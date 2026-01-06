@@ -1,10 +1,11 @@
-﻿using System;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Weapons
 {
@@ -25,7 +26,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
             Item.damage = 14; // The amount of damage the item does to an enemy or player.
-            Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+            Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             Item.knockBack = 5f; // The amount of knockback the item inflicts.
             Item.crit = 4; // The percent chance for the weapon to deal a critical strike. Defaults to 4.
 

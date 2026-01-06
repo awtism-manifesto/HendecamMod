@@ -427,7 +427,7 @@ Mods: {
 			}
 
 			AA12: {
-				DisplayName: A A12
+				DisplayName: AA12
 				Tooltip: ""
 			}
 
@@ -557,7 +557,7 @@ Mods: {
 			}
 
 			RadioactiveEmblem: {
-				DisplayName: Radioactive Emblem
+				DisplayName: Radiation Emblem
 				Tooltip: ""
 			}
 
@@ -612,7 +612,7 @@ Mods: {
 			}
 
 			AK47: {
-				DisplayName: A K47
+				DisplayName: AK47
 				Tooltip: ""
 			}
 
@@ -627,7 +627,7 @@ Mods: {
 			}
 
 			AR15: {
-				DisplayName: A R15
+				DisplayName: AR15
 				Tooltip: ""
 			}
 
@@ -4412,7 +4412,7 @@ Items: {
 	}
 
 	SoulOfImmunityAccessory: {
-		DisplayName: Soul Of Immunity Accessory
+		DisplayName: Soul Of Immunity
 		Tooltip: ""
 	}
 
@@ -4577,7 +4577,7 @@ Items: {
 	}
 
 	RadioactiveEmblem: {
-		DisplayName: Radioactive Emblem
+		DisplayName: Radiation Emblem
 		Tooltip: ""
 	}
 
@@ -4852,7 +4852,7 @@ Items: {
 	}
 
 	AK47: {
-		DisplayName: A K47
+		DisplayName: AK47
 		Tooltip: ""
 	}
 
@@ -4867,7 +4867,7 @@ Items: {
 	}
 
 	AR15: {
-		DisplayName: A R15
+		DisplayName: AR15
 		Tooltip: ""
 	}
 
@@ -5007,7 +5007,7 @@ Items: {
 	}
 
 	ATFsNightmare: {
-		DisplayName: A T Fs Nightmare
+		DisplayName: ATFs Nightmare
 		Tooltip: ""
 	}
 
@@ -5057,7 +5057,7 @@ Items: {
 	}
 
 	BBC: {
-		DisplayName: B B C
+		DisplayName: Bigger, Blacker Cannon
 		Tooltip: ""
 	}
 
@@ -5067,7 +5067,7 @@ Items: {
 	}
 
 	BeeSnipe: {
-		DisplayName: Bee Snipe
+		DisplayName: .50 Bee-MG
 		Tooltip: ""
 	}
 
@@ -5137,7 +5137,7 @@ Items: {
 	}
 
 	BlueMaticHorn: {
-		DisplayName: Blue Matic Horn
+		DisplayName: Blue-Matic Horn
 		Tooltip: ""
 	}
 
@@ -5152,7 +5152,7 @@ Items: {
 	}
 
 	BOOMerang: {
-		DisplayName: B O O Merang
+		DisplayName: BOOM-erang
 		Tooltip: ""
 	}
 
@@ -5212,27 +5212,27 @@ Items: {
 	}
 
 	Bullshit1: {
-		DisplayName: Bullshit1
+		DisplayName: Bull$#!7 Mk.I
 		Tooltip: ""
 	}
 
 	Bullshit2: {
-		DisplayName: Bullshit2
+		DisplayName: Bull$#!7 Mk.II
 		Tooltip: ""
 	}
 
 	Bullshit3: {
-		DisplayName: Bullshit3
+		DisplayName: Bull$#!7 Mk.III
 		Tooltip: ""
 	}
 
 	Bullshit4: {
-		DisplayName: Bullshit4
+		DisplayName: Bull$#!7 Mk.IV
 		Tooltip: ""
 	}
 
 	Bullshit5: {
-		DisplayName: Bullshit5
+		DisplayName: Bull$#!7 Mk.V
 		Tooltip: ""
 	}
 
@@ -5257,7 +5257,7 @@ Items: {
 	}
 
 	CaribousCatastrophe: {
-		DisplayName: Caribous Catastrophe
+		DisplayName: Caribou's Catastrophe
 		Tooltip: ""
 	}
 
@@ -5327,7 +5327,7 @@ Items: {
 	}
 
 	CIAJournalismAward: {
-		DisplayName: C I A Journalism Award
+		DisplayName: CIA Award in Journalism
 		Tooltip: ""
 	}
 
@@ -5352,12 +5352,12 @@ Items: {
 	}
 
 	CompoundBow2: {
-		DisplayName: Compound Bow2
+		DisplayName: Compound Bow Mk.II
 		Tooltip: ""
 	}
 
 	CompoundBow3: {
-		DisplayName: Compound Bow3
+		DisplayName: Compound Bow Mk.III
 		Tooltip: ""
 	}
 
@@ -5427,7 +5427,7 @@ Items: {
 	}
 
 	CrimtaneAmr: {
-		DisplayName: Crimtane Amr
+		DisplayName: Crimtane Anti-Material Rifle
 		Tooltip: ""
 	}
 
@@ -5467,12 +5467,12 @@ Items: {
 	}
 
 	DeadSoldiersRifle: {
-		DisplayName: Dead Soldiers Rifle
+		DisplayName: Dead Soldier's Rifle
 		Tooltip: ""
 	}
 
 	DeathBreathShell: {
-		DisplayName: Death Breath Shell
+		DisplayName: Death's Breath Shell
 		Tooltip: ""
 	}
 
@@ -5492,17 +5492,17 @@ Items: {
 	}
 
 	DirtyRocket1: {
-		DisplayName: Dirty Rocket1
+		DisplayName: Dirty Rocket I
 		Tooltip: ""
 	}
 
 	DirtyRocket2: {
-		DisplayName: Dirty Rocket2
+		DisplayName: Dirty Rocket II
 		Tooltip: ""
 	}
 
 	DirtyRocket3: {
-		DisplayName: Dirty Rocket3
+		DisplayName: Dirty Rocket III
 		Tooltip: ""
 	}
 
@@ -5537,7 +5537,7 @@ Items: {
 	}
 
 	Edward40Hands: {
-		DisplayName: Edward40 Hands
+		DisplayName: Edward 40 Hands
 		Tooltip: ""
 	}
 
@@ -5547,7 +5547,7 @@ Items: {
 	}
 
 	ElementalEmfCaller: {
-		DisplayName: Elemental Emf Caller
+		DisplayName: Elemental EMF Caller
 		Tooltip: ""
 	}
 
@@ -5587,12 +5587,12 @@ Items: {
 	}
 
 	FidgetThrower2: {
-		DisplayName: Fidget Thrower2
+		DisplayName: Fidget Thrower Mk.II
 		Tooltip: ""
 	}
 
 	FidgetThrower3: {
-		DisplayName: Fidget Thrower3
+		DisplayName: Fidget Thrower Mk.III
 		Tooltip: ""
 	}
 
@@ -5612,7 +5612,7 @@ Items: {
 	}
 
 	fivenato: {
-		DisplayName: fivenato
+		DisplayName: .556 Nato Round
 		Tooltip: ""
 	}
 
@@ -5652,7 +5652,7 @@ Items: {
 	}
 
 	FragmentFlatEarth: {
-		DisplayName: Fragment Flat Earth
+		DisplayName: Flat Earth Fragment
 		Tooltip: ""
 	}
 
@@ -5692,7 +5692,7 @@ Items: {
 	}
 
 	GoldenAK: {
-		DisplayName: Golden A K
+		DisplayName: Golden AK
 		Tooltip: ""
 	}
 
@@ -5842,7 +5842,7 @@ Items: {
 	}
 
 	IED: {
-		DisplayName: I E D
+		DisplayName: Improvised Explosive Device
 		Tooltip: ""
 	}
 
@@ -5892,7 +5892,7 @@ Items: {
 	}
 
 	JevilishScythe: {
-		DisplayName: Jevilish Scythe
+		DisplayName: Devilsknife
 		Tooltip: ""
 	}
 
@@ -5932,7 +5932,7 @@ Items: {
 	}
 
 	KingslayerShell: {
-		DisplayName: Kingslayer Shell
+		DisplayName: Shattering Shell
 		Tooltip: ""
 	}
 
@@ -5962,7 +5962,7 @@ Items: {
 	}
 
 	LaserMonkeysPaw: {
-		DisplayName: Laser Monkeys Paw
+		DisplayName: Laser Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -6127,7 +6127,7 @@ Items: {
 	}
 
 	MG42: {
-		DisplayName: M G42
+		DisplayName: MG42
 		Tooltip: ""
 	}
 
@@ -6462,7 +6462,7 @@ Items: {
 	}
 
 	PlasmaMonkeysPaw: {
-		DisplayName: Plasma Monkeys Paw
+		DisplayName: Plasma Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -6472,12 +6472,12 @@ Items: {
 	}
 
 	PlasmaRifle2: {
-		DisplayName: Plasma Rifle2
+		DisplayName: Plasma Rifle Mk.II
 		Tooltip: ""
 	}
 
 	PlasmaRifle3: {
-		DisplayName: Plasma Rifle3
+		DisplayName: Plasma Rifle Mk.III
 		Tooltip: ""
 	}
 
@@ -6592,7 +6592,7 @@ Items: {
 	}
 
 	PondsSniper: {
-		DisplayName: Ponds Sniper
+		DisplayName: Pond's Sniper
 		Tooltip: ""
 	}
 
@@ -6602,7 +6602,7 @@ Items: {
 	}
 
 	PortableTower: {
-		DisplayName: Portable Tower
+		DisplayName: Portable 5G Tower
 		Tooltip: ""
 	}
 
@@ -6717,7 +6717,7 @@ Items: {
 	}
 
 	RectumsRequiem: {
-		DisplayName: Rectums Requiem
+		DisplayName: Rectum's Requiem
 		Tooltip: ""
 	}
 
@@ -6727,12 +6727,12 @@ Items: {
 	}
 
 	RednecksRevenge: {
-		DisplayName: Rednecks Revenge
+		DisplayName: Redneck's Revenge
 		Tooltip: ""
 	}
 
 	RednecksRustBucket: {
-		DisplayName: Rednecks Rust Bucket
+		DisplayName: Redneck's Rust Bucket
 		Tooltip: ""
 	}
 
@@ -6777,7 +6777,7 @@ Items: {
 	}
 
 	RocketNeg1: {
-		DisplayName: Rocket Neg1
+		DisplayName: Rocket -I
 		Tooltip: ""
 	}
 
@@ -6837,7 +6837,7 @@ Items: {
 	}
 
 	SawedOffSparkplug: {
-		DisplayName: Sawed Off Sparkplug
+		DisplayName: Sawed-Off Sparkplug
 		Tooltip: ""
 	}
 
@@ -6897,7 +6897,7 @@ Items: {
 	}
 
 	Six7Gun: {
-		DisplayName: Six7 Gun
+		DisplayName: 67 Gun
 		Tooltip: ""
 	}
 
@@ -6912,7 +6912,7 @@ Items: {
 	}
 
 	SlimeMineStaff: {
-		DisplayName: Slime Mine Staff
+		DisplayName: Slime Mines Staff
 		Tooltip: ""
 	}
 
@@ -6942,7 +6942,7 @@ Items: {
 	}
 
 	SpartansWill: {
-		DisplayName: Spartans Will
+		DisplayName: Spartan's Will
 		Tooltip: ""
 	}
 
@@ -6972,7 +6972,7 @@ Items: {
 	}
 
 	Stg44: {
-		DisplayName: Stg44
+		DisplayName: STG-44
 		Tooltip: ""
 	}
 
@@ -6997,7 +6997,7 @@ Items: {
 	}
 
 	SuperMonkeysPaw: {
-		DisplayName: Super Monkeys Paw
+		DisplayName: Super Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -7072,7 +7072,7 @@ Items: {
 	}
 
 	TheFuckingSun: {
-		DisplayName: The Fucking Sun
+		DisplayName: Literally The Fucking Sun
 		Tooltip: ""
 	}
 
@@ -7102,12 +7102,12 @@ Items: {
 	}
 
 	TheMonkeysPaw: {
-		DisplayName: The Monkeys Paw
+		DisplayName: The Monkey's Paw
 		Tooltip: ""
 	}
 
 	TheMoon: {
-		DisplayName: The Moon
+		DisplayName: Literally The Fucking Moon
 		Tooltip: ""
 	}
 
@@ -7122,7 +7122,7 @@ Items: {
 	}
 
 	ThePeoplesPitchfork: {
-		DisplayName: The Peoples Pitchfork
+		DisplayName: The People's Pitchfork
 		Tooltip: ""
 	}
 
@@ -7157,7 +7157,7 @@ Items: {
 	}
 
 	TheXRay: {
-		DisplayName: The X Ray
+		DisplayName: The X-Ray
 		Tooltip: ""
 	}
 
@@ -7382,7 +7382,7 @@ Items: {
 	}
 
 	TruthSeekersDMR: {
-		DisplayName: Truth Seekers D M R
+		DisplayName: Truth Seeker's DMR
 		Tooltip: ""
 	}
 
@@ -7442,7 +7442,7 @@ Items: {
 	}
 
 	VenomThrower: {
-		DisplayName: Venom Thrower
+		DisplayName: VenomThrower
 		Tooltip: ""
 	}
 
@@ -7472,7 +7472,7 @@ Items: {
 	}
 
 	VP70: {
-		DisplayName: V P70
+		DisplayName: VP70
 		Tooltip: ""
 	}
 
@@ -7582,7 +7582,7 @@ Items: {
 	}
 
 	GunThatKillsPeople: {
-		DisplayName: Gun That Kills People
+		DisplayName: Morbium Mini Rifle
 		Tooltip: ""
 	}
 

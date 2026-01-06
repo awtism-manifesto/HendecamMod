@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items
 {
@@ -78,42 +79,22 @@ namespace HendecamMod.Content.Items
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-
-
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("SteelBar", out ModItem SteelBar))
-            {
-                recipe = CreateRecipe(225);
-
-                recipe.AddIngredient(SteelBar.Type, 2);
-                recipe.AddIngredient<Items.CrudeOil>(2);
-                recipe.AddIngredient(ItemID.Dynamite);
-                recipe.AddTile(TileID.Anvils);
-                recipe.Register();
-
-
-                recipe = CreateRecipe(150);
+            Recipe recipe = CreateRecipe(150);
                 recipe.AddRecipeGroup("IronBar", 2);
                 recipe.AddIngredient<Items.CrudeOil>(2);
                 recipe.AddIngredient(ItemID.Dynamite);
                 recipe.AddTile(TileID.Anvils);
                 recipe.Register();
-               
-            }
-            else
-            {
-                recipe = CreateRecipe(150);
-
-                recipe.AddRecipeGroup("IronBar", 2);
-                recipe.AddIngredient<Items.CrudeOil>(2);
-                recipe.AddIngredient(ItemID.Dynamite);
-                recipe.AddTile(TileID.Anvils);
-                recipe.Register();
-               
 
 
+            recipe = CreateRecipe(225);
+            recipe.AddIngredient<SteelBar>(2);
+            recipe.AddIngredient<Items.CrudeOil>(2);
+            recipe.AddIngredient(ItemID.Dynamite);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
 
-            }
+
 
 
 

@@ -28,21 +28,20 @@ namespace HendecamMod.Content.Items.Weapons
 
 
             // Use Properties
-            Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
-            Item.useAnimation = 18; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+            Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
+            Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
             Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-            Item.mana = 10;
+            Item.mana = 9;
 
 
-            // The sound that this item plays when used.
-            Item.UseSound = SoundID.Item32;
+           
 
 
             // Weapon Properties
             Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-            Item.damage = 43; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-            Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+            Item.damage = 39; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
             Item.UseSound = SoundID.Item20;
 
@@ -50,7 +49,7 @@ namespace HendecamMod.Content.Items.Weapons
 
             // Gun Properties
             Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-            Item.shootSpeed = 7f; // The speed of the projectile (measured in pixels per frame.)
+            Item.shootSpeed = 8.25f; // The speed of the projectile (measured in pixels per frame.)
         }
         private int shotCounter = 0;
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -58,22 +57,22 @@ namespace HendecamMod.Content.Items.Weapons
 
             if (shotCounter <= 0)
             {
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.25f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.5f));
 
                 type = ModContent.ProjectileType<FrostburnProjectile>();
-                SoundEngine.PlaySound(SoundID.Item42, player.position);
+                SoundEngine.PlaySound(SoundID.Item32, player.position);
 
-                Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
+                Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.1f), knockback, player.whoAmI);
                 shotCounter = 2;
             }
             else if (shotCounter == 2)
             {
-                Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.25f));
+                Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.5f));
 
                 type = ModContent.ProjectileType<MintLeafProjectileMagic>();
                 SoundEngine.PlaySound(SoundID.Item42, player.position);
 
-                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.67f), knockback, player.whoAmI);
+                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);
                 shotCounter = 0;
             }
 
@@ -81,10 +80,7 @@ namespace HendecamMod.Content.Items.Weapons
 
             return false;
         }
-        public override Color? GetAlpha(Color lightColor)
-        {
-            return Color.White;
-        }
+       
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {

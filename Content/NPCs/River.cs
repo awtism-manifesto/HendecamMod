@@ -336,6 +336,7 @@ namespace HendecamMod.Content.NPCs
                              .Add<Items.TheMonkeysPaw>()
                     .Add<Items.ThumbtackDart>()
                       .Add<Items.BeetleBomb>(Condition.DownedGolem)
+                      .Add<Items.PrideFlag>()
                 .Add<Items.PridePartyHat>()
                    .Add<Items.CollarOfTheDamned>()
                 
@@ -376,13 +377,7 @@ namespace HendecamMod.Content.NPCs
                 npcShop.Add(ItemID.PoopBlock);
 
             }
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica)
-                && MagMerica.TryFind<ModItem>("PrideFlag", out ModItem PrideFlag))
-            {
-              npcShop.Add(PrideFlag.Type);
-               
-
-            }
+           
             if (ModLoader.TryGetMod("PrideDye", out Mod PrideMerica) && PrideMerica.TryFind<ModItem>("GenderfluidDye", out ModItem GenderfluidDye)
                 && PrideMerica.TryFind<ModItem>("GayDye", out ModItem GayDye)
                  && PrideMerica.TryFind<ModItem>("BisexualDye", out ModItem BisexualDye)

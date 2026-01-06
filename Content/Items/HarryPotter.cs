@@ -10,6 +10,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Items.Materials;
 
 
 namespace HendecamMod.Content.Items
@@ -123,40 +124,17 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("Paper", out ModItem Paper))
-
-            {
-
-                recipe = CreateRecipe();
-             
-               
-                recipe.AddIngredient(Paper.Type, 100);
-                recipe.AddIngredient< CeramicSheet>(40);
-                recipe.AddTile(TileID.Bookcases);
-                recipe.Register();
-
-
-                recipe = CreateRecipe();
+           
+                
                 recipe.AddIngredient(ItemID.FallenStar, 5);
                 recipe.AddIngredient(ItemID.Book);
-
-                recipe.AddIngredient< CeramicSheet>(40);
-                recipe.AddTile(TileID.Bookcases);
-                recipe.Register();
-
-            }
-            else
-            {
-                recipe = CreateRecipe();
-                recipe.AddIngredient(ItemID.FallenStar, 5);
-                recipe.AddIngredient(ItemID.Book);
-
+                recipe.AddIngredient<Paper>(100);
                 recipe.AddIngredient< CeramicSheet>(40);
                 recipe.AddTile(TileID.Bookcases);
                 recipe.Register();
 
 
-            }
+            
 
 
 

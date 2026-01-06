@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items
 {
@@ -65,55 +66,31 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
            
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("FireDiamond", out ModItem FireDiamond))
-            {
-                recipe = CreateRecipe(300);
-                recipe.AddIngredient<Items.RefinedOil>();
-                recipe.AddIngredient(FireDiamond.Type);
-                recipe.AddIngredient<Items.PurifiedSalt>();
-                recipe.AddIngredient(ItemID.EmptyBullet, 300);
-                recipe.AddTile(TileID.Furnaces);
-
-                recipe.Register();
-            }
+           
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SoulofPlight", out ModItem SoulofPlight))
 
 
             {
 
-                recipe = CreateRecipe(350);
-                recipe.AddIngredient<Items.RefinedOil>();
+                recipe = CreateRecipe(400);
+                recipe.AddIngredient<RefinedOil>();
                 recipe.AddIngredient(SoulofPlight.Type);
-                recipe.AddIngredient<Items.PurifiedSalt>();
-                recipe.AddIngredient(ItemID.EmptyBullet, 350);
+                recipe.AddIngredient<FireDiamond>();
+                recipe.AddIngredient<PurifiedSalt>();
+                recipe.AddIngredient(ItemID.EmptyBullet, 400);
                 recipe.AddTile(TileID.Furnaces);
 
                 recipe.Register();
 
             }
-            if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica2) && ThorMerica2.TryFind("SoulofPlight", out ModItem SoulofPlight2)
-                && ModLoader.TryGetMod("MagAF", out Mod MagMerica2) && MagMerica.TryFind<ModItem>("FireDiamond", out ModItem FireDiamond2))
-
-
-            {
-
-                recipe = CreateRecipe(425);
-                recipe.AddIngredient<Items.RefinedOil>();
-                recipe.AddIngredient(SoulofPlight2.Type);
-                recipe.AddIngredient<Items.PurifiedSalt>();
-                recipe.AddIngredient(FireDiamond2.Type);
-                recipe.AddIngredient(ItemID.EmptyBullet, 425);
-                recipe.AddTile(TileID.Furnaces);
-
-                recipe.Register();
-
-            }
+           
             else
             {
-                recipe = CreateRecipe(175);
-                recipe.AddIngredient<Items.RefinedOil>();
-                recipe.AddIngredient<Items.PurifiedSalt>();
-                recipe.AddIngredient(ItemID.EmptyBullet, 175);
+                recipe = CreateRecipe(250);
+                recipe.AddIngredient<RefinedOil>();
+                recipe.AddIngredient<FireDiamond>();
+                recipe.AddIngredient<PurifiedSalt>();
+                recipe.AddIngredient(ItemID.EmptyBullet, 250);
                 recipe.Register();
             }
         }

@@ -75,7 +75,7 @@ namespace HendecamMod.Content.Items.Weapons
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Also try TerMerica!");
+            var line = new TooltipLine(Mod, "Face", "");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")

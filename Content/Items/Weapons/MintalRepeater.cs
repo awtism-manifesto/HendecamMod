@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons
 {
@@ -53,11 +54,19 @@ namespace HendecamMod.Content.Items.Weapons
         {
             return Color.White;
         }
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
 
+            if (type == ProjectileID.WoodenArrowFriendly)
+            {
+                type = ModContent.ProjectileType<MintalArrowProjectile>();
+            }
+            
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "Converts wooden arrows into mintal arrows");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")

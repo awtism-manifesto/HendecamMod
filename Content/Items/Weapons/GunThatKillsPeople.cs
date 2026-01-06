@@ -17,7 +17,7 @@ namespace HendecamMod.Content.Items.Weapons
         {
 
             Item.width = 62;
-            Item.scale = 0.9f;
+            Item.scale = 0.8f;
             Item.rare = ItemRarityID.Yellow;
             Item.value = 140000;
             Item.useTime = 6;
@@ -48,14 +48,11 @@ namespace HendecamMod.Content.Items.Weapons
 
             return false;
         }
-        public override Color? GetAlpha(Color lightColor)
-        {
-            return Color.White;
-        }
+       
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            var line = new TooltipLine(Mod, "Face", "Also try TerMerica!");
+            var line = new TooltipLine(Mod, "Face", "");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -93,7 +90,7 @@ namespace HendecamMod.Content.Items.Weapons
         }
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-10f, -1f);
+            return new Vector2(-16f, -1f);
         }
     }
 

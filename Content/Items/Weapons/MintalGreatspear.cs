@@ -45,7 +45,7 @@ namespace HendecamMod.Content.Items.Weapons
         {
 
             type = ModContent.ProjectileType<MintLeafProjectile>();
-            Projectile.NewProjectileDirect(source, position, velocity * 2, type, (int)(damage * 0.69), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, velocity * 2.67f, type, (int)(damage * 0.69), knockback, player.whoAmI);
 
 
             return true; // Return false because we don't want tModLoader to shoot projectile

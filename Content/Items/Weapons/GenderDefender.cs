@@ -61,7 +61,7 @@ namespace HendecamMod.Content.Items.Weapons
             var line = new TooltipLine(Mod, "Face", "#ArmTheQueers");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Sponsored by TerMerica.")
+            line = new TooltipLine(Mod, "Face", "")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

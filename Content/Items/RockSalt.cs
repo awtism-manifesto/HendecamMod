@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
 
 namespace HendecamMod.Content.Items
 {
@@ -65,15 +66,14 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.CrimtaneBar);
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("FireDiamond", out ModItem FireDiamond))
-            {
+          
                 recipe = CreateRecipe(5);
 
-                recipe.AddIngredient(FireDiamond.Type);
-                recipe.AddTile(TileID.Furnaces);
+            recipe.AddIngredient<FireDiamond>(2);
+            recipe.AddTile(TileID.Furnaces);
 
                 recipe.Register();
-            }
+            
 
 
 

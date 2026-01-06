@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Items.Consumables;
 
 namespace HendecamMod.Content.Items
 {
@@ -69,42 +70,18 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
 
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind("LeadskinPotion", out ModItem LeadskinPotion))
-
-
-            {
+            
                 Recipe recipe = CreateRecipe();
-                recipe.AddIngredient(LeadskinPotion.Type);
-                recipe.AddIngredient< WeedLeaves>();
+            recipe.AddIngredient<LeadskinPotion>();
+            recipe.AddIngredient< WeedLeaves>();
                 recipe.AddIngredient< PurifiedSalt>();
                 recipe.AddIngredient< UraniumOre>();
                 recipe.AddTile(TileID.Bottles);
                 recipe.Register();
 
                 recipe = CreateRecipe();
-                recipe.AddIngredient(LeadskinPotion.Type);
-                recipe.AddIngredient< WeedLeaves>();
-                recipe.AddIngredient< PurifiedSalt>();
-                recipe.AddIngredient< UraniumOre>();
-                recipe.AddTile(TileID.AlchemyTable);
-                recipe.Register();
-               
-
-
-            }
-            else
-            {
-                Recipe recipe = CreateRecipe();
-                recipe.AddIngredient(ItemID.BottledWater);
-                recipe.AddIngredient< WeedLeaves>();
-                recipe.AddIngredient< PurifiedSalt>();
-                recipe.AddIngredient< UraniumOre>();
-                recipe.AddTile(TileID.Bottles);
-                recipe.Register();
-
-                recipe = CreateRecipe();
-                recipe.AddIngredient(ItemID.BottledWater);
-                recipe.AddIngredient< WeedLeaves>();
+            recipe.AddIngredient<LeadskinPotion>();
+            recipe.AddIngredient< WeedLeaves>();
                 recipe.AddIngredient< PurifiedSalt>();
                 recipe.AddIngredient< UraniumOre>();
                 recipe.AddTile(TileID.AlchemyTable);
@@ -112,7 +89,7 @@ namespace HendecamMod.Content.Items
 
 
 
-            }
+            
            
         }
 

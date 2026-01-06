@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -351,7 +352,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.Xenopopper);
             recipe.AddIngredient<TheMagnum>();
             recipe.AddIngredient<ATFsNightmare>();
-
+            recipe.AddIngredient<GunThatKillsPeople>();
             recipe.AddIngredient<TheNanoshot>();
 
             recipe.AddIngredient(ItemID.CandyCornRifle);
@@ -361,8 +362,9 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient<ThePrimeTime>();
             recipe.AddIngredient<CryonicCarbine>();
             recipe.AddIngredient<Bundlebuss>();
+            recipe.AddIngredient<MintalMachinePistol>();
             recipe.AddIngredient<VP70>();
-
+            recipe.AddIngredient<GenderDefender>();
             recipe.AddIngredient(ItemID.SnowballCannon);
             recipe.AddIngredient<TheDeposer>();
             recipe.AddIngredient<CopperShortmachinegun>();
@@ -377,14 +379,7 @@ namespace HendecamMod.Content.Items
             {
                 recipe.AddIngredient(BrenGun.Type);
             }
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("GenderDefender", out ModItem GenderDefender)
-         && MagMerica.TryFind<ModItem>("MintalMachinePistol", out ModItem MintalMachinePistol) && MagMerica.TryFind<ModItem>("GunThatKillsPeople", out ModItem GunThatKillsPeople))
-
-            {
-                recipe.AddIngredient(GenderDefender.Type);
-                recipe.AddIngredient(MintalMachinePistol.Type);
-                recipe.AddIngredient(GunThatKillsPeople.Type);
-            }
+           
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("SomaPrime", out ModItem SomaPrime)
                 && CalMerica.TryFind<ModItem>("HalibutCannon", out ModItem HalibutCannon))
 

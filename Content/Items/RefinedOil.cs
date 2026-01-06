@@ -67,26 +67,16 @@ namespace HendecamMod.Content.Items
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(5);
+            Recipe recipe = CreateRecipe(7);
 
             recipe.AddIngredient<Items.CrudeOil>(10);
+            recipe.AddIngredient<Materials.FireDiamond>(1);
             recipe.AddIngredient(ItemID.LivingFireBlock);
             recipe.AddTile(TileID.AdamantiteForge);
             recipe.Register();
 
            
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind<ModItem>("FireDiamond", out ModItem FireDiamond))
-            {
-                recipe = CreateRecipe(8);
-                recipe.AddIngredient<Items.CrudeOil>(10);
-                recipe.AddIngredient(ItemID.LivingFireBlock);
-                recipe.AddIngredient(FireDiamond.Type);
-                
-                recipe.AddTile(TileID.AdamantiteForge);
-
-                recipe.Register();
-            }
-
+           
 
 
         }

@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using HendecamMod.Content.Items.Placeables;
 
 
 namespace HendecamMod.Content.Items
@@ -105,6 +106,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.FrostCore, 1);
             recipe.AddIngredient<Items.UraniumBar>(5);
             recipe.AddIngredient<Items.PlutoniumBar>(5);
+            recipe.AddIngredient<MorbiumBar>(5);
             recipe.AddIngredient<Items.AstatineBar>(5);
             recipe.AddIngredient(ItemID.SpectreBar, 5);
             recipe.AddIngredient(ItemID.ShroomiteBar, 5);
@@ -117,14 +119,7 @@ namespace HendecamMod.Content.Items
 
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-            if (ModLoader.TryGetMod("MagAF", out Mod MagMerica) && MagMerica.TryFind("MorbiumBar", out ModItem MorbiumBar))
-
-
-            {
-                recipe.AddIngredient(MorbiumBar.Type, 5);
-
-
-            }
+           
 
 
 
