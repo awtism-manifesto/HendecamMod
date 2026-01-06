@@ -1,6 +1,570 @@
 # This file will automatically update with entries for new content after a build and reload.
 
 Items: {
+	HeadOfCthulhuSummon: {
+		DisplayName: Corrupt Goggles
+		Tooltip: ""
+	}
+
+	AirBar: {
+		DisplayName: Air Bar
+		Tooltip: ""
+	}
+
+	DirtBar: {
+		DisplayName: Dirt Bar
+		Tooltip: ""
+	}
+
+	StoneBar: {
+		DisplayName: Stone Bar
+		Tooltip: ""
+	}
+
+	FrozenLightning: {
+		DisplayName: Frozen Lightning
+		Tooltip: ""
+	}
+
+	Conditioner: {
+		Tooltip: ""
+		DisplayName: Conditioner
+	}
+
+	Butterbrot: {
+		Tooltip: ""
+		DisplayName: Butterbrot
+	}
+
+	BodyWash: {
+		Tooltip: ""
+		DisplayName: Body Wash
+	}
+
+	BackupPlan: {
+		Tooltip: ""
+		DisplayName: Backup Plan
+	}
+
+	ArmoredSling: {
+		Tooltip: ""
+		DisplayName: Armored Sling
+	}
+
+	ElementalFlameCore: {
+		DisplayName: Elemental Flame Core
+		Tooltip: ""
+	}
+
+	EmptyBong: {
+		DisplayName: Empty Bong
+		Tooltip: ""
+	}
+
+	FirstHalf: {
+		DisplayName: First Half
+		Tooltip: ""
+	}
+
+	GlowstoneCape: {
+		DisplayName: Glowstone Cape
+		Tooltip: ""
+	}
+
+	GodsPaintThinner: {
+		DisplayName: Gods Paint Thinner
+		Tooltip: ""
+	}
+
+	HeavyDutyBoots: {
+		DisplayName: Heavy Duty Boots
+		Tooltip: ""
+	}
+
+	IdeaGenerator: {
+		DisplayName: Idea Generator
+		Tooltip: ""
+	}
+
+	LargeCactus: {
+		DisplayName: Large Cactus
+		Tooltip: ""
+	}
+
+	LeadBlanket: {
+		DisplayName: Lead Blanket
+		Tooltip: ""
+	}
+
+	LeechRepellant: {
+		DisplayName: Leech Repellant
+		Tooltip: ""
+	}
+
+	Lightbulb: {
+		DisplayName: Lightbulb
+		Tooltip: ""
+	}
+
+	LitBong: {
+		DisplayName: Lit Bong
+		Tooltip: ""
+	}
+
+	LostFragment1: {
+		DisplayName: Lost Fragment1
+		Tooltip: ""
+	}
+
+	LostFragment2: {
+		DisplayName: Lost Fragment2
+		Tooltip: ""
+	}
+
+	LostFragment3: {
+		DisplayName: Lost Fragment3
+		Tooltip: ""
+	}
+
+	LostFragment4: {
+		DisplayName: Lost Fragment4
+		Tooltip: ""
+	}
+
+	MagicSoap: {
+		DisplayName: Magic Soap
+		Tooltip: ""
+	}
+
+	MukbangStarterKit: {
+		DisplayName: Mukbang Starter Kit
+		Tooltip: ""
+	}
+
+	OverthinkersChecklist: {
+		DisplayName: Overthinkers Checklist
+		Tooltip: ""
+	}
+
+	Placebo: {
+		DisplayName: Placebo
+		Tooltip: ""
+	}
+
+	QuestionableVial: {
+		DisplayName: Questionable Vial
+		Tooltip: ""
+	}
+
+	Rampart: {
+		DisplayName: Rampart
+		Tooltip: ""
+	}
+
+	ResearchChemicals: {
+		DisplayName: Research Chemicals
+		Tooltip: ""
+	}
+
+	RiotShield: {
+		DisplayName: Riot Shield
+		Tooltip: ""
+	}
+
+	SecondDinner: {
+		DisplayName: Second Dinner
+		Tooltip: ""
+	}
+
+	SecondHalf: {
+		DisplayName: Second Half
+		Tooltip: ""
+	}
+
+	Shampoo: {
+		DisplayName: Shampoo
+		Tooltip: ""
+	}
+
+	SmellingSalts: {
+		DisplayName: Smelling Salts
+		Tooltip: ""
+	}
+
+	SpiceKingStarterKit: {
+		DisplayName: Spice King Starter Kit
+		Tooltip: ""
+	}
+
+	SpotlightShield: {
+		DisplayName: Spotlight Shield
+		Tooltip: ""
+	}
+
+	SteelSunscreen: {
+		DisplayName: Steel Sunscreen
+		Tooltip: ""
+	}
+
+	ThreeInOne: {
+		DisplayName: Three In One
+		Tooltip: ""
+	}
+
+	TwoInOne: {
+		DisplayName: Two In One
+		Tooltip: ""
+	}
+
+	UltrabrightCandle: {
+		DisplayName: Ultrabright Candle
+		Tooltip: ""
+	}
+
+	Ushanka: {
+		DisplayName: Ushanka
+		Tooltip: ""
+	}
+
+	AnkleMonitor: {
+		DisplayName: Ankle Monitor
+		Tooltip: ""
+	}
+
+	DietSchedule: {
+		DisplayName: Diet Schedule
+		Tooltip: ""
+	}
+
+	EmptyFishingBucket: {
+		DisplayName: Empty Fishing Bucket
+		Tooltip: ""
+	}
+
+	OldOnesGlasses: {
+		DisplayName: Old Ones Glasses
+		Tooltip: ""
+	}
+
+	PacifistsMark: {
+		Tooltip: ""
+		DisplayName: Pacifists Mark
+	}
+
+	HotWax: {
+		DisplayName: Hot Wax
+		Tooltip: ""
+	}
+
+	AlphaMaleChecklist: {
+		DisplayName: Alpha Male Checklist
+		Tooltip: ""
+	}
+
+	BrokenMouse: {
+		DisplayName: Broken Mouse
+		Tooltip: ""
+	}
+
+	GasMask: {
+		DisplayName: Gas Mask
+		Tooltip: ""
+	}
+
+	Grindstone: {
+		DisplayName: Grindstone
+		Tooltip: ""
+	}
+
+	KillShelterPermit: {
+		DisplayName: Kill Shelter Permit
+		Tooltip: ""
+	}
+
+	LeadPlating: {
+		DisplayName: Lead Plating
+		Tooltip: ""
+	}
+
+	NintendoPatent: {
+		DisplayName: Nintendo Patent
+		Tooltip: ""
+	}
+
+	NostalgicDiamond: {
+		DisplayName: Nostalgic Diamond
+		Tooltip: ""
+	}
+
+	PoachersContract: {
+		DisplayName: Poachers Contract
+		Tooltip: ""
+	}
+
+	TornSaddle: {
+		DisplayName: Torn Saddle
+		Tooltip: ""
+	}
+
+	TornFilter: {
+		Tooltip: ""
+		DisplayName: Torn Filter
+	}
+
+	PrisonFood: {
+		Tooltip: ""
+		DisplayName: Prison Food
+	}
+
+	PetaAutograph: {
+		Tooltip: ""
+		DisplayName: Peta Autograph
+	}
+
+	Lunchly: {
+		Tooltip: ""
+		DisplayName: Lunchly
+	}
+
+	DustyMedal: {
+		Tooltip: ""
+		DisplayName: Dusty Medal
+	}
+
+	Disenchanter: {
+		Tooltip: ""
+		DisplayName: Disenchanter
+	}
+
+	CeaseAndDesist: {
+		Tooltip: ""
+		DisplayName: Cease And Desist
+	}
+
+	BurntPan: {
+		Tooltip: ""
+		DisplayName: Burnt Pan
+	}
+
+	ExpiredPetFood: {
+		DisplayName: Expired Pet Food
+		Tooltip: ""
+	}
+
+	JunkFood: {
+		DisplayName: Junk Food
+		Tooltip: ""
+	}
+
+	MoldyCheese: {
+		DisplayName: Moldy Cheese
+		Tooltip: ""
+	}
+
+	NastyPatty: {
+		DisplayName: Nasty Patty
+		Tooltip: ""
+	}
+
+	SchoolFood: {
+		DisplayName: School Food
+		Tooltip: ""
+	}
+
+	SlashedJacket: {
+		DisplayName: Slashed Jacket
+		Tooltip: ""
+	}
+
+	ZoologistHateLetter: {
+		DisplayName: Zoologist Hate Letter
+		Tooltip: ""
+	}
+
+	MoonlordPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Moonlord Peace Agreement
+	}
+
+	FriendCore: {
+		Tooltip: ""
+		DisplayName: Friend Core
+	}
+
+	RoyalGnome: {
+		Tooltip: ""
+		DisplayName: Royal Gnome
+	}
+
+	Godhood: {
+		Tooltip: ""
+		DisplayName: Godhood
+	}
+
+	RoyalChest: {
+		Tooltip: ""
+		DisplayName: Royal Chest
+	}
+
+	ApexPlasmaCannon: {
+		DisplayName: Apex Plasma Cannon
+		Tooltip: ""
+	}
+
+	ApacheElfShipSummon: {
+		Tooltip: ""
+		DisplayName: Candy Heart Box
+	}
+
+	RoyalCushion: {
+		Tooltip: ""
+		DisplayName: Royal Cushion
+	}
+
+	GlitterGun: {
+		DisplayName: Glitter Gun
+		Tooltip: ""
+	}
+
+	CandyHeart: {
+		Tooltip: ""
+		DisplayName: Candy Heart
+	}
+
+	RoyalWing: {
+		DisplayName: Royal Wing
+		Tooltip: ""
+	}
+
+	RoyalMushroom: {
+		Tooltip: ""
+		DisplayName: Royal Mushroom
+	}
+
+	RoyalMandibles: {
+		Tooltip: ""
+		DisplayName: Royal Mandibles
+	}
+
+	RoyalGeode: {
+		Tooltip: ""
+		DisplayName: Royal Geode
+	}
+
+	RoyalFeather: {
+		Tooltip: ""
+		DisplayName: Royal Feather
+	}
+
+	OcularPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Ocular Peace Agreement
+	}
+
+	MonarchyPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Monarchy Peace Agreement
+	}
+
+	MechanicalPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Mechanical Peace Agreement
+	}
+
+	InvaderPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Invader Peace Agreement
+	}
+
+	FlamingPeaceAgreement: {
+		Tooltip: ""
+		DisplayName: Flaming Peace Agreement
+	}
+
+	SeasonalPeaceAgreement: {
+		DisplayName: Seasonal Peace Agreement
+		Tooltip: ""
+	}
+
+	SlushyPeaceAgreement: {
+		DisplayName: Slushy Peace Agreement
+		Tooltip: ""
+	}
+
+	SpreadBiomePeaceAgreement: {
+		DisplayName: Spread Biome Peace Agreement
+		Tooltip: ""
+	}
+
+	UndeadPeaceAgreement: {
+		DisplayName: Undead Peace Agreement
+		Tooltip: ""
+	}
+
+	GrassyPeaceAgreement: {
+		DisplayName: Grassy Peace Agreement
+		Tooltip: ""
+	}
+
+	OceanicPeaceAgreement: {
+		DisplayName: Oceanic Peace Agreement
+		Tooltip: ""
+	}
+
+	PeaceAmongBiomes: {
+		DisplayName: Peace Among Biomes
+		Tooltip: ""
+	}
+
+	PeaceAmongCthulhu: {
+		DisplayName: Peace Among Cthulhu
+		Tooltip: ""
+	}
+
+	PeaceAmongEvents: {
+		DisplayName: Peace Among Events
+		Tooltip: ""
+	}
+
+	PeaceAmongNations: {
+		DisplayName: Peace Among Nations
+		Tooltip: ""
+	}
+
+	RoyalAmalgamation: {
+		DisplayName: Royal Amalgamation
+		Tooltip: ""
+	}
+
+	MoltenRose: {
+		DisplayName: Molten Rose
+		Tooltip: ""
+	}
+
+	SoulOfImmunity: {
+		Tooltip: ""
+		DisplayName: Soul Of Immunity
+	}
+
+	RampartAccessory: {
+		Tooltip: ""
+		DisplayName: Rampart
+	}
+
+	PeaceAmongNationsAccessory: {
+		Tooltip: ""
+		DisplayName: Peace Among Nations
+	}
+
+	SoulOfImmunityAccessory: {
+		Tooltip: ""
+		DisplayName: Soul Of Immunity
+	}
+
+	NastyPattyAccessory: {
+		Tooltip: ""
+		DisplayName: Nasty Patty
+	}
 	PenisBlaster: {
 		DisplayName: Penis Blaster
 		Tooltip:
@@ -3007,6 +3571,11 @@ Items: {
 }
 
 Projectiles: {
+	ApexPlasmaBullet.DisplayName: Apex Plasma Bullet
+	ApexPlasmaBulletHostile.DisplayName: Apex Plasma Bullet
+	GlitterBullet.DisplayName: Glitter Bullet
+	ApexPlasmaSpawn.DisplayName: Apex Plasma Bullet
+	ApexPlasmaSpawnSpawn.DisplayName: Apex Plasma Bullet
 	TrueBullet.DisplayName: True Bullet
 	ShitBallProjectile.DisplayName: Shit Ball Projectile
 	ProtoBeam.DisplayName: Proto Beam
@@ -3739,6 +4308,34 @@ Prefixes: {
 }
 
 NPCs: {
+	HeadOfCthulhu.DisplayName: Head of Cthulhu
+	ApacheElfShip.DisplayName: Apache Elf Ship
+	ApacheElf.DisplayName: Apache Elf
+
+	Alpine: {
+		TownNPCMood: {
+			Princess_LoveNPC: Alpine reminds me of Santa, in a really good way!
+			LikeNPC_Princess: The Princess is legally requiring me to reduce the prices of my goods while in her presence
+			HateNPC: The "Arms Dealer" can suck my eggs, he's an absolute fraud and doesn't know what he's talking about.
+			DislikeNPC: I don't like Tax Collector, but I respect the hustle. Just wish he'd stop putting such high taxes on scrap metal.
+			LikeNPC: Santa was my boss 'fore you came around, it's good to see him again.
+			LoveNPC: THE PIRATE! MY MAN!!! His weapons collection is admirable, not to mention him having some ACTUAL combat experience as opposed to everybody else is a MUCH needed breath of fresh air.
+			HateBiome: Do you REALLY think I can take off from down here, even if I still had my Apache? Eat dick, dude.
+			DislikeBiome: I don't like the desert - too hot, too much sand. Only benefit is landing spots for my Apache - Oh, wait.
+			LikeBiome: The ocean is alright, I guess. Nice to interact with the pirates every once in a while.
+			LoveBiome: Yeah, yeah, call it stereotypical, but the snowy forest is the best. Don't judge me.
+			HateCrowded: Please, just - YOU, AND EVERYONE ELSE, GO AWAY!
+			Content: I'm fine, why do you ask?
+			NoHome: Since you basically blew up my last one, CAN YOU BUILD ME A HOUSE?!
+			FarFromHome: I am too far from home.
+			LoveSpace: Nice not having so many people around
+			DislikeCrowded: Too many people around... Not good for the anxiety... please help..?
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		DisplayName: Helipilot
+		Census.SpawnCondition: Crash their Apache
+	}
 	Politician: {
 		TownNPCMood: {
 			Princess_LovesNPC: I like {NPCName}.
@@ -3865,5 +4462,14 @@ Achievements: {
 	AmericanApotheosis: {
 		Description: Craft the apotheosis of all guns...
 		FriendlyName: American Apotheosis
+	}
+	KnockEmDown: {
+		Description: Crash the Helipilot's Apache and recruit her to your town
+		FriendlyName: Knock Em Down
+	}
+
+	SkullCracker: {
+		Description: Crush the Head of Cthulhu 'neath your boot... But was it at full strength?
+		FriendlyName: Skull Crusher
 	}
 }
