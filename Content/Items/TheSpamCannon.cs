@@ -19,7 +19,7 @@ namespace HendecamMod.Content.Items
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.useAnimation = 15;
             Item.useTime = 15;
-            Item.damage = 82;
+            Item.damage = 85;
             Item.knockBack = 5.5f;
             Item.width = 40;
             Item.height = 40;
@@ -81,7 +81,7 @@ namespace HendecamMod.Content.Items
             {
                 if (Main.rand.NextBool(9))
                 {
-                    Item.damage = Main.rand.Next(70, 115);
+                    Item.damage = Main.rand.Next(75, 125);
                 }
 
 
@@ -90,7 +90,7 @@ namespace HendecamMod.Content.Items
             {
                 if (Main.rand.NextBool(9))
                 {
-                    Item.damage = Main.rand.Next(60, 105);
+                    Item.damage = Main.rand.Next(65, 110);
                 }
 
             }
@@ -110,7 +110,7 @@ namespace HendecamMod.Content.Items
             
             if (Main.rand.NextBool(15))
             {
-                Item.value = Main.rand.Next(-100, 3250000);
+                Item.value = Main.rand.Next(-100, 11500000);
             }
 
             if (spamcannoncooldown > 0)

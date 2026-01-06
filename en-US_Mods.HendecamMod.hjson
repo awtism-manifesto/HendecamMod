@@ -2382,7 +2382,7 @@ Mods: {
 			}
 
 			TedGun: {
-				DisplayName: Ted Gun
+				DisplayName: Freedom Club's Freedom Dispenser
 				Tooltip: ""
 			}
 
@@ -3654,6 +3654,8 @@ WorldGen: {
 	PyriteBlessMessage: Mods.HendecamMod.WorldGen.PyriteBlessMessage
 	MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
 	BlessedWithThroarbiumOreMessage: Mods.HendecamMod.WorldGen.BlessedWithThroarbiumOreMessage
+	PlutoniumMessage: Mods.HendecamMod.WorldGen.PlutoniumMessage
+	PlutoniumBlessMessage: Mods.HendecamMod.WorldGen.PlutoniumBlessMessage
 }
 
 Items: {

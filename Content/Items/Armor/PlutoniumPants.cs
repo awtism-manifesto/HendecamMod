@@ -38,7 +38,7 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28; // Height of the item
             Item.value = Item.sellPrice(gold: 25); // How many coins the item is worth
             Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-            Item.defense = 13; // The amount of defense the item will give when equipped
+            Item.defense = 15; // The amount of defense the item will give when equipped
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {

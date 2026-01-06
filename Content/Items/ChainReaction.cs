@@ -20,7 +20,7 @@ namespace HendecamMod.Content.Items
             // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<PlutoWhip>(), 33, 4, 3.75f);
             Item.rare = ItemRarityID.LightPurple;
-            Item.damage = 104;
+            Item.damage = 132;
             Item.useTime = 42;
             Item.useAnimation = 42;
             Item.knockBack = 3;

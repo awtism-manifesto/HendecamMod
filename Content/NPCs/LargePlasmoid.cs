@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items;
 using Humanizer;
 using Terraria;
@@ -98,11 +99,11 @@ namespace HendecamMod.Content.NPCs
        
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (!Main.dayTime & NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3 & NPC.downedEmpressOfLight)
+            if (!Main.dayTime & ApacheElfShipDown.downedApacheElfShip & NPC.downedEmpressOfLight)
             {
                 return SpawnCondition.Sky.Chance * 0.02f;
             }
-            if (!Main.dayTime & NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3  )
+            if (!Main.dayTime & ApacheElfShipDown.downedApacheElfShip)
             {
                 return SpawnCondition.Sky.Chance * 0.095f;
             }

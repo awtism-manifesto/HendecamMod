@@ -30,7 +30,7 @@ namespace HendecamMod.Content.Items
             Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
             Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-            Item.damage = 79; // The amount of damage the item does to an enemy or player.
+            Item.damage = 94; // The amount of damage the item does to an enemy or player.
             Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
             Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
             

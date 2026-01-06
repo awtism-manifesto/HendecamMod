@@ -14,9 +14,9 @@ namespace HendecamMod.Content.Items.Armor
     public class PlutoniumFacemask : ModItem
     {
 
-        public static readonly int AdditiveDamageBonus = 12;
-        public static readonly int CritBonus = 12;
-        public static readonly int MaxManaIncrease = 70;
+        public static readonly int AdditiveDamageBonus = 13;
+        public static readonly int CritBonus = 13;
+        public static readonly int MaxManaIncrease = 85;
         public static readonly int RangedCritBonus = 10;
         public static LocalizedText SetBonusText { get; private set; }
 
@@ -38,15 +38,15 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28; // Height of the item
             Item.value = Item.sellPrice(gold: 20); // How many coins the item is worth
             Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-            Item.defense = 11; // The amount of defense the item will give when equipped
+            Item.defense = 12; // The amount of defense the item will give when equipped
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "12% increased damage and crit chance");
+            var line = new TooltipLine(Mod, "Face", "13% increased damage and crit chance");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "+70 max mana and +10% ranged crit chance")
+            line = new TooltipLine(Mod, "Face", "+85 max mana and +10% ranged crit chance")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -89,7 +89,7 @@ namespace HendecamMod.Content.Items.Armor
             
             player.statManaMax2 += MaxManaIncrease;
             player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 112f;
+            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
             player.GetCritChance(DamageClass.Generic) += CritBonus;
             player.lifeRegen += -1;
         }

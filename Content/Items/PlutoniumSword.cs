@@ -22,7 +22,7 @@ namespace HendecamMod.Content.Items
             Item.useAnimation = 14;
             Item.useTime = 7;
             Item.reuseDelay = 24;
-            Item.damage = 99;
+            Item.damage = 112;
             Item.knockBack = 9.5f;
             Item.width = 40;
             Item.height = 40;

@@ -43,7 +43,7 @@ namespace HendecamMod.Content.Items
 
             // Weapon Properties
             Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();  // Sets the damage type to ranged.
-            Item.damage = 31; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.damage = 39; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
             
@@ -55,7 +55,7 @@ namespace HendecamMod.Content.Items
             // For some reason, all the guns in the vanilla source have this.
             Item.shoot = ModContent.ProjectileType<Needle>();
             Item.useAmmo = AmmoID.Bullet;
-            Item.shootSpeed = 5.65f; // The speed of the projectile (measured in pixels per frame.)
+            Item.shootSpeed = 6.95f; // The speed of the projectile (measured in pixels per frame.)
            
         }
 

@@ -41,7 +41,7 @@ namespace HendecamMod.Content.Items
 
             // Weapon Properties
             Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-            Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.damage = 78; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
             Item.ArmorPenetration = 15;
@@ -53,7 +53,7 @@ namespace HendecamMod.Content.Items
 
             Item.shootSpeed = 14.8f; // The speed of the projectile (measured in pixels per frame.)
             Item.useAmmo = ItemID.WoodenArrow;
-            Item.shoot = ItemID.WoodenArrow;
+            Item.shoot = ModContent.ProjectileType<PlutoArrow>();
 
 
         }

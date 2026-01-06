@@ -69,7 +69,7 @@ namespace HendecamMod.Content.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
-            Projectile.damage = (int)(Projectile.damage * 0.735f);
+            Projectile.damage = (int)(Projectile.damage * 0.75f);
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 220);
         }
         
@@ -82,7 +82,7 @@ namespace HendecamMod.Content.Projectiles
                     Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
                     Vector2 Peanits = Projectile.Center - new Vector2(0,0);
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.415f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
                 }
                 
             

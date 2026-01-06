@@ -16,7 +16,7 @@ namespace HendecamMod.Content.Items.Armor
     {
 
         public static readonly int CritBonus = 10;
-        public static readonly int AdditiveDamageBonus = 13;
+        public static readonly int AdditiveDamageBonus = 15;
         public static readonly int AttackSpeedBonus = 15;
         public static readonly int StupidArmorPenetration = 10;
        
@@ -41,12 +41,12 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28; // Height of the item
             Item.value = Item.sellPrice(gold: 27); // How many coins the item is worth
             Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-            Item.defense = 16; // The amount of defense the item will give when equipped
+            Item.defense = 17; // The amount of defense the item will give when equipped
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "13% increased damage and 10% increased crit chance");
+            var line = new TooltipLine(Mod, "Face", "15% increased damage and 10% increased crit chance");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "+10 stupid armor penetration and +11% melee speed")
@@ -94,7 +94,7 @@ namespace HendecamMod.Content.Items.Armor
             player.lifeRegen += -1;
             player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 111f;
             
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
+            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 115f;
         }
         // UpdateArmorSet allows you to give set bonuses to the armor.
         public override void AddRecipes()

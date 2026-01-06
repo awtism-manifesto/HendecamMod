@@ -65,7 +65,7 @@ namespace HendecamMod.Content.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 150);
-            target.immune[Projectile.owner] = 6;
+            target.immune[Projectile.owner] = 5;
             
         }
         

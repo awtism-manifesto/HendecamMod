@@ -13,9 +13,9 @@ namespace HendecamMod.Content.Items.Accessories
     {
         // By declaring these here, changing the values will alter the effect, and the tooltip
 
-        public static readonly int AdditiveRangedDamageBonus = 7;
+        public static readonly int AdditiveRangedDamageBonus = 8;
       
-        public static readonly int RangedCritBonus = 10;
+        public static readonly int RangedCritBonus = 12;
 
         // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
         
@@ -32,10 +32,10 @@ namespace HendecamMod.Content.Items.Accessories
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "7% increased ranged damage");
+            var line = new TooltipLine(Mod, "Face", "8% increased ranged damage");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "10% increased ranged crit chance")
+            line = new TooltipLine(Mod, "Face", "12% increased ranged crit chance")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -85,7 +85,7 @@ namespace HendecamMod.Content.Items.Accessories
             // - Adding 4 base damage.
             // - Adding 5 flat damage.
             // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-            player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 107f;
+            player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 108f;
           
             player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
            

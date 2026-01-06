@@ -31,7 +31,7 @@ namespace HendecamMod.Content.Items
 
         public override void SetDefaults()
         {
-            Item.damage = 33; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+            Item.damage = 47; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
             Item.DamageType = DamageClass.Ranged;
             Item.width = 12;
             Item.height = 12;

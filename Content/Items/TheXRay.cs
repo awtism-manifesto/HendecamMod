@@ -28,9 +28,9 @@ namespace HendecamMod.Content.Items
             Item.useAnimation = 10;
             Item.autoReuse = true;
           
-            Item.mana = 5;
+            Item.mana = 6;
             Item.DamageType = DamageClass.Magic;
-            Item.damage = 58;
+            Item.damage = 70;
             Item.knockBack = 0.01f;
             Item.noMelee = true;
             Item.ArmorPenetration = 30;
