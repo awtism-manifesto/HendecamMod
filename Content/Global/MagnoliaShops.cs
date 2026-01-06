@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Equippable;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons;
@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global
 {
-    internal class MericaNPCShops : GlobalNPC
+    internal class MagnoliaShops : GlobalNPC
     {
         public override void ModifyShop(NPCShop shop)
         {

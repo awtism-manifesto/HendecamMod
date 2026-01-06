@@ -4,9 +4,9 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
-using HendecamMod.Content.Items.Equippable;
+using HendecamMod.Content.Items.Accessories;
 
-namespace HendecamMod.Content.Items.Equippable
+namespace HendecamMod.Content.Items.Accessories
 {
     [AutoloadEquip(EquipType.Shield)] // Load the spritesheet you create as a shield for the player when it is equipped.
     public class PanicShield : ModItem

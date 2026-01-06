@@ -3000,7 +3000,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-    public class TerraBuff : GlobalItem
+    public class TerraBladeBuff : GlobalItem
     {
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)

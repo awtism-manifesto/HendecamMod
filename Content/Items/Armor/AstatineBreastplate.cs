@@ -106,8 +106,8 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+30% crit chance at the cost of 15% max life";
+          
             player.GetCritChance(DamageClass.Generic) += CritBonus;
             player.statLifeMax2 = (int)(player.statLifeMax2 * 0.85f);
             player.armorEffectDrawShadow = true;

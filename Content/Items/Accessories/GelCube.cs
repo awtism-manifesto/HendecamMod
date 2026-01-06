@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using Terraria;
 using HendecamMod.Content.Items.Materials;
 
-namespace HendecamMod.Content.Items.Equippable
+namespace HendecamMod.Content.Items.Accessories
 {
     public class GelCube : ModItem
     {

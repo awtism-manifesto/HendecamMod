@@ -22,7 +22,7 @@ namespace HendecamMod.Content.Items.Placeables
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useAnimation = 15;
             Item.useTime = 15;
-            Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Paintings.TwinPosterPlaced>());
+            Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.TwinPosterPlaced>());
 
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)

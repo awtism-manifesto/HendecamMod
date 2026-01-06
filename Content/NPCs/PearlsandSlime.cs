@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Placeables.Banners;
+
 
 namespace HendecamMod.Content.NPCs
 {

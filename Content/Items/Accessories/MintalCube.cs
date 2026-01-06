@@ -7,7 +7,7 @@ using Terraria;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 
-namespace HendecamMod.Content.Items.Equippable
+namespace HendecamMod.Content.Items.Accessories
 {
     public class MintalCube : ModItem
     {

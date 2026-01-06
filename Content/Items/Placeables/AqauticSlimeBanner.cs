@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 using Terraria;
 using HendecamMod.Content.Tiles;
 
-namespace HendecamMod.Content.Items.Placeables.Banners
+namespace HendecamMod.Content.Items.Placeables
 {
     public class AquaticSlimeBanner : ModItem
     {

@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables
 {
@@ -9,7 +10,7 @@ namespace HendecamMod.Content.Items.Placeables
         public override void SetDefaults()
         {
             // Vanilla has many useful methods like these, use them! This substitutes setting Item.createTile and Item.placeStyle as well as setting a few values that are common across all placeable items
-            Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Paintings.ShayyDeadPlaced>());
+            Item.DefaultToPlaceableTile(ModContent.TileType<ShayyDeadPlaced>());
 
             Item.width = 32;
             Item.height = 32;

@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Placeables.Furniture
+namespace HendecamMod.Content.Items.Placeables
 {
     public class CobaltWorkBench : ModItem
     {

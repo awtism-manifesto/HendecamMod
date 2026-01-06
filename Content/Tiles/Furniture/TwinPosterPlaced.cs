@@ -6,7 +6,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles.Paintings
+namespace HendecamMod.Content.Tiles.Furniture
 {
     // Simple 3x3 tile that can be placed on a wall
     public class TwinPosterPlaced : ModTile

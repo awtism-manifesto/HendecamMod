@@ -25,7 +25,7 @@ namespace HendecamMod.Content.Global
         {
             if (!NPC.downedDeerclops)
             {
-                ModContent.GetInstance<LycopiteSystem>().BlessWorldWithLycopite();
+                ModContent.GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
 
             }
 
@@ -33,20 +33,20 @@ namespace HendecamMod.Content.Global
     }
 
 
-    public class LycopiteSystem : ModSystem
+    public class MorbiumSystem : ModSystem
     {
-        public static LocalizedText LycopiteMessage { get; private set; }
-        public static LocalizedText LycopiteBlessMessage { get; private set; }
+        public static LocalizedText MorbiumMessage { get; private set; }
+        public static LocalizedText MorbiumBlessMessage { get; private set; }
 
         public override void SetStaticDefaults()
         {
-            LycopiteMessage = Mod.GetLocalization($"WorldGen.{nameof(LycopiteMessage)}");
-            LycopiteBlessMessage = Mod.GetLocalization($"WorldGen.{nameof(LycopiteBlessMessage)}");
+            MorbiumMessage = Mod.GetLocalization($"WorldGen.{nameof(MorbiumMessage)}");
+            MorbiumBlessMessage = Mod.GetLocalization($"WorldGen.{nameof(MorbiumBlessMessage)}");
         }
 
         // This method is called from MinionBossBody.OnKill the first time the boss is killed.
         // The logic is located here for organizational purposes.
-        public void BlessWorldWithLycopite()
+        public void BlessWorldWithMorbium()
         {
             if (Main.netMode == NetmodeID.MultiplayerClient)
             {
@@ -60,11 +60,11 @@ namespace HendecamMod.Content.Global
                 // Broadcast a message to notify the user.
                 if (Main.netMode == NetmodeID.SinglePlayer)
                 {
-                    Main.NewText(LycopiteBlessMessage.Value, 19, 84, 87); //Manifesto said it should be 19, 84, 87 instead
+                    Main.NewText(MorbiumBlessMessage.Value, 19, 84, 87); //Manifesto said it should be 19, 84, 87 instead
                 }
                 else if (Main.netMode == NetmodeID.Server)
                 {
-                    ChatHelper.BroadcastChatMessage(LycopiteBlessMessage.ToNetworkText(), new Color(19, 83, 87));
+                    ChatHelper.BroadcastChatMessage(MorbiumBlessMessage.ToNetworkText(), new Color(19, 83, 87));
                 }
 
                 // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 

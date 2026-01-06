@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Global
     {
-    public class ExampleNPCLoot : GlobalNPC
+    public class MagUrLazy : GlobalNPC
         {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
             {

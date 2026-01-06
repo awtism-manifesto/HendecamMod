@@ -9,7 +9,7 @@ namespace HendecamMod.Content.Global
     // This class showcases adding additional items to vanilla chests.
     // This example simply adds additional items. More complex logic would likely be required for other scenarios.
     // If this code is confusing, please learn about "for loops" and the "continue" and "break" keywords: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements
-    public class ChestItemWorldGen : ModSystem
+    public class MeAndMagAreFuckingLazy : ModSystem
     {
         // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
         public override void PostWorldGen()

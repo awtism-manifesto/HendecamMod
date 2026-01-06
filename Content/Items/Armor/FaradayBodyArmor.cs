@@ -106,8 +106,8 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
+            player.setBonus = "The globalist 5G waves are no longer reducing your max life";
             
-            player.setBonus = SetBonusText.Value;
             player.statLifeMax2 += 95;
             
         }

@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Items.Materials;
 
-namespace HendecamMod.Content.Items.Equippable
+namespace HendecamMod.Content.Items.Accessories
 {
     public class ZincCube : ModItem
     {

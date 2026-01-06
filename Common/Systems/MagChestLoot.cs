@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Weapons;
-using HendecamMod.Content.Items.Equippable;
+using HendecamMod.Content.Items.Accessories;
 
 namespace HendecamMod.Common.Systems
 {

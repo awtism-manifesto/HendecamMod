@@ -565,6 +565,7 @@ Items: {
 		Tooltip: ""
 		DisplayName: Nasty Patty
 	}
+
 	PenisBlaster: {
 		DisplayName: Penis Blaster
 		Tooltip:
@@ -3429,11 +3430,6 @@ Items: {
 		Tooltip: ""
 	}
 
-	ApexPlasmaCannon: {
-		DisplayName: Apex Plasma Cannon
-		Tooltip: ""
-	}
-
 	PoorMahoganyPickaxe: {
 		DisplayName: Poor Mahogany Pickaxe
 		Tooltip: ""
@@ -4000,7 +3996,6 @@ Projectiles: {
 	SpartanRageSpear.DisplayName: Spartan Rage Spear
 	Electrobomb.DisplayName: Electrobomb
 	IchSpark.DisplayName: Ich Spark
-	ApexPlasmaBullet.DisplayName: Apex Plasma Bullet
 	PyriteArrowProj.DisplayName: Pyrite Arrow Proj
 	PyriteMagicSword.DisplayName: Pyrite Magic Sword
 	TackSpawn.DisplayName: Tack Spawn
@@ -4336,6 +4331,7 @@ NPCs: {
 		DisplayName: Helipilot
 		Census.SpawnCondition: Crash their Apache
 	}
+
 	Politician: {
 		TownNPCMood: {
 			Princess_LovesNPC: I like {NPCName}.
@@ -4463,6 +4459,7 @@ Achievements: {
 		Description: Craft the apotheosis of all guns...
 		FriendlyName: American Apotheosis
 	}
+
 	KnockEmDown: {
 		Description: Crash the Helipilot's Apache and recruit her to your town
 		FriendlyName: Knock Em Down
