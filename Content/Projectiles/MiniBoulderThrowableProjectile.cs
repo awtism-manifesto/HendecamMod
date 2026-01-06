@@ -9,30 +9,25 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles
 {
-    public class BlueMaticHornProjectile : ModProjectile
+    // This example is similar to the Wooden Arrow projectile
+    public class MiniBoulderThrowableProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5; // The length of old position to be recorded
-            ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
+            // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
+            //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
         }
 
         public override void SetDefaults()
         {
-            Projectile.width = 36; // The width of projectile hitbox
-            Projectile.height = 36; // The height of projectile hitbox
-            Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
-            Projectile.friendly = true; // Can the projectile deal damage to enemies?
-            Projectile.hostile = false; // Can the projectile deal damage to the player?
-            Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-            Projectile.penetrate = 7; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-            Projectile.timeLeft = 600; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-            Projectile.light = 0.5f; // How much light emit around the projectile
-            Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
-            Projectile.tileCollide = true; // Can the projectile collide with tiles?
-            Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
+            Projectile.width = 12; // The width of projectile hitbox
+            Projectile.height = 12; // The height of projectile hitbox
 
-            AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+            Projectile.arrow = false;
+            Projectile.friendly = true;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.timeLeft = 1200;
+            Projectile.penetrate = 10;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -65,23 +60,6 @@ namespace HendecamMod.Content.Projectiles
             return false;
         }
 
-        public override bool PreDraw(ref Color lightColor)
-        {
-            // Draws an afterimage trail. See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#afterimage-trail for more information.
-
-            Texture2D texture = TextureAssets.Projectile[Type].Value;
-
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-            for (int k = Projectile.oldPos.Length - 1; k > 0; k--)
-            {
-                Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
-            }
-
-            return true;
-        }
-
         public override void AI()
         {
             // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -93,7 +71,7 @@ namespace HendecamMod.Content.Projectiles
             if (Projectile.ai[0] >= 13f)
             {
                 Projectile.ai[0] = 8f;
-                Projectile.velocity.Y += 0.15f;
+                Projectile.velocity.Y += 0.225f;
             }
 
             // The projectile is rotated to face the direction of travel
@@ -118,7 +96,7 @@ namespace HendecamMod.Content.Projectiles
 
 
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Demonite, 0f, 0f, 100, default, 0.1f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Stone, 0f, 0f, 100, default, 0.1f);
                     fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                     fireDust.velocity *= 0.05f;
                 }
