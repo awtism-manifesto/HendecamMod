@@ -1,0 +1,115 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+using HendecamMod.Content.Projectiles.Items;
+
+
+namespace HendecamMod.Content.Items.Weapons
+{
+    public class GlitterGun : ModItem
+    {
+        public override void SetDefaults()
+        {
+            // shoutouts to manifesto for this weapon
+            Item.width = 104;
+            Item.height = 70;
+            Item.rare = ItemRarityID.Pink;
+            Item.value = 225000;
+            Item.useTime = 5;
+            Item.useAnimation = 15;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.autoReuse = true;
+            Item.DamageType = DamageClass.Magic;
+            Item.damage = 1;
+            Item.knockBack = 2.5f;
+            Item.noMelee = true;
+            Item.ArmorPenetration = 999;
+            Item.mana = 1;
+            Item.shoot =  ModContent.ProjectileType<GlitterBullet>();
+            Item.shootSpeed = 15.95f;
+        }
+        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        {
+            scale = 0.725f;
+            Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
+            Vector2 position = Item.position - Main.screenPosition + new Vector2(Item.width / 2, Item.height - texture.Height * 0.5f);
+            spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+            return false;
+        }
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+        }
+        private int shotCounter = 0;
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if (shotCounter <= 0)
+            {
+                Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
+                type = ModContent.ProjectileType<GlitterBullet>();
+                SoundEngine.PlaySound(SoundID.Item42, player.position);
+                SoundEngine.PlaySound(SoundID.Item99, player.position);
+                SoundEngine.PlaySound(SoundID.Item114, player.position);
+                Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
+                shotCounter = 2;
+            }
+            else if (shotCounter == 2)
+            {
+                Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.33f));
+
+                type = ModContent.ProjectileType<GlitterBullet>();
+                SoundEngine.PlaySound(SoundID.Item42, player.position);
+                SoundEngine.PlaySound(SoundID.Item99, player.position);
+                SoundEngine.PlaySound(SoundID.Item114, player.position);
+                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);
+                shotCounter = 3;
+            }
+
+            else if (shotCounter == 3)
+            {
+                Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.25f));
+
+                type = ModContent.ProjectileType<GlitterBullet>();
+                SoundEngine.PlaySound(SoundID.Item42, player.position);
+                SoundEngine.PlaySound(SoundID.Item99, player.position);
+                SoundEngine.PlaySound(SoundID.Item114, player.position);
+
+                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);
+                shotCounter = 0;
+            }
+
+            return false;
+        }
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            var line = new TooltipLine(Mod, "Face", "Rapidly casts Apex Plasma Bullets that pierce enemies and enemy armor");
+            tooltips.Add(line);
+
+            line = new TooltipLine(Mod, "Face", "")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+            foreach (var l in tooltips)
+            {
+                if (l.Name.EndsWith(":RemoveMe"))
+                {
+                    l.Hide();
+                }
+            }
+        }
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-50f, -1.5f);
+        }
+    }
+}
