@@ -1,10 +1,11 @@
 ﻿
+using HendecamMod.Content.Items.Placeables;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
 {
@@ -35,6 +36,8 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.BottledWater, 1000);
+            recipe.AddIngredient<RockSalt>(45);
+            recipe.AddIngredient<PurifiedSalt>(9);
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }

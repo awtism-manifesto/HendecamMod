@@ -66,8 +66,8 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
 
-            recipe.AddIngredient<PyriteBar>(3);
-            recipe.AddIngredient(ItemID.HellstoneBar, 2);
+            recipe.AddIngredient<PyriteBar>(8);
+            recipe.AddIngredient(ItemID.HellstoneBar, 5);
 
             recipe.AddIngredient(ItemID.DartTrap);
             recipe.AddTile(TileID.Furnaces);

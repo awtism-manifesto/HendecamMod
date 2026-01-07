@@ -20,7 +20,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
         public override void ModifyTooltips(List<TooltipLine> tooltips)
             {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 30% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 10% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Double Movement Speed, 50 Defense, Doubled Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from any vanilla buff"));
             }
@@ -354,7 +354,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
                     }
                 else
                     {
-                    Lighting.AddLight(Player.Center, 255, 255, 255);
+                    Lighting.AddLight(Player.Center, 1.33f, 1.33f, 1.33f);
                     }
                 }
             }
@@ -599,7 +599,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
                     }
                 else
                     {
-                    Player.endurance += 0.3f;
+                   Player.endurance = 1f - 0.9f * (1f - Player.endurance);
                     }
                 }
             }

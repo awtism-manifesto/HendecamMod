@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,6 +106,7 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ShroomiteBar, 10);
+            recipe.AddIngredient<AzuriteBar>(10);
             recipe.AddIngredient(ItemID.PewMaticHorn, 1);
            
             recipe.AddIngredient(ItemID.BlueMoon, 1);

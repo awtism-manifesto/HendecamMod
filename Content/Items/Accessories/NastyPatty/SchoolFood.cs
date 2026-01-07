@@ -20,7 +20,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
             {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana, 4 Luck, 30% Damage Reduction, and 25 Safe Fall Distance"));
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana, 4 Luck, 10% Damage Reduction, and 25 Safe Fall Distance"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building, Fishing, Food, or Exploration Buffs"));
             }
         public override void UpdateEquip(Player player)

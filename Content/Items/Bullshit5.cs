@@ -38,8 +38,8 @@ namespace HendecamMod.Content.Items
 
 
             // Use Properties
-            Item.useTime = 20; // The item's use time in ticks (60 ticks == 1 second.)
-            Item.useAnimation = 20; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+            Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)
+            Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
            
             Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
             Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
@@ -79,6 +79,7 @@ namespace HendecamMod.Content.Items
                 Item.useTime = 4;
                 Item.useAnimation = 4;
                 Item.reuseDelay = 0;
+                Item.ArmorPenetration = 225;
                 Item.autoReuse= true;
                 Item.mana = 10;
             }
@@ -87,6 +88,7 @@ namespace HendecamMod.Content.Items
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.useTime = 16;
                 Item.useAnimation = 16;
+                Item.ArmorPenetration = 75;
                 Item.shoot = ModContent.ProjectileType<BullshitEnergyAxe>();
                 Item.mana = 25;
             }

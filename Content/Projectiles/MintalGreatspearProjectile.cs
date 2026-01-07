@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Projectiles
     {
         // Define the range of the Spear Projectile. These are overridable properties, in case you'll want to make a class inheriting from this one.
         protected virtual float HoldoutRangeMin => 36f;
-        protected virtual float HoldoutRangeMax => 144f;
+        protected virtual float HoldoutRangeMax => 196f;
 
         public override void SetDefaults()
         {

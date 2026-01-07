@@ -37,8 +37,10 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
+
             recipe.AddIngredient(ItemID.IronBar, 5);
             recipe.AddIngredient(ItemID.Wire, 10);
+            recipe.AddIngredient<ShatteredKeyboard>();
             recipe.AddIngredient(ItemID.TungstenHammer, 1);
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();

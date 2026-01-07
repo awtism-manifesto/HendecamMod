@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
 {
@@ -35,6 +36,7 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             recipe = CreateRecipe();
             recipe.AddIngredient<LeechRepellant>(1);
             recipe.AddIngredient<LargeCactus>(1);
+            recipe.AddIngredient<SteelBar>(15);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

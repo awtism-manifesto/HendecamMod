@@ -3026,8 +3026,8 @@ Items: {
 	}
 
 	LoreAccurateBlackshard: {
-		Tooltip: ""
-		DisplayName: Lore Accurate Blackshard
+		Tooltip: Also known as the lore accurate blackshard
+		DisplayName: Shadow Crystal
 	}
 
 	FissionDrive: {

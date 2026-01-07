@@ -18,7 +18,7 @@ namespace HendecamMod.Content.Poop
             // Common Properties
             Item.width = 44; // Hitbox width of the item.
             Item.height = 18; // Hitbox height of the item.
-            Item.scale = 0.875f;
+            Item.scale = 0.8f;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
             Item.value = 20;
 
@@ -125,7 +125,7 @@ namespace HendecamMod.Content.Poop
         // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-4f, -3f);
+            return new Vector2(-4f, 1.5f);
         }
     }
 }

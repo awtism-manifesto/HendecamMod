@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Weapons;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
 {
@@ -32,6 +33,9 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
         {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
+            recipe.AddIngredient<MiniThrowableBoulder>();
+            recipe.AddIngredient(ItemID.SpiderFang, 2);
+            recipe.AddIngredient(ItemID.Spike, 3);
             recipe.AddIngredient(ItemID.RocketBoots);
             recipe.AddIngredient(ItemID.HeavyWorkBench);
             recipe.AddTile(TileID.Anvils);

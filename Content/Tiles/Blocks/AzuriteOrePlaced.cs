@@ -37,18 +37,19 @@ namespace HendecamMod.Content.Tiles.Blocks
             HitSound = SoundID.Tink;
             MineResist = 2f;
             MinPick = 60;
+            
         }
 
         // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
-        public class ThroarbiumOreSystem : ModSystem
+        public class AzuriteOreSystem : ModSystem
         {
             public static LocalizedText MagnoliaOrePassMessage { get; private set; }
-            public static LocalizedText BlessedWithThroarbiumOreMessage { get; private set; }
+            public static LocalizedText BlessedWithAzuriteOreMessage { get; private set; }
 
             public override void SetStaticDefaults()
             {
                 MagnoliaOrePassMessage = Mod.GetLocalization($"WorldGen.{nameof(MagnoliaOrePassMessage)}");
-                BlessedWithThroarbiumOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithThroarbiumOreMessage)}");
+                BlessedWithAzuriteOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithAzuriteOreMessage)}");
             }
 
             // This method is called from MinionBossBody.OnKill the first time the boss is killed.
@@ -67,11 +68,11 @@ namespace HendecamMod.Content.Tiles.Blocks
                     // Broadcast a message to notify the user.
                     if (Main.netMode == NetmodeID.SinglePlayer)
                     {
-                        Main.NewText(BlessedWithThroarbiumOreMessage.Value, 50, 255, 130);
+                        Main.NewText(BlessedWithAzuriteOreMessage.Value, 50, 255, 130);
                     }
                     else if (Main.netMode == NetmodeID.Server)
                     {
-                        ChatHelper.BroadcastChatMessage(BlessedWithThroarbiumOreMessage.ToNetworkText(), new Color(50, 255, 130));
+                        ChatHelper.BroadcastChatMessage(BlessedWithAzuriteOreMessage.ToNetworkText(), new Color(50, 255, 130));
                     }
 
                     // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 
@@ -117,7 +118,7 @@ namespace HendecamMod.Content.Tiles.Blocks
             {
                 // progress.Message is the message shown to the user while the following code is running.
                 // Try to make your message clear. You can be a little bit clever, but make sure it is descriptive enough for troubleshooting purposes.
-                progress.Message = ThroarbiumOreSystem.MagnoliaOrePassMessage.Value;
+                progress.Message = AzuriteOreSystem.MagnoliaOrePassMessage.Value;
 
                 // Ores are quite simple, we simply use a for loop and the WorldGen.TileRunner to place splotches of the specified Tile in the world.
                 // "6E-05" is "scientific notation". It simply means 0.00006 but in some ways is easier to read.

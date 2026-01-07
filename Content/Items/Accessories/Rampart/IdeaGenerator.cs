@@ -32,7 +32,8 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
         {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.IronCrate, 1);
+            recipe.AddIngredient<Iphone>();
+           
             recipe.AddIngredient(ItemID.Book, 1);
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();

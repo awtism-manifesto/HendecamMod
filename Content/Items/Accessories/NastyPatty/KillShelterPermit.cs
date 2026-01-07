@@ -1,6 +1,8 @@
 ﻿
-using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Weapons;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -100,7 +102,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SoulofNight, 50);
-            recipe.AddIngredient(ItemID.Book, 1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.Bookcases);
             recipe.Register();
         }

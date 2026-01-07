@@ -3656,6 +3656,7 @@ WorldGen: {
 	BlessedWithThroarbiumOreMessage: Blue.
 	PlutoniumMessage: Radioactivity floods the world...
 	PlutoniumBlessMessage: Radioactivity floods the world...
+	BlessedWithAzuriteOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAzuriteOreMessage
 }
 
 Items: {
