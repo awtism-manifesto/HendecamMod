@@ -25,11 +25,11 @@ namespace HendecamMod.Content.Items.Tools
             Item.damage = 11;
             Item.knockBack = 6;
             Item.ChangePlayerDirectionOnShoot = false;
-            Item.pick = 64;
+            Item.pick = 105;
 
 
             Item.value = Item.buyPrice(gold: 5);
-            Item.rare = ItemRarityID.Green;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
 
 

@@ -11,7 +11,7 @@ namespace HendecamMod.Content.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class AzuriteHat : ModItem
     {
-        public static readonly int MaxMinionIncrease = 1;
+        public static readonly int MaxMinionIncrease = 2;
         
         public static LocalizedText SetBonusText { get; private set; }
 
@@ -26,10 +26,12 @@ namespace HendecamMod.Content.Items.Armor
 
             SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
         }
-        public static readonly int AdditiveDamageBonus = 9;
+        public static readonly int AdditiveDamageBonus = 15;
+        public static readonly int MeleeAttackSpeedBonus = 10;
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 111f;
+            player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
+            player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 110f;
         }
 
         public override void SetDefaults()
@@ -38,11 +40,11 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28;
             Item.value = Item.sellPrice(gold: 2);
             Item.rare = ItemRarityID.Orange;
-            Item.defense = 4;
+            Item.defense = 5;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "15% increased melee damage and 10% increased melee speed");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -72,7 +74,7 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+2 max summon slots";
             player.maxMinions += MaxMinionIncrease;
         }
     }

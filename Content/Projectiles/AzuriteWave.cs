@@ -23,15 +23,15 @@ namespace HendecamMod.Content.Projectiles
         {
             
 
-            Projectile.width = 30; // The width of projectile hitbox
-            Projectile.height = 30; // The height of projectile hitbox
+            Projectile.width = 100; // The width of projectile hitbox
+            Projectile.height = 100; // The height of projectile hitbox
 
             Projectile.scale = 1f;
-            Projectile.timeLeft = 46;
+            Projectile.timeLeft = 50;
             Projectile.aiStyle = 1;
             AIType = ProjectileID.Bullet;
            
-            Projectile.tileCollide = true;
+            Projectile.tileCollide = false;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Melee;
             Projectile.penetrate = 3; 
@@ -48,7 +48,7 @@ namespace HendecamMod.Content.Projectiles
        
         public override void AI()
         {
-            Projectile.scale = Main.rand.NextFloat(0.67f, 0.8f);
+            Projectile.scale = Main.rand.NextFloat(0.85f, 1.15f);
 
             int frameSpeed = 8;
 

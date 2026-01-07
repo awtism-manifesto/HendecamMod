@@ -78,7 +78,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<AzuriteBar>(15);
+            recipe.AddIngredient<TransBar>(15);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

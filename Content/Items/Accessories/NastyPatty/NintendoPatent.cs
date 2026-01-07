@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -56,6 +57,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             recipe.AddIngredient(ItemID.PlumbersHat, 1);
             recipe.AddIngredient(ItemID.PlumbersShirt, 1);
             recipe.AddIngredient(ItemID.PlumbersPants, 1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.Hellforge);
             recipe.Register();
             }

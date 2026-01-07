@@ -17,7 +17,7 @@ namespace HendecamMod.Content.Items.Weapons
         {
 
             Item.width = 62;
-            Item.scale = 0.8f;
+            Item.scale = 0.75f;
             Item.rare = ItemRarityID.Yellow;
             Item.value = 140000;
             Item.useTime = 6;
@@ -39,7 +39,7 @@ namespace HendecamMod.Content.Items.Weapons
 
             for (int i = 0; i < NumProjectiles; i++)
             {
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.33f));
 
                 newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
@@ -90,7 +90,7 @@ namespace HendecamMod.Content.Items.Weapons
         }
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-16f, -1f);
+            return new Vector2(-20f, -1f);
         }
     }
 

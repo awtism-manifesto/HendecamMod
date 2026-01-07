@@ -65,8 +65,8 @@ namespace HendecamMod.Content.Global
                 }
 
                 // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 
-                int splotches = (int)(225 * (Main.maxTilesX / 4200f));
-                int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.375);
+                int splotches = (int)(259 * (Main.maxTilesX / 4200f));
+                int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.65);
                 for (int iteration = 0; iteration < splotches; iteration++)
                 {
                     // Find a point in the lower half of the rock layer but above the underworld depth.

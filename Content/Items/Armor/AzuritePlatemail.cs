@@ -27,10 +27,11 @@ namespace HendecamMod.Content.Items.Armor
 
             SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
         }
-        public static readonly int AdditiveDamageBonus = 9;
+        public static readonly int AdditiveDamageBonus = 12;
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 111f;
+            player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
+            player.GetCritChance(DamageClass.Ranged) += 8;
         }
         public override void SetDefaults()
         {
@@ -38,15 +39,15 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28; // Height of the item
             Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
             Item.rare = ItemRarityID.Orange; // The rarity of the item
-            Item.defense = 6; // The amount of defense the item will give when equipped
+            Item.defense = 10; // The amount of defense the item will give when equipped
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "12% increased ranged damage");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+            line = new TooltipLine(Mod, "Face", "8% increased ranged crit chance")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

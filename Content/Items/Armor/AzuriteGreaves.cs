@@ -19,10 +19,11 @@ namespace HendecamMod.Content.Items.Armor
 
             SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
         }
-        public static readonly int AdditiveDamageBonus = 9;
+        public static readonly int AdditiveDamageBonus = 10;
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 111f;
+            player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 110f;
+            player.statManaMax2 += 50;
         }
         public override void SetDefaults()
         {
@@ -30,11 +31,11 @@ namespace HendecamMod.Content.Items.Armor
             Item.height = 28;
             Item.value = Item.sellPrice(gold: 2);
             Item.rare = ItemRarityID.Orange;
-            Item.defense = 5;
+            Item.defense = 7;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "Increases magic damage by 10% and max mana by 50");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -68,7 +69,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
 
-            player.setBonus = SetBonusText.Value;
+           
         }
     }
 }

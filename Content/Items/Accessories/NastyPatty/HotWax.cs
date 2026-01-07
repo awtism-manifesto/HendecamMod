@@ -39,7 +39,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.IronBar, 5);
+            recipe.AddIngredient<Items.Placeables.SteelBar>(5);
             recipe.AddIngredient(ItemID.BeeWax, 30);
             recipe.AddIngredient(ItemID.MagmaStone, 1);
             recipe.AddTile(TileID.HoneyDispenser);

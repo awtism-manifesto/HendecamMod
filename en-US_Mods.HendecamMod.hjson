@@ -3657,6 +3657,8 @@ WorldGen: {
 	PlutoniumMessage: Radioactivity floods the world...
 	PlutoniumBlessMessage: Radioactivity floods the world...
 	BlessedWithAzuriteOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAzuriteOreMessage
+	AzuriteMessage: Blue.
+	AzuriteBlessMessage: Blue.
 }
 
 Items: {
@@ -7934,6 +7936,11 @@ Items: {
 
 	PearlceramicSheet: {
 		DisplayName: Pearlceramic Sheet
+		Tooltip: ""
+	}
+
+	AzuriteSaber: {
+		DisplayName: Azurite Saber
 		Tooltip: ""
 	}
 }

@@ -53,9 +53,9 @@ namespace HendecamMod.Content.Projectiles
 
 
             Projectile.rotation += 0.275f;
-            
 
-           
+
+            Lighting.AddLight(Projectile.Center, 0.8f, 0.09f, 0.09f);
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)

@@ -68,8 +68,8 @@ namespace HendecamMod.Content.Global
                 }
 
                 // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 
-                int splotches = (int)(215 * (Main.maxTilesX / 4200f));
-                int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.375);
+                int splotches = (int)(288 * (Main.maxTilesX / 4200f));
+                int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.315);
                 for (int iteration = 0; iteration < splotches; iteration++)
                 {
                     // Find a point in the lower half of the rock layer but above the underworld depth.
@@ -77,7 +77,7 @@ namespace HendecamMod.Content.Global
                     int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                     // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(6, 9), WorldGen.genRand.Next(7, 11), (ushort)ModContent.TileType<MorbiumOrePlaced>());
+                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(7, 8), (ushort)ModContent.TileType<MorbiumOrePlaced>());
                 }
             });
         }
