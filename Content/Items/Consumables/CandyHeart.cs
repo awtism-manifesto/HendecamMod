@@ -31,10 +31,10 @@ namespace HendecamMod.Content.Items.Consumables
             Item.UseSound = SoundID.Item3;
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true;
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.LightPurple;
             Item.value = Item.buyPrice(silver: 3);
-            Item.buffType = BuffID.WellFed;
-            Item.buffTime = 400; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+            Item.buffType = BuffID.WellFed3;
+            Item.buffTime = 300; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
             }
         public override Color? GetAlpha(Color lightColor)
             {
@@ -45,6 +45,8 @@ namespace HendecamMod.Content.Items.Consumables
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "A small candy given by santa to his most loyal and skilled elf soldiers");
             tooltips.Add(line);
+            var line2 = new TooltipLine(Mod, "Face", "Also just so happens to be DELICIOUS");
+            tooltips.Add(line2);
             // Here we will hide all tooltips whose title end with ':RemoveMe'
             // One like that is added at the start of this method
             foreach (var l in tooltips)

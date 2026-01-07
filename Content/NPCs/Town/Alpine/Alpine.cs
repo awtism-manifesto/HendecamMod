@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles.Items;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -232,7 +232,7 @@ namespace HendecamMod.Content.NPCs.Town.Alpine
             chat.Add(Language.GetTextValue("Welp, since you crashed my Apache, I've had a lot less free time because I've been having to fix it. So... Thanks for that. [Sarcastic]"));
             chat.Add(Language.GetTextValue("What I wouldn't do to a Sand Elemental... I'm sorry - What were you saying?"));
             chat.Add(Language.GetTextValue("How I've been defending myself? Elf magic."));
-            chat.Add(Language.GetTextValue("Before your bitch ass crashed my helicopter, i sometimes saw these weird glowy purple triangles up in the night sky. Took hundreds of rounds to down just one."));
+            chat.Add(Language.GetTextValue("Before you crashed my heli, I saw these glowing triangles up in the night sky. Took hundreds of rounds to down just one..."));
             chat.Add(Language.GetTextValue("You know, I'm actually a human. But I was the best damn pilot Kris Kringle had, so he let it slide."));
             chat.Add(Language.GetTextValue("Just because I'm passive now doesn't mean we're friends. I still remember the lives you've taken, monster."));
             NumberOfTimesTalkedTo++;
