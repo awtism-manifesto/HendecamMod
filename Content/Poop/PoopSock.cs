@@ -1,6 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -28,6 +29,7 @@ namespace HendecamMod.Content.Poop
             Item.width = 14;
             Item.height = 14;
             Item.value = 1;
+            Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)

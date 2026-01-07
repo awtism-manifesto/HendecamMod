@@ -1,5 +1,6 @@
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -16,8 +17,8 @@ namespace HendecamMod.Content.Poop
 		public override void SetDefaults()
 		{
 			Item.damage = 11;
-			Item.DamageType = DamageClass.Melee;
-			Item.width = 40;
+			Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+            Item.width = 40;
 			Item.height = 40;
             Item.useTime = 17;
 			Item.useAnimation = 17;

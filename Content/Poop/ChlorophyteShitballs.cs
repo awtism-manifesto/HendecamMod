@@ -1,9 +1,10 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Poop
 {
@@ -17,7 +18,7 @@ namespace HendecamMod.Content.Poop
         public override void SetDefaults()
         {
             Item.damage = 11; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
 
             Item.width = 13;
             Item.height = 13;

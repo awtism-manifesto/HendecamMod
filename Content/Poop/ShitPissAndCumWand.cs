@@ -1,15 +1,16 @@
-﻿using System;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
 
 
 namespace HendecamMod.Content.Poop
@@ -45,7 +46,7 @@ namespace HendecamMod.Content.Poop
 
 
             // Weapon Properties
-            Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
+            Item.DamageType = ModContent.GetInstance<AutismDamage>();
             Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.

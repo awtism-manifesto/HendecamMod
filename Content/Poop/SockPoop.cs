@@ -1,7 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
@@ -25,6 +26,7 @@ namespace HendecamMod.Content.Poop
             Projectile.WhipSettings.RangeMultiplier = 0.5f;
             Projectile.width = 50;
             Projectile.height = 50;
+           Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
             // use these to change from the vanilla defaults
             // Projectile.WhipSettings.Segments = 20;
             // Projectile.WhipSettings.RangeMultiplier = 1f;

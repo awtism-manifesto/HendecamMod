@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Poop
 {
@@ -19,7 +20,7 @@ namespace HendecamMod.Content.Poop
             Item.height = 36;
 
             Item.damage = 9; // Keep in mind that the arrow's final damage is combined with the bow weapon damage.
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
 
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true;

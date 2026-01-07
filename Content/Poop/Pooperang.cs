@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -27,7 +28,7 @@ namespace HendecamMod.Content.Poop
            
 
             Item.damage = 20; // The amount of damage the item does to an enemy or player.
-            Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+            Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             Item.knockBack = 5f; // The amount of knockback the item inflicts.
            
            

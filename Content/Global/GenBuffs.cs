@@ -15,7 +15,7 @@ namespace HendecamMod.Content.GlobalItems
     // if you have to read through these unhinged ahh public classes and youre not Autism Manifesto, i apologize.
     public class ShroomBuff : GlobalItem
     {
-       
+
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
             return item.type == ItemID.ShroomiteDiggingClaw;
@@ -66,7 +66,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-   
+
     public class FuckAntlions : GlobalItem
     {
 
@@ -78,7 +78,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.MediumVioletRed});
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.MediumVioletRed });
 
 
 
@@ -170,10 +170,10 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-            
+
             item.damage = 125;
             item.useTime = 13;
-          
+
             item.useAnimation = 13;
         }
 
@@ -201,7 +201,7 @@ namespace HendecamMod.Content.GlobalItems
             item.useTime = 18;
             item.damage = 27;
             item.useAnimation = 18;
-           
+
         }
 
         public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -224,9 +224,9 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-           
+
             item.damage = 17;
-            
+
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -239,9 +239,9 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-           
+
             Projectile.NewProjectileDirect(source, player.Center, velocity * 21.25f, ProjectileID.BloodArrow, damage, knockback, player.whoAmI);
-           
+
             return true;
         }
 
@@ -282,7 +282,7 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-           
+
             item.damage = 23;
             item.useTime = 24;
             item.useAnimation = 24;
@@ -316,7 +316,7 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-           
+
             item.damage = 16;
             item.useTime = 23;
             item.useAnimation = 23;
@@ -350,9 +350,9 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-         
+
             item.damage = 10;
-           
+
             item.shoot = ModContent.ProjectileType<CactusSpawn>();
             item.shootSpeed = 3f;
         }
@@ -365,7 +365,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
         }
-        
+
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
@@ -393,14 +393,14 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.damage = 41;
             item.useTime = 17;
             item.useAnimation = 17;
 
             item.shootSpeed = 8.75f;
         }
-        
+
 
     }
     public class AssGlaive : GlobalItem
@@ -422,7 +422,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
             item.damage = 63;
-            
+
             item.useTime = 25;
             item.useAnimation = 25;
 
@@ -450,7 +450,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-           
+
             item.useTime = 27;
             item.useAnimation = 27;
             item.mana = 13;
@@ -510,7 +510,7 @@ namespace HendecamMod.Content.GlobalItems
             item.useTime = 25;
             item.useAnimation = 25;
 
-           
+
         }
 
 
@@ -522,7 +522,7 @@ namespace HendecamMod.Content.GlobalItems
         {
             return item.type == ItemID.OnyxBlaster;
         }
-       
+
         public override void SetDefaults(Item item)
         {
 
@@ -564,7 +564,7 @@ namespace HendecamMod.Content.GlobalItems
         {
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
-                Projectile.NewProjectileDirect(source, player.Center, velocity * 5f,  ModContent.ProjectileType<CobaltBolt>(), (int)(damage * 0.6f), knockback, player.whoAmI);
+                Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<CobaltBolt>(), (int)(damage * 0.6f), knockback, player.whoAmI);
             }
             else
             {
@@ -849,11 +849,11 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-            
+
             item.useTime = 19;
             item.useAnimation = 19;
 
-           
+
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -864,7 +864,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
         }
-        
+
 
     }
     public class HeatRayBuff : GlobalItem
@@ -878,7 +878,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-            item.useTime =7;
+            item.useTime = 7;
             item.useAnimation = 7;
 
 
@@ -941,7 +941,7 @@ namespace HendecamMod.Content.GlobalItems
             return item.type == ModContent.ItemType<TheBoner>();
         }
 
-       
+
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
 
@@ -969,7 +969,7 @@ namespace HendecamMod.Content.GlobalItems
         }
 
 
-       
+
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
@@ -1001,7 +1001,7 @@ namespace HendecamMod.Content.GlobalItems
 
     public class Blowie : GlobalItem
     {
-       
+
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
             return item.type == ItemID.Blowgun;
@@ -1034,14 +1034,14 @@ namespace HendecamMod.Content.GlobalItems
         {
             return item.type == ItemID.IceBlade;
         }
-       
+
         public override void SetDefaults(Item item)
         {
 
-            
+
 
             item.useTime = 38;
-           
+
         }
 
 
@@ -1072,7 +1072,7 @@ namespace HendecamMod.Content.GlobalItems
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals less damage with other arrow types") { OverrideColor = Color.MediumVioletRed });
 
         }
-      
+
 
         public override void SetDefaults(Item item)
         {
@@ -1082,7 +1082,7 @@ namespace HendecamMod.Content.GlobalItems
             item.useTime = 3;
             item.useAnimation = 15;
             item.shootSpeed = 15.25f;
-           
+
             item.damage = 33;
         }
 
@@ -1136,7 +1136,7 @@ namespace HendecamMod.Content.GlobalItems
             item.useAnimation = 10;
             item.useTime = 5;
 
-           
+
 
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -1375,7 +1375,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
         }
-       
+
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
 
@@ -1556,7 +1556,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
             item.DamageType = ModContent.GetInstance<MagicSummonDamage>();
-            
+
             item.useTime = 17;
             item.useAnimation = 17;
 
@@ -1595,7 +1595,7 @@ namespace HendecamMod.Content.GlobalItems
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased velocity and fire rate") { OverrideColor = Color.MediumVioletRed });
 
-           
+
 
         }
 
@@ -1638,7 +1638,7 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-            
+
             item.damage = 45;
             item.useTime = 10;
             item.useAnimation = 10;
@@ -1806,19 +1806,19 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
             item.useTime = 12;
             item.useAnimation = 12;
             item.shootSpeed = 16.5f;
-          
+
         }
 
 
     }
     public class SandStupid : GlobalItem
     {
-      
+
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
             return item.type == ItemID.Sandgun;
@@ -1836,7 +1836,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
             item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-            
+
 
         }
 
@@ -1892,10 +1892,10 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
             item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-           
+
             item.damage = 69;
             item.useTime = 16;
-          
+
             item.useAnimation = 16;
             item.scale = 1.66f;
 
@@ -1921,7 +1921,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.rare = ItemRarityID.LightPurple;
             item.damage = 65;
             item.scale = 2f;
@@ -1942,9 +1942,9 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-           
+
             item.DamageType = ModContent.GetInstance<RangedSummonDamage>();
-           
+
             item.ArmorPenetration = 10;
 
         }
@@ -1969,10 +1969,10 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-          
+
             item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
 
-          
+
 
         }
 
@@ -2026,7 +2026,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-          
+
             item.damage = 70;
             item.ArmorPenetration = 20;
             item.shootSpeed = 36f;
@@ -2054,7 +2054,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
             item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
-           
+
             item.mana = 14;
             item.reuseDelay = 16;
             item.noMelee = false;
@@ -2174,7 +2174,7 @@ namespace HendecamMod.Content.GlobalItems
 
         }
 
-        
+
     }
     public class Demoney : GlobalItem
     {
@@ -2357,7 +2357,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-    public class KandyKorn: GlobalItem
+    public class KandyKorn : GlobalItem
     {
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -2367,7 +2367,7 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-            
+
             item.damage = 81;
             item.useTime = 12;
             item.useAnimation = 12;
@@ -2383,9 +2383,9 @@ namespace HendecamMod.Content.GlobalItems
 
 
         }
-        public override void ModifyShootStats(Item item,Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-           if (type == ProjectileID.CandyCorn)
+            if (type == ProjectileID.CandyCorn)
             {
                 damage = (int)(damage * 1.667f);
             }
@@ -2404,10 +2404,10 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-          
+
 
             item.damage = 38;
-           
+
             item.shootSpeed = 15.1f;
 
         }
@@ -2433,7 +2433,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-            
+
 
             item.damage = 58;
 
@@ -2476,7 +2476,7 @@ namespace HendecamMod.Content.GlobalItems
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bullets, Deals extra damage when fired out of the Candy Corn Rifle ") { OverrideColor = Color.MediumVioletRed });
 
-           
+
 
         }
 
@@ -2493,7 +2493,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
             item.StatsModifiedBy.Add(Mod); // Notify the game that we've made a functional change to this item.
-            
+
             item.ammo = AmmoID.Arrow;
             item.rare = ItemRarityID.Yellow;
 
@@ -2501,12 +2501,12 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-           
-            
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { OverrideColor = Color.MediumVioletRed });
-               
-              
-            
+
+
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { OverrideColor = Color.MediumVioletRed });
+
+
+
         }
 
     }
@@ -2521,7 +2521,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-           
+
             item.damage = 6;
             item.ammo = AmmoID.Dart;
             item.rare = ItemRarityID.Orange;
@@ -2534,7 +2534,7 @@ namespace HendecamMod.Content.GlobalItems
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all dartguns as well as the Nail Gun") { OverrideColor = Color.MediumVioletRed });
 
-           
+
 
         }
 
@@ -2550,7 +2550,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-           
+
             item.damage = 2;
             item.DamageType = DamageClass.Ranged;
             item.ammo = AmmoID.Gel;
@@ -2560,7 +2560,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-           
+
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in flamethrowers") { OverrideColor = Color.MediumVioletRed });
 
 
@@ -2582,7 +2582,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
             item.shootSpeed = 26.5f;
-         
+
 
 
 
@@ -2608,7 +2608,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
         }
-       
+
 
     }
     public class Gemz2 : GlobalItem
@@ -2632,7 +2632,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-    
+
     public class Gemz3 : GlobalItem
     {
 
@@ -2668,7 +2668,7 @@ namespace HendecamMod.Content.GlobalItems
 
             item.useTime = 21;
             item.useAnimation = 21;
-            
+
 
 
         }
@@ -2716,7 +2716,7 @@ namespace HendecamMod.Content.GlobalItems
         {
             item.StatsModifiedBy.Add(Mod); // Notify the game that we've made a functional change to this item.
             item.damage = 123;
-           
+
             item.shootSpeed = 15.99f;
             item.useAmmo = AmmoID.Dart;
         }
@@ -2750,13 +2750,13 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.damage = 10;
 
             item.shootSpeed = 6.33f;
-           
+
         }
-        
+
 
 
     }
@@ -2780,11 +2780,11 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-           
-            
-            
-                Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ModContent.ProjectileType<HarpoonProj>(), (int)(damage * 1.05f), knockback, player.whoAmI);
-            
+
+
+
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ModContent.ProjectileType<HarpoonProj>(), (int)(damage * 1.05f), knockback, player.whoAmI);
+
             return false;
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -2817,7 +2817,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             item.rare = ItemRarityID.LightPurple;
             item.damage = 95;
@@ -2825,9 +2825,9 @@ namespace HendecamMod.Content.GlobalItems
             item.useAnimation = 17;
             item.scale = 1.35f;
             item.shootSpeed = 25.75f;
-           
+
         }
-       
+
 
 
     }
@@ -2861,7 +2861,7 @@ namespace HendecamMod.Content.GlobalItems
 
     public class NightsEdgeBuff : GlobalItem
     {
-        
+
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
             return item.type == ItemID.NightsEdge;
@@ -2877,7 +2877,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-            
+
 
             item.damage = 54;
             item.scale = 1.1f;
@@ -2906,11 +2906,11 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
 
             item.damage = 100;
             item.scale = 1.1f;
-           
+
             item.useTime = 17;
             item.useAnimation = 17;
         }
@@ -2935,7 +2935,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-            
+
 
             item.damage = 102;
             item.scale = 1.15f;
@@ -2964,9 +2964,9 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
             item.bait = 115;
-           
+
         }
 
 
@@ -2989,7 +2989,7 @@ namespace HendecamMod.Content.GlobalItems
         }
         public override void SetDefaults(Item item)
         {
-           
+
 
             item.damage = 95;
             item.scale = 1.25f;
@@ -3010,12 +3010,12 @@ namespace HendecamMod.Content.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-           
+
 
             item.damage = 111;
             item.scale = 1.11f;
 
-            
+
         }
 
 
@@ -3041,7 +3041,7 @@ namespace HendecamMod.Content.GlobalItems
 
             item.StatsModifiedBy.Add(Mod);
             item.useTime = 17;
-           
+
             item.useAnimation = 17;
             item.damage = 155;
             item.ArmorPenetration = 25;
@@ -3313,7 +3313,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-           
+
             item.useTime = 9;
             item.useAnimation = 9;
         }
@@ -3344,7 +3344,7 @@ namespace HendecamMod.Content.GlobalItems
             item.useTime = 24;
             item.useAnimation = 24;
             item.shootSpeed = 8.67f;
-            
+
         }
 
 
@@ -3368,7 +3368,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-           
+
             item.damage = 22;
             item.useTime = 2;
             item.useAnimation = 4;
@@ -3402,7 +3402,7 @@ namespace HendecamMod.Content.GlobalItems
             item.damage = 39;
             item.useTime = 14;
             item.useAnimation = 14;
-           
+
 
 
         }
@@ -3414,7 +3414,7 @@ namespace HendecamMod.Content.GlobalItems
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            return item.type == ItemID.Umbrella ;
+            return item.type == ItemID.Umbrella;
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -3428,7 +3428,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void SetDefaults(Item item)
         {
 
-            
+
 
             item.crit = 96;
         }
@@ -3479,7 +3479,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-    public class ShadowTheEdgehog: GlobalItem
+    public class ShadowTheEdgehog : GlobalItem
     {
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -3646,7 +3646,7 @@ namespace HendecamMod.Content.GlobalItems
         {
             return item.type == ItemID.PossessedHatchet;
         }
-        
+
         public override void SetDefaults(Item item)
         {
 
@@ -3690,7 +3690,7 @@ namespace HendecamMod.Content.GlobalItems
 
 
             item.damage = 5;
-            
+
         }
 
 
@@ -3883,11 +3883,11 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
-   
-   
-  
-    
-   
+
+
+
+
+
     public class BowMage1 : GlobalItem
     {
 
@@ -3916,7 +3916,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
             item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
-           
+
 
         }
 
@@ -3958,7 +3958,7 @@ namespace HendecamMod.Content.GlobalItems
     {
 
         // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-            
+
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
             if (ModLoader.TryGetMod("CHIRIKSADDITIONCR", out Mod BowMerica) && BowMerica.TryFind<ModItem>("Calcium", out ModItem Calcium))
@@ -3989,286 +3989,7 @@ namespace HendecamMod.Content.GlobalItems
         }
 
     }
-    public class ShitCity : GlobalItem
-    {
 
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("WandOfPooping", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Magic AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<AutismDamage>();
-
-
-        }
-
-    }
-    public class ShittyCity : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitAndPissWand", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Magic AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<AutismDamage>();
-
-
-        }
-
-    }
-    public class ShittyerCity : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitPissAndCumWand", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Magic AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<AutismDamage>();
-
-
-        }
-
-    }
-    public class ShittyerCityer : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSock", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Summon AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
-
-
-        }
-
-    }
-    public class ShittyestCity : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Pooperang", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Melee AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-
-
-        }
-
-    }
-    public class ShittyestCityer : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSword", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Melee AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-
-
-        }
-
-    }
-    public class ShittyestCityest : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Shitballs", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-
-
-        }
-
-    }
-    public class ShittyestCityestshit : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ChlorophyteShitballs", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-
-           //
-        }
-
-    }
     public class ConsolariaForSomeReason : GlobalItem
     {
 
@@ -4306,110 +4027,4 @@ namespace HendecamMod.Content.GlobalItems
         }
 
     }
-    public class ShittyestCityestshittheshit : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopArrow", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-
-
-        }
-
-    }
-    public class ShittyestCityestshittheeshit : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyAutoPistol", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-
-
-        }
-
-    }
-    public class Shittyshit : GlobalItem
-    {
-
-        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
-
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyPistol", out ModItem WandOfPooping))
-            {
-                return item.type == WandOfPooping.Type;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-
-
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Poop Plus) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.SaddleBrown });
-
-
-
-        }
-        public override void SetDefaults(Item item)
-        {
-
-            item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-
-
-        }
-
-    }
-   
 }

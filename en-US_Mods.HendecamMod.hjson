@@ -3629,18 +3629,18 @@ Achievements: {
 }
 
 DamageClasses: {
-	AutismDamage.DisplayName: Autism Damage
-	MagicSummonDamage.DisplayName: Magic Summon Damage
-	MeleeMagicDamage.DisplayName: Melee Magic Damage
-	MeleeRangedDamage.DisplayName: Melee Ranged Damage
-	MeleeStupidDamage.DisplayName: Melee Stupid Damage
-	MeleeSummonDamage.DisplayName: Melee Summon Damage
-	OmniDamage.DisplayName: Omni Damage
-	RangedMagicDamage.DisplayName: Ranged Magic Damage
-	RangedStupidDamage.DisplayName: Ranged Stupid Damage
-	RangedSummonDamage.DisplayName: Ranged Summon Damage
-	StupidDamage.DisplayName: Stupid Damage
-	SummonStupidDamage.DisplayName: Summon Stupid Damage
+	AutismDamage.DisplayName: magic+stupid damage
+	MagicSummonDamage.DisplayName: magic+summon damage
+	MeleeMagicDamage.DisplayName: melee+magic damage
+	MeleeRangedDamage.DisplayName: melee+ranged damage
+	MeleeStupidDamage.DisplayName: melee+stupid damage
+	MeleeSummonDamage.DisplayName: melee+summon damage
+	OmniDamage.DisplayName: omni damage
+	RangedMagicDamage.DisplayName: ranged+magic damage
+	RangedStupidDamage.DisplayName: ranged+stupid damage
+	RangedSummonDamage.DisplayName: ranged+summon damage
+	StupidDamage.DisplayName: stupid damage
+	SummonStupidDamage.DisplayName: summon+stupid damage
 }
 
 WorldGen: {

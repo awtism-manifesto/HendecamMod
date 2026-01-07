@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Poop
 {
@@ -29,7 +30,7 @@ namespace HendecamMod.Content.Poop
             Item.UseSound = SoundID.Item40; // The sound that this item plays when used.
 
             // Weapon Properties
-            Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
             Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.

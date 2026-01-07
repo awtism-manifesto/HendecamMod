@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Tiles;
+using HendecamMod.Content.Items.Materials;
 
 
 namespace HendecamMod.Content.Items
@@ -23,8 +24,8 @@ namespace HendecamMod.Content.Items
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(3)
-				.AddIngredient(ItemID.Wood, 5)
+			CreateRecipe(2)
+				.AddIngredient<Sawdust>(10)
 				.AddIngredient(ItemID.IceBlock, 2)
 				.AddTile(TileID.Sawmill)
 				.Register();
