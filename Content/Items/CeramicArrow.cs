@@ -62,7 +62,7 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(63);
-            recipe.AddIngredient<Items.CeramicSheet>();
+            recipe.AddIngredient<CeramicSheet>();
             recipe.AddIngredient(ItemID.WoodenArrow, 63);
             recipe.Register();
         }

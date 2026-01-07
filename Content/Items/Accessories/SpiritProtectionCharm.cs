@@ -1,10 +1,11 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories
 {
@@ -35,8 +36,8 @@ namespace HendecamMod.Content.Items.Accessories
             recipe.AddIngredient(ItemID.ManaRegenerationBand);
             recipe.AddIngredient<EmpoweredManaCrystal>();
             recipe.AddIngredient<SaltPendant>();
-           
-            recipe.AddIngredient<Items.PurifiedSalt>(99);
+            recipe.AddIngredient<PearlceramicSheet>(9);
+            recipe.AddIngredient<PurifiedSalt>(99);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
            

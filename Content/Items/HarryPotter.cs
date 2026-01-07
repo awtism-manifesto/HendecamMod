@@ -129,7 +129,7 @@ namespace HendecamMod.Content.Items
                 recipe.AddIngredient(ItemID.FallenStar, 5);
                 recipe.AddIngredient(ItemID.Book);
                 recipe.AddIngredient<Paper>(100);
-                recipe.AddIngredient< CeramicSheet>(40);
+                recipe.AddIngredient<CeramicSheet>(40);
                 recipe.AddTile(TileID.Bookcases);
                 recipe.Register();
 

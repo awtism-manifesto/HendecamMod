@@ -333,7 +333,6 @@
 	  <None Remove="Content\Tiles\LegosPlaced.png" />
 	  <None Remove="Content\Tiles\PureSaltTile.png" />
 	  <None Remove="Content\Tiles\RockSaltTile.png" />
-	  <None Remove="Icon.png" />
 	  <None Remove="icon_workshop.png" />
 		
 	</ItemGroup>

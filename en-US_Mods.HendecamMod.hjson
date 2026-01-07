@@ -2975,17 +2975,17 @@ Mods: {
 
 			RadPoisoning: {
 				DisplayName: Rad Poisoning
-				Description: Mods.HendecamMod.Buffs.RadPoisoning.Description
+				Description: You don't feel so good...
 			}
 
 			RadPoisoning2: {
-				DisplayName: Rad Poisoning2
-				Description: Mods.HendecamMod.Buffs.RadPoisoning2.Description
+				DisplayName: Rad Poisoning Mk.II
+				Description: Your molecules beg for mercy...
 			}
 
 			RadPoisoning3: {
-				DisplayName: Rad Poisoning3
-				Description: Mods.HendecamMod.Buffs.RadPoisoning3.Description
+				DisplayName: Rad Poisoning Mk.III
+				Description: Your atomic fortitude is fading...
 			}
 
 			RainbowBloonBuff: {
@@ -7896,6 +7896,46 @@ Items: {
 		DisplayName: Glass Sword
 		Tooltip: ""
 	}
+
+	AstatineGlassSword: {
+		DisplayName: Astatine Glass Sword
+		Tooltip: ""
+	}
+
+	CrystalShardSword: {
+		DisplayName: Crystal Shard Sword
+		Tooltip: ""
+	}
+
+	ObsidianSword: {
+		DisplayName: Obsidian Sword
+		Tooltip: ""
+	}
+
+	PlutoniumGlassSword: {
+		DisplayName: Plutonium Glass Sword
+		Tooltip: ""
+	}
+
+	ShadowCrystalSword: {
+		DisplayName: Shadow Crystal Sword
+		Tooltip: ""
+	}
+
+	UraniumGlassSword: {
+		DisplayName: Uranium Glass Sword
+		Tooltip: ""
+	}
+
+	CrimceramicSheet: {
+		DisplayName: Crimceramic Sheet
+		Tooltip: ""
+	}
+
+	PearlceramicSheet: {
+		DisplayName: Pearlceramic Sheet
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8063,17 +8103,17 @@ Buffs: {
 
 	RadPoisoning: {
 		DisplayName: Rad Poisoning
-		Description: Mods.HendecamMod.Buffs.RadPoisoning.Description
+		Description: You don't feel so good...
 	}
 
 	RadPoisoning2: {
-		DisplayName: Rad Poisoning2
-		Description: Mods.HendecamMod.Buffs.RadPoisoning2.Description
+		DisplayName: Rad Poisoning Mk.II
+		Description: Your molecules beg for mercy...
 	}
 
 	RadPoisoning3: {
-		DisplayName: Rad Poisoning3
-		Description: Mods.HendecamMod.Buffs.RadPoisoning3.Description
+		DisplayName: Rad Poisoning Mk.III
+		Description: Your atomic fortitude is fading...
 	}
 
 	RainbowBloonBuff: {

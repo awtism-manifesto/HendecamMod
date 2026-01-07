@@ -102,7 +102,7 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CookingPot);
-            recipe.AddIngredient<Items.CeramicSheet>(25);
+            recipe.AddIngredient<CeramicSheet>(25);
             recipe.AddIngredient<Items.RockSalt>(9);
             recipe.AddIngredient(ItemID.HellstoneBar, 8);
             recipe.AddTile(TileID.Anvils);

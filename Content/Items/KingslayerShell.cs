@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items
 {
@@ -13,14 +14,14 @@ namespace HendecamMod.Content.Items
 
         public override void SetDefaults()
         {
-            Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+            Item.damage = 22; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
             Item.DamageType = DamageClass.Ranged;
             Item.width = 16;
             Item.height = 16;
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
             Item.knockBack = 3f;
-            Item.value = 10;
+            Item.value = 220;
             Item.rare = ItemRarityID.Pink;
             Item.shoot = ModContent.ProjectileType<KingslayerRocket>(); // The projectile that weapons fire when using this item as ammunition.
             Item.shootSpeed = 13f; // The speed of the projectile.
@@ -77,9 +78,11 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(150);
+          
             recipe.AddIngredient(ItemID.UnicornHorn, 1);
+            recipe.AddIngredient<PearlceramicSheet>(2);
             recipe.AddIngredient(ItemID.CrystalShard, 3);
-            recipe.AddIngredient<Items.RocketNeg1>(150);
+            recipe.AddIngredient<RocketNeg1>(150);
             recipe.Register();
 
         }

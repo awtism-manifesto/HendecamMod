@@ -18,11 +18,11 @@ namespace HendecamMod.Content.Items.Consumables
             Item.height = 36;
             Item.value = Item.sellPrice(silver: 1000);
             Item.rare = ItemRarityID.Orange;
-            Item.accessory = true;
+          
 
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 14;
+            Item.useAnimation = 14;
             Item.autoReuse = true;
             Item.UseSound = SoundID.Shatter;
             Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
@@ -38,11 +38,7 @@ namespace HendecamMod.Content.Items.Consumables
             {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
             }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-            {
-            player.lifeRegen += (int)8f;
-            return true;
-            }
+       
         public override void AddRecipes()
             {
             Recipe recipe = CreateRecipe();

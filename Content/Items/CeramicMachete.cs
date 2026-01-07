@@ -96,7 +96,7 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
             
-            recipe.AddIngredient<Items.CeramicSheet>(25);
+            recipe.AddIngredient<CeramicSheet>(25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

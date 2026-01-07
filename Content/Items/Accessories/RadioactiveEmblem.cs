@@ -1,11 +1,13 @@
 ﻿
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories
 {
@@ -13,9 +15,9 @@ namespace HendecamMod.Content.Items.Accessories
     {
         // By declaring these here, changing the values will alter the effect, and the tooltip
 
-        public static readonly int AdditiveDamageBonus = 24;
-        public static readonly int AttackSpeedBonus = 8;
-        public static readonly int CritBonus = 8;
+        public static readonly int AdditiveDamageBonus = 21;
+        public static readonly int AttackSpeedBonus = 7;
+        public static readonly int CritBonus = 7;
 
         // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
         public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
@@ -32,16 +34,20 @@ namespace HendecamMod.Content.Items.Accessories
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "24% increased damage");
+            var line = new TooltipLine(Mod, "Face", "21% increased damage");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "8% increased crit chance and attack speed")
+            line = new TooltipLine(Mod, "Face", "7% increased crit chance and attack speed")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
-
+            line = new TooltipLine(Mod, "Face", "Irradiates all enemies you hit")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
 
             // Here we will hide all tooltips whose title end with ':RemoveMe'
             // One like that is added at the start of this method
@@ -90,9 +96,42 @@ namespace HendecamMod.Content.Items.Accessories
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 108f;
             player.GetCritChance(DamageClass.Generic) += CritBonus;
             player.statLifeMax2 = (int) (player.statLifeMax2* 0.85f);
+            player.GetModPlayer<RadApply>().radEffect = true;
         }
     }
-
+    public class RadApply : ModPlayer
+    {
+        public bool radEffect; public override void ResetEffects()
+        {
+            radEffect = false;
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (Player.GetModPlayer<RadApply>().radEffect == false)
+            {
+                return;
+            }
+            else
+            {
+                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+            }
+        }
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (Player.GetModPlayer<RadApply>().radEffect == false)
+            {
+                return;
+            }
+            else
+            {
+                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+            }
+        }
+    }
 
 
 }

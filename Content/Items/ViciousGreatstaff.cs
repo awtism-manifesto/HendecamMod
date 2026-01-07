@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -131,7 +133,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.CrimsonRod);
             recipe.AddIngredient(ItemID.GoldenShower);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
-            recipe.AddIngredient(ItemID.SoulofNight, 5);
+            recipe.AddIngredient<CrimceramicSheet>(15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 

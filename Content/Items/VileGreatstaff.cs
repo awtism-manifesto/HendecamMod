@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -141,7 +142,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.Vilethorn);
             recipe.AddIngredient(ItemID.CursedFlames);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
-            recipe.AddIngredient(ItemID.SoulofNight, 5);
+            recipe.AddIngredient<EbonceramicSheet>(15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 

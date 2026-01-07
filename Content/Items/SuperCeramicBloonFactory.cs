@@ -1,17 +1,18 @@
-﻿using System;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
-using Terraria.ModLoader;
 using Terraria;
-using Microsoft.Xna.Framework;
+using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items
 {
@@ -93,10 +94,13 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<EbonceramicSheet>(25);
+            recipe.AddIngredient<CrimceramicSheet>(25);
+            recipe.AddIngredient<PearlceramicSheet>(25);
             recipe.AddIngredient(ItemID.HallowedBar, 7);
             recipe.AddIngredient(ItemID.SpectreBar, 7);
             recipe.AddIngredient<Rubber>(105);
-            recipe.AddIngredient<Items.CeramicBloonFactory>();
+            recipe.AddIngredient<CeramicBloonFactory>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
            

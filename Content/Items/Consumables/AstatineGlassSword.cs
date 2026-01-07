@@ -1,7 +1,8 @@
 ﻿
-using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -17,32 +18,36 @@ namespace HendecamMod.Content.Items.Consumables
             Item.width = 32;
             Item.height = 32;
             Item.value = Item.sellPrice(silver: 1000);
-            Item.rare = ItemRarityID.Orange;
-            Item.accessory = true;
+            Item.rare = ItemRarityID.Red;
+           
 
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 9;
+            Item.useAnimation = 9;
             Item.autoReuse = true;
             Item.UseSound = SoundID.Shatter;
             Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             Item.maxStack = Item.CommonMaxStack;
-            Item.damage = 480;
-            Item.knockBack = 40.0f;
+            Item.damage = 240;
+            Item.knockBack = 11.5f;
             Item.consumable = true;
             Item.ChangePlayerDirectionOnShoot = true;
             Item.buffType = BuffID.Bleeding; // Specify an existing buff to be applied when used.
+            Item.buffType = ModContent.BuffType<RadPoisoning3>();
             Item.buffTime = 300;
             }
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+
+            target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
+
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
             {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-            }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-            {
-            player.lifeRegen += (int)8f;
-            return true;
-            }
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
+        }
+        
         public override void AddRecipes()
             {
             Recipe recipe = CreateRecipe();

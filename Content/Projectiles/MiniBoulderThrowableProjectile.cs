@@ -20,14 +20,14 @@ namespace HendecamMod.Content.Projectiles
 
         public override void SetDefaults()
         {
-            Projectile.width = 12; // The width of projectile hitbox
-            Projectile.height = 12; // The height of projectile hitbox
+            Projectile.width = 16; // The width of projectile hitbox
+            Projectile.height = 16; // The height of projectile hitbox
 
             Projectile.arrow = false;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.timeLeft = 1200;
-            Projectile.penetrate = 10;
+            Projectile.timeLeft = 400;
+            Projectile.penetrate = 7;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -65,22 +65,21 @@ namespace HendecamMod.Content.Projectiles
             // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
             // like some examples do, this example has custom AI code that is better suited for modifying directly.
             // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
+            Projectile.rotation += 0.225f;
             // Apply gravity after a quarter of a second
             Projectile.ai[0] += 1f;
             if (Projectile.ai[0] >= 13f)
             {
-                Projectile.ai[0] = 8f;
-                Projectile.velocity.Y += 0.225f;
+                Projectile.ai[0] = 20f;
+                Projectile.velocity.Y += 0.245f;
             }
 
-            // The projectile is rotated to face the direction of travel
-            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+           
 
             // Cap downward velocity
-            if (Projectile.velocity.Y > 13f)
+            if (Projectile.velocity.Y > 21f)
             {
-                Projectile.velocity.Y = 19f;
+                Projectile.velocity.Y = 27f;
             }
             if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
             {
