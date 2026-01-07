@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
@@ -351,14 +352,16 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient<PhotonShotgun>();
             recipe.AddIngredient(ItemID.Xenopopper);
             recipe.AddIngredient<TheMagnum>();
+            recipe.AddIngredient<MidnightAfterburner>();
+
+            recipe.AddIngredient<PlutoniumAutoPistol>();
             recipe.AddIngredient<ATFsNightmare>();
             recipe.AddIngredient<GunThatKillsPeople>();
             recipe.AddIngredient<TheNanoshot>();
-
+            recipe.AddIngredient<PoopyAutoPistol>();
             recipe.AddIngredient(ItemID.CandyCornRifle);
             recipe.AddIngredient(ItemID.VenusMagnum);
-            recipe.AddIngredient<MidnightAfterburner>();
-            recipe.AddIngredient<PlutoniumAutoPistol>();
+           
             recipe.AddIngredient<ThePrimeTime>();
             recipe.AddIngredient<CryonicCarbine>();
             recipe.AddIngredient<Bundlebuss>();
@@ -370,10 +373,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient<CopperShortmachinegun>();
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyAutoPistol", out ModItem PoopyAutoPistol))
-            {
-                recipe.AddIngredient(PoopyAutoPistol.Type);
-            }
+           
 
             if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("BrenGun", out ModItem BrenGun))
             {

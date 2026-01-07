@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Poop;
 
 
 namespace HendecamMod.Content.Global
@@ -22,7 +23,7 @@ namespace HendecamMod.Content.Global
                 // Adding an item to a vanilla NPC is easy:
                 // This item sells for the normal price.
                 shop.Add<fivenato>(condition: Terraria.Condition.DownedPlantera);
-
+                shop.Add<Shitballs>(condition: Terraria.Condition.DrunkWorld);
                 shop.Add<KingslayerBullet>(condition: Terraria.Condition.ForTheWorthyWorld);
                 shop.Add<CeramicDart>(condition: Terraria.Condition.Hardmode);
                

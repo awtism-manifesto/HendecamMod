@@ -422,6 +422,23 @@ namespace HendecamMod.Content.Global
 
 
             }
+            if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("GelatinousGlock", out ModItem GelatinousGlock))
+
+
+            {
+                Recipe glocknbawlz = Recipe.Create(GelatinousGlock.Type);
+
+                glocknbawlz.AddIngredient<Items.Glock>();
+                glocknbawlz.AddIngredient(ItemID.Gel, 30);
+              
+
+                glocknbawlz.AddTile(TileID.Solidifier);
+                glocknbawlz.Register();
+
+
+
+            }
+
 
             Recipe gay6 = Recipe.Create(ItemID.IceBow);
             gay6.AddIngredient(ItemID.FrostCore);

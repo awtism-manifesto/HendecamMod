@@ -33,13 +33,53 @@ namespace HendecamMod.Content.Items.Tools
             Item.axe = 20;
             Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
         }
+        public override bool AltFunctionUse(Player player)
+        {
+
+
+            return true;
+
+
+        }
+        public override bool CanUseItem(Player player)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.useTime = 7;
+                Item.useAnimation = 7;
+                Item.pick = 0;
+
+                Item.axe = 0;
+                Item.hammer = 79;
+
+            }
+            else
+            {
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.useTime = 9;
+                Item.useAnimation = 22;
+                Item.pick = 63;
+                Item.hammer = 0;
+                Item.axe = 20;
+            }
+
+            return base.CanUseItem(player);
+        }
+
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Can mine Lycopite");
+            var line = new TooltipLine(Mod, "Face", "Left click for pickaxe and axe functionality");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+            line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+
+            line = new TooltipLine(Mod, "Face", "Can mine Lycopite")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

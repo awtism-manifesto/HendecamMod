@@ -1,7 +1,7 @@
 ﻿using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Placeable;
-using RiverBullshitMod.Content.Items.Accessories.NormalOnes;
+using HendecamMod.Content.Items.Accessories.NormalOnes;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

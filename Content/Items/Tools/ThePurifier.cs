@@ -11,9 +11,14 @@ namespace HendecamMod.Content.Items.Tools
 {
     public class ThePurifier : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+
+            ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
+        }
         public override void SetDefaults()
         {
-            Item.damage = 40;
+            Item.damage = 33;
             Item.DamageType =  DamageClass.Melee;
             Item.width = 50;
             Item.height = 50;
@@ -29,17 +34,51 @@ namespace HendecamMod.Content.Items.Tools
             Item.autoReuse = true;
             Item.tileBoost = 2;
             Item.pick = 155;
-            Item.hammer = 105;
+           
             Item.axe = 26;
             Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
         }
+        public override bool AltFunctionUse(Player player)
+        {
+
+
+            return true;
+
+
+        }
+        public override bool CanUseItem(Player player)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.useTime = 4;
+                Item.useAnimation = 4;
+                Item.pick = 0;
+
+                Item.axe = 0;
+                Item.hammer = 105;
+
+            }
+            else
+            {
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.useTime = 7;
+                Item.useAnimation = 20;
+                Item.pick = 155;
+                Item.hammer = 0;
+                Item.axe = 26;
+            }
+
+            return base.CanUseItem(player);
+        }
+
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "Left click for pickaxe and axe functionality");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+            line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

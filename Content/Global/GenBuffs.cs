@@ -3957,7 +3957,7 @@ namespace HendecamMod.Content.GlobalItems
     public class BowMage123 : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
             
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
@@ -3992,11 +3992,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShitCity : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("WandOfPooping", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("WandOfPooping", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4027,11 +4027,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyCity : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitAndPissWand", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitAndPissWand", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4062,11 +4062,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyerCity : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitPissAndCumWand", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ShitPissAndCumWand", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4097,11 +4097,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyerCityer : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSock", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSock", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4132,11 +4132,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCity : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Pooperang", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Pooperang", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4167,11 +4167,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCityer : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSword", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopSword", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4202,11 +4202,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCityest : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Shitballs", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("Shitballs", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4237,11 +4237,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCityestshit : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ChlorophyteShitballs", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("ChlorophyteShitballs", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4272,7 +4272,7 @@ namespace HendecamMod.Content.GlobalItems
     public class ConsolariaForSomeReason : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
@@ -4309,11 +4309,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCityestshittheshit : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopArrow", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopArrow", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4344,11 +4344,11 @@ namespace HendecamMod.Content.GlobalItems
     public class ShittyestCityestshittheeshit : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyAutoPistol", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyAutoPistol", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }
@@ -4379,11 +4379,11 @@ namespace HendecamMod.Content.GlobalItems
     public class Shittyshit : GlobalItem
     {
 
-        // if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+        // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
 
         public override bool AppliesToEntity(Item item, bool lateInstantiation)
         {
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyPistol", out ModItem WandOfPooping))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica) && ShitMerica.TryFind<ModItem>("PoopyPistol", out ModItem WandOfPooping))
             {
                 return item.type == WandOfPooping.Type;
             }

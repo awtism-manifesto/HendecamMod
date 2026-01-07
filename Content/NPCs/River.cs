@@ -370,7 +370,7 @@ namespace HendecamMod.Content.NPCs
 
             npcShop.Register(); // Name of this shop tab
 
-            if (ModLoader.TryGetMod("PoopExpansion", out Mod ShitMerica))
+            if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
             {
 
 

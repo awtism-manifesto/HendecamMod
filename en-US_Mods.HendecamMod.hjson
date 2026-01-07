@@ -3644,18 +3644,18 @@ DamageClasses: {
 }
 
 WorldGen: {
-	LycopiteMessage: Mods.HendecamMod.WorldGen.LycopiteMessage
-	LycopiteBlessMessage: Mods.HendecamMod.WorldGen.LycopiteBlessMessage
-	MintalMessage: Mods.HendecamMod.WorldGen.MintalMessage
-	MintalBlessMessage: Mods.HendecamMod.WorldGen.MintalBlessMessage
-	MorbiumMessage: Mods.HendecamMod.WorldGen.MorbiumMessage
-	MorbiumBlessMessage: Mods.HendecamMod.WorldGen.MorbiumBlessMessage
-	PyriteMessage: Mods.HendecamMod.WorldGen.PyriteMessage
-	PyriteBlessMessage: Mods.HendecamMod.WorldGen.PyriteBlessMessage
-	MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
-	BlessedWithThroarbiumOreMessage: Mods.HendecamMod.WorldGen.BlessedWithThroarbiumOreMessage
-	PlutoniumMessage: Mods.HendecamMod.WorldGen.PlutoniumMessage
-	PlutoniumBlessMessage: Mods.HendecamMod.WorldGen.PlutoniumBlessMessage
+	LycopiteMessage: Reddish-orange spores stir far below the surface
+	LycopiteBlessMessage: Reddish-orange spores stir far below the surface
+	MintalMessage: The underground has been blessed with some fresh new ore!
+	MintalBlessMessage: The underground has been blessed with some fresh new ore!
+	MorbiumMessage: It's morbin time.
+	MorbiumBlessMessage: It's morbin time.
+	PyriteMessage: Riches once hoarded by Cthulhu now permeate the caverns...
+	PyriteBlessMessage: Riches once hoarded by Cthulhu now permeate the caverns...
+	MagnoliaOrePassMessage: Blue.
+	BlessedWithThroarbiumOreMessage: Blue.
+	PlutoniumMessage: Radioactivity floods the world...
+	PlutoniumBlessMessage: Radioactivity floods the world...
 }
 
 Items: {
@@ -4344,7 +4344,7 @@ Items: {
 	}
 
 	NastyPattyAccessory: {
-		DisplayName: Nasty Patty Accessory
+		DisplayName: Nasty Patty
 		Tooltip: ""
 	}
 
@@ -4489,7 +4489,7 @@ Items: {
 	}
 
 	PeaceAmongNationsAccessory: {
-		DisplayName: Peace Among Nations Accessory
+		DisplayName: Peace Among Nations
 		Tooltip: ""
 	}
 
@@ -4669,27 +4669,27 @@ Items: {
 	}
 
 	LostFragment1: {
-		DisplayName: Lost Fragment1
+		DisplayName: Lost Fragment 1
 		Tooltip: ""
 	}
 
 	LostFragment2: {
-		DisplayName: Lost Fragment2
+		DisplayName: Lost Fragment 2
 		Tooltip: ""
 	}
 
 	LostFragment3: {
-		DisplayName: Lost Fragment3
+		DisplayName: Lost Fragment 3
 		Tooltip: ""
 	}
 
 	LostFragment4: {
-		DisplayName: Lost Fragment4
+		DisplayName: Lost Fragment 4
 		Tooltip: ""
 	}
 
 	MagicSoap: {
-		DisplayName: Magic Soap
+		DisplayName: Dr. Bronner's 18-in-1 Magic Soap
 		Tooltip: ""
 	}
 
@@ -4714,7 +4714,7 @@ Items: {
 	}
 
 	RampartAccessory: {
-		DisplayName: Rampart Accessory
+		DisplayName: Rampart
 		Tooltip: ""
 	}
 
@@ -7787,6 +7787,109 @@ Items: {
 		DisplayName: Molten Rose
 		Tooltip: ""
 	}
+
+	PoopyHelmet: {
+		SetBonus: Mods.HendecamMod.Items.PoopyHelmet.SetBonus
+		DisplayName: Poopy Helmet
+		Tooltip: ""
+	}
+
+	PoopyPants: {
+		SetBonus: Mods.HendecamMod.Items.PoopyPants.SetBonus
+		DisplayName: Poopy Pants
+		Tooltip: ""
+	}
+
+	PoopyShirt: {
+		SetBonus: Mods.HendecamMod.Items.PoopyShirt.SetBonus
+		DisplayName: Poopy Shirt
+		Tooltip: ""
+	}
+
+	ChlorophyteShitballs: {
+		DisplayName: Chlorophyte Shitballs
+		Tooltip: ""
+	}
+
+	PoopArrow: {
+		DisplayName: Poop Arrow
+		Tooltip: ""
+	}
+
+	PoopAxe: {
+		DisplayName: Poop Axe
+		Tooltip: ""
+	}
+
+	Pooperang: {
+		DisplayName: Pooperang
+		Tooltip: ""
+	}
+
+	PoopHammer: {
+		DisplayName: Poop Hammer
+		Tooltip: ""
+	}
+
+	PoopPickaxe: {
+		DisplayName: Poop Pickaxe
+		Tooltip: ""
+	}
+
+	PoopSock: {
+		DisplayName: Poop Sock
+		Tooltip: ""
+	}
+
+	PoopSword: {
+		DisplayName: Poop Sword
+		Tooltip: ""
+	}
+
+	PoopToilet: {
+		DisplayName: Poop Toilet
+		Tooltip: ""
+	}
+
+	PoopyAutoPistol: {
+		DisplayName: Poopy Auto Pistol
+		Tooltip: ""
+	}
+
+	PoopyPistol: {
+		DisplayName: Poopy Pistol
+		Tooltip: ""
+	}
+
+	ShitAndPissWand: {
+		DisplayName: Shit And Piss Wand
+		Tooltip: ""
+	}
+
+	Shitballs: {
+		DisplayName: Shitballs
+		Tooltip: ""
+	}
+
+	ShitPissAndCumWand: {
+		DisplayName: Shit Piss And Cum Wand
+		Tooltip: ""
+	}
+
+	ThrowablePoop: {
+		DisplayName: Throwable Poop
+		Tooltip: ""
+	}
+
+	WandOfPooping: {
+		DisplayName: Wand Of Pooping
+		Tooltip: ""
+	}
+
+	EbonceramicSheet: {
+		DisplayName: Ebonceramic Sheet
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8035,6 +8138,11 @@ Buffs: {
 	WeaponImbueShadowflame: {
 		DisplayName: Weapon Imbue Shadowflame
 		Description: Mods.HendecamMod.Buffs.WeaponImbueShadowflame.Description
+	}
+
+	PoopSocked: {
+		DisplayName: Poop Socked
+		Description: Mods.HendecamMod.Buffs.PoopSocked.Description
 	}
 }
 
@@ -8630,4 +8738,13 @@ Projectiles: {
 	ZazaSmoke.DisplayName: Zaza Smoke
 	ZazaSpawn.DisplayName: Zaza Spawn
 	ZoneSpawn.DisplayName: Zone Spawn
+	ChloroShit.DisplayName: Chloro Shit
+	PoopArrowProj.DisplayName: Poop Arrow Proj
+	PoopRang.DisplayName: Poop Rang
+	PoopSpark.DisplayName: Poop Spark
+	PooShit.DisplayName: Poo Shit
+	PooShot2.DisplayName: Poo Shot2
+	ShitBallProjectile.DisplayName: Shit Ball Projectile
+	SockPoop.DisplayName: Sock Poop
+	ThrownPoop.DisplayName: Thrown Poop
 }

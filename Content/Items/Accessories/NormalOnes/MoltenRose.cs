@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RiverBullshitMod.Content.Items.Accessories.NormalOnes
+namespace HendecamMod.Content.Items.Accessories.NormalOnes
     {
     //[AutoloadEquip(EquipType.Beard)]
     public class MoltenRose : ModItem
