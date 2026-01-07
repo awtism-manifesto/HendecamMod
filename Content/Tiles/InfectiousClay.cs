@@ -130,30 +130,4 @@ namespace HendecamMod.Content.Tiles
             WorldGen.TileMergeAttempt(-2, TileID.ClayBlock, ref up, ref down, ref left, ref right, ref upLeft, ref upRight, ref downLeft, ref downRight);
         }
     }
-
-    #region Items
-    internal class Pearlclay : ModItem
-    {
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<PearlclayPlaced>());
-        }
-
-        internal class Ebonclay : ModItem
-        {
-            public override void SetDefaults()
-            {
-                Item.DefaultToPlaceableTile(ModContent.TileType<EbonclayPlaced>());
-            }
-
-            internal class Crimclay : ModItem
-            {
-                public override void SetDefaults()
-                {
-                    Item.DefaultToPlaceableTile(ModContent.TileType<CrimclayPlaced>());
-                }
-            }
-            #endregion
-        }
-    }
 }

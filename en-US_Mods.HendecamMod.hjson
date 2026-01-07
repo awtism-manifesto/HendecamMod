@@ -8168,6 +8168,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	ApacheElfShip.DisplayName: Apache Elf Ship
@@ -8201,6 +8203,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	River: {
@@ -8224,6 +8228,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	SaltMonster.DisplayName: Salt Monster
@@ -8249,6 +8255,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	TrashSlime.DisplayName: Trash Slime
