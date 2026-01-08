@@ -67,7 +67,7 @@ namespace HendecamMod.Content.Projectiles
             // if (Projectile.localAI[0] == 0f) {
             // 	SoundEngine.PlaySound(SoundID.Item60 with { Volume = 0.65f }, Projectile.position);
             // }
-
+            Lighting.AddLight(Projectile.Center, 0.33f, 0.33f, 1.05f);
             Projectile.localAI[0]++; // Current time that the projectile has been alive.
             Player player = Main.player[Projectile.owner];
             float percentageOfLife = Projectile.localAI[0] / Projectile.ai[1]; // The current time over the max time.

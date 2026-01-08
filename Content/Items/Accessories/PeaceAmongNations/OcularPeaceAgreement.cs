@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -43,6 +44,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.EyeofCthulhuTrophy, 1);
             recipe.AddIngredient<FriendCore>(1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();

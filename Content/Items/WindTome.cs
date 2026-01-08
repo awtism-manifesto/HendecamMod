@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,10 +149,11 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpellTome, 1);
-            recipe.AddIngredient(ItemID.HallowedBar, 6);
            
+
             recipe.AddIngredient(ItemID.SoulofFright, 5);
             recipe.AddIngredient(ItemID.SoulofFlight, 10);
+            recipe.AddIngredient<AirBar>(100);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 

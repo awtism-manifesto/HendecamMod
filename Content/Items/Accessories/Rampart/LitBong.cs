@@ -1,10 +1,11 @@
 ﻿
+using HendecamMod.Content.Items.Placeables;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
 {
@@ -34,9 +35,11 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+           
             recipe.AddIngredient<Lightbulb>(1);
+           
             recipe.AddIngredient<EmptyBong>(1);
+            recipe.AddIngredient<WeedLeaves>(3);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();

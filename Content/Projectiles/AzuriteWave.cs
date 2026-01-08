@@ -86,7 +86,7 @@ namespace HendecamMod.Content.Projectiles
 
                
             }
-
+            Lighting.AddLight(Projectile.Center, 0.25f, 0.25f, 0.875f);
         }
        
         public override void OnKill(int timeLeft)

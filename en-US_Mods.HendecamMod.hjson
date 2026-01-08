@@ -7965,12 +7965,12 @@ Tiles: {
 Buffs: {
 	BalkanRage: {
 		DisplayName: Balkan Rage
-		Description: Mods.HendecamMod.Buffs.BalkanRage.Description
+		Description: Those who know...
 	}
 
 	BigShotCooldown: {
 		DisplayName: Big Shot Cooldown
-		Description: Mods.HendecamMod.Buffs.BigShotCooldown.Description
+		Description: Now's NOT your chance to be a [BIG SHOT]
 	}
 
 	BlackshardDebuff: {
@@ -7979,23 +7979,23 @@ Buffs: {
 	}
 
 	BrainRotted: {
-		DisplayName: Brain Rotted
-		Description: Mods.HendecamMod.Buffs.BrainRotted.Description
+		DisplayName: Brainrotted
+		Description: You watched too many 6 7 memes...
 	}
 
 	CasaBuff: {
-		DisplayName: Casa Buff
-		Description: Mods.HendecamMod.Buffs.CasaBuff.Description
+		DisplayName: Casanova
+		Description: The Casanova is buffing your health and stealth!
 	}
 
 	CeramicBloonBuff: {
 		DisplayName: Ceramic Bloon Buff
-		Description: Mods.HendecamMod.Buffs.CeramicBloonBuff.Description
+		Description: A Ceramic bloon is fighting on your behalf
 	}
 
 	DarkPower: {
 		DisplayName: Dark Power
-		Description: Mods.HendecamMod.Buffs.DarkPower.Description
+		Description: The Blackshard yields you it's strange yet terrifying power
 	}
 
 	DeliriantTag: {
@@ -8024,13 +8024,13 @@ Buffs: {
 	}
 
 	GraniteFriend: {
-		DisplayName: Granite Friend
-		Description: Mods.HendecamMod.Buffs.GraniteFriend.Description
+		DisplayName: Granite Elemental Buff
+		Description: A Granite Elemental is fighting on your behalf
 	}
 
 	HeartBuff: {
-		DisplayName: Heart Buff
-		Description: Mods.HendecamMod.Buffs.HeartBuff.Description
+		DisplayName: Heartache
+		Description: Increased life regen
 	}
 
 	JevilTag: {
@@ -8040,7 +8040,7 @@ Buffs: {
 
 	JungleHealing: {
 		DisplayName: Jungle Healing
-		Description: Mods.HendecamMod.Buffs.JungleHealing.Description
+		Description: Increased life regen and immunity to poison
 	}
 
 	KevlarTag: {
@@ -8055,7 +8055,7 @@ Buffs: {
 
 	LeadPoisoningDebuff: {
 		DisplayName: Lead Poisoning Debuff
-		Description: Mods.HendecamMod.Buffs.LeadPoisoningDebuff.Description
+		Description: Why did you drink that potion dumbass
 	}
 
 	LilTMan: {
@@ -8069,23 +8069,23 @@ Buffs: {
 	}
 
 	MambaBuff: {
-		DisplayName: Mamba Buff
-		Description: Mods.HendecamMod.Buffs.MambaBuff.Description
+		DisplayName: Black Mamba
+		Description: The Black Mamba is buffing your regen and speed!
 	}
 
 	MorbinTime: {
 		DisplayName: Morbin Time
-		Description: Mods.HendecamMod.Buffs.MorbinTime.Description
+		Description: It's Morbin Time.
 	}
 
 	OilMonsterBuff: {
 		DisplayName: Oil Monster Buff
-		Description: Mods.HendecamMod.Buffs.OilMonsterBuff.Description
+		Description: An Oil Monster is fighting on your behalf
 	}
 
 	OtherworldPoisoning: {
 		DisplayName: Otherworld Poisoning
-		Description: Mods.HendecamMod.Buffs.OtherworldPoisoning.Description
+		Description: Unfortunate doesn't begin to describe my series, this game rewards blind luck and nothing else, I am beyond convinced at this point. After getting completely tooled by scheduling with my opponent changing times on me last minute and refusing to provide confirmation prior to the day of the match as to play times, losing this way somehow felt even worse than I had thought possible. My preparation was superior, my play was superior, and I lost, so I don't see a reason to continue engaging in an activity where what is within my control is overwhelmingly outweighed by what is not.
 	}
 
 	PearlTag: {
@@ -8095,7 +8095,7 @@ Buffs: {
 
 	PlasmoidFriend: {
 		DisplayName: Plasmoid Friend
-		Description: Mods.HendecamMod.Buffs.PlasmoidFriend.Description
+		Description: A Plasmoid is fighting on your behalf
 	}
 
 	PlutoWhipBuff: {
@@ -8105,7 +8105,7 @@ Buffs: {
 
 	PolymerSlimeBuff: {
 		DisplayName: Polymer Slime Buff
-		Description: Mods.HendecamMod.Buffs.PolymerSlimeBuff.Description
+		Description: A Polymer Slime is fighting on your behalf
 	}
 
 	RadPoisoning: {
@@ -8125,12 +8125,12 @@ Buffs: {
 
 	RainbowBloonBuff: {
 		DisplayName: Rainbow Bloon Buff
-		Description: Mods.HendecamMod.Buffs.RainbowBloonBuff.Description
+		Description: A Rainbow Bloon is fighting on your behalf
 	}
 
 	RedBloonBuff: {
 		DisplayName: Red Bloon Buff
-		Description: Mods.HendecamMod.Buffs.RedBloonBuff.Description
+		Description: A Red Bloon is fighting on your behalf
 	}
 
 	RedneckTag: {
@@ -8140,17 +8140,17 @@ Buffs: {
 
 	RudeBusterCooldown: {
 		DisplayName: Rude Buster Cooldown
-		Description: Mods.HendecamMod.Buffs.RudeBusterCooldown.Description
+		Description: You're not feeling very rude, buster.
 	}
 
 	Sauced: {
 		DisplayName: Sauced
-		Description: Mods.HendecamMod.Buffs.Sauced.Description
+		Description: Too sauced to feel pain...
 	}
 
 	SlimeMinesBuff: {
 		DisplayName: Slime Mines Buff
-		Description: Mods.HendecamMod.Buffs.SlimeMinesBuff.Description
+		Description: A slime mine occupies your summon slots
 	}
 
 	SmoothTag: {
@@ -8170,7 +8170,7 @@ Buffs: {
 
 	SuperCeramBuff: {
 		DisplayName: Super Ceram Buff
-		Description: Mods.HendecamMod.Buffs.SuperCeramBuff.Description
+		Description: A Super Ceramic Bloon is fighting on your behalf
 	}
 
 	VerdantTag: {
@@ -8185,12 +8185,12 @@ Buffs: {
 
 	WeaponImbueOil: {
 		DisplayName: Weapon Imbue Oil
-		Description: Mods.HendecamMod.Buffs.WeaponImbueOil.Description
+		Description: Melee attacks inflict Oiled
 	}
 
 	WeaponImbueShadowflame: {
 		DisplayName: Weapon Imbue Shadowflame
-		Description: Mods.HendecamMod.Buffs.WeaponImbueShadowflame.Description
+		Description: Melee attacks inflict Shadowflame
 	}
 
 	PoopSocked: {

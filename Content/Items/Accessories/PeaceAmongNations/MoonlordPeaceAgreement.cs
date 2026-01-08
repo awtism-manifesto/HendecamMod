@@ -1,7 +1,8 @@
 ﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Accessories.NastyPatty;
+using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -54,6 +55,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
             recipe.AddIngredient(ItemID.MoonLordTrophy, 1);
             recipe.AddIngredient(ItemID.AncientCultistTrophy, 1);
             recipe.AddIngredient<FriendCore>(1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();

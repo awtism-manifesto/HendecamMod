@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Build.Evaluation;
 using Terraria;
 using Terraria.ID;
@@ -42,6 +43,10 @@ namespace HendecamMod.Content.Items.Weapons
         {
             Recipe recipe = CreateRecipe(25);
             recipe.AddIngredient(ItemID.StoneBlock, 100);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+            recipe = CreateRecipe();
+            recipe.AddIngredient<StoneBar>();
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

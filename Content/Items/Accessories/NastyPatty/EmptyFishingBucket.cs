@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -34,8 +35,9 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
         public override void AddRecipes()
             {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+          
             recipe.AddIngredient(ItemID.EmptyBucket, 1);
+            recipe.AddIngredient<PlasticScrap>(10);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
             }

@@ -1,4 +1,4 @@
-﻿
+﻿using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -38,8 +38,8 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
         public override void AddRecipes()
             {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Placeables.SteelBar>(5);
+           
+            recipe.AddIngredient<SteelBar>(5);
             recipe.AddIngredient(ItemID.BeeWax, 30);
             recipe.AddIngredient(ItemID.MagmaStone, 1);
             recipe.AddTile(TileID.HoneyDispenser);

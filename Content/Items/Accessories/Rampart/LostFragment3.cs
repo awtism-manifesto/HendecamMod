@@ -1,10 +1,11 @@
 ﻿
+using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
 {   
@@ -35,6 +36,7 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ApprenticeStaffT3);
             recipe.AddIngredient(ItemID.DD2ExplosiveTrapT3Popper);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.Tables);
             recipe.Register();
         }

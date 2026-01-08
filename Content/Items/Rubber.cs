@@ -17,9 +17,14 @@ namespace HendecamMod.Content.Items
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe(2);
-            recipe.AddIngredient<Items.PoorMahogany>(9);
+            recipe.AddIngredient<PoorMahogany>(9);
             recipe.AddTile(TileID.CookingPots);
 			recipe.Register();
-		}
+            recipe = CreateRecipe(2);
+            recipe.AddIngredient<PoorMahogany>();
+            recipe.AddIngredient<Polymer>();
+            recipe.AddTile(TileID.CookingPots);
+            recipe.Register();
+        }
 	}
 }

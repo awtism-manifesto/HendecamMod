@@ -111,7 +111,7 @@ namespace HendecamMod.Content.Projectiles
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(9, 9).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.83f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
                 Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
                 new Vector2(-9, 9).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),

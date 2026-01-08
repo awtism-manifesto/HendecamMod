@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -41,7 +42,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.DivingHelmet, 1);
-            recipe.AddIngredient(ItemID.SlimeBlock, 10);
+            recipe.AddIngredient<Rubber>(25);
             recipe.AddTile(TileID.Solidifier);
             recipe.Register();
             }

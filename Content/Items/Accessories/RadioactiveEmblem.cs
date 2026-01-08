@@ -43,7 +43,7 @@ namespace HendecamMod.Content.Items.Accessories
             };
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Irradiates all enemies you hit")
+            line = new TooltipLine(Mod, "Face", "Causes your attacks to irradiate any enemy you hit")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -92,7 +92,7 @@ namespace HendecamMod.Content.Items.Accessories
             // - Adding 4 base damage.
             // - Adding 5 flat damage.
             // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 124f;
+            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 122f;
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 108f;
             player.GetCritChance(DamageClass.Generic) += CritBonus;
             player.statLifeMax2 = (int) (player.statLifeMax2* 0.85f);
@@ -113,9 +113,9 @@ namespace HendecamMod.Content.Items.Accessories
             }
             else
             {
-                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
-                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
-                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 120);
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 280);
+                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 540);
             }
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
@@ -126,9 +126,9 @@ namespace HendecamMod.Content.Items.Accessories
             }
             else
             {
-                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
-                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
-                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+                target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 120);
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 280);
+                target.AddBuff(ModContent.BuffType<RadPoisoning>(), 540);
             }
         }
     }

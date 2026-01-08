@@ -73,7 +73,7 @@ namespace HendecamMod.Content.Items
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "");
             tooltips.Add(line);
-            line = new TooltipLine(Mod, "Face", "unobtainable")
+            line = new TooltipLine(Mod, "Face", "Does everything it can to escape this world")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

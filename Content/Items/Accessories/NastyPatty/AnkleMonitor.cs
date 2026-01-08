@@ -42,10 +42,10 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
         public override void AddRecipes()
             {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+           
             recipe.AddIngredient(ItemID.IronCrate, 1);
             recipe.AddIngredient(ItemID.Ruby, 1);
-            recipe.AddIngredient(ItemID.Silk, 2);
+            recipe.AddIngredient<Polymer>(10);
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
             }

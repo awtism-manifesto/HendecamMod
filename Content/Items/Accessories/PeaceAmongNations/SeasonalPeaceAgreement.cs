@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -48,6 +49,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
             recipe.AddIngredient(ItemID.EverscreamTrophy, 1);
             recipe.AddIngredient(ItemID.MourningWoodTrophy, 1);
             recipe.AddIngredient<FriendCore>(1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();

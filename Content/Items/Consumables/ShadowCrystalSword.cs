@@ -1,7 +1,8 @@
 ﻿
-using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -17,18 +18,18 @@ namespace HendecamMod.Content.Items.Consumables
             Item.width = 32;
             Item.height = 32;
             Item.value = Item.sellPrice(silver: 1000);
-            Item.rare = ItemRarityID.Orange;
-            Item.accessory = true;
+            Item.rare = ModContent.RarityType<Seizure>();
+
 
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 12;
+            Item.useAnimation = 12;
             Item.autoReuse = true;
             Item.UseSound = SoundID.Shatter;
             Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             Item.maxStack = Item.CommonMaxStack;
             Item.damage = 1120;
-            Item.knockBack = 40.0f;
+            Item.knockBack = 17.5f;
             Item.consumable = true;
             Item.ChangePlayerDirectionOnShoot = true;
             Item.buffType = BuffID.Bleeding; // Specify an existing buff to be applied when used.
@@ -45,9 +46,9 @@ namespace HendecamMod.Content.Items.Consumables
             }
         public override void AddRecipes()
             {
-            Recipe recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(10);
             recipe = CreateRecipe();
-            recipe.AddIngredient<LoreAccurateBlackshard>(10);
+            recipe.AddIngredient<LoreAccurateBlackshard>();
             recipe.AddTile(TileID.GlassKiln);
             recipe.Register();
             }

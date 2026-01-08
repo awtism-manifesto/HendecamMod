@@ -150,7 +150,7 @@ namespace HendecamMod.Content.Items.Accessories
             player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 107f;
             player.GetAttackSpeed(DamageClass.Summon) += AttackSpeedBonus / 107f;
             player.GetAttackSpeed<StupidDamage>() += AttackSpeedBonus / 107f;
-            player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 98f;
+            player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 90f;
 
             player.GetArmorPenetration(DamageClass.Melee) += ArmorPenBonus;
             player.GetArmorPenetration(DamageClass.Ranged) += ArmorPenBonus;

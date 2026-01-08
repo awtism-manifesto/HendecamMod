@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,6 +40,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
             recipe.AddIngredient(ItemID.SkeletronPrimeTrophy, 1);
             recipe.AddIngredient(ItemID.DestroyerTrophy, 1);
             recipe.AddIngredient<FriendCore>(1);
+            recipe.AddIngredient<Paper>();
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();

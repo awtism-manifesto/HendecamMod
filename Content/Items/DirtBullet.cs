@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items
 {
@@ -66,6 +67,10 @@ namespace HendecamMod.Content.Items
             Recipe recipe = CreateRecipe(50);
             recipe.AddIngredient(ItemID.DirtBlock, 5);
           
+            recipe.Register();
+            recipe = CreateRecipe(50);
+            recipe.AddIngredient<DirtBar>();
+
             recipe.Register();
         }
     }

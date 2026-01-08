@@ -1,6 +1,8 @@
 ﻿
-using System.Collections.Generic;
+using HendecamMod.Content.Items.Accessories.Rampart;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -37,11 +39,11 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+           
             recipe.AddIngredient(ItemID.RagePotion, 10);
             recipe.AddIngredient(ItemID.WrathPotion, 10);
-            recipe.AddIngredient(ItemID.Book, 1);
-            recipe.AddTile(TileID.Bookcases);
+            recipe.AddIngredient<Paper>();
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
     }
