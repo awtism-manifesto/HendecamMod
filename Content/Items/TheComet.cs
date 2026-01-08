@@ -1,15 +1,16 @@
-﻿using System;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
 
 
 namespace HendecamMod.Content.Items
@@ -107,7 +108,7 @@ namespace HendecamMod.Content.Items
             Recipe recipe = CreateRecipe();
             
             recipe.AddIngredient(ItemID.MeteoriteBar, 20);
-           
+            recipe.AddIngredient<LunarGem>(10);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 

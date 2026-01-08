@@ -127,8 +127,8 @@ namespace HendecamMod.Content.Items.Armor
         {
 
             player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
-            player.setBonus = SetBonusText.Value;
-           
+            player.setBonus = "+15% max life";
+
         }
     }
 }

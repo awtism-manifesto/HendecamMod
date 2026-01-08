@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor
     public class SuperCeramicFedora : ModItem
     {
         public static readonly int AdditiveStupidDamageBonus = 13;
-        public static readonly int StupidAttackSpeedBonus = 17;
+        public static readonly int StupidAttackSpeedBonus = 10;
         public static readonly int StupidCritBonus =9;
         public static LocalizedText SetBonusText { get; private set; }
 
@@ -111,8 +111,8 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = SetBonusText.Value;
-            player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 117f;
+            player.setBonus = "10% increased stupid attack speed";
+            player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 110f;
         }
     }
 }

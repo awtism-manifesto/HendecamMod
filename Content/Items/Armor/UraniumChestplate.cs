@@ -103,13 +103,11 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.lifeRegen += -2;
-            player.setBonus = SetBonusText.Value;
+           
             
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 113f;
-            player.armorEffectDrawShadow = true;
-            player.armorEffectDrawOutlines = true;
-            player.armorEffectDrawOutlinesForbidden = true;
-            
+            player.setBonus = "Increases attack speed at the cost of life regen";
+
         }
     }
 }

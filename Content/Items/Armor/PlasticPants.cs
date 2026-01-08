@@ -101,7 +101,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Increases stupid class armor penetration by 5";
         }
     }
 }

@@ -20,7 +20,7 @@ namespace HendecamMod.Content.Global
 
         public override void OnKill(NPC npc)
         {
-            if (!NPC.downedDeerclops)
+            if (!Main.hardMode)
             {
                 ModContent.GetInstance<MintalSystem>().BlessWorldWithMintal();
 

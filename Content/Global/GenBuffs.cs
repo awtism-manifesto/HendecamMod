@@ -2590,6 +2590,46 @@ namespace HendecamMod.Content.GlobalItems
 
 
     }
+    public class NightmareSigma : GlobalItem
+    {
+
+        public override bool AppliesToEntity(Item item, bool lateInstantiation)
+        {
+            return item.type == ItemID.NightmarePickaxe;
+        }
+
+        public override void SetDefaults(Item item)
+        {
+
+
+            item.pick = 70;
+
+
+
+        }
+
+
+    }
+    public class DeathbringerSigma : GlobalItem
+    {
+
+        public override bool AppliesToEntity(Item item, bool lateInstantiation)
+        {
+            return item.type == ItemID.DeathbringerPickaxe;
+        }
+
+        public override void SetDefaults(Item item)
+        {
+
+
+            item.pick = 70;
+
+
+
+        }
+
+
+    }
     public class Gemz1 : GlobalItem
     {
 

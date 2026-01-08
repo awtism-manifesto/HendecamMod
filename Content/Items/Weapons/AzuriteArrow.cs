@@ -32,7 +32,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.shoot = ModContent.ProjectileType<AzuriteArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
             Item.shootSpeed = 0.67f; // The speed of the projectile.
             Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Orange;
             Item.ArmorPenetration = 5;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)

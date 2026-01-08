@@ -28,7 +28,7 @@ namespace HendecamMod.Content.Global
 
         public override void OnKill(NPC npc)
         {
-            if (ApacheElfShipDown.downedApacheElfShip)
+            if (!ApacheElfShipDown.downedApacheElfShip)
             {
                 ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
               

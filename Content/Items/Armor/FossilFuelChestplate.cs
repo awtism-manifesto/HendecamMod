@@ -106,7 +106,7 @@ namespace HendecamMod.Content.Items.Armor
             player.maxFallSpeed = player.maxFallSpeed * 1.05f;
             player.wingRunAccelerationMult += 1.2f;
             player.wingAccRunSpeed += 1.2f;
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Increased flight time and aerial mobility";
         }
     }
 }

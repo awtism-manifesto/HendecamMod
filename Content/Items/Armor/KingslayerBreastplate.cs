@@ -115,9 +115,9 @@ namespace HendecamMod.Content.Items.Armor
             }
 
 
-           
-            player.setBonus = SetBonusText.Value;
-            
+
+            player.setBonus = "Slightly increases all stats during a boss fight or invasion";
+
         }
     }
 }

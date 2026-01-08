@@ -106,7 +106,7 @@ namespace HendecamMod.Content.Items.Armor
         {
             player.statManaMax2 += MaxManaIncrease;
 
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+50 max mana";
         }
     }
 }

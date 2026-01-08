@@ -103,8 +103,8 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.lifeRegen += 11;
-           
-            player.setBonus = SetBonusText.Value;
+
+            player.setBonus = "Massively increased life regen";
         }
     }
 }

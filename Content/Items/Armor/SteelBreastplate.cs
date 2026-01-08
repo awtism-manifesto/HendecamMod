@@ -85,7 +85,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.statDefense += 5;
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+5 defense";
         }
     }
 }

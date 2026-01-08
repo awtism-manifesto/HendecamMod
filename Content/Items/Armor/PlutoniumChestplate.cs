@@ -107,9 +107,9 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            
-            player.setBonus = SetBonusText.Value;
-            player.statLifeMax2 = (int)(player.statLifeMax2 * 0.875f);
+
+            player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
+            player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
             
 

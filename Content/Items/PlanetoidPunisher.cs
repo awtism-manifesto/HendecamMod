@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using HendecamMod.Content.Items.Materials;
 
 
 namespace HendecamMod.Content.Items
@@ -141,6 +142,7 @@ namespace HendecamMod.Content.Items
                
                 recipe.AddIngredient(MagickStaff.Type);
                 recipe.AddIngredient(ItemID.SpaceGun);
+                recipe.AddIngredient<LunarGem>(10);
                 recipe.AddTile(TileID.Anvils);
                 recipe.Register();
             }
@@ -155,6 +157,7 @@ namespace HendecamMod.Content.Items
                 recipe.AddIngredient(ItemID.Ruby);
                 recipe.AddIngredient(ItemID.Amber);
                 recipe.AddIngredient(ItemID.Diamond);
+                recipe.AddIngredient<LunarGem>(10);
                 recipe.AddTile(TileID.Anvils);
                 recipe.Register();
 

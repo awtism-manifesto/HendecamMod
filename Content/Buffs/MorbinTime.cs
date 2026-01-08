@@ -10,8 +10,8 @@ namespace HendecamMod.Content.Buffs
     public class MorbinTime : ModBuff
     {
         public static readonly int AttackSpeedBonus = 11;
-        public static readonly int CritBonus = 11;
-        public static readonly int AdditiveDamageBonus = 11;
+        public static readonly int CritBonus = 17;
+        public static readonly int AdditiveDamageBonus = 23;
 
 
 
@@ -26,8 +26,8 @@ namespace HendecamMod.Content.Buffs
                 Main.dust[dust].noGravity = true;
             }
             player.GetCritChance(DamageClass.Generic) += CritBonus;
-            player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 113f;
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
+            player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
+            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
             player.statDefense += 11;
         }
     }

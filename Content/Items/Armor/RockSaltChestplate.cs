@@ -102,7 +102,7 @@ namespace HendecamMod.Content.Items.Armor
         {
             player.lifeRegen += 5;
             player.noFallDmg = true;
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Negates fall damage and increases life regen";
         }
     }
 }

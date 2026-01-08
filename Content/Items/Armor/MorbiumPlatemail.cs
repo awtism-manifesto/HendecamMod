@@ -85,7 +85,7 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Causes the player to be on morbin time whenever a boss or invasion appears";
             if (NPC.AnyDanger())
             {
                 player.AddBuff(ModContent.BuffType<MorbinTime>(), 666);

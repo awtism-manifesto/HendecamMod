@@ -108,7 +108,7 @@ namespace HendecamMod.Content.Items.Armor
             player.armorEffectDrawOutlines = true;
             player.armorEffectDrawOutlinesForbidden = true;
 
-            player.setBonus = SetBonusText.Value;
+           
         }
     }
 }

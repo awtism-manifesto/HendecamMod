@@ -104,7 +104,7 @@ namespace HendecamMod.Content.Items.Armor
         {
            
 
-            player.setBonus = SetBonusText.Value;
+          
         }
     }
 }

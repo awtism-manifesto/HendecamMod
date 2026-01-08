@@ -95,7 +95,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.statLifeMax2 = (int)(player.statLifeMax2 * 1.25f);
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+25% max life";
         }
     }
 }

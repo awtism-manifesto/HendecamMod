@@ -23,7 +23,7 @@ namespace HendecamMod.Content.Global
 
         public override void OnKill(NPC npc)
         {
-            if (!NPC.downedDeerclops)
+            if (!NPC.downedPlantBoss)
             {
                 ModContent.GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
 

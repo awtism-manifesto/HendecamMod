@@ -104,7 +104,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.meleeScaleGlove = true;
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Increased melee weapon size";
         }
     }
 }

@@ -112,8 +112,8 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            
-            player.setBonus = SetBonusText.Value;
+
+            player.setBonus = "Increased life and mana regen";
             player.lifeRegen += 5;
             player.manaRegenBonus += 25;
             

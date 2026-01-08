@@ -38,7 +38,7 @@ namespace HendecamMod.Content.Items
            
 
             Item.shoot = ModContent.ProjectileType<SandShot>(); // ID of the projectiles the sword will shoot
-            Item.shootSpeed = 11.1f; // Speed of the projectiles the sword will shoot
+            Item.shootSpeed = 15.25f; // Speed of the projectiles the sword will shoot
 
             // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
             // Item.attackSpeedOnlyAffectsWeaponAnimation = true;

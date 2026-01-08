@@ -82,7 +82,7 @@ namespace HendecamMod.Content.Items.Weapons
             var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "The backwards beam deals more damage")
+            line = new TooltipLine(Mod, "Face", "The backwards bolt deals more damage")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

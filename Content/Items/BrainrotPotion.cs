@@ -86,6 +86,12 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient< PlasticScrap>();
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
+
+            recipe = CreateRecipe(100);
+            recipe.AddIngredient(ItemID.BrainOfConfusion);
+            
+            recipe.AddTile(TileID.Kegs);
+            recipe.Register();
         }
 
     }

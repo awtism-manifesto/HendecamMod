@@ -102,7 +102,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.endurance = 1f - 0.89f * (1f - player.endurance);
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "+11% damage reduction";
         }
     }
 }

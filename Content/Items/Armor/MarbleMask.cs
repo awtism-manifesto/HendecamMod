@@ -104,7 +104,7 @@ namespace HendecamMod.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
            
-            player.setBonus = SetBonusText.Value;
+          
         }
     }
 }

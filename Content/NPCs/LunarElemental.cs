@@ -29,7 +29,7 @@ namespace HendecamMod.Content.NPCs
         public override void SetDefaults()
         {
             NPC.width = 34;
-            NPC.height = 24;
+            NPC.height = 40;
             NPC.damage = 27;
             NPC.defense = 8;
             NPC.lifeMax = 130;
@@ -45,10 +45,17 @@ namespace HendecamMod.Content.NPCs
             BannerItem = ModContent.ItemType<AquaticSlimeBanner>();
 
         }
+        public override void AI()
+        {
+            Lighting.AddLight(NPC.Center, 0.1f, 0.67f, 0.67f);
 
+
+
+        }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), 5, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), 1, 2, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemID.CelestialMagnet, 20));
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)

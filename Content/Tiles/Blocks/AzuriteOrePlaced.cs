@@ -36,11 +36,18 @@ namespace HendecamMod.Content.Tiles.Blocks
             DustType = DustID.BlueTorch;
             HitSound = SoundID.Tink;
             MineResist = 2f;
-            MinPick = 65;
+            MinPick = 70;
             
         }
 
-       
-       
+        public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+        {
+
+            r = 0.1f;
+            g = 0.1f;
+            b = 0.75f;
+
+        }
+
     }
 }

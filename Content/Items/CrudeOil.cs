@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items
 {
@@ -41,10 +42,16 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe(2);
 
-            recipe.AddIngredient<Items.OilBlock>();
+            recipe.AddIngredient<OilBlock>();
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
 
+            recipe = CreateRecipe();
+
+            recipe.AddIngredient<CoalLump>(10);
+            recipe.AddIngredient(ItemID.BottledWater, 2);
+            recipe.AddTile(TileID.CookingPots);
+            recipe.Register();
 
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SmoothCoal", out ModItem SmoothCoal))
 
