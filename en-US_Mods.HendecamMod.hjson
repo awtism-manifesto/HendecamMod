@@ -7599,6 +7599,11 @@ Items: {
 		DisplayName: Flask Of Radiation
 		Tooltip: ""
 	}
+
+	AlpineTreasureBag: {
+		Tooltip: ""
+		DisplayName: Alpine Treasure Bag
+	}
 }
 
 Tiles: {
