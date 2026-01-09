@@ -1,11 +1,14 @@
-﻿using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using HendecamMod.Common.Systems;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
+using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -67,6 +70,40 @@ namespace HendecamMod.Content.NPCs.Bosses
             Main.npcFrameCount[Type] = 4;
             AnimationType = NPCID.BlazingWheel;
             }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            // Do NOT misuse the ModifyNPCLoot and OnKill hooks: the former is only used for registering drops, the latter for everything else
+
+            // The order in which you add loot will appear as such in the Bestiary. To mirror vanilla boss order:
+            // 1. Trophy (1/10 chance)
+            // 2. Classic Mode ("not expert")
+            // 3. Expert Mode (usually just the treasure bag)
+            // 4. Master Mode (relic first, pet last, everything else in between)
+
+            LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+            // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
+            int itemType = ModContent.ItemType<fivenato>();
+            var parameters = new DropOneByOne.Parameters()
+            {
+                ChanceNumerator = 1,
+                ChanceDenominator = 1,
+                MinimumStackPerChunkBase = 4,
+                MaximumStackPerChunkBase = 6,
+                MinimumItemDropsCount = 40,
+                MaximumItemDropsCount = 60,
+            };
+
+            notExpertRule.OnSuccess(new DropOneByOne(itemType, parameters));
+
+            npcLoot.Add(notExpertRule);
+
+            npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AlpineTreasureBag>()));
+
+            // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
+
+            // npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
+        }
         public override void OnKill()
             {
             var source2 = NPC.GetSource_FromAI();
