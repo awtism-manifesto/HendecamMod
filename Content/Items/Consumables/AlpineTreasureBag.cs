@@ -37,6 +37,7 @@ namespace HendecamMod.Content.Items.Consumables
         {
 
             itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ApexPlasmaCannon>(), 5));
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RazorRotors>(), 5));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<fivenato>(), 1, 60, 70));
         }
     }
