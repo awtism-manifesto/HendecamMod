@@ -84,7 +84,13 @@ namespace HendecamMod.Content.Poop
        
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-           
+            for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poop);
+                dust.noGravity = true;
+                dust.velocity *= 3.5f;
+                dust.scale *= 1.25f;
+            }
             target.immune[Projectile.owner] = 6;
             target.AddBuff(BuffID.Poisoned, 90);
             target.AddBuff(BuffID.Stinky, 900);

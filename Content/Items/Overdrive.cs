@@ -60,7 +60,7 @@ public class Overdrive : ModItem
         recipe.AddIngredient<TackSprayer>();
         recipe.AddIngredient<CyberneticGunParts>(2);
         recipe.AddIngredient(ItemID.Cog, 48);
-        recipe.AddIngredient<AstatineBar>(24);
+        recipe.AddIngredient<PlutoniumBar>(16);
 
 
         recipe.AddTile(TileID.MythrilAnvil);

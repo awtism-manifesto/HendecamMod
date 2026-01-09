@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items
 {
@@ -75,21 +76,20 @@ namespace HendecamMod.Content.Items
             tooltips.Add(line);
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
 
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<BlankCanvas>();
+            recipe.AddIngredient(ItemID.Minecart);
+            recipe.AddIngredient<Beer>(7);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
 
-       
+
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Materials;
 
 
 namespace HendecamMod.Content.Global
@@ -594,7 +595,7 @@ namespace HendecamMod.Content.Global
             {
 
                 npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
-
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AutismOrb>(), chanceDenominator: 5));
 
             }
             if (npc.type == NPCID.ScutlixRider)

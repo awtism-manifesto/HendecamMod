@@ -69,18 +69,7 @@ namespace HendecamMod.Content.Poop
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+           
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
@@ -88,6 +77,14 @@ namespace HendecamMod.Content.Poop
             // 60 frames = 1 second
             target.AddBuff(BuffID.Stinky, 900);
             target.AddBuff(BuffID.Poisoned, 180);
+            for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Poop);
+                dust.noGravity = true;
+                dust.velocity *= 7.5f;
+                dust.scale *= 1.25f;
+            }
+
         }
         public override void AddRecipes()
 		{

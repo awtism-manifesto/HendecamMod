@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Humanizer;
 using Microsoft.Build.Tasks.Deployment.ManifestUtilities;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories
 {
@@ -38,6 +39,9 @@ namespace HendecamMod.Content.Items.Accessories
            
             recipe.AddIngredient<SpiritProtectionCharm>();
             recipe.AddIngredient<AutismDiagnosis>();
+            recipe.AddIngredient<AutismOrb>(2);
+            recipe.AddIngredient<PlutoniumBar>(6);
+            recipe.AddIngredient<AstatineBar>(7);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
            
@@ -49,7 +53,7 @@ namespace HendecamMod.Content.Items.Accessories
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "+75 mana, 10% increased magic+stupid crit chance and +15% stupid damage");
+            var line = new TooltipLine(Mod, "Face", "+75 mana, 10% increased magic and stupid crit chance and +15% stupid damage");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "-Developer Item-")
@@ -60,18 +64,7 @@ namespace HendecamMod.Content.Items.Accessories
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+          
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

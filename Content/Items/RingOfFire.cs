@@ -60,7 +60,7 @@ public class RingOfFire : ModItem
         recipe.AddIngredient<HotShots>();
         recipe.AddIngredient<CyberneticGunParts>(2);
         recipe.AddIngredient(ItemID.LivingFireBlock, 48);
-        recipe.AddIngredient<AstatineBar>(24);
+        recipe.AddIngredient<PlutoniumBar>(16);
 
 
         recipe.AddTile(TileID.MythrilAnvil);

@@ -105,7 +105,7 @@ namespace HendecamMod.Content.Poop
         {
            
 
-            player.setBonus = SetBonusText.Value;
+           
         }
     }
 }

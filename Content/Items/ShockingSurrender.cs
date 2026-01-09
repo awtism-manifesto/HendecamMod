@@ -1,8 +1,10 @@
-﻿using System;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Projectiles;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items
 {
@@ -72,8 +74,13 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.Cascade);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
-            
 
+            recipe = CreateRecipe();
+            recipe.AddIngredient<TheBlueBall>();
+            recipe.AddIngredient(ItemID.Rally);
+            recipe.AddIngredient(ItemID.Cascade);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
 
 
 

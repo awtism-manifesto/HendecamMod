@@ -1033,7 +1033,7 @@ Mods: {
 			}
 
 			GiantBone: {
-				DisplayName: Giant Bone
+				DisplayName: Comically Large Bone
 				Tooltip: ""
 			}
 
@@ -3753,7 +3753,7 @@ Items: {
 	}
 
 	AA12: {
-		DisplayName: A A12
+		DisplayName: AA12
 		Tooltip: ""
 	}
 
@@ -4668,7 +4668,7 @@ Items: {
 	}
 
 	BadTrip: {
-		DisplayName: Bad Trip
+		DisplayName: Trippy Throw
 		Tooltip: ""
 	}
 
@@ -4753,7 +4753,7 @@ Items: {
 	}
 
 	BlackHole: {
-		DisplayName: Black Hole
+		DisplayName: Literally A Fucking Black Hole
 		Tooltip: ""
 	}
 
@@ -5313,7 +5313,7 @@ Items: {
 	}
 
 	GiantBone: {
-		DisplayName: Giant Bone
+		DisplayName: Comically Large Bone
 		Tooltip: ""
 	}
 
@@ -6658,7 +6658,7 @@ Items: {
 	}
 
 	TedGun: {
-		DisplayName: Ted Gun
+		DisplayName: Freedom Club's Freedom Dispenser
 		Tooltip: ""
 	}
 
@@ -7584,6 +7584,21 @@ Items: {
 		DisplayName: Golden Sigma
 		Tooltip: ""
 	}
+
+	FlaskOfFission: {
+		DisplayName: Flask Of Fission
+		Tooltip: ""
+	}
+
+	FlaskOfFusion: {
+		DisplayName: Flask Of Fusion
+		Tooltip: ""
+	}
+
+	FlaskOfRadiation: {
+		DisplayName: Flask Of Radiation
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -7838,6 +7853,21 @@ Buffs: {
 		DisplayName: Poop Socked
 		Description: Mods.HendecamMod.Buffs.PoopSocked.Description
 	}
+
+	WeaponImbueFission: {
+		DisplayName: Weapon Imbue Fission
+		Description: Mods.HendecamMod.Buffs.WeaponImbueFission.Description
+	}
+
+	WeaponImbueFusion: {
+		DisplayName: Weapon Imbue Fusion
+		Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
+	}
+
+	WeaponImbueRadiation: {
+		DisplayName: Weapon Imbue Radiation
+		Description: Mods.HendecamMod.Buffs.WeaponImbueRadiation.Description
+	}
 }
 
 NPCs: {
@@ -7902,7 +7932,7 @@ NPCs: {
 	}
 
 	River: {
-		DisplayName: River
+		DisplayName: Dumbass
 
 		TownNPCMood: {
 			Content: I am content.

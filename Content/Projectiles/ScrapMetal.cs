@@ -27,12 +27,12 @@ namespace HendecamMod.Content.Projectiles
             Projectile.hostile = false; // Can the projectile deal damage to the player?
             Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
             Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-            Projectile.timeLeft = 50; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+            Projectile.timeLeft = 45; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
             Projectile.alpha = 10; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
             Projectile.light = 0f; // How much light emit around the projectile
             Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
             Projectile.tileCollide = true; // Can the projectile collide with tiles?
-            Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
+            Projectile.extraUpdates = 3; // Set to above 0 if you want the projectile to update multiple time in a frame
             Projectile.usesLocalNPCImmunity = true;
 
             AIType = ProjectileID.PoisonDart; // Act exactly like default Bullet

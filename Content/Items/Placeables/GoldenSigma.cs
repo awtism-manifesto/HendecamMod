@@ -1,7 +1,8 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables
 {
@@ -21,12 +22,12 @@ namespace HendecamMod.Content.Items.Placeables
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-           
+            recipe.AddIngredient<BlankCanvas>(1);
             recipe.AddIngredient(ItemID.GoldBar, 4194304);
             recipe.AddTile(TileID.Loom);
             recipe.Register();
             recipe = CreateRecipe();
-
+            recipe.AddIngredient<BlankCanvas>(1);
             recipe.AddIngredient(ItemID.PlatinumBar, 4194304);
             recipe.AddTile(TileID.Loom);
             recipe.Register();

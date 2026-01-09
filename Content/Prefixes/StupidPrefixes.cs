@@ -102,7 +102,7 @@ namespace HendecamMod.Content.Prefixes
         // Modify the cost of items with this modifier with this function.
         public override void ModifyValue(ref float valueMult)
         {
-            valueMult *= 1f + 2.225f * Power;
+            valueMult *= 1f + 1.825f * Power;
         }
 
         // This is used to modify most other stats of items which have this modifier.

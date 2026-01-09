@@ -105,7 +105,7 @@ namespace HendecamMod.Content.Poop
         {
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeed / 110f;
             player.AddBuff(BuffID.Stinky, 1984);
-            player.setBonus = SetBonusText.Value;
+            player.setBonus = "Increases attack speed by 10% and makes the wearer INCREDIBLY stinky";
         }
     }
 }

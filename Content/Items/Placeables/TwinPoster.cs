@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Placeables
 {
@@ -39,28 +40,16 @@ namespace HendecamMod.Content.Items.Placeables
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
+            recipe.AddIngredient<BlankCanvas>(1);
+            recipe.AddIngredient(ItemID.PaperAirplaneB, 1);
             recipe.AddIngredient(ItemID.PaperAirplaneA, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
-            recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
-            recipe.AddIngredient(ItemID.PaperAirplaneB, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
+           
 
         }
     }

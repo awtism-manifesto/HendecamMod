@@ -55,6 +55,14 @@ namespace HendecamMod.Content.Poop
             target.AddBuff(BuffID.Stinky, 900);
             Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
             Projectile.damage = (int)(Projectile.damage * 0.5f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
+
+            for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poop);
+                dust.noGravity = true;
+                dust.velocity *= 7.5f;
+                dust.scale *= 1.25f;
+            }
         }
 
 
