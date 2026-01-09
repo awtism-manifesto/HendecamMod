@@ -7599,6 +7599,11 @@ Items: {
 		DisplayName: Flask Of Radiation
 		Tooltip: ""
 	}
+
+	RazorRotors: {
+		Tooltip: ""
+		DisplayName: Razor Rotors
+	}
 }
 
 Tiles: {
@@ -8480,4 +8485,6 @@ Projectiles: {
 	SockPoop.DisplayName: Sock Poop
 	ThrownPoop.DisplayName: Thrown Poop
 	BlueBallProjectile.DisplayName: Blue Ball Projectile
+	RazorRotorsProj.DisplayName: Razor Rotors Proj
+	RazorRotorThrown.DisplayName: Razor Rotor Thrown
 }
