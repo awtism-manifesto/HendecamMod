@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,7 +12,7 @@ namespace HendecamMod.Content.Tiles.Walls
         {
             Main.wallHouse[Type] = true;
 
-            DustType = DustID.Water_Jungle;
+            DustType = ModContent.DustType<MorbiumDust>();
 
             AddMapEntry(new Color(19, 15, 68));
         }

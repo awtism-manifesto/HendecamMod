@@ -8505,3 +8505,15 @@ Projectiles: {
 	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
 	SpecialGlitter.DisplayName: Special Glitter
 }
+
+Biomes: {
+	OasisUndergroundBiome: {
+		TownNPCDialogueName: the Oasis Underground Biome
+		DisplayName: Oasis Underground Biome
+	}
+
+	OasisSurfaceBiome: {
+		TownNPCDialogueName: the Oasis Surface Biome
+		DisplayName: Oasis Surface Biome
+	}
+}
