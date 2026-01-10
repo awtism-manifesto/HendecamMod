@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Dusts
 {
-    public class LimestoneDust : ModDust
+    public class UraniumDust : ModDust
     {
         public override string Texture => null;
 
