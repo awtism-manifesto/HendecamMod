@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Tiles.Blocks
 {
@@ -14,7 +15,7 @@ namespace HendecamMod.Content.Tiles.Blocks
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = true;
 
-            DustType = DustID.Stone;
+            DustType = ModContent.DustType<LimestoneDust>();
             HitSound = SoundID.Tink;
 
             AddMapEntry(new Color(204, 190, 163));

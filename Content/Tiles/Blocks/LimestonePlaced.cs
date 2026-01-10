@@ -1,14 +1,15 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Threading;
 using Terraria;
 using Terraria.Chat;
+using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using Terraria.GameContent.Generation;
 
 namespace HendecamMod.Content.Tiles.Blocks
 {
@@ -26,14 +27,13 @@ namespace HendecamMod.Content.Tiles.Blocks
             Main.tileMerge[TileID.Marble][Type] = true;
             Main.tileBlockLight[Type] = true;
 
-            DustType = DustID.Stone;
+            DustType = ModContent.DustType<LimestoneDust>();
             HitSound = SoundID.Tink;
 
             AddMapEntry(new Color(204, 190, 163));
 
         }
 
-        // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
         public class LimestoneSystem : ModSystem
         {
             public static LocalizedText MagnoliaOrePassMessage { get; private set; }
@@ -45,8 +45,6 @@ namespace HendecamMod.Content.Tiles.Blocks
                 BlessedWithThroarbiumOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithThroarbiumOreMessage)}");
             }
 
-            // This method is called from MinionBossBody.OnKill the first time the boss is killed.
-            // The logic is located here for organizational purposes.
             public void BlessWorldWithExampleOre()
             {
                 if (Main.netMode == NetmodeID.MultiplayerClient)
@@ -86,16 +84,10 @@ namespace HendecamMod.Content.Tiles.Blocks
             // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
             public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
             {
-                // Because world generation is like layering several images on top of each other, we need to do some steps between the original world generation steps.
-
-                // Most vanilla ores are generated in a step called "Shinies", so for maximum compatibility, we will also do this.
-                // First, we find out which step "Shinies" is.
                 int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Clay"));
 
                 if (ShiniesIndex != -1)
                 {
-                    // Next, we insert our pass directly after the original "Shinies" pass.
-                    // ExampleOrePass is a class seen bellow
                     tasks.Insert(ShiniesIndex + 1, new MagnoliaOrePass("Magnolia Mod Ores", 237.4298f));
                 }
             }
