@@ -7604,6 +7604,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Razor Rotors
 	}
+
+	AlpineTreasureBag: {
+		Tooltip: ""
+		DisplayName: Alpine Treasure Bag
+	}
+
+	AlpinePlushieGlitterbomb: {
+		DisplayName: Alpine Plushie Glitterbomb
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -7872,6 +7882,11 @@ Buffs: {
 	WeaponImbueRadiation: {
 		DisplayName: Weapon Imbue Radiation
 		Description: Mods.HendecamMod.Buffs.WeaponImbueRadiation.Description
+	}
+
+	AlpineTagBuff: {
+		DisplayName: Alpine Tag Buff
+		Description: Mods.HendecamMod.Buffs.AlpineTagBuff.Description
 	}
 }
 
@@ -8487,4 +8502,6 @@ Projectiles: {
 	BlueBallProjectile.DisplayName: Blue Ball Projectile
 	RazorRotorsProj.DisplayName: Razor Rotors Proj
 	RazorRotorThrown.DisplayName: Razor Rotor Thrown
+	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
+	SpecialGlitter.DisplayName: Special Glitter
 }

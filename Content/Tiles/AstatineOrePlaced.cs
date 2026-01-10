@@ -18,6 +18,10 @@ namespace HendecamMod.Content.Tiles
             Main.tileMerge[TileID.Crimstone][Type] = true;
             Main.tileMerge[TileID.Pearlstone][Type] = true;
             Main.tileMerge[TileID.LivingFire][Type] = true;
+
+            Main.tileMerge[ModContent.TileType<PlutoniumOrePlaced>()][Type] = true;
+         
+            Main.tileMerge[ModContent.TileType<UraniumTile>()][Type] = true;
             Main.tileBlockLight[Type] = true;
             Main.tileShine[Type] = 400;
             DustType = DustID.CrimsonTorch;

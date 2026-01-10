@@ -1,0 +1,72 @@
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+
+
+
+namespace HendecamMod.Content.Items.Weapons
+{
+   
+    public class AlpinePlushieGlitterbomb : ModItem
+    {
+        public override void SetDefaults()
+        {
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useAnimation = 21;
+            Item.useTime = 21;
+            Item.damage = 156;
+            Item.knockBack = 7.5f;
+            Item.width = 40;
+            Item.height = 40;
+            Item.shootSpeed = 15.5f;
+            Item.ArmorPenetration = 10;
+            Item.scale = 1f;
+            Item.noUseGraphic = true;
+            Item.UseSound = SoundID.Item1;
+            Item.rare = ItemRarityID.Cyan;
+            Item.value = Item.buyPrice(gold: 33); // Sell price is 5 times less than the buy price.
+            Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+            Item.shoot = ModContent.ProjectileType<AlpineGlitterbomb>();
+            Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
+            Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
+            Item.autoReuse = true;
+           
+        }
+
+      
+
+
+
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+            var line = new TooltipLine(Mod, "Face", "Throws a glitter bomb disguised as an Alpine plushie");
+            tooltips.Add(line);
+
+            line = new TooltipLine(Mod, "Face", "The shiny glitter causes your summons to focus hit enemies")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+            line = new TooltipLine(Mod, "Face", "'Huh, so that's why they won't tell us where glitter comes from'")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+
+
+
+        }
+       
+
+
+    }
+}

@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
@@ -6,14 +8,14 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Projectiles
+namespace HendecamMod.Content.Projectiles.Items
 {
-    public class IedThrown : ModProjectile
+    public class AlpineGlitterbomb : ModProjectile
     {
         public override void SetStaticDefaults()
         {
            
-           
+            ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
             // This set handles some things for us already:
             // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
@@ -27,11 +29,11 @@ namespace HendecamMod.Content.Projectiles
         }
         public override void SetDefaults()
         {
-            Projectile.width = 30;
-            Projectile.height = 30;
+            Projectile.width = 35;
+            Projectile.height = 35;
             Projectile.friendly = true;
             Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
             Projectile.light = 0.2f; // How much light emit around the projectile
             Projectile.usesLocalNPCImmunity = true;
             Projectile.extraUpdates = 1;
@@ -47,13 +49,10 @@ namespace HendecamMod.Content.Projectiles
             {
                 Projectile.PrepareBombToBlow();
             }
-            if (Projectile.owner == Main.myPlayer && Main.rand.NextBool(190))
-            {
-                Projectile.timeLeft = 5;
-            }
+           
 
 
-            Projectile.rotation += 0.275f;
+            Projectile.rotation += 0.18f;
             Projectile.ai[0] += 1f;
             if (Projectile.ai[0] >= 28f)
             {
@@ -84,7 +83,7 @@ namespace HendecamMod.Content.Projectiles
             // Resize the hitbox of the projectile for the blast "radius".
             // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
             // Measurements are in pixels, so 128 / 16 = 8 tiles.
-            Projectile.Resize(184, 184);
+            Projectile.Resize(244, 244);
             // Set the knockback of the blast.
             // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
             Projectile.knockBack = 8f;
@@ -101,25 +100,42 @@ namespace HendecamMod.Content.Projectiles
 
             // Resize the projectile again so the explosion dust and gore spawn from the middle.
             // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
-            Projectile.Resize(155, 155);
+            Projectile.Resize(245, 245);
 
             // Spawn a bunch of smoke dusts.
             for (int i = 0; i < 10; i++)
             {
-                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Iron, 0f, 0f, 100, default, 1.5f);
+                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons, 0f, 0f, 100, default, 0.5f);
                 smokeDust.velocity *= 13.5f;
                 smokeDust.noGravity = true;
-                Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Lead, 0f, 0f, 100, default, 1.5f);
+                Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowSpray, 0f, 0f, 100, default, 0.5f);
                 smoke3Dust.velocity *= 11.25f;
             }
+            for (int i = 0; i < 10; i++)
+            {
+                float rotation = MathHelper.ToRadians(i * 36f);
+                Vector2 velocity = Projectile.velocity.RotatedBy(rotation);
+                Vector2 position = Projectile.Center;
+
+                Projectile.NewProjectile(
+                    Projectile.GetSource_FromThis(),
+                    position,
+                    velocity,
+                    ModContent.ProjectileType<SpecialGlitter>(),
+                    Projectile.damage,
+                    Projectile.knockBack,
+                    Projectile.owner
+                );
+            }
+
 
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 20; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 3.5f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.UndergroundHallowedEnemies, 0f, 0f, 100, default, 0.5f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 9f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 100, default, 0.5f);
                 fireDust.velocity *= 3.5f;
             }
 
@@ -127,26 +143,12 @@ namespace HendecamMod.Content.Projectiles
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(BuffID.OnFire, 200);
+            target.AddBuff(ModContent.BuffType<AlpineTagBuff>(), 300);
            
+            Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
+
         }
 
-        // Rocket II explosion that damages tiles.
-        //if (Projectile.owner == Main.myPlayer) {
-        //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7
-
-        //	int minTileX = (int)(Projectile.Center.X / 16f - blastRadius);
-        //	int maxTileX = (int)(Projectile.Center.X / 16f + blastRadius);
-        //	int minTileY = (int)(Projectile.Center.Y / 16f - blastRadius);
-        //	int maxTileY = (int)(Projectile.Center.Y / 16f + blastRadius);
-
-        // Make sure the tiles are inside the world.
-        // Utils.ClampWithinWorld(ref minTileX, ref maxTileX, ref minTileY, ref maxTileY);
-
-        // Check to see if the walls should be destroyed, too.
-        //	bool wallSplode = Projectile.ShouldWallExplode(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY);
-        // Do the damage.
-        //	Projectile.ExplodeTiles(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY, wallSplode);
-        //}
+        
     }
 }

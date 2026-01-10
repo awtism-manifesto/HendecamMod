@@ -66,7 +66,7 @@ namespace HendecamMod.Content.Projectiles
 
             { Projectile.rotation += -0.425f; }
 
-                Lighting.AddLight(Projectile.Center, 0.33f, 0.05f, 0.05f);
+                Lighting.AddLight(Projectile.Center, 0.5f, 0.05f, 0.05f);
 
           
             Projectile.velocity = Vector2.Zero;

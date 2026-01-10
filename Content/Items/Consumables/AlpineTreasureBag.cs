@@ -35,10 +35,12 @@ namespace HendecamMod.Content.Items.Consumables
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
-
-            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ApexPlasmaCannon>(), 5));
-            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RazorRotors>(), 5));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<fivenato>(), 1, 60, 70));
+            itemLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 7, 15));
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ApexPlasmaCannon>(), 3));
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RazorRotors>(), 3));
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AlpinePlushieGlitterbomb>(), 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<fivenato>(), 1, 100, 1000));
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<CandyHeart>(), 1));
         }
     }
 }

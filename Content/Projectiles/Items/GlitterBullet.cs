@@ -29,7 +29,7 @@ namespace HendecamMod.Content.Projectiles.Items
             Projectile.friendly = true;
             Projectile.penetrate = 9999;
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.timeLeft = 120;
+            Projectile.timeLeft = 200;
             Projectile.aiStyle = ProjAIStyleID.Arrow;
             AIType = ProjectileID.Bullet;
             Projectile.usesLocalNPCImmunity = true;
@@ -60,7 +60,7 @@ namespace HendecamMod.Content.Projectiles.Items
 
                 }
 
-            float maxDetectRadius = 999f; // The maximum radius at which a projectile can detect a target
+            float maxDetectRadius = 1499f; // The maximum radius at which a projectile can detect a target
 
             // A short delay to homing behavior after being fired
             if (DelayTimer < 2)

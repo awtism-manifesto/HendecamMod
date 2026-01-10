@@ -15,7 +15,7 @@ namespace HendecamMod.Content.Items
 
         public override void SetDefaults()
         {
-            Item.damage = 133;
+            Item.damage = 111;
             Item.knockBack = 0.5f;
             Item.useStyle = ItemUseStyleID.Rapier; // Makes the player do the proper arm motion
             Item.useAnimation = 30;

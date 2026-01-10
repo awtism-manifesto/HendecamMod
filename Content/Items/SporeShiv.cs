@@ -11,11 +11,7 @@ using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items
 {
-    /// <summary>
-    ///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-    ///     See Source code for Star Wrath projectile to see how it passes through tiles.
-    ///     For a detailed sword guide see <see cref="ExampleSword" />
-    /// </summary>
+    
     public class SporeShiv : ModItem
     {
         public override void SetDefaults()

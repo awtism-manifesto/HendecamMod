@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles
 {
-    // This example is similar to the Wooden Arrow projectile
+    
     public class RazorRotorThrown : ModProjectile
     {
         public override void SetStaticDefaults()
@@ -19,8 +19,8 @@ namespace HendecamMod.Content.Projectiles
 
         public override void SetDefaults()
         {
-            Projectile.width = 104; // The width of projectile hitbox
-            Projectile.height = 104; // The height of projectile hitbox
+            Projectile.width = 104;
+            Projectile.height = 104;
             Projectile.tileCollide = false;
             Projectile.arrow = false;
             Projectile.friendly = true;
@@ -51,29 +51,51 @@ namespace HendecamMod.Content.Projectiles
         {
             Player player = Main.player[Projectile.owner];
 
-            if (Projectile.timeLeft <= 37)
-            {
-                float length = Projectile.velocity.Length();
-                float targetAngle = Projectile.AngleTo(player.Center);
-                Vector2 position0 = Projectile.position;
-                Vector2 targetPosition0 = player.Center;
-                Vector2 direction = targetPosition0 - position0;
-                Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(360f)).ToRotationVector2() * length;
-            }
-            if (Projectile.timeLeft <= 13)
-            {
-               
-                    Projectile.velocity *= 1.07f;
-
-                
-            }
+          
+            Projectile.rotation += 0.425f;
 
             
+            Lighting.AddLight(Projectile.Center, 0.5f, 0.05f, 0.05f);
 
-            Projectile.rotation += 0.425f;
-           
+          
+            if (Projectile.ai[0] == 0f)
+            {
+               
+                if (Projectile.timeLeft <= 37)
+                {
+                    Projectile.ai[0] = 1f;
+                    Projectile.tileCollide = false;
+                }
+            }
+         
+            else
+            {
+                Projectile.timeLeft = 10;
+
+                Vector2 toPlayer = player.Center - Projectile.Center;
+                float distance = toPlayer.Length();
+
+                
+                if (distance < 24f)
+                {
+                    Projectile.Kill();
+                    return;
+                }
+
+               
+                toPlayer.Normalize();
+
+                float returnSpeed = 25f;  
+                float acceleration = 1.33f;
+
+                Projectile.velocity = (Projectile.velocity * acceleration + toPlayer * returnSpeed) / (acceleration + 1f);
+
+               
+                if (Projectile.velocity.Length() < returnSpeed)
+                    Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero) * returnSpeed;
+            }
         }
 
-        
+
     }
 }

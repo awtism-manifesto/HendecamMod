@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -26,7 +27,7 @@ namespace HendecamMod.Content.Projectiles.Items
             Projectile.aiStyle = -1;
             Projectile.friendly = true;
             Projectile.hostile = false;
-            Projectile.DamageType = DamageClass.Magic;
+            Projectile.DamageType = ModContent.GetInstance<RangedMagicDamage>();
             Projectile.penetrate = 11;
             Projectile.timeLeft = 195;
             Projectile.alpha = 100;
