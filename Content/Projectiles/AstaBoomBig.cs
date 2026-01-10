@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -157,10 +158,10 @@ namespace HendecamMod.Content.Projectiles
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 50; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonTorch, 0f, 0f, 100, default, 2.75f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.75f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 7f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith, 0f, 0f, 100, default, 1.2f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
                 fireDust.velocity *= 6f;
                 fireDust.noGravity = true;
             }

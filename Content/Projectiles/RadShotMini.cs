@@ -7,6 +7,7 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles
 {
@@ -32,28 +33,10 @@ namespace HendecamMod.Content.Projectiles
             Projectile.timeLeft = 120;
             AIType = ProjectileID.Bullet;
         }
-        public override bool PreDraw(ref Color lightColor)
-        {
-            Texture2D texture = TextureAssets.Projectile[Type].Value;
-
-            // Redraw the projectile with the color not influenced by light
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-            for (int k = 0; k < Projectile.oldPos.Length; k++)
-            {
-                Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
-            }
-
-            return true;
-        }
-        
+       
         public override void AI()
         {
-            // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
-            // like some examples do, this example has custom AI code that is better suited for modifying directly.
-            // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-            
+           
 
 
             if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -70,7 +53,7 @@ namespace HendecamMod.Content.Projectiles
 
 
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.1f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.1f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                     fireDust.velocity *= 0.08f;
                 }
@@ -84,19 +67,6 @@ namespace HendecamMod.Content.Projectiles
 
 
         }
-        public override void OnKill(int timeLeft)
-        {
-            
-
-
-           
-            for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
-            {
-                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);
-                dust.noGravity = true;
-                dust.velocity *= 1.5f;
-                dust.scale *= 0.9f;
-            }
-        }
+       
     }
 }

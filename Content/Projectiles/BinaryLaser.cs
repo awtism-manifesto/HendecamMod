@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -56,9 +57,25 @@ namespace HendecamMod.Content.Projectiles
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-           
-            target.immune[Projectile.owner] = 2;
-            
+
+
+
+            for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);
+                dust2.noGravity = true;
+                dust2.velocity *= 14.75f;
+                dust2.scale *= 1.75f;
+            }
+
+            for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>());
+                dust.noGravity = true;
+                dust.velocity *= 5.25f;
+                dust.scale *= 1.1f;
+            }
+
         }
         public override void OnKill(int timeLeft)
         {

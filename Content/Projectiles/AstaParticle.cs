@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -36,7 +37,7 @@ namespace HendecamMod.Content.Projectiles
 
             // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
             // the projectile to essentially behave the same way as the vanilla projectile.
-            Projectile.aiStyle = 1;
+            Projectile.aiStyle = -1;
             Projectile.timeLeft = 480;
             Projectile.tileCollide = false;
             Projectile.width = 1; // The width of projectile hitbox
@@ -60,10 +61,10 @@ namespace HendecamMod.Content.Projectiles
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.RedTorch, 0f, 0f, 100, default, 1.5f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
-                Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Wraith, 0f, 0f, 100, default, 1f);
+                Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1f);
                 chud2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
                 chud2Dust.velocity *= 0.05f;
             }

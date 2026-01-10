@@ -10,6 +10,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.DamageClasses;
 
 
 namespace HendecamMod.Content.Items
@@ -41,12 +42,12 @@ namespace HendecamMod.Content.Items
 
 
             // Weapon Properties
-            Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-            Item.damage = 39; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+            Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
             Item.ArmorPenetration = 5;
-
+            Item.mana = 11;
 
 
 

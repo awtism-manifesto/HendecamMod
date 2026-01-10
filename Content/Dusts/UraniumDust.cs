@@ -13,12 +13,12 @@ namespace HendecamMod.Content.Dusts
 
         public override void OnSpawn(Dust dust)
         {
-            int desiredVanillaDustTexture = DustID.Stone;
+            int desiredVanillaDustTexture = DustID.GreenFairy;
             int frameX = desiredVanillaDustTexture * 10 % 1000;
             int frameY = desiredVanillaDustTexture * 10 / 1000 * 30 + Main.rand.Next(3) * 10;
             dust.frame = new Rectangle(frameX, frameY, 8, 8);
             dust.noGravity = true;
-            dust.color = Color.Beige;
+            dust.color = Color.LimeGreen;
             dust.scale = 1f;
             dust.alpha = 100;
 
@@ -26,7 +26,7 @@ namespace HendecamMod.Content.Dusts
 
         public override Color? GetAlpha(Dust dust, Color lightColor)
         {
-            lightColor = Color.Lerp(lightColor, Color.Beige, 0.8f);
+            lightColor = Color.Lerp(lightColor, Color.LimeGreen, 0.8f);
             return new Color(lightColor.R, lightColor.G, lightColor.B, 25);
         }
 
@@ -45,7 +45,7 @@ namespace HendecamMod.Content.Dusts
                 {
                     Vector2 trailPosition = dust.position - dust.velocity * i;
                     float trailScale = dust.scale * (1f - i / 10f);
-                    Main.spriteBatch.Draw(Texture2D.Value, trailPosition - Main.screenPosition, dust.frame, drawColor, dust.rotation, new Vector2(4f, 4f), trailScale, SpriteEffects.None, 0f);
+                    Main.spriteBatch.Draw(Texture2D.Value, trailPosition - Main.screenPosition, dust.frame, drawColor, dust.rotation, new Vector2(3f, 3f), trailScale, SpriteEffects.None, 0f);
                 }
             }
 

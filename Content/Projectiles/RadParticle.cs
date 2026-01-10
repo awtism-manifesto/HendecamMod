@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles
 {
@@ -36,7 +37,7 @@ namespace HendecamMod.Content.Projectiles
             Projectile.timeLeft = 550;
             // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
             // the projectile to essentially behave the same way as the vanilla projectile.
-            Projectile.aiStyle = 1;
+            Projectile.aiStyle = -1;
             Projectile.extraUpdates = 0;
             Projectile.width = 1; // The width of projectile hitbox
             Projectile.height = 1; // The height of projectile hitbox
@@ -67,7 +68,7 @@ namespace HendecamMod.Content.Projectiles
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.CursedTorch, 0f, 0f, 100, default, 0.7f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
 

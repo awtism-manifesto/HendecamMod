@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -73,7 +74,7 @@ namespace HendecamMod.Content.Projectiles
                         // }
 
                         // Spawn smoke dusts at the back of the rocket.
-                        Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustID.GreenTorch, 0f, 0f, 100, default, 0.4f);
+                        Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.4f);
                         smokeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                         smokeDust.velocity *= 0.7f;
                     }
@@ -133,17 +134,17 @@ namespace HendecamMod.Content.Projectiles
             // Spawn a bunch of smoke dusts.
             for (int i = 0; i < 15; i++)
             {
-                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemEmerald, 0f, 0f, 100, default, 1.5f);
+                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.25f);
                 smokeDust.velocity *= 1.4f;
             }
 
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 25; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 3.5f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 2.75f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 7f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 1.5f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.25f);
                 fireDust.velocity *= 3f;
             }
 

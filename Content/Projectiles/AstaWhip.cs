@@ -1,13 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles
 {
@@ -103,9 +104,8 @@ namespace HendecamMod.Content.Projectiles
                 Projectile.FillWhipControlPoints(Projectile, points);
                 int pointIndex = Main.rand.Next(points.Count - 10, points.Count);
                 Rectangle spawnArea = Utils.CenteredRectangle(points[pointIndex], new Vector2(30f, 30f));
-                int dustType = DustID.CrimsonTorch;
-                if (Main.rand.NextBool(3))
-                    dustType = DustID.Wraith;
+                int dustType = ModContent.DustType<AstatineDust>();
+
 
                 // After choosing a randomized dust and a whip segment to spawn from, dust is spawned.
                 Dust dust = Dust.NewDustDirect(spawnArea.TopLeft(), spawnArea.Width, spawnArea.Height, dustType, 0f, 0f, 100, Color.Red);

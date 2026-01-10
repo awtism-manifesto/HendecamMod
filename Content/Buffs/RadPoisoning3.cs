@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -25,14 +26,14 @@ namespace HendecamMod.Content.Buffs
         {
             if (Main.rand.NextBool(5)) // 1-in-3 chance every tick
             {
-                int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.CrimsonTorch,
+                int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<AstatineDust>(),
                     npc.velocity.X * 1.29f, npc.velocity.Y * 1.29f, 70, default, 1.95f);
                 Main.dust[dust].noGravity = true;
             }
 
             if (Main.rand.NextBool(5)) // 1-in-3 chance every tick
             {
-                int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.Wraith,
+                int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<AstatineDust>(),
                     npc.velocity.X * 1.29f, npc.velocity.Y * 1.29f, 70, default, 2.15f);
                 Main.dust[dust].noGravity = true;
             }

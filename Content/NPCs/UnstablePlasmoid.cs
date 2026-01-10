@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -59,17 +60,21 @@ namespace HendecamMod.Content.NPCs
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-            // Common use is applying buffs/debuffs:
-            int buffType = ModContent.BuffType<RadPoisoning>();
-            int buff2Type = ModContent.BuffType<RadPoisoning2>();
+            for (int i = 0; i < 15; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<AstatineDust>());
+                dust.noGravity = true;
+                dust.velocity *= 11.25f;
+                dust.scale *= 1.75f;
+            }
+
+
+
+
             int buff3Type = ModContent.BuffType<RadPoisoning3>();
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
-            int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
-            target.AddBuff(buffType, timeToAdd);
-            int time2Add = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
-            target.AddBuff(buff2Type, time2Add);
+           
             int time3Add = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
             target.AddBuff(buff3Type, time3Add);
         }

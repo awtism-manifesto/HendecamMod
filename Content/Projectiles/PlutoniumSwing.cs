@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -94,7 +95,7 @@ namespace HendecamMod.Content.Projectiles
             {
                 // Original Excalibur color: Color.Gold, Color.White
                 Color dustColor = Color.Lerp(Color.Purple, Color.Magenta, Main.rand.NextFloat() * 0.3f);
-                Dust coloredDust = Dust.NewDustPerfect(Projectile.Center + dustRotation.ToRotationVector2() * (Main.rand.NextFloat() * 80f * Projectile.scale + 20f * Projectile.scale), DustID.PurpleTorch, dustVelocity * 1f, 100, dustColor, 0.4f);
+                Dust coloredDust = Dust.NewDustPerfect(Projectile.Center + dustRotation.ToRotationVector2() * (Main.rand.NextFloat() * 80f * Projectile.scale + 20f * Projectile.scale), ModContent.DustType<PlutoniumDust>(), dustVelocity * 1f, 100, dustColor, 0.4f);
                 coloredDust.fadeIn = 0.4f + Main.rand.NextFloat() * 0.15f;
                 coloredDust.noGravity = true;
             }
@@ -102,7 +103,7 @@ namespace HendecamMod.Content.Projectiles
             if (Main.rand.NextFloat() * 1.5f < Projectile.Opacity)
             {
                 // Original Excalibur color: Color.White
-                Dust.NewDustPerfect(dustPosition, DustID.TintableDustLighted, dustVelocity, 100, Color.DarkRed * Projectile.Opacity, 1.2f * Projectile.Opacity);
+                Dust.NewDustPerfect(dustPosition, DustID.TintableDustLighted, dustVelocity, 100, Color.Purple * Projectile.Opacity, 1.2f * Projectile.Opacity);
             }
 
             Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.

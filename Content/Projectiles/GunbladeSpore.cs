@@ -39,7 +39,7 @@ namespace HendecamMod.Content.Projectiles
 
             // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
             // the projectile to essentially behave the same way as the vanilla projectile.
-            Projectile.aiStyle = ProjectileID.BloodArrow;
+            Projectile.aiStyle = -1;
            Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
             Projectile.timeLeft = 250;
             Projectile.extraUpdates = 1;

@@ -1,8 +1,9 @@
-﻿using HendecamMod.Content.Global;
+﻿using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Global;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Buffs
 {
@@ -54,7 +55,7 @@ namespace HendecamMod.Content.Buffs
             {
                 if (Main.rand.NextBool(5))
                 {
-                    Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.CrimsonTorch);
+                    Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<AstatineDust>());
                     dust.velocity *= 0.5f;
                 }
             }
@@ -66,7 +67,7 @@ namespace HendecamMod.Content.Buffs
             {
                 if (Main.rand.NextBool(5))
                 {
-                    Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, DustID.CrimsonTorch);
+                    Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<AstatineDust>());
                     dust.velocity *= 0.5f;
                 }
             }

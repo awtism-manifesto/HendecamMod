@@ -118,11 +118,7 @@ namespace HendecamMod.Content.Projectiles
             float maximumAngle = MathHelper.PiOver4; // The maximumAngle is used to limit the rotation to create a dead zone.
             float coneRotation = Projectile.rotation + collisionRotation;
 
-            // Uncomment this line for a visual representation of the cone. The dusts are not perfect, but it gives a general idea.
-            // Dust.NewDustPerfect(Projectile.Center + coneRotation.ToRotationVector2() * coneLength, DustID.Pixie, Vector2.Zero);
-            // Dust.NewDustPerfect(Projectile.Center, DustID.BlueFairy, new Vector2((float)Math.Cos(maximumAngle) * Projectile.ai[0], (float)Math.Sin(maximumAngle)) * 5f); // Assumes collisionRotation was not changed
-
-            // First, we check to see if our first cone intersects the target.
+            
             if (targetHitbox.IntersectsConeSlowMoreAccurate(Projectile.Center, coneLength, coneRotation, maximumAngle))
             {
                 return true;

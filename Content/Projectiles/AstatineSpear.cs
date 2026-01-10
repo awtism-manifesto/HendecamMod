@@ -1,5 +1,6 @@
 ﻿
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -85,12 +86,12 @@ namespace HendecamMod.Content.Projectiles
                 // These dusts are added later, for the 'ExampleMod' effect
                 if (Main.rand.NextBool(3))
                 {
-                    Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonTorch, Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 1, Scale: 1.4f);
+                    Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 1, Scale: 1.4f);
                 }
 
-                if (Main.rand.NextBool(4))
+                if (Main.rand.NextBool(5))
                 {
-                    Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith, Alpha: 1, Scale: 1.2f);
+                    Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), Alpha: 1, Scale: 1.2f);
                 }
             }
 

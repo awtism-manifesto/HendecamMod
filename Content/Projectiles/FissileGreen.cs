@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -74,10 +75,10 @@ namespace HendecamMod.Content.Projectiles
 
 
 
-                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.CursedTorch, 0f, 0f, 100, default, 0.2f);
+                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.2f);
                         fireDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                         fireDust.noGravity = true;
-                        fireDust.velocity *= 1.55f;
+                        fireDust.velocity *= 1.15f;
                     }
                 }
 
@@ -133,40 +134,24 @@ namespace HendecamMod.Content.Projectiles
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 10; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 2f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 2f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 7f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 1f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1f);
                 fireDust.velocity *= 3f;
             }
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 8; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemEmerald, 0f, 0f, 100, default, 2f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 2f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 3f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemEmerald, 0f, 0f, 100, default, 1f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1f);
                 fireDust.velocity *= 1f;
             }
 
 
-            // Rocket II explosion that damages tiles.
-            //if (Projectile.owner == Main.myPlayer) {
-            //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7
-
-            //	int minTileX = (int)(Projectile.Center.X / 16f - blastRadius);
-            //	int maxTileX = (int)(Projectile.Center.X / 16f + blastRadius);
-            //	int minTileY = (int)(Projectile.Center.Y / 16f - blastRadius);
-            //	int maxTileY = (int)(Projectile.Center.Y / 16f + blastRadius);
-
-            // Make sure the tiles are inside the world.
-            // Utils.ClampWithinWorld(ref minTileX, ref maxTileX, ref minTileY, ref maxTileY);
-
-            // Check to see if the walls should be destroyed, too.
-            //	bool wallSplode = Projectile.ShouldWallExplode(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY);
-            // Do the damage.
-            //	Projectile.ExplodeTiles(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY, wallSplode);
-            //}
+           
         }
     }
 }

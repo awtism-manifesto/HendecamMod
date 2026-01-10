@@ -4,6 +4,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles
 {
@@ -46,7 +47,7 @@ namespace HendecamMod.Content.Projectiles
                     }
                     
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.PurpleTorch, 0f, 0f, 100, default, 0.9f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.9f);
                     fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 1.6f;

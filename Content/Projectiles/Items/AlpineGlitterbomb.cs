@@ -70,7 +70,7 @@ namespace HendecamMod.Content.Projectiles.Items
         // When the rocket hits a tile, NPC, or player, get ready to explode.
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
+           
             Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
             return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
         }

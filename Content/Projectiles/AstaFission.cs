@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -86,12 +87,12 @@ namespace HendecamMod.Content.Projectiles
                             posOffsetY = Projectile.velocity.Y * 2.5f;
                         }
 
-                        Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Wraith, 0f, 0f, 100, default, 1.3f);
+                        Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.3f);
                         fire2Dust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                         fire2Dust.noGravity = true;
                         fire2Dust.velocity *= 1.95f;
 
-                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.CrimsonTorch, 0f, 0f, 100, default, 2.5f);
+                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.5f);
                         fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                         fireDust.noGravity = true;
                         fireDust.velocity *= 1.95f;
@@ -146,17 +147,17 @@ namespace HendecamMod.Content.Projectiles
             // Spawn a bunch of smoke dusts.
             for (int i = 0; i < 35; i++)
             {
-                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith, 0f, 0f, 100, default, 1.5f);
+                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
                 smokeDust.velocity *= 2.4f;
             }
 
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 50; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonTorch, 0f, 0f, 100, default, 3.5f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.5f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 9f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonTorch, 0f, 0f, 100, default, 1.5f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
                 fireDust.velocity *= 4f;
             }
 

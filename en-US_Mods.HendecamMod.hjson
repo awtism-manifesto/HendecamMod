@@ -4658,7 +4658,7 @@ Items: {
 	}
 
 	Autocannon: {
-		DisplayName: Autocannon
+		DisplayName: AC-8 Autocannon
 		Tooltip: ""
 	}
 
@@ -5308,7 +5308,7 @@ Items: {
 	}
 
 	GeigersGambit: {
-		DisplayName: Geigers Gambit
+		DisplayName: Geiger's Gambit
 		Tooltip: ""
 	}
 

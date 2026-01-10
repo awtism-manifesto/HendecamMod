@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
@@ -47,8 +49,21 @@ namespace HendecamMod.Content.Items.Tools
             };
             tooltips.Add(line);
         }
-        
 
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 245);
+
+
+            for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PlutoniumDust>());
+                dust.noGravity = true;
+                dust.velocity *= 4.5f;
+                dust.scale *= 0.76f;
+
+            }
+        }
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()

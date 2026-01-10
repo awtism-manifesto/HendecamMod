@@ -52,7 +52,7 @@ namespace HendecamMod.Content.Items
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Medium-sized radioactive explosion");
+            var line = new TooltipLine(Mod, "Face", "Medium-sized radioactive explosion that inflicts severe Rad Poisoning");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "Does not destroy tiles")

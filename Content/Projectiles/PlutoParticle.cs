@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -8,10 +9,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles
 {
-    /// <summary>
-    /// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-    /// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
-    /// </summary>
+   
     public class PlutoParticle : ModProjectile
     {
         private NPC HomingTarget
@@ -36,7 +34,7 @@ namespace HendecamMod.Content.Projectiles
 
             // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
             // the projectile to essentially behave the same way as the vanilla projectile.
-            Projectile.aiStyle = 1;
+            Projectile.aiStyle = -1;
             Projectile.timeLeft = 180;
             Projectile.tileCollide = false;
             Projectile.width = 1; // The width of projectile hitbox
@@ -65,7 +63,7 @@ namespace HendecamMod.Content.Projectiles
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.PurpleTorch, 0f, 0f, 100, default, 1.25f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.05f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
 

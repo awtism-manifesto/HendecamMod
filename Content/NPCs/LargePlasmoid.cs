@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items;
 using Humanizer;
 using Terraria;
@@ -62,8 +63,13 @@ namespace HendecamMod.Content.NPCs
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-            // Common use is applying buffs/debuffs:
+            for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PlutoniumDust>());
+                dust.noGravity = true;
+                dust.velocity *= 9.5f;
+                dust.scale *= 1.55f;
+            }
 
             int buffType = ModContent.BuffType<RadPoisoning2>();
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;

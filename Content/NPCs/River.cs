@@ -253,11 +253,10 @@ namespace HendecamMod.Content.NPCs
             {
                 chat.Add(Language.GetTextValue("I like to go down to the glowing mushroom, I love it's absolute lack of crabs!....why are you staring at me like that?"));
             }
-            if (ModLoader.TryGetMod("RiverBullshitMod", out Mod RiverMerica))
-            {
+          
                 chat.Add(Language.GetTextValue("I've been having nightmares about this terrifying monster. It looks like an amalgamation of the bosses we've fought..."));
                 chat.Add(Language.GetTextValue("Why do we keep recruiting enemies to our town? this is like the sixth or seventh time, dude"));
-            }
+            
 
             chat.Add(Language.GetTextValue("c-crab...b-bannerss... Bwuh- Sorry, did you need something?"));
             chat.Add(Language.GetTextValue("Some may call this junk. Me? I call them treasures"));
@@ -445,6 +444,7 @@ namespace HendecamMod.Content.NPCs
             npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit2>(), chanceDenominator: 911, chanceNumerator: 2));
             npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit3>(), chanceDenominator: 42069, chanceNumerator: 15));
             npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit4>(), chanceDenominator: 420691984, chanceNumerator: 3996));
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<Bullshit5>(), chanceDenominator: 911676767, chanceNumerator: 67));
         }
       
 
