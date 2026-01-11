@@ -37,7 +37,7 @@ namespace HendecamMod.Content.Items.Weapons
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "Shots inflict Frostburn for 3 seconds");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")

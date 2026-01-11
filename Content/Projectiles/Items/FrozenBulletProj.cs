@@ -61,6 +61,7 @@ namespace HendecamMod.Content.Projectiles.Items
                 Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ice, 0f, 0f, 100, default, 1f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 5f;
+                target.AddBuff(BuffID.Frostburn, 180);
 
             }
         }
