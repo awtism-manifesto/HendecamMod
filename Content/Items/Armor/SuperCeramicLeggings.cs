@@ -1,10 +1,11 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor
 {
@@ -91,15 +92,20 @@ namespace HendecamMod.Content.Items.Armor
         {
             Recipe recipe = CreateRecipe();
             
-            recipe.AddIngredient(ItemID.MythrilBar, 10);
-            recipe.AddIngredient<CeramicSheet>(40);
-
+          
+            recipe.AddIngredient<CeramicSheet>(35);
+            recipe.AddIngredient<EbonceramicSheet>(15);
+           
+            recipe.AddIngredient<PearlceramicSheet>(15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
             recipe = CreateRecipe();
             
-            recipe.AddIngredient(ItemID.OrichalcumBar, 10);
-            recipe.AddIngredient<CeramicSheet>(40);
+           
+            recipe.AddIngredient<CeramicSheet>(35);
+           
+            recipe.AddIngredient<CrimceramicSheet>(15);
+            recipe.AddIngredient<PearlceramicSheet>(15);
 
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();

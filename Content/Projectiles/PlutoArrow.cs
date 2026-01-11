@@ -128,12 +128,12 @@ namespace HendecamMod.Content.Projectiles
 
             
             SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-            for (int i = 0; i < 15; i++) // Creates a splash of dust around the position the projectile dies.
+            for (int i = 0; i < 13; i++) // Creates a splash of dust around the position the projectile dies.
             {
                 Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
                 dust.noGravity = true;
-                dust.velocity *=8.5f;
-                dust.scale *= 3f;
+                dust.velocity *=5.75f;
+                dust.scale *= 1.8f;
             }
         }
     }

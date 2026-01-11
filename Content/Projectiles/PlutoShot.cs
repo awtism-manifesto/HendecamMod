@@ -92,8 +92,8 @@ namespace HendecamMod.Content.Projectiles
             {
                 Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
                 dust.noGravity = true;
-                dust.velocity *= 5.5f;
-                dust.scale *= 2.5f;
+                dust.velocity *= 3.85f;
+                dust.scale *= 1.15f;
             }
         }
     }

@@ -94,7 +94,7 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<EbonceramicSheet>(25);
+            
             recipe.AddIngredient<CrimceramicSheet>(25);
             recipe.AddIngredient<PearlceramicSheet>(25);
             recipe.AddIngredient(ItemID.HallowedBar, 7);
@@ -103,7 +103,16 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient<CeramicBloonFactory>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
+            recipe = CreateRecipe();
+            recipe.AddIngredient<EbonceramicSheet>(25);
            
+            recipe.AddIngredient<PearlceramicSheet>(25);
+            recipe.AddIngredient(ItemID.HallowedBar, 7);
+            recipe.AddIngredient(ItemID.SpectreBar, 7);
+            recipe.AddIngredient<Rubber>(105);
+            recipe.AddIngredient<CeramicBloonFactory>();
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
 
 
 

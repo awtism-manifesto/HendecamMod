@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -80,13 +81,13 @@ namespace HendecamMod.Content.Projectiles
                         posOffsetX = Projectile.velocity.X * 2.5f;
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
-                    Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustID.CrimsonTorch, 0f, 0f, 100, default, 1.15f);
+                    Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.15f);
                     chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                     chudDust.velocity *= 0.25f;
-                    Dust fireeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustID.PurpleTorch, 0f, 0f, 100, default, 1.16f);
+                    Dust fireeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.16f);
                     fireeDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                     fireeDust.velocity *= 0.25f;
-                    Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustID.CursedTorch, 0f, 0f, 100, default, 1.15f);
+                    Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.15f);
                     firee2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                     firee2Dust.velocity *= 0.25f;
 
