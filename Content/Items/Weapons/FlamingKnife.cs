@@ -14,7 +14,6 @@ namespace HendecamMod.Content.Items.Weapons
     {
         public override void SetDefaults()
         {
-            // Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
 
             // Common Properties
             Item.rare = ItemRarityID.Orange;
@@ -32,17 +31,14 @@ namespace HendecamMod.Content.Items.Weapons
             // Weapon Properties			
             Item.damage = 16;
             Item.knockBack = 5f;
-            Item.noUseGraphic = true; // The item should not be visible when used
-            Item.noMelee = true; // The projectile will do the damage and not the item
+            Item.noUseGraphic = true;
+            Item.noMelee = true;
             Item.DamageType = DamageClass.Throwing;
-
-            // Projectile Properties
             Item.shootSpeed = 12f;
-            Item.shoot = ModContent.ProjectileType<FlamingKnifeProjectile>(); // The projectile that will be thrown
+            Item.shoot = ModContent.ProjectileType<FlamingKnifeProjectile>();
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "Explodes every time it hits an enemy");
             tooltips.Add(line);
 
@@ -53,7 +49,6 @@ namespace HendecamMod.Content.Items.Weapons
             tooltips.Add(line);
 
         }
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(100);

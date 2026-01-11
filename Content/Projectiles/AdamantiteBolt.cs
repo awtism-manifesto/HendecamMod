@@ -15,28 +15,28 @@ namespace HendecamMod.Content.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
-            ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
            
         }
 
         public override void SetDefaults()
         {
-            Projectile.width = 15; // The width of projectile hitbox
-            Projectile.height = 15; // The height of projectile hitbox
+            Projectile.width = 15;
+            Projectile.height = 15;
            
-            Projectile.friendly = true; // Can the projectile deal damage to enemies?
-            Projectile.hostile = false; // Can the projectile deal damage to the player?
-            Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
-            Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+            Projectile.friendly = true;
+            Projectile.hostile = false;
+            Projectile.DamageType = DamageClass.Melee;
+            Projectile.penetrate = 5;
             Projectile.timeLeft = 130; 
                                    
             Projectile.light = 0.3f;
-            Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
-            Projectile.tileCollide = true; // Can the projectile collide with tiles?
-            Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
+            Projectile.ignoreWater = false;
+            Projectile.tileCollide = true;
+            Projectile.extraUpdates = 1;
             Projectile.usesLocalNPCImmunity = true;
-            AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+            AIType = ProjectileID.Bullet;
             Projectile.aiStyle = 1;
             Projectile.alpha = 255;
         }
