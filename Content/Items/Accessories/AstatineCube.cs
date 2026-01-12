@@ -8,12 +8,8 @@ using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories
 {
-    public class MorbiumCube : ModItem
+    public class AstatineCube : ModItem
     {
-        // By declaring these here, changing the values will alter the effect, and the tooltip
-
-        public static readonly int AdditiveDamageBonus = 8;
-
 
 
         public override void SetDefaults()
@@ -23,25 +19,32 @@ namespace HendecamMod.Content.Items.Accessories
             // Common Properties
             Item.width = 26; // Hitbox width of the item.
             Item.height = 26; // Hitbox height of the item.
-            Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-            Item.value = 75500;
+            Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
+            Item.value = 101000;
             Item.maxStack = 1;
             Item.accessory = true;
-            Item.defense = 25;
+            Item.defense = 15;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 108f;
-            player.maxFallSpeed = player.maxFallSpeed * -1.25f;
+            player.maxFallSpeed = player.maxFallSpeed * Main.rand.NextFloat(-0.5f, 5f);
+            player.accRunSpeed *= Main.rand.NextFloat(0.01f, 5f);
+            player.moveSpeed *= Main.rand.NextFloat(0.01f, 5f);
+            player.runAcceleration *= Main.rand.NextFloat(0.01f, 5f);
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Makes you fall in reverse");
+            var line = new TooltipLine(Mod, "Face", "Randomizes your max run speed and fall speed");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Who the fuck turned off gravity?")
+            line = new TooltipLine(Mod, "Face", "Run speed can go from 1% to 500%")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+            line = new TooltipLine(Mod, "Face", "Fall speed can go from -50% to 250%")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -49,24 +52,12 @@ namespace HendecamMod.Content.Items.Accessories
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient<CubicMold>(1);
-            recipe.AddIngredient<Items.Placeables.MorbiumBar>(12);
+            recipe.AddIngredient<AstatineBar>(12);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

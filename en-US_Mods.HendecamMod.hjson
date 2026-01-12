@@ -7614,6 +7614,31 @@ Items: {
 		DisplayName: Alpine Plushie Glitterbomb
 		Tooltip: ""
 	}
+
+	FrozenBullet: {
+		DisplayName: Frozen Bullet
+		Tooltip: ""
+	}
+
+	PykretePickaxe: {
+		DisplayName: Pykrete Pickaxe
+		Tooltip: ""
+	}
+
+	UraniumCube: {
+		DisplayName: Uranium Cube
+		Tooltip: ""
+	}
+
+	PlutoniumCube: {
+		DisplayName: Plutonium Cube
+		Tooltip: ""
+	}
+
+	AstatineCube: {
+		Tooltip: ""
+		DisplayName: Astatine Cube
+	}
 }
 
 Tiles: {
@@ -8504,6 +8529,7 @@ Projectiles: {
 	RazorRotorThrown.DisplayName: Razor Rotor Thrown
 	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
 	SpecialGlitter.DisplayName: Special Glitter
+	FrozenBulletProj.DisplayName: Frozen Bullet Proj
 }
 
 Biomes: {

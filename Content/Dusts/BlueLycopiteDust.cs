@@ -24,7 +24,19 @@ namespace HendecamMod.Content.Dusts
             dust.alpha = 100;
 
         }
+        public override bool Update(Dust dust)
+        {
 
+            float lightR = 0.1f * dust.scale;
+            float lightG = 0.1f * dust.scale;
+            float lightB = 0.8f * dust.scale;
+
+            Lighting.AddLight(dust.position, lightR, lightG, lightB);
+
+
+
+            return true; // RETURN TRUE
+        }
         public override Color? GetAlpha(Dust dust, Color lightColor)
         {
             lightColor = Color.Lerp(lightColor, Color.Blue, 0.8f);

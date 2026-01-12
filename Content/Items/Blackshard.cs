@@ -54,7 +54,7 @@ namespace HendecamMod.Content.Items
                 Item.useTime = 5;
                 Item.useAnimation = 5;
             }
-            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind<ModItem>("Eridanium", out ModItem Eridanium) || (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) || (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))))
+            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind<ModItem>("Eridanium", out ModItem Eridanium) && (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))))
 
             {
                 Item.damage = 196;

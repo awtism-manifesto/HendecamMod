@@ -23,19 +23,22 @@ namespace HendecamMod.Content.Items.Accessories
             Item.value = 500;
             Item.maxStack = 1;
             Item.accessory = true;
+            Item.defense = -1;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.maxFallSpeed = player.maxFallSpeed * 128f;
+            player.fallStart = (int)(player.fallStart * 0.01f);
+            player.stairFall = true;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", ":3's your fall speed");
+            var line = new TooltipLine(Mod, "Face", "-1 defense");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+            line = new TooltipLine(Mod, "Face", ":3's your fall speed")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

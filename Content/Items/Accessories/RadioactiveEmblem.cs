@@ -1,6 +1,7 @@
 ﻿
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -93,6 +94,39 @@ namespace HendecamMod.Content.Items.Accessories
         public bool radEffect; public override void ResetEffects()
         {
             radEffect = false;
+        }
+
+        public override void PostUpdateRunSpeeds()
+        {
+            if (Player.GetModPlayer<RadApply>().radEffect == false)
+            {
+                return;
+            }
+            if (Main.rand.NextBool(6)) // 1-in-3 chance every tick
+            {
+                int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<UraniumDust>(),
+                    Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+
+
+            }
+            if (Main.rand.NextBool(6)) // 1-in-3 chance every tick
+            {
+                int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
+                    Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+
+
+            }
+            if (Main.rand.NextBool(6)) // 1-in-3 chance every tick
+            {
+                int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<AstatineDust>(),
+                    Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+
+
+            }
+           
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {

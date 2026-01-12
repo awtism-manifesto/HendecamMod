@@ -35,6 +35,7 @@ namespace HendecamMod.Content.Projectiles
             Projectile.tileCollide = false; // Can the projectile collide with tiles?
             Projectile.extraUpdates = 10; // Set to above 0 if you want the projectile to update multiple time in a frame
             Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = -1;
             AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         }
 

@@ -17,7 +17,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.height = 36;
 
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 21;
+            Item.useTime = 14;
             Item.useAnimation = 21;
             Item.autoReuse = true;
 

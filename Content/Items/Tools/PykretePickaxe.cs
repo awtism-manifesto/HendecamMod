@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -7,36 +6,33 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items
+namespace HendecamMod.Content.Items.Tools
 {
-    /// <summary>
-    ///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-    ///     See Source code for Star Wrath projectile to see how it passes through tiles.
-    ///     For a detailed sword guide see <see cref="ExampleSword" />
-    /// </summary>
-    public class CraterCreator : ModItem
+
+    public class PykretePickaxe : ModItem
     {
         public override void SetDefaults()
         {
-            Item.width = 99;
-            Item.height = 99;
-            Item.scale = 1.5f;
+            Item.width = 36;
+            Item.height = 36;
+
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 25;
-            Item.useAnimation = 25;
+            Item.useTime = 11;
+            Item.useAnimation = 22;
             Item.autoReuse = true;
 
-            Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-            Item.damage = 208;
-            Item.knockBack = 12.5f;
+            Item.DamageType = DamageClass.Melee;
+            Item.damage = 7;
+            Item.knockBack = 3;
+            Item.ChangePlayerDirectionOnShoot = false;
+            Item.pick = 40;
 
 
-            Item.value = Item.buyPrice(gold: 50);
-            Item.rare = ItemRarityID.Red;
-            Item.UseSound = SoundID.Item14;
+            Item.value = Item.buyPrice(silver: 5);
+            Item.rare = ItemRarityID.White;
+            Item.UseSound = SoundID.Item1;
 
-            Item.shoot = ModContent.ProjectileType<Crater>(); // ID of the projectiles the sword will shoot
-            Item.shootSpeed = 13.2f; // Speed of the projectiles the sword will shoot
+
 
             // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
             // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -44,14 +40,17 @@ namespace HendecamMod.Content.Items
             // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
             // Item.ChangePlayerDirectionOnShoot = false;
         }
-       
 
 
-       
+
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return Color.White;
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Creates a massive explosion with every swing");
+            var line = new TooltipLine(Mod, "Face", "");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -78,25 +77,9 @@ namespace HendecamMod.Content.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-
-           
-            recipe.AddIngredient(ItemID.MeteoriteBar,15);
-            recipe.AddIngredient<Items.AstatineBar>(10);
-            recipe.AddIngredient<Items.FragmentFlatEarth>(5);
-            recipe.AddIngredient(ItemID.FragmentSolar, 5);
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddIngredient<Pykrete>(20);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
-            if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AstralBar", out ModItem AstralBar))
-            {
-                recipe.AddIngredient(AstralBar.Type, 5);
-
-            }
-
-
-
-
-
-
         }
 
     }

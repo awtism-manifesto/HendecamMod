@@ -23,17 +23,17 @@ namespace HendecamMod.Content.Items.Accessories
             Item.value = 500;
             Item.maxStack = 1;
             Item.accessory = true;
-            Item.defense = 4;
+            Item.defense = 5;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.statLifeMax2 = player.statLifeMax2 + 60;
+            player.statLifeMax2 = player.statLifeMax2 + 75;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Increases max life by 60");
+            var line = new TooltipLine(Mod, "Face", "Increases max life by 75");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -44,18 +44,7 @@ namespace HendecamMod.Content.Items.Accessories
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
         public override void AddRecipes()
         {

@@ -354,7 +354,7 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
                     }
                 else
                     {
-                    Lighting.AddLight(Player.Center, 1.33f, 1.33f, 1.33f);
+                    Lighting.AddLight(Player.Center, 2.25f, 2.25f, 2.25f);
                     }
                 }
             }

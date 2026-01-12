@@ -1,11 +1,13 @@
 ﻿
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories
 {
@@ -42,24 +44,17 @@ namespace HendecamMod.Content.Items.Accessories
             };
             tooltips.Add(line);
 
-
-
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
+            line = new TooltipLine(Mod, "Face", "Your attacks now inflict Radiation Poisoning")
             {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
 
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
+            Recipe 
 
 
             
@@ -90,10 +85,62 @@ namespace HendecamMod.Content.Items.Accessories
             player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 103f;
             player.GetCritChance(DamageClass.Generic) += CritBonus;
+            player.GetModPlayer<Rad2Apply>().rad2Effect = true;
             player.aggro += -660;
         }
     }
+    public class Rad2Apply : ModPlayer
+    {
+        public bool rad2Effect; public override void ResetEffects()
+        {
+            rad2Effect = false;
+        }
 
+        public override void PostUpdateRunSpeeds()
+        {
+            if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+            {
+                return;
+            }
+           
+            if (Main.rand.NextBool(4))
+            {
+                int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
+                    Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+
+
+            }
+           
+
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+            {
+                return;
+            }
+            else
+            {
+               
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
+              
+            }
+        }
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+            {
+                return;
+            }
+            else
+            {
+               
+                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
+               
+            }
+        }
+    }
 
 
 }

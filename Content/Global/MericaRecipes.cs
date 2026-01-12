@@ -8,6 +8,8 @@ using HendecamMod.Content.Items.Accessories;
 using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Global
 {
@@ -434,6 +436,38 @@ namespace HendecamMod.Content.Global
 
                 glocknbawlz.AddTile(TileID.Solidifier);
                 glocknbawlz.Register();
+
+
+
+            }
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("aDarksteelAlloy", out ModItem aDarksteelAlloy))
+
+
+            {
+                Recipe glocksnbawlz = Recipe.Create(aDarksteelAlloy.Type);
+
+                glocksnbawlz.AddIngredient<SteelBar>();
+                glocksnbawlz.AddIngredient(ItemID.Bone);
+
+
+                glocksnbawlz.AddTile(TileID.Anvils);
+                glocksnbawlz.Register();
+
+
+
+            }
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
+
+
+            {
+                Recipe glocksnbawlz = Recipe.Create(BlankPainting.Type);
+
+                glocksnbawlz.AddIngredient<BlankCanvas>();
+               
+
+
+                glocksnbawlz.AddTile(TileID.WorkBenches);
+                glocksnbawlz.Register();
 
 
 

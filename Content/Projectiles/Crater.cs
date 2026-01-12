@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -164,11 +165,17 @@ namespace HendecamMod.Content.Projectiles
                 Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 2.75f);
                 fireDust.noGravity = true;
                 fireDust.velocity *= 7f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Meteorite, 0f, 0f, 100, default, 1.5f);
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Meteorite, 0f, 0f, 100, default, 2.25f);
                 fireDust.velocity *= 3f;
                 fireDust.noGravity = true;
             }
-
+            for (int j = 0; j < 30; j++)
+            {
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.25f);
+                fireDust.noGravity = true;
+                fireDust.velocity *= 7f;
+               
+            }
 
 
             // Rocket II explosion that damages tiles.

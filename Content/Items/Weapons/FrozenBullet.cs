@@ -17,7 +17,7 @@ namespace HendecamMod.Content.Items.Weapons
 
         public override void SetDefaults()
         {
-            Item.damage = 2;
+            Item.damage = 8;
             Item.DamageType = DamageClass.Ranged;
 
             Item.width = 16;
@@ -25,7 +25,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true;
             Item.knockBack = 0.5f;
-            Item.value = 0;
+            Item.value = 14;
 
             Item.shoot = ModContent.ProjectileType<FrozenBulletProj>();
             Item.shootSpeed = 3.5f;
@@ -59,7 +59,8 @@ namespace HendecamMod.Content.Items.Weapons
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(50);
-            recipe.AddIngredient(ItemID.IceBlock, 5);
+            recipe.AddIngredient(ItemID.MusketBall, 50);
+            recipe.AddIngredient(ItemID.IceTorch);
 
         }
     }

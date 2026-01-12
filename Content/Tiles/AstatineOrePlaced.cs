@@ -35,9 +35,9 @@ namespace HendecamMod.Content.Tiles
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
 
-            r = 1f;
+            r = 1.4f;
             g = 0.1f;
-            b = 0.285f;
+            b = 0.47f;
 
         }
 

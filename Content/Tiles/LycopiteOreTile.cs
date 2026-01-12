@@ -50,7 +50,7 @@ namespace HendecamMod.Content.Tiles
         {
 
             r = 0.95f;
-            g = 0.235f;
+            g = 0.395f;
             b = 0.05f;
 
         }
