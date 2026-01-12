@@ -17,6 +17,11 @@ namespace HendecamMod.Content.Tiles.Blocks
             Main.tileMerge[TileID.Ebonstone][Type] = true;
             Main.tileMerge[TileID.Crimstone][Type] = true;
             Main.tileMerge[TileID.Pearlstone][Type] = true;
+            Main.tileMerge[TileID.ClayBlock][Type] = true;
+            Main.tileMerge[TileID.Mud][Type] = true;
+            Main.tileMerge[TileID.HardenedSand][Type] = true;
+            Main.tileMerge[TileID.IceBlock][Type] = true;
+            Main.tileMerge[TileID.SnowBlock][Type] = true;
             Main.tileBlockLight[Type] = true;
 
             AddMapEntry(new Color(101, 101, 101), Language.GetText("Fire Diamond")); // localized text for "Metal Bar"

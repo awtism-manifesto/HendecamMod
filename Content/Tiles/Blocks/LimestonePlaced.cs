@@ -25,6 +25,11 @@ namespace HendecamMod.Content.Tiles.Blocks
             Main.tileMerge[TileID.Pearlstone][Type] = true;
             Main.tileMerge[TileID.Granite][Type] = true;
             Main.tileMerge[TileID.Marble][Type] = true;
+            Main.tileMerge[TileID.ClayBlock][Type] = true;
+            Main.tileMerge[TileID.Mud][Type] = true;
+            Main.tileMerge[TileID.HardenedSand][Type] = true;
+            Main.tileMerge[TileID.IceBlock][Type] = true;
+            Main.tileMerge[TileID.SnowBlock][Type] = true;
             Main.tileBlockLight[Type] = true;
 
             DustType = ModContent.DustType<LimestoneDust>();
