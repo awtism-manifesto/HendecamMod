@@ -80,15 +80,18 @@ namespace HendecamMod.Content.Projectiles
                         // }
 
                         // Spawn smoke dusts at the back of the rocket.
-                        Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.7f);
+                        Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
                         smokeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                         smokeDust.velocity *= 0.05f;
-                        Dust smokeyDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustID.CrimsonTorch, 0f, 0f, 100, default, 0.7f);
+                        smokeDust.noGravity = true;
+                        Dust smokeyDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
                         smokeyDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                         smokeyDust.velocity *= 0.05f;
-                        Dust smokeyeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustID.PurpleTorch, 0f, 0f, 100, default, 0.8f);
+                        smokeyDust.noGravity = true;
+                        Dust smokeyeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
                         smokeyeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                         smokeyeDust.velocity *= 0.05f;
+                        smokeyeDust.noGravity = true;
                     }
                 }
 

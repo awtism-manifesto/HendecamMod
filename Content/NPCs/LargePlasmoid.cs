@@ -37,7 +37,7 @@ namespace HendecamMod.Content.NPCs
             NPC.height = 100;
             NPC.damage = 89;
             NPC.defense = 5;
-            NPC.lifeMax = 4825;
+            NPC.lifeMax = 5950;
             NPC.HitSound = SoundID.NPCHit44;
             NPC.DeathSound = SoundID.NPCDeath39;
             NPC.value = 95000f;

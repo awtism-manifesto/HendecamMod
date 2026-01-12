@@ -6,7 +6,7 @@ namespace HendecamMod.Content.Buffs
 {
     public class AlpineTagBuff : ModBuff
     {
-        public static readonly int TagDamage = 12;
+        public static readonly int TagDamage = 13;
 
         public override void SetStaticDefaults()
         {

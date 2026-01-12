@@ -7639,6 +7639,26 @@ Items: {
 		Tooltip: ""
 		DisplayName: Astatine Cube
 	}
+
+	LigmaLazer: {
+		Tooltip: ""
+		DisplayName: Ligma Lazer
+	}
+
+	SplashPotionOfShine: {
+		DisplayName: Splash Potion Of Shine
+		Tooltip: ""
+	}
+
+	SpectralBow: {
+		DisplayName: Spectral Bow
+		Tooltip: ""
+	}
+
+	BlackBrick: {
+		DisplayName: Black Brick
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -7912,6 +7932,21 @@ Buffs: {
 	AlpineTagBuff: {
 		DisplayName: Alpine Tag Buff
 		Description: Mods.HendecamMod.Buffs.AlpineTagBuff.Description
+	}
+
+	Ligma: {
+		Description: Mods.HendecamMod.Buffs.Ligma.Description
+		DisplayName: Ligma
+	}
+
+	ShinyTag: {
+		DisplayName: Shiny Tag
+		Description: Mods.HendecamMod.Buffs.ShinyTag.Description
+	}
+
+	ShinyTag2: {
+		DisplayName: Shiny Tag2
+		Description: Mods.HendecamMod.Buffs.ShinyTag2.Description
 	}
 }
 
@@ -8530,6 +8565,9 @@ Projectiles: {
 	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
 	SpecialGlitter.DisplayName: Special Glitter
 	FrozenBulletProj.DisplayName: Frozen Bullet Proj
+	LigmaLazerProj.DisplayName: Ligma Lazer Proj
+	SplashPotionShine.DisplayName: Splash Potion Shine
+	SpectralArrowProj.DisplayName: Spectral Arrow Proj
 }
 
 Biomes: {

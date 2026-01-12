@@ -56,6 +56,12 @@ namespace HendecamMod.Content.Items.Weapons
                 OverrideColor = new Color(255, 255, 255)
             };
             tooltips.Add(line);
+
+            line = new TooltipLine(Mod, "Face", "13 summon tag damage")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
             line = new TooltipLine(Mod, "Face", "'Huh, so that's why they won't tell us where glitter comes from'")
             {
                 OverrideColor = new Color(255, 255, 255)

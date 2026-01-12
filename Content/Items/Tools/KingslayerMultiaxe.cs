@@ -11,6 +11,11 @@ namespace HendecamMod.Content.Items.Tools
 {
     public class KingslayerMultiaxe : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+
+            ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
+        }
         public override void SetDefaults()
         {
             Item.damage = 23;
@@ -29,7 +34,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.autoReuse = true;
             Item.tileBoost = 1;
             Item.pick = 63;
-            Item.hammer = 79;
+           
             Item.axe = 20;
             Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
         }

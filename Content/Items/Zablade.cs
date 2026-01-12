@@ -51,13 +51,16 @@ namespace HendecamMod.Content.Items
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.RichMahoganySword);
             recipe.AddIngredient< WeedLeaves>(28);
-           
-          
-
-
+  
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
+            recipe = CreateRecipe();
+            recipe.AddIngredient<PoorMahoganySword>();
+            recipe.AddIngredient<WeedLeaves>(28);
+
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
 
 
 
