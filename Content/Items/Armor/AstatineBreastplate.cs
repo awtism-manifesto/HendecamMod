@@ -122,7 +122,7 @@ namespace HendecamMod.Content.Items.Armor
     public class AstaSetBoom : ModPlayer
     {
         public const int CritBonus = 30;
-        private const int ExplosionCooldownMax = 60 * 20; 
+        private const int ExplosionCooldownMax = 60 * 15; 
 
         public bool AstaBlam;
         private int explosionCooldown;

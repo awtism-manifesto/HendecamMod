@@ -25,13 +25,13 @@ namespace HendecamMod.Content.Items.Weapons
             Item.height = 33;
 
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 33;
+            Item.useAnimation = 33;
             Item.autoReuse = true;
         
-            Item.mana = 12;
+            Item.mana = 16;
             Item.DamageType = DamageClass.Magic;
-            Item.damage = 69;
+            Item.damage = 77;
             Item.knockBack = 6.7f;
             Item.noMelee = true;
           
@@ -67,7 +67,7 @@ namespace HendecamMod.Content.Items.Weapons
                 
                 SoundEngine.PlaySound(SoundID.Item91, player.position);
 
-                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1.5f), knockback, player.whoAmI);
+                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 2f), knockback, player.whoAmI);
                 shotCounter = 0;
             }
 
@@ -82,7 +82,7 @@ namespace HendecamMod.Content.Items.Weapons
             var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "The backwards bolt deals more damage")
+            line = new TooltipLine(Mod, "Face", "The backwards bolt deals double damage")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

@@ -124,26 +124,26 @@ namespace HendecamMod.Content.Items
             Recipe
                  recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.WandofSparking);
-            recipe.AddIngredient<PyriteBar>(9);
+            recipe.AddIngredient<PyriteBar>(10);
 
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.WandofFrosting);
-            recipe.AddIngredient<PyriteBar>(9);
+            recipe.AddIngredient<PyriteBar>(10);
 
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
            
             recipe = CreateRecipe();
             recipe.AddIngredient<ShadewoodWand>();
-            recipe.AddIngredient<PyriteBar>(9);
+            recipe.AddIngredient<PyriteBar>(10);
 
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
             recipe = CreateRecipe();
             recipe.AddIngredient<ShadewoodWand>();
-            recipe.AddIngredient<PyriteBar>(9);
+            recipe.AddIngredient<PyriteBar>(10);
 
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();

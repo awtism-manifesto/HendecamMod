@@ -25,7 +25,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.knockBack = 6;
             Item.ArmorPenetration = 3;
             Item.ChangePlayerDirectionOnShoot = true;
-
+            Item.scale = 1.3f;
 
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.White;

@@ -21,11 +21,11 @@ namespace HendecamMod.Content.Items.Weapons
             Item.autoReuse = true;
 
             Item.DamageType = DamageClass.Melee;
-            Item.damage = 19;
+            Item.damage = 20;
             Item.knockBack = 6;
             Item.ArmorPenetration = 6;
             Item.ChangePlayerDirectionOnShoot = true;
-
+            Item.scale = 1.45f;
 
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.Blue;

@@ -125,7 +125,7 @@ namespace HendecamMod.Content.Items.Armor
     public class CeramMultiscale : ModPlayer
     {
        
-        private const int ShatterCooldownMax = 60 * 30;
+        private const int ShatterCooldownMax = 60 * 10;
 
         public bool Multiscale;
         private int ShatterCooldown;

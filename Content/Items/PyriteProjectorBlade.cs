@@ -93,7 +93,7 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
 
-            recipe.AddIngredient<PyriteBar>(11);
+            recipe.AddIngredient<PyriteBar>(12);
             recipe.AddIngredient(ItemID.FallenStar, 3);
 
             recipe.AddTile(TileID.Anvils);

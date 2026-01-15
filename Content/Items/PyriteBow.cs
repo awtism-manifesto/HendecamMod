@@ -88,7 +88,7 @@ namespace HendecamMod.Content.Items
         {
             Recipe recipe = CreateRecipe();
 
-            recipe.AddIngredient<Items.PyriteBar>(11);
+            recipe.AddIngredient<PyriteBar>(12);
             
 
             recipe.AddTile(TileID.Anvils);

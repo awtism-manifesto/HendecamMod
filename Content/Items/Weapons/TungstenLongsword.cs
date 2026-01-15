@@ -16,16 +16,16 @@ namespace HendecamMod.Content.Items.Weapons
             Item.height = 36;
 
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 25;
-            Item.useAnimation = 25;
+            Item.useTime = 26;
+            Item.useAnimation = 26;
             Item.autoReuse = true;
 
             Item.DamageType = DamageClass.Melee;
-            Item.damage = 16;
+            Item.damage = 17;
             Item.knockBack = 6;
             Item.ArmorPenetration = 4;
             Item.ChangePlayerDirectionOnShoot = true;
-
+            Item.scale = 1.32f;
 
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.White;

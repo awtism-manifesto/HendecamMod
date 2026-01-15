@@ -7659,6 +7659,11 @@ Items: {
 		DisplayName: Black Brick
 		Tooltip: ""
 	}
+
+	WeedCube: {
+		Tooltip: ""
+		DisplayName: Weed Cube
+	}
 }
 
 Tiles: {
