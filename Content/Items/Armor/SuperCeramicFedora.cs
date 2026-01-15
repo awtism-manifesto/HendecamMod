@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -116,8 +118,68 @@ namespace HendecamMod.Content.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "10% increased stupid attack speed";
-            player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 110f;
+            player.setBonus = "20% increased damage reduction at max HP, getting hit causes ceramic shards to shatter off the player but removes the boost";
+            player.GetModPlayer<CeramMultiscale>().Multiscale = true;
         }
+    }
+    public class CeramMultiscale : ModPlayer
+    {
+       
+        private const int ShatterCooldownMax = 60 * 30;
+
+        public bool Multiscale;
+        private int ShatterCooldown;
+
+        public override void ResetEffects()
+        {
+            Multiscale = false;
+        }
+
+        public override void PostUpdate()
+        {
+         
+            if (ShatterCooldown > 0)
+                ShatterCooldown--;
+
+          
+            if (Multiscale && Player.statLife == Player.statLifeMax2)
+            {
+                Player.endurance = 1f - 0.8f * (1f - Player.endurance);
+            }
+        }
+
+        public override void OnHurt(Player.HurtInfo info)
+        {
+          
+            if (!Multiscale)
+                return;
+
+          
+            if (ShatterCooldown > 0)
+                return;
+
+            int baseDamage = 35;
+            float defenseScale = 0.75f;
+            int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
+
+            
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+                Player.Center,
+                new Vector2(0f, -5f),
+                ModContent.ProjectileType<CeramOmniSpawn>(),
+                finalDamage,
+                3f,
+                Player.whoAmI
+            );
+
+            // Start cooldown
+            ShatterCooldown = ShatterCooldownMax;
+        }
+
+
+
+
+
     }
 }

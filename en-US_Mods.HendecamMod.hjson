@@ -8568,6 +8568,9 @@ Projectiles: {
 	LigmaLazerProj.DisplayName: Ligma Lazer Proj
 	SplashPotionShine.DisplayName: Splash Potion Shine
 	SpectralArrowProj.DisplayName: Spectral Arrow Proj
+	AstaBoomOmni.DisplayName: Asta Boom Omni
+	CeramOmniSpawn.DisplayName: Ceram Omni Spawn
+	CeramOmni.DisplayName: Ceram Omni
 }
 
 Biomes: {

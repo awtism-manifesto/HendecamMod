@@ -5,27 +5,27 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty
-    {
+{
     //[AutoloadEquip(EquipType.Beard)]
     public class NastyPattyAccessory : ModItem
-        {
+    {
         public override void SetDefaults()
-            {
+        {
             Item.width = 16;
             Item.height = 16;
             Item.value = Item.sellPrice(silver: 16000);
             Item.rare = ItemRarityID.Quest;
             Item.accessory = true;
-            }
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
-            {
+        {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 10% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Double Movement Speed, 50 Defense, Doubled Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from any vanilla buff"));
-            }
+        }
         public override void UpdateEquip(Player player)
-            {
+        {
             player.GetModPlayer<NastyRegen>().NastyEffect = true;
             player.GetModPlayer<NastyLight>().NastyEffect = true;
             player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -321,308 +321,308 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             player.buffImmune[BuffID.IceBarrier] = true;
             player.buffImmune[BuffID.PaladinsShield] = true;
             player.buffImmune[BuffID.Panic] = true;
-            }
+        }
         public class NastyRegen : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyHealth>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.lifeRegen += 6;
-                    }
                 }
             }
+        }
         public class NastyLight : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyLight>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Lighting.AddLight(Player.Center, 2.25f, 2.25f, 2.25f);
-                    }
                 }
             }
+        }
         public class NastyCrit : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyCrit>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.GetCritChance(DamageClass.Generic) += 25f;
-                    }
                 }
             }
+        }
         public class NastyMovement : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyMovement>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.moveSpeed += 1f;
-                    }
                 }
             }
+        }
         public class NastyPenetration : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyPenetration>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.GetArmorPenetration(DamageClass.Generic) += 200f;
-                    }
                 }
             }
+        }
         public class NastyDefense : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyDefense>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.statDefense += 50;
-                    }
                 }
             }
+        }
         public class NastyDamage : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyDamage>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.GetDamage(DamageClass.Generic) += 0.5f;
-                    }
                 }
             }
+        }
         public class NastyJump : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyJump>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.jumpSpeedBoost += 0.7f;
-                    }
                 }
             }
+        }
         public class NastyBreath : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyBreath>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.breathEffectiveness += 2f;
-                    }
                 }
             }
+        }
         public class NastySpeed : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastySpeed>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.GetAttackSpeed(DamageClass.Generic) += 0.3f;
-                    }
                 }
             }
+        }
         public class NastyHealth : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyHealth>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.statLifeMax2 += 200;
-                    }
                 }
             }
+        }
         public class NastyFire : ModPlayer
-            {
+        {
             public bool NastyEffect; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-                {
+            {
                 if (Player.GetModPlayer<NastyFire>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
-                else
-                    {
-                    target.AddBuff(BuffID.OnFire3, 600);
-                    }
                 }
+                else
+                {
+                    target.AddBuff(BuffID.OnFire3, 600);
+                }
+            }
             public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
-                {
+            {
                 if (Player.GetModPlayer<NastyFire>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     target.AddBuff(BuffID.OnFire3, 600);
-                    }
                 }
             }
+        }
         public class NastyLuck : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyLuck>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.equipmentBasedLuckBonus += 4;
-                    }
                 }
             }
+        }
         public class NastyMana : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyMana>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.statManaMax2 += 50;
-                    }
                 }
             }
+        }
         public class NastyEndurance : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyEndurance>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
-                   Player.endurance = 1f - 0.9f * (1f - Player.endurance);
-                    }
+                {
+                    Player.endurance = 1f - 0.9f * (1f - Player.endurance);
                 }
             }
+        }
         public class NastyFall : ModPlayer
-            {
+        {
             public bool NastyEffect = false; public override void ResetEffects()
-                {
+            {
                 NastyEffect = false;
-                }
+            }
             public override void PostUpdateEquips()
-                {
+            {
                 if (Player.GetModPlayer<NastyFall>().NastyEffect == false)
-                    {
+                {
                     return;
-                    }
+                }
                 else
-                    {
+                {
                     Player.extraFall += 25;
-                    }
                 }
             }
+        }
         public override void AddRecipes()
-            {
+        {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
             recipe.AddIngredient<ExpiredPetFood>(1);
@@ -630,6 +630,6 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AdamantiteForge);
             recipe.Register();
-            }
         }
     }
+}

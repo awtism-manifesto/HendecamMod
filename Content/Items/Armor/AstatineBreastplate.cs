@@ -1,10 +1,12 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.Projectiles;
+
 
 namespace HendecamMod.Content.Items.Armor
 {
@@ -14,7 +16,7 @@ namespace HendecamMod.Content.Items.Armor
     public class AstatineBreastplate : ModItem
     {
 
-        public static readonly int CritBonus = 30;
+        
         public static readonly int AdditiveDamageBonus = 17;
         public static readonly int AttackSpeedBonus = 8;
         public static readonly int RangedCritBonus = 16;
@@ -104,16 +106,77 @@ namespace HendecamMod.Content.Items.Armor
            
             recipe.Register();
         }
+       
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "+30% crit chance at the cost of 15% max life";
-          
-            player.GetCritChance(DamageClass.Generic) += CritBonus;
-            player.statLifeMax2 = (int)(player.statLifeMax2 * 0.85f);
-            player.armorEffectDrawShadow = true;
-            player.armorEffectDrawOutlines = true;
-            player.armorEffectDrawOutlinesForbidden = true;
-            
+            player.setBonus = "Gives +30% crit chance at max life, Taking damage releases a large nuclear explosion but removes this boost";
+           
+
+            player.GetModPlayer<AstaSetBoom>().AstaBlam = true;
+
+
         }
+    }
+
+
+    public class AstaSetBoom : ModPlayer
+    {
+        public const int CritBonus = 30;
+        private const int ExplosionCooldownMax = 60 * 20; 
+
+        public bool AstaBlam;
+        private int explosionCooldown;
+
+        public override void ResetEffects()
+        {
+            AstaBlam = false;
+        }
+
+        public override void PostUpdate()
+        {
+            // Cooldown ticking down
+            if (explosionCooldown > 0)
+                explosionCooldown--;
+
+            // Apply crit bonus only at full health
+            if (AstaBlam && Player.statLife == Player.statLifeMax2)
+            {
+                Player.GetCritChance(DamageClass.Generic) += CritBonus;
+            }
+        }
+
+        public override void OnHurt(Player.HurtInfo info)
+        {
+            // Only trigger if set bonus is active
+            if (!AstaBlam)
+                return;
+
+            // Cooldown check
+            if (explosionCooldown > 0)
+                return;
+
+            int baseDamage = 500;
+            float defenseScale = 1.5f;
+            int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
+
+            // Spawn explosion
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+                Player.Center,
+                new Vector2(0f, -1f),
+                ModContent.ProjectileType<AstaBoomOmni>(),
+                finalDamage,
+                15f,
+                Player.whoAmI
+            );
+
+            // Start cooldown
+            explosionCooldown = ExplosionCooldownMax;
+        }
+
+
+
+
+
     }
 }
