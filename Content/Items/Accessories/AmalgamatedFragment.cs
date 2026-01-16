@@ -52,7 +52,7 @@ namespace HendecamMod.Content.Items.Accessories
 
             {
 
-                line = new TooltipLine(Mod, "Face", "TerMerica Cross-Mod (Thorium) - 11% increased throwing damage")
+                line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage")
                 {
                     OverrideColor = new Color(34, 221, 240)
                 };

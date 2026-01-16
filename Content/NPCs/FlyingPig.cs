@@ -56,7 +56,7 @@ namespace HendecamMod.Content.NPCs
 				
 
 				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"TerMerican folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),
+				new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),
 
 				// You can add multiple elements if you really wanted to
 				// You can also use localization keys (see Localization/en-US.lang)

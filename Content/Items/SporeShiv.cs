@@ -61,7 +61,7 @@ namespace HendecamMod.Content.Items
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
             }
 
             

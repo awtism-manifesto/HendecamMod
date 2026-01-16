@@ -67,7 +67,7 @@ namespace HendecamMod.Content.Items
 
             {
 
-                line = new TooltipLine(Mod, "Face", "TerMerica Cross-Mod (Thorium) - 5% increased throwing damage")
+                line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 5% increased throwing damage")
                 {
                     OverrideColor = new Color(34, 221, 240)
                 };
@@ -86,18 +86,7 @@ namespace HendecamMod.Content.Items
             tooltips.Add(line);
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
         // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
         public override bool IsArmorSet(Item head, Item body, Item legs)

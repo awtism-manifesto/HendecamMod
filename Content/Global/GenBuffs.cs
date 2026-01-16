@@ -33,7 +33,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, swing speed, and pick speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, swing speed, and pick speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -51,7 +51,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Stats buffed all around") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Stats buffed all around") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -78,7 +78,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -105,7 +105,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as a melee weapon") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as a melee weapon") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -134,9 +134,9 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and Velocity significantly increased") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and Velocity significantly increased") { OverrideColor = Color.DarkViolet });
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { OverrideColor = Color.DarkViolet });
 
         }
         public override void SetDefaults(Item item)
@@ -162,7 +162,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Fires slower, but deals significantly more damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Fires slower, but deals significantly more damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -190,7 +190,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Doubled fire rate, but incurs a damage penalty when using Chlorophyte Bullets") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Doubled fire rate, but incurs a damage penalty when using Chlorophyte Bullets") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -232,7 +232,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Slightly decreased damage, but shoots out an additional bloodshot with your bullet") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Slightly decreased damage, but shoots out an additional bloodshot with your bullet") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -257,7 +257,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased damage and size, but slightly slower use speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased damage and size, but slightly slower use speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -292,7 +292,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into high velocity blood shots") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into high velocity blood shots") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -326,7 +326,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into Unholy Arrows") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into Unholy Arrows") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -360,7 +360,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings cactus spines with every swing") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings cactus spines with every swing") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -386,7 +386,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased range, speed and damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased range, speed and damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -414,7 +414,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased range") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased range") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -442,7 +442,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hugely increased projectile velocity, lowered mana cost") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hugely increased projectile velocity, lowered mana cost") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -470,7 +470,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now shoots icy bolts every swing at a much higher velocity") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now shoots icy bolts every swing at a much higher velocity") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -498,7 +498,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and damage, reduced swing speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and damage, reduced swing speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -555,7 +555,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Cobalt energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Cobalt energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -594,7 +594,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Palladium energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Palladium energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -633,7 +633,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Mythril energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Mythril energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -672,7 +672,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Orichalcum energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Orichalcum energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -711,7 +711,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Adamantite energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Adamantite energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -750,7 +750,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Titanium energy") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Titanium energy") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -790,7 +790,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings bones with every swing") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings bones with every swing") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -825,7 +825,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a piercing light beam, has higher stats") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a piercing light beam, has higher stats") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -859,7 +859,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased swing speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased swing speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -897,7 +897,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, also deals increased damage during daytime") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, also deals increased damage during daytime") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -924,7 +924,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage increased by 35%") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage increased by 35%") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1010,7 +1010,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots out a flurry of darts or seeds") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots out a flurry of darts or seeds") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1067,9 +1067,9 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts wooden arrows into a CONSTANT barrage of twilight lances") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts wooden arrows into a CONSTANT barrage of twilight lances") { OverrideColor = Color.DarkViolet });
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals less damage with other arrow types") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals less damage with other arrow types") { OverrideColor = Color.DarkViolet });
 
         }
 
@@ -1115,7 +1115,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1150,7 +1150,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1185,7 +1185,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1213,7 +1213,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1248,7 +1248,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1283,7 +1283,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1318,7 +1318,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1352,7 +1352,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1380,7 +1380,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed, range and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed, range and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1414,7 +1414,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1449,7 +1449,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1484,7 +1484,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1519,7 +1519,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1565,7 +1565,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased fire rate") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased fire rate") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1593,7 +1593,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased velocity and fire rate") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased velocity and fire rate") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1621,7 +1621,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1648,7 +1648,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: 1.5x damage, 2x size, and 3x speed ") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: 1.5x damage, 2x size, and 3x speed ") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1666,7 +1666,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hits much harder, but fires slower") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hits much harder, but fires slower") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1719,7 +1719,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1746,7 +1746,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1774,7 +1774,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1799,7 +1799,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1827,7 +1827,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1853,7 +1853,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1884,7 +1884,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1914,7 +1914,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Obtainable earlier, but with reworked stats") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Obtainable earlier, but with reworked stats") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1953,7 +1953,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND summon damage + ignores 10 enemy defense") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND summon damage + ignores 10 enemy defense") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -1980,7 +1980,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND ranged damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND ranged damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2009,7 +2009,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND magic damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2036,7 +2036,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and armor penetration doubled") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and armor penetration doubled") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2065,7 +2065,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2095,7 +2095,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2126,7 +2126,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2153,7 +2153,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND magic damage, massively increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND magic damage, massively increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2214,7 +2214,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2241,7 +2241,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2268,7 +2268,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2295,7 +2295,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2322,7 +2322,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2339,7 +2339,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2378,7 +2378,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use candy corn OR bullets as ammo, deals boosted damage with candy corn") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use candy corn OR bullets as ammo, deals boosted damage with candy corn") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2415,7 +2415,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2444,7 +2444,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2474,7 +2474,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bullets, Deals extra damage when fired out of the Candy Corn Rifle ") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bullets, Deals extra damage when fired out of the Candy Corn Rifle ") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2503,7 +2503,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2532,7 +2532,7 @@ namespace HendecamMod.Content.GlobalItems
         {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Sticks into enemies and explodes after a short time") { OverrideColor = Color.White });
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all dartguns as well as the Nail Gun") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all dartguns as well as the Nail Gun") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2561,7 +2561,7 @@ namespace HendecamMod.Content.GlobalItems
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in flamethrowers") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in flamethrowers") { OverrideColor = Color.DarkViolet });
 
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Shoots bouncy gel shots instead of fire") { OverrideColor = Color.White });
@@ -2736,7 +2736,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use stakes or arrows as ammo") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use stakes or arrows as ammo") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2764,7 +2764,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use nails or darts as ammo") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use nails or darts as ammo") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2783,7 +2783,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2831,7 +2831,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts darts into powerful harpoons that pierce multiple enemies") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts darts into powerful harpoons that pierce multiple enemies") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2850,7 +2850,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, stats increased") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, stats increased") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2889,7 +2889,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now ignores 25 enemy defense") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now ignores 25 enemy defense") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2910,7 +2910,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2939,7 +2939,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2968,7 +2968,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -2997,7 +2997,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as bait, if you're a terrible enough person.") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as bait, if you're a terrible enough person.") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3022,7 +3022,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3071,7 +3071,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3101,7 +3101,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3128,7 +3128,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3155,7 +3155,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3182,7 +3182,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3209,7 +3209,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3236,7 +3236,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3263,7 +3263,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3290,7 +3290,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3317,7 +3317,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3344,7 +3344,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Much faster swing speed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Much faster swing speed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3371,7 +3371,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3400,7 +3400,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3430,7 +3430,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3460,7 +3460,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now guaranteed to crit") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now guaranteed to crit") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3486,7 +3486,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Guaranteed to crit, massively increased damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Guaranteed to crit, massively increased damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3568,7 +3568,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3595,7 +3595,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3624,7 +3624,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does ranged AND magic damage, stats adjusted") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does ranged AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3746,7 +3746,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3774,7 +3774,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3803,7 +3803,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3829,7 +3829,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3855,7 +3855,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Omni Damage, a combination of ALL damage classes") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Omni Damage, a combination of ALL damage classes") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3881,7 +3881,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Magic damage") { OverrideColor = Color.DarkViolet });
 
 
 
@@ -3908,7 +3908,7 @@ namespace HendecamMod.Content.GlobalItems
         {
 
 
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
 
 
 

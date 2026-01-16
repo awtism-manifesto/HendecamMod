@@ -27,7 +27,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
             }
 
 
@@ -55,7 +55,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
             }
 
 
@@ -107,7 +107,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -134,7 +134,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -164,7 +164,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -194,7 +194,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -224,7 +224,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -254,7 +254,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
             }
 
 
@@ -307,7 +307,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Paracosm): Supercharged by the remains of an eldritch being") { OverrideColor = Color.MediumVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Paracosm): Supercharged by the remains of an eldritch being") { OverrideColor = Color.MediumVioletRed });
             }
 
 
@@ -375,7 +375,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
             }
 
 
@@ -402,7 +402,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
             }
 
 
@@ -429,7 +429,7 @@ namespace HendecamMod.Content.GlobalItems
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
             {
 
-                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+                tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
             }
 
 
