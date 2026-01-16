@@ -27,7 +27,7 @@ namespace HendecamMod.Content.Items
             Item.ArmorPenetration = 35;
             Item.width = 14;
             Item.height = 14;
-            Item.value = 310000;
+            Item.value = 22555555;
             Item.DamageType = ModContent.GetInstance<MeleeSummonDamage>();
         }
 

@@ -122,7 +122,7 @@ namespace HendecamMod.Content.Projectiles
                 Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188,188), 1050));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ModContent.ProjectileType<UsaFlag>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<UsaFlag>(), (int)(Projectile.damage*0.85f), Projectile.knockBack, Projectile.owner);
             
         }
 

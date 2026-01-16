@@ -25,13 +25,13 @@ namespace HendecamMod.Content.Items
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 1.1f;
             Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-            Item.value = 5950000;
+            Item.value = 15950000;
 
 
             // Use Properties
             // Use Properties
-            Item.useTime = 100; // The item's use time in ticks (60 ticks == 1 second.)
-            Item.useAnimation = 100; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+            Item.useTime = 99; // The item's use time in ticks (60 ticks == 1 second.)
+            Item.useAnimation = 99; // The length of the item's use animation in ticks (60 ticks == 1 second.)
             Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
             

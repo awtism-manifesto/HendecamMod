@@ -79,6 +79,28 @@ namespace HendecamMod.Content.Projectiles
             target.AddBuff(ModContent.BuffType<Ligma>(), 600);
 
         }
+        public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+        {
+            for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poop);
+                dust.noGravity = true;
+                dust.velocity *= 1.33f;
+                dust.scale *= 0.75f;
+
+            }
+            for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
+            {
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);
+                dust.noGravity = true;
+                dust.velocity *= 1.33f;
+                dust.scale *= 0.75f;
+
+            }
+
+            target.AddBuff(ModContent.BuffType<Ligma>(), 600);
+
+        }
         public override void AI()
         {
 

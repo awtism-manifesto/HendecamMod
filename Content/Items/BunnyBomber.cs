@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Items
 {
@@ -34,8 +35,8 @@ namespace HendecamMod.Content.Items
 
 
             // Weapon Properties
-            Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-            Item.damage = 181; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+            Item.damage = 192; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -48,7 +49,7 @@ namespace HendecamMod.Content.Items
             Item.shoot = ProjectileID.ExplosiveBunny;
 
             Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
-            Item.useAmmo = ItemID.RocketI;
+            Item.useAmmo = AmmoID.Rocket;
 
 
         }
@@ -93,18 +94,7 @@ namespace HendecamMod.Content.Items
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+           
         }
 
 

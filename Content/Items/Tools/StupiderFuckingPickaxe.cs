@@ -24,7 +24,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.knockBack = 6;
             Item.crit = 69416;
             Item.ArmorPenetration = 999;
-            Item.value = Item.buyPrice(gold: 147860);
+            Item.value = Item.buyPrice(gold: 135000);
             Item.rare = ModContent.RarityType<HotPink>();
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;

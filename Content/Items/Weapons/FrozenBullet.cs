@@ -47,13 +47,7 @@ namespace HendecamMod.Content.Items.Weapons
             tooltips.Add(line);
 
 
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
+           
 
         }
         public override void AddRecipes()
@@ -61,6 +55,7 @@ namespace HendecamMod.Content.Items.Weapons
             Recipe recipe = CreateRecipe(50);
             recipe.AddIngredient(ItemID.MusketBall, 50);
             recipe.AddIngredient(ItemID.IceTorch);
+            recipe.Register();
 
         }
     }

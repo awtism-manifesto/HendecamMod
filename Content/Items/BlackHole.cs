@@ -34,7 +34,7 @@ namespace HendecamMod.Content.Items
             Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
             Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
             Item.ArmorPenetration = 69420;
-            Item.value = Item.buyPrice(gold: 9999999);
+            Item.value = Item.buyPrice(gold: 19999999);
             Item.rare = ModContent.RarityType<Seizure2>();
             Item.UseSound = SoundID.Item1;
 

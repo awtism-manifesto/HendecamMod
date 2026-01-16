@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles;
 using Terraria;
 using Terraria.Enums;
@@ -302,8 +303,13 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.AngryNimbusBanner);
             recipe.AddIngredient(ItemID.IceGolemBanner);
             recipe.AddIngredient<OilSlimeBanner>();
+            recipe.AddIngredient<PoisonSlimeBanner>();
+            recipe.AddIngredient<MintSlimeBanner>();
+            recipe.AddIngredient<PearlsandSlimeBanner>();
+            recipe.AddIngredient<AquaticSlimeBanner>();
             recipe.AddIngredient<TrashSlimeBanner>();
             recipe.AddIngredient<SaltMonsterBanner>();
+            recipe.AddIngredient<LunarElementalBanner>();
             recipe.AddIngredient<PlasmoidBanner>();
             recipe.AddIngredient<FlyingPigBanner>();
             recipe.AddIngredient<OilMonsterBanner>();

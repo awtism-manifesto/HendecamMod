@@ -33,7 +33,7 @@ public class InfernoRing : ModItem
         Item.noMelee = true;
         Item.knockBack = 6.5f;
         Item.ArmorPenetration = 150;
-        Item.value = Item.buyPrice(gold: 315);
+        Item.value = Item.buyPrice(gold: 720);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<InfernoRingProj>();

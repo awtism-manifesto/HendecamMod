@@ -34,8 +34,7 @@ namespace HendecamMod.Content.Items
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 1f;
             Item.rare = ModContent.RarityType<Seizure2>();
-            Item.value = 1547483646;
-
+            Item.value = Item.buyPrice(gold: 3999999);
 
             // Use Properties
             Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)

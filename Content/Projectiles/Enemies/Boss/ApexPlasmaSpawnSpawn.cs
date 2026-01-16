@@ -1,6 +1,7 @@
-﻿using System;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -86,7 +87,7 @@ namespace HendecamMod.Content.Projectiles.Enemies.Boss
             SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
             for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
                 {
-                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch);
+                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
                 dust.noGravity = true;
                 dust.velocity *= 5.5f;
                 dust.scale *= 2f;

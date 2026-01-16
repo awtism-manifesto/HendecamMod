@@ -6,25 +6,25 @@ using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty
-    {
+{
     //[AutoloadEquip(EquipType.Beard)]
     public class SchoolFood : ModItem
-        {
+    {
         public override void SetDefaults()
-            {
+        {
             Item.width = 16;
             Item.height = 16;
             Item.value = Item.sellPrice(silver: 4000);
             Item.rare = ItemRarityID.Orange;
             Item.accessory = true;
-            }
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
-            {
+        {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana, 4 Luck, 10% Damage Reduction, and 25 Safe Fall Distance"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building, Fishing, Food, or Exploration Buffs"));
-            }
+        }
         public override void UpdateEquip(Player player)
-            {
+        {
             player.GetModPlayer<NastyLuck>().NastyEffect = true;
             player.GetModPlayer<NastyMana>().NastyEffect = true;
             player.GetModPlayer<NastyEndurance>().NastyEffect = true;
@@ -51,16 +51,16 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty
             player.buffImmune[BuffID.WellFed] = true;
             player.buffImmune[BuffID.WellFed2] = true;
             player.buffImmune[BuffID.WellFed3] = true;
-            }
+        }
         public override void AddRecipes()
-            {
+        {
             Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+
             recipe.AddIngredient<DustyMedal>(1);
             recipe.AddIngredient<PrisonFood>(1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
-            }
         }
     }
+}

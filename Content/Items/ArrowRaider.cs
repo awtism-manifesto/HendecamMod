@@ -52,7 +52,7 @@ namespace HendecamMod.Content.Items
 
             Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
             Item.useAmmo = ItemID.WoodenArrow;
-            Item.shoot = ItemID.WoodenArrow;
+            Item.shoot = ProjectileID.WoodenArrowFriendly;
 
 
         }

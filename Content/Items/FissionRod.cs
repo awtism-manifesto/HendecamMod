@@ -34,7 +34,7 @@ namespace HendecamMod.Content.Items
             Item.knockBack = 20;
             Item.noMelee = true;
             Item.ArmorPenetration = 30;
-            Item.value = 372000;
+            Item.value = 1150000;
             Item.rare = ItemRarityID.Red;
            
 

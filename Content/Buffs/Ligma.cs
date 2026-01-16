@@ -41,7 +41,7 @@ namespace HendecamMod.Content.Buffs
             if (npc.lifeRegen > 0)
                 npc.lifeRegen = 0;
 
-            npc.lifeRegen -= 5500;
+            npc.lifeRegen -= 6700;
 
            
         }

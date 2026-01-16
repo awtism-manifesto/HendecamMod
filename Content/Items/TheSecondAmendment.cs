@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -205,7 +206,7 @@ namespace HendecamMod.Content.Items
                         projType = ProjectileID.FairyQueenRangedItemShot;
                         break;
                     case 41:
-                        projType = ProjectileID.Shuriken;
+                        projType = ModContent.ProjectileType<ApexPlasmaBullet>();
                         break;
                     case 42:
                         projType = ModContent.ProjectileType<TerraRound>();
@@ -217,7 +218,7 @@ namespace HendecamMod.Content.Items
                         projType = ProjectileID.ChlorophyteBullet;
                         break;
                     case 45:
-                        projType = ProjectileID.Bullet;
+                        projType = ModContent.ProjectileType<ApexPlasmaBullet>();
                         break;
                     case 46:
                         projType = ProjectileID.GoldenBullet;
@@ -353,7 +354,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.Xenopopper);
             recipe.AddIngredient<TheMagnum>();
             recipe.AddIngredient<MidnightAfterburner>();
-
+            recipe.AddIngredient<ApexPlasmaCannon>();
             recipe.AddIngredient<PlutoniumAutoPistol>();
             recipe.AddIngredient<ATFsNightmare>();
             recipe.AddIngredient<GunThatKillsPeople>();

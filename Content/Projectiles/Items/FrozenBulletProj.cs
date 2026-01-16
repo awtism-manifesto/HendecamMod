@@ -65,11 +65,11 @@ namespace HendecamMod.Content.Projectiles.Items
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 4; j++)
             {
                 Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 1f);
                 fireDust.noGravity = true;
-                fireDust.velocity *= 5f;
+                fireDust.velocity *= 6.55f;
                 target.AddBuff(BuffID.Frostburn, 180);
 
             }

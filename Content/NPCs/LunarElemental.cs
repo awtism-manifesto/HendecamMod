@@ -42,7 +42,7 @@ namespace HendecamMod.Content.NPCs
             AIType = NPCID.GraniteFlyer;
             AnimationType = NPCID.GraniteFlyer;
             Banner = Type;
-            BannerItem = ModContent.ItemType<AquaticSlimeBanner>();
+            BannerItem = ModContent.ItemType<LunarElementalBanner>();
 
         }
         public override void AI()

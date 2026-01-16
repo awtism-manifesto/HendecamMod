@@ -42,11 +42,11 @@ namespace HendecamMod.Content.Items
 
 
             // Weapon Properties
-            Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
-            Item.damage = 124; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>(); // Sets the damage type to ranged.
+            Item.damage = 83; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
-
+            Item.useAmmo = AmmoID.Rocket;
 
 
 
@@ -55,7 +55,7 @@ namespace HendecamMod.Content.Items
             // For some reason, all the guns in the vanilla source have this.
             Item.shoot = ModContent.ProjectileType<GagGift>();
 
-            Item.shootSpeed = 23.25f; // The speed of the projectile (measured in pixels per frame.)
+            Item.shootSpeed = 20.25f; // The speed of the projectile (measured in pixels per frame.)
 
         }
         
@@ -92,7 +92,7 @@ namespace HendecamMod.Content.Items
             var line = new TooltipLine(Mod, "Face", "Gifts your opponents the wonderful present of pure high explosives!");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+            line = new TooltipLine(Mod, "Face", "Uses rockets as ammo")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
