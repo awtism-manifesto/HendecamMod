@@ -3290,6 +3290,10 @@ WorldGen: {
 	BlessedWithAzuriteOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAzuriteOreMessage
 	AzuriteMessage: Blue.
 	AzuriteBlessMessage: Blue.
+	BlessedWithOilOreMessage: Mods.HendecamMod.WorldGen.BlessedWithOilOreMessage
+	ManifestoOrePassMessage: Mods.HendecamMod.WorldGen.ManifestoOrePassMessage
+	BlessedWithAncientCobaltOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAncientCobaltOreMessage
+	AncientCobaltOrePassMessage: Mods.HendecamMod.WorldGen.AncientCobaltOrePassMessage
 }
 
 Items: {
@@ -7664,6 +7668,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Weed Cube
 	}
+
+	AncientCobaltOre: {
+		Tooltip: ""
+		DisplayName: Ancient Cobalt Ore
+	}
+
+	AncientCobaltBar: {
+		DisplayName: Ancient Cobalt Bar
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -7681,6 +7695,7 @@ Tiles: {
 
 	LycopiteOreTile.MapEntry: Lycopite Ore Tile
 	OilDeposit.MapEntry: Oil Deposit
+	AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore Placed
 }
 
 Buffs: {

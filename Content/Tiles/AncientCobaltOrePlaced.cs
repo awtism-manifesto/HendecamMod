@@ -12,13 +12,13 @@ using Terraria.GameContent.Generation;
 
 namespace HendecamMod.Content.Tiles
 {
-    public class OilDeposit : ModTile
+    public class AncientCobaltOrePlaced : ModTile
     {
         public override void SetStaticDefaults()
         {
             TileID.Sets.Ore[Type] = true;
             Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
-            Main.tileOreFinderPriority[Type] = 235; // Metal Detector value, see https://terraria.wiki.gg/wiki/Metal_Detector
+            Main.tileOreFinderPriority[Type] = 295; // Metal Detector value, see https://terraria.wiki.gg/wiki/Metal_Detector
             Main.tileShine2[Type] = true; // Modifies the draw color slightly.
             Main.tileShine[Type] = 750; // How often tiny dust appear off this tile. Larger is less frequently
             Main.tileMergeDirt[Type] = true;
@@ -32,29 +32,29 @@ namespace HendecamMod.Content.Tiles
             Main.tileBlockLight[Type] = true;
             
             LocalizedText name = CreateMapEntryName();
-            AddMapEntry(new Color(2, 2, 2), Language.GetText("Oil Deposit"));
+            AddMapEntry(new Color(160, 225, 255), Language.GetText("Ancient Cobalt"));
 
-            DustType = DustID.Wraith;
-            HitSound = SoundID.Item50;
+            DustType = DustID.Cobalt;
+            HitSound = SoundID.Tink;
             MineResist = 2f;
-            MinPick = 20;
+            MinPick = 55;
         }
 
         // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
-        public class FrozenOilSystem : ModSystem
+        public class AncientAncientCobaltSystem : ModSystem
         {
-            public static LocalizedText ManifestoOrePassMessage { get; private set; }
-            public static LocalizedText BlessedWithOilOreMessage { get; private set; }
+            public static LocalizedText AncientCobaltOrePassMessage { get; private set; }
+            public static LocalizedText BlessedWithAncientCobaltOreMessage { get; private set; }
 
             public override void SetStaticDefaults()
             {
-                ManifestoOrePassMessage = Mod.GetLocalization($"WorldGen.{nameof(ManifestoOrePassMessage)}");
-                BlessedWithOilOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithOilOreMessage)}");
+                AncientCobaltOrePassMessage = Mod.GetLocalization($"WorldGen.{nameof(AncientCobaltOrePassMessage)}");
+                BlessedWithAncientCobaltOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithAncientCobaltOreMessage)}");
             }
 
             // This method is called from MinionBossBody.OnKill the first time the boss is killed.
             // The logic is located here for organizational purposes.
-            public void BlessWorldWithOilOre()
+            public void BlessWorldWithAncientCobaltOre()
             {
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                 {
@@ -68,11 +68,11 @@ namespace HendecamMod.Content.Tiles
                     // Broadcast a message to notify the user.
                     if (Main.netMode == NetmodeID.SinglePlayer)
                     {
-                        Main.NewText(BlessedWithOilOreMessage.Value, 50, 255, 130);
+                        Main.NewText(BlessedWithAncientCobaltOreMessage.Value, 50, 255, 130);
                     }
                     else if (Main.netMode == NetmodeID.Server)
                     {
-                        ChatHelper.BroadcastChatMessage(BlessedWithOilOreMessage.ToNetworkText(), new Color(50, 255, 130));
+                        ChatHelper.BroadcastChatMessage(BlessedWithAncientCobaltOreMessage.ToNetworkText(), new Color(50, 255, 130));
                     }
 
                     // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 
@@ -85,7 +85,7 @@ namespace HendecamMod.Content.Tiles
                         int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                         // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                        WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<OilDeposit>());
+                        WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<AncientCobaltOrePlaced>());
                     }
                 });
             }
@@ -103,14 +103,14 @@ namespace HendecamMod.Content.Tiles
                 {
                     // Next, we insert our pass directly after the original "Shinies" pass.
                     // ExampleOrePass is a class seen bellow
-                    tasks.Insert(ShiniesIndex + 1, new ManifestoOrePass("Oil Deposits", 237.4298f));
+                    tasks.Insert(ShiniesIndex + 1, new AncientCobaltOrePass("AncientCobalt Deposits", 237.4298f));
                 }
             }
         }
 
-        public class ManifestoOrePass : GenPass
+        public class AncientCobaltOrePass : GenPass
         {
-            public ManifestoOrePass(string name, float loadWeight) : base(name, loadWeight)
+            public AncientCobaltOrePass(string name, float loadWeight) : base(name, loadWeight)
             {
             }
 
@@ -118,11 +118,11 @@ namespace HendecamMod.Content.Tiles
             {
                 // progress.Message is the message shown to the user while the following code is running.
                 // Try to make your message clear. You can be a little bit clever, but make sure it is descriptive enough for troubleshooting purposes.
-                progress.Message = FrozenOilSystem.ManifestoOrePassMessage.Value;
+                progress.Message = AncientAncientCobaltSystem.AncientCobaltOrePassMessage.Value;
 
                 // Ores are quite simple, we simply use a for loop and the WorldGen.TileRunner to place splotches of the specified Tile in the world.
                 // "6E-05" is "scientific notation". It simply means 0.00006 but in some ways is easier to read.
-                for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 17E-05); k++)
+                for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 14E-05); k++)
                 {
                     // The inside of this for loop corresponds to one single splotch of our Ore.
                     // First, we randomly choose any coordinate in the world by choosing a random x and y value.
@@ -133,8 +133,11 @@ namespace HendecamMod.Content.Tiles
 
                     // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place.
                     // Feel free to experiment with strength and step to see the shape they generate.
-                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(4, 7), WorldGen.genRand.Next(8, 12), ModContent.TileType<OilDeposit>());
-
+                    Tile tile = Framing.GetTileSafely(x, y);
+                    if (tile.HasTile && tile.TileType == TileID.Mud)
+                    {
+                        WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(6, 8), ModContent.TileType<AncientCobaltOrePlaced>());
+                    }
                     // Alternately, we could check the tile already present in the coordinate we are interested.
                     // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.
                     // Tile tile = Framing.GetTileSafely(x, y);
