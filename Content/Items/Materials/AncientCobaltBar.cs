@@ -15,25 +15,21 @@ namespace HendecamMod.Content.Items.Materials
            
            
 
-            Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
+            Item.ResearchUnlockCount = 25;
         }
         public override void SetDefaults()
         {
-            // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
-            // Common Properties
-            Item.width = 32; // Hitbox width of the item.
-            Item.height = 32; // Hitbox height of the item.
+            Item.width = 32;
+            Item.height = 32;
             Item.scale = 1f;
-            Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Orange;
             Item.value = 9800;
             Item.maxStack = 9999;
             Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltBarPlaced>());
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "");
+            var line = new TooltipLine(Mod, "Face", "I'm old!");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
