@@ -204,6 +204,8 @@ namespace HendecamMod.Content.Projectiles
             target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
             target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
+            target.AddBuff(ModContent.BuffType<Ligma>(), 444);
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
@@ -223,6 +225,8 @@ namespace HendecamMod.Content.Projectiles
             target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
             target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
+            target.AddBuff(ModContent.BuffType<Ligma>(), 444);
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.BlackLightningHit,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 Projectile.owner);

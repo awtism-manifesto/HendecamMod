@@ -17,7 +17,7 @@ namespace HendecamMod.Content.Items.Consumables
             {
             Item.width = 32;
             Item.height = 32;
-            Item.value = Item.sellPrice(silver: 1000);
+            Item.value = Item.sellPrice(silver: 25);
             Item.rare = ItemRarityID.LightPurple;
            
 

@@ -7953,6 +7953,11 @@ Buffs: {
 		DisplayName: Shiny Tag2
 		Description: Mods.HendecamMod.Buffs.ShinyTag2.Description
 	}
+
+	MoonBurn: {
+		DisplayName: Moon Burn
+		Description: Mods.HendecamMod.Buffs.MoonBurn.Description
+	}
 }
 
 NPCs: {

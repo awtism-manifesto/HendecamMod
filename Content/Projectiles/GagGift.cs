@@ -135,9 +135,9 @@ namespace HendecamMod.Content.Projectiles
             Projectile.Resize(155, 155);
 
             // Spawn a bunch of smoke dusts.
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 35; i++)
             {
-                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
+                Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 30, default, 2.15f);
                 smokeDust.velocity *= 1.4f;
             }
 
@@ -151,30 +151,7 @@ namespace HendecamMod.Content.Projectiles
                 fireDust.velocity *= 3f;
             }
 
-            // Spawn a bunch of smoke gores.
-            for (int k = 0; k < 2; k++)
-            {
-                float speedMulti = 0.4f;
-                if (k == 1)
-                {
-                    speedMulti = 0.8f;
-                }
-
-                Gore smokeGore = Gore.NewGoreDirect(Projectile.GetSource_Death(), Projectile.position, default, Main.rand.Next(GoreID.Smoke1, GoreID.Smoke3 + 1));
-                smokeGore.velocity *= speedMulti;
-                smokeGore.velocity += Vector2.One;
-                smokeGore = Gore.NewGoreDirect(Projectile.GetSource_Death(), Projectile.position, default, Main.rand.Next(GoreID.Smoke1, GoreID.Smoke3 + 1));
-                smokeGore.velocity *= speedMulti;
-                smokeGore.velocity.X -= 1f;
-                smokeGore.velocity.Y += 1f;
-                smokeGore = Gore.NewGoreDirect(Projectile.GetSource_Death(), Projectile.position, default, Main.rand.Next(GoreID.Smoke1, GoreID.Smoke3 + 1));
-                smokeGore.velocity *= speedMulti;
-                smokeGore.velocity.X += 1f;
-                smokeGore.velocity.Y -= 1f;
-                smokeGore = Gore.NewGoreDirect(Projectile.GetSource_Death(), Projectile.position, default, Main.rand.Next(GoreID.Smoke1, GoreID.Smoke3 + 1));
-                smokeGore.velocity *= speedMulti;
-                smokeGore.velocity -= Vector2.One;
-            }
+            
         }
     }
 }

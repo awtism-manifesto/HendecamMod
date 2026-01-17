@@ -220,7 +220,6 @@
 	  <None Remove="Content\Projectiles\AstaBoomBig.png" />
 	  <None Remove="Content\Projectiles\AstaBoomDelayed.png" />
 	  <None Remove="Content\Projectiles\AstaFission.png" />
-	  <None Remove="Content\Projectiles\AstaGlaive.png" />
 	  <None Remove="Content\Projectiles\AstaRocketProj.png" />
 	  <None Remove="Content\Projectiles\AstatineBullet.png" />
 	  <None Remove="Content\Projectiles\Bad5g.png" />

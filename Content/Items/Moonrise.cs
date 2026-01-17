@@ -73,7 +73,7 @@ namespace HendecamMod.Content.Items
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Converts darts into hypersonic luminite darts that deal huge damage on impact and inflict frostbite");
+            var line = new TooltipLine(Mod, "Face", "Converts darts into hypersonic luminite darts that deal huge damage on impact and inflict Moon Burn");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")

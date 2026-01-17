@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -31,7 +32,7 @@ namespace HendecamMod.Content.Tiles
             TileID.Sets.DisableSmartInteract[Type] = true;
             TileID.Sets.Torch[Type] = true;
 
-            DustType = DustID.PurpleTorch;
+            DustType = ModContent.DustType<PlutoniumDust>();
             AdjTiles = [TileID.Torches];
             VanillaFallbackOnModDeletion = TileID.Torches;
 
@@ -186,7 +187,7 @@ namespace HendecamMod.Content.Tiles
 
             if (Main.rand.NextBool(40) && tileFrameX < 66)
             {
-                int dustChoice = DustID.PurpleTorch;
+                int dustChoice = ModContent.DustType<PlutoniumDust>();
                 Dust dust;
                 Vector2 spawnPosition = tileFrameX switch
                 {

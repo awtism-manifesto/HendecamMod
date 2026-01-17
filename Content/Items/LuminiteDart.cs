@@ -41,7 +41,7 @@ namespace HendecamMod.Content.Items
             var line = new TooltipLine(Mod, "Face", "Doubles the base damage of your weapon");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Inflicts Frostbite and Hellfire")
+            line = new TooltipLine(Mod, "Face", "Inflicts Moon Burn")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

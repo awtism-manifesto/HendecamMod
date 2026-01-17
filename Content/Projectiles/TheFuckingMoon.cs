@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -36,10 +37,10 @@ namespace HendecamMod.Content.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 1200);
 
-
-            
         }
+        
 
         public override bool OnTileCollide(Vector2 oldVelocity)
         {

@@ -26,7 +26,7 @@ namespace HendecamMod.Content.Items
             Item.scale = 0.75f;
             Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-            Item.damage = 198; // The amount of damage the item does to an enemy or player.
+            Item.damage = 180; // The amount of damage the item does to an enemy or player.
             Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
             Item.knockBack = 5.5f; // The amount of knockback the item inflicts.
             Item.ArmorPenetration = 45;
@@ -35,7 +35,7 @@ namespace HendecamMod.Content.Items
             Item.value = Item.buyPrice(gold: 1150); // The amount of money that the item is can be bought for.
 
             Item.shoot = ModContent.ProjectileType<AstaGlaive>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
-            Item.shootSpeed = 17.5f; // The velocity of the shot projectile.			
+            Item.shootSpeed = 21.25f; // The velocity of the shot projectile.			
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -52,22 +52,10 @@ namespace HendecamMod.Content.Items
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
 
-        // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-        // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+       
 
         public override Vector2? HoldoutOffset()
         {

@@ -1,10 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Projectiles
 {
@@ -47,9 +49,9 @@ namespace HendecamMod.Content.Projectiles
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
+
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 300);
            
-            target.AddBuff(BuffID.OnFire3, 300);
-            target.AddBuff(BuffID.Frostburn2, 300);
         }
         public override void AI()
         {
@@ -75,10 +77,10 @@ namespace HendecamMod.Content.Projectiles
 
 
 
-                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Vortex, 0f, 0f, 100, default, 0.5f);
+                        Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 1f);
                         fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                         fireDust.noGravity = true;
-                        fireDust.velocity *= 1.55f;
+                        fireDust.velocity *= 1.05f;
                     }
                 }
 
@@ -134,21 +136,13 @@ namespace HendecamMod.Content.Projectiles
             // Spawn a bunch of fire dusts.
             for (int j = 0; j < 6; j++)
             {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.LunarOre, 0f, 0f, 100, default, 1.5f);
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 1.5f);
                 fireDust.noGravity = true;
-                fireDust.velocity *= 7f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.LunarOre, 0f, 0f, 100, default, 0.5f);
-                fireDust.velocity *= 3f;
+                fireDust.velocity *= 8.7f;
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.5f);
+                fireDust.velocity *= 6.3f;
             }
-            // Spawn a bunch of fire dusts.
-            for (int j = 0; j < 3; j++)
-            {
-                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.LunarOre, 0f, 0f, 100, default, 1.5f);
-                fireDust.noGravity = true;
-                fireDust.velocity *= 3f;
-                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.LunarOre, 0f, 0f, 100, default, 0.5f);
-                fireDust.velocity *= 1f;
-            }
+            
 
 
             // Rocket II explosion that damages tiles.

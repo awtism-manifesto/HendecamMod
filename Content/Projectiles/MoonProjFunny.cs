@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -46,7 +47,7 @@ namespace HendecamMod.Content.Projectiles
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(11, 11).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 500);
 
         }
 

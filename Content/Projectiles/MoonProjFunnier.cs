@@ -51,7 +51,7 @@ namespace HendecamMod.Content.Projectiles
             // This can be done by modifying projectile.penetrate
 
         }
-
+       
         public override void AI()
         {
 
@@ -137,7 +137,7 @@ namespace HendecamMod.Content.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<EmblemTag>(), 390);
-           
+            target.AddBuff(ModContent.BuffType<MoonBurn>(), 600);
         }
         public override void OnKill(int timeLeft)
         {
