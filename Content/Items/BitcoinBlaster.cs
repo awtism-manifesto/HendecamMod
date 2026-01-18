@@ -35,14 +35,14 @@ namespace HendecamMod.Content.Items
             Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
             Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-            Item.mana = 6;
+           
 
             // The sound that this item plays when used.
             Item.UseSound = SoundID.Item62;
 
 
             // Weapon Properties
-            Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();  // Sets the damage type to ranged.
+            Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();  // Sets the damage type to ranged.
             Item.damage = 150; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -68,7 +68,7 @@ namespace HendecamMod.Content.Items
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-            damage = (int)(damage * Main.rand.NextFloat(0.02f, 2f));
+            damage = (int)(damage * Main.rand.NextFloat(0.02f, 2.02f));
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.

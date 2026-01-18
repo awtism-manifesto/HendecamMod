@@ -7678,6 +7678,31 @@ Items: {
 		DisplayName: Ancient Cobalt Bar
 		Tooltip: ""
 	}
+
+	AncientCobaltPickaxe: {
+		DisplayName: Ancient Cobalt Pickaxe
+		Tooltip: ""
+	}
+
+	AncientCobaltWaraxe: {
+		DisplayName: Ancient Cobalt Waraxe
+		Tooltip: ""
+	}
+
+	AncientCobaltSword: {
+		DisplayName: Ancient Cobalt Sword
+		Tooltip: ""
+	}
+
+	AncientCobaltRepeater: {
+		DisplayName: Ancient Cobalt Repeater
+		Tooltip: ""
+	}
+
+	LunarStaff: {
+		DisplayName: Lunar Staff
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8596,6 +8621,8 @@ Projectiles: {
 	AstaBoomOmni.DisplayName: Asta Boom Omni
 	CeramOmniSpawn.DisplayName: Ceram Omni Spawn
 	CeramOmni.DisplayName: Ceram Omni
+	LunarBolt.DisplayName: Lunar Bolt
+	LunarContrail.DisplayName: Lunar Contrail
 }
 
 Biomes: {

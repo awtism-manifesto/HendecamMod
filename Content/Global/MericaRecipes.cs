@@ -493,6 +493,21 @@ namespace HendecamMod.Content.Global
             gay69420.AddTile(TileID.Anvils);
             gay69420.Register();
 
+            Recipe ACMH = Recipe.Create(ItemID.AncientCobaltHelmet);
+            ACMH.AddIngredient<AncientCobaltBar>(15);
+            ACMH.AddTile(TileID.Anvils);
+            ACMH.Register();
+
+            Recipe ACMHS = Recipe.Create(ItemID.AncientCobaltLeggings);
+            ACMHS.AddIngredient<AncientCobaltBar>(20);
+            ACMHS.AddTile(TileID.Anvils);
+            ACMHS.Register();
+
+            Recipe ACMHC = Recipe.Create(ItemID.AncientCobaltBreastplate);
+            ACMHC.AddIngredient<AncientCobaltBar>(25);
+            ACMHC.AddTile(TileID.Anvils);
+            ACMHC.Register();
+
             Recipe gay69421 = Recipe.Create(ItemID.ZapinatorGray);
             gay69421.AddIngredient<Items.ZapperGun>();
             gay69421.AddIngredient(ItemID.DemoniteBar, 8);

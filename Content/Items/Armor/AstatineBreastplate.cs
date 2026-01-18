@@ -155,8 +155,8 @@ namespace HendecamMod.Content.Items.Armor
             if (explosionCooldown > 0)
                 return;
 
-            int baseDamage = 500;
-            float defenseScale = 1.5f;
+            int baseDamage = 850;
+            float defenseScale = 2.5f;
             int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
 
             // Spawn explosion

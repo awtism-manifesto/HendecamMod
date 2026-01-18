@@ -44,6 +44,7 @@ namespace HendecamMod.Content.NPCs
             NPC.noGravity = true;
             NPC.despawnEncouraged = false;
             NPC.noTileCollide = true;
+            
             AIType = NPCID.Flocko; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
             AnimationType = NPCID.Harpy; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
             Banner = Type;
@@ -56,6 +57,8 @@ namespace HendecamMod.Content.NPCs
         }
         public override void AI()
         {
+            
+
             Lighting.AddLight(NPC.Center, 2.5f, 0.25f, 0.8f);
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

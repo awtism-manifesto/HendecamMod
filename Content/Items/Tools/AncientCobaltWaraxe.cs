@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -14,7 +15,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.DamageType = DamageClass.Melee;
             Item.width = 40;
             Item.height = 40;
-            Item.useTime = 15;
+            Item.useTime = 7;
             Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
@@ -22,7 +23,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
-
+            Item.scale = 1.15f;
             Item.axe = 22;
             Item.hammer = 75;
             Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -37,7 +38,7 @@ namespace HendecamMod.Content.Items.Tools
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<AzuriteBar>(15);
+            recipe.AddIngredient<AncientCobaltBar>(12);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 

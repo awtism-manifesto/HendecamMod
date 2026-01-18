@@ -132,7 +132,7 @@ namespace HendecamMod.Content.Global
         {
             if (fromVP70 && target.HasBuff(ModContent.BuffType<VpTag>()))
             {
-                modifiers.SourceDamage *= 2.25f;
+                modifiers.SourceDamage *= 1.65f;
             }
         }
 
