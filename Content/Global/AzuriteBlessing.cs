@@ -51,7 +51,7 @@ namespace HendecamMod.Content.Global
         {
             if (Main.netMode == NetmodeID.MultiplayerClient)
             {
-                return; // This should not happen, but just in case.
+                return;
             }
 
             // Since this happens during gameplay, we need to run this code on another thread. If we do not, the game will experience lag for a brief moment. This is especially necessary for world generation tasks that would take even longer to execute.

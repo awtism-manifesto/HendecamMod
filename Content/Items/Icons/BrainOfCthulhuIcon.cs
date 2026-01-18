@@ -24,7 +24,6 @@ namespace HendecamMod.Content.Items.Icons
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "A token for those who have slain the Brain of Cthulhu");
             tooltips.Add(line);
 
@@ -36,8 +35,6 @@ namespace HendecamMod.Content.Items.Icons
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
             foreach (var l in tooltips)
             {
                 if (l.Name.EndsWith(":RemoveMe"))
@@ -46,8 +43,6 @@ namespace HendecamMod.Content.Items.Icons
                 }
             }
 
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
         }
     }
 }

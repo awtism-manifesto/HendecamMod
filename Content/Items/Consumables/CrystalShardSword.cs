@@ -9,7 +9,6 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Consumables
     {
-    //[AutoloadEquip(EquipType.Beard)]
     public class CrystalShardSword : ModItem
         {
         public override void SetDefaults()
@@ -31,7 +30,7 @@ namespace HendecamMod.Content.Items.Consumables
             Item.knockBack = 6.0f;
             Item.consumable = true;
             Item.ChangePlayerDirectionOnShoot = true;
-            Item.buffType = BuffID.Bleeding; // Specify an existing buff to be applied when used.
+            Item.buffType = BuffID.Bleeding; 
             Item.buffTime = 300;
             }
         public override void ModifyTooltips(List<TooltipLine> tooltips)

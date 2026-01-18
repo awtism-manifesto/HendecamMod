@@ -28,7 +28,6 @@ namespace HendecamMod.Content.Items.Consumables
             }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
             {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "Gaze into the night sky, angering a monstrosity that should've stayed on the other side of the moon");
             tooltips.Add(line);
 
