@@ -13,6 +13,7 @@ namespace HendecamMod.Content.Items.Armor
 		{
 			Item.defense = 6;
 			Item.rare = ItemRarityID.Blue;
+            Item.value = 67000;
 		}
         public static readonly int AdditiveDamageBonus = 4;
         public override void UpdateEquip(Player player)

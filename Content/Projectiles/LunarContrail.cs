@@ -62,7 +62,7 @@ namespace HendecamMod.Content.Projectiles
 
 
                
-                if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
+                if (Math.Abs(Projectile.velocity.X) <= 20.5f && Math.Abs(Projectile.velocity.Y) <= 20.5f)
                 {
                     Projectile.velocity *= 1.05f;
 

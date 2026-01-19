@@ -30,7 +30,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.autoReuse = true;
             Item.mana = 11;
             Item.DamageType = DamageClass.Magic;
-            Item.damage = 21;
+            Item.damage = 20;
             Item.knockBack = 3.5f;
             Item.noMelee = true;
             Item.value = 75000;

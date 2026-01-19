@@ -33,7 +33,7 @@ namespace HendecamMod.Content.Items
             Item.knockBack = 3f;
             Item.scale = 1.33f;
             Item.mana = 6;
-            Item.value = Item.buyPrice(gold: 3);
+            Item.value = 59500;
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
 

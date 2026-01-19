@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes
 {
@@ -29,6 +30,12 @@ namespace HendecamMod.Content.Items.Accessories.NormalOnes
         {
             player.AddBuff(BuffID.ShadowDodge, 300);
             player.AddBuff(BuffID.ParryDamageBuff, 300);
+            player.AddBuff(ModContent.BuffType<DarkPower>(), 300);
+            player.AddBuff(ModContent.BuffType<MorbinTime>(), 300);
+            player.AddBuff(ModContent.BuffType<CasaBuff>(), 300);
+            player.AddBuff(ModContent.BuffType<MambaBuff>(), 300);
+            player.AddBuff(ModContent.BuffType<HeartBuff>(), 300);
+            player.AddBuff(ModContent.BuffType<JungleHealing>(), 300);
         }
         public override void AddRecipes()
         {

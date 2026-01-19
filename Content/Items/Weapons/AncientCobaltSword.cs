@@ -19,11 +19,11 @@ namespace HendecamMod.Content.Items.Weapons
 
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useTime = 24;
-            Item.useAnimation = 20;
+            Item.useAnimation = 24;
             Item.autoReuse = true;
 
             Item.DamageType = DamageClass.Melee;
-            Item.damage = 39/2;
+            Item.damage = 18;
             Item.knockBack = 6;
             
             Item.ChangePlayerDirectionOnShoot = true;

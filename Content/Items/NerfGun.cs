@@ -24,7 +24,7 @@ namespace HendecamMod.Content.Items
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 0.7f;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-            Item.value = 1999;
+            Item.value = 110000;
 
 
             // Use Properties

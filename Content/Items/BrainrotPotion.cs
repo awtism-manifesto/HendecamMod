@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -34,8 +35,8 @@ namespace HendecamMod.Content.Items
             Item.consumable = true;
             Item.rare = ItemRarityID.Blue;
             Item.value = Item.buyPrice(silver: 3);
-            Item.buffType = ModContent.BuffType<Buffs.BrainRotted>(); // Specify an existing buff to be applied when used.
-            Item.buffTime = 14400; // Ticks
+            Item.buffType = ModContent.BuffType<BrainRotted>();
+            Item.buffTime = 14480; // Ticks
         }
         public override Color? GetAlpha(Color lightColor)
         {
@@ -55,18 +56,7 @@ namespace HendecamMod.Content.Items
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()

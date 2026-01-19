@@ -7703,6 +7703,11 @@ Items: {
 		DisplayName: Lunar Staff
 		Tooltip: ""
 	}
+
+	AncientCobaltNaginata: {
+		Tooltip: ""
+		DisplayName: Ancient Cobalt Naginata
+	}
 }
 
 Tiles: {
@@ -8623,6 +8628,7 @@ Projectiles: {
 	CeramOmni.DisplayName: Ceram Omni
 	LunarBolt.DisplayName: Lunar Bolt
 	LunarContrail.DisplayName: Lunar Contrail
+	AncientCobaltSpear.DisplayName: Ancient Cobalt Spear
 }
 
 Biomes: {
