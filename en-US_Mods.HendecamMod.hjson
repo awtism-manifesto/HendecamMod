@@ -7723,6 +7723,16 @@ Items: {
 		DisplayName: Lego Chainsaw
 		Tooltip: ""
 	}
+
+	SporeSaw: {
+		Tooltip: ""
+		DisplayName: Spore Saw
+	}
+
+	MorbiumTreeripper: {
+		DisplayName: Morbium Treeripper
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8647,6 +8657,9 @@ Projectiles: {
 	AncientCobaltDrillProj.DisplayName: Ancient Cobalt Drill Proj
 	AncientCobaltChainsawProj.DisplayName: Ancient Cobalt Chainsaw Proj
 	LegoChainsawProj.DisplayName: Lego Chainsaw Proj
+	SporeSawProj.DisplayName: Spore Saw Proj
+	MorbiumTreeripperProj.DisplayName: Morbium Treeripper Proj
+	ElfMagicMissile.DisplayName: Elf Magic Missile
 }
 
 Biomes: {

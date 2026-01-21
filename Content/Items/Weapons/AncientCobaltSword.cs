@@ -30,7 +30,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.scale = 1.45f;
 
             Item.value = Item.buyPrice(gold: 1);
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
             Item.shoot = ModContent.ProjectileType<CobaltBolt>();
             Item.shootSpeed = 10.25f;

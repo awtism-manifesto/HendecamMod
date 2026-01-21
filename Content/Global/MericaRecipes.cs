@@ -514,6 +514,14 @@ namespace HendecamMod.Content.Global
             gay69421.AddIngredient(ItemID.IllegalGunParts);
             gay69421.AddTile(TileID.Anvils);
             gay69421.Register();
+
+            Recipe trans = Recipe.Create(ItemID.GenderChangePotion);
+            trans.AddIngredient<TransOre>();
+            trans.AddIngredient<FireDiamond>();
+            trans.AddIngredient(ItemID.BottledWater);
+            trans.AddTile(TileID.AlchemyTable);
+            trans.Register();
+
             Recipe cc = Recipe.Create(ItemID.CandyCaneSword);
             cc.AddIngredient(ItemID.CandyCaneBlock,15);
             cc.AddIngredient(ItemID.GreenCandyCaneBlock, 10);

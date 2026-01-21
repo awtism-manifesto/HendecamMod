@@ -2,6 +2,7 @@
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -95,7 +96,7 @@ namespace HendecamMod.Content.NPCs.Town.Alpine
             NPC.width = 18;
             NPC.height = 37;
             NPC.aiStyle = NPCAIStyleID.Passive;
-            NPC.damage = 1000;
+            NPC.damage = 600;
             NPC.defense = 20;
             NPC.lifeMax = 5000;
             NPC.HitSound = SoundID.NPCHit1;
@@ -305,8 +306,8 @@ namespace HendecamMod.Content.NPCs.Town.Alpine
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
             {
-            cooldown = 1;
-            randExtraCooldown = 69;
+            cooldown = 15;
+            randExtraCooldown = 15;
             }
 
         // public override void DrawTownAttackGun(ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)
@@ -316,8 +317,8 @@ namespace HendecamMod.Content.NPCs.Town.Alpine
         // }
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
             {
-            projType = ModContent.ProjectileType<ApexPlasmaBullet>();
-            attackDelay = 1;
+            projType = ModContent.ProjectileType<ElfMagicMissile>();
+            attackDelay = 15;
             }
 
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
