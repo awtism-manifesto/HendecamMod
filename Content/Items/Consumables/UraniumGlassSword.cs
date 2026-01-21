@@ -34,7 +34,8 @@ namespace HendecamMod.Content.Items.Consumables
             Item.buffType = BuffID.Bleeding; 
             Item.buffType = ModContent.BuffType<RadPoisoning>();
             Item.buffTime = 300;
-            }
+            Item.useTurn = true;
+        }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
            

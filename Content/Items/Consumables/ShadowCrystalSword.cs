@@ -33,7 +33,8 @@ namespace HendecamMod.Content.Items.Consumables
             Item.ChangePlayerDirectionOnShoot = true;
             Item.buffType = BuffID.Bleeding; 
             Item.buffTime = 300;
-            }
+            Item.useTurn = true;
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
             {
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
