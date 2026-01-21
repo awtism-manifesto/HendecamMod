@@ -27,7 +27,7 @@ namespace HendecamMod.Content.Items
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 1f;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-            Item.value = 13500;
+            Item.value = 1150;
             Item.maxStack = 9999;
             Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.OilDeposit>());
             

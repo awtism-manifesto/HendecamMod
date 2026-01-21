@@ -57,6 +57,7 @@ namespace HendecamMod.Content.Items.Placeables
             Item.width = 12;
             Item.height = 12;
             Item.rare = ItemRarityID.Blue;
+            Item.value = 1590;
 
         }
     }

@@ -338,8 +338,8 @@ namespace HendecamMod.Content.NPCs
                       .Add<Items.PrideFlag>()
                 .Add<Items.PridePartyHat>()
                    .Add<Items.CollarOfTheDamned>()
-                
-                 
+                .Add(ItemID.FishingBobberGlowingStar)
+
 
              .Add(ItemID.Extractinator, Condition.DownedEarlygameBoss)
 

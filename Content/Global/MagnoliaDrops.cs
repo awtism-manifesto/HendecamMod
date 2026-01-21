@@ -79,10 +79,7 @@ namespace HendecamMod.Content.Global
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
 
             }
-            if (npc.type == NPCID.UndeadMiner)
-            {
-                npcLoot.Add(ItemDropRule.Common(ItemID.AleThrowingGlove, 5));
-            }
+           
 
             if (npc.type == NPCID.PossessedArmor)
             {

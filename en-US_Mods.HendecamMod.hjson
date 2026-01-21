@@ -7708,6 +7708,21 @@ Items: {
 		Tooltip: ""
 		DisplayName: Ancient Cobalt Naginata
 	}
+
+	AncientCobaltDrill: {
+		Tooltip: ""
+		DisplayName: Ancient Cobalt Drill
+	}
+
+	AncientCobaltChainsaw: {
+		DisplayName: Ancient Cobalt Chainsaw
+		Tooltip: ""
+	}
+
+	LegoChainsaw: {
+		DisplayName: Lego Chainsaw
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8629,6 +8644,9 @@ Projectiles: {
 	LunarBolt.DisplayName: Lunar Bolt
 	LunarContrail.DisplayName: Lunar Contrail
 	AncientCobaltSpear.DisplayName: Ancient Cobalt Spear
+	AncientCobaltDrillProj.DisplayName: Ancient Cobalt Drill Proj
+	AncientCobaltChainsawProj.DisplayName: Ancient Cobalt Chainsaw Proj
+	LegoChainsawProj.DisplayName: Lego Chainsaw Proj
 }
 
 Biomes: {
