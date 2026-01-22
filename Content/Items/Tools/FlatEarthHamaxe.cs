@@ -23,7 +23,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 7;
             
-            Item.value = Item.buyPrice(gold: 69); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
+            Item.value = Item.buyPrice(gold: 69);
             Item.rare = ModContent.RarityType<HotPink>();
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
@@ -31,11 +31,10 @@ namespace HendecamMod.Content.Items.Tools
             
             Item.hammer = 100;
             Item.axe = 35;
-            Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
+            Item.attackSpeedOnlyAffectsWeaponAnimation = true;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "");
             tooltips.Add(line);
 
@@ -46,7 +45,6 @@ namespace HendecamMod.Content.Items.Tools
             tooltips.Add(line);
         }
 
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

@@ -122,7 +122,7 @@ namespace HendecamMod.Content.Tiles
 
                 // Ores are quite simple, we simply use a for loop and the WorldGen.TileRunner to place splotches of the specified Tile in the world.
                 // "6E-05" is "scientific notation". It simply means 0.00006 but in some ways is easier to read.
-                for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 14E-05); k++)
+                for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 18E-05); k++)
                 {
                     // The inside of this for loop corresponds to one single splotch of our Ore.
                     // First, we randomly choose any coordinate in the world by choosing a random x and y value.

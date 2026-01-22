@@ -66,7 +66,7 @@ namespace HendecamMod.Content.Items.Weapons
                 Item.reuseDelay = 44;
                 Item.autoReuse = true;
                 Item.useAmmo = AmmoID.Rocket;
-                Item.shoot = ProjectileID.MiniNukeSnowmanRocketI;
+                Item.shoot = ModContent.ProjectileType<ElfMagicMissile>();
                 Item.mana = 20;
             }
             else
@@ -97,7 +97,7 @@ namespace HendecamMod.Content.Items.Weapons
         {
             if (player.altFunctionUse == 2)
             {
-                type = ProjectileID.MiniNukeSnowmanRocketI;
+                type = ModContent.ProjectileType<ElfMagicMissile>();
 
 
             }
@@ -115,6 +115,10 @@ namespace HendecamMod.Content.Items.Weapons
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+
+            // golden sigma
+
+
             if (shotCounter <= 0)
             {
                 Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
@@ -157,7 +161,7 @@ namespace HendecamMod.Content.Items.Weapons
             var line = new TooltipLine(Mod, "Face", "Left click to rapidly cast Apex Plasma Bullets that pierce many enemies");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Right click to shoot a swarm of homing missiles")
+            line = new TooltipLine(Mod, "Face", "Right click to shoot a swarm of homing Elf Magic Missiles")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

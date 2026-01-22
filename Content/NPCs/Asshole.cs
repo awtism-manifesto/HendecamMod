@@ -2,6 +2,7 @@
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Armor;
+using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -325,7 +326,8 @@ namespace HendecamMod.Content.NPCs
                          .Add<Pyrocannon>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
                          .Add<ParticleGun>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
                          .Add<WandOfTheOvercompensator>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
-                         
+                           .Add<MintalMachinePistol>(Condition.Hardmode)
+
 
 
             ;

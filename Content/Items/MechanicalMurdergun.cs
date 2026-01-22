@@ -1,14 +1,15 @@
-﻿using System;
+﻿using HendecamMod.Content.Global;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
 
 
 namespace HendecamMod.Content.Items
@@ -17,18 +18,15 @@ namespace HendecamMod.Content.Items
     {
         public override void SetDefaults()
         {
-            // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
-            // Common Properties
-            Item.width = 62; // Hitbox width of the item.
-            Item.height = 32; // Hitbox height of the item.
+           
+            Item.width = 62; 
+            Item.height = 32; 
             Item.scale = 0.85f;
-            Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
-            Item.value = 44000;
+            Item.rare = ItemRarityID.Pink; 
+            Item.value = 196000;
 
 
-            // Use Properties
-            // Use Properties
+           
             Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
             Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
             Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -53,7 +51,7 @@ namespace HendecamMod.Content.Items
             // For some reason, all the guns in the vanilla source have this.
             Item.shoot = ProjectileID.PurificationPowder;
 
-            Item.shootSpeed = 17f; // The speed of the projectile (measured in pixels per frame.)
+            Item.shootSpeed = 13.25f; // The speed of the projectile (measured in pixels per frame.)
            
         }
 
@@ -77,11 +75,11 @@ namespace HendecamMod.Content.Items
                 // Decrease velocity randomly for nicer visuals.
                 newVelocity *= 1f - Main.rand.NextFloat(0.2f);
 
-                // Create a projectile.
-                Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+                int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+                Main.projectile[proj].GetGlobalProjectile<FastLaserSwords>().fromMechGun = true;
             }
 
-            return false; // Return false because we don't want tModLoader to shoot projectile
+            return false; 
         }
        
         public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -98,18 +96,7 @@ namespace HendecamMod.Content.Items
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+           
         }
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Global;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -82,31 +83,40 @@ namespace HendecamMod.Content.Projectiles
 
             return true;
         }
-        
+
 
 
         public override void OnKill(int timeLeft)
         {
-           
-                Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-                SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-                Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-10, 10), 785));
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-                new Vector2(101, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ProjectileID.HolyArrow, (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-                Vector2 Jorkin = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-10, 10), 815));
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Jorkin,
-                new Vector2(99, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ProjectileID.HolyArrow, (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-                Vector2 Stripped = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-10, 10), 845));
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
-                new Vector2(120, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ProjectileID.HolyArrow, (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-                Vector2 Club = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-10, 10), 875));
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Club,
-                new Vector2(120, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ProjectileID.HolyArrow, (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            
+            Player player = Main.player[Projectile.owner];
+
+            SpawnHolyArrow(player, 785, 101f);
+            SpawnHolyArrow(player, 815, 99f);
+            SpawnHolyArrow(player, 845, 120f);
+            SpawnHolyArrow(player, 875, 120f);
+        }
+
+        private void SpawnHolyArrow(Player player, float heightOffset, float speed)
+        {
+            Vector2 spawnPosition = player.Center - new Vector2(Main.rand.Next(-10, 10), heightOffset);
+
+            Vector2 velocity = new Vector2(speed, 0f)
+                .RotatedBy(spawnPosition.DirectionTo(Projectile.Center).ToRotation());
+
+            int proj = Projectile.NewProjectile(
+                Projectile.GetSource_FromThis(),
+                spawnPosition,
+                velocity,
+                ProjectileID.HolyArrow,
+                (int)(Projectile.damage * 0.5f),
+                Projectile.knockBack,
+                Projectile.owner
+            );
+
+            // Apply FastBees GlobalProjectile
+            Main.projectile[proj]
+                .GetGlobalProjectile<FastBees>()
+                .fromBeeSniper = true;
         }
 
     }

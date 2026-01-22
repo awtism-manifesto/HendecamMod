@@ -26,6 +26,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.ArmorPenetration = 4;
             Item.ChangePlayerDirectionOnShoot = true;
             Item.scale = 1.29f;
+            Item.useTurn = true;
 
 
             Item.value = Item.buyPrice(gold: 1);

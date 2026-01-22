@@ -31,6 +31,7 @@ namespace HendecamMod.Content.Items.Weapons
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.White;
             Item.UseSound = SoundID.Item1;
+            Item.useTurn = true;
 
 
 

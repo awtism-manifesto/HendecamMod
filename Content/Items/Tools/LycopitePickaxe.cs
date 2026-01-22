@@ -25,17 +25,16 @@ namespace HendecamMod.Content.Items.Tools
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
                
-            Item.value = 69000; // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
+            Item.value = 69000;
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.tileBoost = 1;
-            Item.pick = 95; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
-            Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
+            Item.pick = 95; 
+            Item.attackSpeedOnlyAffectsWeaponAnimation = true;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "Can mine Hellstone");
             tooltips.Add(line);
 
@@ -47,7 +46,7 @@ namespace HendecamMod.Content.Items.Tools
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            for (int i = 0; i < 2; i++) // Creates a splash of dust around the position the projectile dies.
+            for (int i = 0; i < 2; i++)
             {
                 Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<LycopiteDust>());
                 dust.noGravity = true;
@@ -56,7 +55,6 @@ namespace HendecamMod.Content.Items.Tools
 
             }
         }
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

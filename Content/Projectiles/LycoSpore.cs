@@ -141,7 +141,7 @@ namespace HendecamMod.Content.Projectiles
             // 5. hostile (!friendly)
             // 6. not immortal (e.g. not a target dummy)
             // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
-            return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
+            return target.CanBeChasedBy();
         }
     }
 }

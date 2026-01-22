@@ -493,12 +493,35 @@ namespace HendecamMod.Content.Global
             gay69420.AddTile(TileID.Anvils);
             gay69420.Register();
 
+            Recipe ACMH = Recipe.Create(ItemID.AncientCobaltHelmet);
+            ACMH.AddIngredient<AncientCobaltBar>(15);
+            ACMH.AddTile(TileID.Anvils);
+            ACMH.Register();
+
+            Recipe ACMHS = Recipe.Create(ItemID.AncientCobaltLeggings);
+            ACMHS.AddIngredient<AncientCobaltBar>(20);
+            ACMHS.AddTile(TileID.Anvils);
+            ACMHS.Register();
+
+            Recipe ACMHC = Recipe.Create(ItemID.AncientCobaltBreastplate);
+            ACMHC.AddIngredient<AncientCobaltBar>(25);
+            ACMHC.AddTile(TileID.Anvils);
+            ACMHC.Register();
+
             Recipe gay69421 = Recipe.Create(ItemID.ZapinatorGray);
             gay69421.AddIngredient<Items.ZapperGun>();
             gay69421.AddIngredient(ItemID.DemoniteBar, 8);
             gay69421.AddIngredient(ItemID.IllegalGunParts);
             gay69421.AddTile(TileID.Anvils);
             gay69421.Register();
+
+            Recipe trans = Recipe.Create(ItemID.GenderChangePotion);
+            trans.AddIngredient<TransOre>();
+            trans.AddIngredient<FireDiamond>();
+            trans.AddIngredient(ItemID.BottledWater);
+            trans.AddTile(TileID.AlchemyTable);
+            trans.Register();
+
             Recipe cc = Recipe.Create(ItemID.CandyCaneSword);
             cc.AddIngredient(ItemID.CandyCaneBlock,15);
             cc.AddIngredient(ItemID.GreenCandyCaneBlock, 10);

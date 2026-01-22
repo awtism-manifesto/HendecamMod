@@ -65,6 +65,24 @@ namespace HendecamMod.Content.Global
             }
         }
     }
+    public class FastLaserSwords : GlobalProjectile
+    {
+        public bool fromMechGun;
+
+        public override bool InstancePerEntity => true;
+
+        public override void AI(Projectile projectile)
+        {
+
+            if (fromMechGun)
+            {
+
+                projectile.extraUpdates = 2;
+
+
+            }
+        }
+    }
     public class RedneckCombo : GlobalProjectile
     {
         public bool fromRedneckGun;
@@ -132,7 +150,7 @@ namespace HendecamMod.Content.Global
         {
             if (fromVP70 && target.HasBuff(ModContent.BuffType<VpTag>()))
             {
-                modifiers.SourceDamage *= 2.25f;
+                modifiers.SourceDamage *= 1.65f;
             }
         }
 

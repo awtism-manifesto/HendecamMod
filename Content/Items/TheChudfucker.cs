@@ -21,7 +21,7 @@ namespace HendecamMod.Content.Items
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 1.6f;
             Item.rare = ModContent.RarityType<Seizure2>();
-            Item.value = 44000000;
+            Item.value = 67000000;
 
 
             // Use Properties

@@ -36,7 +36,7 @@ namespace HendecamMod.Content.Items.Tools
             Item.pick = 60;
            
             Item.axe = 18;
-            Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
+            Item.attackSpeedOnlyAffectsWeaponAnimation = true;
         }
         public override bool AltFunctionUse(Player player)
         {
@@ -74,7 +74,6 @@ namespace HendecamMod.Content.Items.Tools
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "Face", "Left click for pickaxe and axe functionality");
             tooltips.Add(line);
 

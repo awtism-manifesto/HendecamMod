@@ -25,7 +25,7 @@ namespace HendecamMod.Content.Items
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
             Item.knockBack = 1.5f;
-            Item.value = 110;
+            Item.value = 19;
             Item.rare = ItemRarityID.Green;
             Item.shoot = ModContent.ProjectileType<WeedDart>(); // The projectile that weapons fire when using this item as ammunition.
             Item.shootSpeed = 4.5f; // The speed of the projectile.

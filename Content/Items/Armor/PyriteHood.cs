@@ -15,7 +15,8 @@ namespace HendecamMod.Content.Items.Armor
 		{
 			Item.defense = 3;
 			Item.rare = ItemRarityID.Blue;
-		}
+            Item.value = 54000;
+        }
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

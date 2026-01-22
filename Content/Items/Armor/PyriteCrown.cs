@@ -14,7 +14,8 @@ namespace HendecamMod.Content.Items.Armor
 		{
 			Item.defense = 2;
 			Item.rare = ItemRarityID.Blue;
-		}
+            Item.value = 54000;
+        }
 		public override void SetStaticDefaults(){
 			ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
 		}
