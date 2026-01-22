@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Bosses;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Systems
@@ -89,6 +89,56 @@ namespace HendecamMod.Common.Systems
             var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
             {
                 Texture2D texture = ModContent.Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/HeadOfCthulhuEntry").Value;
+                Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
+                sb.Draw(texture, centered, color);
+            };
+            bossChecklistMod.Call(
+                "LogBoss",
+                Mod,
+                internalName,
+                weight,
+                downed,
+                bossType,
+                new Dictionary<string, object>()
+                    {
+                    ["spawnItems"] = spawnItem,
+                    ["collectibles"] = collectibles,
+                    ["customPortrait"] = customPortrait,
+                    }
+            );
+            }
+        }
+    public class PromethiumPlasmoidEntry : ModSystem
+        {
+        public override void PostSetupContent()
+            {
+            DoBossChecklistIntegration();
+            }
+        private void DoBossChecklistIntegration()
+            {
+            if (!ModLoader.TryGetMod("BossChecklist", out Mod bossChecklistMod))
+                {
+                return;
+                }
+            if (bossChecklistMod.Version < new Version(1, 6))
+                {
+                return;
+                }
+            string internalName = "PromethiumPlasmoid";
+            float weight = 19f;
+            Func<bool> downed = () => PromethiumPlasmoidDown.downedPromethiumPlasmoid;
+            int bossType = ModContent.NPCType<PromethiumPlasmoid>();
+            int spawnItem = ModContent.ItemType<AstatineGlassSword>();
+            List<int> collectibles = new List<int>()
+                {
+                //ModContent.ItemType<Content.Items.Placeable.Furniture.MinionBossRelic>(),
+                //ModContent.ItemType<Content.Pets.MinionBossPet.MinionBossPetItem>(),
+                //ModContent.ItemType<Content.Items.Placeable.Furniture.MinionBossTrophy>(),
+                //ModContent.ItemType<Content.Items.Armor.Vanity.MinionBossMask>()
+                };
+            var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
+            {
+                Texture2D texture = ModContent.Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/PromethiumPlasmoidEntry").Value;
                 Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
                 sb.Draw(texture, centered, color);
             };

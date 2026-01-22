@@ -44,13 +44,13 @@ namespace HendecamMod.Content.Biomes.Oasis
             switch (SurfaceFrame)
                 {
                 case 0:
-                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid0");
+                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid");
                 case 1:
-                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid1");
+                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid");
                 case 2:
-                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid2");
+                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid");
                 case 3:
-                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid3");
+                return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceMid");
                 default:
                 return -1;
                 }

@@ -27,7 +27,7 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
         public override void UpdateEquip(Player player)
         {
             player.buffImmune[BuffID.ChaosState] = true;
-            player.buffImmune[BuffID.PotionSickness] = true;
+            player.ClearBuff(BuffID.PotionSickness);
         }
         public override void AddRecipes()
         {

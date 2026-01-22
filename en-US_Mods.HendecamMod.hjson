@@ -7678,6 +7678,316 @@ Items: {
 		DisplayName: Ancient Cobalt Bar
 		Tooltip: ""
 	}
+
+	BlueDrawFour: {
+		DisplayName: Blue Draw Four
+		Tooltip: ""
+	}
+
+	UnoDeck: {
+		DisplayName: Uno Deck
+		Tooltip: ""
+	}
+
+	GreenDrawFour: {
+		DisplayName: Green Draw Four
+		Tooltip: ""
+	}
+
+	RedDrawFour: {
+		DisplayName: Red Draw Four
+		Tooltip: ""
+	}
+
+	YellowDrawFour: {
+		DisplayName: Yellow Draw Four
+		Tooltip: ""
+	}
+
+	AnUnoDeck: {
+		DisplayName: An Uno Deck
+		Tooltip: ""
+	}
+
+	RedEight: {
+		Tooltip: ""
+		DisplayName: Red Eight
+	}
+
+	RedDrawTwo: {
+		Tooltip: ""
+		DisplayName: Red Draw Two
+	}
+
+	GreenZero: {
+		Tooltip: ""
+		DisplayName: Green Zero
+	}
+
+	GreenWild: {
+		Tooltip: ""
+		DisplayName: Green Wild
+	}
+
+	GreenTwo: {
+		Tooltip: ""
+		DisplayName: Green Two
+	}
+
+	GreenThree: {
+		Tooltip: ""
+		DisplayName: Green Three
+	}
+
+	GreenSkip: {
+		Tooltip: ""
+		DisplayName: Green Skip
+	}
+
+	GreenSix: {
+		Tooltip: ""
+		DisplayName: Green Six
+	}
+
+	GreenSeven: {
+		Tooltip: ""
+		DisplayName: Green Seven
+	}
+
+	GreenReverse: {
+		Tooltip: ""
+		DisplayName: Green Reverse
+	}
+
+	GreenOne: {
+		Tooltip: ""
+		DisplayName: Green One
+	}
+
+	GreenNine: {
+		Tooltip: ""
+		DisplayName: Green Nine
+	}
+
+	GreenFour: {
+		Tooltip: ""
+		DisplayName: Green Four
+	}
+
+	GreenFive: {
+		Tooltip: ""
+		DisplayName: Green Five
+	}
+
+	GreenEight: {
+		Tooltip: ""
+		DisplayName: Green Eight
+	}
+
+	GreenDrawTwo: {
+		Tooltip: ""
+		DisplayName: Green Draw Two
+	}
+
+	BlueZero: {
+		Tooltip: ""
+		DisplayName: Blue Zero
+	}
+
+	BlueWild: {
+		Tooltip: ""
+		DisplayName: Blue Wild
+	}
+
+	BlueTwo: {
+		Tooltip: ""
+		DisplayName: Blue Two
+	}
+
+	BlueThree: {
+		Tooltip: ""
+		DisplayName: Blue Three
+	}
+
+	BlueSkip: {
+		Tooltip: ""
+		DisplayName: Blue Skip
+	}
+
+	BlueSix: {
+		Tooltip: ""
+		DisplayName: Blue Six
+	}
+
+	BlueSeven: {
+		Tooltip: ""
+		DisplayName: Blue Seven
+	}
+
+	BlueReverse: {
+		Tooltip: ""
+		DisplayName: Blue Reverse
+	}
+
+	BlueOne: {
+		Tooltip: ""
+		DisplayName: Blue One
+	}
+
+	BlueNine: {
+		Tooltip: ""
+		DisplayName: Blue Nine
+	}
+
+	BlueFour: {
+		Tooltip: ""
+		DisplayName: Blue Four
+	}
+
+	BlueFive: {
+		Tooltip: ""
+		DisplayName: Blue Five
+	}
+
+	BlueEight: {
+		Tooltip: ""
+		DisplayName: Blue Eight
+	}
+
+	BlueDrawTwo: {
+		Tooltip: ""
+		DisplayName: Blue Draw Two
+	}
+
+	RedFive: {
+		DisplayName: Red Five
+		Tooltip: ""
+	}
+
+	RedFour: {
+		DisplayName: Red Four
+		Tooltip: ""
+	}
+
+	RedNine: {
+		DisplayName: Red Nine
+		Tooltip: ""
+	}
+
+	RedOne: {
+		DisplayName: Red One
+		Tooltip: ""
+	}
+
+	RedReverse: {
+		DisplayName: Red Reverse
+		Tooltip: ""
+	}
+
+	RedSeven: {
+		DisplayName: Red Seven
+		Tooltip: ""
+	}
+
+	RedSix: {
+		DisplayName: Red Six
+		Tooltip: ""
+	}
+
+	RedSkip: {
+		DisplayName: Red Skip
+		Tooltip: ""
+	}
+
+	RedThree: {
+		DisplayName: Red Three
+		Tooltip: ""
+	}
+
+	RedTwo: {
+		DisplayName: Red Two
+		Tooltip: ""
+	}
+
+	RedWild: {
+		DisplayName: Red Wild
+		Tooltip: ""
+	}
+
+	RedZero: {
+		DisplayName: Red Zero
+		Tooltip: ""
+	}
+
+	YellowDrawTwo: {
+		DisplayName: Yellow Draw Two
+		Tooltip: ""
+	}
+
+	YellowEight: {
+		DisplayName: Yellow Eight
+		Tooltip: ""
+	}
+
+	YellowFive: {
+		DisplayName: Yellow Five
+		Tooltip: ""
+	}
+
+	YellowFour: {
+		DisplayName: Yellow Four
+		Tooltip: ""
+	}
+
+	YellowNine: {
+		DisplayName: Yellow Nine
+		Tooltip: ""
+	}
+
+	YellowOne: {
+		DisplayName: Yellow One
+		Tooltip: ""
+	}
+
+	YellowReverse: {
+		DisplayName: Yellow Reverse
+		Tooltip: ""
+	}
+
+	YellowSeven: {
+		DisplayName: Yellow Seven
+		Tooltip: ""
+	}
+
+	YellowSix: {
+		DisplayName: Yellow Six
+		Tooltip: ""
+	}
+
+	YellowSkip: {
+		DisplayName: Yellow Skip
+		Tooltip: ""
+	}
+
+	YellowThree: {
+		DisplayName: Yellow Three
+		Tooltip: ""
+	}
+
+	YellowTwo: {
+		DisplayName: Yellow Two
+		Tooltip: ""
+	}
+
+	YellowWild: {
+		DisplayName: Yellow Wild
+		Tooltip: ""
+	}
+
+	YellowZero: {
+		DisplayName: Yellow Zero
+		Tooltip: ""
+	}
 }
 
 Tiles: {
@@ -8090,6 +8400,7 @@ NPCs: {
 
 	TrashSlime.DisplayName: Trash Slime
 	UnstablePlasmoid.DisplayName: Unstable Plasmoid
+	PromethiumPlasmoid.DisplayName: Promethium Plasmoid
 }
 
 Prefixes: {

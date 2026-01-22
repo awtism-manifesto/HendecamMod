@@ -2,31 +2,29 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart
-{
+    {
     //[AutoloadEquip(EquipType.Beard)]
     public class RampartAccessory : ModItem
-    {
-        public override void SetDefaults()
         {
+        public override void SetDefaults()
+            {
             Item.width = 16;
             Item.height = 16;
             Item.defense = 32;
             Item.value = Item.sellPrice(silver: 32000);
             Item.rare = ItemRarityID.Red;
             Item.accessory = true;
-        }
+            }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+            {
             var line = new TooltipLine(Mod, "Face", "Grants immunity to every vanilla debuff, aswell as Knockback and fire blocks");
             tooltips.Add(line);
-        }
+            }
         public override void UpdateEquip(Player player)
-        {
+            {
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.ManaSickness] = true;
             player.buffImmune[BuffID.Silenced] = true;
@@ -79,16 +77,16 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             player.buffImmune[BuffID.Tipsy] = true;
             player.buffImmune[BuffID.WaterCandle] = true;
             player.buffImmune[BuffID.ChaosState] = true;
-            player.buffImmune[BuffID.PotionSickness] = true;
+            player.ClearBuff(BuffID.PotionSickness);
             player.buffImmune[BuffID.NoBuilding] = true;
             player.buffImmune[BuffID.WindPushed] = true;
             player.buffImmune[BuffID.MoonLeech] = true;
             player.buffImmune[BuffID.TheTongue] = true;
             player.buffImmune[BuffID.Shimmer] = true;
             player.buffImmune[BuffID.ShadowCandle] = true;
-        }
+            }
         public override void AddRecipes()
-        {
+            {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.AnkhShield, 1);
@@ -96,6 +94,6 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
+            }
         }
     }
-}
