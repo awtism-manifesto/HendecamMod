@@ -14,6 +14,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
     {
         public override void SetDefaults()
         {
+            Item.maxStack = Item.CommonMaxStack;
             Item.width = 16;
             Item.height = 16;
             Item.value = Item.sellPrice(silver: 500);
@@ -27,8 +28,7 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(10);
             recipe.AddIngredient(ItemID.RoyalGel, 1);
             recipe.AddIngredient(ItemID.LifeCrystal, 1);
             recipe.AddIngredient(ItemID.LovePotion, 1);
