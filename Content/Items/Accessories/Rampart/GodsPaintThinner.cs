@@ -49,7 +49,7 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             player.buffImmune[BuffID.Tipsy] = true;
             player.buffImmune[BuffID.WaterCandle] = true;
             player.buffImmune[BuffID.ChaosState] = true;
-            player.buffImmune[BuffID.PotionSickness] = true;
+            player.ClearBuff(BuffID.PotionSickness);
             player.buffImmune[BuffID.NoBuilding] = true;
             player.buffImmune[BuffID.WindPushed] = true;
             player.buffImmune[BuffID.MoonLeech] = true;

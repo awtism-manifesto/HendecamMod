@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -27,7 +27,7 @@ namespace HendecamMod.Content.Items.Consumables
             Item.UseSound = SoundID.Shatter;
             Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
             Item.maxStack = Item.CommonMaxStack;
-            Item.damage = 1120;
+            Item.damage = 2510;
             Item.knockBack = 17.5f;
             Item.consumable = true;
             Item.ChangePlayerDirectionOnShoot = true;
@@ -46,9 +46,9 @@ namespace HendecamMod.Content.Items.Consumables
             }
         public override void AddRecipes()
             {
-            Recipe recipe = CreateRecipe(10);
+            Recipe recipe = CreateRecipe(1);
             recipe = CreateRecipe();
-            recipe.AddIngredient<LoreAccurateBlackshard>();
+            recipe.AddIngredient<LoreAccurateBlackshard>(10);
             recipe.AddTile(TileID.GlassKiln);
             recipe.Register();
             }

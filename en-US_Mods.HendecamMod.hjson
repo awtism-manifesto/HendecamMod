@@ -7689,57 +7689,6 @@ Items: {
 		Tooltip: ""
 	}
 
-	AncientCobaltSword: {
-		DisplayName: Ancient Cobalt Sword
-		Tooltip: ""
-	}
-
-	AncientCobaltRepeater: {
-		DisplayName: Ancient Cobalt Repeater
-		Tooltip: ""
-	}
-
-	LunarStaff: {
-		DisplayName: Lunar Staff
-		Tooltip: ""
-	}
-
-	AncientCobaltNaginata: {
-		Tooltip: ""
-		DisplayName: Ancient Cobalt Naginata
-	}
-
-	AncientCobaltDrill: {
-		Tooltip: ""
-		DisplayName: Ancient Cobalt Drill
-	}
-
-	AncientCobaltChainsaw: {
-		DisplayName: Ancient Cobalt Chainsaw
-		Tooltip: ""
-	}
-
-	LegoChainsaw: {
-		DisplayName: Lego Chainsaw
-		Tooltip: ""
-	}
-
-	SporeSaw: {
-		Tooltip: ""
-		DisplayName: Spore Saw
-	}
-
-	MorbiumTreeripper: {
-		DisplayName: Morbium Treeripper
-		Tooltip: ""
-	}
-
-	OasisSand: {
-		Tooltip: ""
-		DisplayName: Oasis Sand
-	}
-}
-
 Tiles: {
 	AzuriteOrePlaced.MapEntry: Azurite Ore Placed
 	MintalOrePlaced.MapEntry: Mintal Ore Placed
@@ -8150,6 +8099,7 @@ NPCs: {
 
 	TrashSlime.DisplayName: Trash Slime
 	UnstablePlasmoid.DisplayName: Unstable Plasmoid
+	PromethiumPlasmoid.DisplayName: Promethium Plasmoid
 }
 
 Prefixes: {
