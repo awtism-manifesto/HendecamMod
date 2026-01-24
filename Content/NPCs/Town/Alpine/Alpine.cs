@@ -3,7 +3,6 @@ using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -150,9 +149,9 @@ namespace HendecamMod.Content.NPCs.Town.Alpine
                     variant += "_Shimmer";
                 if (NPC.altTexture == 1)
                     variant += "_Party";
-                int headGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Head").Type;
-                int armGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Arm").Type;
-                int legGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Leg").Type;
+                int headGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Head").Type;
+                int armGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Arm").Type;
+                int legGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Leg").Type;
 
                 // Spawn the gores. The positions of the arms and legs are lowered for a more natural look.
 

@@ -4786,12 +4786,12 @@ DamageClasses: {
 Biomes: {
 	OasisUndergroundBiome: {
 		TownNPCDialogueName: the Oasis Underground Biome
-		DisplayName: Oasis Underground Biome
+		DisplayName: Underground Oasis
 	}
 
 	OasisSurfaceBiome: {
 		TownNPCDialogueName: the Oasis Surface Biome
-		DisplayName: Oasis Surface Biome
+		DisplayName: Surface Oasis
 	}
 }
 
@@ -4867,22 +4867,22 @@ NPCs: {
 
 		TownNPCMood: {
 			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
+			NoHome: Geez, I may be a TBH, but I can't survive here!
+			FarFromHome: Where the fuck am I?
+			LoveSpace: I love how much space I get here, crowded spaces stress me out quite a bit.
+			DislikeCrowded: Can I leave now? Too many people.
+			HateCrowded: What the fuck is this, an apartment complex? Get me out of here.
+			LikeBiome: It's nice to be in a place where I don't have to deal with rain.
+			DislikeBiome: Ew.. I like the humidity, but all the critters around are not reflecting well on my blobby exterior.
+			LoveNPC: River's kind of a fun person. Really the only person I really know here.
+			LikeNPC: The Truffle is a 'fungi', don't you think? *snicker*
+			DislikeNPC: "{NPCName} is really greedy, I don't like him."
+			HateNPC: I have far too much to say about {NPCName}. In general, I hate his policies, personality, and life choices. It's pretty clear I hate him as a neighbor.
+			LikeNPC_Princess: There's something... Off, about the Princess, but she seems nice enough!
 			Princess_LovesNPC: I like {NPCName}.
 		}
 
-		Census.SpawnCondition: Conditions unknown
+		Census.SpawnCondition: Obtain Yelmut's Helmut
 	}
 
 	FlyingPig.DisplayName: Flying Pig
@@ -4899,75 +4899,75 @@ NPCs: {
 		DisplayName: Politician
 
 		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			Princess_LovesNPC: I like {NPCName}.
+			Content: I am content with the lack of poor people in this locale.
+			NoHome: Is this what the poors go through??? Maybe I am a monster...
+			FarFromHome: Where the fuck am I? I'll call the CIA on your ass!
+			LoveSpace: I love being away from all the POORS...
+			DislikeCrowded: I don't like how many POORS are around.
+			HateCrowded: Too many God damn... POORS around here.
+			LikeBiome: I like the {BiomeName}. So much lumber to profit off of, and just THINK of the golf courses that can be made!
+			DislikeBiome: I don't like the {BiomeName}. It reminds me of Christmas, which gives the people hope.
+			LoveNPC: "{NPCName} the tax collector is a good buddy of mine. Where did you rescue him from again?"
+			LikeNPC: I respect {NPCName} the Arms Dealer. The right to bear arms shall not be infringed.
+			DislikeNPC: I don't like {NPCName}. He's a God damn terrorist!
+			HateNPC: I fucking HATE {NPCName} the Dryad. She protests ALL of my policies because they 'destroy the envoirnment', and 'harm the wildlife'. What a fucking joke.
+			LikeNPC_Princess: Princess {NPCName} is so gullible, letting me make ALL the policies around here...
+			Princess_LovesNPC: I love how {NPCName} the Politician is taking charge of things! He helps take some of the load off of me being royalty, y'know?
 		}
 
-		Census.SpawnCondition: Conditions unknown
+		Census.SpawnCondition: Hold an evil ore in your inventory
 	}
 
 	River: {
-		DisplayName: River
+		DisplayName: Dumbass
 
 		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LoveBiome: I love {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			HateBiome: I hate {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			Princess_LovesNPC: I like {NPCName}.
+			Content: Could be better, could be worse.
+			NoHome: Did you kick me out because I'm not paying rent?
+			FarFromHome: Call me Spiderman because dear Empress am I far from my house.
+			LoveSpace: Thanks for the open space, I have really bad anxiety.
+			DislikeCrowded: I can't deal with people right now, ok-?
+			HateCrowded: This place is scary - Can we leave?
+			LoveBiome: This place is as bi as I am, and I LOVE it!
+			LikeBiome: The weather gives me an excuse to stay inside and play on my phone.
+			DislikeBiome: God, it's so muggy here, it's hard to breathe...
+			HateBiome: I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore.I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore.
+			LoveNPC: "{NPCName} the Angler's the only person actually willing to employ me, good kid."
+			LikeNPC: Yelmut's pretty cool, tbh... creature. Sorry, couldn't help myself.
+			DislikeNPC: God, I hate paying taxes...
+			HateNPC: Since when did we have elections in Terraria? Get that white-haired idiot the fuck out of here.
+			LikeNPC_Princess: So... She's obviously a kid, right? I HAVE to like her??? Fine..
+			Princess_LovesNPC: River is such a goober! Fun and silly, bringing joy to those around them.
 		}
 
-		Census.SpawnCondition: Conditions unknown
+		Census.SpawnCondition: Hold the Collar of the Damned in your inventory
 	}
 
 	SaltMonster.DisplayName: Salt Monster
 
 	Alpine: {
-		DisplayName: Alpine
+		DisplayName: Helipilot
 
 		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LoveBiome: I love {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			HateBiome: I hate {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			Princess_LovesNPC: I like {NPCName}.
+			Content: I'm fine, why do you ask?
+			NoHome: Since you basically blew up my last one, CAN YOU BUILD ME A HOUSE?!
+			FarFromHome: I think you flew me too far out from my place...
+			LoveSpace: Nice not having so many people around.
+			DislikeCrowded: Too many people around... Not good for the anxiety... please help..?
+			HateCrowded: Please, just - YOU, AND EVERYONE ELSE, GO AWAY!
+			LoveBiome: Yeah, yeah, call it stereotypical, but the snowy forest is the best. Don't judge me.
+			LikeBiome: The ocean is alright, I guess. Nice to interact with the pirates every once in a while.
+			DislikeBiome: I don't like the desert - too hot, too much sand. Only benefit is landing spots for my Apache - Oh, wait.
+			HateBiome: Do you REALLY think I can take off from down here, even if I still had my Apache? Eat dick, dude.
+			LoveNPC: "{NPCName}! My Man! His weapons collection is admirable, not to mention him having some ACTUAL combat experience as opposed to everybody else is a MUCH needed breath of fresh air."
+			LikeNPC: Santa was my boss 'fore you came around, it's good to see him again.
+			DislikeNPC: I don't like {NPCName} the Tax Collector, but I respect the hustle. Just wish he'd stop putting such high taxes on scrap metal."
+			HateNPC: "{NPCName} the 'Arms Dealer' can suck my eggs, he's an absolute fraud and doesn't know what he's talking about."
+			LikeNPC_Princess: "{NPCName} the Princess is legally requiring me to reduce the prices of my goods while in her presence, fuck that."
+			Princess_LovesNPC: Alpine reminds me of Santa, in a really good way!
 		}
 
-		Census.SpawnCondition: Conditions unknown
+		Census.SpawnCondition: Crash her apache
 	}
 
 	TrashSlime.DisplayName: Trash Slime

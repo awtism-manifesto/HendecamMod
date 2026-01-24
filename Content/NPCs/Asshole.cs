@@ -87,7 +87,6 @@ namespace HendecamMod.Content.NPCs
                 .SetNPCAffection(ModContent.NPCType<NPCs.River>(), AffectionLevel.Love) // Likes living near the guide.
                  .SetNPCAffection(ModContent.NPCType<NPCs.Politician>(), AffectionLevel.Hate) // Likes living near the guide.
                 .SetNPCAffection(NPCID.Truffle, AffectionLevel.Like) // Dislikes living near the merchant.
-                .SetNPCAffection(NPCID.Dryad, AffectionLevel.Like) // Hates living near the demolitionist.
             ; // < Mind the semicolon!
 
             // This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
