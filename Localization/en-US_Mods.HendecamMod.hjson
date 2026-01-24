@@ -477,7 +477,7 @@ Items: {
 	}
 
 	AA12: {
-		DisplayName: A A12
+		DisplayName: AA12
 		Tooltip: ""
 	}
 
@@ -502,22 +502,22 @@ Items: {
 	}
 
 	CarbonDioxideBalloon: {
-		DisplayName: Carbon Dioxide Balloon
+		DisplayName: Carbon Dioxide in a Balloon
 		Tooltip: ""
 	}
 
 	CarbonDioxideBottle: {
-		DisplayName: Carbon Dioxide Bottle
+		DisplayName: Carbon Dioxide in a Bottle
 		Tooltip: ""
 	}
 
 	CarbonDioxideCeram: {
-		DisplayName: Carbon Dioxide Ceram
+		DisplayName: Carbon Dioxide Ceramic Bloon
 		Tooltip: ""
 	}
 
 	CeramicHorseshoeBalloon: {
-		DisplayName: Ceramic Horseshoe Balloon
+		DisplayName: Ceramic Horseshoe Bloon
 		Tooltip: ""
 	}
 
@@ -952,7 +952,7 @@ Items: {
 	}
 
 	RadioactiveEmblem: {
-		DisplayName: Radioactive Emblem
+		DisplayName: Radiation Emblem
 		Tooltip: ""
 	}
 
@@ -1002,7 +1002,7 @@ Items: {
 	}
 
 	GodsPaintThinner: {
-		DisplayName: Gods Paint Thinner
+		DisplayName: God's Paint Thinner
 		Tooltip: ""
 	}
 
@@ -1062,7 +1062,7 @@ Items: {
 	}
 
 	MagicSoap: {
-		DisplayName: Magic Soap
+		DisplayName: Dr.Bronner's 18-in-1 Magic Soap
 		Tooltip: ""
 	}
 
@@ -1072,7 +1072,7 @@ Items: {
 	}
 
 	OverthinkersChecklist: {
-		DisplayName: Overthinkers Checklist
+		DisplayName: Overthinker's Checklist
 		Tooltip: ""
 	}
 
@@ -1237,7 +1237,7 @@ Items: {
 	}
 
 	AK47: {
-		DisplayName: A K47
+		DisplayName: AK47
 		Tooltip: ""
 	}
 
@@ -1252,7 +1252,7 @@ Items: {
 	}
 
 	AR15: {
-		DisplayName: A R15
+		DisplayName: AR15
 		Tooltip: ""
 	}
 
@@ -1392,7 +1392,7 @@ Items: {
 	}
 
 	ATFsNightmare: {
-		DisplayName: A T Fs Nightmare
+		DisplayName: ATFs Nightmare
 		Tooltip: ""
 	}
 
@@ -1442,7 +1442,7 @@ Items: {
 	}
 
 	BBC: {
-		DisplayName: B B C
+		DisplayName: Bigger, Blacker Cannon
 		Tooltip: ""
 	}
 
@@ -1452,7 +1452,7 @@ Items: {
 	}
 
 	BeeSnipe: {
-		DisplayName: Bee Snipe
+		DisplayName: .50 Bee-MG
 		Tooltip: ""
 	}
 
@@ -1502,7 +1502,7 @@ Items: {
 	}
 
 	BlackHole: {
-		DisplayName: Black Hole
+		DisplayName: Literally A Fucking Black Hole
 		Tooltip: ""
 	}
 
@@ -1527,7 +1527,7 @@ Items: {
 	}
 
 	BoggsGlove: {
-		DisplayName: Boggs Glove
+		DisplayName: Boggs' Glove
 		Tooltip: ""
 	}
 
@@ -1537,7 +1537,7 @@ Items: {
 	}
 
 	BOOMerang: {
-		DisplayName: B O O Merang
+		DisplayName: BOOM-erang
 		Tooltip: ""
 	}
 
@@ -1597,27 +1597,27 @@ Items: {
 	}
 
 	Bullshit1: {
-		DisplayName: Bullshit1
+		DisplayName: Bull$#!7 Mk.I
 		Tooltip: ""
 	}
 
 	Bullshit2: {
-		DisplayName: Bullshit2
+		DisplayName: Bull$#!7 Mk.II
 		Tooltip: ""
 	}
 
 	Bullshit3: {
-		DisplayName: Bullshit3
+		DisplayName: Bull$#!7 Mk.III
 		Tooltip: ""
 	}
 
 	Bullshit4: {
-		DisplayName: Bullshit4
+		DisplayName: Bull$#!7 Mk.IV
 		Tooltip: ""
 	}
 
 	Bullshit5: {
-		DisplayName: Bullshit5
+		DisplayName: Bull$#!7 Mk.V
 		Tooltip: ""
 	}
 
@@ -1642,7 +1642,7 @@ Items: {
 	}
 
 	CaribousCatastrophe: {
-		DisplayName: Caribous Catastrophe
+		DisplayName: Caribou's Catastrophe
 		Tooltip: ""
 	}
 
@@ -1712,7 +1712,7 @@ Items: {
 	}
 
 	CIAJournalismAward: {
-		DisplayName: C I A Journalism Award
+		DisplayName: CIA Award in Journalism
 		Tooltip: ""
 	}
 
@@ -1737,12 +1737,12 @@ Items: {
 	}
 
 	CompoundBow2: {
-		DisplayName: Compound Bow2
+		DisplayName: Compound Bow Mk.II
 		Tooltip: ""
 	}
 
 	CompoundBow3: {
-		DisplayName: Compound Bow3
+		DisplayName: Compound Bow Mk.III
 		Tooltip: ""
 	}
 
@@ -1972,7 +1972,7 @@ Items: {
 	}
 
 	Edward40Hands: {
-		DisplayName: Edward40 Hands
+		DisplayName: Edward 40 Hands
 		Tooltip: ""
 	}
 
@@ -1987,7 +1987,7 @@ Items: {
 	}
 
 	ElephantsThrow: {
-		DisplayName: Elephants Throw
+		DisplayName: Elephant's Throw
 		Tooltip: ""
 	}
 
@@ -2007,12 +2007,12 @@ Items: {
 	}
 
 	FerrousThornSmooth: {
-		DisplayName: Ferrous Thorn Smooth
+		DisplayName: Ferrous Thorn (Smooth)
 		Tooltip: ""
 	}
 
 	FerrousThornSpiky: {
-		DisplayName: Ferrous Thorn Spiky
+		DisplayName: Ferrous Thorn (Spiky)
 		Tooltip: ""
 	}
 
@@ -2022,12 +2022,12 @@ Items: {
 	}
 
 	FidgetThrower2: {
-		DisplayName: Fidget Thrower2
+		DisplayName: Fidget Thrower Mk.II
 		Tooltip: ""
 	}
 
 	FidgetThrower3: {
-		DisplayName: Fidget Thrower3
+		DisplayName: Fidget Thrower Mk.II
 		Tooltip: ""
 	}
 
@@ -2122,12 +2122,12 @@ Items: {
 	}
 
 	GeigersGambit: {
-		DisplayName: Geigers Gambit
+		DisplayName: Geiger's Gambit
 		Tooltip: ""
 	}
 
 	GiantBone: {
-		DisplayName: Giant Bone
+		DisplayName: Comically Large Bone
 		Tooltip: ""
 	}
 
@@ -2142,7 +2142,7 @@ Items: {
 	}
 
 	GoldenAK: {
-		DisplayName: Golden A K
+		DisplayName: Golden AK
 		Tooltip: ""
 	}
 
@@ -2292,7 +2292,7 @@ Items: {
 	}
 
 	IED: {
-		DisplayName: I E D
+		DisplayName: Improvised Explosive Device
 		Tooltip: ""
 	}
 
@@ -2412,7 +2412,7 @@ Items: {
 	}
 
 	LaserMonkeysPaw: {
-		DisplayName: Laser Monkeys Paw
+		DisplayName: Laser Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -2962,7 +2962,7 @@ Items: {
 	}
 
 	AnUnoDeck: {
-		DisplayName: An Uno Deck
+		DisplayName: Uno Deck
 		Tooltip: ""
 	}
 
@@ -3277,7 +3277,7 @@ Items: {
 	}
 
 	PlasmaMonkeysPaw: {
-		DisplayName: Plasma Monkeys Paw
+		DisplayName: Plasma Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -3287,12 +3287,12 @@ Items: {
 	}
 
 	PlasmaRifle2: {
-		DisplayName: Plasma Rifle2
+		DisplayName: Plasma Rifle Mk.II
 		Tooltip: ""
 	}
 
 	PlasmaRifle3: {
-		DisplayName: Plasma Rifle3
+		DisplayName: Plasma Rifle Mk.III
 		Tooltip: ""
 	}
 
@@ -3412,7 +3412,7 @@ Items: {
 	}
 
 	PortableTower: {
-		DisplayName: Portable Tower
+		DisplayName: Portable 5G Tower
 		Tooltip: ""
 	}
 
@@ -3812,7 +3812,7 @@ Items: {
 	}
 
 	SuperMonkeysPaw: {
-		DisplayName: Super Monkeys Paw
+		DisplayName: Super Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -3837,7 +3837,7 @@ Items: {
 	}
 
 	TedGun: {
-		DisplayName: Ted Gun
+		DisplayName: Freedom Club's Freedom Dispenser
 		Tooltip: ""
 	}
 
@@ -3887,7 +3887,7 @@ Items: {
 	}
 
 	TheFuckingSun: {
-		DisplayName: The Fucking Sun
+		DisplayName: Literally The Fucking Sun
 		Tooltip: ""
 	}
 
@@ -3917,12 +3917,12 @@ Items: {
 	}
 
 	TheMonkeysPaw: {
-		DisplayName: The Monkeys Paw
+		DisplayName: The Monkey's Paw
 		Tooltip: ""
 	}
 
 	TheMoon: {
-		DisplayName: The Moon
+		DisplayName: Literally The Fucking Moon
 		Tooltip: ""
 	}
 
@@ -3972,7 +3972,7 @@ Items: {
 	}
 
 	TheXRay: {
-		DisplayName: The X Ray
+		DisplayName: The X-Ray
 		Tooltip: ""
 	}
 
@@ -4237,7 +4237,7 @@ Items: {
 	}
 
 	TruthSeekersDMR: {
-		DisplayName: Truth Seekers D M R
+		DisplayName: Truth Seeker's DMR
 		Tooltip: ""
 	}
 
@@ -4322,7 +4322,7 @@ Items: {
 	}
 
 	VP70: {
-		DisplayName: V P70
+		DisplayName: VP70
 		Tooltip: ""
 	}
 
@@ -4745,21 +4745,31 @@ Items: {
 		DisplayName: Wand Of Pooping
 		Tooltip: ""
 	}
+
+	ShatteringShell: {
+		DisplayName: Shattering Shell
+		Tooltip: ""
+	}
+
+	VoidPearl: {
+		Tooltip: ""
+		DisplayName: Void Pearl
+	}
 }
 
 WorldGen: {
-	PyriteBlessMessage: Mods.HendecamMod.WorldGen.PyriteBlessMessage
-	PyriteMessage: Mods.HendecamMod.WorldGen.PyriteMessage
-	PlutoniumBlessMessage: Mods.HendecamMod.WorldGen.PlutoniumBlessMessage
-	PlutoniumMessage: Mods.HendecamMod.WorldGen.PlutoniumMessage
-	MorbiumBlessMessage: Mods.HendecamMod.WorldGen.MorbiumBlessMessage
-	MorbiumMessage: Mods.HendecamMod.WorldGen.MorbiumMessage
-	MintalBlessMessage: Mods.HendecamMod.WorldGen.MintalBlessMessage
-	MintalMessage: Mods.HendecamMod.WorldGen.MintalMessage
-	LycopiteBlessMessage: Mods.HendecamMod.WorldGen.LycopiteBlessMessage
-	LycopiteMessage: Mods.HendecamMod.WorldGen.LycopiteMessage
-	AzuriteBlessMessage: Mods.HendecamMod.WorldGen.AzuriteBlessMessage
-	AzuriteMessage: Mods.HendecamMod.WorldGen.AzuriteMessage
+	PyriteBlessMessage: Riches once hoarded by Cthulhu now permeate the earth's crust...
+	PyriteMessage: Riches once hoarded by Cthulhu now permeate the earth's crust...
+	PlutoniumBlessMessage: Strange purple lights start to appear from both above and below...
+	PlutoniumMessage: Strange purple lights start to appear from both above and below...
+	MorbiumBlessMessage: It's morbin time.
+	MorbiumMessage: It's morbin time.
+	MintalBlessMessage: Your world has been blessed with some fresh new ore!
+	MintalMessage: Your world has been blessed with some fresh new ore!
+	LycopiteBlessMessage: Glowing reddish-orange spores stir far beneath the surface...
+	LycopiteMessage: Glowing reddish-orange spores stir far beneath the surface...
+	AzuriteBlessMessage: Blue.
+	AzuriteMessage: Blue.
 	AncientCobaltOrePassMessage: Mods.HendecamMod.WorldGen.AncientCobaltOrePassMessage
 	BlessedWithAncientCobaltOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAncientCobaltOreMessage
 	MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
@@ -4769,18 +4779,18 @@ WorldGen: {
 }
 
 DamageClasses: {
-	SummonStupidDamage.DisplayName: Summon Stupid Damage
-	StupidDamage.DisplayName: Stupid Damage
-	RangedSummonDamage.DisplayName: Ranged Summon Damage
-	RangedStupidDamage.DisplayName: Ranged Stupid Damage
-	RangedMagicDamage.DisplayName: Ranged Magic Damage
-	OmniDamage.DisplayName: Omni Damage
-	MeleeSummonDamage.DisplayName: Melee Summon Damage
-	MeleeStupidDamage.DisplayName: Melee Stupid Damage
-	MeleeRangedDamage.DisplayName: Melee Ranged Damage
-	MeleeMagicDamage.DisplayName: Melee Magic Damage
-	MagicSummonDamage.DisplayName: Magic Summon Damage
-	AutismDamage.DisplayName: Autism Damage
+	SummonStupidDamage.DisplayName: summon+stupid damage
+	StupidDamage.DisplayName: stupid damage
+	RangedSummonDamage.DisplayName: ranged+summon damage
+	RangedStupidDamage.DisplayName: ranged+stupid damage
+	RangedMagicDamage.DisplayName: ranged+magic damage
+	OmniDamage.DisplayName: omni damage
+	MeleeSummonDamage.DisplayName: melee+summon damage
+	MeleeStupidDamage.DisplayName: melee+stupid damage
+	MeleeRangedDamage.DisplayName: melee+ranged damage
+	MeleeMagicDamage.DisplayName: melee+magic damage
+	MagicSummonDamage.DisplayName: magic+summon damage
+	AutismDamage.DisplayName: magic+stupid damage
 }
 
 Biomes: {
@@ -4797,32 +4807,32 @@ Biomes: {
 
 Achievements: {
 	WoahTrippyBro: {
-		Description: Mods.HendecamMod.Achievements.WoahTrippyBro.Description
-		FriendlyName: Woah Trippy Bro
+		Description: Mine Lycopite Ore. The force of a powerful being striking the ground may stir up the elusive spores....
+		FriendlyName: Woahhhhhh.... Trippy, Bro......
 	}
 
 	Plasmophobia: {
-		Description: Mods.HendecamMod.Achievements.Plasmophobia.Description
+		Description: Kill the menace of the night skies, an Unstable Plasmoid
 		FriendlyName: Plasmophobia
 	}
 
 	NowsYourChance: {
-		Description: Mods.HendecamMod.Achievements.NowsYourChance.Description
-		FriendlyName: Nows Your Chance
+		Description: Craft [THE SPAM CANNON]
+		FriendlyName: NOW'S YOUR CHANCE TO BE A
 	}
 
 	JetFuel: {
-		Description: Mods.HendecamMod.Achievements.JetFuel.Description
-		FriendlyName: Jet Fuel
+		Description: Craft the I Forgor using 9 Spectre Bars and 11 Vortex Fragments.
+		FriendlyName: Jet Fuel (It Doesn't Melt Steel Beams!)
 	}
 
 	ICanDoAnything: {
-		Description: Mods.HendecamMod.Achievements.ICanDoAnything.Description
-		FriendlyName: I Can Do Anything
+		Description: Craft the devilsknife, devilsknife!
+		FriendlyName: I Can Do Anything!
 	}
 
 	AmericanApotheosis: {
-		Description: Mods.HendecamMod.Achievements.AmericanApotheosis.Description
+		Description: Craft the apotheosis of all guns...
 		FriendlyName: American Apotheosis
 	}
 
@@ -4832,7 +4842,7 @@ Achievements: {
 	}
 
 	KnockEmDown: {
-		Description: Mods.HendecamMod.Achievements.KnockEmDown.Description
+		Description: Eliminate the Apache Elf Ship.
 		FriendlyName: Knock Em Down
 	}
 }
@@ -5167,7 +5177,7 @@ Buffs: {
 
 	RudeBusterCooldown: {
 		DisplayName: Rude Buster Cooldown
-		Description: Mods.HendecamMod.Buffs.RudeBusterCooldown.Description
+		Description: You're not feeling very rude, buster.
 	}
 
 	Sauced: {
@@ -5273,16 +5283,6 @@ Prefixes: {
 }
 
 Projectiles: {
-	ChloroShit.DisplayName: Chloro Shit
-	PoopArrowProj.DisplayName: Poop Arrow Proj
-	PoopRang.DisplayName: Poop Rang
-	PoopSpark.DisplayName: Poop Spark
-	PooShit.DisplayName: Poo Shit
-	PooShot2.DisplayName: Poo Shot2
-	PooShot.DisplayName: Poo Shot
-	ShitBallProjectile.DisplayName: Shit Ball Projectile
-	SockPoop.DisplayName: Sock Poop
-	ThrownPoop.DisplayName: Thrown Poop
 	A5G.DisplayName: A5 G
 	AdamantiteBolt.DisplayName: Adamantite Bolt
 	AgentGreenProj.DisplayName: Agent Green Proj
@@ -5295,7 +5295,6 @@ Projectiles: {
 	AstaBoom2.DisplayName: Asta Boom2
 	AstaBoomBig.DisplayName: Asta Boom Big
 	AstaBoomDelayed.DisplayName: Asta Boom Delayed
-	AstaBoomOmni.DisplayName: Asta Boom Omni
 	AstaFission.DisplayName: Asta Fission
 	AstaGlaive.DisplayName: Asta Glaive
 	AstaParticle.DisplayName: Asta Particle
@@ -5415,7 +5414,6 @@ Projectiles: {
 	ElectrifiedSand.DisplayName: Electrified Sand
 	Electrobomb.DisplayName: Electrobomb
 	ElephantYoyo.DisplayName: Elephant Yoyo
-	ElfMagicMissile.DisplayName: Elf Magic Missile
 	EmblemBoom.DisplayName: Emblem Boom
 	EmblemProj.DisplayName: Emblem Proj
 	EmblemProj2.DisplayName: Emblem Proj2
@@ -5492,20 +5490,7 @@ Projectiles: {
 	InfernoRingProj.DisplayName: Inferno Ring Proj
 	IronFistProj.DisplayName: Iron Fist Proj
 	IronWave.DisplayName: Iron Wave
-	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
-	AncientCobaltChainsawProj.DisplayName: Ancient Cobalt Chainsaw Proj
-	AncientCobaltDrillProj.DisplayName: Ancient Cobalt Drill Proj
-	AncientCobaltSpear.DisplayName: Ancient Cobalt Spear
-	BlueBallProjectile.DisplayName: Blue Ball Projectile
-	CeramOmni.DisplayName: Ceram Omni
-	CeramOmniSpawn.DisplayName: Ceram Omni Spawn
-	FrozenBulletProj.DisplayName: Frozen Bullet Proj
 	GlitterBullet.DisplayName: Glitter Bullet
-	LegoChainsawProj.DisplayName: Lego Chainsaw Proj
-	SpecialGlitter.DisplayName: Special Glitter
-	SpectralArrowProj.DisplayName: Spectral Arrow Proj
-	SplashPotionShine.DisplayName: Splash Potion Shine
-	SporeSawProj.DisplayName: Spore Saw Proj
 	JevilScythe.DisplayName: Jevil Scythe
 	JevilScythe2.DisplayName: Jevil Scythe2
 	JfkBlood.DisplayName: Jfk Blood
@@ -5525,9 +5510,6 @@ Projectiles: {
 	KnightSwordDown.DisplayName: Knight Sword Down
 	KnightSwordUp.DisplayName: Knight Sword Up
 	LaserBlast.DisplayName: Laser Blast
-	LigmaLazerProj.DisplayName: Ligma Lazer Proj
-	LunarBolt.DisplayName: Lunar Bolt
-	LunarContrail.DisplayName: Lunar Contrail
 	LunarDart.DisplayName: Lunar Dart
 	LycoRay.DisplayName: Lyco Ray
 	LycoShot.DisplayName: Lyco Shot
@@ -5619,6 +5601,7 @@ Projectiles: {
 	PlutoWhip.DisplayName: Pluto Whip
 	PoisonBullet.DisplayName: Poison Bullet
 	PolymerSlime.DisplayName: Polymer Slime
+	PooShot.DisplayName: Poo Shot
 	PulseShot.DisplayName: Pulse Shot
 	PurifiedBoltProj.DisplayName: Purified Bolt Proj
 	PurifiedSaltProj.DisplayName: Purified Salt Proj
@@ -5642,8 +5625,6 @@ Projectiles: {
 	RainbowShard.DisplayName: Rainbow Shard
 	RazorLeaf.DisplayName: Razor Leaf
 	RazorLeafMage.DisplayName: Razor Leaf Mage
-	RazorRotorsProj.DisplayName: Razor Rotors Proj
-	RazorRotorThrown.DisplayName: Razor Rotor Thrown
 	RedBloon.DisplayName: Red Bloon
 	RedneckShovel.DisplayName: Redneck Shovel
 	RedneckShovelHallow.DisplayName: Redneck Shovel Hallow
@@ -5763,4 +5744,34 @@ Projectiles: {
 	ZazaSmoke.DisplayName: Zaza Smoke
 	ZazaSpawn.DisplayName: Zaza Spawn
 	ZoneSpawn.DisplayName: Zone Spawn
+	ChloroShit.DisplayName: Chloro Shit
+	PoopArrowProj.DisplayName: Poop Arrow Proj
+	PoopRang.DisplayName: Poop Rang
+	PoopSpark.DisplayName: Poop Spark
+	PooShit.DisplayName: Poo Shit
+	PooShot2.DisplayName: Poo Shot2
+	ShitBallProjectile.DisplayName: Shit Ball Projectile
+	SockPoop.DisplayName: Sock Poop
+	ThrownPoop.DisplayName: Thrown Poop
+	BlueBallProjectile.DisplayName: Blue Ball Projectile
+	RazorRotorsProj.DisplayName: Razor Rotors Proj
+	RazorRotorThrown.DisplayName: Razor Rotor Thrown
+	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
+	SpecialGlitter.DisplayName: Special Glitter
+	FrozenBulletProj.DisplayName: Frozen Bullet Proj
+	LigmaLazerProj.DisplayName: Ligma Lazer Proj
+	SplashPotionShine.DisplayName: Splash Potion Shine
+	SpectralArrowProj.DisplayName: Spectral Arrow Proj
+	AstaBoomOmni.DisplayName: Asta Boom Omni
+	CeramOmniSpawn.DisplayName: Ceram Omni Spawn
+	CeramOmni.DisplayName: Ceram Omni
+	LunarBolt.DisplayName: Lunar Bolt
+	LunarContrail.DisplayName: Lunar Contrail
+	AncientCobaltSpear.DisplayName: Ancient Cobalt Spear
+	AncientCobaltDrillProj.DisplayName: Ancient Cobalt Drill Proj
+	AncientCobaltChainsawProj.DisplayName: Ancient Cobalt Chainsaw Proj
+	LegoChainsawProj.DisplayName: Lego Chainsaw Proj
+	SporeSawProj.DisplayName: Spore Saw Proj
+	MorbiumTreeripperProj.DisplayName: Morbium Treeripper Proj
+	ElfMagicMissile.DisplayName: Elf Magic Missile
 }

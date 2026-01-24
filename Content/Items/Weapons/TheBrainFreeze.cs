@@ -72,7 +72,7 @@ namespace HendecamMod.Content.Items.Weapons
                 type = ModContent.ProjectileType<MintLeafProjectileMagic>();
                 SoundEngine.PlaySound(SoundID.Item42, player.position);
 
-                Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);
+                Projectile.NewProjectileDirect(source, position, new2Velocity*1.85f, type, (int)(damage * 1f), knockback, player.whoAmI);
                 shotCounter = 0;
             }
 

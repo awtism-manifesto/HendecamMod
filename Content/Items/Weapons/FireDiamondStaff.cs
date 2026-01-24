@@ -88,7 +88,7 @@ namespace HendecamMod.Content.Items.Weapons
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.DiamondStaff);
+           
             recipe.AddIngredient(ItemID.Obsidian, 25);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddIngredient<FireDiamond>(8);

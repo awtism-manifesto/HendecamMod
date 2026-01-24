@@ -55,7 +55,7 @@ namespace HendecamMod.Content.Items
         {
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica)|| (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))))
             { 
-                damage = (int)(damage * 0.6f);
+                damage = (int)(damage * 0.67f);
             }
             else 
             {
@@ -327,18 +327,7 @@ namespace HendecamMod.Content.Items
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()

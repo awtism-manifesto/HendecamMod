@@ -37,7 +37,7 @@ namespace HendecamMod.Content.Tiles.Blocks
 
 
             LocalizedText name = CreateMapEntryName();
-            AddMapEntry(new Color(19, 83, 87), Language.GetText("Morbium Ore"));
+            AddMapEntry(new Color(89, 255, 167), Language.GetText("Morbium Ore"));
 
             DustType = (ModContent.DustType<MorbiumDust>());
             HitSound = SoundID.Tink;
@@ -50,8 +50,8 @@ namespace HendecamMod.Content.Tiles.Blocks
         {
 
             r = 0.05f;
-            g = 0.45f;
-            b = 0.6f;
+            g = 0.75f;
+            b = 0.5f;
 
         }
 

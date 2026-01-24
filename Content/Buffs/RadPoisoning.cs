@@ -15,7 +15,9 @@ namespace HendecamMod.Content.Buffs
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
+            
         }
+        
 
         public override void Update(Player player, ref int buffIndex)
         {
@@ -37,8 +39,8 @@ namespace HendecamMod.Content.Buffs
                 npc.lifeRegen = 0;
 
             npc.lifeRegen -= 20;
+            
 
-           
         }
 
         public class RadPlayer : ModPlayer
