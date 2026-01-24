@@ -26,7 +26,7 @@ namespace HendecamMod.Content.Tiles.Furniture
                 16,
                 16,
                 16,
-                18
+                16
             };
             TileObjectData.addTile(Type);
 

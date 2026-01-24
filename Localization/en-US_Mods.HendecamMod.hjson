@@ -4750,6 +4750,11 @@ Items: {
 		DisplayName: Shattering Shell
 		Tooltip: ""
 	}
+
+	VoidPearl: {
+		Tooltip: ""
+		DisplayName: Void Pearl
+	}
 }
 
 WorldGen: {
