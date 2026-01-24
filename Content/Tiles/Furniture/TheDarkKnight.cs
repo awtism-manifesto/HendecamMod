@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture
 {
-    public class GoldenSigmaPlaced : ModTile
+    public class TheDarkKnight : ModTile
     {
         public override void SetStaticDefaults()
         {
@@ -17,14 +17,11 @@ namespace HendecamMod.Content.Tiles.Furniture
             TileID.Sets.FramesOnKillWall[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
-            TileObjectData.newTile.Width = 8;
-            TileObjectData.newTile.Height = 8;
+            TileObjectData.newTile.Width = 5;
+            TileObjectData.newTile.Height = 5;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new[]
             {
-                16,
-                16,
-                16,
                 16,
                 16,
                 16,
@@ -33,8 +30,8 @@ namespace HendecamMod.Content.Tiles.Furniture
             };
             TileObjectData.addTile(Type);
 
-            AddMapEntry(new Color(225, 173, 66), Language.GetText("Golden Sigma"));
-            DustType = DustID.GoldCoin;
+            AddMapEntry(new Color(225, 173, 66), Language.GetText("Rory Nite"));
+            DustType = DustID.ArgonMoss;
         }
     }
 }
