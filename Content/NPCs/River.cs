@@ -351,7 +351,6 @@ namespace HendecamMod.Content.NPCs
 
 
 
-                 .Add<StupiderFuckingPickaxe>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<StupidFuckingPickaxe>()))
 
                    .Add<StupidestFuckingPickaxe>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<StupiderFuckingPickaxe>()))
                  .Add<Bullshit1>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit1>()))
