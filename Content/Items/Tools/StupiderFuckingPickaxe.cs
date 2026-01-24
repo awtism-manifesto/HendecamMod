@@ -1,4 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -45,8 +48,43 @@ namespace HendecamMod.Content.Items.Tools
             tooltips.Add(line);
         }
 
-      
-       
-
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Zenith, 1);
+            recipe.AddIngredient(ItemID.DrillContainmentUnit, 2);
+            recipe.AddIngredient(ItemID.LunarBar, 420);
+            recipe.AddIngredient(ItemID.BrokenHeroSword, 6);
+            recipe.AddIngredient(ItemID.NypmhBanner, 5);
+            recipe.AddIngredient(ItemID.Muramasa, 1);
+            recipe.AddIngredient(ItemID.GoldBirdCage, 1);
+            recipe.AddIngredient(ItemID.TerraBlade, 1);
+            recipe.AddIngredient(ItemID.HandOfCreation, 1);
+            recipe.AddIngredient(ItemID.PortalGun, 3);
+            recipe.AddIngredient(ItemID.DemonHeart, 1);
+            recipe.AddIngredient(ItemID.GalaxyPearl, 1);
+            recipe.AddIngredient(ItemID.DirtiestBlock, 1);
+            recipe.AddIngredient(ItemID.BottomlessHoneyBucket, 1);
+            recipe.AddIngredient(ItemID.MusicBoxDD2, 1);
+            recipe.AddIngredient(ItemID.TinAxe, 10);
+            recipe.AddIngredient(ItemID.TerrasparkBoots, 1);
+            recipe.AddIngredient(ItemID.AnkhCharm, 1);
+            recipe.AddIngredient(ItemID.CrimsonKey, 2);
+            recipe.AddIngredient<TheAutismManifesto>(1);
+            recipe.AddIngredient<IForgor>(1);
+            recipe.AddIngredient<FireDiamond>(690);
+            recipe.AddIngredient<TheAshesOfCalamity>(10);
+            recipe.AddIngredient<K2Avalanche>(10);
+            recipe.AddIngredient<TransBar>(67);
+            recipe.AddIngredient<LuckyCigarette>(500);
+            recipe.AddIngredient<FidgetThrower3>(10);
+            recipe.AddIngredient<PlasmaRifle3>(10);
+            recipe.AddIngredient<CompoundBow3>(10);
+            recipe.AddIngredient<ATFsNightmare>(10);
+            recipe.AddIngredient<PlanetoidPunisher>(10);
+            recipe.AddIngredient<AirBar>(80085);
+            recipe.AddIngredient<StupidFuckingPickaxe>(1);
+            recipe.Register();
         }
     }
+}

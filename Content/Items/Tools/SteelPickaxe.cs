@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Placeables;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -75,7 +76,7 @@ namespace HendecamMod.Content.Items.Tools
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Placeables.SteelBar>(10);
+            recipe.AddIngredient<SteelBar>(10);
             recipe.AddRecipeGroup("Wood", 4);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
