@@ -1,12 +1,13 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
-using Microsoft.Xna.Framework;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Items
 {
@@ -37,7 +38,7 @@ namespace HendecamMod.Content.Items
             var line = new TooltipLine(Mod, "Face", "14 summon tag damage");
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Variants can freely be crafted between each other")
+            line = new TooltipLine(Mod, "Face", "Right click in the inventory to swap variants")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -49,29 +50,19 @@ namespace HendecamMod.Content.Items
             tooltips.Add(line);
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
+        }
+        public override bool CanRightClick()
+        {
+            return true;
+        }
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>(), 1));
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-
-            recipe = CreateRecipe();
-
-            recipe.AddIngredient<Items.FerrousThornSpiky>();
-
-
-            recipe.Register();
+            Recipe 
 
             recipe = CreateRecipe();
             recipe.AddRecipeGroup("IronBar", 15);

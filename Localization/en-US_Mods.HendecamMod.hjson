@@ -477,7 +477,7 @@ Items: {
 	}
 
 	AA12: {
-		DisplayName: A A12
+		DisplayName: AA12
 		Tooltip: ""
 	}
 
@@ -502,22 +502,22 @@ Items: {
 	}
 
 	CarbonDioxideBalloon: {
-		DisplayName: Carbon Dioxide Balloon
+		DisplayName: Carbon Dioxide in a Balloon
 		Tooltip: ""
 	}
 
 	CarbonDioxideBottle: {
-		DisplayName: Carbon Dioxide Bottle
+		DisplayName: Carbon Dioxide in a Bottle
 		Tooltip: ""
 	}
 
 	CarbonDioxideCeram: {
-		DisplayName: Carbon Dioxide Ceram
+		DisplayName: Carbon Dioxide Ceramic Bloon
 		Tooltip: ""
 	}
 
 	CeramicHorseshoeBalloon: {
-		DisplayName: Ceramic Horseshoe Balloon
+		DisplayName: Ceramic Horseshoe Bloon
 		Tooltip: ""
 	}
 
@@ -952,7 +952,7 @@ Items: {
 	}
 
 	RadioactiveEmblem: {
-		DisplayName: Radioactive Emblem
+		DisplayName: Radiation Emblem
 		Tooltip: ""
 	}
 
@@ -1002,7 +1002,7 @@ Items: {
 	}
 
 	GodsPaintThinner: {
-		DisplayName: Gods Paint Thinner
+		DisplayName: God's Paint Thinner
 		Tooltip: ""
 	}
 
@@ -1062,7 +1062,7 @@ Items: {
 	}
 
 	MagicSoap: {
-		DisplayName: Magic Soap
+		DisplayName: Dr.Bronner's 18-in-1 Magic Soap
 		Tooltip: ""
 	}
 
@@ -1072,7 +1072,7 @@ Items: {
 	}
 
 	OverthinkersChecklist: {
-		DisplayName: Overthinkers Checklist
+		DisplayName: Overthinker's Checklist
 		Tooltip: ""
 	}
 
@@ -1237,7 +1237,7 @@ Items: {
 	}
 
 	AK47: {
-		DisplayName: A K47
+		DisplayName: AK47
 		Tooltip: ""
 	}
 
@@ -1252,7 +1252,7 @@ Items: {
 	}
 
 	AR15: {
-		DisplayName: A R15
+		DisplayName: AR15
 		Tooltip: ""
 	}
 
@@ -1392,7 +1392,7 @@ Items: {
 	}
 
 	ATFsNightmare: {
-		DisplayName: A T Fs Nightmare
+		DisplayName: ATFs Nightmare
 		Tooltip: ""
 	}
 
@@ -1442,7 +1442,7 @@ Items: {
 	}
 
 	BBC: {
-		DisplayName: B B C
+		DisplayName: Bigger, Blacker Cannon
 		Tooltip: ""
 	}
 
@@ -1452,7 +1452,7 @@ Items: {
 	}
 
 	BeeSnipe: {
-		DisplayName: Bee Snipe
+		DisplayName: .50 Bee-MG
 		Tooltip: ""
 	}
 
@@ -1502,7 +1502,7 @@ Items: {
 	}
 
 	BlackHole: {
-		DisplayName: Black Hole
+		DisplayName: Literally A Fucking Black Hole
 		Tooltip: ""
 	}
 
@@ -1527,7 +1527,7 @@ Items: {
 	}
 
 	BoggsGlove: {
-		DisplayName: Boggs Glove
+		DisplayName: Boggs' Glove
 		Tooltip: ""
 	}
 
@@ -1537,7 +1537,7 @@ Items: {
 	}
 
 	BOOMerang: {
-		DisplayName: B O O Merang
+		DisplayName: BOOM-erang
 		Tooltip: ""
 	}
 
@@ -1597,27 +1597,27 @@ Items: {
 	}
 
 	Bullshit1: {
-		DisplayName: Bullshit1
+		DisplayName: Bull$#!7 Mk.I
 		Tooltip: ""
 	}
 
 	Bullshit2: {
-		DisplayName: Bullshit2
+		DisplayName: Bull$#!7 Mk.II
 		Tooltip: ""
 	}
 
 	Bullshit3: {
-		DisplayName: Bullshit3
+		DisplayName: Bull$#!7 Mk.III
 		Tooltip: ""
 	}
 
 	Bullshit4: {
-		DisplayName: Bullshit4
+		DisplayName: Bull$#!7 Mk.IV
 		Tooltip: ""
 	}
 
 	Bullshit5: {
-		DisplayName: Bullshit5
+		DisplayName: Bull$#!7 Mk.V
 		Tooltip: ""
 	}
 
@@ -1642,7 +1642,7 @@ Items: {
 	}
 
 	CaribousCatastrophe: {
-		DisplayName: Caribous Catastrophe
+		DisplayName: Caribou's Catastrophe
 		Tooltip: ""
 	}
 
@@ -1712,7 +1712,7 @@ Items: {
 	}
 
 	CIAJournalismAward: {
-		DisplayName: C I A Journalism Award
+		DisplayName: CIA Award in Journalism
 		Tooltip: ""
 	}
 
@@ -1737,12 +1737,12 @@ Items: {
 	}
 
 	CompoundBow2: {
-		DisplayName: Compound Bow2
+		DisplayName: Compound Bow Mk.II
 		Tooltip: ""
 	}
 
 	CompoundBow3: {
-		DisplayName: Compound Bow3
+		DisplayName: Compound Bow Mk.III
 		Tooltip: ""
 	}
 
@@ -1972,7 +1972,7 @@ Items: {
 	}
 
 	Edward40Hands: {
-		DisplayName: Edward40 Hands
+		DisplayName: Edward 40 Hands
 		Tooltip: ""
 	}
 
@@ -1987,7 +1987,7 @@ Items: {
 	}
 
 	ElephantsThrow: {
-		DisplayName: Elephants Throw
+		DisplayName: Elephant's Throw
 		Tooltip: ""
 	}
 
@@ -2007,12 +2007,12 @@ Items: {
 	}
 
 	FerrousThornSmooth: {
-		DisplayName: Ferrous Thorn Smooth
+		DisplayName: Ferrous Thorn (Smooth)
 		Tooltip: ""
 	}
 
 	FerrousThornSpiky: {
-		DisplayName: Ferrous Thorn Spiky
+		DisplayName: Ferrous Thorn (Spiky)
 		Tooltip: ""
 	}
 
@@ -2022,12 +2022,12 @@ Items: {
 	}
 
 	FidgetThrower2: {
-		DisplayName: Fidget Thrower2
+		DisplayName: Fidget Thrower Mk.II
 		Tooltip: ""
 	}
 
 	FidgetThrower3: {
-		DisplayName: Fidget Thrower3
+		DisplayName: Fidget Thrower Mk.II
 		Tooltip: ""
 	}
 
@@ -2122,12 +2122,12 @@ Items: {
 	}
 
 	GeigersGambit: {
-		DisplayName: Geigers Gambit
+		DisplayName: Geiger's Gambit
 		Tooltip: ""
 	}
 
 	GiantBone: {
-		DisplayName: Giant Bone
+		DisplayName: Comically Large Bone
 		Tooltip: ""
 	}
 
@@ -2142,7 +2142,7 @@ Items: {
 	}
 
 	GoldenAK: {
-		DisplayName: Golden A K
+		DisplayName: Golden AK
 		Tooltip: ""
 	}
 
@@ -2292,7 +2292,7 @@ Items: {
 	}
 
 	IED: {
-		DisplayName: I E D
+		DisplayName: Improvised Explosive Device
 		Tooltip: ""
 	}
 
@@ -2412,7 +2412,7 @@ Items: {
 	}
 
 	LaserMonkeysPaw: {
-		DisplayName: Laser Monkeys Paw
+		DisplayName: Laser Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -2962,7 +2962,7 @@ Items: {
 	}
 
 	AnUnoDeck: {
-		DisplayName: An Uno Deck
+		DisplayName: Uno Deck
 		Tooltip: ""
 	}
 
@@ -3277,7 +3277,7 @@ Items: {
 	}
 
 	PlasmaMonkeysPaw: {
-		DisplayName: Plasma Monkeys Paw
+		DisplayName: Plasma Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -3287,12 +3287,12 @@ Items: {
 	}
 
 	PlasmaRifle2: {
-		DisplayName: Plasma Rifle2
+		DisplayName: Plasma Rifle Mk.II
 		Tooltip: ""
 	}
 
 	PlasmaRifle3: {
-		DisplayName: Plasma Rifle3
+		DisplayName: Plasma Rifle Mk.III
 		Tooltip: ""
 	}
 
@@ -3412,7 +3412,7 @@ Items: {
 	}
 
 	PortableTower: {
-		DisplayName: Portable Tower
+		DisplayName: Portable 5G Tower
 		Tooltip: ""
 	}
 
@@ -3812,7 +3812,7 @@ Items: {
 	}
 
 	SuperMonkeysPaw: {
-		DisplayName: Super Monkeys Paw
+		DisplayName: Super Monkey's Paw
 		Tooltip: ""
 	}
 
@@ -3837,7 +3837,7 @@ Items: {
 	}
 
 	TedGun: {
-		DisplayName: Ted Gun
+		DisplayName: Freedom Club's Freedom Dispenser
 		Tooltip: ""
 	}
 
@@ -3887,7 +3887,7 @@ Items: {
 	}
 
 	TheFuckingSun: {
-		DisplayName: The Fucking Sun
+		DisplayName: Literally The Fucking Sun
 		Tooltip: ""
 	}
 
@@ -3917,12 +3917,12 @@ Items: {
 	}
 
 	TheMonkeysPaw: {
-		DisplayName: The Monkeys Paw
+		DisplayName: The Monkey's Paw
 		Tooltip: ""
 	}
 
 	TheMoon: {
-		DisplayName: The Moon
+		DisplayName: Literally The Fucking Moon
 		Tooltip: ""
 	}
 
@@ -3972,7 +3972,7 @@ Items: {
 	}
 
 	TheXRay: {
-		DisplayName: The X Ray
+		DisplayName: The X-Ray
 		Tooltip: ""
 	}
 
@@ -4237,7 +4237,7 @@ Items: {
 	}
 
 	TruthSeekersDMR: {
-		DisplayName: Truth Seekers D M R
+		DisplayName: Truth Seeker's DMR
 		Tooltip: ""
 	}
 
@@ -4322,7 +4322,7 @@ Items: {
 	}
 
 	VP70: {
-		DisplayName: V P70
+		DisplayName: VP70
 		Tooltip: ""
 	}
 
@@ -4745,21 +4745,26 @@ Items: {
 		DisplayName: Wand Of Pooping
 		Tooltip: ""
 	}
+
+	ShatteringShell: {
+		DisplayName: Shattering Shell
+		Tooltip: ""
+	}
 }
 
 WorldGen: {
-	PyriteBlessMessage: Mods.HendecamMod.WorldGen.PyriteBlessMessage
-	PyriteMessage: Mods.HendecamMod.WorldGen.PyriteMessage
-	PlutoniumBlessMessage: Mods.HendecamMod.WorldGen.PlutoniumBlessMessage
-	PlutoniumMessage: Mods.HendecamMod.WorldGen.PlutoniumMessage
-	MorbiumBlessMessage: Mods.HendecamMod.WorldGen.MorbiumBlessMessage
-	MorbiumMessage: Mods.HendecamMod.WorldGen.MorbiumMessage
-	MintalBlessMessage: Mods.HendecamMod.WorldGen.MintalBlessMessage
-	MintalMessage: Mods.HendecamMod.WorldGen.MintalMessage
-	LycopiteBlessMessage: Mods.HendecamMod.WorldGen.LycopiteBlessMessage
-	LycopiteMessage: Mods.HendecamMod.WorldGen.LycopiteMessage
-	AzuriteBlessMessage: Mods.HendecamMod.WorldGen.AzuriteBlessMessage
-	AzuriteMessage: Mods.HendecamMod.WorldGen.AzuriteMessage
+	PyriteBlessMessage: Riches once hoarded by Cthulhu now permeate the earth's crust...
+	PyriteMessage: Riches once hoarded by Cthulhu now permeate the earth's crust...
+	PlutoniumBlessMessage: Strange purple lights start to appear from both above and below...
+	PlutoniumMessage: Strange purple lights start to appear from both above and below...
+	MorbiumBlessMessage: It's morbin time.
+	MorbiumMessage: It's morbin time.
+	MintalBlessMessage: Your world has been blessed with some fresh new ore!
+	MintalMessage: Your world has been blessed with some fresh new ore!
+	LycopiteBlessMessage: Glowing reddish-orange spores stir far beneath the surface...
+	LycopiteMessage: Glowing reddish-orange spores stir far beneath the surface...
+	AzuriteBlessMessage: Blue.
+	AzuriteMessage: Blue.
 	AncientCobaltOrePassMessage: Mods.HendecamMod.WorldGen.AncientCobaltOrePassMessage
 	BlessedWithAncientCobaltOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAncientCobaltOreMessage
 	MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
@@ -4769,18 +4774,18 @@ WorldGen: {
 }
 
 DamageClasses: {
-	SummonStupidDamage.DisplayName: Summon Stupid Damage
-	StupidDamage.DisplayName: Stupid Damage
-	RangedSummonDamage.DisplayName: Ranged Summon Damage
-	RangedStupidDamage.DisplayName: Ranged Stupid Damage
-	RangedMagicDamage.DisplayName: Ranged Magic Damage
-	OmniDamage.DisplayName: Omni Damage
-	MeleeSummonDamage.DisplayName: Melee Summon Damage
-	MeleeStupidDamage.DisplayName: Melee Stupid Damage
-	MeleeRangedDamage.DisplayName: Melee Ranged Damage
-	MeleeMagicDamage.DisplayName: Melee Magic Damage
-	MagicSummonDamage.DisplayName: Magic Summon Damage
-	AutismDamage.DisplayName: Autism Damage
+	SummonStupidDamage.DisplayName: summon+stupid damage
+	StupidDamage.DisplayName: stupid damage
+	RangedSummonDamage.DisplayName: ranged+summon damage
+	RangedStupidDamage.DisplayName: ranged+stupid damage
+	RangedMagicDamage.DisplayName: ranged+magic damage
+	OmniDamage.DisplayName: omni damage
+	MeleeSummonDamage.DisplayName: melee+summon damage
+	MeleeStupidDamage.DisplayName: melee+stupid damage
+	MeleeRangedDamage.DisplayName: melee+ranged damage
+	MeleeMagicDamage.DisplayName: melee+magic damage
+	MagicSummonDamage.DisplayName: magic+summon damage
+	AutismDamage.DisplayName: magic+stupid damage
 }
 
 Biomes: {
@@ -4797,32 +4802,32 @@ Biomes: {
 
 Achievements: {
 	WoahTrippyBro: {
-		Description: Mods.HendecamMod.Achievements.WoahTrippyBro.Description
-		FriendlyName: Woah Trippy Bro
+		Description: Mine Lycopite Ore. The force of a powerful being striking the ground may stir up the elusive spores....
+		FriendlyName: Woahhhhhh.... Trippy, Bro......
 	}
 
 	Plasmophobia: {
-		Description: Mods.HendecamMod.Achievements.Plasmophobia.Description
+		Description: Kill the menace of the night skies, an Unstable Plasmoid
 		FriendlyName: Plasmophobia
 	}
 
 	NowsYourChance: {
-		Description: Mods.HendecamMod.Achievements.NowsYourChance.Description
-		FriendlyName: Nows Your Chance
+		Description: Craft [THE SPAM CANNON]
+		FriendlyName: NOW'S YOUR CHANCE TO BE A
 	}
 
 	JetFuel: {
-		Description: Mods.HendecamMod.Achievements.JetFuel.Description
-		FriendlyName: Jet Fuel
+		Description: Craft the I Forgor using 9 Spectre Bars and 11 Vortex Fragments.
+		FriendlyName: Jet Fuel (It Doesn't Melt Steel Beams!)
 	}
 
 	ICanDoAnything: {
-		Description: Mods.HendecamMod.Achievements.ICanDoAnything.Description
-		FriendlyName: I Can Do Anything
+		Description: Craft the devilsknife, devilsknife!
+		FriendlyName: I Can Do Anything!
 	}
 
 	AmericanApotheosis: {
-		Description: Mods.HendecamMod.Achievements.AmericanApotheosis.Description
+		Description: Craft the apotheosis of all guns...
 		FriendlyName: American Apotheosis
 	}
 
@@ -4832,7 +4837,7 @@ Achievements: {
 	}
 
 	KnockEmDown: {
-		Description: Mods.HendecamMod.Achievements.KnockEmDown.Description
+		Description: Eliminate the Apache Elf Ship.
 		FriendlyName: Knock Em Down
 	}
 }
@@ -4946,7 +4951,7 @@ NPCs: {
 	SaltMonster.DisplayName: Salt Monster
 
 	Alpine: {
-		DisplayName: Alpine
+		DisplayName: Heli Pilot
 
 		TownNPCMood: {
 			Content: I am content.
@@ -4990,10 +4995,10 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.BigShotCooldown.Description
 	}
 
-		BlackshardDebuff: {
-			DisplayName: Blackshard Debuff
-			Description: Mods.HendecamMod.Buffs.BlackshardDebuff.Description
-		}
+	BlackshardDebuff: {
+		DisplayName: Blackshard Debuff
+		Description: Mods.HendecamMod.Buffs.BlackshardDebuff.Description
+	}
 
 	BrainRotted: {
 		DisplayName: Brain Rotted
@@ -5015,30 +5020,30 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.DarkPower.Description
 	}
 
-		DeliriantTag: {
-			DisplayName: Deliriant Tag
-			Description: Mods.HendecamMod.Buffs.DeliriantTag.Description
-		}
+	DeliriantTag: {
+		DisplayName: Deliriant Tag
+		Description: Mods.HendecamMod.Buffs.DeliriantTag.Description
+	}
 
-		DildoWhipBuff: {
-			DisplayName: Dildo Whip Buff
-			Description: Mods.HendecamMod.Buffs.DildoWhipBuff.Description
-		}
+	DildoWhipBuff: {
+		DisplayName: Dildo Whip Buff
+		Description: Mods.HendecamMod.Buffs.DildoWhipBuff.Description
+	}
 
-		EmblemTag: {
-			DisplayName: Emblem Tag
-			Description: Mods.HendecamMod.Buffs.EmblemTag.Description
-		}
+	EmblemTag: {
+		DisplayName: Emblem Tag
+		Description: Mods.HendecamMod.Buffs.EmblemTag.Description
+	}
 
-		GalaxyTag: {
-			DisplayName: Galaxy Tag
-			Description: Mods.HendecamMod.Buffs.GalaxyTag.Description
-		}
+	GalaxyTag: {
+		DisplayName: Galaxy Tag
+		Description: Mods.HendecamMod.Buffs.GalaxyTag.Description
+	}
 
-		Gay: {
-			DisplayName: Gay
-			Description: Mods.HendecamMod.Buffs.Gay.Description
-		}
+	Gay: {
+		DisplayName: Gay
+		Description: Mods.HendecamMod.Buffs.Gay.Description
+	}
 
 	GraniteFriend: {
 		DisplayName: Granite Friend
@@ -5050,25 +5055,25 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.HeartBuff.Description
 	}
 
-		JevilTag: {
-			DisplayName: Jevil Tag
-			Description: Mods.HendecamMod.Buffs.JevilTag.Description
-		}
+	JevilTag: {
+		DisplayName: Jevil Tag
+		Description: Mods.HendecamMod.Buffs.JevilTag.Description
+	}
 
 	JungleHealing: {
 		DisplayName: Jungle Healing
 		Description: Mods.HendecamMod.Buffs.JungleHealing.Description
 	}
 
-		KevlarTag: {
-			DisplayName: Kevlar Tag
-			Description: Mods.HendecamMod.Buffs.KevlarTag.Description
-		}
+	KevlarTag: {
+		DisplayName: Kevlar Tag
+		Description: Mods.HendecamMod.Buffs.KevlarTag.Description
+	}
 
-		KingTag: {
-			DisplayName: King Tag
-			Description: Mods.HendecamMod.Buffs.KingTag.Description
-		}
+	KingTag: {
+		DisplayName: King Tag
+		Description: Mods.HendecamMod.Buffs.KingTag.Description
+	}
 
 	LeadPoisoningDebuff: {
 		DisplayName: Lead Poisoning Debuff
@@ -5080,15 +5085,15 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.Ligma.Description
 	}
 
-		LilTMan: {
-			DisplayName: Lil T Man
-			Description: Mods.HendecamMod.Buffs.LilTMan.Description
-		}
+	LilTMan: {
+		DisplayName: Lil T Man
+		Description: Mods.HendecamMod.Buffs.LilTMan.Description
+	}
 
-		LycopiteSpores: {
-			DisplayName: Lycopite Spores
-			Description: Mods.HendecamMod.Buffs.LycopiteSpores.Description
-		}
+	LycopiteSpores: {
+		DisplayName: Lycopite Spores
+		Description: Mods.HendecamMod.Buffs.LycopiteSpores.Description
+	}
 
 	MambaBuff: {
 		DisplayName: Mamba Buff
@@ -5115,20 +5120,20 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.OtherworldPoisoning.Description
 	}
 
-		PearlTag: {
-			DisplayName: Pearl Tag
-			Description: Mods.HendecamMod.Buffs.PearlTag.Description
-		}
+	PearlTag: {
+		DisplayName: Pearl Tag
+		Description: Mods.HendecamMod.Buffs.PearlTag.Description
+	}
 
 	PlasmoidFriend: {
 		DisplayName: Plasmoid Friend
 		Description: Mods.HendecamMod.Buffs.PlasmoidFriend.Description
 	}
 
-		PlutoWhipBuff: {
-			DisplayName: Pluto Whip Buff
-			Description: Mods.HendecamMod.Buffs.PlutoWhipBuff.Description
-		}
+	PlutoWhipBuff: {
+		DisplayName: Pluto Whip Buff
+		Description: Mods.HendecamMod.Buffs.PlutoWhipBuff.Description
+	}
 
 	PolymerSlimeBuff: {
 		DisplayName: Polymer Slime Buff
@@ -5160,10 +5165,10 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.RedBloonBuff.Description
 	}
 
-		RedneckTag: {
-			DisplayName: Redneck Tag
-			Description: Mods.HendecamMod.Buffs.RedneckTag.Description
-		}
+	RedneckTag: {
+		DisplayName: Redneck Tag
+		Description: Mods.HendecamMod.Buffs.RedneckTag.Description
+	}
 
 	RudeBusterCooldown: {
 		DisplayName: Rude Buster Cooldown
@@ -5190,45 +5195,45 @@ Buffs: {
 		Description: Mods.HendecamMod.Buffs.SlimeMinesBuff.Description
 	}
 
-		SmoothTag: {
-			DisplayName: Smooth Tag
-			Description: Mods.HendecamMod.Buffs.SmoothTag.Description
-		}
+	SmoothTag: {
+		DisplayName: Smooth Tag
+		Description: Mods.HendecamMod.Buffs.SmoothTag.Description
+	}
 
-		SpikyTag: {
-			DisplayName: Spiky Tag
-			Description: Mods.HendecamMod.Buffs.SpikyTag.Description
-		}
+	SpikyTag: {
+		DisplayName: Spiky Tag
+		Description: Mods.HendecamMod.Buffs.SpikyTag.Description
+	}
 
-		Stamped: {
-			DisplayName: Stamped
-			Description: Mods.HendecamMod.Buffs.Stamped.Description
-		}
+	Stamped: {
+		DisplayName: Stamped
+		Description: Mods.HendecamMod.Buffs.Stamped.Description
+	}
 
 	SuperCeramBuff: {
 		DisplayName: Super Ceram Buff
 		Description: Mods.HendecamMod.Buffs.SuperCeramBuff.Description
 	}
 
-		VerdantTag: {
-			DisplayName: Verdant Tag
-			Description: Mods.HendecamMod.Buffs.VerdantTag.Description
-		}
+	VerdantTag: {
+		DisplayName: Verdant Tag
+		Description: Mods.HendecamMod.Buffs.VerdantTag.Description
+	}
 
-		VpTag: {
-			DisplayName: Vp Tag
-			Description: Mods.HendecamMod.Buffs.VpTag.Description
-		}
+	VpTag: {
+		DisplayName: Vp Tag
+		Description: Mods.HendecamMod.Buffs.VpTag.Description
+	}
 
 	WeaponImbueFission: {
 		DisplayName: Weapon Imbue Fission
 		Description: Mods.HendecamMod.Buffs.WeaponImbueFission.Description
 	}
 
-		WeaponImbueFusion: {
-			DisplayName: Weapon Imbue Fusion
-			Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
-		}
+	WeaponImbueFusion: {
+		DisplayName: Weapon Imbue Fusion
+		Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
+	}
 
 	WeaponImbueOil: {
 		DisplayName: Weapon Imbue Oil
@@ -5251,26 +5256,26 @@ Buffs: {
 	}
 }
 
-	Prefixes: {
-		Academic.DisplayName: Academic
-		Brainrotted.DisplayName: Brainrotted
-		Brainy.DisplayName: Brainy
-		Clunky.DisplayName: Clunky
-		Disciplined.DisplayName: Disciplined
-		Dumb.DisplayName: Dumb
-		Gargantuan.DisplayName: Gargantuan
-		Idiotic.DisplayName: Idiotic
-		Intelligent.DisplayName: Intelligent
-		Lobotomized.DisplayName: Lobotomized
-		Serious.DisplayName: Serious
-		Sigma.DisplayName: Sigma
-		Silly.DisplayName: Silly
-		Skibidi.DisplayName: Skibidi
-		Smart.DisplayName: Smart
-		Switched.DisplayName: Switched
-		Thoughtless.DisplayName: Thoughtless
-		Tiktokified.DisplayName: Tiktokified
-	}
+Prefixes: {
+	Academic.DisplayName: Academic
+	Brainrotted.DisplayName: Brainrotted
+	Brainy.DisplayName: Brainy
+	Clunky.DisplayName: Clunky
+	Disciplined.DisplayName: Disciplined
+	Dumb.DisplayName: Dumb
+	Gargantuan.DisplayName: Gargantuan
+	Idiotic.DisplayName: Idiotic
+	Intelligent.DisplayName: Intelligent
+	Lobotomized.DisplayName: Lobotomized
+	Serious.DisplayName: Serious
+	Sigma.DisplayName: Sigma
+	Silly.DisplayName: Silly
+	Skibidi.DisplayName: Skibidi
+	Smart.DisplayName: Smart
+	Switched.DisplayName: Switched
+	Thoughtless.DisplayName: Thoughtless
+	Tiktokified.DisplayName: Tiktokified
+}
 
 Projectiles: {
 	A5G.DisplayName: A5 G
@@ -5764,16 +5769,4 @@ Projectiles: {
 	SporeSawProj.DisplayName: Spore Saw Proj
 	MorbiumTreeripperProj.DisplayName: Morbium Treeripper Proj
 	ElfMagicMissile.DisplayName: Elf Magic Missile
-}
-
-Biomes: {
-	OasisUndergroundBiome: {
-		TownNPCDialogueName: the Oasis Underground Biome
-		DisplayName: Oasis Underground Biome
-	}
-
-	OasisSurfaceBiome: {
-		TownNPCDialogueName: the Oasis Surface Biome
-		DisplayName: Oasis Surface Biome
-	}
 }
