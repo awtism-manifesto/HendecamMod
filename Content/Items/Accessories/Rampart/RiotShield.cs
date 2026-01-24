@@ -26,10 +26,15 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Weakness, Withered Weapon,"));
             tooltips.Add(new TooltipLine(Mod, "Face", "Broken Armor, Withered Armor, Bleeding,"));
             tooltips.Add(new TooltipLine(Mod, "Face", "Feral Bite, Poison, Acid Venom. Burning,"));
+            tooltips.Add(new TooltipLine(Mod, "Face", "Blackout, Darkness, Stoned, Horrified,"));
             tooltips.Add(new TooltipLine(Mod, "Face", "OnFire, Dazed, and Knockback"));
         }
         public override void UpdateEquip(Player player)
         {
+            player.buffImmune[BuffID.Blackout] = true;
+            player.buffImmune[BuffID.Darkness] = true;
+            player.buffImmune[BuffID.Stoned] = true;
+            player.buffImmune[BuffID.Horrified] = true;
             player.buffImmune[BuffID.Weak] = true;
             player.buffImmune[BuffID.WitheredWeapon] = true;
             player.buffImmune[BuffID.BrokenArmor] = true;

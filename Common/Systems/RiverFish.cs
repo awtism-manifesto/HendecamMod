@@ -23,7 +23,7 @@ namespace HendecamMod.Common.Systems
         public override void CatchFish(FishingAttempt attempt, ref int itemDrop, ref int npcSpawn, ref AdvancedPopupRequest sonar, ref Vector2 sonarPosition)
         {
             bool cheater = !Main.hardMode;
-            bool inShimmer = !attempt.inLava && !attempt.inHoney && Player.ZoneShimmer && Main.hardMode;
+            bool inShimmer = !attempt.inLava && !attempt.inHoney && Player.ZoneShimmer;
             bool trashRod = attempt.playerFishingConditions.PoleItemType == ItemID.WoodFishingPole;
             bool fishRod = attempt.playerFishingConditions.PoleItemType == ItemID.ReinforcedFishingPole;
             bool itemRod = attempt.playerFishingConditions.PoleItemType == ItemID.FisherofSouls || attempt.playerFishingConditions.PoleItemType == ItemID.Fleshcatcher;
@@ -34,7 +34,7 @@ namespace HendecamMod.Common.Systems
             bool merchantRod = attempt.playerFishingConditions.PoleItemType == ItemID.SittingDucksFishingRod;
             bool questRod = attempt.playerFishingConditions.PoleItemType == ItemID.HotlineFishingHook;
             bool goldRod = attempt.playerFishingConditions.PoleItemType == ItemID.GoldenFishingRod;
-            if (cheater)
+            if (cheater && inShimmer)
             {
                 itemDrop = ItemID.TinShortswordOld;
             }

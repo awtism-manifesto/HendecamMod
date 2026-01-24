@@ -1,0 +1,5779 @@
+Items: {
+	GraniteHeadgear: {
+		SetBonus: Mods.HendecamMod.Items.GraniteHeadgear.SetBonus
+		DisplayName: Granite Headgear
+		Tooltip: ""
+	}
+
+	GraniteChestguard: {
+		SetBonus: Mods.HendecamMod.Items.GraniteChestguard.SetBonus
+		DisplayName: Granite Chestguard
+		Tooltip: ""
+	}
+
+	FossilFuelPants: {
+		SetBonus: Mods.HendecamMod.Items.FossilFuelPants.SetBonus
+		DisplayName: Fossil Fuel Pants
+		Tooltip: ""
+	}
+
+	FossilFuelHelmet: {
+		SetBonus: Mods.HendecamMod.Items.FossilFuelHelmet.SetBonus
+		DisplayName: Fossil Fuel Helmet
+		Tooltip: ""
+	}
+
+	FossilFuelChestplate: {
+		SetBonus: Mods.HendecamMod.Items.FossilFuelChestplate.SetBonus
+		DisplayName: Fossil Fuel Chestplate
+		Tooltip: ""
+	}
+
+	FaradayPants: {
+		SetBonus: Mods.HendecamMod.Items.FaradayPants.SetBonus
+		DisplayName: Faraday Pants
+		Tooltip: ""
+	}
+
+	FaradayFedora: {
+		SetBonus: Mods.HendecamMod.Items.FaradayFedora.SetBonus
+		DisplayName: Faraday Fedora
+		Tooltip: ""
+	}
+
+	FaradayBodyArmor: {
+		SetBonus: Mods.HendecamMod.Items.FaradayBodyArmor.SetBonus
+		DisplayName: Faraday Body Armor
+		Tooltip: ""
+	}
+
+	AzuritePlatemail: {
+		SetBonus: Mods.HendecamMod.Items.AzuritePlatemail.SetBonus
+		DisplayName: Azurite Platemail
+		Tooltip: ""
+	}
+
+	AzuriteHat: {
+		SetBonus: Mods.HendecamMod.Items.AzuriteHat.SetBonus
+		DisplayName: Azurite Hat
+		Tooltip: ""
+	}
+
+	AzuriteGreaves: {
+		SetBonus: Mods.HendecamMod.Items.AzuriteGreaves.SetBonus
+		DisplayName: Azurite Greaves
+		Tooltip: ""
+	}
+
+	AstatineHelmet: {
+		SetBonus: Mods.HendecamMod.Items.AstatineHelmet.SetBonus
+		DisplayName: Astatine Helmet
+		Tooltip: ""
+	}
+
+	AstatineGreaves: {
+		SetBonus: Mods.HendecamMod.Items.AstatineGreaves.SetBonus
+		DisplayName: Astatine Greaves
+		Tooltip: ""
+	}
+
+	AstatineBreastplate: {
+		SetBonus: Mods.HendecamMod.Items.AstatineBreastplate.SetBonus
+		DisplayName: Astatine Breastplate
+		Tooltip: ""
+	}
+
+	GraniteLeggings: {
+		SetBonus: Mods.HendecamMod.Items.GraniteLeggings.SetBonus
+		DisplayName: Granite Leggings
+		Tooltip: ""
+	}
+
+	HallowedFedora: {
+		SetBonus: Mods.HendecamMod.Items.HallowedFedora.SetBonus
+		DisplayName: Hallowed Fedora
+		Tooltip: ""
+	}
+
+	KevlarBeret: {
+		SetBonus: Mods.HendecamMod.Items.KevlarBeret.SetBonus
+		DisplayName: Kevlar Beret
+		Tooltip: ""
+	}
+
+	KevlarBodysuit: {
+		SetBonus: Mods.HendecamMod.Items.KevlarBodysuit.SetBonus
+		DisplayName: Kevlar Bodysuit
+		Tooltip: ""
+	}
+
+	KevlarFedora: {
+		SetBonus: Mods.HendecamMod.Items.KevlarFedora.SetBonus
+		DisplayName: Kevlar Fedora
+		Tooltip: ""
+	}
+
+	KevlarHelmet: {
+		SetBonus: Mods.HendecamMod.Items.KevlarHelmet.SetBonus
+		DisplayName: Kevlar Helmet
+		Tooltip: ""
+	}
+
+	KevlarMask: {
+		SetBonus: Mods.HendecamMod.Items.KevlarMask.SetBonus
+		DisplayName: Kevlar Mask
+		Tooltip: ""
+	}
+
+	KevlarPants: {
+		SetBonus: Mods.HendecamMod.Items.KevlarPants.SetBonus
+		DisplayName: Kevlar Pants
+		Tooltip: ""
+	}
+
+	KevlarVisor: {
+		SetBonus: Mods.HendecamMod.Items.KevlarVisor.SetBonus
+		DisplayName: Kevlar Visor
+		Tooltip: ""
+	}
+
+	Kevlar: {
+		DisplayName: Kevlar
+		Tooltip: ""
+	}
+
+	KingslayerBreastplate: {
+		SetBonus: Mods.HendecamMod.Items.KingslayerBreastplate.SetBonus
+		DisplayName: Kingslayer Breastplate
+		Tooltip: ""
+	}
+
+	KingslayerGreaves: {
+		SetBonus: Mods.HendecamMod.Items.KingslayerGreaves.SetBonus
+		DisplayName: Kingslayer Greaves
+		Tooltip: ""
+	}
+
+	KingslayerHelmet: {
+		SetBonus: Mods.HendecamMod.Items.KingslayerHelmet.SetBonus
+		DisplayName: Kingslayer Helmet
+		Tooltip: ""
+	}
+
+	LycopiteChestplate: {
+		SetBonus: Mods.HendecamMod.Items.LycopiteChestplate.SetBonus
+		DisplayName: Lycopite Chestplate
+		Tooltip: ""
+	}
+
+	LycopiteFedora: {
+		SetBonus: Mods.HendecamMod.Items.LycopiteFedora.SetBonus
+		DisplayName: Lycopite Fedora
+		Tooltip: ""
+	}
+
+	LycopiteHelmet: {
+		SetBonus: Mods.HendecamMod.Items.LycopiteHelmet.SetBonus
+		DisplayName: Lycopite Helmet
+		Tooltip: ""
+	}
+
+	LycopiteLeggings: {
+		SetBonus: Mods.HendecamMod.Items.LycopiteLeggings.SetBonus
+		DisplayName: Lycopite Leggings
+		Tooltip: ""
+	}
+
+	LycopiteMask: {
+		SetBonus: Mods.HendecamMod.Items.LycopiteMask.SetBonus
+		DisplayName: Lycopite Mask
+		Tooltip: ""
+	}
+
+	MarbleChestplate: {
+		SetBonus: Mods.HendecamMod.Items.MarbleChestplate.SetBonus
+		DisplayName: Marble Chestplate
+		Tooltip: ""
+	}
+
+	MarbleGreaves: {
+		SetBonus: Mods.HendecamMod.Items.MarbleGreaves.SetBonus
+		DisplayName: Marble Greaves
+		Tooltip: ""
+	}
+
+	MarbleMask: {
+		SetBonus: Mods.HendecamMod.Items.MarbleMask.SetBonus
+		DisplayName: Marble Mask
+		Tooltip: ""
+	}
+
+	MintalBreastplate: {
+		SetBonus: Mods.HendecamMod.Items.MintalBreastplate.SetBonus
+		DisplayName: Mintal Breastplate
+		Tooltip: ""
+	}
+
+	MintalHelmet: {
+		SetBonus: Mods.HendecamMod.Items.MintalHelmet.SetBonus
+		DisplayName: Mintal Helmet
+		Tooltip: ""
+	}
+
+	MintalLeggings: {
+		SetBonus: Mods.HendecamMod.Items.MintalLeggings.SetBonus
+		DisplayName: Mintal Leggings
+		Tooltip: ""
+	}
+
+	MorbiumGreaves: {
+		SetBonus: Mods.HendecamMod.Items.MorbiumGreaves.SetBonus
+		DisplayName: Morbium Greaves
+		Tooltip: ""
+	}
+
+	MorbiumMask: {
+		SetBonus: Mods.HendecamMod.Items.MorbiumMask.SetBonus
+		DisplayName: Morbium Mask
+		Tooltip: ""
+	}
+
+	MorbiumPlatemail: {
+		SetBonus: Mods.HendecamMod.Items.MorbiumPlatemail.SetBonus
+		DisplayName: Morbium Platemail
+		Tooltip: ""
+	}
+
+	PlasticChestplate: {
+		SetBonus: Mods.HendecamMod.Items.PlasticChestplate.SetBonus
+		DisplayName: Plastic Chestplate
+		Tooltip: ""
+	}
+
+	PlasticHeadgear: {
+		SetBonus: Mods.HendecamMod.Items.PlasticHeadgear.SetBonus
+		DisplayName: Plastic Headgear
+		Tooltip: ""
+	}
+
+	PlasticPants: {
+		SetBonus: Mods.HendecamMod.Items.PlasticPants.SetBonus
+		DisplayName: Plastic Pants
+		Tooltip: ""
+	}
+
+	PlutoniumChestplate: {
+		SetBonus: Mods.HendecamMod.Items.PlutoniumChestplate.SetBonus
+		DisplayName: Plutonium Chestplate
+		Tooltip: ""
+	}
+
+	PlutoniumFacemask: {
+		SetBonus: Mods.HendecamMod.Items.PlutoniumFacemask.SetBonus
+		DisplayName: Plutonium Facemask
+		Tooltip: ""
+	}
+
+	PlutoniumPants: {
+		SetBonus: Mods.HendecamMod.Items.PlutoniumPants.SetBonus
+		DisplayName: Plutonium Pants
+		Tooltip: ""
+	}
+
+	PurifiedSaltChestplate: {
+		SetBonus: Mods.HendecamMod.Items.PurifiedSaltChestplate.SetBonus
+		DisplayName: Purified Salt Chestplate
+		Tooltip: ""
+	}
+
+	PurifiedSaltFedora: {
+		SetBonus: Mods.HendecamMod.Items.PurifiedSaltFedora.SetBonus
+		DisplayName: Purified Salt Fedora
+		Tooltip: ""
+	}
+
+	PurifiedSaltLeggings: {
+		SetBonus: Mods.HendecamMod.Items.PurifiedSaltLeggings.SetBonus
+		DisplayName: Purified Salt Leggings
+		Tooltip: ""
+	}
+
+	PurifiedSalt: {
+		DisplayName: Purified Salt
+		Tooltip: ""
+	}
+
+	RockSaltChestplate: {
+		SetBonus: Mods.HendecamMod.Items.RockSaltChestplate.SetBonus
+		DisplayName: Rock Salt Chestplate
+		Tooltip: ""
+	}
+
+	RockSaltFedora: {
+		SetBonus: Mods.HendecamMod.Items.RockSaltFedora.SetBonus
+		DisplayName: Rock Salt Fedora
+		Tooltip: ""
+	}
+
+	RockSaltLeggings: {
+		SetBonus: Mods.HendecamMod.Items.RockSaltLeggings.SetBonus
+		DisplayName: Rock Salt Leggings
+		Tooltip: ""
+	}
+
+	RockSalt: {
+		DisplayName: Rock Salt
+		Tooltip: ""
+	}
+
+	SteelBreastplate: {
+		SetBonus: Mods.HendecamMod.Items.SteelBreastplate.SetBonus
+		DisplayName: Steel Breastplate
+		Tooltip: ""
+	}
+
+	SteelHelmet: {
+		SetBonus: Mods.HendecamMod.Items.SteelHelmet.SetBonus
+		DisplayName: Steel Helmet
+		Tooltip: ""
+	}
+
+	SteelLeggings: {
+		SetBonus: Mods.HendecamMod.Items.SteelLeggings.SetBonus
+		DisplayName: Steel Leggings
+		Tooltip: ""
+	}
+
+	SuperCeramicChestplate: {
+		SetBonus: Mods.HendecamMod.Items.SuperCeramicChestplate.SetBonus
+		DisplayName: Super Ceramic Chestplate
+		Tooltip: ""
+	}
+
+	SuperCeramicFedora: {
+		SetBonus: Mods.HendecamMod.Items.SuperCeramicFedora.SetBonus
+		DisplayName: Super Ceramic Fedora
+		Tooltip: ""
+	}
+
+	SuperCeramicLeggings: {
+		SetBonus: Mods.HendecamMod.Items.SuperCeramicLeggings.SetBonus
+		DisplayName: Super Ceramic Leggings
+		Tooltip: ""
+	}
+
+	TransBodyplate: {
+		SetBonus: Mods.HendecamMod.Items.TransBodyplate.SetBonus
+		DisplayName: Trans Bodyplate
+		Tooltip: ""
+	}
+
+	TransGreaves: {
+		SetBonus: Mods.HendecamMod.Items.TransGreaves.SetBonus
+		DisplayName: Trans Greaves
+		Tooltip: ""
+	}
+
+	TransHat: {
+		SetBonus: Mods.HendecamMod.Items.TransHat.SetBonus
+		DisplayName: Trans Hat
+		Tooltip: ""
+	}
+
+	UraniumChestplate: {
+		SetBonus: Mods.HendecamMod.Items.UraniumChestplate.SetBonus
+		DisplayName: Uranium Chestplate
+		Tooltip: ""
+	}
+
+	UraniumHelmet: {
+		SetBonus: Mods.HendecamMod.Items.UraniumHelmet.SetBonus
+		DisplayName: Uranium Helmet
+		Tooltip: ""
+	}
+
+	UraniumLeggings: {
+		SetBonus: Mods.HendecamMod.Items.UraniumLeggings.SetBonus
+		DisplayName: Uranium Leggings
+		Tooltip: ""
+	}
+
+	WeedHeadgear: {
+		SetBonus: Mods.HendecamMod.Items.WeedHeadgear.SetBonus
+		DisplayName: Weed Headgear
+		Tooltip: ""
+	}
+
+	WeedPants: {
+		SetBonus: Mods.HendecamMod.Items.WeedPants.SetBonus
+		DisplayName: Weed Pants
+		Tooltip: ""
+	}
+
+	WeedShirt: {
+		SetBonus: Mods.HendecamMod.Items.WeedShirt.SetBonus
+		DisplayName: Weed Shirt
+		Tooltip: ""
+	}
+
+	OrcaMask: {
+		SetBonus: Mods.HendecamMod.Items.OrcaMask.SetBonus
+		DisplayName: Orca Mask
+		Tooltip: ""
+	}
+
+	OrcaSuit: {
+		SetBonus: Mods.HendecamMod.Items.OrcaSuit.SetBonus
+		DisplayName: Orca Suit
+		Tooltip: ""
+	}
+
+	OrcaTail: {
+		SetBonus: Mods.HendecamMod.Items.OrcaTail.SetBonus
+		DisplayName: Orca Tail
+		Tooltip: ""
+	}
+
+	PowerChestplate: {
+		SetBonus: Mods.HendecamMod.Items.PowerChestplate.SetBonus
+		DisplayName: Power Chestplate
+		Tooltip: ""
+	}
+
+	PowerHelmet: {
+		SetBonus: Mods.HendecamMod.Items.PowerHelmet.SetBonus
+		DisplayName: Power Helmet
+		Tooltip: ""
+	}
+
+	PowerPants: {
+		SetBonus: Mods.HendecamMod.Items.PowerPants.SetBonus
+		DisplayName: Power Pants
+		Tooltip: ""
+	}
+
+	YelmutsHelmet: {
+		SetBonus: Mods.HendecamMod.Items.YelmutsHelmet.SetBonus
+		DisplayName: Yelmuts Helmet
+		Tooltip: ""
+	}
+
+	PoopyHelmet: {
+		SetBonus: Mods.HendecamMod.Items.PoopyHelmet.SetBonus
+		DisplayName: Poopy Helmet
+		Tooltip: ""
+	}
+
+	PoopyPants: {
+		SetBonus: Mods.HendecamMod.Items.PoopyPants.SetBonus
+		DisplayName: Poopy Pants
+		Tooltip: ""
+	}
+
+	PoopyShirt: {
+		SetBonus: Mods.HendecamMod.Items.PoopyShirt.SetBonus
+		DisplayName: Poopy Shirt
+		Tooltip: ""
+	}
+
+	AA12: {
+		DisplayName: A A12
+		Tooltip: ""
+	}
+
+	AmalgamatedFragment: {
+		DisplayName: Amalgamated Fragment
+		Tooltip: ""
+	}
+
+	AstatineCube: {
+		DisplayName: Astatine Cube
+		Tooltip: ""
+	}
+
+	AutismDiagnosis: {
+		DisplayName: Autism Diagnosis
+		Tooltip: ""
+	}
+
+	BadGrades: {
+		DisplayName: Bad Grades
+		Tooltip: ""
+	}
+
+	CarbonDioxideBalloon: {
+		DisplayName: Carbon Dioxide Balloon
+		Tooltip: ""
+	}
+
+	CarbonDioxideBottle: {
+		DisplayName: Carbon Dioxide Bottle
+		Tooltip: ""
+	}
+
+	CarbonDioxideCeram: {
+		DisplayName: Carbon Dioxide Ceram
+		Tooltip: ""
+	}
+
+	CeramicHorseshoeBalloon: {
+		DisplayName: Ceramic Horseshoe Balloon
+		Tooltip: ""
+	}
+
+	ChlorophyteCube: {
+		DisplayName: Chlorophyte Cube
+		Tooltip: ""
+	}
+
+	ClimbingBoots: {
+		DisplayName: Climbing Boots
+		Tooltip: ""
+	}
+
+	DarkGrayHorseshoeBalloon: {
+		DisplayName: Dark Gray Horseshoe Balloon
+		Tooltip: ""
+	}
+
+	DefenseShield: {
+		DisplayName: Defense Shield
+		Tooltip: ""
+	}
+
+	DoombringerSigil: {
+		DisplayName: Doombringer Sigil
+		Tooltip: ""
+	}
+
+	EmpoweredManaCrystal: {
+		DisplayName: Empowered Mana Crystal
+		Tooltip: ""
+	}
+
+	EternalCrab: {
+		DisplayName: Eternal Crab
+		Tooltip: ""
+	}
+
+	GelCube: {
+		DisplayName: Gel Cube
+		Tooltip: ""
+	}
+
+	GoodGrades: {
+		DisplayName: Good Grades
+		Tooltip: ""
+	}
+
+	ImprovisedLaserSight: {
+		DisplayName: Improvised Laser Sight
+		Tooltip: ""
+	}
+
+	IrradiatedFisticuffs: {
+		DisplayName: Irradiated Fisticuffs
+		Tooltip: ""
+	}
+
+	KetamineInjection: {
+		DisplayName: Ketamine Injection
+		Tooltip: ""
+	}
+
+	KulakWings: {
+		DisplayName: Kulak Wings
+		Tooltip: ""
+	}
+
+	LuckyCigarette: {
+		DisplayName: Lucky Cigarette
+		Tooltip: ""
+	}
+
+	MarksmanLaserSight: {
+		DisplayName: Marksman Laser Sight
+		Tooltip: ""
+	}
+
+	MediocreGrades: {
+		DisplayName: Mediocre Grades
+		Tooltip: ""
+	}
+
+	MeteorCube: {
+		DisplayName: Meteor Cube
+		Tooltip: ""
+	}
+
+	MintalCube: {
+		DisplayName: Mintal Cube
+		Tooltip: ""
+	}
+
+	MorbiumCube: {
+		DisplayName: Morbium Cube
+		Tooltip: ""
+	}
+
+	AlphaMaleChecklist: {
+		DisplayName: Alpha Male Checklist
+		Tooltip: ""
+	}
+
+	AnkleMonitor: {
+		DisplayName: Ankle Monitor
+		Tooltip: ""
+	}
+
+	BrokenMouse: {
+		DisplayName: Broken Mouse
+		Tooltip: ""
+	}
+
+	BurntPan: {
+		DisplayName: Burnt Pan
+		Tooltip: ""
+	}
+
+	CeaseAndDesist: {
+		DisplayName: Cease And Desist
+		Tooltip: ""
+	}
+
+	DietSchedule: {
+		DisplayName: Diet Schedule
+		Tooltip: ""
+	}
+
+	Disenchanter: {
+		DisplayName: Disenchanter
+		Tooltip: ""
+	}
+
+	DustyMedal: {
+		DisplayName: Dusty Medal
+		Tooltip: ""
+	}
+
+	EmptyFishingBucket: {
+		DisplayName: Empty Fishing Bucket
+		Tooltip: ""
+	}
+
+	ExpiredPetFood: {
+		DisplayName: Expired Pet Food
+		Tooltip: ""
+	}
+
+	GasMask: {
+		DisplayName: Gas Mask
+		Tooltip: ""
+	}
+
+	Grindstone: {
+		DisplayName: Grindstone
+		Tooltip: ""
+	}
+
+	HotWax: {
+		DisplayName: Hot Wax
+		Tooltip: ""
+	}
+
+	JunkFood: {
+		DisplayName: Junk Food
+		Tooltip: ""
+	}
+
+	KillShelterPermit: {
+		DisplayName: Kill Shelter Permit
+		Tooltip: ""
+	}
+
+	LeadPlating: {
+		DisplayName: Lead Plating
+		Tooltip: ""
+	}
+
+	Lunchly: {
+		DisplayName: Lunchly
+		Tooltip: ""
+	}
+
+	MoldyCheese: {
+		DisplayName: Moldy Cheese
+		Tooltip: ""
+	}
+
+	NastyPattyAccessory: {
+		DisplayName: Nasty Patty Accessory
+		Tooltip: ""
+	}
+
+	NintendoPatent: {
+		DisplayName: Nintendo Patent
+		Tooltip: ""
+	}
+
+	NostalgicDiamond: {
+		DisplayName: Nostalgic Diamond
+		Tooltip: ""
+	}
+
+	OldOnesGlasses: {
+		DisplayName: Old Ones Glasses
+		Tooltip: ""
+	}
+
+	PacifistsMark: {
+		DisplayName: Pacifists Mark
+		Tooltip: ""
+	}
+
+	PetaAutograph: {
+		DisplayName: Peta Autograph
+		Tooltip: ""
+	}
+
+	PoachersContract: {
+		DisplayName: Poachers Contract
+		Tooltip: ""
+	}
+
+	PrisonFood: {
+		DisplayName: Prison Food
+		Tooltip: ""
+	}
+
+	SchoolFood: {
+		DisplayName: School Food
+		Tooltip: ""
+	}
+
+	SlashedJacket: {
+		DisplayName: Slashed Jacket
+		Tooltip: ""
+	}
+
+	TornFilter: {
+		DisplayName: Torn Filter
+		Tooltip: ""
+	}
+
+	TornSaddle: {
+		DisplayName: Torn Saddle
+		Tooltip: ""
+	}
+
+	ZoologistHateLetter: {
+		DisplayName: Zoologist Hate Letter
+		Tooltip: ""
+	}
+
+	Godhood: {
+		DisplayName: Godhood
+		Tooltip: ""
+	}
+
+	MoltenRose: {
+		DisplayName: Molten Rose
+		Tooltip: ""
+	}
+
+	SoulOfImmunityAccessory: {
+		DisplayName: Soul Of Immunity Accessory
+		Tooltip: ""
+	}
+
+	OverclockedWrench: {
+		DisplayName: Overclocked Wrench
+		Tooltip: ""
+	}
+
+	PanicShield: {
+		DisplayName: Panic Shield
+		Tooltip: ""
+	}
+
+	FlamingPeaceAgreement: {
+		DisplayName: Flaming Peace Agreement
+		Tooltip: ""
+	}
+
+	FriendCore: {
+		DisplayName: Friend Core
+		Tooltip: ""
+	}
+
+	GrassyPeaceAgreement: {
+		DisplayName: Grassy Peace Agreement
+		Tooltip: ""
+	}
+
+	InvaderPeaceAgreement: {
+		DisplayName: Invader Peace Agreement
+		Tooltip: ""
+	}
+
+	MechanicalPeaceAgreement: {
+		DisplayName: Mechanical Peace Agreement
+		Tooltip: ""
+	}
+
+	MonarchyPeaceAgreement: {
+		DisplayName: Monarchy Peace Agreement
+		Tooltip: ""
+	}
+
+	MoonlordPeaceAgreement: {
+		DisplayName: Moonlord Peace Agreement
+		Tooltip: ""
+	}
+
+	OceanicPeaceAgreement: {
+		DisplayName: Oceanic Peace Agreement
+		Tooltip: ""
+	}
+
+	OcularPeaceAgreement: {
+		DisplayName: Ocular Peace Agreement
+		Tooltip: ""
+	}
+
+	PeaceAmongBiomes: {
+		DisplayName: Peace Among Biomes
+		Tooltip: ""
+	}
+
+	PeaceAmongCthulhu: {
+		DisplayName: Peace Among Cthulhu
+		Tooltip: ""
+	}
+
+	PeaceAmongEvents: {
+		DisplayName: Peace Among Events
+		Tooltip: ""
+	}
+
+	PeaceAmongNationsAccessory: {
+		DisplayName: Peace Among Nations Accessory
+		Tooltip: ""
+	}
+
+	RoyalAmalgamation: {
+		DisplayName: Royal Amalgamation
+		Tooltip: ""
+	}
+
+	RoyalChest: {
+		DisplayName: Royal Chest
+		Tooltip: ""
+	}
+
+	RoyalCushion: {
+		DisplayName: Royal Cushion
+		Tooltip: ""
+	}
+
+	RoyalFeather: {
+		DisplayName: Royal Feather
+		Tooltip: ""
+	}
+
+	RoyalGeode: {
+		DisplayName: Royal Geode
+		Tooltip: ""
+	}
+
+	RoyalGnome: {
+		DisplayName: Royal Gnome
+		Tooltip: ""
+	}
+
+	RoyalMandibles: {
+		DisplayName: Royal Mandibles
+		Tooltip: ""
+	}
+
+	RoyalMushroom: {
+		DisplayName: Royal Mushroom
+		Tooltip: ""
+	}
+
+	RoyalWing: {
+		DisplayName: Royal Wing
+		Tooltip: ""
+	}
+
+	SeasonalPeaceAgreement: {
+		DisplayName: Seasonal Peace Agreement
+		Tooltip: ""
+	}
+
+	SlushyPeaceAgreement: {
+		DisplayName: Slushy Peace Agreement
+		Tooltip: ""
+	}
+
+	SpreadBiomePeaceAgreement: {
+		DisplayName: Spread Biome Peace Agreement
+		Tooltip: ""
+	}
+
+	UndeadPeaceAgreement: {
+		DisplayName: Undead Peace Agreement
+		Tooltip: ""
+	}
+
+	PhatBlunt: {
+		DisplayName: Phat Blunt
+		Tooltip: ""
+	}
+
+	PitVipers: {
+		DisplayName: Pit Vipers
+		Tooltip: ""
+	}
+
+	PlutoniumCube: {
+		DisplayName: Plutonium Cube
+		Tooltip: ""
+	}
+
+	PondsWings: {
+		DisplayName: Ponds Wings
+		Tooltip: ""
+	}
+
+	RadioactiveAura: {
+		DisplayName: Radioactive Aura
+		Tooltip: ""
+	}
+
+	RadioactiveEmblem: {
+		DisplayName: Radioactive Emblem
+		Tooltip: ""
+	}
+
+	ArmoredSling: {
+		DisplayName: Armored Sling
+		Tooltip: ""
+	}
+
+	BackupPlan: {
+		DisplayName: Backup Plan
+		Tooltip: ""
+	}
+
+	BodyWash: {
+		DisplayName: Body Wash
+		Tooltip: ""
+	}
+
+	Butterbrot: {
+		DisplayName: Butterbrot
+		Tooltip: ""
+	}
+
+	Conditioner: {
+		DisplayName: Conditioner
+		Tooltip: ""
+	}
+
+	ElementalFlameCore: {
+		DisplayName: Elemental Flame Core
+		Tooltip: ""
+	}
+
+	EmptyBong: {
+		DisplayName: Empty Bong
+		Tooltip: ""
+	}
+
+	FirstHalf: {
+		DisplayName: First Half
+		Tooltip: ""
+	}
+
+	GlowstoneCape: {
+		DisplayName: Glowstone Cape
+		Tooltip: ""
+	}
+
+	GodsPaintThinner: {
+		DisplayName: Gods Paint Thinner
+		Tooltip: ""
+	}
+
+	HeavyDutyBoots: {
+		DisplayName: Heavy Duty Boots
+		Tooltip: ""
+	}
+
+	IdeaGenerator: {
+		DisplayName: Idea Generator
+		Tooltip: ""
+	}
+
+	LargeCactus: {
+		DisplayName: Large Cactus
+		Tooltip: ""
+	}
+
+	LeadBlanket: {
+		DisplayName: Lead Blanket
+		Tooltip: ""
+	}
+
+	LeechRepellant: {
+		DisplayName: Leech Repellant
+		Tooltip: ""
+	}
+
+	Lightbulb: {
+		DisplayName: Lightbulb
+		Tooltip: ""
+	}
+
+	LitBong: {
+		DisplayName: Lit Bong
+		Tooltip: ""
+	}
+
+	LostFragment1: {
+		DisplayName: Lost Fragment1
+		Tooltip: ""
+	}
+
+	LostFragment2: {
+		DisplayName: Lost Fragment2
+		Tooltip: ""
+	}
+
+	LostFragment3: {
+		DisplayName: Lost Fragment3
+		Tooltip: ""
+	}
+
+	LostFragment4: {
+		DisplayName: Lost Fragment4
+		Tooltip: ""
+	}
+
+	MagicSoap: {
+		DisplayName: Magic Soap
+		Tooltip: ""
+	}
+
+	MukbangStarterKit: {
+		DisplayName: Mukbang Starter Kit
+		Tooltip: ""
+	}
+
+	OverthinkersChecklist: {
+		DisplayName: Overthinkers Checklist
+		Tooltip: ""
+	}
+
+	Placebo: {
+		DisplayName: Placebo
+		Tooltip: ""
+	}
+
+	QuestionableVial: {
+		DisplayName: Questionable Vial
+		Tooltip: ""
+	}
+
+	RampartAccessory: {
+		DisplayName: Rampart Accessory
+		Tooltip: ""
+	}
+
+	ResearchChemicals: {
+		DisplayName: Research Chemicals
+		Tooltip: ""
+	}
+
+	RiotShield: {
+		DisplayName: Riot Shield
+		Tooltip: ""
+	}
+
+	SecondDinner: {
+		DisplayName: Second Dinner
+		Tooltip: ""
+	}
+
+	SecondHalf: {
+		DisplayName: Second Half
+		Tooltip: ""
+	}
+
+	Shampoo: {
+		DisplayName: Shampoo
+		Tooltip: ""
+	}
+
+	SmellingSalts: {
+		DisplayName: Smelling Salts
+		Tooltip: ""
+	}
+
+	SpiceKingStarterKit: {
+		DisplayName: Spice King Starter Kit
+		Tooltip: ""
+	}
+
+	SpotlightShield: {
+		DisplayName: Spotlight Shield
+		Tooltip: ""
+	}
+
+	SteelSunscreen: {
+		DisplayName: Steel Sunscreen
+		Tooltip: ""
+	}
+
+	ThreeInOne: {
+		DisplayName: Three In One
+		Tooltip: ""
+	}
+
+	TwoInOne: {
+		DisplayName: Two In One
+		Tooltip: ""
+	}
+
+	UltrabrightCandle: {
+		DisplayName: Ultrabright Candle
+		Tooltip: ""
+	}
+
+	Ushanka: {
+		DisplayName: Ushanka
+		Tooltip: ""
+	}
+
+	RiverCube: {
+		DisplayName: River Cube
+		Tooltip: ""
+	}
+
+	SaltPendant: {
+		DisplayName: Salt Pendant
+		Tooltip: ""
+	}
+
+	ShatteredKeyboard: {
+		DisplayName: Shattered Keyboard
+		Tooltip: ""
+	}
+
+	SilverCube: {
+		DisplayName: Silver Cube
+		Tooltip: ""
+	}
+
+	SpiritProtectionCharm: {
+		DisplayName: Spirit Protection Charm
+		Tooltip: ""
+	}
+
+	StupidEmblem: {
+		DisplayName: Stupid Emblem
+		Tooltip: ""
+	}
+
+	TacticalLaserSight: {
+		DisplayName: Tactical Laser Sight
+		Tooltip: ""
+	}
+
+	TheAutismManifesto: {
+		DisplayName: The Autism Manifesto
+		Tooltip: ""
+	}
+
+	TintedLenses: {
+		DisplayName: Tinted Lenses
+		Tooltip: ""
+	}
+
+	TrenboloneAcetate: {
+		DisplayName: Trenbolone Acetate
+		Tooltip: ""
+	}
+
+	TungstenCube: {
+		DisplayName: Tungsten Cube
+		Tooltip: ""
+	}
+
+	UltraboostedWrench: {
+		DisplayName: Ultraboosted Wrench
+		Tooltip: ""
+	}
+
+	UraniumCube: {
+		DisplayName: Uranium Cube
+		Tooltip: ""
+	}
+
+	WeedCube: {
+		DisplayName: Weed Cube
+		Tooltip: ""
+	}
+
+	ZincCube: {
+		DisplayName: Zinc Cube
+		Tooltip: ""
+	}
+
+	AgentGreenRocket: {
+		DisplayName: Agent Green Rocket
+		Tooltip: ""
+	}
+
+	AK47: {
+		DisplayName: A K47
+		Tooltip: ""
+	}
+
+	AmericaFlag: {
+		DisplayName: America Flag
+		Tooltip: ""
+	}
+
+	AnthraxRocket: {
+		DisplayName: Anthrax Rocket
+		Tooltip: ""
+	}
+
+	AR15: {
+		DisplayName: A R15
+		Tooltip: ""
+	}
+
+	ArcaneDartgun: {
+		DisplayName: Arcane Dartgun
+		Tooltip: ""
+	}
+
+	FlinxFurEarmuffs: {
+		DisplayName: Flinx Fur Earmuffs
+		Tooltip: ""
+	}
+
+	FlinxFurSlippers: {
+		DisplayName: Flinx Fur Slippers
+		Tooltip: ""
+	}
+
+	KingslayerCrown: {
+		DisplayName: Kingslayer Crown
+		Tooltip: ""
+	}
+
+	PoorMahoganyChestplate: {
+		DisplayName: Poor Mahogany Chestplate
+		Tooltip: ""
+	}
+
+	PoorMahoganyHelmet: {
+		DisplayName: Poor Mahogany Helmet
+		Tooltip: ""
+	}
+
+	PoorMahoganyLeggings: {
+		DisplayName: Poor Mahogany Leggings
+		Tooltip: ""
+	}
+
+	PoorMahogany: {
+		DisplayName: Poor Mahogany
+		Tooltip: ""
+	}
+
+	PykreteChestplate: {
+		DisplayName: Pykrete Chestplate
+		Tooltip: ""
+	}
+
+	PykreteGreaves: {
+		DisplayName: Pykrete Greaves
+		Tooltip: ""
+	}
+
+	PykreteHelmet: {
+		DisplayName: Pykrete Helmet
+		Tooltip: ""
+	}
+
+	Pykrete: {
+		DisplayName: Pykrete
+		Tooltip: ""
+	}
+
+	PyriteChestguard: {
+		DisplayName: Pyrite Chestguard
+		Tooltip: ""
+	}
+
+	PyriteCrown: {
+		DisplayName: Pyrite Crown
+		Tooltip: ""
+	}
+
+	PyriteHood: {
+		DisplayName: Pyrite Hood
+		Tooltip: ""
+	}
+
+	PyriteLegPlating: {
+		DisplayName: Pyrite Leg Plating
+		Tooltip: ""
+	}
+
+	ArrowRaider: {
+		DisplayName: Arrow Raider
+		Tooltip: ""
+	}
+
+	ASaltRifle: {
+		DisplayName: A Salt Rifle
+		Tooltip: ""
+	}
+
+	AshSpewer: {
+		DisplayName: Ash Spewer
+		Tooltip: ""
+	}
+
+	AstatineArrow: {
+		DisplayName: Astatine Arrow
+		Tooltip: ""
+	}
+
+	AstatineBar: {
+		DisplayName: Astatine Bar
+		Tooltip: ""
+	}
+
+	AstatineBrick: {
+		DisplayName: Astatine Brick
+		Tooltip: ""
+	}
+
+	AstatineGlass: {
+		DisplayName: Astatine Glass
+		Tooltip: ""
+	}
+
+	AstatineMarksmanRifle: {
+		DisplayName: Astatine Marksman Rifle
+		Tooltip: ""
+	}
+
+	AstatineOre: {
+		DisplayName: Astatine Ore
+		Tooltip: ""
+	}
+
+	AstatinePolearm: {
+		DisplayName: Astatine Polearm
+		Tooltip: ""
+	}
+
+	AstatineTorch: {
+		DisplayName: Astatine Torch
+		Tooltip: ""
+	}
+
+	ATFsNightmare: {
+		DisplayName: A T Fs Nightmare
+		Tooltip: ""
+	}
+
+	AuricSkibidiToilet: {
+		DisplayName: Auric Skibidi Toilet
+		Tooltip: ""
+	}
+
+	AuspiciousArtillery: {
+		DisplayName: Auspicious Artillery
+		Tooltip: ""
+	}
+
+	Autocannon: {
+		DisplayName: Autocannon
+		Tooltip: ""
+	}
+
+	Autovaxxer: {
+		DisplayName: Autovaxxer
+		Tooltip: ""
+	}
+
+	BadTrip: {
+		DisplayName: Bad Trip
+		Tooltip: ""
+	}
+
+	BalkanRagePotion: {
+		DisplayName: Balkan Rage Potion
+		Tooltip: ""
+	}
+
+	BallisticKnife: {
+		DisplayName: Ballistic Knife
+		Tooltip: ""
+	}
+
+	Barbarossa: {
+		DisplayName: Barbarossa
+		Tooltip: ""
+	}
+
+	BarbecueBlade: {
+		DisplayName: Barbecue Blade
+		Tooltip: ""
+	}
+
+	BBC: {
+		DisplayName: B B C
+		Tooltip: ""
+	}
+
+	Beer: {
+		DisplayName: Beer
+		Tooltip: ""
+	}
+
+	BeeSnipe: {
+		DisplayName: Bee Snipe
+		Tooltip: ""
+	}
+
+	BeetleBomb: {
+		DisplayName: Beetle Bomb
+		Tooltip: ""
+	}
+
+	BeetleRounds: {
+		DisplayName: Beetle Rounds
+		Tooltip: ""
+	}
+
+	Bergentrucking: {
+		DisplayName: Bergentrucking
+		Tooltip: ""
+	}
+
+	BigBertha: {
+		DisplayName: Big Bertha
+		Tooltip: ""
+	}
+
+	BigBuddy: {
+		DisplayName: Big Buddy
+		Tooltip: ""
+	}
+
+	BillionaireBiter: {
+		DisplayName: Billionaire Biter
+		Tooltip: ""
+	}
+
+	BinaryRifle: {
+		DisplayName: Binary Rifle
+		Tooltip: ""
+	}
+
+	BionicBoomer: {
+		DisplayName: Bionic Boomer
+		Tooltip: ""
+	}
+
+	BitcoinBlaster: {
+		DisplayName: Bitcoin Blaster
+		Tooltip: ""
+	}
+
+	BlackHole: {
+		DisplayName: Black Hole
+		Tooltip: ""
+	}
+
+	BlackMamba: {
+		DisplayName: Black Mamba
+		Tooltip: ""
+	}
+
+	Blackshard: {
+		DisplayName: Blackshard
+		Tooltip: ""
+	}
+
+	BlankFlag: {
+		DisplayName: Blank Flag
+		Tooltip: ""
+	}
+
+	BlueMaticHorn: {
+		DisplayName: Blue Matic Horn
+		Tooltip: ""
+	}
+
+	BoggsGlove: {
+		DisplayName: Boggs Glove
+		Tooltip: ""
+	}
+
+	BombScepter: {
+		DisplayName: Bomb Scepter
+		Tooltip: ""
+	}
+
+	BOOMerang: {
+		DisplayName: B O O Merang
+		Tooltip: ""
+	}
+
+	BottledOil: {
+		DisplayName: Bottled Oil
+		Tooltip: ""
+	}
+
+	BottledShimmer: {
+		DisplayName: Bottled Shimmer
+		Tooltip: ""
+	}
+
+	BouncingBullet: {
+		DisplayName: Bouncing Bullet
+		Tooltip: ""
+	}
+
+	BowlingBaller: {
+		DisplayName: Bowling Baller
+		Tooltip: ""
+	}
+
+	BoxOfRandomBullshit: {
+		DisplayName: Box Of Random Bullshit
+		Tooltip: ""
+	}
+
+	Brainderbuss: {
+		DisplayName: Brainderbuss
+		Tooltip: ""
+	}
+
+	BrainrotPotion: {
+		DisplayName: Brainrot Potion
+		Tooltip: ""
+	}
+
+	BrickPick: {
+		DisplayName: Brick Pick
+		Tooltip: ""
+	}
+
+	BrokenHeroGun: {
+		DisplayName: Broken Hero Gun
+		Tooltip: ""
+	}
+
+	BugBuzz: {
+		DisplayName: Bug Buzz
+		Tooltip: ""
+	}
+
+	BulletBlade: {
+		DisplayName: Bullet Blade
+		Tooltip: ""
+	}
+
+	Bullshit1: {
+		DisplayName: Bullshit1
+		Tooltip: ""
+	}
+
+	Bullshit2: {
+		DisplayName: Bullshit2
+		Tooltip: ""
+	}
+
+	Bullshit3: {
+		DisplayName: Bullshit3
+		Tooltip: ""
+	}
+
+	Bullshit4: {
+		DisplayName: Bullshit4
+		Tooltip: ""
+	}
+
+	Bullshit5: {
+		DisplayName: Bullshit5
+		Tooltip: ""
+	}
+
+	Bundlebuss: {
+		DisplayName: Bundlebuss
+		Tooltip: ""
+	}
+
+	BunnyBomber: {
+		DisplayName: Bunny Bomber
+		Tooltip: ""
+	}
+
+	CapitalistCarbine: {
+		DisplayName: Capitalist Carbine
+		Tooltip: ""
+	}
+
+	CardinalSin: {
+		DisplayName: Cardinal Sin
+		Tooltip: ""
+	}
+
+	CaribousCatastrophe: {
+		DisplayName: Caribous Catastrophe
+		Tooltip: ""
+	}
+
+	Casanova: {
+		DisplayName: Casanova
+		Tooltip: ""
+	}
+
+	CausticCarrot: {
+		DisplayName: Caustic Carrot
+		Tooltip: ""
+	}
+
+	CeramicArrow: {
+		DisplayName: Ceramic Arrow
+		Tooltip: ""
+	}
+
+	CeramicBloonFactory: {
+		DisplayName: Ceramic Bloon Factory
+		Tooltip: ""
+	}
+
+	CeramicDart: {
+		DisplayName: Ceramic Dart
+		Tooltip: ""
+	}
+
+	CeramicMachete: {
+		DisplayName: Ceramic Machete
+		Tooltip: ""
+	}
+
+	CeramicSheet: {
+		DisplayName: Ceramic Sheet
+		Tooltip: ""
+	}
+
+	ChainCrossbow: {
+		DisplayName: Chain Crossbow
+		Tooltip: ""
+	}
+
+	ChainReaction: {
+		DisplayName: Chain Reaction
+		Tooltip: ""
+	}
+
+	ChainThunderblade: {
+		DisplayName: Chain Thunderblade
+		Tooltip: ""
+	}
+
+	ChlorophyteDart: {
+		DisplayName: Chlorophyte Dart
+		Tooltip: ""
+	}
+
+	ChristianCrossbow: {
+		DisplayName: Christian Crossbow
+		Tooltip: ""
+	}
+
+	ChromaticaAtomizer: {
+		DisplayName: Chromatica Atomizer
+		Tooltip: ""
+	}
+
+	CIAJournalismAward: {
+		DisplayName: C I A Journalism Award
+		Tooltip: ""
+	}
+
+	ClimateChanger: {
+		DisplayName: Climate Changer
+		Tooltip: ""
+	}
+
+	CollarOfTheDamned: {
+		DisplayName: Collar Of The Damned
+		Tooltip: ""
+	}
+
+	ComicallyLargeTurkeyLeg: {
+		DisplayName: Comically Large Turkey Leg
+		Tooltip: ""
+	}
+
+	CompoundBow: {
+		DisplayName: Compound Bow
+		Tooltip: ""
+	}
+
+	CompoundBow2: {
+		DisplayName: Compound Bow2
+		Tooltip: ""
+	}
+
+	CompoundBow3: {
+		DisplayName: Compound Bow3
+		Tooltip: ""
+	}
+
+	AdderallPill: {
+		DisplayName: Adderall Pill
+		Tooltip: ""
+	}
+
+	AlpineTreasureBag: {
+		DisplayName: Alpine Treasure Bag
+		Tooltip: ""
+	}
+
+	ApacheElfShipSummon: {
+		DisplayName: Apache Elf Ship Summon
+		Tooltip: ""
+	}
+
+	AstatineGlassSword: {
+		DisplayName: Astatine Glass Sword
+		Tooltip: ""
+	}
+
+	BottledLava: {
+		DisplayName: Bottled Lava
+		Tooltip: ""
+	}
+
+	CandyHeart: {
+		DisplayName: Candy Heart
+		Tooltip: ""
+	}
+
+	CrystalShardSword: {
+		DisplayName: Crystal Shard Sword
+		Tooltip: ""
+	}
+
+	GlassSword: {
+		DisplayName: Glass Sword
+		Tooltip: ""
+	}
+
+	HeadOfCthulhuSummon: {
+		DisplayName: Head Of Cthulhu Summon
+		Tooltip: ""
+	}
+
+	LeadskinPotion: {
+		DisplayName: Leadskin Potion
+		Tooltip: ""
+	}
+
+	ObsidianSword: {
+		DisplayName: Obsidian Sword
+		Tooltip: ""
+	}
+
+	PlutoniumGlassSword: {
+		DisplayName: Plutonium Glass Sword
+		Tooltip: ""
+	}
+
+	PlutoniumGlass: {
+		DisplayName: Plutonium Glass
+		Tooltip: ""
+	}
+
+	ShadowCrystalSword: {
+		DisplayName: Shadow Crystal Sword
+		Tooltip: ""
+	}
+
+	SpiritRum: {
+		DisplayName: Spirit Rum
+		Tooltip: ""
+	}
+
+	UraniumGlassSword: {
+		DisplayName: Uranium Glass Sword
+		Tooltip: ""
+	}
+
+	UraniumGlass: {
+		DisplayName: Uranium Glass
+		Tooltip: ""
+	}
+
+	CookingPot: {
+		DisplayName: Cooking Pot
+		Tooltip: ""
+	}
+
+	CopperShortgun: {
+		DisplayName: Copper Shortgun
+		Tooltip: ""
+	}
+
+	CopperShortmachinegun: {
+		DisplayName: Copper Shortmachinegun
+		Tooltip: ""
+	}
+
+	CorruptLawman: {
+		DisplayName: Corrupt Lawman
+		Tooltip: ""
+	}
+
+	CrackedNuts: {
+		DisplayName: Cracked Nuts
+		Tooltip: ""
+	}
+
+	CraterCreator: {
+		DisplayName: Crater Creator
+		Tooltip: ""
+	}
+
+	CrimtaneAmr: {
+		DisplayName: Crimtane Amr
+		Tooltip: ""
+	}
+
+	CrossbowBolt: {
+		DisplayName: Crossbow Bolt
+		Tooltip: ""
+	}
+
+	CrudeOil: {
+		DisplayName: Crude Oil
+		Tooltip: ""
+	}
+
+	CryonicCarbine: {
+		DisplayName: Cryonic Carbine
+		Tooltip: ""
+	}
+
+	CyberneticGunParts: {
+		DisplayName: Cybernetic Gun Parts
+		Tooltip: ""
+	}
+
+	DaedalusStormgun: {
+		DisplayName: Daedalus Stormgun
+		Tooltip: ""
+	}
+
+	Dartclone: {
+		DisplayName: Dartclone
+		Tooltip: ""
+	}
+
+	DartShotgun: {
+		DisplayName: Dart Shotgun
+		Tooltip: ""
+	}
+
+	DeadSoldiersRifle: {
+		DisplayName: Dead Soldiers Rifle
+		Tooltip: ""
+	}
+
+	DeathBreathShell: {
+		DisplayName: Death Breath Shell
+		Tooltip: ""
+	}
+
+	DeliriantDagger: {
+		DisplayName: Deliriant Dagger
+		Tooltip: ""
+	}
+
+	DemoniteAreaDenialSystem: {
+		DisplayName: Demonite Area Denial System
+		Tooltip: ""
+	}
+
+	DirtBullet: {
+		DisplayName: Dirt Bullet
+		Tooltip: ""
+	}
+
+	DirtyRocket1: {
+		DisplayName: Dirty Rocket1
+		Tooltip: ""
+	}
+
+	DirtyRocket2: {
+		DisplayName: Dirty Rocket2
+		Tooltip: ""
+	}
+
+	DirtyRocket3: {
+		DisplayName: Dirty Rocket3
+		Tooltip: ""
+	}
+
+	DiseaseBlaster: {
+		DisplayName: Disease Blaster
+		Tooltip: ""
+	}
+
+	DracoMeteor: {
+		DisplayName: Draco Meteor
+		Tooltip: ""
+	}
+
+	DragonBreathShell: {
+		DisplayName: Dragon Breath Shell
+		Tooltip: ""
+	}
+
+	DvdLogo: {
+		DisplayName: Dvd Logo
+		Tooltip: ""
+	}
+
+	EbonwoodWand: {
+		DisplayName: Ebonwood Wand
+		Tooltip: ""
+	}
+
+	EcologicalOvershot: {
+		DisplayName: Ecological Overshot
+		Tooltip: ""
+	}
+
+	Edward40Hands: {
+		DisplayName: Edward40 Hands
+		Tooltip: ""
+	}
+
+	EldritchArrow: {
+		DisplayName: Eldritch Arrow
+		Tooltip: ""
+	}
+
+	ElementalEmfCaller: {
+		DisplayName: Elemental Emf Caller
+		Tooltip: ""
+	}
+
+	ElephantsThrow: {
+		DisplayName: Elephants Throw
+		Tooltip: ""
+	}
+
+	EnfieldRifle: {
+		DisplayName: Enfield Rifle
+		Tooltip: ""
+	}
+
+	EyePoker: {
+		DisplayName: Eye Poker
+		Tooltip: ""
+	}
+
+	EyeRifle: {
+		DisplayName: Eye Rifle
+		Tooltip: ""
+	}
+
+	FerrousThornSmooth: {
+		DisplayName: Ferrous Thorn Smooth
+		Tooltip: ""
+	}
+
+	FerrousThornSpiky: {
+		DisplayName: Ferrous Thorn Spiky
+		Tooltip: ""
+	}
+
+	FidgetThrower: {
+		DisplayName: Fidget Thrower
+		Tooltip: ""
+	}
+
+	FidgetThrower2: {
+		DisplayName: Fidget Thrower2
+		Tooltip: ""
+	}
+
+	FidgetThrower3: {
+		DisplayName: Fidget Thrower3
+		Tooltip: ""
+	}
+
+	FissileDart: {
+		DisplayName: Fissile Dart
+		Tooltip: ""
+	}
+
+	FissionDrive: {
+		DisplayName: Fission Drive
+		Tooltip: ""
+	}
+
+	FissionRod: {
+		DisplayName: Fission Rod
+		Tooltip: ""
+	}
+
+	fivenato: {
+		DisplayName: fivenato
+		Tooltip: ""
+	}
+
+	FlaskOfFission: {
+		DisplayName: Flask Of Fission
+		Tooltip: ""
+	}
+
+	FlaskOfFusion: {
+		DisplayName: Flask Of Fusion
+		Tooltip: ""
+	}
+
+	FlaskOfOil: {
+		DisplayName: Flask Of Oil
+		Tooltip: ""
+	}
+
+	FlaskOfRadiation: {
+		DisplayName: Flask Of Radiation
+		Tooltip: ""
+	}
+
+	FlaskOfShadowflame: {
+		DisplayName: Flask Of Shadowflame
+		Tooltip: ""
+	}
+
+	FlatEarthBlock: {
+		DisplayName: Flat Earth Block
+		Tooltip: ""
+	}
+
+	FlinxsFurblade: {
+		DisplayName: Flinxs Furblade
+		Tooltip: ""
+	}
+
+	FlippingBottle: {
+		DisplayName: Flipping Bottle
+		Tooltip: ""
+	}
+
+	FlyingPigBanner: {
+		DisplayName: Flying Pig Banner
+		Tooltip: ""
+	}
+
+	FoundersDrumroll: {
+		DisplayName: Founders Drumroll
+		Tooltip: ""
+	}
+
+	FragmentFlatEarth: {
+		DisplayName: Fragment Flat Earth
+		Tooltip: ""
+	}
+
+	FreeBird: {
+		DisplayName: Free Bird
+		Tooltip: ""
+	}
+
+	GagGifter: {
+		DisplayName: Gag Gifter
+		Tooltip: ""
+	}
+
+	GayFrogAlchemyGuide: {
+		DisplayName: Gay Frog Alchemy Guide
+		Tooltip: ""
+	}
+
+	GeigersGambit: {
+		DisplayName: Geigers Gambit
+		Tooltip: ""
+	}
+
+	GiantBone: {
+		DisplayName: Giant Bone
+		Tooltip: ""
+	}
+
+	Glock: {
+		DisplayName: Glock
+		Tooltip: ""
+	}
+
+	GlockAndBalls: {
+		DisplayName: Glock And Balls
+		Tooltip: ""
+	}
+
+	GoldenAK: {
+		DisplayName: Golden A K
+		Tooltip: ""
+	}
+
+	GraniteBlaster: {
+		DisplayName: Granite Blaster
+		Tooltip: ""
+	}
+
+	GraniteElectrobomber: {
+		DisplayName: Granite Electrobomber
+		Tooltip: ""
+	}
+
+	GrindingGears: {
+		DisplayName: Grinding Gears
+		Tooltip: ""
+	}
+
+	GunOfRoses: {
+		DisplayName: Gun Of Roses
+		Tooltip: ""
+	}
+
+	HarryPotter: {
+		DisplayName: Harry Potter
+		Tooltip: ""
+	}
+
+	Heartache: {
+		DisplayName: Heartache
+		Tooltip: ""
+	}
+
+	Helldiver: {
+		DisplayName: Helldiver
+		Tooltip: ""
+	}
+
+	HephaestusCannon: {
+		DisplayName: Hephaestus Cannon
+		Tooltip: ""
+	}
+
+	HotShots: {
+		DisplayName: Hot Shots
+		Tooltip: ""
+	}
+
+	HurricaneGun: {
+		DisplayName: Hurricane Gun
+		Tooltip: ""
+	}
+
+	IcicleMinigun: {
+		DisplayName: Icicle Minigun
+		Tooltip: ""
+	}
+
+	BrainOfCthulhuIcon: {
+		DisplayName: Brain Of Cthulhu Icon
+		Tooltip: ""
+	}
+
+	DeerclopsIcon: {
+		DisplayName: Deerclops Icon
+		Tooltip: ""
+	}
+
+	DukeFishronIcon: {
+		DisplayName: Duke Fishron Icon
+		Tooltip: ""
+	}
+
+	EaterOfWorldsIcon: {
+		DisplayName: Eater Of Worlds Icon
+		Tooltip: ""
+	}
+
+	EmpressOfLightIcon: {
+		DisplayName: Empress Of Light Icon
+		Tooltip: ""
+	}
+
+	EyeOfCthulhuIcon: {
+		DisplayName: Eye Of Cthulhu Icon
+		Tooltip: ""
+	}
+
+	GolemIcon: {
+		DisplayName: Golem Icon
+		Tooltip: ""
+	}
+
+	KingSlimeIcon: {
+		DisplayName: King Slime Icon
+		Tooltip: ""
+	}
+
+	LunaticCultistIcon: {
+		DisplayName: Lunatic Cultist Icon
+		Tooltip: ""
+	}
+
+	MoonLordIcon: {
+		DisplayName: Moon Lord Icon
+		Tooltip: ""
+	}
+
+	PlanteraIcon: {
+		DisplayName: Plantera Icon
+		Tooltip: ""
+	}
+
+	QueenBeeIcon: {
+		DisplayName: Queen Bee Icon
+		Tooltip: ""
+	}
+
+	QueenSlimeIcon: {
+		DisplayName: Queen Slime Icon
+		Tooltip: ""
+	}
+
+	SkeletronIcon: {
+		DisplayName: Skeletron Icon
+		Tooltip: ""
+	}
+
+	SkeletronPrimeIcon: {
+		DisplayName: Skeletron Prime Icon
+		Tooltip: ""
+	}
+
+	TheDestroyerIcon: {
+		DisplayName: The Destroyer Icon
+		Tooltip: ""
+	}
+
+	TheTwinsIcon: {
+		DisplayName: The Twins Icon
+		Tooltip: ""
+	}
+
+	WallOfFleshIcon: {
+		DisplayName: Wall Of Flesh Icon
+		Tooltip: ""
+	}
+
+	IED: {
+		DisplayName: I E D
+		Tooltip: ""
+	}
+
+	IForgor: {
+		DisplayName: I Forgor
+		Tooltip: ""
+	}
+
+	ImprovisedMachineGun: {
+		DisplayName: Improvised Machine Gun
+		Tooltip: ""
+	}
+
+	ImprovisedPistol: {
+		DisplayName: Improvised Pistol
+		Tooltip: ""
+	}
+
+	ImpulseBow: {
+		DisplayName: Impulse Bow
+		Tooltip: ""
+	}
+
+	IncendiaryDart: {
+		DisplayName: Incendiary Dart
+		Tooltip: ""
+	}
+
+	InfernoRing: {
+		DisplayName: Inferno Ring
+		Tooltip: ""
+	}
+
+	Iphone: {
+		DisplayName: Iphone
+		Tooltip: ""
+	}
+
+	IronFist: {
+		DisplayName: Iron Fist
+		Tooltip: ""
+	}
+
+	IronValiant: {
+		DisplayName: Iron Valiant
+		Tooltip: ""
+	}
+
+	JevilishScythe: {
+		DisplayName: Jevilish Scythe
+		Tooltip: ""
+	}
+
+	JusticeAxe: {
+		DisplayName: Justice Axe
+		Tooltip: ""
+	}
+
+	K2Avalanche: {
+		DisplayName: K2 Avalanche
+		Tooltip: ""
+	}
+
+	KevlarWhip: {
+		DisplayName: Kevlar Whip
+		Tooltip: ""
+	}
+
+	KingslayerBar: {
+		DisplayName: Kingslayer Bar
+		Tooltip: ""
+	}
+
+	KingslayerBullet: {
+		DisplayName: Kingslayer Bullet
+		Tooltip: ""
+	}
+
+	KingslayerKunai: {
+		DisplayName: Kingslayer Kunai
+		Tooltip: ""
+	}
+
+	KingslayerScepter: {
+		DisplayName: Kingslayer Scepter
+		Tooltip: ""
+	}
+
+	KingslayerShell: {
+		DisplayName: Kingslayer Shell
+		Tooltip: ""
+	}
+
+	KingslayerSniper: {
+		DisplayName: Kingslayer Sniper
+		Tooltip: ""
+	}
+
+	KingslayerSword: {
+		DisplayName: Kingslayer Sword
+		Tooltip: ""
+	}
+
+	KingslayerWarBow: {
+		DisplayName: Kingslayer War Bow
+		Tooltip: ""
+	}
+
+	LargePlasmoidBanner: {
+		DisplayName: Large Plasmoid Banner
+		Tooltip: ""
+	}
+
+	LaserCharge: {
+		DisplayName: Laser Charge
+		Tooltip: ""
+	}
+
+	LaserMonkeysPaw: {
+		DisplayName: Laser Monkeys Paw
+		Tooltip: ""
+	}
+
+	LeafStorm: {
+		DisplayName: Leaf Storm
+		Tooltip: ""
+	}
+
+	LegoBricks: {
+		DisplayName: Lego Bricks
+		Tooltip: ""
+	}
+
+	LegoLauncher: {
+		DisplayName: Lego Launcher
+		Tooltip: ""
+	}
+
+	Libeerator: {
+		DisplayName: Libeerator
+		Tooltip: ""
+	}
+
+	Liquidation: {
+		DisplayName: Liquidation
+		Tooltip: ""
+	}
+
+	LoreAccurateBlackshard: {
+		DisplayName: Lore Accurate Blackshard
+		Tooltip: ""
+	}
+
+	LuminiteDart: {
+		DisplayName: Luminite Dart
+		Tooltip: ""
+	}
+
+	LycopiteBar: {
+		DisplayName: Lycopite Bar
+		Tooltip: ""
+	}
+
+	LycopiteBow: {
+		DisplayName: Lycopite Bow
+		Tooltip: ""
+	}
+
+	LycopiteBrick: {
+		DisplayName: Lycopite Brick
+		Tooltip: ""
+	}
+
+	LycopiteBullet: {
+		DisplayName: Lycopite Bullet
+		Tooltip: ""
+	}
+
+	LycopiteOre: {
+		DisplayName: Lycopite Ore
+		Tooltip: ""
+	}
+
+	M1Garand: {
+		DisplayName: M1 Garand
+		Tooltip: ""
+	}
+
+	Macuahuitl: {
+		DisplayName: Macuahuitl
+		Tooltip: ""
+	}
+
+	MagicBong: {
+		DisplayName: Magic Bong
+		Tooltip: ""
+	}
+
+	MagicCue: {
+		DisplayName: Magic Cue
+		Tooltip: ""
+	}
+
+	MandibleStaff: {
+		DisplayName: Mandible Staff
+		Tooltip: ""
+	}
+
+	ManeAx: {
+		DisplayName: Mane Ax
+		Tooltip: ""
+	}
+
+	MarbleGreatsword: {
+		DisplayName: Marble Greatsword
+		Tooltip: ""
+	}
+
+	MarbleSaber: {
+		DisplayName: Marble Saber
+		Tooltip: ""
+	}
+
+	AncientCobaltBar: {
+		DisplayName: Ancient Cobalt Bar
+		Tooltip: ""
+	}
+
+	AncientCobaltOre: {
+		DisplayName: Ancient Cobalt Ore
+		Tooltip: ""
+	}
+
+	AutismOrb: {
+		DisplayName: Autism Orb
+		Tooltip: ""
+	}
+
+	BlankCanvas: {
+		DisplayName: Blank Canvas
+		Tooltip: ""
+	}
+
+	CoalLump: {
+		DisplayName: Coal Lump
+		Tooltip: ""
+	}
+
+	CrimceramicSheet: {
+		DisplayName: Crimceramic Sheet
+		Tooltip: ""
+	}
+
+	CubicMold: {
+		DisplayName: Cubic Mold
+		Tooltip: ""
+	}
+
+	EbonceramicSheet: {
+		DisplayName: Ebonceramic Sheet
+		Tooltip: ""
+	}
+
+	FireDiamond: {
+		DisplayName: Fire Diamond
+		Tooltip: ""
+	}
+
+	LunarGem: {
+		DisplayName: Lunar Gem
+		Tooltip: ""
+	}
+
+	Paper: {
+		DisplayName: Paper
+		Tooltip: ""
+	}
+
+	PearlceramicSheet: {
+		DisplayName: Pearlceramic Sheet
+		Tooltip: ""
+	}
+
+	Sawdust: {
+		DisplayName: Sawdust
+		Tooltip: ""
+	}
+
+	SoulOfHeight: {
+		DisplayName: Soul Of Height
+		Tooltip: ""
+	}
+
+	WoodenStick: {
+		DisplayName: Wooden Stick
+		Tooltip: ""
+	}
+
+	MaximGelgun: {
+		DisplayName: Maxim Gelgun
+		Tooltip: ""
+	}
+
+	MechanicalMurdergun: {
+		DisplayName: Mechanical Murdergun
+		Tooltip: ""
+	}
+
+	MG42: {
+		DisplayName: M G42
+		Tooltip: ""
+	}
+
+	MidnightAfterburner: {
+		DisplayName: Midnight Afterburner
+		Tooltip: ""
+	}
+
+	MoonLandingFakingDevice: {
+		DisplayName: Moon Landing Faking Device
+		Tooltip: ""
+	}
+
+	Moonrise: {
+		DisplayName: Moonrise
+		Tooltip: ""
+	}
+
+	Naclslash: {
+		DisplayName: Naclslash
+		Tooltip: ""
+	}
+
+	NapalmBlade: {
+		DisplayName: Napalm Blade
+		Tooltip: ""
+	}
+
+	Needler: {
+		DisplayName: Needler
+		Tooltip: ""
+	}
+
+	NerfGun: {
+		DisplayName: Nerf Gun
+		Tooltip: ""
+	}
+
+	ObsidianGreatbow: {
+		DisplayName: Obsidian Greatbow
+		Tooltip: ""
+	}
+
+	OilBlock: {
+		DisplayName: Oil Block
+		Tooltip: ""
+	}
+
+	OilMonsterBanner: {
+		DisplayName: Oil Monster Banner
+		Tooltip: ""
+	}
+
+	OilMonsterStaff: {
+		DisplayName: Oil Monster Staff
+		Tooltip: ""
+	}
+
+	OilSlimeBanner: {
+		DisplayName: Oil Slime Banner
+		Tooltip: ""
+	}
+
+	OrbitalLaserGun: {
+		DisplayName: Orbital Laser Gun
+		Tooltip: ""
+	}
+
+	OtherworldlySixPack: {
+		DisplayName: Otherworldly Six Pack
+		Tooltip: ""
+	}
+
+	Overdrive: {
+		DisplayName: Overdrive
+		Tooltip: ""
+	}
+
+	ParticleGun: {
+		DisplayName: Particle Gun
+		Tooltip: ""
+	}
+
+	PearlwoodWand: {
+		DisplayName: Pearlwood Wand
+		Tooltip: ""
+	}
+
+	PermafrostDart: {
+		DisplayName: Permafrost Dart
+		Tooltip: ""
+	}
+
+	PhotonShotgun: {
+		DisplayName: Photon Shotgun
+		Tooltip: ""
+	}
+
+	PissMissile: {
+		DisplayName: Piss Missile
+		Tooltip: ""
+	}
+
+	AcidCloud: {
+		DisplayName: Acid Cloud
+		Tooltip: ""
+	}
+
+	AirBar: {
+		DisplayName: Air Bar
+		Tooltip: ""
+	}
+
+	AquaticSlimeBanner: {
+		DisplayName: Aquatic Slime Banner
+		Tooltip: ""
+	}
+
+	AzuriteBar: {
+		DisplayName: Azurite Bar
+		Tooltip: ""
+	}
+
+	AzuriteBrick: {
+		DisplayName: Azurite Brick
+		Tooltip: ""
+	}
+
+	AzuriteOre: {
+		DisplayName: Azurite Ore
+		Tooltip: ""
+	}
+
+	BlackBrick: {
+		DisplayName: Black Brick
+		Tooltip: ""
+	}
+
+	BloodCloud: {
+		DisplayName: Blood Cloud
+		Tooltip: ""
+	}
+
+	CobaltWorkBench: {
+		DisplayName: Cobalt Work Bench
+		Tooltip: ""
+	}
+
+	ConflictIsFinished: {
+		DisplayName: Conflict Is Finished
+		Tooltip: ""
+	}
+
+	Crimclay: {
+		DisplayName: Crimclay
+		Tooltip: ""
+	}
+
+	DirtBar: {
+		DisplayName: Dirt Bar
+		Tooltip: ""
+	}
+
+	Ebonclay: {
+		DisplayName: Ebonclay
+		Tooltip: ""
+	}
+
+	FireDiamondStoneBlock: {
+		DisplayName: Fire Diamond Stone Block
+		Tooltip: ""
+	}
+
+	GalvanizedSquareSteel: {
+		DisplayName: Galvanized Square Steel
+		Tooltip: ""
+	}
+
+	GoldenSigma: {
+		DisplayName: Golden Sigma
+		Tooltip: ""
+	}
+
+	Limestone: {
+		DisplayName: Limestone
+		Tooltip: ""
+	}
+
+	LimestoneBrick: {
+		DisplayName: Limestone Brick
+		Tooltip: ""
+	}
+
+	LimestoneBrickWall: {
+		DisplayName: Limestone Brick Wall
+		Tooltip: ""
+	}
+
+	LimestoneWall: {
+		DisplayName: Limestone Wall
+		Tooltip: ""
+	}
+
+	LunarElementalBanner: {
+		DisplayName: Lunar Elemental Banner
+		Tooltip: ""
+	}
+
+	MintalBar: {
+		DisplayName: Mintal Bar
+		Tooltip: ""
+	}
+
+	MintalBrick: {
+		DisplayName: Mintal Brick
+		Tooltip: ""
+	}
+
+	MintalBrickWall: {
+		DisplayName: Mintal Brick Wall
+		Tooltip: ""
+	}
+
+	MintalOre: {
+		DisplayName: Mintal Ore
+		Tooltip: ""
+	}
+
+	MintSlimeBanner: {
+		DisplayName: Mint Slime Banner
+		Tooltip: ""
+	}
+
+	MorbiumBar: {
+		DisplayName: Morbium Bar
+		Tooltip: ""
+	}
+
+	MorbiumBrick: {
+		DisplayName: Morbium Brick
+		Tooltip: ""
+	}
+
+	MorbiumBrickWall: {
+		DisplayName: Morbium Brick Wall
+		Tooltip: ""
+	}
+
+	MorbiumOre: {
+		DisplayName: Morbium Ore
+		Tooltip: ""
+	}
+
+	OasisGrass: {
+		DisplayName: Oasis Grass
+		Tooltip: ""
+	}
+
+	OasisSand: {
+		DisplayName: Oasis Sand
+		Tooltip: ""
+	}
+
+	OrangeBrick: {
+		DisplayName: Orange Brick
+		Tooltip: ""
+	}
+
+	PalladiumWorkBench: {
+		DisplayName: Palladium Work Bench
+		Tooltip: ""
+	}
+
+	Pearlclay: {
+		DisplayName: Pearlclay
+		Tooltip: ""
+	}
+
+	PearlsandSlimeBanner: {
+		DisplayName: Pearlsand Slime Banner
+		Tooltip: ""
+	}
+
+	PipeBob: {
+		DisplayName: Pipe Bob
+		Tooltip: ""
+	}
+
+	PlatinumChest: {
+		DisplayName: Platinum Chest
+		Tooltip: ""
+	}
+
+	PlatinumKey: {
+		DisplayName: Platinum Key
+		Tooltip: ""
+	}
+
+	PoisonSlimeBanner: {
+		DisplayName: Poison Slime Banner
+		Tooltip: ""
+	}
+
+	RedBrickPlatform: {
+		DisplayName: Red Brick Platform
+		Tooltip: ""
+	}
+
+	SmoothLimestone: {
+		DisplayName: Smooth Limestone
+		Tooltip: ""
+	}
+
+	SteelAnvil: {
+		DisplayName: Steel Anvil
+		Tooltip: ""
+	}
+
+	SteelBar: {
+		DisplayName: Steel Bar
+		Tooltip: ""
+	}
+
+	SteelBrick: {
+		DisplayName: Steel Brick
+		Tooltip: ""
+	}
+
+	SteelShelf: {
+		DisplayName: Steel Shelf
+		Tooltip: ""
+	}
+
+	StoneBar: {
+		DisplayName: Stone Bar
+		Tooltip: ""
+	}
+
+	TransBar: {
+		DisplayName: Trans Bar
+		Tooltip: ""
+	}
+
+	TransBrick: {
+		DisplayName: Trans Brick
+		Tooltip: ""
+	}
+
+	TransOre: {
+		DisplayName: Trans Ore
+		Tooltip: ""
+	}
+
+	TwinPoster: {
+		DisplayName: Twin Poster
+		Tooltip: ""
+	}
+
+	AnUnoDeck: {
+		DisplayName: An Uno Deck
+		Tooltip: ""
+	}
+
+	BlueDrawFour: {
+		DisplayName: Blue Draw Four
+		Tooltip: ""
+	}
+
+	BlueDrawTwo: {
+		DisplayName: Blue Draw Two
+		Tooltip: ""
+	}
+
+	BlueEight: {
+		DisplayName: Blue Eight
+		Tooltip: ""
+	}
+
+	BlueFive: {
+		DisplayName: Blue Five
+		Tooltip: ""
+	}
+
+	BlueFour: {
+		DisplayName: Blue Four
+		Tooltip: ""
+	}
+
+	BlueNine: {
+		DisplayName: Blue Nine
+		Tooltip: ""
+	}
+
+	BlueOne: {
+		DisplayName: Blue One
+		Tooltip: ""
+	}
+
+	BlueReverse: {
+		DisplayName: Blue Reverse
+		Tooltip: ""
+	}
+
+	BlueSeven: {
+		DisplayName: Blue Seven
+		Tooltip: ""
+	}
+
+	BlueSix: {
+		DisplayName: Blue Six
+		Tooltip: ""
+	}
+
+	BlueSkip: {
+		DisplayName: Blue Skip
+		Tooltip: ""
+	}
+
+	BlueThree: {
+		DisplayName: Blue Three
+		Tooltip: ""
+	}
+
+	BlueTwo: {
+		DisplayName: Blue Two
+		Tooltip: ""
+	}
+
+	BlueWild: {
+		DisplayName: Blue Wild
+		Tooltip: ""
+	}
+
+	BlueZero: {
+		DisplayName: Blue Zero
+		Tooltip: ""
+	}
+
+	GreenDrawFour: {
+		DisplayName: Green Draw Four
+		Tooltip: ""
+	}
+
+	GreenDrawTwo: {
+		DisplayName: Green Draw Two
+		Tooltip: ""
+	}
+
+	GreenEight: {
+		DisplayName: Green Eight
+		Tooltip: ""
+	}
+
+	GreenFive: {
+		DisplayName: Green Five
+		Tooltip: ""
+	}
+
+	GreenFour: {
+		DisplayName: Green Four
+		Tooltip: ""
+	}
+
+	GreenNine: {
+		DisplayName: Green Nine
+		Tooltip: ""
+	}
+
+	GreenOne: {
+		DisplayName: Green One
+		Tooltip: ""
+	}
+
+	GreenReverse: {
+		DisplayName: Green Reverse
+		Tooltip: ""
+	}
+
+	GreenSeven: {
+		DisplayName: Green Seven
+		Tooltip: ""
+	}
+
+	GreenSix: {
+		DisplayName: Green Six
+		Tooltip: ""
+	}
+
+	GreenSkip: {
+		DisplayName: Green Skip
+		Tooltip: ""
+	}
+
+	GreenThree: {
+		DisplayName: Green Three
+		Tooltip: ""
+	}
+
+	GreenTwo: {
+		DisplayName: Green Two
+		Tooltip: ""
+	}
+
+	GreenWild: {
+		DisplayName: Green Wild
+		Tooltip: ""
+	}
+
+	GreenZero: {
+		DisplayName: Green Zero
+		Tooltip: ""
+	}
+
+	RedDrawFour: {
+		DisplayName: Red Draw Four
+		Tooltip: ""
+	}
+
+	RedDrawTwo: {
+		DisplayName: Red Draw Two
+		Tooltip: ""
+	}
+
+	RedEight: {
+		DisplayName: Red Eight
+		Tooltip: ""
+	}
+
+	RedFive: {
+		DisplayName: Red Five
+		Tooltip: ""
+	}
+
+	RedFour: {
+		DisplayName: Red Four
+		Tooltip: ""
+	}
+
+	RedNine: {
+		DisplayName: Red Nine
+		Tooltip: ""
+	}
+
+	RedOne: {
+		DisplayName: Red One
+		Tooltip: ""
+	}
+
+	RedReverse: {
+		DisplayName: Red Reverse
+		Tooltip: ""
+	}
+
+	RedSeven: {
+		DisplayName: Red Seven
+		Tooltip: ""
+	}
+
+	RedSix: {
+		DisplayName: Red Six
+		Tooltip: ""
+	}
+
+	RedSkip: {
+		DisplayName: Red Skip
+		Tooltip: ""
+	}
+
+	RedThree: {
+		DisplayName: Red Three
+		Tooltip: ""
+	}
+
+	RedTwo: {
+		DisplayName: Red Two
+		Tooltip: ""
+	}
+
+	RedWild: {
+		DisplayName: Red Wild
+		Tooltip: ""
+	}
+
+	RedZero: {
+		DisplayName: Red Zero
+		Tooltip: ""
+	}
+
+	YellowDrawFour: {
+		DisplayName: Yellow Draw Four
+		Tooltip: ""
+	}
+
+	YellowDrawTwo: {
+		DisplayName: Yellow Draw Two
+		Tooltip: ""
+	}
+
+	YellowEight: {
+		DisplayName: Yellow Eight
+		Tooltip: ""
+	}
+
+	YellowFive: {
+		DisplayName: Yellow Five
+		Tooltip: ""
+	}
+
+	YellowFour: {
+		DisplayName: Yellow Four
+		Tooltip: ""
+	}
+
+	YellowNine: {
+		DisplayName: Yellow Nine
+		Tooltip: ""
+	}
+
+	YellowOne: {
+		DisplayName: Yellow One
+		Tooltip: ""
+	}
+
+	YellowReverse: {
+		DisplayName: Yellow Reverse
+		Tooltip: ""
+	}
+
+	YellowSeven: {
+		DisplayName: Yellow Seven
+		Tooltip: ""
+	}
+
+	YellowSix: {
+		DisplayName: Yellow Six
+		Tooltip: ""
+	}
+
+	YellowSkip: {
+		DisplayName: Yellow Skip
+		Tooltip: ""
+	}
+
+	YellowThree: {
+		DisplayName: Yellow Three
+		Tooltip: ""
+	}
+
+	YellowTwo: {
+		DisplayName: Yellow Two
+		Tooltip: ""
+	}
+
+	YellowWild: {
+		DisplayName: Yellow Wild
+		Tooltip: ""
+	}
+
+	YellowZero: {
+		DisplayName: Yellow Zero
+		Tooltip: ""
+	}
+
+	WarIsOver: {
+		DisplayName: War Is Over
+		Tooltip: ""
+	}
+
+	PlanetoidPunisher: {
+		DisplayName: Planetoid Punisher
+		Tooltip: ""
+	}
+
+	PlasmaMonkeysPaw: {
+		DisplayName: Plasma Monkeys Paw
+		Tooltip: ""
+	}
+
+	PlasmaRifle: {
+		DisplayName: Plasma Rifle
+		Tooltip: ""
+	}
+
+	PlasmaRifle2: {
+		DisplayName: Plasma Rifle2
+		Tooltip: ""
+	}
+
+	PlasmaRifle3: {
+		DisplayName: Plasma Rifle3
+		Tooltip: ""
+	}
+
+	PlasmoidBanner: {
+		DisplayName: Plasmoid Banner
+		Tooltip: ""
+	}
+
+	PlasmoidWand: {
+		DisplayName: Plasmoid Wand
+		Tooltip: ""
+	}
+
+	PlasticScrap: {
+		DisplayName: Plastic Scrap
+		Tooltip: ""
+	}
+
+	PlasticSpork: {
+		DisplayName: Plastic Spork
+		Tooltip: ""
+	}
+
+	PlutoniumAutoPistol: {
+		DisplayName: Plutonium Auto Pistol
+		Tooltip: ""
+	}
+
+	PlutoniumBar: {
+		DisplayName: Plutonium Bar
+		Tooltip: ""
+	}
+
+	PlutoniumBow: {
+		DisplayName: Plutonium Bow
+		Tooltip: ""
+	}
+
+	PlutoniumBrick: {
+		DisplayName: Plutonium Brick
+		Tooltip: ""
+	}
+
+	PlutoniumOre: {
+		DisplayName: Plutonium Ore
+		Tooltip: ""
+	}
+
+	PlutoniumSword: {
+		DisplayName: Plutonium Sword
+		Tooltip: ""
+	}
+
+	PlutoniumTorch: {
+		DisplayName: Plutonium Torch
+		Tooltip: ""
+	}
+
+	PocketBees: {
+		DisplayName: Pocket Bees
+		Tooltip: ""
+	}
+
+	PocketBeetles: {
+		DisplayName: Pocket Beetles
+		Tooltip: ""
+	}
+
+	PocketCrimsand: {
+		DisplayName: Pocket Crimsand
+		Tooltip: ""
+	}
+
+	PocketEbonsand: {
+		DisplayName: Pocket Ebonsand
+		Tooltip: ""
+	}
+
+	PocketMortar: {
+		DisplayName: Pocket Mortar
+		Tooltip: ""
+	}
+
+	PocketPearlsand: {
+		DisplayName: Pocket Pearlsand
+		Tooltip: ""
+	}
+
+	PocketSand: {
+		DisplayName: Pocket Sand
+		Tooltip: ""
+	}
+
+	PoliceBaton: {
+		DisplayName: Police Baton
+		Tooltip: ""
+	}
+
+	Polymer: {
+		DisplayName: Polymer
+		Tooltip: ""
+	}
+
+	PolymerSlimeStaff: {
+		DisplayName: Polymer Slime Staff
+		Tooltip: ""
+	}
+
+	PondsSniper: {
+		DisplayName: Ponds Sniper
+		Tooltip: ""
+	}
+
+	PoorMahoganySword: {
+		DisplayName: Poor Mahogany Sword
+		Tooltip: ""
+	}
+
+	PortableTower: {
+		DisplayName: Portable Tower
+		Tooltip: ""
+	}
+
+	PrideFlag: {
+		DisplayName: Pride Flag
+		Tooltip: ""
+	}
+
+	PridePartyHat: {
+		DisplayName: Pride Party Hat
+		Tooltip: ""
+	}
+
+	PrismaticBullet: {
+		DisplayName: Prismatic Bullet
+		Tooltip: ""
+	}
+
+	PulsePistols: {
+		DisplayName: Pulse Pistols
+		Tooltip: ""
+	}
+
+	PurifiedBolt: {
+		DisplayName: Purified Bolt
+		Tooltip: ""
+	}
+
+	PurifiedPolearm: {
+		DisplayName: Purified Polearm
+		Tooltip: ""
+	}
+
+	PurifiedSaltBlock: {
+		DisplayName: Purified Salt Block
+		Tooltip: ""
+	}
+
+	PykreteBow: {
+		DisplayName: Pykrete Bow
+		Tooltip: ""
+	}
+
+	PykreteSword: {
+		DisplayName: Pykrete Sword
+		Tooltip: ""
+	}
+
+	PyriteArrow: {
+		DisplayName: Pyrite Arrow
+		Tooltip: ""
+	}
+
+	PyriteBar: {
+		DisplayName: Pyrite Bar
+		Tooltip: ""
+	}
+
+	PyriteBow: {
+		DisplayName: Pyrite Bow
+		Tooltip: ""
+	}
+
+	PyriteOre: {
+		DisplayName: Pyrite Ore
+		Tooltip: ""
+	}
+
+	PyriteProjectorBlade: {
+		DisplayName: Pyrite Projector Blade
+		Tooltip: ""
+	}
+
+	PyriteSparkler: {
+		DisplayName: Pyrite Sparkler
+		Tooltip: ""
+	}
+
+	Pyrocannon: {
+		DisplayName: Pyrocannon
+		Tooltip: ""
+	}
+
+	PyroDartTrap: {
+		DisplayName: Pyro Dart Trap
+		Tooltip: ""
+	}
+
+	RadBullet: {
+		DisplayName: Rad Bullet
+		Tooltip: ""
+	}
+
+	RadiologicalRavager: {
+		DisplayName: Radiological Ravager
+		Tooltip: ""
+	}
+
+	RadRang: {
+		DisplayName: Rad Rang
+		Tooltip: ""
+	}
+
+	RainbowBloonFactory: {
+		DisplayName: Rainbow Bloon Factory
+		Tooltip: ""
+	}
+
+	RainbowRifle: {
+		DisplayName: Rainbow Rifle
+		Tooltip: ""
+	}
+
+	RazorRotors: {
+		DisplayName: Razor Rotors
+		Tooltip: ""
+	}
+
+	RectumsRequiem: {
+		DisplayName: Rectums Requiem
+		Tooltip: ""
+	}
+
+	RedBloonFactory: {
+		DisplayName: Red Bloon Factory
+		Tooltip: ""
+	}
+
+	RednecksRevenge: {
+		DisplayName: Rednecks Revenge
+		Tooltip: ""
+	}
+
+	RednecksRustBucket: {
+		DisplayName: Rednecks Rust Bucket
+		Tooltip: ""
+	}
+
+	RefinedOil: {
+		DisplayName: Refined Oil
+		Tooltip: ""
+	}
+
+	Repentance: {
+		DisplayName: Repentance
+		Tooltip: ""
+	}
+
+	Reversibow: {
+		DisplayName: Reversibow
+		Tooltip: ""
+	}
+
+	RingOfFire: {
+		DisplayName: Ring Of Fire
+		Tooltip: ""
+	}
+
+	RiverBanner: {
+		DisplayName: River Banner
+		Tooltip: ""
+	}
+
+	RiverGun: {
+		DisplayName: River Gun
+		Tooltip: ""
+	}
+
+	RiverMachinegun: {
+		DisplayName: River Machinegun
+		Tooltip: ""
+	}
+
+	RivetGun: {
+		DisplayName: Rivet Gun
+		Tooltip: ""
+	}
+
+	RocketNeg1: {
+		DisplayName: Rocket Neg1
+		Tooltip: ""
+	}
+
+	RockSaltBlock: {
+		DisplayName: Rock Salt Block
+		Tooltip: ""
+	}
+
+	RoyalGuardianSword: {
+		DisplayName: Royal Guardian Sword
+		Tooltip: ""
+	}
+
+	Rubber: {
+		DisplayName: Rubber
+		Tooltip: ""
+	}
+
+	RunicRaygun: {
+		DisplayName: Runic Raygun
+		Tooltip: ""
+	}
+
+	SacrificialPistol: {
+		DisplayName: Sacrificial Pistol
+		Tooltip: ""
+	}
+
+	SaltBae: {
+		DisplayName: Salt Bae
+		Tooltip: ""
+	}
+
+	SaltGun: {
+		DisplayName: Salt Gun
+		Tooltip: ""
+	}
+
+	SaltMonsterBanner: {
+		DisplayName: Salt Monster Banner
+		Tooltip: ""
+	}
+
+	SaltShaker: {
+		DisplayName: Salt Shaker
+		Tooltip: ""
+	}
+
+	SandyScorpion: {
+		DisplayName: Sandy Scorpion
+		Tooltip: ""
+	}
+
+	SandyShocks: {
+		DisplayName: Sandy Shocks
+		Tooltip: ""
+	}
+
+	SawedOffSparkplug: {
+		DisplayName: Sawed Off Sparkplug
+		Tooltip: ""
+	}
+
+	ScreamingSoyjak: {
+		DisplayName: Screaming Soyjak
+		Tooltip: ""
+	}
+
+	SeedBomber: {
+		DisplayName: Seed Bomber
+		Tooltip: ""
+	}
+
+	Septicemia: {
+		DisplayName: Septicemia
+		Tooltip: ""
+	}
+
+	ShadewoodWand: {
+		DisplayName: Shadewood Wand
+		Tooltip: ""
+	}
+
+	Shadowflame: {
+		DisplayName: Shadowflame
+		Tooltip: ""
+	}
+
+	ShadowflameArrow: {
+		DisplayName: Shadowflame Arrow
+		Tooltip: ""
+	}
+
+	ShockingSurrender: {
+		DisplayName: Shocking Surrender
+		Tooltip: ""
+	}
+
+	ShroomiteBladegun: {
+		DisplayName: Shroomite Bladegun
+		Tooltip: ""
+	}
+
+	ShroomiteGunblade: {
+		DisplayName: Shroomite Gunblade
+		Tooltip: ""
+	}
+
+	ShroomiteMissile: {
+		DisplayName: Shroomite Missile
+		Tooltip: ""
+	}
+
+	SisyphusPrime: {
+		DisplayName: Sisyphus Prime
+		Tooltip: ""
+	}
+
+	Six7Gun: {
+		DisplayName: Six7 Gun
+		Tooltip: ""
+	}
+
+	SkeletonKey: {
+		DisplayName: Skeleton Key
+		Tooltip: ""
+	}
+
+	SkibidiToilet: {
+		DisplayName: Skibidi Toilet
+		Tooltip: ""
+	}
+
+	SlimeMineStaff: {
+		DisplayName: Slime Mine Staff
+		Tooltip: ""
+	}
+
+	SmallSausageSpammer: {
+		DisplayName: Small Sausage Spammer
+		Tooltip: ""
+	}
+
+	SodiumShotbow: {
+		DisplayName: Sodium Shotbow
+		Tooltip: ""
+	}
+
+	SolarRayRifle: {
+		DisplayName: Solar Ray Rifle
+		Tooltip: ""
+	}
+
+	SovietFlag: {
+		DisplayName: Soviet Flag
+		Tooltip: ""
+	}
+
+	SpaceTrasher: {
+		DisplayName: Space Trasher
+		Tooltip: ""
+	}
+
+	SpartansWill: {
+		DisplayName: Spartans Will
+		Tooltip: ""
+	}
+
+	SpecOpsRifle: {
+		DisplayName: Spec Ops Rifle
+		Tooltip: ""
+	}
+
+	SporeShiv: {
+		DisplayName: Spore Shiv
+		Tooltip: ""
+	}
+
+	SporeSower: {
+		DisplayName: Spore Sower
+		Tooltip: ""
+	}
+
+	StalingradSpewer: {
+		DisplayName: Stalingrad Spewer
+		Tooltip: ""
+	}
+
+	StarfishOnAString: {
+		DisplayName: Starfish On A String
+		Tooltip: ""
+	}
+
+	Stg44: {
+		DisplayName: Stg44
+		Tooltip: ""
+	}
+
+	Sublimination: {
+		DisplayName: Sublimination
+		Tooltip: ""
+	}
+
+	SubstrateSpreader: {
+		DisplayName: Substrate Spreader
+		Tooltip: ""
+	}
+
+	Sunrise: {
+		DisplayName: Sunrise
+		Tooltip: ""
+	}
+
+	SuperCeramicBloonFactory: {
+		DisplayName: Super Ceramic Bloon Factory
+		Tooltip: ""
+	}
+
+	SuperMonkeysPaw: {
+		DisplayName: Super Monkeys Paw
+		Tooltip: ""
+	}
+
+	SuperSamuraiSlicer: {
+		DisplayName: Super Samurai Slicer
+		Tooltip: ""
+	}
+
+	TackShooter: {
+		DisplayName: Tack Shooter
+		Tooltip: ""
+	}
+
+	TackSprayer: {
+		DisplayName: Tack Sprayer
+		Tooltip: ""
+	}
+
+	TarriffStamper: {
+		DisplayName: Tarriff Stamper
+		Tooltip: ""
+	}
+
+	TedGun: {
+		DisplayName: Ted Gun
+		Tooltip: ""
+	}
+
+	TerraSkibidiToilet: {
+		DisplayName: Terra Skibidi Toilet
+		Tooltip: ""
+	}
+
+	TheAirFlare: {
+		DisplayName: The Air Flare
+		Tooltip: ""
+	}
+
+	TheAshesOfCalamity: {
+		DisplayName: The Ashes Of Calamity
+		Tooltip: ""
+	}
+
+	TheBoner: {
+		DisplayName: The Boner
+		Tooltip: ""
+	}
+
+	TheChudfucker: {
+		DisplayName: The Chudfucker
+		Tooltip: ""
+	}
+
+	TheComet: {
+		DisplayName: The Comet
+		Tooltip: ""
+	}
+
+	TheCommunistManifesto: {
+		DisplayName: The Communist Manifesto
+		Tooltip: ""
+	}
+
+	TheDeposer: {
+		DisplayName: The Deposer
+		Tooltip: ""
+	}
+
+	TheFishStick: {
+		DisplayName: The Fish Stick
+		Tooltip: ""
+	}
+
+	TheFuckingSun: {
+		DisplayName: The Fucking Sun
+		Tooltip: ""
+	}
+
+	TheIcebreaker: {
+		DisplayName: The Icebreaker
+		Tooltip: ""
+	}
+
+	TheImperialBoomerangs: {
+		DisplayName: The Imperial Boomerangs
+		Tooltip: ""
+	}
+
+	TheJfkExperience: {
+		DisplayName: The Jfk Experience
+		Tooltip: ""
+	}
+
+	TheMagnum: {
+		DisplayName: The Magnum
+		Tooltip: ""
+	}
+
+	TheMeltdown: {
+		DisplayName: The Meltdown
+		Tooltip: ""
+	}
+
+	TheMonkeysPaw: {
+		DisplayName: The Monkeys Paw
+		Tooltip: ""
+	}
+
+	TheMoon: {
+		DisplayName: The Moon
+		Tooltip: ""
+	}
+
+	TheNanoshot: {
+		DisplayName: The Nanoshot
+		Tooltip: ""
+	}
+
+	TheOilBaron: {
+		DisplayName: The Oil Baron
+		Tooltip: ""
+	}
+
+	ThePeoplesPitchfork: {
+		DisplayName: The Peoples Pitchfork
+		Tooltip: ""
+	}
+
+	ThePrimeTime: {
+		DisplayName: The Prime Time
+		Tooltip: ""
+	}
+
+	TheSaltLick: {
+		DisplayName: The Salt Lick
+		Tooltip: ""
+	}
+
+	TheSecondAmendment: {
+		DisplayName: The Second Amendment
+		Tooltip: ""
+	}
+
+	TheSpamCannon: {
+		DisplayName: The Spam Cannon
+		Tooltip: ""
+	}
+
+	TheTackZone: {
+		DisplayName: The Tack Zone
+		Tooltip: ""
+	}
+
+	TheWither: {
+		DisplayName: The Wither
+		Tooltip: ""
+	}
+
+	TheXRay: {
+		DisplayName: The X Ray
+		Tooltip: ""
+	}
+
+	ThumbtackDart: {
+		DisplayName: Thumbtack Dart
+		Tooltip: ""
+	}
+
+	Tomatonator: {
+		DisplayName: Tomatonator
+		Tooltip: ""
+	}
+
+	TommyGun: {
+		DisplayName: Tommy Gun
+		Tooltip: ""
+	}
+
+	AncientCobaltChainsaw: {
+		DisplayName: Ancient Cobalt Chainsaw
+		Tooltip: ""
+	}
+
+	AncientCobaltDrill: {
+		DisplayName: Ancient Cobalt Drill
+		Tooltip: ""
+	}
+
+	AncientCobaltPickaxe: {
+		DisplayName: Ancient Cobalt Pickaxe
+		Tooltip: ""
+	}
+
+	AncientCobaltWaraxe: {
+		DisplayName: Ancient Cobalt Waraxe
+		Tooltip: ""
+	}
+
+	AstatineAnnihilator: {
+		DisplayName: Astatine Annihilator
+		Tooltip: ""
+	}
+
+	AzuritePickaxe: {
+		DisplayName: Azurite Pickaxe
+		Tooltip: ""
+	}
+
+	AzuriteWaraxe: {
+		DisplayName: Azurite Waraxe
+		Tooltip: ""
+	}
+
+	FlatEarthHamaxe: {
+		DisplayName: Flat Earth Hamaxe
+		Tooltip: ""
+	}
+
+	FlatEarthPickaxe: {
+		DisplayName: Flat Earth Pickaxe
+		Tooltip: ""
+	}
+
+	GenderBreaker: {
+		DisplayName: Gender Breaker
+		Tooltip: ""
+	}
+
+	GoldMultiaxe: {
+		DisplayName: Gold Multiaxe
+		Tooltip: ""
+	}
+
+	KingslayerMultiaxe: {
+		DisplayName: Kingslayer Multiaxe
+		Tooltip: ""
+	}
+
+	LegoChainsaw: {
+		DisplayName: Lego Chainsaw
+		Tooltip: ""
+	}
+
+	LycopiteHamaxe: {
+		DisplayName: Lycopite Hamaxe
+		Tooltip: ""
+	}
+
+	LycopitePickaxe: {
+		DisplayName: Lycopite Pickaxe
+		Tooltip: ""
+	}
+
+	MintalHamaxe: {
+		DisplayName: Mintal Hamaxe
+		Tooltip: ""
+	}
+
+	MintalPickaxe: {
+		DisplayName: Mintal Pickaxe
+		Tooltip: ""
+	}
+
+	MorbiumBattleaxe: {
+		DisplayName: Morbium Battleaxe
+		Tooltip: ""
+	}
+
+	MorbiumGroundbreaker: {
+		DisplayName: Morbium Groundbreaker
+		Tooltip: ""
+	}
+
+	MorbiumPickaxe: {
+		DisplayName: Morbium Pickaxe
+		Tooltip: ""
+	}
+
+	MorbiumTreeripper: {
+		DisplayName: Morbium Treeripper
+		Tooltip: ""
+	}
+
+	PlatinumMultiaxe: {
+		DisplayName: Platinum Multiaxe
+		Tooltip: ""
+	}
+
+	PlutoniumHamaxe: {
+		DisplayName: Plutonium Hamaxe
+		Tooltip: ""
+	}
+
+	PlutoniumPickaxe: {
+		DisplayName: Plutonium Pickaxe
+		Tooltip: ""
+	}
+
+	PoorMahoganyAxe: {
+		DisplayName: Poor Mahogany Axe
+		Tooltip: ""
+	}
+
+	PoorMahoganyHammer: {
+		DisplayName: Poor Mahogany Hammer
+		Tooltip: ""
+	}
+
+	PoorMahoganyPickaxe: {
+		DisplayName: Poor Mahogany Pickaxe
+		Tooltip: ""
+	}
+
+	PykretePickaxe: {
+		DisplayName: Pykrete Pickaxe
+		Tooltip: ""
+	}
+
+	SodiumHamaxe: {
+		DisplayName: Sodium Hamaxe
+		Tooltip: ""
+	}
+
+	SodiumPickaxe: {
+		DisplayName: Sodium Pickaxe
+		Tooltip: ""
+	}
+
+	SporeSaw: {
+		DisplayName: Spore Saw
+		Tooltip: ""
+	}
+
+	SqueakyHammer: {
+		DisplayName: Squeaky Hammer
+		Tooltip: ""
+	}
+
+	SteelAxe: {
+		DisplayName: Steel Axe
+		Tooltip: ""
+	}
+
+	SteelHammer: {
+		DisplayName: Steel Hammer
+		Tooltip: ""
+	}
+
+	SteelPickaxe: {
+		DisplayName: Steel Pickaxe
+		Tooltip: ""
+	}
+
+	StupiderFuckingPickaxe: {
+		DisplayName: Stupider Fucking Pickaxe
+		Tooltip: ""
+	}
+
+	StupidestFuckingPickaxe: {
+		DisplayName: Stupidest Fucking Pickaxe
+		Tooltip: ""
+	}
+
+	StupidFuckingPickaxe: {
+		DisplayName: Stupid Fucking Pickaxe
+		Tooltip: ""
+	}
+
+	ThePurifier: {
+		DisplayName: The Purifier
+		Tooltip: ""
+	}
+
+	Transitioner: {
+		DisplayName: Transitioner
+		Tooltip: ""
+	}
+
+	UraniumHamaxe: {
+		DisplayName: Uranium Hamaxe
+		Tooltip: ""
+	}
+
+	UraniumPickaxe: {
+		DisplayName: Uranium Pickaxe
+		Tooltip: ""
+	}
+
+	ToothlessWyrm: {
+		DisplayName: Toothless Wyrm
+		Tooltip: ""
+	}
+
+	TorchSong: {
+		DisplayName: Torch Song
+		Tooltip: ""
+	}
+
+	ToxicBullet: {
+		DisplayName: Toxic Bullet
+		Tooltip: ""
+	}
+
+	TrashSlimeBanner: {
+		DisplayName: Trash Slime Banner
+		Tooltip: ""
+	}
+
+	TriAttack: {
+		DisplayName: Tri Attack
+		Tooltip: ""
+	}
+
+	TrippyTransmutationStaff: {
+		DisplayName: Trippy Transmutation Staff
+		Tooltip: ""
+	}
+
+	TrueJfkExperience: {
+		DisplayName: True Jfk Experience
+		Tooltip: ""
+	}
+
+	TruthSeekersDMR: {
+		DisplayName: Truth Seekers D M R
+		Tooltip: ""
+	}
+
+	UltrabrightArrow: {
+		DisplayName: Ultrabright Arrow
+		Tooltip: ""
+	}
+
+	UnicornPoacher: {
+		DisplayName: Unicorn Poacher
+		Tooltip: ""
+	}
+
+	UnstablePlasmoidBanner: {
+		DisplayName: Unstable Plasmoid Banner
+		Tooltip: ""
+	}
+
+	UraniumBar: {
+		DisplayName: Uranium Bar
+		Tooltip: ""
+	}
+
+	UraniumBow: {
+		DisplayName: Uranium Bow
+		Tooltip: ""
+	}
+
+	UraniumBrick: {
+		DisplayName: Uranium Brick
+		Tooltip: ""
+	}
+
+	UraniumOre: {
+		DisplayName: Uranium Ore
+		Tooltip: ""
+	}
+
+	UraniumShotgun: {
+		DisplayName: Uranium Shotgun
+		Tooltip: ""
+	}
+
+	UraniumSword: {
+		DisplayName: Uranium Sword
+		Tooltip: ""
+	}
+
+	UraniumTorch: {
+		DisplayName: Uranium Torch
+		Tooltip: ""
+	}
+
+	VenomThrower: {
+		DisplayName: Venom Thrower
+		Tooltip: ""
+	}
+
+	VerdantClaymore: {
+		DisplayName: Verdant Claymore
+		Tooltip: ""
+	}
+
+	VerminImpaler: {
+		DisplayName: Vermin Impaler
+		Tooltip: ""
+	}
+
+	VeryBigStick: {
+		DisplayName: Very Big Stick
+		Tooltip: ""
+	}
+
+	ViciousGreatstaff: {
+		DisplayName: Vicious Greatstaff
+		Tooltip: ""
+	}
+
+	VileGreatstaff: {
+		DisplayName: Vile Greatstaff
+		Tooltip: ""
+	}
+
+	VP70: {
+		DisplayName: V P70
+		Tooltip: ""
+	}
+
+	WandOfTheOvercompensator: {
+		DisplayName: Wand Of The Overcompensator
+		Tooltip: ""
+	}
+
+	WaterflameSword: {
+		DisplayName: Waterflame Sword
+		Tooltip: ""
+	}
+
+	AlpinePlushieGlitterbomb: {
+		DisplayName: Alpine Plushie Glitterbomb
+		Tooltip: ""
+	}
+
+	AncientCobaltNaginata: {
+		DisplayName: Ancient Cobalt Naginata
+		Tooltip: ""
+	}
+
+	AncientCobaltRepeater: {
+		DisplayName: Ancient Cobalt Repeater
+		Tooltip: ""
+	}
+
+	AncientCobaltSword: {
+		DisplayName: Ancient Cobalt Sword
+		Tooltip: ""
+	}
+
+	ApexPlasmaCannon: {
+		DisplayName: Apex Plasma Cannon
+		Tooltip: ""
+	}
+
+	AzuriteArrow: {
+		DisplayName: Azurite Arrow
+		Tooltip: ""
+	}
+
+	AzuriteBow: {
+		DisplayName: Azurite Bow
+		Tooltip: ""
+	}
+
+	AzuriteDualStaff: {
+		DisplayName: Azurite Dual Staff
+		Tooltip: ""
+	}
+
+	AzuriteSaber: {
+		DisplayName: Azurite Saber
+		Tooltip: ""
+	}
+
+	BloodshotArrow: {
+		DisplayName: Bloodshot Arrow
+		Tooltip: ""
+	}
+
+	CopperLongsword: {
+		DisplayName: Copper Longsword
+		Tooltip: ""
+	}
+
+	CopperQuadsword: {
+		DisplayName: Copper Quadsword
+		Tooltip: ""
+	}
+
+	CrimtaneShuriken: {
+		DisplayName: Crimtane Shuriken
+		Tooltip: ""
+	}
+
+	DemoniteShuriken: {
+		DisplayName: Demonite Shuriken
+		Tooltip: ""
+	}
+
+	FeatherArrow: {
+		DisplayName: Feather Arrow
+		Tooltip: ""
+	}
+
+	FireDiamondStaff: {
+		DisplayName: Fire Diamond Staff
+		Tooltip: ""
+	}
+
+	FireyPhaseblade: {
+		DisplayName: Firey Phaseblade
+		Tooltip: ""
+	}
+
+	FireyPhasesaber: {
+		DisplayName: Firey Phasesaber
+		Tooltip: ""
+	}
+
+	FlamingKnife: {
+		DisplayName: Flaming Knife
+		Tooltip: ""
+	}
+
+	FrozenBullet: {
+		DisplayName: Frozen Bullet
+		Tooltip: ""
+	}
+
+	FrozenMace: {
+		DisplayName: Frozen Mace
+		Tooltip: ""
+	}
+
+	GenderDefender: {
+		DisplayName: Gender Defender
+		Tooltip: ""
+	}
+
+	GlitterGun: {
+		DisplayName: Glitter Gun
+		Tooltip: ""
+	}
+
+	GoldLongsword: {
+		DisplayName: Gold Longsword
+		Tooltip: ""
+	}
+
+	GunThatKillsPeople: {
+		DisplayName: Gun That Kills People
+		Tooltip: ""
+	}
+
+	IronLongsword: {
+		DisplayName: Iron Longsword
+		Tooltip: ""
+	}
+
+	LeadLongsword: {
+		DisplayName: Lead Longsword
+		Tooltip: ""
+	}
+
+	LigmaLazer: {
+		DisplayName: Ligma Lazer
+		Tooltip: ""
+	}
+
+	LunarStaff: {
+		DisplayName: Lunar Staff
+		Tooltip: ""
+	}
+
+	MetalBall: {
+		DisplayName: Metal Ball
+		Tooltip: ""
+	}
+
+	MiniThrowableBoulder: {
+		DisplayName: Mini Throwable Boulder
+		Tooltip: ""
+	}
+
+	MintalArrow: {
+		DisplayName: Mintal Arrow
+		Tooltip: ""
+	}
+
+	MintalBow: {
+		DisplayName: Mintal Bow
+		Tooltip: ""
+	}
+
+	MintalGreatspear: {
+		DisplayName: Mintal Greatspear
+		Tooltip: ""
+	}
+
+	MintalMachinePistol: {
+		DisplayName: Mintal Machine Pistol
+		Tooltip: ""
+	}
+
+	MintalRepeater: {
+		DisplayName: Mintal Repeater
+		Tooltip: ""
+	}
+
+	MintalSword: {
+		DisplayName: Mintal Sword
+		Tooltip: ""
+	}
+
+	MoltenShuriken: {
+		DisplayName: Molten Shuriken
+		Tooltip: ""
+	}
+
+	MorbeamStaff: {
+		DisplayName: Morbeam Staff
+		Tooltip: ""
+	}
+
+	MorbiumArrow: {
+		DisplayName: Morbium Arrow
+		Tooltip: ""
+	}
+
+	MorbiumBow: {
+		DisplayName: Morbium Bow
+		Tooltip: ""
+	}
+
+	MorbiumSword: {
+		DisplayName: Morbium Sword
+		Tooltip: ""
+	}
+
+	PlatinumLongsword: {
+		DisplayName: Platinum Longsword
+		Tooltip: ""
+	}
+
+	RunicCodex: {
+		DisplayName: Runic Codex
+		Tooltip: ""
+	}
+
+	SexualitySlicer: {
+		DisplayName: Sexuality Slicer
+		Tooltip: ""
+	}
+
+	Shortgun: {
+		DisplayName: Shortgun
+		Tooltip: ""
+	}
+
+	SilverLongsword: {
+		DisplayName: Silver Longsword
+		Tooltip: ""
+	}
+
+	SpectralBow: {
+		DisplayName: Spectral Bow
+		Tooltip: ""
+	}
+
+	SplashPotionOfShine: {
+		DisplayName: Splash Potion Of Shine
+		Tooltip: ""
+	}
+
+	SteelBow: {
+		DisplayName: Steel Bow
+		Tooltip: ""
+	}
+
+	SteelKnife: {
+		DisplayName: Steel Knife
+		Tooltip: ""
+	}
+
+	SteelLongsword: {
+		DisplayName: Steel Longsword
+		Tooltip: ""
+	}
+
+	SteelShuriken: {
+		DisplayName: Steel Shuriken
+		Tooltip: ""
+	}
+
+	TheBlueBall: {
+		DisplayName: The Blue Ball
+		Tooltip: ""
+	}
+
+	TheBrainFreeze: {
+		DisplayName: The Brain Freeze
+		Tooltip: ""
+	}
+
+	TinLongsword: {
+		DisplayName: Tin Longsword
+		Tooltip: ""
+	}
+
+	TransgenderTwinbeam: {
+		DisplayName: Transgender Twinbeam
+		Tooltip: ""
+	}
+
+	TungstenLongsword: {
+		DisplayName: Tungsten Longsword
+		Tooltip: ""
+	}
+
+	WeedLeaves: {
+		DisplayName: Weed Leaves
+		Tooltip: ""
+	}
+
+	WhippetWhip: {
+		DisplayName: Whippet Whip
+		Tooltip: ""
+	}
+
+	WindTome: {
+		DisplayName: Wind Tome
+		Tooltip: ""
+	}
+
+	Zablade: {
+		DisplayName: Zablade
+		Tooltip: ""
+	}
+
+	ZapperGun: {
+		DisplayName: Zapper Gun
+		Tooltip: ""
+	}
+
+	ZazaBreath: {
+		DisplayName: Zaza Breath
+		Tooltip: ""
+	}
+
+	ZazaDart: {
+		DisplayName: Zaza Dart
+		Tooltip: ""
+	}
+
+	ZazaPipegun: {
+		DisplayName: Zaza Pipegun
+		Tooltip: ""
+	}
+
+	ChlorophyteShitballs: {
+		DisplayName: Chlorophyte Shitballs
+		Tooltip: ""
+	}
+
+	PoopArrow: {
+		DisplayName: Poop Arrow
+		Tooltip: ""
+	}
+
+	PoopAxe: {
+		DisplayName: Poop Axe
+		Tooltip: ""
+	}
+
+	Pooperang: {
+		DisplayName: Pooperang
+		Tooltip: ""
+	}
+
+	PoopHammer: {
+		DisplayName: Poop Hammer
+		Tooltip: ""
+	}
+
+	PoopPickaxe: {
+		DisplayName: Poop Pickaxe
+		Tooltip: ""
+	}
+
+	PoopSock: {
+		DisplayName: Poop Sock
+		Tooltip: ""
+	}
+
+	PoopSword: {
+		DisplayName: Poop Sword
+		Tooltip: ""
+	}
+
+	PoopToilet: {
+		DisplayName: Poop Toilet
+		Tooltip: ""
+	}
+
+	PoopyAutoPistol: {
+		DisplayName: Poopy Auto Pistol
+		Tooltip: ""
+	}
+
+	PoopyPistol: {
+		DisplayName: Poopy Pistol
+		Tooltip: ""
+	}
+
+	ShitAndPissWand: {
+		DisplayName: Shit And Piss Wand
+		Tooltip: ""
+	}
+
+	Shitballs: {
+		DisplayName: Shitballs
+		Tooltip: ""
+	}
+
+	ShitPissAndCumWand: {
+		DisplayName: Shit Piss And Cum Wand
+		Tooltip: ""
+	}
+
+	ThrowablePoop: {
+		DisplayName: Throwable Poop
+		Tooltip: ""
+	}
+
+	WandOfPooping: {
+		DisplayName: Wand Of Pooping
+		Tooltip: ""
+	}
+}
+
+WorldGen: {
+	PyriteBlessMessage: Mods.HendecamMod.WorldGen.PyriteBlessMessage
+	PyriteMessage: Mods.HendecamMod.WorldGen.PyriteMessage
+	PlutoniumBlessMessage: Mods.HendecamMod.WorldGen.PlutoniumBlessMessage
+	PlutoniumMessage: Mods.HendecamMod.WorldGen.PlutoniumMessage
+	MorbiumBlessMessage: Mods.HendecamMod.WorldGen.MorbiumBlessMessage
+	MorbiumMessage: Mods.HendecamMod.WorldGen.MorbiumMessage
+	MintalBlessMessage: Mods.HendecamMod.WorldGen.MintalBlessMessage
+	MintalMessage: Mods.HendecamMod.WorldGen.MintalMessage
+	LycopiteBlessMessage: Mods.HendecamMod.WorldGen.LycopiteBlessMessage
+	LycopiteMessage: Mods.HendecamMod.WorldGen.LycopiteMessage
+	AzuriteBlessMessage: Mods.HendecamMod.WorldGen.AzuriteBlessMessage
+	AzuriteMessage: Mods.HendecamMod.WorldGen.AzuriteMessage
+	AncientCobaltOrePassMessage: Mods.HendecamMod.WorldGen.AncientCobaltOrePassMessage
+	BlessedWithAncientCobaltOreMessage: Mods.HendecamMod.WorldGen.BlessedWithAncientCobaltOreMessage
+	MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
+	BlessedWithThroarbiumOreMessage: Mods.HendecamMod.WorldGen.BlessedWithThroarbiumOreMessage
+	ManifestoOrePassMessage: Mods.HendecamMod.WorldGen.ManifestoOrePassMessage
+	BlessedWithOilOreMessage: Mods.HendecamMod.WorldGen.BlessedWithOilOreMessage
+}
+
+DamageClasses: {
+	SummonStupidDamage.DisplayName: Summon Stupid Damage
+	StupidDamage.DisplayName: Stupid Damage
+	RangedSummonDamage.DisplayName: Ranged Summon Damage
+	RangedStupidDamage.DisplayName: Ranged Stupid Damage
+	RangedMagicDamage.DisplayName: Ranged Magic Damage
+	OmniDamage.DisplayName: Omni Damage
+	MeleeSummonDamage.DisplayName: Melee Summon Damage
+	MeleeStupidDamage.DisplayName: Melee Stupid Damage
+	MeleeRangedDamage.DisplayName: Melee Ranged Damage
+	MeleeMagicDamage.DisplayName: Melee Magic Damage
+	MagicSummonDamage.DisplayName: Magic Summon Damage
+	AutismDamage.DisplayName: Autism Damage
+}
+
+Biomes: {
+	OasisUndergroundBiome: {
+		TownNPCDialogueName: the Oasis Underground Biome
+		DisplayName: Oasis Underground Biome
+	}
+
+	OasisSurfaceBiome: {
+		TownNPCDialogueName: the Oasis Surface Biome
+		DisplayName: Oasis Surface Biome
+	}
+}
+
+Achievements: {
+	WoahTrippyBro: {
+		Description: Mods.HendecamMod.Achievements.WoahTrippyBro.Description
+		FriendlyName: Woah Trippy Bro
+	}
+
+	Plasmophobia: {
+		Description: Mods.HendecamMod.Achievements.Plasmophobia.Description
+		FriendlyName: Plasmophobia
+	}
+
+	NowsYourChance: {
+		Description: Mods.HendecamMod.Achievements.NowsYourChance.Description
+		FriendlyName: Nows Your Chance
+	}
+
+	JetFuel: {
+		Description: Mods.HendecamMod.Achievements.JetFuel.Description
+		FriendlyName: Jet Fuel
+	}
+
+	ICanDoAnything: {
+		Description: Mods.HendecamMod.Achievements.ICanDoAnything.Description
+		FriendlyName: I Can Do Anything
+	}
+
+	AmericanApotheosis: {
+		Description: Mods.HendecamMod.Achievements.AmericanApotheosis.Description
+		FriendlyName: American Apotheosis
+	}
+
+	SkullCracker: {
+		Description: Mods.HendecamMod.Achievements.SkullCracker.Description
+		FriendlyName: Skull Cracker
+	}
+
+	KnockEmDown: {
+		Description: Mods.HendecamMod.Achievements.KnockEmDown.Description
+		FriendlyName: Knock Em Down
+	}
+}
+
+Tiles: {
+	AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore Placed
+	AzuriteOrePlaced.MapEntry: Azurite Ore Placed
+	MintalOrePlaced.MapEntry: Mintal Ore Placed
+	MorbiumOrePlaced.MapEntry: Morbium Ore Placed
+	TransOrePlaced.MapEntry: Trans Ore Placed
+	CobaltWorkBenchPlaced.MapEntry: Cobalt Work Bench Placed
+
+	PlatinumChestPlaced: {
+		MapEntry0: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry0
+		MapEntry1: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry1
+		Locked: Mods.HendecamMod.Tiles.PlatinumChestPlaced.Locked
+	}
+
+	LycopiteOreTile.MapEntry: Lycopite Ore Tile
+	OilDeposit.MapEntry: Oil Deposit
+}
+
+NPCs: {
+	ApacheElfShip.DisplayName: Apache Elf Ship
+	ApacheElf.DisplayName: Apache Elf
+	HeadOfCthulhu.DisplayName: Head Of Cthulhu
+	PromethiumPlasmoid.DisplayName: Promethium Plasmoid
+	AquaticSlime.DisplayName: Aquatic Slime
+
+	Asshole: {
+		DisplayName: Asshole
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Census.SpawnCondition: Conditions unknown
+	}
+
+	FlyingPig.DisplayName: Flying Pig
+	LargePlasmoid.DisplayName: Large Plasmoid
+	LunarElemental.DisplayName: Lunar Elemental
+	MintSlime.DisplayName: Mint Slime
+	OilMonster.DisplayName: Oil Monster
+	OilSlime.DisplayName: Oil Slime
+	PearlsandSlime.DisplayName: Pearlsand Slime
+	Plasmoid.DisplayName: Plasmoid
+	PoisonSlime.DisplayName: Poison Slime
+
+	Politician: {
+		DisplayName: Politician
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Census.SpawnCondition: Conditions unknown
+	}
+
+	River: {
+		DisplayName: River
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LoveBiome: I love {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			HateBiome: I hate {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Census.SpawnCondition: Conditions unknown
+	}
+
+	SaltMonster.DisplayName: Salt Monster
+
+	Alpine: {
+		DisplayName: Alpine
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LoveBiome: I love {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			HateBiome: I hate {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Census.SpawnCondition: Conditions unknown
+	}
+
+	TrashSlime.DisplayName: Trash Slime
+	UnstablePlasmoid.DisplayName: Unstable Plasmoid
+}
+
+Buffs: {
+	AlpineTagBuff: {
+		DisplayName: Alpine Tag Buff
+		Description: Mods.HendecamMod.Buffs.AlpineTagBuff.Description
+	}
+
+	BalkanRage: {
+		DisplayName: Balkan Rage
+		Description: Mods.HendecamMod.Buffs.BalkanRage.Description
+	}
+
+	BigShotCooldown: {
+		DisplayName: Big Shot Cooldown
+		Description: Mods.HendecamMod.Buffs.BigShotCooldown.Description
+	}
+
+		BlackshardDebuff: {
+			DisplayName: Blackshard Debuff
+			Description: Mods.HendecamMod.Buffs.BlackshardDebuff.Description
+		}
+
+	BrainRotted: {
+		DisplayName: Brain Rotted
+		Description: Mods.HendecamMod.Buffs.BrainRotted.Description
+	}
+
+	CasaBuff: {
+		DisplayName: Casa Buff
+		Description: Mods.HendecamMod.Buffs.CasaBuff.Description
+	}
+
+	CeramicBloonBuff: {
+		DisplayName: Ceramic Bloon Buff
+		Description: Mods.HendecamMod.Buffs.CeramicBloonBuff.Description
+	}
+
+	DarkPower: {
+		DisplayName: Dark Power
+		Description: Mods.HendecamMod.Buffs.DarkPower.Description
+	}
+
+		DeliriantTag: {
+			DisplayName: Deliriant Tag
+			Description: Mods.HendecamMod.Buffs.DeliriantTag.Description
+		}
+
+		DildoWhipBuff: {
+			DisplayName: Dildo Whip Buff
+			Description: Mods.HendecamMod.Buffs.DildoWhipBuff.Description
+		}
+
+		EmblemTag: {
+			DisplayName: Emblem Tag
+			Description: Mods.HendecamMod.Buffs.EmblemTag.Description
+		}
+
+		GalaxyTag: {
+			DisplayName: Galaxy Tag
+			Description: Mods.HendecamMod.Buffs.GalaxyTag.Description
+		}
+
+		Gay: {
+			DisplayName: Gay
+			Description: Mods.HendecamMod.Buffs.Gay.Description
+		}
+
+	GraniteFriend: {
+		DisplayName: Granite Friend
+		Description: Mods.HendecamMod.Buffs.GraniteFriend.Description
+	}
+
+	HeartBuff: {
+		DisplayName: Heart Buff
+		Description: Mods.HendecamMod.Buffs.HeartBuff.Description
+	}
+
+		JevilTag: {
+			DisplayName: Jevil Tag
+			Description: Mods.HendecamMod.Buffs.JevilTag.Description
+		}
+
+	JungleHealing: {
+		DisplayName: Jungle Healing
+		Description: Mods.HendecamMod.Buffs.JungleHealing.Description
+	}
+
+		KevlarTag: {
+			DisplayName: Kevlar Tag
+			Description: Mods.HendecamMod.Buffs.KevlarTag.Description
+		}
+
+		KingTag: {
+			DisplayName: King Tag
+			Description: Mods.HendecamMod.Buffs.KingTag.Description
+		}
+
+	LeadPoisoningDebuff: {
+		DisplayName: Lead Poisoning Debuff
+		Description: Mods.HendecamMod.Buffs.LeadPoisoningDebuff.Description
+	}
+
+	Ligma: {
+		DisplayName: Ligma
+		Description: Mods.HendecamMod.Buffs.Ligma.Description
+	}
+
+		LilTMan: {
+			DisplayName: Lil T Man
+			Description: Mods.HendecamMod.Buffs.LilTMan.Description
+		}
+
+		LycopiteSpores: {
+			DisplayName: Lycopite Spores
+			Description: Mods.HendecamMod.Buffs.LycopiteSpores.Description
+		}
+
+	MambaBuff: {
+		DisplayName: Mamba Buff
+		Description: Mods.HendecamMod.Buffs.MambaBuff.Description
+	}
+
+	MoonBurn: {
+		DisplayName: Moon Burn
+		Description: Mods.HendecamMod.Buffs.MoonBurn.Description
+	}
+
+	MorbinTime: {
+		DisplayName: Morbin Time
+		Description: Mods.HendecamMod.Buffs.MorbinTime.Description
+	}
+
+	OilMonsterBuff: {
+		DisplayName: Oil Monster Buff
+		Description: Mods.HendecamMod.Buffs.OilMonsterBuff.Description
+	}
+
+	OtherworldPoisoning: {
+		DisplayName: Otherworld Poisoning
+		Description: Mods.HendecamMod.Buffs.OtherworldPoisoning.Description
+	}
+
+		PearlTag: {
+			DisplayName: Pearl Tag
+			Description: Mods.HendecamMod.Buffs.PearlTag.Description
+		}
+
+	PlasmoidFriend: {
+		DisplayName: Plasmoid Friend
+		Description: Mods.HendecamMod.Buffs.PlasmoidFriend.Description
+	}
+
+		PlutoWhipBuff: {
+			DisplayName: Pluto Whip Buff
+			Description: Mods.HendecamMod.Buffs.PlutoWhipBuff.Description
+		}
+
+	PolymerSlimeBuff: {
+		DisplayName: Polymer Slime Buff
+		Description: Mods.HendecamMod.Buffs.PolymerSlimeBuff.Description
+	}
+
+	RadPoisoning: {
+		DisplayName: Rad Poisoning
+		Description: Mods.HendecamMod.Buffs.RadPoisoning.Description
+	}
+
+	RadPoisoning2: {
+		DisplayName: Rad Poisoning2
+		Description: Mods.HendecamMod.Buffs.RadPoisoning2.Description
+	}
+
+	RadPoisoning3: {
+		DisplayName: Rad Poisoning3
+		Description: Mods.HendecamMod.Buffs.RadPoisoning3.Description
+	}
+
+	RainbowBloonBuff: {
+		DisplayName: Rainbow Bloon Buff
+		Description: Mods.HendecamMod.Buffs.RainbowBloonBuff.Description
+	}
+
+	RedBloonBuff: {
+		DisplayName: Red Bloon Buff
+		Description: Mods.HendecamMod.Buffs.RedBloonBuff.Description
+	}
+
+		RedneckTag: {
+			DisplayName: Redneck Tag
+			Description: Mods.HendecamMod.Buffs.RedneckTag.Description
+		}
+
+	RudeBusterCooldown: {
+		DisplayName: Rude Buster Cooldown
+		Description: You're not feeling very rude, buster.
+	}
+
+	Sauced: {
+		DisplayName: Sauced
+		Description: Mods.HendecamMod.Buffs.Sauced.Description
+	}
+
+	ShinyTag: {
+		DisplayName: Shiny Tag
+		Description: Mods.HendecamMod.Buffs.ShinyTag.Description
+	}
+
+	ShinyTag2: {
+		DisplayName: Shiny Tag2
+		Description: Mods.HendecamMod.Buffs.ShinyTag2.Description
+	}
+
+	SlimeMinesBuff: {
+		DisplayName: Slime Mines Buff
+		Description: Mods.HendecamMod.Buffs.SlimeMinesBuff.Description
+	}
+
+		SmoothTag: {
+			DisplayName: Smooth Tag
+			Description: Mods.HendecamMod.Buffs.SmoothTag.Description
+		}
+
+		SpikyTag: {
+			DisplayName: Spiky Tag
+			Description: Mods.HendecamMod.Buffs.SpikyTag.Description
+		}
+
+		Stamped: {
+			DisplayName: Stamped
+			Description: Mods.HendecamMod.Buffs.Stamped.Description
+		}
+
+	SuperCeramBuff: {
+		DisplayName: Super Ceram Buff
+		Description: Mods.HendecamMod.Buffs.SuperCeramBuff.Description
+	}
+
+		VerdantTag: {
+			DisplayName: Verdant Tag
+			Description: Mods.HendecamMod.Buffs.VerdantTag.Description
+		}
+
+		VpTag: {
+			DisplayName: Vp Tag
+			Description: Mods.HendecamMod.Buffs.VpTag.Description
+		}
+
+	WeaponImbueFission: {
+		DisplayName: Weapon Imbue Fission
+		Description: Mods.HendecamMod.Buffs.WeaponImbueFission.Description
+	}
+
+		WeaponImbueFusion: {
+			DisplayName: Weapon Imbue Fusion
+			Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
+		}
+
+	WeaponImbueOil: {
+		DisplayName: Weapon Imbue Oil
+		Description: Mods.HendecamMod.Buffs.WeaponImbueOil.Description
+	}
+
+	WeaponImbueRadiation: {
+		DisplayName: Weapon Imbue Radiation
+		Description: Mods.HendecamMod.Buffs.WeaponImbueRadiation.Description
+	}
+
+	WeaponImbueShadowflame: {
+		DisplayName: Weapon Imbue Shadowflame
+		Description: Mods.HendecamMod.Buffs.WeaponImbueShadowflame.Description
+	}
+
+	PoopSocked: {
+		DisplayName: Poop Socked
+		Description: Mods.HendecamMod.Buffs.PoopSocked.Description
+	}
+}
+
+	Prefixes: {
+		Academic.DisplayName: Academic
+		Brainrotted.DisplayName: Brainrotted
+		Brainy.DisplayName: Brainy
+		Clunky.DisplayName: Clunky
+		Disciplined.DisplayName: Disciplined
+		Dumb.DisplayName: Dumb
+		Gargantuan.DisplayName: Gargantuan
+		Idiotic.DisplayName: Idiotic
+		Intelligent.DisplayName: Intelligent
+		Lobotomized.DisplayName: Lobotomized
+		Serious.DisplayName: Serious
+		Sigma.DisplayName: Sigma
+		Silly.DisplayName: Silly
+		Skibidi.DisplayName: Skibidi
+		Smart.DisplayName: Smart
+		Switched.DisplayName: Switched
+		Thoughtless.DisplayName: Thoughtless
+		Tiktokified.DisplayName: Tiktokified
+	}
+
+Projectiles: {
+	A5G.DisplayName: A5 G
+	AdamantiteBolt.DisplayName: Adamantite Bolt
+	AgentGreenProj.DisplayName: Agent Green Proj
+	AMRRound.DisplayName: A M R Round
+	ArcaneDart.DisplayName: Arcane Dart
+	AshenWeed.DisplayName: Ashen Weed
+	AstaArrowProj.DisplayName: Asta Arrow Proj
+	AstaBlob.DisplayName: Asta Blob
+	AstaBoom.DisplayName: Asta Boom
+	AstaBoom2.DisplayName: Asta Boom2
+	AstaBoomBig.DisplayName: Asta Boom Big
+	AstaBoomDelayed.DisplayName: Asta Boom Delayed
+	AstaFission.DisplayName: Asta Fission
+	AstaGlaive.DisplayName: Asta Glaive
+	AstaParticle.DisplayName: Asta Particle
+	AstaPool.DisplayName: Asta Pool
+	AstaRocketProj.DisplayName: Asta Rocket Proj
+	AstaSwing.DisplayName: Asta Swing
+	AstatineBullet.DisplayName: Astatine Bullet
+	AstatineSpear.DisplayName: Astatine Spear
+	AstaWhip.DisplayName: Asta Whip
+	AuricSkibidiHead.DisplayName: Auric Skibidi Head
+	AvalancheBoulder.DisplayName: Avalanche Boulder
+	AzuriteArrowProjectile.DisplayName: Azurite Arrow Projectile
+	AzuriteBeam.DisplayName: Azurite Beam
+	AzuriteSwing.DisplayName: Azurite Swing
+	AzuriteWave.DisplayName: Azurite Wave
+	BabyOilMonster.DisplayName: Baby Oil Monster
+	Baconator.DisplayName: Baconator
+	Bad5g.DisplayName: Bad5g
+	BarbBullet.DisplayName: Barb Bullet
+	BeadsNDick.DisplayName: Beads N Dick
+	BeerYeet.DisplayName: Beer Yeet
+	BeetleBombProj.DisplayName: Beetle Bomb Proj
+	BeetleFriend.DisplayName: Beetle Friend
+	BeetleRoundProjectile.DisplayName: Beetle Round Projectile
+	BigBall.DisplayName: Big Ball
+	BigBerthaProj.DisplayName: Big Bertha Proj
+	BigCannonBall.DisplayName: Big Cannon Ball
+	BigShot.DisplayName: Big Shot
+	BinaryLaser.DisplayName: Binary Laser
+	BirdBullet.DisplayName: Bird Bullet
+	Bitcoin.DisplayName: Bitcoin
+	BlackHoleProj.DisplayName: Black Hole Proj
+	BlackshardProj.DisplayName: Blackshard Proj
+	BlackshardThrown.DisplayName: Blackshard Thrown
+	BladegunBomb.DisplayName: Bladegun Bomb
+	BladegunSwing.DisplayName: Bladegun Swing
+	BladegunWave.DisplayName: Bladegun Wave
+	BladegunWave2.DisplayName: Bladegun Wave2
+	Bloodfish.DisplayName: Bloodfish
+	BloodIchor.DisplayName: Blood Ichor
+	BloodshotArrowProjectile.DisplayName: Bloodshot Arrow Projectile
+	BloodshotBomb.DisplayName: Bloodshot Bomb
+	BloodshotSpawn.DisplayName: Bloodshot Spawn
+	BlueMaticHornProjectile.DisplayName: Blue Matic Horn Projectile
+	BombBoom.DisplayName: Bomb Boom
+	BoomShroom.DisplayName: Boom Shroom
+	BoomShroomMage.DisplayName: Boom Shroom Mage
+	BoomSmall.DisplayName: Boom Small
+	BoomSmallish.DisplayName: Boom Smallish
+	BouncingBulletProj.DisplayName: Bouncing Bullet Proj
+	BowBoltProj.DisplayName: Bow Bolt Proj
+	BowlingBall.DisplayName: Bowling Ball
+	BugWave.DisplayName: Bug Wave
+	BullshitEnergyAxe.DisplayName: Bullshit Energy Axe
+	BullshitSwing.DisplayName: Bullshit Swing
+	BushPlane.DisplayName: Bush Plane
+	CactusSpawn.DisplayName: Cactus Spawn
+	CactusSpike.DisplayName: Cactus Spike
+	Carbon02.DisplayName: Carbon02
+	CarrotProj.DisplayName: Carrot Proj
+	CasaShot.DisplayName: Casa Shot
+	Censored.DisplayName: Censored
+	CeramArrow.DisplayName: Ceram Arrow
+	CeramDart.DisplayName: Ceram Dart
+	CeramicBloon.DisplayName: Ceramic Bloon
+	CeramicScrap.DisplayName: Ceramic Scrap
+	CeramMag.DisplayName: Ceram Mag
+	CeramNop.DisplayName: Ceram Nop
+	ChainThunder.DisplayName: Chain Thunder
+	ChargeLaser.DisplayName: Charge Laser
+	ChloroDart.DisplayName: Chloro Dart
+	ChloroDartMini.DisplayName: Chloro Dart Mini
+	ChromaticaLaser.DisplayName: Chromatica Laser
+	CiaRocket.DisplayName: Cia Rocket
+	CiaShot.DisplayName: Cia Shot
+	CiaShot2.DisplayName: Cia Shot2
+	CiaShot3.DisplayName: Cia Shot3
+	CiaSpawn.DisplayName: Cia Spawn
+	CobaltBolt.DisplayName: Cobalt Bolt
+	CopperQuadswordProjectile.DisplayName: Copper Quadsword Projectile
+	CopperShort.DisplayName: Copper Short
+	CorruptSpark.DisplayName: Corrupt Spark
+	CrackedNut.DisplayName: Cracked Nut
+	Crater.DisplayName: Crater
+	CrimPocket.DisplayName: Crim Pocket
+	CrimSpark.DisplayName: Crim Spark
+	CrimtaneShurikenProjectile.DisplayName: Crimtane Shuriken Projectile
+	CryoBullet.DisplayName: Cryo Bullet
+	DaeRound.DisplayName: Dae Round
+	DaggerProj.DisplayName: Dagger Proj
+	DaggerProjThrown.DisplayName: Dagger Proj Thrown
+	DemonBall.DisplayName: Demon Ball
+	DemonFlame.DisplayName: Demon Flame
+	DemoniteShurikenProjectile.DisplayName: Demonite Shuriken Projectile
+	DevilFlame.DisplayName: Devil Flame
+	DirgeFlame.DisplayName: Dirge Flame
+	DirtBulletProj.DisplayName: Dirt Bullet Proj
+	DracoDrop.DisplayName: Draco Drop
+	DracoRound.DisplayName: Draco Round
+	DragonBreath.DisplayName: Dragon Breath
+	DragonBreath2.DisplayName: Dragon Breath2
+	DragonBreath2Shadow.DisplayName: Dragon Breath2 Shadow
+	DragonBreath3.DisplayName: Dragon Breath3
+	DragonBreath3Shadow.DisplayName: Dragon Breath3 Shadow
+	DragonBreath4.DisplayName: Dragon Breath4
+	DragonBreath4Shadow.DisplayName: Dragon Breath4 Shadow
+	DragonBreathShadow.DisplayName: Dragon Breath Shadow
+	DragonSpawn.DisplayName: Dragon Spawn
+	DragonSpawnShadow.DisplayName: Dragon Spawn Shadow
+	DvdBlue.DisplayName: Dvd Blue
+	DvdGreen.DisplayName: Dvd Green
+	DvdRed.DisplayName: Dvd Red
+	DvdYellow.DisplayName: Dvd Yellow
+	Dynarang.DisplayName: Dynarang
+	EbonPocket.DisplayName: Ebon Pocket
+	EldritchProj.DisplayName: Eldritch Proj
+	ElectrifiedSand.DisplayName: Electrified Sand
+	Electrobomb.DisplayName: Electrobomb
+	ElephantYoyo.DisplayName: Elephant Yoyo
+	EmblemBoom.DisplayName: Emblem Boom
+	EmblemProj.DisplayName: Emblem Proj
+	EmblemProj2.DisplayName: Emblem Proj2
+	ApexPlasmaBulletHostile.DisplayName: Apex Plasma Bullet Hostile
+	ApexPlasmaBullet.DisplayName: Apex Plasma Bullet
+	ApexPlasmaSpawn.DisplayName: Apex Plasma Spawn
+	ApexPlasmaSpawnSpawn.DisplayName: Apex Plasma Spawn Spawn
+	EyeShot.DisplayName: Eye Shot
+	EyeSpear.DisplayName: Eye Spear
+	FakeRocket.DisplayName: Fake Rocket
+	FakeRocket2.DisplayName: Fake Rocket2
+	FeatherArrowProjectile.DisplayName: Feather Arrow Projectile
+	FerroWhipSmooth.DisplayName: Ferro Whip Smooth
+	FerroWhipSpiky.DisplayName: Ferro Whip Spiky
+	FidgetSpinner1.DisplayName: Fidget Spinner1
+	FidgetSpinner2.DisplayName: Fidget Spinner2
+	FidgetSpinner3.DisplayName: Fidget Spinner3
+	FireDiamondStaffProjectile.DisplayName: Fire Diamond Staff Projectile
+	FishStick.DisplayName: Fish Stick
+	FissileGreen.DisplayName: Fissile Green
+	FissilePurple.DisplayName: Fissile Purple
+	FissileRed.DisplayName: Fissile Red
+	FissileSpawn.DisplayName: Fissile Spawn
+	fiveproj.DisplayName: fiveproj
+	FlamingKnifeProjectile.DisplayName: Flaming Knife Projectile
+	FlippingBottleProj.DisplayName: Flipping Bottle Proj
+	FranceYoyo.DisplayName: France Yoyo
+	FrenchFlag.DisplayName: French Flag
+	FriendlyGranite.DisplayName: Friendly Granite
+	FrostBoom.DisplayName: Frost Boom
+	FrostburnProjectile.DisplayName: Frostburn Projectile
+	FrostChunk.DisplayName: Frost Chunk
+	FrostDart.DisplayName: Frost Dart
+	FrostySpark.DisplayName: Frosty Spark
+	FrozenMaceProjectile.DisplayName: Frozen Mace Projectile
+	FurBall.DisplayName: Fur Ball
+	GagGift.DisplayName: Gag Gift
+	GalaxyBoom.DisplayName: Galaxy Boom
+	GalaxyProj.DisplayName: Galaxy Proj
+	GalaxyProj2.DisplayName: Galaxy Proj2
+	GalaxyShard.DisplayName: Galaxy Shard
+	GayFrogChemicals.DisplayName: Gay Frog Chemicals
+	GeigerBoom.DisplayName: Geiger Boom
+	GeigerRocket.DisplayName: Geiger Rocket
+	GelShot.DisplayName: Gel Shot
+	GelShotMini.DisplayName: Gel Shot Mini
+	GraniteLaser.DisplayName: Granite Laser
+	GreaseBomb.DisplayName: Grease Bomb
+	GreaseBomb2.DisplayName: Grease Bomb2
+	GreaseSplatter.DisplayName: Grease Splatter
+	GreaseSplatter2.DisplayName: Grease Splatter2
+	GrindGear1.DisplayName: Grind Gear1
+	GrindGear2.DisplayName: Grind Gear2
+	GunbladeCloud.DisplayName: Gunblade Cloud
+	GunbladeSpore.DisplayName: Gunblade Spore
+	GunbladeSwing.DisplayName: Gunblade Swing
+	HallowSpark.DisplayName: Hallow Spark
+	HammerNSickle.DisplayName: Hammer N Sickle
+	HamProj.DisplayName: Ham Proj
+	HarpoonProj.DisplayName: Harpoon Proj
+	HeartShot.DisplayName: Heart Shot
+	HephBall.DisplayName: Heph Ball
+	HephFlame.DisplayName: Heph Flame
+	HotShotsProj.DisplayName: Hot Shots Proj
+	HotTack.DisplayName: Hot Tack
+	HotTackSpawn.DisplayName: Hot Tack Spawn
+	Hurricane.DisplayName: Hurricane
+	IchSpark.DisplayName: Ich Spark
+	Icicle.DisplayName: Icicle
+	IcicleRanged.DisplayName: Icicle Ranged
+	IedThrown.DisplayName: Ied Thrown
+	InfernoMeteor.DisplayName: Inferno Meteor
+	InfernoProj.DisplayName: Inferno Proj
+	InfernoRingProj.DisplayName: Inferno Ring Proj
+	IronFistProj.DisplayName: Iron Fist Proj
+	IronWave.DisplayName: Iron Wave
+	GlitterBullet.DisplayName: Glitter Bullet
+	JevilScythe.DisplayName: Jevil Scythe
+	JevilScythe2.DisplayName: Jevil Scythe2
+	JfkBlood.DisplayName: Jfk Blood
+	JfkBullet.DisplayName: Jfk Bullet
+	JusticeSwing.DisplayName: Justice Swing
+	KevlarWhipProj.DisplayName: Kevlar Whip Proj
+	KingBoomerang.DisplayName: King Boomerang
+	KingHammer.DisplayName: King Hammer
+	KingShot.DisplayName: King Shot
+	KingslayerKunaiProj.DisplayName: Kingslayer Kunai Proj
+	KingslayerRocket.DisplayName: Kingslayer Rocket
+	KnightSpawn.DisplayName: Knight Spawn
+	KnightStar.DisplayName: Knight Star
+	KnightStarSpawn.DisplayName: Knight Star Spawn
+	KnightStarSpawnSlow.DisplayName: Knight Star Spawn Slow
+	KnightSwordCombo.DisplayName: Knight Sword Combo
+	KnightSwordDown.DisplayName: Knight Sword Down
+	KnightSwordUp.DisplayName: Knight Sword Up
+	LaserBlast.DisplayName: Laser Blast
+	LunarDart.DisplayName: Lunar Dart
+	LycoRay.DisplayName: Lyco Ray
+	LycoShot.DisplayName: Lyco Shot
+	LycoSpawn.DisplayName: Lyco Spawn
+	LycoSpore.DisplayName: Lyco Spore
+	LycoSporeMelee.DisplayName: Lyco Spore Melee
+	LycoSporeRanged.DisplayName: Lyco Spore Ranged
+	LycoSwing.DisplayName: Lyco Swing
+	MacuaSwing.DisplayName: Macua Swing
+	MagicBall.DisplayName: Magic Ball
+	MagicSpear.DisplayName: Magic Spear
+	MagnumShot.DisplayName: Magnum Shot
+	MambaShot.DisplayName: Mamba Shot
+	MandibleProj.DisplayName: Mandible Proj
+	ManeSwing.DisplayName: Mane Swing
+	MarbleSwing.DisplayName: Marble Swing
+	MerFlare.DisplayName: Mer Flare
+	MerFlare2.DisplayName: Mer Flare2
+	MetalBallProjectile.DisplayName: Metal Ball Projectile
+	Meteor.DisplayName: Meteor
+	MeteorBoom.DisplayName: Meteor Boom
+	MiniBoulderThrowableProjectile.DisplayName: Mini Boulder Throwable Projectile
+	MinieMag.DisplayName: Minie Mag
+	MinieProj.DisplayName: Minie Proj
+	MintalArrowProjectile.DisplayName: Mintal Arrow Projectile
+	MintalGreatspearProjectile.DisplayName: Mintal Greatspear Projectile
+	MintLeafProjectile.DisplayName: Mint Leaf Projectile
+	MintLeafProjectileMagic.DisplayName: Mint Leaf Projectile Magic
+	MoltenShurikenProjectile.DisplayName: Molten Shuriken Projectile
+	MoltenSpear.DisplayName: Molten Spear
+	Money.DisplayName: Money
+	MoonBoom.DisplayName: Moon Boom
+	MoonProjFunnier.DisplayName: Moon Proj Funnier
+	MoonProjFunny.DisplayName: Moon Proj Funny
+	Morbeam.DisplayName: Morbeam
+	MorbeamRanged.DisplayName: Morbeam Ranged
+	MorbiumArrowProj.DisplayName: Morbium Arrow Proj
+	MorbiumBolt.DisplayName: Morbium Bolt
+	MushyPeas.DisplayName: Mushy Peas
+	MusketBallSpinny.DisplayName: Musket Ball Spinny
+	MythrilBolt.DisplayName: Mythril Bolt
+	Napalm.DisplayName: Napalm
+	NapalmBad.DisplayName: Napalm Bad
+	NapalmDart.DisplayName: Napalm Dart
+	NapalmRanged.DisplayName: Napalm Ranged
+	Needle.DisplayName: Needle
+	NuhUh.DisplayName: Nuh Uh
+	ObsidianArrow.DisplayName: Obsidian Arrow
+	ObsidianScrap.DisplayName: Obsidian Scrap
+	OilBall.DisplayName: Oil Ball
+	OilBallRanged.DisplayName: Oil Ball Ranged
+	OilBoom.DisplayName: Oil Boom
+	OilBoomSmall.DisplayName: Oil Boom Small
+	OilBottleProj.DisplayName: Oil Bottle Proj
+	OilBottleSplash.DisplayName: Oil Bottle Splash
+	OilSwing.DisplayName: Oil Swing
+	OrbitalDeathRay.DisplayName: Orbital Death Ray
+	OrbitTracer.DisplayName: Orbit Tracer
+	OrcaTooth.DisplayName: Orca Tooth
+	OrichalcumBolt.DisplayName: Orichalcum Bolt
+	OverdriveProj.DisplayName: Overdrive Proj
+	OverSpawn.DisplayName: Over Spawn
+	PalladiumBolt.DisplayName: Palladium Bolt
+	ParticleBeam.DisplayName: Particle Beam
+	PearlPocket.DisplayName: Pearl Pocket
+	PearlProj.DisplayName: Pearl Proj
+	Pentagram.DisplayName: Pentagram
+	Photon.DisplayName: Photon
+	PhotonSpawn.DisplayName: Photon Spawn
+	PiercingLight.DisplayName: Piercing Light
+	Pipis.DisplayName: Pipis
+	PissMissileProj.DisplayName: Piss Missile Proj
+	PitchforkProj.DisplayName: Pitchfork Proj
+	PlasmaBlast.DisplayName: Plasma Blast
+	PlasmaLaser.DisplayName: Plasma Laser
+	PlasmaPool.DisplayName: Plasma Pool
+	PlasmoidFriendly.DisplayName: Plasmoid Friendly
+	PlutoArrow.DisplayName: Pluto Arrow
+	PlutoArrowMini.DisplayName: Pluto Arrow Mini
+	PlutoArrowMinier.DisplayName: Pluto Arrow Minier
+	PlutoAura.DisplayName: Pluto Aura
+	PlutoBlob.DisplayName: Pluto Blob
+	PlutoniumSwing.DisplayName: Plutonium Swing
+	PlutoParticle.DisplayName: Pluto Particle
+	PlutoPool.DisplayName: Pluto Pool
+	PlutoRocket.DisplayName: Pluto Rocket
+	PlutoShot.DisplayName: Pluto Shot
+	PlutoShotMini.DisplayName: Pluto Shot Mini
+	PlutoWhip.DisplayName: Pluto Whip
+	PoisonBullet.DisplayName: Poison Bullet
+	PolymerSlime.DisplayName: Polymer Slime
+	PooShot.DisplayName: Poo Shot
+	PulseShot.DisplayName: Pulse Shot
+	PurifiedBoltProj.DisplayName: Purified Bolt Proj
+	PurifiedSaltProj.DisplayName: Purified Salt Proj
+	PurifiedSaltRanged.DisplayName: Purified Salt Ranged
+	PurifiedSpear.DisplayName: Purified Spear
+	PyriteArrowProj.DisplayName: Pyrite Arrow Proj
+	PyriteMagicSword.DisplayName: Pyrite Magic Sword
+	PyroBall.DisplayName: Pyro Ball
+	PyroDart.DisplayName: Pyro Dart
+	PyroFlame.DisplayName: Pyro Flame
+	RadArrow.DisplayName: Rad Arrow
+	RadArrowMini.DisplayName: Rad Arrow Mini
+	RadAura.DisplayName: Rad Aura
+	RadBoomerang.DisplayName: Rad Boomerang
+	RadParticle.DisplayName: Rad Particle
+	RadShot.DisplayName: Rad Shot
+	RadShotMini.DisplayName: Rad Shot Mini
+	RainbowBeam.DisplayName: Rainbow Beam
+	RainbowBloon.DisplayName: Rainbow Bloon
+	RainbowBullet.DisplayName: Rainbow Bullet
+	RainbowShard.DisplayName: Rainbow Shard
+	RazorLeaf.DisplayName: Razor Leaf
+	RazorLeafMage.DisplayName: Razor Leaf Mage
+	RedBloon.DisplayName: Red Bloon
+	RedneckShovel.DisplayName: Redneck Shovel
+	RedneckShovelHallow.DisplayName: Redneck Shovel Hallow
+	RingFireProj.DisplayName: Ring Fire Proj
+	RingOfFireProj.DisplayName: Ring Of Fire Proj
+	RiverHead.DisplayName: River Head
+	Rocketneg1proj.DisplayName: Rocketneg1proj
+	RosePetal.DisplayName: Rose Petal
+	RosePetalBig.DisplayName: Rose Petal Big
+	RoyalSwing.DisplayName: Royal Swing
+	RudeBuster.DisplayName: Rude Buster
+	RuderBuster.DisplayName: Ruder Buster
+	RuneShot.DisplayName: Rune Shot
+	RunicCodexProjectile.DisplayName: Runic Codex Projectile
+	SaberProj.DisplayName: Saber Proj
+	SaberProjThrown.DisplayName: Saber Proj Thrown
+	Salt.DisplayName: Salt
+	SaltGrav.DisplayName: Salt Grav
+	SaltMage.DisplayName: Salt Mage
+	SaltMelee.DisplayName: Salt Melee
+	SaltMelee2.DisplayName: Salt Melee2
+	SaltSwing.DisplayName: Salt Swing
+	SaltYoyo.DisplayName: Salt Yoyo
+	SandBall.DisplayName: Sand Ball
+	SandPocket.DisplayName: Sand Pocket
+	SandShot.DisplayName: Sand Shot
+	Sausage.DisplayName: Sausage
+	Sausage2.DisplayName: Sausage2
+	ScrapMetal.DisplayName: Scrap Metal
+	Seven.DisplayName: Seven
+	ShortgunProjectile.DisplayName: Shortgun Projectile
+	ShroomBoom.DisplayName: Shroom Boom
+	ShroomiteMissileProj.DisplayName: Shroomite Missile Proj
+	SisyphusBoulder.DisplayName: Sisyphus Boulder
+	Six.DisplayName: Six
+	SkibidiHead.DisplayName: Skibidi Head
+	SlimeMine.DisplayName: Slime Mine
+	SodiumBolt.DisplayName: Sodium Bolt
+	SolarRay.DisplayName: Solar Ray
+	Soundwave.DisplayName: Soundwave
+	SpaceTrash.DisplayName: Space Trash
+	SpaceTrash2.DisplayName: Space Trash2
+	SpaceTrash3.DisplayName: Space Trash3
+	SpamtonHead.DisplayName: Spamton Head
+	SpartanRageSpear.DisplayName: Spartan Rage Spear
+	SpartanSpear.DisplayName: Spartan Spear
+	SpermProj.DisplayName: Sperm Proj
+	SpermRange.DisplayName: Sperm Range
+	SpikyLego.DisplayName: Spiky Lego
+	SpinningDiamond.DisplayName: Spinning Diamond
+	SpinningRuby.DisplayName: Spinning Ruby
+	SporeShivDupe.DisplayName: Spore Shiv Dupe
+	SporeShivProj.DisplayName: Spore Shiv Proj
+	StarfishYoyo.DisplayName: Starfish Yoyo
+	SteakProj.DisplayName: Steak Proj
+	SteelKnifeProjectile.DisplayName: Steel Knife Projectile
+	SteelShurikenProjectile.DisplayName: Steel Shuriken Projectile
+	Stingeer.DisplayName: Stingeer
+	SublimRay.DisplayName: Sublim Ray
+	SublimRay2.DisplayName: Sublim Ray2
+	SunDart.DisplayName: Sun Dart
+	SuperCeramicBloon.DisplayName: Super Ceramic Bloon
+	Tack.DisplayName: Tack
+	TackShooterProj.DisplayName: Tack Shooter Proj
+	TackSpawn.DisplayName: Tack Spawn
+	TackSprayerProj.DisplayName: Tack Sprayer Proj
+	TackSpraySpawn.DisplayName: Tack Spray Spawn
+	TackZoneProj.DisplayName: Tack Zone Proj
+	TedPackage.DisplayName: Ted Package
+	TerraRound.DisplayName: Terra Round
+	TerraRoundCopy.DisplayName: Terra Round Copy
+	TerraSkibidiHead.DisplayName: Terra Skibidi Head
+	TheFuckingMoon.DisplayName: The Fucking Moon
+	TheSun.DisplayName: The Sun
+	ThumbtackProj.DisplayName: Thumbtack Proj
+	ThunderSwing.DisplayName: Thunder Swing
+	TinShort.DisplayName: Tin Short
+	TitaniumBolt.DisplayName: Titanium Bolt
+	Tomato.DisplayName: Tomato
+	TransBeamBlue.DisplayName: Trans Beam Blue
+	TransBeamPink.DisplayName: Trans Beam Pink
+	TriFlame1.DisplayName: Tri Flame1
+	TriFlame2.DisplayName: Tri Flame2
+	TrippyYoyo.DisplayName: Trippy Yoyo
+	TrueBullet.DisplayName: True Bullet
+	UltraArrowProj.DisplayName: Ultra Arrow Proj
+	UnicornHornProj.DisplayName: Unicorn Horn Proj
+	UraniumRocket.DisplayName: Uranium Rocket
+	UraniumSwing.DisplayName: Uranium Swing
+	UsaFlag.DisplayName: Usa Flag
+	UsaFlag2.DisplayName: Usa Flag2
+	ValiantLance.DisplayName: Valiant Lance
+	ValiantYoyo.DisplayName: Valiant Yoyo
+	VaxNanobot.DisplayName: Vax Nanobot
+	VaxNeedle.DisplayName: Vax Needle
+	VenomBall.DisplayName: Venom Ball
+	VenomFang.DisplayName: Venom Fang
+	VenomFlame.DisplayName: Venom Flame
+	VenomFlame2.DisplayName: Venom Flame2
+	VenomSpear.DisplayName: Venom Spear
+	VerdantProj.DisplayName: Verdant Proj
+	VerdantProjThrown.DisplayName: Verdant Proj Thrown
+	VileFlame.DisplayName: Vile Flame
+	VileSpawn.DisplayName: Vile Spawn
+	WaterDart.DisplayName: Water Dart
+	Waterflame.DisplayName: Waterflame
+	WaterJetMelee.DisplayName: Water Jet Melee
+	WeedDart.DisplayName: Weed Dart
+	WhippetProj.DisplayName: Whippet Proj
+	WindTomeProjectile.DisplayName: Wind Tome Projectile
+	WitherSkullBlack.DisplayName: Wither Skull Black
+	WitherSkullBlue.DisplayName: Wither Skull Blue
+	Xray.DisplayName: Xray
+	Xray2.DisplayName: Xray2
+	YeetKnife.DisplayName: Yeet Knife
+	ZazaMagic.DisplayName: Zaza Magic
+	ZazaSmoke.DisplayName: Zaza Smoke
+	ZazaSpawn.DisplayName: Zaza Spawn
+	ZoneSpawn.DisplayName: Zone Spawn
+	ChloroShit.DisplayName: Chloro Shit
+	PoopArrowProj.DisplayName: Poop Arrow Proj
+	PoopRang.DisplayName: Poop Rang
+	PoopSpark.DisplayName: Poop Spark
+	PooShit.DisplayName: Poo Shit
+	PooShot2.DisplayName: Poo Shot2
+	ShitBallProjectile.DisplayName: Shit Ball Projectile
+	SockPoop.DisplayName: Sock Poop
+	ThrownPoop.DisplayName: Thrown Poop
+	BlueBallProjectile.DisplayName: Blue Ball Projectile
+	RazorRotorsProj.DisplayName: Razor Rotors Proj
+	RazorRotorThrown.DisplayName: Razor Rotor Thrown
+	AlpineGlitterbomb.DisplayName: Alpine Glitterbomb
+	SpecialGlitter.DisplayName: Special Glitter
+	FrozenBulletProj.DisplayName: Frozen Bullet Proj
+	LigmaLazerProj.DisplayName: Ligma Lazer Proj
+	SplashPotionShine.DisplayName: Splash Potion Shine
+	SpectralArrowProj.DisplayName: Spectral Arrow Proj
+	AstaBoomOmni.DisplayName: Asta Boom Omni
+	CeramOmniSpawn.DisplayName: Ceram Omni Spawn
+	CeramOmni.DisplayName: Ceram Omni
+	LunarBolt.DisplayName: Lunar Bolt
+	LunarContrail.DisplayName: Lunar Contrail
+	AncientCobaltSpear.DisplayName: Ancient Cobalt Spear
+	AncientCobaltDrillProj.DisplayName: Ancient Cobalt Drill Proj
+	AncientCobaltChainsawProj.DisplayName: Ancient Cobalt Chainsaw Proj
+	LegoChainsawProj.DisplayName: Lego Chainsaw Proj
+	SporeSawProj.DisplayName: Spore Saw Proj
+	MorbiumTreeripperProj.DisplayName: Morbium Treeripper Proj
+	ElfMagicMissile.DisplayName: Elf Magic Missile
+}
+
+Biomes: {
+	OasisUndergroundBiome: {
+		TownNPCDialogueName: the Oasis Underground Biome
+		DisplayName: Oasis Underground Biome
+	}
+
+	OasisSurfaceBiome: {
+		TownNPCDialogueName: the Oasis Surface Biome
+		DisplayName: Oasis Surface Biome
+	}
+}

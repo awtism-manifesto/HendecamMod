@@ -25,6 +25,10 @@ namespace HendecamMod.Content.Items.Accessories.Rampart
             }
         public override void UpdateEquip(Player player)
             {
+            player.buffImmune[BuffID.Blackout] = true;
+            player.buffImmune[BuffID.Darkness] = true;
+            player.buffImmune[BuffID.Stoned] = true;
+            player.buffImmune[BuffID.Horrified] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.ManaSickness] = true;
             player.buffImmune[BuffID.Silenced] = true;

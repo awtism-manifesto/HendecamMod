@@ -57,6 +57,10 @@ namespace HendecamMod.Content.Items.Accessories.NormalOnes
             player.GetModPlayer<NastyMana>().NastyEffect = true;
             player.GetModPlayer<NastyEndurance>().NastyEffect = true;
             player.GetModPlayer<NastyFall>().NastyEffect = true;
+            player.buffImmune[BuffID.Blackout] = true;
+            player.buffImmune[BuffID.Darkness] = true;
+            player.buffImmune[BuffID.Stoned] = true;
+            player.buffImmune[BuffID.Horrified] = true;
             player.breathEffectiveness += 200000f;
             player.fishingSkill += 30;
             player.rocketBoots = 2;
