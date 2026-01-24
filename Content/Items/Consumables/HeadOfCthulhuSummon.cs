@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.NPCs.Bosses;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -59,9 +59,15 @@ namespace HendecamMod.Content.Items.Consumables
                 {
                 SoundEngine.PlaySound(SoundID.Zombie92, player.position);
                 int type = ModContent.NPCType<HeadOfCthulhu>();
-                NPC.SpawnOnPlayer(player.whoAmI, type);
+                if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                    NPC.SpawnOnPlayer(player.whoAmI, type);
+                    }
+                else
+                    {
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
+                    }
                 return true;
-                NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
                 }
             return true;
             }

@@ -24,6 +24,7 @@ namespace HendecamMod.Content.NPCs.Bosses
         public override void SetStaticDefaults()
             {
             Main.npcFrameCount[Type] = 4;
+            NPCID.Sets.MPAllowedEnemies[Type] = true;
             NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Poisoned] = true;
             NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Confused] = true;
             NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.BoneJavelin] = true;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
@@ -70,8 +70,14 @@ namespace HendecamMod.Content.Items.Consumables
                     {
                     ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Target found, firing at will."), new Color(185, 105, 105));
                     }
+                if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
                     NPC.SpawnOnPlayer(player.whoAmI, type);
-                NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
+                    }
+                else
+                    {
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
+                    }
                 }
             return true;
             }

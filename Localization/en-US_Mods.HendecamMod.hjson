@@ -4917,12 +4917,12 @@ NPCs: {
 			HateCrowded: Too many God damn... POORS around here.
 			LikeBiome: I like the {BiomeName}. So much lumber to profit off of, and just THINK of the golf courses that can be made!
 			DislikeBiome: I don't like the {BiomeName}. It reminds me of Christmas, which gives the people hope.
-			LoveNPC: "{NPCName} the tax collector is a good buddy of mine. Where did you rescue him from again?"
-			LikeNPC: I respect {NPCName} the Arms Dealer. The right to bear arms shall not be infringed.
+			LoveNPC: "{NPCName} is a good buddy of mine. Where did you rescue him from again?"
+			LikeNPC: I respect {NPCName}. The right to bear arms shall not be infringed.
 			DislikeNPC: I don't like {NPCName}. He's a God damn terrorist!
 			HateNPC: I fucking HATE {NPCName} the Dryad. She protests ALL of my policies because they 'destroy the envoirnment', and 'harm the wildlife'. What a fucking joke.
 			LikeNPC_Princess: Princess {NPCName} is so gullible, letting me make ALL the policies around here...
-			Princess_LovesNPC: I love how {NPCName} the Politician is taking charge of things! He helps take some of the load off of me being royalty, y'know?
+			Princess_LovesNPC: I love how {NPCName} is taking charge of things! He helps take some of the load off of me being royalty, y'know?
 		}
 
 		Census.SpawnCondition: Hold an evil ore in your inventory
@@ -4942,7 +4942,7 @@ NPCs: {
 			LikeBiome: The weather gives me an excuse to stay inside and play on my phone.
 			DislikeBiome: God, it's so muggy here, it's hard to breathe...
 			HateBiome: I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore.I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore. I don't wanna place anymore.
-			LoveNPC: "{NPCName} the Angler's the only person actually willing to employ me, good kid."
+			LoveNPC: "{NPCName}'s the only person actually willing to employ me, good kid."
 			LikeNPC: Yelmut's pretty cool, tbh... creature. Sorry, couldn't help myself.
 			DislikeNPC: God, I hate paying taxes...
 			HateNPC: Since when did we have elections in Terraria? Get that white-haired idiot the fuck out of here.
@@ -4971,9 +4971,9 @@ NPCs: {
 			HateBiome: Do you REALLY think I can take off from down here, even if I still had my Apache? Eat dick, dude.
 			LoveNPC: "{NPCName}! My Man! His weapons collection is admirable, not to mention him having some ACTUAL combat experience as opposed to everybody else is a MUCH needed breath of fresh air."
 			LikeNPC: Santa was my boss 'fore you came around, it's good to see him again.
-			DislikeNPC: I don't like {NPCName} the Tax Collector, but I respect the hustle. Just wish he'd stop putting such high taxes on scrap metal."
-			HateNPC: "{NPCName} the 'Arms Dealer' can suck my eggs, he's an absolute fraud and doesn't know what he's talking about."
-			LikeNPC_Princess: "{NPCName} the Princess is legally requiring me to reduce the prices of my goods while in her presence, fuck that."
+			DislikeNPC: I don't like {NPCName}, but I respect the hustle. Just wish he'd stop putting such high taxes on scrap metal."
+			HateNPC: "'{NPCName} the Arms Dealer' can suck my eggs, he's an absolute fraud and doesn't know what he's talking about."
+			LikeNPC_Princess: "{NPCName} is legally requiring me to reduce the prices of my goods while in her presence, fuck that."
 			Princess_LovesNPC: Alpine reminds me of Santa, in a really good way!
 		}
 
