@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using HendecamMod.Content.Tiles;
 
 
 namespace HendecamMod.Content.Items
@@ -45,7 +46,7 @@ namespace HendecamMod.Content.Items
             Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
+          
 
             // Gun Properties
             // For some reason, all the guns in the vanilla source have this.

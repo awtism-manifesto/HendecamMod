@@ -1,5 +1,5 @@
 ﻿using System;
-using HendecamMod.Content.Tiles;
+using HendecamMod.Content.Tiles.Blocks;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Biomes.Oasis
@@ -9,7 +9,7 @@ namespace HendecamMod.Content.Biomes.Oasis
         public int oasisBlockCount;
         public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
             {
-            oasisBlockCount = tileCounts[ModContent.TileType<AstatineBrickTile>()];
+            oasisBlockCount = tileCounts[ModContent.TileType<OasisSandPlaced>()];
             }
         }
     }

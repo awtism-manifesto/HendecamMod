@@ -24,7 +24,8 @@ namespace HendecamMod.Content.Items.Accessories
             Item.value = 1000;
             Item.maxStack = 1;
             Item.accessory = true;
-            Item.defense = 2;
+            Item.defense = 4;
+            Item.lifeRegen = 2;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

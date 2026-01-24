@@ -2,6 +2,7 @@
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
@@ -319,7 +320,9 @@ namespace HendecamMod.Content.NPCs
         public override void AddShops()
         {
             var npcShop = new NPCShop(Type, ShopName)
-                
+
+
+                    .Add<AnUnoDeck>()
                  .Add<Items.RockSalt>(Condition.DownedEarlygameBoss)
               .Add<Items.PurifiedSalt>(Condition.DownedMechBossAny)
                .Add(ItemID.Gel)

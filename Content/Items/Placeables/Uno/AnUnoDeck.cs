@@ -20,6 +20,7 @@ namespace HendecamMod.Content.Items.Placeables.Uno
             Item.width = 24;
             Item.height = 24;
             Item.rare = ItemRarityID.Expert;
+            Item.value = 300000;
             }
 
         public override bool CanRightClick()

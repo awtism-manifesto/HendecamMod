@@ -39,7 +39,8 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations
             {
             Recipe recipe = CreateRecipe();
             recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.GiantHarpyFeather, 1);
+            recipe.AddIngredient(ItemID.BatBat, 1);
+           
             recipe.AddIngredient<FriendCore>(1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.AddTile(TileID.AlchemyTable);

@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables
 {
@@ -22,7 +23,7 @@ namespace HendecamMod.Content.Items.Placeables
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useAnimation = 15;
             Item.useTime = 15;
-            Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.MorbiumBarPlaced>());
+            Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBarPlaced>());
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
