@@ -4,23 +4,22 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles
+namespace HendecamMod.Content.Tiles;
+
+public class PrideFlagPlaced : ModTile
 {
-    public class PrideFlagPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = false;
-            Main.tileSolidTop[Type] = false;
-            Main.tileFrameImportant[Type] = true;
+        Main.tileSolid[Type] = false;
+        Main.tileSolidTop[Type] = false;
+        Main.tileFrameImportant[Type] = true;
 
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.LavaDeath = true;
-            TileObjectData.addTile(Type);
-            TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
+        TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+        TileObjectData.newTile.StyleHorizontal = true;
+        TileObjectData.newTile.LavaDeath = true;
+        TileObjectData.addTile(Type);
+        TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 
-            AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag")); // localized text for "Metal Bar"
-        }
+        AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag")); // localized text for "Metal Bar"
     }
 }

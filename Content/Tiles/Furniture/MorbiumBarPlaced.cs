@@ -6,25 +6,24 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using HendecamMod.Content.Dusts;
 
-namespace HendecamMod.Content.Tiles.Furniture
+namespace HendecamMod.Content.Tiles.Furniture;
+
+public class MorbiumBarPlaced : ModTile
 {
-    public class MorbiumBarPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileShine[Type] = 1100;
-            Main.tileSolid[Type] = true;
-            Main.tileSolidTop[Type] = true;
-            Main.tileFrameImportant[Type] = true;
+        Main.tileShine[Type] = 1100;
+        Main.tileSolid[Type] = true;
+        Main.tileSolidTop[Type] = true;
+        Main.tileFrameImportant[Type] = true;
 
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.LavaDeath = false;
-            TileObjectData.addTile(Type);
-            HitSound = SoundID.Dig;
-            DustType = ModContent.DustType<MorbiumDust>();
+        TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+        TileObjectData.newTile.StyleHorizontal = true;
+        TileObjectData.newTile.LavaDeath = false;
+        TileObjectData.addTile(Type);
+        HitSound = SoundID.Dig;
+        DustType = ModContent.DustType<MorbiumDust>();
 
-            AddMapEntry(new Color(85, 229, 197), Language.GetText("Morbium Bar")); // localized text for "Metal Bar"
-        }
+        AddMapEntry(new Color(85, 229, 197), Language.GetText("Morbium Bar")); // localized text for "Metal Bar"
     }
 }

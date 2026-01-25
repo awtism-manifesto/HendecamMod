@@ -4,26 +4,25 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
 
-namespace HendecamMod.Content.Tiles.Blocks
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class OrangeBrickPlaced : ModTile
 {
-    public class OrangeBrickPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileBlockLight[Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = true;
+        Main.tileBlockLight[Type] = true;
 
-            DustType = DustID.Torch;
-            HitSound = SoundID.Tink;
+        DustType = DustID.Torch;
+        HitSound = SoundID.Tink;
 
-            AddMapEntry(new Color(185, 54, 0));
-        }
+        AddMapEntry(new Color(185, 54, 0));
+    }
 
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

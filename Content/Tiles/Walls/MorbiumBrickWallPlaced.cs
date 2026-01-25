@@ -4,22 +4,21 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Tiles.Walls
+namespace HendecamMod.Content.Tiles.Walls;
+
+public class MorbiumBrickWallPlaced : ModWall
 {
-    public class MorbiumBrickWallPlaced : ModWall
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.wallHouse[Type] = true;
+        Main.wallHouse[Type] = true;
 
-            DustType = ModContent.DustType<MorbiumDust>();
+        DustType = ModContent.DustType<MorbiumDust>();
 
-            AddMapEntry(new Color(19, 15, 68));
-        }
+        AddMapEntry(new Color(19, 15, 68));
+    }
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

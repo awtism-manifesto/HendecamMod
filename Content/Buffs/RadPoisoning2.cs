@@ -6,59 +6,58 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Buffs
+namespace HendecamMod.Content.Buffs;
+
+public class RadPoisoning2 : ModBuff
 {
-    public class RadPoisoning2 : ModBuff
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
+        Main.debuff[Type] = true;
+        Main.pvpBuff[Type] = true;
+        Main.buffNoSave[Type] = true;
+    }
+
+    public override void Update(Player player, ref int buffIndex)
+    {
+        player.GetModPlayer<Rad2Player>().Rad2 = true;
+    }
+
+    public override void Update(NPC npc, ref int buffIndex)
+    {
+        
+
+        if (Main.rand.NextBool(3)) 
         {
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = true;
-            Main.buffNoSave[Type] = true;
+            int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<PlutoniumDust>(),
+                npc.velocity.X * 0.89f, npc.velocity.Y * 0.89f, 70, default, 1.95f);
+            Main.dust[dust].noGravity = true;
         }
 
-        public override void Update(Player player, ref int buffIndex)
+        if (npc.lifeRegen > 0)
+            npc.lifeRegen = 0;
+
+        npc.lifeRegen -= 85;
+
+       
+    }
+
+    public class Rad2Player : ModPlayer
+    {
+        public bool Rad2;
+
+        public override void ResetEffects()
         {
-            player.GetModPlayer<Rad2Player>().Rad2 = true;
+            Rad2 = false;
         }
 
-        public override void Update(NPC npc, ref int buffIndex)
+        public override void UpdateBadLifeRegen()
         {
-            
-
-            if (Main.rand.NextBool(3)) 
+            if (Rad2)
             {
-                int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<PlutoniumDust>(),
-                    npc.velocity.X * 0.89f, npc.velocity.Y * 0.89f, 70, default, 1.95f);
-                Main.dust[dust].noGravity = true;
-            }
-
-            if (npc.lifeRegen > 0)
-                npc.lifeRegen = 0;
-
-            npc.lifeRegen -= 85;
-
-           
-        }
-
-        public class Rad2Player : ModPlayer
-        {
-            public bool Rad2;
-
-            public override void ResetEffects()
-            {
-                Rad2 = false;
-            }
-
-            public override void UpdateBadLifeRegen()
-            {
-                if (Rad2)
-                {
-                    if (Player.lifeRegen > 0)
-                        Player.lifeRegen = 0;
-                    Player.lifeRegenTime = 0;
-                    Player.lifeRegen -= 30;
-                }
+                if (Player.lifeRegen > 0)
+                    Player.lifeRegen = 0;
+                Player.lifeRegenTime = 0;
+                Player.lifeRegen -= 30;
             }
         }
     }

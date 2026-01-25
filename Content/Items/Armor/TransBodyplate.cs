@@ -6,84 +6,83 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
 
-namespace HendecamMod.Content.Items.Armor
+namespace HendecamMod.Content.Items.Armor;
+
+// The AutoloadEquip attribute automatically attaches an equip texture to this item.
+// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
+[AutoloadEquip(EquipType.Body)]
+public class TransBodyplate : ModItem
 {
-    // The AutoloadEquip attribute automatically attaches an equip texture to this item.
-    // Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
-    [AutoloadEquip(EquipType.Body)]
-    public class TransBodyplate : ModItem
+
+    public static LocalizedText SetBonusText { get; private set; }
+
+    public override void SetStaticDefaults()
     {
+        // If your head equipment should draw hair while drawn, use one of the following:
+        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
+        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
+        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
+        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-        public static LocalizedText SetBonusText { get; private set; }
 
-        public override void SetStaticDefaults()
+        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
+    }
+    public override void SetDefaults()
+    {
+        Item.width = 32; // Width of the item
+        Item.height = 28; // Height of the item
+        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.rare = ItemRarityID.Blue; // The rarity of the item
+        Item.defense = 6; // The amount of defense the item will give when equipped
+    }
+    // Damage bonuses
+    public static readonly int AdditiveDamageBonus = 6;
+    public static readonly int GenericCritBonus = 5;
+    public override void UpdateEquip(Player player)
+    {
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Tooltip code
+        var line = new TooltipLine(Mod, "Face", "");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
         {
-            // If your head equipment should draw hair while drawn, use one of the following:
-            // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-            // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-            // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-            // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
 
-            SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-        }
-        public override void SetDefaults()
-        {
-            Item.width = 32; // Width of the item
-            Item.height = 28; // Height of the item
-            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
-            Item.rare = ItemRarityID.Blue; // The rarity of the item
-            Item.defense = 6; // The amount of defense the item will give when equipped
-        }
-        // Damage bonuses
-        public static readonly int AdditiveDamageBonus = 6;
-        public static readonly int GenericCritBonus = 5;
-        public override void UpdateEquip(Player player)
-        {
-            player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
-            player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            // Tooltip code
-            var line = new TooltipLine(Mod, "Face", "");
-            tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "")
+        // Idfk how it works
+        foreach (var l in tooltips)
+        {
+            if (l.Name.EndsWith(":RemoveMe"))
             {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-
-
-            // Idfk how it works
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
+                l.Hide();
             }
+        }
 
-            // Please help
-        }
-        // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-        public override bool IsArmorSet(Item head, Item body, Item legs)
-        {
-            return head.type == ModContent.ItemType<TransHat>() && legs.type == ModContent.ItemType<TransGreaves>();
-        }
-        // UpdateArmorSet allows you to give set bonuses to the armor.
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<TransBar>(20);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
-        public override void UpdateArmorSet(Player player)
-        {
-            
-        }
+        // Please help
+    }
+    // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
+    public override bool IsArmorSet(Item head, Item body, Item legs)
+    {
+        return head.type == ModContent.ItemType<TransHat>() && legs.type == ModContent.ItemType<TransGreaves>();
+    }
+    // UpdateArmorSet allows you to give set bonuses to the armor.
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<TransBar>(20);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
+    public override void UpdateArmorSet(Player player)
+    {
+        
     }
 }

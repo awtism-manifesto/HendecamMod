@@ -4,26 +4,25 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
 
-namespace HendecamMod.Content.Tiles.Blocks
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class AzuriteBrickPlaced : ModTile
 {
-    public class AzuriteBrickPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileBlockLight[Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = true;
+        Main.tileBlockLight[Type] = true;
 
-            DustType = DustID.VampireHeal;
-            HitSound = SoundID.Tink;
+        DustType = DustID.VampireHeal;
+        HitSound = SoundID.Tink;
 
-            AddMapEntry(new Color(130, 0, 13));
-        }
+        AddMapEntry(new Color(130, 0, 13));
+    }
 
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

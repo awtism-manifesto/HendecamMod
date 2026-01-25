@@ -2,31 +2,30 @@
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
 
-namespace HendecamMod.Content.Global
+namespace HendecamMod.Content.Global;
+
+// Very simple drop condition: drop during daytime
+public class PostMoonlordDrop : IItemDropRuleCondition
 {
-    // Very simple drop condition: drop during daytime
-    public class PostMoonlordDrop : IItemDropRuleCondition
+    private static LocalizedText Description;
+
+    public PostMoonlordDrop()
     {
-        private static LocalizedText Description;
+        Description ??= Language.GetOrRegister("Drops after defeating moon lord");
+    }
 
-        public PostMoonlordDrop()
-        {
-            Description ??= Language.GetOrRegister("Drops after defeating moon lord");
-        }
+    public bool CanDrop(DropAttemptInfo info)
+    {
+        return NPC.downedMoonlord;
+    }
 
-        public bool CanDrop(DropAttemptInfo info)
-        {
-            return NPC.downedMoonlord;
-        }
+    public bool CanShowItemDropInUI()
+    {
+        return NPC.downedMoonlord;
+    }
 
-        public bool CanShowItemDropInUI()
-        {
-            return NPC.downedMoonlord;
-        }
-
-        public string GetConditionDescription()
-        {
-            return Description.Value;
-        }
+    public string GetConditionDescription()
+    {
+        return Description.Value;
     }
 }

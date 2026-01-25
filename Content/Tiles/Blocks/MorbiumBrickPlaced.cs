@@ -5,26 +5,25 @@ using Terraria.ModLoader;
 using Terraria.Audio;
 using HendecamMod.Content.Dusts;
 
-namespace HendecamMod.Content.Tiles.Blocks
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class MorbiumBrickPlaced : ModTile
 {
-    public class MorbiumBrickPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileBlockLight[Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = true;
+        Main.tileBlockLight[Type] = true;
 
-            DustType = ModContent.DustType<MorbiumDust>();
-            HitSound = SoundID.Tink;
+        DustType = ModContent.DustType<MorbiumDust>();
+        HitSound = SoundID.Tink;
 
-            AddMapEntry(new Color(41, 72, 92));
-        }
+        AddMapEntry(new Color(41, 72, 92));
+    }
 
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

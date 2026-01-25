@@ -8,15 +8,15 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace HendecamMod.Content.Projectiles
+namespace HendecamMod.Content.Projectiles;
+
+public class SisyphusBoulder : ModProjectile
 {
-    public class SisyphusBoulder : ModProjectile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
-            ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-        }
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
+        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
+    }
 
         public override void SetDefaults()
         {
@@ -52,46 +52,44 @@ namespace HendecamMod.Content.Projectiles
                 Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
               
 
-                // If the projectile hits the left or right side of the tile, reverse the X velocity
-                if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-                {
-                    Projectile.velocity.X = -oldVelocity.X;
-                }
-
-                // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-                if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-                {
-                    Projectile.velocity.Y = -oldVelocity.Y;
-                }
-            }
-
-            return false;
-        }
-
-        public override bool PreDraw(ref Color lightColor)
-        {
-            Texture2D texture = TextureAssets.Projectile[Type].Value;
-
-            // Redraw the projectile with the color not influenced by light
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-            for (int k = 0; k < Projectile.oldPos.Length; k++)
+            // If the projectile hits the left or right side of the tile, reverse the X velocity
+            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
-                Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+                Projectile.velocity.X = -oldVelocity.X;
             }
 
-            return true;
+            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+            {
+                Projectile.velocity.Y = -oldVelocity.Y;
+            }
         }
 
-        
-        public override void OnKill(int timeLeft)
+        return false;
+    }
+
+    public override bool PreDraw(ref Color lightColor)
+    {
+        Texture2D texture = TextureAssets.Projectile[Type].Value;
+
+        // Redraw the projectile with the color not influenced by light
+        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+        for (int k = 0; k < Projectile.oldPos.Length; k++)
         {
-            // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-            Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+            Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+            Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
         }
 
+        return true;
+    }
+
+    
+    public override void OnKill(int timeLeft)
+    {
+        // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
+        Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
+        SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
 
 }

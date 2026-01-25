@@ -10,81 +10,80 @@ using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Tools
+namespace HendecamMod.Content.Items.Tools;
+
+public class StupiderFuckingPickaxe : ModItem
 {
-    public class StupiderFuckingPickaxe : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Item.damage = 999999;
-            Item.DamageType = ModContent.GetInstance<StupidDamage>();
-            Item.width = 100;
-            Item.height = 100;
-            Item.useTime = 1;
-            Item.useAnimation = 10;
-            Item.scale = 2.5f;
-            Item.useStyle = ItemUseStyleID.Swing;
-            Item.knockBack = 6;
-            Item.crit = 69416;
-            Item.ArmorPenetration = 999;
-            Item.value = Item.buyPrice(gold: 135000);
-            Item.rare = ModContent.RarityType<HotPink>();
-            Item.UseSound = SoundID.Item1;
-            Item.autoReuse = true;
-            Item.tileBoost = 696969;
-            Item.pick = 3000; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
-            Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "WARNING: DISABLE SMART CURSOR BEFORE HOLDING THIS ITEM");
-            tooltips.Add(line);
+        Item.damage = 999999;
+        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.width = 100;
+        Item.height = 100;
+        Item.useTime = 1;
+        Item.useAnimation = 10;
+        Item.scale = 2.5f;
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.knockBack = 6;
+        Item.crit = 69416;
+        Item.ArmorPenetration = 999;
+        Item.value = Item.buyPrice(gold: 135000);
+        Item.rare = ModContent.RarityType<HotPink>();
+        Item.UseSound = SoundID.Item1;
+        Item.autoReuse = true;
+        Item.tileBoost = 696969;
+        Item.pick = 3000; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
+        Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "WARNING: DISABLE SMART CURSOR BEFORE HOLDING THIS ITEM");
+        tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "I'm gonna disassemble your molecules!")
-            {
-                OverrideColor = new Color(55, 70, 254)
-            };
-            tooltips.Add(line);
-        }
-
-        public override void AddRecipes()
+        line = new TooltipLine(Mod, "Face", "I'm gonna disassemble your molecules!")
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Zenith, 1);
-            recipe.AddIngredient(ItemID.DrillContainmentUnit, 2);
-            recipe.AddIngredient(ItemID.LunarBar, 420);
-            recipe.AddIngredient(ItemID.BrokenHeroSword, 6);
-            recipe.AddIngredient(ItemID.NypmhBanner, 5);
-            recipe.AddIngredient(ItemID.Muramasa, 1);
-            recipe.AddIngredient(ItemID.GoldBirdCage, 1);
-            recipe.AddIngredient(ItemID.TerraBlade, 1);
-            recipe.AddIngredient(ItemID.HandOfCreation, 1);
-            recipe.AddIngredient(ItemID.PortalGun, 3);
-            recipe.AddIngredient(ItemID.DemonHeart, 1);
-            recipe.AddIngredient(ItemID.GalaxyPearl, 1);
-            recipe.AddIngredient(ItemID.DirtiestBlock, 1);
-            recipe.AddIngredient(ItemID.BottomlessHoneyBucket, 1);
-            recipe.AddIngredient(ItemID.MusicBoxDD2, 1);
-            recipe.AddIngredient(ItemID.TinAxe, 10);
-            recipe.AddIngredient(ItemID.TerrasparkBoots, 1);
-            recipe.AddIngredient(ItemID.AnkhCharm, 1);
-            recipe.AddIngredient(ItemID.CrimsonKey, 2);
-            recipe.AddIngredient<TheAutismManifesto>(1);
-            recipe.AddIngredient<IForgor>(1);
-            recipe.AddIngredient<FireDiamond>(690);
-            recipe.AddIngredient<TheAshesOfCalamity>(10);
-            recipe.AddIngredient<K2Avalanche>(10);
-            recipe.AddIngredient<TransBar>(67);
-            recipe.AddIngredient<LuckyCigarette>(500);
-            recipe.AddIngredient<FidgetThrower3>(10);
-            recipe.AddIngredient<PlasmaRifle3>(10);
-            recipe.AddIngredient<CompoundBow3>(10);
-            recipe.AddIngredient<ATFsNightmare>(10);
-            recipe.AddIngredient<PlanetoidPunisher>(10);
-            recipe.AddIngredient<AirBar>(80085);
-            recipe.AddIngredient<StupidFuckingPickaxe>(1);
-            recipe.Register();
-        }
+            OverrideColor = new Color(55, 70, 254)
+        };
+        tooltips.Add(line);
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Zenith, 1);
+        recipe.AddIngredient(ItemID.DrillContainmentUnit, 2);
+        recipe.AddIngredient(ItemID.LunarBar, 420);
+        recipe.AddIngredient(ItemID.BrokenHeroSword, 6);
+        recipe.AddIngredient(ItemID.NypmhBanner, 5);
+        recipe.AddIngredient(ItemID.Muramasa, 1);
+        recipe.AddIngredient(ItemID.GoldBirdCage, 1);
+        recipe.AddIngredient(ItemID.TerraBlade, 1);
+        recipe.AddIngredient(ItemID.HandOfCreation, 1);
+        recipe.AddIngredient(ItemID.PortalGun, 3);
+        recipe.AddIngredient(ItemID.DemonHeart, 1);
+        recipe.AddIngredient(ItemID.GalaxyPearl, 1);
+        recipe.AddIngredient(ItemID.DirtiestBlock, 1);
+        recipe.AddIngredient(ItemID.BottomlessHoneyBucket, 1);
+        recipe.AddIngredient(ItemID.MusicBoxDD2, 1);
+        recipe.AddIngredient(ItemID.TinAxe, 10);
+        recipe.AddIngredient(ItemID.TerrasparkBoots, 1);
+        recipe.AddIngredient(ItemID.AnkhCharm, 1);
+        recipe.AddIngredient(ItemID.CrimsonKey, 2);
+        recipe.AddIngredient<TheAutismManifesto>(1);
+        recipe.AddIngredient<IForgor>(1);
+        recipe.AddIngredient<FireDiamond>(690);
+        recipe.AddIngredient<TheAshesOfCalamity>(10);
+        recipe.AddIngredient<K2Avalanche>(10);
+        recipe.AddIngredient<TransBar>(67);
+        recipe.AddIngredient<LuckyCigarette>(500);
+        recipe.AddIngredient<FidgetThrower3>(10);
+        recipe.AddIngredient<PlasmaRifle3>(10);
+        recipe.AddIngredient<CompoundBow3>(10);
+        recipe.AddIngredient<ATFsNightmare>(10);
+        recipe.AddIngredient<PlanetoidPunisher>(10);
+        recipe.AddIngredient<AirBar>(80085);
+        recipe.AddIngredient<StupidFuckingPickaxe>(1);
+        recipe.Register();
     }
 }

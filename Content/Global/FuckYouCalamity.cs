@@ -5,45 +5,44 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.GlobalItems
+namespace HendecamMod.Content.GlobalItems;
+
+
+public class FuckYouCalamity : GlobalItem
 {
-    
-    public class FuckYouCalamity : GlobalItem
+    // respectfully :)
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        // respectfully :)
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            return item.type == ItemID.Minishark;
-        }
-
-        public override void SetDefaults(Item item)
-        {
-            
-            
-            item.damage = 6;
-            item.useTime = 8; 
-            item.useAnimation = 8;
-        }
-
-       
+        return item.type == ItemID.Minishark;
     }
-    public class FuckYouCalamity2 : GlobalItem
+
+    public override void SetDefaults(Item item)
     {
-        // respectfully :)
-        public override bool AppliesToEntity(Item item, bool lateInstantiation)
-        {
-            return item.type == ItemID.StarCannon;
-        }
-
-        public override void SetDefaults(Item item)
-        {
-
-
-            item.damage = 55;
-            item.useTime = 12;
-            item.useAnimation = 12;
-        }
-
-
+        
+        
+        item.damage = 6;
+        item.useTime = 8; 
+        item.useAnimation = 8;
     }
+
+   
+}
+public class FuckYouCalamity2 : GlobalItem
+{
+    // respectfully :)
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.StarCannon;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+
+
+        item.damage = 55;
+        item.useTime = 12;
+        item.useAnimation = 12;
+    }
+
+
 }

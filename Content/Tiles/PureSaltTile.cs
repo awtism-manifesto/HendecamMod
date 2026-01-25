@@ -4,25 +4,24 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
 
-namespace HendecamMod.Content.Tiles
+namespace HendecamMod.Content.Tiles;
+
+public class PureSaltTile : ModTile
 {
-    public class PureSaltTile : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileBlockLight[Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = true;
+        Main.tileBlockLight[Type] = true;
 
-            DustType = DustID.HallowedTorch;
+        DustType = DustID.HallowedTorch;
 
-            AddMapEntry(new Color(252, 166, 153));
-        }
+        AddMapEntry(new Color(252, 166, 153));
+    }
 
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

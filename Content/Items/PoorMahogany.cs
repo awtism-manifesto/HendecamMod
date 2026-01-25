@@ -2,8 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items
-{
+namespace HendecamMod.Content.Items;
+
 	public class PoorMahogany : ModItem
 	{
 		public override void SetDefaults()
@@ -27,4 +27,3 @@ namespace HendecamMod.Content.Items
 			recipe.Register();
 		}
 	}
-}

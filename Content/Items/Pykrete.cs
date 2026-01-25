@@ -5,8 +5,8 @@ using HendecamMod.Content.Tiles;
 using HendecamMod.Content.Items.Materials;
 
 
-namespace HendecamMod.Content.Items
-{
+namespace HendecamMod.Content.Items;
+
 	public class Pykrete : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -31,4 +31,3 @@ namespace HendecamMod.Content.Items
 				.Register();
 		}
 	}
-}

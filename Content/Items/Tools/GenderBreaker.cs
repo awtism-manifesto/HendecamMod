@@ -6,70 +6,69 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Tools
+namespace HendecamMod.Content.Items.Tools;
+
+
+public class GenderBreaker : ModItem
 {
-
-    public class GenderBreaker : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
+        Item.width = 36;
+        Item.height = 36;
+
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTime = 12;
+        Item.useAnimation = 20;
+        Item.autoReuse = true;
+        Item.DamageType = DamageClass.Melee;
+        Item.damage = 9;
+        Item.knockBack = 6;
+        Item.ChangePlayerDirectionOnShoot = false;
+        Item.pick = 60;
+
+
+        Item.value = Item.buyPrice(silver: 15);
+        Item.rare = ItemRarityID.Blue;
+        Item.UseSound = SoundID.Item1;
+
+
+    }
+
+
+
+    public override Color? GetAlpha(Color lightColor)
+    {
+        return Color.White;
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        var line = new TooltipLine(Mod, "Face", "");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
         {
-            Item.width = 36;
-            Item.height = 36;
-
-            Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 12;
-            Item.useAnimation = 20;
-            Item.autoReuse = true;
-            Item.DamageType = DamageClass.Melee;
-            Item.damage = 9;
-            Item.knockBack = 6;
-            Item.ChangePlayerDirectionOnShoot = false;
-            Item.pick = 60;
-
-
-            Item.value = Item.buyPrice(silver: 15);
-            Item.rare = ItemRarityID.Blue;
-            Item.UseSound = SoundID.Item1;
-
-
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
 
 
-        public override Color? GetAlpha(Color lightColor)
+        foreach (var l in tooltips)
         {
-            return Color.White;
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            var line = new TooltipLine(Mod, "Face", "");
-            tooltips.Add(line);
-
-            line = new TooltipLine(Mod, "Face", "")
+            if (l.Name.EndsWith(":RemoveMe"))
             {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-
-
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
+                l.Hide();
             }
-
-        }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<TransBar>(10);
-            recipe.AddRecipeGroup("Wood", 4);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
         }
 
     }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<TransBar>(10);
+        recipe.AddRecipeGroup("Wood", 4);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
+
 }

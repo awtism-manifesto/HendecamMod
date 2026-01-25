@@ -2,8 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items
-{ 
+namespace HendecamMod.Content.Items;
+
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:
 	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
@@ -36,8 +36,8 @@ namespace HendecamMod.Content.Items
 			recipe.AddIngredient(ItemID.BorealWoodSword, 1);
 			recipe.AddIngredient(ItemID.PalmWoodSword, 1);
 			recipe.AddIngredient(ItemID.RichMahoganySword, 1);
-            recipe.AddIngredient<Items.PoorMahoganySword>();
-            recipe.AddTile(TileID.Anvils);
+        recipe.AddIngredient<Items.PoorMahoganySword>();
+        recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 			// With Shadewood
 			recipe = CreateRecipe();
@@ -46,8 +46,8 @@ namespace HendecamMod.Content.Items
 			recipe.AddIngredient(ItemID.BorealWoodSword, 1);
 			recipe.AddIngredient(ItemID.PalmWoodSword, 1);
 			recipe.AddIngredient(ItemID.RichMahoganySword, 1);
-            recipe.AddIngredient<Items.PoorMahoganySword>();
-            recipe.AddTile(TileID.Anvils);
+        recipe.AddIngredient<Items.PoorMahoganySword>();
+        recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 		}
 		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -60,4 +60,3 @@ namespace HendecamMod.Content.Items
 
 		}
 	}
-}

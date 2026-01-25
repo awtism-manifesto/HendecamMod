@@ -5,24 +5,23 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles.Furniture
+namespace HendecamMod.Content.Tiles.Furniture;
+
+public class MintalBarPlaced : ModTile
 {
-    public class MintalBarPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileShine[Type] = 1100;
-            Main.tileSolid[Type] = true;
-            Main.tileSolidTop[Type] = true;
-            Main.tileFrameImportant[Type] = true;
+        Main.tileShine[Type] = 1100;
+        Main.tileSolid[Type] = true;
+        Main.tileSolidTop[Type] = true;
+        Main.tileFrameImportant[Type] = true;
 
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.LavaDeath = false;
-            TileObjectData.addTile(Type);
-            HitSound = SoundID.Tink;
+        TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+        TileObjectData.newTile.StyleHorizontal = true;
+        TileObjectData.newTile.LavaDeath = false;
+        TileObjectData.addTile(Type);
+        HitSound = SoundID.Tink;
 
-            AddMapEntry(new Color(85, 229, 197), Language.GetText("Mintal")); // localized text for "Metal Bar"
-        }
+        AddMapEntry(new Color(85, 229, 197), Language.GetText("Mintal")); // localized text for "Metal Bar"
     }
 }

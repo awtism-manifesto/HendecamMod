@@ -3,8 +3,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Tiles;
 
-namespace HendecamMod.Content.Items
-{
+namespace HendecamMod.Content.Items;
+
 	public class PyriteBar : ModItem
 	{
 		public override void SetDefaults()
@@ -27,4 +27,3 @@ namespace HendecamMod.Content.Items
 			recipe.Register();
 		}
 	}
-}

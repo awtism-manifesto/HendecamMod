@@ -4,8 +4,8 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria.Localization;
 
-namespace HendecamMod.Content.Tiles
-{
+namespace HendecamMod.Content.Tiles;
+
 	public class PykreteTile : ModTile
 	{
 		public override void SetStaticDefaults()
@@ -25,4 +25,3 @@ namespace HendecamMod.Content.Tiles
 			num = fail ? 1 : 3;
 		}
 	}
-}

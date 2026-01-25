@@ -5,26 +5,25 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Tiles.Blocks
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class SmoothLimestonePlaced : ModTile
 {
-    public class SmoothLimestonePlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = false;
+        Main.tileBlockLight[Type] = true;
 
-            DustType = ModContent.DustType<LimestoneDust>();
-            HitSound = SoundID.Tink;
+        DustType = ModContent.DustType<LimestoneDust>();
+        HitSound = SoundID.Tink;
 
-            AddMapEntry(new Color(204, 190, 163));
-        }
+        AddMapEntry(new Color(204, 190, 163));
+    }
 
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

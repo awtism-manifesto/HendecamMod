@@ -3,8 +3,8 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Armor
-{
+namespace HendecamMod.Content.Items.Armor;
+
 	[AutoloadEquip(EquipType.Head)]
 	public class PoorMahoganyHelmet : ModItem
 	{
@@ -30,4 +30,3 @@ namespace HendecamMod.Content.Items.Armor
 			return body.type == ModContent.ItemType<PoorMahoganyChestplate>() && legs.type == ModContent.ItemType<PoorMahoganyLeggings>();
 		}
 	}
-}
