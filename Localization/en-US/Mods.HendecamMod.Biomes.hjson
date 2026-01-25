@@ -1,0 +1,9 @@
+OasisUndergroundBiome: {
+	TownNPCDialogueName: the Oasis Underground Biome
+	DisplayName: Underground Oasis
+}
+
+OasisSurfaceBiome: {
+	TownNPCDialogueName: the Oasis Surface Biome
+	DisplayName: Surface Oasis
+}
