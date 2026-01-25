@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Global;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -33,12 +34,9 @@ public class RadPoisoning2 : ModBuff
             Main.dust[dust].noGravity = true;
         }
 
-        if (npc.lifeRegen > 0)
-            npc.lifeRegen = 0;
+        npc.GetGlobalNPC<Rad2Tick>().Radded2 = true;
 
-        npc.lifeRegen -= 85;
 
-       
     }
 
     public class Rad2Player : ModPlayer

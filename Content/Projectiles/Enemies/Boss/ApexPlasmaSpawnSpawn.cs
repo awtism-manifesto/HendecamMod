@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -70,7 +71,13 @@ public class ApexPlasmaSpawnSpawn : ModProjectile
                 }
             }
         }
+    public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+    {
 
+
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+
+    }
     public override void OnKill(int timeLeft)
         {
 

@@ -1,7 +1,8 @@
-﻿using System;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -70,7 +71,13 @@ public class ApexPlasmaSpawn : ModProjectile
             }
         }
     }
+    public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+    {
 
+
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+
+    }
     public override void OnKill(int timeLeft)
     {
 

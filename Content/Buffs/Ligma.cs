@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Global;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -38,12 +39,9 @@ public class Ligma : ModBuff
             Main.dust[dust].noGravity = true;
         }
 
-        if (npc.lifeRegen > 0)
-            npc.lifeRegen = 0;
+        npc.GetGlobalNPC<WhoTfIsSteveJobs>().DyingOfLigma = true;
 
-        npc.lifeRegen -= 6700;
 
-       
     }
 
     public class LigmaPlayer : ModPlayer

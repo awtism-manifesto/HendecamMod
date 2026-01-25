@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class RazorLeafMage : ModProjectile
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -32,7 +32,7 @@ public class RazorLeafMage : ModProjectile
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 15;
-       
+
 
     }
 
@@ -47,26 +47,26 @@ public class RazorLeafMage : ModProjectile
 
     }
 
-       
-        public override bool OnTileCollide(Vector2 oldVelocity)
-        {
-            // If collide with tile, reduce the penetrate.
-            // So the projectile can reflect at most 5 times
-            Projectile.penetrate--;
-            if (Projectile.penetrate <= 0)
-            {
-                Projectile.Kill();
-            }
-            else
-            {
-                Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-               
 
-                // If the projectile hits the left or right side of the tile, reverse the X velocity
-                if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-                {
-                    Projectile.velocity.X = -oldVelocity.X;
-                }
+    public override bool OnTileCollide(Vector2 oldVelocity)
+    {
+        // If collide with tile, reduce the penetrate.
+        // So the projectile can reflect at most 5 times
+        Projectile.penetrate--;
+        if (Projectile.penetrate <= 0)
+        {
+            Projectile.Kill();
+        }
+        else
+        {
+            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+
+
+            // If the projectile hits the left or right side of the tile, reverse the X velocity
+            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+            {
+                Projectile.velocity.X = -oldVelocity.X;
+            }
 
             // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
             if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
@@ -75,11 +75,12 @@ public class RazorLeafMage : ModProjectile
             }
         }
 
-            return false;
-        }
-        
-       
+        return false;
     }
+
+
+
 }
-    
+
+
 

@@ -2101,7 +2101,7 @@ FoundersDrumroll: {
 }
 
 FragmentFlatEarth: {
-	DisplayName: Fragment Flat Earth
+	DisplayName: Flat Earth Fragment
 	Tooltip: ""
 }
 
@@ -2431,7 +2431,7 @@ LegoLauncher: {
 }
 
 Libeerator: {
-	DisplayName: Libeerator
+	DisplayName: Li-bee-rator
 	Tooltip: ""
 }
 
@@ -2601,7 +2601,7 @@ MechanicalMurdergun: {
 }
 
 MG42: {
-	DisplayName: M G42
+	DisplayName: MG42
 	Tooltip: ""
 }
 
@@ -3541,12 +3541,12 @@ RedBloonFactory: {
 }
 
 RednecksRevenge: {
-	DisplayName: Rednecks Revenge
+	DisplayName: Redneck's Revenge
 	Tooltip: ""
 }
 
 RednecksRustBucket: {
-	DisplayName: Rednecks Rust Bucket
+	DisplayName: Redneck's Rust Bucket
 	Tooltip: ""
 }
 
@@ -3591,7 +3591,7 @@ RivetGun: {
 }
 
 RocketNeg1: {
-	DisplayName: Rocket Neg1
+	DisplayName: Rocket -I
 	Tooltip: ""
 }
 
@@ -3651,7 +3651,7 @@ SandyShocks: {
 }
 
 SawedOffSparkplug: {
-	DisplayName: Sawed Off Sparkplug
+	DisplayName: Sawed-Off Sparkplug
 	Tooltip: ""
 }
 
@@ -3711,7 +3711,7 @@ SisyphusPrime: {
 }
 
 Six7Gun: {
-	DisplayName: Six7 Gun
+	DisplayName: 67 Gun
 	Tooltip: ""
 }
 
@@ -3756,7 +3756,7 @@ SpaceTrasher: {
 }
 
 SpartansWill: {
-	DisplayName: Spartans Will
+	DisplayName: Spartan's Will
 	Tooltip: ""
 }
 
@@ -3786,7 +3786,7 @@ StarfishOnAString: {
 }
 
 Stg44: {
-	DisplayName: Stg44
+	DisplayName: Stg-44
 	Tooltip: ""
 }
 

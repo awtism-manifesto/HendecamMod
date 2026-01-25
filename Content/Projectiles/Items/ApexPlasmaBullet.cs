@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -41,6 +42,14 @@ public class ApexPlasmaBullet : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.95f);
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+    }
+    public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+    {
+
+
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+
     }
     public override void AI()
     {

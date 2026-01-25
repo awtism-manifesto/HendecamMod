@@ -32,6 +32,7 @@ public class MorbiumOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Yellow;
+        Item.value = 3150;
 
     }
 }

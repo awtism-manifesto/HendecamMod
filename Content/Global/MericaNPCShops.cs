@@ -10,6 +10,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Poop;
+using HendecamMod.Content.NPCs.Town.Alpine;
 
 
 namespace HendecamMod.Content.Global;
@@ -133,7 +134,7 @@ public class MericaNPCShops:GlobalNPC
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
             shop.Add<AutismDiagnosis>();
-            shop.Add<CyberneticGunParts>(condition: Terraria.Condition.DownedGolem);
+            shop.Add<CyberneticGunParts>(condition: Terraria.Condition.NpcIsPresent(ModContent.NPCType<Alpine>()));
            
             shop.Add<PowerHelmet>();
             shop.Add<PowerChestplate>();

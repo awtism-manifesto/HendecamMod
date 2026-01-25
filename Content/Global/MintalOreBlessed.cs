@@ -57,11 +57,11 @@ public class MintalSystem : ModSystem
             // Broadcast a message to notify the user.
             if (Main.netMode == NetmodeID.SinglePlayer)
             {
-                Main.NewText(MintalBlessMessage.Value, 47, 207, 163); //Manifesto said it should be 19, 84, 87 instead
+                Main.NewText(MintalBlessMessage.Value, 47, 207, 163); 
             }
             else if (Main.netMode == NetmodeID.Server)
             {
-                ChatHelper.BroadcastChatMessage(MintalBlessMessage.ToNetworkText(), new Color(19, 83, 87));
+                ChatHelper.BroadcastChatMessage(MintalBlessMessage.ToNetworkText(), new Color(47, 207, 163));
             }
 
             // 100 controls how many splotches of ore are spawned into the world, scaled by world size. For comparison, the first 3 times altars are smashed about 275, 190, or 120 splotches of the respective hardmode ores are spawned. 

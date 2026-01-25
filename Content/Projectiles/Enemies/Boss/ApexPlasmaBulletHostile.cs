@@ -1,4 +1,5 @@
 ﻿
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -9,14 +10,14 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles.Enemies.Boss;
 
 public class ApexPlasmaBulletHostile : ModProjectile
-    {
+{
     public override void SetStaticDefaults()
-        {
+    {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8;
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
-        }
+    }
     public override void SetDefaults()
-        {
+    {
         Projectile.width = 16;
         Projectile.height = 16;
         Projectile.aiStyle = -1;
@@ -28,22 +29,29 @@ public class ApexPlasmaBulletHostile : ModProjectile
         Projectile.ignoreWater = false;
         Projectile.tileCollide = true;
         AIType = ProjectileID.BulletDeadeye;
-        }
+    }
+    public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+    {
+        
+
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+
+    }
     public override void AI()
-        {
+    {
         Lighting.AddLight(Projectile.Center, 0.55f, 0f, 0.55f);
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-        }
+    }
     public override bool PreDraw(ref Color lightColor)
-        {
+    {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
         Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
         for (int k = 0; k < Projectile.oldPos.Length; k++)
-            {
+        {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
             Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
-            }
-        return true;
         }
+        return true;
     }
+}
