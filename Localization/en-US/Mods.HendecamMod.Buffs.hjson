@@ -1,0 +1,274 @@
+AlpineTagBuff: {
+	DisplayName: Alpine Tag Buff
+	Description: Mods.HendecamMod.Buffs.AlpineTagBuff.Description
+}
+
+BalkanRage: {
+	DisplayName: Balkan Rage
+	Description: Mods.HendecamMod.Buffs.BalkanRage.Description
+}
+
+BigShotCooldown: {
+	DisplayName: Big Shot Cooldown
+	Description: Mods.HendecamMod.Buffs.BigShotCooldown.Description
+}
+
+BlackshardDebuff: {
+	DisplayName: Blackshard Debuff
+	Description: Mods.HendecamMod.Buffs.BlackshardDebuff.Description
+}
+
+BrainRotted: {
+	DisplayName: Brain Rotted
+	Description: Mods.HendecamMod.Buffs.BrainRotted.Description
+}
+
+CasaBuff: {
+	DisplayName: Casa Buff
+	Description: Mods.HendecamMod.Buffs.CasaBuff.Description
+}
+
+CeramicBloonBuff: {
+	DisplayName: Ceramic Bloon Buff
+	Description: Mods.HendecamMod.Buffs.CeramicBloonBuff.Description
+}
+
+DarkPower: {
+	DisplayName: Dark Power
+	Description: Mods.HendecamMod.Buffs.DarkPower.Description
+}
+
+DeliriantTag: {
+	DisplayName: Deliriant Tag
+	Description: Mods.HendecamMod.Buffs.DeliriantTag.Description
+}
+
+DildoWhipBuff: {
+	DisplayName: Dildo Whip Buff
+	Description: Mods.HendecamMod.Buffs.DildoWhipBuff.Description
+}
+
+EmblemTag: {
+	DisplayName: Emblem Tag
+	Description: Mods.HendecamMod.Buffs.EmblemTag.Description
+}
+
+GalaxyTag: {
+	DisplayName: Galaxy Tag
+	Description: Mods.HendecamMod.Buffs.GalaxyTag.Description
+}
+
+Gay: {
+	DisplayName: Gay
+	Description: Mods.HendecamMod.Buffs.Gay.Description
+}
+
+GraniteFriend: {
+	DisplayName: Granite Friend
+	Description: Mods.HendecamMod.Buffs.GraniteFriend.Description
+}
+
+HeartBuff: {
+	DisplayName: Heart Buff
+	Description: Mods.HendecamMod.Buffs.HeartBuff.Description
+}
+
+JevilTag: {
+	DisplayName: Jevil Tag
+	Description: Mods.HendecamMod.Buffs.JevilTag.Description
+}
+
+JungleHealing: {
+	DisplayName: Jungle Healing
+	Description: Mods.HendecamMod.Buffs.JungleHealing.Description
+}
+
+KevlarTag: {
+	DisplayName: Kevlar Tag
+	Description: Mods.HendecamMod.Buffs.KevlarTag.Description
+}
+
+KingTag: {
+	DisplayName: King Tag
+	Description: Mods.HendecamMod.Buffs.KingTag.Description
+}
+
+LeadPoisoningDebuff: {
+	DisplayName: Lead Poisoning Debuff
+	Description: Mods.HendecamMod.Buffs.LeadPoisoningDebuff.Description
+}
+
+Ligma: {
+	DisplayName: Ligma
+	Description: Mods.HendecamMod.Buffs.Ligma.Description
+}
+
+LilTMan: {
+	DisplayName: Lil T Man
+	Description: Mods.HendecamMod.Buffs.LilTMan.Description
+}
+
+LycopiteSpores: {
+	DisplayName: Lycopite Spores
+	Description: Mods.HendecamMod.Buffs.LycopiteSpores.Description
+}
+
+MambaBuff: {
+	DisplayName: Mamba Buff
+	Description: Mods.HendecamMod.Buffs.MambaBuff.Description
+}
+
+MoonBurn: {
+	DisplayName: Moon Burn
+	Description: Mods.HendecamMod.Buffs.MoonBurn.Description
+}
+
+MorbinTime: {
+	DisplayName: Morbin Time
+	Description: Mods.HendecamMod.Buffs.MorbinTime.Description
+}
+
+OilMonsterBuff: {
+	DisplayName: Oil Monster Buff
+	Description: Mods.HendecamMod.Buffs.OilMonsterBuff.Description
+}
+
+OtherworldPoisoning: {
+	DisplayName: Otherworld Poisoning
+	Description: Mods.HendecamMod.Buffs.OtherworldPoisoning.Description
+}
+
+PearlTag: {
+	DisplayName: Pearl Tag
+	Description: Mods.HendecamMod.Buffs.PearlTag.Description
+}
+
+PlasmoidFriend: {
+	DisplayName: Plasmoid Friend
+	Description: Mods.HendecamMod.Buffs.PlasmoidFriend.Description
+}
+
+PlutoWhipBuff: {
+	DisplayName: Pluto Whip Buff
+	Description: Mods.HendecamMod.Buffs.PlutoWhipBuff.Description
+}
+
+PolymerSlimeBuff: {
+	DisplayName: Polymer Slime Buff
+	Description: Mods.HendecamMod.Buffs.PolymerSlimeBuff.Description
+}
+
+RadPoisoning: {
+	DisplayName: Rad Poisoning
+	Description: Mods.HendecamMod.Buffs.RadPoisoning.Description
+}
+
+RadPoisoning2: {
+	DisplayName: Rad Poisoning2
+	Description: Mods.HendecamMod.Buffs.RadPoisoning2.Description
+}
+
+RadPoisoning3: {
+	DisplayName: Rad Poisoning3
+	Description: Mods.HendecamMod.Buffs.RadPoisoning3.Description
+}
+
+RainbowBloonBuff: {
+	DisplayName: Rainbow Bloon Buff
+	Description: Mods.HendecamMod.Buffs.RainbowBloonBuff.Description
+}
+
+RedBloonBuff: {
+	DisplayName: Red Bloon Buff
+	Description: Mods.HendecamMod.Buffs.RedBloonBuff.Description
+}
+
+RedneckTag: {
+	DisplayName: Redneck Tag
+	Description: Mods.HendecamMod.Buffs.RedneckTag.Description
+}
+
+RudeBusterCooldown: {
+	DisplayName: Rude Buster Cooldown
+	Description: You're not feeling very rude, buster.
+}
+
+Sauced: {
+	DisplayName: Sauced
+	Description: Mods.HendecamMod.Buffs.Sauced.Description
+}
+
+ShinyTag: {
+	DisplayName: Shiny Tag
+	Description: Mods.HendecamMod.Buffs.ShinyTag.Description
+}
+
+ShinyTag2: {
+	DisplayName: Shiny Tag2
+	Description: Mods.HendecamMod.Buffs.ShinyTag2.Description
+}
+
+SlimeMinesBuff: {
+	DisplayName: Slime Mines Buff
+	Description: Mods.HendecamMod.Buffs.SlimeMinesBuff.Description
+}
+
+SmoothTag: {
+	DisplayName: Smooth Tag
+	Description: Mods.HendecamMod.Buffs.SmoothTag.Description
+}
+
+SpikyTag: {
+	DisplayName: Spiky Tag
+	Description: Mods.HendecamMod.Buffs.SpikyTag.Description
+}
+
+Stamped: {
+	DisplayName: Stamped
+	Description: Mods.HendecamMod.Buffs.Stamped.Description
+}
+
+SuperCeramBuff: {
+	DisplayName: Super Ceram Buff
+	Description: Mods.HendecamMod.Buffs.SuperCeramBuff.Description
+}
+
+VerdantTag: {
+	DisplayName: Verdant Tag
+	Description: Mods.HendecamMod.Buffs.VerdantTag.Description
+}
+
+VpTag: {
+	DisplayName: Vp Tag
+	Description: Mods.HendecamMod.Buffs.VpTag.Description
+}
+
+WeaponImbueFission: {
+	DisplayName: Weapon Imbue Fission
+	Description: Mods.HendecamMod.Buffs.WeaponImbueFission.Description
+}
+
+WeaponImbueFusion: {
+	DisplayName: Weapon Imbue Fusion
+	Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
+}
+
+WeaponImbueOil: {
+	DisplayName: Weapon Imbue Oil
+	Description: Mods.HendecamMod.Buffs.WeaponImbueOil.Description
+}
+
+WeaponImbueRadiation: {
+	DisplayName: Weapon Imbue Radiation
+	Description: Mods.HendecamMod.Buffs.WeaponImbueRadiation.Description
+}
+
+WeaponImbueShadowflame: {
+	DisplayName: Weapon Imbue Shadowflame
+	Description: Mods.HendecamMod.Buffs.WeaponImbueShadowflame.Description
+}
+
+PoopSocked: {
+	DisplayName: Poop Socked
+	Description: Mods.HendecamMod.Buffs.PoopSocked.Description
+}

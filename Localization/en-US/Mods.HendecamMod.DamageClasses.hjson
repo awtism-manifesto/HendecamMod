@@ -1,0 +1,12 @@
+SummonStupidDamage.DisplayName: summon+stupid damage
+StupidDamage.DisplayName: stupid damage
+RangedSummonDamage.DisplayName: ranged+summon damage
+RangedStupidDamage.DisplayName: ranged+stupid damage
+RangedMagicDamage.DisplayName: ranged+magic damage
+OmniDamage.DisplayName: omni damage
+MeleeSummonDamage.DisplayName: melee+summon damage
+MeleeStupidDamage.DisplayName: melee+stupid damage
+MeleeRangedDamage.DisplayName: melee+ranged damage
+MeleeMagicDamage.DisplayName: melee+magic damage
+MagicSummonDamage.DisplayName: magic+summon damage
+AutismDamage.DisplayName: magic+stupid damage

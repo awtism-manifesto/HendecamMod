@@ -1,0 +1,15 @@
+AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore Placed
+AzuriteOrePlaced.MapEntry: Azurite Ore Placed
+MintalOrePlaced.MapEntry: Mintal Ore Placed
+MorbiumOrePlaced.MapEntry: Morbium Ore Placed
+TransOrePlaced.MapEntry: Trans Ore Placed
+CobaltWorkBenchPlaced.MapEntry: Cobalt Work Bench Placed
+
+PlatinumChestPlaced: {
+	MapEntry0: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry0
+	MapEntry1: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry1
+	Locked: Mods.HendecamMod.Tiles.PlatinumChestPlaced.Locked
+}
+
+LycopiteOreTile.MapEntry: Lycopite Ore Tile
+OilDeposit.MapEntry: Oil Deposit
