@@ -29,7 +29,7 @@ AmericanApotheosis: {
 }
 
 SkullCracker: {
-	Description: Mods.HendecamMod.Achievements.SkullCracker.Description
+	Description: Destroy the Head of Cthulhu. Wether you did it before the wall or after, it's still an amazing feat.
 	FriendlyName: Skull Cracker
 }
 
