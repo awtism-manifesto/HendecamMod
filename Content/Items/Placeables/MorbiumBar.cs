@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables
 {
@@ -25,10 +26,18 @@ namespace HendecamMod.Content.Items.Placeables
             Item.useTime = 15;
             Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBarPlaced>());
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+           
+            recipe.AddIngredient<MorbiumOre>(5);
+            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.Register();
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Its morbin time");
+            var line = new TooltipLine(Mod, "Face", "It's morbin time.");
             tooltips.Add(line);
 
             line = new TooltipLine(Mod, "Face", "")
@@ -39,18 +48,7 @@ namespace HendecamMod.Content.Items.Placeables
 
 
 
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
-            }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+            
         }
     }
 }

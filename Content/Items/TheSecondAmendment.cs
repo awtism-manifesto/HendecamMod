@@ -353,13 +353,14 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient(ItemID.VenusMagnum);
            
             recipe.AddIngredient<ThePrimeTime>();
+            recipe.AddIngredient(ItemID.Megashark);
             recipe.AddIngredient<CryonicCarbine>();
             recipe.AddIngredient<Bundlebuss>();
             recipe.AddIngredient<MintalMachinePistol>();
             recipe.AddIngredient<VP70>();
             recipe.AddIngredient<GenderDefender>();
             recipe.AddIngredient(ItemID.SnowballCannon);
-            recipe.AddIngredient<TheDeposer>();
+           
             recipe.AddIngredient<CopperShortmachinegun>();
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

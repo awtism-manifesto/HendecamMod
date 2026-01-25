@@ -1907,7 +1907,7 @@ Items: {
 	}
 
 	DeathBreathShell: {
-		DisplayName: Death Breath Shell
+		DisplayName: Death's Breath Shell
 		Tooltip: ""
 	}
 
@@ -1927,17 +1927,17 @@ Items: {
 	}
 
 	DirtyRocket1: {
-		DisplayName: Dirty Rocket1
+		DisplayName: Dirty Rocket I
 		Tooltip: ""
 	}
 
 	DirtyRocket2: {
-		DisplayName: Dirty Rocket2
+		DisplayName: Dirty Rocket II
 		Tooltip: ""
 	}
 
 	DirtyRocket3: {
-		DisplayName: Dirty Rocket3
+		DisplayName: Dirty Rocket III
 		Tooltip: ""
 	}
 
@@ -1952,7 +1952,7 @@ Items: {
 	}
 
 	DragonBreathShell: {
-		DisplayName: Dragon Breath Shell
+		DisplayName: Dragon's Breath Shell
 		Tooltip: ""
 	}
 
@@ -1982,7 +1982,7 @@ Items: {
 	}
 
 	ElementalEmfCaller: {
-		DisplayName: Elemental Emf Caller
+		DisplayName: Elemental EMF Caller
 		Tooltip: ""
 	}
 
@@ -2027,7 +2027,7 @@ Items: {
 	}
 
 	FidgetThrower3: {
-		DisplayName: Fidget Thrower Mk.II
+		DisplayName: Fidget Thrower Mk.III
 		Tooltip: ""
 	}
 
@@ -2047,7 +2047,7 @@ Items: {
 	}
 
 	fivenato: {
-		DisplayName: fivenato
+		DisplayName: .556 Nato Round
 		Tooltip: ""
 	}
 
@@ -2082,7 +2082,7 @@ Items: {
 	}
 
 	FlinxsFurblade: {
-		DisplayName: Flinxs Furblade
+		DisplayName: Flinx's Furblade
 		Tooltip: ""
 	}
 
@@ -2097,12 +2097,12 @@ Items: {
 	}
 
 	FoundersDrumroll: {
-		DisplayName: Founders Drumroll
+		DisplayName: Founder's Drumroll
 		Tooltip: ""
 	}
 
 	FragmentFlatEarth: {
-		DisplayName: Fragment Flat Earth
+		DisplayName: Flat Earth Fragment
 		Tooltip: ""
 	}
 
@@ -3712,7 +3712,7 @@ Items: {
 	}
 
 	Six7Gun: {
-		DisplayName: Six7 Gun
+		DisplayName: 67 Gun
 		Tooltip: ""
 	}
 
@@ -4457,7 +4457,7 @@ Items: {
 	}
 
 	GunThatKillsPeople: {
-		DisplayName: Gun That Kills People
+		DisplayName: Morbium Mini Rifle
 		Tooltip: ""
 	}
 

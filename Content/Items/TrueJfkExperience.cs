@@ -111,6 +111,7 @@ namespace HendecamMod.Content.Items
             recipe.AddIngredient<Items.CorruptLawman>();
             
             recipe.AddIngredient<Items.M1Garand>();
+            recipe.AddIngredient<TheDeposer>();
             recipe.AddIngredient<Items.FissionDrive>();
 
             recipe.AddTile(TileID.LunarCraftingStation);

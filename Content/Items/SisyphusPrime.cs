@@ -47,7 +47,7 @@ namespace HendecamMod.Content.Items
             Item.knockBack = 7.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
             
-            Item.mana = 10;
+            Item.mana = 9;
 
 
             // Gun Properties

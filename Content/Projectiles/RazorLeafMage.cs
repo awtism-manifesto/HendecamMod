@@ -60,7 +60,7 @@ namespace HendecamMod.Content.Projectiles
             else
             {
                 Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-                SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+               
 
                 // If the projectile hits the left or right side of the tile, reverse the X velocity
                 if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -77,12 +77,7 @@ namespace HendecamMod.Content.Projectiles
 
             return false;
         }
-        public override void OnKill(int timeLeft)
-        {
-            // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-            Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-        }
+        
        
     }
 }
