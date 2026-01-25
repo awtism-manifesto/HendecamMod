@@ -2,8 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Armor
-{
+namespace HendecamMod.Content.Items.Armor;
+
 	[AutoloadEquip(EquipType.Body)]
 	public class PykreteChestplate : ModItem
 	{
@@ -20,4 +20,3 @@ namespace HendecamMod.Content.Items.Armor
 			recipe.Register();
 		}
 	}
-}

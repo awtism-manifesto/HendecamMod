@@ -6,21 +6,20 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles
+namespace HendecamMod.Content.Tiles;
+
+public class BergentruckingTile : ModTile
 {
-    public class BergentruckingTile : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
-            TileID.Sets.FramesOnKillWall[Type] = true;
+        Main.tileFrameImportant[Type] = true;
+        Main.tileLavaDeath[Type] = true;
+        TileID.Sets.FramesOnKillWall[Type] = true;
 
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
-            TileObjectData.addTile(Type);
+        TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
+        TileObjectData.addTile(Type);
 
-            AddMapEntry(new Color(220, 255, 250), Language.GetText("Bergentrucking"));
-            DustType = 7;
-        }
+        AddMapEntry(new Color(220, 255, 250), Language.GetText("Bergentrucking"));
+        DustType = 7;
     }
 }

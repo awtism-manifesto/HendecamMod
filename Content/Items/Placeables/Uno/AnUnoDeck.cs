@@ -6,50 +6,50 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace HendecamMod.Content.Items.Placeables.Uno
+namespace HendecamMod.Content.Items.Placeables.Uno;
+
+public class AnUnoDeck : ModItem
     {
-    public class AnUnoDeck : ModItem
+    public override void SetStaticDefaults()
         {
-        public override void SetStaticDefaults()
-            {
-            ItemID.Sets.PreHardmodeLikeBossBag[Type] = true;
-            Item.ResearchUnlockCount = 1;
-            }
-
-        public override void SetDefaults()
-            {
-            Item.maxStack = 1;
-            Item.width = 24;
-            Item.height = 24;
-            Item.rare = ItemRarityID.Expert;
-            Item.value = 300000;
-            }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Right click in the inventory to draw a card");
-            tooltips.Add(line);
-
-            line = new TooltipLine(Mod, "Face", "'Everyone has uno dipshit, it came free with your fucking xbox'")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-           
-
-
-
+        ItemID.Sets.PreHardmodeLikeBossBag[Type] = true;
+        Item.ResearchUnlockCount = 1;
         }
-        public override bool CanRightClick()
-            {
-            return true;
-            }
-        int draw = Main.rand.Next();
-        public override void ModifyItemLoot(ItemLoot itemLoot)
-            {
 
-            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AnUnoDeck>(), 1));
-            itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(1,
+    public override void SetDefaults()
+        {
+        Item.maxStack = 1;
+        Item.width = 24;
+        Item.height = 24;
+        Item.rare = ItemRarityID.Expert;
+        Item.value = 300000;
+        }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Right click in the inventory to draw a card");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "'Everyone has uno dipshit, it came free with your fucking xbox'")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+       
+
+
+
+    }
+    public override bool CanRightClick()
+        {
+        return true;
+        }
+    int draw = Main.rand.Next();
+    public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AnUnoDeck>(), 1));
+        itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(1,
 ModContent.ItemType<RedZero>(),
 ModContent.ItemType<RedOne>(),
 ModContent.ItemType<RedOne>(),
@@ -158,21 +158,21 @@ ModContent.ItemType<BlueDrawTwo>(),
 ModContent.ItemType<BlueDrawTwo>(),
 ModContent.ItemType<BlueWild>(),
 ModContent.ItemType<BlueDrawFour>()));
-            }
-        public override void UpdateInventory(Player player)
-            {
-            draw = Main.rand.Next();
-            }
-        public override void AddRecipes()
-            {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Paper>(110);
-            recipe.AddIngredient(ItemID.RedDye, 25);
-            recipe.AddIngredient(ItemID.YellowDye, 25);
-            recipe.AddIngredient(ItemID.GreenDye, 25);
-            recipe.AddIngredient(ItemID.BlueDye, 25);
-            recipe.AddIngredient(ItemID.BlackDye, 10);
-            recipe.Register();
-            }
+        }
+    public override void UpdateInventory(Player player)
+        {
+        draw = Main.rand.Next();
+        }
+    public override void AddRecipes()
+        {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<Paper>(110);
+        recipe.AddIngredient(ItemID.RedDye, 25);
+        recipe.AddIngredient(ItemID.YellowDye, 25);
+        recipe.AddIngredient(ItemID.GreenDye, 25);
+        recipe.AddIngredient(ItemID.BlueDye, 25);
+        recipe.AddIngredient(ItemID.BlackDye, 10);
+        recipe.Register();
         }
     }
+

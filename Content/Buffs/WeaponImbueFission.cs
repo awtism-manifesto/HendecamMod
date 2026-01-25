@@ -5,74 +5,71 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Buffs
+namespace HendecamMod.Content.Buffs;
+
+
+public class WeaponImbueFission : ModBuff
 {
-   
-    public class WeaponImbueFission : ModBuff
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            BuffID.Sets.IsAFlaskBuff[Type] = true;
-            Main.meleeBuff[Type] = true;
-            Main.persistentBuff[Type] = true;
-        }
+        BuffID.Sets.IsAFlaskBuff[Type] = true;
+        Main.meleeBuff[Type] = true;
+        Main.persistentBuff[Type] = true;
+    }
 
-        public override void Update(Player player, ref int buffIndex)
+    public override void Update(Player player, ref int buffIndex)
+    {
+        player.GetModPlayer<FissionImbueGlobal>().FissionWeaponImbue = true;
+        player.MeleeEnchantActive = true; // MeleeEnchantActive indicates to other mods that a weapon imbue is active.
+    }
+}
+public class FissionImbueGlobal : ModPlayer
+{
+    public bool FissionWeaponImbue = false;
+
+    public override void ResetEffects()
+    {
+        FissionWeaponImbue = false;
+    }
+
+    public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (FissionWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>())
         {
-            player.GetModPlayer<FissionImbueGlobal>().FissionWeaponImbue = true;
-            player.MeleeEnchantActive = true; // MeleeEnchantActive indicates to other mods that a weapon imbue is active.
+            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
         }
     }
-    public class FissionImbueGlobal : ModPlayer
+
+    public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        public bool FissionWeaponImbue = false;
-
-        public override void ResetEffects()
+        if (FissionWeaponImbue && (proj.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[proj.type]) && !proj.noEnchantments)
         {
-            FissionWeaponImbue = false;
+            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
         }
+    }
 
-        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
+    // MeleeEffects and EmitEnchantmentVisualsAt apply the visual effects of the weapon imbue to items and projectiles respectively.
+    public override void MeleeEffects(Item item, Rectangle hitbox)
+    {
+        if (FissionWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>() && !item.noMelee && !item.noUseGraphic)
         {
-            if (FissionWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>())
+            if (Main.rand.NextBool(5))
             {
-                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
-            }
-        }
-
-        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            if (FissionWeaponImbue && (proj.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[proj.type]) && !proj.noEnchantments)
-            {
-                target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
-            }
-        }
-
-        // MeleeEffects and EmitEnchantmentVisualsAt apply the visual effects of the weapon imbue to items and projectiles respectively.
-        public override void MeleeEffects(Item item, Rectangle hitbox)
-        {
-            if (FissionWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>() && !item.noMelee && !item.noUseGraphic)
-            {
-                if (Main.rand.NextBool(5))
-                {
-                    Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<PlutoniumDust>());
-                    dust.velocity *= 0.5f;
-                }
-            }
-        }
-
-        public override void EmitEnchantmentVisualsAt(Projectile projectile, Vector2 boxPosition, int boxWidth, int boxHeight)
-        {
-            if (FissionWeaponImbue && (projectile.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[projectile.type]) && !projectile.noEnchantments)
-            {
-                if (Main.rand.NextBool(5))
-                {
-                    Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<PlutoniumDust>());
-                    dust.velocity *= 0.5f;
-                }
+                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<PlutoniumDust>());
+                dust.velocity *= 0.5f;
             }
         }
     }
 
-
+    public override void EmitEnchantmentVisualsAt(Projectile projectile, Vector2 boxPosition, int boxWidth, int boxHeight)
+    {
+        if (FissionWeaponImbue && (projectile.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[projectile.type]) && !projectile.noEnchantments)
+        {
+            if (Main.rand.NextBool(5))
+            {
+                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<PlutoniumDust>());
+                dust.velocity *= 0.5f;
+            }
+        }
+    }
 }

@@ -3,25 +3,24 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Tiles.Blocks
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class BloodCloudPlaced : ModTile
 {
-    public class BloodCloudPlaced : ModTile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = false;
+        Main.tileSolid[Type] = true;
+        Main.tileMergeDirt[Type] = false;
+        Main.tileBlockLight[Type] = false;
 
-            DustType = DustID.Cloud;
-            HitSound = SoundID.Dig;
+        DustType = DustID.Cloud;
+        HitSound = SoundID.Dig;
 
-            AddMapEntry(new Color(255, 127, 127));
-        }
+        AddMapEntry(new Color(255, 127, 127));
+    }
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

@@ -8,90 +8,89 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Projectiles.Enemies.Boss
+namespace HendecamMod.Content.Projectiles.Enemies.Boss;
+
+// This example is similar to the Wooden Arrow projectile
+public class ApexPlasmaSpawn : ModProjectile
 {
-    // This example is similar to the Wooden Arrow projectile
-    public class ApexPlasmaSpawn : ModProjectile
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
-            //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
+        // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
+        //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
 
+    }
+
+    public override void SetDefaults()
+    {
+        Projectile.width = 12; // The width of projectile hitbox
+        Projectile.height = 12; // The height of projectile hitbox
+        Projectile.extraUpdates = 2;
+        Projectile.aiStyle = ProjAIStyleID.Arrow;
+        Projectile.penetrate = 1;
+        Projectile.hostile = true;
+        Projectile.timeLeft = 1;
+
+        Projectile.timeLeft = 31;
+    }
+    public override bool PreDraw(ref Color lightColor)
+    {
+        Texture2D texture = TextureAssets.Projectile[Type].Value;
+
+        // Redraw the projectile with the color not influenced by light
+        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+        for (int k = 0; k < Projectile.oldPos.Length; k++)
+        {
+            Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+            Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
         }
 
-        public override void SetDefaults()
-        {
-            Projectile.width = 12; // The width of projectile hitbox
-            Projectile.height = 12; // The height of projectile hitbox
-            Projectile.extraUpdates = 2;
-            Projectile.aiStyle = ProjAIStyleID.Arrow;
-            Projectile.penetrate = 1;
-            Projectile.hostile = true;
-            Projectile.timeLeft = 1;
+        return true;
+    }
+    public override void AI()
+    {
 
-            Projectile.timeLeft = 31;
-        }
-        public override bool PreDraw(ref Color lightColor)
+        if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
-            Texture2D texture = TextureAssets.Projectile[Type].Value;
-
-            // Redraw the projectile with the color not influenced by light
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-            for (int k = 0; k < Projectile.oldPos.Length; k++)
+            for (int i = 0; i < 2; i++)
             {
-                Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
-            }
-
-            return true;
-        }
-        public override void AI()
-        {
-
-            if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
-            {
-                for (int i = 0; i < 2; i++)
+                float posOffsetX = 0f;
+                float posOffsetY = 0f;
+                if (i == 1)
                 {
-                    float posOffsetX = 0f;
-                    float posOffsetY = 0f;
-                    if (i == 1)
-                    {
-                        posOffsetX = Projectile.velocity.X * 2.5f;
-                        posOffsetY = Projectile.velocity.Y * 2.5f;
-                    }
-
-
-
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.1f);
-                    fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
-                    fireDust.velocity *= 0.08f;
+                    posOffsetX = Projectile.velocity.X * 2.5f;
+                    posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
+
+
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.1f);
+                fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
+                fireDust.velocity *= 0.08f;
             }
         }
+    }
 
-        public override void OnKill(int timeLeft)
+    public override void OnKill(int timeLeft)
+    {
+
+        for (int i = -1; i <= 1; i++)
         {
 
-            for (int i = -1; i <= 1; i++)
-            {
-
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
-                Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<ApexPlasmaBulletHostile>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
-            }
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
+            Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<ApexPlasmaBulletHostile>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
+        }
 
 
-            SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-            for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
-            {
-                Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
-                dust.noGravity = true;
-                dust.velocity *= 5.5f;
-                dust.scale *= 2f;
-            }
+        SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
+        for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
+        {
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
+            dust.noGravity = true;
+            dust.velocity *= 5.5f;
+            dust.scale *= 2f;
         }
     }
 }

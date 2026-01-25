@@ -4,19 +4,18 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Buffs
+namespace HendecamMod.Content.Buffs;
+
+public class BrainRotted : ModBuff
 {
-    public class BrainRotted : ModBuff
+    public static readonly int AdditiveStupidDamageBonus = 10;
+
+
+    public override LocalizedText Description => base.Description.WithFormatArgs(AdditiveStupidDamageBonus);
+
+    public override void Update(Player player, ref int buffIndex)
     {
-        public static readonly int AdditiveStupidDamageBonus = 10;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 110f;
 
-
-        public override LocalizedText Description => base.Description.WithFormatArgs(AdditiveStupidDamageBonus);
-
-        public override void Update(Player player, ref int buffIndex)
-        {
-            player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 110f;
-
-        }
     }
 }

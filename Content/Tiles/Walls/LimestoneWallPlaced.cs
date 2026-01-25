@@ -4,22 +4,21 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Tiles.Walls
+namespace HendecamMod.Content.Tiles.Walls;
+
+public class LimestoneWallPlaced : ModWall
 {
-    public class LimestoneWallPlaced : ModWall
+    public override void SetStaticDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Main.wallHouse[Type] = true;
+        Main.wallHouse[Type] = true;
 
-            DustType = ModContent.DustType<LimestoneDust>();
+        DustType = ModContent.DustType<LimestoneDust>();
 
-            AddMapEntry(new Color(204, 190, 163));
-        }
+        AddMapEntry(new Color(204, 190, 163));
+    }
 
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+    public override void NumDust(int i, int j, bool fail, ref int num)
+    {
+        num = fail ? 1 : 3;
     }
 }

@@ -3,16 +3,15 @@ using Terraria.ModLoader;
 using Terraria;
 using HendecamMod.Content.Tiles;
 
-namespace HendecamMod.Content.Items.Placeables
+namespace HendecamMod.Content.Items.Placeables;
+
+public class MintSlimeBanner : ModItem
 {
-    public class MintSlimeBanner : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<EnemyBanner>(), (int)EnemyBanner.StyleID.MintSlime);
-            Item.width = 10;
-            Item.height = 24;
-            Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 10));
-        }
+        Item.DefaultToPlaceableTile(ModContent.TileType<EnemyBanner>(), (int)EnemyBanner.StyleID.MintSlime);
+        Item.width = 10;
+        Item.height = 24;
+        Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 10));
     }
 }

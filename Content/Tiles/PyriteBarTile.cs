@@ -5,8 +5,8 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles
-{
+namespace HendecamMod.Content.Tiles;
+
 	public class PyriteBarTile : ModTile
 	{
 		public override void SetStaticDefaults()
@@ -22,4 +22,3 @@ namespace HendecamMod.Content.Tiles
 			HitSound = SoundID.Tink;
 		}
 	}
-}

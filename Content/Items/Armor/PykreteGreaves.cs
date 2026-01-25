@@ -3,8 +3,8 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Items.Armor
-{
+namespace HendecamMod.Content.Items.Armor;
+
 	[AutoloadEquip(EquipType.Legs)]
 	public class PykreteGreaves : ModItem
 	{
@@ -23,11 +23,10 @@ namespace HendecamMod.Content.Items.Armor
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "+5% damage reduction";
-            player.endurance = 1f - 0.95f * (1f - player.endurance);
-        }
+        player.endurance = 1f - 0.95f * (1f - player.endurance);
+    }
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
 			return body.type == ModContent.ItemType<PykreteChestplate>() && head.type == ModContent.ItemType<PykreteHelmet>();
 		}
 	}
-}

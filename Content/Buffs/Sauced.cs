@@ -3,19 +3,18 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Buffs
+namespace HendecamMod.Content.Buffs;
+
+public class Sauced : ModBuff
 {
-    public class Sauced : ModBuff
+    public static readonly int DefenseBonus = 6;
+   
+
+    public override LocalizedText Description => base.Description.WithFormatArgs(DefenseBonus);
+
+    public override void Update(Player player, ref int buffIndex)
     {
-        public static readonly int DefenseBonus = 6;
-       
-
-        public override LocalizedText Description => base.Description.WithFormatArgs(DefenseBonus);
-
-        public override void Update(Player player, ref int buffIndex)
-        {
-            player.statDefense += DefenseBonus; // Grant a +10 defense boost to the player while the buff is active.
-            
-        }
+        player.statDefense += DefenseBonus; // Grant a +10 defense boost to the player while the buff is active.
+        
     }
 }

@@ -4,18 +4,17 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Content.Buffs
+namespace HendecamMod.Content.Buffs;
+
+public class RudeBusterCooldown : ModBuff
 {
-    public class RudeBusterCooldown : ModBuff
+
+    public override void SetStaticDefaults()
     {
+        Main.debuff[Type] = true;
+       
 
-        public override void SetStaticDefaults()
-        {
-            Main.debuff[Type] = true;
-           
-
-
-        }
 
     }
+
 }

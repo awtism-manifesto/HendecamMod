@@ -2,31 +2,30 @@
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
 
-namespace HendecamMod.Content.Global
+namespace HendecamMod.Content.Global;
+
+// Very simple drop condition: drop during daytime
+public class HardmodeDrop : IItemDropRuleCondition
 {
-    // Very simple drop condition: drop during daytime
-    public class HardmodeDrop : IItemDropRuleCondition
+    private static LocalizedText Description;
+
+    public HardmodeDrop()
     {
-        private static LocalizedText Description;
+        Description ??= Language.GetOrRegister("Drops in Hardmode");
+    }
 
-        public HardmodeDrop()
-        {
-            Description ??= Language.GetOrRegister("Drops in Hardmode");
-        }
+    public bool CanDrop(DropAttemptInfo info)
+    {
+        return Main.hardMode;
+    }
 
-        public bool CanDrop(DropAttemptInfo info)
-        {
-            return Main.hardMode;
-        }
+    public bool CanShowItemDropInUI()
+    {
+        return Main.hardMode;
+    }
 
-        public bool CanShowItemDropInUI()
-        {
-            return Main.hardMode;
-        }
-
-        public string GetConditionDescription()
-        {
-            return Description.Value;
-        }
+    public string GetConditionDescription()
+    {
+        return Description.Value;
     }
 }

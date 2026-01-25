@@ -8,61 +8,60 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using HendecamMod.Content.DamageClasses;
 
-namespace HendecamMod.Content.Items
+namespace HendecamMod.Content.Items;
+
+public class WhippetWhip : ModItem
 {
-    public class WhippetWhip : ModItem
+  
+
+    public override void SetDefaults()
     {
-      
+        // This method quickly sets the whip's properties.
+        // Mouse over to see its parameters.
+        Item.DefaultToWhip(ModContent.ProjectileType<WhippetProj>(), 20, 2, 3.75f);
+        Item.rare = ItemRarityID.Green;
+        Item.damage = 21;
+        Item.useTime = 15;
+        Item.useAnimation = 15;
+        Item.knockBack = 3;
+        Item.width = 14;
+        Item.height = 14;
+        Item.value = Item.buyPrice(silver: 600);
+        Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+    }
 
-        public override void SetDefaults()
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Swings really, really fast");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "'My name lil t man'")
         {
-            // This method quickly sets the whip's properties.
-            // Mouse over to see its parameters.
-            Item.DefaultToWhip(ModContent.ProjectileType<WhippetProj>(), 20, 2, 3.75f);
-            Item.rare = ItemRarityID.Green;
-            Item.damage = 21;
-            Item.useTime = 15;
-            Item.useAnimation = 15;
-            Item.knockBack = 3;
-            Item.width = 14;
-            Item.height = 14;
-            Item.value = Item.buyPrice(silver: 600);
-            Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
+
+
+        // Here we will hide all tooltips whose title end with ':RemoveMe'
+        // One like that is added at the start of this method
+        foreach (var l in tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-            var line = new TooltipLine(Mod, "Face", "Swings really, really fast");
-            tooltips.Add(line);
-
-            line = new TooltipLine(Mod, "Face", "'My name lil t man'")
+            if (l.Name.EndsWith(":RemoveMe"))
             {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-
-
-            // Here we will hide all tooltips whose title end with ':RemoveMe'
-            // One like that is added at the start of this method
-            foreach (var l in tooltips)
-            {
-                if (l.Name.EndsWith(":RemoveMe"))
-                {
-                    l.Hide();
-                }
+                l.Hide();
             }
-
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
         }
 
+        // Another method of hiding can be done if you want to hide just one line.
+        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+    }
 
-        // Makes the whip receive melee prefixes
-        public override bool MeleePrefix()
-        {
-            return true;
-        }
+
+    // Makes the whip receive melee prefixes
+    public override bool MeleePrefix()
+    {
+        return true;
     }
 }

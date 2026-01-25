@@ -3,19 +3,18 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HendecamMod.Content.Tiles.Furniture;
 
-namespace HendecamMod.Content.Items.Placeables
-{
-    public class ConflictIsFinished : ModItem
-    {
-        public override void SetDefaults()
-        {
-            // Vanilla has many useful methods like these, use them! This substitutes setting Item.createTile and Item.placeStyle as well as setting a few values that are common across all placeable items
-            Item.DefaultToPlaceableTile(ModContent.TileType<ShayyDeadPlaced>());
+namespace HendecamMod.Content.Items.Placeables;
 
-            Item.width = 32;
-            Item.height = 32;
-            Item.rare = ItemRarityID.Blue;
-            Item.value = 262;
-        }
+public class ConflictIsFinished : ModItem
+{
+    public override void SetDefaults()
+    {
+        // Vanilla has many useful methods like these, use them! This substitutes setting Item.createTile and Item.placeStyle as well as setting a few values that are common across all placeable items
+        Item.DefaultToPlaceableTile(ModContent.TileType<ShayyDeadPlaced>());
+
+        Item.width = 32;
+        Item.height = 32;
+        Item.rare = ItemRarityID.Blue;
+        Item.value = 262;
     }
 }
