@@ -42,14 +42,14 @@ public class Needle : ModProjectile
     {
 
 
-        if (Projectile.penetrate <= 0)
-        {
-            Projectile.Kill();
-        }
-        else
-        {
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+            if (Projectile.penetrate <= 0)
+            {
+                Projectile.Kill();
+            }
+            else
+            {
+                Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+               
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)

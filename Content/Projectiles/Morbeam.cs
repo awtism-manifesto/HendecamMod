@@ -54,27 +54,27 @@ public class Morbeam : ModProjectile
                 }
 
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 2.67f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(7) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 0.3f;
-               
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 2.67f);
+                    fireDust.fadeIn = 0.2f + Main.rand.Next(7) * 0.1f;
+                    fireDust.noGravity = true;
+                    fireDust.velocity *= 0.3f;
+                   
+                }
             }
         }
-    }
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        // If collide with tile, reduce the penetrate.
-        // So the projectile can reflect at most 5 times
-        Projectile.penetrate--;
-        if (Projectile.penetrate <= 0)
+        public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            Projectile.Kill();
-        }
-        else
-        {
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+            // If collide with tile, reduce the penetrate.
+            // So the projectile can reflect at most 5 times
+            Projectile.penetrate--;
+            if (Projectile.penetrate <= 0)
+            {
+                Projectile.Kill();
+            }
+            else
+            {
+                Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+              
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)

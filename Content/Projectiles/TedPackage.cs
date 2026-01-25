@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -134,45 +135,60 @@ public class TedPackage : ModProjectile
             smokeDust.velocity *= 1.4f;
         }
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3f;
-            Dust fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 3.5f);
-            fire1Dust.noGravity = true;
-            fire1Dust.velocity *= 7f;
-            fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 1.5f);
-            fire1Dust.velocity *= 3f;
-            Dust fire1Dust2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IchorTorch, 0f, 0f, 100, default, 3.5f);
-            fire1Dust2.noGravity = true;
-            fire1Dust2.velocity *= 7f;
-            fire1Dust2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IchorTorch, 0f, 0f, 100, default, 1.5f);
-            fire1Dust2.velocity *= 3f;
-            Dust fire1Dust23 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 3.5f);
-            fire1Dust23.noGravity = true;
-            fire1Dust23.velocity *= 7f;
-            fire1Dust23 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 1.5f);
-            fire1Dust23.velocity *= 3f;
-            Dust fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
-            fire1Dust234.noGravity = true;
-            fire1Dust234.velocity *= 7f;
-            fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
-            fire1Dust234.velocity *= 3f;
-            Dust fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
-            fire1Dust2354.noGravity = true;
-            fire1Dust2354.velocity *= 7f;
-            fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
-            fire1Dust2354.velocity *= 3f;
-            Dust fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 2f);
-            fire1Dust23546.noGravity = true;
-            fire1Dust23546.velocity *= 7f;
-            fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 0.7f);
-            fire1Dust23546.velocity *= 3f;
-        }
+            // Spawn a bunch of fire dusts.
+            for (int j = 0; j < 20; j++)
+            {
+                Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 3.5f);
+                fireDust.noGravity = true;
+                fireDust.velocity *= 7f;
+                fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
+                fireDust.velocity *= 3f;
+                Dust fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 3.5f);
+                fire1Dust.noGravity = true;
+                fire1Dust.velocity *= 7f;
+                fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CursedTorch, 0f, 0f, 100, default, 1.5f);
+                fire1Dust.velocity *= 3f;
+                Dust fire1Dust2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IchorTorch, 0f, 0f, 100, default, 3.5f);
+                fire1Dust2.noGravity = true;
+                fire1Dust2.velocity *= 7f;
+                fire1Dust2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IchorTorch, 0f, 0f, 100, default, 1.5f);
+                fire1Dust2.velocity *= 3f;
+                Dust fire1Dust23 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 3.5f);
+                fire1Dust23.noGravity = true;
+                fire1Dust23.velocity *= 7f;
+                fire1Dust23 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 1.5f);
+                fire1Dust23.velocity *= 3f;
+                Dust fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
+                fire1Dust234.noGravity = true;
+                fire1Dust234.velocity *= 7f;
+                fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
+                fire1Dust234.velocity *= 3f;
+                Dust fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
+                fire1Dust2354.noGravity = true;
+                fire1Dust2354.velocity *= 7f;
+                fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
+                fire1Dust2354.velocity *= 3f;
+                Dust fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 2f);
+                fire1Dust23546.noGravity = true;
+                fire1Dust23546.velocity *= 7f;
+                fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 0.7f);
+                fire1Dust23546.velocity *= 3f;
+                Dust fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height,ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
+                fire1Dust235467.noGravity = true;
+                fire1Dust235467.velocity *= 7f;
+                fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
+                fire1Dust235467.velocity *= 3f;
+                Dust fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
+                fire1Dust235468.noGravity = true;
+                fire1Dust235468.velocity *= 7f;
+                fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
+                fire1Dust235468.velocity *= 3f;
+                Dust fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
+                fire1Dust235469.noGravity = true;
+                fire1Dust235469.velocity *= 7f;
+                fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
+                fire1Dust235469.velocity *= 3f;
+            }
 
        
     }

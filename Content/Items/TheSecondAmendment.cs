@@ -327,43 +327,44 @@ public class TheSecondAmendment : ModItem
 
 
 
-        
-    }
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<TrueJfkExperience>();
-        recipe.AddIngredient(ItemID.SDMG);
-        recipe.AddIngredient<GlockAndBalls>();
-        recipe.AddIngredient<AA12>();
-        recipe.AddIngredient(ItemID.VortexBeater);
-        recipe.AddIngredient<DaedalusStormgun>();
-        recipe.AddIngredient<PhotonShotgun>();
-        recipe.AddIngredient(ItemID.Xenopopper);
-        recipe.AddIngredient<TheMagnum>();
-        recipe.AddIngredient<MidnightAfterburner>();
-        recipe.AddIngredient<ApexPlasmaCannon>();
-        recipe.AddIngredient<PlutoniumAutoPistol>();
-        recipe.AddIngredient<ATFsNightmare>();
-        recipe.AddIngredient<GunThatKillsPeople>();
-        recipe.AddIngredient<TheNanoshot>();
-        recipe.AddIngredient<PoopyAutoPistol>();
-        recipe.AddIngredient(ItemID.CandyCornRifle);
-        recipe.AddIngredient(ItemID.VenusMagnum);
-       
-        recipe.AddIngredient<ThePrimeTime>();
-        recipe.AddIngredient<CryonicCarbine>();
-        recipe.AddIngredient<Bundlebuss>();
-        recipe.AddIngredient<MintalMachinePistol>();
-        recipe.AddIngredient<VP70>();
-        recipe.AddIngredient<GenderDefender>();
-        recipe.AddIngredient(ItemID.SnowballCannon);
-        recipe.AddIngredient<TheDeposer>();
-        recipe.AddIngredient<CopperShortmachinegun>();
-        recipe.AddTile(TileID.LunarCraftingStation);
-        recipe.Register();
-       
+            
+        }
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<TrueJfkExperience>();
+            recipe.AddIngredient(ItemID.SDMG);
+            recipe.AddIngredient<GlockAndBalls>();
+            recipe.AddIngredient<AA12>();
+            recipe.AddIngredient(ItemID.VortexBeater);
+            recipe.AddIngredient<DaedalusStormgun>();
+            recipe.AddIngredient<PhotonShotgun>();
+            recipe.AddIngredient(ItemID.Xenopopper);
+            recipe.AddIngredient<TheMagnum>();
+            recipe.AddIngredient<MidnightAfterburner>();
+            recipe.AddIngredient<ApexPlasmaCannon>();
+            recipe.AddIngredient<PlutoniumAutoPistol>();
+            recipe.AddIngredient<ATFsNightmare>();
+            recipe.AddIngredient<GunThatKillsPeople>();
+            recipe.AddIngredient<TheNanoshot>();
+            recipe.AddIngredient<PoopyAutoPistol>();
+            recipe.AddIngredient(ItemID.CandyCornRifle);
+            recipe.AddIngredient(ItemID.VenusMagnum);
+           
+            recipe.AddIngredient<ThePrimeTime>();
+            recipe.AddIngredient(ItemID.Megashark);
+            recipe.AddIngredient<CryonicCarbine>();
+            recipe.AddIngredient<Bundlebuss>();
+            recipe.AddIngredient<MintalMachinePistol>();
+            recipe.AddIngredient<VP70>();
+            recipe.AddIngredient<GenderDefender>();
+            recipe.AddIngredient(ItemID.SnowballCannon);
+           
+            recipe.AddIngredient<CopperShortmachinegun>();
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
+           
 
         if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("BrenGun", out ModItem BrenGun))
         {
