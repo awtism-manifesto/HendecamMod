@@ -27,7 +27,8 @@ public class BannerTile : ModBannerTile
 			FlyingPig,
 			SaltMonster,
 			OilMonster,
-			River
+			River,
+			MorbiumWarrior
 
     }
 }

@@ -73,7 +73,7 @@ public class AquaticSlime : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-        return SpawnCondition.Ocean.Chance * 0.2f;
+        return SpawnCondition.Ocean.Chance * 0.25f;
 
     }
 

@@ -65,6 +65,7 @@ public class FastBees : GlobalProjectile
         }
     }
 }
+
 public class FastLaserSwords : GlobalProjectile
 {
     public bool fromMechGun;
@@ -82,6 +83,23 @@ public class FastLaserSwords : GlobalProjectile
 
         }
     }
+}
+public class FuckRedDevils : GlobalProjectile
+{
+    public bool fromRedDevil;
+
+    public override bool InstancePerEntity => true;
+
+    public override void ModifyHitPlayer(Projectile projectile, Player target, ref Player.HurtModifiers modifiers)
+    {
+        if (projectile.type == ProjectileID.UnholyTridentHostile)
+        {
+            modifiers.SourceDamage *= 0.67f;
+        }
+    }
+    
+   
+
 }
 public class RedneckCombo : GlobalProjectile
 {

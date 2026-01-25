@@ -76,7 +76,7 @@ public class FlyingPig : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
         
-            return SpawnCondition.Overworld.Chance * 0.0096f;
+            return SpawnCondition.Overworld.Chance * 0.0095f;
     }
 
 }

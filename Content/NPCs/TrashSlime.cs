@@ -94,7 +94,7 @@ public class TrashSlime : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-        return SpawnCondition.Ocean.Chance * 1.066f;
+        return SpawnCondition.Ocean.Chance * 0.89f;
 
     }
 

@@ -300,29 +300,6 @@ public class MagnoliaDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RunicCodex>(), 1));
         }
-        if (npc.type == NPCID.BlueArmoredBones)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
-        if (npc.type == NPCID.BlueArmoredBonesMace)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
-        if (npc.type == NPCID.BlueArmoredBonesNoPants)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
-        if (npc.type == NPCID.BlueArmoredBonesSword)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
-        if (npc.type == NPCID.SkeletonSniper)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
-        if (npc.type == NPCID.TacticalSkeleton)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumBar>(), 2, 1, 4));
-        }
+        
     }
 }

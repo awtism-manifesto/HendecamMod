@@ -1861,7 +1861,7 @@ CraterCreator: {
 }
 
 CrimtaneAmr: {
-	DisplayName: Crimtane Amr
+	DisplayName: Crimtane Anti-Material Rifle
 	Tooltip: ""
 }
 
@@ -1906,7 +1906,7 @@ DeadSoldiersRifle: {
 }
 
 DeathBreathShell: {
-	DisplayName: Death Breath Shell
+	DisplayName: Death's Breath Shell
 	Tooltip: ""
 }
 
@@ -1926,17 +1926,17 @@ DirtBullet: {
 }
 
 DirtyRocket1: {
-	DisplayName: Dirty Rocket1
+	DisplayName: Dirty Rocket I
 	Tooltip: ""
 }
 
 DirtyRocket2: {
-	DisplayName: Dirty Rocket2
+	DisplayName: Dirty Rocket II
 	Tooltip: ""
 }
 
 DirtyRocket3: {
-	DisplayName: Dirty Rocket3
+	DisplayName: Dirty Rocket III
 	Tooltip: ""
 }
 
@@ -1951,12 +1951,12 @@ DracoMeteor: {
 }
 
 DragonBreathShell: {
-	DisplayName: Dragon Breath Shell
+	DisplayName: Dragon's Breath Shell
 	Tooltip: ""
 }
 
 DvdLogo: {
-	DisplayName: Dvd Logo
+	DisplayName: DVD Logo
 	Tooltip: ""
 }
 
@@ -1981,7 +1981,7 @@ EldritchArrow: {
 }
 
 ElementalEmfCaller: {
-	DisplayName: Elemental Emf Caller
+	DisplayName: Elemental EMF Caller
 	Tooltip: ""
 }
 
@@ -2026,7 +2026,7 @@ FidgetThrower2: {
 }
 
 FidgetThrower3: {
-	DisplayName: Fidget Thrower Mk.II
+	DisplayName: Fidget Thrower Mk.III
 	Tooltip: ""
 }
 
@@ -2046,7 +2046,7 @@ FissionRod: {
 }
 
 fivenato: {
-	DisplayName: fivenato
+	DisplayName: .556 Nato Round
 	Tooltip: ""
 }
 
@@ -3901,7 +3901,7 @@ TheImperialBoomerangs: {
 }
 
 TheJfkExperience: {
-	DisplayName: The Jfk Experience
+	DisplayName: The JFK Experience
 	Tooltip: ""
 }
 
@@ -4231,7 +4231,7 @@ TrippyTransmutationStaff: {
 }
 
 TrueJfkExperience: {
-	DisplayName: True Jfk Experience
+	DisplayName: True JFK Experience
 	Tooltip: ""
 }
 
@@ -4291,7 +4291,7 @@ UraniumTorch: {
 }
 
 VenomThrower: {
-	DisplayName: Venom Thrower
+	DisplayName: Venom-Thrower
 	Tooltip: ""
 }
 
@@ -4456,7 +4456,7 @@ GoldLongsword: {
 }
 
 GunThatKillsPeople: {
-	DisplayName: Gun That Kills People
+	DisplayName: Morbium Mini Rifle
 	Tooltip: ""
 }
 
@@ -4753,4 +4753,9 @@ ShatteringShell: {
 VoidPearl: {
 	Tooltip: ""
 	DisplayName: Void Pearl
+}
+
+MorbiumWarriorBanner: {
+	Tooltip: ""
+	DisplayName: Morbium Warrior Banner
 }

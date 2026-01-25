@@ -71,7 +71,7 @@ public class MintSlime : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-        return SpawnCondition.OverworldHallow.Chance * 1.2f;
+        return SpawnCondition.OverworldHallow.Chance * 0.8f;
 
     }
 

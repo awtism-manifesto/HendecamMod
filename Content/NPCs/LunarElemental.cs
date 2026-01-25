@@ -61,7 +61,7 @@ public class LunarElemental : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-        return SpawnCondition.Sky.Chance * 0.67f;
+        return SpawnCondition.Sky.Chance * 0.55f;
 
     }
 }

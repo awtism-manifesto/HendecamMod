@@ -116,7 +116,7 @@ public class UnstablePlasmoid : ModNPC
     {
         if (!Main.dayTime  & NPC.downedEmpressOfLight)
         {
-            return SpawnCondition.Sky.Chance * 0.07f;
+            return SpawnCondition.Sky.Chance * 0.072f;
         }
         else
             return SpawnCondition.Sky.Chance * 0f;

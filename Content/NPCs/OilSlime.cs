@@ -90,7 +90,7 @@ public class OilSlime : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
        
-        return SpawnCondition.Underground.Chance * 1.05f;
+        return SpawnCondition.Underground.Chance * 0.95f;
        
     }
 
