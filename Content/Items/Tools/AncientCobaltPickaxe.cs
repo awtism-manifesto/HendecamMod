@@ -32,7 +32,7 @@ public class AncientCobaltPickaxe : ModItem
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
-
+        Item.useTurn = true;
 
 
     }

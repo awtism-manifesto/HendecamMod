@@ -23,7 +23,8 @@ public class MorbiumTreeripper : ModItem
         Item.scale = 1.5f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 11.5f;
-        
+        Item.useTurn = true;
+
         Item.value = Item.buyPrice(gold: 67);
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item23;

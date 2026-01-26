@@ -19,6 +19,7 @@ public class MintalPickaxe : ModItem
         Item.useTime = 8;
         Item.useAnimation = 19;
         Item.autoReuse = true;
+        Item.useTurn = true;
 
         Item.DamageType = DamageClass.Melee;
         Item.damage = 11;

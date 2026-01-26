@@ -25,7 +25,7 @@ public class MorbiumSword : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 124;
         Item.knockBack = 9.25f;
-
+        Item.useTurn = true;
 
         Item.value = Item.buyPrice(gold: 15);
         Item.rare = ItemRarityID.Yellow;

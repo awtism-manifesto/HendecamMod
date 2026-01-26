@@ -24,7 +24,8 @@ public class KingslayerMultiaxe : ModItem
         Item.height = 50;
         Item.useTime = 9;
         Item.useAnimation = 22;
-       
+        Item.useTurn = true;
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6.5f;
         Item.scale = 1.2f;

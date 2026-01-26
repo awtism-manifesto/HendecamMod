@@ -19,7 +19,7 @@ public class FlatEarthHamaxe : ModItem
         Item.height = 50;
         Item.useTime = 7;
         Item.useAnimation = 25;
-       
+        Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
         

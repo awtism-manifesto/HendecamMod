@@ -24,6 +24,8 @@ public class ThePurifier : ModItem
         Item.height = 50;
         Item.useTime = 6;
         Item.useAnimation = 20;
+        Item.useTurn = true;
+
         Item.scale = 1.45f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;

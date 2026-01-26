@@ -31,6 +31,7 @@ public class PykreteSword : ModItem
         Item.autoReuse = true;
         Item.shoot = ModContent.ProjectileType<FrostySpark>();
         Item.shootSpeed = 4.25f;
+        Item.useTurn = true;
     }
 
 

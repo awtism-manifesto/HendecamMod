@@ -31,8 +31,9 @@ public class PlutoniumHamaxe : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
-        
+        Item.useTurn = true;
+
+
         Item.hammer = 115;
         Item.axe = 29;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig

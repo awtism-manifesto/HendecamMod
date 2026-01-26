@@ -19,7 +19,7 @@ public class PoorMahoganySword : ModItem
         Item.useTime = 14;
         Item.useAnimation = 14;
         Item.autoReuse = true;
-
+        Item.useTurn = true;
         Item.DamageType = DamageClass.Melee;
         Item.damage = 8;
         Item.knockBack = 4.5f;

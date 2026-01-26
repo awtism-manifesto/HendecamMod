@@ -22,6 +22,7 @@ public class MorbiumGroundbreaker : ModItem
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true; // Automatically re-swing/re-use this item after its swinging animation is over.
+        Item.useTurn = true;
 
         Item.hammer = 100; // How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig

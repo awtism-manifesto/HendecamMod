@@ -27,6 +27,7 @@ public class AncientCobaltWaraxe : ModItem
         Item.axe = 22;
         Item.hammer = 75;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
+        Item.useTurn = true;
     }
 
     public override void MeleeEffects(Player player, Rectangle hitbox)

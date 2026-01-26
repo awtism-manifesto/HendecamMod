@@ -35,7 +35,7 @@ public class WaterflameSword : ModItem
         Item.value = Item.buyPrice(gold: 4);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
-
+        Item.useTurn = true;
         Item.shoot = ModContent.ProjectileType<Waterflame>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
 

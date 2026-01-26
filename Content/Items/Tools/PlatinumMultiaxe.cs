@@ -19,7 +19,8 @@ public class PlatinumMultiaxe : ModItem
         Item.height = 50;
         Item.useTime = 10;
         Item.useAnimation = 24;
-       
+        Item.useTurn = true;
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 5;
         Item.scale = 1.25f;

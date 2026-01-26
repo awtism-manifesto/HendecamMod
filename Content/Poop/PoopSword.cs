@@ -8,27 +8,28 @@ using Terraria.ID;
 using Terraria.ModLoader;
 namespace HendecamMod.Content.Poop;
 
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-	public class PoopSword : ModItem
-	{
-		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.HendecamMod.hjson' file.
-		public override void SetDefaults()
-		{
-			Item.damage = 11;
-			Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+// This is a basic item template.
+// Please see tModLoader's ExampleMod for every other example:
+// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
+public class PoopSword : ModItem
+{
+    // The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.HendecamMod.hjson' file.
+    public override void SetDefaults()
+    {
+        Item.damage = 11;
+        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.width = 40;
-			Item.height = 40;
+        Item.height = 40;
         Item.useTime = 17;
-			Item.useAnimation = 17;
-			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 3;
-			Item.value = Item.buyPrice(copper: 1);
-			Item.rare = ItemRarityID.White;
-			Item.UseSound = SoundID.Item1;
-			Item.autoReuse = true;
-			Item.shoot = ModContent.ProjectileType<PooShit>();
+        Item.useAnimation = 17;
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.knockBack = 3;
+        Item.useTurn = true;
+        Item.value = Item.buyPrice(copper: 1);
+        Item.rare = ItemRarityID.White;
+        Item.UseSound = SoundID.Item1;
+        Item.autoReuse = true;
+        Item.shoot = ModContent.ProjectileType<PooShit>();
         Item.shootSpeed = 5.75f;
     }
 
@@ -69,7 +70,7 @@ namespace HendecamMod.Content.Poop;
 
 
 
-       
+
     }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -87,11 +88,11 @@ namespace HendecamMod.Content.Poop;
 
     }
     public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
+    {
+        Recipe recipe = CreateRecipe();
         recipe.AddRecipeGroup("Wood", 6);
         recipe.AddIngredient(ItemID.PoopBlock, 6);
-      
+
         recipe.Register();
-		}
-	}
+    }
+}

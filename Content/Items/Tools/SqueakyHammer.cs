@@ -29,6 +29,7 @@ public class SqueakyHammer : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 10;
         Item.knockBack = 0.5f;
+        Item.useTurn = true;
 
         Item.hammer = 40;
         Item.value = Item.buyPrice(silver: 3);

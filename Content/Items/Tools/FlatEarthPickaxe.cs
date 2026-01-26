@@ -19,7 +19,7 @@ public class FlatEarthPickaxe : ModItem
         Item.height = 50;
         Item.useTime = 6;
         Item.useAnimation = 11;
-        
+        Item.useTurn = true;
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;

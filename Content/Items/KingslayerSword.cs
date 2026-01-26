@@ -34,8 +34,8 @@ public class KingslayerSword : ModItem
         Item.useAnimation = 42; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
 
+        Item.useTurn = true;
 
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item1;

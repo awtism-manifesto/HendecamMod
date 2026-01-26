@@ -30,7 +30,8 @@ public class PlutoniumPickaxe : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
+        Item.useTurn = true;
+
         Item.pick = 205; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }

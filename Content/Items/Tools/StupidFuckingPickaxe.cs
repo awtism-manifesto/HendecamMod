@@ -1,11 +1,15 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -19,6 +23,8 @@ public class StupidFuckingPickaxe : ModItem
         Item.height = 500;
         Item.useTime = 1;
         Item.useAnimation = 10;
+        Item.useTurn = true;
+
         Item.scale = 2.25f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 0;
@@ -43,7 +49,39 @@ public class StupidFuckingPickaxe : ModItem
         };
         tooltips.Add(line);
     }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.NightsEdge);
+       
+       
+       
+       
+        recipe.AddIngredient(ItemID.GoldBrickWall, 333);
+        recipe.AddIngredient(ItemID.BladeofGrass, 1);
+        recipe.AddIngredient(ItemID.PortableStool, 67);
+        recipe.AddIngredient(ItemID.CrabBanner);
+      
+        recipe.AddIngredient(ItemID.WhitePearl, 69);
+       
+        recipe.AddIngredient(ItemID.TinShortsword, 167);
+        recipe.AddIngredient(ItemID.SpectreBoots, 1);
+     
+        
+        recipe.AddIngredient<WeedLeaves>(420);
+        recipe.AddIngredient<LunarGem>(911);
+        recipe.AddIngredient<BadGrades>();
+        recipe.AddIngredient<SuperMonkeysPaw>();
+        recipe.AddIngredient<PhatBlunt>();
+        recipe.AddIngredient<AzuriteSaber>();
+        recipe.AddIngredient<GunOfRoses>();
+        recipe.AddIngredient<RednecksRustBucket>(1);
+        
+        recipe.AddIngredient<DirtBar>(6767);
+        recipe.AddIngredient(ItemID.RedDye, 500);
 
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        recipe.Register();
+    }
    
+
 }

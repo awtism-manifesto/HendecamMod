@@ -23,7 +23,8 @@ public class LycopiteHamaxe : ModItem
         Item.scale = 1.2f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7.75f;
-        
+        Item.useTurn = true;
+
         Item.value = Item.buyPrice(gold: 3);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;

@@ -21,7 +21,9 @@ public class UraniumHamaxe : ModItem
         Item.height = 50;
         Item.useTime = 14;
         Item.useAnimation = 20;
-       
+        Item.useTurn = true;
+
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
         

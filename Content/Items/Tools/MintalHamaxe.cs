@@ -20,7 +20,8 @@ public class MintalHamaxe : ModItem
         Item.value = 10000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
-        Item.autoReuse = true; 
+        Item.autoReuse = true;
+        Item.useTurn = true;
 
         Item.axe = 25; 
         Item.hammer = 80;

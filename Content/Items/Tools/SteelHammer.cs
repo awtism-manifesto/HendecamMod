@@ -16,6 +16,8 @@ public class SteelHammer : ModItem
         Item.useTime = 18;
         Item.useAnimation = 28;
         Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTurn = true;
+
         Item.knockBack = 6;
         Item.value = 1500;
         Item.rare = ItemRarityID.White;

@@ -35,6 +35,7 @@ public class RoyalGuardianSword : ModItem
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
+        
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

@@ -18,6 +18,8 @@ public class StupidestFuckingPickaxe : ModItem
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 1;
+        Item.useTurn = true;
+
         Item.useAnimation = 10;
         Item.ArmorPenetration = 99999;
         Item.useStyle = ItemUseStyleID.Swing;

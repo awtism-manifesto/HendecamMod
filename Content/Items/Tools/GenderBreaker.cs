@@ -25,6 +25,7 @@ public class GenderBreaker : ModItem
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 60;
+        Item.useTurn = true;
 
 
         Item.value = Item.buyPrice(silver: 15);

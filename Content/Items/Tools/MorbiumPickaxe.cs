@@ -26,6 +26,7 @@ public class MorbiumPickaxe : ModItem
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 205;
         Item.tileBoost = 2;
+        Item.useTurn = true;
 
 
         Item.value = Item.buyPrice(gold: 5);

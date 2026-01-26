@@ -24,7 +24,9 @@ public class UraniumPickaxe : ModItem
        
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 4 ;
-        
+        Item.useTurn = true;
+
+
         Item.value = Item.buyPrice(gold: 1); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;

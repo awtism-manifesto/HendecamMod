@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
@@ -272,6 +273,11 @@ public class Alpine : ModNPC
     public override void AddShops()
         {
         var npcShop = new NPCShop(Type, ShopName)
+
+             .Add<OverclockedWrench>()
+
+
+
         ;
         npcShop.Register(); // Name of this shop tab
         }

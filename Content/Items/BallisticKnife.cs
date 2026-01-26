@@ -30,7 +30,7 @@ public class BallisticKnife : ModItem
         Item.damage = 33;
         Item.knockBack = 4;
 
-
+        Item.useTurn = true;
         Item.value = Item.buyPrice(gold: 21);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item14;

@@ -20,7 +20,8 @@ public class LycopitePickaxe : ModItem
         Item.height = 35;
         Item.useTime = 8;
         Item.useAnimation = 14;
-        
+        Item.useTurn = true;
+
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;

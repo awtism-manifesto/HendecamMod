@@ -30,8 +30,8 @@ public class TarriffStamper : ModItem
         Item.value = Item.buyPrice(gold: 90);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
-        
-       
+        Item.useTurn = true;
+
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;

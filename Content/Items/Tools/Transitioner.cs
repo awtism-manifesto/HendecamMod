@@ -16,6 +16,8 @@ public class Transitioner : ModItem
         Item.useTime = 12;
         Item.useAnimation = 34;
         Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTurn = true;
+
         Item.knockBack = 6;
         Item.value = 10000;
         Item.rare = ItemRarityID.Green;

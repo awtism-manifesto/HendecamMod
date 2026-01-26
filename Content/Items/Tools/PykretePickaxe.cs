@@ -26,6 +26,7 @@ public class PykretePickaxe : ModItem
         Item.knockBack = 3;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 40;
+        Item.useTurn = true;
 
 
         Item.value = Item.buyPrice(silver: 5);

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Global;
 
@@ -44,13 +45,21 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe12.Register();
 
         Recipe recipe123 = Recipe.Create(ItemID.CobaltShield);
-        recipe123.AddIngredient<AzuriteBar>(5);
-        recipe123.AddIngredient(ItemID.CobaltBar, 5);
+        recipe123.AddIngredient<AzuriteBar>(10);
+       
         recipe123.AddIngredient<DefenseShield>();
 
-
-        recipe123.AddTile(TileID.Anvils);
+        recipe123.AddTile<CobaltWorkBenchPlaced>();
+       
         recipe123.Register();
+        Recipe recipe1233 = Recipe.Create(ItemID.CobaltShield);
+        recipe1233.AddIngredient<AzuriteBar>(10);
+
+        recipe1233.AddIngredient<DefenseShield>();
+
+        recipe1233.AddTile<PalladiumWorkBenchPlaced>();
+
+        recipe1233.Register();
 
         Recipe recipe1234 = Recipe.Create(ItemID.WaterBolt);
         recipe1234.AddIngredient<AzuriteBar>(10);

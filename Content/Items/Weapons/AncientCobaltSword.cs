@@ -34,6 +34,7 @@ public class AncientCobaltSword : ModItem
         Item.UseSound = SoundID.Item1;
         Item.shoot = ModContent.ProjectileType<CobaltBolt>();
         Item.shootSpeed = 10.25f;
+        Item.useTurn = true;
 
     }
 

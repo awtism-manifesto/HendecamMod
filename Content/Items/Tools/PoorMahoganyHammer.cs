@@ -22,7 +22,8 @@ public class PoorMahoganyHammer : ModItem
        
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 1;
-        
+        Item.useTurn = true;
+
         Item.value = Item.buyPrice(gold: 0); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;

@@ -985,6 +985,11 @@ public class ExampleNPCLoot : GlobalNPC
             
             npcLoot.Add(ItemDropRule.Common(ItemID.Ectoplasm, 3, 1, 4));
         }
+        if (npc.type == NPCID.SeekerHead)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemID.WormTooth, 2, 2, 4));
+        }
         if (npc.type == NPCID.SpikedIceSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.BlizzardinaBottle, 20));

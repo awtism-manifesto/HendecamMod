@@ -25,6 +25,8 @@ public class StupiderFuckingPickaxe : ModItem
         Item.useAnimation = 10;
         Item.scale = 2.5f;
         Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTurn = true;
+
         Item.knockBack = 6;
         Item.crit = 69416;
         Item.ArmorPenetration = 999;

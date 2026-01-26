@@ -34,7 +34,8 @@ public class GoldMultiaxe : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 1;
         Item.pick = 60;
-       
+        Item.useTurn = true;
+
         Item.axe = 18;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }

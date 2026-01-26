@@ -26,7 +26,7 @@ public class AzuritePickaxe : ModItem
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 105;
-
+        Item.useTurn = true;
 
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;

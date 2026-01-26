@@ -29,11 +29,7 @@ public class OverclockedWrench : ModItem
         Item.value = 1499000;
         
     }
-    public override void AddRecipes()
-    {
-        
-       
-    }
+    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

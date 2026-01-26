@@ -17,6 +17,8 @@ public class SteelAxe : ModItem
         Item.useAnimation = 25;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
+        Item.useTurn = true;
+
         Item.value = 1500;
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;

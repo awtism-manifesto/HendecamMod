@@ -19,6 +19,8 @@ public class SteelPickaxe : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 14;
         Item.useAnimation = 20;
+        Item.useTurn = true;
+
         Item.autoReuse = true;
         Item.DamageType = DamageClass.Melee;
         Item.damage = 9;

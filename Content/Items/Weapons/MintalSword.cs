@@ -27,7 +27,7 @@ public class MintalSword : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
         Item.scale = 2f;
-
+        Item.useTurn = true;
 
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

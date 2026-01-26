@@ -27,8 +27,9 @@ public class SodiumHamaxe : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
-        
+        Item.useTurn = true;
+
+
         Item.hammer = 75;
         Item.axe = 18;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig

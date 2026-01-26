@@ -30,7 +30,7 @@ public class FireyPhasesaber : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item15;
 
-
+        Item.useTurn = true;
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;

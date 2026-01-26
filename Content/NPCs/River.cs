@@ -4,6 +4,7 @@ using HendecamMod.Content.Global;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
@@ -357,9 +358,10 @@ public class River : ModNPC
                .Add<Bullshit2>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit2>()))
                  .Add<Bullshit3>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit3>()))
                    .Add<Bullshit4>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit4>()))
+                     .Add<SoulOfImmunityAccessory>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit4>()))
                      .Add<LoreAccurateBlackshard>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Blackshard>()))
                     .Add<TheSecondAmendment>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<TheSecondAmendment>()))
-                     .Add<Bullshit5>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<TheSecondAmendment>()))
+                     .Add<Bullshit5>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit5>()))
 
                       .Add(ItemID.CrabBanner, Condition.InBeach)
 
