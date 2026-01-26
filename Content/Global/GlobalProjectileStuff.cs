@@ -147,6 +147,52 @@ public class HarpyBuff : GlobalProjectile
  
 
 }
+public class FrostCoreTack : GlobalProjectile
+{
+    public bool fromIceGolem;
+
+    public override bool InstancePerEntity => true;
+
+    private int tickCounter = 0;
+    private int nextSpawnTick = 0;
+    public override void AI(Projectile projectile)
+    {
+        if (nextSpawnTick == 0)
+        {
+            tickCounter++;
+            nextSpawnTick = 1;
+        }
+
+
+
+        if (tickCounter >= nextSpawnTick && projectile.type == ProjectileID.FrostBeam && Main.masterMode)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                float rotation = MathHelper.ToRadians(i * 45f);
+                Vector2 velocity = projectile.velocity.RotatedBy(rotation);
+                Vector2 position = projectile.Center;
+
+                Projectile.NewProjectile(
+                    projectile.GetSource_FromThis(),
+                    position,
+                    velocity,
+                    ModContent.ProjectileType<FrostBeamClone>(),
+                    projectile.damage,
+                    projectile.knockBack,
+                    projectile.owner
+                );
+            }
+
+            tickCounter = 0;
+            nextSpawnTick = 99999;
+
+        }
+
+    }
+
+
+}
 public class DeerBurn : GlobalProjectile
 {
     public bool DeerclopsAttack;
