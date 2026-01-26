@@ -80,7 +80,7 @@ public class ArcaneDart : ModProjectile
                
             }
         }
-        float maxDetectRadius = 265f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 375f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
         if (DelayTimer < 25)
