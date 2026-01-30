@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;

@@ -1,9 +1,6 @@
-﻿using System;
+﻿using HendecamMod.Content.Global;
 using Terraria;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using HendecamMod.Content.Global;
-using System.Drawing;
 
 
 

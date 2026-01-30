@@ -1,11 +1,8 @@
 ﻿
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Weapons;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 

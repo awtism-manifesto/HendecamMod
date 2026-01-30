@@ -8,7 +8,6 @@ using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using Terraria.GameContent.Generation;
 
 namespace HendecamMod.Content.Tiles;
 

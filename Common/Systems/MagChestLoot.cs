@@ -1,9 +1,8 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Weapons;
-using HendecamMod.Content.Items.Accessories;
 
 namespace HendecamMod.Common.Systems;
 

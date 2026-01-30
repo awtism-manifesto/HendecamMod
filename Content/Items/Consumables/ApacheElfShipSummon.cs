@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;

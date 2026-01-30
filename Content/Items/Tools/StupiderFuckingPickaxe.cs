@@ -2,12 +2,10 @@
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 

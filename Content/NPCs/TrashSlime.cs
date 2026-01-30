@@ -1,10 +1,10 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using HendecamMod.Content.Items;
 
 namespace HendecamMod.Content.NPCs;
 

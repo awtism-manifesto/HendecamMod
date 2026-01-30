@@ -1,9 +1,4 @@
-﻿using log4net.Core;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 

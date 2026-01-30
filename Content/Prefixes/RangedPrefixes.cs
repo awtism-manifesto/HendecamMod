@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.DamageClasses;
 using Terraria;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace HendecamMod.Content.Prefixes;
 

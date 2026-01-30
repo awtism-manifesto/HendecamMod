@@ -1,13 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.Tiles.Blocks;
+using Microsoft.Xna.Framework;
 using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Blocks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.Global;
 

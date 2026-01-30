@@ -1,11 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Chat;
-using Terraria.Localization;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.Global;
 

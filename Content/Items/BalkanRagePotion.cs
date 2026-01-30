@@ -1,10 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using HendecamMod.Content.Items.Consumables;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items.Consumables;
 
 namespace HendecamMod.Content.Items;
 

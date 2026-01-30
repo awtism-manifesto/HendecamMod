@@ -1,16 +1,11 @@
-﻿using System;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.DamageClasses;
 
 
 namespace HendecamMod.Content.Items;

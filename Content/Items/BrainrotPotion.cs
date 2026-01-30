@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;

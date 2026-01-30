@@ -1,8 +1,7 @@
-﻿using Microsoft.Build.Evaluation;
+﻿using HendecamMod.Content.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons;
 

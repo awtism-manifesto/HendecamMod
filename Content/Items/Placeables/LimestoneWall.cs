@@ -1,8 +1,7 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Tiles.Walls;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Walls;
-using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Placeables;
 

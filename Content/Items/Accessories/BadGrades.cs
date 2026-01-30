@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;

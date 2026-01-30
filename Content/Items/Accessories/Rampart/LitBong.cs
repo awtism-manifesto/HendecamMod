@@ -1,10 +1,6 @@
-﻿
-using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;

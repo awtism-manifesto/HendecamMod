@@ -1,9 +1,8 @@
-﻿using HendecamMod.Content.Global;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Buffs;
 

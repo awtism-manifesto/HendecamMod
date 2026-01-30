@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Common.Systems;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;

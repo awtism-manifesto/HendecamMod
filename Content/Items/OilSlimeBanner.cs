@@ -1,7 +1,7 @@
-﻿using Terraria.Enums;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Tiles;
 using Terraria;
-using HendecamMod.Content.Tiles;
+using Terraria.Enums;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 

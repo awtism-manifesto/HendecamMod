@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HendecamMod.Content.Global;
+﻿using HendecamMod.Content.Global;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
@@ -10,6 +8,8 @@ using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;

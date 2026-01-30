@@ -1,8 +1,8 @@
-﻿using System.IO;
-using Terraria.ModLoader.IO;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.NPCs;
+using System.IO;
 using Terraria;
-using HendecamMod.Content.NPCs;
+using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.GlobalNPCs;
 

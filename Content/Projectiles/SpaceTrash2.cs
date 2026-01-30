@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

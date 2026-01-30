@@ -1,11 +1,11 @@
 ﻿
 using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories;
 

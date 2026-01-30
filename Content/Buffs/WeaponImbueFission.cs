@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Global;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;

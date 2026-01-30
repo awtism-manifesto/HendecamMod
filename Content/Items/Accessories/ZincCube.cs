@@ -1,11 +1,10 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories;
 

@@ -1,7 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;

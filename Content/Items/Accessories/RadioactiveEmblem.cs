@@ -1,6 +1,5 @@
 ﻿
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -8,7 +7,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories;
 

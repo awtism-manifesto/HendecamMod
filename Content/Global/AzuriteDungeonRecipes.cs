@@ -1,16 +1,10 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Items.Accessories;
-using System.Collections.Generic;
-
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

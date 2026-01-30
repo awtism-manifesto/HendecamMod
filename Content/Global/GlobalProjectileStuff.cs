@@ -1,12 +1,9 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Enemies;
 
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;

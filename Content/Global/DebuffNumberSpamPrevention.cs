@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;

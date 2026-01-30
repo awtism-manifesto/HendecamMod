@@ -1,9 +1,9 @@
-﻿using System;
+﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Projectiles.Items;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles.Items;
-using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Weapons;
 

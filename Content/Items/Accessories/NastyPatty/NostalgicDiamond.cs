@@ -1,10 +1,7 @@
 ﻿
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Accessories.Rampart;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 

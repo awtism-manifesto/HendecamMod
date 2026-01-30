@@ -1,8 +1,7 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items;
 
 namespace HendecamMod.Content.Achievements;
 

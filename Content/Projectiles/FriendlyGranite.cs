@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
-using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
-using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace HendecamMod.Content.Projectiles;
 

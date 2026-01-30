@@ -1,16 +1,9 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using HendecamMod.Content.NPCs;
-using System.Threading.Tasks;
+﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.NPCs.Town.Alpine;
+using HendecamMod.Content.Poop;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Poop;
-using HendecamMod.Content.NPCs.Town.Alpine;
 
 
 namespace HendecamMod.Content.Global;

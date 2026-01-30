@@ -7,7 +7,6 @@ using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 

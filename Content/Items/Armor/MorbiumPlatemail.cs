@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Placeables;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Items.Armor;
 

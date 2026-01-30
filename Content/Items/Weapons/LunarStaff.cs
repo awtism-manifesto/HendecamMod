@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using Mono.Cecil;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;

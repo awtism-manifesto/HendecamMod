@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Projectiles;
 using System;
 using Terraria;

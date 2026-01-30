@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
-using Terraria.ModLoader;
-using Terraria;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 

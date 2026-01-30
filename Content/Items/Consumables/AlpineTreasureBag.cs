@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Weapons;
-using HendecamMod.Content.NPCs.Bosses;
+﻿using HendecamMod.Content.Items.Weapons;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;

@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 

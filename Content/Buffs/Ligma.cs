@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Global;
-using System;
+﻿using HendecamMod.Content.Global;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;

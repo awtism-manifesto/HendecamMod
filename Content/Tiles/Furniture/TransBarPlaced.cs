@@ -1,9 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Tiles.Furniture;
 

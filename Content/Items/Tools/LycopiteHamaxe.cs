@@ -1,10 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 

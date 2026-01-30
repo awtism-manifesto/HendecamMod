@@ -1,11 +1,9 @@
 ﻿using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items;
-using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 

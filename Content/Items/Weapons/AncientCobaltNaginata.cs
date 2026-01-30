@@ -1,11 +1,11 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles.Items;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Weapons;
 

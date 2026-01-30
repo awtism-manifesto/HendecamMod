@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework.Graphics;
-using System.Drawing;
+using System;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

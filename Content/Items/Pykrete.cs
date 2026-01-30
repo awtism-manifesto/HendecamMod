@@ -1,8 +1,8 @@
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Tiles;
-using HendecamMod.Content.Items.Materials;
 
 
 namespace HendecamMod.Content.Items;

@@ -1,8 +1,7 @@
-﻿using Microsoft.Build.Evaluation;
+﻿using HendecamMod.Content.DamageClasses;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Poop;
 

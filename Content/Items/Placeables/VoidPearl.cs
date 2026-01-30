@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Tiles.Furniture;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

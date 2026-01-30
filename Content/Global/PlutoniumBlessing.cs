@@ -1,18 +1,13 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
-using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Tiles;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Formats.Asn1;
 using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.Global;
 

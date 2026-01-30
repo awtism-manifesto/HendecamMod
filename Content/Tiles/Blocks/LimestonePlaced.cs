@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Terraria;
 using Terraria.Chat;
-using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.Localization;

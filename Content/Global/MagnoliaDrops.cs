@@ -1,11 +1,10 @@
-﻿using System.Linq;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons;
 
 namespace HendecamMod.Content.Global;
 

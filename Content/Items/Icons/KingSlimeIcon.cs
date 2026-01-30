@@ -1,10 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Rarities;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria;
-using HendecamMod.Content.Rarities;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Icons;
 

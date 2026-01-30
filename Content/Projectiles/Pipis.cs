@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 

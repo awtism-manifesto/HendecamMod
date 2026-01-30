@@ -1,10 +1,10 @@
-﻿using System;
+﻿using HendecamMod.Content.Items;
+using System;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Items;
 
 namespace HendecamMod.Common.GlobalItems;
 

@@ -1,8 +1,8 @@
 ﻿
-using System.Collections.Generic;
 using HendecamMod.Content.Items.Accessories.NastyPatty;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

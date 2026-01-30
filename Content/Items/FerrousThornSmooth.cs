@@ -1,12 +1,9 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;

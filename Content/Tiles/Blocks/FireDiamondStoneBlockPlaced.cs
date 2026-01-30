@@ -1,10 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Materials;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
 using Terraria.Localization;
-using HendecamMod.Content.Items.Materials;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 

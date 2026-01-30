@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Build.Evaluation;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;

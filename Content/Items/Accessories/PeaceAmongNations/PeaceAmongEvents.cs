@@ -1,10 +1,7 @@
 ﻿
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Accessories.NastyPatty;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
