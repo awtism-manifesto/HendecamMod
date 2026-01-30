@@ -82,6 +82,13 @@ public class MericaNPCShops:GlobalNPC
             shop.Add<GayFrogAlchemyGuide>(condition: Terraria.Condition.DownedMechBossAny);
 
         }
+        if (shop.NpcType == NPCID.Wizard)
+        {
+            // Adding an item to a vanilla NPC is easy:
+            // This item sells for the normal price.
+            shop.Add<GayFrogAlchemyGuide>(condition: Terraria.Condition.DownedMechBossAny);
+
+        }
         if (shop.NpcType == NPCID.Steampunker)
         {
             // Adding an item to a vanilla NPC is easy:

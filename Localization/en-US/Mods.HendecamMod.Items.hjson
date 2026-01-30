@@ -4759,3 +4759,13 @@ MorbiumWarriorBanner: {
 	Tooltip: ""
 	DisplayName: Morbium Warrior Banner
 }
+
+MorbiumEarthquaker: {
+	DisplayName: Morbium Earthquaker
+	Tooltip: ""
+}
+
+MorbiumMinesweeper: {
+	Tooltip: ""
+	DisplayName: Morbium Minesweeper
+}

@@ -29,7 +29,7 @@ public class PlasmoidWand : ModItem
     {
         Item.damage = 15;
         Item.knockBack = 3f;
-        Item.mana = 10; // mana cost
+      
         Item.width = 32;
         Item.height = 32;
         Item.useTime = 36;

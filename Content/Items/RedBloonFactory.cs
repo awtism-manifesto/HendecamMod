@@ -29,7 +29,7 @@ public override void SetDefaults()
 {
     Item.damage = 6;
     Item.knockBack = 0.1f;
-    Item.mana = 2; // mana cost
+  
     Item.width = 32;
     Item.height = 32;
     Item.scale = 0.9f;

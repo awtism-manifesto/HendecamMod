@@ -51,7 +51,7 @@ public class AlpinePlushieGlitterbomb : ModItem
         var line = new TooltipLine(Mod, "Face", "Throws a glitter bomb disguised as an Alpine plushie");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The shiny glitter causes your summons to focus hit enemies")
+        line = new TooltipLine(Mod, "Face", "The shiny glitter causes your summons to focus hit enemies, and homes in, dealing up to 150 un-negateable damage")
         {
             OverrideColor = new Color(255, 255, 255)
         };

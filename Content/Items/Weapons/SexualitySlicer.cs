@@ -14,13 +14,13 @@ public class SexualitySlicer : ModItem
     {
         Item.width = 36;
         Item.height = 36;
-        Item.scale = 1.15f;
+       
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 13;
-        Item.useAnimation = 13;
+        Item.useTime = 11;
+        Item.useAnimation = 11;
         Item.autoReuse = true;
-
+        Item.scale = 1.33f;
         Item.DamageType = DamageClass.Melee;
         Item.damage = 22;
         Item.knockBack = 7;

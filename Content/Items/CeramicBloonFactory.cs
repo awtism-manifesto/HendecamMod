@@ -29,7 +29,7 @@ public class CeramicBloonFactory : ModItem
     {
         Item.damage = 22;
         Item.knockBack = 0.8f;
-        Item.mana = 11; // mana cost
+       
         Item.width = 32;
         Item.height = 32;
         Item.scale = 0.9f;

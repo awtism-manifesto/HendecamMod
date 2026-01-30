@@ -23,7 +23,7 @@ public class RingOfFire : ModItem
         Item.damage = 63;
         Item.DamageType = DamageClass.Summon;
         Item.sentry = true;
-        Item.mana = 10;
+       
         Item.width = 26;
         Item.height = 28;
         Item.useTime = 30;

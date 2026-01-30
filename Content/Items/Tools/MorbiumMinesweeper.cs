@@ -10,16 +10,16 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
-public class MorbiumTreeripper : ModItem
+public class MorbiumMinesweeper : ModItem
 {
     public override void SetDefaults()
     {
-        Item.damage = 152;
-        Item.DamageType =  DamageClass.Melee;
+        Item.damage = 178;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
-        Item.useTime = 4;
-        Item.useAnimation = 12;
+        Item.useTime = 3;
+        Item.useAnimation = 18;
         Item.scale = 1.5f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 11.5f;
@@ -30,9 +30,9 @@ public class MorbiumTreeripper : ModItem
         Item.UseSound = SoundID.Item23;
         Item.autoReuse = true;
         Item.tileBoost = 4;
-        
-       
-        Item.axe = 48;
+
+
+        Item.pick = 205;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -54,11 +54,11 @@ public class MorbiumTreeripper : ModItem
 
 
         recipe.AddIngredient<MorbiumBar>(18);
-       
-        
+
+
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-        
+
     }
 }
