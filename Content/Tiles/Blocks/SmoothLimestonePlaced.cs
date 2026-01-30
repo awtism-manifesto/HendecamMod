@@ -1,9 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -20,7 +15,6 @@ public class SmoothLimestonePlaced : ModTile
 
         AddMapEntry(new Color(204, 190, 163));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

@@ -1,10 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Consumables;
+﻿namespace HendecamMod.Content.Items.Consumables;
 
 public class AdderallPill : ModItem
 {
@@ -12,7 +6,8 @@ public class AdderallPill : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(240, 240, 240),
             new Color(200, 200, 200),
             new Color(140, 140, 140)

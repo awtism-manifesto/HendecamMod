@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.DamageClasses;
+﻿namespace HendecamMod.Content.DamageClasses;
 
 public class OmniDamage : DamageClass
 {
@@ -14,55 +11,55 @@ public class OmniDamage : DamageClass
         // Default is, you guessed it, the default damage class. It doesn't scale off of any class-specific stat bonuses or universal stat bonuses.
         // There are a number of items and projectiles that use this, such as thrown waters and the Bone Glove's bones.
         // Generic, on the other hand, scales off of all universal stat bonuses and nothing else; it's the base damage class upon which all others that aren't Default are built.
-        if (damageClass == DamageClass.Generic)
+        if (damageClass == Generic)
             return new StatInheritanceData(
-             damageInheritance: 0.67f,
-             critChanceInheritance: 0.67f,
-             attackSpeedInheritance: 0.67f,
-             armorPenInheritance: 0.67f,
-             knockbackInheritance: 0.67f);
-        if (damageClass == DamageClass.Summon)
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
+        if (damageClass == Summon)
             return new StatInheritanceData(
-            damageInheritance: 0.67f,
-            critChanceInheritance: 0.67f,
-            attackSpeedInheritance: 0.67f,
-            armorPenInheritance: 0.67f,
-            knockbackInheritance: 0.67f);
-        if (damageClass == DamageClass.Ranged)
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
+        if (damageClass == Ranged)
             return new StatInheritanceData(
-              damageInheritance: 0.67f,
-              critChanceInheritance: 0.67f,
-              attackSpeedInheritance: 0.67f,
-              armorPenInheritance: 0.67f,
-              knockbackInheritance: 0.67f);
-        if (damageClass == DamageClass.Melee)
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
+        if (damageClass == Melee)
             return new StatInheritanceData(
-              damageInheritance: 0.67f,
-              critChanceInheritance: 0.67f,
-              attackSpeedInheritance: 0.67f,
-              armorPenInheritance: 0.67f,
-              knockbackInheritance: 0.50f);
-        if (damageClass == DamageClass.Magic)
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.50f);
+        if (damageClass == Magic)
             return new StatInheritanceData(
-             damageInheritance: 0.67f,
-             critChanceInheritance: 0.67f,
-             attackSpeedInheritance: 0.67f,
-             armorPenInheritance: 0.67f,
-             knockbackInheritance: 0.67f);
-        if (damageClass == DamageClass.Throwing)
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
+        if (damageClass == Throwing)
             return new StatInheritanceData(
-             damageInheritance: 0.67f,
-             critChanceInheritance: 0.67f,
-             attackSpeedInheritance: 0.67f,
-             armorPenInheritance: 0.67f,
-             knockbackInheritance: 0.67f);
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
         if (damageClass == ModContent.GetInstance<StupidDamage>())
             return new StatInheritanceData(
-             damageInheritance: 0.67f,
-             critChanceInheritance: 0.67f,
-             attackSpeedInheritance: 0.67f,
-             armorPenInheritance: 0.67f,
-             knockbackInheritance: 0.67f);
+                damageInheritance: 0.67f,
+                critChanceInheritance: 0.67f,
+                attackSpeedInheritance: 0.67f,
+                armorPenInheritance: 0.67f,
+                knockbackInheritance: 0.67f);
         return new StatInheritanceData(
             damageInheritance: 0.67f,
             critChanceInheritance: 0.67f,
@@ -71,33 +68,27 @@ public class OmniDamage : DamageClass
             knockbackInheritance: 0.67f
         );
     }
+
     public override bool GetPrefixInheritance(DamageClass damageClass)
     {
-       
-        if (damageClass == DamageClass.Generic)
+        if (damageClass == Generic)
             return true;
         if (damageClass == ModContent.GetInstance<StupidDamage>())
             return true;
 
         return true;
     }
+
     public override bool GetEffectInheritance(DamageClass damageClass)
     {
-       
         return true;
     }
+
     public override void SetDefaultStats(Player player)
     {
         // This method lets you set default statistical modifiers for your example damage class.
         // Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-        
-       
         // These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
         // You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
     }
-
-
-
-
-
 }

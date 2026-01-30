@@ -1,9 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Tiles;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Tiles;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -19,6 +14,5 @@ public class Ebonclay : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<EbonclayPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
 }

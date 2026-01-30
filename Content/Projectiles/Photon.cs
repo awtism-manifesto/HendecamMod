@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -36,12 +30,12 @@ public class Photon : ModProjectile
         Projectile.scale = 0.45f;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
-       
-        
         return Color.Orange;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -82,24 +76,17 @@ public class Photon : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
         target.AddBuff(BuffID.Electrified, 240);
         target.AddBuff(BuffID.OnFire, 240);
         target.AddBuff(BuffID.OnFire3, 235);
         target.AddBuff(BuffID.BetsysCurse, 240);
     }
-
-
-   
-
 }
-
-
-

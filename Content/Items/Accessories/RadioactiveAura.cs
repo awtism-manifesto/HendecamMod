@@ -1,13 +1,7 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -17,8 +11,8 @@ public class RadioactiveAura : ModItem
 
     public static readonly int AdditiveDamageBonus = 6;
     public static readonly int AttackSpeedBonus = 3;
-    public static readonly int CritBonus = 6;
 
+    public static readonly int CritBonus = 6;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
@@ -31,7 +25,7 @@ public class RadioactiveAura : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 230000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,26 +43,20 @@ public class RadioactiveAura : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
     }
+
     public override void AddRecipes()
     {
-        Recipe 
-
-
-        
+        Recipe
             recipe = CreateRecipe();
-           
-            recipe.AddIngredient<PlutoniumBar>(12);
-            
-            recipe.AddIngredient(ItemID.PutridScent);
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.Register();
 
-        
+        recipe.AddIngredient<PlutoniumBar>(12);
 
+        recipe.AddIngredient(ItemID.PutridScent);
+        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -89,55 +77,50 @@ public class RadioactiveAura : ModItem
         player.aggro += -660;
     }
 }
+
 public class Rad2Apply : ModPlayer
 {
-    public bool rad2Effect; public override void ResetEffects()
+    public bool rad2Effect;
+
+    public override void ResetEffects()
     {
         rad2Effect = false;
     }
 
     public override void PostUpdateRunSpeeds()
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
             return;
         }
-       
+
         if (Main.rand.NextBool(4))
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
-
-
         }
-       
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
-            return;
         }
         else
         {
-           
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-          
         }
     }
+
     public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
-            return;
         }
         else
         {
-           
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-           
         }
     }
 }

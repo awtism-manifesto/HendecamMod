@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
 
@@ -12,10 +7,8 @@ public class RazorRotors : ModItem
 {
     public override void SetStaticDefaults()
     {
-      
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
-
 
     public override void SetDefaults()
     {
@@ -41,28 +34,26 @@ public class RazorRotors : ModItem
         Item.shootSpeed = 0f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<RazorRotorsProj>(); // The projectile that is fired from this weapon
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
         {
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.shoot = ModContent.ProjectileType<RazorRotorThrown>();
-            Item.shootSpeed = 28.5f; 
+            Item.shootSpeed = 28.5f;
         }
         else
         {
             Item.useStyle = ItemUseStyleID.Swing;
-          
+
             Item.shoot = ModContent.ProjectileType<RazorRotorsProj>();
-            Item.shootSpeed = 0f; 
+            Item.shootSpeed = 0f;
         }
 
         return base.CanUseItem(player);
@@ -85,12 +76,5 @@ public class RazorRotors : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        
     }
-   
-   
-   
 }

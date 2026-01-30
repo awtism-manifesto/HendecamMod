@@ -1,14 +1,8 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class AncientCobaltSword : ModItem
 {
@@ -25,7 +19,7 @@ public class AncientCobaltSword : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 18;
         Item.knockBack = 6;
-        
+
         Item.ChangePlayerDirectionOnShoot = true;
         Item.scale = 1.45f;
 
@@ -35,15 +29,13 @@ public class AncientCobaltSword : ModItem
         Item.shoot = ModContent.ProjectileType<CobaltBolt>();
         Item.shootSpeed = 10.25f;
         Item.useTurn = true;
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Shoots a beam of ancient cobalt energy");
@@ -54,12 +46,8 @@ public class AncientCobaltSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -67,5 +55,4 @@ public class AncientCobaltSword : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

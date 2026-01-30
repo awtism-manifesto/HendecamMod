@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -13,13 +6,13 @@ public class KingslayerMultiaxe : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.damage = 23;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 9;
@@ -35,18 +28,16 @@ public class KingslayerMultiaxe : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 1;
         Item.pick = 63;
-       
+
         Item.axe = 20;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -58,7 +49,6 @@ public class KingslayerMultiaxe : ModItem
 
             Item.axe = 0;
             Item.hammer = 79;
-
         }
         else
         {
@@ -103,11 +93,5 @@ public class KingslayerMultiaxe : ModItem
         recipe.AddIngredient<KingslayerBar>(6);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
-
     }
-
 }

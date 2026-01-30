@@ -1,14 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -18,16 +8,10 @@ public class GalaxyShard : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
 
     public override void SetStaticDefaults()
     {
@@ -53,12 +37,10 @@ public class GalaxyShard : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
 
         Projectile.extraUpdates = 1;
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -66,8 +48,6 @@ public class GalaxyShard : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -83,6 +63,7 @@ public class GalaxyShard : ModProjectile
 
         return false;
     }
+
     // Custom AI
     public override void AI()
     {
@@ -98,10 +79,9 @@ public class GalaxyShard : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
+
         float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -132,7 +112,6 @@ public class GalaxyShard : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2f)).ToRotationVector2() * length;
-       
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -178,5 +157,3 @@ public class GalaxyShard : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

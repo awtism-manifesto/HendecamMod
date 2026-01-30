@@ -1,8 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Poop;
 
@@ -38,5 +34,4 @@ public class PoopArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 100);
         recipe.Register();
     }
-
 }

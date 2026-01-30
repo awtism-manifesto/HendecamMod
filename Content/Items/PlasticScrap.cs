@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -21,6 +16,7 @@ public class PlasticScrap : ModItem
         Item.value = 10;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -32,8 +28,6 @@ public class PlasticScrap : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -53,29 +47,23 @@ public class PlasticScrap : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("Plastic", out ModItem Plastic))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("Plastic", out ModItem Plastic))
         {
             recipe = CreateRecipe(20);
 
             recipe.AddIngredient(Plastic.Type);
-           
+
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
         }
         else
         {
-             recipe = CreateRecipe();
+            recipe = CreateRecipe();
 
-            recipe.AddIngredient<Items.CrudeOil>(3);
-          
+            recipe.AddIngredient<CrudeOil>(3);
+
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
-
-
-
         }
-
-
     }
-
 }

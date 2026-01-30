@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Tiles.Furniture;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -26,6 +20,7 @@ public class MorbiumBar : ModItem
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBarPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -37,18 +32,14 @@ public class MorbiumBar : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<MorbiumOre>(5);
-      
+
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-        
     }
 }

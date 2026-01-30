@@ -1,8 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -35,11 +31,10 @@ public class BloodshotArrow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(20);
-        recipe.AddIngredient(ItemID.CrimtaneBar, 1);
+        recipe.AddIngredient(ItemID.CrimtaneBar);
         recipe.Register();
         recipe = CreateRecipe(20);
-        recipe.AddIngredient(ItemID.DemoniteBar, 1);
+        recipe.AddIngredient(ItemID.DemoniteBar);
         recipe.Register();
     }
-
 }

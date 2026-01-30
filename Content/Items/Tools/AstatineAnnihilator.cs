@@ -1,13 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -15,9 +8,9 @@ public class AstatineAnnihilator : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.damage = 125;
@@ -36,18 +29,16 @@ public class AstatineAnnihilator : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 5;
         Item.pick = 245;
-       
+
         Item.axe = 43;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -59,7 +50,6 @@ public class AstatineAnnihilator : ModItem
 
             Item.axe = 0;
             Item.hammer = 185;
-
         }
         else
         {
@@ -73,6 +63,7 @@ public class AstatineAnnihilator : ModItem
 
         return base.CanUseItem(player);
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -89,6 +80,7 @@ public class AstatineAnnihilator : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
@@ -99,17 +91,13 @@ public class AstatineAnnihilator : ModItem
             dust.noGravity = true;
             dust.velocity *= 5.5f;
             dust.scale *= 0.9f;
-
         }
     }
-
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe.AddIngredient<AstatineBar>(25);
         recipe.AddIngredient<ThePurifier>();
@@ -117,6 +105,5 @@ public class AstatineAnnihilator : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-
     }
 }

@@ -1,15 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class Pentagram : ModProjectile
 {
@@ -17,16 +6,10 @@ public class Pentagram : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-    
-
 
     public override void SetStaticDefaults()
     {
@@ -39,7 +22,7 @@ public class Pentagram : ModProjectile
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -49,20 +32,13 @@ public class Pentagram : ModProjectile
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-       
-
-        
     }
 
     // Custom AI
     public override void AI()
     {
-
-
-
         if (Projectile.alpha < 133)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -84,6 +60,7 @@ public class Pentagram : ModProjectile
                 fireDust.velocity *= 1f;
             }
         }
+
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -160,5 +137,3 @@ public class Pentagram : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-    
-

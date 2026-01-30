@@ -1,13 +1,9 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.GameContent.ObjectInteractions;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture;
@@ -57,7 +53,8 @@ public class PlatinumChestPlaced : ModTile
         TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
         TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
         // lists which tiles chests cannot be placed on
-        TileObjectData.newTile.AnchorInvalidTiles = [
+        TileObjectData.newTile.AnchorInvalidTiles =
+        [
             TileID.MagicalIceBlock,
             TileID.Boulder,
             TileID.BouncyBoulder,
@@ -75,17 +72,17 @@ public class PlatinumChestPlaced : ModTile
     // This example shows using GetItemDrops to manually decide item drops. This example is for a tile with a TileObjectData.
     // This example is commented out because the RegisterItemDrop line in SetStaticDefaults above handles this situation and is the recommended approach, but the code is still useful to learn from if conditional drops need to be implemented.
     /*
-		public override IEnumerable<Item> GetItemDrops(int i, int j) {
-			Tile tile = Main.tile[i, j];
-			int style = TileObjectData.GetTileStyle(tile);
-			if (style == 0) {
-				yield return new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleChest>());
-			}
-			if (style == 1) {
-				yield return new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleChest>());
-			}
-		}
-		*/
+        public override IEnumerable<Item> GetItemDrops(int i, int j) {
+            Tile tile = Main.tile[i, j];
+            int style = TileObjectData.GetTileStyle(tile);
+            if (style == 0) {
+                yield return new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleChest>());
+            }
+            if (style == 1) {
+                yield return new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleChest>());
+            }
+        }
+        */
 
     public override ushort GetMapOption(int i, int j)
     {
@@ -110,7 +107,6 @@ public class PlatinumChestPlaced : ModTile
 
     public override bool UnlockChest(int i, int j, ref short frameXAdjustment, ref int dustType, ref bool manual)
     {
-
         DustType = dustType;
         return true;
     }
@@ -124,6 +120,7 @@ public class PlatinumChestPlaced : ModTile
             // We can check other conditions as well, such as how biome chests can't be locked until Plantera is defeated
             return true;
         }
+
         return false;
     }
 

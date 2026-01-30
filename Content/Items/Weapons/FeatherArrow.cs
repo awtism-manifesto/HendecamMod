@@ -1,8 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -36,8 +32,7 @@ public class FeatherArrow : ModItem
     {
         Recipe recipe = CreateRecipe(20);
         recipe.AddIngredient(ItemID.WoodenArrow, 20);
-        recipe.AddIngredient(ItemID.Feather, 1);
+        recipe.AddIngredient(ItemID.Feather);
         recipe.Register();
     }
-
 }

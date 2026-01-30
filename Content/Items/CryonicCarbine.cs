@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -41,10 +37,12 @@ public class CryonicCarbine : ModItem
         Item.shootSpeed = 15.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<CryoBullet>();
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -75,6 +73,7 @@ public class CryonicCarbine : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -86,8 +85,6 @@ public class CryonicCarbine : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -107,12 +104,12 @@ public class CryonicCarbine : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CryonicBar", out ModItem CryonicBar))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CryonicBar", out ModItem CryonicBar))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Uzi);
             recipe.AddIngredient(CryonicBar.Type, 12);
-           
+
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -121,18 +118,12 @@ public class CryonicCarbine : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Uzi);
             recipe.AddIngredient(ItemID.HallowedBar, 12);
-           
+
             recipe.AddIngredient(ItemID.FrostCore);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
-            
-
         }
-
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

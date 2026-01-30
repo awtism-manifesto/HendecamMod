@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class NapalmDart : ModProjectile
@@ -63,28 +56,23 @@ public class NapalmDart : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Torch, 0f, 0f, 100, default, 0.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-
         if (Main.netMode != NetmodeID.MultiplayerClient)
         {
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 1);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(Main.rand.Next(-2, 2), 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<NapalmRanged>(), Projectile.damage = (int)(Projectile.damage * 0.3f), Projectile.knockBack);
-           
+                new Vector2(Main.rand.Next(-2, 2), 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+                ModContent.ProjectileType<NapalmRanged>(), Projectile.damage = (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         }
 
-        
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);

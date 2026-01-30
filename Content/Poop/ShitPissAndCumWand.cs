@@ -1,17 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Poop;
 
@@ -21,6 +11,7 @@ public class ShitPissAndCumWand : ModItem
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -31,45 +22,31 @@ public class ShitPissAndCumWand : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 2500;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 14; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 14; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item8;
-
-
+        Item.UseSound = SoundID.Item8;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<AutismDamage>();
         Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-        
         Item.mana = 11;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot  = ModContent.ProjectileType<PooShot2>();
+        Item.shoot = ModContent.ProjectileType<PooShot2>();
 
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PooShot2>();
-
     }
-
-
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -77,11 +54,8 @@ public class ShitPissAndCumWand : ModItem
         player.AddBuff(BuffID.Stinky, 250);
         for (int i = 0; i < NumProjectiles; i++)
         {
-
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
-         
-           
 
             // Create a projectile.
 
@@ -91,14 +65,11 @@ public class ShitPissAndCumWand : ModItem
             type = ModContent.ProjectileType<SpermProj>();
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<PooShot2>();
-
-
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -115,8 +86,6 @@ public class ShitPissAndCumWand : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -131,22 +100,15 @@ public class ShitPissAndCumWand : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Ectoplasm, 12);
         recipe.AddIngredient<ShitAndPissWand>();
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

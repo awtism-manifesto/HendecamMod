@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Prefixes;
-
 
 public class Gargantuan : ModPrefix
 {
@@ -31,11 +25,12 @@ public class Gargantuan : ModPrefix
     {
         // apply to all ranged classes
         if (item.DamageType == DamageClass.Melee || item.DamageType == ModContent.GetInstance<MeleeRangedDamage>()
-            || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeMagicDamage>() || item.DamageType == ModContent.GetInstance<MeleeSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
-        { return true; }
-        else
-        { return false; }
+                                                 || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeMagicDamage>() || item.DamageType == ModContent.GetInstance<MeleeSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        {
+            return true;
+        }
 
+        return false;
     }
 
     // Use this function to modify these stats for items which have this prefix:
@@ -43,9 +38,9 @@ public class Gargantuan : ModPrefix
     public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
     {
         damageMult *= 1f + 0.20f * Power;
-        
+
         useTimeMult *= 1f + 0.125f * Power;
-       
+
         scaleMult *= 1f + 0.33f * Power;
     }
 
@@ -58,6 +53,5 @@ public class Gargantuan : ModPrefix
     // This is used to modify most other stats of items which have this modifier.
     public override void Apply(Item item)
     {
-
     }
 }

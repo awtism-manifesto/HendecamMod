@@ -1,8 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ModLoader;
+﻿using Terraria.Enums;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -55,11 +51,9 @@ public class IronFistProj : ModProjectile
             Projectile.Kill();
             return;
         }
-        else
-        {
-            // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
-            player.heldProj = Projectile.whoAmI;
-        }
+
+        // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
+        player.heldProj = Projectile.whoAmI;
 
         // Fade in and out
         // GetLerpValue returns a value between 0f and 1f - if clamped is true - representing how far Timer got along the "distance" defined by the first two parameters
@@ -80,29 +74,25 @@ public class IronFistProj : ModProjectile
         // The code in this method is important to align the sprite with the hitbox how we want it to
         SetVisualOffsets();
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 6;
-
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        
-            modifiers.SourceDamage *= 0f;
-        
+        modifiers.SourceDamage *= 0f;
     }
+
     public override void OnKill(int timeLeft)
     {
-
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Bottom - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<IronWave>(), (int)(Projectile.damage * 1.033f), (Projectile.knockBack * 1.33f), Projectile.owner);
-
+            ModContent.ProjectileType<IronWave>(), (int)(Projectile.damage * 1.033f), (Projectile.knockBack * 1.33f), Projectile.owner);
     }
+
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)
@@ -150,7 +140,7 @@ public class IronFistProj : ModProjectile
         // "Hit anything between the player and the tip of the sword"
         // shootSpeed is 2.1f for reference, so this is basically plotting 12 pixels ahead from the center
         Vector2 start = Projectile.Center;
-        Vector2 end = start + Projectile.velocity *6f;
+        Vector2 end = start + Projectile.velocity * 6f;
         float collisionPoint = 0f; // Don't need that variable, but required as parameter
         return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
     }

@@ -1,37 +1,27 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
-public class SpermProj: ModProjectile
+public class SpermProj : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-       
-        Main.projFrames[Projectile.type] = 4;
-    }
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
+    public override void SetStaticDefaults()
+    {
+        Main.projFrames[Projectile.type] = 4;
+    }
+
     public override void SetDefaults()
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -41,11 +31,10 @@ public class SpermProj: ModProjectile
         Projectile.light = 0.05f; // How much light emit around the projectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-       
+
         Projectile.usesLocalNPCImmunity = true;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -62,10 +51,9 @@ public class SpermProj: ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
+
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -96,8 +84,8 @@ public class SpermProj: ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(4f)).ToRotationVector2() * length;
-
     }
+
     public bool IsValidTarget(NPC target)
     {
         // This method checks that the NPC is:
@@ -110,6 +98,7 @@ public class SpermProj: ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -138,7 +127,6 @@ public class SpermProj: ModProjectile
         return closestNPC;
     }
 
-   
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -168,12 +156,14 @@ public class SpermProj: ModProjectile
 
         return false;
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     private void Visuals()
     {
         Projectile.rotation = Projectile.velocity.X * 0.05f;
@@ -191,11 +181,7 @@ public class SpermProj: ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

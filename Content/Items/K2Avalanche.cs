@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.DamageClasses;
-
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,8 +16,6 @@ public class K2Avalanche : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 14500000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
@@ -38,31 +25,23 @@ public class K2Avalanche : ModItem
         Item.reuseDelay = 8;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.DeerclopsRubbleAttack;
-
-
+        Item.UseSound = SoundID.DeerclopsRubbleAttack;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 145; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 21;
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<AvalancheBoulder>();
 
         Item.shootSpeed = 24.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<AvalancheBoulder>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -74,6 +53,7 @@ public class K2Avalanche : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
+
         // Loop these functions 3 times.
         for (int i = 0; i < 2; i++)
         {
@@ -100,9 +80,6 @@ public class K2Avalanche : ModItem
         return false;
     }
 
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -114,8 +91,6 @@ public class K2Avalanche : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -130,22 +105,17 @@ public class K2Avalanche : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BlizzardStaff);
-        recipe.AddIngredient<Items.IcicleMinigun>();
-        recipe.AddIngredient<Items.SisyphusPrime>();
+        recipe.AddIngredient<IcicleMinigun>();
+        recipe.AddIngredient<SisyphusPrime>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
-
-
-
     }
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -14,9 +10,9 @@ namespace HendecamMod.Content.Items.Armor;
 public class FaradayFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 21;
-    
+
     public static readonly int StupidCritBonus = 15;
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -40,6 +36,7 @@ public class FaradayFedora : ModItem
         Item.defense = 15; // The amount of defense the item will give when equipped
         Item.lifeRegen = 4;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,8 +48,6 @@ public class FaradayFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,11 +62,13 @@ public class FaradayFedora : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<FaradayBodyArmor>() && legs.type == ModContent.ItemType<FaradayPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -86,22 +83,22 @@ public class FaradayFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 121f;
-        
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.LunarBar, 8);
-       
+
         recipe.AddIngredient<FragmentFlatEarth>(10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-        
     }
 }

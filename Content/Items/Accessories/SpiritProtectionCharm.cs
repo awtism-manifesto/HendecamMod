@@ -1,26 +1,16 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class SpiritProtectionCharm : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-    
-    
-    
     public static readonly int MagicCritBonus = 7;
+
     public static readonly int MaxManaIncrease = 70;
+
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -30,6 +20,7 @@ public class SpiritProtectionCharm : ModItem
         Item.value = 99000;
         Item.defense = 5;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -40,8 +31,8 @@ public class SpiritProtectionCharm : ModItem
         recipe.AddIngredient<PurifiedSalt>(99);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-       
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -53,8 +44,6 @@ public class SpiritProtectionCharm : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

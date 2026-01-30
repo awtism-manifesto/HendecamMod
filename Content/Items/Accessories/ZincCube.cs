@@ -1,18 +1,11 @@
-﻿using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Rarities;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class ZincCube : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -31,6 +24,7 @@ public class ZincCube : ModItem
     {
         player.maxFallSpeed = player.maxFallSpeed * 2f;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -42,8 +36,6 @@ public class ZincCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -58,17 +50,16 @@ public class ZincCube : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
-
-        if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind<ModItem>("ZincBar", out ModItem ZincBar))
+        if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("ZincBar", out ModItem ZincBar))
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<CubicMold>(1);
+            recipe.AddIngredient<CubicMold>();
             recipe.AddIngredient(ZincBar.Type, 12);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
-        else { }
     }
 }

@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -13,8 +8,6 @@ public class MorbiumCube : ModItem
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
     public static readonly int AdditiveDamageBonus = 8;
-
-
 
     public override void SetDefaults()
     {
@@ -35,6 +28,7 @@ public class MorbiumCube : ModItem
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 108f;
         player.maxFallSpeed = player.maxFallSpeed * -1.25f;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,8 +40,6 @@ public class MorbiumCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -62,11 +54,12 @@ public class MorbiumCube : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
-        recipe.AddIngredient<Items.Placeables.MorbiumBar>(12);
+        recipe.AddIngredient<CubicMold>();
+        recipe.AddIngredient<Placeables.MorbiumBar>(12);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

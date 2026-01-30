@@ -1,17 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Threading;
-using Terraria;
-using Terraria.Chat;
-using Terraria.GameContent.Generation;
-using Terraria.ID;
-using Terraria.IO;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria.WorldBuilding;
-
-namespace HendecamMod.Content.Tiles.Blocks;
+﻿namespace HendecamMod.Content.Tiles.Blocks;
 
 public class OasisGrassPlaced : ModTile
 {
@@ -34,6 +21,5 @@ public class OasisGrassPlaced : ModTile
         HitSound = SoundID.Dig;
 
         AddMapEntry(new Color(170, 142, 69));
-
     }
 }

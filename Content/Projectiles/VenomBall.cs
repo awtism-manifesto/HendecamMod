@@ -1,20 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class VenomBall : ModProjectile
 {
-  
-
     public override void SetDefaults()
     {
         Projectile.width = 14; // The width of projectile hitbox
@@ -30,29 +17,15 @@ public class VenomBall : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2;
-
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         target.AddBuff(BuffID.Venom, 150);
-
-
     }
-   
+
     public override void AI()
     {
-      
-
         Projectile.rotation += -0.135f;
-
-       
-      
     }
-
-   
-  
 }
-
-

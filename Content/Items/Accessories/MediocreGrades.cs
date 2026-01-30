@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -39,8 +35,6 @@ public class MediocreGrades : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -54,6 +48,7 @@ public class MediocreGrades : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -62,23 +57,16 @@ public class MediocreGrades : ModItem
         recipe.AddIngredient(ItemID.SoulofFright, 5);
         recipe.AddIngredient(ItemID.SoulofSight, 5);
         recipe.AddIngredient(ItemID.SoulofMight, 5);
-        
+
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
-
-
         {
             recipe.AddIngredient(SoulOfPlight.Type, 5);
-
-
         }
+
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
-
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.

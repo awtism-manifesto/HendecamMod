@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -26,8 +22,6 @@ public class FaradayBodyArmor : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -40,6 +34,7 @@ public class FaradayBodyArmor : ModItem
         Item.defense = 23; // The amount of defense the item will give when equipped
         Item.lifeRegen = 6;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -55,8 +50,6 @@ public class FaradayBodyArmor : ModItem
         {
             OverrideColor = new Color(255, 255, 255)
         };
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -70,11 +63,13 @@ public class FaradayBodyArmor : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<FaradayFedora>() && legs.type == ModContent.ItemType<FaradayPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -88,12 +83,11 @@ public class FaradayBodyArmor : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 109f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -104,11 +98,11 @@ public class FaradayBodyArmor : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "The globalist 5G waves are no longer reducing your max life";
-        
+
         player.statLifeMax2 += 95;
-        
     }
 }

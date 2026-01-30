@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -12,12 +7,9 @@ public class PlutoniumTorch : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
-       
-
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -30,8 +22,9 @@ public class PlutoniumTorch : ModItem
         Item.value = 3250;
         Item.maxStack = 9999;
 
-        Item.DefaultToTorch(ModContent.TileType<Tiles.PlutoniumTorchPlaced>(), 0, false);
+        Item.DefaultToTorch(ModContent.TileType<Tiles.PlutoniumTorchPlaced>(), 0);
     }
+
     public override void HoldItem(Player player)
     {
         // This torch cannot be used in water, so it shouldn't spawn particles or light either
@@ -83,8 +76,6 @@ public class PlutoniumTorch : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -99,19 +90,13 @@ public class PlutoniumTorch : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(35);
 
-        recipe.AddIngredient< PlutoniumOre>();
+        recipe.AddIngredient<PlutoniumOre>();
         recipe.AddIngredient(ItemID.Torch, 35);
-        
+
         recipe.Register();
-
-
-
-
-
     }
 }

@@ -1,10 +1,6 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
 
@@ -31,10 +27,12 @@ public class DragonBreathShell : ModItem
         Item.shootSpeed = 7.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,8 +44,6 @@ public class DragonBreathShell : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -62,16 +58,12 @@ public class DragonBreathShell : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-       
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SoulofPlight", out ModItem SoulofPlight))
-
-
         {
-
             recipe = CreateRecipe(400);
             recipe.AddIngredient<RefinedOil>();
             recipe.AddIngredient(SoulofPlight.Type);
@@ -81,9 +73,8 @@ public class DragonBreathShell : ModItem
             recipe.AddTile(TileID.Furnaces);
 
             recipe.Register();
-
         }
-       
+
         else
         {
             recipe = CreateRecipe(250);

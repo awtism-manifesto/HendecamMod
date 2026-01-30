@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -12,9 +6,6 @@ public class IedThrown : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
-       
-
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
@@ -25,6 +16,7 @@ public class IedThrown : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -40,6 +32,7 @@ public class IedThrown : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -47,11 +40,11 @@ public class IedThrown : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
+
         if (Projectile.owner == Main.myPlayer && Main.rand.NextBool(190))
         {
             Projectile.timeLeft = 5;
         }
-
 
         Projectile.rotation += 0.275f;
         Projectile.ai[0] += 1f;
@@ -60,12 +53,11 @@ public class IedThrown : ModProjectile
             Projectile.ai[0] = 28f;
             Projectile.velocity.Y += 0.235f;
         }
+
         if (Projectile.velocity.Y > 15f)
         {
             Projectile.velocity.Y = 17f;
         }
-
-       
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -122,13 +114,11 @@ public class IedThrown : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 200);
-       
     }
 
     // Rocket II explosion that damages tiles.

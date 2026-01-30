@@ -1,8 +1,4 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -23,27 +19,23 @@ public class AzuriteWaraxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.useTurn = true;
-        Item.axe = 22; 
+        Item.axe = 22;
         Item.hammer = 75;
-        Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
+        Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { 
+        {
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AzuriteBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
 }

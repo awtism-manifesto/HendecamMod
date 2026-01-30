@@ -1,14 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -18,20 +9,19 @@ public class GelShotMini : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 8; // The width of projectile hitbox
         Projectile.height = 8; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 420; 
-                               
+        Projectile.timeLeft = 420;
+
         Projectile.light = 0.2f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -42,9 +32,9 @@ public class GelShotMini : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -70,6 +60,7 @@ public class GelShotMini : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
         Projectile.ai[0] += 1f;
@@ -87,9 +78,9 @@ public class GelShotMini : ModProjectile
         {
             Projectile.velocity.Y = 21f;
         }
-        if (Projectile.alpha <167)
+
+        if (Projectile.alpha < 167)
         {
-           
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -104,21 +95,13 @@ public class GelShotMini : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 0.55f;
-              
-              
             }
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Slimed, 300);
         target.AddBuff(ModContent.BuffType<KingTag>(), 300);
-
     }
-    
-    
 }
-
-

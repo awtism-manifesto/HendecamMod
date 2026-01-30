@@ -1,9 +1,6 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
-using Terraria.ModLoader;
-using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Achievements;
 
@@ -16,5 +13,4 @@ public class FlintAndSteel : ModAchievement
         Achievement.SetCategory(AchievementCategory.Collector);
         Condition = AddItemCraftCondition(ModContent.ItemType<SteelBar>());
     }
-
 }

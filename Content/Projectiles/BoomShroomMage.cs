@@ -1,11 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -13,11 +7,10 @@ public class BoomShroomMage : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-      
+
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
@@ -28,6 +21,7 @@ public class BoomShroomMage : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 15;
@@ -36,14 +30,14 @@ public class BoomShroomMage : ModProjectile
         Projectile.scale = 1f;
         Projectile.friendly = false;
         Projectile.hostile = false;
-     
+
         Projectile.penetrate = 696969; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Magic;
         Projectile.light = 0.7f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 2;
         Projectile.timeLeft = 92;
-   
+
         Projectile.localNPCHitCooldown = -1;
         Projectile.aiStyle = -1;
         Projectile.alpha = 85;
@@ -53,19 +47,14 @@ public class BoomShroomMage : ModProjectile
         // AIType = ProjectileID.RocketI;
     }
 
-    
     public override void AI()
     {
-
-
         if (Projectile.timeLeft < 69)
         {
-           
             Projectile.friendly = true;
-           
         }
 
-        if (Projectile.timeLeft> 209)
+        if (Projectile.timeLeft > 209)
         {
             int frameSpeed = 15;
 
@@ -79,13 +68,10 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 152)
         {
             int frameSpeed = 12;
@@ -100,13 +86,10 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 151)
         {
             int frameSpeed = 9;
@@ -121,13 +104,10 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 76)
         {
             int frameSpeed = 6;
@@ -142,16 +122,9 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
-
-       
-
 
         Projectile.velocity *= 0f;
 
@@ -159,13 +132,7 @@ public class BoomShroomMage : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
-
-       
     }
-
-   
-  
 
     public override void PrepareBombToBlow()
     {
@@ -180,11 +147,12 @@ public class BoomShroomMage : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 5f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.96f);
-        
     }
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
@@ -193,8 +161,6 @@ public class BoomShroomMage : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.DD2_ExplosiveTrapExplode, Projectile.position);
-        
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(100, 100);
@@ -215,11 +181,7 @@ public class BoomShroomMage : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 5f;
         }
-
-       
     }
-    
-    
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

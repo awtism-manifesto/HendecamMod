@@ -1,13 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-
-
-
 
 namespace HendecamMod.Content.Items;
 
@@ -42,9 +35,9 @@ public class KingslayerKunai : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Item.DamageType = DamageClass.Throwing;
-           
         }
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * 1f);
@@ -52,23 +45,13 @@ public class KingslayerKunai : ModItem
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-4.8f));
         Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(4.8f));
-       
-
-
-
 
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-        
-
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -84,12 +67,10 @@ public class KingslayerKunai : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -99,13 +80,5 @@ public class KingslayerKunai : ModItem
 
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

@@ -1,30 +1,28 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class InvaderPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Invaders should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.GoblinArcher] = true;
         player.npcTypeNoAggro[NPCID.GoblinPeon] = true;
         player.npcTypeNoAggro[NPCID.GoblinScout] = true;
@@ -176,25 +174,25 @@ public class InvaderPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.VortexLarva] = true;
         player.npcTypeNoAggro[NPCID.VortexRifleman] = true;
         player.npcTypeNoAggro[NPCID.VortexSoldier] = true;
+    }
 
-        }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.BloodMoonMonolith, 1);
-        recipe.AddIngredient(ItemID.ShadowFlameHexDoll, 1);
-        recipe.AddIngredient(ItemID.MothronWings, 1);
-        recipe.AddIngredient(ItemID.PumpkingTrophy, 1);
-        recipe.AddIngredient(ItemID.IceQueenTrophy, 1);
-        recipe.AddIngredient(ItemID.MartianSaucerTrophy, 1);
-        recipe.AddIngredient(ItemID.BossTrophyBetsy, 1);
-        recipe.AddIngredient(ItemID.FlyingDutchmanTrophy, 1);
-        recipe.AddIngredient(ItemID.CelestialSigil, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.BloodMoonMonolith);
+        recipe.AddIngredient(ItemID.ShadowFlameHexDoll);
+        recipe.AddIngredient(ItemID.MothronWings);
+        recipe.AddIngredient(ItemID.PumpkingTrophy);
+        recipe.AddIngredient(ItemID.IceQueenTrophy);
+        recipe.AddIngredient(ItemID.MartianSaucerTrophy);
+        recipe.AddIngredient(ItemID.BossTrophyBetsy);
+        recipe.AddIngredient(ItemID.FlyingDutchmanTrophy);
+        recipe.AddIngredient(ItemID.CelestialSigil);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

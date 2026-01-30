@@ -1,15 +1,15 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Projectiles;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class ShockingSurrender : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetStaticDefaults()
     {
         // These are all related to gamepad controls and don't seem to affect anything else
@@ -33,7 +33,7 @@ public class ShockingSurrender : ModItem
         Item.damage = 35; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
-     
+
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.sellPrice(gold: 3, silver: 25);
@@ -41,11 +41,6 @@ public class ShockingSurrender : ModItem
         Item.shoot = ModContent.ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
-
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override bool AllowPrefix(int pre)
     {
@@ -66,6 +61,7 @@ public class ShockingSurrender : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -81,8 +77,5 @@ public class ShockingSurrender : ModItem
         recipe.AddIngredient(ItemID.Cascade);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
     }
 }

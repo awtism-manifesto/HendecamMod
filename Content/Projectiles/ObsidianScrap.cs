@@ -1,12 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +6,6 @@ public class ObsidianScrap : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -37,10 +28,12 @@ public class ObsidianScrap : ModProjectile
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 8;
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -59,12 +52,8 @@ public class ObsidianScrap : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
@@ -81,11 +70,13 @@ public class ObsidianScrap : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
+
         if (Math.Abs(Projectile.velocity.X) <= 38f && Math.Abs(Projectile.velocity.Y) <= 15f)
         {
             Projectile.velocity *= 1.15f;
         }
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -116,14 +107,10 @@ public class ObsidianScrap : ModProjectile
         return false;
     }
 
-   
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

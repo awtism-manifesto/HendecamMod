@@ -1,12 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -45,66 +41,44 @@ public class LoreAccurateBlackshard : ModItem
             Item.useTime = 10;
             Item.useAnimation = 10;
         }
-
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-       
-            return true;
-       
+        return true;
     }
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        
-
-            if (player.altFunctionUse == 2)
-            {
-                Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
-                return false;
-            }
-
-        
-
-
-
+        if (player.altFunctionUse == 2)
+        {
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
+            return false;
+        }
 
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
-
-
-
     }
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
-
-       
-            line = new TooltipLine(Mod, "Face", "Right click to throw the shard")
-            {
-                OverrideColor = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
-            };
-            tooltips.Add(line);
-
-        
+        line = new TooltipLine(Mod, "Face", "Right click to throw the shard")
+        {
+            OverrideColor = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
+        };
+        tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Because River wouldn't stop asking'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -119,6 +93,4 @@ public class LoreAccurateBlackshard : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
-
 }

@@ -1,15 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
 
 public class TheMoon : ModItem
 {
@@ -26,8 +21,8 @@ public class TheMoon : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 1230;
         Item.knockBack = 35;
-        Item.noMelee = true; 
-        Item.noUseGraphic = true; 
+        Item.noMelee = true;
+        Item.noUseGraphic = true;
         Item.ArmorPenetration = 35;
         Item.value = Item.buyPrice(gold: 45);
         Item.rare = ItemRarityID.Red;
@@ -35,9 +30,8 @@ public class TheMoon : ModItem
 
         Item.shoot = ModContent.ProjectileType<TheFuckingMoon>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16f; // Speed of the projectiles the sword will shoot
-
-       
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -57,11 +51,11 @@ public class TheMoon : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,16 +67,11 @@ public class TheMoon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe.AddIngredient<LunarGem>(100);
         recipe.AddIngredient<FragmentFlatEarth>(10);
@@ -90,8 +79,5 @@ public class TheMoon : ModItem
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
     }
-
 }

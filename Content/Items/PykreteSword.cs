@@ -1,19 +1,13 @@
-using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-
 using System.Collections.Generic;
-using Terraria;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.Items;
 
-
 public class PykreteSword : ModItem
 {
-   
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         Item.damage = 14;
@@ -34,7 +28,6 @@ public class PykreteSword : ModItem
         Item.useTurn = true;
     }
 
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,25 +43,17 @@ public class PykreteSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
-    private int shotCounter = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.3f, 0.4f));
-
-
         if (shotCounter <= 0)
         {
             for (int i = 0; i < 4; i++)
             {
                 float rotation = MathHelper.ToRadians(i * 90f);
                 Vector2 newVelocity = velocity.RotatedBy(rotation);
-
-
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 shotCounter = 2;
             }
@@ -79,25 +64,16 @@ public class PykreteSword : ModItem
             {
                 float rotation = MathHelper.ToRadians(45f + i * 90f);
                 Vector2 newVelocity = velocity.RotatedBy(rotation);
-
-
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 shotCounter = 0;
             }
         }
-            
-       
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-        
-
-
-       
         if (Main.rand.NextBool(4))
         {
             target.AddBuff(BuffID.Frostburn, 150);
@@ -108,10 +84,8 @@ public class PykreteSword : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Pykrete>(15);
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
-
 }

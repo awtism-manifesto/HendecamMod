@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -74,13 +67,12 @@ public class MiniBoulderThrowableProjectile : ModProjectile
             Projectile.velocity.Y += 0.245f;
         }
 
-       
-
         // Cap downward velocity
         if (Projectile.velocity.Y > 21f)
         {
             Projectile.velocity.Y = 27f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -92,8 +84,6 @@ public class MiniBoulderThrowableProjectile : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Stone, 0f, 0f, 100, default, 0.1f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;

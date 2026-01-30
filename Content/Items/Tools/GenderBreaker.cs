@@ -1,13 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Tools;
-
 
 public class GenderBreaker : ModItem
 {
@@ -26,21 +20,16 @@ public class GenderBreaker : ModItem
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 60;
         Item.useTurn = true;
-
-
         Item.value = Item.buyPrice(silver: 15);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
-
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -52,8 +41,6 @@ public class GenderBreaker : ModItem
         };
         tooltips.Add(line);
 
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -61,8 +48,8 @@ public class GenderBreaker : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -71,5 +58,4 @@ public class GenderBreaker : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

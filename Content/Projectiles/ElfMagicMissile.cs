@@ -1,15 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -18,27 +9,23 @@ public class ElfMagicMissile : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
 
     public override void SetDefaults()
     {
         Projectile.width = 24; // The width of projectile hitbox
         Projectile.height = 24; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = -1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 500;
-        Projectile.scale = 1.5f;                      
-       
+        Projectile.scale = 1.5f;
+
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -49,12 +36,14 @@ public class ElfMagicMissile : ModProjectile
         Projectile.alpha = 255;
         Projectile.extraUpdates = 1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 225);
         Projectile.PrepareBombToBlow();
         Projectile.timeLeft = 2;
     }
+
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 0.67f, 0.38f, 1f);
@@ -113,9 +102,8 @@ public class ElfMagicMissile : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-        
-
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -156,6 +144,7 @@ public class ElfMagicMissile : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -183,10 +172,6 @@ public class ElfMagicMissile : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(235, 235);
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 25; j++)
         {
@@ -195,16 +180,6 @@ public class ElfMagicMissile : ModProjectile
             fireDust.velocity *= 5.5f;
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
-           
         }
-      
-
-
-
-       
     }
-
-
 }
-
-

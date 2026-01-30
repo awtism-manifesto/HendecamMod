@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -26,21 +22,16 @@ public class AutismDiagnosis : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.value = 400000;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-       
         recipe.AddIngredient<Paper>();
         recipe.AddIngredient<AutismOrb>(2);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,10 +48,8 @@ public class AutismDiagnosis : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-      
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -75,6 +64,6 @@ public class AutismDiagnosis : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 113f;
-        player.endurance = 1f - 0.92f * (1f - player.endurance);  // The percentage of damage reduction
+        player.endurance = 1f - 0.92f * (1f - player.endurance); // The percentage of damage reduction
     }
 }

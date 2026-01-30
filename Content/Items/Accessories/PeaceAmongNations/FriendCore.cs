@@ -1,11 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Accessories.NastyPatty;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
@@ -21,17 +14,19 @@ public class FriendCore : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "A basis for peace with enemies");
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(10);
-        recipe.AddIngredient(ItemID.RoyalGel, 1);
-        recipe.AddIngredient(ItemID.LifeCrystal, 1);
-        recipe.AddIngredient(ItemID.LovePotion, 1);
+        recipe.AddIngredient(ItemID.RoyalGel);
+        recipe.AddIngredient(ItemID.LifeCrystal);
+        recipe.AddIngredient(ItemID.LovePotion);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

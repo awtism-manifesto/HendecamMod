@@ -1,23 +1,17 @@
-﻿using Microsoft.Xna.Framework;
-using Mono.Cecil;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
 
-
 public class MorbeamStaff : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -27,7 +21,7 @@ public class MorbeamStaff : ModItem
         Item.useTime = 12;
         Item.useAnimation = 12;
         Item.autoReuse = true;
-    
+
         Item.mana = 10;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 90;
@@ -48,23 +42,15 @@ public class MorbeamStaff : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Morbeam>();
-       
-
-       
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.5f));
-
-
 
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -72,12 +58,8 @@ public class MorbeamStaff : ModItem
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
 
-
-
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-
-
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
@@ -93,8 +75,6 @@ public class MorbeamStaff : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -108,10 +88,12 @@ public class MorbeamStaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(3f, -7f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -121,5 +103,4 @@ public class MorbeamStaff : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

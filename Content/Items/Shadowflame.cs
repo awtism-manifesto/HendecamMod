@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -21,6 +16,7 @@ public class Shadowflame : ModItem
         Item.value = 1499;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -32,8 +28,6 @@ public class Shadowflame : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -52,22 +46,11 @@ public class Shadowflame : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
-       
-      
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("TheFirstShadowflame", out ModItem TheFirstShadowflame))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("TheFirstShadowflame", out ModItem TheFirstShadowflame))
         {
             recipe.AddIngredient(TheFirstShadowflame.Type);
             recipe.AddTile(TileID.AdamantiteForge);
             recipe.Register();
         }
-        else
-        {
-
-
-        }
-
-
-
     }
-
 }

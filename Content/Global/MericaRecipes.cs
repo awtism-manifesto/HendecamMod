@@ -1,15 +1,7 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Items.Accessories;
-using System.Collections.Generic;
-
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Global;
 
@@ -26,15 +18,15 @@ public class MericaRecipes : ModSystem
         recipe.Register();
 
         Recipe recipeenar = Recipe.Create(ItemID.Torch, 10);
-       
+
         recipeenar.AddRecipeGroup("Wood");
         recipeenar.AddIngredient<Items.CrudeOil>();
-        
+
         recipeenar.Register();
 
         Recipe brecipe = Recipe.Create(ItemID.Celeb2);
         brecipe.AddIngredient(ItemID.FireworksLauncher);
-       
+
         brecipe.AddIngredient<Items.FissionDrive>();
         brecipe.AddTile(TileID.LunarCraftingStation);
         brecipe.Register();
@@ -64,7 +56,7 @@ public class MericaRecipes : ModSystem
 
         Recipe recipenis = Recipe.Create(ItemID.LesionStation);
         recipenis.AddIngredient(ItemID.FleshCloningVaat);
-       
+
         recipenis.AddTile(TileID.MythrilAnvil);
         recipenis.Register();
 
@@ -93,14 +85,14 @@ public class MericaRecipes : ModSystem
 
         Recipe penises = Recipe.Create(ItemID.Keybrand);
         penises.AddIngredient(ItemID.Cutlass);
-       
+
         penises.AddIngredient(ItemID.GoldenKey);
         penises.AddIngredient(ItemID.HallowedBar, 9);
         penises.AddTile(TileID.MythrilAnvil);
         penises.Register();
 
         Recipe aaa = Recipe.Create(ItemID.LunarHook);
-        
+
         aaa.AddIngredient<Items.FragmentFlatEarth>(20);
         aaa.AddTile(TileID.LunarCraftingStation);
         aaa.Register();
@@ -136,7 +128,7 @@ public class MericaRecipes : ModSystem
         aaaa.Register();
 
         Recipe aaaa2 = Recipe.Create(ItemID.WandofFrosting);
-        
+
         aaaa2.AddIngredient<Items.Pykrete>(5);
         aaaa2.AddIngredient(ItemID.IceTorch, 25);
         aaaa2.AddTile(TileID.WorkBenches);
@@ -165,7 +157,7 @@ public class MericaRecipes : ModSystem
         ass99.Register();
 
         Recipe wass = Recipe.Create(ItemID.ShinyRedBalloon);
-        wass.AddIngredient(ItemID.Cloud,5);
+        wass.AddIngredient(ItemID.Cloud, 5);
         wass.AddIngredient<Items.PlasticScrap>(5);
         wass.AddIngredient<Items.Rubber>(10);
         wass.AddTile(TileID.TinkerersWorkbench);
@@ -200,7 +192,7 @@ public class MericaRecipes : ModSystem
         waess.Register();
 
         Recipe wawess = Recipe.Create(ItemID.HolyArrow, 77);
-        wawess.AddIngredient(ItemID.WoodenArrow,77);
+        wawess.AddIngredient(ItemID.WoodenArrow, 77);
         wawess.AddIngredient<Items.PurifiedSalt>();
         wawess.AddTile(TileID.MythrilAnvil);
         wawess.Register();
@@ -211,7 +203,7 @@ public class MericaRecipes : ModSystem
         wackwess.AddTile(TileID.Autohammer);
         wackwess.Register();
         Recipe qwawess = Recipe.Create(ItemID.ShadowFlameHexDoll);
-       
+
         qwawess.AddIngredient<Items.Shadowflame>(50);
         qwawess.AddTile(TileID.MythrilAnvil);
         qwawess.Register();
@@ -230,11 +222,9 @@ public class MericaRecipes : ModSystem
         qv3wawesss.AddIngredient<Items.Shadowflame>(15);
         qv3wawesss.AddTile(TileID.DyeVat);
         qv3wawesss.Register();
-
-
         Recipe qv333wawesss = Recipe.Create(ItemID.SlimeCrown);
         qv333wawesss.AddIngredient(ItemID.Gel, 15);
-        
+
         qv333wawesss.AddIngredient<KingslayerCrown>();
         qv333wawesss.AddTile(TileID.DemonAltar);
         qv333wawesss.Register();
@@ -255,7 +245,7 @@ public class MericaRecipes : ModSystem
 
         Recipe bitcheee = Recipe.Create(ItemID.BrokenHeroSword);
         bitcheee.AddIngredient<Items.BrokenHeroGun>();
-       
+
         bitcheee.AddTile(TileID.MythrilAnvil);
         bitcheee.Register();
 
@@ -266,10 +256,8 @@ public class MericaRecipes : ModSystem
 
         wadwess.AddTile(TileID.LunarCraftingStation);
         wadwess.Register();
-
-       
         Recipe wcass = Recipe.Create(ItemID.FishingBobber);
-       
+
         wcass.AddIngredient<Items.PlasticScrap>(15);
         wcass.AddTile(TileID.TinkerersWorkbench);
         wcass.Register();
@@ -280,12 +268,8 @@ public class MericaRecipes : ModSystem
         wcaess.AddTile(TileID.WorkBenches);
         wcaess.Register();
 
-
-       
-
-
         Recipe bitch = Recipe.Create(ItemID.Worm);
-        bitch.AddIngredient(ItemID.DirtBlock, 30);           
+        bitch.AddIngredient(ItemID.DirtBlock, 30);
         bitch.Register();
 
         Recipe bitchass = Recipe.Create(ItemID.WaffleIron);
@@ -309,7 +293,7 @@ public class MericaRecipes : ModSystem
 
         Recipe fuck = Recipe.Create(ItemID.HotlineFishingHook);
         fuck.AddIngredient(ItemID.Fleshcatcher);
-        fuck.AddIngredient(ItemID.HellstoneBar,10);           
+        fuck.AddIngredient(ItemID.HellstoneBar, 10);
         fuck.AddTile(TileID.Anvils);
         fuck.Register();
 
@@ -335,8 +319,6 @@ public class MericaRecipes : ModSystem
         gay.AddIngredient(ItemID.CobaltBar, 10);
         gay.AddTile(TileID.Anvils);
         gay.Register();
-
-        
 
         Recipe gay2 = Recipe.Create(ItemID.Frostbrand);
         gay2.AddIngredient(ItemID.FrostCore);
@@ -369,13 +351,10 @@ public class MericaRecipes : ModSystem
         recipee.AddTile(TileID.Anvils);
         recipee.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("ArteryPiece", out ModItem ArteryPiece))
-
-
         {
             recipee.AddIngredient(ArteryPiece.Type, 10);
-
-
         }
+
         Recipe recipeee = Recipe.Create(ItemID.SharpTears);
         recipeee.AddIngredient(ItemID.DemoniteBar, 10);
         recipeee.AddIngredient(ItemID.CrimtaneBar, 10);
@@ -383,12 +362,8 @@ public class MericaRecipes : ModSystem
         recipeee.AddTile(TileID.Anvils);
         recipeee.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica2) && SpookMerica2.TryFind("ArteryPiece", out ModItem ArteryPiece2))
-
-
         {
             recipeee.AddIngredient(ArteryPiece2.Type, 10);
-
-
         }
 
         Recipe recipeeee = Recipe.Create(ItemID.DripplerFlail);
@@ -399,13 +374,10 @@ public class MericaRecipes : ModSystem
         recipeeee.AddTile(TileID.Anvils);
         recipeeee.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica3) && SpookMerica3.TryFind("ArteryPiece", out ModItem ArteryPiece1))
-
-
         {
             recipeeee.AddIngredient(ArteryPiece1.Type, 10);
-
-
         }
+
         Recipe recipeeeee = Recipe.Create(ItemID.BloodHamaxe);
         recipeeeee.AddIngredient(ItemID.DemoniteBar, 10);
         recipeeeee.AddIngredient(ItemID.CrimtaneBar, 10);
@@ -414,65 +386,40 @@ public class MericaRecipes : ModSystem
         recipeeeee.AddTile(TileID.Anvils);
         recipeeeee.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica33) && SpookMerica33.TryFind("ArteryPiece", out ModItem ArteryPiece11))
-
-
         {
             Recipe recipeepee = Recipe.Create(ItemID.BloodHamaxe);
-
-
             recipeepee.AddIngredient(ArteryPiece11.Type, 10);
-
-
         }
+
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("GelatinousGlock", out ModItem GelatinousGlock))
-
-
         {
             Recipe glocknbawlz = Recipe.Create(GelatinousGlock.Type);
 
             glocknbawlz.AddIngredient<Items.Glock>();
             glocknbawlz.AddIngredient(ItemID.Gel, 30);
-          
-
             glocknbawlz.AddTile(TileID.Solidifier);
             glocknbawlz.Register();
-
-
-
         }
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("aDarksteelAlloy", out ModItem aDarksteelAlloy))
-
-
         {
             Recipe glocksnbawlz = Recipe.Create(aDarksteelAlloy.Type);
 
             glocksnbawlz.AddIngredient<SteelBar>();
             glocksnbawlz.AddIngredient(ItemID.Bone);
-
-
             glocksnbawlz.AddTile(TileID.Anvils);
             glocksnbawlz.Register();
-
-
-
         }
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
-
-
         {
             Recipe glocksnbawlz = Recipe.Create(BlankPainting.Type);
 
             glocksnbawlz.AddIngredient<BlankCanvas>();
-           
-
 
             glocksnbawlz.AddTile(TileID.WorkBenches);
             glocksnbawlz.Register();
-
-
-
         }
-
 
         Recipe gay6 = Recipe.Create(ItemID.IceBow);
         gay6.AddIngredient(ItemID.FrostCore);
@@ -523,13 +470,11 @@ public class MericaRecipes : ModSystem
         trans.Register();
 
         Recipe cc = Recipe.Create(ItemID.CandyCaneSword);
-        cc.AddIngredient(ItemID.CandyCaneBlock,15);
+        cc.AddIngredient(ItemID.CandyCaneBlock, 15);
         cc.AddIngredient(ItemID.GreenCandyCaneBlock, 10);
         cc.AddTile(TileID.Anvils);
         cc.Register();
-
-       
-            Recipe crrc = Recipe.Create(ItemID.RedRyder);
+        Recipe crrc = Recipe.Create(ItemID.RedRyder);
         crrc.AddIngredient(ItemID.Musket);
         crrc.AddIngredient(ItemID.GreenCandyCaneBlock, 15);
         crrc.AddTile(TileID.Anvils);
@@ -541,7 +486,7 @@ public class MericaRecipes : ModSystem
         crrrc.Register();
 
         Recipe ckc = Recipe.Create(ItemID.WhoopieCushion);
-        ckc.AddIngredient(ItemID.PoopBlock, 1);
+        ckc.AddIngredient(ItemID.PoopBlock);
         ckc.AddIngredient<Items.PlasticScrap>(5);
         ckc.AddIngredient<Items.Rubber>(15);
         ckc.AddTile(TileID.TinkerersWorkbench);
@@ -554,9 +499,7 @@ public class MericaRecipes : ModSystem
         ccp.Register();
 
         Recipe ccpee = Recipe.Create(ItemID.DirtiestBlock);
-        ccpee.AddIngredient(ItemID.DirtBlock, 2147483646 );
-        
-        
+        ccpee.AddIngredient(ItemID.DirtBlock, 2147483646);
         ccpee.Register();
 
         Recipe gayee5 = Recipe.Create(ItemID.AntlionClaw);
@@ -565,9 +508,4 @@ public class MericaRecipes : ModSystem
         gayee5.AddTile(TileID.Anvils);
         gayee5.Register();
     }
-
-
-
-
 }
-

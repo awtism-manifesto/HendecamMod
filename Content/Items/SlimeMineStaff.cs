@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
-
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -39,11 +29,11 @@ public class SlimeMineStaff : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.DD2_PhantomPhoenixShot; // What sound should play when using the item
         Item.buffType = ModContent.BuffType<SlimeMinesBuff>();
-      
+
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
-      
+
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
         Item.shoot = ModContent.ProjectileType<SlimeMine>(); // This item creates the minion projectile
     }
@@ -60,11 +50,13 @@ public class SlimeMineStaff : ModItem
         // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
         return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
         position = Main.MouseWorld;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,8 +68,6 @@ public class SlimeMineStaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -92,23 +82,14 @@ public class SlimeMineStaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        recipe.AddIngredient<Items.KingslayerBar>(12);
+
+        recipe.AddIngredient<KingslayerBar>(12);
         recipe.AddIngredient(ItemID.Dynamite, 25);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
-
     }
-
-   
-
-    
-
 }

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Placeables;
+﻿namespace HendecamMod.Content.Items.Placeables;
 
 public class AirBar : ModItem
 {
@@ -17,6 +7,7 @@ public class AirBar : ModItem
         Item.ResearchUnlockCount = 25;
         ItemID.Sets.SortingPriorityMaterials[Type] = 1;
     }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AirBar>());
@@ -24,11 +15,12 @@ public class AirBar : ModItem
         Item.height = 20;
         Item.value = 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("OxygenOreMod", out Mod OxygenOreMod) && OxygenOreMod.TryFind<ModItem>("OxygenOre", out ModItem OxygenOre))
+        if (ModLoader.TryGetMod("OxygenOreMod", out Mod OxygenOreMod) && OxygenOreMod.TryFind("OxygenOre", out ModItem OxygenOre))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(OxygenOre, 2);

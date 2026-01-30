@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace HendecamMod.Content.Dusts;
 
@@ -21,7 +16,6 @@ public class LimestoneDust : ModDust
         dust.color = Color.Beige;
         dust.scale = 1f;
         dust.alpha = 100;
-
     }
 
     public override Color? GetAlpha(Dust dust, Color lightColor)

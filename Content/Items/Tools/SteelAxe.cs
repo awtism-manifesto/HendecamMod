@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Tools;
+﻿namespace HendecamMod.Content.Items.Tools;
 
 public class SteelAxe : ModItem
 {
@@ -31,8 +26,9 @@ public class SteelAxe : ModItem
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
-          // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
+        {
+            // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
+            // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
         }
     }
 
@@ -40,14 +36,9 @@ public class SteelAxe : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.SteelBar>(8);
+        recipe.AddIngredient<Placeables.SteelBar>(8);
         recipe.AddRecipeGroup("Wood", 3);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
 }

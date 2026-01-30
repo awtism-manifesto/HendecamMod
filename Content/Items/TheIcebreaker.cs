@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
-
+using HendecamMod.Content.Projectiles;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,42 +17,30 @@ public class TheIcebreaker : ModItem
         Item.scale = 1.15f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 25000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 33; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item1;
-
-
+        Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>(); 
+        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.mana = 6;
-        
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Icicle>();
 
         Item.shootSpeed = 9.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Icicle>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -75,7 +53,7 @@ public class TheIcebreaker : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
-      
+
         for (int i = 0; i < 1; i++)
         {
             position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
@@ -101,9 +79,6 @@ public class TheIcebreaker : ModItem
         return false;
     }
 
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -115,8 +90,6 @@ public class TheIcebreaker : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -131,8 +104,6 @@ public class TheIcebreaker : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-  
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

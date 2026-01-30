@@ -1,12 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -40,8 +35,8 @@ public class AstaSwing : ModProjectile
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
         Projectile.ownerHitCheckDistance = 176f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
-                                               // Normally, projectiles die after they have hit all the enemies they can.
-                                               // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
+        // Normally, projectiles die after they have hit all the enemies they can.
+        // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
         Projectile.stopsDealingDamageAfterPenetrateHits = true;
 
         // We will be using custom AI for this projectile. The original Excalibur uses aiStyle 190.
@@ -86,10 +81,6 @@ public class AstaSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
-       
-
-      
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -112,21 +103,15 @@ public class AstaSwing : ModProjectile
     // Or if the projectile hasn't already hit all of the targets it can with Projectile.penetrate
     public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
     {
-
-
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
-       
 
-       
-            float coneLength = 85f * Projectile.scale;
-        
-        
-        
+        float coneLength = 85f * Projectile.scale;
+
         // This number affects how much the start and end of the collision will be rotated.
-            // Bigger Pi numbers will rotate the collision counter clockwise.
-            // Smaller Pi numbers will rotate the collision clockwise.
-            // (Projectile.ai[0] is the direction)
-            float collisionRotation = MathHelper.Pi * 2f / 25f * Projectile.ai[0];
+        // Bigger Pi numbers will rotate the collision counter clockwise.
+        // Smaller Pi numbers will rotate the collision clockwise.
+        // (Projectile.ai[0] is the direction)
+        float collisionRotation = MathHelper.Pi * 2f / 25f * Projectile.ai[0];
         float maximumAngle = MathHelper.PiOver4; // The maximumAngle is used to limit the rotation to create a dead zone.
         float coneRotation = Projectile.rotation + collisionRotation;
 
@@ -183,24 +168,20 @@ public class AstaSwing : ModProjectile
 
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
-
-        
-            Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(120, 239)));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(120, 239)));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
             ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(240, 360)));
-            Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(240, 360)));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
-
-
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
@@ -238,30 +219,30 @@ public class AstaSwing : ModProjectile
         faintLightingColor.B = (byte)(faintLightingColor.R * (0.25f + lightingColor * 0.75f));
 
         // Back part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects);
         // Very faint part affected by the light color
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Middle part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects);
         // Front part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects);
         // Thin top line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Thin middle line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects);
         // Thin bottom line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects);
 
         // This draws some sparkles around the circumference of the swing.
         for (float i = 0f; i < 8f; i += 1f)
         {
             float edgeRotation = Projectile.rotation + Projectile.ai[0] * i * (MathHelper.Pi * -2f) * 0.025f + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0];
-            Vector2 drawPos = position + edgeRotation.ToRotationVector2() * ((float)texture.Width * 0.5f - 6f) * scale;
+            Vector2 drawPos = position + edgeRotation.ToRotationVector2() * (texture.Width * 0.5f - 6f) * scale;
             DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos, new Color(255, 255, 255, 0) * lerpTime * (i / 9f), middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, edgeRotation, new Vector2(0f, Utils.Remap(percentageOfLife, 0f, 1f, 3f, 0f)) * scale, Vector2.One * scale);
         }
 
         // This draws a large star sparkle at the front of the projectile.
-        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
+        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * (texture.Width * 0.5f - 4f) * scale;
         DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos2, new Color(255, 255, 255, 0) * lerpTime * 0.5f, middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, 0f, new Vector2(2f, Utils.Remap(percentageOfLife, 0f, 1f, 4f, 1f)) * scale, Vector2.One * scale);
 
         // Uncomment this line for a visual representation of the projectile's size.

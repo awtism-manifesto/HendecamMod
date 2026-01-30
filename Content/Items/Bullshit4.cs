@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,7 +17,7 @@ public class Bullshit4 : ModItem
         Item.height = 64;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 27; 
+        Item.useTime = 27;
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.scale = 1.25f;
@@ -45,8 +40,6 @@ public class Bullshit4 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-   
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -58,8 +51,6 @@ public class Bullshit4 : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -74,6 +65,7 @@ public class Bullshit4 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -84,17 +76,11 @@ public class Bullshit4 : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("GoldLobster", out ModItem GoldLobster)
-            && ThorMerica.TryFind("TheOmegaCore", out ModItem TheOmegaCore))
+                                                                  && ThorMerica.TryFind("TheOmegaCore", out ModItem TheOmegaCore))
 
         {
             recipe.AddIngredient(GoldLobster.Type);
             recipe.AddIngredient(TheOmegaCore.Type);
-
         }
-
-
-
-
     }
-
 }

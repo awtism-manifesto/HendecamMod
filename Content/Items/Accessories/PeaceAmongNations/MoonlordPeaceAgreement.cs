@@ -1,12 +1,5 @@
-﻿
-using HendecamMod.Content.Items.Accessories.NastyPatty;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
@@ -21,11 +14,13 @@ public class MoonlordPeaceAgreement : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The Moonlord and his cultists should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.MoonLordCore] = true;
@@ -48,13 +43,14 @@ public class MoonlordPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.CultistDragonBody4] = true;
         player.npcTypeNoAggro[NPCID.CultistDragonTail] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.MoonLordTrophy, 1);
-        recipe.AddIngredient(ItemID.AncientCultistTrophy, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.MoonLordTrophy);
+        recipe.AddIngredient(ItemID.AncientCultistTrophy);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

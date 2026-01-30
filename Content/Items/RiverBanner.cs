@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles;
-using Terraria;
 using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -18,6 +15,7 @@ public class RiverBanner : ModItem
         Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 999999));
         Item.rare = ModContent.RarityType<Seizure2>();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -317,7 +315,5 @@ public class RiverBanner : ModItem
         recipe.AddIngredient<UnstablePlasmoidBanner>();
         recipe.AddIngredient<LoreAccurateBlackshard>(9999);
         recipe.Register();
-
-
     }
 }

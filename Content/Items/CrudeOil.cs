@@ -1,21 +1,13 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items;
 
 public class CrudeOil : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
 
         Item.ResearchUnlockCount = 99; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -24,7 +16,7 @@ public class CrudeOil : ModItem
     {
         Item.damage = 3; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -35,7 +27,6 @@ public class CrudeOil : ModItem
         Item.shoot = ProjectileID.Flames;
         Item.shootSpeed = 0f; // The speed of the projectile.
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
-       
     }
 
     public override void AddRecipes()
@@ -54,20 +45,13 @@ public class CrudeOil : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SmoothCoal", out ModItem SmoothCoal))
-
-
         {
-
-           
-
             recipe = CreateRecipe(5);
             recipe.AddIngredient(SmoothCoal.Type);
-         
+
             recipe.AddTile(TileID.Bottles);
             recipe.Register();
         }
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -82,8 +66,6 @@ public class CrudeOil : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -97,5 +79,4 @@ public class CrudeOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
 }

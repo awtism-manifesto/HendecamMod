@@ -1,17 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,7 +13,7 @@ public class ShroomiteBladegun : ModItem
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
-    
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -33,18 +24,12 @@ public class ShroomiteBladegun : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 255000;
-
-
         // Use Properties
         Item.useTime = 28; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 28; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-       
+
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
-
-       
-
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
@@ -52,23 +37,17 @@ public class ShroomiteBladegun : ModItem
         Item.knockBack = 9.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         Item.shoot = ModContent.ProjectileType<BladegunWave>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 16.67f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.None; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 
-
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -77,7 +56,7 @@ public class ShroomiteBladegun : ModItem
             Item.useTime = 33;
             Item.useAnimation = 33;
             Item.reuseDelay = 0;
-            Item.autoReuse= true;
+            Item.autoReuse = true;
             Item.useAmmo = AmmoID.Bullet;
             Item.shoot = ProjectileID.PurificationPowder;
         }
@@ -108,32 +87,25 @@ public class ShroomiteBladegun : ModItem
                 newVelocity *= 1f - Main.rand.NextFloat(0.25f);
 
                 Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-               
             }
+
             type = ModContent.ProjectileType<BladegunBomb>();
-            Projectile.NewProjectileDirect(source, position, (velocity* 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, (velocity * 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
 
             SoundEngine.PlaySound(SoundID.Item62, player.position);
 
             return false;
         }
-        else
-        {
-           
-            SoundEngine.PlaySound(SoundID.Item71, player.position);
 
+        SoundEngine.PlaySound(SoundID.Item71, player.position);
+        damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
-            damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
+        float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
+        Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+        NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
-            float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
-            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
-            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-
-            return true; // Return false because we don't want tModLoader to shoot projectile}
-            
-        }
+        return true; // Return false because we don't want tModLoader to shoot projectile}
     }
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -155,11 +127,8 @@ public class ShroomiteBladegun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-      
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-0.5f, -0.5f);
@@ -168,20 +137,12 @@ public class ShroomiteBladegun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient(ItemID.ChlorophyteClaymore);
         recipe.AddIngredient<BulletBlade>();
         recipe.AddIngredient(ItemID.ShroomiteBar, 12);
-       
-       
-        
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
     }
-
 }

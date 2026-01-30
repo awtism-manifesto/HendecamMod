@@ -1,12 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -17,6 +10,7 @@ public class MintalArrowProjectile : ModProjectile
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 20; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 6;
@@ -40,12 +34,7 @@ public class MintalArrowProjectile : ModProjectile
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
-
         Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
         // If the projectile hits the left or right side of the tile, reverse the X velocity
         if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
         {
@@ -58,9 +47,9 @@ public class MintalArrowProjectile : ModProjectile
             Projectile.velocity.Y = -oldVelocity.Y;
         }
 
-
         return false;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -71,7 +60,7 @@ public class MintalArrowProjectile : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -83,18 +72,12 @@ public class MintalArrowProjectile : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<MintalArrowProjectile>(), (int)(Projectile.damage * 0.95f), Projectile.knockBack, Projectile.owner);
-
+            ModContent.ProjectileType<MintalArrowProjectile>(), (int)(Projectile.damage * 0.95f), Projectile.knockBack, Projectile.owner);
     }
+
     public override void AI()
     {
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-
-
-
-
-
 }

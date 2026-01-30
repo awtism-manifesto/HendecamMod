@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles;
+﻿namespace HendecamMod.Content.Tiles;
 
 public class AstatineBrickTile : ModTile
 {
@@ -15,7 +9,7 @@ public class AstatineBrickTile : ModTile
         Main.tileMerge[ModContent.TileType<LycopiteBrickTile>()][Type] = true;
         Main.tileMerge[ModContent.TileType<PlutoniumBrickTile>()][Type] = true;
         Main.tileMerge[ModContent.TileType<UraniumBrickTile>()][Type] = true;
-        
+
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 500;
         DustType = DustID.CrimsonTorch;
@@ -24,13 +18,12 @@ public class AstatineBrickTile : ModTile
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;
     }
+
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 1f;
         g = 0.1f;
         b = 0.285f;
-
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

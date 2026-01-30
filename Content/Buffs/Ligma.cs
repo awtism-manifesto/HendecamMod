@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Global;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Global;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -40,8 +33,6 @@ public class Ligma : ModBuff
         }
 
         npc.GetGlobalNPC<WhoTfIsSteveJobs>().DyingOfLigma = true;
-
-
     }
 
     public class LigmaPlayer : ModPlayer

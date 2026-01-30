@@ -1,12 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -14,7 +7,6 @@ public class SplashPotionShine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -27,6 +19,7 @@ public class SplashPotionShine : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -42,6 +35,7 @@ public class SplashPotionShine : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -49,8 +43,6 @@ public class SplashPotionShine : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
-
 
         Projectile.rotation += 0.18f;
         Projectile.ai[0] += 1f;
@@ -59,18 +51,16 @@ public class SplashPotionShine : ModProjectile
             Projectile.ai[0] = 24f;
             Projectile.velocity.Y += 0.25f;
         }
+
         if (Projectile.velocity.Y > 16f)
         {
             Projectile.velocity.Y = 20f;
         }
-
-       
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
@@ -102,10 +92,6 @@ public class SplashPotionShine : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(134, 134);
 
-       
-       
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 25; j++)
         {
@@ -115,16 +101,12 @@ public class SplashPotionShine : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.YellowStarDust, 0f, 0f, 100, default, 1.15f);
             fireDust.velocity *= 3.5f;
         }
-
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<ShinyTag>(), 300);
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-
     }
-
-    
 }

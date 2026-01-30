@@ -1,19 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class BalkanRage : ModBuff
 {
     public static readonly int AttackSpeedBonus = 6;
     public static readonly int CritBonus = 12;
     public static readonly int DefenseBonus = -6;
-
-
-
 
     public override void Update(Player player, ref int buffIndex)
     {

@@ -1,17 +1,16 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class StarfishOnAString : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetStaticDefaults()
     {
         // These are all related to gamepad controls and don't seem to affect anything else
@@ -42,15 +41,7 @@ public class StarfishOnAString : ModItem
 
         Item.shoot = ModContent.ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
-
-       
-
     }
-
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override bool AllowPrefix(int pre)
     {
@@ -71,6 +62,7 @@ public class StarfishOnAString : ModItem
         // Don't reroll
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -82,8 +74,6 @@ public class StarfishOnAString : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -98,6 +88,4 @@ public class StarfishOnAString : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-  
 }

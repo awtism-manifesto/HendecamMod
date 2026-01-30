@@ -1,17 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
-
 public class MarbleSaber : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.damage = 16;
@@ -33,43 +27,28 @@ public class MarbleSaber : ModItem
         Item.shoot = ModContent.ProjectileType<SaberProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 4.85f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-       
-            return true;
-       
+        return true;
     }
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-       
-
-            if (player.altFunctionUse == 2)
-            {
-                Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
-                return false;
-            }
-
-        
-
-
-
+        if (player.altFunctionUse == 2)
+        {
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
+            return false;
+        }
 
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
-        
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(12f));
 
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
@@ -86,11 +65,8 @@ public class MarbleSaber : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-       
-
-       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -98,7 +74,5 @@ public class MarbleSaber : ModItem
         recipe.AddRecipeGroup("IronBar", 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
     }
-
 }

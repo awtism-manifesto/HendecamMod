@@ -1,19 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class BionicBoomer : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 44; // The width of the item's hitbox.
@@ -49,18 +41,13 @@ public class BionicBoomer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        
     }
-
-   
 
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-20f, 4f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -74,6 +61,5 @@ public class BionicBoomer : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-
     }
 }

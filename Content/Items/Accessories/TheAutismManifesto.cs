@@ -1,12 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Humanizer;
-using Microsoft.Build.Tasks.Deployment.ManifestUtilities;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -14,16 +7,14 @@ namespace HendecamMod.Content.Items.Accessories;
 public class TheAutismManifesto : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
     public static readonly int AdditiveStupidDamageBonus = 10;
 
     public static readonly int MagicCritBonus = 10;
     public static readonly int StupidCritBonus = 10;
+
     public static readonly int MaxManaIncrease = 75;
+
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -33,10 +24,11 @@ public class TheAutismManifesto : ModItem
         Item.value = 9999000;
         Item.defense = 10;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<SpiritProtectionCharm>();
         recipe.AddIngredient<AutismDiagnosis>();
         recipe.AddIngredient<AutismOrb>(2);
@@ -44,12 +36,8 @@ public class TheAutismManifesto : ModItem
         recipe.AddIngredient<AstatineBar>(7);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-       
-
-
-
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,10 +49,6 @@ public class TheAutismManifesto : ModItem
             OverrideColor = new Color(255, 15, 85)
         };
         tooltips.Add(line);
-
-
-
-      
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -81,7 +65,7 @@ public class TheAutismManifesto : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 115f;
-       
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;

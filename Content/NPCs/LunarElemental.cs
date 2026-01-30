@@ -1,12 +1,7 @@
-﻿using Terraria;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.ModLoader.Utilities;
-using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Materials;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
 
@@ -19,8 +14,9 @@ public class LunarElemental : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.GraniteFlyer;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -43,15 +39,13 @@ public class LunarElemental : ModNPC
         AnimationType = NPCID.GraniteFlyer;
         Banner = Type;
         BannerItem = ModContent.ItemType<LunarElementalBanner>();
-
     }
+
     public override void AI()
     {
         Lighting.AddLight(NPC.Center, 0.1f, 0.67f, 0.67f);
-
-
-
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), 1, 2, 5));
@@ -60,8 +54,6 @@ public class LunarElemental : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         return SpawnCondition.Sky.Chance * 0.55f;
-
     }
 }

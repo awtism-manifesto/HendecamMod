@@ -1,9 +1,5 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
@@ -18,7 +14,7 @@ public class FissileDart : ModItem
     {
         Item.damage = 21; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-       
+
         Item.width = 13;
         Item.height = 13;
         Item.maxStack = Item.CommonMaxStack;
@@ -30,10 +26,12 @@ public class FissileDart : ModItem
         Item.shootSpeed = 1.1f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -45,8 +43,6 @@ public class FissileDart : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -61,12 +57,13 @@ public class FissileDart : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(999);
-        recipe.AddIngredient<Items.AstatineBar>(5);
-        recipe.AddIngredient<Items.PlutoniumBar>(4);
-        recipe.AddIngredient<Items.UraniumBar>(3);
+        recipe.AddIngredient<AstatineBar>(5);
+        recipe.AddIngredient<PlutoniumBar>(4);
+        recipe.AddIngredient<UraniumBar>(3);
         recipe.Register();
     }
 }

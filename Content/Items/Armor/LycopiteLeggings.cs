@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -14,9 +8,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class LycopiteLeggings : ModItem
 {
-   
     public static readonly int AttackSpeedBonus = 5;
-  
+
     public static readonly int MoveSpeedBonus = 12;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -27,7 +20,7 @@ public class LycopiteLeggings : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -40,6 +33,7 @@ public class LycopiteLeggings : ModItem
         Item.defense = 8; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,8 +45,6 @@ public class LycopiteLeggings : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,11 +59,13 @@ public class LycopiteLeggings : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<LycopiteChestplate>() && head.type == ModContent.ItemType<LycopiteFedora>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -85,25 +79,22 @@ public class LycopiteLeggings : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-       
+
         player.moveSpeed += MoveSpeedBonus / 112f;
         player.runAcceleration *= 1.12f;
-        player.GetAttackSpeed (DamageClass.Generic) += AttackSpeedBonus / 105f;
-       
+        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 105f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
-
         recipe.AddIngredient<LycopiteBar>(25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-        
     }
 }

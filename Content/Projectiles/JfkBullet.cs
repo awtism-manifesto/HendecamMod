@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -28,7 +22,7 @@ public class JfkBullet : ModProjectile
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 250; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -77,38 +71,34 @@ public class JfkBullet : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
-            
-                
-                Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
-                Vector2 Peanits = Projectile.Center - new Vector2(70, 20);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(72));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 20));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
+        Vector2 Peanits = Projectile.Center - new Vector2(70, 20);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(144));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 80));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(72));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 20));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(216));
-            Vector2 Peanits4 = Projectile.Center - new Vector2(-60, -60);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(144));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 80));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
             ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(288));
-            Vector2 Peanits5 = Projectile.Center - new Vector2(60, -60);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(216));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(-60, -60);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-        
-
+        Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(288));
+        Vector2 Peanits5 = Projectile.Center - new Vector2(60, -60);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+            ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         for (int i = 0; i < 20; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);
@@ -116,17 +106,12 @@ public class JfkBullet : ModProjectile
             dust.velocity *= 11.5f;
             dust.scale *= 2f;
         }
-
-
-
     }
+
     public override void AI()
     {
-
-        
-
-            // dust, all dust
-            if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
+        // dust, all dust
+        if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -137,6 +122,7 @@ public class JfkBullet : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.GemSapphire, 0f, 0f, 100, default, 0.75f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
@@ -157,8 +143,4 @@ public class JfkBullet : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }
-
-
-

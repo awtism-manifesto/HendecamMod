@@ -1,20 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class RazorLeafMage : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 42; // The width of projectile hitbox
@@ -32,8 +19,6 @@ public class RazorLeafMage : ModProjectile
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 15;
-
-
     }
 
     public override void AI()
@@ -42,11 +27,8 @@ public class RazorLeafMage : ModProjectile
         if (Math.Abs(Projectile.velocity.X) <= 25.5f && Math.Abs(Projectile.velocity.Y) <= 25.5f)
         {
             Projectile.velocity *= 1.165f;
-
         }
-
     }
-
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
@@ -60,8 +42,6 @@ public class RazorLeafMage : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -77,10 +57,4 @@ public class RazorLeafMage : ModProjectile
 
         return false;
     }
-
-
-
 }
-
-
-

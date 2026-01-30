@@ -1,31 +1,20 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class SporeShivDupe : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -44,7 +33,7 @@ public class SporeShivDupe : ModProjectile
         Projectile.tileCollide = false;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 205;
-        
+
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
@@ -53,14 +42,11 @@ public class SporeShivDupe : ModProjectile
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Projectile.DamageType = DamageClass.Throwing;
-
         }
     }
-   
-   
+
     public override void AI()
     {
-
         if (Projectile.timeLeft > 190)
         {
             Projectile.velocity *= 0.05f;
@@ -68,8 +54,8 @@ public class SporeShivDupe : ModProjectile
         else if (Math.Abs(Projectile.velocity.X) <= 40f && Math.Abs(Projectile.velocity.Y) <= 40f)
         {
             Projectile.velocity *= 1.7f;
-
         }
+
         float maxDetectRadius = 2500f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -100,8 +86,8 @@ public class SporeShivDupe : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-        
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -142,6 +128,4 @@ public class SporeShivDupe : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy();
     }
-
-   
 }

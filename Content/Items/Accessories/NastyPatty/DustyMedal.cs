@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -20,11 +14,13 @@ public class DustyMedal : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana and 4 Luck"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building or Fishing Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyLuck>().NastyEffect = true;
@@ -37,12 +33,13 @@ public class DustyMedal : ModItem
         player.buffImmune[BuffID.BiomeSight] = true;
         player.buffImmune[BuffID.Invisibility] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<EmptyFishingBucket>(1);
-        recipe.AddIngredient<OldOnesGlasses>(1);
+        recipe.AddIngredient<EmptyFishingBucket>();
+        recipe.AddIngredient<OldOnesGlasses>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

@@ -1,14 +1,12 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 public class TrippyYoyo : ModProjectile
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetStaticDefaults()
     {
         // The following sets are only applicable to yoyo that use aiStyle 99.
@@ -25,34 +23,27 @@ public class TrippyYoyo : ModProjectile
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 13.15f;
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
 
     public override void AI()
     {
-       
-           
-            if (nextSpawnTick == 0)
-            {
-                nextSpawnTick = Main.rand.Next(24, 26);
-            }
+        if (nextSpawnTick == 0)
+        {
+            nextSpawnTick = Main.rand.Next(24, 26);
+        }
 
-            tickCounter++;
+        tickCounter++;
 
-            if (tickCounter >= nextSpawnTick)
-            {
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-                Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+        if (tickCounter >= nextSpawnTick)
+        {
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+            Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+                ModContent.ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
 
-                tickCounter = 0;
-                nextSpawnTick = Main.rand.Next(27, 28);
-
-                
-                Projectile.netUpdate = true;
-            }
-        
+            tickCounter = 0;
+            nextSpawnTick = Main.rand.Next(27, 28);
+            Projectile.netUpdate = true;
+        }
 
         // dust code (visual only, fine to run on all clients)
         if (Projectile.alpha < 187)
@@ -66,6 +57,7 @@ public class TrippyYoyo : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.2f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
                 chudDust.velocity *= 0.25f;
@@ -83,6 +75,6 @@ public class TrippyYoyo : ModProjectile
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
         Projectile.DamageType = DamageClass.MeleeNoSpeed; // Benefits from melee bonuses. MeleeNoSpeed means the item will not scale with attack speed.
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.
-                                   // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
+        // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
     }
 }

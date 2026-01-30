@@ -1,18 +1,24 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
-using Terraria;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-using System;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
 public class FerroWhipSpiky : ModProjectile
 {
+    private float Timer
+    {
+        get => Projectile.ai[0];
+        set => Projectile.ai[0] = value;
+    }
+
+    private float ChargeTime
+    {
+        get => Projectile.ai[1];
+        set => Projectile.ai[1] = value;
+    }
+
     public override void SetStaticDefaults()
     {
         // This makes the projectile use whip collision detection and allows flasks to be applied to it.
@@ -32,25 +38,10 @@ public class FerroWhipSpiky : ModProjectile
         // Projectile.WhipSettings.RangeMultiplier = 1f;
     }
 
-    private float Timer
-    {
-        get => Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
-
-    private float ChargeTime
-    {
-        get => Projectile.ai[1];
-        set => Projectile.ai[1] = value;
-    }
-
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-    
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
         target.AddBuff(ModContent.BuffType<SpikyTag>(), 310);
@@ -59,14 +50,10 @@ public class FerroWhipSpiky : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
-   
-
     public override bool PreDraw(ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
-
-       
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.
@@ -94,8 +81,6 @@ public class FerroWhipSpiky : ModProjectile
                 // This is the head of the whip. You need to measure the sprite to figure out these values.
                 frame.Y = 1; // Distance from the top of the sprite to the start of the frame.
                 frame.Height = 114; // Height of the frame.
-
-               
             }
             else if (i > 35)
             {
@@ -128,10 +113,11 @@ public class FerroWhipSpiky : ModProjectile
             float rotation = diff.ToRotation() - MathHelper.PiOver2; // This projectile's sprite faces down, so PiOver2 is used to correct rotation.
             Color color = Lighting.GetColor(element.ToTileCoordinates());
 
-            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip, 0);
+            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip);
 
             pos += diff;
         }
+
         return false;
     }
 }

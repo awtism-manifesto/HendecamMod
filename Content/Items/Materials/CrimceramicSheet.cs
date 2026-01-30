@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -19,6 +14,7 @@ public class CrimceramicSheet : ModItem
         Item.value = 2250;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -29,12 +25,7 @@ public class CrimceramicSheet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
-
 
     public override void AddRecipes()
     {
@@ -52,8 +43,5 @@ public class CrimceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
-
-
     }
 }

@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Items;
-using Terraria;
+﻿using HendecamMod.Content.Tiles;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles;
 
 namespace HendecamMod.Content.Achievements;
 

@@ -1,17 +1,8 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -27,8 +18,6 @@ public class CompoundBow3 : ModItem
         Item.scale = 0.96f;
         Item.rare = ModContent.RarityType<HotPink>(); // The color that the item's name will be in-game.
         Item.value = 850000;
-
-
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 30; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -37,8 +26,6 @@ public class CompoundBow3 : ModItem
         Item.reuseDelay = 17;
 
         // The sound that this item plays when used.
-      
-
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -46,17 +33,11 @@ public class CompoundBow3 : ModItem
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 15.33f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
-
-
     }
 
     public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -66,16 +47,11 @@ public class CompoundBow3 : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
         SoundEngine.PlaySound(SoundID.Item102, player.position);
         return false; // Prevent vanilla projectile spawn
-
-
-
     }
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -88,8 +64,6 @@ public class CompoundBow3 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -105,31 +79,21 @@ public class CompoundBow3 : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.CompoundBow2>();
+        recipe.AddIngredient<CompoundBow2>();
 
         recipe.AddIngredient(ItemID.LunarBar, 10);
-      
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteBar", out ModItem ArtemiteBar))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("ArtemiteBar", out ModItem ArtemiteBar))
         {
             recipe.AddIngredient(ArtemiteBar.Type, 5);
-
         }
-
-
-
-
-
-
-
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

@@ -1,12 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -46,22 +41,17 @@ public class TheFuckingSun : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
-
 
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
-
-       
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -75,12 +65,13 @@ public class TheFuckingSun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AshesofAnnihilation", out ModItem AshesofAnnihilation)
-            && CalMerica.TryFind<ModItem>("AuricBar", out ModItem AuricBar) && CalMerica.TryFind<ModItem>("YharonSoulFragment", out ModItem YharonSoulFragment))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AshesofAnnihilation", out ModItem AshesofAnnihilation)
+                                                                  && CalMerica.TryFind("AuricBar", out ModItem AuricBar) && CalMerica.TryFind("YharonSoulFragment", out ModItem YharonSoulFragment))
         {
             recipe = CreateRecipe();
 
@@ -92,7 +83,6 @@ public class TheFuckingSun : ModItem
             recipe.AddIngredient(ItemID.FragmentSolar, 25);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
         }
         else
         {
@@ -104,10 +94,6 @@ public class TheFuckingSun : ModItem
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
-
-
         }
     }
-
 }

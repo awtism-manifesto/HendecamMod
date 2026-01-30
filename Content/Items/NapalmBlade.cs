@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -28,8 +24,6 @@ public class NapalmBlade : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 156;
         Item.knockBack = 3;
-
-
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
@@ -43,6 +37,7 @@ public class NapalmBlade : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 33; // The number of projectiles that this gun will shoot.
@@ -62,8 +57,6 @@ public class NapalmBlade : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-  
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,8 +68,6 @@ public class NapalmBlade : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -91,16 +82,15 @@ public class NapalmBlade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.FragmentSolar,5);
+        recipe.AddIngredient(ItemID.FragmentSolar, 5);
         recipe.AddIngredient(ItemID.Ichor, 10);
-        recipe.AddIngredient<Items.RefinedOil>(50);
-        recipe.AddIngredient<Items.BrokenHeroGun>();
+        recipe.AddIngredient<RefinedOil>(50);
+        recipe.AddIngredient<BrokenHeroGun>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

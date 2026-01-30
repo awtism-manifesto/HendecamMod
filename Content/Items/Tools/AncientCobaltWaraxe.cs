@@ -1,9 +1,4 @@
 ﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -36,16 +31,12 @@ public class AncientCobaltWaraxe : ModItem
         {
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AncientCobaltBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
 }

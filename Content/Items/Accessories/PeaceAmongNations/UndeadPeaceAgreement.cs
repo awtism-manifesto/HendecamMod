@@ -1,29 +1,28 @@
-﻿using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class UndeadPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(copper: 676767);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "All undead should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Zombie] = true;
         player.npcTypeNoAggro[NPCID.ZombieEskimo] = true;
         player.npcTypeNoAggro[NPCID.ZombieDoctor] = true;
@@ -127,16 +126,17 @@ public class UndeadPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.PossessedArmor] = true;
         player.npcTypeNoAggro[NPCID.Poltergeist] = true;
         player.npcTypeNoAggro[NPCID.SwampThing] = true;
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SkeletronTrophy);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

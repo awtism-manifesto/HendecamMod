@@ -1,10 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -45,8 +39,6 @@ public class AstatineArrow : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -68,5 +60,4 @@ public class AstatineArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
         recipe.Register();
     }
-
 }

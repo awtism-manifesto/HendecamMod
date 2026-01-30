@@ -1,15 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -19,14 +9,13 @@ public class SublimRay2 : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
         Projectile.height = 5; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -44,8 +33,7 @@ public class SublimRay2 : ModProjectile
 
     public override void AI()
     {
-
-        if (Projectile.alpha <190)
+        if (Projectile.alpha < 190)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -57,8 +45,6 @@ public class SublimRay2 : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                 fireDust.noGravity = true;
@@ -66,15 +52,9 @@ public class SublimRay2 : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 255);
-
     }
-   
-    
-    
 }
-
-

@@ -1,10 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,12 +7,6 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Beard)]
 public class CollarOfTheDamned : ModItem
 {
-   
-    
-    
-
-   
-
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -27,25 +15,17 @@ public class CollarOfTheDamned : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.accessory = true;
         Item.vanity = true;
-        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.PinkDye);
         recipe.AddIngredient(ItemID.CrabBanner);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-       
-
-
-
-
-
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,8 +37,6 @@ public class CollarOfTheDamned : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -74,7 +52,4 @@ public class CollarOfTheDamned : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
-    
-   
 }

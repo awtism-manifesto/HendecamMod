@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -21,30 +16,20 @@ public class CrimtaneAmr : ModItem
         Item.value = 44000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 60; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 60; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item88;
-
-
+        Item.UseSound = SoundID.Item88;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 10;
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -54,26 +39,18 @@ public class CrimtaneAmr : ModItem
         Item.useAmmo = ItemID.RocketI;
 
         if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica))
-
-
         {
             Item.damage = 36;
-            Item.useTime = 54; 
-            Item.useAnimation = 54; 
+            Item.useTime = 54;
+            Item.useAnimation = 54;
         }
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.AMRRound>();
-
     }
 
-
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -85,8 +62,6 @@ public class CrimtaneAmr : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -102,28 +77,21 @@ public class CrimtaneAmr : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient(ItemID.CrimtaneBar, 30);
-        recipe.AddIngredient(ItemID.CrimsonSeeds, 1);
+        recipe.AddIngredient(ItemID.CrimsonSeeds);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica) && JfkMerica.TryFind<ModItem>("Crimtane_Auto_Rifle", out ModItem CrimtaneAutoRifle))
-     
-
+        if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica) && JfkMerica.TryFind("Crimtane_Auto_Rifle", out ModItem CrimtaneAutoRifle))
         {
             recipe.AddIngredient(CrimtaneAutoRifle.Type);
-           
         }
-
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

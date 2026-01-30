@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class BlackshardDebuff : ModBuff
 {
@@ -18,14 +11,11 @@ public class BlackshardDebuff : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-       
-        if (Main.rand.NextBool(2)) 
+        if (Main.rand.NextBool(2))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.WhiteTorch,
                 npc.velocity.X * 1.5f, npc.velocity.Y * 1.5f, 70, default, 3f);
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

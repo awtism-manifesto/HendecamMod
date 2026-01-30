@@ -1,13 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -18,7 +13,7 @@ public class SuperCeramicFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 13;
     public static readonly int StupidAttackSpeedBonus = 10;
-    public static readonly int StupidCritBonus =9;
+    public static readonly int StupidCritBonus = 9;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -41,6 +36,7 @@ public class SuperCeramicFedora : ModItem
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,8 +48,6 @@ public class SuperCeramicFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -68,11 +62,13 @@ public class SuperCeramicFedora : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<SuperCeramicChestplate>() && legs.type == ModContent.ItemType<SuperCeramicLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -87,44 +83,38 @@ public class SuperCeramicFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 113f;
-        
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-      
         recipe.AddIngredient<CeramicSheet>(25);
         recipe.AddIngredient<EbonceramicSheet>(10);
-      
+
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
-       
         recipe.AddIngredient<CeramicSheet>(25);
-     
+
         recipe.AddIngredient<CrimceramicSheet>(10);
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "20% increased damage reduction at max HP, getting hit causes ceramic shards to shatter off the player but removes the boost";
         player.GetModPlayer<CeramMultiscale>().Multiscale = true;
     }
 }
+
 public class CeramMultiscale : ModPlayer
 {
-   
     private const int ShatterCooldownMax = 60 * 10;
 
     public bool Multiscale;
@@ -137,11 +127,8 @@ public class CeramMultiscale : ModPlayer
 
     public override void PostUpdate()
     {
-     
         if (ShatterCooldown > 0)
             ShatterCooldown--;
-
-      
         if (Multiscale && Player.statLife == Player.statLifeMax2)
         {
             Player.endurance = 1f - 0.8f * (1f - Player.endurance);
@@ -150,19 +137,14 @@ public class CeramMultiscale : ModPlayer
 
     public override void OnHurt(Player.HurtInfo info)
     {
-      
         if (!Multiscale)
             return;
-
-      
         if (ShatterCooldown > 0)
             return;
 
         int baseDamage = 35;
         float defenseScale = 0.75f;
-        int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
-
-        
+        int finalDamage = baseDamage + Player.statDefense * defenseScale;
         Projectile.NewProjectile(
             Player.GetSource_FromThis(),
             Player.Center,
@@ -176,9 +158,4 @@ public class CeramMultiscale : ModPlayer
         // Start cooldown
         ShatterCooldown = ShatterCooldownMax;
     }
-
-
-
-
-
 }

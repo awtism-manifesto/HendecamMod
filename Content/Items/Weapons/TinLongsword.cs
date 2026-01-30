@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class TinLongsword : ModItem
 {
@@ -26,14 +20,10 @@ public class TinLongsword : ModItem
         Item.ArmorPenetration = 2;
         Item.ChangePlayerDirectionOnShoot = true;
         Item.scale = 1.2f;
-
-
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-
-
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -42,12 +32,11 @@ public class TinLongsword : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,8 +48,6 @@ public class TinLongsword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -75,6 +62,7 @@ public class TinLongsword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -82,10 +70,9 @@ public class TinLongsword : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.TinBroadsword, 1);
+        recipe.AddIngredient(ItemID.TinBroadsword);
         recipe.AddIngredient(ItemID.TinBar, 4);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

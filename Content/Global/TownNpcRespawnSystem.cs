@@ -1,8 +1,6 @@
 ﻿using System.IO;
-using Terraria.ModLoader.IO;
-using Terraria.ModLoader;
-using Terraria;
 using HendecamMod.Content.NPCs;
+using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.GlobalNPCs;
 
@@ -11,7 +9,7 @@ namespace HendecamMod.Content.GlobalNPCs;
 public class TownNPCRespawnSystem : ModSystem
 {
     // Tracks if ExamplePerson has ever been spawned in this world
-    public static bool unlockedExamplePersonSpawn = false;
+    public static bool unlockedExamplePersonSpawn;
 
     // Town NPC rescued in the world would follow a similar implementation, the only difference being how the value is set to true.
     // public static bool savedExamplePerson = false;
@@ -45,10 +43,11 @@ public class TownNPCRespawnSystem : ModSystem
         reader.ReadFlags(out unlockedExamplePersonSpawn);
     }
 }
+
 public class TownNpeeRespawnSystem : ModSystem
 {
     // Tracks if ExamplePerson has ever been spawned in this world
-    public static bool unlockedriver = false;
+    public static bool unlockedriver;
 
     // Town NPC rescued in the world would follow a similar implementation, the only difference being how the value is set to true.
     // public static bool savedExamplePerson = false;
@@ -82,10 +81,11 @@ public class TownNpeeRespawnSystem : ModSystem
         reader.ReadFlags(out unlockedriver);
     }
 }
+
 public class YelmutRespawnSystem : ModSystem
 {
     // Tracks if ExamplePerson has ever been spawned in this world
-    public static bool unlockedyelmut = false;
+    public static bool unlockedyelmut;
 
     // Town NPC rescued in the world would follow a similar implementation, the only difference being how the value is set to true.
     // public static bool savedExamplePerson = false;

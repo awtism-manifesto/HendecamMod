@@ -1,15 +1,6 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Items.Accessories;
-using System.Collections.Generic;
-
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Global;
@@ -22,35 +13,29 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe.AddIngredient<AzuriteBar>(10);
         recipe.AddIngredient(ItemID.BottledWater, 30);
         recipe.AddIngredient(ItemID.FallenStar, 3);
-       
-       
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
         Recipe recipe1 = Recipe.Create(ItemID.BlueMoon);
         recipe1.AddIngredient<AzuriteBar>(15);
         recipe1.AddIngredient(ItemID.Mace);
-       
-
 
         recipe1.AddTile(TileID.Anvils);
         recipe1.Register();
         Recipe recipe12 = Recipe.Create(ItemID.Muramasa);
         recipe12.AddIngredient<AzuriteBar>(10);
         recipe12.AddIngredient(ItemID.Katana);
-       
-
 
         recipe12.AddTile(TileID.Anvils);
         recipe12.Register();
 
         Recipe recipe123 = Recipe.Create(ItemID.CobaltShield);
         recipe123.AddIngredient<AzuriteBar>(10);
-       
+
         recipe123.AddIngredient<DefenseShield>();
 
         recipe123.AddTile<CobaltWorkBenchPlaced>();
-       
+
         recipe123.Register();
         Recipe recipe1233 = Recipe.Create(ItemID.CobaltShield);
         recipe1233.AddIngredient<AzuriteBar>(10);
@@ -65,8 +50,6 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe1234.AddIngredient<AzuriteBar>(10);
         recipe1234.AddIngredient(ItemID.FallenStar, 3);
         recipe1234.AddIngredient(ItemID.Book);
-        
-
 
         recipe1234.AddTile(TileID.Bookcases);
         recipe1234.Register();
@@ -75,18 +58,7 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe12345.AddIngredient<AzuriteBar>(10);
         recipe12345.AddIngredient<WoodenStick>(5);
         recipe12345.AddIngredient(ItemID.FallenStar, 3);
-        
-
-
-
         recipe12345.AddTile(TileID.Anvils);
         recipe12345.Register();
-
-
     }
-
-
-
-
 }
-

@@ -1,14 +1,15 @@
-﻿using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Weapons;
 
 public class MetalBall : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetStaticDefaults()
     {
         // These are all related to gamepad controls and don't seem to affect anything else
@@ -41,11 +42,6 @@ public class MetalBall : ModItem
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
 
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.
@@ -65,6 +61,7 @@ public class MetalBall : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

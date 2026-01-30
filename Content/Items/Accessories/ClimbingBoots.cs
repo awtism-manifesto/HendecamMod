@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -11,35 +7,36 @@ namespace HendecamMod.Content.Items.Accessories;
 // Of particular note is a showcase of the correct approaches to various movement speed modifications.
 [AutoloadEquip(EquipType.Shoes)]
 public class ClimbingBoots : ModItem
-    {
+{
     public static readonly int MoveSpeedBonus = 8;
 
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(MoveSpeedBonus);
 
     public override void SetDefaults()
-        {
+    {
         Item.width = 22;
         Item.height = 22;
 
         Item.accessory = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(silver: 650); // Equivalent to Item.buyPrice(0, 1, 0, 0);
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "8% increased movement speed");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Allows the wearer to run super fast")
-            {
+        {
             OverrideColor = new Color(255, 255, 255)
-            };
+        };
         tooltips.Add(line);
-        }
+    }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
-        {
+    {
         // These 2 stat changes are equal to the Lightning Boots
         player.moveSpeed += MoveSpeedBonus / 109f; // Modifies the player movement speed bonus.
         player.accRunSpeed = 6.35f; // Sets the players sprint speed in boots.
@@ -63,55 +60,56 @@ public class ClimbingBoots : ModItem
 
         // These effects are visual only. These are replicated in UpdateVanity below so they apply for vanity equipment.
         if (!hideVisual)
-            {
+        {
             player.CancelAllBootRunVisualEffects(); // This ensures that boot visual effects don't overlap if multiple are equipped
 
             // Hellfire Treads sprint dust. For more info on sprint dusts see Player.SpawnFastRunParticles() method in Player.cs
             player.hellfireTreads = false;
             // Other boot run visual effects include: sailDash, coldDash, desertDash, fairyBoots
-            }
         }
+    }
 
     public override void UpdateVanity(Player player)
-        {
+    {
         // This code is a copy of the visual effects code in UpdateAccessory above
         player.CancelAllBootRunVisualEffects();
         player.vanityRocketBoots = 2;
         player.hellfireTreads = false;
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         // Hermes Boots
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.HermesBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.HermesBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Flurry Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.FlurryBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.FlurryBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Dunerider Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SandBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.SandBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Sailfish Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SailfishBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.SailfishBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        }
     }
+}

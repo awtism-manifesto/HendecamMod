@@ -1,12 +1,8 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
+﻿using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.GameContent;
 using Terraria.GameContent.ObjectInteractions;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Poop;
@@ -101,7 +97,8 @@ public class PoopToiletPlaced : ModTile
         Player player = Main.LocalPlayer;
 
         if (player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
-        { // Avoid being able to trigger it from long range
+        {
+            // Avoid being able to trigger it from long range
             player.GamepadEnableGrappleCooldown();
             player.sitting.SitDown(player, i, j);
         }
@@ -114,7 +111,8 @@ public class PoopToiletPlaced : ModTile
         Player player = Main.LocalPlayer;
 
         if (!player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
-        { // Match condition in RightClick. Interaction should only show if clicking it does something
+        {
+            // Match condition in RightClick. Interaction should only show if clicking it does something
             return;
         }
 

@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -30,8 +25,6 @@ public class KingslayerBreastplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -43,6 +36,7 @@ public class KingslayerBreastplate : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,16 +48,14 @@ public class KingslayerBreastplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<KingslayerHelmet>() && legs.type == ModContent.ItemType<KingslayerGreaves>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -80,28 +72,25 @@ public class KingslayerBreastplate : ModItem
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 106f;
         player.maxMinions += MaxMinionIncrease;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-      
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<KingslayerBar>(22);
-        
+
         recipe.AddIngredient(ItemID.FlinxFurCoat);
-      
+
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
         if (NPC.AnyDanger())
-            {
-
-
-
+        {
             player.statLifeMax2 = (int)(player.statLifeMax2 * 1.05f);
             player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 105f;
             player.moveSpeed += MoveSpeedBonus / 108f;
@@ -114,9 +103,6 @@ public class KingslayerBreastplate : ModItem
             player.statManaMax2 += 40;
         }
 
-
-
         player.setBonus = "Slightly increases all stats during a boss fight or invasion";
-
     }
 }

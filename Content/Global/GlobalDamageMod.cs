@@ -1,14 +1,11 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 
 public class DamageModificationGlobalNPC : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool stamped;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {
@@ -31,14 +28,15 @@ public class DamageModificationGlobalNPC : GlobalNPC
         {
             drawColor.R = 255;
             drawColor.G = 5;
-            drawColor.B = 5;   
+            drawColor.B = 5;
         }
     }
 }
+
 public class OrangeDebuff : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool orange;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {
@@ -65,10 +63,11 @@ public class OrangeDebuff : GlobalNPC
         }
     }
 }
+
 public class GayDebuff : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool gay;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {

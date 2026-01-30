@@ -1,12 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -30,18 +25,14 @@ public class BigCannonBall : ModProjectile
         Projectile.timeLeft = 195;
         Projectile.scale = 2f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-        
-        
         Projectile.Kill();
     }
-    
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -49,8 +40,6 @@ public class BigCannonBall : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -73,18 +62,12 @@ public class BigCannonBall : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-
-        
-
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
             Projectile.ai[0] = 17f;
             Projectile.velocity.Y += 0.27f;
         }
-        
-      
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 17f)
@@ -92,6 +75,7 @@ public class BigCannonBall : ModProjectile
             Projectile.velocity.Y = 17f;
         }
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -102,7 +86,7 @@ public class BigCannonBall : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;

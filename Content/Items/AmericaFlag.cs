@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -26,6 +20,7 @@ public class AmericaFlag : ModItem
         Item.autoReuse = true;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AmericaFlagPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -38,8 +33,6 @@ public class AmericaFlag : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -51,18 +44,15 @@ public class AmericaFlag : ModItem
         }
     }
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+    // Another method of hiding can be done if you want to hide just one line.
+    // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<BlankFlag>(1);
+        recipe.AddIngredient<BlankFlag>();
         recipe.AddIngredient(ItemID.Wood, 2);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
-
-
 }

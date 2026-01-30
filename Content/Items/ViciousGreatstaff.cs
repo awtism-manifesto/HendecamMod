@@ -1,18 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-
 
 namespace HendecamMod.Content.Items;
 
@@ -28,12 +18,13 @@ public class ViciousGreatstaff : ModItem
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.useAnimation = 14;
         Item.useTime = 14;
-        Item.damage =  72;
+        Item.damage = 72;
         Item.knockBack = 11.5f;
         Item.width = 40;
         Item.height = 40;
@@ -41,45 +32,28 @@ public class ViciousGreatstaff : ModItem
         Item.shootSpeed = 15.95f;
         Item.scale = 1.05f;
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
-
-
         {
-
             Item.damage = 89;
-
-
         }
-
 
         Item.rare = ItemRarityID.Lime;
         Item.value = Item.buyPrice(gold: 20); // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Magic;
         Item.shoot = ModContent.ProjectileType<BloodshotBomb>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
-      
+
         Item.autoReuse = true;
     }
-   
+
     public override bool AltFunctionUse(Player player)
     {
-
-        
-            return true;
-       
-       
+        return true;
     }
-  
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)
         {
-
-
-
-
-
-
-
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item13, player.position);
 
@@ -87,17 +61,9 @@ public class ViciousGreatstaff : ModItem
             return false;
         }
 
-
-
-
-        else
-        {
-            SoundEngine.PlaySound(SoundID.Item100, player.position);
-            return true;
-        }
+        SoundEngine.PlaySound(SoundID.Item100, player.position);
+        return true;
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -110,8 +76,6 @@ public class ViciousGreatstaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -126,6 +90,7 @@ public class ViciousGreatstaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -138,20 +103,8 @@ public class ViciousGreatstaff : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
-
-
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
-
-
-
         }
-
-
-
-
-
     }
-
-
 }

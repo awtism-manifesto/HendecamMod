@@ -1,13 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -16,7 +10,6 @@ public class SpaceTrash3 : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -33,15 +26,14 @@ public class SpaceTrash3 : ModProjectile
         Projectile.localNPCHitCooldown = 25;
         Projectile.DamageType = DamageClass.Magic;
         Projectile.timeLeft = 195;
-      
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
         target.AddBuff(BuffID.OnFire, 300);
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
     }
-   
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -52,7 +44,7 @@ public class SpaceTrash3 : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -60,7 +52,6 @@ public class SpaceTrash3 : ModProjectile
 
     public override void AI()
     {
-
         int frameSpeed = 5;
 
         Projectile.frameCounter++;
@@ -73,16 +64,12 @@ public class SpaceTrash3 : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
-
-
         if (Projectile.timeLeft <= 115)
 
-        Projectile.ai[0] += 8.5f;
+            Projectile.ai[0] += 8.5f;
         if (Projectile.ai[0] >= 8.5f)
         {
             Projectile.ai[0] = 8.5f;
@@ -110,20 +97,16 @@ public class SpaceTrash3 : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 60, Projectile.height - 60, DustID.Torch, 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 2f;
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.DeerclopsRubbleAttack, Projectile.position);
-
-
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

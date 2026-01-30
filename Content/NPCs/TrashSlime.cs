@@ -1,10 +1,7 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Items;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using HendecamMod.Content.Items;
 
 namespace HendecamMod.Content.NPCs;
 
@@ -17,8 +14,9 @@ public class TrashSlime : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.MotherSlime;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -39,25 +37,25 @@ public class TrashSlime : ModNPC
 
         AIType = NPCID.GreenSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
-        
+
         Banner = Type;
         BannerItem = ModContent.ItemType<TrashSlimeBanner>();
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"A natural result of the horrific ecological overshoot that has been brought upon this world by humanity...\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"A natural result of the horrific ecological overshoot that has been brought upon this world by humanity...\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         // Since Party Zombie is essentially just another variation of Zombie, we'd like to mimic the Zombie drops.
@@ -84,8 +82,8 @@ public class TrashSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.OldShoe, 4));
         npcLoot.Add(ItemDropRule.Common(ItemID.FishingSeaweed, 4));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LegoBricks>(), 25, 50, 101));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 101, 1, 1));
-       
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 101));
+
         npcLoot.Add(ItemDropRule.Common(ItemID.JojaCola, 20));
         npcLoot.Add(ItemDropRule.Common(ItemID.ChainKnife, 33));
         npcLoot.Add(ItemDropRule.Common(ItemID.FlintlockPistol, 33));
@@ -93,9 +91,6 @@ public class TrashSlime : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         return SpawnCondition.Ocean.Chance * 0.89f;
-
     }
-
 }

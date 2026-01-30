@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -14,12 +7,12 @@ public class PoorMahoganyAxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 6;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 35;
         Item.height = 35;
         Item.useTime = 15;
         Item.useAnimation = 19;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 1;
         Item.useTurn = true;
@@ -28,10 +21,11 @@ public class PoorMahoganyAxe : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
+
         Item.axe = 5; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,14 +44,9 @@ public class PoorMahoganyAxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<PoorMahogany>(10);
-        
-        
         recipe.AddTile(TileID.WorkBenches);
 
         recipe.Register();
-        
     }
 }

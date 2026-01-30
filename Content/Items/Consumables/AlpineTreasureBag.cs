@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Weapons;
-using HendecamMod.Content.NPCs.Bosses;
-using Terraria;
+﻿using HendecamMod.Content.Items.Weapons;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Consumables;
 
@@ -40,6 +35,6 @@ public class AlpineTreasureBag : ModItem
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RazorRotors>(), 3));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AlpinePlushieGlitterbomb>(), 3));
         itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<fivenato>(), 1, 100, 1000));
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<CandyHeart>(), 1));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<CandyHeart>()));
     }
 }

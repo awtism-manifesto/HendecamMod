@@ -1,11 +1,6 @@
-﻿using Terraria;
-using Terraria.GameContent.Bestiary;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using HendecamMod.Content.Items.Placeables;
-
 
 namespace HendecamMod.Content.NPCs;
 
@@ -18,8 +13,9 @@ public class MintSlime : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.ShimmerSlime;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -42,7 +38,6 @@ public class MintSlime : ModNPC
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<MintSlimeBanner>();
-
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -63,16 +58,11 @@ public class MintSlime : ModNPC
         // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-
-
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MintalOre>(), 1, 9, 23));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         return SpawnCondition.OverworldHallow.Chance * 0.8f;
-
     }
-
 }

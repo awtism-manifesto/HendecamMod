@@ -1,26 +1,19 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class Tomato : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         Main.projFrames[Projectile.type] = 4;
-       
     }
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -45,13 +38,10 @@ public class Tomato : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
 
     public override void AI()
     {
-
-
         int frameSpeed = 9;
 
         Projectile.frameCounter++;
@@ -64,10 +54,9 @@ public class Tomato : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
+
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -80,18 +69,16 @@ public class Tomato : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
+
                 Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustID.Water_Crimson, 0f, 0f, 100, default, 0.75f);
                 firee2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
                 firee2Dust.velocity *= 0.25f;
-
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Water_BloodMoon);
@@ -99,7 +86,5 @@ public class Tomato : ModProjectile
             dust.velocity *= 9.95f;
             dust.scale *= 1.25f;
         }
-
-
     }
 }

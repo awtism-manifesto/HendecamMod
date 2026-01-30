@@ -1,11 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -30,12 +25,13 @@ public class GalaxyProj : ModProjectile
         Projectile.extraUpdates = 1;
         AIType = ProjectileID.WoodenArrowFriendly;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<GalaxyTag>(), 330);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -58,34 +54,27 @@ public class GalaxyProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-       
-        
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-
-       
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(11, 5).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyBoom>(), Projectile.damage = (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
+        Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
             new Vector2(-3, 8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
+        Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
             new Vector2(6, -10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
-            Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
+        Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
             new Vector2(-5, -11).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
-           
-        
 
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-       
     }
 }

@@ -1,14 +1,9 @@
-﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
-using Terraria;
+using HendecamMod.Content.Dusts;
 using Terraria.Chat;
-using Terraria.GameContent.Generation;
-using Terraria.ID;
 using Terraria.IO;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.WorldBuilding;
 
 namespace HendecamMod.Content.Tiles.Blocks;
@@ -36,7 +31,6 @@ public class LimestonePlaced : ModTile
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(204, 190, 163));
-
     }
 
     public class LimestoneSystem : ModSystem
@@ -56,6 +50,7 @@ public class LimestonePlaced : ModTile
             {
                 return;
             }
+
             ThreadPool.QueueUserWorkItem(_ =>
             {
                 if (Main.netMode == NetmodeID.SinglePlayer)

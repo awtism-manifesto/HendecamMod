@@ -1,16 +1,12 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class GagGift : ModProjectile
 {
@@ -28,6 +24,7 @@ public class GagGift : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -40,15 +37,15 @@ public class GagGift : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.SpikyBall;
-       
+
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 240;
 
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -71,8 +68,6 @@ public class GagGift : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -89,7 +84,6 @@ public class GagGift : ModProjectile
             // Increase the speed of the rocket if it is moving less than 1 block per second.
             // It is not recommended to increase the number past 16f to increase the speed of the rocket. It could start no clipping through blocks.
             // Instead, increase extraUpdates in SetDefaults() to make the rocket move faster.
-          
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -103,9 +97,7 @@ public class GagGift : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
-       
     }
-
 
     public override void PrepareBombToBlow()
     {
@@ -150,7 +142,5 @@ public class GagGift : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3f;
         }
-
-        
     }
 }

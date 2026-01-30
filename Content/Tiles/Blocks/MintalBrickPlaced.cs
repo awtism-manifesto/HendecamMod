@@ -1,9 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -20,7 +15,6 @@ public class MintalBrickPlaced : ModTile
 
         AddMapEntry(new Color(76, 196, 166));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

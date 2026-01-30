@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,12 +8,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class KingslayerGreaves : ModItem
 {
-
     public static readonly int MoveSpeedBonus = 25;
     public static readonly int AdditiveDamageBonus = 6;
     public static readonly int AttackSpeedBonus = 5;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -28,8 +20,6 @@ public class KingslayerGreaves : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -41,25 +31,24 @@ public class KingslayerGreaves : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "6% increased damage");
         tooltips.Add(line);
-       
-            line = new TooltipLine(Mod, "Face", "5% increased whip speed")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        
-        line = new TooltipLine(Mod, "Face", "Significantly increased move speed, even more on sand")
+
+        line = new TooltipLine(Mod, "Face", "5% increased whip speed")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
+        line = new TooltipLine(Mod, "Face", "Significantly increased move speed, even more on sand")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -74,11 +63,13 @@ public class KingslayerGreaves : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<KingslayerHelmet>() && body.type == ModContent.ItemType<KingslayerBreastplate>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -93,36 +84,33 @@ public class KingslayerGreaves : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.desertBoots = true;
-       
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
         player.moveSpeed += MoveSpeedBonus / 125f;
         player.runAcceleration *= 1.25f;
-       
-            player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 105f;
-        
+
+        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 105f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
-       
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<KingslayerBar>(16);
         recipe.AddIngredient<FlinxFurSlippers>();
         recipe.AddIngredient(ItemID.SandBoots);
 
         recipe.AddTile(TileID.Solidifier);
-
-       
         recipe.Register();
-        
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
     }
-    public class Penieees: ModPlayer
+
+    public class Penieees : ModPlayer
     {
-        public bool BigPenits = false;
+        public bool BigPenits;
 
         public override void ResetEffects()
         {
@@ -137,8 +125,7 @@ public class KingslayerGreaves : ModItem
                 return;
             }
 
-           
-            Player.runAcceleration *= 1.33f; 
+            Player.runAcceleration *= 1.33f;
             Player.maxRunSpeed *= 1.33f;
             Player.accRunSpeed *= 1.33f;
             Player.runSlowdown *= 1.33f;

@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -31,8 +26,6 @@ public class ThePeoplesPitchfork : ModItem
         Item.knockBack = 6.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-
-
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
@@ -42,11 +35,10 @@ public class ThePeoplesPitchfork : ModItem
 
         if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica))
         {
-
             Item.damage = 20;
-
         }
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -66,11 +58,11 @@ public class ThePeoplesPitchfork : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -82,8 +74,6 @@ public class ThePeoplesPitchfork : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -102,14 +92,13 @@ public class ThePeoplesPitchfork : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica) && YelMerica.TryFind<ModItem>("PoorMahoganyBlock", out ModItem PoorMahoganyBlock))
+        if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica) && YelMerica.TryFind("PoorMahoganyBlock", out ModItem PoorMahoganyBlock))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(PoorMahoganyBlock.Type, 18);
 
             recipe.AddRecipeGroup("IronBar", 8);
             recipe.Register();
-
         }
         else
         {
@@ -118,16 +107,5 @@ public class ThePeoplesPitchfork : ModItem
             recipe.AddRecipeGroup("IronBar", 8);
             recipe.Register();
         }
-          
-
-       
     }
-
-
-
-
-
 }
-
-
-

@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
 
@@ -32,6 +27,7 @@ public class PyriteArrow : ModItem
         Item.shootSpeed = 3.95f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -43,11 +39,8 @@ public class PyriteArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
@@ -55,5 +48,4 @@ public class PyriteArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
         recipe.Register();
     }
-
 }

@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,6 +13,7 @@ public class GodsPaintThinner : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Penetrated, Blood Butchered, Midas,"));
@@ -28,6 +23,7 @@ public class GodsPaintThinner : ModItem
         tooltips.Add(new TooltipLine(Mod, "Face", "Chaos State, Potion Sickness, Creative Shock, Might Wind,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Moon Bite, The Tongue, Shimmer, and the Shadow Candle"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.BoneJavelin] = true;
@@ -57,12 +53,13 @@ public class GodsPaintThinner : ModItem
         player.buffImmune[BuffID.Shimmer] = true;
         player.buffImmune[BuffID.ShadowCandle] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<MagicSoap>(1);
-        recipe.AddIngredient<ResearchChemicals>(1);
+        recipe.AddIngredient<MagicSoap>();
+        recipe.AddIngredient<ResearchChemicals>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();

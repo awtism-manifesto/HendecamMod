@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,8 +8,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class LycopiteMask : ModItem
 {
-
-    
     public static readonly int MeleeCritBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 5;
     public static readonly int AttackSpeedBonus = 14;
@@ -41,6 +34,7 @@ public class LycopiteMask : ModItem
         Item.defense = 7; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,8 +51,6 @@ public class LycopiteMask : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -72,11 +64,13 @@ public class LycopiteMask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<LycopiteChestplate>() && legs.type == ModContent.ItemType<LycopiteLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -90,28 +84,26 @@ public class LycopiteMask : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
-       
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
         player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 114f;
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
         player.whipRangeMultiplier = 1.10f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<LycopiteBar>(19);
-      
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
         player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
         player.setBonus = "+15% max life";
-
     }
 }

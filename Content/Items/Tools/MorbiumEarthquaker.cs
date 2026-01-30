@@ -1,8 +1,4 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -43,10 +39,5 @@ public class MorbiumEarthquaker : ModItem
         recipe.AddIngredient<MorbiumBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
     }
 }

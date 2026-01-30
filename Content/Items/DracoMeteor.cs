@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -39,6 +35,7 @@ public class DracoMeteor : ModItem
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DracoRound>();
@@ -63,7 +60,6 @@ public class DracoMeteor : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,8 +71,6 @@ public class DracoMeteor : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -92,16 +86,13 @@ public class DracoMeteor : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
-        
         recipe.AddIngredient(ItemID.MeteoriteBar, 10);
-        recipe.AddIngredient<Items.AstatineBar>(15);
-        recipe.AddIngredient<Items.AK47>();
+        recipe.AddIngredient<AstatineBar>(15);
+        recipe.AddIngredient<AK47>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
-
+using HendecamMod.Content.Projectiles;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,42 +17,30 @@ public class BitcoinBlaster : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 7500000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 6; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item62;
-
-
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();  // Sets the damage type to ranged.
+        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 150; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Bitcoin>();
         Item.useAmmo = AmmoID.Coin;
         Item.shootSpeed = 15.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Bitcoin>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -75,16 +53,12 @@ public class BitcoinBlaster : ModItem
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
 
             // Decrease velocity randomly for nicer visuals.
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -97,8 +71,6 @@ public class BitcoinBlaster : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -123,11 +95,6 @@ public class BitcoinBlaster : ModItem
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
-
-
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

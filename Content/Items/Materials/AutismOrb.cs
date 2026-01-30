@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Materials;
 
@@ -14,6 +9,7 @@ public class AutismOrb : ModItem
         Item.ResearchUnlockCount = 1;
         ItemID.Sets.ItemIconPulse[Item.type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -22,6 +18,7 @@ public class AutismOrb : ModItem
         Item.value = 36;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The power of autism compels you");
@@ -40,7 +37,5 @@ public class AutismOrb : ModItem
                 l.Hide();
             }
         }
-
     }
-
 }

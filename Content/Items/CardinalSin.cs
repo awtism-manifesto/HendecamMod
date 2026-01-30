@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
-
+using HendecamMod.Content.Projectiles;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,8 +17,6 @@ public class CardinalSin : ModItem
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 90000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
@@ -39,8 +27,6 @@ public class CardinalSin : ModItem
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
         Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -49,24 +35,23 @@ public class CardinalSin : ModItem
         Item.ArmorPenetration = 5;
         Item.mana = 11;
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.6f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DevilFlame>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
@@ -85,15 +70,10 @@ public class CardinalSin : ModItem
             type = ModContent.ProjectileType<DevilFlame>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<Pentagram>();
-
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -106,8 +86,6 @@ public class CardinalSin : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -122,8 +100,6 @@ public class CardinalSin : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

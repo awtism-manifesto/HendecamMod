@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -34,16 +28,14 @@ public class FrostChunk : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1;
         Projectile.scale = 2f;
-        
-
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         target.AddBuff(BuffID.Frostburn, 180);
-       
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -58,8 +50,6 @@ public class FrostChunk : ModProjectile
             Projectile.velocity.Y += 0.26f;
         }
 
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -67,6 +57,7 @@ public class FrostChunk : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -77,14 +68,12 @@ public class FrostChunk : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.IceTorch, 0f, 0f, 100, default, 0.15f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
             fireDust.velocity *= 0.05f;
         }
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -125,12 +114,11 @@ public class FrostChunk : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-
 
     public override void OnKill(int timeLeft)
     {
@@ -138,5 +126,4 @@ public class FrostChunk : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class WeedDart : ModProjectile
@@ -51,21 +44,20 @@ public class WeedDart : ModProjectile
         {
             Projectile.velocity.Y = 17.5f;
         }
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (Main.rand.NextBool(5))
         {
-
             target.AddBuff(BuffID.Confused, 60);
         }
-        
+
         Projectile.damage = (int)(Projectile.damage * 0.85f);
     }
+
     public override void OnKill(int timeLeft)
     {
-       
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.JungleGrass);

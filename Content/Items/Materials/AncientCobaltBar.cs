@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Tiles;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -12,11 +7,9 @@ public class AncientCobaltBar : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
-       
-
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -27,6 +20,7 @@ public class AncientCobaltBar : ModItem
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltBarPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "I'm old!");
@@ -37,25 +31,13 @@ public class AncientCobaltBar : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-      
         recipe.AddIngredient<AncientCobaltOre>(3);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-
-
-
-
-
     }
 }

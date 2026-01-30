@@ -1,9 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
 using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -22,6 +18,7 @@ public class CarbonDioxideBalloon : ModItem
         player.jumpBoost = true;
         player.jumpSpeedBoost = 0.55f;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -31,8 +28,8 @@ public class CarbonDioxideBalloon : ModItem
         recipe.AddIngredient(ItemID.ShinyRedBalloon);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-       
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -44,8 +41,6 @@ public class CarbonDioxideBalloon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -60,14 +55,11 @@ public class CarbonDioxideBalloon : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }
 
 public class CarbonExtraJump : ExtraJump
 {
     public override Position GetDefaultPosition() => new After(BlizzardInABottle);
-
-
 
     public override float GetDurationMultiplier(Player player)
     {
@@ -99,8 +91,6 @@ public class CarbonExtraJump : ExtraJump
             Dust dust = Dust.NewDustDirect(player.position + new Vector2(-34f, offsetY), 102, 32, DustID.Cloud, -player.velocity.X * 0.5f, player.velocity.Y * 0.5f, 100, Color.Gray, 1.5f);
             dust.velocity = dust.velocity * 0.5f - player.velocity * new Vector2(0.1f, 0.3f);
         }
-
-
     }
 
     private static void SpawnCloudPoof(Player player, Vector2 position)

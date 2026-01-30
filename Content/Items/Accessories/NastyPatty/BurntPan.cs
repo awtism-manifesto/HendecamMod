@@ -1,19 +1,14 @@
-﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Terraria;
+﻿using System.Collections.Generic;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class BurntPan : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
@@ -29,22 +24,25 @@ public class BurntPan : ModItem
         Item.damage = 100;
         Item.knockBack = 40.0f;
         Item.ChangePlayerDirectionOnShoot = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Used:"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Inflicts Hellfire and grants 4hp/s life regen"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Equipped:"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health and Hellfire for all attacks"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks or Combat Buffs"));
-        }
+    }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
+    {
         player.lifeRegen += (int)(8f);
         return true;
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
         player.GetModPlayer<NastyFire>().NastyEffect = true;
         player.buffImmune[BuffID.WeaponImbueConfetti] = true;
@@ -74,14 +72,15 @@ public class BurntPan : ModItem
         player.buffImmune[BuffID.Wrath] = true;
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<PacifistsMark>(1);
-        recipe.AddIngredient<HotWax>(1);
+        recipe.AddIngredient<PacifistsMark>();
+        recipe.AddIngredient<HotWax>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-        }
     }
+}

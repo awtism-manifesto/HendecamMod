@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace HendecamMod.Content.Dusts;
 
@@ -21,22 +16,19 @@ public class PlutoniumDust : ModDust
         dust.color = Color.Purple;
         dust.scale = 1f;
         dust.alpha = 100;
-        
-
     }
+
     public override bool Update(Dust dust)
     {
-
         float lightR = 0.77f * dust.scale;
         float lightG = 0.35f * dust.scale;
         float lightB = 1f * dust.scale;
 
         Lighting.AddLight(dust.position, lightR, lightG, lightB);
 
-
-
         return true; // RETURN TRUE
     }
+
     public override Color? GetAlpha(Dust dust, Color lightColor)
     {
         lightColor = Color.Lerp(lightColor, Color.BlueViolet, 0.8f);

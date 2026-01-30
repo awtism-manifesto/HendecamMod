@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -40,8 +34,6 @@ public class MoonBurn : ModBuff
         }
 
         npc.GetGlobalNPC<MoonBurning>().MoonCooked = true;
-
-
     }
 
     public class MoonBurntPlayer : ModPlayer

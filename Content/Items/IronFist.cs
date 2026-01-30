@@ -1,17 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
 
-
 public class IronFist : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.damage = 33;
@@ -28,14 +21,11 @@ public class IronFist : ModItem
         Item.noMelee = true; // The projectile will do the damage and not the item
 
         Item.rare = ItemRarityID.Green;
-        Item.value = Item.sellPrice(0, 3, 0, 0);
+        Item.value = Item.sellPrice(0, 3);
 
         Item.shoot = ModContent.ProjectileType<IronFistProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 2.15f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
-   
-   
-   
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -48,8 +38,6 @@ public class IronFist : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-      
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -64,6 +52,7 @@ public class IronFist : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -71,7 +60,5 @@ public class IronFist : ModItem
         recipe.AddIngredient(ItemID.IronBar, 35);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-      
     }
-
 }

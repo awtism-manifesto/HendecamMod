@@ -1,17 +1,11 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items;
-using Newtonsoft.Json.Linq;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Items;
 
 /// <summary>
-/// A potion that applies the ExampleWeaponImbue buff to the player.
-/// See also ExampleWeaponImbue and ExampleWeaponEnchantmentPlayer.
+///     A potion that applies the ExampleWeaponImbue buff to the player.
+///     See also ExampleWeaponImbue and ExampleWeaponEnchantmentPlayer.
 /// </summary>
 public class FlaskOfOil : ModItem
 {
@@ -19,12 +13,14 @@ public class FlaskOfOil : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = [
+        ItemID.Sets.DrinkParticleColors[Type] =
+        [
             new Color(24, 20, 20),
             new Color(0, 20, 20),
             new Color(10, 10, 40)
         ];
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -36,8 +32,6 @@ public class FlaskOfOil : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -74,7 +68,7 @@ public class FlaskOfOil : ModItem
     {
         CreateRecipe()
             .AddIngredient(ItemID.BottledWater)
-            .AddIngredient<Items.CrudeOil>(5)
+            .AddIngredient<CrudeOil>(5)
             .AddTile(TileID.ImbuingStation)
             .Register();
     }

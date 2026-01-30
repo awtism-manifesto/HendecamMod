@@ -1,10 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items;
+﻿namespace HendecamMod.Content.Items;
 
 public class BottledShimmer : ModItem
 {
@@ -13,7 +7,8 @@ public class BottledShimmer : ModItem
         Item.ResearchUnlockCount = 20;
 
         // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(240, 240, 240),
             new Color(200, 200, 200),
             new Color(140, 140, 140)
@@ -36,10 +31,11 @@ public class BottledShimmer : ModItem
         Item.buffType = BuffID.Shimmer; // Specify an existing buff to be applied when used.
         Item.buffTime = 600; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Bottle, 1);
+        recipe.AddIngredient(ItemID.Bottle);
         recipe.AddCondition(Condition.NearShimmer);
         recipe.Register();
     }

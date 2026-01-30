@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -26,8 +22,6 @@ public class PlasticPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
     }
 
@@ -39,6 +33,7 @@ public class PlasticPants : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,8 +45,6 @@ public class PlasticPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,7 +60,7 @@ public class PlasticPants : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-    
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -85,6 +78,7 @@ public class PlasticPants : ModItem
         player.moveSpeed += MoveSpeedBonus / 106f; // Increase the movement speed of the player
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -94,10 +88,12 @@ public class PlasticPants : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<PlasticHeadgear>() && body.type == ModContent.ItemType<PlasticChestplate>();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;

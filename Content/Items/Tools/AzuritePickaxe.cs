@@ -1,13 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Tools;
-
 
 public class AzuritePickaxe : ModItem
 {
@@ -31,15 +25,13 @@ public class AzuritePickaxe : ModItem
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -51,8 +43,6 @@ public class AzuritePickaxe : ModItem
         };
         tooltips.Add(line);
 
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -60,8 +50,8 @@ public class AzuritePickaxe : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -69,5 +59,4 @@ public class AzuritePickaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

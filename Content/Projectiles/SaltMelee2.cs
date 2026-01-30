@@ -1,15 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class SaltMelee2 : ModProjectile
 {
@@ -32,8 +21,6 @@ public class SaltMelee2 : ModProjectile
         Projectile.extraUpdates = 7;
     }
 
-   
-
     public override void OnKill(int timeLeft)
     {
         // Plays the basic sound most projectiles make when hitting blocks.
@@ -46,4 +33,3 @@ public class SaltMelee2 : ModProjectile
         }
     }
 }
-

@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -23,8 +18,8 @@ public class PipeBob : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PipeBobPlaced>());
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -37,8 +32,6 @@ public class PipeBob : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -49,13 +42,13 @@ public class PipeBob : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient < Items.Materials.BlankCanvas>(1);
-        recipe.AddIngredient(ItemID.Bomb, 1);
+        recipe.AddIngredient<Materials.BlankCanvas>();
+        recipe.AddIngredient(ItemID.Bomb);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
     }
 }

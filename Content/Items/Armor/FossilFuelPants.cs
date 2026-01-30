@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,9 +8,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class FossilFuelPants : ModItem
 {
-
     public static readonly int MoveSpeedBonus = 22;
-    
+
     public static readonly int AttackSpeedBonus = 11;
     public static readonly int MaxMinionIncrease = 1;
     public static LocalizedText SetBonusText { get; private set; }
@@ -27,8 +21,6 @@ public class FossilFuelPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -40,6 +32,7 @@ public class FossilFuelPants : ModItem
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 9; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,8 +44,6 @@ public class FossilFuelPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,11 +58,13 @@ public class FossilFuelPants : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<FossilFuelHelmet>() && body.type == ModContent.ItemType<FossilFuelChestplate>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -88,29 +81,30 @@ public class FossilFuelPants : ModItem
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 111f;
         player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 111f;
         player.maxMinions += MaxMinionIncrease;
-       
+
         player.moveSpeed += MoveSpeedBonus / 122f;
         player.runAcceleration *= 1.22f;
-        
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<CrudeOil>(65);
         recipe.AddIngredient<RefinedOil>(25);
         recipe.AddIngredient(ItemID.FossilPants);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
+
     public class FossilFUUelPants : ModPlayer
     {
-        public bool AstaeetinePantys = false;
+        public bool AstaeetinePantys;
 
         public override void ResetEffects()
         {
@@ -125,7 +119,6 @@ public class FossilFuelPants : ModItem
                 return;
             }
 
-            
             Player.runAcceleration *= 1.44f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.44f;
             Player.accRunSpeed *= 1.44f;

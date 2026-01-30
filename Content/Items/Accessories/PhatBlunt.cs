@@ -1,10 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -13,12 +7,6 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Beard)]
 public class PhatBlunt : ModItem
 {
-   
-    
-    
-
-   
-
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -26,8 +14,8 @@ public class PhatBlunt : ModItem
         Item.value = Item.sellPrice(gold: 7); // How many coins the item is worth
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.accessory = true;
-        
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,8 +34,6 @@ public class PhatBlunt : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -62,7 +48,7 @@ public class PhatBlunt : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -80,24 +66,14 @@ public class PhatBlunt : ModItem
         player.lifeRegen += 3;
         player.breathMax = 167;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient< LuckyCigarette>();
-        recipe.AddIngredient< WeedLeaves>(28);
-      
-
-
-
+        recipe.AddIngredient<LuckyCigarette>();
+        recipe.AddIngredient<WeedLeaves>(28);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
-
-
     }
-
 }

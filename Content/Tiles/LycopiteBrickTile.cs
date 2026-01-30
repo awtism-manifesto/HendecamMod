@@ -1,9 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -22,7 +17,6 @@ public class LycopiteBrickTile : ModTile
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(255, 77, 5));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

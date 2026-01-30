@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -14,12 +9,11 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class PlutoniumChestplate : ModItem
 {
-
     public static readonly int CritBonus = 10;
     public static readonly int AdditiveDamageBonus = 15;
     public static readonly int AttackSpeedBonus = 15;
     public static readonly int StupidArmorPenetration = 10;
-   
+
     public static readonly int MeleeAttackSpeedBonus = 11;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -30,8 +24,6 @@ public class PlutoniumChestplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -43,6 +35,7 @@ public class PlutoniumChestplate : ModItem
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 17; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,8 +47,6 @@ public class PlutoniumChestplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -70,11 +61,13 @@ public class PlutoniumChestplate : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<PlutoniumFacemask>() && legs.type == ModContent.ItemType<PlutoniumPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -93,26 +86,24 @@ public class PlutoniumChestplate : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.lifeRegen += -1;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 111f;
-        
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 115f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(36);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
         player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
-        
-
     }
-   
 }

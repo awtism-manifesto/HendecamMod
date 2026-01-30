@@ -1,12 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.GlobalItems;
-
+﻿namespace HendecamMod.Content.GlobalItems;
 
 public class FuckYouCalamity : GlobalItem
 {
@@ -18,15 +10,12 @@ public class FuckYouCalamity : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        
-        
         item.damage = 6;
-        item.useTime = 8; 
+        item.useTime = 8;
         item.useAnimation = 8;
     }
-
-   
 }
+
 public class FuckYouCalamity2 : GlobalItem
 {
     // respectfully :)
@@ -37,12 +26,8 @@ public class FuckYouCalamity2 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-
-
         item.damage = 55;
         item.useTime = 12;
         item.useAnimation = 12;
     }
-
-
 }

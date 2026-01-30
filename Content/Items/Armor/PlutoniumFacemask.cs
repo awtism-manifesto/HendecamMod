@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,7 +8,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PlutoniumFacemask : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 13;
     public static readonly int CritBonus = 13;
     public static readonly int MaxManaIncrease = 85;
@@ -40,6 +34,7 @@ public class PlutoniumFacemask : ModItem
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 12; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,8 +46,6 @@ public class PlutoniumFacemask : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,11 +60,13 @@ public class PlutoniumFacemask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PlutoniumChestplate>() && legs.type == ModContent.ItemType<PlutoniumPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -85,29 +80,27 @@ public class PlutoniumFacemask : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-        
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.lifeRegen += -1;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(25);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.armorEffectDrawShadow = true;
         player.armorEffectDrawOutlines = true;
         player.armorEffectDrawOutlinesForbidden = true;
-
-       
     }
 }

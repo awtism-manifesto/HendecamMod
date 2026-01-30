@@ -1,20 +1,14 @@
-﻿using System;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class MambaBuff : ModBuff
 {
-
     public static readonly int MoveSpeedBonus = 30;
 
-   // player.wingTimeMax += 115;
-       // player.jumpSpeedBoost += 1.15f;
-       // player.maxFallSpeed = player.maxFallSpeed* 1.05f;
-       // player.wingRunAccelerationMult += 1.2f;
-       // player.wingAccRunSpeed += 1.2f;
+    // player.wingTimeMax += 115;
+    // player.jumpSpeedBoost += 1.15f;
+    // player.maxFallSpeed = player.maxFallSpeed* 1.05f;
+    // player.wingRunAccelerationMult += 1.2f;
+    // player.wingAccRunSpeed += 1.2f;
 
     public override void Update(Player player, ref int buffIndex)
     {

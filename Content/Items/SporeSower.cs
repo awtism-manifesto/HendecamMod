@@ -1,13 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-
-
-
 
 namespace HendecamMod.Content.Items;
 
@@ -29,7 +22,7 @@ public class SporeSower : ModItem
         Item.height = 40;
         Item.shootSpeed = 7.33f;
         Item.scale = 1.35f;
-     
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
         Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
@@ -45,13 +38,8 @@ public class SporeSower : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-       
-
         return true;
     }
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -64,8 +52,6 @@ public class SporeSower : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -80,22 +66,13 @@ public class SporeSower : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<LycopiteBar>(13);
-
-       
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

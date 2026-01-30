@@ -1,23 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class TackSpawn : ModProjectile
 {
-
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.SentryShot[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -37,12 +26,6 @@ public class TackSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
-
-   
-   
-   
-
     public override void OnKill(int timeLeft)
     {
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
@@ -53,44 +36,37 @@ public class TackSpawn : ModProjectile
             dust.scale *= 1.55f;
         }
 
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(90));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(135));
         Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(180));
         Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(225));
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(270));
         Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(315));
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-        ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
-
+            ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
     }
-
 }
-
-
-

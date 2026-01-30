@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
-using System;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria;
+﻿using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +7,7 @@ public class RedBloon : ModProjectile
     public override void SetStaticDefaults()
     {
         // Sets the amount of frames this minion has on its spritesheet
-        
+
         // This is necessary for right-click targeting
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
 
@@ -29,7 +22,7 @@ public class RedBloon : ModProjectile
         Projectile.width = 36;
         Projectile.height = 54;
         Projectile.tileCollide = false; // Makes the minion go through tiles freely
-       
+
         // These below are needed for a minion weapon
         Projectile.friendly = true; // Only controls if it deals damage to enemies on contact (more on that later)
         Projectile.minion = true; // Declares this as a minion (has many effects)
@@ -139,7 +132,7 @@ public class RedBloon : ModProjectile
             }
         }
     }
-   
+
     private void SearchForTargets(Player owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter)
     {
         // Starting search distance
@@ -246,13 +239,10 @@ public class RedBloon : ModProjectile
             }
         }
     }
+
     private void Visuals()
     {
         // So it will lean slightly towards the direction it's moving
         Projectile.rotation = Projectile.velocity.X * 0.05f;
-
-
-
-
     }
 }

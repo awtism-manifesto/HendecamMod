@@ -1,11 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -13,7 +7,6 @@ public class BloodshotBomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -26,6 +19,7 @@ public class BloodshotBomb : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 25;
@@ -42,6 +36,7 @@ public class BloodshotBomb : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -49,20 +44,14 @@ public class BloodshotBomb : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
-
 
         Projectile.rotation += 0.275f;
-
-
         Lighting.AddLight(Projectile.Center, 0.8f, 0.09f, 0.09f);
     }
 
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-
         modifiers.SourceDamage *= 0.75f;
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -119,12 +108,10 @@ public class BloodshotBomb : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.RedTorch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
         target.AddBuff(ModContent.BuffType<Stamped>(), 180);
     }
 

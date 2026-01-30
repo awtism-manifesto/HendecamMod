@@ -1,17 +1,24 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Poop;
 
 public class SockPoop : ModProjectile
 {
+    private float Timer
+    {
+        get => Projectile.ai[0];
+        set => Projectile.ai[0] = value;
+    }
+
+    private float ChargeTime
+    {
+        get => Projectile.ai[1];
+        set => Projectile.ai[1] = value;
+    }
+
     public override void SetStaticDefaults()
     {
         // This makes the projectile use whip collision detection and allows flasks to be applied to it.
@@ -26,28 +33,14 @@ public class SockPoop : ModProjectile
         Projectile.WhipSettings.RangeMultiplier = 0.5f;
         Projectile.width = 50;
         Projectile.height = 50;
-       Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
         // use these to change from the vanilla defaults
         // Projectile.WhipSettings.Segments = 20;
         // Projectile.WhipSettings.RangeMultiplier = 1f;
     }
 
-    private float Timer
-    {
-        get => Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
-
-    private float ChargeTime
-    {
-        get => Projectile.ai[1];
-        set => Projectile.ai[1] = value;
-    }
-
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<PoopSocked>(), 240);
@@ -65,14 +58,10 @@ public class SockPoop : ModProjectile
         }
     }
 
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
-
-
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.
@@ -131,10 +120,11 @@ public class SockPoop : ModProjectile
             float rotation = diff.ToRotation() - MathHelper.PiOver2; // This projectile's sprite faces down, so PiOver2 is used to correct rotation.
             Color color = Lighting.GetColor(element.ToTileCoordinates());
 
-            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip, 0);
+            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip);
 
             pos += diff;
         }
+
         return false;
     }
 }

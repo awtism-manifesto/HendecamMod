@@ -1,16 +1,10 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
 public class AgentGreenRocket : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.damage = 36; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
@@ -25,8 +19,8 @@ public class AgentGreenRocket : ModItem
         Item.shoot = ModContent.ProjectileType<AgentGreenProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 12.85f; // The speed of the projectile.
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
-
     }
+
     public override void SetStaticDefaults()
     {
         AmmoID.Sets.IsSpecialist[Type] = true; // This item will benefit from the Shroomite Helmet.
@@ -46,10 +40,12 @@ public class AgentGreenRocket : ModItem
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
         // The Celebration and Electrosphere Launcher will always use their own projectiles no matter which rocket you use as ammo.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,8 +57,6 @@ public class AgentGreenRocket : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -77,12 +71,12 @@ public class AgentGreenRocket : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(75);
-        recipe.AddIngredient(ItemID.CursedFlame, 1);
+        recipe.AddIngredient(ItemID.CursedFlame);
         recipe.AddIngredient<RocketNeg1>(75);
         recipe.Register();
-
     }
 }

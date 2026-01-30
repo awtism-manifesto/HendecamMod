@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -25,9 +19,7 @@ public class RadPoisoning2 : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-        
-
-        if (Main.rand.NextBool(3)) 
+        if (Main.rand.NextBool(3))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<PlutoniumDust>(),
                 npc.velocity.X * 0.89f, npc.velocity.Y * 0.89f, 70, default, 1.95f);
@@ -35,8 +27,6 @@ public class RadPoisoning2 : ModBuff
         }
 
         npc.GetGlobalNPC<Rad2Tick>().Radded2 = true;
-
-
     }
 
     public class Rad2Player : ModPlayer

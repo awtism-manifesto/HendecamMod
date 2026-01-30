@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Rarities;
 
 namespace HendecamMod.Content.Items.Icons;
@@ -14,14 +9,16 @@ public class EyeOfCthulhuIcon : ModItem
     {
         Item.ResearchUnlockCount = 3;
     }
+
     public override void SetDefaults()
     {
-        Item.width = 32; 
-        Item.height = 32; 
+        Item.width = 32;
+        Item.height = 32;
         Item.rare = ModContent.RarityType<DarkGreen>();
         Item.value = 0;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "A token for those who have slain the Eye of Cthulhu");
@@ -32,8 +29,6 @@ public class EyeOfCthulhuIcon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -41,6 +36,5 @@ public class EyeOfCthulhuIcon : ModItem
                 l.Hide();
             }
         }
-
     }
 }

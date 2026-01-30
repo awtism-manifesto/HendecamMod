@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,9 +8,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class KevlarBeret : ModItem
 {
-
-    
-   
     public static readonly int MoveSpeedBonus = -3;
     public static readonly int MeleeAttackSpeedBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 14;
@@ -43,6 +35,7 @@ public class KevlarBeret : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 2; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,16 +47,14 @@ public class KevlarBeret : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<KevlarBodysuit>() && legs.type == ModContent.ItemType<KevlarPants>();
     }
-    
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -84,6 +75,7 @@ public class KevlarBeret : ModItem
         player.moveSpeed += MoveSpeedBonus / 97f;
         player.runAcceleration *= 0.97f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -93,6 +85,7 @@ public class KevlarBeret : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.endurance = 1f - 0.89f * (1f - player.endurance);

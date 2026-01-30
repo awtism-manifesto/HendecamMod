@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Blocks;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -30,12 +26,12 @@ public class SmoothLimestone : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<SmoothLimestonePlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Placeables.Limestone>(1);
+        recipe.AddIngredient<Limestone>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

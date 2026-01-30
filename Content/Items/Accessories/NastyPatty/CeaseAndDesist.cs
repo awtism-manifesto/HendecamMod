@@ -1,30 +1,28 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class CeaseAndDesist : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25% Crit Chance and double movement speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Summons or Mounts"));
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
         player.GetModPlayer<NastyMovement>().NastyEffect = true;
         player.ClearBuff(BuffID.Flamingo);
@@ -75,14 +73,15 @@ public class CeaseAndDesist : ModItem
         player.ClearBuff(BuffID.UnicornMount);
         player.ClearBuff(BuffID.WallOfFleshGoatMount);
         player.ClearBuff(BuffID.WolfMount);
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<NintendoPatent>(1);
-        recipe.AddIngredient<TornSaddle>(1);
+        recipe.AddIngredient<NintendoPatent>();
+        recipe.AddIngredient<TornSaddle>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-        }
     }
+}

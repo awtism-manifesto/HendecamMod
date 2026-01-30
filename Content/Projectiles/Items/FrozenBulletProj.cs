@@ -1,13 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items.Weapons;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -30,24 +22,19 @@ public class FrozenBulletProj : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 450;
         Projectile.aiStyle = 1;
-        AIType = ProjectileID.Bullet; 
+        AIType = ProjectileID.Bullet;
     }
 
     public override void AI()
     {
-
-
-
         if (Projectile.alpha < 200)
         {
-
             Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 0f, Projectile.position.Y + 0f) - Projectile.velocity * 0.1f, Projectile.width - 2, Projectile.height - 2, DustID.IceTorch, 0f, 0f, 100, default, 0.75f);
             fire2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             fire2Dust.velocity *= 0.15f;
-
         }
-
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -58,21 +45,20 @@ public class FrozenBulletProj : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int j = 0; j < 4; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 1f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100);
             fireDust.noGravity = true;
             fireDust.velocity *= 6.55f;
             target.AddBuff(BuffID.Frostburn, 180);
-
         }
     }
-
 }

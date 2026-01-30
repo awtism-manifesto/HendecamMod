@@ -1,14 +1,9 @@
-﻿
-using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
-using Terraria;
 using Terraria.Enums;
 using Terraria.GameContent.Drawing;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles;
@@ -41,20 +36,20 @@ public class UraniumTorchPlaced : ModTile
         // Placement
         TileObjectData.newTile.CopyFrom(TileObjectData.GetTileData(TileID.Torches, 0));
         /*  This is what is copied from the Torches tile
-			TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
-			TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
-			TileObjectData.addAlternate(1);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorRight = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
-			TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
-			TileObjectData.addAlternate(2);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorWall = true;
-			TileObjectData.addAlternate(0);
-			*/
+            TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+            TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
+            TileObjectData.addAlternate(1);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorRight = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+            TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
+            TileObjectData.addAlternate(2);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorWall = true;
+            TileObjectData.addAlternate(0);
+            */
 
         // This code adds style-specific properties to style 1. Style 1 is used by ExampleWaterTorch. This code allows the tile to be placed in liquids. More info can be found in the guide: https://github.com/tModLoader/tModLoader/wiki/Basic-Tile#newsubtile-and-newalternate
         TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
@@ -98,8 +93,6 @@ public class UraniumTorchPlaced : ModTile
         // A negative luck of 2 will cancel out all torch luck bonuses.
 
         // The influence positive torch luck can have overall is 0.1 (if positive luck is any number less than 1) or 0.2 (if positive luck is greater than or equal to 1)
-
-
         return 1.15f;
     }
 
@@ -160,7 +153,7 @@ public class UraniumTorchPlaced : ModTile
 
         Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
 
-        ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i); // Don't remove any casts.
+        ulong randSeed = Main.TileFrameSeed ^ (ulong)(((long)j << 32) | (uint)i); // Don't remove any casts.
         Color color = new Color(100, 100, 100, 0);
         int width = 20;
         int height = 20;

@@ -1,35 +1,27 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class LycoSporeRanged : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
 
     public override void SetDefaults()
     {
-       
         Projectile.aiStyle = 1;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -37,58 +29,50 @@ public class LycoSporeRanged : ModProjectile
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.alpha = 255;
         AIType = ProjectileID.Bullet;
-       
+
         Projectile.timeLeft = 190;
         Projectile.extraUpdates = 2;
         Projectile.tileCollide = true;
         Projectile.width = 1; // The width of projectile hitbox
         Projectile.height = 1; // The height of projectile hitbox
-      
-
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             modifiers.SourceDamage *= 1.5f;
         }
+
         if (target.HasBuff(ModContent.BuffType<VpTag>()))
         {
             modifiers.SourceDamage *= 1.66f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             SoundEngine.PlaySound(SoundID.Item37, target.position);
-
         }
 
         if (target.HasBuff(ModContent.BuffType<VpTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             SoundEngine.PlaySound(SoundID.Item37, target.position);
-
         }
-
-
     }
+
     public override void AI()
     {
-
-       
         // dust, all dust
         if (Projectile.alpha < 198)
         {
@@ -101,12 +85,13 @@ public class LycoSporeRanged : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.7f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
                 chudDust.velocity *= 0.1f;
-
             }
         }
+
         float maxDetectRadius = 390f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -183,6 +168,3 @@ public class LycoSporeRanged : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
-

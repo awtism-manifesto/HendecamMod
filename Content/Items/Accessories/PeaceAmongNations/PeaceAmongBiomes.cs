@@ -1,29 +1,27 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class PeaceAmongBiomes : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Most biome-based entities should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.WallofFlesh] = true;
         player.npcTypeNoAggro[NPCID.WallofFleshEye] = true;
         player.npcTypeNoAggro[NPCID.TheHungry] = true;
@@ -44,7 +42,7 @@ public class PeaceAmongBiomes : ModItem
         player.npcTypeNoAggro[NPCID.JungleBat] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.JungleCreeper] = true;
         player.npcTypeNoAggro[NPCID.JungleCreeperWall] = true;
-        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true;//redundant in PAM
+        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.Piranha] = true;
         player.npcTypeNoAggro[NPCID.Snatcher] = true;
         player.npcTypeNoAggro[NPCID.ManEater] = true;
@@ -132,19 +130,19 @@ public class PeaceAmongBiomes : ModItem
         player.npcTypeNoAggro[NPCID.DesertGhoulCrimson] = true;
         player.npcTypeNoAggro[NPCID.BigMimicCrimson] = true;
         player.npcTypeNoAggro[NPCID.PigronCrimson] = true;
+    }
 
-        }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<FlamingPeaceAgreement>(1);
-        recipe.AddIngredient<GrassyPeaceAgreement>(1);
-        recipe.AddIngredient<OceanicPeaceAgreement>(1);
-        recipe.AddIngredient<SpreadBiomePeaceAgreement>(1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FlamingPeaceAgreement>();
+        recipe.AddIngredient<GrassyPeaceAgreement>();
+        recipe.AddIngredient<OceanicPeaceAgreement>();
+        recipe.AddIngredient<SpreadBiomePeaceAgreement>();
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

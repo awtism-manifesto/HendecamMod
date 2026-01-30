@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -51,8 +46,6 @@ public class TheDeposer : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -71,13 +64,11 @@ public class TheDeposer : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        recipe.AddIngredient<Items.Polymer>(5);
-        recipe.AddIngredient<Items.ImprovisedPistol>();
+
+        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<ImprovisedPistol>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-       
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

@@ -1,11 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Accessories.Rampart;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -21,11 +14,13 @@ public class NostalgicDiamond : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants much higher jump speed, at the cost of Minecarts");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyJump>().NastyEffect = true;
@@ -84,11 +79,12 @@ public class NostalgicDiamond : ModItem
         player.buffImmune[BuffID.TopazMinecartLeft] = true;
         player.buffImmune[BuffID.TopazMinecartRight] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.DiamondMinecart, 1);
+        recipe.AddIngredient(ItemID.DiamondMinecart);
         recipe.AddTile(TileID.HeavyWorkBench);
         recipe.Register();
     }

@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -38,6 +33,7 @@ public class TackSprayer : ModItem
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<TackSprayerProj>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,19 +45,14 @@ public class TackSprayer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<TackShooter>();
         recipe.AddIngredient(ItemID.Cog, 32);
         recipe.AddIngredient(ItemID.AdamantiteBar, 16);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -69,28 +60,16 @@ public class TackSprayer : ModItem
         recipe.AddIngredient<TackShooter>();
         recipe.AddIngredient(ItemID.Cog, 32);
         recipe.AddIngredient(ItemID.TitaniumBar, 16);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-
         position = Main.MouseWorld;
         player.LimitPointToPlayerReachableArea(ref position);
         int halfProjectileHeight = (int)Math.Ceiling(ContentSamples.ProjectilesByType[type].height / 2f);
-
-       
-            position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
-        
-
+        position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
         // Spawn the sentry projectile at the calculated location.
         Projectile.NewProjectile(source, position, Vector2.Zero, type, damage, knockback, Main.myPlayer);
 

@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles;
+﻿namespace HendecamMod.Content.Tiles;
 
 public class PureSaltTile : ModTile
 {
@@ -18,7 +12,6 @@ public class PureSaltTile : ModTile
 
         AddMapEntry(new Color(252, 166, 153));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

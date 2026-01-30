@@ -1,25 +1,13 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class RingFireProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.SentryShot[Type] = true;
         Main.projFrames[Projectile.type] = 3;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 480;
@@ -31,19 +19,17 @@ public class RingFireProj : ModProjectile
         Projectile.alpha = 93;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = false;
-        
+
         Projectile.scale = 1f;
         Projectile.usesIDStaticNPCImmunity = true;
         Projectile.idStaticNPCHitCooldown = 5;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.OnFire3, 360);
-
-
-
     }
+
     public override void OnKill(int timeLeft)
     {
         for (int i = 0; i < 36; i++) // Creates a splash of dust around the position the projectile dies.
@@ -53,21 +39,11 @@ public class RingFireProj : ModProjectile
             dust.velocity *= 10.5f;
             dust.scale *= 2.5f;
         }
-
-
-        
-
-
     }
+
     public override void AI()
     {
-
-       
-
-       
-            Projectile.rotation += 0.11f;
-        
-
+        Projectile.rotation += 0.11f;
         int frameSpeed = 6;
 
         Projectile.frameCounter++;
@@ -80,22 +56,10 @@ public class RingFireProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
-
-
         Lighting.AddLight(Projectile.Center, 2.25f, 1.45f, 0.65f);
-
-      
         Projectile.velocity = Vector2.Zero;
-
-
     }
-
-
 }
-
-

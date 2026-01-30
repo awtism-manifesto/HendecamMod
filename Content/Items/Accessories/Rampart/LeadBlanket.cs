@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,11 +13,13 @@ public class LeadBlanket : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Moon Bite, The Tongue, Shimmered, and the Shadow Candle");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.MoonLeech] = true;
@@ -31,12 +27,13 @@ public class LeadBlanket : ModItem
         player.buffImmune[BuffID.Shimmer] = true;
         player.buffImmune[BuffID.ShadowCandle] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<SteelSunscreen>(1);
-        recipe.AddIngredient<GlowstoneCape>(1);
+        recipe.AddIngredient<SteelSunscreen>();
+        recipe.AddIngredient<GlowstoneCape>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -12,7 +6,6 @@ public class MoltenShurikenProjectile : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -25,6 +18,7 @@ public class MoltenShurikenProjectile : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 11;
@@ -37,13 +31,12 @@ public class MoltenShurikenProjectile : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.CloneDefaults(ProjectileID.Shuriken);
         AIType = ProjectileID.Shuriken;
-
-
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // Apply gravity after a quarter of a second
@@ -82,8 +75,6 @@ public class MoltenShurikenProjectile : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -96,11 +87,7 @@ public class MoltenShurikenProjectile : ModProjectile
                     smokeDust.velocity *= 0.05f;
                 }
             }
-
-            
         }
-
-        
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -180,6 +167,7 @@ public class MoltenShurikenProjectile : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);

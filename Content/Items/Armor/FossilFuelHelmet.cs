@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,8 +8,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class FossilFuelHelmet : ModItem
 {
-
-    
     public static readonly int AdditiveSummonDamageBonus = 15;
     public static readonly int CritBonus = 8;
 
@@ -42,6 +35,7 @@ public class FossilFuelHelmet : ModItem
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -53,8 +47,6 @@ public class FossilFuelHelmet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -69,11 +61,13 @@ public class FossilFuelHelmet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<KevlarBodysuit>() && legs.type == ModContent.ItemType<KevlarPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -93,22 +87,21 @@ public class FossilFuelHelmet : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
         player.maxMinions += MaxMinionIncrease;
         player.whipRangeMultiplier = 1.08f;
-        
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< CrudeOil>(50);
-        recipe.AddIngredient< RefinedOil>(20);
+        recipe.AddIngredient<CrudeOil>(50);
+        recipe.AddIngredient<RefinedOil>(20);
         recipe.AddIngredient(ItemID.FossilHelm);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-       
     }
 }

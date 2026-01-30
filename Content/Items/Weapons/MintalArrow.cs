@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -33,6 +28,7 @@ public class MintalArrow : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.ArmorPenetration = 5;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -44,17 +40,13 @@ public class MintalArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(75);
-        recipe.AddIngredient<MintalBar>(1);
+        recipe.AddIngredient<MintalBar>();
         recipe.AddIngredient(ItemID.WoodenArrow, 75);
         recipe.Register();
     }
-
 }

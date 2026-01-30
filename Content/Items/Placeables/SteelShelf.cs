@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -23,7 +20,7 @@ public class SteelShelf : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(1);
+        recipe.AddIngredient<SteelBar>();
         recipe.Register();
     }
 }

@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,11 +13,13 @@ public class BackupPlan : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Cursed, Mana Sickness, Suffocation, "));
         tooltips.Add(new TooltipLine(Mod, "Face", "Confused, Distorted, Slowness, and Oozed"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Cursed] = true;
@@ -35,12 +31,13 @@ public class BackupPlan : ModItem
         player.buffImmune[BuffID.Slow] = true;
         player.buffImmune[BuffID.OgreSpit] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.CountercurseMantra, 1);
-        recipe.AddIngredient(ItemID.ThePlan, 1);
+        recipe.AddIngredient(ItemID.CountercurseMantra);
+        recipe.AddIngredient(ItemID.ThePlan);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -28,7 +24,7 @@ public class PlutoniumSword : ModItem
         Item.height = 40;
         Item.scale = 1.33f;
         Item.ArmorPenetration = 25;
-        
+
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 172000; // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
@@ -47,9 +43,6 @@ public class PlutoniumSword : ModItem
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
-
-
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -68,8 +61,6 @@ public class PlutoniumSword : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -83,15 +74,14 @@ public class PlutoniumSword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.PlutoniumBar>(18);
+        recipe.AddIngredient<PlutoniumBar>(18);
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-       
     }
-
 }

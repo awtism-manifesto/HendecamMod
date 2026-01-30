@@ -1,26 +1,14 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class EternalCrab : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-    
     public static readonly int ArmorPenetration = 1000;
-    
-    
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-    
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -29,6 +17,7 @@ public class EternalCrab : ModItem
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.value = 99988700;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -65,6 +54,7 @@ public class EternalCrab : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,17 +66,10 @@ public class EternalCrab : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        
-
-     
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
     }
 }

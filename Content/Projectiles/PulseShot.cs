@@ -1,13 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -37,37 +30,27 @@ public class PulseShot : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override void AI()
     {
-
-
-
-
-       
-        
-            if (Projectile.alpha < 169)
+        if (Projectile.alpha < 169)
+        {
+            for (int i = 0; i < 2; i++)
             {
-                for (int i = 0; i < 2; i++)
+                float posOffsetX = 0f;
+                float posOffsetY = 0f;
+                if (i == 1)
                 {
-                    float posOffsetX = 0f;
-                    float posOffsetY = 0f;
-                    if (i == 1)
-                    {
-                        posOffsetX = Projectile.velocity.X * 2.5f;
-                        posOffsetY = Projectile.velocity.Y * 2.5f;
-                    }
-
-
-
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Electric, 0f, 0f, 100, default, 0.1f);
-                    fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
-                    fireDust.noGravity = true;
-                    fireDust.velocity *= 0.95f;
+                    posOffsetX = Projectile.velocity.X * 2.5f;
+                    posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Electric, 0f, 0f, 100, default, 0.1f);
+                fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
+                fireDust.noGravity = true;
+                fireDust.velocity *= 0.95f;
             }
-
-
-        
+        }
     }
 
     public override bool PreDraw(ref Color lightColor)
@@ -80,18 +63,16 @@ public class PulseShot : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
 
-   
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }
