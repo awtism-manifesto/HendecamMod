@@ -16,7 +16,7 @@ public class IcicleMinigun : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.85f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 88000;
+        Item.value = 196000;
         // Use Properties
         // Use Properties
         Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)

@@ -26,6 +26,7 @@ public class AzuriteOre : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<AzuriteOrePlaced>());
         Item.width = 12;
         Item.height = 12;
+        Item.value = 2900;
         Item.rare = ItemRarityID.Blue;
     }
 }

@@ -15,6 +15,7 @@ public class Pykrete : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<PykreteTile>());
         Item.width = 12;
         Item.height = 12;
+        Item.value = 5;
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

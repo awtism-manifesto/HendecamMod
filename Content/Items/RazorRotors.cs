@@ -14,7 +14,7 @@ public class RazorRotors : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.Cyan;
-        Item.value = 350000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 635000;
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)

@@ -14,7 +14,7 @@ public class UraniumBow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 12000;
+        Item.value = 112000;
         // Use Properties
         Item.useTime = 31; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 31; // The length of the item's use animation in ticks (60 ticks == 1 second.)

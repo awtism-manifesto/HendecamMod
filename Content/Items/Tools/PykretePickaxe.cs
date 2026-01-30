@@ -20,7 +20,7 @@ public class PykretePickaxe : ModItem
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 40;
         Item.useTurn = true;
-        Item.value = Item.buyPrice(silver: 5);
+        Item.value = 6600;
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
 

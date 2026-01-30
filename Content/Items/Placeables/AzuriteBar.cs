@@ -17,7 +17,7 @@ public class AzuriteBar : ModItem
         Item.width = 20; // Hitbox width of the item.
         Item.height = 20; // Hitbox height of the item.
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 5151;
+        Item.value = 17750;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;

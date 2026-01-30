@@ -18,7 +18,7 @@ public class LunaticCultistIcon : ModItem
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.rare = ModContent.RarityType<DarkGreen>();
-        Item.value = 10;
+        Item.value = 750000;
         Item.maxStack = 9999;
     }
 

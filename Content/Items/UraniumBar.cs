@@ -20,7 +20,7 @@ public class UraniumBar : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 19500;
+        Item.value = 13250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.UraniumBarPlaced>());
     }

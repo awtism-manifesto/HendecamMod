@@ -36,7 +36,7 @@ public class BadTrip : ModItem
 
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.Orange; // The item's rarity. This changes the color of the item's name.
-        Item.value = 22000; // The amount of money that the item is can be bought for.
+        Item.value = 122000; // The amount of money that the item is can be bought for.
 
         Item.shoot = ModContent.ProjectileType<TrippyYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			

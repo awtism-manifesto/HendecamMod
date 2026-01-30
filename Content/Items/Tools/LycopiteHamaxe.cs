@@ -18,7 +18,7 @@ public class LycopiteHamaxe : ModItem
         Item.knockBack = 7.75f;
         Item.useTurn = true;
 
-        Item.value = Item.buyPrice(gold: 3);
+        Item.value = 178900;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

@@ -15,7 +15,7 @@ public class AutismOrb : ModItem
         Item.width = 32;
         Item.height = 32;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 36;
+        Item.value = 160000;
         Item.maxStack = 9999;
     }
 

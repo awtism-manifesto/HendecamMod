@@ -26,7 +26,7 @@ public class AncientCobaltDrill : ModItem
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.knockBack = 0.5f;
-        Item.value = Item.buyPrice(gold: 1, silver: 50);
+        Item.value = Item.buyPrice(gold: 1, silver: 85);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item23;
         Item.shoot = ModContent.ProjectileType<AncientCobaltDrillProj>(); // Create the drill projectile

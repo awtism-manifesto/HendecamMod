@@ -29,7 +29,7 @@ public class KingslayerBar : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.rare = ItemRarityID.Green;
-        Item.value = Item.buyPrice(silver: 67);
+        Item.value = Item.buyPrice(silver: 71);
         Item.buffType = BuffID.Slimed; // Specify an existing buff to be applied when used.
         Item.buffTime = 690; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
     }

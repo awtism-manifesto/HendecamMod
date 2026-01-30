@@ -24,7 +24,7 @@ public class MarbleGreatsword : ModItem
 
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.White;
-        Item.value = Item.buyPrice(gold: 1); // Sell price is 5 times less than the buy price.
+        Item.value = 82500;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<MarbleSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

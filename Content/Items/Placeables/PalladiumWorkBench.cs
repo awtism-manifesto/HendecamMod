@@ -7,7 +7,7 @@ public class PalladiumWorkBench : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PalladiumWorkBenchPlaced>());
         Item.width = 28;
         Item.height = 14;
-        Item.value = 150;
+        Item.value = 52500;
     }
 
     public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)

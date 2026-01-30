@@ -20,7 +20,7 @@ public class LycopiteBar : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 18900;
+        Item.value = 11900;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.LycopiteBarPlaced>());
     }

@@ -13,7 +13,7 @@ public class PurifiedSalt : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.22f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 950;
+        Item.value = 6750;
         Item.maxStack = 9999;
     }
 

@@ -17,7 +17,7 @@ public class Sawdust : ModItem
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
-        Item.value = 25;
+        Item.value = 2;
         Item.maxStack = 9999;
     }
 

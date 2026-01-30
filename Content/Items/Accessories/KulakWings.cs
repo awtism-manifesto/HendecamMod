@@ -15,7 +15,7 @@ public class KulakWings : ModItem
     {
         Item.width = 22;
         Item.height = 20;
-        Item.value = 15000;
+        Item.value = 950000;
         Item.rare = ItemRarityID.Green;
         Item.accessory = true;
     }

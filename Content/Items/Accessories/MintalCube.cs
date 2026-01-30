@@ -11,7 +11,7 @@ public class MintalCube : ModItem
         Item.width = 26;
         Item.height = 26;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 5;
+        Item.value = 115000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 3;

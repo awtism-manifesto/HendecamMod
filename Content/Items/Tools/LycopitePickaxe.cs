@@ -17,7 +17,7 @@ public class LycopitePickaxe : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
 
-        Item.value = 69000;
+        Item.value = 189000;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

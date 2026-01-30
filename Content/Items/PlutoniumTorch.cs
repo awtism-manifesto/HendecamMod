@@ -19,10 +19,11 @@ public class PlutoniumTorch : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 3250;
+        
         Item.maxStack = 9999;
 
         Item.DefaultToTorch(ModContent.TileType<Tiles.PlutoniumTorchPlaced>(), 0);
+        Item.value = 525;
     }
 
     public override void HoldItem(Player player)

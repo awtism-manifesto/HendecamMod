@@ -21,7 +21,7 @@ public class AlpinePlushieGlitterbomb : ModItem
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Cyan;
-        Item.value = Item.buyPrice(gold: 33); // Sell price is 5 times less than the buy price.
+        Item.value = 595000;
         Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
         Item.shoot = ModContent.ProjectileType<AlpineGlitterbomb>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

@@ -19,7 +19,7 @@ public class PykreteSword : ModItem
         Item.scale = 1.15f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 3.5f;
-        Item.value = Item.buyPrice(copper: 300);
+        Item.value = 5100;
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

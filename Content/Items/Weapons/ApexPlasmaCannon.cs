@@ -24,7 +24,7 @@ public class ApexPlasmaCannon : ModItem
         Item.width = 104;
         Item.height = 70;
         Item.rare = ItemRarityID.Cyan;
-        Item.value = 425000;
+        Item.value = 635000;
         Item.useTime = 5;
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Shoot;

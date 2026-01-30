@@ -19,7 +19,7 @@ public class PondsWings : ModItem
     {
         Item.width = 22;
         Item.height = 20;
-        Item.value = 150000;
+        Item.value = 1750000;
         Item.rare = ItemRarityID.Blue;
         Item.accessory = true;
     }

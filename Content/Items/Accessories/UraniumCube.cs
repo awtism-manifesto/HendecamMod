@@ -13,7 +13,7 @@ public class UraniumCube : ModItem
         Item.width = 26; // Hitbox width of the item.
         Item.height = 26; // Hitbox height of the item.
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 33000;
+        Item.value = 79000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 5;

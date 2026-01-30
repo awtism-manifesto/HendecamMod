@@ -19,10 +19,11 @@ public class AstatineTorch : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 7500;
+       
         Item.maxStack = 9999;
 
         Item.DefaultToTorch(ModContent.TileType<Tiles.AstatineTorchPlaced>(), 0);
+        Item.value = 950;
     }
 
     public override void HoldItem(Player player)

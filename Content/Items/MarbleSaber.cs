@@ -22,7 +22,7 @@ public class MarbleSaber : ModItem
         Item.noMelee = true; // The projectile will do the damage and not the item
 
         Item.rare = ItemRarityID.White;
-        Item.value = Item.sellPrice(0, 0, 0, 10);
+        Item.value = 63000;
 
         Item.shoot = ModContent.ProjectileType<SaberProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 4.85f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values

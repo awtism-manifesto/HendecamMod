@@ -20,7 +20,7 @@ public class DeathBreathShell : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 0f;
-        Item.value = 30;
+        Item.value = 76;
         Item.rare = ItemRarityID.Pink;
         Item.shoot = ModContent.ProjectileType<DragonSpawnShadow>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 7.25f; // The speed of the projectile.
