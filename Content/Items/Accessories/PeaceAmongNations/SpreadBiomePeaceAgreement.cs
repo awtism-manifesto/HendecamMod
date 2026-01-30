@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class SpreadBiomePeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "The crimson, corruption, and hallow should be friendly");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Pixie] = true;
         player.npcTypeNoAggro[NPCID.Unicorn] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
@@ -88,9 +88,9 @@ public class SpreadBiomePeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.BigMimicCrimson] = true;
         player.npcTypeNoAggro[NPCID.PigronCrimson] = true;
 
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.EaterofWorldsTrophy, 1);
@@ -101,5 +101,5 @@ public class SpreadBiomePeaceAgreement : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

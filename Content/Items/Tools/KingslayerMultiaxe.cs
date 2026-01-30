@@ -19,7 +19,7 @@ public class KingslayerMultiaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 23;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 9;
@@ -35,7 +35,7 @@ public class KingslayerMultiaxe : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 1;
         Item.pick = 63;
-       
+
         Item.axe = 20;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }

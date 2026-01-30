@@ -37,7 +37,7 @@ public class PoliceBaton : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
+
 
 
     public override Color? GetAlpha(Color lightColor)
@@ -71,7 +71,7 @@ public class PoliceBaton : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

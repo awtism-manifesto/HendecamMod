@@ -8,9 +8,9 @@ using Terraria.ObjectData;
 namespace HendecamMod.Content.Tiles.Uno;
 
 public class YellowSeven : ModTile
-    {
+{
     public override void SetStaticDefaults()
-        {
+    {
         Main.tileSolid[Type] = true;
         Main.tileSolidTop[Type] = true;
         Main.tileFrameImportant[Type] = true;
@@ -24,14 +24,14 @@ public class YellowSeven : ModTile
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(200, 200, 0), Language.GetText("Yellow Uno Card"));
-        }
+    }
 
     public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
-        {
+    {
         if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1))
-            {
+        {
             WorldGen.KillTile(i, j);
-            }
-        return true;
         }
+        return true;
     }
+}

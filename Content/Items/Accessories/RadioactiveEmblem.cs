@@ -31,7 +31,7 @@ public class RadioactiveEmblem : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 300000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,16 +61,16 @@ public class RadioactiveEmblem : ModItem
         Recipe recipe = CreateRecipe();
 
 
-        
-            recipe = CreateRecipe();
-            recipe.AddIngredient<AstatineBar>(12);
-            recipe.AddIngredient<PlutoniumBar>(12);
-            recipe.AddIngredient<UraniumBar>(12);
-            recipe.AddIngredient(ItemID.DestroyerEmblem);
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.Register();
 
-        
+        recipe = CreateRecipe();
+        recipe.AddIngredient<AstatineBar>(12);
+        recipe.AddIngredient<PlutoniumBar>(12);
+        recipe.AddIngredient<UraniumBar>(12);
+        recipe.AddIngredient(ItemID.DestroyerEmblem);
+        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.Register();
+
+
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -89,7 +89,7 @@ public class RadioactiveEmblem : ModItem
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 122f;
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 108f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.statLifeMax2 = (int) (player.statLifeMax2* 0.85f);
+        player.statLifeMax2 = (int)(player.statLifeMax2 * 0.85f);
         player.GetModPlayer<RadApply>().radEffect = true;
     }
 }
@@ -130,7 +130,7 @@ public class RadApply : ModPlayer
 
 
         }
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

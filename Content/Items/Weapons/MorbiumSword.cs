@@ -31,7 +31,7 @@ public class MorbiumSword : ModItem
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<MorbiumBolt>(); 
+        Item.shoot = ModContent.ProjectileType<MorbiumBolt>();
         Item.shootSpeed = 9.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -40,10 +40,10 @@ public class MorbiumSword : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
 
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -74,9 +74,9 @@ public class MorbiumSword : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-     
+
         recipe.AddIngredient<MorbiumBar>(15);
-      
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

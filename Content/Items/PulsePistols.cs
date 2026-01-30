@@ -28,8 +28,8 @@ public class PulsePistols : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.reuseDelay = 34;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
-      
+
+
         Item.ArmorPenetration = 10;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -54,7 +54,7 @@ public class PulsePistols : ModItem
     {
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.54f, 0.55f));
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -69,7 +69,7 @@ public class PulsePistols : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -99,7 +99,7 @@ public class PulsePistols : ModItem
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-   
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

@@ -73,7 +73,7 @@ public class OmniDamage : DamageClass
     }
     public override bool GetPrefixInheritance(DamageClass damageClass)
     {
-       
+
         if (damageClass == DamageClass.Generic)
             return true;
         if (damageClass == ModContent.GetInstance<StupidDamage>())
@@ -83,15 +83,15 @@ public class OmniDamage : DamageClass
     }
     public override bool GetEffectInheritance(DamageClass damageClass)
     {
-       
+
         return true;
     }
     public override void SetDefaultStats(Player player)
     {
         // This method lets you set default statistical modifiers for your example damage class.
         // Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-        
-       
+
+
         // These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
         // You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
     }

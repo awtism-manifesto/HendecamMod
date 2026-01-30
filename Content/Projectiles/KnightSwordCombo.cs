@@ -1,9 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -25,7 +23,7 @@ public class KnightSwordCombo : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -44,15 +42,15 @@ public class KnightSwordCombo : ModProjectile
         Projectile.tileCollide = false;
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.timeLeft = 205;
-        
+
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
     }
-   
-   
+
+
     public override void AI()
     {
 
@@ -95,7 +93,7 @@ public class KnightSwordCombo : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-        
+
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -138,5 +136,5 @@ public class KnightSwordCombo : ModProjectile
         return target.CanBeChasedBy();
     }
 
-   
+
 }

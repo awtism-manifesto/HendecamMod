@@ -97,12 +97,12 @@ public class LargePlasmoid : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlutoniumOre>(), 1, 121, 166));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheXRay>(), 10));
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 5, 10));
-      
-        npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 3, 15,30));
-      
+
+        npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 3, 15, 30));
+
 
     }
-   
+
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
         if (!Main.dayTime & ApacheElfShipDown.downedApacheElfShip & NPC.downedEmpressOfLight)

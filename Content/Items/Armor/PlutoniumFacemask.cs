@@ -86,7 +86,7 @@ public class PlutoniumFacemask : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        
+
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
@@ -99,7 +99,7 @@ public class PlutoniumFacemask : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(25);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
@@ -108,6 +108,6 @@ public class PlutoniumFacemask : ModItem
         player.armorEffectDrawOutlines = true;
         player.armorEffectDrawOutlinesForbidden = true;
 
-       
+
     }
 }

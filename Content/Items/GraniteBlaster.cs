@@ -35,11 +35,11 @@ public class GraniteBlaster : ModItem
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
-       
+
+
 
         // The sound that this item plays when used.
-       
+
 
 
         // Weapon Properties
@@ -49,14 +49,14 @@ public class GraniteBlaster : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 6;
         Item.consumeAmmoOnLastShotOnly = true;
-       
+
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<GraniteLaser>();
         Item.useAmmo = AmmoID.Gel;
-        
+
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
 
     }
@@ -88,7 +88,7 @@ public class GraniteBlaster : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -130,6 +130,6 @@ public class GraniteBlaster : ModItem
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2( -8f, -1f);
+        return new Vector2(-8f, -1f);
     }
 }

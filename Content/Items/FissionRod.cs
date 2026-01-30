@@ -36,7 +36,7 @@ public class FissionRod : ModItem
         Item.ArmorPenetration = 30;
         Item.value = 1150000;
         Item.rare = ItemRarityID.Red;
-       
+
 
         Item.shoot = ModContent.ProjectileType<AstaFission>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 8.25f; // Speed of the projectiles the sword will shoot
@@ -59,9 +59,9 @@ public class FissionRod : ModItem
 
 
     }
-   
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -98,8 +98,8 @@ public class FissionRod : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Items.BombScepter>();
         recipe.AddIngredient<FissionDrive>();
-       
-      
+
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }

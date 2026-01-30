@@ -100,7 +100,7 @@ public class ValiantYoyo : ModProjectile
             }
         }
     }
-  
+
     public override void SetDefaults()
     {
         Projectile.width = 16; // The width of the projectile's hitbox.

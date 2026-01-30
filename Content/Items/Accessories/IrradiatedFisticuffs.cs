@@ -12,9 +12,9 @@ public class IrradiatedFisticuffs : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
-   
+
     public static readonly int MeleeAttackSpeedBonus = 14;
-   
+
     public static readonly int AdditiveMeleeDamageBonus = 14;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
@@ -29,7 +29,7 @@ public class IrradiatedFisticuffs : ModItem
         Item.value = 980000;
         Item.defense = 11;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -80,7 +80,7 @@ public class IrradiatedFisticuffs : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-       
+
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 114f;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 114f;
         player.aggro += 660;

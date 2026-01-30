@@ -26,7 +26,7 @@ public class PyriteProjectorBlade : ModItem
         Item.useTime = 9;
         Item.useAnimation = 27;
         Item.autoReuse = true;
-        
+
 
         Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Item.damage = 22;
@@ -49,9 +49,9 @@ public class PyriteProjectorBlade : ModItem
     private int shotCounter = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-       
-      
+
+
+
 
         if (shotCounter <= 0)
         {
@@ -87,7 +87,7 @@ public class PyriteProjectorBlade : ModItem
 
         return false;
     }
-   
+
 
     public override void AddRecipes()
     {
@@ -134,6 +134,6 @@ public class PyriteProjectorBlade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

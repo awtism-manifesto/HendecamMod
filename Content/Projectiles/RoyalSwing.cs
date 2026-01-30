@@ -221,7 +221,7 @@ public class RoyalSwing : ModProjectile
 
         Color backDarkColor = new Color(211, 211, 211); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(170, 145, 4); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(245,244 , 245); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(245, 244, 245); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.White * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));

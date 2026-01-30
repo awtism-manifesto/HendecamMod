@@ -38,7 +38,7 @@ public class BalkanRagePotion : ModItem
         Item.buffType = ModContent.BuffType<Buffs.BalkanRage>(); // Specify an existing buff to be applied when used.
         Item.buffTime = 21600; // Ticks
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,27 +70,27 @@ public class BalkanRagePotion : ModItem
     public override void AddRecipes()
     {
 
-        
-            Recipe recipe = CreateRecipe();
+
+        Recipe recipe = CreateRecipe();
         recipe.AddIngredient<LeadskinPotion>();
-        recipe.AddIngredient< WeedLeaves>();
-            recipe.AddIngredient< PurifiedSalt>();
-            recipe.AddIngredient< UraniumOre>();
-            recipe.AddTile(TileID.Bottles);
-            recipe.Register();
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient<UraniumOre>();
+        recipe.AddTile(TileID.Bottles);
+        recipe.Register();
 
-            recipe = CreateRecipe();
+        recipe = CreateRecipe();
         recipe.AddIngredient<LeadskinPotion>();
-        recipe.AddIngredient< WeedLeaves>();
-            recipe.AddIngredient< PurifiedSalt>();
-            recipe.AddIngredient< UraniumOre>();
-            recipe.AddTile(TileID.AlchemyTable);
-            recipe.Register();
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient<UraniumOre>();
+        recipe.AddTile(TileID.AlchemyTable);
+        recipe.Register();
 
 
 
-        
-       
+
+
     }
 
 }

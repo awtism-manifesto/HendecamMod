@@ -25,9 +25,9 @@ public class RadPoisoning2 : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-        
 
-        if (Main.rand.NextBool(3)) 
+
+        if (Main.rand.NextBool(3))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<PlutoniumDust>(),
                 npc.velocity.X * 0.89f, npc.velocity.Y * 0.89f, 70, default, 1.95f);

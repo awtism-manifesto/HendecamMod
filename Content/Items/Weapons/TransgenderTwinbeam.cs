@@ -34,7 +34,7 @@ public class TransgenderTwinbeam : ModItem
         Item.noMelee = true;
         Item.value = 70000;
         Item.rare = ItemRarityID.Green;
-      
+
 
         Item.shoot = ModContent.ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10f; // Speed of the projectiles the sword will shoot

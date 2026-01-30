@@ -27,10 +27,10 @@ public class DoombringerSigil : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
+
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
 
-       
+
     }
     public override void SetDefaults()
     {
@@ -40,7 +40,7 @@ public class DoombringerSigil : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 4900000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -102,7 +102,7 @@ public class DoombringerSigil : ModItem
         recipe.AddIngredient(ItemID.CelestialSigil);
         recipe.AddIngredient<RadioactiveEmblem>();
         recipe.AddIngredient<AmalgamatedFragment>();
-      
+
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
@@ -133,7 +133,7 @@ public class DoombringerSigil : ModItem
         player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 115f;
         player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 115f;   
+        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 115f;
         player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 115f;
         player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 93f;
 

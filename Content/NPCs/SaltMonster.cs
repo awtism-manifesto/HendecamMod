@@ -74,7 +74,7 @@ public class SaltMonster : ModNPC
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-       
+
         if (NPC.downedBoss1 & NPC.downedSlimeKing)
         {
             return SpawnCondition.DesertCave.Chance * 0.18f;

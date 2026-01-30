@@ -30,7 +30,7 @@ public class LegoChainsaw : ModItem
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.knockBack = 0.5f;
-        Item.value = Item.buyPrice( silver: 50);
+        Item.value = Item.buyPrice(silver: 50);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item22;
         Item.shoot = ModContent.ProjectileType<LegoChainsawProj>(); // Create the drill projectile

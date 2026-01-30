@@ -35,7 +35,7 @@ public class RiverGun : ModItem
         Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
 
@@ -91,7 +91,7 @@ public class RiverGun : ModItem
 
 
         recipe.AddIngredient<CollarOfTheDamned>();
-      
+
         recipe.Register();
 
 
@@ -124,7 +124,7 @@ public class RiverGun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

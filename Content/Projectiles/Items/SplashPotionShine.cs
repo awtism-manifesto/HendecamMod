@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +11,7 @@ public class SplashPotionShine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -49,7 +46,7 @@ public class SplashPotionShine : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
 
 
         Projectile.rotation += 0.18f;
@@ -64,13 +61,13 @@ public class SplashPotionShine : ModProjectile
             Projectile.velocity.Y = 20f;
         }
 
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
+
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
@@ -102,8 +99,8 @@ public class SplashPotionShine : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(134, 134);
 
-       
-       
+
+
 
 
         // Spawn a bunch of fire dusts.
@@ -116,15 +113,15 @@ public class SplashPotionShine : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<ShinyTag>(), 300);
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
     }
 
-    
+
 }

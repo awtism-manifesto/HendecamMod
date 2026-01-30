@@ -83,6 +83,6 @@ public class AzuritePlatemail : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
 }

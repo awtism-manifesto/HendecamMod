@@ -12,7 +12,7 @@ public class BigBall : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -152,7 +152,7 @@ public class BigBall : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(363, 363);
 
-        
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 60; j++)
@@ -164,7 +164,7 @@ public class BigBall : ModProjectile
             fireDust.velocity *= 3f;
         }
 
-       
+
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

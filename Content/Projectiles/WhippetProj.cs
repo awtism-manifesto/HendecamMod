@@ -36,7 +36,7 @@ public class WhippetProj : ModProjectile
         set => Projectile.ai[0] = value;
     }
 
-   
+
 
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
@@ -45,7 +45,7 @@ public class WhippetProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<LilTMan>(), 240);
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }

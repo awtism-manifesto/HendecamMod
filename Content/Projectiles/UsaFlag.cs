@@ -37,7 +37,7 @@ public class UsaFlag : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-    
+
 
     public override bool PreDraw(ref Color lightColor)
     {

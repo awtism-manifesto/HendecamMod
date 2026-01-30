@@ -66,7 +66,7 @@ public class GalaxyShard : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -132,7 +132,7 @@ public class GalaxyShard : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range

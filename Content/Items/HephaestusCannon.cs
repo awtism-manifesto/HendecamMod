@@ -34,7 +34,7 @@ public class HephaestusCannon : ModItem
         Item.useAnimation = 32; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
@@ -47,7 +47,7 @@ public class HephaestusCannon : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 10;
 
-        
+
 
 
         // Gun Properties
@@ -84,7 +84,7 @@ public class HephaestusCannon : ModItem
             type = ModContent.ProjectileType<HephFlame>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<HephBall>();
-          
+
 
         }
 
@@ -93,7 +93,7 @@ public class HephaestusCannon : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

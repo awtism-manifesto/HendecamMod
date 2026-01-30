@@ -80,26 +80,26 @@ public class NapalmRanged : ModProjectile
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
         // Apply gravity after a quarter of a second
-      
+
         // dust, all dust
-       
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-
-
-
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Lava, 0f, 0f, 100, default, 0.35f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
-                fireDust.velocity *= 0.05f;
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
+
+
+
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Lava, 0f, 0f, 100, default, 0.35f);
+            fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
+            fireDust.velocity *= 0.05f;
+        }
+
     }
 
     public override bool PreDraw(ref Color lightColor)

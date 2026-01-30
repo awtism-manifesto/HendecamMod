@@ -174,7 +174,7 @@ public class Crater : ModProjectile
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.25f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-           
+
         }
 
 

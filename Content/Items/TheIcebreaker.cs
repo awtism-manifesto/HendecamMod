@@ -35,18 +35,18 @@ public class TheIcebreaker : ModItem
         Item.useAnimation = 33; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item1;
 
 
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>(); 
+        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.mana = 6;
-        
+
 
 
 
@@ -75,7 +75,7 @@ public class TheIcebreaker : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
-      
+
         for (int i = 0; i < 1; i++)
         {
             position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
@@ -131,7 +131,7 @@ public class TheIcebreaker : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-  
+
 
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

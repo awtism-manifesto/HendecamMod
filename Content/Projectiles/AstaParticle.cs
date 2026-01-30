@@ -133,17 +133,17 @@ public class AstaParticle : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
     }
     public override void OnKill(int timeLeft)
     {
-        
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<AstaBoom2>(), (int)(Projectile.damage* 0.666f), Projectile.knockBack, Projectile.owner);
-        
+
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<AstaBoom2>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
 

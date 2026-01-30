@@ -53,27 +53,27 @@ public class VerdantClaymore : ModItem
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(9f));
 
 
-      
-       
-            if (player.altFunctionUse == 2)
-            {
-                int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
-                player.AddBuff(BuffID.Poisoned, 24);
 
-                return false;
-            }
-            else
-            {
-                int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<VerdantCombo>().fromVerdantClaymore = true;
-                Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = false;
-                player.AddBuff(BuffID.Poisoned, 24);
-                return false; // Prevent vanilla projectile spawn
 
-            }
-        
-       
+        if (player.altFunctionUse == 2)
+        {
+            int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
+            player.AddBuff(BuffID.Poisoned, 24);
+
+            return false;
+        }
+        else
+        {
+            int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<VerdantCombo>().fromVerdantClaymore = true;
+            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = false;
+            player.AddBuff(BuffID.Poisoned, 24);
+            return false; // Prevent vanilla projectile spawn
+
+        }
+
+
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -88,34 +88,34 @@ public class VerdantClaymore : ModItem
         };
         tooltips.Add(line);
 
-       
-            line = new TooltipLine(Mod, "Face", "Right click to throw the claymore")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the claymore, complete it by stabbing")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-            line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and grant the player a powerful but short life regen buff")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Right click to throw the claymore")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-
-        
-      
+        line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the claymore, complete it by stabbing")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and grant the player a powerful but short life regen buff")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
 
 
-          
 
-       
+
+
+
+
+
+
     }
-   
+
 
 }

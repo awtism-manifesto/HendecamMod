@@ -26,7 +26,7 @@ public class Xray2 : ModProjectile
 
     public override void SetDefaults()
     {
-        
+
         Projectile.penetrate = 2;
         Projectile.aiStyle = 1;
         Projectile.DamageType = DamageClass.Magic;
@@ -34,7 +34,7 @@ public class Xray2 : ModProjectile
         Projectile.aiStyle = ProjectileID.Bullet;
         Projectile.timeLeft = 180;
         Projectile.tileCollide = false;
-        Projectile.width = 1; 
+        Projectile.width = 1;
         Projectile.usesLocalNPCImmunity = true;
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -46,7 +46,7 @@ public class Xray2 : ModProjectile
     public override void AI()
     {
 
-        
+
 
 
         if (Projectile.alpha < 169)

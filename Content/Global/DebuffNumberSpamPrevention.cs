@@ -32,7 +32,7 @@ public class RadTick : GlobalNPC
             DOTDebuff(npc, 7, ref damage);
         }
         // float damagePerSecond = npc.lifeMax * 0.005f + 10; // debuff that scales based on max life
-        
+
     }
 
 }
@@ -62,7 +62,7 @@ public class Rad2Tick : GlobalNPC
         {
             DOTDebuff(npc, 13, ref damage);
         }
-       
+
 
     }
 

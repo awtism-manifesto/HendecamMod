@@ -40,9 +40,9 @@ public class PlutoniumSwing : ModProjectile
         Projectile.ignoreWater = true;
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
         Projectile.ownerHitCheckDistance = 168f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
-        // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
-                                               // Normally, projectiles die after they have hit all the enemies they can.
-                                               // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
+                                                 // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
+                                                 // Normally, projectiles die after they have hit all the enemies they can.
+                                                 // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
         Projectile.stopsDealingDamageAfterPenetrateHits = true;
 
         // We will be using custom AI for this projectile. The original Excalibur uses aiStyle 190.
@@ -178,7 +178,7 @@ public class PlutoniumSwing : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
-       
+
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.BlackLightningHit,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);

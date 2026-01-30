@@ -47,20 +47,20 @@ public class PlutoWhip : ModProjectile
 
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-    
+
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<PlutoWhipBuff>(), 300);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-       
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-            Vector2 Peanits = Projectile.Center - new Vector2 (Main.rand.NextFloat(-125, 126));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-          
-        
+
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-125, 126));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+
+
         Projectile.damage = (int)(Projectile.damage * 0.55f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
@@ -74,7 +74,7 @@ public class PlutoWhip : ModProjectile
         // However, the use of UnitX basically turns it into a more complicated way of checking if the projectile's velocity is above or equal to zero on the X axis.
         Projectile.spriteDirection = Projectile.velocity.X >= 0f ? 1 : -1;
 
-       
+
 
         Timer++;
 
@@ -127,7 +127,7 @@ public class PlutoWhip : ModProjectile
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
 
-       
+
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.

@@ -13,19 +13,19 @@ public class CactusSpike : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-        
+
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.timeLeft = 10;
-       
+
     }
 
     public override void AI()
@@ -34,7 +34,7 @@ public class CactusSpike : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-        
+
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 18f)
         {
@@ -51,12 +51,12 @@ public class CactusSpike : ModProjectile
             Projectile.velocity.Y = 6f;
         }
         // dust
-       
+
     }
-    
+
     public override void OnKill(int timeLeft)
     {
-         // Plays the basic sound most projectiles make when hitting blocks.
+        // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.t_Cactus);

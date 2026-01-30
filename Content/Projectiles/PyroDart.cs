@@ -1,10 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,12 +11,12 @@ public class PyroDart : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-         // Deals double damage on direct hits.
-      
+        // Deals double damage on direct hits.
+
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -29,10 +26,10 @@ public class PyroDart : ModProjectile
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
-       
+
         target.AddBuff(BuffID.OnFire, 222);
-      
-       
+
+
     }
     public override void SetDefaults()
     {
@@ -40,7 +37,7 @@ public class PyroDart : ModProjectile
         Projectile.height = 14;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-      
+
         Projectile.light = 0.1f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 210;
@@ -55,11 +52,11 @@ public class PyroDart : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-   
+
     public override void AI()
     {
 
-       
+
         if (Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -89,7 +86,7 @@ public class PyroDart : ModProjectile
 
 
         }
-        
+
         // Rotate the rocket in the direction that it is moving.
         if (Projectile.velocity != Vector2.Zero)
         {
@@ -102,7 +99,7 @@ public class PyroDart : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        
+
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
 
@@ -110,7 +107,7 @@ public class PyroDart : ModProjectile
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
         Projectile.alpha = 255; // Make the rocket invisible.
-       
+
         // Resize the hitbox of the projectile for the blast "radius".
         // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
         // Measurements are in pixels, so 128 / 16 = 8 tiles.
@@ -128,15 +125,15 @@ public class PyroDart : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-        
+
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(130, 130);
 
-       
 
-       
+
+
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 7; j++)
         {

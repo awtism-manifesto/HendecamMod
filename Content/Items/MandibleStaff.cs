@@ -49,7 +49,7 @@ public class MandibleStaff : ModItem
         Item.damage = 11; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 5;
         Item.mana = 6;
 
@@ -59,7 +59,7 @@ public class MandibleStaff : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -72,21 +72,21 @@ public class MandibleStaff : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.66f));
 
-           
+        // Rotate the velocity randomly by 30 degrees at max.
+        Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.66f));
+
+
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.66f));
 
-        
+
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

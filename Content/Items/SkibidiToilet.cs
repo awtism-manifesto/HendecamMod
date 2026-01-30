@@ -70,7 +70,7 @@ public class SkibidiToilet : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
-         int NumProjectiles = 2; 
+        int NumProjectiles = 2;
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -89,7 +89,7 @@ public class SkibidiToilet : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -128,17 +128,17 @@ public class SkibidiToilet : ModItem
 
             recipe.AddIngredient(RottenBrain.Type);
             recipe.AddIngredient(ItemID.Toilet);
-         
+
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
         }
         else
         {
-            
+
 
         }
-        
+
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

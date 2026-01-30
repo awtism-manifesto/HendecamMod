@@ -28,7 +28,7 @@ public class PlutoniumCube : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-      
+
         player.accRunSpeed *= Main.rand.NextFloat(0.01f, 5f);
         player.moveSpeed *= Main.rand.NextFloat(0.01f, 5f);
         player.runAcceleration *= Main.rand.NextFloat(0.01f, 5f);
@@ -47,7 +47,7 @@ public class PlutoniumCube : ModItem
 
 
 
-       
+
     }
     public override void AddRecipes()
     {

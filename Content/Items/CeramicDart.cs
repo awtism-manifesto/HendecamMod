@@ -63,7 +63,7 @@ public class CeramicDart : ModItem
     }
     public override void AddRecipes()
     {
-        
+
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("WoodenDart", out ModItem WoodenDart))
         {
@@ -83,8 +83,8 @@ public class CeramicDart : ModItem
 
 
         }
-       
-       
-        
+
+
+
     }
 }

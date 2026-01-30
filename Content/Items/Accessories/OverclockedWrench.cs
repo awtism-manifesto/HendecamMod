@@ -13,10 +13,10 @@ public class OverclockedWrench : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
-    
-    
-    
-   
+
+
+
+
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
 
 
@@ -27,9 +27,9 @@ public class OverclockedWrench : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Lime;
         Item.value = 1499000;
-        
+
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,10 +57,10 @@ public class OverclockedWrench : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
+
         player.GetModPlayer<Overclockified>().Overclocked = true; // Put all boosts in the ModPlayer below to toggle dynamically
 
     }
@@ -91,8 +91,8 @@ public class Overclockified : ModPlayer
     }
     public override void PostUpdateEquips()
     {
-       
-        if ( Player.GetModPlayer<Ultraboostified>().Ultraboosted == true || !Overclocked ) //Disable when Ultraboosted
+
+        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == true || !Overclocked) //Disable when Ultraboosted
         {
             return;
         }

@@ -1,10 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -38,27 +35,27 @@ public class BouncingBulletProj : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-  
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
 
-       
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
 
-            // If the projectile hits the left or right side of the tile, reverse the X velocity
-            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-            {
-                Projectile.velocity.X = -oldVelocity.X;
-            }
+        Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
 
-            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-            {
-                Projectile.velocity.Y = -oldVelocity.Y;
-            }
-        
+
+        // If the projectile hits the left or right side of the tile, reverse the X velocity
+        if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+        {
+            Projectile.velocity.X = -oldVelocity.X;
+        }
+
+        // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+        if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+        {
+            Projectile.velocity.Y = -oldVelocity.Y;
+        }
+
 
         return false;
     }
@@ -89,13 +86,13 @@ public class BouncingBulletProj : ModProjectile
     }
     public override void AI()
     {
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-   
 
-   
 
-   
+
+
+
 }

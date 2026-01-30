@@ -14,7 +14,7 @@ public class PlatinumMultiaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 20;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 10;
@@ -30,7 +30,7 @@ public class PlatinumMultiaxe : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 1;
         Item.pick = 61;
-      
+
         Item.axe = 19;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
@@ -92,7 +92,7 @@ public class PlatinumMultiaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-       
+
 
 
 

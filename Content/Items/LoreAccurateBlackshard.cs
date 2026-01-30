@@ -50,22 +50,22 @@ public class LoreAccurateBlackshard : ModItem
     public override bool AltFunctionUse(Player player)
     {
 
-       
-            return true;
-       
+
+        return true;
+
     }
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        
 
-            if (player.altFunctionUse == 2)
-            {
-                Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
-                return false;
-            }
 
-        
+        if (player.altFunctionUse == 2)
+        {
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
+            return false;
+        }
+
+
 
 
 
@@ -89,14 +89,14 @@ public class LoreAccurateBlackshard : ModItem
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
-       
-            line = new TooltipLine(Mod, "Face", "Right click to throw the shard")
-            {
-                OverrideColor = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
-            };
-            tooltips.Add(line);
 
-        
+        line = new TooltipLine(Mod, "Face", "Right click to throw the shard")
+        {
+            OverrideColor = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
+        };
+        tooltips.Add(line);
+
+
 
         line = new TooltipLine(Mod, "Face", "'Because River wouldn't stop asking'")
         {
@@ -119,6 +119,6 @@ public class LoreAccurateBlackshard : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
+
 
 }

@@ -17,14 +17,14 @@ public class HephFlame : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
+
     }
-  
+
     public override void SetDefaults()
     {
         Projectile.width = 24; // The width of projectile hitbox
         Projectile.height = 24; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -38,16 +38,16 @@ public class HephFlame : ModProjectile
         Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-      
+
         Projectile.alpha = 255;
     }
 
     public override void AI()
     {
 
-        if (Projectile.alpha <159)
+        if (Projectile.alpha < 159)
         {
-           
+
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -77,8 +77,8 @@ public class HephFlame : ModProjectile
         target.immune[Projectile.owner] = 7;
         target.AddBuff(BuffID.OnFire3, 300);
     }
-    
-    
+
+
 }
 
 

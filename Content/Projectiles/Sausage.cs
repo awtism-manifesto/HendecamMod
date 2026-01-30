@@ -23,15 +23,15 @@ public class Sausage : ModProjectile
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.CloneDefaults(ProjectileID.Shuriken);
         AIType = ProjectileID.Shuriken;
         Projectile.penetrate += -3;
-       
+
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 450;
-        
+
     }
 
     public override void AI()
@@ -86,7 +86,7 @@ public class Sausage : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)

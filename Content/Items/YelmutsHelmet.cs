@@ -31,7 +31,7 @@ public class YelmutsHelmet : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-      
+
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
@@ -43,7 +43,7 @@ public class YelmutsHelmet : ModItem
         Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -61,7 +61,7 @@ public class YelmutsHelmet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
 
 
@@ -86,12 +86,12 @@ public class YelmutsHelmet : ModItem
         tooltips.Add(line);
 
 
-        
+
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ItemID.RichMahoganyBreastplate  && legs.type == ItemID.RichMahoganyGreaves;
+        return body.type == ItemID.RichMahoganyBreastplate && legs.type == ItemID.RichMahoganyGreaves;
     }
     public override void UpdateEquip(Player player)
     {
@@ -126,6 +126,6 @@ public class YelmutsHelmet : ModItem
         player.statDefense += 1;
         player.maxMinions += MaxMinionIncrease;
         player.setBonus = SetBonusText.Value;
-       
+
     }
 }

@@ -105,12 +105,12 @@ public class LycoRay : ModProjectile
         if (Main.rand.NextBool(3))
         {
 
-           
+
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
 
-      
+
         if (Main.rand.NextBool(4))
         {
 
@@ -123,7 +123,7 @@ public class LycoRay : ModProjectile
         if (Main.rand.NextBool(5))
         {
 
-            
+
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
@@ -144,10 +144,10 @@ public class LycoRay : ModProjectile
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Projectile.alpha <188)
+
+        // dust, all dust
+        if (Projectile.alpha < 188)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -166,7 +166,7 @@ public class LycoRay : ModProjectile
         }
     }
 
-   
+
 
 }
 

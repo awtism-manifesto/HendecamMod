@@ -37,7 +37,7 @@ public class CompoundBow3 : ModItem
         Item.reuseDelay = 17;
 
         // The sound that this item plays when used.
-      
+
 
 
         // Weapon Properties
@@ -113,7 +113,7 @@ public class CompoundBow3 : ModItem
         recipe.AddIngredient<Items.CompoundBow2>();
 
         recipe.AddIngredient(ItemID.LunarBar, 10);
-      
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteBar", out ModItem ArtemiteBar))

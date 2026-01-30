@@ -29,7 +29,7 @@ public class FakeRocket2 : ModProjectile
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 1; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 1f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -40,7 +40,7 @@ public class FakeRocket2 : ModProjectile
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
+
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -85,7 +85,7 @@ public class FakeRocket2 : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-       
+
 
 
 
@@ -125,18 +125,18 @@ public class FakeRocket2 : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
-        
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188,188), 1050));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(36, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-            Vector2 Peanits2 = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2,
-            new Vector2(42, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-        
+
+        Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(36, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+        Vector2 Peanits2 = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2,
+        new Vector2(42, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+
     }
-    }
+}
 
 
 

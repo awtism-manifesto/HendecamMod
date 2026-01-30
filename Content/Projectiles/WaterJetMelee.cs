@@ -1,10 +1,6 @@
 ﻿
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,7 +9,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class WaterJetMelee : ModProjectile
 {
-   
+
 
     public override void SetDefaults()
     {
@@ -34,17 +30,17 @@ public class WaterJetMelee : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-    
 
-   
-  
+
+
+
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Projectile.alpha <233)
+
+        // dust, all dust
+        if (Projectile.alpha < 233)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -63,7 +59,7 @@ public class WaterJetMelee : ModProjectile
         }
     }
 
-   
+
 
 }
 

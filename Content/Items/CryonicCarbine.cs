@@ -112,7 +112,7 @@ public class CryonicCarbine : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Uzi);
             recipe.AddIngredient(CryonicBar.Type, 12);
-           
+
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -121,12 +121,12 @@ public class CryonicCarbine : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Uzi);
             recipe.AddIngredient(ItemID.HallowedBar, 12);
-           
+
             recipe.AddIngredient(ItemID.FrostCore);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 
-            
+
 
         }
 

@@ -14,8 +14,8 @@ public class LycopiteBar : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-        
-       
+
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -66,7 +66,7 @@ public class LycopiteBar : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Items.LycopiteOre>(5);
-       
+
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
 

@@ -28,7 +28,7 @@ public class PlutoniumSword : ModItem
         Item.height = 40;
         Item.scale = 1.33f;
         Item.ArmorPenetration = 25;
-        
+
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 172000; // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
@@ -49,7 +49,7 @@ public class PlutoniumSword : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,7 +91,7 @@ public class PlutoniumSword : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-       
+
     }
 
 }

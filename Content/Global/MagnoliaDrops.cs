@@ -79,7 +79,7 @@ public class MagnoliaDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
 
         }
-       
+
 
         if (npc.type == NPCID.PossessedArmor)
         {
@@ -300,6 +300,6 @@ public class MagnoliaDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RunicCodex>(), 1));
         }
-        
+
     }
 }

@@ -16,17 +16,17 @@ namespace HendecamMod.Content.Items;
 
 public class TheSecondAmendment : ModItem
 {
-    
+
     public override void SetDefaults()
     {
 
-      
+
 
 
         Item.width = 130;
-        Item.height = 60; 
+        Item.height = 60;
         Item.scale = 1f;
-        Item.rare = ModContent.RarityType<HotPink>(); 
+        Item.rare = ModContent.RarityType<HotPink>();
         Item.value = 250000000;
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
@@ -40,8 +40,8 @@ public class TheSecondAmendment : ModItem
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 1776; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 20f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-        
-        
+
+
         Item.ArmorPenetration = 176;
 
         Item.shoot = ProjectileID.Bullet;
@@ -53,18 +53,18 @@ public class TheSecondAmendment : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica)|| (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))))
-        { 
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) || (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))))
+        {
             damage = (int)(damage * 0.67f);
         }
-        else 
+        else
         {
             damage = (int)(damage * 0.45f);
         }
 
 
 
-           
+
         SoundEngine.PlaySound(SoundID.Item68, player.position);
         SoundEngine.PlaySound(SoundID.Item61, player.position);
         for (int i = 0; i < 3; i++) // Fire 3 random projectiles
@@ -76,7 +76,7 @@ public class TheSecondAmendment : ModItem
 
             int projType = type;
             int projDamage = damage;
-            
+
 
             switch (choice)
             {
@@ -175,7 +175,7 @@ public class TheSecondAmendment : ModItem
                     break;
                 case 31:
                     projType = ProjectileID.CrystalBullet;
-                   
+
                     break;
                 case 32:
                     projType = ModContent.ProjectileType<OilBallRanged>();
@@ -297,7 +297,7 @@ public class TheSecondAmendment : ModItem
             Projectile.NewProjectileDirect(source, position, newVelocity, projType, projDamage, knockback, player.whoAmI);
         }
 
-       
+
         if (Main.rand.NextBool(69))
         {
             int bonusType = ModContent.ProjectileType<RiverHead>();
@@ -327,50 +327,50 @@ public class TheSecondAmendment : ModItem
 
 
 
-            
-        }
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<TrueJfkExperience>();
-            recipe.AddIngredient(ItemID.SDMG);
-            recipe.AddIngredient<GlockAndBalls>();
-            recipe.AddIngredient<AA12>();
-            recipe.AddIngredient(ItemID.VortexBeater);
-            recipe.AddIngredient<DaedalusStormgun>();
-            recipe.AddIngredient<PhotonShotgun>();
-            recipe.AddIngredient(ItemID.Xenopopper);
-            recipe.AddIngredient<TheMagnum>();
-            recipe.AddIngredient<MidnightAfterburner>();
-            recipe.AddIngredient<ApexPlasmaCannon>();
-            recipe.AddIngredient<PlutoniumAutoPistol>();
-            recipe.AddIngredient<ATFsNightmare>();
-            recipe.AddIngredient<GunThatKillsPeople>();
-            recipe.AddIngredient<TheNanoshot>();
-            recipe.AddIngredient<PoopyAutoPistol>();
-            recipe.AddIngredient(ItemID.CandyCornRifle);
-            recipe.AddIngredient(ItemID.VenusMagnum);
-           
-            recipe.AddIngredient<ThePrimeTime>();
-            recipe.AddIngredient(ItemID.Megashark);
-            recipe.AddIngredient<CryonicCarbine>();
-            recipe.AddIngredient<Bundlebuss>();
-            recipe.AddIngredient<MintalMachinePistol>();
-            recipe.AddIngredient<VP70>();
-            recipe.AddIngredient<GenderDefender>();
-            recipe.AddIngredient(ItemID.SnowballCannon);
-           
-            recipe.AddIngredient<CopperShortmachinegun>();
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.Register();
-           
+
+    }
+    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<TrueJfkExperience>();
+        recipe.AddIngredient(ItemID.SDMG);
+        recipe.AddIngredient<GlockAndBalls>();
+        recipe.AddIngredient<AA12>();
+        recipe.AddIngredient(ItemID.VortexBeater);
+        recipe.AddIngredient<DaedalusStormgun>();
+        recipe.AddIngredient<PhotonShotgun>();
+        recipe.AddIngredient(ItemID.Xenopopper);
+        recipe.AddIngredient<TheMagnum>();
+        recipe.AddIngredient<MidnightAfterburner>();
+        recipe.AddIngredient<ApexPlasmaCannon>();
+        recipe.AddIngredient<PlutoniumAutoPistol>();
+        recipe.AddIngredient<ATFsNightmare>();
+        recipe.AddIngredient<GunThatKillsPeople>();
+        recipe.AddIngredient<TheNanoshot>();
+        recipe.AddIngredient<PoopyAutoPistol>();
+        recipe.AddIngredient(ItemID.CandyCornRifle);
+        recipe.AddIngredient(ItemID.VenusMagnum);
+
+        recipe.AddIngredient<ThePrimeTime>();
+        recipe.AddIngredient(ItemID.Megashark);
+        recipe.AddIngredient<CryonicCarbine>();
+        recipe.AddIngredient<Bundlebuss>();
+        recipe.AddIngredient<MintalMachinePistol>();
+        recipe.AddIngredient<VP70>();
+        recipe.AddIngredient<GenderDefender>();
+        recipe.AddIngredient(ItemID.SnowballCannon);
+
+        recipe.AddIngredient<CopperShortmachinegun>();
+        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.Register();
+
 
         if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("BrenGun", out ModItem BrenGun))
         {
             recipe.AddIngredient(BrenGun.Type);
         }
-       
+
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("SomaPrime", out ModItem SomaPrime)
             && CalMerica.TryFind<ModItem>("HalibutCannon", out ModItem HalibutCannon))
 
@@ -381,7 +381,7 @@ public class TheSecondAmendment : ModItem
 
             recipe.AddIngredient(HalibutCannon.Type);
         }
-       
+
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind<ModItem>("Hyperion", out ModItem Hyperion))
 
 
@@ -425,7 +425,7 @@ public class TheSecondAmendment : ModItem
             recipe.AddIngredient(OmniCannon.Type);
 
         }
-       
+
         if (ModLoader.TryGetMod("Redemption", out Mod RedMerica) && RedMerica.TryFind<ModItem>("DepletedCrossbow", out ModItem DepletedCrossbow)
           && RedMerica.TryFind<ModItem>("XeniumElectrolaser", out ModItem XeniumElectrolaser))
 
@@ -441,7 +441,7 @@ public class TheSecondAmendment : ModItem
             recipe.AddIngredient(CosmicDestroyer.Type);
             recipe.AddIngredient(InheritedCaseM4A1.Type);
         }
-       
+
         if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind<ModItem>("TheBiggestSting", out ModItem TheBiggestSting)
       && FargoMerica.TryFind<ModItem>("NavalRustrifle", out ModItem NavalRustrifle)
       && FargoMerica.TryFind<ModItem>("Lightslinger", out ModItem Lightslinger))
@@ -454,7 +454,7 @@ public class TheSecondAmendment : ModItem
         }
         if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind<ModItem>("Blackout", out ModItem Blackout)
           && HomeMerica.TryFind<ModItem>("FortSniper", out ModItem FortSniper)
-           
+
            && HomeMerica.TryFind<ModItem>("ClockworkMinigun", out ModItem ClockworkMinigun)
             && HomeMerica.TryFind<ModItem>("EssenceofBright", out ModItem EssenceofBright))
 
@@ -464,13 +464,13 @@ public class TheSecondAmendment : ModItem
             recipe.AddIngredient(Blackout.Type);
 
             recipe.AddIngredient(FortSniper.Type);
-           
+
             recipe.AddIngredient(EssenceofBright.Type, 5);
         }
 
     }
-    
-    
+
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

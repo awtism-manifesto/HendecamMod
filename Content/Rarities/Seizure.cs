@@ -13,7 +13,7 @@ public class Seizure : ModRarity
     {
         if (offset > 0)
         { // If the offset is 1 or 2 (a positive modifier).
-           return ModContent.RarityType<Seizure2>();  // Make the rarity of items that have this rarity with a positive modifier the higher tier one.
+            return ModContent.RarityType<Seizure2>();  // Make the rarity of items that have this rarity with a positive modifier the higher tier one.
         }
 
         return ItemRarityID.Purple;  // no 'lower' tier to go to, so return the type of this rarity.

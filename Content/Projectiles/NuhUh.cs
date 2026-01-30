@@ -37,13 +37,13 @@ public class NuhUh : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-    
-
-   
-   
 
 
-   
+
+
+
+
+
 
 }
 

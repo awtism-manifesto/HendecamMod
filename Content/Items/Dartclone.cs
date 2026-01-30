@@ -93,7 +93,7 @@ public class Dartclone : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -128,13 +128,13 @@ public class Dartclone : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
-        
+
+
         recipe.AddIngredient(ItemID.ShroomiteBar, 14);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-      
+
 
 
 

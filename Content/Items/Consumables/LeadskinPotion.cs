@@ -32,7 +32,7 @@ public class LeadskinPotion : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(copper: 42);
-        Item.buffType = ModContent.BuffType<Buffs.LeadPoisoningDebuff>(); 
+        Item.buffType = ModContent.BuffType<Buffs.LeadPoisoningDebuff>();
         Item.buffTime = 25200;
     }
     public override void AddRecipes()

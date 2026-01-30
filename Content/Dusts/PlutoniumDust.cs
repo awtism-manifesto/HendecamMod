@@ -21,7 +21,7 @@ public class PlutoniumDust : ModDust
         dust.color = Color.Purple;
         dust.scale = 1f;
         dust.alpha = 100;
-        
+
 
     }
     public override bool Update(Dust dust)

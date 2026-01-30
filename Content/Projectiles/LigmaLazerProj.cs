@@ -39,7 +39,7 @@ public class LigmaLazerProj : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
+
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -56,7 +56,7 @@ public class LigmaLazerProj : ModProjectile
 
         return true;
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -104,7 +104,7 @@ public class LigmaLazerProj : ModProjectile
     public override void AI()
     {
 
-       
+
 
 
 
@@ -112,7 +112,7 @@ public class LigmaLazerProj : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.5f, 0.1f, 0.1f);
 
 
-       
+
 
 
     }

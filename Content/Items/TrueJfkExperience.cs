@@ -67,7 +67,7 @@ public class TrueJfkExperience : ModItem
     {
         type = ModContent.ProjectileType<Projectiles.JfkBullet>();
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,26 +96,26 @@ public class TrueJfkExperience : ModItem
             }
         }
 
-            // Another method of hiding can be done if you want to hide just one line.
-            // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
-        }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Items.TheJfkExperience>();
-            recipe.AddIngredient(ItemID.SniperRifle);
-            recipe.AddIngredient<Items.KingslayerSniper>();
-            recipe.AddIngredient<Items.BeeSnipe>();
-           
-            recipe.AddIngredient<Items.AstatineMarksmanRifle>();
-            recipe.AddIngredient<Items.CorruptLawman>();
-            
-            recipe.AddIngredient<Items.M1Garand>();
-            recipe.AddIngredient<TheDeposer>();
-            recipe.AddIngredient<Items.FissionDrive>();
+        // Another method of hiding can be done if you want to hide just one line.
+        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+    }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<Items.TheJfkExperience>();
+        recipe.AddIngredient(ItemID.SniperRifle);
+        recipe.AddIngredient<Items.KingslayerSniper>();
+        recipe.AddIngredient<Items.BeeSnipe>();
+
+        recipe.AddIngredient<Items.AstatineMarksmanRifle>();
+        recipe.AddIngredient<Items.CorruptLawman>();
+
+        recipe.AddIngredient<Items.M1Garand>();
+        recipe.AddIngredient<TheDeposer>();
+        recipe.AddIngredient<Items.FissionDrive>();
 
         recipe.AddTile(TileID.LunarCraftingStation);
-      
+
         recipe.Register();
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("BloodstoneCore", out ModItem BloodstoneCore))
@@ -145,7 +145,7 @@ public class TrueJfkExperience : ModItem
 
         }
 
-       
+
     }
     public override Vector2? HoldoutOffset()
     {

@@ -58,7 +58,7 @@ public class Plasmoid : ModNPC
     {
         Lighting.AddLight(NPC.Center, 0.33f, 1, 0.33f);
 
-      
+
 
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
@@ -99,19 +99,19 @@ public class Plasmoid : ModNPC
 
 
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 2, 5));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(),1,34, 69));
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(), 1, 34, 69));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlasmoidWand>(), 15));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<RadBullet>(),4, 40, 120));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<RadBullet>(), 4, 40, 120));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-        if ( NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3 & NPC.downedEmpressOfLight)
+        if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3 & NPC.downedEmpressOfLight)
         {
             return SpawnCondition.Sky.Chance * 0.13f;
         }
-        if ( NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3)
+        if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3)
         {
             return SpawnCondition.Sky.Chance * 0.15f;
         }
@@ -128,7 +128,7 @@ public class Plasmoid : ModNPC
         {
             return SpawnCondition.Sky.Chance * 0.43f;
         }
-      
+
         else
             return SpawnCondition.Sky.Chance * 0.00f;
 

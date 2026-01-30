@@ -26,7 +26,7 @@ public class GunOfRoses : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(gold:30);
+        Item.value = Item.buyPrice(gold: 30);
 
 
         // Use Properties
@@ -46,7 +46,7 @@ public class GunOfRoses : ModItem
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
         Item.mana = 6;
 
@@ -68,7 +68,7 @@ public class GunOfRoses : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -93,12 +93,12 @@ public class GunOfRoses : ModItem
         {
             type = ModContent.ProjectileType<Projectiles.RosePetalBig>();
 
-            Projectile.NewProjectileDirect(source, position, velocity, type, (int)(damage*1.55f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, velocity, type, (int)(damage * 1.55f), knockback, player.whoAmI);
 
             tickCounter = 0;
             nextSpawnTick = Main.rand.Next(3, 4);
 
-            
+
         }
 
 
@@ -109,7 +109,7 @@ public class GunOfRoses : ModItem
 
     public override void AddRecipes()
     {
-        Recipe 
+        Recipe
         recipe = CreateRecipe();
         recipe.AddIngredient<Items.Heartache>();
         recipe.AddIngredient(ItemID.JungleSpores, 10);
@@ -165,7 +165,7 @@ public class GunOfRoses : ModItem
     }
 
 
-    
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

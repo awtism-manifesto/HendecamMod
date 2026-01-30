@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -26,16 +25,16 @@ public class PyroDartTrapTile : ModTile
 
         // These 2 AddMapEntry and GetMapOption show off multiple Map Entries per Tile. Delete GetMapOption and all but 1 of these for your own ModTile if you don't actually need it.
         AddMapEntry(new Color(21, 179, 192), Language.GetText("MapObject.Trap")); // localized text for "Trap"
-       
+
     }
 
     // Read the comments above on AddMapEntry.
-  
+
 
     public override bool IsTileDangerous(int i, int j, Player player) => true;
 
     // Because this tile does not use a TileObjectData, and consequently does not have "real" tile styles, the correct tile style value can't be determined automatically. This means that the correct item won't automatically drop, so we must use GetItemDrops to calculate the tile style to determine the item drop. 
-   
+
 
     public override bool CreateDust(int i, int j, ref int type)
     {
@@ -44,7 +43,7 @@ public class PyroDartTrapTile : ModTile
         {
             type = DustID.Torch; // A blue dust to match the tile
         }
-       
+
         return true;
     }
 
@@ -100,6 +99,6 @@ public class PyroDartTrapTile : ModTile
                 Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
             }
         }
-       
+
     }
 }

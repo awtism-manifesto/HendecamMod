@@ -6,15 +6,15 @@ using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
-	[AutoloadEquip(EquipType.Body)]
-	public class PyriteChestguard : ModItem
-	{
-		public override void SetDefaults()
-		{
-			Item.defense = 6;
-			Item.rare = ItemRarityID.Blue;
+[AutoloadEquip(EquipType.Body)]
+public class PyriteChestguard : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.defense = 6;
+        Item.rare = ItemRarityID.Blue;
         Item.value = 67000;
-		}
+    }
     public static readonly int AdditiveDamageBonus = 4;
     public override void UpdateEquip(Player player)
     {
@@ -47,13 +47,13 @@ namespace HendecamMod.Content.Items.Armor;
 
 
 
-        
+
     }
     public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<PyriteBar>(20);
-			recipe.AddTile(TileID.Anvils);
-			recipe.Register();
-		}
-	}
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<PyriteBar>(20);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
+}

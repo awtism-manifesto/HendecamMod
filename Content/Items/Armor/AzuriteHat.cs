@@ -12,7 +12,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class AzuriteHat : ModItem
 {
     public static readonly int MaxMinionIncrease = 2;
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()

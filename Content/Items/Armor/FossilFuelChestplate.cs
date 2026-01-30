@@ -15,7 +15,7 @@ public class FossilFuelChestplate : ModItem
 {
     public static readonly int AdditiveSummonDamageBonus = 16;
     public static readonly int CritBonus = 16;
-   
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -86,15 +86,15 @@ public class FossilFuelChestplate : ModItem
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 116f;
         player.ammoCost75 = true;
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
-      
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< CrudeOil>(80);
-        recipe.AddIngredient< RefinedOil>(35);
+        recipe.AddIngredient<CrudeOil>(80);
+        recipe.AddIngredient<RefinedOil>(35);
         recipe.AddIngredient(ItemID.FossilShirt);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

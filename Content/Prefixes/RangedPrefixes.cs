@@ -97,7 +97,7 @@ public class Switched : ModPrefix
         damageMult *= 1f - 0.125f * Power;
         critBonus = -5;
         useTimeMult *= 1f - 0.3f * Power;
-      
+
         shootSpeedMult *= 1f - 0.15f * Power;
     }
 

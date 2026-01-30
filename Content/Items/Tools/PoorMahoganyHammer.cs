@@ -14,12 +14,12 @@ public class PoorMahoganyHammer : ModItem
     public override void SetDefaults()
     {
         Item.damage = 3;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 35;
         Item.height = 35;
         Item.useTime = 25;
         Item.useAnimation = 25;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 1;
         Item.useTurn = true;
@@ -28,7 +28,7 @@ public class PoorMahoganyHammer : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
+
         Item.hammer = 30; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
@@ -53,11 +53,11 @@ public class PoorMahoganyHammer : ModItem
 
 
         recipe.AddIngredient<PoorMahogany>(12);
-        
-        
+
+
         recipe.AddTile(TileID.WorkBenches);
 
         recipe.Register();
-        
+
     }
 }

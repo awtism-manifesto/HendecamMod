@@ -18,7 +18,7 @@ namespace HendecamMod.Content.Items;
 
 public class UnicornPoacher : ModItem
 {
-    
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -47,7 +47,7 @@ public class UnicornPoacher : ModItem
         Item.damage = 58; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -61,14 +61,14 @@ public class UnicornPoacher : ModItem
 
     }
 
-   
+
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       
+
         type = ModContent.ProjectileType<UnicornHornProj>();
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -99,7 +99,7 @@ public class UnicornPoacher : ModItem
     }
 
 
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-16.5f, -1.66f);

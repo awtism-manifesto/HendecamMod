@@ -45,8 +45,8 @@ public class PlutoniumAutoPistol : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-         
-        
+
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -57,9 +57,9 @@ public class PlutoniumAutoPistol : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            
+
         }
-        
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -93,7 +93,7 @@ public class PlutoniumAutoPistol : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<Items.PlutoniumBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

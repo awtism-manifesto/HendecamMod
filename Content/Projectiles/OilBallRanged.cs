@@ -35,16 +35,16 @@ public class OilBallRanged : ModProjectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-       
+
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
 
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
+
         target.AddBuff(BuffID.Oiled, 240);
-       
+
     }
     public override void AI()
     {
@@ -114,8 +114,8 @@ public class OilBallRanged : ModProjectile
         }
     }
 
-   
-   
+
+
     public override void OnKill(int timeLeft)
     {
 

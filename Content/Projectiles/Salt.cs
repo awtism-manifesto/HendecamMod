@@ -34,10 +34,10 @@ public class Salt : ModProjectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
-     
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-  
+
 
     public override bool PreDraw(ref Color lightColor)
     {

@@ -45,7 +45,7 @@ public class DirtyRocket1 : ModItem
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
         AmmoID.Sets.IsSpecialist[Type] = true;
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -79,6 +79,6 @@ public class DirtyRocket1 : ModItem
         recipe.AddIngredient<Items.UraniumBar>();
         recipe.AddIngredient<Items.RocketNeg1>(75);
         recipe.Register();
-       
+
     }
 }

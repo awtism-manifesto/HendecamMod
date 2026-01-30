@@ -69,7 +69,7 @@ public class OtherworldlySixPack : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-    
-   
+
+
 }
 

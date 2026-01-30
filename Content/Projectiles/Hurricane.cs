@@ -23,7 +23,7 @@ public class Hurricane : ModProjectile
     {
         Projectile.width = 105; // The width of projectile hitbox
         Projectile.height = 105; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -35,7 +35,7 @@ public class Hurricane : ModProjectile
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-        
+
     }
 
     public override void AI()
@@ -62,9 +62,9 @@ public class Hurricane : ModProjectile
     {
         target.AddBuff(BuffID.Wet, 180);
         target.AddBuff(BuffID.Electrified, 180);
-       
+
         target.immune[Projectile.owner] = 4;
-        
+
     }
     public override void OnKill(int timeLeft)
     {

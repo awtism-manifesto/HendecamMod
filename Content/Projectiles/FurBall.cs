@@ -21,26 +21,26 @@ public class FurBall : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width =23; // The width of projectile hitbox
+        Projectile.width = 23; // The width of projectile hitbox
         Projectile.height = 23; // The height of projectile hitbox
         Projectile.penetrate = 1;
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.timeLeft = 270;
-        
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-        
-        
+
+
         Projectile.Kill();
     }
-    
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
+
 
         if (Projectile.penetrate <= 0)
         {
@@ -49,7 +49,7 @@ public class FurBall : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-          
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -73,7 +73,7 @@ public class FurBall : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-       
+
 
 
 
@@ -83,7 +83,7 @@ public class FurBall : ModProjectile
             Projectile.ai[0] = 17f;
             Projectile.velocity.Y += 0.18f;
         }
-        
+
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 

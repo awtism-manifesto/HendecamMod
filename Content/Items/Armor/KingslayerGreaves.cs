@@ -46,13 +46,13 @@ public class KingslayerGreaves : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "6% increased damage");
         tooltips.Add(line);
-       
-            line = new TooltipLine(Mod, "Face", "5% increased whip speed")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        
+
+        line = new TooltipLine(Mod, "Face", "5% increased whip speed")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
         line = new TooltipLine(Mod, "Face", "Significantly increased move speed, even more on sand")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -93,18 +93,18 @@ public class KingslayerGreaves : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.desertBoots = true;
-       
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
         player.moveSpeed += MoveSpeedBonus / 125f;
         player.runAcceleration *= 1.25f;
-       
-            player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 105f;
-        
+
+        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 105f;
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
-       
+
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<KingslayerBar>(16);
         recipe.AddIngredient<FlinxFurSlippers>();
@@ -112,15 +112,15 @@ public class KingslayerGreaves : ModItem
 
         recipe.AddTile(TileID.Solidifier);
 
-       
+
         recipe.Register();
-        
+
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
-    public class Penieees: ModPlayer
+    public class Penieees : ModPlayer
     {
         public bool BigPenits = false;
 
@@ -137,8 +137,8 @@ public class KingslayerGreaves : ModItem
                 return;
             }
 
-           
-            Player.runAcceleration *= 1.33f; 
+
+            Player.runAcceleration *= 1.33f;
             Player.maxRunSpeed *= 1.33f;
             Player.accRunSpeed *= 1.33f;
             Player.runSlowdown *= 1.33f;

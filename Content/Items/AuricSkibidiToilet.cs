@@ -59,7 +59,7 @@ public class AuricSkibidiToilet : ModItem
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
 
     }
-    
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<AuricSkibidiHead>();
@@ -92,7 +92,7 @@ public class AuricSkibidiToilet : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -121,7 +121,7 @@ public class AuricSkibidiToilet : ModItem
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AuricToilet", out ModItem AuricToilet))
         {
             Recipe recipe = CreateRecipe();
-            
+
             recipe.AddIngredient<Items.TerraSkibidiToilet>();
             recipe.AddIngredient(AuricToilet.Type);
             recipe.AddTile(TileID.LunarCraftingStation);

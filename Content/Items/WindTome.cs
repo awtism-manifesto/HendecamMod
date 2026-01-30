@@ -1,12 +1,7 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -51,9 +46,9 @@ public class WindTome : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 8.75f; // The speed of the projectile (measured in pixels per frame.)
     }
-   
+
     private int shotCounter = 0;
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
@@ -149,7 +144,7 @@ public class WindTome : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SpellTome, 1);
-       
+
 
         recipe.AddIngredient(ItemID.SoulofFright, 5);
         recipe.AddIngredient(ItemID.SoulofFlight, 10);

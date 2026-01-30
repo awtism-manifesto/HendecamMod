@@ -44,7 +44,7 @@ public class CeramOmni : ModProjectile
     {
         Projectile.rotation += 0.33f;
 
-        
+
         if (Math.Abs(Projectile.velocity.X) <= 15f && Math.Abs(Projectile.velocity.Y) <= 15f)
         {
             Projectile.velocity *= 1.15f;
@@ -97,6 +97,6 @@ public class CeramOmni : ModProjectile
     }
 
 
-   
+
 
 }

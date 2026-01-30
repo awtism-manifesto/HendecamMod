@@ -25,7 +25,7 @@ public class BouncingBullet : ModItem
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 2.5f;
         Item.value = 33;
-      
+
         Item.shoot = ModContent.ProjectileType<BouncingBulletProj>();
         Item.shootSpeed = 5.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.

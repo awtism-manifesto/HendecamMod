@@ -66,8 +66,8 @@ public class ToxicBullet : ModItem
         Recipe recipe = CreateRecipe(100);
         recipe.AddIngredient(ItemID.MusketBall, 100);
         recipe.AddIngredient(ItemID.Stinger);
-       
+
         recipe.Register();
-       
+
     }
 }

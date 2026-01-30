@@ -14,8 +14,8 @@ public class AstatineBrick : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
-       
+
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }

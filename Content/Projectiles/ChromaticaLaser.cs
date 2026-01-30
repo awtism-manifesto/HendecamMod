@@ -14,7 +14,7 @@ public class ChromaticaLaser : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -88,7 +88,7 @@ public class ChromaticaLaser : ModProjectile
                     // }
 
                     // Spawn smoke dusts at the back of the rocket.
-                   
+
                 }
             }
 

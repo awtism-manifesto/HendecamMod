@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard))
 public class TornSaddle : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Grants double your movement speed, at the cost of Mounts");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyMovement>().NastyEffect = true;
         player.ClearBuff(BuffID.BasiliskMount);
         player.ClearBuff(BuffID.BeeMount);
@@ -53,9 +53,9 @@ public class TornSaddle : ModItem
         player.ClearBuff(BuffID.Flamingo);
         player.ClearBuff(BuffID.Rudolph);
         player.ClearBuff(BuffID.WitchBroom);
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DarkHorseSaddle, 1);
@@ -65,5 +65,5 @@ public class TornSaddle : ModItem
         recipe.AddIngredient(ItemID.HardySaddle, 1);
         recipe.AddTile(TileID.Sawmill);
         recipe.Register();
-        }
     }
+}

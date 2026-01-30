@@ -27,7 +27,7 @@ public class AzuriteBlessing : GlobalNPC
         if (!NPC.downedBoss3)
         {
             ModContent.GetInstance<AzuriteSystem>().BlessWorldWithAzurite();
-          
+
         }
 
     }

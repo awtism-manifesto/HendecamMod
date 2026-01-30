@@ -33,10 +33,10 @@ public class SodiumBolt : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-       
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-    
+
     public override void AI()
     {
 
@@ -79,7 +79,7 @@ public class SodiumBolt : ModProjectile
 
         return true;
     }
-   
+
 
 
     public override void OnKill(int timeLeft)

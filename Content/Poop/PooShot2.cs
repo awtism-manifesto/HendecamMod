@@ -13,25 +13,25 @@ namespace HendecamMod.Content.Poop;
 
 public class PooShot2 : ModProjectile
 {
-   
+
 
     public override void SetDefaults()
     {
         Projectile.width = 9; // The width of projectile hitbox
         Projectile.height = 9; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 1125;
-        Projectile.extraUpdates = 3;                       
+        Projectile.extraUpdates = 3;
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-       Projectile.usesLocalNPCImmunity = true;
+        Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
-      
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -55,10 +55,10 @@ public class PooShot2 : ModProjectile
         {
             Projectile.velocity.Y = 18f;
         }
-    
-        if (Projectile.alpha <205)
+
+        if (Projectile.alpha < 205)
         {
-           
+
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -77,12 +77,12 @@ public class PooShot2 : ModProjectile
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.35f;
-               
+
             }
         }
-        
+
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
@@ -96,8 +96,8 @@ public class PooShot2 : ModProjectile
         target.AddBuff(BuffID.Poisoned, 180);
         target.AddBuff(BuffID.Stinky, 900);
     }
-    
-    
+
+
 }
 
 

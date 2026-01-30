@@ -52,10 +52,10 @@ public class BionicBoomer : ModItem
 
 
 
-        
+
     }
 
-   
+
 
     public override Vector2? HoldoutOffset()
     {

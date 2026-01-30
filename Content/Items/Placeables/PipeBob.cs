@@ -52,7 +52,7 @@ public class PipeBob : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient < Items.Materials.BlankCanvas>(1);
+        recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
         recipe.AddIngredient(ItemID.Bomb, 1);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();

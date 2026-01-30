@@ -15,7 +15,7 @@ public class MorbiumTreeripper : ModItem
     public override void SetDefaults()
     {
         Item.damage = 144;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 4;
@@ -30,8 +30,8 @@ public class MorbiumTreeripper : ModItem
         Item.UseSound = SoundID.Item23;
         Item.autoReuse = true;
         Item.tileBoost = 3;
-        
-       
+
+
         Item.axe = 48;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
@@ -54,11 +54,11 @@ public class MorbiumTreeripper : ModItem
 
 
         recipe.AddIngredient<MorbiumBar>(12);
-       
-        
+
+
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-        
+
     }
 }

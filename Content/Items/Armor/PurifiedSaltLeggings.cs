@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class PurifiedSaltLeggings : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 17;
-   
+
     public static readonly int MoveSpeedBonus = 17;
 
     public static LocalizedText SetBonusText { get; private set; }
@@ -26,7 +26,7 @@ public class PurifiedSaltLeggings : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
     }
 
@@ -85,7 +85,7 @@ public class PurifiedSaltLeggings : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 117f;
         player.statLifeMax2 += 25;
-        
+
         player.moveSpeed += MoveSpeedBonus / 120f;
         player.runAcceleration *= 1.2f;
     }
@@ -102,8 +102,8 @@ public class PurifiedSaltLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
-        
+
+
     }
     public class PurePants : ModPlayer
     {

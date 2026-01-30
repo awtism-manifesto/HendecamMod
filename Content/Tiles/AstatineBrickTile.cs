@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -15,7 +14,7 @@ public class AstatineBrickTile : ModTile
         Main.tileMerge[ModContent.TileType<LycopiteBrickTile>()][Type] = true;
         Main.tileMerge[ModContent.TileType<PlutoniumBrickTile>()][Type] = true;
         Main.tileMerge[ModContent.TileType<UraniumBrickTile>()][Type] = true;
-        
+
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 500;
         DustType = DustID.CrimsonTorch;

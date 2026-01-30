@@ -84,11 +84,11 @@ public class RadiologicalRavager : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<TheIcebreaker>();
         recipe.AddIngredient<FissionDrive>();
-       
-        
+
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("UltimusCleaver", out ModItem UltimusCleaver) && CalMerica.TryFind<ModItem>("BloodstoneCore", out ModItem BloodstoneCore))
@@ -99,7 +99,7 @@ public class RadiologicalRavager : ModItem
         }
         if (!ModLoader.TryGetMod("CalamityMod", out Mod SkillIssue2))
         {
-           
+
             recipe.AddIngredient<AstatineBar>(10);
         }
     }

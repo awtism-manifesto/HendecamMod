@@ -66,8 +66,8 @@ public class CausticCarrot : ModItem
         Recipe recipe = CreateRecipe(125);
         recipe.AddIngredient<Items.LycopiteBar>();
         recipe.AddIngredient(ItemID.WoodenArrow, 125);
-            recipe.Register();
-        
+        recipe.Register();
+
     }
 
 }

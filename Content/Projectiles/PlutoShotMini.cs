@@ -30,20 +30,20 @@ public class PlutoShotMini : ModProjectile
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-       
+
         Projectile.extraUpdates = 2;
         Projectile.friendly = true;
         Projectile.penetrate = 1;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 120;
-        Projectile.aiStyle = 1; 
+        Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-        
+
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 110);
     }
     public override void AI()
@@ -96,7 +96,7 @@ public class PlutoShotMini : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(6.33f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -143,10 +143,10 @@ public class PlutoShotMini : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-        
 
 
-       
+
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());

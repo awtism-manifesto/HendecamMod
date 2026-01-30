@@ -25,7 +25,7 @@ public class WaterflameSword : ModItem
         Item.useTime = 32;
         Item.useAnimation = 32;
         Item.autoReuse = true;
-        
+
 
         Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Item.damage = 36;
@@ -45,10 +45,10 @@ public class WaterflameSword : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
 
 
-  
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,6 +76,6 @@ public class WaterflameSword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

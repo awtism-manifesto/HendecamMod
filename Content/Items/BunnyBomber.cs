@@ -94,7 +94,7 @@ public class BunnyBomber : ModItem
 
 
 
-       
+
     }
 
 
@@ -104,7 +104,7 @@ public class BunnyBomber : ModItem
         recipe.AddIngredient(ItemID.RocketLauncher);
         recipe.AddIngredient(ItemID.ExplosiveBunny, 5);
 
-       
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -113,7 +113,7 @@ public class BunnyBomber : ModItem
 
         {
             recipe.AddIngredient(SuspiciousLookingEgg.Type);
-           
+
 
 
         }

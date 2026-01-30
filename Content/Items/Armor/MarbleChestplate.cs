@@ -16,7 +16,7 @@ public class MarbleChestplate : ModItem
 
     public static readonly int AdditiveMeleeDamageBonus = 8;
     public static readonly int MeleeAttackSpeedBonus = 8;
-   
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,7 +27,7 @@ public class MarbleChestplate : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-       
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -86,12 +86,12 @@ public class MarbleChestplate : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-      
+
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 106f;
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
 
     }
-    
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class LycopiteHelmet : ModItem
 {
 
-   
+
     public static readonly int AdditiveMagicDamageBonus = 9;
     public static readonly int CritBonus = 5;
     public static readonly int MaxManaIncrease = 70;
@@ -28,7 +28,7 @@ public class LycopiteHelmet : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -97,7 +97,7 @@ public class LycopiteHelmet : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
 
         player.statManaMax2 += MaxManaIncrease;
-       
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()

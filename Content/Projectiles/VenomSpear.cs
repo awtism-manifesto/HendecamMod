@@ -16,8 +16,8 @@ public class VenomSpear : ModProjectile
     {
         Projectile.width = 110;
         Projectile.height = 20;
-       
-       
+
+
         Projectile.CloneDefaults(ProjectileID.Spear);
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;

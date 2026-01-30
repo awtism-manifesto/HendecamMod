@@ -15,7 +15,7 @@ public class ZoneSpawn : ModProjectile
 
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.SentryShot[Type] = true;
     }
     public override void SetDefaults()
@@ -37,11 +37,11 @@ public class ZoneSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
 
-   
-   
-   
+
+
+
+
 
     public override void OnKill(int timeLeft)
     {
@@ -73,7 +73,7 @@ public class ZoneSpawn : ModProjectile
                 );
             }
         }
-        else 
+        else
         {
 
             for (int i = 0; i < 36; i++)
@@ -93,7 +93,7 @@ public class ZoneSpawn : ModProjectile
                 );
             }
         }
-            
+
 
     }
 

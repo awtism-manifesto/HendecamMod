@@ -47,7 +47,7 @@ public class ClimateChanger : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
 
-        
+
 
 
         // Gun Properties
@@ -87,7 +87,7 @@ public class ClimateChanger : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -122,7 +122,7 @@ public class ClimateChanger : ModItem
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("ScoriaBar", out ModItem ScoriaBar))
         {
             recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(ScoriaBar.Type, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
             recipe.AddIngredient<RefinedOil>(35);
@@ -150,7 +150,7 @@ public class ClimateChanger : ModItem
 
     }
 
-    
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

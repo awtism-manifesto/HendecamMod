@@ -34,7 +34,7 @@ public class DartShotgun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 31;
-       
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item99;
@@ -46,7 +46,7 @@ public class DartShotgun : ModItem
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-      
+
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -65,10 +65,10 @@ public class DartShotgun : ModItem
         damage = (int)(damage * Main.rand.NextFloat(0.575f, 0.67f));
         for (int i = 0; i < NumProjectiles; i++)
         {
-            
+
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(12.5f));
 
-           
+
             newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
             // Create a projectile.
@@ -79,7 +79,7 @@ public class DartShotgun : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -110,7 +110,7 @@ public class DartShotgun : ModItem
 
 
 
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(0f, -1f);

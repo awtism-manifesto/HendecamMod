@@ -43,12 +43,12 @@ public class ChristianCrossbow : ModItem
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        
+
 
         Item.shootSpeed = 9.4f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
@@ -63,7 +63,7 @@ public class ChristianCrossbow : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -78,7 +78,7 @@ public class ChristianCrossbow : ModItem
 
 
 
-        
+
     }
 
 
@@ -86,7 +86,7 @@ public class ChristianCrossbow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.GoldBar, 10);
         recipe.AddIngredient(ItemID.PurificationPowder, 25);
         recipe.AddIngredient(ItemID.Ruby);
@@ -94,7 +94,7 @@ public class ChristianCrossbow : ModItem
         recipe.Register();
 
         recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.PlatinumBar, 10);
         recipe.AddIngredient(ItemID.PurificationPowder, 25);
         recipe.AddIngredient(ItemID.Ruby);

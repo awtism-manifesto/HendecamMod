@@ -31,11 +31,11 @@ public class CookingPot : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 21;
         Item.knockBack = 1;
-        
+
 
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
-        
+
 
         Item.shoot = ModContent.ProjectileType<GreaseSplatter>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.2f; // Speed of the projectiles the sword will shoot
@@ -66,7 +66,7 @@ public class CookingPot : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

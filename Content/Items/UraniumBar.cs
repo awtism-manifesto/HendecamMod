@@ -15,7 +15,7 @@ public class UraniumBar : ModItem
 
 
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
-       
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }

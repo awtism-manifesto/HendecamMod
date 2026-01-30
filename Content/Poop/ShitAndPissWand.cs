@@ -47,8 +47,8 @@ public class ShitAndPissWand : ModItem
         Item.damage = 39; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
         Item.mana = 9;
 
 
@@ -80,7 +80,7 @@ public class ShitAndPissWand : ModItem
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             type = ProjectileID.GoldenShowerFriendly;
-           
+
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
@@ -94,7 +94,7 @@ public class ShitAndPissWand : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Shoots a poo shot that poisons enemies and makes them stinky");
         tooltips.Add(line);
-        
+
         line = new TooltipLine(Mod, "Face", "And even worse, additionally shoots a piss stream that lowers enemy defense.")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -130,7 +130,7 @@ public class ShitAndPissWand : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-      
+
 
 
 

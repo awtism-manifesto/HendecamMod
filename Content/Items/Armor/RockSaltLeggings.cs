@@ -14,8 +14,8 @@ namespace HendecamMod.Content.Items.Armor;
 public class RockSaltLeggings : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 7;
-    
-    
+
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -25,7 +25,7 @@ public class RockSaltLeggings : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
     }
 
@@ -84,20 +84,20 @@ public class RockSaltLeggings : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 107f;
         player.statLifeMax2 += 10;
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<RockSalt>(45);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-       
-        
+
+
     }
 }

@@ -25,7 +25,7 @@ public class TedGun : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(gold:40);
+        Item.value = Item.buyPrice(gold: 40);
 
 
         // Use Properties
@@ -45,7 +45,7 @@ public class TedGun : ModItem
         Item.damage = 109; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
         Item.mana = 11;
 
@@ -66,8 +66,8 @@ public class TedGun : ModItem
 
 
 
-  
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -100,7 +100,7 @@ public class TedGun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Items.ImprovisedPistol>();
         recipe.AddIngredient(ItemID.NaturesGift);
         recipe.AddIngredient(ItemID.FrostCore, 1);
@@ -119,7 +119,7 @@ public class TedGun : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-       
+
 
 
 

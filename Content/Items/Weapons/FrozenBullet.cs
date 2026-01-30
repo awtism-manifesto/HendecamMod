@@ -1,10 +1,9 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.Projectiles.Items;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -47,7 +46,7 @@ public class FrozenBullet : ModItem
         tooltips.Add(line);
 
 
-       
+
 
     }
     public override void AddRecipes()

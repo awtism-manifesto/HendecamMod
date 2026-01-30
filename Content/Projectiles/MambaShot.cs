@@ -14,7 +14,7 @@ public class MambaShot : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-      
+
         Main.projFrames[Projectile.type] = 3;
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -83,7 +83,7 @@ public class MambaShot : ModProjectile
         target.AddBuff(BuffID.Poisoned, 480);
         Projectile.damage = (int)(Projectile.damage * 0.7f);
     }
-   
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

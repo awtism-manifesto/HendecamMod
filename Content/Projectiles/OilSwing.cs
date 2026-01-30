@@ -84,7 +84,7 @@ public class OilSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-       
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -157,13 +157,13 @@ public class OilSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
         if (target.HasBuff(BuffID.Oiled))
         {
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<OilBoom>(), (int)(Projectile.damage*1.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<OilBoom>(), (int)(Projectile.damage * 1.5f), Projectile.knockBack, Projectile.owner);
 
         }
 
@@ -198,7 +198,7 @@ public class OilSwing : ModProjectile
 
         Color backDarkColor = new Color(112, 154, 209); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(181, 165, 213); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(255,163 , 167); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(255, 163, 167); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.Black * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));

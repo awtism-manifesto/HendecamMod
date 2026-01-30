@@ -27,7 +27,7 @@ public class MorbeamStaff : ModItem
         Item.useTime = 12;
         Item.useAnimation = 12;
         Item.autoReuse = true;
-    
+
         Item.mana = 10;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 90;
@@ -52,9 +52,9 @@ public class MorbeamStaff : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Morbeam>();
-       
 
-       
+
+
 
     }
 

@@ -68,7 +68,7 @@ public class PurifiedBolt : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-       
+
 
 
 

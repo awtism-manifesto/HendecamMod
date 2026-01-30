@@ -30,9 +30,9 @@ public class MorbiumPlatemail : ModItem
     }
     public override void UpdateEquip(Player player)
     {
-        
 
-       
+
+
         player.lifeRegen += 3;
     }
     public override void SetDefaults()

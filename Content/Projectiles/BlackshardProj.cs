@@ -86,7 +86,7 @@ public class BlackshardProj : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-       
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -220,7 +220,7 @@ public class BlackshardProj : ModProjectile
 
         Color backDarkColor = new Color(98, 2, 10); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(102, 5, 15); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(135,14 , 26); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(135, 14, 26); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.White * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));

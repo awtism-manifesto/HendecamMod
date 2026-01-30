@@ -36,7 +36,7 @@ public class LycopiteBow : ModItem
         Item.reuseDelay = 20;
 
         // The sound that this item plays when used.
-       
+
 
 
         // Weapon Properties
@@ -90,7 +90,7 @@ public class LycopiteBow : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -126,11 +126,11 @@ public class LycopiteBow : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Items.LycopiteBar>(13);
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-        
+
 
 
 

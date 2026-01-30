@@ -34,7 +34,7 @@ public class PowerPants : ModItem
         Item.height = 18; // Height of the item
         Item.value = 150000;
         Item.rare = ItemRarityID.Gray; // The rarity of the item
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -81,8 +81,8 @@ public class PowerPants : ModItem
 
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    
-   
+
+
     public override void UpdateArmorSet(Player player)
     {
 

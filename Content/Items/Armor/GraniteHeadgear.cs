@@ -14,9 +14,9 @@ namespace HendecamMod.Content.Items.Armor;
 public class GraniteHeadgear : ModItem
 {
 
-    
+
     public static readonly int MagicDamageBonus = 5;
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,7 +27,7 @@ public class GraniteHeadgear : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-       
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -35,7 +35,7 @@ public class GraniteHeadgear : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(silver : 95 ); // How many coins the item is worth
+        Item.value = Item.sellPrice(silver: 95); // How many coins the item is worth
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
     }
@@ -84,8 +84,8 @@ public class GraniteHeadgear : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
-      
+
+
         player.GetDamage(DamageClass.Magic) += MagicDamageBonus / 105f;
         player.manaCost = 0.9f;
 
@@ -102,8 +102,8 @@ public class GraniteHeadgear : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
 
-      
+
+
     }
 }

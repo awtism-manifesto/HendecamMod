@@ -53,7 +53,7 @@ public class BinaryRifle : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot =  ModContent.ProjectileType<BinaryLaser>();
+        Item.shoot = ModContent.ProjectileType<BinaryLaser>();
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
 

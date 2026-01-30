@@ -70,7 +70,7 @@ public class TheNanoshot : ModItem
         recipe.AddIngredient(ItemID.Shotgun);
         recipe.AddIngredient<Items.CyberneticGunParts>();
         recipe.AddIngredient(ItemID.Nanites, 15);
-       
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

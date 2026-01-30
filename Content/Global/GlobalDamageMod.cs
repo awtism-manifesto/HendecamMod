@@ -31,7 +31,7 @@ public class DamageModificationGlobalNPC : GlobalNPC
         {
             drawColor.R = 255;
             drawColor.G = 5;
-            drawColor.B = 5;   
+            drawColor.B = 5;
         }
     }
 }

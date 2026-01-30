@@ -1,11 +1,9 @@
-﻿using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework;
 using System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -29,7 +27,7 @@ public class CeramicBloon : ModProjectile
         Projectile.width = 50;
         Projectile.height = 78;
         Projectile.tileCollide = false; // Makes the minion go through tiles freely
-       
+
         // These below are needed for a minion weapon
         Projectile.friendly = true; // Only controls if it deals damage to enemies on contact (more on that later)
         Projectile.minion = true; // Declares this as a minion (has many effects)
@@ -139,7 +137,7 @@ public class CeramicBloon : ModProjectile
             }
         }
     }
-   
+
     private void SearchForTargets(Player owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter)
     {
         // Starting search distance

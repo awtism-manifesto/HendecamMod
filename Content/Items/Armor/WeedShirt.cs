@@ -14,12 +14,12 @@ namespace HendecamMod.Content.Items.Armor;
 public class WeedShirt : ModItem
 {
 
-   
+
     public static readonly int AdditiveDamageBonus = 6;
-   
+
     public static readonly int StupidArmorPenetration = 3;
-   
-  
+
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -38,7 +38,7 @@ public class WeedShirt : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(silver : 45); // How many coins the item is worth
+        Item.value = Item.sellPrice(silver: 45); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
@@ -99,7 +99,7 @@ public class WeedShirt : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<WeedLeaves>(49);
         recipe.AddTile(TileID.Loom);
-       
+
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LivingLeaf", out ModItem LivingLeaf))
 
@@ -116,6 +116,6 @@ public class WeedShirt : ModItem
         player.setBonus = "Increased life and mana regen";
         player.lifeRegen += 5;
         player.manaRegenBonus += 25;
-        
+
     }
 }

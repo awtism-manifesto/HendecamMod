@@ -56,7 +56,7 @@ public class TruthSeekersDMR : ModItem
     {
         type = ModContent.ProjectileType<Projectiles.TrueBullet>();
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -68,7 +68,7 @@ public class TruthSeekersDMR : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
 
 
 

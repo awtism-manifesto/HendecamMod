@@ -32,7 +32,7 @@ public class VileGreatstaff : ModItem
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.useAnimation = 9;
         Item.useTime = 9;
-        Item.damage =  64;
+        Item.damage = 64;
         Item.knockBack = 6.5f;
         Item.width = 40;
         Item.height = 40;
@@ -55,17 +55,17 @@ public class VileGreatstaff : ModItem
         Item.DamageType = DamageClass.Magic;
         Item.shoot = ModContent.ProjectileType<VileFlame>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
-      
+
         Item.autoReuse = true;
     }
-   
+
     public override bool AltFunctionUse(Player player)
     {
 
-        
-            return true;
-       
-       
+
+        return true;
+
+
     }
     private int altClickCooldown = 0;
     public override void UpdateInventory(Player player)

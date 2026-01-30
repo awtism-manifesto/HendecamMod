@@ -45,7 +45,7 @@ public class OilBoom : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.OnFire3, 300);
         target.AddBuff(BuffID.OnFire, 420);
         Projectile.damage = (int)(Projectile.damage * 0.935f);
@@ -174,7 +174,7 @@ public class OilBoom : ModProjectile
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 2.25f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-           
+
         }
 
         // Rocket II explosion that damages tiles.

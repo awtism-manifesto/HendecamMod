@@ -45,7 +45,7 @@ public class VerminImpaler : ModItem
     {
 
         type = ModContent.ProjectileType<VenomFang>();
-        Projectile.NewProjectileDirect(source, position, velocity*2.75f, type, (int)(damage*0.67f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, velocity * 2.75f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
 
 
         return true; // Return false because we don't want tModLoader to shoot projectile
@@ -86,12 +86,12 @@ public class VerminImpaler : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SpiderFang, 12);
-        recipe.AddIngredient< EyePoker>();
+        recipe.AddIngredient<EyePoker>();
 
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
 
 
 

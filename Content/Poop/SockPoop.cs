@@ -26,7 +26,7 @@ public class SockPoop : ModProjectile
         Projectile.WhipSettings.RangeMultiplier = 0.5f;
         Projectile.width = 50;
         Projectile.height = 50;
-       Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
         // use these to change from the vanilla defaults
         // Projectile.WhipSettings.Segments = 20;
         // Projectile.WhipSettings.RangeMultiplier = 1f;

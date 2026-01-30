@@ -52,8 +52,8 @@ public class Shadowflame : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
-       
-      
+
+
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("TheFirstShadowflame", out ModItem TheFirstShadowflame))
         {
             recipe.AddIngredient(TheFirstShadowflame.Type);

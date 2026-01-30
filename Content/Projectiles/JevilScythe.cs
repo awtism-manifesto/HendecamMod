@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -36,15 +34,15 @@ public class JevilScythe : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-    
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<JevilTag>(), 300);
 
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
-            Vector2 Peanits = Projectile.Center - new Vector2(-30, 30);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Vector2 Peanits = Projectile.Center - new Vector2(-30, 30);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(135));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
@@ -63,6 +61,6 @@ public class JevilScythe : ModProjectile
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

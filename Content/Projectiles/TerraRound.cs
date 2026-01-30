@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class TerraRound : ModProjectile
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -49,7 +49,7 @@ public class TerraRound : ModProjectile
         // dust, all dust
         if (Projectile.alpha < 169)
         {
-            
+
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -89,9 +89,9 @@ public class TerraRound : ModProjectile
         }
 
 
-            ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
+          new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+          Projectile.owner);
 
 
     }

@@ -119,7 +119,7 @@ public class ASaltRifle : ModItem
         recipe.AddIngredient<SaltGun>();
         recipe.AddIngredient<PurifiedSalt>(81);
 
-        
+
         recipe.AddIngredient(ItemID.SpectreBar, 9);
 
         recipe.AddTile(TileID.MythrilAnvil);

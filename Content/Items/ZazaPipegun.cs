@@ -34,7 +34,7 @@ public class ZazaPipegun : ModItem
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
@@ -67,13 +67,13 @@ public class ZazaPipegun : ModItem
 
         type = ModContent.ProjectileType<ZazaSmoke>();
         Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
-        
+
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,16 +108,16 @@ public class ZazaPipegun : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Blowpipe);
-        recipe.AddIngredient< WeedLeaves>(21);
+        recipe.AddIngredient<WeedLeaves>(21);
         recipe.AddIngredient(ItemID.JungleSpores, 3);
         recipe.AddIngredient(ItemID.Torch, 10);
-       
 
-       
+
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-      
+
 
 
 

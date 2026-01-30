@@ -18,10 +18,10 @@ public class AmalgamatedFragment : ModItem
     {
 
 
-        ItemID.Sets.ItemIconPulse[Item.type] = true; 
-        ItemID.Sets.ItemNoGravity[Item.type] = true; 
+        ItemID.Sets.ItemIconPulse[Item.type] = true;
+        ItemID.Sets.ItemNoGravity[Item.type] = true;
 
-       
+
     }
     public override void SetDefaults()
     {
@@ -31,7 +31,7 @@ public class AmalgamatedFragment : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 999000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Increases melee, ranged, magic, summon, and stupid damage by 11%");
@@ -72,7 +72,7 @@ public class AmalgamatedFragment : ModItem
         recipe.AddIngredient(ItemID.FragmentNebula, 15);
         recipe.AddIngredient(ItemID.FragmentStardust, 15);
         recipe.AddIngredient<FragmentFlatEarth>(15);
-       
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
@@ -91,7 +91,7 @@ public class AmalgamatedFragment : ModItem
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
         player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 112f;
         player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 112f;
-        
+
         player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 112f;
         player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 92f;
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))

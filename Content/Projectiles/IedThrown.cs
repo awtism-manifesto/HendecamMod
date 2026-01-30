@@ -12,8 +12,8 @@ public class IedThrown : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
-       
+
+
 
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
@@ -65,7 +65,7 @@ public class IedThrown : ModProjectile
             Projectile.velocity.Y = 17f;
         }
 
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -123,12 +123,12 @@ public class IedThrown : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 200);
-       
+
     }
 
     // Rocket II explosion that damages tiles.

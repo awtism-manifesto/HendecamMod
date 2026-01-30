@@ -43,7 +43,7 @@ public class ModCompat : ModSystem
             if (item.damage > 0 && item.CountsAsClass<StupidDamage>() && !item.CountsAsClass<OmniDamage>())
             {
                 return true;
-               
+
             }
             return false;
         })
@@ -67,7 +67,7 @@ public class MulticlassRecipe : ModSystem
 			(Predicate<Item>)((Item item) =>
         {
             if (item.damage > 0 & item.CountsAsClass<MeleeStupidDamage>() || item.CountsAsClass<RangedStupidDamage>() || item.CountsAsClass<AutismDamage>()
-            || item.CountsAsClass<OmniDamage>()|| item.CountsAsClass<MeleeMagicDamage>()|| item.CountsAsClass<RangedMagicDamage>()|| item.CountsAsClass<RangedSummonDamage>() 
+            || item.CountsAsClass<OmniDamage>()|| item.CountsAsClass<MeleeMagicDamage>()|| item.CountsAsClass<RangedMagicDamage>()|| item.CountsAsClass<RangedSummonDamage>()
             || item.CountsAsClass<MagicSummonDamage>()|| item.CountsAsClass<SummonStupidDamage>()|| item.CountsAsClass<MeleeRangedDamage>()|| item.CountsAsClass<MeleeSummonDamage>()|| item.CountsAsClass(DamageClass.Generic))
             {
                 return true;

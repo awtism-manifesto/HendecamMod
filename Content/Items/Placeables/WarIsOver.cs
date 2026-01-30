@@ -38,7 +38,7 @@ public class WarIsOver : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
         recipe.AddIngredient(ItemID.AshBlock, 10);
-       
+
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
 

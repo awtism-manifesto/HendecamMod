@@ -12,7 +12,7 @@ namespace HendecamMod.Content.Items;
 
 public class WhippetWhip : ModItem
 {
-  
+
 
     public override void SetDefaults()
     {

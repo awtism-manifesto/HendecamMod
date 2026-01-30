@@ -32,10 +32,10 @@ public class IForgor : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.reuseDelay = 46;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
 
 
-     
+
+
 
 
         // Weapon Properties
@@ -43,8 +43,8 @@ public class IForgor : ModItem
         Item.damage = 244; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-      
-       
+
+
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -56,7 +56,7 @@ public class IForgor : ModItem
         type = ModContent.ProjectileType<Projectiles.BushPlane>();
         SoundEngine.PlaySound(SoundID.Item163, player.position);
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -87,7 +87,7 @@ public class IForgor : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.SpectreBar, 9);
         recipe.AddIngredient(ItemID.FragmentVortex, 11);
         recipe.AddTile(TileID.LunarCraftingStation);

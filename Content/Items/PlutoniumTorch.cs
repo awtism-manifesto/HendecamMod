@@ -14,7 +14,7 @@ public class PlutoniumTorch : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -104,9 +104,9 @@ public class PlutoniumTorch : ModItem
     {
         Recipe recipe = CreateRecipe(35);
 
-        recipe.AddIngredient< PlutoniumOre>();
+        recipe.AddIngredient<PlutoniumOre>();
         recipe.AddIngredient(ItemID.Torch, 35);
-        
+
         recipe.Register();
 
 

@@ -100,7 +100,7 @@ public class LycopiteChestplate : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
-       
+
+
     }
 }

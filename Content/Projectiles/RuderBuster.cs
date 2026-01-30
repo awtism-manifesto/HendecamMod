@@ -101,11 +101,11 @@ public class RuderBuster : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.66f)).ToRotationVector2() * length;
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
         SoundEngine.PlaySound(SoundID.NPCHit42, Projectile.position);
     }
     // Finding the closest NPC to attack within maxDetectDistance range

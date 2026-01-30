@@ -47,7 +47,7 @@ public class ShatteringShell : ModItem
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
         // The Celebration and Electrosphere Launcher will always use their own projectiles no matter which rocket you use as ammo.
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -66,7 +66,7 @@ public class ShatteringShell : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
-      
+
         recipe.AddIngredient(ItemID.UnicornHorn, 1);
         recipe.AddIngredient<PearlceramicSheet>(2);
         recipe.AddIngredient(ItemID.CrystalShard, 3);

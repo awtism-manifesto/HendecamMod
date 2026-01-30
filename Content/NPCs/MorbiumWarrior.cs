@@ -62,19 +62,19 @@ public class MorbiumWarrior : ModNPC
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
 
-       
+
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumOre>(), 1, 11, 33));
-      
-        
-      
-       
+
+
+
+
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-       
-       
+
+
         if (NPC.downedPlantBoss)
         {
             return SpawnCondition.Dungeon.Chance * 0.55f;

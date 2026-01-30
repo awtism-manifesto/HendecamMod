@@ -107,14 +107,14 @@ public class BombScepter : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient(ItemID.Bomb, 99);
-       
+
         recipe.AddRecipeGroup("IronBar", 9);
         recipe.AddIngredient(ItemID.FallenStar, 1);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        
+
 
 
 

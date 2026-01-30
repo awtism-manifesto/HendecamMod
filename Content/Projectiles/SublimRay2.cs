@@ -1,12 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -19,14 +14,14 @@ public class SublimRay2 : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
+
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
         Projectile.height = 5; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -45,7 +40,7 @@ public class SublimRay2 : ModProjectile
     public override void AI()
     {
 
-        if (Projectile.alpha <190)
+        if (Projectile.alpha < 190)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -72,9 +67,9 @@ public class SublimRay2 : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 255);
 
     }
-   
-    
-    
+
+
+
 }
 
 

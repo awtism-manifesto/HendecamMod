@@ -64,13 +64,13 @@ public class DiseaseBlaster : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
 
-            
-           
+
+
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.75f));
 
             // Decrease velocity randomly for nicer visuals.
@@ -80,7 +80,7 @@ public class DiseaseBlaster : ModItem
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             type = ProjectileID.TinyEater;
-            
+
 
         }
 
@@ -88,7 +88,7 @@ public class DiseaseBlaster : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

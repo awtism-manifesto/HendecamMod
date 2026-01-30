@@ -12,7 +12,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class Carbon02 : ModProjectile
 {
-   
+
 
     public override void SetDefaults()
     {
@@ -63,14 +63,14 @@ public class Carbon02 : ModProjectile
         }
     }
 
-   
+
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.immune[Projectile.owner] = 5;
     }
 
-    
+
 
 }

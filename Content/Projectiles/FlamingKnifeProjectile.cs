@@ -25,7 +25,7 @@ public class FlamingKnifeProjectile : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 1200;
-       
+
         Projectile.CloneDefaults(ProjectileID.ThrowingKnife);
         Projectile.penetrate = 3;
         AIType = ProjectileID.ThrowingKnife;
@@ -47,7 +47,7 @@ public class FlamingKnifeProjectile : ModProjectile
             Projectile.velocity.Y += 0.21f;
         }
 
-       
+
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 13f)
@@ -91,7 +91,7 @@ public class FlamingKnifeProjectile : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage*0.75), Projectile.knockBack, Projectile.owner);
-      
+        ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage * 0.75), Projectile.knockBack, Projectile.owner);
+
     }
 }

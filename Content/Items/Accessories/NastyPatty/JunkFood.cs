@@ -9,24 +9,24 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class JunkFood : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 8000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 10% Damage Reduction, 25 Safe Fall Distance, and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, Enviornmental,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Building, Fishing, Food, or Exploration Buffs"));
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
         player.GetModPlayer<NastySpeed>().NastyEffect = true;
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
@@ -99,9 +99,9 @@ public class JunkFood : ModItem
         player.buffImmune[BuffID.WellFed] = true;
         player.buffImmune[BuffID.WellFed2] = true;
         player.buffImmune[BuffID.WellFed3] = true;
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<SlashedJacket>(1);
@@ -109,5 +109,5 @@ public class JunkFood : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
-        }
     }
+}

@@ -49,7 +49,7 @@ public class PlutoniumBow : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        
+
 
         Item.shootSpeed = 14.8f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
@@ -64,7 +64,7 @@ public class PlutoniumBow : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

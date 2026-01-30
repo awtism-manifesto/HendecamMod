@@ -45,7 +45,7 @@ public class BeetleFriend : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.immune[Projectile.owner] = 3;
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -96,7 +96,7 @@ public class BeetleFriend : ModProjectile
         }
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
-       
+
 
         float maxDetectRadius = 800f; // The maximum radius at which a projectile can detect a target
 
@@ -128,7 +128,7 @@ public class BeetleFriend : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -175,10 +175,10 @@ public class BeetleFriend : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-        
 
 
-       
-        
+
+
+
     }
 }

@@ -32,7 +32,7 @@ public class SteakProj : ModProjectile
         // This can be done by modifying projectile.penetrate
         Projectile.extraUpdates = 1;
     }
-   
-   
-   
+
+
+
 }

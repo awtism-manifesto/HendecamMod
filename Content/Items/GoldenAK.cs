@@ -45,9 +45,9 @@ public class GoldenAK : ModItem
         Item.damage = 40; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-       
-       
+
+
+
 
         // Gun Properties
         Item.shoot = ProjectileID.Bullet; // For some reason, all the guns in the vanilla source have this.
@@ -68,31 +68,32 @@ public class GoldenAK : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.5f));
-        
+
+        // Rotate the velocity randomly by 30 degrees at max.
+        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.5f));
+
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.225f);
 
-            // Create a projectile.
-          
+        // Create a projectile.
+
         if (type == ProjectileID.CrystalBullet)
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<CrystalBeef>().fromGoldenAK = true;
             return false; // Prevent vanilla projectile spawn
         }
-        else { 
+        else
+        {
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
-      
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-       
-       
-    
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -104,7 +105,7 @@ public class GoldenAK : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
 
 
 
@@ -125,7 +126,7 @@ public class GoldenAK : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-      
+
         recipe.AddIngredient<AK47>();
         recipe.AddIngredient(ItemID.SoulofLight, 5);
         recipe.AddIngredient(ItemID.GoldDust, 100);

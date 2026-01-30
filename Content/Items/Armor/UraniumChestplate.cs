@@ -13,8 +13,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class UraniumChestplate : ModItem
 {
-    
-    
+
+
     public static readonly int AdditiveDamageBonus = 10;
     public static readonly int AttackSpeedBonus = 12;
 
@@ -85,9 +85,9 @@ public class UraniumChestplate : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
 
-        
+
+
         player.statLifeMax2 += -25;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 111f;
     }
@@ -103,8 +103,8 @@ public class UraniumChestplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.lifeRegen += -2;
-       
-        
+
+
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 113f;
         player.setBonus = "Increases attack speed at the cost of life regen";
 

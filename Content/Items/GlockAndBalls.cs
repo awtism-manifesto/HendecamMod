@@ -34,8 +34,8 @@ public class GlockAndBalls : ModItem
         Item.damage = 69; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -73,12 +73,12 @@ public class GlockAndBalls : ModItem
     {
         return Main.rand.NextFloat() >= 0.33f;
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod,"Face", "Shoots exactly what you'd expect it to shoot");
+        var line = new TooltipLine(Mod, "Face", "Shoots exactly what you'd expect it to shoot");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "So does firing this weapon count as failing no nut november?")
@@ -87,7 +87,7 @@ public class GlockAndBalls : ModItem
         };
         tooltips.Add(line);
 
-       
+
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -108,11 +108,11 @@ public class GlockAndBalls : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Items.Glock>();
-       
-        recipe.AddIngredient(ItemID.LunarBar,8);
+
+        recipe.AddIngredient(ItemID.LunarBar, 8);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        
+
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

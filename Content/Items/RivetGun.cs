@@ -32,7 +32,7 @@ public class RivetGun : ModItem
         Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item108;
@@ -77,7 +77,7 @@ public class RivetGun : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,7 +108,7 @@ public class RivetGun : ModItem
 
 
 
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);

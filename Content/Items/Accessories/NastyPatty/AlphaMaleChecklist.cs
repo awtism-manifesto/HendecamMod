@@ -39,7 +39,7 @@ public class AlphaMaleChecklist : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient(ItemID.RagePotion, 10);
         recipe.AddIngredient(ItemID.WrathPotion, 10);
         recipe.AddIngredient<Paper>();

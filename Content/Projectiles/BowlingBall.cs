@@ -28,19 +28,19 @@ public class BowlingBall : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 240;
-        
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-        
-        
+
+
         Projectile.Kill();
     }
-    
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
+
 
         if (Projectile.penetrate <= 0)
         {
@@ -49,7 +49,7 @@ public class BowlingBall : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -73,7 +73,7 @@ public class BowlingBall : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-       
+
 
 
 
@@ -83,7 +83,7 @@ public class BowlingBall : ModProjectile
             Projectile.ai[0] = 9f;
             Projectile.velocity.Y += 0.2f;
         }
-        
+
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 

@@ -18,12 +18,12 @@ public class PlutoniumHamaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 70;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 9;
         Item.useAnimation = 19;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 8.5f;
 
@@ -74,11 +74,11 @@ public class PlutoniumHamaxe : ModItem
 
 
         recipe.AddIngredient<PlutoniumBar>(15);
-        
-        
+
+
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-        
+
     }
 }

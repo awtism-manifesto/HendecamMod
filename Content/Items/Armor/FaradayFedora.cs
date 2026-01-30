@@ -14,9 +14,9 @@ namespace HendecamMod.Content.Items.Armor;
 public class FaradayFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 21;
-    
+
     public static readonly int StupidCritBonus = 15;
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -86,7 +86,7 @@ public class FaradayFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 121f;
-        
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -94,14 +94,14 @@ public class FaradayFedora : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.LunarBar, 8);
-       
+
         recipe.AddIngredient<FragmentFlatEarth>(10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-       
-        
+
+
     }
 }

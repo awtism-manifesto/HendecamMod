@@ -178,7 +178,7 @@ public class KingslayerRocket : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
-   
+
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

@@ -11,7 +11,7 @@ namespace HendecamMod.Content.Items;
 
 public class TheFishStick : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -24,12 +24,12 @@ public class TheFishStick : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
-        
+
         Item.damage = 18; // The amount of damage the item does to an enemy or player.
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 1.5f; // The amount of knockback the item inflicts.
-        
-       
+
+
         Item.rare = ItemRarityID.Blue; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
 
@@ -88,5 +88,5 @@ public class TheFishStick : ModItem
         // Don't reroll
         return true;
     }
-    
+
 }

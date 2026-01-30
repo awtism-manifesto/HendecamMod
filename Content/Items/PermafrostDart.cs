@@ -70,12 +70,12 @@ public class PermafrostDart : ModItem
         {
             recipe = CreateRecipe(100);
 
-           
+
             recipe.AddIngredient(EssenceofEleum.Type, 5);
-           
+
             recipe.Register();
         }
-       
+
         {
             recipe = CreateRecipe(350);
             recipe.AddIngredient(ItemID.FrostCore);

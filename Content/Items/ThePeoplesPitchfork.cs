@@ -118,9 +118,9 @@ public class ThePeoplesPitchfork : ModItem
             recipe.AddRecipeGroup("IronBar", 8);
             recipe.Register();
         }
-          
 
-       
+
+
     }
 
 

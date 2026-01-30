@@ -15,7 +15,7 @@ public class TackSpawn : ModProjectile
 
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.SentryShot[Type] = true;
     }
     public override void SetDefaults()
@@ -37,11 +37,11 @@ public class TackSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
 
-   
-   
-   
+
+
+
+
 
     public override void OnKill(int timeLeft)
     {

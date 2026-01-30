@@ -33,7 +33,7 @@ public class IdeaGenerator : ModItem
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<Iphone>();
-       
+
         recipe.AddIngredient(ItemID.Book, 1);
         recipe.AddTile(TileID.HeavyWorkBench);
         recipe.Register();

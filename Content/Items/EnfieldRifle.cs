@@ -45,7 +45,7 @@ public class EnfieldRifle : ModItem
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 3;
-        
+
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -70,7 +70,7 @@ public class EnfieldRifle : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-  
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -113,7 +113,7 @@ public class EnfieldRifle : ModItem
 
 
 
-       
+
 
     }
     public override Vector2? HoldoutOffset()

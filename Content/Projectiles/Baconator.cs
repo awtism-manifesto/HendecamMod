@@ -17,9 +17,9 @@ public class Baconator : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 4;
-       
+
     }
     public override void SetDefaults()
     {
@@ -68,13 +68,13 @@ public class Baconator : ModProjectile
 
             }
         }
-       
+
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-       
+
 
 
     }

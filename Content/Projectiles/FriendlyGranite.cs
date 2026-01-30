@@ -27,7 +27,7 @@ public class FriendlyGranite : ModProjectile
         ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
     }
-   
+
     public override void SetDefaults()
     {
         Projectile.netImportant = true;
@@ -69,7 +69,7 @@ public class FriendlyGranite : ModProjectile
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
 
-       
+
     }
     private bool CheckActive(Player owner)
     {
@@ -240,6 +240,6 @@ public class FriendlyGranite : ModProjectile
                 Projectile.frame = 0;
             }
         }
-      
+
     }
 }

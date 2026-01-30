@@ -51,9 +51,9 @@ public class ThumbtackProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-       
+
     }
-  
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.

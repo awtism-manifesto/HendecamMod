@@ -29,7 +29,7 @@ public class SporeSower : ModItem
         Item.height = 40;
         Item.shootSpeed = 7.33f;
         Item.scale = 1.35f;
-     
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
         Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
@@ -45,7 +45,7 @@ public class SporeSower : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-       
+
 
         return true;
     }
@@ -86,7 +86,7 @@ public class SporeSower : ModItem
 
         recipe.AddIngredient<LycopiteBar>(13);
 
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

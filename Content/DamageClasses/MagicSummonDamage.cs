@@ -28,7 +28,7 @@ public class MagicSummonDamage : DamageClass
             return StatInheritanceData.None;
         if (damageClass == DamageClass.Summon)
             return StatInheritanceData.Full;
-       
+
 
         return new StatInheritanceData(
             damageInheritance: 0f,
@@ -66,8 +66,8 @@ public class MagicSummonDamage : DamageClass
     {
         // This method lets you set default statistical modifiers for your example damage class.
         // Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-        
-       
+
+
         // These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
         // You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
     }

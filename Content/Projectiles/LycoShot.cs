@@ -124,14 +124,14 @@ public class LycoShot : ModProjectile
 
         return true;
     }
-    
+
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Projectile.alpha <198)
+
+        // dust, all dust
+        if (Projectile.alpha < 198)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -150,7 +150,7 @@ public class LycoShot : ModProjectile
         }
     }
 
-   
+
 
 }
 

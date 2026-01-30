@@ -38,12 +38,12 @@ public class PhotonShotgun : ModItem
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item12 with
         {
-            Volume = 10f, 
-             Pitch = -0.95f, 
-            PitchVariance = 0.00f, 
-                 MaxInstances = 5, 
-                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
-                }
+            Volume = 10f,
+            Pitch = -0.95f,
+            PitchVariance = 0.00f,
+            MaxInstances = 5,
+            SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
+        }
         ;
 
 
@@ -53,8 +53,8 @@ public class PhotonShotgun : ModItem
         Item.knockBack = 8.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 45;
-       
-       
+
+
 
         // Gun Properties
         Item.shoot = ProjectileID.Bullet; // For some reason, all the guns in the vanilla source have this.
@@ -67,14 +67,14 @@ public class PhotonShotgun : ModItem
 
 
         SoundEngine.PlaySound(SoundID.Item72, player.position);
-       
-        
-            
-            
-            
-            
-            
-           
+
+
+
+
+
+
+
+
 
 
         for (int i = 0; i < NumProjectiles; i++)
@@ -104,7 +104,7 @@ public class PhotonShotgun : ModItem
             knockback = (int)(knockback * 0.5f);
         }
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -116,7 +116,7 @@ public class PhotonShotgun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
 
 
 

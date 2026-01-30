@@ -25,7 +25,7 @@ public class MarbleGreatsword : ModItem
         Item.width = 40;
         Item.height = 40;
         Item.scale = 1.25f;
-       
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.White;
         Item.value = Item.buyPrice(gold: 1); // Sell price is 5 times less than the buy price.
@@ -83,6 +83,6 @@ public class MarbleGreatsword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

@@ -69,7 +69,7 @@ public class Shitballs : ModItem
         recipe.AddIngredient(ItemID.MusketBall, 150);
         recipe.Register();
     }
-    }
+}
 
 
 

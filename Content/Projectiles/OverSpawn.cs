@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -15,7 +11,7 @@ public class OverSpawn : ModProjectile
 
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.SentryShot[Type] = true;
     }
     public override void SetDefaults()
@@ -37,11 +33,11 @@ public class OverSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
 
-   
-   
-   
+
+
+
+
 
     public override void OnKill(int timeLeft)
     {

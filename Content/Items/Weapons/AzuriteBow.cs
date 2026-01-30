@@ -42,7 +42,7 @@ public class AzuriteBow : ModItem
         Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage
-       
+
 
 
 
@@ -51,7 +51,7 @@ public class AzuriteBow : ModItem
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-  
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

@@ -22,7 +22,7 @@ public class Bullshit4 : ModItem
         Item.height = 64;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 27; 
+        Item.useTime = 27;
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.scale = 1.25f;
@@ -45,8 +45,8 @@ public class Bullshit4 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-   
-    
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

@@ -31,7 +31,7 @@ public class Zablade : ModItem
         Item.damage = 16;
         Item.knockBack = 5.5f;
         Item.scale = 1.15f;
-       
+
         Item.value = Item.buyPrice(silver: 99);
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
@@ -50,7 +50,7 @@ public class Zablade : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.RichMahoganySword);
-        recipe.AddIngredient< WeedLeaves>(28);
+        recipe.AddIngredient<WeedLeaves>(28);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
@@ -103,6 +103,6 @@ public class Zablade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

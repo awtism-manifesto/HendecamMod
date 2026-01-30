@@ -30,7 +30,7 @@ public class SteelSunscreen : ModItem
         player.buffImmune[BuffID.MoonLeech] = true;
         player.buffImmune[BuffID.TheTongue] = true;
     }
-        public override void AddRecipes()
+    public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();

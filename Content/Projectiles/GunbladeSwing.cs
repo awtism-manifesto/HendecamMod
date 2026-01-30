@@ -86,7 +86,7 @@ public class GunbladeSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-       
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -159,8 +159,8 @@ public class GunbladeSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
-       
+
+
 
 
 
@@ -169,7 +169,7 @@ public class GunbladeSwing : ModProjectile
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
-       
+
 
         info.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
@@ -188,7 +188,7 @@ public class GunbladeSwing : ModProjectile
         float lerpTime = Utils.Remap(percentageOfLife, 0f, 0.6f, 0f, 1f) * Utils.Remap(percentageOfLife, 0.6f, 1f, 1f, 0f);
         float lightingColor = Lighting.GetColor(Projectile.Center.ToTileCoordinates()).ToVector3().Length() / (float)Math.Sqrt(3.0);
         lightingColor = Utils.Remap(lightingColor, 0.2f, 1f, 0f, 1f);
-        
+
         Color backDarkColor = new Color(44, 26, 255); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(81, 85, 255); // Original Excalibur color: Color(255, 255, 80)
         Color frontLightColor = new Color(112, 205, 255); // Original Excalibur color: Color(255, 240, 150)
@@ -214,7 +214,7 @@ public class GunbladeSwing : ModProjectile
         // Thin bottom line (final frame)
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
 
-       
+
 
         // This draws a large star sparkle at the front of the projectile.
         Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
@@ -256,7 +256,7 @@ public class GunbladeSwing : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
             ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         }
-        else 
+        else
         {
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
@@ -286,7 +286,7 @@ public class GunbladeSwing : ModProjectile
 
         }
 
-       
+
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

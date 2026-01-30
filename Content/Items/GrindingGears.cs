@@ -21,15 +21,15 @@ public class GrindingGears : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       type = ModContent.ProjectileType<GrindGear1>();
+        type = ModContent.ProjectileType<GrindGear1>();
 
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5));
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 3f;
-        Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage*0.9f), knockback, player.whoAmI);
-        
+        Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);
+
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
@@ -75,7 +75,7 @@ public class GrindingGears : ModItem
         Item.damage = 75; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.Melee; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
-       
+
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.LightPurple; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 22); // The amount of money that the item is can be bought for.
@@ -108,5 +108,5 @@ public class GrindingGears : ModItem
         // Don't reroll
         return true;
     }
-   
+
 }

@@ -30,7 +30,7 @@ public class BloodshotArrowProjectile : ModProjectile
         // projectile.aiStyle = 3; This line is not needed since CloneDefaults sets it already.
         AIType = ProjectileID.UnholyArrow;
     }
-    
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.

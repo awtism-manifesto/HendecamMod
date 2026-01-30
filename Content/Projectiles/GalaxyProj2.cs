@@ -32,7 +32,7 @@ public class GalaxyProj2 : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.timeLeft = 480;
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -98,7 +98,7 @@ public class GalaxyProj2 : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(60f)).ToRotationVector2() * length;
-        
+
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -143,31 +143,31 @@ public class GalaxyProj2 : ModProjectile
     public override void OnKill(int timeLeft)
     {
 
-        
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(11, 5).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<GalaxyBoom>(), Projectile.damage = (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
-            new Vector2(-3, 8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
-            new Vector2(6, -10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 1.025f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy2,
-            new Vector2(3, -8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb2,
-            new Vector2(-6, 10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
 
-        
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(11, 5).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<GalaxyBoom>(), Projectile.damage = (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+        Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
+        new Vector2(-3, 8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+        Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
+        new Vector2(6, -10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 1.025f), Projectile.knockBack, Projectile.owner);
+        Vector2 JorkinMy2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy2,
+        new Vector2(3, -8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Vector2 InDaClerb2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb2,
+        new Vector2(-6, 10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+
+
 
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-       
+
     }
 }

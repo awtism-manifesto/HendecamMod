@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -74,7 +72,7 @@ public class MiniBoulderThrowableProjectile : ModProjectile
             Projectile.velocity.Y += 0.245f;
         }
 
-       
+
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 21f)

@@ -1,7 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -37,7 +35,7 @@ public class DracoDrop : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.DD2PhoenixBowShot; // Act exactly like default Bullet
     }
-    
+
 
     public override bool PreDraw(ref Color lightColor)
     {

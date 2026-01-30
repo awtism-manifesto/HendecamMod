@@ -20,7 +20,7 @@ public class Macuahuitl : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 22;
         Item.useTime = 22;
-        Item.damage =28;
+        Item.damage = 28;
         Item.knockBack = 5.75f;
         Item.width = 40;
         Item.height = 40;
@@ -88,6 +88,6 @@ public class Macuahuitl : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -21,9 +18,9 @@ public class EnemyBanner : ModBannerTile
     {
         MintSlime,
         PearlsandSlime,
-			PoisonSlime,
-			AquaticSlime,
-			LunarElemental
+        PoisonSlime,
+        AquaticSlime,
+        LunarElemental
 
     }
 }

@@ -15,14 +15,14 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
-public class MagicBong: ModItem
+public class MagicBong : ModItem
 {
     public override void SetStaticDefaults()
     {
         ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller
         ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
-       
+
     }
     public override void SetDefaults()
     {
@@ -52,8 +52,8 @@ public class MagicBong: ModItem
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
         Item.mana = 12;
 
 
@@ -71,26 +71,26 @@ public class MagicBong: ModItem
         position = Main.MouseWorld;
     }
 
-  //  public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-   // {
-       // int NumProjectiles = 1;
+    //  public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    // {
+    // int NumProjectiles = 1;
 
-       // for (int i = 0; i < NumProjectiles; i++)
-        //{
-            // Rotate the velocity randomly by 30 degrees at max.
-            //Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0));
-
-           
-
-            // Create a projectile.
-            //Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-       // }
-
-       // return false; // Return false because we don't want tModLoader to shoot projectile
-   // }
+    // for (int i = 0; i < NumProjectiles; i++)
+    //{
+    // Rotate the velocity randomly by 30 degrees at max.
+    //Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0));
 
 
-  
+
+    // Create a projectile.
+    //Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+    // }
+
+    // return false; // Return false because we don't want tModLoader to shoot projectile
+    // }
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -123,12 +123,12 @@ public class MagicBong: ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        { 
-           
-           
-          
+        {
 
-            recipe.AddIngredient< WeedLeaves>(28);
+
+
+
+            recipe.AddIngredient<WeedLeaves>(28);
             recipe.AddIngredient(ItemID.BottledWater, 3);
             recipe.AddIngredient(ItemID.NaturesGift);
             recipe.AddTile(TileID.GlassKiln);

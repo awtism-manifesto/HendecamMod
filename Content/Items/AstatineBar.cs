@@ -15,7 +15,7 @@ public class AstatineBar : ModItem
 
 
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
-       
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -65,8 +65,8 @@ public class AstatineBar : ModItem
     {
         Recipe recipe = CreateRecipe(2);
 
-        recipe.AddIngredient< AstatineOre>(18);
-        recipe.AddIngredient< PurifiedSalt>(3);
+        recipe.AddIngredient<AstatineOre>(18);
+        recipe.AddIngredient<PurifiedSalt>(3);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
 

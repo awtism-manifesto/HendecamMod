@@ -14,11 +14,11 @@ public class TacticalLaserSight : ModItem
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
     public static readonly int AdditiveRangedDamageBonus = 8;
-  
+
     public static readonly int RangedCritBonus = 12;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-    
+
 
     public override void SetDefaults()
     {
@@ -28,7 +28,7 @@ public class TacticalLaserSight : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 15000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,15 +61,15 @@ public class TacticalLaserSight : ModItem
         Recipe recipe = CreateRecipe();
 
 
-        
-            recipe = CreateRecipe();
+
+        recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Lens, 2);
         recipe.AddIngredient<PlutoniumBar>(9);
         recipe.AddIngredient<ImprovisedLaserSight>();
         recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.Register();
+        recipe.Register();
 
-        
+
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -86,8 +86,8 @@ public class TacticalLaserSight : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 108f;
-      
+
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-       
+
     }
 }

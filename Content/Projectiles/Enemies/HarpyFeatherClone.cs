@@ -24,12 +24,12 @@ public class HarpyFeatherClone : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.HarpyFeather;
-       
+
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
 
     }
-   
-   
+
+
 }

@@ -64,7 +64,7 @@ public class AzuriteArrowProjectile : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-               
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.GemSapphire, 0f, 0f, 100, default, 0.8f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;

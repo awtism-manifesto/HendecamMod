@@ -25,13 +25,13 @@ public class LycopitePickaxe : ModItem
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-           
+
         Item.value = 69000;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 1;
-        Item.pick = 95; 
+        Item.pick = 95;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -63,11 +63,11 @@ public class LycopitePickaxe : ModItem
 
 
         recipe.AddIngredient<LycopiteBar>(17);
-        
-        
+
+
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-        
+
     }
 }

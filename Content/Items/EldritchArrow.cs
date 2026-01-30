@@ -64,7 +64,7 @@ public class EldritchArrow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(666);
-      
+
         recipe.AddIngredient(ItemID.CursedArrow, 222);
         recipe.AddIngredient<Items.ShadowflameArrow>(222);
         recipe.AddIngredient(ItemID.IchorArrow, 222);

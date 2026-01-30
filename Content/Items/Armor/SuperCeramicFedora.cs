@@ -18,7 +18,7 @@ public class SuperCeramicFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 13;
     public static readonly int StupidAttackSpeedBonus = 10;
-    public static readonly int StupidCritBonus =9;
+    public static readonly int StupidCritBonus = 9;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -87,7 +87,7 @@ public class SuperCeramicFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 113f;
-        
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -95,18 +95,18 @@ public class SuperCeramicFedora : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-      
+
         recipe.AddIngredient<CeramicSheet>(25);
         recipe.AddIngredient<EbonceramicSheet>(10);
-      
+
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient<CeramicSheet>(25);
-     
+
         recipe.AddIngredient<CrimceramicSheet>(10);
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
@@ -124,7 +124,7 @@ public class SuperCeramicFedora : ModItem
 }
 public class CeramMultiscale : ModPlayer
 {
-   
+
     private const int ShatterCooldownMax = 60 * 10;
 
     public bool Multiscale;
@@ -137,11 +137,11 @@ public class CeramMultiscale : ModPlayer
 
     public override void PostUpdate()
     {
-     
+
         if (ShatterCooldown > 0)
             ShatterCooldown--;
 
-      
+
         if (Multiscale && Player.statLife == Player.statLifeMax2)
         {
             Player.endurance = 1f - 0.8f * (1f - Player.endurance);
@@ -150,11 +150,11 @@ public class CeramMultiscale : ModPlayer
 
     public override void OnHurt(Player.HurtInfo info)
     {
-      
+
         if (!Multiscale)
             return;
 
-      
+
         if (ShatterCooldown > 0)
             return;
 
@@ -162,7 +162,7 @@ public class CeramMultiscale : ModPlayer
         float defenseScale = 0.75f;
         int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
 
-        
+
         Projectile.NewProjectile(
             Player.GetSource_FromThis(),
             Player.Center,

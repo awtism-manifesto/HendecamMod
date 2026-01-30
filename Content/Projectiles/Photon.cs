@@ -38,8 +38,8 @@ public class Photon : ModProjectile
     }
     public override Color? GetAlpha(Color lightColor)
     {
-       
-        
+
+
         return Color.Orange;
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -89,7 +89,7 @@ public class Photon : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
         target.AddBuff(BuffID.Electrified, 240);
         target.AddBuff(BuffID.OnFire, 240);
         target.AddBuff(BuffID.OnFire3, 235);
@@ -97,7 +97,7 @@ public class Photon : ModProjectile
     }
 
 
-   
+
 
 }
 

@@ -83,6 +83,6 @@ public class SteelHelmet : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-      
+
     }
 }

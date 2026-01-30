@@ -22,7 +22,7 @@ public class BladegunWave2 : ModProjectile
     }
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 31; // The width of projectile hitbox
         Projectile.height = 31; // The height of projectile hitbox
@@ -34,9 +34,9 @@ public class BladegunWave2 : ModProjectile
 
 
         Projectile.tileCollide = true;
-        Projectile.friendly = true; 
+        Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
-        Projectile.penetrate = 5; 
+        Projectile.penetrate = 5;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
         Projectile.alpha = 255;
@@ -47,7 +47,7 @@ public class BladegunWave2 : ModProjectile
 
         Projectile.damage = (int)(Projectile.damage * 0.8f);
     }
-    
+
     public override void AI()
     {
         Projectile.scale = Main.rand.NextFloat(0.66f, 0.8f);
@@ -83,15 +83,15 @@ public class BladegunWave2 : ModProjectile
         {
             Projectile.alpha = 35;
         }
-       
+
 
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-        
-       
+
+
 
 
 

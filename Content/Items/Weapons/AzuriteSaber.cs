@@ -23,7 +23,7 @@ public class AzuriteSaber : ModItem
         Item.height = 40;
         Item.shootSpeed = 6f;
         Item.scale = 1.15f;
-       
+
         Item.UseSound = SoundID.Item60;
         Item.rare = ItemRarityID.Orange;
         Item.value = Item.buyPrice(gold: 1); // Sell price is 5 times less than the buy price.
@@ -79,9 +79,9 @@ public class AzuriteSaber : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
 
-       
+
+
         recipe.AddIngredient<AzuriteBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

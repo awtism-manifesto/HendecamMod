@@ -1,9 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
+﻿using HendecamMod.Content.DamageClasses;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -15,23 +11,23 @@ namespace HendecamMod.Content.Projectiles;
 /// </summary>
 public class KnightStarSpawn : ModProjectile
 {
-    
+
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 12; // The width of projectile hitbox
         Projectile.height = 12; // The height of projectile hitbox
 
-       
+
         Projectile.timeLeft = 53;
         Projectile.aiStyle = -1;
         Projectile.extraUpdates = 1;
         Projectile.alpha = 0;
         Projectile.tileCollide = false;
-        Projectile.friendly = true; 
+        Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
-        Projectile.penetrate = 3; 
+        Projectile.penetrate = 3;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
@@ -42,15 +38,15 @@ public class KnightStarSpawn : ModProjectile
     {
         Projectile.scale = Main.rand.NextFloat(0.66f, 1.25f);
 
-       
-        
+
+
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-        
-       
+
+
 
 
 

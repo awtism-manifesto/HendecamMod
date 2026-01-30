@@ -112,7 +112,7 @@ public class Asshole : ModNPC
 
         AnimationType = NPCID.Demolitionist;
     }
-    
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
@@ -182,7 +182,7 @@ public class Asshole : ModNPC
     {
         return new List<string>() {
             "Yelmut",
-           
+
         };
     }
     public override void FindFrame(int frameHeight)
@@ -200,7 +200,7 @@ public class Asshole : ModNPC
     public override void SetChatButtons(ref string button, ref string button2)
     { // What the chat buttons are when you open up the chat UI
         button = Language.GetTextValue("LegacyInterface.28");
-       
+
     }
 
     public override string GetChat()
@@ -214,7 +214,7 @@ public class Asshole : ModNPC
         {
             chat.Add(Language.GetTextValue("Oh, I love rain! They help my \"herbs\" in the backyard grow."));
             chat.Add(Language.GetTextValue("Both rain AND wind??? What's not to love!"));
-           
+
 
         }
         if (Main.raining && Main.WindyEnoughForKiteDrops)
@@ -226,7 +226,7 @@ public class Asshole : ModNPC
         }
         if (!Main.dayTime)
         {
-           
+
             chat.Add(Language.GetTextValue("Ugh, I'm tired. Time to sleep under five hundred blankets."));
 
 
@@ -237,17 +237,17 @@ public class Asshole : ModNPC
 
 
         }
-        
-       
+
+
 
         chat.Add(Language.GetTextValue("Don't tell nintendo about the meteor sprite."));
         chat.Add(Language.GetTextValue("I don't know why they say I'm a good artist. I thought I was pretty bad at it."));
         chat.Add(Language.GetTextValue("Hello, terrarian! Just doing some doodling, that's what I do most of the time."));
 
-       
+
 
         NumberOfTimesTalkedTo++;
-        
+
 
         string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 
@@ -276,7 +276,8 @@ public class Asshole : ModNPC
         foreach (var player in Main.ActivePlayers)
         {
             // Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-            if (player.inventory.Any(item => item.type == ModContent.ItemType<YelmutsHelmet>())) { 
+            if (player.inventory.Any(item => item.type == ModContent.ItemType<YelmutsHelmet>()))
+            {
                 return true;
             }
         }
@@ -308,7 +309,7 @@ public class Asshole : ModNPC
                .Add(ItemID.HerbBag, Condition.DownedEarlygameBoss)
                 .Add(ItemID.FlinxFur, Condition.DownedEarlygameBoss)
                 .Add<Rubber>(Condition.DownedEarlygameBoss)
-                
+
                 .Add<PoorMahogany>(Condition.DownedEarlygameBoss)
                   .Add<WeedLeaves>(Condition.DownedEarlygameBoss)
                    .Add<KingslayerBar>(Condition.DownedKingSlime, Condition.DownedEyeOfCthulhu)
@@ -318,7 +319,7 @@ public class Asshole : ModNPC
                 .Add(ItemID.AncientBattleArmorMaterial, Condition.DownedMechBossAny)
 
 
-                    
+
                       .Add<NerfGun>()
                        .Add<TackShooter>()
                        .Add<MandibleStaff>(Condition.DownedEarlygameBoss)
@@ -334,18 +335,18 @@ public class Asshole : ModNPC
 
         npcShop.Register(); // Name of this shop tab
 
-        if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica) && YelMerica.TryFind<ModItem>("PoorMahogany", out ModItem PoorMahogany) 
+        if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica) && YelMerica.TryFind<ModItem>("PoorMahogany", out ModItem PoorMahogany)
             && YelMerica.TryFind<ModItem>("Rubber", out ModItem Rubber) && YelMerica.TryFind<ModItem>("PyriteBar", out ModItem PyriteBar))
         {
 
 
-           
+
             npcShop.Add(PyriteBar.Type, Condition.DownedEarlygameBoss);
 
         }
 
     }
-    
+
 
 
 
@@ -371,10 +372,10 @@ public class Asshole : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<YelmutsHelmet>(),5));
-       
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<YelmutsHelmet>(), 5));
+
     }
-  
+
 
 
 

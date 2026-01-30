@@ -43,11 +43,11 @@ public class BlueBallProjectile : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.BlueTorch, 0f, 0f, 100, default, 0.75f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
-                fireDust.velocity *=  0.75f;
+                fireDust.velocity *= 0.75f;
             }
         }
     }

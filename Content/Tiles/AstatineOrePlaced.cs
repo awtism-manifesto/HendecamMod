@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -20,7 +19,7 @@ public class AstatineOrePlaced : ModTile
         Main.tileMerge[TileID.LivingFire][Type] = true;
 
         Main.tileMerge[ModContent.TileType<PlutoniumOrePlaced>()][Type] = true;
-     
+
         Main.tileMerge[ModContent.TileType<UraniumTile>()][Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 400;

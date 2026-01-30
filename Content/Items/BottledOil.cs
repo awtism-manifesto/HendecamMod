@@ -32,7 +32,7 @@ public class BottledOil : ModItem
         Item.rare = ItemRarityID.White;
         Item.shoot = ModContent.ProjectileType<OilBottleProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.25f; // The speed of the projectile.
-       
+
     }
     public override Color? GetAlpha(Color lightColor)
     {
@@ -68,10 +68,10 @@ public class BottledOil : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(10);
-       
+
         recipe.AddIngredient(ItemID.Bottle);
         recipe.AddIngredient<CrudeOil>();
         recipe.Register();
-       
+
     }
 }

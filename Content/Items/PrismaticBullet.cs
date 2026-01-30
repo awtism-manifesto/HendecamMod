@@ -25,7 +25,7 @@ public class PrismaticBullet : ModItem
     {
         Item.damage = 19; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -41,21 +41,21 @@ public class PrismaticBullet : ModItem
     {
         Recipe recipe = CreateRecipe(1500);
 
-       
 
-            
-            recipe.AddIngredient<Items.AstatineBar>(5);
-            recipe.AddIngredient<Items.PlutoniumBar>(3);
-            recipe.AddIngredient<Items.UraniumBar>();
-            recipe.AddIngredient(ItemID.HallowBossDye);
-            recipe.AddIngredient(ItemID.EmptyBullet, 1500);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
 
-        
+
+        recipe.AddIngredient<Items.AstatineBar>(5);
+        recipe.AddIngredient<Items.PlutoniumBar>(3);
+        recipe.AddIngredient<Items.UraniumBar>();
+        recipe.AddIngredient(ItemID.HallowBossDye);
+        recipe.AddIngredient(ItemID.EmptyBullet, 1500);
+        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
+
+
 
     }
-    
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -84,5 +84,5 @@ public class PrismaticBullet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 }

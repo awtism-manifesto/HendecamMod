@@ -45,8 +45,8 @@ public class LeafStorm : ModItem
         Item.damage = 60; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-       
+
+
         Item.mana = 5;
 
 
@@ -84,7 +84,7 @@ public class LeafStorm : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -116,16 +116,16 @@ public class LeafStorm : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
-            
-            
 
-            recipe.AddIngredient(ItemID.HeatRay);
-            recipe.AddIngredient(ItemID.LeafBlower);
-        recipe.AddIngredient< CyberneticGunParts>();
+
+
+
+        recipe.AddIngredient(ItemID.HeatRay);
+        recipe.AddIngredient(ItemID.LeafBlower);
+        recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        
+
     }
 
 

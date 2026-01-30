@@ -58,8 +58,8 @@ public class CrimtaneAmr : ModItem
 
         {
             Item.damage = 36;
-            Item.useTime = 54; 
-            Item.useAnimation = 54; 
+            Item.useTime = 54;
+            Item.useAnimation = 54;
         }
 
     }
@@ -73,7 +73,7 @@ public class CrimtaneAmr : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -113,11 +113,11 @@ public class CrimtaneAmr : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica) && JfkMerica.TryFind<ModItem>("Crimtane_Auto_Rifle", out ModItem CrimtaneAutoRifle))
-     
+
 
         {
             recipe.AddIngredient(CrimtaneAutoRifle.Type);
-           
+
         }
 
 

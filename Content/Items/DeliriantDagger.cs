@@ -33,20 +33,20 @@ public class DeliriantDagger : ModItem
 
         Item.shoot = ModContent.ProjectileType<DaggerProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 6.66f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
-       
+
     }
     public override bool AltFunctionUse(Player player)
     {
 
-       
-            return true;
-       
-            
-        
+
+        return true;
+
+
+
     }
     //   int NumProjectiles = Main.rand.Next(7, 11); 
 
-            
+
 
     //if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish))
 
@@ -88,8 +88,8 @@ public class DeliriantDagger : ModItem
             return true; // Prevent vanilla projectile spawn
 
         }
-        
-       
+
+
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -98,40 +98,40 @@ public class DeliriantDagger : ModItem
         var line = new TooltipLine(Mod, "Face", "Multiple daggers rapidly stab all around the player");
         tooltips.Add(line);
 
-       
-
-        
-            line = new TooltipLine(Mod, "Face", "Right click to throw five daggers in quick succession")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-
-            line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the daggers, complete it by stabbing")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-            line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and sometimes cause an explosion of shadowflame sparks")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
 
 
 
-        
+        line = new TooltipLine(Mod, "Face", "Right click to throw five daggers in quick succession")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+
+        line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the daggers, complete it by stabbing")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and sometimes cause an explosion of shadowflame sparks")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+
+
+
 
         line = new TooltipLine(Mod, "Face", "'For when the hat man won't quit talking shit'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
-        
 
-        
+
+
+
     }
     public override void AddRecipes()
     {
@@ -149,21 +149,21 @@ public class DeliriantDagger : ModItem
 
         }
 
-        
+
         else
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ShadowFlameKnife);
             recipe.AddIngredient(ItemID.PsychoKnife);
 
-            recipe.AddIngredient< PlutoniumBar>(12);
+            recipe.AddIngredient<PlutoniumBar>(12);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 
         }
 
     }
-    }
+}
 
 
 

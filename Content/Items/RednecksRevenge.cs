@@ -35,7 +35,7 @@ public class RednecksRevenge : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
 
-       
+
 
 
         // Weapon Properties
@@ -66,7 +66,7 @@ public class RednecksRevenge : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-           
+
             Item.noUseGraphic = true;
             int proj = Projectile.NewProjectile(source, position, velocity * 1.1f, ModContent.ProjectileType<RedneckShovelHallow>(), (int)(damage * 1.5f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
@@ -76,7 +76,7 @@ public class RednecksRevenge : ModItem
         }
         else
         {
-           
+
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             Item.noUseGraphic = false;
             int NumProjectiles = Main.rand.Next(4, 7); // The number of projectiles that this gun will shoot.
@@ -122,7 +122,7 @@ public class RednecksRevenge : ModItem
 
 
 
-      
+
     }
     public override Vector2? HoldoutOffset()
     {
@@ -136,7 +136,7 @@ public class RednecksRevenge : ModItem
         recipe.AddIngredient(ItemID.SoulofFright, 10);
         recipe.AddIngredient(ItemID.SoulofSight, 10);
         recipe.AddIngredient(ItemID.SoulofMight, 10);
-       
+
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
 
 

@@ -11,13 +11,13 @@ namespace HendecamMod.Content.Items;
 // ExampleRocketLauncher will inherit the variants specified by the Rocket Launcher weapon
 public class TheJfkExperience : ModItem
 {
-   
+
 
     public override void SetDefaults()
     {
-        
-        
-      
+
+
+
         Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 5; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -27,7 +27,7 @@ public class TheJfkExperience : ModItem
         Item.noMelee = true;
         Item.damage = 99999;
         Item.noUseGraphic = true;
-     
+
         Item.knockBack = 4f;
         Item.UseSound = SoundID.Item161;
         Item.value = Item.buyPrice(copper: 1);
@@ -89,7 +89,7 @@ public class TheJfkExperience : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DirtBlock, 69);
-        
+
         recipe.Register();
     }
     public override Vector2? HoldoutOffset()

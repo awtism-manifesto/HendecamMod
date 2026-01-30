@@ -72,6 +72,6 @@ public class PyriteArrowProj : ModProjectile
         }
 
     }
-   
-   
+
+
 }

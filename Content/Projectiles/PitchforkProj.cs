@@ -41,7 +41,7 @@ public class PitchforkProj : ModProjectile
         Projectile.Kill();
     }
 
-    
+
 
     public override void AI()
     {

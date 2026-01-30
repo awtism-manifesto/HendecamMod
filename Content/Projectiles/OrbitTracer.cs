@@ -85,13 +85,13 @@ public class OrbitTracer : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(5, 5), 1575));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(70, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<OrbitalDeathRay>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
 
-        
+        Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(5, 5), 1575));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(70, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<OrbitalDeathRay>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+
+
 
 
     }

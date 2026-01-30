@@ -19,10 +19,10 @@ public class PlasmoidWand : ModItem
 {
     public override void SetStaticDefaults()
     {
-        ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; 
+        ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true;
         ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
-        ItemID.Sets.StaffMinionSlotsRequired[Type] = 1f; 
+        ItemID.Sets.StaffMinionSlotsRequired[Type] = 1f;
     }
 
     public override void SetDefaults()
@@ -106,6 +106,6 @@ public class PlasmoidWand : ModItem
         return false;
     }
 
-    
+
 
 }

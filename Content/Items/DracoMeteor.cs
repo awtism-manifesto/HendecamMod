@@ -63,7 +63,7 @@ public class DracoMeteor : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,8 +97,8 @@ public class DracoMeteor : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
-        
+
+
         recipe.AddIngredient(ItemID.MeteoriteBar, 10);
         recipe.AddIngredient<Items.AstatineBar>(15);
         recipe.AddIngredient<Items.AK47>();

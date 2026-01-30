@@ -23,15 +23,15 @@ public class MintalHamaxe : ModItem
         Item.autoReuse = true;
         Item.useTurn = true;
 
-        Item.axe = 25; 
+        Item.axe = 25;
         Item.hammer = 80;
-        Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
+        Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { 
+        {
         }
     }
 

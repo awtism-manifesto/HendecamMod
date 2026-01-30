@@ -16,7 +16,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class AstatineBreastplate : ModItem
 {
 
-    
+
     public static readonly int AdditiveDamageBonus = 17;
     public static readonly int AttackSpeedBonus = 8;
     public static readonly int RangedCritBonus = 16;
@@ -103,14 +103,14 @@ public class AstatineBreastplate : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(48);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
-   
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "Gives +30% crit chance at max life, Taking damage releases a large nuclear explosion but removes this boost";
-       
+
 
         player.GetModPlayer<AstaSetBoom>().AstaBlam = true;
 
@@ -122,7 +122,7 @@ public class AstatineBreastplate : ModItem
 public class AstaSetBoom : ModPlayer
 {
     public const int CritBonus = 30;
-    private const int ExplosionCooldownMax = 60 * 15; 
+    private const int ExplosionCooldownMax = 60 * 15;
 
     public bool AstaBlam;
     private int explosionCooldown;

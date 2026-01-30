@@ -46,7 +46,7 @@ public class SpartansWill : ModItem
     {
 
         type = ModContent.ProjectileType<SpartanRageSpear>();
-        Projectile.NewProjectileDirect(source, position, velocity*2.25f, type, (int)(damage*0.9f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, velocity * 2.25f, type, (int)(damage * 0.9f), knockback, player.whoAmI);
 
 
         return true; // Return false because we don't want tModLoader to shoot projectile

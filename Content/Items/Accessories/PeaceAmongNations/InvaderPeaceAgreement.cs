@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class InvaderPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Invaders should be friendly");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.GoblinArcher] = true;
         player.npcTypeNoAggro[NPCID.GoblinPeon] = true;
         player.npcTypeNoAggro[NPCID.GoblinScout] = true;
@@ -177,9 +177,9 @@ public class InvaderPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.VortexRifleman] = true;
         player.npcTypeNoAggro[NPCID.VortexSoldier] = true;
 
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BloodMoonMonolith, 1);
@@ -196,5 +196,5 @@ public class InvaderPeaceAgreement : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

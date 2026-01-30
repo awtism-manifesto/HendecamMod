@@ -1,8 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,7 +37,7 @@ public class HarpoonProj : ModProjectile
     }
 
 
-    
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -62,6 +60,6 @@ public class HarpoonProj : ModProjectile
         target.immune[Projectile.owner] = 8;
     }
 
-    
+
 
 }

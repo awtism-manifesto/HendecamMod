@@ -40,7 +40,7 @@ public class PyriteSparkler : ModItem
 
 
         // The sound that this item plays when used.
-       
+
         Item.UseSound = Terraria.ID.SoundID.Item13 with
         {
             Volume = 10f,
@@ -66,7 +66,7 @@ public class PyriteSparkler : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-			type = ModContent.ProjectileType<IchSpark>();
+        type = ModContent.ProjectileType<IchSpark>();
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -89,7 +89,7 @@ public class PyriteSparkler : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -134,7 +134,7 @@ public class PyriteSparkler : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-       
+
         recipe = CreateRecipe();
         recipe.AddIngredient<ShadewoodWand>();
         recipe.AddIngredient<PyriteBar>(10);
@@ -149,5 +149,5 @@ public class PyriteSparkler : ModItem
         recipe.Register();
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
-    
+
 }

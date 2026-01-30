@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class BloodshotSpawn : ModProjectile
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -25,7 +25,7 @@ public class BloodshotSpawn : ModProjectile
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 1; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 0f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -36,7 +36,7 @@ public class BloodshotSpawn : ModProjectile
 
     public override void OnSpawn(IEntitySource source)
     {
-       
+
     }
 
 

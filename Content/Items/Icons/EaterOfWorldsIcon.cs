@@ -16,8 +16,8 @@ public class EaterOfWorldsIcon : ModItem
     }
     public override void SetDefaults()
     {
-        Item.width = 32; 
-        Item.height = 32; 
+        Item.width = 32;
+        Item.height = 32;
         Item.rare = ModContent.RarityType<DarkGreen>();
         Item.value = 10;
         Item.maxStack = 9999;

@@ -95,10 +95,10 @@ public class GreaseBomb2 : ModProjectile
                 }
             }
 
-            
+
         }
 
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.

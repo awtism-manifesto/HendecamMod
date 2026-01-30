@@ -39,7 +39,7 @@ public class TrashSlime : ModNPC
 
         AIType = NPCID.GreenSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
-        
+
         Banner = Type;
         BannerItem = ModContent.ItemType<TrashSlimeBanner>();
     }
@@ -85,7 +85,7 @@ public class TrashSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.FishingSeaweed, 4));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LegoBricks>(), 25, 50, 101));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 101, 1, 1));
-       
+
         npcLoot.Add(ItemDropRule.Common(ItemID.JojaCola, 20));
         npcLoot.Add(ItemDropRule.Common(ItemID.ChainKnife, 33));
         npcLoot.Add(ItemDropRule.Common(ItemID.FlintlockPistol, 33));

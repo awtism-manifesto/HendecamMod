@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class RadAura : ModProjectile
 {
-   
+
     public override void SetDefaults()
     {
         Projectile.width = 299;
@@ -26,7 +26,7 @@ public class RadAura : ModProjectile
         Projectile.alpha = 205;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = false;
-        
+
         Projectile.scale = 1f;
         Projectile.usesIDStaticNPCImmunity = true;
         Projectile.idStaticNPCHitCooldown = 7;
@@ -44,14 +44,14 @@ public class RadAura : ModProjectile
 
         Player player = Main.player[Projectile.owner];
 
-       
+
         Projectile.Center = player.Center;
 
         if (Main.rand.NextBool(2))
         {
             Projectile.rotation += 0.2f;
         }
-        else 
+        else
         {
             Projectile.rotation += -0.2f;
         }
@@ -60,9 +60,9 @@ public class RadAura : ModProjectile
 
 
 
-            Lighting.AddLight(Projectile.Center, 0.25f, 0.95f, 0.05f);
+        Lighting.AddLight(Projectile.Center, 0.25f, 0.95f, 0.05f);
 
-      
+
         Projectile.velocity = Vector2.Zero;
 
 

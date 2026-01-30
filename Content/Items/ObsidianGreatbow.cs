@@ -44,12 +44,12 @@ public class ObsidianGreatbow : ModItem
         Item.damage = 30; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        
+
 
         Item.shootSpeed = 19.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
@@ -71,7 +71,7 @@ public class ObsidianGreatbow : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -105,13 +105,13 @@ public class ObsidianGreatbow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.Obsidian, 35);
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-       
+
 
 
 

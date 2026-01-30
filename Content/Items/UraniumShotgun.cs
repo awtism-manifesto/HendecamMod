@@ -45,7 +45,7 @@ public class UraniumShotgun : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 4; // The number of projectiles that this gun will shoot.
-         
+
         damage = (int)(damage * Main.rand.NextFloat(0.41f, 0.411f));
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -57,9 +57,9 @@ public class UraniumShotgun : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            
+
         }
-        
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -93,7 +93,7 @@ public class UraniumShotgun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<Items.UraniumBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

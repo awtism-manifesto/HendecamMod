@@ -85,15 +85,15 @@ public class MarbleSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
+
         if (Main.rand.NextFloat() * 2f < Projectile.Opacity)
         {
             // Original Excalibur color: Color.Gold, Color.White
             Color dustColor = Color.Lerp(Color.White, Color.WhiteSmoke, Main.rand.NextFloat() * 0.3f);
-           
+
         }
 
-      
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -170,7 +170,7 @@ public class MarbleSwing : ModProjectile
         // The particles from the Particle Orchestra are predefined by vanilla and most can not be customized that much.
         // Use auto complete to see the other ParticleOrchestraType types there are.
         // Here we are spawning the Excalibur particle randomly inside of the target's hitbox.
-      
+
 
         // You could also spawn dusts at the enemy position. Here is simple an example:
         // Dust.NewDust(Main.rand.NextVector2FromRectangle(target.Hitbox), 0, 0, ModContent.DustType<Content.Dusts.Sparkle>());
@@ -185,7 +185,7 @@ public class MarbleSwing : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.9f;
             dust.scale *= 1.1f;
-            
+
         }
 
 
@@ -217,7 +217,7 @@ public class MarbleSwing : ModProjectile
 
         Color backDarkColor = new Color(255, 255, 255); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(255, 232, 255); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(255,255 , 255); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(255, 255, 255); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.White * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));

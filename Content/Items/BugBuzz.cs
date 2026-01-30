@@ -37,7 +37,7 @@ public class BugBuzz : ModItem
         Item.reuseDelay = 16;
 
         // The sound that this item plays when used.
-      
+
 
 
         // Weapon Properties
@@ -61,7 +61,7 @@ public class BugBuzz : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-      
+
         SoundEngine.PlaySound(SoundID.NPCDeath57, player.position);
         return true;
     }
@@ -78,11 +78,11 @@ public class BugBuzz : ModItem
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
-        
-    }
-   
 
-   
+    }
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -117,7 +117,7 @@ public class BugBuzz : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-      
+
         recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
         recipe.AddIngredient(ItemID.BeetleHusk, 8);
         recipe.AddTile(TileID.MythrilAnvil);
@@ -138,6 +138,6 @@ public class BugBuzz : ModItem
     }
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2( -16f, -1f);
+        return new Vector2(-16f, -1f);
     }
 }

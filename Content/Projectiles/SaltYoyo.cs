@@ -30,9 +30,9 @@ public class SaltYoyo : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-       
+
         // dust
-        if (Math.Abs(Projectile.velocity.X) >=0f || Math.Abs(Projectile.velocity.Y) >= 0f)
+        if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -43,7 +43,7 @@ public class SaltYoyo : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-                
+
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Ghost, 0f, 0f, 100, default, 0.9f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -59,17 +59,17 @@ public class SaltYoyo : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
         ModContent.ProjectileType<SaltMelee>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
-       
-       
-    
-}
+
+
+
+    }
     public override void SetDefaults()
     {
         Projectile.width = 16; // The width of the projectile's hitbox.
         Projectile.height = 16; // The height of the projectile's hitbox.
 
         Projectile.aiStyle = ProjAIStyleID.Yoyo; // The projectile's ai style. Yoyos use aiStyle 99 (ProjAIStyleID.Yoyo). A lot of yoyo code checks for this aiStyle to work properly.
-       
+
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
         Projectile.DamageType = DamageClass.MeleeNoSpeed; // Benefits from melee bonuses. MeleeNoSpeed means the item will not scale with attack speed.
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.

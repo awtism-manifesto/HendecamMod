@@ -44,7 +44,7 @@ public class KingslayerKunaiProj : ModProjectile
 
         }
     }
-  
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
@@ -59,7 +59,7 @@ public class KingslayerKunaiProj : ModProjectile
 
     }
 
-   
+
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -76,10 +76,10 @@ public class KingslayerKunaiProj : ModProjectile
 
         return true;
     }
-    
-   
 
-   
+
+
+
 
 }
 

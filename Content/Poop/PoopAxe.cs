@@ -25,10 +25,10 @@ public class PoopAxe : ModItem
         Item.knockBack = 3.33f;
 
         Item.value = Item.buyPrice(copper: 70); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
-     
+
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-       
+
         Item.axe = 9;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }

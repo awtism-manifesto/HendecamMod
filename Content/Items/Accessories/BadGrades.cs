@@ -12,11 +12,11 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class BadGrades : ModItem
 {
-   
 
-     public static readonly int AdditiveStupidDamageBonus = 6;
 
-  
+    public static readonly int AdditiveStupidDamageBonus = 6;
+
+
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs();
 
     public override void SetDefaults()
@@ -26,7 +26,7 @@ public class BadGrades : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.White;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -41,7 +41,7 @@ public class BadGrades : ModItem
 
 
 
-      
+
     }
     public override void AddRecipes()
     {
@@ -53,7 +53,7 @@ public class BadGrades : ModItem
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
+
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 106f;
     }
 }

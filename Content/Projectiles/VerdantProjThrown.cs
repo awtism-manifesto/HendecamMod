@@ -26,9 +26,9 @@ public class VerdantProjThrown : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.Poisoned, 120);
-       
+
 
     }
     public override void AI()
@@ -36,7 +36,7 @@ public class VerdantProjThrown : ModProjectile
 
         if (Projectile.timeLeft < 589)
         {
-            
+
             Projectile.Resize(60, 60);
         }
 

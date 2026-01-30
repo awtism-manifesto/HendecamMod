@@ -31,7 +31,7 @@ public class RainbowShard : ModProjectile
 
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
     }
 
@@ -91,7 +91,7 @@ public class RainbowShard : ModProjectile
         }
 
         // dust, all dust
-        if (Projectile.alpha <196)
+        if (Projectile.alpha < 196)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -129,7 +129,7 @@ public class RainbowShard : ModProjectile
                 fire6Dust.velocity *= 0.25f;
             }
         }
-       
+
         float maxDetectRadius = 500f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -160,7 +160,7 @@ public class RainbowShard : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(7.77f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range

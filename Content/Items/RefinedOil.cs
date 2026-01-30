@@ -23,7 +23,7 @@ public class RefinedOil : ModItem
     {
         Item.damage = 6; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -35,8 +35,8 @@ public class RefinedOil : ModItem
         Item.shootSpeed = 0f; // The speed of the projectile.
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
     }
-   
-    
+
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -75,8 +75,8 @@ public class RefinedOil : ModItem
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
 
-       
-       
+
+
 
 
     }

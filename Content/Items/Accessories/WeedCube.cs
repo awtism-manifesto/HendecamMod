@@ -46,7 +46,7 @@ public class WeedCube : ModItem
 
 
 
-       
+
     }
     public override void AddRecipes()
     {
@@ -59,15 +59,15 @@ public class WeedCube : ModItem
 }
 public class Weedified : ModPlayer
 {
-   
+
     public bool Weeded = false;
 
     public override void ResetEffects()
     {
         Weeded = false;
     }
-   
-    
+
+
     public override void PostUpdateEquips()
     {
 
@@ -85,7 +85,7 @@ public class Weedified : ModPlayer
             Player.underShirtColor = Color.DarkOliveGreen;
             Player.skinColor = Color.DarkOliveGreen;
             Player.hairDyeColor = Color.DarkOliveGreen;
-           
+
         }
 
 

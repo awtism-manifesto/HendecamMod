@@ -42,7 +42,7 @@ public class CopperShort : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.75f);
-      
+
     }
 
     public override bool PreDraw(ref Color lightColor)

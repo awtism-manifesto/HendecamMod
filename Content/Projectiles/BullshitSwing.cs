@@ -251,7 +251,7 @@ public class BullshitSwing : ModProjectile
 
         Color backDarkColor = new Color(255, 152, 0); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(255, 235, 145); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(255,244 , 226); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(255, 244, 226); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.Orange * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));

@@ -66,14 +66,14 @@ public class LycoSpawn : ModProjectile
 
 
 
-    
+
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Projectile.alpha <188)
+
+        // dust, all dust
+        if (Projectile.alpha < 188)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -92,7 +92,7 @@ public class LycoSpawn : ModProjectile
         }
     }
 
-   
+
 
 }
 

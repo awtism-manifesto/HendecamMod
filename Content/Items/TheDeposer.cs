@@ -71,13 +71,13 @@ public class TheDeposer : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Items.Polymer>(5);
         recipe.AddIngredient<Items.ImprovisedPistol>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-       
+
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

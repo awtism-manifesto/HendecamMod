@@ -17,20 +17,20 @@ public class AdamantiteBolt : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
-       
+
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 15;
         Projectile.height = 15;
-       
+
         Projectile.friendly = true;
         Projectile.hostile = false;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.penetrate = 5;
-        Projectile.timeLeft = 130; 
-                               
+        Projectile.timeLeft = 130;
+
         Projectile.light = 0.3f;
         Projectile.ignoreWater = false;
         Projectile.tileCollide = true;
@@ -44,9 +44,9 @@ public class AdamantiteBolt : ModProjectile
     public override void AI()
     {
 
-        if (Projectile.alpha <180)
+        if (Projectile.alpha < 180)
         {
-           
+
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -72,12 +72,12 @@ public class AdamantiteBolt : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.immune[Projectile.owner] = 6;
         Projectile.damage = (int)(Projectile.damage * 0.9f);
     }
-    
-    
+
+
 }
 
 

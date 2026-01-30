@@ -19,7 +19,7 @@ public class RainbowBloonFactory : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
+
         ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
         ItemID.Sets.StaffMinionSlotsRequired[Type] = 0.5f; // The default value is 1, but other values are supported. See the docs for more guidance. 
@@ -49,7 +49,7 @@ public class RainbowBloonFactory : ModItem
         Item.shootSpeed = 8f;
     }
 
-   
+
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -93,8 +93,8 @@ public class RainbowBloonFactory : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        
+
+
         recipe = CreateRecipe();
         recipe.AddIngredient<UraniumBar>(15);
         recipe.AddIngredient<Rubber>(40);

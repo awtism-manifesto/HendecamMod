@@ -35,7 +35,7 @@ public class Tomatonator : ModItem
         Item.useAnimation = 14; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item61;
@@ -46,7 +46,7 @@ public class Tomatonator : ModItem
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
 
@@ -72,7 +72,7 @@ public class Tomatonator : ModItem
         if (Main.rand.NextBool(5))
         {
             type = ModContent.ProjectileType<Baconator>();
-            Projectile.NewProjectileDirect(source, position, newVelocity*1.25f, type, (int)(damage* 2.15f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, newVelocity * 1.25f, type, (int)(damage * 2.15f), knockback, player.whoAmI);
         }
         else
         {
@@ -81,7 +81,7 @@ public class Tomatonator : ModItem
         }
 
 
-      
+
 
 
         return false;
@@ -120,11 +120,11 @@ public class Tomatonator : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient<LycopiteBar>(13);
-     
-      
-      
+
+
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

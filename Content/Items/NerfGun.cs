@@ -32,7 +32,7 @@ public class NerfGun : ModItem
         Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item99;
@@ -77,7 +77,7 @@ public class NerfGun : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -118,7 +118,7 @@ public class NerfGun : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-      
+
 
 
 

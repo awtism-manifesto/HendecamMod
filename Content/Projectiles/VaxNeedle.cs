@@ -45,8 +45,8 @@ public class VaxNeedle : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-       
-       
+
+
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -130,13 +130,13 @@ public class VaxNeedle : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-       
-            
-               
-               
 
 
-       
+
+
+
+
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);

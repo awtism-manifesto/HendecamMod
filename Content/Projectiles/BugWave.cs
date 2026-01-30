@@ -23,7 +23,7 @@ public class BugWave : ModProjectile
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -60,25 +60,25 @@ public class BugWave : ModProjectile
         }
     }
 
-   
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
 
-            // If the projectile hits the left or right side of the tile, reverse the X velocity
-            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-            {
-                Projectile.velocity.X = -oldVelocity.X;
-            }
+        Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
 
-            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-            {
-                Projectile.velocity.Y = -oldVelocity.Y;
-            }
-        
+
+        // If the projectile hits the left or right side of the tile, reverse the X velocity
+        if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+        {
+            Projectile.velocity.X = -oldVelocity.X;
+        }
+
+        // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+        if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+        {
+            Projectile.velocity.Y = -oldVelocity.Y;
+        }
+
 
         return false;
     }
@@ -88,7 +88,7 @@ public class BugWave : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-   
+
 }
 
 

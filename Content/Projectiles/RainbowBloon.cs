@@ -29,7 +29,7 @@ public class RainbowBloon : ModProjectile
         Projectile.width = 44;
         Projectile.height = 64;
         Projectile.tileCollide = false; // Makes the minion go through tiles freely
-       
+
         // These below are needed for a minion weapon
         Projectile.friendly = true; // Only controls if it deals damage to enemies on contact (more on that later)
         Projectile.minion = true; // Declares this as a minion (has many effects)
@@ -139,7 +139,7 @@ public class RainbowBloon : ModProjectile
             }
         }
     }
-    
+
     private void SearchForTargets(Player owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter)
     {
         // Starting search distance

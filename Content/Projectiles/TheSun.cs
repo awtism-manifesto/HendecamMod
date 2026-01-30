@@ -15,23 +15,23 @@ namespace HendecamMod.Content.Projectiles;
 /// </summary>
 public class TheSun : ModProjectile
 {
-   
+
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 536; // The width of projectile hitbox
         Projectile.height = 536; // The height of projectile hitbox
 
-       
+
         Projectile.timeLeft = 500;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
         Projectile.light = 100f;
         Projectile.tileCollide = false;
-        Projectile.friendly = true; 
+        Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
-        Projectile.penetrate = 500; 
+        Projectile.penetrate = 500;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.alpha = 255;
@@ -47,20 +47,20 @@ public class TheSun : ModProjectile
         target.AddBuff(BuffID.Frostburn2, 1250);
         target.AddBuff(BuffID.ShadowFlame, 1250);
     }
-    
+
     public override void AI()
     {
         Projectile.scale = Main.rand.NextFloat(1.25f, 1.275f);
 
-       
+
 
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-        
-       
+
+
 
 
 

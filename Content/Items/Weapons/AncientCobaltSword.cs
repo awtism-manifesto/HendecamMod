@@ -25,7 +25,7 @@ public class AncientCobaltSword : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 18;
         Item.knockBack = 6;
-        
+
         Item.ChangePlayerDirectionOnShoot = true;
         Item.scale = 1.45f;
 
@@ -57,7 +57,7 @@ public class AncientCobaltSword : ModItem
 
 
 
-        
+
 
     }
     public override void AddRecipes()

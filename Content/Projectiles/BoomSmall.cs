@@ -46,7 +46,7 @@ public class BoomSmall : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.OnFire, 300);
     }
     public override void AI()

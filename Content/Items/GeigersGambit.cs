@@ -33,7 +33,7 @@ public class GeigersGambit : ModItem
 
 
         // The sound that this item plays when used.
-        
+
         Item.UseSound = Terraria.ID.SoundID.Item46;
 
 
@@ -64,7 +64,7 @@ public class GeigersGambit : ModItem
     {
         type = ModContent.ProjectileType<Projectiles.GeigerRocket>();
         SoundEngine.PlaySound(SoundID.Item88);
-        
+
     }
     public override void AddRecipes()
     {
@@ -75,7 +75,7 @@ public class GeigersGambit : ModItem
         recipe = CreateRecipe();
         recipe.AddIngredient<Items.Autocannon>();
         recipe.AddIngredient<Items.FissionDrive>(2);
-       
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
@@ -83,7 +83,7 @@ public class GeigersGambit : ModItem
 
     }
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -113,7 +113,7 @@ public class GeigersGambit : ModItem
     }
 
 
-   
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

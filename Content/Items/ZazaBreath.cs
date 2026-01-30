@@ -1,14 +1,8 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -46,9 +40,9 @@ public class ZazaBreath : ModItem
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
 
-        
+
+
 
 
         // Gun Properties
@@ -58,7 +52,7 @@ public class ZazaBreath : ModItem
         Item.shootSpeed = 8.75f; // The speed of the projectile (measured in pixels per frame.)
 
     }
-    
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<ZazaSmoke>();
@@ -68,7 +62,7 @@ public class ZazaBreath : ModItem
     {
         return Main.rand.NextFloat() >= 0.85f;
     }
-   
+
 
 
 
@@ -103,12 +97,12 @@ public class ZazaBreath : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient< WeedLeaves>(28);
+        recipe.AddIngredient<WeedLeaves>(28);
         recipe.AddIngredient(ItemID.RichMahogany, 15);
         recipe.AddIngredient(ItemID.JungleSpores, 4);
         recipe.AddIngredient(ItemID.Torch, 25);
-       
-        
+
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

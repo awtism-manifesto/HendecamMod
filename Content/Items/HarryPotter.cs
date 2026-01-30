@@ -15,14 +15,14 @@ using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items;
 
-public class HarryPotter: ModItem
+public class HarryPotter : ModItem
 {
     public override void SetStaticDefaults()
     {
         ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller
         ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
-       
+
     }
     public override void SetDefaults()
     {
@@ -53,8 +53,8 @@ public class HarryPotter: ModItem
         Item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
         Item.mana = 14;
 
 
@@ -74,14 +74,14 @@ public class HarryPotter: ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next (5,8); // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(5, 8); // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360));
 
-           
+
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -91,7 +91,7 @@ public class HarryPotter: ModItem
     }
 
 
-  
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -124,17 +124,17 @@ public class HarryPotter: ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-            
-            recipe.AddIngredient(ItemID.FallenStar, 5);
-            recipe.AddIngredient(ItemID.Book);
-            recipe.AddIngredient<Paper>(100);
-            recipe.AddIngredient<CeramicSheet>(40);
-            recipe.AddTile(TileID.Bookcases);
-            recipe.Register();
 
 
-        
+        recipe.AddIngredient(ItemID.FallenStar, 5);
+        recipe.AddIngredient(ItemID.Book);
+        recipe.AddIngredient<Paper>(100);
+        recipe.AddIngredient<CeramicSheet>(40);
+        recipe.AddTile(TileID.Bookcases);
+        recipe.Register();
+
+
+
 
 
 

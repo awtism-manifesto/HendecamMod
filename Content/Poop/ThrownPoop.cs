@@ -33,10 +33,10 @@ public class ThrownPoop : ModProjectile
     {
 
 
-       
-            Projectile.Kill();
-        
-      
+
+        Projectile.Kill();
+
+
 
         return false;
     }
@@ -59,31 +59,31 @@ public class ThrownPoop : ModProjectile
 
             }
         }
-       
 
-       
-           
-            for (int i = 0; i < 1; i++)
+
+
+
+        for (int i = 0; i < 1; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Poop, 0f, 0f, 100, default, 0.67f);
-                fire2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
-                fire2Dust.noGravity = true;
-                fire2Dust.velocity *= 0.25f;
-               
-               
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
-        
+
+            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Poop, 0f, 0f, 100, default, 0.67f);
+            fire2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
+            fire2Dust.noGravity = true;
+            fire2Dust.velocity *= 0.25f;
+
+
+        }
+
+
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
@@ -97,8 +97,8 @@ public class ThrownPoop : ModProjectile
         target.AddBuff(BuffID.Poisoned, 90);
         target.AddBuff(BuffID.Stinky, 900);
     }
-    
-    
+
+
 }
 
 

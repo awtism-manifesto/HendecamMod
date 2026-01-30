@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class KevlarHelmet : ModItem
 {
 
-    
+
     public static readonly int AdditiveMagicDamageBonus = 7;
     public static readonly int MoveSpeedBonus = -3;
     public static readonly int MaxManaIncrease = 50;
@@ -29,7 +29,7 @@ public class KevlarHelmet : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -73,7 +73,7 @@ public class KevlarHelmet : ModItem
     {
         return body.type == ModContent.ItemType<KevlarBodysuit>() && legs.type == ModContent.ItemType<KevlarPants>();
     }
-   
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.

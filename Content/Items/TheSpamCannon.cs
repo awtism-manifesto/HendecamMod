@@ -23,7 +23,7 @@ public class TheSpamCannon : ModItem
         Item.knockBack = 5.5f;
         Item.width = 40;
         Item.height = 40;
-        
+
 
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
@@ -38,15 +38,15 @@ public class TheSpamCannon : ModItem
         }
 
         Item.mana = 2;
-       
-        
+
+
         Item.UseSound = SoundID.Item61;
         Item.rare = ItemRarityID.Yellow;
         Item.value = Item.buyPrice(gold: 115);
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.shoot = ModContent.ProjectileType<Pipis>();
-        Item.noMelee = true; 
-      
+        Item.noMelee = true;
+
         Item.autoReuse = true;
     }
     public override bool CanUseItem(Player player)
@@ -66,10 +66,10 @@ public class TheSpamCannon : ModItem
     public override bool AltFunctionUse(Player player)
     {
 
-        
-            return true;
-       
-       
+
+        return true;
+
+
     }
     private int spamcannoncooldown = 0;
     public override void UpdateInventory(Player player)
@@ -107,7 +107,7 @@ public class TheSpamCannon : ModItem
         {
             Item.ArmorPenetration = Main.rand.Next(1, 15);
         }
-        
+
         if (Main.rand.NextBool(15))
         {
             Item.value = Main.rand.Next(-100, 11500000);
@@ -121,8 +121,8 @@ public class TheSpamCannon : ModItem
         if (player.altFunctionUse == 2)
         {
 
-           
-          
+
+
             if (spamcannoncooldown > 0)
                 return false;
 
@@ -138,7 +138,7 @@ public class TheSpamCannon : ModItem
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath56, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 13.5f), (int)(knockback*25f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 13.5f), (int)(knockback * 25f), player.whoAmI);
             return false;
         }
         // Rotate the velocity randomly by 30 degrees at max.
@@ -174,8 +174,8 @@ public class TheSpamCannon : ModItem
         };
         tooltips.Add(line);
 
-       
-        
+
+
     }
     public override Vector2? HoldoutOffset()
     {

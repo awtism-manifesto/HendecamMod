@@ -49,7 +49,7 @@ public class TwinPoster : ModItem
         recipe.AddIngredient(ItemID.PaperAirplaneA, 1);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-       
+
 
     }
 }

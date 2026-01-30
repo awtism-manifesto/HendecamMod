@@ -33,14 +33,14 @@ public class BigCannonBall : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-        
-        
+
+
         Projectile.Kill();
     }
-    
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
+
 
         if (Projectile.penetrate <= 0)
         {
@@ -49,7 +49,7 @@ public class BigCannonBall : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -74,7 +74,7 @@ public class BigCannonBall : ModProjectile
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
 
-        
+
 
 
         Projectile.ai[0] += 1f;
@@ -83,8 +83,8 @@ public class BigCannonBall : ModProjectile
             Projectile.ai[0] = 17f;
             Projectile.velocity.Y += 0.27f;
         }
-        
-      
+
+
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 17f)

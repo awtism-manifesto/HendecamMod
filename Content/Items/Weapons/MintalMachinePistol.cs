@@ -103,7 +103,7 @@ public class MintalMachinePistol : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient < Items.Placeables.MintalBar>(10);
+        recipe.AddIngredient<Items.Placeables.MintalBar>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

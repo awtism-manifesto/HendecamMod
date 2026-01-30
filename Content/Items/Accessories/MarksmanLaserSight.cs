@@ -14,11 +14,11 @@ public class MarksmanLaserSight : ModItem
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
     public static readonly int AdditiveRangedDamageBonus = 16;
-  
+
     public static readonly int RangedCritBonus = 10;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-    
+
 
     public override void SetDefaults()
     {
@@ -28,7 +28,7 @@ public class MarksmanLaserSight : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 95000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -86,8 +86,8 @@ public class MarksmanLaserSight : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 116f;
-     
+
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-       
+
     }
 }

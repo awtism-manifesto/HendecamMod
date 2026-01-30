@@ -85,7 +85,7 @@ public class UraniumSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-       
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -118,7 +118,7 @@ public class UraniumSwing : ModProjectile
         float maximumAngle = MathHelper.PiOver4; // The maximumAngle is used to limit the rotation to create a dead zone.
         float coneRotation = Projectile.rotation + collisionRotation;
 
-        
+
         if (targetHitbox.IntersectsConeSlowMoreAccurate(Projectile.Center, coneLength, coneRotation, maximumAngle))
         {
             return true;
@@ -196,7 +196,7 @@ public class UraniumSwing : ModProjectile
 
         Color backDarkColor = new Color(0, 255, 7); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(0, 232, 45); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(117,255 , 95); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(117, 255, 95); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.LimeGreen * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));
@@ -239,13 +239,13 @@ public class UraniumSwing : ModProjectile
     public override void OnKill(int timeLeft)
     {
 
-       
 
-            Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<RadAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
-        
+
+        Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<RadAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
+
     }
     // Copied from Main.DrawPrettyStarSparkle() which is private
     private static void DrawPrettyStarSparkle(float opacity, SpriteEffects dir, Vector2 drawPos, Color drawColor, Color shineColor, float flareCounter, float fadeInStart, float fadeInEnd, float fadeOutStart, float fadeOutEnd, float rotation, Vector2 scale, Vector2 fatness)

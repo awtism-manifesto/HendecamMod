@@ -42,7 +42,7 @@ public class ImprovisedPistol : ModItem
         Item.damage = 9; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
@@ -68,7 +68,7 @@ public class ImprovisedPistol : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-    
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -101,7 +101,7 @@ public class ImprovisedPistol : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddRecipeGroup("Wood", 12);
         recipe.AddRecipeGroup("IronBar", 3);
         recipe.Register();

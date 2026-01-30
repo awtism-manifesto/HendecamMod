@@ -44,12 +44,12 @@ public class PyriteBow : ModItem
         Item.damage = 19; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        
+
 
         Item.shootSpeed = 8.9f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
@@ -60,11 +60,11 @@ public class PyriteBow : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       type = ModContent.ProjectileType<PyriteArrowProj>();
+        type = ModContent.ProjectileType<PyriteArrowProj>();
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -79,7 +79,7 @@ public class PyriteBow : ModItem
 
 
 
-       
+
     }
 
 
@@ -89,7 +89,7 @@ public class PyriteBow : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<PyriteBar>(12);
-        
+
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

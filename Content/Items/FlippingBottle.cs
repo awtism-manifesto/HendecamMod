@@ -31,7 +31,7 @@ public class FlippingBottle : ModItem
         Item.knockBack = 2.5f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-       
+
 
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;

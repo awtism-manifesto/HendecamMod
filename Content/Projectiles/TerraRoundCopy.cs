@@ -25,7 +25,7 @@ public class TerraRoundCopy : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -42,7 +42,7 @@ public class TerraRoundCopy : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.tileCollide = false;
-        
+
         Projectile.timeLeft = 205;
         Projectile.extraUpdates = 3;
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
@@ -116,7 +116,7 @@ public class TerraRoundCopy : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(12.5f)).ToRotationVector2() * length;
-        
+
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -159,5 +159,5 @@ public class TerraRoundCopy : ModProjectile
         return target.CanBeChasedBy();
     }
 
-   
+
 }

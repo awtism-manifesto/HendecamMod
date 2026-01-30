@@ -86,10 +86,10 @@ public class AstaSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
-       
 
-      
+
+
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -115,18 +115,18 @@ public class AstaSwing : ModProjectile
 
 
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
-       
 
-       
-            float coneLength = 85f * Projectile.scale;
-        
-        
-        
+
+
+        float coneLength = 85f * Projectile.scale;
+
+
+
         // This number affects how much the start and end of the collision will be rotated.
-            // Bigger Pi numbers will rotate the collision counter clockwise.
-            // Smaller Pi numbers will rotate the collision clockwise.
-            // (Projectile.ai[0] is the direction)
-            float collisionRotation = MathHelper.Pi * 2f / 25f * Projectile.ai[0];
+        // Bigger Pi numbers will rotate the collision counter clockwise.
+        // Smaller Pi numbers will rotate the collision clockwise.
+        // (Projectile.ai[0] is the direction)
+        float collisionRotation = MathHelper.Pi * 2f / 25f * Projectile.ai[0];
         float maximumAngle = MathHelper.PiOver4; // The maximumAngle is used to limit the rotation to create a dead zone.
         float coneRotation = Projectile.rotation + collisionRotation;
 
@@ -184,19 +184,19 @@ public class AstaSwing : ModProjectile
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
 
-        
-            Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(120, 239)));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(240, 360)));
-            Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+
+        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(120, 239)));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(240, 360)));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+        ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
 

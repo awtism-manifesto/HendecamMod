@@ -62,8 +62,8 @@ public class ChromaticaAtomizer : ModItem
 
 
 
-   
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -99,7 +99,7 @@ public class ChromaticaAtomizer : ModItem
         recipe.AddIngredient<Items.ParticleGun>();
         recipe.AddIngredient(ItemID.HallowedBar, 12);
         recipe.AddIngredient(ItemID.SoulofSight, 15);
-       
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

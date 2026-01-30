@@ -13,7 +13,7 @@ public class BloodshotBomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -49,7 +49,7 @@ public class BloodshotBomb : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
 
 
         Projectile.rotation += 0.275f;
@@ -120,11 +120,11 @@ public class BloodshotBomb : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
+
         target.AddBuff(ModContent.BuffType<Stamped>(), 180);
     }
 

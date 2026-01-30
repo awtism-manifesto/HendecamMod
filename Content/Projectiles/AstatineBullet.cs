@@ -14,7 +14,7 @@ public class AstatineBullet : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-         // Deals double damage on direct hits.
+        // Deals double damage on direct hits.
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -30,7 +30,7 @@ public class AstatineBullet : ModProjectile
     {
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
-     
+
     }
     public override void SetDefaults()
     {
@@ -52,11 +52,11 @@ public class AstatineBullet : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-   
+
     public override void AI()
     {
 
-       
+
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -86,7 +86,7 @@ public class AstatineBullet : ModProjectile
 
 
         }
-        
+
         // Rotate the rocket in the direction that it is moving.
         if (Projectile.velocity != Vector2.Zero)
         {
@@ -99,7 +99,7 @@ public class AstatineBullet : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        
+
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
 
@@ -107,7 +107,7 @@ public class AstatineBullet : ModProjectile
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
         Projectile.alpha = 255; // Make the rocket invisible.
-       
+
         // Resize the hitbox of the projectile for the blast "radius".
         // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
         // Measurements are in pixels, so 128 / 16 = 8 tiles.
@@ -125,13 +125,13 @@ public class AstatineBullet : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-        
+
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(110, 110);
 
-       
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 18; j++)
@@ -152,7 +152,7 @@ public class AstatineBullet : ModProjectile
             fireDust.velocity *= 1f;
         }
 
-        
+
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {
         //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

@@ -17,7 +17,7 @@ public class BeetleBombProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -41,7 +41,7 @@ public class BeetleBombProj : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.SpikyBall;
-       
+
         Projectile.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Projectile.timeLeft = 180;
         Projectile.usesLocalNPCImmunity = true;
@@ -55,9 +55,9 @@ public class BeetleBombProj : ModProjectile
     }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        
-            modifiers.SourceDamage *= 0f;
-        
+
+        modifiers.SourceDamage *= 0f;
+
     }
     public override void AI()
     {
@@ -99,24 +99,24 @@ public class BeetleBombProj : ModProjectile
             // Increase the speed of the rocket if it is moving less than 1 block per second.
             // It is not recommended to increase the number past 16f to increase the speed of the rocket. It could start no clipping through blocks.
             // Instead, increase extraUpdates in SetDefaults() to make the rocket move faster.
-          
+
         }
 
-       
+
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
-       
+
     }
 
 
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
-       
+
     }
 
     public override void OnKill(int timeLeft)

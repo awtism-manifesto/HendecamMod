@@ -37,11 +37,11 @@ public class SporeShiv : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Item.DamageType = DamageClass.Throwing;
-           
+
         }
     }
 
-  
+
 
 
 
@@ -64,7 +64,7 @@ public class SporeShiv : ModItem
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
 
-        
+
     }
     public override void AddRecipes()
     {
@@ -72,7 +72,7 @@ public class SporeShiv : ModItem
 
         recipe.AddIngredient<LycopiteBar>(10);
 
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

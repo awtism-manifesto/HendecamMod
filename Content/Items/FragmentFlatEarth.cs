@@ -12,7 +12,7 @@ public class FragmentFlatEarth : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-       
+
 
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
@@ -62,8 +62,8 @@ public class FragmentFlatEarth : ModItem
 
     public override void AddRecipes()
     {
-        Recipe 
-        
+        Recipe
+
          recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FragmentNebula);
         recipe.AddIngredient(ItemID.FragmentSolar);
@@ -72,7 +72,7 @@ public class FragmentFlatEarth : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
-       
+
 
 
 

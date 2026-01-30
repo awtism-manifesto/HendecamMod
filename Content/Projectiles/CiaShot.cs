@@ -34,7 +34,7 @@ public class CiaShot : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 9; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.scale = 0.85f;
-        
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
     public override void AI()
@@ -90,7 +90,7 @@ public class CiaShot : ModProjectile
 
         return true;
     }
-   
+
 
 
     public override void OnKill(int timeLeft)

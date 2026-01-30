@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class KetamineInjection : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -20,7 +20,7 @@ public class KetamineInjection : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 7500000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

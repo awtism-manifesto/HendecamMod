@@ -91,7 +91,7 @@ public class HallowedFedora : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.HallowedBar, 12);
-        
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

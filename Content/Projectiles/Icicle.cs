@@ -1,9 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -23,7 +19,7 @@ public class Icicle : ModProjectile
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
@@ -37,9 +33,9 @@ public class Icicle : ModProjectile
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
         Projectile.usesLocalNPCImmunity = true;
-        
+
     }
-    
+
     public override void AI()
     {
         int frameSpeed = 5;
@@ -63,10 +59,10 @@ public class Icicle : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Frostburn, 240);
-       
-       
-        
-        
+
+
+
+
     }
     public override void OnKill(int timeLeft)
     {
@@ -74,7 +70,7 @@ public class Icicle : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item27, Projectile.position);
     }
-   
+
 }
 
 

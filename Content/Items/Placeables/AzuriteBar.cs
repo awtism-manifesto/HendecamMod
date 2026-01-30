@@ -53,7 +53,7 @@ public class AzuriteBar : ModItem
             }
         }
     }
-        public override void AddRecipes()
+    public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(1);
         recipe.AddIngredient<AzuriteOre>(4);

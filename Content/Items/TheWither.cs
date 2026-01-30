@@ -35,8 +35,8 @@ public class TheWither : ModItem
         Item.useAnimation = 36; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
-      
+
+
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
 
@@ -59,27 +59,27 @@ public class TheWither : ModItem
             Item.rare = ItemRarityID.Yellow;
         }
 
-            // Gun Properties
-            // For some reason, all the guns in the vanilla source have this.
-            Item.shoot = ModContent.ProjectileType<WitherSkullBlack>();
-       
+        // Gun Properties
+        // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ModContent.ProjectileType<WitherSkullBlack>();
+
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
 
     }
-   
+
     private int tickCounter = 0;
     private int nextSpawnTick = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
-            
-           
-           
+
+
+
 
 
             if (nextSpawnTick == 0)
@@ -96,7 +96,7 @@ public class TheWither : ModItem
                     type = ModContent.ProjectileType<WitherSkullBlack>();
                     Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 }
-                
+
                 if (Main.rand.NextBool(5))
                 {
                     Vector2 new3Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
@@ -106,9 +106,9 @@ public class TheWither : ModItem
 
                 type = ModContent.ProjectileType<WitherSkullBlack>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                
 
-               
+
+
 
 
                 tickCounter = 5;
@@ -149,7 +149,7 @@ public class TheWither : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-   
+
 
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -190,7 +190,7 @@ public class TheWither : ModItem
         recipe.AddIngredient<PocketPearlsand>();
         recipe.AddIngredient(ItemID.ObsidianSkull, 3);
         recipe.AddIngredient(ItemID.SoulofNight, 18);
-       
+
         recipe.AddIngredient(ItemID.SoulofMight, 18);
         recipe.AddIngredient(ItemID.SoulofFright, 18);
 
@@ -205,7 +205,7 @@ public class TheWither : ModItem
 
 
         }
-       
+
         if (!ModLoader.TryGetMod("Consolaria", out Mod Cons2Merica))
 
 

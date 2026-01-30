@@ -34,7 +34,7 @@ public class TriAttack : ModItem
         Item.useAnimation = 27; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
@@ -69,7 +69,7 @@ public class TriAttack : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<NuhUh>();
-       
+
     }
     private int tickCounter = 0;
     private int nextSpawnTick = 0;
@@ -84,7 +84,7 @@ public class TriAttack : ModItem
             Vector2 new1Velocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-3.66f));
 
-            
+
             if (nextSpawnTick == 0)
             {
                 nextSpawnTick = 2;
@@ -134,7 +134,7 @@ public class TriAttack : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -173,7 +173,7 @@ public class TriAttack : ModItem
         {
 
 
-            
+
 
 
             recipe = CreateRecipe();
@@ -182,7 +182,7 @@ public class TriAttack : ModItem
             recipe.AddIngredient(FrostburnIgniter.Type);
             recipe.AddIngredient<Items.VenomThrower>();
             recipe.AddTile(TileID.MythrilAnvil);
-           
+
             recipe.Register();
 
 

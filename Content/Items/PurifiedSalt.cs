@@ -60,7 +60,7 @@ public class PurifiedSalt : ModItem
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
 
-        
+
 
 
 

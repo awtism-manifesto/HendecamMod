@@ -58,7 +58,7 @@ public class Blackshard : ModItem
 
         {
             Item.damage = 196;
-           
+
         }
 
     }
@@ -114,9 +114,9 @@ public class Blackshard : ModItem
             if (Main.rand.NextBool(2))
             {
                 int proj2 = Projectile.NewProjectile(source, position, newVelocity * 2.1f, ModContent.ProjectileType<KnightStar>(), (int)(damage * 1.5f), (int)(knockback * 2f), player.whoAmI);
-               
+
                 Main.projectile[proj2].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
-               
+
             }
 
 
@@ -182,10 +182,10 @@ public class Blackshard : ModItem
         recipe.AddIngredient<DeliriantDagger>();
         recipe.AddIngredient<BallisticKnife>();
         recipe.AddIngredient(ItemID.UnholyTrident);
-       
+
         recipe.AddIngredient(ItemID.EmpressBlade);
-       
-       
+
+
         recipe.AddIngredient(ItemID.CandyCaneSword);
 
 
@@ -207,7 +207,7 @@ public class Blackshard : ModItem
             recipe.AddIngredient(DarkMatter.Type, 10);
         }
 
-       
+
         if (!ModLoader.TryGetMod("ThoriumMod", out Mod SkillIssue))
 
 

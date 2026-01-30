@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -34,7 +33,7 @@ public class BowBoltProj : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-        
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -43,7 +42,7 @@ public class BowBoltProj : ModProjectile
         target.immune[Projectile.owner] = 8;
 
     }
-   
+
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -60,7 +59,7 @@ public class BowBoltProj : ModProjectile
 
         return true;
     }
-   
+
 
 
     public override void OnKill(int timeLeft)

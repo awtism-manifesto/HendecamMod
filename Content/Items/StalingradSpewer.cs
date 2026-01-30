@@ -42,7 +42,7 @@ public class StalingradSpewer : ModItem
         Item.damage = 27; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
@@ -68,7 +68,7 @@ public class StalingradSpewer : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,8 +96,8 @@ public class StalingradSpewer : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
-   
+
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);

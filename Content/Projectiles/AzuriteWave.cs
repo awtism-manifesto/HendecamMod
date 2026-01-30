@@ -1,8 +1,4 @@
-﻿
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -21,7 +17,7 @@ public class AzuriteWave : ModProjectile
     }
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 100; // The width of projectile hitbox
         Projectile.height = 100; // The height of projectile hitbox
@@ -30,11 +26,11 @@ public class AzuriteWave : ModProjectile
         Projectile.timeLeft = 50;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-       
+
         Projectile.tileCollide = false;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
-        Projectile.penetrate = 3; 
+        Projectile.penetrate = 3;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
         Projectile.alpha = 255;
@@ -42,10 +38,10 @@ public class AzuriteWave : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
-        Projectile.damage = (int)(Projectile.damage * 0.75f); 
+
+        Projectile.damage = (int)(Projectile.damage * 0.75f);
     }
-   
+
     public override void AI()
     {
         Projectile.scale = Main.rand.NextFloat(0.85f, 1.15f);
@@ -84,16 +80,16 @@ public class AzuriteWave : ModProjectile
         if (Projectile.timeLeft > 178)
         {
 
-           
+
         }
         Lighting.AddLight(Projectile.Center, 0.2f, 0.2f, 0.8f);
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-        
-       
+
+
 
 
 

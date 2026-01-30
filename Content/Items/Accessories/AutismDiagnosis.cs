@@ -30,7 +30,7 @@ public class AutismDiagnosis : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient<Paper>();
         recipe.AddIngredient<AutismOrb>(2);
         recipe.AddTile(TileID.TinkerersWorkbench);
@@ -59,7 +59,7 @@ public class AutismDiagnosis : ModItem
         tooltips.Add(line);
 
 
-      
+
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
     {

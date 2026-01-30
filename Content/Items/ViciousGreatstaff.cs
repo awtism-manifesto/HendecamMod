@@ -33,7 +33,7 @@ public class ViciousGreatstaff : ModItem
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.useAnimation = 14;
         Item.useTime = 14;
-        Item.damage =  72;
+        Item.damage = 72;
         Item.knockBack = 11.5f;
         Item.width = 40;
         Item.height = 40;
@@ -56,19 +56,19 @@ public class ViciousGreatstaff : ModItem
         Item.DamageType = DamageClass.Magic;
         Item.shoot = ModContent.ProjectileType<BloodshotBomb>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
-      
+
         Item.autoReuse = true;
     }
-   
+
     public override bool AltFunctionUse(Player player)
     {
 
-        
-            return true;
-       
-       
+
+        return true;
+
+
     }
-  
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)

@@ -39,11 +39,11 @@ public class SlimeMineStaff : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.DD2_PhantomPhoenixShot; // What sound should play when using the item
         Item.buffType = ModContent.BuffType<SlimeMinesBuff>();
-      
+
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
-      
+
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
         Item.shoot = ModContent.ProjectileType<SlimeMine>(); // This item creates the minion projectile
     }
@@ -95,7 +95,7 @@ public class SlimeMineStaff : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Items.KingslayerBar>(12);
         recipe.AddIngredient(ItemID.Dynamite, 25);
         recipe.AddTile(TileID.Solidifier);
@@ -107,8 +107,8 @@ public class SlimeMineStaff : ModItem
 
     }
 
-   
 
-    
+
+
 
 }

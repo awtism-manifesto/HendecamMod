@@ -15,9 +15,9 @@ public class PoopyHelmet : ModItem
 {
 
     public static readonly int AdditiveDamageBonus = 1;
-   
+
     public static readonly int AttackSpeed = 10;
-  
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -28,7 +28,7 @@ public class PoopyHelmet : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-       
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -85,12 +85,12 @@ public class PoopyHelmet : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-      
-       
-       
+
+
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 101f;
-       
-        
+
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
@@ -98,7 +98,7 @@ public class PoopyHelmet : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.PoopBlock, 12);
         recipe.AddTile(TileID.WorkBenches);
-       
+
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)

@@ -84,7 +84,7 @@ public class KevlarPants : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-       
+
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.runAcceleration *= 0.91f;
         player.moveSpeed += MoveSpeedBonus / 91f;
@@ -101,6 +101,6 @@ public class KevlarPants : ModItem
     public override void UpdateArmorSet(Player player)
     {
 
-       
+
     }
 }

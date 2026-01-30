@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Poop;
 
 public class Pooperang : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -25,13 +25,13 @@ public class Pooperang : ModItem
         Item.useAnimation = 25; // All vanilla yoyos have a useAnimation of 25.
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-       
+
 
         Item.damage = 20; // The amount of damage the item does to an enemy or player.
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.knockBack = 5f; // The amount of knockback the item inflicts.
-       
-       
+
+
         Item.rare = ItemRarityID.White; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(copper: 6); // The amount of money that the item is can be bought for.
 
@@ -42,7 +42,7 @@ public class Pooperang : ModItem
     {
         SoundEngine.PlaySound(SoundID.Item1, player.position);
         player.AddBuff(BuffID.Stinky, 61);
-      
+
 
 
         return true;
@@ -105,7 +105,7 @@ public class Pooperang : ModItem
 
 
         recipe.AddIngredient(ItemID.WoodenBoomerang);
-       
+
         recipe.AddIngredient(ItemID.PoopBlock, 5);
         recipe.AddTile(TileID.WorkBenches);
 

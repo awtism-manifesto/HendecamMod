@@ -37,21 +37,21 @@ public class TheOilBaron : ModItem
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
     }
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
         type = ModContent.ProjectileType<OilBall>();                                             // Create a projectile.
-        Projectile.NewProjectileDirect(source, position, velocity*1.667f, type, (int)(damage*0.67f), knockback, player.whoAmI);
-       
+        Projectile.NewProjectileDirect(source, position, velocity * 1.667f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
+
         return true;
     }
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -82,7 +82,7 @@ public class TheOilBaron : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient<WaterflameSword>();
 
         recipe.AddIngredient(ItemID.SoulofNight, 10);
@@ -96,6 +96,6 @@ public class TheOilBaron : ModItem
 
 
     }
-   
+
 
 }

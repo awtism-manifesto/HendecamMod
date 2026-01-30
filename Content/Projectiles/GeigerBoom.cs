@@ -37,7 +37,7 @@ public class GeigerBoom : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.timeLeft =12;
+        Projectile.timeLeft = 12;
         Projectile.extraUpdates = 0;
         Projectile.tileCollide = false;
 
@@ -102,7 +102,7 @@ public class GeigerBoom : ModProjectile
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
 
-                   
+
                 }
             }
 
@@ -122,8 +122,8 @@ public class GeigerBoom : ModProjectile
         }
     }
 
-    
-    
+
+
 
     public override void PrepareBombToBlow()
     {

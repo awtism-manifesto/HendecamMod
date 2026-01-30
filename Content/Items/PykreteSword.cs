@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 
 public class PykreteSword : ModItem
 {
-   
+
     public override void SetDefaults()
     {
         Item.damage = 14;
@@ -53,7 +53,7 @@ public class PykreteSword : ModItem
 
 
 
-       
+
     }
     private int shotCounter = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -85,8 +85,8 @@ public class PykreteSword : ModItem
                 shotCounter = 0;
             }
         }
-            
-       
+
+
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
@@ -94,10 +94,10 @@ public class PykreteSword : ModItem
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-        
 
 
-       
+
+
         if (Main.rand.NextBool(4))
         {
             target.AddBuff(BuffID.Frostburn, 150);
@@ -108,7 +108,7 @@ public class PykreteSword : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Pykrete>(15);
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

@@ -15,7 +15,7 @@ public class FossilFuelPants : ModItem
 {
 
     public static readonly int MoveSpeedBonus = 22;
-    
+
     public static readonly int AttackSpeedBonus = 11;
     public static readonly int MaxMinionIncrease = 1;
     public static LocalizedText SetBonusText { get; private set; }
@@ -88,16 +88,16 @@ public class FossilFuelPants : ModItem
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 111f;
         player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 111f;
         player.maxMinions += MaxMinionIncrease;
-       
+
         player.moveSpeed += MoveSpeedBonus / 122f;
         player.runAcceleration *= 1.22f;
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<CrudeOil>(65);
         recipe.AddIngredient<RefinedOil>(25);
         recipe.AddIngredient(ItemID.FossilPants);
@@ -125,7 +125,7 @@ public class FossilFuelPants : ModItem
                 return;
             }
 
-            
+
             Player.runAcceleration *= 1.44f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.44f;
             Player.accRunSpeed *= 1.44f;

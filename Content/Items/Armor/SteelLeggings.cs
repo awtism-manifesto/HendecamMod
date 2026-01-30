@@ -85,6 +85,6 @@ public class SteelLeggings : ModItem
     public override void UpdateArmorSet(Player player)
     {
 
-      
+
     }
 }

@@ -96,7 +96,7 @@ public class AstaBoomDelayed : ModProjectile
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
 
-                   
+
                 }
             }
 
@@ -166,7 +166,7 @@ public class AstaBoomDelayed : ModProjectile
             fireDust.noGravity = true;
         }
 
-      
+
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

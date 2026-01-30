@@ -15,7 +15,7 @@ using HendecamMod.Content.NPCs.Town.Alpine;
 
 namespace HendecamMod.Content.Global;
 
-public class MericaNPCShops:GlobalNPC
+public class MericaNPCShops : GlobalNPC
 {
     public override void ModifyShop(NPCShop shop)
     {
@@ -27,36 +27,36 @@ public class MericaNPCShops:GlobalNPC
             shop.Add<Shitballs>(condition: Terraria.Condition.DrunkWorld);
             shop.Add<KingslayerBullet>(condition: Terraria.Condition.ForTheWorthyWorld);
             shop.Add<CeramicDart>(condition: Terraria.Condition.Hardmode);
-           
+
 
             shop.Add<Glock>(condition: Terraria.Condition.DownedEyeOfCthulhu);
             shop.Add<AK47>(condition: Terraria.Condition.DownedSkeletron);
-            
-          
+
+
             shop.Add(ItemID.Handgun, condition: Terraria.Condition.DownedSkeletron);
-            shop.Add(ItemID.QuadBarrelShotgun,condition: Terraria.Condition.DownedSkeletron);
+            shop.Add(ItemID.QuadBarrelShotgun, condition: Terraria.Condition.DownedSkeletron);
             shop.Add<TommyGun>(condition: Terraria.Condition.Hardmode);
             shop.Add<PoliceBaton>(condition: Terraria.Condition.NotTenthAnniversaryWorld);
             shop.Add<SacrificialPistol>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<DiseaseBlaster>()));
             shop.Add<DiseaseBlaster>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<SacrificialPistol>()));
             shop.Add<Brainderbuss>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<ToothlessWyrm>()));
             shop.Add<ToothlessWyrm>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Brainderbuss>()));
-           
 
 
-           
 
-         }
+
+
+        }
         if (shop.NpcType == NPCID.Merchant)
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
             shop.Add<EnfieldRifle>(condition: Terraria.Condition.NpcIsPresent(NPCID.ArmsDealer));
             shop.Add<M1Garand>(condition: Terraria.Condition.Hardmode);
-           
+
             shop.Add(ItemID.Blowpipe);
-           
-           
+
+
 
         }
         if (shop.NpcType == NPCID.Demolitionist)
@@ -67,7 +67,7 @@ public class MericaNPCShops:GlobalNPC
             shop.Add<RivetGun>(condition: Terraria.Condition.DownedSkeletron);
             shop.Add(ItemID.Nail, condition: Terraria.Condition.DownedSkeletron);
         }
-       
+
         if (shop.NpcType == NPCID.PartyGirl)
         {
             // Adding an item to a vanilla NPC is easy:
@@ -106,7 +106,7 @@ public class MericaNPCShops:GlobalNPC
             shop.Add<OrcaSuit>();
             shop.Add<OrcaTail>();
         }
-       
+
         if (shop.NpcType == NPCID.Pirate)
         {
             // Adding an item to a vanilla NPC is easy:
@@ -127,7 +127,7 @@ public class MericaNPCShops:GlobalNPC
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
             shop.Add(ItemID.Cog, condition: Terraria.Condition.Hardmode);
-           
+
         }
         if (shop.NpcType == NPCID.Cyborg)
         {
@@ -135,7 +135,7 @@ public class MericaNPCShops:GlobalNPC
             // This item sells for the normal price.
             shop.Add<AutismDiagnosis>();
             shop.Add<CyberneticGunParts>(condition: Terraria.Condition.NpcIsPresent(ModContent.NPCType<Alpine>()));
-           
+
             shop.Add<PowerHelmet>();
             shop.Add<PowerChestplate>();
             shop.Add<PowerPants>();
@@ -158,8 +158,8 @@ public class MericaNPCShops:GlobalNPC
         }
 
 
-       
-        
+
+
     }
 }
 

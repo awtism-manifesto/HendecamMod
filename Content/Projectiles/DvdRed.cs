@@ -44,7 +44,7 @@ public class DvdRed : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 6;
-       
+
     }
     public override void AI()
     {
@@ -55,7 +55,7 @@ public class DvdRed : ModProjectile
         }
         else
         {
-           
+
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -111,22 +111,22 @@ public class DvdRed : ModProjectile
         // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
 
         // Play an exploding sound.
-      
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-      
+
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(175, 175);
 
-       
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<DvdGreen>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
-           
-           
 
-        
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<DvdGreen>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
+
+
+
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -165,9 +165,9 @@ public class DvdRed : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 0.2f);
             fireeeDust.velocity *= 2f;
         }
-       
+
         // Spawn a bunch of fire dusts.
-       
+
 
 
         // Rocket II explosion that damages tiles.

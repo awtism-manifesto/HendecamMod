@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class KevlarFedora : ModItem
 {
 
-    
+
     public static readonly int StupidArmorPenetration = 5;
     public static readonly int StupidAttackSpeedBonus = 11;
     public static readonly int MoveSpeedBonus = -3;
@@ -86,7 +86,7 @@ public class KevlarFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        
+
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 111f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.moveSpeed += MoveSpeedBonus / 97f;

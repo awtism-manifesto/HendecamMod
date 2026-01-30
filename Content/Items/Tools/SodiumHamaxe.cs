@@ -14,15 +14,15 @@ public class SodiumHamaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 22;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 60;
         Item.height = 60;
         Item.useTime = 13;
         Item.useAnimation = 22;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
-        
+
         Item.value = Item.buyPrice(gold: 1); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
@@ -55,11 +55,11 @@ public class SodiumHamaxe : ModItem
 
 
         recipe.AddIngredient<RockSalt>(40);
-        
-        
+
+
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-        
+
     }
 }

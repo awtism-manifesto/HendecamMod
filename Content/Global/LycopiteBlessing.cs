@@ -26,7 +26,7 @@ public class LycopiteBlessing : GlobalNPC
         if (!NPC.downedDeerclops)
         {
             ModContent.GetInstance<LycopiteSystem>().BlessWorldWithLycopite();
-          
+
         }
 
     }

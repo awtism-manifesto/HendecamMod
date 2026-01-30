@@ -40,7 +40,7 @@ public class TheFuckingMoon : ModProjectile
         target.AddBuff(ModContent.BuffType<MoonBurn>(), 1200);
 
     }
-    
+
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {

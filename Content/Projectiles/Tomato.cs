@@ -1,9 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -17,9 +15,9 @@ public class Tomato : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 4;
-       
+
     }
     public override void SetDefaults()
     {
@@ -80,7 +78,7 @@ public class Tomato : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
+
                 Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustID.Water_Crimson, 0f, 0f, 100, default, 0.75f);
                 firee2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
                 firee2Dust.velocity *= 0.25f;
@@ -88,7 +86,7 @@ public class Tomato : ModProjectile
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 

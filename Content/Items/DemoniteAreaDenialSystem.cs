@@ -34,7 +34,7 @@ public class DemoniteAreaDenialSystem : ModItem
 
 
         // The sound that this item plays when used.
-     
+
 
 
         // Weapon Properties
@@ -48,7 +48,7 @@ public class DemoniteAreaDenialSystem : ModItem
 
 
         {
-            Item.damage = 15; 
+            Item.damage = 15;
 
         }
 
@@ -85,7 +85,7 @@ public class DemoniteAreaDenialSystem : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -128,7 +128,7 @@ public class DemoniteAreaDenialSystem : ModItem
 
 
         {
-          
+
             recipe.AddIngredient(DemoniteSniperRifle.Type);
         }
 

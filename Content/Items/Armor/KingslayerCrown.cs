@@ -37,7 +37,7 @@ public class KingslayerCrown : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.accessory = true;
         Item.vanity = true;
-        
+
     }
     public override void AddRecipes()
     {
@@ -62,7 +62,7 @@ public class KingslayerCrown : ModItem
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
 
-       
+
 
 
 
@@ -95,7 +95,7 @@ public class KingslayerCrown : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
-    
-   
+
+
+
 }

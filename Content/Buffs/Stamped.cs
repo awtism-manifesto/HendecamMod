@@ -18,18 +18,18 @@ public class Stamped : ModBuff
     {
         Main.pvpBuff[Type] = true; // This buff can be applied by other players in Pvp, so we need this to be true.
 
-      
+
     }
 
     public override void Update(NPC npc, ref int buffIndex)
     {
         npc.GetGlobalNPC<DamageModificationGlobalNPC>().stamped = true;
-        
+
     }
 
     public override void Update(Player player, ref int buffIndex)
     {
-        
+
         player.statDefense *= DefenseMultiplier;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -42,7 +41,7 @@ public class TinShort : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.725f);
-      
+
     }
 
     public override bool PreDraw(ref Color lightColor)

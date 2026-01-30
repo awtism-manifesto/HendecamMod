@@ -33,7 +33,7 @@ public class PlasmaMonkeysPaw : ModItem
         Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item39;
@@ -125,27 +125,27 @@ public class PlasmaMonkeysPaw : ModItem
 
         {
 
-            
-       
+
+
             recipe = CreateRecipe();
             recipe.AddIngredient<Items.LaserMonkeysPaw>();
 
             recipe.AddIngredient<Items.FissionDrive>();
-           
+
             recipe.AddIngredient(WhiteDwarfFragment.Type, 8);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
 
 
-            
+
 
 
         }
         else
         {
-           
 
-                recipe = CreateRecipe();
+
+            recipe = CreateRecipe();
             recipe.AddIngredient<Items.LaserMonkeysPaw>();
 
             recipe.AddIngredient<Items.FissionDrive>();
@@ -159,7 +159,7 @@ public class PlasmaMonkeysPaw : ModItem
         }
 
     }
-    
+
 
     public override Vector2? HoldoutOffset()
     {

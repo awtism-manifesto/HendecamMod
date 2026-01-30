@@ -64,29 +64,29 @@ public class ZazaDart : ModItem
     }
     public override void AddRecipes()
     {
-        
+
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("WoodenDart", out ModItem WoodenDart))
         {
             recipe = CreateRecipe(150);
 
             recipe.AddIngredient(WoodenDart.Type, 150);
-            recipe.AddIngredient< WeedLeaves>(3);
+            recipe.AddIngredient<WeedLeaves>(3);
             recipe.AddTile(TileID.Loom);
             recipe.Register();
         }
         else
         {
             recipe = CreateRecipe(50);
-            recipe.AddIngredient< WeedLeaves>(1);
+            recipe.AddIngredient<WeedLeaves>(1);
             recipe.AddRecipeGroup("Wood", 2);
             recipe.AddTile(TileID.Loom);
             recipe.Register();
 
 
         }
-       
-       
-        
+
+
+
     }
 }

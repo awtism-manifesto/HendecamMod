@@ -18,8 +18,8 @@ public class VerdantTag : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-       
-        if (Main.rand.NextBool(2)) 
+
+        if (Main.rand.NextBool(2))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.PoisonStaff,
                 npc.velocity.X * 0.96f, npc.velocity.Y * 0.96f, 70, default, 2.15f);

@@ -36,7 +36,7 @@ public class RednecksRustBucket : ModItem
 
 
         // The sound that this item plays when used.
-       
+
 
 
         // Weapon Properties
@@ -44,7 +44,7 @@ public class RednecksRustBucket : ModItem
         Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
         Item.ArmorPenetration = 10;
 
         // Gun Properties
@@ -69,7 +69,7 @@ public class RednecksRustBucket : ModItem
         if (player.altFunctionUse == 2)
         {
             Item.noUseGraphic = true;
-          
+
             int proj = Projectile.NewProjectile(source, position, velocity * 1.18f, ModContent.ProjectileType<RedneckShovel>(), (int)(damage * 0.95f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
             SoundEngine.PlaySound(SoundID.Item1, player.position);
@@ -80,7 +80,7 @@ public class RednecksRustBucket : ModItem
         {
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             Item.noUseGraphic = false;
-           
+
             int NumProjectiles = Main.rand.Next(3, 6); // The number of projectiles that this gun will shoot.
             damage = (int)(damage * Main.rand.NextFloat(0.43f, 0.445f));
             for (int i = 0; i < NumProjectiles; i++)
@@ -98,8 +98,8 @@ public class RednecksRustBucket : ModItem
         }
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-    
-    
+
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -143,23 +143,23 @@ public class RednecksRustBucket : ModItem
     }
     public override void AddRecipes()
     {
-        Recipe 
+        Recipe
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.QuadBarrelShotgun);
-        recipe.AddIngredient< ImprovisedMachineGun>();
-        recipe.AddIngredient< ToothlessWyrm>();
-        recipe.AddIngredient< Brainderbuss>();
-        recipe.AddIngredient< UraniumShotgun>();
-        
-        
+        recipe.AddIngredient<ImprovisedMachineGun>();
+        recipe.AddIngredient<ToothlessWyrm>();
+        recipe.AddIngredient<Brainderbuss>();
+        recipe.AddIngredient<UraniumShotgun>();
+
+
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel))
-            {
+        {
             recipe.AddIngredient(PurifiedGel.Type, 10);
 
         }
-        
+
     }
-    }
+}
 

@@ -31,7 +31,7 @@ public class PlutoniumBlessing : GlobalNPC
         if (!ApacheElfShipDown.downedApacheElfShip)
         {
             ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
-          
+
         }
 
     }

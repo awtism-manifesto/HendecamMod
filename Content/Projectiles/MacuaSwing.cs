@@ -22,7 +22,7 @@ public class MacuaSwing : ModProjectile
         // This set has the projectiles for the Night's Edge, Excalibur, Terra Blade (close range), and The Horseman's Blade (close range).
         // This set does not have the True Night's Edge, True Excalibur, or the long range Terra Beam projectiles.
         ProjectileID.Sets.AllowsContactDamageFromJellyfish[Type] = true;
-      
+
     }
 
     public override void SetDefaults()
@@ -86,10 +86,10 @@ public class MacuaSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
-       
 
-      
+
+
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 

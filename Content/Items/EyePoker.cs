@@ -72,7 +72,7 @@ public class EyePoker : ModItem
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
         return player.ownedProjectileCounts[Item.shoot] < 1;
     }
-  
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

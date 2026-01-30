@@ -18,7 +18,7 @@ public class ChlorophyteDart : ModItem
     {
         Item.damage = 9; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-       
+
         Item.width = 13;
         Item.height = 13;
         Item.maxStack = Item.CommonMaxStack;
@@ -34,7 +34,7 @@ public class ChlorophyteDart : ModItem
     {
         return Color.White;
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

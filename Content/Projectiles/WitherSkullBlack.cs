@@ -13,7 +13,7 @@ public class WitherSkullBlack : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -21,7 +21,7 @@ public class WitherSkullBlack : ModProjectile
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
-      
+
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
@@ -49,13 +49,13 @@ public class WitherSkullBlack : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
 
 
         Projectile.rotation += 0.15f;
-       
 
-       
+
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -113,7 +113,7 @@ public class WitherSkullBlack : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -122,5 +122,5 @@ public class WitherSkullBlack : ModProjectile
 
     }
 
-   
+
 }

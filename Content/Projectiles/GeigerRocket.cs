@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -71,7 +70,7 @@ public class GeigerRocket : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-                   
+
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -116,7 +115,7 @@ public class GeigerRocket : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        
+
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
 
@@ -149,39 +148,39 @@ public class GeigerRocket : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(570, 570);
 
-        
-            Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(65));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(110));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<GeigerBoom    >(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(155));
-            Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(200));
-            Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(245));
-            Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(290));
-            Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(335));
-            Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-            ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+
+        Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(65));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(110));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(155));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(200));
+        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(245));
+        Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(290));
+        Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(335));
+        Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
+        ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
 
 
 

@@ -100,7 +100,7 @@ public class BushPlane : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-                   
+
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -132,7 +132,7 @@ public class BushPlane : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        
+
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
 
@@ -158,13 +158,13 @@ public class BushPlane : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-        
+
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(290, 290);
 
-       
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 55; j++)

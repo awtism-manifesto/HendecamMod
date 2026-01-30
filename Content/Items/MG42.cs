@@ -41,7 +41,7 @@ public class MG42 : ModItem
         Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-      
+
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -67,9 +67,9 @@ public class MG42 : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
 
     }
-   
-   
-   
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -102,11 +102,11 @@ public class MG42 : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Gatligator);
         recipe.AddIngredient<Items.Stg44>();
-       
+
         recipe.AddIngredient(ItemID.SoulofFright, 5);
-      
+
         recipe.AddIngredient(ItemID.SoulofMight, 5);
-       
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))

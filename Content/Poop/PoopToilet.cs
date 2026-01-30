@@ -1,10 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria.DataStructures;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HendecamMod.Content.Tiles;
-using Terraria;
 
 namespace HendecamMod.Content.Poop;
 
@@ -15,8 +13,8 @@ public class PoopToilet : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
-      
+
+
         Item.ResearchUnlockCount = 2; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -31,7 +29,7 @@ public class PoopToilet : ModItem
         Item.value = 12;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<PoopToiletPlaced>());
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

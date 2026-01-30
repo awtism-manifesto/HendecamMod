@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Head)]
 public class PridePartyHat : ModItem
 {
-  
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -25,7 +25,7 @@ public class PridePartyHat : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         ArmorIDs.Head.Sets.IsTallHat[Item.headSlot] = true;
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
-       
+
     }
 
     public override void SetDefaults()
@@ -34,7 +34,7 @@ public class PridePartyHat : ModItem
         Item.height = 18; // Height of the item
         Item.value = Item.buyPrice(gold: 1); // How many coins the item is worth
         Item.rare = ItemRarityID.Pink; // The rarity of the item
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -63,6 +63,6 @@ public class PridePartyHat : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
-   
+
+
 }

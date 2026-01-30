@@ -48,7 +48,7 @@ public class Libeerator : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.Seed;
 
-       
+
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -64,10 +64,10 @@ public class Libeerator : ModItem
 
     }
 
-    
 
-   
-    
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,7 +97,7 @@ public class Libeerator : ModItem
     }
 
 
-    
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

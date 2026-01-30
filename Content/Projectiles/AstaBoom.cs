@@ -96,7 +96,7 @@ public class AstaBoom : ModProjectile
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
 
-                   
+
                 }
             }
 

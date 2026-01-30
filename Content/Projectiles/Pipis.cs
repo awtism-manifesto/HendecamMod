@@ -69,8 +69,8 @@ public class Pipis : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
-       
+
+
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -78,7 +78,7 @@ public class Pipis : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)

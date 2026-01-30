@@ -135,7 +135,7 @@ public class KingslayerWarBow : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<KingslayerBar>(14);
-       
+
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
 

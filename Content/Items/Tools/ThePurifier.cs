@@ -19,7 +19,7 @@ public class ThePurifier : ModItem
     public override void SetDefaults()
     {
         Item.damage = 33;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 6;
@@ -29,14 +29,14 @@ public class ThePurifier : ModItem
         Item.scale = 1.45f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
-        
+
         Item.value = Item.buyPrice(gold: 9); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 2;
         Item.pick = 155;
-       
+
         Item.axe = 26;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
@@ -100,7 +100,7 @@ public class ThePurifier : ModItem
             recipe.AddIngredient<KingslayerMultiaxe>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-            
+
         }
         else
         {
@@ -110,7 +110,7 @@ public class ThePurifier : ModItem
 
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-           
+
 
         }
 

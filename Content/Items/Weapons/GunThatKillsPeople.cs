@@ -48,7 +48,7 @@ public class GunThatKillsPeople : ModItem
 
         return false;
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

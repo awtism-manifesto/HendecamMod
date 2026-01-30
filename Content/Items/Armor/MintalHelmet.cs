@@ -94,7 +94,7 @@ public class MintalHelmet : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-      
-      
+
+
     }
 }

@@ -33,7 +33,7 @@ public class Liquidation : ModItem
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item99;
@@ -44,7 +44,7 @@ public class Liquidation : ModItem
         Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -58,14 +58,14 @@ public class Liquidation : ModItem
 
     }
 
-   
+
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       
+
         type = ModContent.ProjectileType<WaterDart>();
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -97,7 +97,7 @@ public class Liquidation : ModItem
 
 
 
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-4f, -3f);

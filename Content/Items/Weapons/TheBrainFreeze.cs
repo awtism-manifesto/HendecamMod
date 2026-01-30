@@ -35,7 +35,7 @@ public class TheBrainFreeze : ModItem
         Item.mana = 9;
 
 
-       
+
 
 
         // Weapon Properties
@@ -72,7 +72,7 @@ public class TheBrainFreeze : ModItem
             type = ModContent.ProjectileType<MintLeafProjectileMagic>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
-            Projectile.NewProjectileDirect(source, position, new2Velocity*1.85f, type, (int)(damage * 1f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new2Velocity * 1.85f, type, (int)(damage * 1f), knockback, player.whoAmI);
             shotCounter = 0;
         }
 
@@ -80,7 +80,7 @@ public class TheBrainFreeze : ModItem
 
         return false;
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

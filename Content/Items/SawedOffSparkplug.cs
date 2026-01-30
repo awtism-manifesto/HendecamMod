@@ -68,13 +68,13 @@ public class SawedOffSparkplug : ModItem
 
         for (int i = 0; i < NumProjectiles; i++)
         {
-            
+
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(28.5f));
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-28.5f));
             Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(13.5f));
             Vector2 new5Velocity = velocity.RotatedBy(MathHelper.ToRadians(-13.5f));
             Vector2 new4Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.5f));
-          
+
 
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.45f);
@@ -89,7 +89,7 @@ public class SawedOffSparkplug : ModItem
             type = ModContent.ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<OilBallRanged>();
-            Projectile.NewProjectileDirect(source, position, new4Velocity, type, (int)(damage*1.5f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new4Velocity, type, (int)(damage * 1.5f), knockback, player.whoAmI);
             type = ModContent.ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
         }
@@ -132,10 +132,10 @@ public class SawedOffSparkplug : ModItem
         recipe.AddIngredient<RefinedOil>(50);
         recipe.AddIngredient(ItemID.IllegalGunParts);
         recipe.AddIngredient(ItemID.Boomstick);
-        
-       
-       
-       
+
+
+
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SparkSpreader", out ModItem SparkSpreader))
@@ -146,7 +146,7 @@ public class SawedOffSparkplug : ModItem
 
 
 
-        }
+    }
 
 
 

@@ -18,7 +18,7 @@ public class RadShot : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-        
+
     }
 
     public override void SetDefaults()
@@ -48,7 +48,7 @@ public class RadShot : ModProjectile
 
         return true;
     }
-    
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
@@ -59,7 +59,7 @@ public class RadShot : ModProjectile
     }
     public override void AI()
     {
-       
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -80,20 +80,20 @@ public class RadShot : ModProjectile
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-        
-            for (int i = -1; i <= 1; i++)
-            {
-               
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
-                Vector2 Peanits = Projectile.Center - new Vector2(0,0);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<RadShotMini>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
-            }
-            
-        
+
+        for (int i = -1; i <= 1; i++)
+        {
+
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
+            Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<RadShotMini>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
+        }
+
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

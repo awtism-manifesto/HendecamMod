@@ -36,7 +36,7 @@ public class Autovaxxer : ModItem
         Item.useAnimation = 14; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
 
@@ -131,11 +131,11 @@ public class Autovaxxer : ModItem
         recipe.AddIngredient<FissionDrive>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FragmentFlatEarth>(12);
-       
-      
+
+
         recipe.AddIngredient(ItemID.VialofVenom, 20);
         recipe.AddIngredient(ItemID.Nanites, 20);
-      
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -148,7 +148,7 @@ public class Autovaxxer : ModItem
 
 
         }
-       
+
     }
 
 

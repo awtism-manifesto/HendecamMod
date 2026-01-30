@@ -28,7 +28,7 @@ public class JfkBullet : ModProjectile
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 250; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -84,30 +84,30 @@ public class JfkBullet : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
-            
-                
-                Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
-                Vector2 Peanits = Projectile.Center - new Vector2(70, 20);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(72));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 20));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+
+
+
+        Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
+        Vector2 Peanits = Projectile.Center - new Vector2(70, 20);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(144));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 80));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(216));
-            Vector2 Peanits4 = Projectile.Center - new Vector2(-60, -60);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(288));
-            Vector2 Peanits5 = Projectile.Center - new Vector2(60, -60);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-        
+        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(72));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 20));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(144));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 80));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(216));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(-60, -60);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+        ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(288));
+        Vector2 Peanits5 = Projectile.Center - new Vector2(60, -60);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+        ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+
 
         for (int i = 0; i < 20; i++) // Creates a splash of dust around the position the projectile dies.
         {
@@ -123,10 +123,10 @@ public class JfkBullet : ModProjectile
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
+
+        // dust, all dust
+        if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
             {

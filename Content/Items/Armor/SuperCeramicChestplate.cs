@@ -16,7 +16,7 @@ public class SuperCeramicChestplate : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 10;
     public static readonly int StupidArmorPenetration = 5;
-   
+
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -96,18 +96,18 @@ public class SuperCeramicChestplate : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        
+
         recipe.AddIngredient<CeramicSheet>(40);
         recipe.AddIngredient<EbonceramicSheet>(20);
-      
+
         recipe.AddIngredient<PearlceramicSheet>(20);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient<CeramicSheet>(40);
-       
+
         recipe.AddIngredient<CrimceramicSheet>(20);
         recipe.AddIngredient<PearlceramicSheet>(20);
         recipe.AddTile(TileID.MythrilAnvil);
@@ -119,7 +119,7 @@ public class SuperCeramicChestplate : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
-        
+
+
     }
 }

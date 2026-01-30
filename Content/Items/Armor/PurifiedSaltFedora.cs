@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class PurifiedSaltFedora : ModItem
 {
 
-    
+
     public static readonly int StupidCritBonus = 16;
     public static readonly int StupidArmorPenetration = 12;
     public static LocalizedText SetBonusText { get; private set; }
@@ -84,10 +84,10 @@ public class PurifiedSaltFedora : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
+
         player.statLifeMax2 += 25;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
-       
+
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -103,7 +103,7 @@ public class PurifiedSaltFedora : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
-        
+
+
     }
 }

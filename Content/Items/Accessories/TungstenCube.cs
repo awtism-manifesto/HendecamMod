@@ -14,9 +14,9 @@ public class TungstenCube : ModItem
 
     public override void SetDefaults()
     {
-        Item.width = 26; 
+        Item.width = 26;
         Item.height = 26;
-        Item.rare = ItemRarityID.Blue; 
+        Item.rare = ItemRarityID.Blue;
         Item.value = 500;
         Item.maxStack = 1;
         Item.accessory = true;

@@ -18,7 +18,7 @@ namespace HendecamMod.Content.Items;
 
 public class RainbowRifle : ModItem
 {
-    
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -73,7 +73,7 @@ public class RainbowRifle : ModItem
 
         type = ModContent.ProjectileType<RainbowBullet>();
     }
-  
+
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -132,7 +132,7 @@ public class RainbowRifle : ModItem
         recipe.AddIngredient<GoldenAK>();
         recipe.AddIngredient<OtherworldlySixPack>();
         recipe.AddIngredient<KingslayerBar>(12);
-     
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CoreofSunlight", out ModItem CoreofSunlight))

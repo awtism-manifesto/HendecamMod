@@ -40,7 +40,7 @@ public class PortableTower : ModItem
 
         Item.value = 420000;
         Item.rare = ItemRarityID.Red;
-       
+
 
         Item.shoot = ModContent.ProjectileType<A5G>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.5f; // Speed of the projectiles the sword will shoot
@@ -71,7 +71,7 @@ public class PortableTower : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

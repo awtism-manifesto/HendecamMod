@@ -23,7 +23,7 @@ public class IcicleRanged : ModProjectile
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -39,7 +39,7 @@ public class IcicleRanged : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 13;
     }
-    
+
     public override void AI()
     {
         int frameSpeed = 5;
@@ -78,7 +78,7 @@ public class IcicleRanged : ModProjectile
             fireDust.velocity *= 0.15f;
             fireDust.noGravity = true;
 
-          
+
         }
     }
 
@@ -96,7 +96,7 @@ public class IcicleRanged : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item27, Projectile.position);
     }
-   
+
 }
 
 

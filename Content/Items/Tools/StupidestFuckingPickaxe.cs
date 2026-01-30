@@ -47,5 +47,5 @@ public class StupidestFuckingPickaxe : ModItem
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-    
+
 }

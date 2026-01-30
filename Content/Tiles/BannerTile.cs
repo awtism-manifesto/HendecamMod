@@ -1,7 +1,4 @@
-﻿using System;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -20,15 +17,15 @@ public class BannerTile : ModBannerTile
     public enum StyleID
     {
         Plasmoid,
-			LargePlasmoid,
-			UnstablePlasmoid,
-			OilSlime,
-			TrashSlime,
-			FlyingPig,
-			SaltMonster,
-			OilMonster,
-			River,
-			MorbiumWarrior
+        LargePlasmoid,
+        UnstablePlasmoid,
+        OilSlime,
+        TrashSlime,
+        FlyingPig,
+        SaltMonster,
+        OilMonster,
+        River,
+        MorbiumWarrior
 
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -34,26 +33,26 @@ public class Waterflame : ModProjectile
     public override void AI()
     {
 
-       
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-                Dust fire1Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustID.Torch, 0f, 0f, 100, default, 0.66f);
-                fire1Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
-                fire1Dust.noGravity = true;
-                fire1Dust.velocity *= 0.25f;
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustID.WaterCandle, 0f, 0f, 100, default, 1.5f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 0.25f;
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
+            Dust fire1Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustID.Torch, 0f, 0f, 100, default, 0.66f);
+            fire1Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
+            fire1Dust.noGravity = true;
+            fire1Dust.velocity *= 0.25f;
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustID.WaterCandle, 0f, 0f, 100, default, 1.5f);
+            fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
+            fireDust.noGravity = true;
+            fireDust.velocity *= 0.25f;
+        }
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -64,6 +63,6 @@ public class Waterflame : ModProjectile
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

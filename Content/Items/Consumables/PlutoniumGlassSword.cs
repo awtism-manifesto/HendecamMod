@@ -11,14 +11,14 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Items.Consumables;
 
 public class PlutoniumGlassSword : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 32;
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 25);
         Item.rare = ItemRarityID.LightPurple;
-       
+
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 11;
@@ -43,17 +43,17 @@ public class PlutoniumGlassSword : ModItem
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
     }
-  
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumGlass>(10);
         recipe.AddTile(TileID.GlassKiln);
         recipe.Register();
-        }
     }
+}

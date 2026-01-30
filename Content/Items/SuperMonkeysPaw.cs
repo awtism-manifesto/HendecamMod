@@ -33,7 +33,7 @@ public class SuperMonkeysPaw : ModItem
         Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item1;
@@ -44,7 +44,7 @@ public class SuperMonkeysPaw : ModItem
         Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -64,7 +64,7 @@ public class SuperMonkeysPaw : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
 
-       
+
         if (type == ModContent.ProjectileType<FrostDart>())
         {
             damage = (int)(damage * 0.75f);
@@ -107,13 +107,13 @@ public class SuperMonkeysPaw : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LightAnguish", out ModItem LightAnguish)
              && ThorMerica.TryFind("Embowelment", out ModItem Embowelment)
              && (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel)))
-             
+
 
 
         {
 
 
-             recipe = CreateRecipe();
+            recipe = CreateRecipe();
             recipe.AddIngredient<Items.TheMonkeysPaw>();
             recipe.AddIngredient(LightAnguish);
             recipe.AddIngredient(Embowelment);
@@ -135,7 +135,7 @@ public class SuperMonkeysPaw : ModItem
             recipe.AddIngredient<Items.TheMonkeysPaw>();
             recipe.AddIngredient(Light2Anguish);
             recipe.AddIngredient(Embowelment2);
-           
+
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
@@ -143,12 +143,12 @@ public class SuperMonkeysPaw : ModItem
         if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica) && (!ModLoader.TryGetMod("ThoriumMod", out Mod NuhUh) && Cal2Merica.TryFind<ModItem>("PurifiedGel", out ModItem Purified2Gel)))
         {
 
-             recipe = CreateRecipe();
+            recipe = CreateRecipe();
             recipe.AddIngredient<Items.TheMonkeysPaw>();
             recipe.AddIngredient<Items.Liquidation>();
             recipe.AddIngredient<Items.SacrificialPistol>();
             recipe.AddIngredient<Items.DiseaseBlaster>();
-           
+
             recipe.AddIngredient(ItemID.Blowgun);
             recipe.AddIngredient(Purified2Gel.Type, 10);
             recipe.AddTile(TileID.DemonAltar);
@@ -159,12 +159,12 @@ public class SuperMonkeysPaw : ModItem
         }
         else
         {
-           recipe = CreateRecipe();
+            recipe = CreateRecipe();
             recipe.AddIngredient<Items.TheMonkeysPaw>();
             recipe.AddIngredient<Items.Liquidation>();
             recipe.AddIngredient<Items.SacrificialPistol>();
             recipe.AddIngredient<Items.DiseaseBlaster>();
-           
+
             recipe.AddIngredient(ItemID.Blowgun);
 
             recipe.AddTile(TileID.DemonAltar);
@@ -175,7 +175,7 @@ public class SuperMonkeysPaw : ModItem
 
 
     }
-    
+
 
     public override Vector2? HoldoutOffset()
     {

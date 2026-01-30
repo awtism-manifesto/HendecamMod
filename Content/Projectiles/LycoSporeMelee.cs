@@ -33,11 +33,11 @@ public class LycoSporeMelee : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-       
+
 
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-       
+
         Projectile.DamageType = DamageClass.Melee;
         Projectile.friendly = true;
         Projectile.hostile = false;
@@ -53,7 +53,7 @@ public class LycoSporeMelee : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
+
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -61,7 +61,7 @@ public class LycoSporeMelee : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -80,10 +80,10 @@ public class LycoSporeMelee : ModProjectile
     }
     public override void AI()
     {
-      
 
 
-       
+
+
 
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {

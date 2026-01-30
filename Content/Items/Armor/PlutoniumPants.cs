@@ -114,9 +114,9 @@ public class PlutoniumPants : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
-    public class Penis: ModPlayer
+    public class Penis : ModPlayer
     {
         public bool BigPenis = false;
 
@@ -133,8 +133,8 @@ public class PlutoniumPants : ModItem
                 return;
             }
 
-           
-            Player.runAcceleration *= 1.21f; 
+
+            Player.runAcceleration *= 1.21f;
             Player.maxRunSpeed *= 1.21f;
             Player.accRunSpeed *= 1.21f;
             Player.runSlowdown *= 1.21f;

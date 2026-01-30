@@ -82,9 +82,9 @@ public class UnicornHornProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.8f);
-       
+
     }
 
-    
+
 
 }

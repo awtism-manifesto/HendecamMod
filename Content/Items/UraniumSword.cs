@@ -26,7 +26,7 @@ public class UraniumSword : ModItem
         Item.width = 40;
         Item.height = 40;
         Item.scale = 1.15f;
-        
+
         Item.UseSound = SoundID.Item15;
         Item.rare = ItemRarityID.Green;
         Item.value = Item.buyPrice(gold: 5); // Sell price is 5 times less than the buy price.
@@ -48,7 +48,7 @@ public class UraniumSword : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -84,7 +84,7 @@ public class UraniumSword : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-       
+
     }
 
 }

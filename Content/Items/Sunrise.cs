@@ -18,7 +18,7 @@ namespace HendecamMod.Content.Items;
 
 public class Sunrise : ModItem
 {
-    
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -47,7 +47,7 @@ public class Sunrise : ModItem
         Item.damage = 122; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -61,14 +61,14 @@ public class Sunrise : ModItem
 
     }
 
-   
+
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       
+
         type = ModContent.ProjectileType<SunDart>();
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -117,14 +117,14 @@ public class Sunrise : ModItem
         else
         {
             recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(ItemID.HallowedBar, 12);
             recipe.AddIngredient(ItemID.HellstoneBar, 12);
             recipe.AddIngredient<Items.LycopiteBar>(10);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 
-           
+
 
         }
 

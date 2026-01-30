@@ -13,11 +13,11 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Beard)]
 public class CollarOfTheDamned : ModItem
 {
-   
-    
-    
 
-   
+
+
+
+
 
     public override void SetDefaults()
     {
@@ -27,7 +27,7 @@ public class CollarOfTheDamned : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.accessory = true;
         Item.vanity = true;
-        
+
     }
     public override void AddRecipes()
     {
@@ -38,7 +38,7 @@ public class CollarOfTheDamned : ModItem
         recipe.AddIngredient(ItemID.CrabBanner);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-       
+
 
 
 
@@ -74,7 +74,7 @@ public class CollarOfTheDamned : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
-    
-   
+
+
+
 }

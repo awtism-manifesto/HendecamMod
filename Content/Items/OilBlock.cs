@@ -14,8 +14,8 @@ public class OilBlock : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
-      
+
+
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -30,7 +30,7 @@ public class OilBlock : ModItem
         Item.value = 1150;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.OilDeposit>());
-        
+
     }
     public override void AddRecipes()
     {
@@ -38,7 +38,7 @@ public class OilBlock : ModItem
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("OilShale", out ModItem OilShale))
         {
             recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(OilShale.Type);
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
@@ -50,7 +50,7 @@ public class OilBlock : ModItem
         else
         {
 
-           
+
         }
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -82,5 +82,5 @@ public class OilBlock : ModItem
     }
 
 
-    
+
 }

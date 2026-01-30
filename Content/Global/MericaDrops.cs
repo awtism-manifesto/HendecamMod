@@ -59,7 +59,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AmalgamatedFragment>(), chanceDenominator: 1));
 
         }
-       
+
         if (npc.type == NPCID.Hellhound)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SmallSausageSpammer>(), chanceDenominator: 20));
@@ -153,7 +153,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.HallowBoss)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PrismaticBullet>(),1, 1449,2749));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PrismaticBullet>(), 1, 1449, 2749));
 
 
 
@@ -344,7 +344,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.CursedSkull)
         {
-          
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GiantBone>(), chanceDenominator: 150));
 
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SkeletonKey>(), chanceDenominator: 225));
@@ -370,7 +370,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SkeletonKey>(), chanceDenominator: 225));
             npcLoot.Add(ItemDropRule.Common(ItemID.MagicCuffs, 20));
         }
-      
+
         if (npc.type == NPCID.DesertScorpionWalk)
         {
 
@@ -473,16 +473,16 @@ public class ExampleNPCLoot : GlobalNPC
         {
 
 
-           
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BowlingBaller>(), chanceDenominator: 7));
 
-            
-           
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BowlingBaller>(), chanceDenominator: 7));
+
+
+
 
 
 
         }
-       
+
         if (npc.type == NPCID.DiabolistRed)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShatteredKeyboard>(), chanceDenominator: 25));
@@ -532,9 +532,9 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bundlebuss>(), chanceDenominator: 33));
 
         }
-        
-          
-        
+
+
+
         if (npc.type == NPCID.Scutlix)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PulsePistols>(), chanceDenominator: 18));
@@ -558,7 +558,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.Angler)
         {
-           
+
             npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Six7Gun>(), chanceDenominator: 7, chanceNumerator: 6));
 
 
@@ -572,7 +572,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.TheDestroyer)
         {
-           
+
             npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 3));
 
 
@@ -628,7 +628,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.HellArmoredBones)
         {
-            
+
             npcLoot.Add(ItemDropRule.Common(ItemID.HellstoneBar, 2, 2, 4));
 
 
@@ -755,8 +755,8 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.SkeletronHead)
         {
-            
-          
+
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SkeletonKey>(), chanceDenominator: 8));
 
         }
@@ -794,7 +794,7 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
         }
-        
+
         if (npc.type == NPCID.DD2OgreT2)
         {
 
@@ -830,7 +830,7 @@ public class ExampleNPCLoot : GlobalNPC
 
 
         }
-       
+
         if (npc.type == NPCID.DemonEye2)
         {
 
@@ -861,7 +861,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.EyeofCthulhu)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 2, 2,3));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 2, 2, 3));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyeRifle>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyePoker>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ItemID.VampireFrogStaff, 4));
@@ -872,7 +872,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 1, 1, 10));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyeRifle>(), chanceDenominator: 8));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyePoker>(), chanceDenominator: 8));
-           
+
         }
         if (npc.type == NPCID.Deerclops)
         {
@@ -960,7 +960,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheFishStick>(), chanceDenominator: 9));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlasticScrap>(), 15, 4, 9));
         }
-       
+
         if (npc.type == NPCID.UndeadViking)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.RedRyder, 15));
@@ -982,7 +982,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.Poltergeist)
         {
-            
+
             npcLoot.Add(ItemDropRule.Common(ItemID.Ectoplasm, 3, 1, 4));
         }
         if (npc.type == NPCID.SeekerHead)
@@ -1017,7 +1017,7 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.Corruptor)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Toxikarp,33));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Toxikarp, 33));
         }
         if (npc.type == NPCID.Herpling)
         {
@@ -1029,12 +1029,12 @@ public class ExampleNPCLoot : GlobalNPC
         }
         if (npc.type == NPCID.Hellbat)
         {
-           
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuckyCigarette>(), chanceDenominator: 20));
         }
         if (npc.type == NPCID.FireImp)
         {
-           
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuckyCigarette>(), chanceDenominator: 20));
         }
         if (npc.type == NPCID.LavaSlime)
@@ -1042,7 +1042,7 @@ public class ExampleNPCLoot : GlobalNPC
 
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuckyCigarette>(), chanceDenominator: 20));
         }
-       
+
         if (npc.type == NPCID.BoneLee)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.MasterNinjaGear, 60));

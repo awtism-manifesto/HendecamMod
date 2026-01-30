@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Head)]
 public class PowerHelmet : ModItem
 {
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -23,8 +23,8 @@ public class PowerHelmet : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-       
-       
+
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -34,7 +34,7 @@ public class PowerHelmet : ModItem
         Item.height = 18; // Height of the item
         Item.value = 100000; // How many coins the item is worth
         Item.rare = ItemRarityID.Gray; // The rarity of the item
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -64,7 +64,7 @@ public class PowerHelmet : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -78,8 +78,8 @@ public class PowerHelmet : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-       
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    
+
 }

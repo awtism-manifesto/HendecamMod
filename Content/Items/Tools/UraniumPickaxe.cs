@@ -21,9 +21,9 @@ public class UraniumPickaxe : ModItem
         Item.height = 35;
         Item.useTime = 9;
         Item.useAnimation = 15;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.knockBack = 4 ;
+        Item.knockBack = 4;
         Item.useTurn = true;
 
 
@@ -31,7 +31,7 @@ public class UraniumPickaxe : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        
+
         Item.pick = 110; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
@@ -71,11 +71,11 @@ public class UraniumPickaxe : ModItem
 
 
         recipe.AddIngredient<UraniumBar>(18);
-        
-        
+
+
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-        
+
     }
 }

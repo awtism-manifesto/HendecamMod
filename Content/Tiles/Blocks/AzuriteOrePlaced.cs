@@ -37,7 +37,7 @@ public class AzuriteOrePlaced : ModTile
         HitSound = SoundID.Tink;
         MineResist = 2f;
         MinPick = 70;
-        
+
     }
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

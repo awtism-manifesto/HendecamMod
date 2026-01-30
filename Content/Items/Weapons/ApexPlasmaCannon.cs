@@ -21,7 +21,7 @@ public class ApexPlasmaCannon : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
+
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
 
@@ -44,7 +44,7 @@ public class ApexPlasmaCannon : ModItem
         Item.noMelee = true;
         Item.ArmorPenetration = 15;
         Item.mana = 8;
-        Item.shoot =  ModContent.ProjectileType<ApexPlasmaBullet>();
+        Item.shoot = ModContent.ProjectileType<ApexPlasmaBullet>();
         Item.shootSpeed = 15.95f;
     }
 
@@ -122,7 +122,7 @@ public class ApexPlasmaCannon : ModItem
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
-           
+
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);
@@ -133,7 +133,7 @@ public class ApexPlasmaCannon : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.33f));
 
-           
+
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);
@@ -145,7 +145,7 @@ public class ApexPlasmaCannon : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.25f));
 
-           
+
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);

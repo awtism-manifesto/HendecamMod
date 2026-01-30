@@ -1,9 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -34,7 +31,7 @@ public class SandShot : ModProjectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
-     
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
@@ -87,6 +84,6 @@ public class SandShot : ModProjectile
     }
 
 
-   
+
 
 }

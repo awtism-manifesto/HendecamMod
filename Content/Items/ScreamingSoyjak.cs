@@ -36,16 +36,16 @@ public class ScreamingSoyjak : ModItem
         Item.reuseDelay = 3;
 
         // The sound that this item plays when used.
-       
+
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 59; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-       
-        
+
+
+
 
 
         // Gun Properties
@@ -64,7 +64,7 @@ public class ScreamingSoyjak : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -94,7 +94,7 @@ public class ScreamingSoyjak : ModItem
     }
 
 
-  
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

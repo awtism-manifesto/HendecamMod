@@ -23,7 +23,7 @@ public class AncientCobaltOre : ModItem
         Item.value = 1250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltOrePlaced>());
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -38,9 +38,9 @@ public class AncientCobaltOre : ModItem
 
 
 
-       
+
     }
 
 
-    
+
 }

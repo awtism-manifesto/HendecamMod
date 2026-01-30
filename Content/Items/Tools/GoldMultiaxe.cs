@@ -13,18 +13,18 @@ public class GoldMultiaxe : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
+
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
     public override void SetDefaults()
     {
         Item.damage = 19;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 10;
         Item.useAnimation = 25;
-       
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 5;
         Item.scale = 1.2f;
@@ -84,7 +84,7 @@ public class GoldMultiaxe : ModItem
         };
         tooltips.Add(line);
     }
-    
+
 
     public override void AddRecipes()
     {
@@ -97,7 +97,7 @@ public class GoldMultiaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-       
+
 
 
 

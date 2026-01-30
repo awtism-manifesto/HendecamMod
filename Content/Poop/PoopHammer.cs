@@ -25,12 +25,12 @@ public class PoopHammer : ModItem
         Item.knockBack = 4.5f;
 
         Item.value = Item.buyPrice(copper: 71); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
-     
+
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-     
+
         Item.hammer = 45;
-      
+
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -44,10 +44,10 @@ public class ComicallyLargeTurkeyLeg : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
 
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -80,7 +80,7 @@ public class ComicallyLargeTurkeyLeg : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.ChickenNugget, 2);
         recipe.AddIngredient<GiantBone>();
-      
+
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
     }

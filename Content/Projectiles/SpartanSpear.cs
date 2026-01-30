@@ -17,8 +17,8 @@ public class SpartanSpear : ModProjectile
     {
         Projectile.width = 20;
         Projectile.height = 20;
-       
-       
+
+
         Projectile.CloneDefaults(ProjectileID.Trident); // Clone the default values for a vanilla spear. Spear specific values set for width, height, aiStyle, friendly, penetrate, tileCollide, scale, hide, ownerHitCheck, and melee.
         Projectile.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Projectile.usesLocalNPCImmunity = true;
@@ -34,7 +34,7 @@ public class SpartanSpear : ModProjectile
             dust.scale *= 1.1f;
 
         }
-        
+
     }
     public override bool PreAI()
     {
@@ -79,7 +79,7 @@ public class SpartanSpear : ModProjectile
             Projectile.rotation += MathHelper.ToRadians(135f);
         }
 
-       
+
 
         return false; // Don't execute vanilla AI.
     }

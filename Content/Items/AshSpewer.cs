@@ -123,14 +123,14 @@ public class AshSpewer : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.AshBlock, 100);
         recipe.AddIngredient(ItemID.SilverBar, 5);
-       
+
         recipe.AddIngredient(ItemID.Torch, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.AshBlock, 100);
         recipe.AddIngredient(ItemID.TungstenBar, 5);
-       
+
         recipe.AddIngredient(ItemID.Torch, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

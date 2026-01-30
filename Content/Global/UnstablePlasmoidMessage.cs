@@ -15,7 +15,7 @@ public class UnstablePlasmoidMessage : GlobalNPC
     {
         return npc.type == NPCID.HallowBoss;
     }
-    
+
     public override void OnKill(NPC npc)
     {
         if (!NPC.downedEmpressOfLight)
@@ -23,6 +23,6 @@ public class UnstablePlasmoidMessage : GlobalNPC
 
             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Ominous red orbs can be seen looming high up in the night sky..."), new Color(185, 15, 15));
         }
-        
+
     }
 }

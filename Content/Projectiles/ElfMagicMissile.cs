@@ -1,12 +1,8 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -25,20 +21,20 @@ public class ElfMagicMissile : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
 
     public override void SetDefaults()
     {
         Projectile.width = 24; // The width of projectile hitbox
         Projectile.height = 24; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = -1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 500;
-        Projectile.scale = 1.5f;                      
-       
+        Projectile.scale = 1.5f;
+
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -113,7 +109,7 @@ public class ElfMagicMissile : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-        
+
 
     }
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -195,13 +191,13 @@ public class ElfMagicMissile : ModProjectile
             fireDust.velocity *= 5.5f;
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
-           
+
         }
-      
 
 
 
-       
+
+
     }
 
 

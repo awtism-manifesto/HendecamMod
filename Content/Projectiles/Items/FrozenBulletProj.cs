@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items.Weapons;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,7 +26,7 @@ public class FrozenBulletProj : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 450;
         Projectile.aiStyle = 1;
-        AIType = ProjectileID.Bullet; 
+        AIType = ProjectileID.Bullet;
     }
 
     public override void AI()

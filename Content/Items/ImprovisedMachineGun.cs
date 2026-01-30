@@ -42,7 +42,7 @@ public class ImprovisedMachineGun : ModItem
         Item.damage = 5; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
         // Gun Properties
@@ -52,7 +52,7 @@ public class ImprovisedMachineGun : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next(0, 2);  // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(0, 2);  // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.67f, 1.67f));
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -68,7 +68,7 @@ public class ImprovisedMachineGun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -112,7 +112,7 @@ public class ImprovisedMachineGun : ModItem
 
 
 
-        
+
 
     }
     public override Vector2? HoldoutOffset()

@@ -33,7 +33,7 @@ public class HeartShot : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-        
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
@@ -83,20 +83,20 @@ public class HeartShot : ModProjectile
         return true;
     }
 
-    public override void OnHitNPC( NPC target, NPC.HitInfo hit, int damageDone)
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
 
 
 
         //player.Heal((int)(Projectile.damage * 0.1f));
         base.OnHitNPC(target, hit, damageDone);
     }
-   
-        
-        
 
-    
-   
+
+
+
+
+
 
 }

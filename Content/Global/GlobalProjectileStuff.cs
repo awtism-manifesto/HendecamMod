@@ -124,7 +124,7 @@ public class HarpyBuff : GlobalProjectile
             tickCounter++;
             nextSpawnTick = 1;
         }
-        
+
 
 
         if (tickCounter >= nextSpawnTick && projectile.type == ProjectileID.HarpyFeather && Main.expertMode)
@@ -144,7 +144,7 @@ public class HarpyBuff : GlobalProjectile
         }
 
     }
- 
+
 
 }
 public class FrostCoreTack : GlobalProjectile
@@ -199,7 +199,7 @@ public class DeerBurn : GlobalProjectile
 
     public override bool InstancePerEntity => true;
 
-   
+
 
     public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info)
     {
@@ -306,7 +306,7 @@ public class VPComboSetup : GlobalProjectile
 
 
         if (!fromtheVP70)
-            return; 
+            return;
 
         target.AddBuff(ModContent.BuffType<VpTag>(), 95);
 
@@ -327,7 +327,7 @@ public class KnightComboSetup : GlobalProjectile
 
 
         if (!fromtheBlackshard)
-            return; 
+            return;
 
         target.AddBuff(ModContent.BuffType<BlackshardDebuff>(), 196);
 
@@ -350,14 +350,14 @@ public class DeliriantComboSetup : GlobalProjectile
 
 
         if (!fromtheDeliriantDagger)
-            return; 
+            return;
 
 
-      
 
-            target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
 
-        
+        target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
+
+
 
 
     }

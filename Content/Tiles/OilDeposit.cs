@@ -30,7 +30,7 @@ public class OilDeposit : ModTile
         Main.tileMerge[TileID.SnowBlock][Type] = true;
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
-        
+
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(2, 2, 2), Language.GetText("Oil Deposit"));
 

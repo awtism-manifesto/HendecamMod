@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class FossilFuelHelmet : ModItem
 {
 
-    
+
     public static readonly int AdditiveSummonDamageBonus = 15;
     public static readonly int CritBonus = 8;
 
@@ -93,22 +93,22 @@ public class FossilFuelHelmet : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
         player.maxMinions += MaxMinionIncrease;
         player.whipRangeMultiplier = 1.08f;
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< CrudeOil>(50);
-        recipe.AddIngredient< RefinedOil>(20);
+        recipe.AddIngredient<CrudeOil>(50);
+        recipe.AddIngredient<RefinedOil>(20);
         recipe.AddIngredient(ItemID.FossilHelm);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-       
-       
+
+
     }
 }

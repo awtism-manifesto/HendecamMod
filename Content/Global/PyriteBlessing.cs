@@ -23,7 +23,7 @@ public class PyriteBlessing : GlobalNPC
         if (!NPC.downedSlimeKing)
         {
             ModContent.GetInstance<PyriteSystem>().BlessWorldWithPyrite();
-          
+
         }
 
     }

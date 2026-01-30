@@ -23,7 +23,7 @@ public class Soundwave : ModProjectile
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -62,10 +62,10 @@ public class Soundwave : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
-       
+
+
         target.immune[Projectile.owner] = 8;
-        
+
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
@@ -79,7 +79,7 @@ public class Soundwave : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -102,7 +102,7 @@ public class Soundwave : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-    
+
 }
 
 

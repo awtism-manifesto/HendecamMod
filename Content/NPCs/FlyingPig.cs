@@ -40,7 +40,7 @@ public class FlyingPig : ModNPC
         NPC.aiStyle = 2; // slime ai
         NPC.noGravity = true;
         NPC.despawnEncouraged = false;
-        
+
         AIType = NPCID.PigronHallow; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.PigronHallow; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
@@ -75,8 +75,8 @@ public class FlyingPig : ModNPC
     //NPC.downedEmpressOfLight
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        
-            return SpawnCondition.Overworld.Chance * 0.0095f;
+
+        return SpawnCondition.Overworld.Chance * 0.0095f;
     }
 
 }

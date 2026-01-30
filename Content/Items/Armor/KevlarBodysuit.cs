@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class KevlarBodysuit : ModItem
 {
     public static readonly int AdditiveDamageBonus = 11;
-   
+
     public static readonly int MoveSpeedBonus = -6;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -85,7 +85,7 @@ public class KevlarBodysuit : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 111f;
-       
+
         player.moveSpeed += MoveSpeedBonus / 94f;
         player.runAcceleration *= 0.94f;
     }
@@ -100,7 +100,7 @@ public class KevlarBodysuit : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
-       
+
+
     }
 }

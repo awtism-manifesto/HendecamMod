@@ -53,15 +53,15 @@ public class KingslayerSword : ModItem
 
         {
             Item.damage = 40;
-            Item.useTime = 36; 
+            Item.useTime = 36;
             Item.useAnimation = 36;
             Item.rare = ItemRarityID.LightRed;
 
         }
 
-            // Gun Properties
-            // For some reason, all the guns in the vanilla source have this.
-            Item.shoot = ModContent.ProjectileType<SpinningRuby>();
+        // Gun Properties
+        // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ModContent.ProjectileType<SpinningRuby>();
 
         Item.shootSpeed = 0.05f; // The speed of the projectile (measured in pixels per frame.)
 
@@ -74,21 +74,21 @@ public class KingslayerSword : ModItem
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 new1Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-       
+
         // Decrease velocity randomly for nicer visuals.
 
 
         // Create a projectile.
         type = ModContent.ProjectileType<SpinningDiamond>();
-        Projectile.NewProjectileDirect(source, position, new1Velocity, type, (int)(damage*0.66f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, new1Velocity, type, (int)(damage * 0.66f), knockback, player.whoAmI);
         type = ModContent.ProjectileType<SpinningRuby>();
         Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 0.6f), knockback, player.whoAmI);
-       
+
 
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-    
+
 
 
 
@@ -139,7 +139,7 @@ public class KingslayerSword : ModItem
             recipe.Register();
 
         }
-        else 
+        else
         {
 
             recipe = CreateRecipe();

@@ -25,7 +25,7 @@ public class Heartache : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.775f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(gold:4);
+        Item.value = Item.buyPrice(gold: 4);
 
 
         // Use Properties
@@ -45,7 +45,7 @@ public class Heartache : ModItem
         Item.damage = 19; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
         Item.mana = 6;
 
@@ -104,7 +104,7 @@ public class Heartache : ModItem
     }
 
 
-    
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -17,20 +12,20 @@ public class TriFlame2 : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
+
     }
-   
+
     public override void SetDefaults()
     {
-        Projectile.width =30; // The width of projectile hitbox
+        Projectile.width = 30; // The width of projectile hitbox
         Projectile.height = 30; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 57; 
-                               
+        Projectile.timeLeft = 57;
+
         Projectile.light = 0.5f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -45,9 +40,9 @@ public class TriFlame2 : ModProjectile
     public override void AI()
     {
 
-        if (Projectile.alpha <191)
+        if (Projectile.alpha < 191)
         {
-           
+
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -63,7 +58,7 @@ public class TriFlame2 : ModProjectile
                 fire1Dust.velocity *= 3.5f;
 
 
-              
+
             }
         }
     }
@@ -71,11 +66,11 @@ public class TriFlame2 : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.825f);
-       
+
         target.AddBuff(BuffID.Frostburn2, 240);
     }
-    
-    
+
+
 }
 
 

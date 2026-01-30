@@ -35,9 +35,9 @@ public class LitBong : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Lightbulb>(1);
-       
+
         recipe.AddIngredient<EmptyBong>(1);
         recipe.AddIngredient<WeedLeaves>(3);
         recipe.AddTile(TileID.TinkerersWorkbench);

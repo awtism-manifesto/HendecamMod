@@ -1,8 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,7 +37,7 @@ public class SolarRay : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -75,10 +73,10 @@ public class SolarRay : ModProjectile
     public override void AI()
     {
 
-        
 
-            // dust, all dust
-            if (Projectile.alpha <198)
+
+        // dust, all dust
+        if (Projectile.alpha < 198)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -107,7 +105,7 @@ public class SolarRay : ModProjectile
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-       
+
     }
 
 }

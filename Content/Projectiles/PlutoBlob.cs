@@ -14,7 +14,7 @@ public class PlutoBlob : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -177,7 +177,7 @@ public class PlutoBlob : ModProjectile
         target.immune[Projectile.owner] = 4;
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 170);
     }
-   
+
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

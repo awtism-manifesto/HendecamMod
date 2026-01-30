@@ -14,7 +14,7 @@ public class VenomFang : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 6;
     }
 
@@ -22,7 +22,7 @@ public class VenomFang : ModProjectile
     {
         Projectile.width = 8; // The width of projectile hitbox
         Projectile.height = 8; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
@@ -73,7 +73,7 @@ public class VenomFang : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Venom, 0f, 0f, 100, default, 0.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.velocity *= 0.18f;
@@ -87,7 +87,7 @@ public class VenomFang : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.AddBuff(BuffID.Venom, 180);
     }
-   
+
 
 
     public override void OnKill(int timeLeft)
@@ -96,7 +96,7 @@ public class VenomFang : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-   
+
 }
 
 

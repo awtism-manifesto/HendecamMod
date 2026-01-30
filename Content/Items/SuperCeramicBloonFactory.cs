@@ -94,7 +94,7 @@ public class SuperCeramicBloonFactory : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<CrimceramicSheet>(25);
         recipe.AddIngredient<PearlceramicSheet>(25);
         recipe.AddIngredient(ItemID.HallowedBar, 7);
@@ -105,7 +105,7 @@ public class SuperCeramicBloonFactory : ModItem
         recipe.Register();
         recipe = CreateRecipe();
         recipe.AddIngredient<EbonceramicSheet>(25);
-       
+
         recipe.AddIngredient<PearlceramicSheet>(25);
         recipe.AddIngredient(ItemID.HallowedBar, 7);
         recipe.AddIngredient(ItemID.SpectreBar, 7);

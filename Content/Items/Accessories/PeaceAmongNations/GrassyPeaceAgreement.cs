@@ -8,22 +8,22 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Buttplug)]
 public class GrassyPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(copper: 676767);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "The jungle's denizens should be friendly");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Plantera] = true;
         player.npcTypeNoAggro[NPCID.PlanterasHook] = true;
         player.npcTypeNoAggro[NPCID.PlanterasTentacle] = true;
@@ -51,9 +51,9 @@ public class GrassyPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.HornetLeafy] = true;
         player.npcTypeNoAggro[NPCID.HornetSpikey] = true;
 
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.GolemTrophy);//skibidi toilet sigma balls 67000 lolllllllxd
@@ -63,6 +63,6 @@ public class GrassyPeaceAgreement : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}
 

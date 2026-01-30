@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -39,20 +37,20 @@ public class KingBoomerang : ModProjectile
     public override void AI()
     {
 
-       
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
+            }
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.GemRuby, 0f, 0f, 100, default, 0.5f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
             fireDust.velocity *= 0.25f;
-            fireDust.noGravity = true;  
+            fireDust.noGravity = true;
 
             Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Platinum, 0f, 0f, 100, default, 0.15f);
             fire2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
@@ -60,17 +58,17 @@ public class KingBoomerang : ModProjectile
             fire2Dust.noGravity = true;
 
             Dust fireeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Gold, 0f, 0f, 100, default, 0.15f);
-                fireeDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
-                fireeDust.velocity *= 0.15f;
+            fireeDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
+            fireeDust.velocity *= 0.15f;
             fireeDust.noGravity = true;
         }
-        
+
     }
-    
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

@@ -29,26 +29,26 @@ public class Needler : ModItem
         Item.value = 190000;
 
 
-            // Use Properties
-            // Use Properties
-            Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
-            Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-            Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-            Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+        // Use Properties
+        // Use Properties
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+        Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item114;
 
 
-            // Weapon Properties
-            Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();  // Sets the damage type to ranged.
-            Item.damage = 37; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-            Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-            Item.noMelee = true; // So the item's animation doesn't do damage.
-            
-            Item.ArmorPenetration = 15;
-            Item.mana = 6;
+        // Weapon Properties
+        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();  // Sets the damage type to ranged.
+        Item.damage = 37; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.noMelee = true; // So the item's animation doesn't do damage.
+
+        Item.ArmorPenetration = 15;
+        Item.mana = 6;
 
 
         // Gun Properties
@@ -56,7 +56,7 @@ public class Needler : ModItem
         Item.shoot = ModContent.ProjectileType<Needle>();
         Item.useAmmo = AmmoID.Bullet;
         Item.shootSpeed = 6.95f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -85,7 +85,7 @@ public class Needler : ModItem
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -118,9 +118,9 @@ public class Needler : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient< PlutoniumBar>(15);
+        recipe.AddIngredient<PlutoniumBar>(15);
         recipe.AddIngredient(ItemID.CrystalShard, 10);
-       
+
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

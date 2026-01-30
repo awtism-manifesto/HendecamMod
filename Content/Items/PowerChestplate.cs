@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Body)]
 public class PowerChestplate : ModItem
 {
-    
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -34,7 +34,7 @@ public class PowerChestplate : ModItem
         Item.height = 28; // Height of the item
         Item.value = 200000; // How many coins the item is worth
         Item.rare = ItemRarityID.Gray; // The rarity of the item
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -64,7 +64,7 @@ public class PowerChestplate : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -78,8 +78,8 @@ public class PowerChestplate : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    
+
 }

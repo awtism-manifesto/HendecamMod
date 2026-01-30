@@ -34,7 +34,7 @@ public class Pyrocannon : ModItem
         Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
@@ -54,9 +54,9 @@ public class Pyrocannon : ModItem
             Item.damage = 19;
         }
 
-            // Gun Properties
-            // For some reason, all the guns in the vanilla source have this.
-            Item.shoot = ProjectileID.PurificationPowder;
+        // Gun Properties
+        // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileID.PurificationPowder;
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 18.8f; // The speed of the projectile (measured in pixels per frame.)
 
@@ -88,7 +88,7 @@ public class Pyrocannon : ModItem
             type = ModContent.ProjectileType<PyroFlame>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<PyroBall>();
-          
+
 
         }
 
@@ -97,7 +97,7 @@ public class Pyrocannon : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -128,9 +128,9 @@ public class Pyrocannon : ModItem
 
     public override void AddRecipes()
     {
-        
 
-      
+
+
 
         Recipe recipe = CreateRecipe();
 
@@ -157,16 +157,16 @@ public class Pyrocannon : ModItem
         }
         else
         {
-          
+
             recipe = CreateRecipe();
-          
+
             recipe.AddIngredient<Items.AshSpewer>();
             recipe.AddIngredient(ItemID.HellstoneBar, 15);
             recipe.AddIngredient<CrudeOil>(12);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-          
+
 
         }
 

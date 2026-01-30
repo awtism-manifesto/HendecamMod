@@ -10,11 +10,11 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
-public class SpermRange: ModProjectile
+public class SpermRange : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 4;
     }
     private NPC HomingTarget
@@ -31,7 +31,7 @@ public class SpermRange: ModProjectile
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -138,10 +138,10 @@ public class SpermRange: ModProjectile
         return closestNPC;
     }
 
-   
-   
-   
-    
+
+
+
+
 }
 
 

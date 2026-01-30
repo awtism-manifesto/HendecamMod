@@ -15,7 +15,7 @@ public class GunbladeCloud : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-      
+
         Main.projFrames[Projectile.type] = 5;
     }
 
@@ -37,7 +37,7 @@ public class GunbladeCloud : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
         Projectile.aiStyle = -1;
-       
+
 
     }
 
@@ -66,10 +66,10 @@ public class GunbladeCloud : ModProjectile
         }
     }
 
-   
-   
-    
-    
+
+
+
+
 }
 
 

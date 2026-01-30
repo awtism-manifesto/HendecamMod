@@ -43,7 +43,7 @@ public class DaggerProj : ModProjectile
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
         Projectile.extraUpdates = 1; // Update 1+extraUpdates times per tick
         Projectile.timeLeft = 15; // This value does not matter since we manually kill it earlier, it just has to be higher than the duration we use in AI
-      
+
     }
 
     public override void AI()
@@ -54,7 +54,7 @@ public class DaggerProj : ModProjectile
         if (Timer >= TotalDuration)
         {
             // Kill the projectile if it reaches it's intended lifetime
-           
+
             return;
         }
         else
@@ -95,7 +95,7 @@ public class DaggerProj : ModProjectile
             fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 0.1f;
-           
+
         }
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

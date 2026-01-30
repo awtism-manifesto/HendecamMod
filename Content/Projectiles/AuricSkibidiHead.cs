@@ -30,7 +30,7 @@ public class AuricSkibidiHead : ModProjectile
 
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
     }
 
@@ -58,28 +58,28 @@ public class AuricSkibidiHead : ModProjectile
     public override void AI()
     {
 
-      
 
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-               
-               
-
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Electric, 0f, 0f, 100, Color.Orange, 0.5f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
-                fireDust.noGravity = true;
-            fireDust.color = Color.Orange;
-                fireDust.velocity *= 1.15f;
-            
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
+
+
+
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Electric, 0f, 0f, 100, Color.Orange, 0.5f);
+            fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
+            fireDust.noGravity = true;
+            fireDust.color = Color.Orange;
+            fireDust.velocity *= 1.15f;
+
+        }
+
         float maxDetectRadius = 2000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired

@@ -47,7 +47,7 @@ public class PocketBeetles : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next(1, 2);  // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(1, 2);  // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -103,7 +103,7 @@ public class PocketBeetles : ModItem
         recipe.AddIngredient<Items.PocketBees>();
         recipe.AddIngredient(ItemID.PapyrusScarab);
         recipe.AddIngredient(ItemID.BeetleHusk, 10);
-      
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

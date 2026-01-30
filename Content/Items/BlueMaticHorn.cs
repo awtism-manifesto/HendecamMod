@@ -108,7 +108,7 @@ public class BlueMaticHorn : ModItem
         recipe.AddIngredient(ItemID.ShroomiteBar, 10);
         recipe.AddIngredient<AzuriteBar>(10);
         recipe.AddIngredient(ItemID.PewMaticHorn, 1);
-       
+
         recipe.AddIngredient(ItemID.BlueMoon, 1);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

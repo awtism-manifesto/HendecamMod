@@ -57,8 +57,8 @@ public class TheMagnum : ModItem
         }
     }
 
-   
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -86,21 +86,21 @@ public class TheMagnum : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
+
     public override void AddRecipes()
     {
 
 
         Recipe recipe = CreateRecipe();
 
-        if(ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("HitScanner", out ModItem HitScanner))
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("HitScanner", out ModItem HitScanner))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient<Items.FreeBird>();
             recipe.AddIngredient(HitScanner.Type);
             recipe.AddIngredient<Items.CyberneticGunParts>();
-           
-          
+
+
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -110,25 +110,25 @@ public class TheMagnum : ModItem
             recipe.AddIngredient<Items.FreeBird>();
             recipe.AddIngredient<Items.PulsePistols>();
             recipe.AddIngredient<Items.CyberneticGunParts>();
-           
+
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 
-            
+
 
         }
 
     }
 
-          
-        
 
 
 
 
-    
-        
-    
+
+
+
+
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

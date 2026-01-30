@@ -106,11 +106,11 @@ public class CompoundBow2 : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Items.Kevlar>(15);
-        
+
         recipe.AddIngredient<Items.CompoundBow>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        
+
 
 
 

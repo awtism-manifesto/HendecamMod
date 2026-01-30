@@ -47,7 +47,7 @@ public class SaltShaker : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<SaltGrav>();
-        
+
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -60,7 +60,7 @@ public class SaltShaker : ModItem
 
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.4f);
-            
+
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
@@ -69,7 +69,7 @@ public class SaltShaker : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

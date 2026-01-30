@@ -80,7 +80,7 @@ public class SodiumShotbow : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -109,18 +109,18 @@ public class SodiumShotbow : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    
+
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<RockSalt>(35);
-       
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-        
+
 
 
 

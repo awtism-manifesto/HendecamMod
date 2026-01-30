@@ -69,6 +69,6 @@ public class AzuriteGreaves : ModItem
     public override void UpdateArmorSet(Player player)
     {
 
-       
+
     }
 }

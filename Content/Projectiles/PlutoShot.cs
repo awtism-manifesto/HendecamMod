@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Projectiles;
 // This example is similar to the Wooden Arrow projectile
 public class PlutoShot : ModProjectile
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -46,7 +46,7 @@ public class PlutoShot : ModProjectile
 
     public override void AI()
     {
-       
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -73,20 +73,20 @@ public class PlutoShot : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 220);
     }
-    
+
     public override void OnKill(int timeLeft)
     {
-        
-            for (int i = -1; i <= 1; i++)
-            {
-                float angle = 11 * i; // gives -15, 0, 15
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
-                Vector2 Peanits = Projectile.Center - new Vector2(0,0);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
-            }
-            
-        
+
+        for (int i = -1; i <= 1; i++)
+        {
+            float angle = 11 * i; // gives -15, 0, 15
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
+            Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+        }
+
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

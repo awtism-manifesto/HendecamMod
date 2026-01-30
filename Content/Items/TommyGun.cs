@@ -42,8 +42,8 @@ public class TommyGun : ModItem
         Item.damage = 26; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
 
 
         // Gun Properties
@@ -53,7 +53,7 @@ public class TommyGun : ModItem
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-       
+
         var line = new TooltipLine(Mod, "Face", "Also seen in about 6 or 7 other mods");
         tooltips.Add(line);
 
@@ -89,7 +89,7 @@ public class TommyGun : ModItem
     {
         return Main.rand.NextFloat() >= 0.25f;
     }
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-44f, -2f);

@@ -14,9 +14,9 @@ public class PurifiedSpear : ModProjectile
 
     public override void SetDefaults()
     {
-       
+
         Projectile.usesOwnerMeleeHitCD = true;
-       
+
         Projectile.CloneDefaults(ProjectileID.AdamantiteGlaive);
         Projectile.width = 40;
         Projectile.height = 40;

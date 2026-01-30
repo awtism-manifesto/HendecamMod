@@ -34,7 +34,7 @@ public class RunicRaygun : ModItem
         Item.useAnimation = 35; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item28;
@@ -45,8 +45,8 @@ public class RunicRaygun : ModItem
         Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-       
+
+
         Item.mana = 14;
 
 
@@ -66,7 +66,7 @@ public class RunicRaygun : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        int NumProjectiles = 1; 
+        int NumProjectiles = 1;
 
         damage = (int)(damage * Main.rand.NextFloat(1f, 5f));
         for (int i = 0; i < NumProjectiles; i++)
@@ -115,7 +115,7 @@ public class RunicRaygun : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-   
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

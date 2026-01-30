@@ -36,30 +36,30 @@ public class MarbleSaber : ModItem
     public override bool AltFunctionUse(Player player)
     {
 
-       
-            return true;
-       
+
+        return true;
+
     }
-   
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
-       
 
-            if (player.altFunctionUse == 2)
-            {
-                Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
-                return false;
-            }
 
-        
+        if (player.altFunctionUse == 2)
+        {
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
+            return false;
+        }
+
+
 
 
 
 
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
-        
+
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -87,9 +87,9 @@ public class MarbleSaber : ModItem
         };
         tooltips.Add(line);
 
-       
 
-       
+
+
     }
     public override void AddRecipes()
     {
@@ -98,7 +98,7 @@ public class MarbleSaber : ModItem
         recipe.AddRecipeGroup("IronBar", 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
     }
 
 }

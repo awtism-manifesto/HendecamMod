@@ -10,14 +10,14 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Items.Consumables;
 
 public class ObsidianSword : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 36;
         Item.height = 36;
         Item.value = Item.sellPrice(silver: 3);
         Item.rare = ItemRarityID.Orange;
-      
+
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 14;
@@ -30,21 +30,21 @@ public class ObsidianSword : ModItem
         Item.knockBack = 40.0f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
-        Item.buffType = BuffID.Bleeding; 
+        Item.buffType = BuffID.Bleeding;
         Item.buffTime = 300;
         Item.useTurn = true;
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        }
-   
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Obsidian, 10);
         recipe.AddTile(TileID.GlassKiln);
         recipe.Register();
-        }
     }
+}

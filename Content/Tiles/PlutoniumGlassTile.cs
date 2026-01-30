@@ -11,9 +11,9 @@ public class PlutoniumGlassTile : ModTile
     public override void SetStaticDefaults()
     {
         Main.tileSolid[Type] = true;
-       
-       
-        
+
+
+
         DustType = DustID.PurpleTorch;
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(215, 171, 255));

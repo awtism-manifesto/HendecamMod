@@ -36,7 +36,7 @@ public class SpaceTrasher : ModItem
         Item.useAnimation = 44; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item9;
@@ -75,25 +75,25 @@ public class SpaceTrasher : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
-      
-       
-            position = player.Center - new Vector2(Main.rand.NextFloat(451) * player.direction, 600f);
-            position.Y -= 100;
-            Vector2 heading = target - position;
 
-            if (heading.Y < 0f)
-            {
-                heading.Y *= -1f;
-            }
 
-            if (heading.Y < 20f)
-            {
-                heading.Y = 20f;
-            }
+        position = player.Center - new Vector2(Main.rand.NextFloat(451) * player.direction, 600f);
+        position.Y -= 100;
+        Vector2 heading = target - position;
 
-            heading.Normalize();
-            heading *= velocity.Length();
-            heading.Y += Main.rand.Next(-70, 71) * 0.02f;
+        if (heading.Y < 0f)
+        {
+            heading.Y *= -1f;
+        }
+
+        if (heading.Y < 20f)
+        {
+            heading.Y = 20f;
+        }
+
+        heading.Normalize();
+        heading *= velocity.Length();
+        heading.Y += Main.rand.Next(-70, 71) * 0.02f;
         if (Main.rand.NextBool(3))
         {
             type = ModContent.ProjectileType<SpaceTrash2>();
@@ -102,9 +102,9 @@ public class SpaceTrasher : ModItem
         {
             type = ModContent.ProjectileType<SpaceTrash3>();
         }
-       
-            Projectile.NewProjectile(source, position, heading, type, (int)(damage), knockback, player.whoAmI, 0f, ceilingLimit);
-       
+
+        Projectile.NewProjectile(source, position, heading, type, (int)(damage), knockback, player.whoAmI, 0f, ceilingLimit);
+
 
 
         return false;
@@ -147,7 +147,7 @@ public class SpaceTrasher : ModItem
         recipe.AddIngredient<Items.UraniumBar>(10);
         recipe.AddIngredient<LunarGem>(10);
         recipe.AddIngredient(ItemID.Wire, 45);
-      
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("StrangeAlienTech", out ModItem StrangeAlienTech))

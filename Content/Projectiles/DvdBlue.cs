@@ -45,29 +45,29 @@ public class DvdBlue : ModProjectile
     {
 
 
-       
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
-            // If the projectile hits the left or right side of the tile, reverse the X velocity
-            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-            {
-                Projectile.velocity.X = -oldVelocity.X;
-            }
+        Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+        SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
-            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-            {
-                Projectile.velocity.Y = -oldVelocity.Y;
-            }
-        
+        // If the projectile hits the left or right side of the tile, reverse the X velocity
+        if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+        {
+            Projectile.velocity.X = -oldVelocity.X;
+        }
+
+        // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+        if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+        {
+            Projectile.velocity.Y = -oldVelocity.Y;
+        }
+
 
         return false;
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 6;
-      
+
     }
     public override void AI()
     {
@@ -78,7 +78,7 @@ public class DvdBlue : ModProjectile
         }
         else
         {
-           
+
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -89,7 +89,7 @@ public class DvdBlue : ModProjectile
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-   
+
 
     public override void PrepareBombToBlow()
     {
@@ -112,22 +112,22 @@ public class DvdBlue : ModProjectile
         // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
 
         // Play an exploding sound.
-      
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-      
+
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(175, 175);
 
-        
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<DvdRed>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
-           
-           
 
-        
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<DvdRed>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
+
+
+
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -166,9 +166,9 @@ public class DvdBlue : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 0.2f);
             fireeeDust.velocity *= 2f;
         }
-       
+
         // Spawn a bunch of fire dusts.
-       
+
 
 
         // Rocket II explosion that damages tiles.

@@ -26,7 +26,7 @@ public class RoyalGuardianSword : ModItem
         Item.height = 64;
         Item.scale = 3.9f;
         Item.ArmorPenetration = 135;
-           
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Red;
         Item.value = 10000000; // Sell price is 5 times less than the buy price.
@@ -35,7 +35,7 @@ public class RoyalGuardianSword : ModItem
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
-        
+
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -84,10 +84,10 @@ public class RoyalGuardianSword : ModItem
         recipe.AddIngredient<KingslayerBar>(15);
         recipe.AddIngredient(ItemID.HallowedBar, 15);
         recipe.AddIngredient(ItemID.LunarBar, 5);
-      
+
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-       
+
 
     }
 

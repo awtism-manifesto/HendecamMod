@@ -33,16 +33,16 @@ public class SpaceTrash2 : ModProjectile
         Projectile.localNPCHitCooldown = 25;
         Projectile.DamageType = DamageClass.Magic;
         Projectile.timeLeft = 195;
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
+
         target.AddBuff(BuffID.OnFire, 300);
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
     }
-     
-   
+
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -83,7 +83,7 @@ public class SpaceTrash2 : ModProjectile
 
         if (Projectile.timeLeft <= 115)
 
-        Projectile.ai[0] += 8.5f;
+            Projectile.ai[0] += 8.5f;
         if (Projectile.ai[0] >= 8.5f)
         {
             Projectile.ai[0] = 8.5f;
@@ -119,7 +119,7 @@ public class SpaceTrash2 : ModProjectile
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.DeerclopsRubbleAttack, Projectile.position);

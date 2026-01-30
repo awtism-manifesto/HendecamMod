@@ -61,7 +61,7 @@ public class ImpulseBow : ModItem
 
 
 
-  
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,12 +96,12 @@ public class ImpulseBow : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-      
+
         recipe.AddIngredient(ItemID.PulseBow);
         recipe.AddIngredient<Items.AstatineBar>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        
+
 
 
 

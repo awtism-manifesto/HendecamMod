@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class PacifistsMark : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Grants 200 more Health, at the cost of Combat Buffs");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
         player.buffImmune[BuffID.AmmoReservation] = true;
         player.buffImmune[BuffID.Archery] = true;
@@ -45,14 +45,14 @@ public class PacifistsMark : ModItem
         player.buffImmune[BuffID.Wrath] = true;
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FallenStar, 4);
         recipe.AddIngredient(ItemID.DemonHeart, 1);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-        }
     }
+}

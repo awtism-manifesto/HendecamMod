@@ -62,7 +62,7 @@ public class CopperShortgun : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -98,7 +98,7 @@ public class CopperShortgun : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< ImprovisedPistol>();
+        recipe.AddIngredient<ImprovisedPistol>();
         recipe.AddIngredient(ItemID.CopperShortsword);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();

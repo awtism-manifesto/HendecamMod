@@ -35,7 +35,7 @@ public class GagGifter : ModItem
         Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item61;
@@ -58,7 +58,7 @@ public class GagGifter : ModItem
         Item.shootSpeed = 20.25f; // The speed of the projectile (measured in pixels per frame.)
 
     }
-    
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<GagGift>();
@@ -66,7 +66,7 @@ public class GagGifter : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+        int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -85,7 +85,7 @@ public class GagGifter : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -118,7 +118,7 @@ public class GagGifter : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SantaNK1Trophy);
-       
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();

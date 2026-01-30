@@ -69,6 +69,6 @@ public class RadBullet : ModItem
         recipe.AddIngredient(ItemID.EmptyBullet, 50);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
     }
 }

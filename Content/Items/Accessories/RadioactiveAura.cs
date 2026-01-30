@@ -31,7 +31,7 @@ public class RadioactiveAura : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 230000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,19 +54,19 @@ public class RadioactiveAura : ModItem
     }
     public override void AddRecipes()
     {
-        Recipe 
+        Recipe
 
 
-        
+
             recipe = CreateRecipe();
-           
-            recipe.AddIngredient<PlutoniumBar>(12);
-            
-            recipe.AddIngredient(ItemID.PutridScent);
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.Register();
 
-        
+        recipe.AddIngredient<PlutoniumBar>(12);
+
+        recipe.AddIngredient(ItemID.PutridScent);
+        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
+
+
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -102,7 +102,7 @@ public class Rad2Apply : ModPlayer
         {
             return;
         }
-       
+
         if (Main.rand.NextBool(4))
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
@@ -111,7 +111,7 @@ public class Rad2Apply : ModPlayer
 
 
         }
-       
+
 
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -122,9 +122,9 @@ public class Rad2Apply : ModPlayer
         }
         else
         {
-           
+
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-          
+
         }
     }
     public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
@@ -135,9 +135,9 @@ public class Rad2Apply : ModPlayer
         }
         else
         {
-           
+
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-           
+
         }
     }
 }

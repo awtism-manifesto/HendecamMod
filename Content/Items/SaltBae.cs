@@ -67,14 +67,14 @@ public class SaltBae : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-      
+
         Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
         float ceilingLimit = target.Y;
         if (ceilingLimit > player.Center.Y - 200f)
         {
             ceilingLimit = player.Center.Y - 200f;
         }
-      
+
         for (int i = 0; i < 1; i++)
         {
             position = player.Center - new Vector2(Main.rand.NextFloat(201) * player.direction, 600f);
@@ -139,7 +139,7 @@ public class SaltBae : ModItem
         recipe.AddTile(TileID.Bookcases);
         recipe.Register();
 
-      
+
 
 
 

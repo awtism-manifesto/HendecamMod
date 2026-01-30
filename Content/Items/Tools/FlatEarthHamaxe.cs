@@ -14,7 +14,7 @@ public class FlatEarthHamaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 60;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 7;
@@ -22,13 +22,13 @@ public class FlatEarthHamaxe : ModItem
         Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
-        
+
         Item.value = Item.buyPrice(gold: 69);
         Item.rare = ModContent.RarityType<HotPink>();
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 4;
-        
+
         Item.hammer = 100;
         Item.axe = 35;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -52,11 +52,11 @@ public class FlatEarthHamaxe : ModItem
 
 
         recipe.AddIngredient<FragmentFlatEarth>(14);
-        recipe.AddIngredient(ItemID.LunarBar,12);
-        
+        recipe.AddIngredient(ItemID.LunarBar, 12);
+
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-        
+
     }
 }

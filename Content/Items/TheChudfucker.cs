@@ -30,11 +30,11 @@ public class TheChudfucker : ModItem
         Item.useAnimation = 32; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
-        
+
+
 
         // The sound that this item plays when used.
-     
+
 
 
         // Weapon Properties
@@ -47,10 +47,10 @@ public class TheChudfucker : ModItem
 
 
 
-       
+
 
         Item.shootSpeed = 30f; // The speed of the projectile (measured in pixels per frame.)
-      
+
         Item.shoot = ProjectileID.Seed;
 
     }
@@ -63,9 +63,9 @@ public class TheChudfucker : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
+
         SoundEngine.PlaySound(SoundID.Item38, player.position);
-        
+
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
@@ -106,7 +106,7 @@ public class TheChudfucker : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

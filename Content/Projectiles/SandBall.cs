@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class SandBall : ModProjectile
 {
-  
+
 
     public override void SetDefaults()
     {
@@ -33,20 +33,20 @@ public class SandBall : ModProjectile
 
 
     }
-   
-   
+
+
     public override void AI()
     {
-      
+
 
         Projectile.rotation += -0.135f;
 
-       
-      
+
+
     }
 
-   
-  
+
+
 }
 
 

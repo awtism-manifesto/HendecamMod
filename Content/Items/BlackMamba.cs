@@ -34,8 +34,8 @@ public class BlackMamba : ModItem
         Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
-      
+
+
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item5;
 
@@ -45,7 +45,7 @@ public class BlackMamba : ModItem
         Item.damage = 98; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -64,7 +64,7 @@ public class BlackMamba : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<MambaShot>();
-       
+
     }
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
@@ -131,7 +131,7 @@ public class BlackMamba : ModItem
         recipe.AddIngredient<Casanova>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<AstatineBar>(15);
-       
+
 
         recipe.AddTile(TileID.MythrilAnvil);
 

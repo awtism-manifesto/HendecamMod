@@ -86,15 +86,15 @@ public class ThunderSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
+
         if (Main.rand.NextFloat() * 2f < Projectile.Opacity)
         {
             // Original Excalibur color: Color.Gold, Color.White
             Color dustColor = Color.Lerp(Color.LightBlue, Color.LightCyan, Main.rand.NextFloat() * 0.3f);
-           
+
         }
 
-      
+
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -181,19 +181,19 @@ public class ThunderSwing : ModProjectile
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
         SoundEngine.PlaySound(SoundID.Item93, Projectile.position);
-       
-        
-            Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(Main.rand.Next(1, 360)));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<ChainThunder>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
-           
-           
 
-        
+
+        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(Main.rand.Next(1, 360)));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        ModContent.ProjectileType<ChainThunder>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+
+
+
+
     }
 
-   
+
 
     // Taken from Main.DrawProj_Excalibur()
     // Look at the source code for the other sword types.

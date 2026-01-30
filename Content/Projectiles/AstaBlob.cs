@@ -14,7 +14,7 @@ public class AstaBlob : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -162,7 +162,7 @@ public class AstaBlob : ModProjectile
             ModContent.ProjectileType<AstaPool>(), (int)(Projectile.damage * 0.8f), Projectile.knockBack, Projectile.owner);
 
     }
-  
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);

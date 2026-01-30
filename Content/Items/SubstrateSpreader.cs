@@ -34,7 +34,7 @@ public class SubstrateSpreader : ModItem
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
         Item.consumeAmmoOnFirstShotOnly = true;
 
         Item.ArmorPenetration = 5;
@@ -45,9 +45,9 @@ public class SubstrateSpreader : ModItem
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
-       
+
+
+
 
 
         // Gun Properties
@@ -87,9 +87,9 @@ public class SubstrateSpreader : ModItem
             shotCounter = 0;
         }
 
-      
 
-        return false; 
+
+        return false;
     }
 
 
@@ -130,7 +130,7 @@ public class SubstrateSpreader : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
 
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
 
@@ -138,16 +138,16 @@ public class SubstrateSpreader : ModItem
         {
 
             recipe = CreateRecipe();
-           
-           
+
+
             recipe.AddIngredient<Items.AshSpewer>();
             recipe.AddIngredient(ThrowerParts.Type);
             recipe.AddIngredient<Items.LycopiteBar>(13);
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-          
-            
+
+
 
 
         }
@@ -160,7 +160,7 @@ public class SubstrateSpreader : ModItem
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-          
+
 
         }
 

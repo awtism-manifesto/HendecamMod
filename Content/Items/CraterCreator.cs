@@ -44,10 +44,10 @@ public class CraterCreator : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
 
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -79,8 +79,8 @@ public class CraterCreator : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
-        recipe.AddIngredient(ItemID.MeteoriteBar,15);
+
+        recipe.AddIngredient(ItemID.MeteoriteBar, 15);
         recipe.AddIngredient<Items.AstatineBar>(10);
         recipe.AddIngredient<Items.FragmentFlatEarth>(5);
         recipe.AddIngredient(ItemID.FragmentSolar, 5);

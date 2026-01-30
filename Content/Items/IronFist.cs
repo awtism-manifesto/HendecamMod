@@ -33,9 +33,9 @@ public class IronFist : ModItem
         Item.shoot = ModContent.ProjectileType<IronFistProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 2.15f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
-   
-   
-   
+
+
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -49,7 +49,7 @@ public class IronFist : ModItem
         };
         tooltips.Add(line);
 
-      
+
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -71,7 +71,7 @@ public class IronFist : ModItem
         recipe.AddIngredient(ItemID.IronBar, 35);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-      
+
     }
 
 }

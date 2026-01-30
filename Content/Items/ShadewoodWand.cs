@@ -45,8 +45,8 @@ public class ShadewoodWand : ModItem
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
         Item.mana = 3;
 
 
@@ -84,7 +84,7 @@ public class ShadewoodWand : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -119,7 +119,7 @@ public class ShadewoodWand : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Shadewood, 25);
         recipe.AddIngredient(ItemID.CrimsonTorch, 10);
-       
+
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
 

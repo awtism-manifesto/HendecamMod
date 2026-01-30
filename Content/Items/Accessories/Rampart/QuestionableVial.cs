@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
 //[AutoloadEquip(EquipType.Beard)]
-public class QuestionableVial: ModItem
+public class QuestionableVial : ModItem
 {
     public override void SetDefaults()
     {

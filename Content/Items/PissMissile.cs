@@ -9,7 +9,7 @@ namespace HendecamMod.Content.Items;
 
 public class PissMissile : ModItem
 {
-   
+
 
     public override void SetDefaults()
     {
@@ -25,7 +25,7 @@ public class PissMissile : ModItem
         Item.shoot = ModContent.ProjectileType<PissMissileProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 11.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
-        
+
     }
     public override void SetStaticDefaults()
     {
@@ -83,6 +83,6 @@ public class PissMissile : ModItem
         recipe.AddIngredient(ItemID.Ichor, 1);
         recipe.AddIngredient<Items.RocketNeg1>(75);
         recipe.Register();
-       
+
     }
 }

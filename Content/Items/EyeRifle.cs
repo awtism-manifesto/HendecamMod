@@ -47,8 +47,8 @@ public class EyeRifle : ModItem
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-       
+
+
         Item.mana = 6;
 
 
@@ -109,7 +109,7 @@ public class EyeRifle : ModItem
     }
 
 
-  
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

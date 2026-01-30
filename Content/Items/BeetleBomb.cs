@@ -39,7 +39,7 @@ public class BeetleBomb : ModItem
             Item.DamageType = DamageClass.Throwing;
         }
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -55,9 +55,9 @@ public class BeetleBomb : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        
 
-    
+
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
 
@@ -65,7 +65,7 @@ public class BeetleBomb : ModItem
         }
 
 
-    
+
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -86,9 +86,9 @@ public class BeetleBomb : ModItem
         recipe.AddIngredient(ItemID.Beenade, 20);
         recipe.AddIngredient(ItemID.ChlorophyteBar);
         recipe.AddIngredient(ItemID.BeetleHusk, 2);
-       
+
         recipe.Register();
-       
+
 
     }
 }

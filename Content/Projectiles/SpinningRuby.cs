@@ -1,9 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +11,7 @@ public class SpinningRuby : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -23,7 +20,7 @@ public class SpinningRuby : ModProjectile
         Projectile.width = 18; // The width of projectile hitbox
         Projectile.height = 18; // The height of projectile hitbox
         Projectile.scale = 1.8f;
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
@@ -36,9 +33,9 @@ public class SpinningRuby : ModProjectile
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
-      
+
     }
-   
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -64,17 +61,17 @@ public class SpinningRuby : ModProjectile
 
 
 
-        
+
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {
             Projectile.velocity *= 1.235f;
-            
-        }
-        
-    }
-   
 
-   
+        }
+
+    }
+
+
+
 
 
     public override void OnKill(int timeLeft)

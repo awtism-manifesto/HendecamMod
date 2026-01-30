@@ -103,6 +103,6 @@ public class ElementalEmfCaller : ModItem
         return false;
     }
 
-    
+
 
 }

@@ -22,7 +22,7 @@ public class ShroomiteBladegun : ModItem
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
-    
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -38,12 +38,12 @@ public class ShroomiteBladegun : ModItem
         // Use Properties
         Item.useTime = 28; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 28; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-       
+
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
 
-       
+
+
 
 
         // Weapon Properties
@@ -77,7 +77,7 @@ public class ShroomiteBladegun : ModItem
             Item.useTime = 33;
             Item.useAnimation = 33;
             Item.reuseDelay = 0;
-            Item.autoReuse= true;
+            Item.autoReuse = true;
             Item.useAmmo = AmmoID.Bullet;
             Item.shoot = ProjectileID.PurificationPowder;
         }
@@ -108,10 +108,10 @@ public class ShroomiteBladegun : ModItem
                 newVelocity *= 1f - Main.rand.NextFloat(0.25f);
 
                 Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-               
+
             }
             type = ModContent.ProjectileType<BladegunBomb>();
-            Projectile.NewProjectileDirect(source, position, (velocity* 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, (velocity * 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
 
             SoundEngine.PlaySound(SoundID.Item62, player.position);
 
@@ -119,7 +119,7 @@ public class ShroomiteBladegun : ModItem
         }
         else
         {
-           
+
             SoundEngine.PlaySound(SoundID.Item71, player.position);
 
 
@@ -130,7 +130,7 @@ public class ShroomiteBladegun : ModItem
             NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
             return true; // Return false because we don't want tModLoader to shoot projectile}
-            
+
         }
     }
 
@@ -158,7 +158,7 @@ public class ShroomiteBladegun : ModItem
 
 
 
-      
+
     }
     public override Vector2? HoldoutOffset()
     {
@@ -168,13 +168,13 @@ public class ShroomiteBladegun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient(ItemID.ChlorophyteClaymore);
         recipe.AddIngredient<BulletBlade>();
         recipe.AddIngredient(ItemID.ShroomiteBar, 12);
-       
-       
-        
+
+
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

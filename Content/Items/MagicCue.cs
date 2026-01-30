@@ -44,10 +44,10 @@ public class MagicCue : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-         type = ModContent.ProjectileType<MagicBall>();
+
+        type = ModContent.ProjectileType<MagicBall>();
         Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
-        
+
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
@@ -83,7 +83,7 @@ public class MagicCue : ModItem
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
         return player.ownedProjectileCounts[Item.shoot] < 1;
     }
-   
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

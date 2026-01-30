@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class PurifiedSaltChestplate : ModItem
 {
     public static readonly int StupidAttackSpeedBonus = 10;
-   
+
     public static readonly int AdditiveStupidDamageBonus = 10;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -87,7 +87,7 @@ public class PurifiedSaltChestplate : ModItem
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 110f;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 110f;
         player.statLifeMax2 += 25;
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()

@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,7 +11,7 @@ public class WitherSkullBlue : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -49,13 +47,13 @@ public class WitherSkullBlue : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
 
 
         Projectile.rotation += 0.15f;
-       
 
-       
+
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -113,7 +111,7 @@ public class WitherSkullBlue : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -122,5 +120,5 @@ public class WitherSkullBlue : ModProjectile
 
     }
 
-   
+
 }

@@ -32,7 +32,7 @@ public class ApexPlasmaBulletHostile : ModProjectile
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hit)
     {
-        
+
 
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
 

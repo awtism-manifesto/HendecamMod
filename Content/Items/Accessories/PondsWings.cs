@@ -11,7 +11,7 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Wings)]
 public class PondsWings : ModItem
 {
-  
+
 
     public override void SetStaticDefaults()
     {
@@ -67,6 +67,6 @@ public class PondsWings : ModItem
         constantAscend = 0.125f;
     }
 
-    
-   
+
+
 }

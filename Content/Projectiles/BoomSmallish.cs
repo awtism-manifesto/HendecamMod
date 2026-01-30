@@ -46,18 +46,18 @@ public class BoomSmallish : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.OnFire, 300);
     }
     public override void AI()
     {
-       
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.

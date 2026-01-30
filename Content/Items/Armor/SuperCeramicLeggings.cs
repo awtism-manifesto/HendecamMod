@@ -15,7 +15,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class SuperCeramicLeggings : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 8;
-   
+
     public static readonly int StupidCritBonus = 5;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -26,7 +26,7 @@ public class SuperCeramicLeggings : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
     }
 
@@ -91,19 +91,19 @@ public class SuperCeramicLeggings : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
-      
+
+
         recipe.AddIngredient<CeramicSheet>(35);
         recipe.AddIngredient<EbonceramicSheet>(15);
-       
+
         recipe.AddIngredient<PearlceramicSheet>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-        
-       
+
+
         recipe.AddIngredient<CeramicSheet>(35);
-       
+
         recipe.AddIngredient<CrimceramicSheet>(15);
         recipe.AddIngredient<PearlceramicSheet>(15);
 
@@ -116,7 +116,7 @@ public class SuperCeramicLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-      
-        
+
+
     }
 }

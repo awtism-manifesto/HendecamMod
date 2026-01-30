@@ -37,7 +37,7 @@ public class SandyShocks : ModItem
         Item.ArmorPenetration = 30;
         Item.value = 100000;
         Item.rare = ItemRarityID.Pink;
-       
+
 
         Item.shoot = ModContent.ProjectileType<ElectrifiedSand>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
@@ -54,7 +54,7 @@ public class SandyShocks : ModItem
     {
         type = ModContent.ProjectileType<ElectrifiedSand>();
 
-       
+
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -106,7 +106,7 @@ public class SandyShocks : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

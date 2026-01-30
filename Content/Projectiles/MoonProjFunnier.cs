@@ -3,8 +3,6 @@ using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
@@ -37,7 +35,7 @@ public class MoonProjFunnier : ModProjectile
 
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-       
+
         Projectile.aiStyle = -1;
         Projectile.extraUpdates = 1;
         Projectile.alpha = 0;
@@ -51,7 +49,7 @@ public class MoonProjFunnier : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-   
+
     public override void AI()
     {
 
@@ -92,7 +90,7 @@ public class MoonProjFunnier : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(60f)).ToRotationVector2() * length;
-       
+
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -141,19 +139,19 @@ public class MoonProjFunnier : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-       
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage* 1f), Projectile.knockBack, Projectile.owner);
-           
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(1, 0).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
-        
+
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(1, 0).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
+
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

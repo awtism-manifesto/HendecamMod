@@ -16,7 +16,7 @@ public class AstatineSpear : ModProjectile
 
     public override void SetDefaults()
     {
-       
+
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 9;
@@ -26,14 +26,14 @@ public class AstatineSpear : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
-       
 
-    Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+
+
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
     public override bool PreAI()

@@ -60,13 +60,13 @@ public class CompoundBow : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        
-            int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
-            return false; // Prevent vanilla projectile spawn
-        
 
-     
+        int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+        Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
+        return false; // Prevent vanilla projectile spawn
+
+
+
     }
 
 
@@ -106,7 +106,7 @@ public class CompoundBow : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Items.Polymer>(12);
-        
+
         recipe.AddIngredient(ItemID.IronBow);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

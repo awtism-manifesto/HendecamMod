@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +13,7 @@ public class PlasmaLaser : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -134,7 +133,7 @@ public class PlasmaLaser : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 8f;
     }
-    
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
@@ -170,7 +169,7 @@ public class PlasmaLaser : ModProjectile
             ModContent.ProjectileType<PlasmaPool>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
     }
-    
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 250);

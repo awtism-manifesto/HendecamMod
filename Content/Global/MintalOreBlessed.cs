@@ -57,7 +57,7 @@ public class MintalSystem : ModSystem
             // Broadcast a message to notify the user.
             if (Main.netMode == NetmodeID.SinglePlayer)
             {
-                Main.NewText(MintalBlessMessage.Value, 47, 207, 163); 
+                Main.NewText(MintalBlessMessage.Value, 47, 207, 163);
             }
             else if (Main.netMode == NetmodeID.Server)
             {

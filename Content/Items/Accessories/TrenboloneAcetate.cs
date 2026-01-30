@@ -28,7 +28,7 @@ public class TrenboloneAcetate : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.value = 80000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

@@ -46,11 +46,11 @@ public class FerroWhipSmooth : ModProjectile
 
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-    
+
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
         target.AddBuff(ModContent.BuffType<SmoothTag>(), 300);
@@ -59,14 +59,14 @@ public class FerroWhipSmooth : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.5f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
-    
+
 
     public override bool PreDraw(ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
 
-       
+
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.
@@ -95,7 +95,7 @@ public class FerroWhipSmooth : ModProjectile
                 frame.Y = 1; // Distance from the top of the sprite to the start of the frame.
                 frame.Height = 114; // Height of the frame.
 
-               
+
             }
             else if (i > 35)
             {

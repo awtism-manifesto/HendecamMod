@@ -64,13 +64,13 @@ public class LycopiteBullet : ModItem
     public override void AddRecipes()
     {
         Recipe
-       
-        
+
+
             recipe = CreateRecipe(111);
         recipe.AddIngredient<Items.LycopiteBar>();
         recipe.AddIngredient(ItemID.MusketBall, 111);
 
         recipe.Register();
-        
+
     }
 }

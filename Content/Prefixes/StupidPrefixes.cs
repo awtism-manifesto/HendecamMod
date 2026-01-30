@@ -30,12 +30,12 @@ public class Dumb : ModPrefix
     public override bool CanRoll(Item item)
     {
         // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>()|| item.DamageType == ModContent.GetInstance<MeleeStupidDamage>() 
+        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
             || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
-            { return true; }
-        else 
-        {  return false; }
-          
+        { return true; }
+        else
+        { return false; }
+
     }
 
     // Use this function to modify these stats for items which have this prefix:
@@ -43,7 +43,7 @@ public class Dumb : ModPrefix
     public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
     {
         damageMult *= 1f + 0.075f * Power;
-       
+
     }
 
     // Modify the cost of items with this modifier with this function.
@@ -55,7 +55,7 @@ public class Dumb : ModPrefix
     // This is used to modify most other stats of items which have this modifier.
     public override void Apply(Item item)
     {
-       
+
     }
 }
 public class Lobotomized : ModPrefix
@@ -96,7 +96,7 @@ public class Lobotomized : ModPrefix
         critBonus = 5;
         useTimeMult *= 1f - 0.135f * Power;
         knockbackMult *= 1f + 0.25f * Power;
-       
+
     }
 
     // Modify the cost of items with this modifier with this function.
@@ -147,7 +147,7 @@ public class Intelligent : ModPrefix
     {
         damageMult *= 1f - 0.18f * Power;
         critBonus = -6;
-       
+
         knockbackMult *= 1f - 0.36f * Power;
 
     }
@@ -199,7 +199,7 @@ public class Brainy : ModPrefix
     public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
     {
         damageMult *= 1f - 0.1f * Power;
-       
+
         useTimeMult *= 1f + 0.075f * Power;
         knockbackMult *= 1f - 0.15f * Power;
 
@@ -360,7 +360,7 @@ public class Smart : ModPrefix
         damageMult *= 1f - 0.07f * Power;
         critBonus = -1;
         useTimeMult *= 1f + 0.05f * Power;
-       
+
 
     }
 
@@ -676,9 +676,9 @@ public class Tiktokified : ModPrefix
     public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
     {
         damageMult *= 1f - 0.125f * Power;
-       
+
         useTimeMult *= 1f - 0.225f * Power;
-       
+
 
     }
 
@@ -781,7 +781,7 @@ public class Silly : ModPrefix
     // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
     public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
     {
-       
+
         useTimeMult *= 1f - 0.067f * Power;
         knockbackMult *= 1f + 0.33f * Power;
 

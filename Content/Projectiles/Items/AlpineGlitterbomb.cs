@@ -14,7 +14,7 @@ public class AlpineGlitterbomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -49,7 +49,7 @@ public class AlpineGlitterbomb : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
+
 
 
         Projectile.rotation += 0.18f;
@@ -64,13 +64,13 @@ public class AlpineGlitterbomb : ModProjectile
             Projectile.velocity.Y = 17f;
         }
 
-       
+
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
+
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
@@ -139,15 +139,15 @@ public class AlpineGlitterbomb : ModProjectile
             fireDust.velocity *= 3.5f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<AlpineTagBuff>(), 300);
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
     }
 
-    
+
 }

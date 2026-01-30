@@ -58,7 +58,7 @@ public class GayFrogAlchemyGuide : ModItem
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
 
     }
-   
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<GayFrogChemicals>();
@@ -68,7 +68,7 @@ public class GayFrogAlchemyGuide : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,7 +97,7 @@ public class GayFrogAlchemyGuide : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    
+
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

@@ -46,7 +46,7 @@ public class TheFuckingSun : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
+
 
 
     public override Color? GetAlpha(Color lightColor)
@@ -59,7 +59,7 @@ public class TheFuckingSun : ModItem
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
 
-       
+
 
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'

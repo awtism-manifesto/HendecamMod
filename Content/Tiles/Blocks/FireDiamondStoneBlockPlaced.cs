@@ -28,7 +28,7 @@ public class FireDiamondStoneBlockPlaced : ModTile
         AddMapEntry(new Color(101, 101, 101), Language.GetText("Fire Diamond"));
 
         // I don't think this works but I'm leaving it in just because
-        RegisterItemDrop(ModContent.ItemType<FireDiamond>(),0);
+        RegisterItemDrop(ModContent.ItemType<FireDiamond>(), 0);
 
         DustType = DustID.Stone;
         HitSound = SoundID.Tink;

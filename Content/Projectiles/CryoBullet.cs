@@ -116,7 +116,7 @@ public class CryoBullet : ModProjectile
 
         target.AddBuff(BuffID.Frostburn, 300);
         target.AddBuff(BuffID.Frostburn2, 200);
-        
+
     }
 
 
@@ -132,7 +132,7 @@ public class CryoBullet : ModProjectile
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<FrostChunk>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack, Projectile.owner);
-           
+
         }
         if (Main.rand.NextBool(2))
         {

@@ -44,7 +44,7 @@ public class UnstablePlasmoid : ModNPC
         NPC.noGravity = true;
         NPC.despawnEncouraged = false;
         NPC.noTileCollide = true;
-        
+
         AIType = NPCID.Flocko; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.Harpy; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
@@ -57,7 +57,7 @@ public class UnstablePlasmoid : ModNPC
     }
     public override void AI()
     {
-        
+
 
         Lighting.AddLight(NPC.Center, 2.5f, 0.25f, 0.8f);
     }
@@ -77,7 +77,7 @@ public class UnstablePlasmoid : ModNPC
         int buff3Type = ModContent.BuffType<RadPoisoning3>();
         // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
-       
+
         int time3Add = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buff3Type, time3Add);
     }
@@ -106,15 +106,15 @@ public class UnstablePlasmoid : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(), 4, 41, 79));
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 4, 19, 39));
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 15, 25));
-       
-      
-       
+
+
+
         npcLoot.Add(ItemDropRule.Common(ItemID.Ectoplasm, 4, 9, 19));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        if (!Main.dayTime  & NPC.downedEmpressOfLight)
+        if (!Main.dayTime & NPC.downedEmpressOfLight)
         {
             return SpawnCondition.Sky.Chance * 0.072f;
         }

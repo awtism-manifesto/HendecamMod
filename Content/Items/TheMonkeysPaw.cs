@@ -59,7 +59,7 @@ public class TheMonkeysPaw : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next(0,3); // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(0, 3); // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.775f, 1.595f));
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -77,7 +77,7 @@ public class TheMonkeysPaw : ModItem
     }
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,7 +108,7 @@ public class TheMonkeysPaw : ModItem
 
 
 
-   
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

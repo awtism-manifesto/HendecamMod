@@ -29,7 +29,7 @@ public class MidnightAfterburner : ModItem
 
 
         // Use Properties
-       
+
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
@@ -43,7 +43,7 @@ public class MidnightAfterburner : ModItem
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-      
+
         Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 5;
@@ -55,15 +55,15 @@ public class MidnightAfterburner : ModItem
 
         Item.shootSpeed = 14.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
-       
 
 
-        
-            
-       
 
 
-        
+
+
+
+
+
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -83,7 +83,7 @@ public class MidnightAfterburner : ModItem
 
 
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(52.5f));
-           
+
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(15));
             Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(32.5f));
             Vector2 new4Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(Main.rand.Next(2, 4)));
@@ -92,7 +92,7 @@ public class MidnightAfterburner : ModItem
             Vector2 new7Velocity = velocity.RotatedBy(MathHelper.ToRadians(-32.5f));
             Vector2 new8Velocity = velocity.RotatedBy(MathHelper.ToRadians(-15));
 
-            
+
 
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.15f);
@@ -110,9 +110,9 @@ public class MidnightAfterburner : ModItem
             type = ModContent.ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<OilBallRanged>();
-            Projectile.NewProjectileDirect(source, position, new4Velocity*1.25f, type, (int)(damage*1.45f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new4Velocity * 1.25f, type, (int)(damage * 1.45f), knockback, player.whoAmI);
             type = ProjectileID.BlackBolt;
-            Projectile.NewProjectileDirect(source, position, new5Velocity*1.5f, type, (int)(damage * 1.45f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new5Velocity * 1.5f, type, (int)(damage * 1.45f), knockback, player.whoAmI);
             type = ModContent.ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new6Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<DragonSpawnShadow>();
@@ -168,7 +168,7 @@ public class MidnightAfterburner : ModItem
 
 
         {
-           
+
 
             recipe.AddIngredient(DarkMatter.Type, 10);
         }

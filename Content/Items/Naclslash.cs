@@ -25,7 +25,7 @@ public class Naclslash : ModItem
         Item.width = 40;
         Item.height = 40;
         Item.scale = 1.45f;
-       
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Green;
         Item.value = Item.buyPrice(gold: 5); // Sell price is 5 times less than the buy price.
@@ -47,7 +47,7 @@ public class Naclslash : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,6 +75,6 @@ public class Naclslash : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

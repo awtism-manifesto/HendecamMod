@@ -30,7 +30,7 @@ public class JusticeAxe : ModItem
         Item.knockBack = 11.5f;
         Item.width = 40;
         Item.height = 40;
-       
+
         Item.shootSpeed = 9.25f;
         Item.scale = 1.775f;
         Item.axe = 45;
@@ -44,14 +44,14 @@ public class JusticeAxe : ModItem
         Item.autoReuse = true;
         Item.mana = 0;
     }
-   
+
     public override bool AltFunctionUse(Player player)
     {
 
-        
-            return true;
-       
-       
+
+        return true;
+
+
     }
     private int justiceaxecooldown = 0;
     public override bool CanUseItem(Player player)
@@ -63,7 +63,7 @@ public class JusticeAxe : ModItem
         else
         {
             Item.mana = 0;
-           
+
         }
 
         return base.CanUseItem(player);
@@ -78,8 +78,8 @@ public class JusticeAxe : ModItem
         if (player.altFunctionUse == 2)
         {
 
-           
-          
+
+
             if (justiceaxecooldown > 0)
                 return false;
 
@@ -94,7 +94,7 @@ public class JusticeAxe : ModItem
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 2.85f, ModContent.ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback*2.75f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.85f, ModContent.ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
             return false;
         }
 
@@ -145,7 +145,7 @@ public class JusticeAxe : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        
+
 
 
 

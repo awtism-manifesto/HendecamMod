@@ -14,7 +14,7 @@ public class ParticleBeam : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -143,7 +143,7 @@ public class ParticleBeam : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(20, 20);
 
-       
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -160,13 +160,13 @@ public class ParticleBeam : ModProjectile
             RubyDust.velocity *= 3f;
         }
 
-       
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
         target.AddBuff(BuffID.Electrified, 240);
-       
+
 
     }
 

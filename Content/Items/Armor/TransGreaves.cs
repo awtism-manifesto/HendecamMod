@@ -85,6 +85,6 @@ public class TransGreaves : ModItem
     public override void UpdateArmorSet(Player player)
     {
 
-       
+
     }
 }

@@ -16,7 +16,7 @@ public class CubicMold : ModItem
     public override void SetDefaults()
     {
         Item.width = 32;
-        Item.height = 32; 
+        Item.height = 32;
         Item.rare = ItemRarityID.White;
         Item.value = 30;
         Item.maxStack = 9999;

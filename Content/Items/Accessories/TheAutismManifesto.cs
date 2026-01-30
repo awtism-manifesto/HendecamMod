@@ -36,7 +36,7 @@ public class TheAutismManifesto : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<SpiritProtectionCharm>();
         recipe.AddIngredient<AutismDiagnosis>();
         recipe.AddIngredient<AutismOrb>(2);
@@ -44,7 +44,7 @@ public class TheAutismManifesto : ModItem
         recipe.AddIngredient<AstatineBar>(7);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-       
+
 
 
 
@@ -64,7 +64,7 @@ public class TheAutismManifesto : ModItem
 
 
 
-      
+
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -81,7 +81,7 @@ public class TheAutismManifesto : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 115f;
-       
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;

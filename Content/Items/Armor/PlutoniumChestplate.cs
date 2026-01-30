@@ -19,7 +19,7 @@ public class PlutoniumChestplate : ModItem
     public static readonly int AdditiveDamageBonus = 15;
     public static readonly int AttackSpeedBonus = 15;
     public static readonly int StupidArmorPenetration = 10;
-   
+
     public static readonly int MeleeAttackSpeedBonus = 11;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -93,7 +93,7 @@ public class PlutoniumChestplate : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.lifeRegen += -1;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 111f;
-        
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 115f;
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -102,7 +102,7 @@ public class PlutoniumChestplate : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(36);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
@@ -111,8 +111,8 @@ public class PlutoniumChestplate : ModItem
         player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
-        
+
 
     }
-   
+
 }

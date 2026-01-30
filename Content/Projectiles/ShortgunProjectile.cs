@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -39,7 +38,7 @@ public class ShortgunProjectile : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-  
+
 
     public override bool PreDraw(ref Color lightColor)
     {

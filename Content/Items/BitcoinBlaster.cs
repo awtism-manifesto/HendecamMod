@@ -35,7 +35,7 @@ public class BitcoinBlaster : ModItem
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item62;

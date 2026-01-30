@@ -33,11 +33,11 @@ public class OrcaTooth : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
-       
+
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-    
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -74,28 +74,28 @@ public class OrcaTooth : ModProjectile
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
         // Apply gravity after a quarter of a second
-      
+
         // dust, all dust
-       
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
+            }
 
             Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.Blood, 0f, 0f, 100, default, 0.8f);
             fire2Dust.fadeIn = 0.15f + Main.rand.Next(2) * 0.1f;
             fire2Dust.velocity *= 0.95f;
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.Water, 0f, 0f, 100, default, 0.85f);
-                fireDust.fadeIn = 0.15f + Main.rand.Next(2) * 0.1f;
-                fireDust.velocity *= 0.95f;
-            }
-        
+            fireDust.fadeIn = 0.15f + Main.rand.Next(2) * 0.1f;
+            fireDust.velocity *= 0.95f;
+        }
+
     }
 
     public override bool PreDraw(ref Color lightColor)

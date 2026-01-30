@@ -29,7 +29,7 @@ public class LycoSporeRanged : ModProjectile
 
     public override void SetDefaults()
     {
-       
+
         Projectile.aiStyle = 1;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -37,13 +37,13 @@ public class LycoSporeRanged : ModProjectile
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.alpha = 255;
         AIType = ProjectileID.Bullet;
-       
+
         Projectile.timeLeft = 190;
         Projectile.extraUpdates = 2;
         Projectile.tileCollide = true;
         Projectile.width = 1; // The width of projectile hitbox
         Projectile.height = 1; // The height of projectile hitbox
-      
+
 
     }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
@@ -88,7 +88,7 @@ public class LycoSporeRanged : ModProjectile
     public override void AI()
     {
 
-       
+
         // dust, all dust
         if (Projectile.alpha < 198)
         {

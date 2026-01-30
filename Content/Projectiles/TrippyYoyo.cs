@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,29 +29,29 @@ public class TrippyYoyo : ModProjectile
 
     public override void AI()
     {
-       
-           
-            if (nextSpawnTick == 0)
-            {
-                nextSpawnTick = Main.rand.Next(24, 26);
-            }
 
-            tickCounter++;
 
-            if (tickCounter >= nextSpawnTick)
-            {
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-                Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+        if (nextSpawnTick == 0)
+        {
+            nextSpawnTick = Main.rand.Next(24, 26);
+        }
 
-                tickCounter = 0;
-                nextSpawnTick = Main.rand.Next(27, 28);
+        tickCounter++;
 
-                
-                Projectile.netUpdate = true;
-            }
-        
+        if (tickCounter >= nextSpawnTick)
+        {
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+            Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+                ModContent.ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+
+            tickCounter = 0;
+            nextSpawnTick = Main.rand.Next(27, 28);
+
+
+            Projectile.netUpdate = true;
+        }
+
 
         // dust code (visual only, fine to run on all clients)
         if (Projectile.alpha < 187)

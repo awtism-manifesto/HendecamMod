@@ -65,8 +65,8 @@ public class DragonBreathShell : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-       
+
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SoulofPlight", out ModItem SoulofPlight))
 
 
@@ -83,7 +83,7 @@ public class DragonBreathShell : ModItem
             recipe.Register();
 
         }
-       
+
         else
         {
             recipe = CreateRecipe(250);

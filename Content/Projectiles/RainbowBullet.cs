@@ -84,9 +84,9 @@ public class RainbowBullet : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
-            
-        
+
+
+
 
 
     }
@@ -96,7 +96,7 @@ public class RainbowBullet : ModProjectile
 
 
         // dust, all dust
-         if (Projectile.alpha < 190)
+        if (Projectile.alpha < 190)
         {
             for (int i = 0; i < 2; i++)
             {

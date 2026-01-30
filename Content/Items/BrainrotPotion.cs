@@ -56,7 +56,7 @@ public class BrainrotPotion : ModItem
 
 
 
-        
+
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
@@ -64,22 +64,22 @@ public class BrainrotPotion : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BottledWater);
         recipe.AddIngredient(ItemID.Deathweed);
-        recipe.AddIngredient< WeedLeaves>();
-        recipe.AddIngredient< PlasticScrap>();
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PlasticScrap>();
         recipe.AddTile(TileID.Bottles);
         recipe.Register();
 
-         recipe = CreateRecipe();
+        recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BottledWater);
         recipe.AddIngredient(ItemID.Deathweed);
-        recipe.AddIngredient< WeedLeaves>();
-        recipe.AddIngredient< PlasticScrap>();
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PlasticScrap>();
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
 
         recipe = CreateRecipe(100);
         recipe.AddIngredient(ItemID.BrainOfConfusion);
-        
+
         recipe.AddTile(TileID.Kegs);
         recipe.Register();
     }

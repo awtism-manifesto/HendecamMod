@@ -1,10 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,7 +7,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class VenomBall : ModProjectile
 {
-  
+
 
     public override void SetDefaults()
     {
@@ -35,24 +29,24 @@ public class VenomBall : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.Venom, 150);
 
 
     }
-   
+
     public override void AI()
     {
-      
+
 
         Projectile.rotation += -0.135f;
 
-       
-      
+
+
     }
 
-   
-  
+
+
 }
 
 

@@ -38,7 +38,7 @@ public class IED : ModItem
             Item.DamageType = DamageClass.Throwing;
         }
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -55,7 +55,7 @@ public class IED : ModItem
         };
         tooltips.Add(line);
 
-    
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
 
@@ -63,7 +63,7 @@ public class IED : ModItem
         }
 
 
-    
+
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

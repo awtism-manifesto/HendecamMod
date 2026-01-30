@@ -1,11 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -26,7 +22,7 @@ public class PearlProj : ModProjectile
 
     public ref float DelayTimer => ref Projectile.ai[1];
 
-    
+
 
 
     public override void SetStaticDefaults()
@@ -40,7 +36,7 @@ public class PearlProj : ModProjectile
     {
         Projectile.width = 16; // The width of projectile hitbox
         Projectile.height = 16; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>(); // Is the projectile shoot by a ranged weapon?
@@ -50,15 +46,15 @@ public class PearlProj : ModProjectile
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-       
 
-        
+
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<PearlTag>(), 270);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-       
+
     }
     // Custom AI
     public override void AI()
@@ -93,7 +89,7 @@ public class PearlProj : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.75f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -139,5 +135,5 @@ public class PearlProj : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-    
+
 

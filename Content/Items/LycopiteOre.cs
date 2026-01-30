@@ -14,8 +14,8 @@ public class LycopiteOre : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
-      
+
+
         Item.ResearchUnlockCount = 100; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -30,7 +30,7 @@ public class LycopiteOre : ModItem
         Item.value = 3350;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.LycopiteOreTile>());
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -61,5 +61,5 @@ public class LycopiteOre : ModItem
     }
 
 
-    
+
 }

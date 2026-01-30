@@ -103,6 +103,6 @@ public class CopperQuadsword : ModItem
             recipe.Register();
         }
 
-        }
-
     }
+
+}

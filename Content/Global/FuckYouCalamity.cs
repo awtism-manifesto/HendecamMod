@@ -18,14 +18,14 @@ public class FuckYouCalamity : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        
-        
+
+
         item.damage = 6;
-        item.useTime = 8; 
+        item.useTime = 8;
         item.useAnimation = 8;
     }
 
-   
+
 }
 public class FuckYouCalamity2 : GlobalItem
 {

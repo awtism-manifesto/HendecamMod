@@ -32,7 +32,7 @@ public class SaltMelee2 : ModProjectile
         Projectile.extraUpdates = 7;
     }
 
-   
+
 
     public override void OnKill(int timeLeft)
     {

@@ -49,7 +49,7 @@ public class BulletBlade : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
 
-      
+
         if (type == ProjectileID.ChlorophyteBullet)
         {
             damage = (int)(damage * 0.25f);
@@ -65,7 +65,7 @@ public class BulletBlade : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360));
 
-           
+
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -121,7 +121,7 @@ public class BulletBlade : ModItem
 
         Recipe recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient(ItemID.AdamantiteBar, 12);
         recipe.AddIngredient(ItemID.SoulofMight, 10);
         recipe.AddIngredient(ItemID.MusketBall, 100);
@@ -133,7 +133,7 @@ public class BulletBlade : ModItem
         recipe.AddIngredient(ItemID.MusketBall, 100);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        
+
     }
 
 }

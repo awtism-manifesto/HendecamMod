@@ -32,13 +32,13 @@ public class OilBottleProj : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Oiled, 180);
 
-       
-        
+
+
 
 
 
@@ -58,7 +58,7 @@ public class OilBottleProj : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-           
+
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Wraith, 0f, 0f, 100, default, 0.45f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -76,6 +76,6 @@ public class OilBottleProj : ModProjectile
 
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

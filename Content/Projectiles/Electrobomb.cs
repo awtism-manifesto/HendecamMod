@@ -26,7 +26,7 @@ public class Electrobomb : ModProjectile
     public ref float DelayTimer => ref Projectile.ai[1];
     public override void SetStaticDefaults()
     {
-        
+
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -34,13 +34,13 @@ public class Electrobomb : ModProjectile
     {
         Projectile.width = 13; // The width of projectile hitbox
         Projectile.height = 13; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = -1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 200; 
-                               
+        Projectile.timeLeft = 200;
+
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -109,7 +109,7 @@ public class Electrobomb : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-        
+
 
     }
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -191,13 +191,13 @@ public class Electrobomb : ModProjectile
             fireDust.velocity *= 3f;
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
-           
+
         }
-      
 
 
 
-       
+
+
     }
 
 

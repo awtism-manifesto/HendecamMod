@@ -12,7 +12,7 @@ public class SlimeMine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -23,9 +23,9 @@ public class SlimeMine : ModProjectile
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         Main.projFrames[Projectile.type] = 2;
-      
-     
-       
+
+
+
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
@@ -38,7 +38,7 @@ public class SlimeMine : ModProjectile
         Projectile.scale = 1.5f;
         Projectile.friendly = false;
         Projectile.hostile = false;
-     
+
         Projectile.penetrate = 696969; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Summon;
         Projectile.light = 0.7f; // How much light emit around the projectile
@@ -56,20 +56,20 @@ public class SlimeMine : ModProjectile
         // AIType = ProjectileID.RocketI;
     }
 
-    
+
     public override void AI()
     {
 
 
-      
+
         if (Projectile.timeLeft < 546)
         {
-           
+
             Projectile.friendly = true;
-          
+
         }
 
-        if (Projectile.timeLeft> 453)
+        if (Projectile.timeLeft > 453)
         {
             int frameSpeed = 18;
 
@@ -168,13 +168,13 @@ public class SlimeMine : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
 
-       
+
+
     }
 
-   
-  
+
+
 
     public override void PrepareBombToBlow()
     {
@@ -192,7 +192,7 @@ public class SlimeMine : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.96f);
-        
+
     }
     public override void OnKill(int timeLeft)
     {
@@ -225,10 +225,10 @@ public class SlimeMine : ModProjectile
             fireDust.velocity *= 5f;
         }
 
-       
+
     }
-    
-    
+
+
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

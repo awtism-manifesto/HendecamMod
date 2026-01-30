@@ -17,7 +17,7 @@ public class BabyOilMonster : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
 
         Main.projFrames[Projectile.type] = 15;
         Main.projPet[Projectile.type] = true;

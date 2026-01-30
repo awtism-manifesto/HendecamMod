@@ -30,7 +30,7 @@ public class AncientCobaltOrePlaced : ModTile
         Main.tileMerge[TileID.SnowBlock][Type] = true;
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
-        
+
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(160, 225, 255), Language.GetText("Ancient Cobalt"));
 

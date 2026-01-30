@@ -43,10 +43,10 @@ public class MoonBoom : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-    
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.immune[Projectile.owner] = 8;
     }
     public override void AI()

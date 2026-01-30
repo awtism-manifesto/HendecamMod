@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,17 +11,17 @@ public class SaltGrav : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-        
+
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType =  ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 66;
         Projectile.extraUpdates = 1;
     }
@@ -34,7 +32,7 @@ public class SaltGrav : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-        
+
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 18f)
         {
@@ -51,12 +49,12 @@ public class SaltGrav : ModProjectile
             Projectile.velocity.Y = 6f;
         }
         // dust
-       
+
     }
-    
+
     public override void OnKill(int timeLeft)
     {
-         // Plays the basic sound most projectiles make when hitting blocks.
+        // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);

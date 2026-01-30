@@ -43,7 +43,7 @@ public class StarfishOnAString : ModItem
         Item.shoot = ModContent.ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
 
-       
+
 
     }
 
@@ -99,5 +99,5 @@ public class StarfishOnAString : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-  
+
 }

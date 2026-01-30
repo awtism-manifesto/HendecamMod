@@ -77,24 +77,24 @@ public class KingslayerBar : ModItem
         recipe.AddIngredient(ItemID.Gel, 5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-       
-            // recipe.AddIngredient(PyriteBar.Type, 2);
-            recipe = CreateRecipe(3);
+
+        // recipe.AddIngredient(PyriteBar.Type, 2);
+        recipe = CreateRecipe(3);
         recipe.AddIngredient<Items.PyriteBar>(2);
         recipe.AddIngredient(ItemID.PlatinumBar, 2);
-            recipe.AddIngredient(ItemID.Gel, 5);
-            recipe.AddTile(TileID.Solidifier);
-            recipe.Register();
+        recipe.AddIngredient(ItemID.Gel, 5);
+        recipe.AddTile(TileID.Solidifier);
+        recipe.Register();
 
-            recipe = CreateRecipe(3);
+        recipe = CreateRecipe(3);
         recipe.AddIngredient<Items.PyriteBar>(2);
         recipe.AddIngredient(ItemID.GoldBar, 2);
-            recipe.AddIngredient(ItemID.Gel, 5);
-            recipe.AddTile(TileID.Solidifier);
-            recipe.Register();
+        recipe.AddIngredient(ItemID.Gel, 5);
+        recipe.AddTile(TileID.Solidifier);
+        recipe.Register();
 
-        
+
     }
-   
+
 }
 

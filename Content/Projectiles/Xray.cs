@@ -18,20 +18,20 @@ public class Xray : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 36; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
+
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
         Projectile.height = 5; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 63; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -39,7 +39,7 @@ public class Xray : ModProjectile
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 5; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-        
+
     }
     public override void AI()
     {
@@ -66,10 +66,10 @@ public class Xray : ModProjectile
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 150);
         target.immune[Projectile.owner] = 5;
-        
+
     }
-    
-    
+
+
 }
 
 

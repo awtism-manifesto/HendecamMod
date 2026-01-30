@@ -11,9 +11,9 @@ public class UraniumGlassTile : ModTile
     public override void SetStaticDefaults()
     {
         Main.tileSolid[Type] = true;
-       
-       
-        
+
+
+
         DustType = DustID.CursedTorch;
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(111, 255, 149));

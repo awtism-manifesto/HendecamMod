@@ -42,7 +42,7 @@ public class KingslayerKunai : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Item.DamageType = DamageClass.Throwing;
-           
+
         }
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -52,7 +52,7 @@ public class KingslayerKunai : ModItem
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-4.8f));
         Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(4.8f));
-       
+
 
 
 
@@ -60,7 +60,7 @@ public class KingslayerKunai : ModItem
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-        
+
 
 
         return false; // Return false because we don't want tModLoader to shoot projectile
@@ -88,7 +88,7 @@ public class KingslayerKunai : ModItem
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
 
-        
+
     }
     public override void AddRecipes()
     {

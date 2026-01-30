@@ -35,7 +35,7 @@ public class LunarStaff : ModItem
         Item.noMelee = true;
         Item.value = 75000;
         Item.rare = ItemRarityID.Orange;
-      
+
 
         Item.shoot = ModContent.ProjectileType<LunarBolt>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.5f; // Speed of the projectiles the sword will shoot
@@ -49,12 +49,12 @@ public class LunarStaff : ModItem
 
 
 
-   
+
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
-       
+
 
         SoundEngine.PlaySound(SoundID.Item91, player.position);
 
@@ -76,7 +76,7 @@ public class LunarStaff : ModItem
 
 
 
-       
+
     }
     public override Vector2? HoldoutOffset()
     {

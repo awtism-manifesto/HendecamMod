@@ -36,7 +36,7 @@ public class AstatineAnnihilator : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 5;
         Item.pick = 245;
-       
+
         Item.axe = 43;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }

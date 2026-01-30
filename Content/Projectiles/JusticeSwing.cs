@@ -85,7 +85,7 @@ public class JusticeSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-      
+
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -157,7 +157,7 @@ public class JusticeSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
 
@@ -187,7 +187,7 @@ public class JusticeSwing : ModProjectile
 
         Color backDarkColor = new Color(152, 64, 80); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(255, 100, 100); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(245,120 , 155); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(245, 120, 155); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.White * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));
@@ -210,10 +210,10 @@ public class JusticeSwing : ModProjectile
         // Thin bottom line (final frame)
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
 
-        
+
         return false;
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private
-    
+
 }

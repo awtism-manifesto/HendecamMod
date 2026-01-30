@@ -34,15 +34,15 @@ public class FrostChunk : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1;
         Projectile.scale = 2f;
-        
+
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.Frostburn, 180);
-       
+
     }
     public override void AI()
     {

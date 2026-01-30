@@ -2,7 +2,6 @@
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -64,11 +63,11 @@ public class KnightSwordDown : ModProjectile
             {
                 SoundEngine.PlaySound(SoundID.Item82, Projectile.position);
                 Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-                Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660),Main.rand.NextFloat(-500, 500));
+                Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                     ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.75f), Projectile.knockBack, Projectile.owner);
 
-               
+
             }
         }
 
@@ -92,10 +91,10 @@ public class KnightSwordDown : ModProjectile
 
         return true;
     }
-   
 
 
-   
+
+
 
 }
 

@@ -88,7 +88,7 @@ public class ChainThunderblade : ModItem
         else
         {
             recipe = CreateRecipe();
-            
+
             recipe.AddIngredient(ItemID.DemoniteBar, 7);
             recipe.AddIngredient(ItemID.FossilOre, 12);
             recipe.AddIngredient<Items.RockSalt>(25);
@@ -105,7 +105,7 @@ public class ChainThunderblade : ModItem
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 7);
-          
+
             recipe.AddIngredient(ItemID.FossilOre, 12);
             recipe.AddIngredient<Items.RockSalt>(25);
             recipe.AddTile(TileID.Anvils);
@@ -149,6 +149,6 @@ public class ChainThunderblade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

@@ -2,7 +2,6 @@
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,7 +11,7 @@ public class PissMissileProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -173,7 +172,7 @@ public class PissMissileProj : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
-         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Ichor, 600);
         target.immune[Projectile.owner] = 4;

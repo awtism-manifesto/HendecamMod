@@ -15,7 +15,7 @@ public class RockSaltFedora : ModItem
 {
 
     public static readonly int AdditiveStupidDamageBonus = 6;
-    public static readonly int StupidCritBonus =6;
+    public static readonly int StupidCritBonus = 6;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -83,7 +83,7 @@ public class RockSaltFedora : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
+
         player.statLifeMax2 += 5;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 106f;
@@ -99,7 +99,7 @@ public class RockSaltFedora : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-      
-        
+
+
     }
 }

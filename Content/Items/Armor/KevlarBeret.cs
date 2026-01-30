@@ -14,8 +14,8 @@ namespace HendecamMod.Content.Items.Armor;
 public class KevlarBeret : ModItem
 {
 
-    
-   
+
+
     public static readonly int MoveSpeedBonus = -3;
     public static readonly int MeleeAttackSpeedBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 14;
@@ -63,7 +63,7 @@ public class KevlarBeret : ModItem
     {
         return body.type == ModContent.ItemType<KevlarBodysuit>() && legs.type == ModContent.ItemType<KevlarPants>();
     }
-    
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.

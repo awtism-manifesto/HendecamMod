@@ -33,7 +33,7 @@ public class BadTrip : ModItem
         Item.damage = 31; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 1.5f; // The amount of knockback the item inflicts.
-        
+
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.Orange; // The item's rarity. This changes the color of the item's name.
         Item.value = 22000; // The amount of money that the item is can be bought for.
@@ -100,7 +100,7 @@ public class BadTrip : ModItem
         recipe.AddIngredient<Items.LycopiteBar>(13);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
 
 
 

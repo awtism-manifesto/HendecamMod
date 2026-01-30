@@ -28,16 +28,16 @@ public class AzuriteDualStaff : ModItem
         Item.useTime = 33;
         Item.useAnimation = 33;
         Item.autoReuse = true;
-    
+
         Item.mana = 16;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 77;
         Item.knockBack = 6.7f;
         Item.noMelee = true;
-      
+
         Item.value = 105000;
         Item.rare = ItemRarityID.Orange;
-      
+
 
         Item.shoot = ModContent.ProjectileType<AzuriteBeam>();
         Item.shootSpeed = 12.5f;
@@ -54,7 +54,7 @@ public class AzuriteDualStaff : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
 
-           
+
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
@@ -64,7 +64,7 @@ public class AzuriteDualStaff : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(180f));
 
-            
+
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 2f), knockback, player.whoAmI);

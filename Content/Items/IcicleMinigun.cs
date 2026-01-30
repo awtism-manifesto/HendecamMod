@@ -45,7 +45,7 @@ public class IcicleMinigun : ModItem
         Item.damage = 49; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 5;
         Item.mana = 7;
 
@@ -55,7 +55,7 @@ public class IcicleMinigun : ModItem
         Item.shoot = ModContent.ProjectileType<IcicleRanged>();
 
         Item.shootSpeed = 20.95f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -69,7 +69,7 @@ public class IcicleMinigun : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
+
         SoundEngine.PlaySound(SoundID.Item98, player.position);
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -85,7 +85,7 @@ public class IcicleMinigun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -115,7 +115,7 @@ public class IcicleMinigun : ModItem
     }
 
 
-   
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

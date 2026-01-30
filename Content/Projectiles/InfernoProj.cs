@@ -31,10 +31,10 @@ public class InfernoProj : ModProjectile
         Projectile.alpha = 93;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = false;
-        
+
         Projectile.scale = 1f;
         Projectile.usesIDStaticNPCImmunity = true;
-        Projectile.idStaticNPCHitCooldown = 3; 
+        Projectile.idStaticNPCHitCooldown = 3;
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -66,11 +66,11 @@ public class InfernoProj : ModProjectile
     public override void AI()
     {
 
-       
 
-       
-            Projectile.rotation += -0.14f;
-        
+
+
+        Projectile.rotation += -0.14f;
+
 
         int frameSpeed = 6;
 
@@ -93,7 +93,7 @@ public class InfernoProj : ModProjectile
 
         Lighting.AddLight(Projectile.Center, 3.15f, 1.85f, 0.95f);
 
-      
+
         Projectile.velocity = Vector2.Zero;
 
 

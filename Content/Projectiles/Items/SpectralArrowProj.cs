@@ -3,7 +3,6 @@ using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -83,7 +82,7 @@ public class SpectralArrowProj : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-       
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrystalSerpent_Pink);

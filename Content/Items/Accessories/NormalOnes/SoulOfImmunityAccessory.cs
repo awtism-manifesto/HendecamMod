@@ -12,9 +12,9 @@ namespace HendecamMod.Content.Items.Accessories.NormalOnes;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class SoulOfImmunityAccessory : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 32;
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 64000);
@@ -22,25 +22,25 @@ public class SoulOfImmunityAccessory : ModItem
         Item.accessory = true;
         Item.defense = 32;
 
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 30% Damage Reduction, 35 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 extra Defense, Doubled Armor Penetraton, 50% more Generic Damage, MUCH higher jump speed, Flight, Liquid walking,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Super fast movement, More mobility on ice, Faster running speed on sand, 30 fishing power, and Auto jump"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Immune to every buff, debuff, knockback, fall damage, fire blocks, and liquids"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Every enemy should be friendly"));
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.CancelAllBootRunVisualEffects();
         player.hellfireTreads = true;
         if (!player.mount.Active || player.mount.Type != MountID.WallOfFleshGoat)
-            {
+        {
             player.DoBootsEffect(player.DoBootsEffect_PlaceFlamesOnTile);
             player.DoBootsEffect(player.DoBootsEffect_PlaceFlamesOnTile);
-            }
+        }
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
         player.GetModPlayer<NastyLight>().NastyEffect = true;
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -1024,9 +1024,9 @@ public class SoulOfImmunityAccessory : ModItem
         player.npcTypeNoAggro[NPCID.Crimslime] = true;
         player.npcTypeNoAggro[NPCID.IlluminantSlime] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<RampartAccessory>(1);
@@ -1036,5 +1036,5 @@ public class SoulOfImmunityAccessory : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

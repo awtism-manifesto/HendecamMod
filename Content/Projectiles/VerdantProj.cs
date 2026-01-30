@@ -36,7 +36,7 @@ public class VerdantProj : ModProjectile
         Projectile.width = 119;
         Projectile.height = 99;
         Projectile.scale = 1.33f;
-      
+
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
@@ -84,7 +84,7 @@ public class VerdantProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-      
+
         target.AddBuff(BuffID.Poisoned, 120);
     }
     private void SetVisualOffsets()

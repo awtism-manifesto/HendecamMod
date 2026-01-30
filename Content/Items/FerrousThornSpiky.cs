@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 
 public class FerrousThornSpiky : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -48,7 +48,7 @@ public class FerrousThornSpiky : ModItem
         };
         tooltips.Add(line);
 
-        
+
     }
     public override bool CanRightClick()
     {
@@ -70,7 +70,7 @@ public class FerrousThornSpiky : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-       
+
 
 
     }

@@ -83,6 +83,6 @@ public class TransBodyplate : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
+
     }
 }

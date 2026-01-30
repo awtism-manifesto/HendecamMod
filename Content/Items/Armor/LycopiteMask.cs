@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class LycopiteMask : ModItem
 {
 
-    
+
     public static readonly int MeleeCritBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 5;
     public static readonly int AttackSpeedBonus = 14;
@@ -90,8 +90,8 @@ public class LycopiteMask : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
-       
+
+
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
         player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 114f;
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
@@ -101,9 +101,9 @@ public class LycopiteMask : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<LycopiteBar>(19);
-      
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

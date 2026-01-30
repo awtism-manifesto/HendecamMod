@@ -34,7 +34,7 @@ public class GlitterGun : ModItem
         Item.noMelee = true;
         Item.ArmorPenetration = 999;
         Item.mana = 1;
-        Item.shoot =  ModContent.ProjectileType<GlitterBullet>();
+        Item.shoot = ModContent.ProjectileType<GlitterBullet>();
         Item.shootSpeed = 15.95f;
     }
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

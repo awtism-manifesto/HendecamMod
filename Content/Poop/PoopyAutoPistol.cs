@@ -39,7 +39,7 @@ public class PoopyAutoPistol : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 6.9f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
-       
+
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -60,9 +60,9 @@ public class PoopyAutoPistol : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            
+
         }
-        
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -98,10 +98,10 @@ public class PoopyAutoPistol : ModItem
 
         Recipe recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient<PoopyPistol>();
 
-       
+
         recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
 
         recipe.Register();

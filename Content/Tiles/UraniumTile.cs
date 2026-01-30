@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -22,7 +21,7 @@ public class UraniumTile : ModTile
 
         Main.tileMerge[ModContent.TileType<PlutoniumOrePlaced>()][Type] = true;
         Main.tileMerge[ModContent.TileType<AstatineOrePlaced>()][Type] = true;
-      
+
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 400;
         DustType = DustID.CursedTorch;

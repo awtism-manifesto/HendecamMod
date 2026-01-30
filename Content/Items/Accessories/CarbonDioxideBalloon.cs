@@ -31,7 +31,7 @@ public class CarbonDioxideBalloon : ModItem
         recipe.AddIngredient(ItemID.ShinyRedBalloon);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

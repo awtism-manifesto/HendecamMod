@@ -95,7 +95,7 @@ public class BrokenHeroGun : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
+
         recipe.AddIngredient(ItemID.BrokenHeroSword);
 
         recipe.AddTile(TileID.MythrilAnvil);

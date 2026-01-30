@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Poop;
 
 public class PoopSock : ModItem
 {
-  
+
 
     public override void SetDefaults()
     {
@@ -65,11 +65,11 @@ public class PoopSock : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-        player.AddBuff(BuffID.Stinky, 61);
-       
 
-        return true; 
+        player.AddBuff(BuffID.Stinky, 61);
+
+
+        return true;
     }
     public override void AddRecipes()
     {

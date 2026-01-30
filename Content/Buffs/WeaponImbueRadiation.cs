@@ -8,7 +8,7 @@ using HendecamMod.Content.Dusts;
 namespace HendecamMod.Content.Buffs;
 
 
-public class WeaponImbueRadiation: ModBuff
+public class WeaponImbueRadiation : ModBuff
 {
     public override void SetStaticDefaults()
     {

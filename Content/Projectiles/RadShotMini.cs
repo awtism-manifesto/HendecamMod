@@ -18,7 +18,7 @@ public class RadShotMini : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-        
+
     }
 
     public override void SetDefaults()
@@ -33,10 +33,10 @@ public class RadShotMini : ModProjectile
         Projectile.timeLeft = 120;
         AIType = ProjectileID.Bullet;
     }
-   
+
     public override void AI()
     {
-       
+
 
 
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -63,9 +63,9 @@ public class RadShotMini : ModProjectile
     {
 
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 60);
-       
+
 
 
     }
-   
+
 }

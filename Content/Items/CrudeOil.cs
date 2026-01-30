@@ -24,7 +24,7 @@ public class CrudeOil : ModItem
     {
         Item.damage = 3; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -35,7 +35,7 @@ public class CrudeOil : ModItem
         Item.shoot = ProjectileID.Flames;
         Item.shootSpeed = 0f; // The speed of the projectile.
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
-       
+
     }
 
     public override void AddRecipes()
@@ -58,11 +58,11 @@ public class CrudeOil : ModItem
 
         {
 
-           
+
 
             recipe = CreateRecipe(5);
             recipe.AddIngredient(SmoothCoal.Type);
-         
+
             recipe.AddTile(TileID.Bottles);
             recipe.Register();
         }
@@ -97,5 +97,5 @@ public class CrudeOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 }

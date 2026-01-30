@@ -30,7 +30,7 @@ public class PlasmoidFriendly : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-       
+
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 150);
     }
     public override void SetDefaults()
@@ -76,7 +76,7 @@ public class PlasmoidFriendly : ModProjectile
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
 
-       
+
     }
     private bool CheckActive(Player owner)
     {
@@ -247,6 +247,6 @@ public class PlasmoidFriendly : ModProjectile
                 Projectile.frame = 0;
             }
         }
-      
+
     }
 }

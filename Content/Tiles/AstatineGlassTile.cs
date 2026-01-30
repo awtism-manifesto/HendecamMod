@@ -11,9 +11,9 @@ public class AstatineGlassTile : ModTile
     public override void SetStaticDefaults()
     {
         Main.tileSolid[Type] = true;
-       
-       
-        
+
+
+
         DustType = DustID.CrimsonTorch;
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(196, 62, 90));

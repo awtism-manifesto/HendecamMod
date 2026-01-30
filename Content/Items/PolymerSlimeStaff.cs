@@ -64,7 +64,7 @@ public class PolymerSlimeStaff : ModItem
         };
         tooltips.Add(line);
 
-       
+
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -108,6 +108,6 @@ public class PolymerSlimeStaff : ModItem
         return false;
     }
 
-    
+
 
 }

@@ -13,11 +13,11 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Beard)]
 public class LuckyCigarette : ModItem
 {
-   
-    public static readonly int CritBonus = 10;
-    
 
-   
+    public static readonly int CritBonus = 10;
+
+
+
 
     public override void SetDefaults()
     {
@@ -26,7 +26,7 @@ public class LuckyCigarette : ModItem
         Item.value = Item.sellPrice(silver: 66); // How many coins the item is worth
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.accessory = true;
-        
+
     }
     public override void UpdateEquip(Player player)
     {
@@ -37,7 +37,7 @@ public class LuckyCigarette : ModItem
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-       
+
         var line = new TooltipLine(Mod, "Face", "10% increased crit chance");
         tooltips.Add(line);
 
@@ -56,7 +56,7 @@ public class LuckyCigarette : ModItem
 
 
 
-       
+
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -65,12 +65,12 @@ public class LuckyCigarette : ModItem
             }
         }
 
-        
+
     }
-   
-   
-  
-    
-    
-   
+
+
+
+
+
+
 }

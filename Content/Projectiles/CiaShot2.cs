@@ -89,7 +89,7 @@ public class CiaShot2 : ModProjectile
 
         return true;
     }
-   
+
 
 
     public override void OnKill(int timeLeft)

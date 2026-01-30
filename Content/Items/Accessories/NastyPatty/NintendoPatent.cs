@@ -10,22 +10,22 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class NintendoPatent : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Grants 25% Crit Chance, at the cost of Summons");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
         player.maxMinions = 0;
         player.ClearBuff(BuffID.BabyBird);
@@ -48,9 +48,9 @@ public class NintendoPatent : ModItem
         player.ClearBuff(BuffID.TwinEyesMinion);
         player.ClearBuff(BuffID.UFOMinion);
         player.ClearBuff(BuffID.VampireFrog);
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.GemBunnyDiamond, 5);
@@ -60,5 +60,5 @@ public class NintendoPatent : ModItem
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
-        }
     }
+}

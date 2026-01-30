@@ -88,9 +88,9 @@ public class IronFistProj : ModProjectile
     }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        
-            modifiers.SourceDamage *= 0f;
-        
+
+        modifiers.SourceDamage *= 0f;
+
     }
     public override void OnKill(int timeLeft)
     {
@@ -150,7 +150,7 @@ public class IronFistProj : ModProjectile
         // "Hit anything between the player and the tip of the sword"
         // shootSpeed is 2.1f for reference, so this is basically plotting 12 pixels ahead from the center
         Vector2 start = Projectile.Center;
-        Vector2 end = start + Projectile.velocity *6f;
+        Vector2 end = start + Projectile.velocity * 6f;
         float collisionPoint = 0f; // Don't need that variable, but required as parameter
         return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
     }

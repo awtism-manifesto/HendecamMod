@@ -47,24 +47,24 @@ public class Six7Gun : ModItem
         Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
-       
+
+
+
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Six>();
-       
+
         Item.shootSpeed = 11.67f; // The speed of the projectile (measured in pixels per frame.)
 
     }
     public override void UpdateInventory(Player player)
     {
 
-       
-                Item.damage = 67;
-          
+
+        Item.damage = 67;
+
 
     }
     private int shotCounter = 0;
@@ -93,14 +93,14 @@ public class Six7Gun : ModItem
             shotCounter = 0;
         }
 
-      
 
-        return false; 
+
+        return false;
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         damage = 67;
-      
+
     }
     public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
     {
@@ -130,7 +130,7 @@ public class Six7Gun : ModItem
     }
 
 
-   
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

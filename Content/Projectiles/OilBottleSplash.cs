@@ -47,7 +47,7 @@ public class OilBottleSplash : ModProjectile
     {
         target.immune[Projectile.owner] = 4;
         target.AddBuff(BuffID.Oiled, 120);
-      
+
         Projectile.damage = (int)(Projectile.damage * 0.935f);
     }
     public override void AI()
@@ -158,14 +158,14 @@ public class OilBottleSplash : ModProjectile
 
 
 
-       
+
 
         for (int j = 0; j < 25; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith, 0f, 0f, 100, default, 1.35f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-           
+
         }
 
         // Rocket II explosion that damages tiles.

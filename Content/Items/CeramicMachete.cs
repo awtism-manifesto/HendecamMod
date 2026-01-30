@@ -28,7 +28,7 @@ public class CeramicMachete : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 31;
         Item.knockBack = 1.5f;
-        
+
 
 
         Item.value = Item.buyPrice(gold: 5);
@@ -64,7 +64,7 @@ public class CeramicMachete : ModItem
     }
 
 
-  
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -95,7 +95,7 @@ public class CeramicMachete : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<CeramicSheet>(25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

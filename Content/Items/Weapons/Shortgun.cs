@@ -49,9 +49,9 @@ public class Shortgun : ModItem
         // Gun Properties
         Item.shoot = ModContent.ProjectileType<Projectiles.ShortgunProjectile>();
         Item.shootSpeed = 6.1f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
-   
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;

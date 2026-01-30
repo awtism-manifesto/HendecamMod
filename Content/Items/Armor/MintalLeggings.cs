@@ -94,7 +94,7 @@ public class MintalLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-        
-       
+
+
     }
 }

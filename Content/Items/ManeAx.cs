@@ -33,7 +33,7 @@ public class ManeAx : ModItem
         Item.shootSpeed = 7.25f;
         Item.scale = 1.5f;
         Item.axe = 23;
-       
+
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
         Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
@@ -61,10 +61,10 @@ public class ManeAx : ModItem
     public override bool AltFunctionUse(Player player)
     {
 
-        
-            return true;
-       
-       
+
+        return true;
+
+
     }
     private int maneaxcooldown = 0;
     public override void UpdateInventory(Player player)
@@ -91,7 +91,7 @@ public class ManeAx : ModItem
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<RudeBuster>(), (int)(damage * 2.33f), (int)(knockback*2.25f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<RudeBuster>(), (int)(damage * 2.33f), (int)(knockback * 2.25f), player.whoAmI);
             return false;
         }
 

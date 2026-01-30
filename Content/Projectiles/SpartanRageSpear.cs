@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,7 +28,7 @@ public class SpartanRageSpear : ModProjectile
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 135; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 100; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
-       
+
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -41,7 +39,7 @@ public class SpartanRageSpear : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.9f);
-       
+
 
     }
     public override void AI()
@@ -74,6 +72,6 @@ public class SpartanRageSpear : ModProjectile
     }
 
 
-   
+
 
 }

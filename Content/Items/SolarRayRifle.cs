@@ -44,7 +44,7 @@ public class SolarRayRifle : ModItem
         Item.damage = 18; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
         Item.mana = 6;
 
@@ -70,7 +70,7 @@ public class SolarRayRifle : ModItem
 
 
 
-    
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -106,7 +106,7 @@ public class SolarRayRifle : ModItem
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AerialiteBar", out ModItem AerialiteBar))
         {
             recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(AerialiteBar.Type, 7);
             recipe.AddIngredient(ItemID.HellstoneBar, 7);
             recipe.AddIngredient<Items.PyriteBar>(7);
@@ -121,14 +121,14 @@ public class SolarRayRifle : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient<Items.PyriteBar>(11);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
-           
+
             recipe.AddIngredient<Items.CrudeOil>(15);
             recipe.AddIngredient(ItemID.Lens, 4);
             recipe.AddIngredient(ItemID.IllegalGunParts);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-          
+
 
         }
 

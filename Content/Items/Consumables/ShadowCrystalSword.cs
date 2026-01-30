@@ -11,9 +11,9 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Items.Consumables;
 
 public class ShadowCrystalSword : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 32;
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 999);
@@ -31,25 +31,25 @@ public class ShadowCrystalSword : ModItem
         Item.knockBack = 17.5f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
-        Item.buffType = BuffID.Bleeding; 
+        Item.buffType = BuffID.Bleeding;
         Item.buffTime = 300;
         Item.useTurn = true;
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        }
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
+    {
         player.lifeRegen += (int)8f;
         return true;
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe(1);
         recipe = CreateRecipe();
         recipe.AddIngredient<LoreAccurateBlackshard>(10);
         recipe.AddTile(TileID.GlassKiln);
         recipe.Register();
-        }
     }
+}

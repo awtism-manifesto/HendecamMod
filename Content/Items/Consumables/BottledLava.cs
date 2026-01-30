@@ -33,10 +33,10 @@ public class BottledLava : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(copper: 42);
-        Item.buffType = BuffID.OnFire; 
-        Item.buffTime = 6000; 
+        Item.buffType = BuffID.OnFire;
+        Item.buffTime = 6000;
         Item.buffType = BuffID.Burning;
-        Item.buffTime = 6000; 
+        Item.buffTime = 6000;
     }
     public override void AddRecipes()
     {

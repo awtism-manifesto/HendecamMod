@@ -38,7 +38,7 @@ public class CiaRocket : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-   
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.

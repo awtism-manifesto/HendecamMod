@@ -66,14 +66,14 @@ public class RockSalt : ModItem
         recipe.AddIngredient(ItemID.CrimtaneBar);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-      
-            recipe = CreateRecipe(5);
+
+        recipe = CreateRecipe(5);
 
         recipe.AddIngredient<FireDiamond>(2);
         recipe.AddTile(TileID.Furnaces);
 
-            recipe.Register();
-        
+        recipe.Register();
+
 
 
 

@@ -1,9 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +11,7 @@ public class SpinningDiamond : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -23,7 +20,7 @@ public class SpinningDiamond : ModProjectile
         Projectile.width = 18; // The width of projectile hitbox
         Projectile.height = 18; // The height of projectile hitbox
         Projectile.scale = 1.8f;
-        
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
@@ -38,7 +35,7 @@ public class SpinningDiamond : ModProjectile
         Projectile.localNPCHitCooldown = -1;
 
     }
-    
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -64,17 +61,17 @@ public class SpinningDiamond : ModProjectile
 
 
 
-        
+
         if (Math.Abs(Projectile.velocity.X) <= 25.5f && Math.Abs(Projectile.velocity.Y) <= 25.5f)
         {
             Projectile.velocity *= 1.32f;
-           
-        }
-        
-    }
-   
 
-   
+        }
+
+    }
+
+
+
 
 
     public override void OnKill(int timeLeft)

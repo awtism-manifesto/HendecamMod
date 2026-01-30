@@ -25,7 +25,7 @@ public class BullshitEnergyAxe : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -59,7 +59,7 @@ public class BullshitEnergyAxe : ModProjectile
         target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
         Projectile.Kill();
     }
-    
+
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 2.25f, 1.65f, 0.65f);
@@ -97,9 +97,9 @@ public class BullshitEnergyAxe : ModProjectile
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(9f)).ToRotationVector2() * length;
         if (DelayTimer >= 29)
         {
-            
-                Projectile.friendly = true;
-            
+
+            Projectile.friendly = true;
+
         }
     }
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -145,7 +145,7 @@ public class BullshitEnergyAxe : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-       
+
 
     }
 }

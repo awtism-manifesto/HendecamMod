@@ -12,7 +12,7 @@ namespace HendecamMod.Content.Items;
 
 public class TheMeltdown : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -64,7 +64,7 @@ public class TheMeltdown : ModItem
 
 
 
-      
+
         recipe.AddIngredient(ItemID.FireWhip);
         recipe.AddIngredient<Items.ChainReaction>();
         recipe.AddIngredient<FissionDrive>();

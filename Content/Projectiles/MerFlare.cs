@@ -28,7 +28,7 @@ public class MerFlare : ModProjectile
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 250; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -84,10 +84,10 @@ public class MerFlare : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
 
-        
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 510));
+
+
+        Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 510));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(16, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack);
@@ -123,7 +123,7 @@ public class MerFlare : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Cooding,
         new Vector2(39, 0).RotatedBy((Cooding).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 Codingg = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15 ), 1320));
+        Vector2 Codingg = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1320));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Codingg,
         new Vector2(32, 0).RotatedBy((Codingg).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
@@ -139,14 +139,14 @@ public class MerFlare : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fuckking,
         new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 ImAFuckingDegenerate = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-5, 5), 1680));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fuckking,
-            new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        
+        Vector2 ImAFuckingDegenerate = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-5, 5), 1680));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fuckking,
+        new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-        
+
 
 
 

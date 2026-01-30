@@ -13,11 +13,11 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Beard)]
 public class PhatBlunt : ModItem
 {
-   
-    
-    
 
-   
+
+
+
+
 
     public override void SetDefaults()
     {
@@ -26,7 +26,7 @@ public class PhatBlunt : ModItem
         Item.value = Item.sellPrice(gold: 7); // How many coins the item is worth
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.accessory = true;
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -62,7 +62,7 @@ public class PhatBlunt : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -84,9 +84,9 @@ public class PhatBlunt : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient< LuckyCigarette>();
-        recipe.AddIngredient< WeedLeaves>(28);
-      
+        recipe.AddIngredient<LuckyCigarette>();
+        recipe.AddIngredient<WeedLeaves>(28);
+
 
 
 

@@ -13,22 +13,22 @@ namespace HendecamMod.Content.Projectiles;
 /// </summary>
 public class FireDiamondStaffProjectile : ModProjectile
 {
-  
+
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 12; // The width of projectile hitbox
         Projectile.height = 12; // The height of projectile hitbox
 
         Projectile.scale = 1f;
         Projectile.timeLeft = 150;
-      
-       
+
+
         Projectile.tileCollide = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Magic;
-        Projectile.penetrate = 3; 
+        Projectile.penetrate = 3;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.alpha = 55;
@@ -43,7 +43,7 @@ public class FireDiamondStaffProjectile : ModProjectile
         ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage * 0.75), Projectile.knockBack, Projectile.owner);
 
     }
-   
+
     public override void AI()
     {
         Projectile.rotation += 0.33f;
@@ -69,6 +69,6 @@ public class FireDiamondStaffProjectile : ModProjectile
         }
 
     }
-   
-    
+
+
 }

@@ -77,6 +77,6 @@ public class Beer : ModItem
         recipe.AddTile(TileID.Kegs);
         recipe.Register();
     }
-   
+
 }
 

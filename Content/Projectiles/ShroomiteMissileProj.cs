@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,7 +12,7 @@ public class ShroomiteMissileProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -161,9 +160,9 @@ public class ShroomiteMissileProj : ModProjectile
             fireDust.velocity *= 3f;
         }
 
-       
+
     }
-   
+
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

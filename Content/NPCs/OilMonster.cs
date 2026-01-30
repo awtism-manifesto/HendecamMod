@@ -68,16 +68,16 @@ public class OilMonster : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheOilBaron>(), 16));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<OilMonsterStaff>(), 25));
         npcLoot.Add(ItemDropRule.Common(ItemID.DarkShard, 49));
-        
-      
-       
+
+
+
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
 
-       
-       
+
+
         if (Main.hardMode)
         {
             return SpawnCondition.OverworldDayDesert.Chance * 0.6f;

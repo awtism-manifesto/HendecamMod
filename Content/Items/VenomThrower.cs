@@ -34,7 +34,7 @@ public class VenomThrower : ModItem
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
         Item.consumeAmmoOnFirstShotOnly = true;
 
         // The sound that this item plays when used.
@@ -46,9 +46,9 @@ public class VenomThrower : ModItem
         Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
-       
+
+
+
 
 
         // Gun Properties
@@ -67,11 +67,11 @@ public class VenomThrower : ModItem
         type = ModContent.ProjectileType<VenomFlame2>();
 
     }
-   
 
 
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -104,7 +104,7 @@ public class VenomThrower : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
 
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
 
@@ -127,7 +127,7 @@ public class VenomThrower : ModItem
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-            
+
 
 
         }

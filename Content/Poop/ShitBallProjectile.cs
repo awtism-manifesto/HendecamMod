@@ -37,7 +37,7 @@ public class ShitBallProjectile : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
+
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -100,7 +100,7 @@ public class ShitBallProjectile : ModProjectile
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-    }     
+    }
 
 }
 

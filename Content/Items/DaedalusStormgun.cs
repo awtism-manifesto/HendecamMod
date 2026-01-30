@@ -33,7 +33,7 @@ public class DaedalusStormgun : ModItem
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-   
+
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
@@ -79,7 +79,7 @@ public class DaedalusStormgun : ModItem
         return false;
     }
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -115,7 +115,7 @@ public class DaedalusStormgun : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Items.DracoMeteor>();
-       
+
         recipe.AddIngredient<Items.CyberneticGunParts>();
         recipe.AddIngredient<FissionDrive>();
 

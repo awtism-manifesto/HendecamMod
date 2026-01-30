@@ -49,8 +49,8 @@ public class GraniteElectrobomber : ModItem
         Item.damage = 18; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-       
+
+
         Item.mana = 7;
 
 
@@ -59,7 +59,7 @@ public class GraniteElectrobomber : ModItem
         Item.shoot = ModContent.ProjectileType<Electrobomb>();
 
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -70,8 +70,8 @@ public class GraniteElectrobomber : ModItem
 
 
 
-    
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

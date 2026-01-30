@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class ZoologistHateLetter : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s, Light, 25% Crit Chance, and Double Movement Speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets, Light Pets, Summons, or Mounts"));
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
         player.GetModPlayer<NastyLight>().NastyEffect = true;
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -155,9 +155,9 @@ public class ZoologistHateLetter : ModItem
         player.ClearBuff(BuffID.TikiSpirit);
         player.ClearBuff(BuffID.VoltBunny);
         player.ClearBuff(BuffID.ZephyrFish);
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<PetaAutograph>(1);
@@ -165,5 +165,5 @@ public class ZoologistHateLetter : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

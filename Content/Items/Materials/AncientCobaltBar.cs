@@ -12,8 +12,8 @@ public class AncientCobaltBar : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
-       
+
+
 
         Item.ResearchUnlockCount = 25;
     }
@@ -40,7 +40,7 @@ public class AncientCobaltBar : ModItem
 
 
 
-       
+
     }
 
 
@@ -48,7 +48,7 @@ public class AncientCobaltBar : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-      
+
         recipe.AddIngredient<AncientCobaltOre>(3);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();

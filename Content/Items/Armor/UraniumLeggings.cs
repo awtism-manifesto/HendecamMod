@@ -100,7 +100,7 @@ public class UraniumLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-      
+
         player.setBonus = SetBonusText.Value;
     }
 }

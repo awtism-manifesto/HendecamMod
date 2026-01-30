@@ -68,7 +68,7 @@ public class fivenato : ModItem
         recipe.AddIngredient(ItemID.SoulofFright);
         recipe.AddIngredient(ItemID.SoulofSight);
         recipe.AddIngredient(ItemID.SoulofMight);
-       
+
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
 

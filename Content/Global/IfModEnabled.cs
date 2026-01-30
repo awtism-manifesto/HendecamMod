@@ -41,7 +41,7 @@ public class SaltCalBuff : GlobalItem
         }
     }
 
-   
+
 }
 public class PureSaltCalBuff : GlobalItem
 {
@@ -79,7 +79,7 @@ public class PlanetoidThorium : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        
+
 
 
     }
@@ -278,7 +278,7 @@ public class ThoriumsBullshit : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-       
+
 
 
     }
@@ -356,8 +356,8 @@ public class FabsolKillingTheClimat2e : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            item.damage = 39/2;
-           
+            item.damage = 39 / 2;
+
         }
     }
 

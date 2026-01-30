@@ -45,8 +45,8 @@ public class PlanetoidPunisher : ModItem
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-        
+
+
         Item.mana = 14;
 
 
@@ -79,11 +79,11 @@ public class PlanetoidPunisher : ModItem
             Vector2 new4Velocity = velocity.RotatedBy(MathHelper.ToRadians(-5.7f));
             Vector2 new5Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.9f));
             Vector2 new6Velocity = velocity.RotatedBy(MathHelper.ToRadians(-3.8f));
-           
+
 
             // Create a projectile.
 
-           
+
             type = ProjectileID.DiamondBolt;
             Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
             type = ProjectileID.RubyBolt;
@@ -102,7 +102,7 @@ public class PlanetoidPunisher : ModItem
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -139,7 +139,7 @@ public class PlanetoidPunisher : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind<ModItem>("MagickStaff", out ModItem MagickStaff))
         {
             recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(MagickStaff.Type);
             recipe.AddIngredient(ItemID.SpaceGun);
             recipe.AddIngredient<LunarGem>(10);

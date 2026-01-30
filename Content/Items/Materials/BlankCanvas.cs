@@ -18,7 +18,7 @@ public class BlankCanvas : ModItem
     {
         Item.width = 32;
         Item.height = 32;
-        Item.rare = ItemRarityID.White; 
+        Item.rare = ItemRarityID.White;
         Item.value = 10;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
@@ -62,7 +62,7 @@ public class BlankCanvas : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
 
-           
+
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(BlankPainting.Type);

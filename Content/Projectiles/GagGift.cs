@@ -40,7 +40,7 @@ public class GagGift : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.SpikyBall;
-       
+
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 240;
 
@@ -89,7 +89,7 @@ public class GagGift : ModProjectile
             // Increase the speed of the rocket if it is moving less than 1 block per second.
             // It is not recommended to increase the number past 16f to increase the speed of the rocket. It could start no clipping through blocks.
             // Instead, increase extraUpdates in SetDefaults() to make the rocket move faster.
-          
+
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -103,7 +103,7 @@ public class GagGift : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
-       
+
     }
 
 
@@ -151,6 +151,6 @@ public class GagGift : ModProjectile
             fireDust.velocity *= 3f;
         }
 
-        
+
     }
 }

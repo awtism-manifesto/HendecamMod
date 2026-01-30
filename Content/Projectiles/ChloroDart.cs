@@ -44,8 +44,8 @@ public class ChloroDart : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-       
-       
+
+
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -71,20 +71,20 @@ public class ChloroDart : ModProjectile
         }
 
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-       
-            
-               
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
-                Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
+
+
+
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
+        Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
         Vector2 Peanits3 = Projectile.Center - new Vector2(0, 0);

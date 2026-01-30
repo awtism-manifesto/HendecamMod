@@ -59,7 +59,7 @@ public class OilSlime : ModNPC
         BannerItem = ModContent.ItemType<OilSlimeBanner>();
 
     }
-   
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         // Since Party Zombie is essentially just another variation of Zombie, we'd like to mimic the Zombie drops.
@@ -79,8 +79,8 @@ public class OilSlime : ModNPC
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
 
-        
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(),1,10, 21));
+
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(), 1, 10, 21));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CarbonDioxideBottle>(), 20, 1, 1));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 150, 1, 1));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<OilMonsterStaff>(), chanceDenominator: 250, chanceNumerator: 1));
@@ -89,9 +89,9 @@ public class OilSlime : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-       
+
         return SpawnCondition.Underground.Chance * 0.95f;
-       
+
     }
 
 }

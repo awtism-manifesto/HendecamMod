@@ -45,7 +45,7 @@ public class PlasmaRifle : ModItem
         Item.damage = 24; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 10;
         Item.mana = 8;
 
@@ -66,8 +66,8 @@ public class PlasmaRifle : ModItem
 
 
 
-   
-    
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -100,7 +100,7 @@ public class PlasmaRifle : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Items.UraniumBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

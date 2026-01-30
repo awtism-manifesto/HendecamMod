@@ -104,7 +104,7 @@ public class FidgetSpinner1 : ModProjectile
 
             }
         }
-        
+
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -125,5 +125,5 @@ public class FidgetSpinner1 : ModProjectile
         }
 
     }
-    
+
 }

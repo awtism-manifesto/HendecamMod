@@ -15,10 +15,10 @@ namespace HendecamMod.Content.Projectiles;
 /// </summary>
 public class IronWave : ModProjectile
 {
-   
+
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 145; // The width of projectile hitbox
         Projectile.height = 145; // The height of projectile hitbox
@@ -31,7 +31,7 @@ public class IronWave : ModProjectile
         Projectile.tileCollide = false;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
-        Projectile.penetrate = 8; 
+        Projectile.penetrate = 8;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.alpha = 255;
@@ -40,17 +40,17 @@ public class IronWave : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         SoundEngine.PlaySound(SoundID.NPCHit42, Projectile.position);
-        Projectile.damage = (int)(Projectile.damage * 0.75f); 
+        Projectile.damage = (int)(Projectile.damage * 0.75f);
     }
-  
+
     public override void AI()
     {
-       
+
 
 
         Projectile.scale = Main.rand.NextFloat(0.98f, 1.15f);
 
-        
+
         if (Projectile.timeLeft < 17)
         {
             Projectile.alpha = 190;
@@ -67,15 +67,15 @@ public class IronWave : ModProjectile
         {
             Projectile.alpha = 35;
         }
-       
+
 
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
-        
-       
+
+
 
 
 

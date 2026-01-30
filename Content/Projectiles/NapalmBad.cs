@@ -39,9 +39,9 @@ public class NapalmBad : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.OnFire, 180);
-     
+
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {

@@ -34,7 +34,7 @@ public class BoggsGlove : ModItem
         Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item1;
@@ -45,7 +45,7 @@ public class BoggsGlove : ModItem
         Item.damage = 105; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
 
 
         // Gun Properties
@@ -53,16 +53,16 @@ public class BoggsGlove : ModItem
 
 
         Item.shootSpeed = 31.95f; // The speed of the projectile (measured in pixels per frame.)
-       
+
         Item.shoot = ProjectileID.Ale;
 
 
     }
 
-   
 
-   
-   
+
+
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

@@ -14,7 +14,7 @@ public class UraniumGlass : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
+
 
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -29,7 +29,7 @@ public class UraniumGlass : ModItem
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 4000;
         Item.maxStack = 9999;
-        
+
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.UraniumGlassTile>());
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

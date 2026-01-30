@@ -40,7 +40,7 @@ public class PocketMortar : ModItem
         Item.damage = 12; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
 
@@ -55,7 +55,7 @@ public class PocketMortar : ModItem
 
     }
 
-   
+
 
 
 
@@ -77,7 +77,7 @@ public class PocketMortar : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -110,14 +110,14 @@ public class PocketMortar : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient(ItemID.FlareGun);
-       
+
         recipe.AddRecipeGroup("IronBar", 15);
         recipe.AddIngredient<Items.CrudeOil>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
 
 
 

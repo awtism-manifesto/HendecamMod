@@ -3,7 +3,6 @@ using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -73,14 +72,14 @@ public class GayFrogChemicals : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<Gay>(), 900);
-       
+
         target.AddBuff(BuffID.Venom, 900);
-       
+
         target.immune[Projectile.owner] = 6;
     }
     public override void OnKill(int timeLeft)
     {
-       
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);

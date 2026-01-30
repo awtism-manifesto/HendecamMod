@@ -27,7 +27,7 @@ public class EmpoweredManaCrystal : ModItem
     public override void UpdateEquip(Player player)
     {
         player.statManaMax2 += MaxManaIncrease;
-        player.GetCritChance(damageClass: DamageClass.Magic) +=MagicCritBonus ;
+        player.GetCritChance(damageClass: DamageClass.Magic) += MagicCritBonus;
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -60,7 +60,7 @@ public class EmpoweredManaCrystal : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.ManaCrystal, 1);
         recipe.AddIngredient(ItemID.FallenStar, 4);
-        
+
         recipe.Register();
     }
 

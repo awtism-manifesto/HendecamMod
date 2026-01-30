@@ -82,31 +82,31 @@ public class DracoRound : ModProjectile
 
         return true;
     }
-   
+
 
     public override void OnKill(int timeLeft)
     {
-       
+
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-        
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-150, 150), 940));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 Peanit1s = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-150, 150), 960));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanit1s,
-            new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 Jorkin = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-120, 120), 925));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Jorkin,
-            new Vector2(28, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 Stripped = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-30, 30), 970));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
-            new Vector2(32, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        
+
+        Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-150, 150), 940));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+        Vector2 Peanit1s = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-150, 150), 960));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanit1s,
+        new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+        Vector2 Jorkin = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-120, 120), 925));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Jorkin,
+        new Vector2(28, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+        Vector2 Stripped = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-30, 30), 970));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
+        new Vector2(32, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<DracoDrop>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+
     }
 
 }

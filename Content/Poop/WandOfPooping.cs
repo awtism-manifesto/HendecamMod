@@ -46,8 +46,8 @@ public class WandOfPooping : ModItem
         Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
+
+
         Item.mana = 3;
 
 
@@ -85,7 +85,7 @@ public class WandOfPooping : ModItem
 
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -118,13 +118,13 @@ public class WandOfPooping : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient(ItemID.PoopBlock, 5);
         recipe.AddRecipeGroup("Wood", 15);
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-      
+
 
 
 

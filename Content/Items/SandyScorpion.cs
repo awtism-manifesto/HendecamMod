@@ -15,7 +15,7 @@ namespace HendecamMod.Content.Items;
 public class SandyScorpion : ModItem
 {
 
-    
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -24,18 +24,18 @@ public class SandyScorpion : ModItem
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.useTime = 6;
         Item.useAnimation = 12;
-       
+
         Item.autoReuse = true;
-       
+
         Item.mana = 8;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 28;
         Item.knockBack = 2f;
         Item.noMelee = true;
-      
+
         Item.value = 110000;
         Item.rare = ItemRarityID.LightRed;
-       
+
 
         Item.shoot = ModContent.ProjectileType<SandShot>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.25f; // Speed of the projectiles the sword will shoot
@@ -73,10 +73,10 @@ public class SandyScorpion : ModItem
             shotCounter = 0;
         }
 
-       
 
 
-        return false; 
+
+        return false;
     }
 
 
@@ -113,6 +113,6 @@ public class SandyScorpion : ModItem
     {
         return new Vector2(-7.5f, -1f);
     }
-    
+
 
 }

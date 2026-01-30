@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +13,7 @@ public class UraniumRocket : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -23,8 +22,8 @@ public class UraniumRocket : ModProjectile
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
-       
-        
+
+
     }
     public override void SetDefaults()
     {
@@ -44,7 +43,7 @@ public class UraniumRocket : ModProjectile
     }
     public override void AI()
     {
-        
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -148,7 +147,7 @@ public class UraniumRocket : ModProjectile
             fireDust.velocity *= 3f;
         }
 
-       
+
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

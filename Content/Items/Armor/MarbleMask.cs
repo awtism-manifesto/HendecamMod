@@ -14,8 +14,8 @@ namespace HendecamMod.Content.Items.Armor;
 public class MarbleMask : ModItem
 {
 
-    
-   
+
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -88,10 +88,10 @@ public class MarbleMask : ModItem
 
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 108f;
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 108f;
-       
-        
+
+
     }
-    
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -103,7 +103,7 @@ public class MarbleMask : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
-      
+
+
     }
 }

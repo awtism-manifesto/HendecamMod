@@ -45,7 +45,7 @@ public class Septicemia : ModItem
         Item.damage = 23; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
         Item.mana = 8;
 
@@ -68,23 +68,23 @@ public class Septicemia : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-
-       
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
-            Vector2 new1Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
-            Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
-            // Decrease velocity randomly for nicer visuals.
 
 
-            // Create a projectile.
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            type = ProjectileID.BloodArrow;
+
+        // Rotate the velocity randomly by 30 degrees at max.
+        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
+        Vector2 new1Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
+        Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
+        // Decrease velocity randomly for nicer visuals.
+
+
+        // Create a projectile.
+        Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+        type = ProjectileID.BloodArrow;
         Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-            type = ProjectileID.TinyEater;
+        type = ProjectileID.TinyEater;
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-            type = ProjectileID.TinyEater;
+        type = ProjectileID.TinyEater;
 
 
 
@@ -127,7 +127,7 @@ public class Septicemia : ModItem
         recipe.AddIngredient(ItemID.CrimtaneBar, 12);
         recipe.AddIngredient(ItemID.SoulofFright, 15);
         recipe.AddIngredient(ItemID.SoulofNight, 5);
-        
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("ArteryPiece", out ModItem ArteryPiece))

@@ -17,7 +17,7 @@ public class AvalancheBoulder : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-        
+
     }
 
     public override void SetDefaults()
@@ -28,7 +28,7 @@ public class AvalancheBoulder : ModProjectile
         Projectile.extraUpdates = 3;
         Projectile.friendly = true;
         Projectile.penetrate = 6;
-        
+
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
         Projectile.DamageType = DamageClass.Magic;
@@ -37,13 +37,13 @@ public class AvalancheBoulder : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
+
         target.AddBuff(BuffID.Frostburn, 390);
         target.AddBuff(BuffID.Frostburn2, 150);
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-        
+
 
         if (Projectile.penetrate <= 0)
         {
@@ -52,23 +52,23 @@ public class AvalancheBoulder : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
                 Projectile.velocity.X = -oldVelocity.X;
                 Projectile.extraUpdates = 1;
-               
+
 
             }
-            
+
             // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
             if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
             {
-                Projectile.velocity.Y = -oldVelocity.Y ;
+                Projectile.velocity.Y = -oldVelocity.Y;
                 Projectile.extraUpdates = 1;
-                
+
 
             }
         }
@@ -96,7 +96,7 @@ public class AvalancheBoulder : ModProjectile
 
         if (Projectile.timeLeft <= 115)
 
-        Projectile.ai[0] += 8.5f;
+            Projectile.ai[0] += 8.5f;
         if (Projectile.ai[0] >= 8.5f)
         {
             Projectile.ai[0] = 8.5f;
@@ -132,13 +132,13 @@ public class AvalancheBoulder : ModProjectile
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-        
 
 
-       
+
+
         for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Snow);

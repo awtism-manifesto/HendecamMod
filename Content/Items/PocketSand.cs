@@ -65,7 +65,7 @@ public class PocketSand : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -99,7 +99,7 @@ public class PocketSand : ModItem
 
         recipe.AddIngredient<Items.PlasticScrap>(5);
         recipe.AddIngredient(ItemID.SandBlock, 150);
-        
+
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
 

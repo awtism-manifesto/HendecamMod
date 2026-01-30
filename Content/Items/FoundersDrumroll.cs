@@ -32,7 +32,7 @@ public class FoundersDrumroll : ModItem
         Item.useAnimation = 4; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
+
 
 
         // The sound that this item plays when used.
@@ -44,7 +44,7 @@ public class FoundersDrumroll : ModItem
         Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
+
         Item.ArmorPenetration = 5;
 
 
@@ -53,7 +53,7 @@ public class FoundersDrumroll : ModItem
         Item.shootSpeed = 25.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-   
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.PulseShot>();
@@ -62,7 +62,7 @@ public class FoundersDrumroll : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -120,7 +120,7 @@ public class FoundersDrumroll : ModItem
         recipe.AddIngredient(ItemID.IllegalGunParts);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-       
+
     }
 
     public override Vector2? HoldoutOffset()

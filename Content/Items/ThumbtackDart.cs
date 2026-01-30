@@ -67,6 +67,6 @@ public class ThumbtackDart : ModItem
         recipe.AddIngredient<Items.PlasticScrap>(2);
         recipe.AddRecipeGroup("IronBar", 1);
         recipe.Register();
-      
+
     }
 }

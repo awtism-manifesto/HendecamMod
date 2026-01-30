@@ -32,7 +32,7 @@ public class SacrificialPistol : ModItem
         Item.useAnimation = 5; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item13;
@@ -76,7 +76,7 @@ public class SacrificialPistol : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
 
-            
+
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);

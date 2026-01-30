@@ -12,7 +12,7 @@ public class RazorRotors : ModItem
 {
     public override void SetStaticDefaults()
     {
-      
+
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
 
@@ -55,14 +55,14 @@ public class RazorRotors : ModItem
         {
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.shoot = ModContent.ProjectileType<RazorRotorThrown>();
-            Item.shootSpeed = 28.5f; 
+            Item.shootSpeed = 28.5f;
         }
         else
         {
             Item.useStyle = ItemUseStyleID.Swing;
-          
+
             Item.shoot = ModContent.ProjectileType<RazorRotorsProj>();
-            Item.shootSpeed = 0f; 
+            Item.shootSpeed = 0f;
         }
 
         return base.CanUseItem(player);
@@ -88,9 +88,9 @@ public class RazorRotors : ModItem
 
 
 
-        
+
     }
-   
-   
-   
+
+
+
 }

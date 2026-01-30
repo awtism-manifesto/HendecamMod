@@ -55,7 +55,7 @@ public class AncientCobaltRepeater : ModItem
     {
         return Color.White;
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,7 +70,7 @@ public class AncientCobaltRepeater : ModItem
 
 
 
-       
+
     }
 
     public override void AddRecipes()

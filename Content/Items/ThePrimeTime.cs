@@ -49,7 +49,7 @@ public class ThePrimeTime : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-       
+
         Item.shootSpeed = 90f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
         Item.shoot = ModContent.ProjectileType<ChargeLaser>();
@@ -88,7 +88,7 @@ public class ThePrimeTime : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

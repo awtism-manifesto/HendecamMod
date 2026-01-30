@@ -47,17 +47,17 @@ public class AstaWhip : ModProjectile
 
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-    
+
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-       
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
-            Vector2 Peanits = Projectile.Center - new Vector2 (Main.rand.NextFloat(-1,1));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
+
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-1, 1));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+        ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
         Projectile.damage = (int)(Projectile.damage * 0.45f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
@@ -73,7 +73,7 @@ public class AstaWhip : ModProjectile
         // However, the use of UnitX basically turns it into a more complicated way of checking if the projectile's velocity is above or equal to zero on the X axis.
         Projectile.spriteDirection = Projectile.velocity.X >= 0f ? 1 : -1;
 
-       
+
 
         Timer++;
 
@@ -126,7 +126,7 @@ public class AstaWhip : ModProjectile
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
 
-       
+
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.

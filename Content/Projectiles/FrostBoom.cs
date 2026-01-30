@@ -45,7 +45,7 @@ public class FrostBoom : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.AddBuff(BuffID.Frostburn, 300);
         target.AddBuff(BuffID.Frostburn2, 120);
     }

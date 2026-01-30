@@ -59,8 +59,8 @@ public class Helldiver : ModItem
 
 
 
-  
-    
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,7 +97,7 @@ public class Helldiver : ModItem
         if (ModLoader.TryGetMod("SpiritMod", out Mod SpiritMerica) && SpiritMerica.TryFind<ModItem>("LibertyItem", out ModItem LibertyItem))
         {
             recipe = CreateRecipe();
-          
+
             recipe.AddIngredient(LibertyItem.Type);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddTile(TileID.Anvils);

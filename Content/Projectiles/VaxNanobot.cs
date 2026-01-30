@@ -1,10 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -40,7 +36,7 @@ public class VaxNanobot : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
         target.immune[Projectile.owner] = 1;
     }
 
@@ -61,7 +57,7 @@ public class VaxNanobot : ModProjectile
             Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Electric, 0f, 0f, 100, default, 0.2f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.2f;
-            chudDust.noGravity = true;  
+            chudDust.noGravity = true;
         }
 
         float maxDetectRadius = 800f; // The maximum radius at which a projectile can detect a target
@@ -94,7 +90,7 @@ public class VaxNanobot : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-       
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -141,10 +137,10 @@ public class VaxNanobot : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-        
 
 
-       
+
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric);

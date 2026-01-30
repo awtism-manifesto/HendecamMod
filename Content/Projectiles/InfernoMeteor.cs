@@ -28,7 +28,7 @@ public class InfernoMeteor : ModProjectile
     {
 
         ProjectileID.Sets.SentryShot[Type] = true;
-       
+
     }
     public ref float DelayTimer => ref Projectile.ai[1];
 
@@ -39,11 +39,11 @@ public class InfernoMeteor : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-       
+
 
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-       
+
         Projectile.DamageType = DamageClass.Summon;
         Projectile.friendly = true;
         Projectile.hostile = false;
@@ -57,16 +57,16 @@ public class InfernoMeteor : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-   
+
     public override void AI()
     {
         if (Math.Abs(Projectile.velocity.X) <= 0.9f && Math.Abs(Projectile.velocity.Y) <= 0.9f)
         {
-            Projectile.velocity.X = Main.rand.NextFloat(-1f,1f);
+            Projectile.velocity.X = Main.rand.NextFloat(-1f, 1f);
             Projectile.velocity.Y = Main.rand.NextFloat(-1f, 1f);
 
         }
-       
+
 
         Projectile.scale = Main.rand.NextFloat(0.85f, 1.15f);
 

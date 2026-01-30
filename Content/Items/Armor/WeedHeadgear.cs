@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class WeedHeadgear : ModItem
 {
 
-    
+
     public static readonly int StupidAttackSpeed = 6;
     public static readonly int MaxManaIncrease = 40;
     public static LocalizedText SetBonusText { get; private set; }
@@ -27,7 +27,7 @@ public class WeedHeadgear : ModItem
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-       
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -35,7 +35,7 @@ public class WeedHeadgear : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(silver : 50 ); // How many coins the item is worth
+        Item.value = Item.sellPrice(silver: 50); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
     }
@@ -96,7 +96,7 @@ public class WeedHeadgear : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<WeedLeaves>(35);
         recipe.AddTile(TileID.Loom);
-       
+
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LivingLeaf", out ModItem LivingLeaf))
 
@@ -109,8 +109,8 @@ public class WeedHeadgear : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-       
 
-      
+
+
     }
 }

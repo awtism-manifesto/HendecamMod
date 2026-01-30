@@ -167,7 +167,7 @@ public class PlutoniumTorchPlaced : ModTile
         int frameX = tile.TileFrameX;
         int frameY = tile.TileFrameY;
         int style = TileObjectData.GetTileStyle(Main.tile[i, j]);
-       
+
 
         for (int k = 0; k < 7; k++)
         {

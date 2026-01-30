@@ -42,10 +42,10 @@ public class FidgetThrower2 : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
 
 
-    
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -85,11 +85,11 @@ public class FidgetThrower2 : ModItem
         recipe.AddIngredient(ItemID.FrostCore);
         recipe.AddIngredient<Items.RefinedOil>(33);
         recipe.AddIngredient<Items.Shadowflame>(33);
-    
-     
+
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-      
+
     }
 
 }

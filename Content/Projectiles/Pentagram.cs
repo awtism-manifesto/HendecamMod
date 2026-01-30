@@ -25,7 +25,7 @@ public class Pentagram : ModProjectile
 
     public ref float DelayTimer => ref Projectile.ai[1];
 
-    
+
 
 
     public override void SetStaticDefaults()
@@ -39,7 +39,7 @@ public class Pentagram : ModProjectile
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -49,9 +49,9 @@ public class Pentagram : ModProjectile
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-       
 
-        
+
+
     }
 
     // Custom AI
@@ -160,5 +160,5 @@ public class Pentagram : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-    
+
 

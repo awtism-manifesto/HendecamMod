@@ -1,9 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -24,7 +22,7 @@ public class LunarContrail : ModProjectile
             Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
         }
     }
-    
+
     public ref float DelayTimer => ref Projectile.ai[1];
 
     public override void SetDefaults()
@@ -34,11 +32,11 @@ public class LunarContrail : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-       
+
 
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-       
+
         Projectile.DamageType = DamageClass.Magic;
         Projectile.friendly = true;
         Projectile.hostile = false;
@@ -52,7 +50,7 @@ public class LunarContrail : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-   
+
     public override void AI()
     {
         if (Projectile.timeLeft < 317)
@@ -61,7 +59,7 @@ public class LunarContrail : ModProjectile
 
 
 
-           
+
             if (Math.Abs(Projectile.velocity.X) <= 20.5f && Math.Abs(Projectile.velocity.Y) <= 20.5f)
             {
                 Projectile.velocity *= 1.05f;
@@ -152,7 +150,7 @@ public class LunarContrail : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
+
 
         for (int i = 0; i < 8; i++) // Creates a splash of dust around the position the projectile dies.
         {

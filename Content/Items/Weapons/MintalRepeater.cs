@@ -61,7 +61,7 @@ public class MintalRepeater : ModItem
         {
             type = ModContent.ProjectileType<MintalArrowProjectile>();
         }
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

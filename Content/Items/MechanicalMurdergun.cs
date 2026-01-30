@@ -18,15 +18,15 @@ public class MechanicalMurdergun : ModItem
 {
     public override void SetDefaults()
     {
-       
-        Item.width = 62; 
-        Item.height = 32; 
+
+        Item.width = 62;
+        Item.height = 32;
         Item.scale = 0.85f;
-        Item.rare = ItemRarityID.Pink; 
+        Item.rare = ItemRarityID.Pink;
         Item.value = 196000;
 
 
-       
+
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -42,7 +42,7 @@ public class MechanicalMurdergun : ModItem
         Item.damage = 66; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 20;
         Item.mana = 10;
 
@@ -52,7 +52,7 @@ public class MechanicalMurdergun : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 13.25f; // The speed of the projectile (measured in pixels per frame.)
-       
+
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -79,9 +79,9 @@ public class MechanicalMurdergun : ModItem
             Main.projectile[proj].GetGlobalProjectile<FastLaserSwords>().fromMechGun = true;
         }
 
-        return false; 
+        return false;
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,7 +96,7 @@ public class MechanicalMurdergun : ModItem
 
 
 
-       
+
     }
 
 
@@ -106,7 +106,7 @@ public class MechanicalMurdergun : ModItem
         recipe.AddIngredient(ItemID.LaserRifle);
         recipe.AddIngredient(ItemID.HallowedBar, 12);
         recipe.AddIngredient(ItemID.SoulofMight, 15);
-        
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class BigShot : ModProjectile
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -57,7 +57,7 @@ public class BigShot : ModProjectile
     public override void AI()
     {
 
-       
+
 
         if (Projectile.timeLeft < 292)
         {
@@ -148,7 +148,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 156)
         {
             Projectile.scale = 0.725f;
-           
+
         }
         if (Projectile.timeLeft < 148)
         {
@@ -158,7 +158,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 140)
         {
             Projectile.scale = 1.05f;
-           
+
         }
         if (Projectile.timeLeft < 132)
         {
@@ -188,7 +188,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 92)
         {
             Projectile.scale = 0.725f;
-           
+
         }
         if (Projectile.timeLeft < 84)
         {
@@ -198,7 +198,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 76)
         {
             Projectile.scale = 1.05f;
-           
+
         }
         if (Projectile.timeLeft < 68)
         {
@@ -208,7 +208,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 60)
         {
             Projectile.scale = 1.325f;
-          
+
         }
         if (Projectile.timeLeft < 52)
         {
@@ -218,7 +218,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 44)
         {
             Projectile.scale = 0.975f;
-           
+
         }
         if (Projectile.timeLeft < 36)
         {
@@ -228,7 +228,7 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 28)
         {
             Projectile.scale = 0.79f;
-           
+
         }
         if (Projectile.timeLeft < 20)
         {
@@ -240,13 +240,13 @@ public class BigShot : ModProjectile
             Projectile.scale = 1.12f;
             Projectile.Resize(95, 95);
         }
-       
+
         if (Projectile.timeLeft < 11)
         {
             Projectile.scale = 1.48f;
             Projectile.Resize(165, 165);
         }
-      
+
 
 
 

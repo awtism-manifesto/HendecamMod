@@ -18,8 +18,8 @@ public class AcidCloud : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Blocks.AcidCloudPlaced>());
         Item.width = 12;
         Item.height = 12;
-    
-        }
+
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -38,7 +36,7 @@ public class GraniteLaser : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
+
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -55,7 +53,7 @@ public class GraniteLaser : ModProjectile
 
         return true;
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -73,7 +71,7 @@ public class GraniteLaser : ModProjectile
     public override void AI()
     {
 
-       
+
 
 
 
@@ -81,7 +79,7 @@ public class GraniteLaser : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.1f, 0.4f, 0.85f);
 
 
-       
+
 
 
     }

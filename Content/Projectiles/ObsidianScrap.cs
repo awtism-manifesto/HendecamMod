@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +12,7 @@ public class ObsidianScrap : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
+
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -116,7 +114,7 @@ public class ObsidianScrap : ModProjectile
         return false;
     }
 
-   
+
 
 
     public override void OnKill(int timeLeft)

@@ -87,10 +87,10 @@ public class AstatineHelmet : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.statManaMax2 += MaxManaIncrease;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeed / 113f;
-       
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 121f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
@@ -98,11 +98,11 @@ public class AstatineHelmet : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(32);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
 }

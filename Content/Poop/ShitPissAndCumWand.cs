@@ -50,14 +50,14 @@ public class ShitPissAndCumWand : ModItem
         Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-        
+
+
         Item.mana = 11;
 
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot  = ModContent.ProjectileType<PooShot2>();
+        Item.shoot = ModContent.ProjectileType<PooShot2>();
 
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
 
@@ -80,8 +80,8 @@ public class ShitPissAndCumWand : ModItem
 
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
-         
-           
+
+
 
             // Create a projectile.
 
@@ -98,7 +98,7 @@ public class ShitPissAndCumWand : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

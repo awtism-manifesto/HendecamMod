@@ -80,11 +80,11 @@ public class RocketNeg1 : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
-            recipe.AddRecipeGroup("IronBar", 2);
-            recipe.AddIngredient<Items.CrudeOil>(2);
-            recipe.AddIngredient(ItemID.Dynamite);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+        recipe.AddRecipeGroup("IronBar", 2);
+        recipe.AddIngredient<Items.CrudeOil>(2);
+        recipe.AddIngredient(ItemID.Dynamite);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
 
 
         recipe = CreateRecipe(225);

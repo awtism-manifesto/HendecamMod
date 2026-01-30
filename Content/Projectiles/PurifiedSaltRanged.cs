@@ -12,7 +12,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class PurifiedSaltRanged : ModProjectile
 {
-   
+
 
     public override void SetDefaults()
     {
@@ -68,11 +68,11 @@ public class PurifiedSaltRanged : ModProjectile
         }
     }
 
-   
-   
 
 
-   
+
+
+
 
 }
 

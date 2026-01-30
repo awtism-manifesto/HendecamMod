@@ -57,7 +57,7 @@ public class KingslayerBreastplate : ModItem
 
 
 
-       
+
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -80,17 +80,17 @@ public class KingslayerBreastplate : ModItem
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 106f;
         player.maxMinions += MaxMinionIncrease;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-      
+
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient<KingslayerBar>(22);
-        
+
         recipe.AddIngredient(ItemID.FlinxFurCoat);
-      
+
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
     }
@@ -98,7 +98,7 @@ public class KingslayerBreastplate : ModItem
     {
 
         if (NPC.AnyDanger())
-            {
+        {
 
 
 

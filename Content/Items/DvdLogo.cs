@@ -31,7 +31,7 @@ public class DvdLogo : ModItem
         Item.knockBack = 6;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-       
+
         Item.value = Item.buyPrice(gold: 20);
         Item.rare = ItemRarityID.Cyan;
         Item.UseSound = SoundID.Item1;
@@ -45,7 +45,7 @@ public class DvdLogo : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-   
+
 
 
     public override Color? GetAlpha(Color lightColor)
@@ -94,7 +94,7 @@ public class DvdLogo : ModItem
         }
         else
         {
-           
+
 
         }
     }

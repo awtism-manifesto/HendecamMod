@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
@@ -17,33 +13,33 @@ public class KnightStar : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 2;
-       
+
     }
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 50; // The width of projectile hitbox
         Projectile.height = 50; // The height of projectile hitbox
 
-       
+
         Projectile.timeLeft = 48;
         Projectile.aiStyle = -1;
-     
+
         Projectile.alpha = 0;
         Projectile.tileCollide = false;
-        Projectile.friendly = true; 
+        Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
-        Projectile.penetrate = 6969; 
+        Projectile.penetrate = 6969;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
     }
 
     public override void AI()
     {
-        Projectile.alpha = Main.rand.Next(55,225);
+        Projectile.alpha = Main.rand.Next(55, 225);
 
         if (Projectile.timeLeft < 13)
         {
@@ -67,9 +63,9 @@ public class KnightStar : ModProjectile
 
             }
         }
-        
+
     }
-   
+
     public override void OnKill(int timeLeft)
     {
 
@@ -97,7 +93,7 @@ public class KnightStar : ModProjectile
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
         ModContent.ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
-       
+
 
 
 

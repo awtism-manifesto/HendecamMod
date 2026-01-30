@@ -49,28 +49,28 @@ public class JfkBlood : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<Stamped>(), 300);
-       
+
     }
     public override void AI()
     {
 
         // dust, all dust
-       
-            for (int i = 0; i < 2; i++)
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Blood, 0f, 0f, 100, default, 1.89f);
-                chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
-                chudDust.velocity *= 0.05f;
-                
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Blood, 0f, 0f, 100, default, 1.89f);
+            chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
+            chudDust.velocity *= 0.05f;
+
+        }
+
         float maxDetectRadius = 2000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired

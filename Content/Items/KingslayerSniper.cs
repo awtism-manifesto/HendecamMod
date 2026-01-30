@@ -43,8 +43,8 @@ public class KingslayerSniper : ModItem
         Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-       
+
+
         Item.shoot = ProjectileID.Bullet;
         Item.useAmmo = AmmoID.Bullet; // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
 
@@ -65,7 +65,7 @@ public class KingslayerSniper : ModItem
             damage = (int)(damage * 1.25f);
         }
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -77,7 +77,7 @@ public class KingslayerSniper : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
 
 
 
@@ -97,12 +97,12 @@ public class KingslayerSniper : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient<Items.DeadSoldiersRifle>();
         recipe.AddIngredient<Items.PondsSniper>();
         recipe.AddIngredient<Items.KingslayerBar>(10);
-     
-       
+
+
         recipe.AddIngredient(ItemID.Diamond, 2);
         recipe.AddIngredient(ItemID.Ruby, 2);
         recipe.AddTile(TileID.Solidifier);

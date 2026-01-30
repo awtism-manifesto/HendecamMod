@@ -66,5 +66,5 @@ public class RunicCodexProjectile : ModProjectile
             dust.scale *= 3f;
         }
     }
-   
+
 }

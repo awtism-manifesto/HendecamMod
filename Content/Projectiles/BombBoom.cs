@@ -95,7 +95,7 @@ public class BombBoom : ModProjectile
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
 
-                   
+
                 }
             }
 

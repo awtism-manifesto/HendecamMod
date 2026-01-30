@@ -45,7 +45,7 @@ public class PlasmaRifle3 : ModItem
         Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 20;
         Item.mana = 12;
 
@@ -73,7 +73,7 @@ public class PlasmaRifle3 : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.22f));
 
-           
+
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -83,7 +83,7 @@ public class PlasmaRifle3 : ModItem
     }
 
 
-  
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -116,7 +116,7 @@ public class PlasmaRifle3 : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<Items.PlasmaRifle2>();
         recipe.AddIngredient<Items.AstatineBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);

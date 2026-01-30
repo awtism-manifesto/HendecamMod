@@ -64,11 +64,11 @@ public class SaltGun : ModItem
         type = ModContent.ProjectileType<Salt>();
 
     }
-   
 
 
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -99,7 +99,7 @@ public class SaltGun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient(ItemID.SilverBar, 9);
         recipe.AddIngredient<Items.RockSalt>(35);
         recipe.AddTile(TileID.Anvils);

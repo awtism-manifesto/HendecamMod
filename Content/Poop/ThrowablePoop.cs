@@ -32,7 +32,7 @@ public class ThrowablePoop : ModItem
         Item.rare = ItemRarityID.White;
         Item.shoot = ModContent.ProjectileType<ThrownPoop>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 16.65f; // The speed of the projectile.
-       
+
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -76,10 +76,10 @@ public class ThrowablePoop : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(33);
-       
+
         recipe.AddIngredient(ItemID.PoopBlock);
-       
+
         recipe.Register();
-       
+
     }
 }

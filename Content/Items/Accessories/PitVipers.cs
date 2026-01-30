@@ -59,15 +59,15 @@ public class PitVipers : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
-        
+
+
         recipe.AddIngredient<TintedLenses>();
         recipe.AddIngredient<TrenboloneAcetate>();
         recipe.AddIngredient<MediocreGrades>();
         recipe.AddIngredient<FragmentFlatEarth>(10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-       
+
 
 
 

@@ -60,7 +60,7 @@ public class PykreteBow : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-     
+
         if (Main.rand.NextBool(4))
         {
             int proj = Projectile.NewProjectile(source, position, velocity, ProjectileID.FrostburnArrow, damage, knockback, player.whoAmI);
@@ -71,7 +71,7 @@ public class PykreteBow : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -107,11 +107,11 @@ public class PykreteBow : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Pykrete>(15);
-      
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-        
+
 
 
 

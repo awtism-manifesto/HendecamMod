@@ -25,7 +25,7 @@ public class JevilScythe2 : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -66,7 +66,7 @@ public class JevilScythe2 : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -119,9 +119,9 @@ public class JevilScythe2 : ModProjectile
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(12f)).ToRotationVector2() * length;
         if (DelayTimer >= 29)
         {
-            
-                Projectile.friendly = true;
-            
+
+            Projectile.friendly = true;
+
         }
     }
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -169,6 +169,6 @@ public class JevilScythe2 : ModProjectile
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
+
     }
 }

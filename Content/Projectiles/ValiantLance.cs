@@ -1,9 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -51,7 +49,7 @@ public class ValiantLance : ModProjectile
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
 
-       
+
 
 
 
@@ -73,6 +71,6 @@ public class ValiantLance : ModProjectile
     }
 
 
-   
+
 
 }

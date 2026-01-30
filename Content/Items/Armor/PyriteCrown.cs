@@ -7,25 +7,26 @@ using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
-	[AutoloadEquip(EquipType.Head)]
-	public class PyriteCrown : ModItem
-	{
-		public override void SetDefaults()
-		{
-			Item.defense = 2;
-			Item.rare = ItemRarityID.Blue;
+[AutoloadEquip(EquipType.Head)]
+public class PyriteCrown : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.defense = 2;
+        Item.rare = ItemRarityID.Blue;
         Item.value = 54000;
     }
-		public override void SetStaticDefaults(){
-			ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
-		}
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<PyriteBar>(10);
-			recipe.AddTile(TileID.Anvils);
-			recipe.Register();
-		}
+    public override void SetStaticDefaults()
+    {
+        ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
+    }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<PyriteBar>(10);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
     public static readonly int MeleeAttackSpeedBonus = 9;
     public static readonly int AdditiveSummonDamageBonus = 9;
     public override void UpdateEquip(Player player)
@@ -44,7 +45,7 @@ namespace HendecamMod.Content.Items.Armor;
 
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 109f;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 109f;
-       
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -74,13 +75,13 @@ namespace HendecamMod.Content.Items.Armor;
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     public override void UpdateArmorSet(Player player)
-		{
-			player.setBonus = "1 extra minion & sentry slot";
-			player.maxMinions += 1;
-			player.maxTurrets += 1;
-		}
-		public override bool IsArmorSet(Item head, Item body, Item legs)
-		{
-			return body.type == ModContent.ItemType<PyriteChestguard>() && legs.type == ModContent.ItemType<PyriteLegPlating>();
-		}
-	}
+    {
+        player.setBonus = "1 extra minion & sentry slot";
+        player.maxMinions += 1;
+        player.maxTurrets += 1;
+    }
+    public override bool IsArmorSet(Item head, Item body, Item legs)
+    {
+        return body.type == ModContent.ItemType<PyriteChestguard>() && legs.type == ModContent.ItemType<PyriteLegPlating>();
+    }
+}

@@ -84,7 +84,7 @@ public class BeetleRoundProjectile : ModProjectile
         return true;
     }
 
-   
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

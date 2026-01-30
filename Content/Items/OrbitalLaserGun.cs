@@ -34,7 +34,7 @@ public class OrbitalLaserGun : ModItem
         Item.useAnimation = 99; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item67;
@@ -45,7 +45,7 @@ public class OrbitalLaserGun : ModItem
         Item.damage = 185; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 80;
         Item.mana = 100;
 
@@ -66,8 +66,8 @@ public class OrbitalLaserGun : ModItem
 
 
 
-    
- 
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -112,7 +112,7 @@ public class OrbitalLaserGun : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
-       
+
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("DianiteBar", out ModItem DianiteBar))
         {
             recipe.AddIngredient(DianiteBar.Type, 5);

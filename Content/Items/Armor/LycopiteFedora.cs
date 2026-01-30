@@ -14,9 +14,9 @@ namespace HendecamMod.Content.Items.Armor;
 public class LycopiteFedora : ModItem
 {
 
-    
+
     public static readonly int StupidCritBonus = 9;
-   
+
     public static readonly int StupidAttackSpeedBonus = 9;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -109,7 +109,7 @@ public class LycopiteFedora : ModItem
 
 
 
-            player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 109f;
     }
@@ -117,9 +117,9 @@ public class LycopiteFedora : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<LycopiteBar>(19);
-      
+
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

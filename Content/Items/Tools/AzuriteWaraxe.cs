@@ -23,15 +23,15 @@ public class AzuriteWaraxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.useTurn = true;
-        Item.axe = 22; 
+        Item.axe = 22;
         Item.hammer = 75;
-        Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
+        Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { 
+        {
         }
     }
     public override void AddRecipes()

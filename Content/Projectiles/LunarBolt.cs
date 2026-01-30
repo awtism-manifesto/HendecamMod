@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -16,10 +12,10 @@ namespace HendecamMod.Content.Projectiles;
 /// </summary>
 public class LunarBolt : ModProjectile
 {
-   
+
     public override void SetDefaults()
     {
-        
+
 
         Projectile.width = 3; // The width of projectile hitbox
         Projectile.height = 3; // The height of projectile hitbox
@@ -28,18 +24,18 @@ public class LunarBolt : ModProjectile
         Projectile.timeLeft = 200;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-       
+
         Projectile.tileCollide = true;
-        Projectile.friendly = true; 
+        Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Magic;
-        Projectile.penetrate = 1; 
+        Projectile.penetrate = 1;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.alpha = 255;
         Projectile.extraUpdates = 1;
 
     }
-   
+
     private int tickCounter = 0;
     private int nextSpawnTick = 0;
     public override void AI()
@@ -110,5 +106,5 @@ public class LunarBolt : ModProjectile
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
-    
+
 }

@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -31,7 +25,7 @@ public class RingFireProj : ModProjectile
         Projectile.alpha = 93;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = false;
-        
+
         Projectile.scale = 1f;
         Projectile.usesIDStaticNPCImmunity = true;
         Projectile.idStaticNPCHitCooldown = 5;
@@ -55,18 +49,18 @@ public class RingFireProj : ModProjectile
         }
 
 
-        
+
 
 
     }
     public override void AI()
     {
 
-       
 
-       
-            Projectile.rotation += 0.11f;
-        
+
+
+        Projectile.rotation += 0.11f;
+
 
         int frameSpeed = 6;
 
@@ -89,7 +83,7 @@ public class RingFireProj : ModProjectile
 
         Lighting.AddLight(Projectile.Center, 2.25f, 1.45f, 0.65f);
 
-      
+
         Projectile.velocity = Vector2.Zero;
 
 

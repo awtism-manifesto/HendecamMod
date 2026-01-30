@@ -11,11 +11,11 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Wings)]
 public class KulakWings : ModItem
 {
-  
+
 
     public override void SetStaticDefaults()
     {
-       
+
         ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(21, 6.75f, 1.25f);
     }
 
@@ -64,6 +64,6 @@ public class KulakWings : ModItem
         constantAscend = 0.135f;
     }
 
-    
-   
+
+
 }

@@ -36,7 +36,7 @@ public class Edward40Hands : ModItem
 
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
-      
+
 
         Item.shoot = ModContent.ProjectileType<BeerYeet>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
@@ -67,7 +67,7 @@ public class Edward40Hands : ModItem
     }
 
 
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -102,8 +102,8 @@ public class Edward40Hands : ModItem
         recipe.AddIngredient<Items.PlasticScrap>(4);
         recipe.AddIngredient<Items.Polymer>(2);
         recipe.AddIngredient(ItemID.Gel, 5);
-        
-       
+
+
         recipe.Register();
 
 

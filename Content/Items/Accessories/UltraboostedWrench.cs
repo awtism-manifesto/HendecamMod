@@ -11,7 +11,7 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class UltraboostedWrench : ModItem
 {
-  
+
 
 
     public override void SetDefaults()
@@ -21,14 +21,14 @@ public class UltraboostedWrench : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 9599000;
-        
+
     }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<OverclockedWrench>();
-      
+
 
         recipe.AddIngredient<FissionDrive>();
 
@@ -57,12 +57,12 @@ public class UltraboostedWrench : ModItem
 
 
 
-       
+
     }
-   
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
+
 
         player.GetModPlayer<Ultraboostified>().Ultraboosted = true;// Put all boosts in the ModPlayer below to toggle dynamically
     }
@@ -92,12 +92,12 @@ public class Ultraboostified : ModPlayer
     }
     public override void PostUpdateEquips()
     {
-        
+
         if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == false) // Strongest boost takes priority, weaker boosts shouldn't prevent this
         {
             return;
         }
-        else 
+        else
         {
             Player.maxTurrets += 4;
             Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 121f;
@@ -105,6 +105,6 @@ public class Ultraboostified : ModPlayer
             Player.moveSpeed += MoveSpeedBonus / 121f;
         }
 
-            
+
     }
 }

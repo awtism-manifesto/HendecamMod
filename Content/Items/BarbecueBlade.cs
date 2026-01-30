@@ -147,7 +147,7 @@ public class BarbecueBlade : ModItem
         {
             recipe.AddIngredient(GreatDrumstick.Type);
             recipe.AddIngredient(SpicySauce.Type, 25);
-           
+
 
         }
 

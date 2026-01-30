@@ -18,8 +18,8 @@ public class BlackshardDebuff : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-       
-        if (Main.rand.NextBool(2)) 
+
+        if (Main.rand.NextBool(2))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.WhiteTorch,
                 npc.velocity.X * 1.5f, npc.velocity.Y * 1.5f, 70, default, 3f);

@@ -64,13 +64,13 @@ public class DeathBreathShell : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        
-            recipe = CreateRecipe(150);
+
+
+        recipe = CreateRecipe(150);
         recipe.AddIngredient<Items.Shadowflame>();
         recipe.AddIngredient<Items.DragonBreathShell>(150);
-           
-            recipe.Register();
-        
+
+        recipe.Register();
+
     }
 }

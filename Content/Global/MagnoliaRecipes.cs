@@ -79,7 +79,7 @@ public class MagnoliaRecipes : ModSystem
 
         Recipe A9 = Recipe.Create(ItemID.CopperAxe);
         A9.AddIngredient(ItemID.CopperBar, 6);
-        A9.AddIngredient<  WoodenStick>(2);
+        A9.AddIngredient<WoodenStick>(2);
         A9.AddTile(TileID.Anvils);
         A9.Register();
 
@@ -906,7 +906,7 @@ public class MagnoliaRecipes : ModSystem
         A189.Register();
 
         Recipe A190 = Recipe.Create(ItemID.PixieDust, 10);
-        A190.AddIngredient(ItemID.GoldDust ,10);
+        A190.AddIngredient(ItemID.GoldDust, 10);
         A190.AddIngredient(ItemID.SoulofLight, 1);
         A190.AddTile<PalladiumWorkBenchPlaced>();
         A190.Register();

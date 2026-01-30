@@ -13,7 +13,7 @@ namespace HendecamMod.Content.Items;
 
 public class FerrousThornSmooth : ModItem
 {
-    
+
 
     public override void SetDefaults()
     {
@@ -29,7 +29,7 @@ public class FerrousThornSmooth : ModItem
         Item.width = 18;
         Item.height = 18;
         Item.value = 90000;
-       
+
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -50,7 +50,7 @@ public class FerrousThornSmooth : ModItem
         tooltips.Add(line);
 
 
-        
+
     }
     public override bool CanRightClick()
     {
@@ -62,7 +62,7 @@ public class FerrousThornSmooth : ModItem
     }
     public override void AddRecipes()
     {
-        Recipe 
+        Recipe
 
         recipe = CreateRecipe();
         recipe.AddRecipeGroup("IronBar", 15);
@@ -71,7 +71,7 @@ public class FerrousThornSmooth : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-       
+
 
     }
 

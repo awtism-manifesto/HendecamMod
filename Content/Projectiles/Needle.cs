@@ -27,29 +27,29 @@ public class Needle : ModProjectile
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-        
-        
+
+
         Projectile.friendly = true;
         Projectile.penetrate = 1;
         Projectile.DamageType = DamageClass.Magic;
         Projectile.timeLeft = 290;
         Projectile.aiStyle = 1;
         Projectile.extraUpdates = 1;
-        AIType  = ProjectileID.Bullet;
+        AIType = ProjectileID.Bullet;
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
 
-            if (Projectile.penetrate <= 0)
-            {
-                Projectile.Kill();
-            }
-            else
-            {
-                Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-               
+        if (Projectile.penetrate <= 0)
+        {
+            Projectile.Kill();
+        }
+        else
+        {
+            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+
 
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
@@ -116,8 +116,8 @@ public class Needle : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
-      
-       
+
+
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -152,7 +152,7 @@ public class Needle : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 90);
-      
+
 
     }
     public bool IsValidTarget(NPC target)

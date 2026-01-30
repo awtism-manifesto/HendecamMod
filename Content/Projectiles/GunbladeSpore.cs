@@ -40,7 +40,7 @@ public class GunbladeSpore : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         Projectile.aiStyle = -1;
-       Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
         Projectile.timeLeft = 250;
         Projectile.extraUpdates = 1;
         Projectile.tileCollide = true;
@@ -51,14 +51,14 @@ public class GunbladeSpore : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
 
 
 
-       
+
 
     }
     public override void AI()

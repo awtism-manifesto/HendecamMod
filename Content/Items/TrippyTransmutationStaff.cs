@@ -27,16 +27,16 @@ public class TrippyTransmutationStaff : ModItem
         Item.useTime = 29;
         Item.useAnimation = 29;
         Item.autoReuse = true;
-       
+
         Item.mana = 13;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 39;
         Item.knockBack = 3.5f;
         Item.noMelee = true;
-       
+
         Item.value = 72000;
         Item.rare = ItemRarityID.Orange;
-       
+
 
         Item.shoot = ModContent.ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.05f; // Speed of the projectiles the sword will shoot
@@ -52,16 +52,16 @@ public class TrippyTransmutationStaff : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<LycoRay>();
-       
 
 
 
-       
+
+
 
     }
-   
 
-   
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,10 +97,10 @@ public class TrippyTransmutationStaff : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< LycopiteBar>(13);
+        recipe.AddIngredient<LycopiteBar>(13);
         recipe.AddIngredient(ItemID.GlowingMushroom, 10);
         recipe.AddIngredient(ItemID.Mushroom, 5);
-      
+
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

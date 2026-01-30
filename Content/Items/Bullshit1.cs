@@ -45,8 +45,8 @@ public class Bullshit1 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-   
-    
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

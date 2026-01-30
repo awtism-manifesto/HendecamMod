@@ -86,12 +86,12 @@ public class KingslayerHelmet : ModItem
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 105f;
 
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
-      
+
         player.GetCritChance(DamageClass.Generic) += CritBonus;
 
-       
-            player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
-        
+
+        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
+
 
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -102,16 +102,16 @@ public class KingslayerHelmet : ModItem
         recipe.AddIngredient<FlinxFurEarmuffs>();
         recipe.AddIngredient<KingslayerCrown>();
         recipe.AddTile(TileID.Solidifier);
-       
+
         recipe.Register();
-        
-           
 
 
-        
+
+
+
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
 }

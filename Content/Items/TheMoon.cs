@@ -26,8 +26,8 @@ public class TheMoon : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 1230;
         Item.knockBack = 35;
-        Item.noMelee = true; 
-        Item.noUseGraphic = true; 
+        Item.noMelee = true;
+        Item.noUseGraphic = true;
         Item.ArmorPenetration = 35;
         Item.value = Item.buyPrice(gold: 45);
         Item.rare = ItemRarityID.Red;
@@ -36,7 +36,7 @@ public class TheMoon : ModItem
         Item.shoot = ModContent.ProjectileType<TheFuckingMoon>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16f; // Speed of the projectiles the sword will shoot
 
-       
+
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -76,7 +76,7 @@ public class TheMoon : ModItem
 
 
 
-        
+
     }
     public override void AddRecipes()
     {

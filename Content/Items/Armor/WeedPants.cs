@@ -13,10 +13,10 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class WeedPants : ModItem
 {
-   
+
     public static readonly int MoveSpeedBonus = 10;
     public static readonly int StupidCritBonus = 7;
-   
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -84,7 +84,7 @@ public class WeedPants : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-       
+
         player.moveSpeed += MoveSpeedBonus / 111f; // Increase the movement speed of the player
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Magic) += StupidCritBonus;
@@ -94,7 +94,7 @@ public class WeedPants : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<WeedLeaves>(42);
-      
+
         recipe.AddTile(TileID.Loom);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LivingLeaf", out ModItem LivingLeaf))
@@ -106,10 +106,10 @@ public class WeedPants : ModItem
 
         }
     }
-   
+
     public override void UpdateArmorSet(Player player)
     {
-       
-      
+
+
     }
 }

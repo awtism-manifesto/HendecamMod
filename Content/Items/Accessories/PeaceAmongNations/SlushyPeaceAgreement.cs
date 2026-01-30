@@ -9,22 +9,22 @@ namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class SlushyPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Members of the Cold and Wet should be friendly");
         tooltips.Add(line);
-        }
+    }
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Deerclops] = true;
         player.npcTypeNoAggro[NPCID.AngryNimbus] = true;
         player.npcTypeNoAggro[NPCID.FlyingFish] = true;
@@ -53,9 +53,9 @@ public class SlushyPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.PigronHallow] = true;
         player.npcTypeNoAggro[NPCID.IceElemental] = true;
 
-        }
+    }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DeerclopsTrophy, 1);
@@ -64,5 +64,5 @@ public class SlushyPeaceAgreement : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

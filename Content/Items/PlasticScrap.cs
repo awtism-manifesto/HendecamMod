@@ -58,16 +58,16 @@ public class PlasticScrap : ModItem
             recipe = CreateRecipe(20);
 
             recipe.AddIngredient(Plastic.Type);
-           
+
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
         }
         else
         {
-             recipe = CreateRecipe();
+            recipe = CreateRecipe();
 
             recipe.AddIngredient<Items.CrudeOil>(3);
-          
+
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
 

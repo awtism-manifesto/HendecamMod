@@ -40,15 +40,15 @@ public class MorbiumBar : ModItem
 
 
 
-       
+
     }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<MorbiumOre>(5);
-      
+
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-        
+
     }
 }

@@ -34,7 +34,7 @@ public class Sublimination : ModItem
         Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
+
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
@@ -47,7 +47,7 @@ public class Sublimination : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 50;
 
-        
+
 
 
         // Gun Properties
@@ -66,7 +66,7 @@ public class Sublimination : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -75,7 +75,7 @@ public class Sublimination : ModItem
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
             Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.9f));
             Vector2 new4Velocity = velocity.RotatedBy(MathHelper.ToRadians(-3.8f));
-           
+
 
 
             if (nextSpawnTick == 0)
@@ -115,7 +115,7 @@ public class Sublimination : ModItem
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 type = ModContent.ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-               
+
 
 
                 tickCounter = 5;

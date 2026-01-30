@@ -19,8 +19,8 @@ public class ShinyTag2 : ModBuff
         // Other mods may check it for different purposes.
         BuffID.Sets.IsATagBuff[Type] = true;
     }
-   
-   
+
+
 
     public override void Update(NPC npc, ref int buffIndex)
     {

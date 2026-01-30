@@ -40,7 +40,7 @@ public class TheBoner : ModItem
         Item.damage = 51; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
 
 
@@ -55,12 +55,12 @@ public class TheBoner : ModItem
 
     }
 
-   
 
 
 
-    
-    
+
+
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -95,11 +95,11 @@ public class TheBoner : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Bone, 50);
         recipe.AddIngredient(ItemID.Obsidian, 25);
-       
+
         recipe.AddRecipeGroup("IronBar", 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
 
 
 

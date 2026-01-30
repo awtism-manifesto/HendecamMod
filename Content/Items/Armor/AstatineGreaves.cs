@@ -64,7 +64,7 @@ public class AstatineGreaves : ModItem
             };
             tooltips.Add(line);
         }
-        
+
 
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
@@ -109,14 +109,14 @@ public class AstatineGreaves : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient< AstatineBar>(40);
+        recipe.AddIngredient<AstatineBar>(40);
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-       
+
     }
     public class AstatinePants : ModPlayer
     {
@@ -135,7 +135,7 @@ public class AstatineGreaves : ModItem
                 return;
             }
 
-            
+
             Player.runAcceleration *= 1.35f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.35f;
             Player.accRunSpeed *= 1.35f;

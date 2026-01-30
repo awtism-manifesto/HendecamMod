@@ -10,11 +10,11 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
-public class Bloodfish: ModProjectile
+public class Bloodfish : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
+
         Main.projFrames[Projectile.type] = 4;
     }
     private NPC HomingTarget
@@ -31,7 +31,7 @@ public class Bloodfish: ModProjectile
     {
         Projectile.width = 10; // The width of projectile hitbox
         Projectile.height = 10; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -41,7 +41,7 @@ public class Bloodfish: ModProjectile
         Projectile.light = 0.05f; // How much light emit around the projectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-       
+
         Projectile.usesLocalNPCImmunity = true;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
@@ -159,7 +159,7 @@ public class Bloodfish: ModProjectile
         return closestNPC;
     }
 
-   
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.

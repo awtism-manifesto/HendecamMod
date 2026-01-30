@@ -15,7 +15,7 @@ public class AstatineOre : ModItem
 
 
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
-      
+
         Item.ResearchUnlockCount = 100; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -30,7 +30,7 @@ public class AstatineOre : ModItem
         Item.value = 13500;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineOrePlaced>());
-        
+
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -61,5 +61,5 @@ public class AstatineOre : ModItem
     }
 
 
-    
+
 }

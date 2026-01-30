@@ -29,7 +29,7 @@ public class ChargeLaser : ModProjectile
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 180; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 255; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
-       
+
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 4; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -72,7 +72,7 @@ public class ChargeLaser : ModProjectile
 
 
         Lighting.AddLight(Projectile.Center, 0.66f, 0.2f, 0.2f);
-       
+
 
 
 
@@ -96,9 +96,9 @@ public class ChargeLaser : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
+
         target.AddBuff(BuffID.Electrified, 240);
-        
+
     }
 
 

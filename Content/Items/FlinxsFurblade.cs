@@ -65,7 +65,7 @@ public class FlinxsFurblade : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        
+
         if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind<ModItem>("Cyborg", out ModItem Cyborg))
         {
             recipe = CreateRecipe();
@@ -75,7 +75,7 @@ public class FlinxsFurblade : ModItem
 
             recipe.Register();
         }
-       
+
         else
         {
 
@@ -111,6 +111,6 @@ public class FlinxsFurblade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
+
 
 }

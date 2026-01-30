@@ -21,11 +21,11 @@ public class PlutoniumPickaxe : ModItem
         Item.height = 35;
         Item.useTime = 5;
         Item.useAnimation = 14;
-        
+
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-        
+
         Item.value = 190000; // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.LightPurple;
         Item.UseSound = SoundID.Item1;
@@ -69,11 +69,11 @@ public class PlutoniumPickaxe : ModItem
 
 
         recipe.AddIngredient<PlutoniumBar>(21);
-        
-        
+
+
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-        
+
     }
 }

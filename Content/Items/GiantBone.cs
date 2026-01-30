@@ -29,7 +29,7 @@ public class GiantBone : ModItem
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.damage = 60;
         Item.knockBack = 7;
-        
+
 
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.Orange;
@@ -46,7 +46,7 @@ public class GiantBone : ModItem
 
 
 
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -81,7 +81,7 @@ public class GiantBone : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        
+
 
     }
     public override Vector2? HoldoutOffset()

@@ -6,14 +6,14 @@ using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
-	[AutoloadEquip(EquipType.Legs)]
-	public class FlinxFurSlippers : ModItem
-	{
-		public override void SetDefaults()
-		{
-			Item.defense = 1;
-			Item.rare = ItemRarityID.Blue;
-		}
+[AutoloadEquip(EquipType.Legs)]
+public class FlinxFurSlippers : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.defense = 1;
+        Item.rare = ItemRarityID.Blue;
+    }
     public static readonly int AdditiveSummonDamageBonus = 4;
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -56,14 +56,14 @@ namespace HendecamMod.Content.Items.Armor;
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 104f;
-       
+
 
     }
     public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.FlinxFur, 3);
-			recipe.AddTile(TileID.Loom);
-			recipe.Register();
-		}
-	}
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.FlinxFur, 3);
+        recipe.AddTile(TileID.Loom);
+        recipe.Register();
+    }
+}

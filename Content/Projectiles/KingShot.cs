@@ -63,7 +63,7 @@ public class KingShot : ModProjectile
     {
 
         // dust, all dust
-        if (Projectile.alpha <202)
+        if (Projectile.alpha < 202)
         {
             for (int i = 0; i < 2; i++)
             {

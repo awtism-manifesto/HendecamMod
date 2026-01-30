@@ -259,7 +259,7 @@ public class PeaceAmongEvents : ModItem
         player.npcTypeNoAggro[NPCID.VortexRifleman] = true;
         player.npcTypeNoAggro[NPCID.VortexSoldier] = true;
 
-        }
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -14,14 +14,14 @@ public class FissilePurple : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-         // Deals double damage on direct hits.
+        // Deals double damage on direct hits.
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
-       
+
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
@@ -54,7 +54,7 @@ public class FissilePurple : ModProjectile
     public override void AI()
     {
 
-       
+
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -84,7 +84,7 @@ public class FissilePurple : ModProjectile
 
 
         }
-        
+
         // Rotate the rocket in the direction that it is moving.
         if (Projectile.velocity != Vector2.Zero)
         {
@@ -97,7 +97,7 @@ public class FissilePurple : ModProjectile
     {
         Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        
+
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
 
@@ -105,7 +105,7 @@ public class FissilePurple : ModProjectile
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
         Projectile.alpha = 255; // Make the rocket invisible.
-       
+
         // Resize the hitbox of the projectile for the blast "radius".
         // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
         // Measurements are in pixels, so 128 / 16 = 8 tiles.
@@ -122,14 +122,14 @@ public class FissilePurple : ModProjectile
         // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
 
         // Play an exploding sound.
-       
-        
+
+
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(64, 64);
 
-       
+
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)

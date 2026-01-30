@@ -75,13 +75,13 @@ public class Repentance : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-      
+
         recipe.AddIngredient(ItemID.HellstoneBar, 18);
         recipe.AddIngredient<CrudeOil>(15);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
+
 
 
 

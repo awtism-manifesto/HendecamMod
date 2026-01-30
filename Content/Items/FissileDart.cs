@@ -18,7 +18,7 @@ public class FissileDart : ModItem
     {
         Item.damage = 21; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-       
+
         Item.width = 13;
         Item.height = 13;
         Item.maxStack = Item.CommonMaxStack;

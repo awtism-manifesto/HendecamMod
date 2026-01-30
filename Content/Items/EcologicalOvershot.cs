@@ -45,7 +45,7 @@ public class EcologicalOvershot : ModItem
         Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
 
         Item.mana = 9;
 
@@ -66,7 +66,7 @@ public class EcologicalOvershot : ModItem
 
 
 
-   
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -102,9 +102,9 @@ public class EcologicalOvershot : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DemoniteBar, 10);
         recipe.AddIngredient(ItemID.CrimtaneBar, 10);
-      
+
         recipe.AddIngredient(ItemID.SoulofNight, 5);
-        
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

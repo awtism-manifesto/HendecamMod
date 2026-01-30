@@ -14,7 +14,7 @@ namespace HendecamMod.Content.Projectiles.Items;
 public class CeramOmniSpawn : ModProjectile
 {
 
-    
+
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -34,16 +34,16 @@ public class CeramOmniSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
 
-   
-   
-   
+
+
+
+
 
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position);
-        
+
 
         for (int i = 0; i < 10; i++)
         {

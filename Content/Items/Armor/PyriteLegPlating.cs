@@ -6,13 +6,13 @@ using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
-	[AutoloadEquip(EquipType.Legs)]
-	public class PyriteLegPlating : ModItem
-	{
-		public override void SetDefaults()
-		{
-			Item.defense = 5;
-			Item.rare = ItemRarityID.Blue;
+[AutoloadEquip(EquipType.Legs)]
+public class PyriteLegPlating : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.defense = 5;
+        Item.rare = ItemRarityID.Blue;
         Item.value = 60000;
     }
     public static readonly int AdditiveDamageBonus = 4;
@@ -61,10 +61,10 @@ namespace HendecamMod.Content.Items.Armor;
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<PyriteBar>(15);
-			recipe.AddTile(TileID.Anvils);
-			recipe.Register();
-		}
-	}
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<PyriteBar>(15);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
+}

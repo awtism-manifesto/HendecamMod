@@ -29,7 +29,7 @@ public class FakeRocket : ModProjectile
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 150; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 1f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -40,7 +40,7 @@ public class FakeRocket : ModProjectile
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-       
+
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -82,7 +82,7 @@ public class FakeRocket : ModProjectile
 
         return true;
     }
-   
+
     public override void AI()
     {
 
@@ -118,12 +118,12 @@ public class FakeRocket : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
-        
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188,188), 1050));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag>(), (int)(Projectile.damage*0.85f), Projectile.knockBack, Projectile.owner);
-        
+
+        Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+        ModContent.ProjectileType<UsaFlag>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+
     }
 
 }

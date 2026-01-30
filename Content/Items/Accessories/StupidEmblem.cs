@@ -26,7 +26,7 @@ public class StupidEmblem : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.value = 20000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,7 +54,7 @@ public class StupidEmblem : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-  
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -69,6 +69,6 @@ public class StupidEmblem : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 115f;
-        
+
     }
 }

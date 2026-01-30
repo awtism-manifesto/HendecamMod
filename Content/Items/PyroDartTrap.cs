@@ -15,8 +15,8 @@ public class PyroDartTrap : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
 
-       
-       
+
+
 
         Item.ResearchUnlockCount = 10; // Configure the amount of this item that's needed to research it in Journey mode.
     }
