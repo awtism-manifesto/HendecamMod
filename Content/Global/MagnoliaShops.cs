@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

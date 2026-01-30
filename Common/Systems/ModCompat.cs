@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Bosses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Systems;
 

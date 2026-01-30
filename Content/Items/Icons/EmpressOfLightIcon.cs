@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Icons;
 

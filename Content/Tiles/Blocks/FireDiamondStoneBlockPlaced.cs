@@ -1,9 +1,5 @@
 ﻿using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 

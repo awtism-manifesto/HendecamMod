@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Global;
+﻿namespace HendecamMod.Content.Global;
 
 /// <summary>
 ///     Handles the effects and weapon visuals of the Example Weapon Imbue.

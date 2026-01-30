@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Content.Projectiles.Items;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 

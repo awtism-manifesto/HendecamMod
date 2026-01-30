@@ -1,7 +1,3 @@
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 namespace HendecamMod.Content.Items;
 
 public class PyriteBar : ModItem

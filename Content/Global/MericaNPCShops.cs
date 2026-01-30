@@ -2,8 +2,6 @@
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Poop;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

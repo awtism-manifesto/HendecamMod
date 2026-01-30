@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Tiles;
-using Microsoft.Xna.Framework;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Materials;
 

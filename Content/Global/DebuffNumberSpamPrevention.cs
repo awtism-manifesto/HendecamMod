@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Global;
+﻿namespace HendecamMod.Content.Global;
 
 public class RadTick : GlobalNPC
 {

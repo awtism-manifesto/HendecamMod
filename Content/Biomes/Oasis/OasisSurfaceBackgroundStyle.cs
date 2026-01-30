@@ -1,5 +1,3 @@
-using Terraria.ModLoader;
-
 namespace HendecamMod.Content.Biomes.Oasis;
 
 public class OasisSurfaceBackgroundStyle : ModSurfaceBackgroundStyle

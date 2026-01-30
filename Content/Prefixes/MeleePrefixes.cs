@@ -1,6 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Terraria;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Prefixes;
 

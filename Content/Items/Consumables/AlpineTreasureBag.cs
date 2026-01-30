@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Content.Items.Weapons;
-using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Consumables;
 

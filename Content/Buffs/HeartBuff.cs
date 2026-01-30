@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class HeartBuff : ModBuff
 {

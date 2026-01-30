@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ModLoader;
+﻿using Terraria.Enums;
 
 namespace HendecamMod.Content.Projectiles;
 

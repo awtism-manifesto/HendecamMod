@@ -1,6 +1,4 @@
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Biomes.Oasis;
 

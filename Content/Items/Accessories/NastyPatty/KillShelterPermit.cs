@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;

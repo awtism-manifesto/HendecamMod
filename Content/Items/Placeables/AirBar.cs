@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Placeables;
+﻿namespace HendecamMod.Content.Items.Placeables;
 
 public class AirBar : ModItem
 {

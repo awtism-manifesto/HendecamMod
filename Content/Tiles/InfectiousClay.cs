@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Tiles;
+﻿namespace HendecamMod.Content.Tiles;
 
 // These three classes showcase how to create tiles that act as corruption/crimson/hallow versions of vanilla tiles.
 // For this example, we will be making vanilla's clay tiles convertible into the three spreading biomes

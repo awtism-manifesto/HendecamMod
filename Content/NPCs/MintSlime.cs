@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;

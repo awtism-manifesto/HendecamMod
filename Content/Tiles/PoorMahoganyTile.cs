@@ -1,6 +1,3 @@
-using Terraria;
-using Terraria.ModLoader;
-
 namespace HendecamMod.Content.Tiles;
 
 public class PoorMahoganyTile : ModTile

@@ -1,10 +1,6 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles;
 

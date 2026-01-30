@@ -4,14 +4,10 @@ using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.NPCs.Bosses;
 

@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Tools;
+﻿namespace HendecamMod.Content.Items.Tools;
 
 public class MintalHamaxe : ModItem
 {

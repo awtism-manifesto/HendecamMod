@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Tiles.Blocks;
+﻿namespace HendecamMod.Content.Tiles.Blocks;
 
 public class OrangeBrickPlaced : ModTile
 {

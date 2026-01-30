@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Rarities;
+﻿namespace HendecamMod.Content.Rarities;
 
 public class Seizure2 : ModRarity
 {

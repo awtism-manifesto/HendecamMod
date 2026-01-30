@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Content.Items;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

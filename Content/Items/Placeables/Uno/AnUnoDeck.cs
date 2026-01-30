@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables.Uno;
 

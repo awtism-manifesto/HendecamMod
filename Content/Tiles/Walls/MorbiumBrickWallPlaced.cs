@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles.Walls;
 

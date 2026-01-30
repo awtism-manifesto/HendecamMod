@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.DamageClasses;
+﻿namespace HendecamMod.Content.DamageClasses;
 
 public class SummonStupidDamage : DamageClass
 {

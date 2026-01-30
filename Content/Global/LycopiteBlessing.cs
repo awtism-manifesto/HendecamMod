@@ -1,11 +1,7 @@
 ﻿using System.Threading;
 using HendecamMod.Content.Tiles;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Chat;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 

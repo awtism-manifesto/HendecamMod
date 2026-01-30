@@ -1,9 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Consumables;
-using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Global;
 

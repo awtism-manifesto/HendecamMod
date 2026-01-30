@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using Terraria;
 using Terraria.GameContent.Drawing;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 

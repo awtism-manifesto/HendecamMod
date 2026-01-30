@@ -1,7 +1,4 @@
-﻿using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles.Enemies;
+﻿namespace HendecamMod.Content.Projectiles.Enemies;
 
 /// <summary>
 ///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().

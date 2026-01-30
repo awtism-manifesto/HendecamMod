@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Global;
+﻿namespace HendecamMod.Content.Global;
 
 // if you have to read through these unhinged ahh public classes and youre not Autism Manifesto, i apologize.
 public class CobaltPickaxeBuff : GlobalItem

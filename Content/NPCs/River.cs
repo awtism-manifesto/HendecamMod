@@ -8,18 +8,14 @@ using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Events;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.GameContent.Personalities;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 

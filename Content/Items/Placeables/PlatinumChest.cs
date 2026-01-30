@@ -1,6 +1,4 @@
 ﻿using HendecamMod.Content.Tiles.Furniture;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables;
 

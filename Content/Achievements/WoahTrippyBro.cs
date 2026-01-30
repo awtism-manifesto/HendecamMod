@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Content.Tiles;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Achievements;
 

@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 

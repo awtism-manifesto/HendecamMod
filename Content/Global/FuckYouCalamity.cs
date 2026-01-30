@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.GlobalItems;
+﻿namespace HendecamMod.Content.GlobalItems;
 
 public class FuckYouCalamity : GlobalItem
 {

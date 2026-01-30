@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class JevilTag : ModBuff
 {

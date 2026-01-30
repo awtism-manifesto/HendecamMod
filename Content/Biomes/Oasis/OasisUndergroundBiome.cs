@@ -1,9 +1,5 @@
 ﻿using HendecamMod.Content.Items;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Graphics.Capture;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Biomes.Oasis;
 

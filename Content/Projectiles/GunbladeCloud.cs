@@ -1,7 +1,4 @@
-﻿using System;
-using HendecamMod.Content.DamageClasses;
-using Terraria;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Projectiles;
 

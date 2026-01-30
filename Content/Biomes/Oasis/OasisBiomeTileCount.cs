@@ -1,6 +1,4 @@
-﻿using System;
-using HendecamMod.Content.Tiles.Blocks;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Biomes.Oasis;
 

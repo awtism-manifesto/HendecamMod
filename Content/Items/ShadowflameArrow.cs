@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items;
+﻿namespace HendecamMod.Content.Items;
 
 // This example is similar to the Wooden Arrow item
 public class ShadowflameArrow : ModItem

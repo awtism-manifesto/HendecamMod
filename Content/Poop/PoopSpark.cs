@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Poop;
+﻿namespace HendecamMod.Content.Poop;
 
 public class PoopSpark : ModProjectile
 {

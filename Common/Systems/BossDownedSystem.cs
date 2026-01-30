@@ -1,6 +1,4 @@
 using System.IO;
-using Terraria;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Common.Systems;

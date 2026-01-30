@@ -1,6 +1,4 @@
 ﻿using HendecamMod.Content.Dusts;
-using Terraria;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
 

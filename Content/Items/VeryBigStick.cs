@@ -1,7 +1,3 @@
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 namespace HendecamMod.Content.Items;
 
 // This is a basic item template.

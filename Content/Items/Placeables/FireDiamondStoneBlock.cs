@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Blocks;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables;
 

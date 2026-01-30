@@ -1,7 +1,4 @@
-﻿using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Placeables.Uno;
+﻿namespace HendecamMod.Content.Items.Placeables.Uno;
 
 public class BlueTwo : ModItem
 {

@@ -1,7 +1,6 @@
 using HendecamMod.Content.NPCs.Bosses;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Systems;
 

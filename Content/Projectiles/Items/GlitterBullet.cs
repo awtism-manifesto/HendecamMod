@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles.Items;
+﻿namespace HendecamMod.Content.Projectiles.Items;
 
 // This example is similar to the Wooden Arrow projectile
 public class GlitterBullet : ModProjectile

@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.GameContent.Drawing;
 
 namespace HendecamMod.Content.Projectiles;
 
