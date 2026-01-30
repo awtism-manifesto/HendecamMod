@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BugBuzz : ModItem
@@ -44,24 +45,22 @@ public class BugBuzz : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         SoundEngine.PlaySound(SoundID.NPCDeath57, player.position);
         return true;
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         type = ModContent.ProjectileType<BugWave>();
         if (type == ModContent.ProjectileType<BugWave>())
         {
             damage = (int)(damage * 0.8f);
         }
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -98,13 +97,12 @@ public class BugBuzz : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("LivingShard", out ModItem LivingShard))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("LivingShard", out ModItem LivingShard))
         {
             recipe.AddIngredient(LivingShard.Type, 4);
-
         }
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-16f, -1f);

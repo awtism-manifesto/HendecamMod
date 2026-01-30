@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -20,6 +20,7 @@ public class PurifiedSalt : ModItem
         Item.value = 950;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -45,13 +46,14 @@ public class PurifiedSalt : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(9);
 
         recipe.AddIngredient(ItemID.PixieDust, 2);
         recipe.AddIngredient(ItemID.SoulofLight);
-        recipe.AddIngredient<Items.RockSalt>(9);
+        recipe.AddIngredient<RockSalt>(9);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
     }

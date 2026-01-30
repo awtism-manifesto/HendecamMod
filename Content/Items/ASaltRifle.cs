@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ASaltRifle : ModItem
@@ -40,14 +41,13 @@ public class ASaltRifle : ModItem
         Item.shoot = ModContent.ProjectileType<PurifiedSaltRanged>();
 
         Item.shootSpeed = 16.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PurifiedSaltRanged>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -66,6 +66,7 @@ public class ASaltRifle : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,6 +92,7 @@ public class ASaltRifle : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -100,8 +102,8 @@ public class ASaltRifle : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

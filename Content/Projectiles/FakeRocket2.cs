@@ -1,11 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class FakeRocket2 : ModProjectile
@@ -37,7 +38,6 @@ public class FakeRocket2 : ModProjectile
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -74,18 +74,18 @@ public class FakeRocket2 : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
     }
+
     public override void AI()
     {
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -98,6 +98,7 @@ public class FakeRocket2 : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.IceTorch, 0f, 0f, 100, default, 0.55f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
@@ -115,13 +116,11 @@ public class FakeRocket2 : ModProjectile
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(36, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            new Vector2(36, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Vector2 Peanits2 = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2,
-        new Vector2(42, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-
+            new Vector2(42, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
     }
 }
-

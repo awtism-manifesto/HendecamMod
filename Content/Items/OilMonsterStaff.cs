@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class OilMonsterStaff : ModItem
@@ -45,6 +46,7 @@ public class OilMonsterStaff : ModItem
         // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
         position = Main.MouseWorld;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,14 +78,14 @@ public class OilMonsterStaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.PolymerSlimeStaff>();
-        recipe.AddIngredient<Items.RefinedOil>(50);
+        recipe.AddIngredient<PolymerSlimeStaff>();
+        recipe.AddIngredient<RefinedOil>(50);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -98,5 +100,4 @@ public class OilMonsterStaff : ModItem
         // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
         return false;
     }
-
 }

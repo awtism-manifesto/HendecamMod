@@ -2,11 +2,11 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class RazorRotorsProj : ModProjectile
 {
-
     public override void SetDefaults()
     {
         Projectile.width = 312;
@@ -23,9 +23,9 @@ public class RazorRotorsProj : ModProjectile
         Projectile.usesIDStaticNPCImmunity = true;
         Projectile.idStaticNPCHitCooldown = 5;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         for (int i = 0; i < 8; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Blood);
@@ -34,9 +34,9 @@ public class RazorRotorsProj : ModProjectile
             dust.scale *= 1.5f;
         }
     }
+
     public override void AI()
     {
-
         Player player = Main.player[Projectile.owner];
         Projectile.Center = player.Center;
 
@@ -46,7 +46,9 @@ public class RazorRotorsProj : ModProjectile
         }
         else
 
-        { Projectile.rotation += -0.425f; }
+        {
+            Projectile.rotation += -0.425f;
+        }
 
         Lighting.AddLight(Projectile.Center, 0.5f, 0.05f, 0.05f);
         Projectile.velocity = Vector2.Zero;

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -42,6 +42,7 @@ public class CookingPot : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 7; // The number of projectiles that this gun will shoot.
@@ -86,19 +87,20 @@ public class CookingPot : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-7f, 3f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.CookingPot);
         recipe.AddIngredient<CeramicSheet>(25);
-        recipe.AddIngredient<Items.RockSalt>(9);
+        recipe.AddIngredient<RockSalt>(9);
         recipe.AddIngredient(ItemID.HellstoneBar, 8);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

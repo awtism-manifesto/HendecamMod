@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class GraniteLaser : ModProjectile
@@ -44,7 +45,7 @@ public class GraniteLaser : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -58,16 +59,13 @@ public class GraniteLaser : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.33f;
             dust.scale *= 0.75f;
-
         }
 
         target.AddBuff(BuffID.Electrified, 240);
-
     }
+
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 0.1f, 0.4f, 0.85f);
-
     }
 }
-

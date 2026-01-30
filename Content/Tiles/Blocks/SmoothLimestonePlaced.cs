@@ -19,6 +19,7 @@ public class SmoothLimestonePlaced : ModTile
 
         AddMapEntry(new Color(204, 190, 163));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

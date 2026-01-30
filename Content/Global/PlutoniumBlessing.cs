@@ -1,8 +1,8 @@
-﻿using HendecamMod.Common.Systems;
+﻿using System.Threading;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Tiles;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -13,7 +13,6 @@ namespace HendecamMod.Content.Global;
 
 public class PlutoniumBlessing : GlobalNPC
 {
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == ModContent.NPCType<ApacheElfShip>();
@@ -24,11 +23,10 @@ public class PlutoniumBlessing : GlobalNPC
         if (!ApacheElfShipDown.downedApacheElfShip)
         {
             ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
-
         }
-
     }
 }
+
 public class PlutoniumSystem : ModSystem
 {
     public static LocalizedText PlutoniumMessage { get; private set; }
@@ -56,7 +54,7 @@ public class PlutoniumSystem : ModSystem
             // Broadcast a message to notify the user.
             if (Main.netMode == NetmodeID.SinglePlayer)
             {
-                Main.NewText(PlutoniumBlessMessage.Value, 115, 25, 255);
+                Main.NewText(PlutoniumBlessMessage.Value, 115, 25);
             }
             else if (Main.netMode == NetmodeID.Server)
             {
@@ -79,5 +77,4 @@ public class PlutoniumSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -36,6 +36,7 @@ public class IForgor : ModItem
         Item.shootSpeed = 15.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Rocket; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.BushPlane>();
@@ -67,6 +68,7 @@ public class IForgor : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -76,6 +78,7 @@ public class IForgor : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-31f, -5f);

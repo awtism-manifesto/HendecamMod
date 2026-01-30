@@ -19,25 +19,28 @@ public class OilSlime : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.MotherSlime;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"Spoopy, Oopy, and goopy, these hard-to see, deceptively tanky slimes can ruin your day if you're not careful!\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"Spoopy, Oopy, and goopy, these hard-to see, deceptively tanky slimes can ruin your day if you're not careful!\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void SetDefaults()
     {
         NPC.width = 32;
@@ -55,7 +58,6 @@ public class OilSlime : ModNPC
         AnimationType = NPCID.BlueSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<OilSlimeBanner>();
-
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -77,17 +79,14 @@ public class OilSlime : ModNPC
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(), 1, 10, 21));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CarbonDioxideBottle>(), 20, 1, 1));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 150, 1, 1));
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CarbonDioxideBottle>(), 20));
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 150));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<OilMonsterStaff>(), chanceDenominator: 250, chanceNumerator: 1));
-        npcLoot.Add(ItemDropRule.Common(ItemID.Rally, 33, 1, 1));
+        npcLoot.Add(ItemDropRule.Common(ItemID.Rally, 33));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         return SpawnCondition.Underground.Chance * 0.95f;
-
     }
-
 }

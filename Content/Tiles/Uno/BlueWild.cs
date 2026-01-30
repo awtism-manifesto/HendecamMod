@@ -30,6 +30,7 @@ public class BlueWild : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

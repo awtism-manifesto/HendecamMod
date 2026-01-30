@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -40,6 +40,7 @@ public class FrozenMace : ModItem
         Item.channel = true;
         Item.noMelee = true; // This makes sure the item does not deal damage from the swinging animation
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -74,10 +75,10 @@ public class FrozenMace : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.IceTorch, 99);
-        recipe.AddIngredient(ItemID.FlamingMace, 1);
+        recipe.AddIngredient(ItemID.FlamingMace);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod) && ThoriumMod.TryFind<ModItem>("IcyShard", out ModItem IcyShard))
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod) && ThoriumMod.TryFind("IcyShard", out ModItem IcyShard))
         {
             recipe.AddIngredient(IcyShard.Type, 3);
         }

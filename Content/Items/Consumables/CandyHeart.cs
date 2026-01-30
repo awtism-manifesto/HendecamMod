@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +12,8 @@ public class CandyHeart : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(92, 42, 9),
             new Color(51, 24, 6),
             new Color(122, 51, 4)
@@ -35,10 +36,12 @@ public class CandyHeart : ModItem
         Item.buffType = BuffID.WellFed3;
         Item.buffTime = 300;
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "A small candy given by santa to his most loyal and skilled elf soldiers");

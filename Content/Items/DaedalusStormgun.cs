@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -39,6 +39,7 @@ public class DaedalusStormgun : ModItem
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DaeRound>();
@@ -53,6 +54,7 @@ public class DaedalusStormgun : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
+
         // Loop these functions 3 times.
         for (int i = 0; i < 1; i++)
         {
@@ -78,6 +80,7 @@ public class DaedalusStormgun : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -103,14 +106,15 @@ public class DaedalusStormgun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.DracoMeteor>();
+        recipe.AddIngredient<DracoMeteor>();
 
-        recipe.AddIngredient<Items.CyberneticGunParts>();
+        recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();

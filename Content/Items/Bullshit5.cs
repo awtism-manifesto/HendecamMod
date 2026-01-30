@@ -1,9 +1,9 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -47,12 +47,13 @@ public class Bullshit5 : ModItem
         // Gun Properties
         Item.shoot = ModContent.ProjectileType<BullshitEnergyAxe>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 9f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -82,7 +83,6 @@ public class Bullshit5 : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             for (int i = 0; i < 1; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
@@ -92,8 +92,8 @@ public class Bullshit5 : ModItem
                 newVelocity *= 1f - Main.rand.NextFloat(0.25f);
 
                 Projectile.NewProjectile(source, position, newVelocity * 2.1f, type, damage, knockback, player.whoAmI);
-
             }
+
             SoundEngine.PlaySound(SoundID.NPCDeath51, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath44, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath55, player.position);
@@ -102,9 +102,8 @@ public class Bullshit5 : ModItem
 
             return false;
         }
-        else
-        {
 
+        {
             SoundEngine.PlaySound(SoundID.Item71, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath51, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath44, player.position);
@@ -124,9 +123,9 @@ public class Bullshit5 : ModItem
             Projectile.NewProjectile(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
 
             return true; // Return false because we don't want tModLoader to shoot projectile}
-
         }
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -148,6 +147,7 @@ public class Bullshit5 : ModItem
         };
         tooltips.Add(line);
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-0.5f, -0.5f);
@@ -163,7 +163,5 @@ public class Bullshit5 : ModItem
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
-
 }

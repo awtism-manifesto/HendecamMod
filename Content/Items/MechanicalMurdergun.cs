@@ -1,17 +1,17 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class MechanicalMurdergun : ModItem
 {
     public override void SetDefaults()
     {
-
         Item.width = 62;
         Item.height = 32;
         Item.scale = 0.85f;
@@ -23,7 +23,7 @@ public class MechanicalMurdergun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item67;
+        Item.UseSound = SoundID.Item67;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 66; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,13 +37,11 @@ public class MechanicalMurdergun : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 13.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.LightBeam;
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -77,6 +75,7 @@ public class MechanicalMurdergun : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -86,8 +85,8 @@ public class MechanicalMurdergun : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

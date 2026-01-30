@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class OilBall : ModProjectile
@@ -33,14 +34,13 @@ public class OilBall : ModProjectile
 
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Oiled, 180);
-
     }
+
     public override void AI()
     {
         int frameSpeed = 6;
@@ -57,6 +57,7 @@ public class OilBall : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
@@ -72,6 +73,7 @@ public class OilBall : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
+
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -99,6 +101,7 @@ public class OilBall : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     private void Visuals()
     {
         Projectile.rotation = Projectile.velocity.X * 0.05f;

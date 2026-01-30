@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -42,11 +42,12 @@ public class TheOilBaron : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-        type = ModContent.ProjectileType<OilBall>();                                             // Create a projectile.
+        type = ModContent.ProjectileType<OilBall>(); // Create a projectile.
         Projectile.NewProjectileDirect(source, position, velocity * 1.667f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
 
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -72,6 +73,7 @@ public class TheOilBaron : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

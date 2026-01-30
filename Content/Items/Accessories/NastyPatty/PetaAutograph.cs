@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class PetaAutograph : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s and light"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets or Light Pets"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
@@ -106,12 +107,13 @@ public class PetaAutograph : ModItem
         player.ClearBuff(BuffID.VoltBunny);
         player.ClearBuff(BuffID.ZephyrFish);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<KillShelterPermit>(1);
-        recipe.AddIngredient<PoachersContract>(1);
+        recipe.AddIngredient<KillShelterPermit>();
+        recipe.AddIngredient<PoachersContract>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

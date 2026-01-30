@@ -1,5 +1,5 @@
-﻿using Terraria;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SandBall : ModProjectile
@@ -20,10 +20,9 @@ public class SandBall : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2;
     }
+
     public override void AI()
     {
         Projectile.rotation += -0.135f;
-
     }
-
 }

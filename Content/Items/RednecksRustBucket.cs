@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -42,6 +42,7 @@ public class RednecksRustBucket : ModItem
         Item.shootSpeed = 10.15f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
@@ -49,7 +50,6 @@ public class RednecksRustBucket : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         if (player.altFunctionUse == 2)
         {
             Item.noUseGraphic = true;
@@ -60,26 +60,25 @@ public class RednecksRustBucket : ModItem
 
             return false;
         }
-        else
+
+        SoundEngine.PlaySound(SoundID.Item62, player.position);
+        Item.noUseGraphic = false;
+
+        int NumProjectiles = Main.rand.Next(3, 6); // The number of projectiles that this gun will shoot.
+        damage = (int)(damage * Main.rand.NextFloat(0.43f, 0.445f));
+        for (int i = 0; i < NumProjectiles; i++)
         {
-            SoundEngine.PlaySound(SoundID.Item62, player.position);
-            Item.noUseGraphic = false;
+            // Rotate the velocity randomly by 30 degrees at max.
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6f));
 
-            int NumProjectiles = Main.rand.Next(3, 6); // The number of projectiles that this gun will shoot.
-            damage = (int)(damage * Main.rand.NextFloat(0.43f, 0.445f));
-            for (int i = 0; i < NumProjectiles; i++)
-            {
-                // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6f));
+            // Decrease velocity randomly for nicer visuals.
+            newVelocity *= 1f - Main.rand.NextFloat(0.335f);
 
-                // Decrease velocity randomly for nicer visuals.
-                newVelocity *= 1f - Main.rand.NextFloat(0.335f);
-
-                // Create a projectile.
-                int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
-            }
+            // Create a projectile.
+            int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
         }
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
@@ -117,14 +116,16 @@ public class RednecksRustBucket : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-29.25f, -2.66f);
     }
+
     public override void AddRecipes()
     {
         Recipe
-        recipe = CreateRecipe();
+            recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.QuadBarrelShotgun);
         recipe.AddIngredient<ImprovisedMachineGun>();
         recipe.AddIngredient<ToothlessWyrm>();
@@ -132,12 +133,9 @@ public class RednecksRustBucket : ModItem
         recipe.AddIngredient<UraniumShotgun>();
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PurifiedGel", out ModItem PurifiedGel))
         {
             recipe.AddIngredient(PurifiedGel.Type, 10);
-
         }
-
     }
 }
-

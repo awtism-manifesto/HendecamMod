@@ -11,6 +11,7 @@ public class StoneBar : ModItem
         Item.ResearchUnlockCount = 25;
         ItemID.Sets.SortingPriorityMaterials[Type] = 2;
     }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.StoneBar>());
@@ -18,6 +19,7 @@ public class StoneBar : ModItem
         Item.height = 20;
         Item.value = 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

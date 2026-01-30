@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -11,7 +11,6 @@ public class GreaseBomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class GreaseBomb : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -38,9 +38,9 @@ public class GreaseBomb : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 13f)
         {
@@ -56,6 +56,7 @@ public class GreaseBomb : ModProjectile
         {
             Projectile.velocity.Y = 37f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -182,6 +183,7 @@ public class GreaseBomb : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);

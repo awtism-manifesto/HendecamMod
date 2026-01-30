@@ -1,7 +1,6 @@
-﻿using HendecamMod.Content.Tiles.Blocks;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Tiles.Blocks;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -25,6 +24,7 @@ public class TransOre : ModItem
         // Portuguese: "Bloco de exemplo", "Este é um bloco modded"
         // Polish: "Przykładowy blok", "Jest to modded blok"
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -55,6 +55,5 @@ public class TransOre : ModItem
         Item.height = 12;
         Item.rare = ItemRarityID.Blue;
         Item.value = 1590;
-
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class SecondHalf : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Betsy's Curse, Oiled, Daybroken, and Celled");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.BetsysCurse] = true;
@@ -29,12 +30,13 @@ public class SecondHalf : ModItem
         player.buffImmune[BuffID.Daybreak] = true;
         player.buffImmune[BuffID.StardustMinionBleed] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<LostFragment3>(1);
-        recipe.AddIngredient<LostFragment4>(1);
+        recipe.AddIngredient<LostFragment3>();
+        recipe.AddIngredient<LostFragment4>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

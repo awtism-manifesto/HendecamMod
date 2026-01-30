@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles.Items;
 
 public class CeramOmniSpawn : ModProjectile
@@ -47,6 +48,4 @@ public class CeramOmniSpawn : ModProjectile
             );
         }
     }
-
 }
-

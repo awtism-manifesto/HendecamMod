@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,6 +16,7 @@ public class MagicSoap : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Penetrated, Blood Butchered, Midas,"));
@@ -24,6 +24,7 @@ public class MagicSoap : ModItem
         tooltips.Add(new TooltipLine(Mod, "Face", "Slimed, Sparkle Slime, Wet, Lovestruck, Stinky, Ichor, Webbed,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Webbed, Cerebral Mindtrick, Tipsy, and the Water Candle"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.BoneJavelin] = true;
@@ -45,12 +46,13 @@ public class MagicSoap : ModItem
         player.buffImmune[BuffID.Tipsy] = true;
         player.buffImmune[BuffID.WaterCandle] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<OverthinkersChecklist>(1);
-        recipe.AddIngredient<ThreeInOne>(1);
+        recipe.AddIngredient<OverthinkersChecklist>();
+        recipe.AddIngredient<ThreeInOne>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

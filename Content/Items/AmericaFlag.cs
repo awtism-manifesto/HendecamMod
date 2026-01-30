@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class AmericaFlag : ModItem
@@ -23,6 +24,7 @@ public class AmericaFlag : ModItem
         Item.autoReuse = true;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AmericaFlagPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,10 +54,9 @@ public class AmericaFlag : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<BlankFlag>(1);
+        recipe.AddIngredient<BlankFlag>();
         recipe.AddIngredient(ItemID.Wood, 2);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
 }

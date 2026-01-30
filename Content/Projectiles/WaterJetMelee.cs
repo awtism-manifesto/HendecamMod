@@ -1,8 +1,8 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class WaterJetMelee : ModProjectile
@@ -28,7 +28,6 @@ public class WaterJetMelee : ModProjectile
 
     public override void AI()
     {
-
         // dust, all dust
         if (Projectile.alpha < 233)
         {
@@ -48,6 +47,4 @@ public class WaterJetMelee : ModProjectile
             }
         }
     }
-
 }
-

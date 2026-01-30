@@ -2,16 +2,16 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class ZoneSpawn : ModProjectile
 {
-
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.SentryShot[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -33,7 +33,6 @@ public class ZoneSpawn : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 20; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke);
@@ -41,9 +40,9 @@ public class ZoneSpawn : ModProjectile
             dust.velocity *= 18.5f;
             dust.scale *= 1.75f;
         }
+
         if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
         {
-
             for (int i = 0; i < 45; i++)
             {
                 float rotation = MathHelper.ToRadians(i * 8f);
@@ -63,7 +62,6 @@ public class ZoneSpawn : ModProjectile
         }
         else
         {
-
             for (int i = 0; i < 36; i++)
             {
                 float rotation = MathHelper.ToRadians(i * 10f);
@@ -82,6 +80,4 @@ public class ZoneSpawn : ModProjectile
             }
         }
     }
-
 }
-

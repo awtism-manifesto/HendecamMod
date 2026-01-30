@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class VenomFlame : ModProjectile
@@ -10,7 +11,6 @@ public class VenomFlame : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -37,10 +37,8 @@ public class VenomFlame : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 190)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;

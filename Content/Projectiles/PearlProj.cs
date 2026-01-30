@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class PearlProj : ModProjectile
@@ -12,13 +13,11 @@ public class PearlProj : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 16; // The length of old position to be recorded
@@ -40,14 +39,14 @@ public class PearlProj : ModProjectile
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<PearlTag>(), 270);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-
     }
+
     // Custom AI
     public override void AI()
     {
@@ -81,7 +80,6 @@ public class PearlProj : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.75f)).ToRotationVector2() * length;
-
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range

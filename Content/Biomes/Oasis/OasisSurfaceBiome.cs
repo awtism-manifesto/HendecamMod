@@ -19,12 +19,12 @@ public class OasisSurfaceBiome : ModBiome
     public override string BackgroundPath => base.BackgroundPath;
     public override Color? BackgroundColor => base.BackgroundColor;
     public override string MapBackground => BackgroundPath;
+    public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow;
+
     public override bool IsBiomeActive(Player player)
     {
         bool b1 = ModContent.GetInstance<OasisTileCount>().oasisBlockCount >= 40;
         bool b2 = player.ZoneSkyHeight || player.ZoneOverworldHeight;
         return b1 && b2;
     }
-    public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow;
 }
-

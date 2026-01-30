@@ -1,14 +1,18 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class TriAttack : ModItem
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -28,7 +32,7 @@ public class TriAttack : ModItem
 
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 63; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -45,19 +49,18 @@ public class TriAttack : ModItem
         Item.shoot = ModContent.ProjectileType<TriFlame2>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.8f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<NuhUh>();
-
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -72,6 +75,7 @@ public class TriAttack : ModItem
             {
                 nextSpawnTick = 2;
             }
+
             tickCounter++;
 
             if (tickCounter >= nextSpawnTick && tickCounter < 3)
@@ -97,7 +101,6 @@ public class TriAttack : ModItem
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 tickCounter = 0;
                 nextSpawnTick = 2;
-
             }
             else
             {
@@ -107,13 +110,12 @@ public class TriAttack : ModItem
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
                 type = ModContent.ProjectileType<TriFlame1>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-
             }
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -139,34 +141,32 @@ public class TriAttack : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("FrostburnIgniter", out ModItem FrostburnIgniter))
         {
-
             recipe = CreateRecipe();
 
             recipe.AddIngredient(ItemID.Flamethrower);
             recipe.AddIngredient(FrostburnIgniter.Type);
-            recipe.AddIngredient<Items.VenomThrower>();
+            recipe.AddIngredient<VenomThrower>();
             recipe.AddTile(TileID.MythrilAnvil);
 
             recipe.Register();
-
         }
         else
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Flamethrower);
             recipe.AddIngredient(ItemID.ElfMelter);
-            recipe.AddIngredient<Items.VenomThrower>();
+            recipe.AddIngredient<VenomThrower>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -7,16 +7,20 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class BladegunWave : ModProjectile
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 3;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 32; // The width of projectile hitbox
@@ -34,15 +38,13 @@ public class BladegunWave : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
         Projectile.alpha = 255;
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.8f);
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+
     public override void AI()
     {
         Projectile.scale = Main.rand.NextFloat(0.66f, 0.8f);
@@ -60,25 +62,29 @@ public class BladegunWave : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         if (Projectile.timeLeft < 245)
         {
             Projectile.alpha = 190;
         }
+
         if (Projectile.timeLeft < 230)
         {
             Projectile.alpha = 130;
         }
+
         if (Projectile.timeLeft < 220)
         {
             Projectile.alpha = 75;
         }
+
         if (Projectile.timeLeft < 210)
         {
             Projectile.alpha = 35;
         }
+
         if (Projectile.timeLeft > 178)
         {
-
             if (nextSpawnTick == 0)
             {
                 nextSpawnTick = Main.rand.Next(15, 24);
@@ -98,11 +104,9 @@ public class BladegunWave : ModProjectile
                 Projectile.netUpdate = true;
             }
         }
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
     }
 }

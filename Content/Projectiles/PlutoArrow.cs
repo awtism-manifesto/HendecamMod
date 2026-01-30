@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -16,7 +16,6 @@ public class PlutoArrow : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-
     }
 
     public override void SetDefaults()
@@ -29,6 +28,7 @@ public class PlutoArrow : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 29;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
@@ -53,12 +53,13 @@ public class PlutoArrow : ModProjectile
 
         return false;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.7f);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -81,6 +82,7 @@ public class PlutoArrow : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -102,23 +104,22 @@ public class PlutoArrow : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(9, 9).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
+            new Vector2(9, 9).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
         Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
-        new Vector2(-9, 9).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(-9, 9).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
-        new Vector2(9, -9).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(9, -9).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
-        new Vector2(-9, -9).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(-9, -9).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 13; i++) // Creates a splash of dust around the position the projectile dies.
         {

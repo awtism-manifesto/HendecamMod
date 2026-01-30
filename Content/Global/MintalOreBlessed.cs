@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Tiles.Blocks;
+﻿using System.Threading;
+using HendecamMod.Content.Tiles.Blocks;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -21,11 +21,10 @@ public class MintalOreBlessed : GlobalNPC
         if (!Main.hardMode)
         {
             ModContent.GetInstance<MintalSystem>().BlessWorldWithMintal();
-
         }
-
     }
 }
+
 public class MintalSystem : ModSystem
 {
     public static LocalizedText MintalMessage { get; private set; }
@@ -76,5 +75,4 @@ public class MintalSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

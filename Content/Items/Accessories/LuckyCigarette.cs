@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,8 +11,8 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Beard)]
 public class LuckyCigarette : ModItem
 {
-
     public static readonly int CritBonus = 10;
+
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -20,16 +20,16 @@ public class LuckyCigarette : ModItem
         Item.value = Item.sellPrice(silver: 66); // How many coins the item is worth
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.accessory = true;
-
     }
+
     public override void UpdateEquip(Player player)
     {
         player.breathMax = 167;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-
         var line = new TooltipLine(Mod, "Face", "10% increased crit chance");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time")

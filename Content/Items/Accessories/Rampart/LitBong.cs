@@ -16,11 +16,13 @@ public class LitBong : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Chaos State, Potion Sickness, Creative Shock, and Mighty Wind");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.ChaosState] = true;
@@ -28,13 +30,14 @@ public class LitBong : ModItem
         player.buffImmune[BuffID.NoBuilding] = true;
         player.buffImmune[BuffID.WindPushed] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Lightbulb>(1);
+        recipe.AddIngredient<Lightbulb>();
 
-        recipe.AddIngredient<EmptyBong>(1);
+        recipe.AddIngredient<EmptyBong>();
         recipe.AddIngredient<WeedLeaves>(3);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

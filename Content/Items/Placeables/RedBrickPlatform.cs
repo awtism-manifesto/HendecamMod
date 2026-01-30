@@ -23,7 +23,7 @@ public class RedBrickPlatform : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient(ItemID.RedBrick, 1);
+        recipe.AddIngredient(ItemID.RedBrick);
         recipe.Register();
     }
 }

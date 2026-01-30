@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -16,11 +16,11 @@ namespace HendecamMod.Content.Items;
 /// </summary>
 public class PortableTower : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -49,6 +49,7 @@ public class PortableTower : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 3; // The number of projectiles that this gun will shoot.
@@ -93,18 +94,19 @@ public class PortableTower : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(6f, -15f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.AstatineBar>(15);
-        recipe.AddIngredient<Items.FragmentFlatEarth>(8);
-        recipe.AddIngredient<Items.Iphone>();
+        recipe.AddIngredient<AstatineBar>(15);
+        recipe.AddIngredient<FragmentFlatEarth>(8);
+        recipe.AddIngredient<Iphone>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
-
 }

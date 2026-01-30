@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ArrowRaider : ModItem
@@ -40,13 +41,13 @@ public class ArrowRaider : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
         float ceilingLimit = target.Y;
         if (ceilingLimit > player.Center.Y - 200f)
         {
             ceilingLimit = player.Center.Y - 200f;
         }
+
         // Loop these functions 3 times.
         for (int i = 0; i < 1; i++)
         {
@@ -108,8 +109,8 @@ public class ArrowRaider : ModItem
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-16f, -1f);

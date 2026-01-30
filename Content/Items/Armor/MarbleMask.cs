@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,6 +12,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class MarbleMask : ModItem
 {
+    public static readonly int AdditiveMeleeDamageBonus = 8;
+    public static readonly int MeleeAttackSpeedBonus = 8;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -35,6 +37,7 @@ public class MarbleMask : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -60,13 +63,13 @@ public class MarbleMask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<MarbleChestplate>() && legs.type == ModContent.ItemType<MarbleGreaves>();
     }
-    public static readonly int AdditiveMeleeDamageBonus = 8;
-    public static readonly int MeleeAttackSpeedBonus = 8;
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -92,8 +95,8 @@ public class MarbleMask : ModItem
         recipe.AddRecipeGroup("IronBar", 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
     }

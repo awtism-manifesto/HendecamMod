@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class DragonBreath3Shadow : ModProjectile
@@ -10,7 +11,6 @@ public class DragonBreath3Shadow : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -38,7 +38,6 @@ public class DragonBreath3Shadow : ModProjectile
     {
         if (Projectile.alpha < 196)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -59,7 +58,6 @@ public class DragonBreath3Shadow : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 1;
         target.AddBuff(BuffID.ShadowFlame, 450);
     }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -20,6 +20,7 @@ public class PlasticScrap : ModItem
         Item.value = 10;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,7 +51,7 @@ public class PlasticScrap : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("Plastic", out ModItem Plastic))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("Plastic", out ModItem Plastic))
         {
             recipe = CreateRecipe(20);
 
@@ -63,12 +64,10 @@ public class PlasticScrap : ModItem
         {
             recipe = CreateRecipe();
 
-            recipe.AddIngredient<Items.CrudeOil>(3);
+            recipe.AddIngredient<CrudeOil>(3);
 
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
-
         }
     }
-
 }

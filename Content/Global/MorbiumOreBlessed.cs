@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Tiles.Blocks;
+﻿using System.Threading;
+using HendecamMod.Content.Tiles.Blocks;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -11,7 +11,6 @@ namespace HendecamMod.Content.Global;
 
 public class MorbiumOreBlessed : GlobalNPC
 {
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.Plantera;
@@ -22,11 +21,10 @@ public class MorbiumOreBlessed : GlobalNPC
         if (!NPC.downedPlantBoss)
         {
             ModContent.GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
-
         }
-
     }
 }
+
 public class MorbiumSystem : ModSystem
 {
     public static LocalizedText MorbiumMessage { get; private set; }
@@ -77,5 +75,4 @@ public class MorbiumSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

@@ -1,23 +1,26 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Weapons;
 
 public class ApexPlasmaCannon : ModItem
 {
+    private int shotCounter;
+
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         // shoutouts to manifesto for this weapon
@@ -44,6 +47,7 @@ public class ApexPlasmaCannon : ModItem
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -66,11 +70,11 @@ public class ApexPlasmaCannon : ModItem
             Item.shoot = ModContent.ProjectileType<ApexPlasmaBullet>();
             Item.useAmmo = AmmoID.Bullet;
             Item.mana = 8;
-
         }
 
         return base.CanUseItem(player);
     }
+
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
@@ -79,6 +83,7 @@ public class ApexPlasmaCannon : ModItem
         spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
         return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (player.altFunctionUse == 2)
@@ -89,13 +94,10 @@ public class ApexPlasmaCannon : ModItem
         {
             type = ModContent.ProjectileType<ApexPlasmaBullet>();
         }
-
     }
-    private int shotCounter = 0;
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         // golden sigma
         if (shotCounter <= 0)
         {
@@ -130,6 +132,7 @@ public class ApexPlasmaCannon : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Left click to rapidly cast Apex Plasma Bullets that pierce many enemies");
@@ -145,8 +148,8 @@ public class ApexPlasmaCannon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-50f, -1.5f);

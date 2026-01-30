@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,6 +24,7 @@ public class LunarDart : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 13;
@@ -45,12 +46,12 @@ public class LunarDart : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<MoonBurn>(), 300);
-
     }
+
     public override void AI()
     {
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
@@ -71,7 +72,7 @@ public class LunarDart : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 1f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 1.05f;

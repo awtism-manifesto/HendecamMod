@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class Godhood : ModItem
         Item.rare = ItemRarityID.Master;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Nothing can touch you, everything you touch crumbles to dust"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Works best with Hallowed Armor"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.AddBuff(BuffID.ShadowDodge, 300);
@@ -34,12 +35,13 @@ public class Godhood : ModItem
         player.AddBuff(ModContent.BuffType<HeartBuff>(), 300);
         player.AddBuff(ModContent.BuffType<JungleHealing>(), 300);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Bullshit5>(1);
-        recipe.AddIngredient<SoulOfImmunityAccessory>(1);
+        recipe.AddIngredient<Bullshit5>();
+        recipe.AddIngredient<SoulOfImmunityAccessory>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.AddTile(TileID.VoidMonolith);
         recipe.Register();

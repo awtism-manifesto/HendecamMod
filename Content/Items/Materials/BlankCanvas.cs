@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,11 +8,11 @@ namespace HendecamMod.Content.Items.Materials;
 
 public class BlankCanvas : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -25,6 +25,7 @@ public class BlankCanvas : ModItem
         Item.useAnimation = 15;
         Item.autoReuse = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Used to craft custom paintings");
@@ -43,6 +44,7 @@ public class BlankCanvas : ModItem
                 l.Hide();
             }
         }
+
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -51,6 +53,7 @@ public class BlankCanvas : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
@@ -67,5 +70,4 @@ public class BlankCanvas : ModItem
             recipe.Register();
         }
     }
-
 }

@@ -12,6 +12,7 @@ public class PykreteChestplate : ModItem
         Item.defense = 5;
         Item.rare = ItemRarityID.White;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class BeerYeet : ModProjectile
@@ -11,7 +12,6 @@ public class BeerYeet : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -53,9 +53,9 @@ public class BeerYeet : ModProjectile
         {
             Projectile.velocity.Y = 21f;
         }
+
         if (Projectile.alpha < 235)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -74,9 +74,7 @@ public class BeerYeet : ModProjectile
                 fire3Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fire3Dust.noGravity = true;
                 fire3Dust.velocity *= 1.2f;
-
             }
         }
     }
-
 }

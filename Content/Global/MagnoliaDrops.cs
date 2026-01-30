@@ -19,142 +19,143 @@ public class MagnoliaDrops : GlobalNPC
         if (npc.type == NPCID.Demon)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.FireImp)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.Hellbat)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.LavaSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.Lavabat)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.BoneSerpentHead)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.RedDevil)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.VoodooDemon)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), chanceDenominator: 4, 2, 7));
-
         }
+
         if (npc.type == NPCID.Harpy)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 3, 1, 4));
-
         }
+
         if (npc.type == NPCID.WyvernBody)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 2, 5, 12));
-
         }
+
         if (npc.type == NPCID.Zombie)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
-
         }
+
         if (npc.type == NPCID.DemonEye)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
-
         }
+
         if (npc.type == NPCID.PossessedArmor)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteelBar>(), chanceDenominator: 5, 1, 3));
-
         }
+
         if (npc.type == NPCID.Corruptor)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.FloatyGross)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.GiantBat)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.GiantFlyingFox)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.Gastropod)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.IlluminantBat)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.IceElemental)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.Lavabat)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.MossHornet)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.Pixie)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.RedDevil)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
+
         if (npc.type == NPCID.Wraith)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
+
         if (npc.type == NPCID.WanderingEye)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
         }
 
         if (npc.type == NPCID.DarkCaster)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.WaterBolt, 50));
         }
+
         if (npc.type == NPCID.BlackSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CoalLump>(), 1, 2, 7));
-
         }
+
         if (npc.type == NPCID.EyeofCthulhu)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 1, 5));
@@ -169,6 +170,7 @@ public class MagnoliaDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.RainCloud, 3, 20, 35));
         }
+
         if (npc.type == NPCID.IceMimic)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.SnowGlobe, 3));
@@ -251,7 +253,7 @@ public class MagnoliaDrops : GlobalNPC
 
         if (npc.type == NPCID.Angler)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.MagicConch, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.MagicConch));
         }
 
         if (npc.type == NPCID.HoppinJack)
@@ -291,8 +293,7 @@ public class MagnoliaDrops : GlobalNPC
 
         if (npc.type == NPCID.RuneWizard)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RunicCodex>(), 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RunicCodex>()));
         }
-
     }
 }

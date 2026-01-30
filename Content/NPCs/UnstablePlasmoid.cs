@@ -19,8 +19,9 @@ public class UnstablePlasmoid : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.Pixie;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -55,10 +56,12 @@ public class UnstablePlasmoid : ModNPC
             NPC.damage = 145;
         }
     }
+
     public override void AI()
     {
         Lighting.AddLight(NPC.Center, 2.5f, 0.25f, 0.8f);
     }
+
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
     {
         for (int i = 0; i < 15; i++) // Creates a splash of dust around the position the projectile dies.
@@ -68,22 +71,24 @@ public class UnstablePlasmoid : ModNPC
             dust.velocity *= 11.25f;
             dust.scale *= 1.75f;
         }
+
         int buff3Type = ModContent.BuffType<RadPoisoning3>();
         // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
         int time3Add = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buff3Type, time3Add);
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that even the Moon Lord trembles in fear at the destructive potential of Unstable Plasmoids. Studying them may be the key to major technological advancements...\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that even the Moon Lord trembles in fear at the destructive potential of Unstable Plasmoids. Studying them may be the key to major technological advancements...\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
 
@@ -106,8 +111,7 @@ public class UnstablePlasmoid : ModNPC
         {
             return SpawnCondition.Sky.Chance * 0.072f;
         }
-        else
-            return SpawnCondition.Sky.Chance * 0f;
-    }
 
+        return SpawnCondition.Sky.Chance * 0f;
+    }
 }

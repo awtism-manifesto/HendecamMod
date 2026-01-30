@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using System;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -12,7 +12,6 @@ public class ShroomiteMissileProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -25,6 +24,7 @@ public class ShroomiteMissileProj : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 24;
@@ -41,6 +41,7 @@ public class ShroomiteMissileProj : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.

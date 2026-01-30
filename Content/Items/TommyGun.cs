@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -25,7 +25,7 @@ public class TommyGun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item89;
+        Item.UseSound = SoundID.Item89;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 26; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -36,9 +36,9 @@ public class TommyGun : ModItem
         Item.shootSpeed = 10.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-
         var line = new TooltipLine(Mod, "Face", "Also seen in about 6 or 7 other mods");
         tooltips.Add(line);
 
@@ -48,6 +48,7 @@ public class TommyGun : ModItem
         };
         tooltips.Add(line);
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -66,6 +67,7 @@ public class TommyGun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.25f;

@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ImpulseBow : ModItem
@@ -24,7 +25,7 @@ public class ImpulseBow : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item75;
+        Item.UseSound = SoundID.Item75;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>(); // Sets the damage type to ranged.
         Item.damage = 95; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -70,11 +71,11 @@ public class ImpulseBow : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.PulseBow);
-        recipe.AddIngredient<Items.AstatineBar>(15);
+        recipe.AddIngredient<AstatineBar>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-19f, -1f);

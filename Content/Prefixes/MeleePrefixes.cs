@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Prefixes;
+
 public class Gargantuan : ModPrefix
 {
     // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
@@ -26,11 +27,12 @@ public class Gargantuan : ModPrefix
     {
         // apply to all ranged classes
         if (item.DamageType == DamageClass.Melee || item.DamageType == ModContent.GetInstance<MeleeRangedDamage>()
-            || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeMagicDamage>() || item.DamageType == ModContent.GetInstance<MeleeSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
-        { return true; }
-        else
-        { return false; }
+                                                 || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeMagicDamage>() || item.DamageType == ModContent.GetInstance<MeleeSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        {
+            return true;
+        }
 
+        return false;
     }
 
     // Use this function to modify these stats for items which have this prefix:
@@ -53,6 +55,5 @@ public class Gargantuan : ModPrefix
     // This is used to modify most other stats of items which have this modifier.
     public override void Apply(Item item)
     {
-
     }
 }

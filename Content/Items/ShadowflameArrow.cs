@@ -36,5 +36,4 @@ public class ShadowflameArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
         recipe.Register();
     }
-
 }

@@ -30,6 +30,7 @@ public class YellowReverse : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

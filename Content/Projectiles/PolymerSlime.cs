@@ -17,16 +17,15 @@ public class PolymerSlime : ModProjectile
         ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         if (Main.rand.NextBool(5))
         {
-
             target.AddBuff(BuffID.Oiled, 240);
         }
-
     }
+
     public override void SetDefaults()
     {
         Projectile.CloneDefaults(ProjectileID.BabySlime);
@@ -44,6 +43,7 @@ public class PolymerSlime : ModProjectile
 
         Projectile.penetrate = -1;
     }
+
     public override bool? CanCutTiles()
     {
         return false;
@@ -60,7 +60,6 @@ public class PolymerSlime : ModProjectile
 
         if (!CheckActive(owner))
         {
-            return;
         }
     }
 

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -24,6 +24,7 @@ public class DvdBlue : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 28;
@@ -40,9 +41,9 @@ public class DvdBlue : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
@@ -57,23 +58,21 @@ public class DvdBlue : ModProjectile
         {
             Projectile.velocity.Y = -oldVelocity.Y;
         }
+
         return false;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 6;
-
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
-        }
-        else
-        {
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -114,7 +113,7 @@ public class DvdBlue : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<DvdRed>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<DvdRed>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -135,6 +134,7 @@ public class DvdBlue : ModProjectile
             fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BlueTorch, 0f, 0f, 100, default, 2.5f);
             fire11Dust.velocity *= 3f;
         }
+
         for (int j = 0; j < 15; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 0.8f);

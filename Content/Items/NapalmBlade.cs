@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -41,6 +41,7 @@ public class NapalmBlade : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 33; // The number of projectiles that this gun will shoot.
@@ -91,10 +92,9 @@ public class NapalmBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FragmentSolar, 5);
         recipe.AddIngredient(ItemID.Ichor, 10);
-        recipe.AddIngredient<Items.RefinedOil>(50);
-        recipe.AddIngredient<Items.BrokenHeroGun>();
+        recipe.AddIngredient<RefinedOil>(50);
+        recipe.AddIngredient<BrokenHeroGun>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

@@ -1,16 +1,16 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class DeliriantDagger : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.damage = 111;
@@ -31,12 +31,11 @@ public class DeliriantDagger : ModItem
 
         Item.shoot = ModContent.ProjectileType<DaggerProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 6.66f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
-
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
-
     }
     //   int NumProjectiles = Main.rand.Next(7, 11); 
 
@@ -51,21 +50,17 @@ public class DeliriantDagger : ModItem
             Main.projectile[proj].GetGlobalProjectile<DeliriantComboSetup>().fromtheDeliriantDagger = true;
             return false;
         }
-        else
+
+        int NumProjectiles = Main.rand.Next(7, 10);
+        for (int i = 0; i < NumProjectiles; i++)
         {
-            int NumProjectiles = Main.rand.Next(7, 10);
-            for (int i = 0; i < NumProjectiles; i++)
-            {
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360f));
 
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360f));
-
-                int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, ModContent.ProjectileType<DaggerProj>(), (int)(damage * 0.85f), knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<DeliriantComboSetup>().fromtheDeliriantDagger = false;
-
-            }
-            return true; // Prevent vanilla projectile spawn
-
+            int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, ModContent.ProjectileType<DaggerProj>(), (int)(damage * 0.85f), knockback, player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<DeliriantComboSetup>().fromtheDeliriantDagger = false;
         }
+
+        return true; // Prevent vanilla projectile spawn
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -95,11 +90,12 @@ public class DeliriantDagger : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("PlutoniumShank", out ModItem PlutoniumShank))
+        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind("PlutoniumShank", out ModItem PlutoniumShank))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ShadowFlameKnife);
@@ -108,7 +104,6 @@ public class DeliriantDagger : ModItem
             recipe.AddIngredient(PlutoniumShank.Type);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
         else
         {
@@ -119,8 +114,6 @@ public class DeliriantDagger : ModItem
             recipe.AddIngredient<PlutoniumBar>(12);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
-
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class MoldyCheese : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 Defense, Doubled Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Minecarts, Weapon, Armor, or Accessory Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyPenetration>().NastyEffect = true;
@@ -120,12 +121,13 @@ public class MoldyCheese : ModItem
         player.buffImmune[BuffID.PaladinsShield] = true;
         player.buffImmune[BuffID.Panic] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<Disenchanter>(1);
-        recipe.AddIngredient<Lunchly>(1);
+        recipe.AddIngredient<Disenchanter>();
+        recipe.AddIngredient<Lunchly>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

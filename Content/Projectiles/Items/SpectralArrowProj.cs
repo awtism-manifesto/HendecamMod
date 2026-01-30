@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -51,6 +51,7 @@ public class SpectralArrowProj : ModProjectile
         {
             Projectile.velocity.Y = 21f;
         }
+
         // dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -74,13 +75,14 @@ public class SpectralArrowProj : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<ShinyTag2>(), 300);
     }
+
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrystalSerpent_Pink);
@@ -88,6 +90,7 @@ public class SpectralArrowProj : ModProjectile
             dust.velocity *= 1.5f;
             dust.scale *= 0.9f;
         }
+
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.YellowStarDust);

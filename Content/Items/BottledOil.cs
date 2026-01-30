@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -32,12 +32,13 @@ public class BottledOil : ModItem
         Item.rare = ItemRarityID.White;
         Item.shoot = ModContent.ProjectileType<OilBottleProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.25f; // The speed of the projectile.
-
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -63,6 +64,7 @@ public class BottledOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(10);
@@ -70,6 +72,5 @@ public class BottledOil : ModItem
         recipe.AddIngredient(ItemID.Bottle);
         recipe.AddIngredient<CrudeOil>();
         recipe.Register();
-
     }
 }

@@ -8,8 +8,9 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class RadBoomerang : ModProjectile
 {
@@ -30,8 +31,8 @@ public class RadBoomerang : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
+
     public override void AI()
     {
         for (int i = 0; i < 2; i++)
@@ -48,21 +49,20 @@ public class RadBoomerang : ModProjectile
             fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             fireDust.velocity *= 0.05f;
         }
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 250);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<RadParticle>(), (int)(Projectile.damage * 0.667f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<RadParticle>(), (int)(Projectile.damage * 0.667f), Projectile.knockBack, Projectile.owner);
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
     }
 }

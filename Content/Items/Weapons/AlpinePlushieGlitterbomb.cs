@@ -1,11 +1,13 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Weapons;
+
 public class AlpinePlushieGlitterbomb : ModItem
 {
     public override void SetDefaults()
@@ -29,8 +31,8 @@ public class AlpinePlushieGlitterbomb : ModItem
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -53,7 +55,5 @@ public class AlpinePlushieGlitterbomb : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
-
 }

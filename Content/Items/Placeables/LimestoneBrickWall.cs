@@ -24,7 +24,7 @@ public class LimestoneBrickWall : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(4);
-        recipe.AddIngredient<LimestoneBrick>(1);
+        recipe.AddIngredient<LimestoneBrick>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

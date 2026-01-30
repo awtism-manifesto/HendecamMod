@@ -16,11 +16,13 @@ public class RoyalCushion : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "All that are creepy and crawly should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.BloodNautilus] = true;
@@ -49,12 +51,13 @@ public class RoyalCushion : ModItem
         player.npcTypeNoAggro[NPCID.DuneSplicerHead] = true;
         player.npcTypeNoAggro[NPCID.DuneSplicerTail] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.WhoopieCushion, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.WhoopieCushion);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

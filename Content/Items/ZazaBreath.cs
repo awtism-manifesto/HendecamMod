@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ZazaBreath : ModItem
@@ -28,7 +29,7 @@ public class ZazaBreath : ModItem
         Item.reuseDelay = 9;
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,18 +41,18 @@ public class ZazaBreath : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 8.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<ZazaSmoke>();
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.85f;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -92,7 +93,6 @@ public class ZazaBreath : ModItem
         {
             recipe.AddIngredient(ThrowerParts.Type);
         }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

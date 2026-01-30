@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
@@ -41,8 +41,8 @@ public class LycoSwing : ModProjectile
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
         Projectile.ownerHitCheckDistance = 146f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
-                                               // Normally, projectiles die after they have hit all the enemies they can.
-                                               // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
+        // Normally, projectiles die after they have hit all the enemies they can.
+        // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
         Projectile.stopsDealingDamageAfterPenetrateHits = true;
 
         // We will be using custom AI for this projectile. The original Excalibur uses aiStyle 190.
@@ -162,37 +162,33 @@ public class LycoSwing : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
 
             if (Main.rand.NextBool(3))
             {
-
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
-
+                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
+
             if (Main.rand.NextBool(3))
             {
-
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
-
+                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
+
             if (Main.rand.NextBool(3))
             {
-
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
-
+                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
-
         }
+
         target.AddBuff(ModContent.BuffType<LycopiteSpores>(), 210);
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -201,7 +197,6 @@ public class LycoSwing : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 5.15f;
             dust.scale *= 1.05f;
-
         }
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
@@ -242,21 +237,21 @@ public class LycoSwing : ModProjectile
         faintLightingColor.B = (byte)(faintLightingColor.R * (0.25f + lightingColor * 0.75f));
 
         // Back part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects);
         // Very faint part affected by the light color
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Middle part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects);
         // Front part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects);
         // Thin top line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Thin middle line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects);
         // Thin bottom line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects);
         // This draws a large star sparkle at the front of the projectile.
-        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
+        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * (texture.Width * 0.5f - 4f) * scale;
         DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos2, new Color(255, 165, 99, 0) * lerpTime * 0.5f, middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, 0f, new Vector2(2f, Utils.Remap(percentageOfLife, 0f, 1f, 4f, 1f)) * scale, Vector2.One * scale);
 
         // Uncomment this line for a visual representation of the projectile's size.

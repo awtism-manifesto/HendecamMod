@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,6 +17,7 @@ public class JunkFood : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
@@ -25,6 +25,7 @@ public class JunkFood : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, Enviornmental,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Building, Fishing, Food, or Exploration Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
@@ -100,12 +101,13 @@ public class JunkFood : ModItem
         player.buffImmune[BuffID.WellFed2] = true;
         player.buffImmune[BuffID.WellFed3] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<SlashedJacket>(1);
-        recipe.AddIngredient<SchoolFood>(1);
+        recipe.AddIngredient<SlashedJacket>();
+        recipe.AddIngredient<SchoolFood>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

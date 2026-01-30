@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -52,6 +52,7 @@ public class EldritchProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -76,6 +77,7 @@ public class EldritchProj : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.CursedInferno, 240);
@@ -83,9 +85,9 @@ public class EldritchProj : ModProjectile
         target.AddBuff(BuffID.ShadowFlame, 240);
         target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
     }
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-
     }
 }

@@ -38,10 +38,8 @@ public class LycopiteOreTile : ModTile
     // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.95f;
         g = 0.395f;
         b = 0.05f;
-
     }
 }

@@ -32,12 +32,11 @@ public class PlutoniumOrePlaced : ModTile
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.77f;
         g = 0.35f;
         b = 1f;
-
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

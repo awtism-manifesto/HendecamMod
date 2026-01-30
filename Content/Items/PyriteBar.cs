@@ -16,8 +16,9 @@ public class PyriteBar : ModItem
         Item.consumable = true;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PyriteBarTile>(), 0);
+        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PyriteBarTile>());
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

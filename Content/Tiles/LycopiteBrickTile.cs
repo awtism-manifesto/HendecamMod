@@ -21,6 +21,7 @@ public class LycopiteBrickTile : ModTile
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(255, 77, 5));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 2 : 5;

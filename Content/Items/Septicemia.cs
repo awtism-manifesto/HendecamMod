@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class Septicemia : ModItem
@@ -25,7 +26,7 @@ public class Septicemia : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item167;
+        Item.UseSound = SoundID.Item167;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 23; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,18 +38,15 @@ public class Septicemia : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 19.9f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.BloodArrow;
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
         Vector2 new1Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.35f));
@@ -90,6 +88,7 @@ public class Septicemia : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -104,16 +103,17 @@ public class Septicemia : ModItem
         {
             recipe.AddIngredient(ArteryPiece.Type, 10);
         }
-        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind<ModItem>("NightmareScale", out ModItem NightmareScale)
-          && ParaMerica.TryFind<ModItem>("DivineFlesh", out ModItem DivineFlesh))
+
+        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind("NightmareScale", out ModItem NightmareScale)
+                                                                && ParaMerica.TryFind("DivineFlesh", out ModItem DivineFlesh))
 
         {
             recipe.AddIngredient(NightmareScale.Type, 6);
 
             recipe.AddIngredient(DivineFlesh.Type, 6);
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -29,8 +29,8 @@ public class LimestoneBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<LimestoneBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);

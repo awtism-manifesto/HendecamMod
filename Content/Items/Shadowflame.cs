@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -20,6 +20,7 @@ public class Shadowflame : ModItem
         Item.value = 1499;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,16 +50,11 @@ public class Shadowflame : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("TheFirstShadowflame", out ModItem TheFirstShadowflame))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("TheFirstShadowflame", out ModItem TheFirstShadowflame))
         {
             recipe.AddIngredient(TheFirstShadowflame.Type);
             recipe.AddTile(TileID.AdamantiteForge);
             recipe.Register();
         }
-        else
-        {
-        }
-
     }
-
 }

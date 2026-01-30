@@ -25,12 +25,12 @@ public class PoorMahoganySword : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.PoorMahogany>(7);
+        recipe.AddIngredient<PoorMahogany>(7);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
 }

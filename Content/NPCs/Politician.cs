@@ -1,12 +1,12 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -26,20 +26,22 @@ namespace HendecamMod.Content.NPCs;
 public class Politician : ModNPC
 {
     public const string ShopName = "Shop";
-    public int NumberOfTimesTalkedTo = 0;
 
     private static int ShimmerHeadIndex;
     private static Profiles.StackedNPCProfile NPCProfile;
+    public int NumberOfTimesTalkedTo;
 
     public override void Load()
     {
         // Adds our Shimmer Head to the NPCHeadLoader.
         ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, Texture + "_Shimmer_Head");
     }
+
     public override ITownNPCProfile TownNPCProfile()
     {
         return NPCProfile;
     }
+
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
@@ -55,12 +57,12 @@ public class Politician : ModNPC
 
         NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
         // Influences how the NPC looks in the Bestiary
-        NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+        NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
             Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             Direction = 1 // -1 is left and 1 is right. NPCs are drawn facing the left by default but ExamplePerson will be drawn facing the right
-                          // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
-                          // If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
+            // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
+            // If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
         };
 
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
@@ -70,12 +72,11 @@ public class Politician : ModNPC
         NPC.Happiness
             .SetBiomeAffection<ForestBiome>(AffectionLevel.Like) // Example Person prefers the forest.
             .SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike) // Example Person dislikes the snow.
-
             .SetNPCAffection(NPCID.Dryad, AffectionLevel.Hate) // Loves living near the dryad.
             .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Like) // Likes living near the guide.
             .SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Love) // Dislikes living near the merchant.
             .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Dislike) // Hates living near the demolitionist.
-        ; // < Mind the semicolon!
+            ; // < Mind the semicolon!
 
         // This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
         NPCProfile = new Profiles.StackedNPCProfile(
@@ -104,17 +105,18 @@ public class Politician : ModNPC
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets the preferred biomes of this town NPC listed in the bestiary.
+            // With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
+            BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from the most putrid depths of Washington D.C, the Politician is here to fearmonger, leech off everyone else and generally make society a worse place"),
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("Hailing from the most putrid depths of Washington D.C, the Politician is here to fearmonger, leech off everyone else and generally make society a worse place"),
 
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
 
@@ -164,21 +166,24 @@ public class Politician : ModNPC
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, hatGore);
             }
-            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore, 1f);
+
+            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
         }
     }
+
     public override List<string> SetNPCNameList()
     {
-        return new List<string>() {
+        return new List<string>
+        {
             "Donald Trump",
             "Joe Biden",
             "George Bush",
-             "JD Vance",
-              "Chuck Schumer",
+            "JD Vance",
+            "Chuck Schumer",
 
             "Ronald Reagan",
             "Barack Obama",
@@ -190,22 +195,24 @@ public class Politician : ModNPC
             "Mitch McConnell"
         };
     }
+
     public override void FindFrame(int frameHeight)
     {
         /*npc.frame.Width = 40;
-			if (((int)Main.time / 10) % 2 == 0)
-			{
-				npc.frame.X = 40;
-			}
-			else
-			{
-				npc.frame.X = 0;
-			}*/
+            if (((int)Main.time / 10) % 2 == 0)
+            {
+                npc.frame.X = 40;
+            }
+            else
+            {
+                npc.frame.X = 0;
+            }*/
     }
-    public override void SetChatButtons(ref string button, ref string button2)
-    { // What the chat buttons are when you open up the chat UI
-        button = Language.GetTextValue("LegacyInterface.28");
 
+    public override void SetChatButtons(ref string button, ref string button2)
+    {
+        // What the chat buttons are when you open up the chat UI
+        button = Language.GetTextValue("LegacyInterface.28");
     }
 
     public override string GetChat()
@@ -213,7 +220,6 @@ public class Politician : ModNPC
         WeightedRandom<string> chat = new WeightedRandom<string>();
         if (NPC.IsShimmerVariant)
         {
-
         }
 
         chat.Add(Language.GetTextValue("I should probably clarify real quick that my dumbass dialogue reflects what actual politicians think, not what Autism Manifesto thinks."), 2.5);
@@ -254,7 +260,8 @@ public class Politician : ModNPC
     }
 
     public override bool CanTownNPCSpawn(int numTownNPCs)
-    { // Requirements for the town NPC to spawn.
+    {
+        // Requirements for the town NPC to spawn.
         if (TownNPCRespawnSystem.unlockedExamplePersonSpawn)
         {
             // If Example Person has spawned in this world before, we don't require the user satisfying the ExampleItem/ExampleBlock inventory conditions for a respawn.
@@ -272,11 +279,11 @@ public class Politician : ModNPC
 
         return false;
     }
+
     public override void OnChatButtonClicked(bool firstButton, ref string shop)
     {
         if (firstButton)
         {
-
             shop = ShopName; // Name of the shop tab we want to open.
         }
     }
@@ -285,7 +292,7 @@ public class Politician : ModNPC
 
     public override void AddShops()
     {
-        var npcShop = new NPCShop(Type, ShopName)
+        var npcShop = new NPCShop(Type)
             .Add<Beer>()
             .Add<CrudeOil>()
             .Add<RefinedOil>(Condition.Hardmode)
@@ -295,7 +302,7 @@ public class Politician : ModNPC
             .Add(ItemID.CrimtaneBar, Condition.DownedEowOrBoc)
             .Add(ItemID.TissueSample, Condition.DownedEowOrBoc)
             .Add(ItemID.ShadowScale, Condition.DownedEowOrBoc)
-            .Add<KetamineInjection>(condition: Terraria.Condition.NpcIsPresent(NPCID.TaxCollector))
+            .Add<KetamineInjection>(condition: Condition.NpcIsPresent(NPCID.TaxCollector))
             .Add<TarriffStamper>()
             .Add<CarbonDioxideBottle>(Condition.DownedEarlygameBoss)
             .Add<UnicornPoacher>(Condition.InHallow)
@@ -312,6 +319,7 @@ public class Politician : ModNPC
             npcShop.Add(SoulofBlight.Type, Condition.DownedEmpressOfLight);
         }
     }
+
     public override void ModifyActiveShop(string shopName, Item[] items)
     {
         foreach (Item item in items)
@@ -333,7 +341,6 @@ public class Politician : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Glock>(), 3));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AR15>(), 5));
     }

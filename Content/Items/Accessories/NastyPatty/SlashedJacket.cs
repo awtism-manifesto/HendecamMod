@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class SlashedJacket : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, and Hellfire for all attacks"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, or Enviornmental Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
@@ -72,12 +73,13 @@ public class SlashedJacket : ModItem
         player.buffImmune[BuffID.CatBast] = true;
         player.buffImmune[BuffID.MonsterBanner] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<BurntPan>(1);
-        recipe.AddIngredient<TornFilter>(1);
+        recipe.AddIngredient<BurntPan>();
+        recipe.AddIngredient<TornFilter>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

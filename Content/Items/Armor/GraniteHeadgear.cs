@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -34,6 +34,7 @@ public class GraniteHeadgear : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,11 +60,13 @@ public class GraniteHeadgear : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<GraniteChestguard>() && legs.type == ModContent.ItemType<GraniteLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -79,8 +82,8 @@ public class GraniteHeadgear : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Magic) += MagicDamageBonus / 105f;
         player.manaCost = 0.9f;
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -89,10 +92,9 @@ public class GraniteHeadgear : ModItem
         recipe.AddRecipeGroup("IronBar", 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
+
 public class AncientCobaltPickaxe : ModItem
 {
     public override void SetDefaults()
@@ -33,6 +34,7 @@ public class AncientCobaltPickaxe : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -51,8 +53,8 @@ public class AncientCobaltPickaxe : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -60,5 +62,4 @@ public class AncientCobaltPickaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

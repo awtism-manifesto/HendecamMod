@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,9 +10,9 @@ public class GoldMultiaxe : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.damage = 19;
@@ -36,10 +36,12 @@ public class GoldMultiaxe : ModItem
         Item.axe = 18;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -51,7 +53,6 @@ public class GoldMultiaxe : ModItem
 
             Item.axe = 0;
             Item.hammer = 75;
-
         }
         else
         {
@@ -77,6 +78,7 @@ public class GoldMultiaxe : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -88,5 +90,4 @@ public class GoldMultiaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

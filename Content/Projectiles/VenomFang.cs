@@ -1,16 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class VenomFang : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 6;
     }
 
@@ -33,7 +33,6 @@ public class VenomFang : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -73,9 +72,9 @@ public class VenomFang : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.AddBuff(BuffID.Venom, 180);
     }
@@ -86,5 +85,4 @@ public class VenomFang : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

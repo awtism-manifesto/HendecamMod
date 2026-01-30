@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -43,6 +43,7 @@ public class FlinxsFurblade : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -61,21 +62,19 @@ public class FlinxsFurblade : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind<ModItem>("Cyborg", out ModItem Cyborg))
+        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind("Cyborg", out ModItem Cyborg))
         {
             recipe = CreateRecipe();
 
             recipe.AddIngredient(ItemID.DeerclopsBossBag);
             recipe.Register();
         }
-
-        else
-        {
-        }
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

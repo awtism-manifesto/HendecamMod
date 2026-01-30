@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,7 +8,6 @@ namespace HendecamMod.Content.Items;
 
 public class RefinedOil : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
@@ -58,15 +57,15 @@ public class RefinedOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(7);
 
-        recipe.AddIngredient<Items.CrudeOil>(10);
-        recipe.AddIngredient<Materials.FireDiamond>(1);
+        recipe.AddIngredient<CrudeOil>(10);
+        recipe.AddIngredient<Materials.FireDiamond>();
         recipe.AddIngredient(ItemID.LivingFireBlock);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
     }
 }

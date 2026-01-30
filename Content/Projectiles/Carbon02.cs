@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class Carbon02 : ModProjectile
@@ -28,10 +29,8 @@ public class Carbon02 : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.timeLeft < 67)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -41,6 +40,7 @@ public class Carbon02 : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
                 fire2Dust.noGravity = true;
@@ -55,8 +55,6 @@ public class Carbon02 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 5;
     }
-
 }

@@ -21,12 +21,10 @@ public class DirtBulletProj : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 450;
-
     }
 
     public override void AI()
     {
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 13f)
         {
@@ -44,17 +42,15 @@ public class DirtBulletProj : ModProjectile
         Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 0f, Projectile.position.Y + 0f) - Projectile.velocity * 0.1f, Projectile.width - 2, Projectile.height - 2, DustID.Dirt, 0f, 0f, 100, default, 0.75f);
         fire2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
         fire2Dust.velocity *= 0.15f;
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int j = 0; j < 3; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Dirt, 0f, 0f, 100, default, 1f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Dirt, 0f, 0f, 100);
             fireDust.noGravity = true;
             fireDust.velocity *= 5f;
-
         }
     }
-
 }

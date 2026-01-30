@@ -30,6 +30,7 @@ public class BlueFour : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

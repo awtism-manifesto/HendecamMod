@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -14,17 +14,16 @@ public class BeetleFriend : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
+
+    public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 2;
     }
-    public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -39,14 +38,14 @@ public class BeetleFriend : ModProjectile
         Projectile.usesIDStaticNPCImmunity = true;
         AIType = ProjectileID.Bullet;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 3;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -72,6 +71,7 @@ public class BeetleFriend : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
         int frameSpeed = 6;
@@ -88,6 +88,7 @@ public class BeetleFriend : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         float maxDetectRadius = 800f; // The maximum radius at which a projectile can detect a target
@@ -120,7 +121,6 @@ public class BeetleFriend : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -165,8 +165,8 @@ public class BeetleFriend : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public override void OnKill(int timeLeft)
     {
-
     }
 }

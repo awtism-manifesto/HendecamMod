@@ -17,12 +17,12 @@ public class OasisSand : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<OasisSandPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SandBlock, 1);
+        recipe.AddIngredient(ItemID.SandBlock);
         recipe.AddTile(TileID.WorkBenches);
         recipe.AddCondition(Condition.NearWater);
         recipe.Register();

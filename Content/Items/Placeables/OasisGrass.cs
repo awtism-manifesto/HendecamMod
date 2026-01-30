@@ -17,12 +17,12 @@ public class OasisGrass : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<OasisGrassPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.GrassSeeds, 1);
+        recipe.AddIngredient(ItemID.GrassSeeds);
         recipe.AddTile(TileID.WorkBenches);
         recipe.AddCondition(Condition.NearWater);
         recipe.Register();

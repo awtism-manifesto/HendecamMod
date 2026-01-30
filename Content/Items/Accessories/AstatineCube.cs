@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class AstatineCube : ModItem
         player.moveSpeed *= Main.rand.NextFloat(0.01f, 5f);
         player.runAcceleration *= Main.rand.NextFloat(0.01f, 5f);
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,12 +47,12 @@ public class AstatineCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
+        recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient<AstatineBar>(12);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

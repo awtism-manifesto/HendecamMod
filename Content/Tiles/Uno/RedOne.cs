@@ -30,6 +30,7 @@ public class RedOne : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

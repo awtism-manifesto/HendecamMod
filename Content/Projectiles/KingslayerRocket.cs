@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -23,6 +23,7 @@ public class KingslayerRocket : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 36;
@@ -38,10 +39,12 @@ public class KingslayerRocket : ModProjectile
         // AIType = ProjectileID.RocketI;
         Projectile.extraUpdates = 1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 4;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -134,12 +137,14 @@ public class KingslayerRocket : ModProjectile
             Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 1.4f;
         }
+
         // Spawn a bunch of smoke dusts.
         for (int i = 0; i < 10; i++)
         {
             Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PinkCrystalShard, 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 2.2f;
         }
+
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
         {

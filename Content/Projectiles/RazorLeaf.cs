@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class RazorLeaf : ModProjectile
@@ -27,20 +28,21 @@ public class RazorLeaf : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 15;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.67f);
     }
+
     public override void AI()
     {
         Projectile.rotation += 0.75f;
         if (Math.Abs(Projectile.velocity.X) <= 19.9f && Math.Abs(Projectile.velocity.Y) <= 19.9f)
         {
             Projectile.velocity *= 1.07f;
-
         }
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -68,12 +70,11 @@ public class RazorLeaf : ModProjectile
 
         return false;
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }
-

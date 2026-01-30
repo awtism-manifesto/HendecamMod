@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.GlobalItems;
+
 public class FuckYouCalamity : GlobalItem
 {
     // respectfully :)
@@ -18,6 +19,7 @@ public class FuckYouCalamity : GlobalItem
         item.useAnimation = 8;
     }
 }
+
 public class FuckYouCalamity2 : GlobalItem
 {
     // respectfully :)

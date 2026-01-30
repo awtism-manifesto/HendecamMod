@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -37,6 +37,7 @@ public class RunicCodex : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 7f; // The speed of the projectile (measured in pixels per frame.)
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -70,8 +71,8 @@ public class RunicCodex : ModItem
 
     public override void AddRecipes()
     {
-
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.RunicCodexProjectile>();

@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ThePrimeTime : ModItem
@@ -25,7 +26,7 @@ public class ThePrimeTime : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item94;
+        Item.UseSound = SoundID.Item94;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 56; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -44,13 +45,15 @@ public class ThePrimeTime : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<Projectiles.ChargeLaser>();
+            type = ModContent.ProjectileType<ChargeLaser>();
         }
+
         if (type == ModContent.ProjectileType<ChargeLaser>())
         {
             damage = (int)(damage * 1.25f);
         }
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 4; // The number of projectiles that this gun will shoot.
@@ -95,15 +98,15 @@ public class ThePrimeTime : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.HallowedBar, 12);
         recipe.AddIngredient(ItemID.SoulofFright, 15);
-        recipe.AddIngredient<Items.LaserCharge>(250);
+        recipe.AddIngredient<LaserCharge>(250);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
 
     public override Vector2? HoldoutOffset()

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -46,10 +46,12 @@ public class RocketNeg1 : ModItem
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
         AmmoID.Sets.IsSpecialist[Type] = true;
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,20 +77,20 @@ public class RocketNeg1 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
         recipe.AddRecipeGroup("IronBar", 2);
-        recipe.AddIngredient<Items.CrudeOil>(2);
+        recipe.AddIngredient<CrudeOil>(2);
         recipe.AddIngredient(ItemID.Dynamite);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe(225);
         recipe.AddIngredient<SteelBar>(2);
-        recipe.AddIngredient<Items.CrudeOil>(2);
+        recipe.AddIngredient<CrudeOil>(2);
         recipe.AddIngredient(ItemID.Dynamite);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 }

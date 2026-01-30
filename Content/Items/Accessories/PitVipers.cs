@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -54,6 +54,7 @@ public class PitVipers : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -64,6 +65,7 @@ public class PitVipers : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.

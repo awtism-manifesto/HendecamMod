@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,7 +24,7 @@ public class TrueJfkExperience : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.NPCDeath56;
+        Item.UseSound = SoundID.NPCDeath56;
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -45,8 +45,8 @@ public class TrueJfkExperience : ModItem
             Item.useTime = 45; // The item's use time in ticks (60 ticks == 1 second.)
             Item.useAnimation = 45; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         }
-
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.JfkBullet>();
@@ -81,48 +81,50 @@ public class TrueJfkExperience : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.TheJfkExperience>();
+        recipe.AddIngredient<TheJfkExperience>();
         recipe.AddIngredient(ItemID.SniperRifle);
-        recipe.AddIngredient<Items.KingslayerSniper>();
-        recipe.AddIngredient<Items.BeeSnipe>();
+        recipe.AddIngredient<KingslayerSniper>();
+        recipe.AddIngredient<BeeSnipe>();
 
-        recipe.AddIngredient<Items.AstatineMarksmanRifle>();
-        recipe.AddIngredient<Items.CorruptLawman>();
+        recipe.AddIngredient<AstatineMarksmanRifle>();
+        recipe.AddIngredient<CorruptLawman>();
 
-        recipe.AddIngredient<Items.M1Garand>();
+        recipe.AddIngredient<M1Garand>();
         recipe.AddIngredient<TheDeposer>();
-        recipe.AddIngredient<Items.FissionDrive>();
+        recipe.AddIngredient<FissionDrive>();
 
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("BloodstoneCore", out ModItem BloodstoneCore))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("BloodstoneCore", out ModItem BloodstoneCore))
         {
             recipe.AddIngredient(BloodstoneCore.Type, 6);
-
         }
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("DeathEssence", out ModItem DeathEssence))
         {
             recipe.AddIngredient(DeathEssence.Type);
         }
-        if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica) && JfkMerica.TryFind<ModItem>("Crimtane_Auto_Rifle", out ModItem CrimtaneAutoRifle)
-      && JfkMerica.TryFind<ModItem>("Demonite_Sniper_Rifle", out ModItem DemoniteSniperRifle))
+
+        if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica) && JfkMerica.TryFind("Crimtane_Auto_Rifle", out ModItem CrimtaneAutoRifle)
+                                                                   && JfkMerica.TryFind("Demonite_Sniper_Rifle", out ModItem DemoniteSniperRifle))
 
         {
             recipe.AddIngredient(CrimtaneAutoRifle.Type);
             recipe.AddIngredient(DemoniteSniperRifle.Type);
         }
 
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteBar", out ModItem ArtemiteBar))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("ArtemiteBar", out ModItem ArtemiteBar))
         {
             recipe.AddIngredient(ArtemiteBar.Type, 5);
-
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-25f, -1f);

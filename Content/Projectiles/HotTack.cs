@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class HotTack : ModProjectile
@@ -34,9 +35,9 @@ public class HotTack : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.OnFire, 150);
     }
 
@@ -51,16 +52,16 @@ public class HotTack : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.Torch, 0f, 0f, 100, default, 0.5f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
             fireDust.noGravity = true;
             fireDust.velocity *= 0.25f;
-
         }
 
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -71,7 +72,7 @@ public class HotTack : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;

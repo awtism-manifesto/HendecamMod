@@ -34,11 +34,10 @@ public class BloodshotArrow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(20);
-        recipe.AddIngredient(ItemID.CrimtaneBar, 1);
+        recipe.AddIngredient(ItemID.CrimtaneBar);
         recipe.Register();
         recipe = CreateRecipe(20);
-        recipe.AddIngredient(ItemID.DemoniteBar, 1);
+        recipe.AddIngredient(ItemID.DemoniteBar);
         recipe.Register();
     }
-
 }

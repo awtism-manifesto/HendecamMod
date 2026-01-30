@@ -1,12 +1,13 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class GraniteBlaster : ModItem
@@ -44,17 +45,18 @@ public class GraniteBlaster : ModItem
         Item.useAmmo = AmmoID.Gel;
 
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<GraniteLaser>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (Main.rand.NextBool(2))
@@ -63,14 +65,14 @@ public class GraniteBlaster : ModItem
         }
         else
         {
-
             Item.mana = 6;
-
         }
+
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         SoundEngine.PlaySound(SoundID.Item114, player.position);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -104,7 +106,6 @@ public class GraniteBlaster : ModItem
         recipe.AddRecipeGroup("IronBar", 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

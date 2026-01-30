@@ -14,5 +14,4 @@ public class FlintAndSteel : ModAchievement
         Achievement.SetCategory(AchievementCategory.Collector);
         Condition = AddItemCraftCondition(ModContent.ItemType<SteelBar>());
     }
-
 }

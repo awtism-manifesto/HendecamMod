@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class FrostburnProjectile : ModProjectile
@@ -27,19 +28,16 @@ public class FrostburnProjectile : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-
         modifiers.SourceDamage *= 1.125f;
-
     }
 
     public override void AI()
     {
-
         if (Projectile.alpha < 182)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;

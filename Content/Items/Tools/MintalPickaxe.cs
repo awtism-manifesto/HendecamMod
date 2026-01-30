@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
+
 public class MintalPickaxe : ModItem
 {
     public override void SetDefaults()
@@ -40,6 +41,7 @@ public class MintalPickaxe : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,12 +67,12 @@ public class MintalPickaxe : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.MintalBar>(20);
+        recipe.AddIngredient<Placeables.MintalBar>(20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

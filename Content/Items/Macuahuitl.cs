@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -45,6 +45,7 @@ public class Macuahuitl : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

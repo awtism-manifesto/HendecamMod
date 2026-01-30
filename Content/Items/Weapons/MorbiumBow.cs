@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -38,6 +38,7 @@ public class MorbiumBow : ModItem
         Item.shootSpeed = 14.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -75,16 +76,15 @@ public class MorbiumBow : ModItem
         recipe.AddIngredient<MorbiumBar>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);
-
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<MorbiumArrowProj>();
     }
 }
-

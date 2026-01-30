@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,8 +22,8 @@ public class PipeBob : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PipeBobPlaced>());
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,13 +46,13 @@ public class PipeBob : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
-        recipe.AddIngredient(ItemID.Bomb, 1);
+        recipe.AddIngredient<Materials.BlankCanvas>();
+        recipe.AddIngredient(ItemID.Bomb);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
     }
 }

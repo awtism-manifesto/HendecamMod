@@ -18,6 +18,7 @@ public class RiverBanner : ModItem
         Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 999999));
         Item.rare = ModContent.RarityType<Seizure2>();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -12,6 +12,7 @@ public class PykreteHelmet : ModItem
         Item.defense = 4;
         Item.rare = ItemRarityID.White;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -10,7 +10,6 @@ public class CactusSpike : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
     }
 
     public override void SetDefaults()
@@ -22,7 +21,6 @@ public class CactusSpike : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.timeLeft = 10;
-
     }
 
     public override void AI()
@@ -46,7 +44,6 @@ public class CactusSpike : ModProjectile
             Projectile.velocity.Y = 6f;
         }
         // dust
-
     }
 
     public override void OnKill(int timeLeft)

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -12,6 +12,8 @@ namespace HendecamMod.Content.Items.Weapons;
 
 public class TheBrainFreeze : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -40,10 +42,9 @@ public class TheBrainFreeze : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 8.25f; // The speed of the projectile (measured in pixels per frame.)
     }
-    private int shotCounter = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.5f));
@@ -67,6 +68,7 @@ public class TheBrainFreeze : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -92,12 +94,13 @@ public class TheBrainFreeze : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(1);
+        Recipe recipe = CreateRecipe();
         recipe.AddIngredient<MintalBar>(9);
-        recipe.AddIngredient(ItemID.FrostCore, 1);
-        recipe.AddIngredient(ItemID.BrainOfConfusion, 1);
+        recipe.AddIngredient(ItemID.FrostCore);
+        recipe.AddIngredient(ItemID.BrainOfConfusion);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

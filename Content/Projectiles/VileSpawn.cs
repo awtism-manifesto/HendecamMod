@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class VileSpawn : ModProjectile
@@ -29,13 +30,17 @@ public class VileSpawn : ModProjectile
     public override void OnSpawn(IEntitySource source)
     {
         if (Main.rand.NextBool(2))
-        { Projectile.velocity.X = (Main.rand.NextFloat(0.66f, 1.5f)); }
+        {
+            Projectile.velocity.X = (Main.rand.NextFloat(0.66f, 1.5f));
+        }
         else
-        { Projectile.velocity.X = (Main.rand.NextFloat(-1.5f, -0.66f)); }
+        {
+            Projectile.velocity.X = (Main.rand.NextFloat(-1.5f, -0.66f));
+        }
     }
+
     public override void OnKill(int timeLeft)
     {
-
         Projectile.velocity.Y = -33.5f;
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(25f));
@@ -51,6 +56,4 @@ public class VileSpawn : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
             ProjectileID.VilethornBase, (int)(Projectile.damage * 1.1f), Projectile.knockBack, Projectile.owner);
     }
-
 }
-

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SublimRay2 : ModProjectile
@@ -12,7 +13,6 @@ public class SublimRay2 : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -37,7 +37,6 @@ public class SublimRay2 : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 190)
         {
             for (int i = 0; i < 2; i++)
@@ -57,11 +56,9 @@ public class SublimRay2 : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 255);
-
     }
-
 }

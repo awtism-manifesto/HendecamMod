@@ -41,13 +41,14 @@ public class MintalGreatspear : ModItem
         Item.shootSpeed = 3.7f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<MintalGreatspearProjectile>(); // The projectile that is fired from this weapon
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         type = ModContent.ProjectileType<MintLeafProjectile>();
         Projectile.NewProjectileDirect(source, position, velocity * 2.67f, type, (int)(damage * 0.69), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
@@ -64,6 +65,7 @@ public class MintalGreatspear : ModItem
 
         return null;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

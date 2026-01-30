@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,18 +8,16 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class KnightSwordCombo : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
@@ -49,9 +47,9 @@ public class KnightSwordCombo : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
     }
+
     public override void AI()
     {
-
         if (Projectile.timeLeft > 190)
         {
             Projectile.velocity *= 0.05f;
@@ -59,8 +57,8 @@ public class KnightSwordCombo : ModProjectile
         else if (Math.Abs(Projectile.velocity.X) <= 40f && Math.Abs(Projectile.velocity.Y) <= 40f)
         {
             Projectile.velocity *= 1.7f;
-
         }
+
         float maxDetectRadius = 2500f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -91,8 +89,8 @@ public class KnightSwordCombo : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(30f)).ToRotationVector2() * length;
-
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;

@@ -6,17 +6,17 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class Baconator : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
-
     }
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -41,7 +41,6 @@ public class Baconator : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
 
     public override void AI()
@@ -60,7 +59,6 @@ public class Baconator : ModProjectile
                 Projectile.frame = 0;
             }
         }
-
     }
 
     public override void OnKill(int timeLeft)

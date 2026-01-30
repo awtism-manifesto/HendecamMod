@@ -1,15 +1,20 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class TheWither : ModItem
 {
+    private int nextSpawnTick;
+
+    private int tickCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -27,7 +32,7 @@ public class TheWither : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.damage = 48; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -49,11 +54,8 @@ public class TheWither : ModItem
         Item.shoot = ModContent.ProjectileType<WitherSkullBlack>();
 
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -67,6 +69,7 @@ public class TheWither : ModItem
             {
                 nextSpawnTick = 2;
             }
+
             tickCounter++;
 
             if (tickCounter >= nextSpawnTick && tickCounter < 3)
@@ -112,19 +115,17 @@ public class TheWither : ModItem
 
                 tickCounter = 0;
                 nextSpawnTick = 2;
-
             }
             else
             {
                 type = ModContent.ProjectileType<WitherSkullBlue>();
                 Projectile.NewProjectileDirect(source, position, velocity * 0.81f, type, damage, knockback, player.whoAmI);
-
             }
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -150,6 +151,7 @@ public class TheWither : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -168,23 +170,20 @@ public class TheWither : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
         {
             recipe.AddIngredient(SoulofBlight.Type, 18);
-
         }
 
         if (!ModLoader.TryGetMod("Consolaria", out Mod Cons2Merica))
         {
-
             recipe.AddIngredient(ItemID.SoulofFlight, 18);
         }
 
-        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind<ModItem>("NetherStar", out ModItem NetherStar))
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind("NetherStar", out ModItem NetherStar))
 
         {
-
             recipe.AddIngredient(NetherStar.Type);
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

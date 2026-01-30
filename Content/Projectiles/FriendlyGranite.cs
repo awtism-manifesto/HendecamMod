@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,6 +39,7 @@ public class FriendlyGranite : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 18;
     }
+
     public override bool? CanCutTiles()
     {
         return false;
@@ -63,6 +64,7 @@ public class FriendlyGranite : ModProjectile
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
     }
+
     private bool CheckActive(Player owner)
     {
         if (owner.dead || !owner.active)
@@ -79,6 +81,7 @@ public class FriendlyGranite : ModProjectile
 
         return true;
     }
+
     private void GeneralBehavior(Player owner, out Vector2 vectorToIdlePosition, out float distanceToIdlePosition)
     {
         Vector2 idlePosition = owner.Center;
@@ -96,6 +99,7 @@ public class FriendlyGranite : ModProjectile
             Projectile.velocity *= 0.1f;
             Projectile.netUpdate = true;
         }
+
         float overlapVelocity = 0.04f;
 
         for (int i = 0; i < Main.maxProjectiles; i++)
@@ -167,6 +171,7 @@ public class FriendlyGranite : ModProjectile
                 }
             }
         }
+
         Projectile.friendly = foundTarget;
     }
 
@@ -232,6 +237,5 @@ public class FriendlyGranite : ModProjectile
                 Projectile.frame = 0;
             }
         }
-
     }
 }

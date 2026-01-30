@@ -5,11 +5,9 @@ namespace HendecamMod.Content.Buffs;
 
 public class OtherworldPoisoning : ModBuff
 {
-
     public override void SetStaticDefaults()
     {
         Main.debuff[Type] = true;
-
     }
 
     public override void Update(Player player, ref int buffIndex)

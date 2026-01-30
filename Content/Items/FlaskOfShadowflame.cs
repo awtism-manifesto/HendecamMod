@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,8 +8,8 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Items;
 
 /// <summary>
-/// A potion that applies the ExampleWeaponImbue buff to the player.
-/// See also ExampleWeaponImbue and ExampleWeaponEnchantmentPlayer.
+///     A potion that applies the ExampleWeaponImbue buff to the player.
+///     See also ExampleWeaponImbue and ExampleWeaponEnchantmentPlayer.
 /// </summary>
 public class FlaskOfShadowflame : ModItem
 {
@@ -17,12 +17,14 @@ public class FlaskOfShadowflame : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = [
+        ItemID.Sets.DrinkParticleColors[Type] =
+        [
             new Color(242, 20, 250),
             new Color(220, 110, 255),
             new Color(210, 170, 255)
         ];
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,7 +72,7 @@ public class FlaskOfShadowflame : ModItem
     {
         CreateRecipe()
             .AddIngredient(ItemID.BottledWater)
-            .AddIngredient<Items.Shadowflame>(2)
+            .AddIngredient<Shadowflame>(2)
             .AddTile(TileID.ImbuingStation)
             .Register();
     }

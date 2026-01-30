@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BitcoinBlaster : ModItem
@@ -29,7 +30,7 @@ public class BitcoinBlaster : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item62;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();  // Sets the damage type to ranged.
+        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 150; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -39,13 +40,11 @@ public class BitcoinBlaster : ModItem
         Item.shoot = ModContent.ProjectileType<Bitcoin>();
         Item.useAmmo = AmmoID.Coin;
         Item.shootSpeed = 15.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Bitcoin>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -100,7 +99,6 @@ public class BitcoinBlaster : ModItem
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

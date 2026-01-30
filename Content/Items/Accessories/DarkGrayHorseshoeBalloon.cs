@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
@@ -23,6 +23,7 @@ public class DarkGrayHorseshoeBalloon : ModItem
         player.jumpSpeedBoost = 0.55f;
         player.noFallDmg = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -32,8 +33,8 @@ public class DarkGrayHorseshoeBalloon : ModItem
         recipe.AddIngredient(ItemID.LuckyHorseshoe);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,7 +60,6 @@ public class DarkGrayHorseshoeBalloon : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }
 
 public class Carbon2ExtraJump : ExtraJump

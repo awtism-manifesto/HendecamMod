@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -24,7 +24,6 @@ public class FerrousThornSmooth : ModItem
         Item.width = 18;
         Item.height = 18;
         Item.value = 90000;
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -43,24 +42,25 @@ public class FerrousThornSmooth : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override bool CanRightClick()
     {
         return true;
     }
+
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>(), 1));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>()));
     }
+
     public override void AddRecipes()
     {
         Recipe
-
-        recipe = CreateRecipe();
+            recipe = CreateRecipe();
         recipe.AddRecipeGroup("IronBar", 15);
-        recipe.AddIngredient<Items.CrudeOil>(35);
-        recipe.AddIngredient<Items.RefinedOil>(35);
+        recipe.AddIngredient<CrudeOil>(35);
+        recipe.AddIngredient<RefinedOil>(35);
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();

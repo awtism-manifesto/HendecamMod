@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -30,7 +30,7 @@ public class BBC : ModItem
         Item.UseSound = SoundID.Item62;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
-        Item.damage = 150;  // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 150; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 10f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -39,7 +39,6 @@ public class BBC : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 35.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -92,18 +91,19 @@ public class BBC : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.BowlingBaller>();
-        recipe.AddIngredient<Items.BigBuddy>();
+        recipe.AddIngredient<BowlingBaller>();
+        recipe.AddIngredient<BigBuddy>();
         recipe.AddIngredient(ItemID.LunarBar, 10);
         recipe.AddIngredient<FragmentFlatEarth>(10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,6 +13,7 @@ public class AstatineTorch : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -25,8 +26,9 @@ public class AstatineTorch : ModItem
         Item.value = 7500;
         Item.maxStack = 9999;
 
-        Item.DefaultToTorch(ModContent.TileType<Tiles.AstatineTorchPlaced>(), 0, false);
+        Item.DefaultToTorch(ModContent.TileType<Tiles.AstatineTorchPlaced>(), 0);
     }
+
     public override void HoldItem(Player player)
     {
         // This torch cannot be used in water, so it shouldn't spawn particles or light either
@@ -91,6 +93,7 @@ public class AstatineTorch : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
@@ -99,6 +102,5 @@ public class AstatineTorch : ModItem
         recipe.AddIngredient(ItemID.Torch, 50);
 
         recipe.Register();
-
     }
 }

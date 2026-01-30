@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -29,6 +29,7 @@ public class RiverCube : ModItem
         player.fallStart = (int)(player.fallStart * 0.01f);
         player.stairFall = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,10 +55,11 @@ public class RiverCube : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
+        recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient(ItemID.CrabBanner, 6);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class QuestionableVial : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Ichor, Webbed, Cerebral Mindtrick, Tipsy, and the Water Candle");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Ichor] = true;
@@ -30,12 +31,13 @@ public class QuestionableVial : ModItem
         player.buffImmune[BuffID.Tipsy] = true;
         player.buffImmune[BuffID.WaterCandle] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<BodyWash>(1);
-        recipe.AddIngredient<SmellingSalts>(1);
+        recipe.AddIngredient<BodyWash>();
+        recipe.AddIngredient<SmellingSalts>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

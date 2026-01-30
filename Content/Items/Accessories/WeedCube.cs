@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -28,6 +28,7 @@ public class WeedCube : ModItem
     {
         player.GetModPlayer<Weedified>().Weeded = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -40,30 +41,30 @@ public class WeedCube : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
+        recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient<WeedLeaves>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
 }
+
 public class Weedified : ModPlayer
 {
-
-    public bool Weeded = false;
+    public bool Weeded;
 
     public override void ResetEffects()
     {
         Weeded = false;
     }
+
     public override void PostUpdateEquips()
     {
-
-        if (Player.GetModPlayer<Weedified>().Weeded == false) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (!Player.GetModPlayer<Weedified>().Weeded) // Strongest boost takes priority, weaker boosts shouldn't prevent this
         {
-            return;
         }
         else
         {
@@ -75,7 +76,6 @@ public class Weedified : ModPlayer
             Player.underShirtColor = Color.DarkOliveGreen;
             Player.skinColor = Color.DarkOliveGreen;
             Player.hairDyeColor = Color.DarkOliveGreen;
-
         }
     }
 }

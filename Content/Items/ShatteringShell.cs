@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,8 +24,8 @@ public class ShatteringShell : ModItem
         Item.shoot = ModContent.ProjectileType<KingslayerRocket>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 13f; // The speed of the projectile.
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
-
     }
+
     public override void SetStaticDefaults()
     {
         AmmoID.Sets.IsSpecialist[Type] = true; // This item will benefit from the Shroomite Helmet.
@@ -57,17 +57,16 @@ public class ShatteringShell : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
 
-        recipe.AddIngredient(ItemID.UnicornHorn, 1);
+        recipe.AddIngredient(ItemID.UnicornHorn);
         recipe.AddIngredient<PearlceramicSheet>(2);
         recipe.AddIngredient(ItemID.CrystalShard, 3);
         recipe.AddIngredient<RocketNeg1>(150);
         recipe.Register();
-
     }
 }

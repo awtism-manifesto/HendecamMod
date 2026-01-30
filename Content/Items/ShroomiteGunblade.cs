@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -17,6 +17,7 @@ public class ShroomiteGunblade : ModItem
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -45,10 +46,12 @@ public class ShroomiteGunblade : ModItem
         Item.shootSpeed = 13.12f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -76,7 +79,6 @@ public class ShroomiteGunblade : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
             Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<GunbladeSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
             NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
@@ -85,24 +87,19 @@ public class ShroomiteGunblade : ModItem
 
             return false;
         }
-        else
+
+        SoundEngine.PlaySound(SoundID.Item40, player.position);
+        damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
+
+        if (Main.rand.NextBool(3))
         {
-
-            SoundEngine.PlaySound(SoundID.Item40, player.position);
-            damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
-
-            if (Main.rand.NextBool(3))
-            {
-
-                type = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<GunbladeSpore>(), damage, knockback, player.whoAmI);
-                return false;
-            }
-            else
-            {
-                return true; // Return false because we don't want tModLoader to shoot projectile}
-            }
+            type = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<GunbladeSpore>(), damage, knockback, player.whoAmI);
+            return false;
         }
+
+        return true; // Return false because we don't want tModLoader to shoot projectile}
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -124,6 +121,7 @@ public class ShroomiteGunblade : ModItem
         };
         tooltips.Add(line);
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-0.5f, -0.5f);
@@ -139,7 +137,5 @@ public class ShroomiteGunblade : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
-
 }

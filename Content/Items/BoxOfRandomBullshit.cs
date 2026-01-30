@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BoxOfRandomBullshit : ModItem
@@ -28,7 +29,7 @@ public class BoxOfRandomBullshit : ModItem
         Item.noUseGraphic = true;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item1;
+        Item.UseSound = SoundID.Item1;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<OmniDamage>(); // Sets the damage type to ranged.
         Item.damage = 12; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,13 +41,11 @@ public class BoxOfRandomBullshit : ModItem
         Item.shoot = ProjectileID.Shuriken;
 
         Item.shootSpeed = 16.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.ThrowingKnife;
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -83,6 +82,7 @@ public class BoxOfRandomBullshit : ModItem
 
         return false; // return true only if you want the default projectile to be fired as well
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,6 +108,7 @@ public class BoxOfRandomBullshit : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -120,8 +121,8 @@ public class BoxOfRandomBullshit : ModItem
 
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

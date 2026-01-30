@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class SpiceKingStarterKit : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire, and Cursed Inferno");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.NeutralHunger] = true;
@@ -32,12 +33,13 @@ public class SpiceKingStarterKit : ModItem
         player.buffImmune[BuffID.OnFire3] = true;
         player.buffImmune[BuffID.CursedInferno] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<MukbangStarterKit>(1);
-        recipe.AddIngredient<ElementalFlameCore>(1);
+        recipe.AddIngredient<MukbangStarterKit>();
+        recipe.AddIngredient<ElementalFlameCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class DartShotgun : ModItem
@@ -25,7 +26,7 @@ public class DartShotgun : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 31;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item99;
+        Item.UseSound = SoundID.Item99;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -45,7 +46,6 @@ public class DartShotgun : ModItem
         damage = (int)(damage * Main.rand.NextFloat(0.575f, 0.67f));
         for (int i = 0; i < NumProjectiles; i++)
         {
-
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(12.5f));
             newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
@@ -81,6 +81,7 @@ public class DartShotgun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(0f, -1f);

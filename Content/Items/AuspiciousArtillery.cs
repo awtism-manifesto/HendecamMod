@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -42,14 +42,15 @@ public class AuspiciousArtillery : ModItem
         Item.shootSpeed = 19f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.RocketI;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (type == ModContent.ProjectileType<KingslayerRocket>())
         {
             damage = (int)(damage * 1.25f);
         }
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -62,12 +63,14 @@ public class AuspiciousArtillery : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<DemoniteAreaDenialSystem>();
         recipe.AddIngredient(ItemID.CrystalShard, 10);
-        recipe.AddIngredient<PurifiedSalt>(99); ;
+        recipe.AddIngredient<PurifiedSalt>(99);
+        ;
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -77,8 +80,8 @@ public class AuspiciousArtillery : ModItem
         recipe.AddIngredient<PurifiedSalt>(99);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

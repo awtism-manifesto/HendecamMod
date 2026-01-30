@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class EyeRifle : ModItem
@@ -29,7 +30,7 @@ public class EyeRifle : ModItem
         Item.crit = 10;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item42;
+        Item.UseSound = SoundID.Item42;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -41,13 +42,11 @@ public class EyeRifle : ModItem
         Item.shoot = ModContent.ProjectileType<EyeShot>();
         Item.useAmmo = AmmoID.Bullet;
         Item.shootSpeed = 10.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<EyeShot>();
-
     }
 
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class VenomThrower : ModItem
@@ -28,7 +29,7 @@ public class VenomThrower : ModItem
         Item.consumeAmmoOnFirstShotOnly = true;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,16 +41,16 @@ public class VenomThrower : ModItem
         Item.shoot = ModContent.ProjectileType<VenomFlame2>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<VenomFlame2>();
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -77,15 +78,15 @@ public class VenomThrower : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
         {
-
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient<Items.RefinedOil>(30);
+            recipe.AddIngredient<RefinedOil>(30);
             recipe.AddIngredient(ItemID.CobaltBar, 12);
             recipe.AddIngredient(ThrowerParts.Type);
 
@@ -93,32 +94,30 @@ public class VenomThrower : ModItem
             recipe.Register();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient<Items.RefinedOil>(30);
+            recipe.AddIngredient<RefinedOil>(30);
             recipe.AddIngredient(ItemID.PalladiumBar, 12);
             recipe.AddIngredient(ThrowerParts.Type);
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
         else
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient<Items.RefinedOil>(30);
+            recipe.AddIngredient<RefinedOil>(30);
             recipe.AddIngredient(ItemID.CobaltBar, 12);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient<Items.RefinedOil>(30);
+            recipe.AddIngredient<RefinedOil>(30);
             recipe.AddIngredient(ItemID.PalladiumBar, 12);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

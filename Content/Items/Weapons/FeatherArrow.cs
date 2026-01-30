@@ -35,8 +35,7 @@ public class FeatherArrow : ModItem
     {
         Recipe recipe = CreateRecipe(20);
         recipe.AddIngredient(ItemID.WoodenArrow, 20);
-        recipe.AddIngredient(ItemID.Feather, 1);
+        recipe.AddIngredient(ItemID.Feather);
         recipe.Register();
     }
-
 }

@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
@@ -11,7 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class LycopiteLeggings : ModItem
 {
-
     public static readonly int AttackSpeedBonus = 5;
 
     public static readonly int MoveSpeedBonus = 12;
@@ -37,6 +37,7 @@ public class LycopiteLeggings : ModItem
         Item.defense = 8; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -62,11 +63,13 @@ public class LycopiteLeggings : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<LycopiteChestplate>() && head.type == ModContent.ItemType<LycopiteFedora>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -84,8 +87,8 @@ public class LycopiteLeggings : ModItem
         player.moveSpeed += MoveSpeedBonus / 112f;
         player.runAcceleration *= 1.12f;
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 105f;
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -94,6 +97,7 @@ public class LycopiteLeggings : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
     }

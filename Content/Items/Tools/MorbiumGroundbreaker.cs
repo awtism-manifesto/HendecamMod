@@ -31,8 +31,9 @@ public class MorbiumGroundbreaker : ModItem
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
-          // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
+        {
+            // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
+            // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
         }
     }
 
@@ -43,6 +44,5 @@ public class MorbiumGroundbreaker : ModItem
         recipe.AddIngredient<MorbiumBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
 }

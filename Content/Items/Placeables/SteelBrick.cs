@@ -29,12 +29,12 @@ public class SteelBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<SteelBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(10);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(1);
+        recipe.AddIngredient<SteelBar>();
         recipe.AddIngredient(ItemID.StoneBlock, 10);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();

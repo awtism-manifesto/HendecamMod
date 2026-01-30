@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,10 +21,12 @@ public class PlasmoidFriendly : ModProjectile
         ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 150);
     }
+
     public override void SetDefaults()
     {
         Projectile.netImportant = true;
@@ -42,6 +44,7 @@ public class PlasmoidFriendly : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 14;
     }
+
     public override bool? CanCutTiles()
     {
         return false;
@@ -68,6 +71,7 @@ public class PlasmoidFriendly : ModProjectile
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
     }
+
     private bool CheckActive(Player owner)
     {
         if (owner.dead || !owner.active)
@@ -84,6 +88,7 @@ public class PlasmoidFriendly : ModProjectile
 
         return true;
     }
+
     private void GeneralBehavior(Player owner, out Vector2 vectorToIdlePosition, out float distanceToIdlePosition)
     {
         Vector2 idlePosition = owner.Center;
@@ -101,6 +106,7 @@ public class PlasmoidFriendly : ModProjectile
             Projectile.velocity *= 0.1f;
             Projectile.netUpdate = true;
         }
+
         float overlapVelocity = 0.04f;
 
         for (int i = 0; i < Main.maxProjectiles; i++)
@@ -172,6 +178,7 @@ public class PlasmoidFriendly : ModProjectile
                 }
             }
         }
+
         Projectile.friendly = foundTarget;
     }
 
@@ -237,6 +244,5 @@ public class PlasmoidFriendly : ModProjectile
                 Projectile.frame = 0;
             }
         }
-
     }
 }

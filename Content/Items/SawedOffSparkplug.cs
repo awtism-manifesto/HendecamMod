@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SawedOffSparkplug : ModItem
@@ -40,9 +41,10 @@ public class SawedOffSparkplug : ModItem
         Item.shootSpeed = 17.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.DragonSpawn>();
+        type = ModContent.ProjectileType<DragonSpawn>();
         SoundEngine.PlaySound(SoundID.Item38, player.position);
     }
 
@@ -52,7 +54,6 @@ public class SawedOffSparkplug : ModItem
 
         for (int i = 0; i < NumProjectiles; i++)
         {
-
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(28.5f));
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-28.5f));
             Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(13.5f));
@@ -104,6 +105,7 @@ public class SawedOffSparkplug : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -115,9 +117,7 @@ public class SawedOffSparkplug : ModItem
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SparkSpreader", out ModItem SparkSpreader))
         {
             recipe.AddIngredient(SparkSpreader.Type);
-
         }
-
     }
 
     public override Vector2? HoldoutOffset()

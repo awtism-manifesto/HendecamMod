@@ -12,6 +12,9 @@ namespace HendecamMod.Content.Tiles;
 // In particular, hammer behavior is particularly tricky. The logic here is setup for multiple styles as well.
 public class PyroDartTrapTile : ModTile
 {
+    // This progression matches vanilla tiles, you don't have to follow it if you don't want. Some vanilla traps don't have 6 states, only 4. This can be implemented with different logic in Slope. Making 8 directions is also easily done in a similar manner.
+    private static readonly int[] frameXCycle = [2, 3, 4, 5, 1, 0];
+
     public override void SetStaticDefaults()
     {
         TileID.Sets.DrawsWalls[Type] = true;
@@ -25,7 +28,6 @@ public class PyroDartTrapTile : ModTile
 
         // These 2 AddMapEntry and GetMapOption show off multiple Map Entries per Tile. Delete GetMapOption and all but 1 of these for your own ModTile if you don't actually need it.
         AddMapEntry(new Color(21, 179, 192), Language.GetText("MapObject.Trap")); // localized text for "Trap"
-
     }
 
     // Read the comments above on AddMapEntry.
@@ -53,14 +55,13 @@ public class PyroDartTrapTile : ModTile
         {
             tile.TileFrameX += 18;
         }
+
         if (Main.netMode == NetmodeID.MultiplayerClient)
         {
-            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1, TileChangeType.None);
+            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1);
         }
     }
 
-    // This progression matches vanilla tiles, you don't have to follow it if you don't want. Some vanilla traps don't have 6 states, only 4. This can be implemented with different logic in Slope. Making 8 directions is also easily done in a similar manner.
-    private static int[] frameXCycle = [2, 3, 4, 5, 1, 0];
     // We can use the Slope method to override what happens when this tile is hammered.
     public override bool Slope(int i, int j)
     {
@@ -69,8 +70,9 @@ public class PyroDartTrapTile : ModTile
         tile.TileFrameX = (short)(nextFrameX * 18);
         if (Main.netMode == NetmodeID.MultiplayerClient)
         {
-            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1, TileChangeType.None);
+            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1);
         }
+
         return false;
     }
 
@@ -95,6 +97,5 @@ public class PyroDartTrapTile : ModTile
                 Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
             }
         }
-
     }
 }

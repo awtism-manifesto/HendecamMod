@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -11,7 +11,6 @@ public class GreaseBomb2 : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class GreaseBomb2 : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -41,6 +41,7 @@ public class GreaseBomb2 : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -50,7 +51,6 @@ public class GreaseBomb2 : ModProjectile
         }
         else
         {
-
             Projectile.ai[0] += 1f;
             if (Projectile.ai[0] >= 12f)
             {
@@ -66,6 +66,7 @@ public class GreaseBomb2 : ModProjectile
             {
                 Projectile.velocity.Y = 24f;
             }
+
             // Spawn dusts if the rocket is moving at or greater than half of its max speed.
             if (Math.Abs(Projectile.velocity.X) >= 8f || Math.Abs(Projectile.velocity.Y) >= 8f)
             {
@@ -171,6 +172,7 @@ public class GreaseBomb2 : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class UraniumHamaxe : ModItem
         Item.axe = 19;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -53,7 +54,6 @@ public class UraniumHamaxe : ModItem
             dust.noGravity = true;
             dust.velocity *= 3.5f;
             dust.scale *= 0.65f;
-
         }
     }
 
@@ -66,6 +66,5 @@ public class UraniumHamaxe : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-
     }
 }

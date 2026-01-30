@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,6 +17,7 @@ public class RiotShield : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Weakness, Withered Weapon,"));
@@ -26,6 +26,7 @@ public class RiotShield : ModItem
         tooltips.Add(new TooltipLine(Mod, "Face", "Blackout, Darkness, Stoned, Horrified,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "OnFire, Dazed, and Knockback"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Blackout] = true;
@@ -46,12 +47,13 @@ public class RiotShield : ModItem
         player.fireWalk = true;
         player.noKnockback = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<SpotlightShield>(1);
-        recipe.AddIngredient<ArmoredSling>(1);
+        recipe.AddIngredient<SpotlightShield>();
+        recipe.AddIngredient<ArmoredSling>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

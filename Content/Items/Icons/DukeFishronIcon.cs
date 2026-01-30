@@ -1,7 +1,6 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Icons;
@@ -12,6 +11,7 @@ public class DukeFishronIcon : ModItem
     {
         Item.ResearchUnlockCount = 3;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -20,6 +20,7 @@ public class DukeFishronIcon : ModItem
         Item.value = 10;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "A token for those who have slain Duke Fishron");

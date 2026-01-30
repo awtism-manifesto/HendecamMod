@@ -14,5 +14,4 @@ public class MintyFresh : ModAchievement
         Achievement.SetCategory(AchievementCategory.Explorer);
         Condition = AddTileDestroyedCondition([ModContent.TileType<MintalOrePlaced>()]);
     }
-
 }

@@ -17,13 +17,13 @@ public class BlackBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<OrangeBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Materials.CoalLump>(1);
-        recipe.AddIngredient(ItemID.StoneBlock, 1);
+        recipe.AddIngredient<Materials.CoalLump>();
+        recipe.AddIngredient(ItemID.StoneBlock);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
     }

@@ -1,5 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +17,13 @@ public class GrassyPeaceAgreement : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The jungle's denizens should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Plantera] = true;
@@ -30,7 +32,7 @@ public class GrassyPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.JungleBat] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.JungleCreeper] = true;
         player.npcTypeNoAggro[NPCID.JungleCreeperWall] = true;
-        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true;//redundant in PAM
+        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.Piranha] = true;
         player.npcTypeNoAggro[NPCID.Snatcher] = true;
         player.npcTypeNoAggro[NPCID.ManEater] = true;
@@ -50,19 +52,18 @@ public class GrassyPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.HornetStingy] = true;
         player.npcTypeNoAggro[NPCID.HornetLeafy] = true;
         player.npcTypeNoAggro[NPCID.HornetSpikey] = true;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.GolemTrophy);//skibidi toilet sigma balls 67000 lolllllllxd
-        recipe.AddIngredient(ItemID.PlanteraTrophy);//skibidi toilet sigma balls 67000 lolllllllxd
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.GolemTrophy); //skibidi toilet sigma balls 67000 lolllllllxd
+        recipe.AddIngredient(ItemID.PlanteraTrophy); //skibidi toilet sigma balls 67000 lolllllllxd
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
     }
 }
-

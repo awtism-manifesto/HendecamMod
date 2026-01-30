@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -12,7 +12,6 @@ public class KulakWings : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(21, 6.75f, 1.25f);
     }
 
@@ -24,6 +23,7 @@ public class KulakWings : ModItem
         Item.rare = ItemRarityID.Green;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,6 +49,7 @@ public class KulakWings : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
         ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
     {
@@ -58,5 +59,4 @@ public class KulakWings : ModItem
         maxAscentMultiplier = 3f;
         constantAscend = 0.135f;
     }
-
 }

@@ -30,6 +30,7 @@ public class BlueSkip : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

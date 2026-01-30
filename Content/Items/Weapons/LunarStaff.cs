@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -9,13 +9,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
+
 public class LunarStaff : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -43,11 +44,11 @@ public class LunarStaff : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         SoundEngine.PlaySound(SoundID.Item91, player.position);
 
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -60,10 +61,12 @@ public class LunarStaff : ModItem
         };
         tooltips.Add(line);
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(3f, -7f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -72,5 +75,4 @@ public class LunarStaff : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

@@ -1,5 +1,4 @@
-﻿
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -41,20 +40,20 @@ public class PlutoniumTorchPlaced : ModTile
         // Placement
         TileObjectData.newTile.CopyFrom(TileObjectData.GetTileData(TileID.Torches, 0));
         /*  This is what is copied from the Torches tile
-			TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
-			TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
-			TileObjectData.addAlternate(1);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorRight = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
-			TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
-			TileObjectData.addAlternate(2);
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
-			TileObjectData.newAlternate.AnchorWall = true;
-			TileObjectData.addAlternate(0);
-			*/
+            TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+            TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
+            TileObjectData.addAlternate(1);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorRight = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+            TileObjectData.newAlternate.AnchorAlternateTiles = [124, 561, 574, 575, 576, 577, 578];
+            TileObjectData.addAlternate(2);
+            TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
+            TileObjectData.newAlternate.AnchorWall = true;
+            TileObjectData.addAlternate(0);
+            */
 
         // This code adds style-specific properties to style 1. Style 1 is used by ExampleWaterTorch. This code allows the tile to be placed in liquids. More info can be found in the guide: https://github.com/tModLoader/tModLoader/wiki/Basic-Tile#newsubtile-and-newalternate
         TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
@@ -158,7 +157,7 @@ public class PlutoniumTorchPlaced : ModTile
 
         Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
 
-        ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i); // Don't remove any casts.
+        ulong randSeed = Main.TileFrameSeed ^ (ulong)(((long)j << 32) | (uint)i); // Don't remove any casts.
         Color color = new Color(100, 100, 100, 0);
         int width = 20;
         int height = 20;

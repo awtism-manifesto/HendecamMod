@@ -14,5 +14,4 @@ public class SandyShores : ModAchievement
         Achievement.SetCategory(AchievementCategory.Collector);
         Condition = AddItemCraftCondition(ModContent.ItemType<HurricaneGun>());
     }
-
 }

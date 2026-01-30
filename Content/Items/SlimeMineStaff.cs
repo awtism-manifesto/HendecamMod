@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SlimeMineStaff : ModItem
@@ -53,11 +54,13 @@ public class SlimeMineStaff : ModItem
         // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
         return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
         position = Main.MouseWorld;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -83,15 +86,14 @@ public class SlimeMineStaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.KingslayerBar>(12);
+        recipe.AddIngredient<KingslayerBar>(12);
         recipe.AddIngredient(ItemID.Dynamite, 25);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
     }
-
 }

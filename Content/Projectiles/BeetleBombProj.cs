@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -9,14 +9,14 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class BeetleBombProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -28,6 +28,7 @@ public class BeetleBombProj : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -50,14 +51,13 @@ public class BeetleBombProj : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-
         modifiers.SourceDamage *= 0f;
-
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -96,20 +96,17 @@ public class BeetleBombProj : ModProjectile
             // Increase the speed of the rocket if it is moving less than 1 block per second.
             // It is not recommended to increase the number past 16f to increase the speed of the rocket. It could start no clipping through blocks.
             // Instead, increase extraUpdates in SetDefaults() to make the rocket move faster.
-
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
-
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
-
     }
 
     public override void OnKill(int timeLeft)
@@ -128,12 +125,10 @@ public class BeetleBombProj : ModProjectile
 
         for (int i = -1; i <= (Main.rand.NextFloat(6, 10)); i++)
         {
-
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<BeetleFriend>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<BeetleFriend>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
         }
-
     }
 }

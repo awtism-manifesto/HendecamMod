@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BombScepter : ModItem
@@ -42,7 +43,6 @@ public class BombScepter : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 0.01f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -76,6 +76,7 @@ public class BombScepter : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -83,11 +84,11 @@ public class BombScepter : ModItem
         recipe.AddIngredient(ItemID.Bomb, 99);
 
         recipe.AddRecipeGroup("IronBar", 9);
-        recipe.AddIngredient(ItemID.FallenStar, 1);
+        recipe.AddIngredient(ItemID.FallenStar);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,6 +21,7 @@ public class EternalCrab : ModItem
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.value = 99988700;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -57,6 +58,7 @@ public class EternalCrab : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -72,7 +74,6 @@ public class EternalCrab : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
     }
 }

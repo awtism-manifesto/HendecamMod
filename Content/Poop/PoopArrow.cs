@@ -37,5 +37,4 @@ public class PoopArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 100);
         recipe.Register();
     }
-
 }

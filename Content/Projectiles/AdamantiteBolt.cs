@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class AdamantiteBolt : ModProjectile
@@ -10,7 +11,6 @@ public class AdamantiteBolt : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
-
     }
 
     public override void SetDefaults()
@@ -36,10 +36,8 @@ public class AdamantiteBolt : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 180)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -49,6 +47,7 @@ public class AdamantiteBolt : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.RedTorch, 0f, 0f, 100, default, 2.5f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fireDust.noGravity = true;
@@ -63,7 +62,6 @@ public class AdamantiteBolt : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 6;
         Projectile.damage = (int)(Projectile.damage * 0.9f);
     }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,6 +24,7 @@ public class BlankFlag : ModItem
         Item.autoReuse = true;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.BlankFlagPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -56,6 +57,7 @@ public class BlankFlag : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -63,7 +65,5 @@ public class BlankFlag : ModItem
         recipe.AddIngredient(ItemID.Silk, 3);
         recipe.AddTile(TileID.Loom);
         recipe.Register();
-
     }
-
 }

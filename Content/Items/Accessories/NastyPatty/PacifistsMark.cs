@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class PacifistsMark : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 200 more Health, at the cost of Combat Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
@@ -46,12 +47,13 @@ public class PacifistsMark : ModItem
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FallenStar, 4);
-        recipe.AddIngredient(ItemID.DemonHeart, 1);
+        recipe.AddIngredient(ItemID.DemonHeart);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
     }

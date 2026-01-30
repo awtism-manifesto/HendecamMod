@@ -1,5 +1,4 @@
-﻿
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -22,6 +21,7 @@ public class SpartanSpear : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
@@ -30,10 +30,9 @@ public class SpartanSpear : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.9f;
             dust.scale *= 1.1f;
-
         }
-
     }
+
     public override bool PreAI()
     {
         Player player = Main.player[Projectile.owner]; // Since we access the owner player instance so much, it's useful to create a helper local variable for this

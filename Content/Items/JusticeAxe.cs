@@ -1,13 +1,14 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -17,6 +18,8 @@ namespace HendecamMod.Content.Items;
 /// </summary>
 public class JusticeAxe : ModItem
 {
+    private int justiceaxecooldown;
+
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Swing;
@@ -45,7 +48,7 @@ public class JusticeAxe : ModItem
     {
         return true;
     }
-    private int justiceaxecooldown = 0;
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -55,28 +58,32 @@ public class JusticeAxe : ModItem
         else
         {
             Item.mana = 0;
-
         }
 
         return base.CanUseItem(player);
     }
+
     public override void UpdateInventory(Player player)
     {
         if (justiceaxecooldown > 0)
             justiceaxecooldown--;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)
         {
-
             if (justiceaxecooldown > 0)
                 return false;
 
-            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica))//fixing weird fargos bug (with spite)
-            { justiceaxecooldown = 45; }
+            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica)) //fixing weird fargos bug (with spite)
+            {
+                justiceaxecooldown = 45;
+            }
             else
-            { justiceaxecooldown = 60; }
+            {
+                justiceaxecooldown = 60;
+            }
 
             player.AddBuff(ModContent.BuffType<RudeBusterCooldown>(), 60);
             SoundEngine.PlaySound(SoundID.Item82, player.position);
@@ -119,6 +126,7 @@ public class JusticeAxe : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -128,6 +136,5 @@ public class JusticeAxe : ModItem
         recipe.AddIngredient(ItemID.SoulofNight, 5);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
 }

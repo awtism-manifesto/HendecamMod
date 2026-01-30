@@ -18,6 +18,7 @@ public class OrangeBrickPlaced : ModTile
 
         AddMapEntry(new Color(185, 54, 0));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

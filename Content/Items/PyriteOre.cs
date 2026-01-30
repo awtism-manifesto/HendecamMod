@@ -17,6 +17,6 @@ public class PyriteOre : ModItem
         Item.consumable = true;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.DefaultToPlaceableTile(ModContent.TileType<PyriteOreTile>(), 0);
+        Item.DefaultToPlaceableTile(ModContent.TileType<PyriteOreTile>());
     }
 }

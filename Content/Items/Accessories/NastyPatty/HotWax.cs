@@ -1,5 +1,5 @@
-﻿using HendecamMod.Content.Items.Placeables;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +18,13 @@ public class HotWax : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Makes ALL attacks inflict Hellfire, at the cost of Flasks");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyFire>().NastyEffect = true;
@@ -35,13 +37,14 @@ public class HotWax : ModItem
         player.buffImmune[BuffID.WeaponImbuePoison] = true;
         player.buffImmune[BuffID.WeaponImbueVenom] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<SteelBar>(5);
         recipe.AddIngredient(ItemID.BeeWax, 30);
-        recipe.AddIngredient(ItemID.MagmaStone, 1);
+        recipe.AddIngredient(ItemID.MagmaStone);
         recipe.AddTile(TileID.HoneyDispenser);
         recipe.Register();
     }

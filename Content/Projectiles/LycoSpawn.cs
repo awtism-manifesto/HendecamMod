@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class LycoSpawn : ModProjectile
@@ -34,26 +35,24 @@ public class LycoSpawn : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.05f));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.05f));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         if (Main.rand.NextBool(5))
         {
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<LycoSporeRanged>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
         }
         else
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<LycoShot>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<LycoShot>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         }
     }
+
     public override void AI()
     {
-
         // dust, all dust
         if (Projectile.alpha < 188)
         {
@@ -73,6 +72,4 @@ public class LycoSpawn : ModProjectile
             }
         }
     }
-
 }
-

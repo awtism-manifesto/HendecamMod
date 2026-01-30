@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,6 +12,8 @@ namespace HendecamMod.Content.Items.Armor;
 public class AzuriteHat : ModItem
 {
     public static readonly int MaxMinionIncrease = 2;
+    public static readonly int AdditiveDamageBonus = 15;
+    public static readonly int MeleeAttackSpeedBonus = 10;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -24,8 +26,7 @@ public class AzuriteHat : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 15;
-    public static readonly int MeleeAttackSpeedBonus = 10;
+
     public override void UpdateEquip(Player player)
     {
         player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
@@ -40,6 +41,7 @@ public class AzuriteHat : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.defense = 5;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "15% increased melee damage and 10% increased melee speed");
@@ -59,10 +61,12 @@ public class AzuriteHat : ModItem
             }
         }
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<AzuritePlatemail>() && legs.type == ModContent.ItemType<AzuriteGreaves>();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -70,6 +74,7 @@ public class AzuriteHat : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "+2 max summon slots";

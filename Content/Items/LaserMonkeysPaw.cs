@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class LaserMonkeysPaw : ModItem
@@ -26,7 +27,7 @@ public class LaserMonkeysPaw : ModItem
 
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item39;
+        Item.UseSound = SoundID.Item39;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -43,8 +44,8 @@ public class LaserMonkeysPaw : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<LaserBlast>();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,10 +71,11 @@ public class LaserMonkeysPaw : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe
-        recipe = CreateRecipe();
+            recipe = CreateRecipe();
         recipe.AddIngredient<SuperMonkeysPaw>();
 
         recipe.AddIngredient<PlutoniumBar>(15);
@@ -82,8 +84,8 @@ public class LaserMonkeysPaw : ModItem
         recipe.AddIngredient(ItemID.SoulofNight, 5);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-28f, -3f);

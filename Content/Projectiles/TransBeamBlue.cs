@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class TransBeamBlue : ModProjectile
@@ -31,7 +32,6 @@ public class TransBeamBlue : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.4f, 0.4f, 0.95f);
         if (Projectile.alpha < 180)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -41,11 +41,11 @@ public class TransBeamBlue : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.IceTorch, 0f, 0f, 100, Color.Blue, 1.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.2f;
-
             }
         }
     }

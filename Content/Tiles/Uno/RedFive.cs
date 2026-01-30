@@ -30,6 +30,7 @@ public class RedFive : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

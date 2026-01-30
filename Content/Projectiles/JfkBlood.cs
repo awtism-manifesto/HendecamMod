@@ -7,18 +7,16 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class JfkBlood : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
@@ -38,20 +36,20 @@ public class JfkBlood : ModProjectile
         Projectile.extraUpdates = 1;
         Projectile.width = 1; // The width of projectile hitbox
         Projectile.height = 1; // The height of projectile hitbox
-                               // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
-                               // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
-                               // This can be done by modifying projectile.penetrate
+        // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
+        // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
+        // This can be done by modifying projectile.penetrate
         Projectile.friendly = false;
         Projectile.tileCollide = false;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<Stamped>(), 300);
-
     }
+
     public override void AI()
     {
-
         // dust, all dust
 
         for (int i = 0; i < 2; i++)
@@ -63,10 +61,10 @@ public class JfkBlood : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Blood, 0f, 0f, 100, default, 1.89f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
-
         }
 
         float maxDetectRadius = 2000f; // The maximum radius at which a projectile can detect a target
@@ -102,9 +100,7 @@ public class JfkBlood : ModProjectile
         Projectile.rotation = Projectile.velocity.ToRotation();
         if (DelayTimer >= 14)
         {
-
             Projectile.friendly = true;
-
         }
     }
 
@@ -151,4 +147,3 @@ public class JfkBlood : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-

@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SacrificialPistol : ModItem
@@ -24,7 +25,7 @@ public class SacrificialPistol : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item13;
+        Item.UseSound = SoundID.Item13;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 5; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -47,6 +48,7 @@ public class SacrificialPistol : ModItem
     {
         type = ProjectileID.BloodArrow;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -59,7 +61,6 @@ public class SacrificialPistol : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
@@ -101,11 +102,10 @@ public class SacrificialPistol : ModItem
 
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("LivingFleshItem", out ModItem LivingFleshItem))
         {
-
             recipe.AddIngredient(LivingFleshItem.Type, 45);
-
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,6 +13,7 @@ public class FireDiamondStaff : ModItem
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -40,6 +41,7 @@ public class FireDiamondStaff : ModItem
         Item.shoot = ModContent.ProjectileType<Projectiles.FireDiamondStaffProjectile>();
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,11 +78,12 @@ public class FireDiamondStaff : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("SOTS", out Mod SOTS) && SOTS.TryFind<ModItem>("DissolvingEarth", out ModItem DissolvingEarth))
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTS) && SOTS.TryFind("DissolvingEarth", out ModItem DissolvingEarth))
         {
-            recipe.AddIngredient(DissolvingEarth.Type, 1);
+            recipe.AddIngredient(DissolvingEarth.Type);
         }
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.FireDiamondStaffProjectile>();

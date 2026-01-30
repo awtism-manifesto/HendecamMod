@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -39,6 +39,7 @@ public class BlueMaticHorn : ModItem
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -57,6 +58,7 @@ public class BlueMaticHorn : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -93,22 +95,23 @@ public class BlueMaticHorn : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.ShroomiteBar, 10);
         recipe.AddIngredient<AzuriteBar>(10);
-        recipe.AddIngredient(ItemID.PewMaticHorn, 1);
+        recipe.AddIngredient(ItemID.PewMaticHorn);
 
-        recipe.AddIngredient(ItemID.BlueMoon, 1);
+        recipe.AddIngredient(ItemID.BlueMoon);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("SpikedBall", out ModItem SpikedBall))
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("SpikedBall", out ModItem SpikedBall))
         {
             recipe.AddIngredient(SpikedBall.Type);
         }
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.BlueMaticHornProjectile>();

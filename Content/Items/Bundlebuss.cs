@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -31,7 +31,7 @@ public class Bundlebuss : ModItem
         Item.consumeAmmoOnLastShotOnly = true;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item40;
+        Item.UseSound = SoundID.Item40;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -47,14 +47,15 @@ public class Bundlebuss : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<Projectiles.MusketBallSpinny>();
+            type = ModContent.ProjectileType<MusketBallSpinny>();
         }
+
         if (type == ModContent.ProjectileType<MusketBallSpinny>())
         {
             damage = (int)(damage * 1.25f);
         }
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

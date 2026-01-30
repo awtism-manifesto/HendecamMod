@@ -2,13 +2,13 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SaltMelee : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
     }
 
     public override void SetDefaults()
@@ -44,7 +44,6 @@ public class SaltMelee : ModProjectile
             Projectile.velocity.Y = 6f;
         }
         // dust
-
     }
 
     public override void OnKill(int timeLeft)
@@ -59,4 +58,3 @@ public class SaltMelee : ModProjectile
         }
     }
 }
-

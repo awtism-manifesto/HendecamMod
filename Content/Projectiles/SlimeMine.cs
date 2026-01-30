@@ -10,7 +10,6 @@ public class SlimeMine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -26,6 +25,7 @@ public class SlimeMine : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 25;
@@ -51,14 +51,12 @@ public class SlimeMine : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
-
         if (Projectile.timeLeft < 546)
         {
-
             Projectile.friendly = true;
-
         }
 
         if (Projectile.timeLeft > 453)
@@ -78,6 +76,7 @@ public class SlimeMine : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 453)
         {
             int frameSpeed = 14;
@@ -95,6 +94,7 @@ public class SlimeMine : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 302)
         {
             int frameSpeed = 10;
@@ -112,6 +112,7 @@ public class SlimeMine : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 151)
         {
             int frameSpeed = 8;
@@ -134,14 +135,15 @@ public class SlimeMine : ModProjectile
         {
             ProjectileID.Sets.IsARocketThatDealsDoubleDamageToPrimaryEnemy[Type] = false;
         }
+
         Projectile.velocity *= 0f;
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 5)
         {
             Projectile.PrepareBombToBlow();
         }
-
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -155,11 +157,12 @@ public class SlimeMine : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 10f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.96f);
-
     }
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because

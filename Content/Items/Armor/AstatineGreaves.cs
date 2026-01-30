@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,7 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class AstatineGreaves : ModItem
 {
-
     public static readonly int MoveSpeedBonus = 35;
     public static readonly int AdditiveDamageBonus = 8;
     public static readonly int AdditiveThrowDamageBonus = 13;
@@ -38,6 +37,7 @@ public class AstatineGreaves : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 22; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,7 +52,6 @@ public class AstatineGreaves : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             line = new TooltipLine(Mod, "Face", "13% increased throwing damage")
             {
                 OverrideColor = new Color(255, 255, 255)
@@ -62,11 +61,13 @@ public class AstatineGreaves : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<AstatineHelmet>() && body.type == ModContent.ItemType<AstatineBreastplate>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -89,11 +90,10 @@ public class AstatineGreaves : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 113f;
         }
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -103,13 +103,14 @@ public class AstatineGreaves : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
+
     public class AstatinePants : ModPlayer
     {
-        public bool AstatinePantys = false;
+        public bool AstatinePantys;
 
         public override void ResetEffects()
         {
@@ -123,6 +124,7 @@ public class AstatineGreaves : ModItem
             {
                 return;
             }
+
             Player.runAcceleration *= 1.35f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.35f;
             Player.accRunSpeed *= 1.35f;

@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class DiseaseBlaster : ModItem
@@ -26,7 +27,7 @@ public class DiseaseBlaster : ModItem
         Item.reuseDelay = 33;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item99;
+        Item.UseSound = SoundID.Item99;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -39,6 +40,7 @@ public class DiseaseBlaster : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.5f, 0.53f));
@@ -102,11 +104,10 @@ public class DiseaseBlaster : ModItem
         recipe.Register();
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("LivingFleshItem", out ModItem LivingFleshItem))
         {
-
             recipe.AddIngredient(LivingFleshItem.Type, 45);
-
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);

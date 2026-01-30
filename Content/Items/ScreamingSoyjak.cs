@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ScreamingSoyjak : ModItem
@@ -21,7 +22,7 @@ public class ScreamingSoyjak : ModItem
         Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 39; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-        Item.UseSound = Terraria.ID.SoundID.DD2_WyvernDeath;
+        Item.UseSound = SoundID.DD2_WyvernDeath;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 3;
 
@@ -37,14 +38,13 @@ public class ScreamingSoyjak : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.Soundwave>();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

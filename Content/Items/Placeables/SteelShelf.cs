@@ -22,7 +22,7 @@ public class SteelShelf : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(1);
+        recipe.AddIngredient<SteelBar>();
         recipe.Register();
     }
 }

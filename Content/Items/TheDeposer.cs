@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -69,8 +69,8 @@ public class TheDeposer : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.Polymer>(5);
-        recipe.AddIngredient<Items.ImprovisedPistol>();
+        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<ImprovisedPistol>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

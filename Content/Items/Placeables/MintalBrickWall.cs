@@ -24,7 +24,7 @@ public class MintalBrickWall : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(4);
-        recipe.AddIngredient<Items.Placeables.MintalBrick>(1);
+        recipe.AddIngredient<MintalBrick>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

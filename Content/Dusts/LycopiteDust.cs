@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,11 +22,10 @@ public class LycopiteDust : ModDust
         dust.color = Color.OrangeRed;
         dust.scale = 1.15f;
         dust.alpha = 100;
-
     }
+
     public override bool Update(Dust dust)
     {
-
         float lightR = 0.95f * dust.scale;
         float lightG = 0.395f * dust.scale;
         float lightB = 0.05f * dust.scale;
@@ -35,6 +34,7 @@ public class LycopiteDust : ModDust
 
         return true; // RETURN TRUE
     }
+
     public override Color? GetAlpha(Dust dust, Color lightColor)
     {
         lightColor = Color.Lerp(lightColor, Color.OrangeRed, 0.8f);

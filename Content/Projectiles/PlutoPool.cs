@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class PlutoPool : ModProjectile
@@ -9,6 +10,7 @@ public class PlutoPool : ModProjectile
     {
         Main.projFrames[Projectile.type] = 3;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 55;
@@ -25,11 +27,12 @@ public class PlutoPool : ModProjectile
         Projectile.localNPCHitCooldown = 19;
         Projectile.alpha = 145;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60);
-
     }
+
     public override void AI()
     {
         int frameSpeed = 5;
@@ -52,43 +55,45 @@ public class PlutoPool : ModProjectile
         if (Projectile.timeLeft < 53)
         {
             Projectile.scale = 1.75f;
-
         }
+
         if (Projectile.timeLeft < 47)
         {
             Projectile.scale = 1.2f;
             Projectile.Resize(80, 80);
         }
+
         if (Projectile.timeLeft < 40)
         {
             Projectile.scale = 1.95f;
-
         }
+
         if (Projectile.timeLeft < 33)
         {
             Projectile.scale = 2.1f;
             Projectile.Resize(100, 100);
         }
+
         if (Projectile.timeLeft < 27)
         {
             Projectile.scale = 1.95f;
-
         }
+
         if (Projectile.timeLeft < 20)
         {
             Projectile.scale = 1.76f;
             Projectile.Resize(70, 70);
         }
+
         if (Projectile.timeLeft < 13)
         {
             Projectile.scale = 1.55f;
-
         }
+
         if (Projectile.timeLeft < 7)
         {
             Projectile.scale = 1.35f;
             Projectile.Resize(45, 45);
         }
-
     }
 }

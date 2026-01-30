@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class A5G : ModProjectile
@@ -10,7 +11,6 @@ public class A5G : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -29,13 +29,10 @@ public class A5G : ModProjectile
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 4; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.immune[Projectile.owner] = 4;
-
     }
 }

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -52,16 +52,16 @@ public class TheMeltdown : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FireWhip);
-        recipe.AddIngredient<Items.ChainReaction>();
+        recipe.AddIngredient<ChainReaction>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-
     }
 
     // Makes the whip receive melee prefixes

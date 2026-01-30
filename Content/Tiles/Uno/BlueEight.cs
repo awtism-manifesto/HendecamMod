@@ -30,6 +30,7 @@ public class BlueEight : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

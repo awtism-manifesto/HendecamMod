@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class RoyalChest : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Mimics should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Mimic] = true;
@@ -32,12 +33,13 @@ public class RoyalChest : ModItem
         player.npcTypeNoAggro[NPCID.IceMimic] = true;
         player.npcTypeNoAggro[NPCID.PresentMimic] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.ToySled, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.ToySled);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

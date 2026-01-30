@@ -1,13 +1,17 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class GunOfRoses : ModItem
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -25,7 +29,7 @@ public class GunOfRoses : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item28;
+        Item.UseSound = SoundID.Item28;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,15 +41,13 @@ public class GunOfRoses : ModItem
         Item.shoot = ModContent.ProjectileType<Projectiles.RosePetal>();
 
         Item.shootSpeed = 10.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.RosePetal>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -82,13 +84,14 @@ public class GunOfRoses : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void AddRecipes()
     {
         Recipe
-        recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Heartache>();
+            recipe = CreateRecipe();
+        recipe.AddIngredient<Heartache>();
         recipe.AddIngredient(ItemID.JungleSpores, 10);
-        recipe.AddIngredient<Items.LycopiteBar>(7);
+        recipe.AddIngredient<LycopiteBar>(7);
         recipe.AddIngredient(ItemID.JungleRose);
 
         recipe.AddTile(TileID.Anvils);
@@ -99,6 +102,7 @@ public class GunOfRoses : ModItem
             recipe.AddIngredient(Petal.Type, 4);
         }
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

@@ -1,18 +1,19 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class TheXRay : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -40,6 +41,7 @@ public class TheXRay : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Xray>();
@@ -70,10 +72,12 @@ public class TheXRay : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(6f, -15f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -83,5 +87,4 @@ public class TheXRay : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class DevilFlame : ModProjectile
@@ -10,7 +11,6 @@ public class DevilFlame : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -36,10 +36,8 @@ public class DevilFlame : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 166)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -67,6 +65,5 @@ public class DevilFlame : ModProjectile
     {
         Projectile.damage = (int)(Projectile.damage * 0.8f);
         target.immune[Projectile.owner] = 7;
-
     }
 }

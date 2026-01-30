@@ -11,7 +11,6 @@ public class SaltGrav : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
     }
 
     public override void SetDefaults()
@@ -47,7 +46,6 @@ public class SaltGrav : ModProjectile
             Projectile.velocity.Y = 6f;
         }
         // dust
-
     }
 
     public override void OnKill(int timeLeft)

@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,7 +12,6 @@ namespace HendecamMod.Content.Poop;
 [AutoloadEquip(EquipType.Head)]
 public class PoopyHelmet : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 1;
 
     public static readonly int AttackSpeed = 10;
@@ -38,6 +36,7 @@ public class PoopyHelmet : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 1; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -63,11 +62,13 @@ public class PoopyHelmet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PoopyShirt>() && legs.type == ModContent.ItemType<PoopyPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -84,6 +85,7 @@ public class PoopyHelmet : ModItem
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 101f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -93,6 +95,7 @@ public class PoopyHelmet : ModItem
 
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeed / 110f;

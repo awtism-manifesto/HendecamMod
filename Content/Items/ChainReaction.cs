@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -54,15 +54,15 @@ public class ChainReaction : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.PlutoniumBar>(18);
+        recipe.AddIngredient<PlutoniumBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-
     }
 
     // Makes the whip receive melee prefixes

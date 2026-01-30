@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SaltGun : ModItem
@@ -27,7 +28,7 @@ public class SaltGun : ModItem
         Item.reuseDelay = 31;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item151;
+        Item.UseSound = SoundID.Item151;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -39,13 +40,11 @@ public class SaltGun : ModItem
         Item.shoot = ModContent.ProjectileType<Salt>();
 
         Item.shootSpeed = 6.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Salt>();
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -73,23 +72,24 @@ public class SaltGun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient(ItemID.SilverBar, 9);
-        recipe.AddIngredient<Items.RockSalt>(35);
+        recipe.AddIngredient<RockSalt>(35);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
         recipe = CreateRecipe();
 
         recipe.AddIngredient(ItemID.TungstenBar, 9);
-        recipe.AddIngredient<Items.RockSalt>(35);
+        recipe.AddIngredient<RockSalt>(35);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

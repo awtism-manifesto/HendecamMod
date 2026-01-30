@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,6 +21,7 @@ public class PurifiedSaltBlock : ModItem
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PureSaltTile>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,11 +52,9 @@ public class PurifiedSaltBlock : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.PurifiedSalt>(9);
+        recipe.AddIngredient<PurifiedSalt>(9);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
-
 }

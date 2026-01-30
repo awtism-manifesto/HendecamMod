@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -26,7 +26,7 @@ public class MG42 : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item40;
+        Item.UseSound = SoundID.Item40;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,6 +37,7 @@ public class MG42 : ModItem
         Item.shootSpeed = 9.66f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -54,7 +55,6 @@ public class MG42 : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -82,11 +82,12 @@ public class MG42 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Gatligator);
-        recipe.AddIngredient<Items.Stg44>();
+        recipe.AddIngredient<Stg44>();
 
         recipe.AddIngredient(ItemID.SoulofFright, 5);
 
@@ -99,6 +100,7 @@ public class MG42 : ModItem
             recipe.AddIngredient(SoulOfPlight.Type, 5);
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-27f, -1f);

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,7 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class PlutoniumChestplate : ModItem
 {
-
     public static readonly int CritBonus = 10;
     public static readonly int AdditiveDamageBonus = 15;
     public static readonly int AttackSpeedBonus = 15;
@@ -40,6 +39,7 @@ public class PlutoniumChestplate : ModItem
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 17; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,11 +65,13 @@ public class PlutoniumChestplate : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<PlutoniumFacemask>() && legs.type == ModContent.ItemType<PlutoniumPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -91,6 +93,7 @@ public class PlutoniumChestplate : ModItem
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 115f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -100,12 +103,11 @@ public class PlutoniumChestplate : ModItem
 
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
         player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
     }
-
 }

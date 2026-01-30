@@ -1,8 +1,8 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Poop;
 
 public class PooShit : ModProjectile
@@ -28,7 +28,6 @@ public class PooShit : ModProjectile
 
     public override void AI()
     {
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
@@ -47,7 +46,6 @@ public class PooShit : ModProjectile
 
         if (Projectile.alpha < 205)
         {
-
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -66,10 +64,8 @@ public class PooShit : ModProjectile
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.35f;
-
             }
         }
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

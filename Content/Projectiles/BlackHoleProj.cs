@@ -1,12 +1,11 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
+
 public class BlackHoleProj : ModProjectile
 {
-
     public override void SetDefaults()
     {
         Projectile.width = 330; // The width of projectile hitbox
@@ -23,8 +22,8 @@ public class BlackHoleProj : ModProjectile
         Projectile.localNPCHitCooldown = 1;
         Projectile.alpha = 255;
         Projectile.extraUpdates = 1;
-
     }
+
     public override void AI()
     {
         Projectile.scale = Projectile.scale * 1.08f;
@@ -32,11 +31,9 @@ public class BlackHoleProj : ModProjectile
         Projectile.height = (int)(Projectile.height * 1.075f);
         Projectile.velocity.X = -13.5f;
         Projectile.velocity.Y = -13.5f;
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
     }
 }

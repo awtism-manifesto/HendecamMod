@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class GayFrogAlchemyGuide : ModItem
@@ -26,7 +27,7 @@ public class GayFrogAlchemyGuide : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item13;
+        Item.UseSound = SoundID.Item13;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<AutismDamage>(); // Sets the damage type to ranged.
         Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -38,13 +39,11 @@ public class GayFrogAlchemyGuide : ModItem
         Item.shoot = ModContent.ProjectileType<GayFrogChemicals>();
 
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<GayFrogChemicals>();
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

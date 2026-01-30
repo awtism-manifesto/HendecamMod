@@ -3,13 +3,15 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.NPCs.Bosses;
 
 [AutoloadBossHead]
 public class HeadOfCthulhu : ModNPC
 {
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = 4;
@@ -25,6 +27,7 @@ public class HeadOfCthulhu : ModNPC
             NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
         }
     }
+
     public override void SetDefaults()
     {
         if (Main.hardMode)
@@ -39,6 +42,7 @@ public class HeadOfCthulhu : ModNPC
             NPC.defense = 67;
             NPC.lifeMax = 10050;
         }
+
         NPC.width = 300;
         NPC.height = 300;
 
@@ -67,20 +71,24 @@ public class HeadOfCthulhu : ModNPC
             }
         }
     }
+
     public override void FindFrame(int frameHeight)
     {
         Main.npcFrameCount[Type] = 4;
         AnimationType = NPCID.BlazingWheel;
     }
+
     public override void OnKill()
     {
         NPC.SetEventFlagCleared(ref HeadOfCthulhuDown.downedHeadOfCthulhu, -1);
     }
+
     public override bool CanHitPlayer(Player target, ref int cooldownSlot)
     {
         cooldownSlot = ImmunityCooldownID.Bosses;
         return true;
     }
+
     public override void AI()
     {
         if (!NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
@@ -88,6 +96,7 @@ public class HeadOfCthulhu : ModNPC
             NPC.SetDefaults(0);
             NPC.active = false;
         }
+
         if (nextSpawnTick == 0)
         {
             nextSpawnTick = Main.rand.Next(24, 26);
@@ -126,4 +135,3 @@ public class HeadOfCthulhu : ModNPC
         }
     }
 }
-

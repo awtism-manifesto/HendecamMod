@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -70,10 +70,11 @@ public class Bullshit3 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Bullshit2>();
+        recipe.AddIngredient<Bullshit2>();
         recipe.AddIngredient(ItemID.EmpressButterfly);
         recipe.AddIngredient(ItemID.PaladinBanner);
         recipe.AddIngredient<RadioactiveEmblem>();
@@ -84,11 +85,9 @@ public class Bullshit3 : ModItem
             recipe.AddIngredient(GoldDuck.Type);
         }
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CoreofCalamity", out ModItem CoreofCalamity))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CoreofCalamity", out ModItem CoreofCalamity))
         {
             recipe.AddIngredient(CoreofCalamity.Type);
-
         }
     }
-
 }

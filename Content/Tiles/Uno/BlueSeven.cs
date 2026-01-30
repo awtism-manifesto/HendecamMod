@@ -30,6 +30,7 @@ public class BlueSeven : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

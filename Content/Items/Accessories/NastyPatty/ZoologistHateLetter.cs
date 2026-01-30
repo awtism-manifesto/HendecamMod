@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class ZoologistHateLetter : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s, Light, 25% Crit Chance, and Double Movement Speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets, Light Pets, Summons, or Mounts"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
@@ -156,12 +157,13 @@ public class ZoologistHateLetter : ModItem
         player.ClearBuff(BuffID.VoltBunny);
         player.ClearBuff(BuffID.ZephyrFish);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<PetaAutograph>(1);
-        recipe.AddIngredient<CeaseAndDesist>(1);
+        recipe.AddIngredient<PetaAutograph>();
+        recipe.AddIngredient<CeaseAndDesist>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

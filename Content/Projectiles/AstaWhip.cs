@@ -1,9 +1,9 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -14,6 +14,18 @@ namespace HendecamMod.Content.Projectiles;
 
 public class AstaWhip : ModProjectile
 {
+    private float Timer
+    {
+        get => Projectile.ai[0];
+        set => Projectile.ai[0] = value;
+    }
+
+    private float ChargeTime
+    {
+        get => Projectile.ai[1];
+        set => Projectile.ai[1] = value;
+    }
+
     public override void SetStaticDefaults()
     {
         // This makes the projectile use whip collision detection and allows flasks to be applied to it.
@@ -33,29 +45,16 @@ public class AstaWhip : ModProjectile
         // Projectile.WhipSettings.RangeMultiplier = 1f;
     }
 
-    private float Timer
-    {
-        get => Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
-
-    private float ChargeTime
-    {
-        get => Projectile.ai[1];
-        set => Projectile.ai[1] = value;
-    }
-
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-1, 1));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
         Projectile.damage = (int)(Projectile.damage * 0.45f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
@@ -177,10 +176,11 @@ public class AstaWhip : ModProjectile
             float rotation = diff.ToRotation() - MathHelper.PiOver2; // This projectile's sprite faces down, so PiOver2 is used to correct rotation.
             Color color = Lighting.GetColor(element.ToTileCoordinates());
 
-            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip, 0);
+            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip);
 
             pos += diff;
         }
+
         return false;
     }
 }

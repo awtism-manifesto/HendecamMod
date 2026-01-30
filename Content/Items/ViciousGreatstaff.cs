@@ -1,12 +1,13 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -21,6 +22,7 @@ public class ViciousGreatstaff : ModItem
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Shoot;
@@ -35,9 +37,9 @@ public class ViciousGreatstaff : ModItem
         Item.scale = 1.05f;
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
         {
-
             Item.damage = 89;
         }
+
         Item.rare = ItemRarityID.Lime;
         Item.value = Item.buyPrice(gold: 20); // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Magic;
@@ -56,18 +58,15 @@ public class ViciousGreatstaff : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item13, player.position);
 
             Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ModContent.ProjectileType<BloodshotSpawn>(), (int)(damage * 0.45f), (int)(knockback * 0.5f), player.whoAmI);
             return false;
         }
-        else
-        {
-            SoundEngine.PlaySound(SoundID.Item100, player.position);
-            return true;
-        }
+
+        SoundEngine.PlaySound(SoundID.Item100, player.position);
+        return true;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -95,6 +94,7 @@ public class ViciousGreatstaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -109,8 +109,6 @@ public class ViciousGreatstaff : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
-
         }
-
     }
 }

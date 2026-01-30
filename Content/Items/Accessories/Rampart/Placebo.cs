@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,15 +16,18 @@ public class Placebo : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Potion Sickness");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.ClearBuff(BuffID.PotionSickness);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
+
 public class FireyPhasesaber : ModItem
 {
     public override void SetDefaults()
@@ -38,6 +39,7 @@ public class FireyPhasesaber : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,13 +72,13 @@ public class FireyPhasesaber : ModItem
         // 60 frames = 1 second
         target.AddBuff(BuffID.OnFire3, 600);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.CrystalShard, 25);
-        recipe.AddIngredient<Items.Weapons.FireyPhaseblade>(1);
+        recipe.AddIngredient<FireyPhaseblade>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

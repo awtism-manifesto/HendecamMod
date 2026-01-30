@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,9 +10,9 @@ public class ThePurifier : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.damage = 33;
@@ -37,10 +37,12 @@ public class ThePurifier : ModItem
         Item.axe = 26;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -52,7 +54,6 @@ public class ThePurifier : ModItem
 
             Item.axe = 0;
             Item.hammer = 105;
-
         }
         else
         {
@@ -93,7 +94,6 @@ public class ThePurifier : ModItem
             recipe.AddIngredient<KingslayerMultiaxe>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
         else
         {
@@ -104,6 +104,5 @@ public class ThePurifier : ModItem
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
-
     }
 }

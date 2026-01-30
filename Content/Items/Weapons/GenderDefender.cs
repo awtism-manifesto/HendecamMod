@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -37,6 +37,7 @@ public class GenderDefender : ModItem
         Item.shootSpeed = 10f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -74,8 +75,8 @@ public class GenderDefender : ModItem
         recipe.AddIngredient<TransBar>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-30f, -1f);

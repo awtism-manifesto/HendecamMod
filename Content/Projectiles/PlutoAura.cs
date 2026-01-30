@@ -2,11 +2,11 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class PlutoAura : ModProjectile
 {
-
     public override void SetDefaults()
     {
         Projectile.width = 448;
@@ -23,15 +23,14 @@ public class PlutoAura : ModProjectile
         Projectile.usesIDStaticNPCImmunity = true;
         Projectile.idStaticNPCHitCooldown = 6;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 90);
-
     }
+
     public override void AI()
     {
-
         Player player = Main.player[Projectile.owner];
         Projectile.Center = player.Center;
 

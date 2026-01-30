@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -37,13 +37,11 @@ public class BeeSnipe : ModItem
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
         Item.shoot = ProjectileID.BeeArrow;
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.BeeArrow;
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -79,8 +77,8 @@ public class BeeSnipe : ModItem
         recipe.AddIngredient<Polymer>(25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -9,10 +9,7 @@ namespace HendecamMod.Common.Systems;
 // It is unlocked when ExampleWormHead has been defeated 5 times rather than just once.
 public class SkullCracker : ModAchievement
 {
-    public NPCKilledCondition Condition
-    {
-        get; private set;
-    }
+    public NPCKilledCondition Condition { get; private set; }
 
     public override void SetStaticDefaults()
     {

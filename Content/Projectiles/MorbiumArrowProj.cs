@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class MorbiumArrowProj : ModProjectile
@@ -24,14 +25,14 @@ public class MorbiumArrowProj : ModProjectile
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
+
     public override void AI()
     {
-
         Projectile.velocity = Projectile.velocity * 0.225f;
     }
+
     public override void OnKill(int timeLeft)
     {
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.5f));
         Vector2 spawn = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity,
@@ -39,17 +40,15 @@ public class MorbiumArrowProj : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1.5f));
         Vector2 spawn2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn2, velocity2,
-        ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
         Vector2 spawn3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn3, velocity3,
-        ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-4.5f));
         Vector2 spawn4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn4, velocity4,
-        ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
     }
-
 }
-

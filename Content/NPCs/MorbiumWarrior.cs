@@ -18,25 +18,28 @@ public class MorbiumWarrior : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.PossessedArmor;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"They're here to usher in Morbin Time. Fast and erratic. Do not trust them.\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"They're here to usher in Morbin Time. Fast and erratic. Do not trust them.\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void SetDefaults()
     {
         NPC.width = 24;
@@ -54,7 +57,6 @@ public class MorbiumWarrior : ModNPC
         AnimationType = NPCID.PossessedArmor; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<OilMonsterBanner>();
-
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -64,14 +66,11 @@ public class MorbiumWarrior : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         if (NPC.downedPlantBoss)
         {
             return SpawnCondition.Dungeon.Chance * 0.55f;
         }
-        else
-            return SpawnCondition.DesertCave.Chance * 0.00f;
 
+        return SpawnCondition.DesertCave.Chance * 0.00f;
     }
-
 }

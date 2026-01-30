@@ -34,12 +34,12 @@ public class AzuriteWaraxe : ModItem
         {
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AzuriteBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 }

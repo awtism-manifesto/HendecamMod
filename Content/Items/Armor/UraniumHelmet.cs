@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,7 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class UraniumHelmet : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 9;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,6 +35,7 @@ public class UraniumHelmet : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,11 +61,13 @@ public class UraniumHelmet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<UraniumChestplate>() && legs.type == ModContent.ItemType<UraniumLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -83,6 +85,7 @@ public class UraniumHelmet : ModItem
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 109f;
         player.statLifeMax2 += -15;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -92,6 +95,7 @@ public class UraniumHelmet : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = SetBonusText.Value;

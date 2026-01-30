@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,7 +12,6 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Body)]
 public class PowerChestplate : ModItem
 {
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -31,8 +30,8 @@ public class PowerChestplate : ModItem
         Item.height = 28; // Height of the item
         Item.value = 200000; // How many coins the item is worth
         Item.rare = ItemRarityID.Gray; // The rarity of the item
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,8 +72,6 @@ public class PowerChestplate : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
-
 }

@@ -50,6 +50,7 @@ public class VaxNeedle : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -67,8 +68,8 @@ public class VaxNeedle : ModProjectile
             fire2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
             fire2Dust.velocity *= 0.115f;
         }
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Venom, 250);
@@ -76,7 +77,7 @@ public class VaxNeedle : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-50, 50);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-50, 50);
 
@@ -92,33 +93,30 @@ public class VaxNeedle : ModProjectile
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-       ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-
+                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-        ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-
+                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
+
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-       ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-
+                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-       ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-
+                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
     }
+
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);

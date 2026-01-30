@@ -15,6 +15,7 @@ public class AstatineGlassTile : ModTile
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(196, 62, 90));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 2 : 5;

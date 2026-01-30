@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class DietSchedule : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 10% damage reduction, at the cost of Food Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyEndurance>().NastyEffect = true;
@@ -30,12 +31,13 @@ public class DietSchedule : ModItem
         player.buffImmune[BuffID.WellFed2] = true;
         player.buffImmune[BuffID.WellFed3] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.DontStarveShaderItem, 1);
-        recipe.AddIngredient(ItemID.Book, 1);
+        recipe.AddIngredient(ItemID.DontStarveShaderItem);
+        recipe.AddIngredient(ItemID.Book);
         recipe.AddTile(TileID.Bookcases);
         recipe.Register();
     }

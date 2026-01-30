@@ -29,12 +29,12 @@ public class MintalBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<MintalBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(5);
-        recipe.AddIngredient<MintalOre>(1);
+        recipe.AddIngredient<MintalOre>();
         recipe.AddIngredient(ItemID.StoneBlock, 5);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();

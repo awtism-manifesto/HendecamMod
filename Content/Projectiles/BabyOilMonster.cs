@@ -18,12 +18,11 @@ public class BabyOilMonster : ModProjectile
         ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         if (Main.rand.NextBool(5))
         {
-
             target.AddBuff(BuffID.Oiled, 240);
         }
 
@@ -31,12 +30,11 @@ public class BabyOilMonster : ModProjectile
         {
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<OilBoomSmall>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
-
+                new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+                ModContent.ProjectileType<OilBoomSmall>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
         }
-
     }
+
     public override void SetDefaults()
     {
         Projectile.CloneDefaults(ProjectileID.PirateCaptain);
@@ -54,6 +52,7 @@ public class BabyOilMonster : ModProjectile
 
         Projectile.penetrate = -1;
     }
+
     public override bool? CanCutTiles()
     {
         return false;
@@ -70,7 +69,6 @@ public class BabyOilMonster : ModProjectile
 
         if (!CheckActive(owner))
         {
-            return;
         }
     }
 

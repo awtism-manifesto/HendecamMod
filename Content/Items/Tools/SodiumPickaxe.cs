@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class SodiumPickaxe : ModItem
         Item.pick = 64; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -42,6 +43,7 @@ public class SodiumPickaxe : ModItem
         };
         tooltips.Add(line);
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -51,6 +53,5 @@ public class SodiumPickaxe : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-
     }
 }

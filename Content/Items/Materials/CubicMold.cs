@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,6 +12,7 @@ public class CubicMold : ModItem
     {
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -20,6 +21,7 @@ public class CubicMold : ModItem
         Item.value = 30;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Used for making cubes out of various materials");
@@ -38,8 +40,8 @@ public class CubicMold : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -47,5 +49,4 @@ public class CubicMold : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

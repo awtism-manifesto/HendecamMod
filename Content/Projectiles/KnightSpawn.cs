@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class KnightSpawn : ModProjectile
@@ -24,9 +25,9 @@ public class KnightSpawn : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override void OnKill(int timeLeft)
     {
-
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(66, 66);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -40,14 +41,11 @@ public class KnightSpawn : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-66, -66);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-        ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity24 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits24 = Projectile.Center - new Vector2(66, -66);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits24, velocity24,
-        ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
-
+            ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
     }
-
 }
-

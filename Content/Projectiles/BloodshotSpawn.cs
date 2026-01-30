@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class BloodshotSpawn : ModProjectile
@@ -28,28 +29,25 @@ public class BloodshotSpawn : ModProjectile
 
     public override void OnSpawn(IEntitySource source)
     {
-
     }
+
     public override void OnKill(int timeLeft)
     {
-
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-105, 105), 940));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanit1s = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-125, 125), 960));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanit1s,
-        new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-           ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 Jorkin = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-65, 65), 925));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Jorkin,
-        new Vector2(28, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(28, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 Stripped = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-25, 25), 970));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
-        new Vector2(32, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(32, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
     }
-
 }
-

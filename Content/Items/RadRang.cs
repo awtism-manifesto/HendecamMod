@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,6 +10,11 @@ namespace HendecamMod.Content.Items;
 
 public class RadRang : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -33,6 +38,7 @@ public class RadRang : ModItem
         Item.shoot = ModContent.ProjectileType<RadBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,11 +65,6 @@ public class RadRang : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.
@@ -83,6 +84,7 @@ public class RadRang : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -91,6 +93,5 @@ public class RadRang : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-
     }
 }

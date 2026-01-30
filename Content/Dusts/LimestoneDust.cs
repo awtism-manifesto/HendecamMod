@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,7 +21,6 @@ public class LimestoneDust : ModDust
         dust.color = Color.Beige;
         dust.scale = 1f;
         dust.alpha = 100;
-
     }
 
     public override Color? GetAlpha(Dust dust, Color lightColor)

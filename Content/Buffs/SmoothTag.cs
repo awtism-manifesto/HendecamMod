@@ -14,8 +14,8 @@ public class SmoothTag : ModBuff
         // Other mods may check it for different purposes.
         BuffID.Sets.IsATagBuff[Type] = true;
     }
-
 }
+
 public class SmoothTagg : GlobalNPC
 {
     public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
@@ -32,7 +32,5 @@ public class SmoothTagg : GlobalNPC
         }
 
         // if you have a lot of buffs in your mod, it might be faster to loop over the NPC.buffType and buffTime arrays once, and track the buffs you find, rather than calling HasBuff many times
-
     }
 }
-

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -15,7 +15,6 @@ public class SpaceTrash2 : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -32,14 +31,14 @@ public class SpaceTrash2 : ModProjectile
         Projectile.localNPCHitCooldown = 25;
         Projectile.DamageType = DamageClass.Magic;
         Projectile.timeLeft = 195;
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.OnFire, 300);
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -50,7 +49,7 @@ public class SpaceTrash2 : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -58,7 +57,6 @@ public class SpaceTrash2 : ModProjectile
 
     public override void AI()
     {
-
         int frameSpeed = 5;
 
         Projectile.frameCounter++;

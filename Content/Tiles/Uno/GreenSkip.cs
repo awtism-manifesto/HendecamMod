@@ -30,6 +30,7 @@ public class GreenSkip : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

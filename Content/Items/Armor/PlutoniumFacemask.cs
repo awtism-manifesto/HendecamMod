@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,7 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PlutoniumFacemask : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 13;
     public static readonly int CritBonus = 13;
     public static readonly int MaxManaIncrease = 85;
@@ -39,6 +38,7 @@ public class PlutoniumFacemask : ModItem
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 12; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,11 +64,13 @@ public class PlutoniumFacemask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PlutoniumChestplate>() && legs.type == ModContent.ItemType<PlutoniumPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -88,6 +90,7 @@ public class PlutoniumFacemask : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.lifeRegen += -1;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -97,6 +100,7 @@ public class PlutoniumFacemask : ModItem
 
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.armorEffectDrawShadow = true;

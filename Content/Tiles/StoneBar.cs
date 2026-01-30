@@ -32,6 +32,7 @@ public class StoneBar : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

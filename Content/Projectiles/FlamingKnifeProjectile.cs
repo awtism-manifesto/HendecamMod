@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -52,6 +52,7 @@ public class FlamingKnifeProjectile : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -70,6 +71,7 @@ public class FlamingKnifeProjectile : ModProjectile
             }
         }
     }
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
@@ -81,13 +83,13 @@ public class FlamingKnifeProjectile : ModProjectile
             dust.scale *= 0.9f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage * 0.75), Projectile.knockBack, Projectile.owner);
-
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage * 0.75), Projectile.knockBack, Projectile.owner);
     }
 }

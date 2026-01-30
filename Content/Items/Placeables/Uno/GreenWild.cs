@@ -1,6 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,6 +14,7 @@ public class GreenWild : ModItem
         ItemID.Sets.SortingPriorityMaterials[Type] = 2;
         Item.rare = ItemRarityID.Expert;
     }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.GreenWild>());
@@ -22,6 +22,7 @@ public class GreenWild : ModItem
         Item.height = 20;
         Item.value = 1;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Right Click to make it Blue")
@@ -30,12 +31,14 @@ public class GreenWild : ModItem
         };
         tooltips.Add(line);
     }
+
     public override bool CanRightClick()
     {
         return true;
     }
+
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<BlueWild>(), 1));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<BlueWild>()));
     }
 }

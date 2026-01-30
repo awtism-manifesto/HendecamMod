@@ -1,8 +1,7 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -33,18 +32,21 @@ public class ShadowCrystalSword : ModItem
         Item.buffTime = 300;
         Item.useTurn = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         player.lifeRegen += (int)8f;
         return true;
     }
+
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(1);
+        Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<LoreAccurateBlackshard>(10);
         recipe.AddTile(TileID.GlassKiln);

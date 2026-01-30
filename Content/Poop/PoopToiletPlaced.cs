@@ -101,7 +101,8 @@ public class PoopToiletPlaced : ModTile
         Player player = Main.LocalPlayer;
 
         if (player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
-        { // Avoid being able to trigger it from long range
+        {
+            // Avoid being able to trigger it from long range
             player.GamepadEnableGrappleCooldown();
             player.sitting.SitDown(player, i, j);
         }
@@ -114,7 +115,8 @@ public class PoopToiletPlaced : ModTile
         Player player = Main.LocalPlayer;
 
         if (!player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
-        { // Match condition in RightClick. Interaction should only show if clicking it does something
+        {
+            // Match condition in RightClick. Interaction should only show if clicking it does something
             return;
         }
 

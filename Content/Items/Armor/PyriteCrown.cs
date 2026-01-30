@@ -1,5 +1,5 @@
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -9,16 +9,21 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PyriteCrown : ModItem
 {
+    public static readonly int MeleeAttackSpeedBonus = 9;
+    public static readonly int AdditiveSummonDamageBonus = 9;
+
     public override void SetDefaults()
     {
         Item.defense = 2;
         Item.rare = ItemRarityID.Blue;
         Item.value = 54000;
     }
+
     public override void SetStaticDefaults()
     {
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -26,8 +31,7 @@ public class PyriteCrown : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-    public static readonly int MeleeAttackSpeedBonus = 9;
-    public static readonly int AdditiveSummonDamageBonus = 9;
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -44,8 +48,8 @@ public class PyriteCrown : ModItem
 
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 109f;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 109f;
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -71,12 +75,14 @@ public class PyriteCrown : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "1 extra minion & sentry slot";
         player.maxMinions += 1;
         player.maxTurrets += 1;
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PyriteChestguard>() && legs.type == ModContent.ItemType<PyriteLegPlating>();

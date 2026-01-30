@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,7 +8,6 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class UltraboostedWrench : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -16,8 +15,8 @@ public class UltraboostedWrench : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 9599000;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -28,8 +27,8 @@ public class UltraboostedWrench : ModItem
         recipe.AddIngredient(ItemID.FragmentStardust, 10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,25 +50,28 @@ public class UltraboostedWrench : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetModPlayer<Ultraboostified>().Ultraboosted = true;// Put all boosts in the ModPlayer below to toggle dynamically
+        player.GetModPlayer<Ultraboostified>().Ultraboosted = true; // Put all boosts in the ModPlayer below to toggle dynamically
     }
 }
+
 public class Ultraboostified : ModPlayer
 {
     public static readonly int MeleeAttackSpeedBonus = 20;
     public static readonly int MoveSpeedBonus = 20;
-    public bool Ultraboosted = false;
+    public bool Ultraboosted;
 
     public override void ResetEffects()
     {
         Ultraboosted = false;
     }
+
     public override void PostUpdateRunSpeeds()
     {
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == false) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (!Player.GetModPlayer<Ultraboostified>().Ultraboosted) // Strongest boost takes priority, weaker boosts shouldn't prevent this
         {
             return;
         }
+
         if (Main.rand.NextBool(4)) // 1-in-3 chance every tick
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustID.Electric,
@@ -77,12 +79,11 @@ public class Ultraboostified : ModPlayer
             Main.dust[dust].noGravity = true;
         }
     }
+
     public override void PostUpdateEquips()
     {
-
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == false) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (!Player.GetModPlayer<Ultraboostified>().Ultraboosted) // Strongest boost takes priority, weaker boosts shouldn't prevent this
         {
-            return;
         }
         else
         {

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,9 +12,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class MarbleChestplate : ModItem
 {
-
     public static readonly int AdditiveMeleeDamageBonus = 8;
     public static readonly int MeleeAttackSpeedBonus = 8;
+    public static readonly int MeleeCritBonus = 6;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,6 +36,7 @@ public class MarbleChestplate : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,12 +62,13 @@ public class MarbleChestplate : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<MarbleMask>() && legs.type == ModContent.ItemType<MarbleGreaves>();
     }
-    public static readonly int MeleeCritBonus = 6;
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -82,7 +84,6 @@ public class MarbleChestplate : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 106f;
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
-
     }
 
     public override void AddRecipes()
@@ -92,8 +93,8 @@ public class MarbleChestplate : ModItem
         recipe.AddRecipeGroup("IronBar", 30);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.meleeScaleGlove = true;

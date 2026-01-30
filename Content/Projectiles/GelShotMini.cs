@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class GelShotMini : ModProjectile
@@ -13,7 +14,6 @@ public class GelShotMini : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -37,9 +37,9 @@ public class GelShotMini : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -65,6 +65,7 @@ public class GelShotMini : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
         Projectile.ai[0] += 1f;
@@ -82,9 +83,9 @@ public class GelShotMini : ModProjectile
         {
             Projectile.velocity.Y = 21f;
         }
+
         if (Projectile.alpha < 167)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -105,9 +106,7 @@ public class GelShotMini : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Slimed, 300);
         target.AddBuff(ModContent.BuffType<KingTag>(), 300);
-
     }
 }

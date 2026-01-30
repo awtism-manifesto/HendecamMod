@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SpamtonHead : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -32,7 +32,6 @@ public class SpamtonHead : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -56,5 +55,4 @@ public class SpamtonHead : ModProjectile
             }
         }
     }
-
 }

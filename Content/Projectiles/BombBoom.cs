@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -11,7 +11,6 @@ public class BombBoom : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class BombBoom : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -39,12 +39,13 @@ public class BombBoom : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 4;
         Projectile.damage = (int)(Projectile.damage * 0.95f);
-
     }
+
     public override void AI()
     {
         // Apply gravity after a quarter of a second
@@ -63,6 +64,7 @@ public class BombBoom : ModProjectile
         {
             Projectile.velocity.Y = 32f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -145,7 +147,6 @@ public class BombBoom : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 11; j++)
         {
-
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 2.75f);
             fireDust.noGravity = true;
             fireDust.velocity *= 3f;
@@ -155,7 +156,7 @@ public class BombBoom : ModProjectile
             Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.75f);
             fireeDust.noGravity = true;
             fireeDust.velocity *= 3f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1f);
+            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100);
             fireeDust.velocity *= 2.5f;
             fireeDust.noGravity = true;
         }

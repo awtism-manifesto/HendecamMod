@@ -1,12 +1,13 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -16,11 +17,14 @@ namespace HendecamMod.Content.Items;
 /// </summary>
 public class VileGreatstaff : ModItem
 {
+    private int altClickCooldown;
+
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Shoot;
@@ -36,7 +40,6 @@ public class VileGreatstaff : ModItem
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
         {
-
             Item.damage = 79;
         }
 
@@ -53,17 +56,17 @@ public class VileGreatstaff : ModItem
     {
         return true;
     }
-    private int altClickCooldown = 0;
+
     public override void UpdateInventory(Player player)
     {
         if (altClickCooldown > 0)
             altClickCooldown--;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)
         {
-
             // Check if cooldown is still active
             if (altClickCooldown > 0)
                 return false;
@@ -77,11 +80,9 @@ public class VileGreatstaff : ModItem
             Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ModContent.ProjectileType<VileSpawn>(), (int)(damage * 1.33f), (int)(knockback * 1f), player.whoAmI);
             return false;
         }
-        else
-        {
-            SoundEngine.PlaySound(SoundID.Item100, player.position);
-            return true;
-        }
+
+        SoundEngine.PlaySound(SoundID.Item100, player.position);
+        return true;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -109,6 +110,7 @@ public class VileGreatstaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -123,8 +125,6 @@ public class VileGreatstaff : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
-
         }
-
     }
 }

@@ -11,7 +11,6 @@ public class SplashPotionShine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class SplashPotionShine : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -39,6 +39,7 @@ public class SplashPotionShine : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -54,6 +55,7 @@ public class SplashPotionShine : ModProjectile
             Projectile.ai[0] = 24f;
             Projectile.velocity.Y += 0.25f;
         }
+
         if (Projectile.velocity.Y > 16f)
         {
             Projectile.velocity.Y = 20f;
@@ -63,7 +65,6 @@ public class SplashPotionShine : ModProjectile
     // When the rocket hits a tile, NPC, or player, get ready to explode.
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
         return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
     }
@@ -105,11 +106,11 @@ public class SplashPotionShine : ModProjectile
             fireDust.velocity *= 3.5f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<ShinyTag>(), 300);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-
     }
 }

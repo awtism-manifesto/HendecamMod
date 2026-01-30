@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SaltMelee2 : ModProjectile
@@ -36,4 +37,3 @@ public class SaltMelee2 : ModProjectile
         }
     }
 }
-

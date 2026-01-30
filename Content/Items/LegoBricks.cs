@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,6 +21,7 @@ public class LegoBricks : ModItem
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.LegosPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,11 +52,9 @@ public class LegoBricks : ModItem
     {
         Recipe recipe = CreateRecipe(4);
 
-        recipe.AddIngredient<Items.PlasticScrap>();
+        recipe.AddIngredient<PlasticScrap>();
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
     }
-
 }

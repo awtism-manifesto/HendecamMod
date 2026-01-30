@@ -11,18 +11,15 @@ public class AzuriteArrowProjectile : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -48,10 +45,8 @@ public class AzuriteArrowProjectile : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 180)
         {
-
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -61,13 +56,14 @@ public class AzuriteArrowProjectile : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.GemSapphire, 0f, 0f, 100, default, 0.8f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.85f;
-
             }
         }
+
         float maxDetectRadius = 275f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -98,8 +94,8 @@ public class AzuriteArrowProjectile : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(5f)).ToRotationVector2() * length;
-
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;

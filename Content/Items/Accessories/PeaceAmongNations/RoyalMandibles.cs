@@ -16,11 +16,13 @@ public class RoyalMandibles : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The dwellers of the desert should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Vulture] = true;
@@ -60,12 +62,13 @@ public class RoyalMandibles : ModItem
         player.npcTypeNoAggro[NPCID.DuneSplicerTail] = true;
         player.npcTypeNoAggro[NPCID.Tumbleweed] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.AntlionClaw, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.AntlionClaw);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

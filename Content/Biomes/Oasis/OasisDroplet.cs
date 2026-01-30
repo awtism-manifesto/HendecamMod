@@ -13,4 +13,3 @@ public class OasisDroplet : ModGore
         UpdateType = GoreID.WaterDrip;
     }
 }
-

@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
+
 public class WeaponImbueFission : ModBuff
 {
     public override void SetStaticDefaults()
@@ -20,9 +21,10 @@ public class WeaponImbueFission : ModBuff
         player.MeleeEnchantActive = true; // MeleeEnchantActive indicates to other mods that a weapon imbue is active.
     }
 }
+
 public class FissionImbueGlobal : ModPlayer
 {
-    public bool FissionWeaponImbue = false;
+    public bool FissionWeaponImbue;
 
     public override void ResetEffects()
     {

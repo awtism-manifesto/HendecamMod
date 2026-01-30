@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class HephFlame : ModProjectile
@@ -10,7 +11,6 @@ public class HephFlame : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -37,10 +37,8 @@ public class HephFlame : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 159)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -50,6 +48,7 @@ public class HephFlame : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.YellowTorch, 0f, 0f, 100, default, 2.9f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fire2Dust.noGravity = true;

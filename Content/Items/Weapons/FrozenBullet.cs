@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,10 +30,12 @@ public class FrozenBullet : ModItem
         Item.shootSpeed = 3.5f;
         Item.ammo = AmmoID.Bullet;
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Shots inflict Frostburn for 3 seconds");
@@ -45,12 +47,12 @@ public class FrozenBullet : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
         recipe.AddIngredient(ItemID.MusketBall, 50);
         recipe.AddIngredient(ItemID.IceTorch);
         recipe.Register();
-
     }
 }

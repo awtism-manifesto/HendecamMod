@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
+
 public class SilverLongsword : ModItem
 {
     public override void SetDefaults()
@@ -39,6 +40,7 @@ public class SilverLongsword : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,6 +66,7 @@ public class SilverLongsword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -71,10 +74,9 @@ public class SilverLongsword : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SilverBroadsword, 1);
+        recipe.AddIngredient(ItemID.SilverBroadsword);
         recipe.AddIngredient(ItemID.SilverBar, 4);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

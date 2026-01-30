@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -13,7 +13,6 @@ public class GeigerBoom : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -26,6 +25,7 @@ public class GeigerBoom : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -44,6 +44,7 @@ public class GeigerBoom : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 15;
@@ -52,6 +53,7 @@ public class GeigerBoom : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 661);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 661);
     }
+
     public override void AI()
     {
         // Apply gravity after a quarter of a second
@@ -70,6 +72,7 @@ public class GeigerBoom : ModProjectile
         {
             Projectile.velocity.Y = 32f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -113,6 +116,7 @@ public class GeigerBoom : ModProjectile
             Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + MathHelper.PiOver2;
         }
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -159,6 +163,7 @@ public class GeigerBoom : ModProjectile
             fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.4f);
             fire11Dust.velocity *= 6.5f;
         }
+
         for (int j = 0; j < 33; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
@@ -177,6 +182,7 @@ public class GeigerBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
             fireeeDust.velocity *= 3f;
         }
+
         for (int j = 0; j < 17; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
@@ -195,6 +201,7 @@ public class GeigerBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.2f);
             fireeeDust.velocity *= 10f;
         }
+
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
         {

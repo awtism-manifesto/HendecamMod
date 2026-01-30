@@ -1,14 +1,15 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class LycoShot : ModProjectile
@@ -37,37 +38,38 @@ public class LycoShot : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             modifiers.SourceDamage *= 1.5f;
         }
+
         if (target.HasBuff(ModContent.BuffType<VpTag>()))
         {
             modifiers.SourceDamage *= 1.66f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             SoundEngine.PlaySound(SoundID.Item37, target.position);
-
         }
 
         if (target.HasBuff(ModContent.BuffType<VpTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             SoundEngine.PlaySound(SoundID.Item37, target.position);
-
         }
     }
 
@@ -111,7 +113,7 @@ public class LycoShot : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -119,7 +121,6 @@ public class LycoShot : ModProjectile
 
     public override void AI()
     {
-
         // dust, all dust
         if (Projectile.alpha < 198)
         {
@@ -139,6 +140,4 @@ public class LycoShot : ModProjectile
             }
         }
     }
-
 }
-

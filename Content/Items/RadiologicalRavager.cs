@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -38,7 +38,6 @@ public class RadiologicalRavager : ModItem
             Item.useAnimation = 28;
             Item.useTime = 28;
             Item.damage = 314;
-
         }
     }
 
@@ -50,6 +49,7 @@ public class RadiologicalRavager : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,6 +75,7 @@ public class RadiologicalRavager : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -83,17 +84,16 @@ public class RadiologicalRavager : ModItem
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("UltimusCleaver", out ModItem UltimusCleaver) && CalMerica.TryFind<ModItem>("BloodstoneCore", out ModItem BloodstoneCore))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("UltimusCleaver", out ModItem UltimusCleaver) && CalMerica.TryFind("BloodstoneCore", out ModItem BloodstoneCore))
         {
             recipe.AddIngredient(UltimusCleaver.Type);
             recipe.AddIngredient(BloodstoneCore.Type, 5);
             recipe.AddIngredient<AstatineBar>(10);
         }
+
         if (!ModLoader.TryGetMod("CalamityMod", out Mod SkillIssue2))
         {
-
             recipe.AddIngredient<AstatineBar>(10);
         }
     }
-
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -37,6 +37,7 @@ public class MintalMachinePistol : ModItem
         Item.shootSpeed = 11.1f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -55,6 +56,7 @@ public class MintalMachinePistol : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -89,11 +91,11 @@ public class MintalMachinePistol : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.MintalBar>(10);
+        recipe.AddIngredient<Placeables.MintalBar>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -31,10 +31,12 @@ public class PlatinumMultiaxe : ModItem
         Item.axe = 19;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -46,7 +48,6 @@ public class PlatinumMultiaxe : ModItem
 
             Item.axe = 0;
             Item.hammer = 77;
-
         }
         else
         {
@@ -85,5 +86,4 @@ public class PlatinumMultiaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

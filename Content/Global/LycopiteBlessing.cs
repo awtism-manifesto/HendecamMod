@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Tiles;
+﻿using System.Threading;
+using HendecamMod.Content.Tiles;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -11,7 +11,6 @@ namespace HendecamMod.Content.Global;
 
 public class LycopiteBlessing : GlobalNPC
 {
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.Deerclops;
@@ -22,11 +21,10 @@ public class LycopiteBlessing : GlobalNPC
         if (!NPC.downedDeerclops)
         {
             ModContent.GetInstance<LycopiteSystem>().BlessWorldWithLycopite();
-
         }
-
     }
 }
+
 public class LycopiteSystem : ModSystem
 {
     public static LocalizedText LycopiteMessage { get; private set; }
@@ -77,5 +75,4 @@ public class LycopiteSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

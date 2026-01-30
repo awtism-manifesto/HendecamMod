@@ -14,5 +14,4 @@ public class TheSniper : ModAchievement
         Achievement.SetCategory(AchievementCategory.Collector);
         Condition = AddItemCraftCondition(ModContent.ItemType<TrueJfkExperience>());
     }
-
 }

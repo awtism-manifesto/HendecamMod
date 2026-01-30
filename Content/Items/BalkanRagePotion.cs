@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Consumables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Consumables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,7 +14,8 @@ public class BalkanRagePotion : ModItem
         Item.ResearchUnlockCount = 20;
 
         // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(195, 32, 102),
             new Color(17, 155, 11),
             new Color(91, 21, 224)
@@ -63,6 +64,7 @@ public class BalkanRagePotion : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -81,8 +83,5 @@ public class BalkanRagePotion : ModItem
         recipe.AddIngredient<UraniumOre>();
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-
     }
-
 }
-

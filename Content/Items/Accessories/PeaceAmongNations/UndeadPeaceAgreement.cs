@@ -1,5 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +17,13 @@ public class UndeadPeaceAgreement : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "All undead should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Zombie] = true;
@@ -128,12 +130,13 @@ public class UndeadPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.Poltergeist] = true;
         player.npcTypeNoAggro[NPCID.SwampThing] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SkeletronTrophy);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

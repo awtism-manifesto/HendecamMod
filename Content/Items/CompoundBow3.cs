@@ -1,12 +1,13 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class CompoundBow3 : ModItem
@@ -50,13 +51,12 @@ public class CompoundBow3 : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
         SoundEngine.PlaySound(SoundID.Item102, player.position);
         return false; // Prevent vanilla projectile spawn
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -86,18 +86,18 @@ public class CompoundBow3 : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.CompoundBow2>();
+        recipe.AddIngredient<CompoundBow2>();
 
         recipe.AddIngredient(ItemID.LunarBar, 10);
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteBar", out ModItem ArtemiteBar))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("ArtemiteBar", out ModItem ArtemiteBar))
         {
             recipe.AddIngredient(ArtemiteBar.Type, 5);
-
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -64,5 +64,4 @@ public class AstatineArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
         recipe.Register();
     }
-
 }

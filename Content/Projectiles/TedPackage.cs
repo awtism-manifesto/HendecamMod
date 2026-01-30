@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -25,6 +25,7 @@ public class TedPackage : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -39,6 +40,7 @@ public class TedPackage : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -158,12 +160,12 @@ public class TedPackage : ModProjectile
             Dust fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
             fire1Dust234.noGravity = true;
             fire1Dust234.velocity *= 7f;
-            fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
+            fire1Dust234 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100);
             fire1Dust234.velocity *= 3f;
             Dust fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 2.5f);
             fire1Dust2354.noGravity = true;
             fire1Dust2354.velocity *= 7f;
-            fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100, default, 1f);
+            fire1Dust2354 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Venom, 0f, 0f, 100);
             fire1Dust2354.velocity *= 3f;
             Dust fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 2f);
             fire1Dust23546.noGravity = true;
@@ -187,6 +189,7 @@ public class TedPackage : ModProjectile
             fire1Dust235469.velocity *= 3f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Venom, 444);
@@ -204,7 +207,6 @@ public class TedPackage : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
-
     }
 
     // Rocket II explosion that damages tiles.

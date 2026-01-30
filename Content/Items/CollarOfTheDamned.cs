@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,8 +19,8 @@ public class CollarOfTheDamned : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.accessory = true;
         Item.vanity = true;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -28,8 +28,8 @@ public class CollarOfTheDamned : ModItem
         recipe.AddIngredient(ItemID.CrabBanner);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -56,5 +56,4 @@ public class CollarOfTheDamned : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-
 }

@@ -1,8 +1,9 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using System;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class MorbeamRanged : ModProjectile
@@ -31,11 +32,9 @@ public class MorbeamRanged : ModProjectile
 
     public override void AI()
     {
-
         if (Math.Abs(Projectile.velocity.X) <= 15.5f && Math.Abs(Projectile.velocity.Y) <= 15.5f)
         {
             Projectile.velocity *= 1.15f;
-
         }
 
         for (int i = 0; i < 2; i++)
@@ -47,14 +46,14 @@ public class MorbeamRanged : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 2.67f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
             fireDust.noGravity = true;
             fireDust.velocity *= 0.3f;
-
         }
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -82,6 +81,7 @@ public class MorbeamRanged : ModProjectile
 
         return false;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.75f); // lose a bit of damage as it pierces

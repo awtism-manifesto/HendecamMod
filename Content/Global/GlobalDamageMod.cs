@@ -7,8 +7,8 @@ namespace HendecamMod.Content.Global;
 
 public class DamageModificationGlobalNPC : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool stamped;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {
@@ -35,10 +35,11 @@ public class DamageModificationGlobalNPC : GlobalNPC
         }
     }
 }
+
 public class OrangeDebuff : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool orange;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {
@@ -65,10 +66,11 @@ public class OrangeDebuff : GlobalNPC
         }
     }
 }
+
 public class GayDebuff : GlobalNPC
 {
-    public override bool InstancePerEntity => true;
     public bool gay;
+    public override bool InstancePerEntity => true;
 
     public override void ResetEffects(NPC npc)
     {

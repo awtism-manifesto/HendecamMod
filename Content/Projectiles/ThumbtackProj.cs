@@ -50,7 +50,6 @@ public class ThumbtackProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-
     }
 
     public override void OnKill(int timeLeft)

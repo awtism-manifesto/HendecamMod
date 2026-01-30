@@ -40,5 +40,4 @@ public class UltrabrightArrow : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

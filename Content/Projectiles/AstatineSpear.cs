@@ -1,5 +1,4 @@
-﻿
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -16,7 +15,6 @@ public class AstatineSpear : ModProjectile
 
     public override void SetDefaults()
     {
-
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 9;
@@ -24,16 +22,17 @@ public class AstatineSpear : ModProjectile
         Projectile.width = 32;
         Projectile.height = 32;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
+
     public override bool PreAI()
     {
         Player player = Main.player[Projectile.owner]; // Since we access the owner player instance so much, it's useful to create a helper local variable for this

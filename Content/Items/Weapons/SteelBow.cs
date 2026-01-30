@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -36,6 +36,7 @@ public class SteelBow : ModItem
         Item.shootSpeed = 6.1f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -70,11 +71,11 @@ public class SteelBow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.SteelBar>(7);
+        recipe.AddIngredient<Placeables.SteelBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);

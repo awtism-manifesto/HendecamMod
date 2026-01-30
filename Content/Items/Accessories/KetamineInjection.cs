@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -42,6 +42,7 @@ public class KetamineInjection : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -56,7 +57,7 @@ public class KetamineInjection : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.875f);
-        player.endurance = 1f - 0.75f * (1f - player.endurance);  // The percentage of damage reduction
+        player.endurance = 1f - 0.75f * (1f - player.endurance); // The percentage of damage reduction
         player.lifeRegen += -2;
     }
 }

@@ -17,12 +17,10 @@ public class Gay : ModBuff
     public override void Update(NPC npc, ref int buffIndex)
     {
         npc.GetGlobalNPC<GayDebuff>().gay = true;
-
     }
 
     public override void Update(Player player, ref int buffIndex)
     {
-
         player.statDefense *= DefenseMultiplier;
     }
 }

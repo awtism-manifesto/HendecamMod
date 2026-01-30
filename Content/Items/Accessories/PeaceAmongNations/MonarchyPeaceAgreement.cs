@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class MonarchyPeaceAgreement : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Slimes, Bees, and Hornets should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.QueenSlimeBoss] = true;
@@ -63,16 +64,16 @@ public class MonarchyPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.HornetSpikey] = true;
         player.npcTypeNoAggro[NPCID.HornetStingy] = true;
         player.npcTypeNoAggro[NPCID.MossHornet] = true;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.KingSlimeTrophy, 1);
-        recipe.AddIngredient(ItemID.QueenSlimeTrophy, 1);
-        recipe.AddIngredient(ItemID.QueenBeeTrophy, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.KingSlimeTrophy);
+        recipe.AddIngredient(ItemID.QueenSlimeTrophy);
+        recipe.AddIngredient(ItemID.QueenBeeTrophy);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

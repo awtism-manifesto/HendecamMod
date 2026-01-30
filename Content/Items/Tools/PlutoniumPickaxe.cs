@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class PlutoniumPickaxe : ModItem
         Item.pick = 205; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -42,9 +43,9 @@ public class PlutoniumPickaxe : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 245);
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
@@ -53,9 +54,9 @@ public class PlutoniumPickaxe : ModItem
             dust.noGravity = true;
             dust.velocity *= 4.5f;
             dust.scale *= 0.76f;
-
         }
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -65,6 +66,5 @@ public class PlutoniumPickaxe : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-
     }
 }

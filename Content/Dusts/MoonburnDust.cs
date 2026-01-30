@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,9 +22,9 @@ public class MoonburnDust : ModDust
         dust.scale = 1f;
         dust.alpha = 100;
     }
+
     public override bool Update(Dust dust)
     {
-
         float lightR = 0.2f * dust.scale;
         float lightG = 0.8f * dust.scale;
         float lightB = 0.8f * dust.scale;
@@ -33,6 +33,7 @@ public class MoonburnDust : ModDust
 
         return true; // RETURN TRUE
     }
+
     public override Color? GetAlpha(Dust dust, Color lightColor)
     {
         lightColor = Color.Lerp(lightColor, Color.DarkCyan, 0.8f);
@@ -60,5 +61,4 @@ public class MoonburnDust : ModDust
 
         return true;
     }
-
 }

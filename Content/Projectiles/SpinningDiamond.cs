@@ -3,13 +3,13 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SpinningDiamond : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -31,7 +31,6 @@ public class SpinningDiamond : ModProjectile
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
-
     }
 
     public override void AI()
@@ -54,12 +53,11 @@ public class SpinningDiamond : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         if (Math.Abs(Projectile.velocity.X) <= 25.5f && Math.Abs(Projectile.velocity.Y) <= 25.5f)
         {
             Projectile.velocity *= 1.32f;
-
         }
-
     }
 
     public override void OnKill(int timeLeft)
@@ -68,5 +66,4 @@ public class SpinningDiamond : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

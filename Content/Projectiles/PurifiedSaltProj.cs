@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class PurifiedSaltProj : ModProjectile
@@ -26,13 +27,13 @@ public class PurifiedSaltProj : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
     }
 
     public override void AI()
     {
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -56,6 +57,4 @@ public class PurifiedSaltProj : ModProjectile
             }
         }
     }
-
 }
-

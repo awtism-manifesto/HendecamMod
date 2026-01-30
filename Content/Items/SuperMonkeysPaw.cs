@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SuperMonkeysPaw : ModItem
@@ -26,7 +27,7 @@ public class SuperMonkeysPaw : ModItem
 
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item1;
+        Item.UseSound = SoundID.Item1;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -39,6 +40,7 @@ public class SuperMonkeysPaw : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (type == ModContent.ProjectileType<FrostDart>())
@@ -72,17 +74,17 @@ public class SuperMonkeysPaw : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
-
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LightAnguish", out ModItem LightAnguish)
-             && ThorMerica.TryFind("Embowelment", out ModItem Embowelment)
-             && (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel)))
+                                                                  && ThorMerica.TryFind("Embowelment", out ModItem Embowelment)
+                                                                  && (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PurifiedGel", out ModItem PurifiedGel)))
 
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.TheMonkeysPaw>();
+            recipe.AddIngredient<TheMonkeysPaw>();
             recipe.AddIngredient(LightAnguish);
             recipe.AddIngredient(Embowelment);
             recipe.AddIngredient(PurifiedGel.Type, 10);
@@ -90,49 +92,48 @@ public class SuperMonkeysPaw : ModItem
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("LightAnguish", out ModItem Light2Anguish)
 
-             && (!ModLoader.TryGetMod("CalamityMod", out Mod Cal69Merica)
-              && ThorMerica.TryFind("Embowelment", out ModItem Embowelment2)))
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("LightAnguish", out ModItem Light2Anguish)
+                                                                   && (!ModLoader.TryGetMod("CalamityMod", out Mod Cal69Merica)
+                                                                       && ThorMerica.TryFind("Embowelment", out ModItem Embowelment2)))
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.TheMonkeysPaw>();
+            recipe.AddIngredient<TheMonkeysPaw>();
             recipe.AddIngredient(Light2Anguish);
             recipe.AddIngredient(Embowelment2);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
-        if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica) && (!ModLoader.TryGetMod("ThoriumMod", out Mod NuhUh) && Cal2Merica.TryFind<ModItem>("PurifiedGel", out ModItem Purified2Gel)))
-        {
 
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica) && (!ModLoader.TryGetMod("ThoriumMod", out Mod NuhUh) && Cal2Merica.TryFind("PurifiedGel", out ModItem Purified2Gel)))
+        {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.TheMonkeysPaw>();
-            recipe.AddIngredient<Items.Liquidation>();
-            recipe.AddIngredient<Items.SacrificialPistol>();
-            recipe.AddIngredient<Items.DiseaseBlaster>();
+            recipe.AddIngredient<TheMonkeysPaw>();
+            recipe.AddIngredient<Liquidation>();
+            recipe.AddIngredient<SacrificialPistol>();
+            recipe.AddIngredient<DiseaseBlaster>();
 
             recipe.AddIngredient(ItemID.Blowgun);
             recipe.AddIngredient(Purified2Gel.Type, 10);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
-
         }
         else
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.TheMonkeysPaw>();
-            recipe.AddIngredient<Items.Liquidation>();
-            recipe.AddIngredient<Items.SacrificialPistol>();
-            recipe.AddIngredient<Items.DiseaseBlaster>();
+            recipe.AddIngredient<TheMonkeysPaw>();
+            recipe.AddIngredient<Liquidation>();
+            recipe.AddIngredient<SacrificialPistol>();
+            recipe.AddIngredient<DiseaseBlaster>();
 
             recipe.AddIngredient(ItemID.Blowgun);
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
             // recipe.AddIngredient(PurifiedGel.Type, 10);
-
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-28f, -3f);

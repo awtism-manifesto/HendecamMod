@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,6 +12,7 @@ public class MintalBar : ModItem
     {
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -27,6 +28,7 @@ public class MintalBar : ModItem
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.MintalBarPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,6 +61,5 @@ public class MintalBar : ModItem
         recipe.AddIngredient<MintalOre>(5);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
-
     }
 }

@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using System;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class MorbiumBolt : ModProjectile
@@ -30,6 +31,7 @@ public class MorbiumBolt : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -59,12 +61,11 @@ public class MorbiumBolt : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
-
         if (Projectile.alpha < 180)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -74,11 +75,11 @@ public class MorbiumBolt : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 3.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.3f;
-
             }
         }
     }

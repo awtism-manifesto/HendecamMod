@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -29,7 +29,7 @@ public class GeigersGambit : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
 
-        Item.UseSound = Terraria.ID.SoundID.Item46;
+        Item.UseSound = SoundID.Item46;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 1190; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -49,20 +49,20 @@ public class GeigersGambit : ModItem
     {
         type = ModContent.ProjectileType<Projectiles.GeigerRocket>();
         SoundEngine.PlaySound(SoundID.Item88);
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Autocannon>();
-        recipe.AddIngredient<Items.FissionDrive>(2);
+        recipe.AddIngredient<Autocannon>();
+        recipe.AddIngredient<FissionDrive>(2);
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,6 +15,7 @@ public class Bergentrucking : ModItem
 
         Item.ResearchUnlockCount = 1; // Configure the amount of this item that's needed to research it in Journey mode.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -28,6 +29,7 @@ public class Bergentrucking : ModItem
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.BergentruckingTile>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -69,7 +71,6 @@ public class Bergentrucking : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
 
     public override void AddRecipes()
@@ -81,5 +82,4 @@ public class Bergentrucking : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
 }

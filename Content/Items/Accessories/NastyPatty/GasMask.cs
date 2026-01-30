@@ -17,11 +17,13 @@ public class GasMask : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants double the breath timer, at the cost of Envoirnmental Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
@@ -35,11 +37,12 @@ public class GasMask : ModItem
         player.buffImmune[BuffID.CatBast] = true;
         player.buffImmune[BuffID.MonsterBanner] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.DivingHelmet, 1);
+        recipe.AddIngredient(ItemID.DivingHelmet);
         recipe.AddIngredient<Rubber>(25);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();

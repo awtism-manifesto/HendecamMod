@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
@@ -11,6 +11,18 @@ namespace HendecamMod.Content.Projectiles;
 
 public class KevlarWhipProj : ModProjectile
 {
+    private float Timer
+    {
+        get => Projectile.ai[0];
+        set => Projectile.ai[0] = value;
+    }
+
+    private float ChargeTime
+    {
+        get => Projectile.ai[1];
+        set => Projectile.ai[1] = value;
+    }
+
     public override void SetStaticDefaults()
     {
         // This makes the projectile use whip collision detection and allows flasks to be applied to it.
@@ -28,18 +40,6 @@ public class KevlarWhipProj : ModProjectile
         // use these to change from the vanilla defaults
         // Projectile.WhipSettings.Segments = 20;
         // Projectile.WhipSettings.RangeMultiplier = 1f;
-    }
-
-    private float Timer
-    {
-        get => Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
-
-    private float ChargeTime
-    {
-        get => Projectile.ai[1];
-        set => Projectile.ai[1] = value;
     }
 
     // This example uses PreAI to implement a charging mechanic.
@@ -113,10 +113,11 @@ public class KevlarWhipProj : ModProjectile
             float rotation = diff.ToRotation() - MathHelper.PiOver2; // This projectile's sprite faces down, so PiOver2 is used to correct rotation.
             Color color = Lighting.GetColor(element.ToTileCoordinates());
 
-            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip, 0);
+            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip);
 
             pos += diff;
         }
+
         return false;
     }
 }

@@ -43,7 +43,6 @@ public class DaggerProj : ModProjectile
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
         Projectile.extraUpdates = 1; // Update 1+extraUpdates times per tick
         Projectile.timeLeft = 15; // This value does not matter since we manually kill it earlier, it just has to be higher than the duration we use in AI
-
     }
 
     public override void AI()
@@ -57,11 +56,9 @@ public class DaggerProj : ModProjectile
 
             return;
         }
-        else
-        {
-            // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
-            player.heldProj = Projectile.whoAmI;
-        }
+
+        // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
+        player.heldProj = Projectile.whoAmI;
 
         // Fade in and out
         // GetLerpValue returns a value between 0f and 1f - if clamped is true - representing how far Timer got along the "distance" defined by the first two parameters
@@ -95,9 +92,9 @@ public class DaggerProj : ModProjectile
             fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 0.1f;
-
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 90);
@@ -107,55 +104,52 @@ public class DaggerProj : ModProjectile
 
         if (target.HasBuff(ModContent.BuffType<DeliriantTag>()))
         {
-
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
-             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-             Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             if (Main.rand.NextBool(7))
             {
                 Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(90));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(180));
                 Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-               ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(270));
                 Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-               ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
-
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
             }
+
             if (Main.rand.NextBool(7))
             {
                 Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(135));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(225));
                 Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-               ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
                 Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(315));
                 Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-               ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
-
+                    ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
             }
-
         }
-
     }
+
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)

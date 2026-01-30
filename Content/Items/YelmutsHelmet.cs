@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -41,8 +41,8 @@ public class YelmutsHelmet : ModItem
         Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -62,13 +62,13 @@ public class YelmutsHelmet : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 5% increased throwing damage")
             {
                 OverrideColor = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
+
         line = new TooltipLine(Mod, "Face", "May attract a visitor to your town")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -80,20 +80,21 @@ public class YelmutsHelmet : ModItem
             OverrideColor = new Color(220, 40, 245)
         };
         tooltips.Add(line);
-
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ItemID.RichMahoganyBreastplate && legs.type == ItemID.RichMahoganyGreaves;
     }
+
     public override void UpdateEquip(Player player)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             player.GetDamage(DamageClass.Throwing) += ThrowingDamageBonus / 106f;
         }
+
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 108f;
         player.statManaMax2 += MaxManaIncrease;
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
@@ -101,6 +102,7 @@ public class YelmutsHelmet : ModItem
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenBonus;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -113,11 +115,11 @@ public class YelmutsHelmet : ModItem
         recipe.AddTile(TileID.Loom);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.statDefense += 1;
         player.maxMinions += MaxMinionIncrease;
         player.setBonus = SetBonusText.Value;
-
     }
 }

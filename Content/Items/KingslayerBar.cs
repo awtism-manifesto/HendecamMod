@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,7 +13,8 @@ public class KingslayerBar : ModItem
         Item.ResearchUnlockCount = 20;
 
         // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(102, 144, 229),
             new Color(72, 63, 44),
             new Color(173, 167, 118)
@@ -36,10 +37,12 @@ public class KingslayerBar : ModItem
         Item.buffType = BuffID.Slimed; // Specify an existing buff to be applied when used.
         Item.buffTime = 690; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,6 +68,7 @@ public class KingslayerBar : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -77,19 +81,17 @@ public class KingslayerBar : ModItem
 
         // recipe.AddIngredient(PyriteBar.Type, 2);
         recipe = CreateRecipe(3);
-        recipe.AddIngredient<Items.PyriteBar>(2);
+        recipe.AddIngredient<PyriteBar>(2);
         recipe.AddIngredient(ItemID.PlatinumBar, 2);
         recipe.AddIngredient(ItemID.Gel, 5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
 
         recipe = CreateRecipe(3);
-        recipe.AddIngredient<Items.PyriteBar>(2);
+        recipe.AddIngredient<PyriteBar>(2);
         recipe.AddIngredient(ItemID.GoldBar, 2);
         recipe.AddIngredient(ItemID.Gel, 5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
     }
-
 }
-

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -17,6 +17,8 @@ namespace HendecamMod.Content.Items;
 /// </summary>
 public class PyriteProjectorBlade : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -44,7 +46,7 @@ public class PyriteProjectorBlade : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    private int shotCounter = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (shotCounter <= 0)
@@ -71,8 +73,10 @@ public class PyriteProjectorBlade : ModItem
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, (int)(damage * 0.7f), knockback, player.whoAmI);
             shotCounter = 0;
         }
+
         return false;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -82,7 +86,6 @@ public class PyriteProjectorBlade : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

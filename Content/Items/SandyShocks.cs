@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -8,13 +8,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class SandyShocks : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -42,10 +43,12 @@ public class SandyShocks : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<ElectrifiedSand>();
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 9; // The number of projectiles that this gun will shoot.
@@ -62,11 +65,11 @@ public class SandyShocks : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,12 +100,11 @@ public class SandyShocks : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.SandyScorpion>();
+        recipe.AddIngredient<SandyScorpion>();
         recipe.AddIngredient(ItemID.ThunderStaff);
         recipe.AddIngredient(ItemID.HallowedBar, 10);
         recipe.AddIngredient(ItemID.AncientBattleArmorMaterial);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

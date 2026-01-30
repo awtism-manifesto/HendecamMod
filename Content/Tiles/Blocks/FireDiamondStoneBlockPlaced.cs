@@ -32,6 +32,7 @@ public class FireDiamondStoneBlockPlaced : ModTile
         DustType = DustID.Stone;
         HitSound = SoundID.Tink;
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

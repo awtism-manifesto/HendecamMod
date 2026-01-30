@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class MandibleProj : ModProjectile
@@ -33,7 +34,6 @@ public class MandibleProj : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -80,6 +80,7 @@ public class MandibleProj : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     private void Visuals()
     {
         Projectile.rotation = Projectile.velocity.X * 0.05f;

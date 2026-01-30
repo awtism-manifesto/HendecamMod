@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,15 +16,18 @@ public class LargeCactus : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to The Tongue");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.TheTongue] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -33,7 +35,7 @@ public class LargeCactus : ModItem
         recipe.AddIngredient(ItemID.Cactus, 50);
         recipe.AddIngredient(ItemID.Spike, 10);
         recipe.AddIngredient(ItemID.WoodenSpike, 10);
-        recipe.AddIngredient(ItemID.ClayPot, 1);
+        recipe.AddIngredient(ItemID.ClayPot);
         recipe.AddTile(TileID.LivingLoom);
         recipe.Register();
     }

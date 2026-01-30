@@ -19,7 +19,6 @@ public class PlasmoidFriend : ModBuff
     {
         Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
         Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
-
     }
 
     public override void Update(Player player, ref int buffIndex)

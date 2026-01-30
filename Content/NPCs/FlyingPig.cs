@@ -19,8 +19,9 @@ public class FlyingPig : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.ExplosiveBunny;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -45,22 +46,22 @@ public class FlyingPig : ModNPC
         AnimationType = NPCID.PigronHallow; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<FlyingPigBanner>();
-
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ItemID.Ruby, 3, 5, 10));
@@ -70,11 +71,10 @@ public class FlyingPig : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.PlatinumBar, 2, 12, 19));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemID.CoinGun, chanceDenominator: 4999, chanceNumerator: 2));
     }
+
     //NPC.downedEmpressOfLight
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         return SpawnCondition.Overworld.Chance * 0.0095f;
     }
-
 }

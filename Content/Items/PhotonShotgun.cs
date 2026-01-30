@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -27,15 +27,15 @@ public class PhotonShotgun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item12 with
-        {
-            Volume = 10f,
-            Pitch = -0.95f,
-            PitchVariance = 0.00f,
-            MaxInstances = 5,
-            SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
-        }
-        ;
+        Item.UseSound = SoundID.Item12 with
+            {
+                Volume = 10f,
+                Pitch = -0.95f,
+                PitchVariance = 0.00f,
+                MaxInstances = 5,
+                SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
+            }
+            ;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -48,6 +48,7 @@ public class PhotonShotgun : ModItem
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 6; // The number of projectiles that this gun will shoot.
@@ -66,13 +67,14 @@ public class PhotonShotgun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<Projectiles.PhotonSpawn>();
+            type = ModContent.ProjectileType<PhotonSpawn>();
         }
+
         if (type == ModContent.ProjectileType<PhotonSpawn>())
         {
             damage = (int)(damage * 1.03f);
@@ -104,21 +106,20 @@ public class PhotonShotgun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind<ModItem>("Cyborg", out ModItem Cyborg))
+        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind("Cyborg", out ModItem Cyborg))
         {
             recipe = CreateRecipe();
 
             recipe.AddIngredient(ItemID.BossBagBetsy);
             recipe.Register();
         }
-        else
-        {
-        }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-29f, -1f);

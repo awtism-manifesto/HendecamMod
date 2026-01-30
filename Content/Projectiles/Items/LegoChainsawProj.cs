@@ -90,7 +90,7 @@ public class LegoChainsawProj : ModProjectile
         // Spawning dust
         if (Main.rand.NextBool(10))
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 80, Color.White, 1f);
+            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 80, Color.White);
             dust.position.X -= 4f;
             dust.noGravity = true;
             dust.velocity.X *= 0.5f;

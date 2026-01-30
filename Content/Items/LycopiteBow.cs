@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class LycopiteBow : ModItem
@@ -41,19 +42,21 @@ public class LycopiteBow : ModItem
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<Projectiles.CarrotProj>();
+            type = ModContent.ProjectileType<CarrotProj>();
         }
+
         if (type == ModContent.ProjectileType<CarrotProj>())
         {
             damage = (int)(damage * 1.15f);
             velocity = velocity * 1.66f;
         }
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -103,12 +106,12 @@ public class LycopiteBow : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.LycopiteBar>(13);
+        recipe.AddIngredient<LycopiteBar>(13);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(5f, -1f);

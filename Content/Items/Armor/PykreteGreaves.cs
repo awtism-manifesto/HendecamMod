@@ -12,6 +12,7 @@ public class PykreteGreaves : ModItem
         Item.defense = 4;
         Item.rare = ItemRarityID.White;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -19,11 +20,13 @@ public class PykreteGreaves : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "+5% damage reduction";
         player.endurance = 1f - 0.95f * (1f - player.endurance);
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PykreteChestplate>() && head.type == ModContent.ItemType<PykreteHelmet>();

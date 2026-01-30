@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -9,17 +9,17 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class FidgetSpinner2 : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
-
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20; // The width of projectile hitbox
@@ -40,9 +40,9 @@ public class FidgetSpinner2 : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 15;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -68,9 +68,9 @@ public class FidgetSpinner2 : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
@@ -101,41 +101,38 @@ public class FidgetSpinner2 : ModProjectile
                 Projectile.frame = 0;
             }
         }
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (Main.rand.NextBool(9))
         {
-
             target.AddBuff(BuffID.Poisoned, 240);
         }
+
         if (Main.rand.NextBool(9))
         {
-
             target.AddBuff(BuffID.OnFire, 240);
         }
+
         if (Main.rand.NextBool(9))
         {
-
             target.AddBuff(BuffID.Confused, 240);
         }
+
         if (Main.rand.NextBool(6))
         {
-
             target.AddBuff(BuffID.Oiled, 240);
         }
+
         if (Main.rand.NextBool(6))
         {
-
             target.AddBuff(BuffID.Frostburn2, 240);
         }
+
         if (Main.rand.NextBool(6))
         {
-
             target.AddBuff(BuffID.ShadowFlame, 240);
         }
-
     }
-
 }

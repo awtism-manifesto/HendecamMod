@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,6 +27,7 @@ public class ChlorophyteCube : ModItem
     {
         player.statLifeMax2 = player.statLifeMax2 + 75;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -39,10 +40,11 @@ public class ChlorophyteCube : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
+        recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

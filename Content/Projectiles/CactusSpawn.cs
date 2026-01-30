@@ -1,11 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class CactusSpawn : ModProjectile
@@ -73,7 +74,7 @@ public class CactusSpawn : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -84,14 +85,11 @@ public class CactusSpawn : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(25));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-        ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(25));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-
     }
-
 }
-

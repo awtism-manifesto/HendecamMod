@@ -11,7 +11,6 @@ public class WitherSkullBlack : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class WitherSkullBlack : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -40,6 +40,7 @@ public class WitherSkullBlack : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -49,7 +50,6 @@ public class WitherSkullBlack : ModProjectile
         }
 
         Projectile.rotation += 0.15f;
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -107,10 +107,10 @@ public class WitherSkullBlack : ModProjectile
             fireDust.velocity *= 3.5f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Venom, 240);
         target.AddBuff(BuffID.Poisoned, 240);
-
     }
 }

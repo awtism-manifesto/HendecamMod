@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,6 +13,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class AzuritePlatemail : ModItem
 {
+    public static readonly int AdditiveDamageBonus = 12;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -25,12 +26,13 @@ public class AzuritePlatemail : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 12;
+
     public override void UpdateEquip(Player player)
     {
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
         player.GetCritChance(DamageClass.Ranged) += 8;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -39,6 +41,7 @@ public class AzuritePlatemail : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 10; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,11 +67,13 @@ public class AzuritePlatemail : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<AzuriteHat>() && legs.type == ModContent.ItemType<AzuriteGreaves>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -77,8 +82,8 @@ public class AzuritePlatemail : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

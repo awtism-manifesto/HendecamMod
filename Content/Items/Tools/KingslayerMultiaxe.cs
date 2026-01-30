@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,9 +10,9 @@ public class KingslayerMultiaxe : ModItem
 {
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.damage = 23;
@@ -36,10 +36,12 @@ public class KingslayerMultiaxe : ModItem
         Item.axe = 20;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -51,7 +53,6 @@ public class KingslayerMultiaxe : ModItem
 
             Item.axe = 0;
             Item.hammer = 79;
-
         }
         else
         {
@@ -96,7 +97,5 @@ public class KingslayerMultiaxe : ModItem
         recipe.AddIngredient<KingslayerBar>(6);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
     }
-
 }

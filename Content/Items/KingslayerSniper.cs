@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,7 +27,7 @@ public class KingslayerSniper : ModItem
         Item.crit = 9;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.NPCDeath56;
+        Item.UseSound = SoundID.NPCDeath56;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -41,13 +41,14 @@ public class KingslayerSniper : ModItem
         Item.shootSpeed = 19.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<Projectiles.KingShot>();
+            type = ModContent.ProjectileType<KingShot>();
         }
+
         if (type == ModContent.ProjectileType<KingShot>())
         {
             damage = (int)(damage * 1.25f);
@@ -78,19 +79,20 @@ public class KingslayerSniper : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.DeadSoldiersRifle>();
-        recipe.AddIngredient<Items.PondsSniper>();
-        recipe.AddIngredient<Items.KingslayerBar>(10);
+        recipe.AddIngredient<DeadSoldiersRifle>();
+        recipe.AddIngredient<PondsSniper>();
+        recipe.AddIngredient<KingslayerBar>(10);
         recipe.AddIngredient(ItemID.Diamond, 2);
         recipe.AddIngredient(ItemID.Ruby, 2);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-9f, -1f);

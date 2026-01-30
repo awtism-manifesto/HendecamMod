@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,10 +30,12 @@ public class IncendiaryDart : ModItem
         Item.shootSpeed = 4.9f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,15 +61,16 @@ public class IncendiaryDart : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("WoodenDart", out ModItem WoodenDart))
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("WoodenDart", out ModItem WoodenDart))
         {
             recipe = CreateRecipe(275);
 
             recipe.AddIngredient(WoodenDart.Type, 275);
-            recipe.AddIngredient(ItemID.HellstoneBar, 1);
+            recipe.AddIngredient(ItemID.HellstoneBar);
             recipe.AddIngredient<CrudeOil>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
@@ -75,7 +78,7 @@ public class IncendiaryDart : ModItem
         else
         {
             recipe = CreateRecipe(175);
-            recipe.AddIngredient(ItemID.HellstoneBar, 1);
+            recipe.AddIngredient(ItemID.HellstoneBar);
             recipe.AddIngredient<CrudeOil>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();

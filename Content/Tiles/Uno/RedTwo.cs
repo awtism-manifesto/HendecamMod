@@ -30,6 +30,7 @@ public class RedTwo : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

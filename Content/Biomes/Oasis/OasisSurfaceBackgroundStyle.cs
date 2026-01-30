@@ -4,6 +4,9 @@ namespace HendecamMod.Content.Biomes.Oasis;
 
 public class OasisSurfaceBackgroundStyle : ModSurfaceBackgroundStyle
 {
+    private static int SurfaceFrameCounter;
+    private static int SurfaceFrame;
+
     public override void ModifyFarFades(float[] fades, float transitionSpeed)
     {
         for (int i = 0; i < fades.Length; i++)
@@ -32,8 +35,6 @@ public class OasisSurfaceBackgroundStyle : ModSurfaceBackgroundStyle
         return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/OasisBiomeSurfaceFar");
     }
 
-    private static int SurfaceFrameCounter;
-    private static int SurfaceFrame;
     public override int ChooseMiddleTexture()
     {
         if (++SurfaceFrameCounter > 12)
@@ -41,6 +42,7 @@ public class OasisSurfaceBackgroundStyle : ModSurfaceBackgroundStyle
             SurfaceFrame = (SurfaceFrame + 1) % 4;
             SurfaceFrameCounter = 0;
         }
+
         switch (SurfaceFrame)
         {
             case 0:

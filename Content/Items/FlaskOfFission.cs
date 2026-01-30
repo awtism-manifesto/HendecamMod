@@ -1,23 +1,26 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class FlaskOfFission : ModItem
 {
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = [
+        ItemID.Sets.DrinkParticleColors[Type] =
+        [
             new Color(85, 25, 255),
             new Color(210, 115, 255),
             new Color(225, 185, 255)
         ];
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

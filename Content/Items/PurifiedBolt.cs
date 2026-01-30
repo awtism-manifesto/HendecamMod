@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -60,11 +60,9 @@ public class PurifiedBolt : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(25);
-        recipe.AddIngredient<Items.PurifiedSalt>();
-        recipe.AddIngredient<Items.CrossbowBolt>(25);
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient<CrossbowBolt>(25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
-
 }

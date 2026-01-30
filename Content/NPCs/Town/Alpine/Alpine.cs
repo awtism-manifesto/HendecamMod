@@ -1,11 +1,11 @@
-﻿using HendecamMod.Common.Systems;
+﻿using System.Collections.Generic;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -26,20 +26,22 @@ namespace HendecamMod.Content.NPCs.Town.Alpine;
 public class Alpine : ModNPC
 {
     public const string ShopName = "Shop";
-    public int NumberOfTimesTalkedTo = 0;
 
     private static int ShimmerHeadIndex;
     private static Profiles.StackedNPCProfile NPCProfile;
+    public int NumberOfTimesTalkedTo;
 
     public override void Load()
     {
         // Adds our Shimmer Head to the NPCHeadLoader.
         ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, Texture + "_Shimmer_Head");
     }
+
     public override ITownNPCProfile TownNPCProfile()
     {
         return NPCProfile;
     }
+
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = 23; // The total amount of frames the NPC has
@@ -55,12 +57,12 @@ public class Alpine : ModNPC
 
         NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
         // Influences how the NPC looks in the Bestiary
-        NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+        NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
             Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             Direction = 1 // -1 is left and 1 is right. NPCs are drawn facing the left by default but ExamplePerson will be drawn facing the right
-                          // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
-                          // If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
+            // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
+            // If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
         };
 
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
@@ -76,7 +78,7 @@ public class Alpine : ModNPC
             .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Hate) // Likes living near the guide.
             .SetNPCAffection(NPCID.Pirate, AffectionLevel.Love) // Dislikes living near the merchant.
             .SetNPCAffection(NPCID.SantaClaus, AffectionLevel.Like) // Hates living near the demolitionist.
-        ; // < Mind the semicolon!
+            ; // < Mind the semicolon!
 
         // This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
         NPCProfile = new Profiles.StackedNPCProfile(
@@ -105,17 +107,18 @@ public class Alpine : ModNPC
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets the preferred biomes of this town NPC listed in the bestiary.
+            // With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
+            BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"Leader of the elven military and Santa's right hand, Alpine will not show any hesitation when she needs to put something, or someONE down. Currently working on rebuilding her Apache, sells scrap for more money to get parts.\" "),
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"Leader of the elven military and Santa's right hand, Alpine will not show any hesitation when she needs to put something, or someONE down. Currently working on rebuilding her Apache, sells scrap for more money to get parts.\" "),
 
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
 
@@ -146,41 +149,45 @@ public class Alpine : ModNPC
                 variant += "_Shimmer";
             if (NPC.altTexture == 1)
                 variant += "_Party";
-            int headGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Head").Type;
-            int armGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Arm").Type;
-            int legGore = Mod.Find<ModGore>($"Alpine_Gore" + variant + "_Leg").Type;
+            int headGore = Mod.Find<ModGore>("Alpine_Gore" + variant + "_Head").Type;
+            int armGore = Mod.Find<ModGore>("Alpine_Gore" + variant + "_Arm").Type;
+            int legGore = Mod.Find<ModGore>("Alpine_Gore" + variant + "_Leg").Type;
 
             // Spawn the gores. The positions of the arms and legs are lowered for a more natural look.
 
-            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore, 1f);
+            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
             Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
         }
     }
+
     public override List<string> SetNPCNameList()
     {
-        return new List<string>() {
+        return new List<string>
+        {
             "Alpine",
         };
     }
+
     public override void FindFrame(int frameHeight)
     {
         /*npc.frame.Width = 40;
-			if (((int)Main.time / 10) % 2 == 0)
-			{
-				npc.frame.X = 40;
-			}
-			else
-			{
-				npc.frame.X = 0;
-			}*/
+            if (((int)Main.time / 10) % 2 == 0)
+            {
+                npc.frame.X = 40;
+            }
+            else
+            {
+                npc.frame.X = 0;
+            }*/
     }
-    public override void SetChatButtons(ref string button, ref string button2)
-    { // What the chat buttons are when you open up the chat UI
-        button = Language.GetTextValue("LegacyInterface.28");
 
+    public override void SetChatButtons(ref string button, ref string button2)
+    {
+        // What the chat buttons are when you open up the chat UI
+        button = Language.GetTextValue("LegacyInterface.28");
     }
 
     public override string GetChat()
@@ -191,32 +198,39 @@ public class Alpine : ModNPC
         {
             chat.Add(Language.GetTextValue("Fuck. You."), 500);
         }
+
         if (BirthdayParty.PartyIsUp && NPC.IsShimmerVariant)
         {
             chat.Add(Language.GetTextValue("...Can this get any worse? Well, at least it's not raining."), 50000);
         }
+
         if (BirthdayParty.PartyIsUp && NPC.IsShimmerVariant && Main.raining)
         {
             chat.Add(Language.GetTextValue("This can't POSSIBLY get worse..."), 50000000);
         }
+
         if (BirthdayParty.PartyIsUp && NPC.IsShimmerVariant && Main._shouldUseStormMusic)
         {
             chat.Add(Language.GetTextValue("Hey, God? Fuck you."), 50000000000);
         }
+
         if (Main.raining)
         {
             chat.Add(Language.GetTextValue("If a storm rolls in, don't expect a rematch."));
             chat.Add(Language.GetTextValue("Outside conditions are getting worse... I'll need to stay in instead of working on the Apache."));
         }
+
         if (Main._shouldUseStormMusic)
         {
             chat.Add(Language.GetTextValue("I hope you get struck by lightning out there, asshole."));
             chat.Add(Language.GetTextValue("I'm not rematching you until this weather clears up - I don't have a death wish."));
         }
+
         if (Main.bloodMoon)
         {
             chat.Add(Language.GetTextValue("There's enemies dripping with blood everywhere... This isn't good."));
         }
+
         if (ModLoader.TryGetMod("CalamityMod", out Mod Shitlamity))
         {
             chat.Add(Language.GetTextValue("What I wouldn't do to a Rare Sand Elemental... I'm sorry - What were you saying?"));
@@ -224,6 +238,7 @@ public class Alpine : ModNPC
             chat.Add(Language.GetTextValue("What I wouldn't do to the Brimstone Elemental... I'm sorry - What were you saying?"));
             chat.Add(Language.GetTextValue("What I wouldn't do to Anahita... I'm sorry - What were you saying?"));
         }
+
         chat.Add(Language.GetTextValue("Welp, since you crashed my Apache, I've had a lot less free time because I've been having to fix it. So... Thanks for that. [Sarcastic]"));
         chat.Add(Language.GetTextValue("What I wouldn't do to a Sand Elemental... I'm sorry - What were you saying?"));
         chat.Add(Language.GetTextValue("How I've been defending myself? Elf magic."));
@@ -244,18 +259,20 @@ public class Alpine : ModNPC
     }
 
     public override bool CanTownNPCSpawn(int numTownNPCs)
-    { // Requirements for the town NPC to spawn.
+    {
+        // Requirements for the town NPC to spawn.
         if (AlpineNPCRespawnSystem.unlockedAlpineSpawn)
         {
             return true;
         }
+
         return false;
     }
+
     public override void OnChatButtonClicked(bool firstButton, ref string shop)
     {
         if (firstButton)
         {
-
             shop = ShopName; // Name of the shop tab we want to open.
         }
     }
@@ -264,13 +281,12 @@ public class Alpine : ModNPC
 
     public override void AddShops()
     {
-        var npcShop = new NPCShop(Type, ShopName)
-
-             .Add<OverclockedWrench>()
-
-        ;
+        var npcShop = new NPCShop(Type)
+                .Add<OverclockedWrench>()
+            ;
         npcShop.Register(); // Name of this shop tab
     }
+
     public override void ModifyActiveShop(string shopName, Item[] items)
     {
         foreach (Item item in items)
@@ -289,10 +305,12 @@ public class Alpine : ModNPC
             }
         }
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ApexPlasmaCannon>(), 1));
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ApexPlasmaCannon>()));
     }
+
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
     {
         damage = 9;
@@ -332,6 +350,7 @@ public class Alpine : ModNPC
     {
         tag["numberOfTimesTalkedTo"] = NumberOfTimesTalkedTo;
     }
+
     public override void AI()
     {
         if (NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>()))

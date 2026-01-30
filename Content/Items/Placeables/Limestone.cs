@@ -17,13 +17,13 @@ public class Limestone : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<LimestonePlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.StoneBlock, 1);
-        recipe.AddIngredient(ItemID.Seashell, 1);
+        recipe.AddIngredient(ItemID.StoneBlock);
+        recipe.AddIngredient(ItemID.Seashell);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
         recipe = CreateRecipe();

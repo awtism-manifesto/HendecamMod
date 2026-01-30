@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class MidnightAfterburner : ModItem
@@ -43,11 +44,11 @@ public class MidnightAfterburner : ModItem
 
         Item.shootSpeed = 14.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
-
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.DragonSpawnShadow>();
+        type = ModContent.ProjectileType<DragonSpawnShadow>();
         SoundEngine.PlaySound(SoundID.Item38, player.position);
 
         SoundEngine.PlaySound(SoundID.Item45, player.position);
@@ -95,7 +96,6 @@ public class MidnightAfterburner : ModItem
             Projectile.NewProjectileDirect(source, position, new7Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new8Velocity, type, damage, knockback, player.whoAmI);
-
         }
 
         return true; // Return false because we don't want tModLoader to shoot projectile
@@ -126,6 +126,7 @@ public class MidnightAfterburner : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -144,9 +145,7 @@ public class MidnightAfterburner : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
-
         }
-
     }
 
     public override Vector2? HoldoutOffset()

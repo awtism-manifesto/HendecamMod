@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class TornFilter : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 30% more Attack Speed and double your breath timer"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Activated or Enviornmental Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
@@ -43,12 +44,13 @@ public class TornFilter : ModItem
         player.buffImmune[BuffID.CatBast] = true;
         player.buffImmune[BuffID.MonsterBanner] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<GasMask>(1);
-        recipe.AddIngredient<BrokenMouse>(1);
+        recipe.AddIngredient<GasMask>();
+        recipe.AddIngredient<BrokenMouse>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

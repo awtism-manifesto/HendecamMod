@@ -5,6 +5,7 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SporeShivProj : ModProjectile
@@ -35,13 +36,11 @@ public class SporeShivProj : ModProjectile
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Projectile.DamageType = DamageClass.Throwing;
-
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         SoundEngine.PlaySound(SoundID.Item82, Projectile.position);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-330, 330), Main.rand.NextFloat(-250, 250));
@@ -59,11 +58,9 @@ public class SporeShivProj : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-
 }
-

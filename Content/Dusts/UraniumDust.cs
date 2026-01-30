@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,9 +22,9 @@ public class UraniumDust : ModDust
         dust.scale = 1f;
         dust.alpha = 100;
     }
+
     public override bool Update(Dust dust)
     {
-
         float lightR = 0.6f * dust.scale;
         float lightG = 1f * dust.scale;
         float lightB = 0.6f * dust.scale;
@@ -33,6 +33,7 @@ public class UraniumDust : ModDust
 
         return true; // RETURN TRUE
     }
+
     public override Color? GetAlpha(Dust dust, Color lightColor)
     {
         lightColor = Color.Lerp(lightColor, Color.LimeGreen, 0.8f);

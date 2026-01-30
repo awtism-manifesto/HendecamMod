@@ -50,7 +50,6 @@ public class CeramDart : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-
     }
 
     public override void OnKill(int timeLeft)

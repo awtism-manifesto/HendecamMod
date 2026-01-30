@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -30,7 +30,7 @@ public class BowlingBaller : ModItem
         Item.UseSound = SoundID.Item61;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
-        Item.damage = 25;  // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -39,7 +39,6 @@ public class BowlingBaller : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 20.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -95,7 +94,6 @@ public class BowlingBaller : ModItem
 
     public override void AddRecipes()
     {
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Rubber>(20);
         recipe.AddIngredient<Kevlar>(10);

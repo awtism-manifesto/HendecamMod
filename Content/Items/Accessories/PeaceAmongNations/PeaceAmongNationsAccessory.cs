@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class PeaceAmongNationsAccessory : ModItem
         Item.rare = ItemRarityID.Purple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "All those who are hostile should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Raven] = true;
@@ -188,7 +189,7 @@ public class PeaceAmongNationsAccessory : ModItem
         player.npcTypeNoAggro[NPCID.JungleBat] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.JungleCreeper] = true;
         player.npcTypeNoAggro[NPCID.JungleCreeperWall] = true;
-        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true;//redundant in PAM
+        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.Piranha] = true;
         player.npcTypeNoAggro[NPCID.Snatcher] = true;
         player.npcTypeNoAggro[NPCID.ManEater] = true;
@@ -632,17 +633,17 @@ public class PeaceAmongNationsAccessory : ModItem
         player.npcTypeNoAggro[NPCID.Crimslime] = true;
         player.npcTypeNoAggro[NPCID.IlluminantSlime] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<PeaceAmongCthulhu>(1);
-        recipe.AddIngredient<PeaceAmongBiomes>(1);
-        recipe.AddIngredient<PeaceAmongEvents>(1);
-        recipe.AddIngredient<RoyalAmalgamation>(1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<PeaceAmongCthulhu>();
+        recipe.AddIngredient<PeaceAmongBiomes>();
+        recipe.AddIngredient<PeaceAmongEvents>();
+        recipe.AddIngredient<RoyalAmalgamation>();
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

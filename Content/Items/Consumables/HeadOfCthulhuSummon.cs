@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using HendecamMod.Content.NPCs.Bosses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -26,6 +26,7 @@ public class HeadOfCthulhuSummon : ModItem
         Item.useTime = 30;
         Item.useStyle = ItemUseStyleID.HoldUp;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Gaze into the night sky, angering a monstrosity that should've stayed on the other side of the moon");
@@ -67,10 +68,13 @@ public class HeadOfCthulhuSummon : ModItem
             {
                 NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
             }
+
             return true;
         }
+
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -81,6 +85,5 @@ public class HeadOfCthulhuSummon : ModItem
         recipe.AddIngredient(ItemID.WormTooth, 10);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
-
     }
 }

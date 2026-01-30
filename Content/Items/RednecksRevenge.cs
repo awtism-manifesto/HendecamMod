@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -41,6 +41,7 @@ public class RednecksRevenge : ModItem
         Item.shootSpeed = 13.12f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
@@ -50,7 +51,6 @@ public class RednecksRevenge : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             Item.noUseGraphic = true;
             int proj = Projectile.NewProjectile(source, position, velocity * 1.1f, ModContent.ProjectileType<RedneckShovelHallow>(), (int)(damage * 1.5f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
@@ -58,27 +58,24 @@ public class RednecksRevenge : ModItem
 
             return false;
         }
-        else
+
+        SoundEngine.PlaySound(SoundID.Item62, player.position);
+        Item.noUseGraphic = false;
+        int NumProjectiles = Main.rand.Next(4, 7); // The number of projectiles that this gun will shoot.
+        damage = (int)(damage * Main.rand.NextFloat(0.42f, 0.45f));
+        for (int i = 0; i < NumProjectiles; i++)
         {
+            // Rotate the velocity randomly by 30 degrees at max.
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.77f));
 
-            SoundEngine.PlaySound(SoundID.Item62, player.position);
-            Item.noUseGraphic = false;
-            int NumProjectiles = Main.rand.Next(4, 7); // The number of projectiles that this gun will shoot.
-            damage = (int)(damage * Main.rand.NextFloat(0.42f, 0.45f));
-            for (int i = 0; i < NumProjectiles; i++)
-            {
-                // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.77f));
+            // Decrease velocity randomly for nicer visuals.
+            newVelocity *= 1f - Main.rand.NextFloat(0.35f);
 
-                // Decrease velocity randomly for nicer visuals.
-                newVelocity *= 1f - Main.rand.NextFloat(0.35f);
-
-                int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
-            }
-
-            return false; // Return false because we don't want tModLoader to shoot projectile
+            int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
         }
+
+        return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -102,6 +99,7 @@ public class RednecksRevenge : ModItem
         };
         tooltips.Add(line);
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-27.25f, -2.5f);
@@ -119,9 +117,8 @@ public class RednecksRevenge : ModItem
         {
             recipe.AddIngredient(SoulOfPlight.Type, 10);
         }
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
-
 }

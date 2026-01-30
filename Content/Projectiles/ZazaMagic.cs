@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class ZazaMagic : ModProjectile
@@ -11,7 +12,6 @@ public class ZazaMagic : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -35,12 +35,17 @@ public class ZazaMagic : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override void OnSpawn(IEntitySource source)
     {
         if (Main.rand.NextBool(2))
-        { Projectile.velocity.X = (Main.rand.NextFloat(0.1f, 0.6f)); }
+        {
+            Projectile.velocity.X = (Main.rand.NextFloat(0.1f, 0.6f));
+        }
         else
-        { Projectile.velocity.X = (Main.rand.NextFloat(-0.6f, -0.1f)); }
+        {
+            Projectile.velocity.X = (Main.rand.NextFloat(-0.6f, -0.1f));
+        }
     }
 
     public override void AI()
@@ -56,6 +61,7 @@ public class ZazaMagic : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
             fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
             fire2Dust.noGravity = true;
@@ -65,14 +71,12 @@ public class ZazaMagic : ModProjectile
             fireDust.noGravity = true;
             fireDust.velocity *= 1.33f;
         }
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (Main.rand.NextBool(7))
         {
-
             target.AddBuff(BuffID.Confused, 60);
         }
 

@@ -1,10 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -36,6 +36,7 @@ public class StupiderFuckingPickaxe : ModItem
         Item.pick = 3000; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,41 +53,41 @@ public class StupiderFuckingPickaxe : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Zenith, 1);
+        recipe.AddIngredient(ItemID.Zenith);
         recipe.AddIngredient(ItemID.DrillContainmentUnit, 2);
         recipe.AddIngredient(ItemID.LunarBar, 420);
         recipe.AddIngredient(ItemID.BrokenHeroSword, 6);
         recipe.AddIngredient(ItemID.NypmhBanner, 5);
-        recipe.AddIngredient(ItemID.Muramasa, 1);
-        recipe.AddIngredient(ItemID.GoldBirdCage, 1);
-        recipe.AddIngredient(ItemID.TerraBlade, 1);
-        recipe.AddIngredient(ItemID.HandOfCreation, 1);
+        recipe.AddIngredient(ItemID.Muramasa);
+        recipe.AddIngredient(ItemID.GoldBirdCage);
+        recipe.AddIngredient(ItemID.TerraBlade);
+        recipe.AddIngredient(ItemID.HandOfCreation);
         recipe.AddIngredient(ItemID.PortalGun, 3);
-        recipe.AddIngredient(ItemID.DemonHeart, 1);
-        recipe.AddIngredient(ItemID.GalaxyPearl, 1);
-        recipe.AddIngredient(ItemID.DirtiestBlock, 1);
-        recipe.AddIngredient(ItemID.BottomlessHoneyBucket, 1);
-        recipe.AddIngredient(ItemID.MusicBoxDD2, 1);
+        recipe.AddIngredient(ItemID.DemonHeart);
+        recipe.AddIngredient(ItemID.GalaxyPearl);
+        recipe.AddIngredient(ItemID.DirtiestBlock);
+        recipe.AddIngredient(ItemID.BottomlessHoneyBucket);
+        recipe.AddIngredient(ItemID.MusicBoxDD2);
         recipe.AddIngredient(ItemID.TinAxe, 10);
-        recipe.AddIngredient(ItemID.TerrasparkBoots, 1);
-        recipe.AddIngredient(ItemID.AnkhCharm, 1);
+        recipe.AddIngredient(ItemID.TerrasparkBoots);
+        recipe.AddIngredient(ItemID.AnkhCharm);
         recipe.AddIngredient(ItemID.CrimsonKey, 2);
-        recipe.AddIngredient(ItemID.WireKite, 1);
-        recipe.AddIngredient(ItemID.LaserDrill, 1);
-        recipe.AddIngredient<TheAutismManifesto>(1);
+        recipe.AddIngredient(ItemID.WireKite);
+        recipe.AddIngredient(ItemID.LaserDrill);
+        recipe.AddIngredient<TheAutismManifesto>();
         recipe.AddIngredient<IForgor>(11);
         recipe.AddIngredient<FireDiamond>(690);
-        recipe.AddIngredient<TheAshesOfCalamity>(1);
+        recipe.AddIngredient<TheAshesOfCalamity>();
         recipe.AddIngredient<K2Avalanche>(2);
         recipe.AddIngredient<TransBar>(67);
         recipe.AddIngredient<LuckyCigarette>(500);
         recipe.AddIngredient<FidgetThrower3>(3);
         recipe.AddIngredient<PlasmaRifle3>(3);
         recipe.AddIngredient<CompoundBow3>(3);
-        recipe.AddIngredient<ATFsNightmare>(1);
-        recipe.AddIngredient<PlanetoidPunisher>(1);
+        recipe.AddIngredient<ATFsNightmare>();
+        recipe.AddIngredient<PlanetoidPunisher>();
         recipe.AddIngredient<AirBar>(80085);
-        recipe.AddIngredient<StupidFuckingPickaxe>(1);
+        recipe.AddIngredient<StupidFuckingPickaxe>();
         recipe.Register();
     }
 }

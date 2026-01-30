@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -51,6 +51,7 @@ public class BionicBoomer : ModItem
     {
         return new Vector2(-20f, 4f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -64,6 +65,5 @@ public class BionicBoomer : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-
     }
 }

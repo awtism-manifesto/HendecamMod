@@ -2,11 +2,11 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class FrostySpark : ModProjectile
 {
-
     public override void SetDefaults()
     {
         Projectile.width = 3; // The width of projectile hitbox
@@ -28,10 +28,8 @@ public class FrostySpark : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.alpha < 180)
         {
-
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -50,10 +48,8 @@ public class FrostySpark : ModProjectile
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.75f;
-
             }
         }
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -62,6 +58,5 @@ public class FrostySpark : ModProjectile
         {
             target.AddBuff(BuffID.Frostburn, 90);
         }
-
     }
 }

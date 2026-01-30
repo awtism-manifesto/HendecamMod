@@ -11,7 +11,6 @@ public class BloodshotBomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -24,6 +23,7 @@ public class BloodshotBomb : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 25;
@@ -40,6 +40,7 @@ public class BloodshotBomb : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -54,9 +55,7 @@ public class BloodshotBomb : ModProjectile
 
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-
         modifiers.SourceDamage *= 0.75f;
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -114,9 +113,9 @@ public class BloodshotBomb : ModProjectile
             fireDust.velocity *= 3.5f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<Stamped>(), 180);
     }
 

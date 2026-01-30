@@ -1,14 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Accessories;
 
 public class EmpoweredManaCrystal : ModItem
 {
     public static readonly int MaxManaIncrease = 50;
     public static readonly int MagicCritBonus = 5;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -21,12 +23,13 @@ public class EmpoweredManaCrystal : ModItem
         Item.maxStack = 1;
         Item.accessory = true;
     }
+
     public override void UpdateEquip(Player player)
     {
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(damageClass: DamageClass.Magic) += MagicCritBonus;
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,13 +55,13 @@ public class EmpoweredManaCrystal : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.ManaCrystal, 1);
+        recipe.AddIngredient(ItemID.ManaCrystal);
         recipe.AddIngredient(ItemID.FallenStar, 4);
 
         recipe.Register();
     }
-
 }

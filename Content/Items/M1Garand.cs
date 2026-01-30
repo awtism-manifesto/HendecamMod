@@ -24,7 +24,7 @@ public class M1Garand : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item89;
+        Item.UseSound = SoundID.Item89;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 57; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,6 +37,7 @@ public class M1Garand : ModItem
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -55,10 +56,11 @@ public class M1Garand : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("SteelRifle", out ModItem SteelRifle))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("SteelRifle", out ModItem SteelRifle))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CobaltBar, 5);
@@ -71,24 +73,23 @@ public class M1Garand : ModItem
             recipe.AddIngredient(SteelRifle.Type);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
         else
         {
-
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CobaltBar, 5);
-            recipe.AddIngredient<Items.EnfieldRifle>();
+            recipe.AddIngredient<EnfieldRifle>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.PalladiumBar, 5);
-            recipe.AddIngredient<Items.EnfieldRifle>();
+            recipe.AddIngredient<EnfieldRifle>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-25f, -1f);

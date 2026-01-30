@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,13 +39,14 @@ public class TheMagnum : ModItem
         Item.shootSpeed = 13.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<Projectiles.MagnumShot>();
+            type = ModContent.ProjectileType<MagnumShot>();
         }
+
         if (type == ModContent.ProjectileType<MagnumShot>())
         {
             damage = (int)(damage * 2.05f);
@@ -89,24 +90,22 @@ public class TheMagnum : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("HitScanner", out ModItem HitScanner))
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.FreeBird>();
+            recipe.AddIngredient<FreeBird>();
             recipe.AddIngredient(HitScanner.Type);
-            recipe.AddIngredient<Items.CyberneticGunParts>();
+            recipe.AddIngredient<CyberneticGunParts>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
         else
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.FreeBird>();
-            recipe.AddIngredient<Items.PulsePistols>();
-            recipe.AddIngredient<Items.CyberneticGunParts>();
+            recipe.AddIngredient<FreeBird>();
+            recipe.AddIngredient<PulsePistols>();
+            recipe.AddIngredient<CyberneticGunParts>();
 
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

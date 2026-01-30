@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class TorchSong : ModItem
@@ -28,7 +29,7 @@ public class TorchSong : ModItem
 
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,18 +41,18 @@ public class TorchSong : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 10.1f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DirgeFlame>();
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.8f;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -97,7 +98,7 @@ public class TorchSong : ModItem
     public override void AddRecipes()
     {
         Recipe
-        recipe = CreateRecipe();
+            recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Bone, 50);
         recipe.AddIngredient(ItemID.Obsidian, 20);
 
@@ -108,7 +109,6 @@ public class TorchSong : ModItem
         {
             recipe.AddIngredient(SpiritDroplet.Type, 5);
         }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

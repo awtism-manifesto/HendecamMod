@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class BigShot : ModProjectile
@@ -45,42 +46,44 @@ public class BigShot : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.timeLeft < 292)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 284)
         {
             Projectile.scale = 0.725f;
             Projectile.Resize(85, 85);
         }
+
         if (Projectile.timeLeft < 276)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 268)
         {
             Projectile.scale = 1.05f;
             Projectile.Resize(110, 110);
         }
+
         if (Projectile.timeLeft < 260)
         {
             Projectile.scale = 1.175f;
-
         }
+
         if (Projectile.timeLeft < 252)
         {
             Projectile.scale = 1.325f;
             Projectile.Resize(125, 125);
         }
+
         if (Projectile.timeLeft < 244)
         {
             Projectile.scale = 1.15f;
-
         }
+
         if (Projectile.timeLeft < 236)
         {
             Projectile.scale = 0.975f;
@@ -90,138 +93,144 @@ public class BigShot : ModProjectile
         if (Projectile.timeLeft < 228)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 220)
         {
             Projectile.scale = 0.725f;
             Projectile.Resize(95, 95);
         }
+
         if (Projectile.timeLeft < 212)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 204)
         {
             Projectile.scale = 1.05f;
             Projectile.Resize(105, 105);
         }
+
         if (Projectile.timeLeft < 196)
         {
             Projectile.scale = 1.175f;
-
         }
+
         if (Projectile.timeLeft < 188)
         {
             Projectile.scale = 1.325f;
             Projectile.Resize(130, 130);
         }
+
         if (Projectile.timeLeft < 180)
         {
             Projectile.scale = 1.15f;
-
         }
+
         if (Projectile.timeLeft < 172)
         {
             Projectile.scale = 0.975f;
             Projectile.Resize(110, 110);
         }
+
         if (Projectile.timeLeft < 164)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 156)
         {
             Projectile.scale = 0.725f;
-
         }
+
         if (Projectile.timeLeft < 148)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 140)
         {
             Projectile.scale = 1.05f;
-
         }
+
         if (Projectile.timeLeft < 132)
         {
             Projectile.scale = 1.175f;
-
         }
+
         if (Projectile.timeLeft < 124)
         {
             Projectile.scale = 1.325f;
             Projectile.Resize(114, 114);
         }
+
         if (Projectile.timeLeft < 116)
         {
             Projectile.scale = 1.15f;
-
         }
+
         if (Projectile.timeLeft < 108)
         {
             Projectile.scale = 0.975f;
             Projectile.Resize(98, 98);
         }
+
         if (Projectile.timeLeft < 100)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 92)
         {
             Projectile.scale = 0.725f;
-
         }
+
         if (Projectile.timeLeft < 84)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 76)
         {
             Projectile.scale = 1.05f;
-
         }
+
         if (Projectile.timeLeft < 68)
         {
             Projectile.scale = 1.175f;
-
         }
+
         if (Projectile.timeLeft < 60)
         {
             Projectile.scale = 1.325f;
-
         }
+
         if (Projectile.timeLeft < 52)
         {
             Projectile.scale = 1.15f;
-
         }
+
         if (Projectile.timeLeft < 44)
         {
             Projectile.scale = 0.975f;
-
         }
+
         if (Projectile.timeLeft < 36)
         {
             Projectile.scale = 0.9f;
-
         }
+
         if (Projectile.timeLeft < 28)
         {
             Projectile.scale = 0.79f;
-
         }
+
         if (Projectile.timeLeft < 20)
         {
             Projectile.scale = 0.97f;
-
         }
+
         if (Projectile.timeLeft < 12)
         {
             Projectile.scale = 1.12f;
@@ -233,7 +242,5 @@ public class BigShot : ModProjectile
             Projectile.scale = 1.48f;
             Projectile.Resize(165, 165);
         }
-
     }
-
 }

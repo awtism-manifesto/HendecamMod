@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,6 +24,7 @@ public class TungstenCube : ModItem
     {
         player.maxFallSpeed = player.maxFallSpeed * 2f;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "This costs $5000 on Ebay");
@@ -41,12 +42,12 @@ public class TungstenCube : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>(1);
+        recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient(ItemID.TungstenBar, 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

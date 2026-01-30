@@ -63,7 +63,7 @@ public class Glock : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SilverBar, 5);
         recipe.AddIngredient(ItemID.DemoniteBar, 5);
-        recipe.AddIngredient<Items.Polymer>(10);
+        recipe.AddIngredient<Polymer>(10);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
@@ -72,7 +72,7 @@ public class Glock : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 5);
         recipe.AddIngredient(ItemID.DemoniteBar, 5);
 
-        recipe.AddIngredient<Items.Polymer>(10);
+        recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
@@ -80,7 +80,7 @@ public class Glock : ModItem
         recipe.AddIngredient(ItemID.SilverBar, 5);
         recipe.AddIngredient(ItemID.CrimtaneBar, 5);
 
-        recipe.AddIngredient<Items.Polymer>(10);
+        recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
@@ -88,7 +88,7 @@ public class Glock : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 5);
         recipe.AddIngredient(ItemID.CrimtaneBar, 5);
 
-        recipe.AddIngredient<Items.Polymer>(10);
+        recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

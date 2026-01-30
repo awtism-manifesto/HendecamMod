@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -244,6 +244,7 @@ public class RainbowBloon : ModProjectile
             }
         }
     }
+
     private void Visuals()
     {
         // So it will lean slightly towards the direction it's moving

@@ -20,8 +20,9 @@ public class LargePlasmoid : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.Pixie;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -56,10 +57,12 @@ public class LargePlasmoid : ModNPC
             NPC.damage = 96;
         }
     }
+
     public override void AI()
     {
         Lighting.AddLight(NPC.Center, 1.5f, 0.575f, 2f);
     }
+
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
     {
         for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
@@ -76,19 +79,21 @@ public class LargePlasmoid : ModNPC
         int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buffType, timeToAdd);
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"Like their normal-sized counterparts, Large Plasmoids feed on radiation. Unlike normal Plasmoids, however, they seem to return to the edge of space when it's daytime\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"Like their normal-sized counterparts, Large Plasmoids feed on radiation. Unlike normal Plasmoids, however, they seem to return to the edge of space when it's daytime\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlutoniumOre>(), 1, 121, 166));
@@ -104,12 +109,12 @@ public class LargePlasmoid : ModNPC
         {
             return SpawnCondition.Sky.Chance * 0.02f;
         }
+
         if (!Main.dayTime & ApacheElfShipDown.downedApacheElfShip)
         {
             return SpawnCondition.Sky.Chance * 0.095f;
         }
-        else
-            return SpawnCondition.Sky.Chance * 0f;
-    }
 
+        return SpawnCondition.Sky.Chance * 0f;
+    }
 }

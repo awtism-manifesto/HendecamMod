@@ -6,11 +6,11 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
+
 public class AstaGlaive : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
     }
 
     public override void SetDefaults()
@@ -27,9 +27,9 @@ public class AstaGlaive : ModProjectile
         Projectile.localNPCHitCooldown = 10;
         Projectile.extraUpdates = 1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         for (int i = 0; i < 5; i++)
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<AstatineDust>());
@@ -37,9 +37,10 @@ public class AstaGlaive : ModProjectile
             dust.velocity *= 5.5f;
             dust.scale *= 1f;
         }
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 180);
 
+        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 180);
     }
+
     public override void AI()
     {
         Player player = Main.player[Projectile.owner];
@@ -63,7 +64,6 @@ public class AstaGlaive : ModProjectile
 
         if (Projectile.ai[0] == 0f)
         {
-
             if (Projectile.timeLeft <= 30)
             {
                 Projectile.ai[0] = 1f;
@@ -82,6 +82,7 @@ public class AstaGlaive : ModProjectile
                 Projectile.Kill();
                 return;
             }
+
             toPlayer.Normalize();
 
             float returnSpeed = 23f;

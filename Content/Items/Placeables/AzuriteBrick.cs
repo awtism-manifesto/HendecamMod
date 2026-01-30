@@ -29,12 +29,12 @@ public class AzuriteBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<AzuriteBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(5);
-        recipe.AddIngredient<AzuriteOre>(1);
+        recipe.AddIngredient<AzuriteOre>();
         recipe.AddIngredient(ItemID.StoneBlock, 5);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();

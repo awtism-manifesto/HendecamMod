@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
@@ -36,6 +37,7 @@ public class AstatineBreastplate : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 25; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,11 +63,13 @@ public class AstatineBreastplate : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<AstatineHelmet>() && legs.type == ModContent.ItemType<AstatineGreaves>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -86,6 +90,7 @@ public class AstatineBreastplate : ModItem
         player.GetArmorPenetration(DamageClass.Melee) += MeleeArmorPenetration;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 117f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -102,6 +107,7 @@ public class AstatineBreastplate : ModItem
         player.GetModPlayer<AstaSetBoom>().AstaBlam = true;
     }
 }
+
 public class AstaSetBoom : ModPlayer
 {
     public const int CritBonus = 30;
@@ -140,7 +146,7 @@ public class AstaSetBoom : ModPlayer
 
         int baseDamage = 850;
         float defenseScale = 2.5f;
-        int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
+        int finalDamage = baseDamage + Player.statDefense * defenseScale;
 
         // Spawn explosion
         Projectile.NewProjectile(
@@ -156,5 +162,4 @@ public class AstaSetBoom : ModPlayer
         // Start cooldown
         explosionCooldown = ExplosionCooldownMax;
     }
-
 }

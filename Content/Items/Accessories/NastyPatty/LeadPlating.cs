@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class LeadPlating : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 50 defense, at the cost of Armor Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyDefense>().NastyEffect = true;
@@ -51,6 +52,7 @@ public class LeadPlating : ModItem
         player.buffImmune[BuffID.BallistaPanic] = true;
         player.buffImmune[BuffID.RapidHealing] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,8 +18,8 @@ public class PhatBlunt : ModItem
         Item.value = Item.sellPrice(gold: 7); // How many coins the item is worth
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.accessory = true;
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -70,6 +70,7 @@ public class PhatBlunt : ModItem
         player.lifeRegen += 3;
         player.breathMax = 167;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -79,5 +80,4 @@ public class PhatBlunt : ModItem
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }
-
 }

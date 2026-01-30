@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,6 +12,7 @@ public class CoalLump : ModItem
     {
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -20,6 +21,7 @@ public class CoalLump : ModItem
         Item.value = 30;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The industrial revolution and its consequences");
@@ -37,8 +39,8 @@ public class CoalLump : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

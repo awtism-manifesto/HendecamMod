@@ -6,12 +6,12 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class KnightStarSpawnSlow : ModProjectile
 {
-
     public override void SetDefaults()
     {
         Projectile.width = 12; // The width of projectile hitbox
@@ -28,17 +28,14 @@ public class KnightStarSpawnSlow : ModProjectile
         Projectile.localNPCHitCooldown = 20;
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-
     }
 
     public override void AI()
     {
         Projectile.scale = Main.rand.NextFloat(0.66f, 1.25f);
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
     }
 }

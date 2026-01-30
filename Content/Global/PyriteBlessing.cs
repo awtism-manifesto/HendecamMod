@@ -1,6 +1,6 @@
+using System.Threading;
 using HendecamMod.Content.Tiles;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -21,11 +21,10 @@ public class PyriteBlessing : GlobalNPC
         if (!NPC.downedSlimeKing)
         {
             ModContent.GetInstance<PyriteSystem>().BlessWorldWithPyrite();
-
         }
-
     }
 }
+
 public class PyriteSystem : ModSystem
 {
     public static LocalizedText PyriteMessage { get; private set; }
@@ -76,5 +75,4 @@ public class PyriteSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

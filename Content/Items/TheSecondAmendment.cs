@@ -1,20 +1,20 @@
-﻿using HendecamMod.Content.Items.Weapons;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class TheSecondAmendment : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.width = 130;
@@ -49,6 +49,7 @@ public class TheSecondAmendment : ModItem
         {
             damage = (int)(damage * 0.45f);
         }
+
         SoundEngine.PlaySound(SoundID.Item68, player.position);
         SoundEngine.PlaySound(SoundID.Item61, player.position);
         for (int i = 0; i < 3; i++) // Fire 3 random projectiles
@@ -278,17 +279,20 @@ public class TheSecondAmendment : ModItem
 
             Projectile.NewProjectileDirect(source, position, newVelocity, projType, projDamage, knockback, player.whoAmI);
         }
+
         if (Main.rand.NextBool(69))
         {
             int bonusType = ModContent.ProjectileType<RiverHead>();
             Vector2 bonusVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8));
             Projectile.NewProjectileDirect(source, position, bonusVelocity, bonusType, damage, knockback, player.whoAmI);
         }
+
         if (Main.rand.NextBool(15))
         {
             return true;
         }
-        else return false;
+
+        return false;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -303,6 +307,7 @@ public class TheSecondAmendment : ModItem
         };
         tooltips.Add(line);
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -338,83 +343,84 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<CopperShortmachinegun>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("BrenGun", out ModItem BrenGun))
+        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind("BrenGun", out ModItem BrenGun))
         {
             recipe.AddIngredient(BrenGun.Type);
         }
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("SomaPrime", out ModItem SomaPrime)
-            && CalMerica.TryFind<ModItem>("HalibutCannon", out ModItem HalibutCannon))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SomaPrime", out ModItem SomaPrime)
+                                                                  && CalMerica.TryFind("HalibutCannon", out ModItem HalibutCannon))
         {
-
             recipe.AddIngredient(SomaPrime.Type);
 
             recipe.AddIngredient(HalibutCannon.Type);
         }
 
-        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind<ModItem>("Hyperion", out ModItem Hyperion))
+        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind("Hyperion", out ModItem Hyperion))
         {
             recipe.AddIngredient(Hyperion.Type);
         }
+
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("VolcanicRepeater", out ModItem VolcanicRepeater))
         {
             recipe.AddIngredient(VolcanicRepeater.Type);
-
         }
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteMagnum", out ModItem ArtemiteMagnum)
-             && MacroMerica.TryFind<ModItem>("TychoDesertEagle", out ModItem TychoDesertEagle) && MacroMerica.TryFind<ModItem>("Cruithne", out ModItem Cruithne))
+
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("ArtemiteMagnum", out ModItem ArtemiteMagnum)
+                                                                  && MacroMerica.TryFind("TychoDesertEagle", out ModItem TychoDesertEagle) && MacroMerica.TryFind("Cruithne", out ModItem Cruithne))
         {
             recipe.AddIngredient(Cruithne.Type);
             recipe.AddIngredient(ArtemiteMagnum.Type);
             recipe.AddIngredient(TychoDesertEagle.Type);
         }
-        if (ModLoader.TryGetMod("ZenithGunReturn", out Mod ZenithMerica) && ZenithMerica.TryFind<ModItem>("ZenithGun", out ModItem ZenithGun))
+
+        if (ModLoader.TryGetMod("ZenithGunReturn", out Mod ZenithMerica) && ZenithMerica.TryFind("ZenithGun", out ModItem ZenithGun))
         {
             recipe.AddIngredient(ZenithGun.Type);
         }
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind<ModItem>("TerrariumPulseRifle", out ModItem TerrariumPulseRifle)
-           && ThorMerica.TryFind<ModItem>("OmniCannon", out ModItem OmniCannon)
-            && ThorMerica.TryFind<ModItem>("TrenchSpitter", out ModItem TrenchSpitter))
+
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariumPulseRifle", out ModItem TerrariumPulseRifle)
+                                                                  && ThorMerica.TryFind("OmniCannon", out ModItem OmniCannon)
+                                                                  && ThorMerica.TryFind("TrenchSpitter", out ModItem TrenchSpitter))
 
         {
             recipe.AddIngredient(TrenchSpitter.Type);
             recipe.AddIngredient(TerrariumPulseRifle.Type);
 
             recipe.AddIngredient(OmniCannon.Type);
-
         }
 
-        if (ModLoader.TryGetMod("Redemption", out Mod RedMerica) && RedMerica.TryFind<ModItem>("DepletedCrossbow", out ModItem DepletedCrossbow)
-          && RedMerica.TryFind<ModItem>("XeniumElectrolaser", out ModItem XeniumElectrolaser))
+        if (ModLoader.TryGetMod("Redemption", out Mod RedMerica) && RedMerica.TryFind("DepletedCrossbow", out ModItem DepletedCrossbow)
+                                                                 && RedMerica.TryFind("XeniumElectrolaser", out ModItem XeniumElectrolaser))
 
         {
             recipe.AddIngredient(DepletedCrossbow.Type);
 
             recipe.AddIngredient(XeniumElectrolaser.Type);
         }
-        if (ModLoader.TryGetMod("StarsAbove", out Mod StarMerica) && StarMerica.TryFind<ModItem>("CosmicDestroyer", out ModItem CosmicDestroyer)
-          && StarMerica.TryFind<ModItem>("InheritedCaseM4A1", out ModItem InheritedCaseM4A1))
+
+        if (ModLoader.TryGetMod("StarsAbove", out Mod StarMerica) && StarMerica.TryFind("CosmicDestroyer", out ModItem CosmicDestroyer)
+                                                                  && StarMerica.TryFind("InheritedCaseM4A1", out ModItem InheritedCaseM4A1))
 
         {
             recipe.AddIngredient(CosmicDestroyer.Type);
             recipe.AddIngredient(InheritedCaseM4A1.Type);
         }
 
-        if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind<ModItem>("TheBiggestSting", out ModItem TheBiggestSting)
-      && FargoMerica.TryFind<ModItem>("NavalRustrifle", out ModItem NavalRustrifle)
-      && FargoMerica.TryFind<ModItem>("Lightslinger", out ModItem Lightslinger))
+        if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind("TheBiggestSting", out ModItem TheBiggestSting)
+                                                                         && FargoMerica.TryFind("NavalRustrifle", out ModItem NavalRustrifle)
+                                                                         && FargoMerica.TryFind("Lightslinger", out ModItem Lightslinger))
 
         {
-
             recipe.AddIngredient(NavalRustrifle.Type);
             recipe.AddIngredient(Lightslinger.Type);
             recipe.AddIngredient(TheBiggestSting.Type);
         }
-        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind<ModItem>("Blackout", out ModItem Blackout)
-          && HomeMerica.TryFind<ModItem>("FortSniper", out ModItem FortSniper)
 
-           && HomeMerica.TryFind<ModItem>("ClockworkMinigun", out ModItem ClockworkMinigun)
-            && HomeMerica.TryFind<ModItem>("EssenceofBright", out ModItem EssenceofBright))
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind("Blackout", out ModItem Blackout)
+                                                                          && HomeMerica.TryFind("FortSniper", out ModItem FortSniper)
+                                                                          && HomeMerica.TryFind("ClockworkMinigun", out ModItem ClockworkMinigun)
+                                                                          && HomeMerica.TryFind("EssenceofBright", out ModItem EssenceofBright))
         {
             recipe.AddIngredient(ClockworkMinigun.Type);
             recipe.AddIngredient(Blackout.Type);
@@ -423,7 +429,6 @@ public class TheSecondAmendment : ModItem
 
             recipe.AddIngredient(EssenceofBright.Type, 5);
         }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

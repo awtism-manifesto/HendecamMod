@@ -1,15 +1,14 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Poop;
 
 public class ThrownPoop : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -23,16 +22,16 @@ public class ThrownPoop : ModProjectile
         Projectile.penetrate += -3;
         Projectile.timeLeft = 1500;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.Kill();
 
         return false;
     }
+
     public override void AI()
     {
-
         int frameSpeed = 7;
 
         Projectile.frameCounter++;
@@ -47,6 +46,7 @@ public class ThrownPoop : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         for (int i = 0; i < 1; i++)
         {
             float posOffsetX = 0f;

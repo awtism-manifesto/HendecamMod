@@ -29,12 +29,12 @@ public class SmoothLimestone : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<SmoothLimestonePlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Placeables.Limestone>(1);
+        recipe.AddIngredient<Limestone>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

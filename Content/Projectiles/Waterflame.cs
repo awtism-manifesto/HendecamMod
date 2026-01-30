@@ -6,8 +6,9 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class Waterflame : ModProjectile
 {
@@ -30,6 +31,7 @@ public class Waterflame : ModProjectile
         // This can be done by modifying projectile.penetrate
         Projectile.timeLeft = 500;
     }
+
     public override void AI()
     {
         for (int i = 0; i < 2; i++)
@@ -41,6 +43,7 @@ public class Waterflame : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust fire1Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustID.Torch, 0f, 0f, 100, default, 0.66f);
             fire1Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
             fire1Dust.noGravity = true;
@@ -50,17 +53,17 @@ public class Waterflame : ModProjectile
             fireDust.noGravity = true;
             fireDust.velocity *= 0.25f;
         }
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);
         target.AddBuff(BuffID.Wet, 300);
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
     }
 }

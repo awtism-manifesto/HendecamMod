@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +12,6 @@ public class FlamingKnife : ModItem
 {
     public override void SetDefaults()
     {
-
         // Common Properties
         Item.rare = ItemRarityID.Orange;
         Item.value = Item.sellPrice(silver: 5);
@@ -35,6 +34,7 @@ public class FlamingKnife : ModItem
         Item.shootSpeed = 12f;
         Item.shoot = ModContent.ProjectileType<FlamingKnifeProjectile>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Explodes every time it hits an enemy");
@@ -45,13 +45,13 @@ public class FlamingKnife : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(100);
-        recipe.AddIngredient<FireDiamond>(1);
-        recipe.AddIngredient(ItemID.HellstoneBar, 1);
+        recipe.AddIngredient<FireDiamond>();
+        recipe.AddIngredient(ItemID.HellstoneBar);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

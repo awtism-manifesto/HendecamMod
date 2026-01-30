@@ -1,10 +1,10 @@
-﻿using HendecamMod.Common.Systems;
+﻿using System.Threading.Tasks;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
 using Microsoft.Xna.Framework;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
@@ -12,13 +12,15 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.NPCs.Bosses;
 
 [AutoloadBossHead]
 public class ApacheElfShip : ModNPC
 {
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = 4;
@@ -34,9 +36,9 @@ public class ApacheElfShip : ModNPC
             NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
         }
     }
+
     public override void SetDefaults()
     {
-
         NPC.damage = 80;
         NPC.defense = 45;
         NPC.lifeMax = 75000;
@@ -64,11 +66,13 @@ public class ApacheElfShip : ModNPC
             }
         }
     }
+
     public override void FindFrame(int frameHeight)
     {
         Main.npcFrameCount[Type] = 4;
         AnimationType = NPCID.BlazingWheel;
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         // Do NOT misuse the ModifyNPCLoot and OnKill hooks: the former is only used for registering drops, the latter for everything else
@@ -83,7 +87,7 @@ public class ApacheElfShip : ModNPC
 
         // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
         int itemType = ModContent.ItemType<fivenato>();
-        var parameters = new DropOneByOne.Parameters()
+        var parameters = new DropOneByOne.Parameters
         {
             ChanceNumerator = 1,
             ChanceDenominator = 1,
@@ -103,6 +107,7 @@ public class ApacheElfShip : ModNPC
 
         // npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
     }
+
     public override void OnKill()
     {
         var source2 = NPC.GetSource_FromAI();
@@ -111,24 +116,27 @@ public class ApacheElfShip : ModNPC
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
         NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
     }
+
     public override bool CanHitPlayer(Player target, ref int cooldownSlot)
     {
         cooldownSlot = ImmunityCooldownID.Bosses;
         return true;
     }
+
     public async override void AI()
     {
         if (!NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
         {
             NPC.SetDefaults(0);
             NPC.active = false;
-            if (ApacheElfShipDown.downedApacheElfShip == true)
+            if (ApacheElfShipDown.downedApacheElfShip)
             {
                 var source2 = NPC.GetSource_FromAI();
                 AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
                 NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
             }
         }
+
         {
             if (nextSpawnTick == 0)
             {
@@ -157,19 +165,22 @@ public class ApacheElfShip : ModNPC
                     int b = 0;
                     int Difficulty = 1;
                     Difficulty = 1;
-                    if (Main.expertMode == true)
+                    if (Main.expertMode)
                     {
                         Difficulty += 1;
                     }
-                    if (Main.masterMode == true)
+
+                    if (Main.masterMode)
                     {
                         Difficulty += 1;
                     }
-                    if (Main.getGoodWorld == true)
+
+                    if (Main.getGoodWorld)
                     {
                         Difficulty += 1;
                     }
-                    if (Main.getGoodWorld == true & Main.drunkWorld == true)
+
+                    if (Main.getGoodWorld & Main.drunkWorld)
                     {
                         Difficulty += 1;
                     }
@@ -185,6 +196,7 @@ public class ApacheElfShip : ModNPC
                             p = 0;
                             break;
                     }
+
                     switch (Main.rand.Next(5))
                     {
                         case 0:
@@ -198,6 +210,7 @@ public class ApacheElfShip : ModNPC
                                 Projectile.NewProjectile(source, position0, direction0 * 0.01f, ProjectileID.Present, 75, 0f, Main.myPlayer);
                                 await Task.Delay(400 / Difficulty);
                             }
+
                             break;
                         case 1:
                             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Get ready to eat plasma, asswipe."), new Color(185, 105, 105));
@@ -215,8 +228,10 @@ public class ApacheElfShip : ModNPC
                                     Projectile.NewProjectile(source, position1, direction1 * 0.01f, ModContent.ProjectileType<ApexPlasmaBulletHostile>(), 75, 0f, Main.myPlayer);
                                     await Task.Delay(50 / Difficulty);
                                 }
+
                                 await Task.Delay(500 / Difficulty);
                             }
+
                             break;
                         case 2:
 
@@ -227,6 +242,7 @@ public class ApacheElfShip : ModNPC
                             {
                                 NPC.NewNPCDirect(source, (int)NPC.Center.X + SummonX + Main.rand.Next(-100, 100), (int)NPC.Center.Y + Main.rand.Next(-500, 500), NPCID.SantaNK1, NPC.whoAmI);
                             }
+
                             await Task.Delay(10000 / Difficulty);
                             break;
                         case 3:
@@ -237,6 +253,7 @@ public class ApacheElfShip : ModNPC
                             {
                                 NPC.NewNPCDirect(source, (int)NPC.Center.X + SummonX + Main.rand.Next(-100, 100), (int)NPC.Center.Y + Main.rand.Next(-500, 500), NPCID.ElfCopter, NPC.whoAmI);
                             }
+
                             break;
                         case 4:
                             SoundEngine.PlaySound(SoundID.Item94, position);
@@ -250,15 +267,14 @@ public class ApacheElfShip : ModNPC
                                 Projectile.NewProjectile(source, position4, direction4 * speed, ProjectileID.Missile, 80, 0f, Main.myPlayer);
                                 await Task.Delay(200 / Difficulty);
                             }
+
                             break;
                     }
                 }
 
                 tickCounter = 0;
                 nextSpawnTick = Main.rand.Next(300, 500);
-
             }
         }
     }
 }
-

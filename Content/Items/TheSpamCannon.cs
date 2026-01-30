@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -10,8 +10,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class TheSpamCannon : ModItem
 {
+    private int spamcannoncooldown;
+
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Shoot;
@@ -23,14 +26,11 @@ public class TheSpamCannon : ModItem
         Item.height = 40;
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
-
             Item.shootSpeed = 19.5f;
-
         }
         else
         {
             Item.shootSpeed = 18.25f;
-
         }
 
         Item.mana = 2;
@@ -43,6 +43,7 @@ public class TheSpamCannon : ModItem
 
         Item.autoReuse = true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -52,19 +53,18 @@ public class TheSpamCannon : ModItem
         else
         {
             Item.mana = 2;
-
         }
 
         return base.CanUseItem(player);
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
-    private int spamcannoncooldown = 0;
+
     public override void UpdateInventory(Player player)
     {
-
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
             if (Main.rand.NextBool(9))
@@ -78,17 +78,18 @@ public class TheSpamCannon : ModItem
             {
                 Item.damage = Main.rand.Next(65, 110);
             }
-
         }
 
         if (Main.rand.NextBool(13))
         {
             Item.knockBack = Main.rand.NextFloat(2, 12);
         }
+
         if (Main.rand.NextBool(10))
         {
             Item.crit = Main.rand.Next(-15, 20);
         }
+
         if (Main.rand.NextBool(11))
         {
             Item.ArmorPenetration = Main.rand.Next(1, 15);
@@ -102,18 +103,22 @@ public class TheSpamCannon : ModItem
         if (spamcannoncooldown > 0)
             spamcannoncooldown--;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)
         {
-
             if (spamcannoncooldown > 0)
                 return false;
 
-            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica))//fixing weird fargos bug
-            { spamcannoncooldown = 100; }
+            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica)) //fixing weird fargos bug
+            {
+                spamcannoncooldown = 100;
+            }
             else
-            { spamcannoncooldown = 150; }
+            {
+                spamcannoncooldown = 150;
+            }
 
             player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 150);
             SoundEngine.PlaySound(SoundID.Item14, player.position);
@@ -123,6 +128,7 @@ public class TheSpamCannon : ModItem
             Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 13.5f), (int)(knockback * 25f), player.whoAmI);
             return false;
         }
+
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.5f));
 
@@ -151,12 +157,13 @@ public class TheSpamCannon : ModItem
             OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
         };
         tooltips.Add(line);
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(5f, 4f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -168,16 +175,14 @@ public class TheSpamCannon : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CoreofCalamity", out ModItem CoreofCalamity))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CoreofCalamity", out ModItem CoreofCalamity))
         {
             recipe.AddIngredient(CoreofCalamity.Type, 9);
-
         }
 
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseBar", out ModItem PhaseBar))
         {
             recipe.AddIngredient(PhaseBar.Type, 6);
         }
-
     }
 }

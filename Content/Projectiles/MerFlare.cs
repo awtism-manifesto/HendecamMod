@@ -1,11 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class MerFlare : ModProjectile
@@ -75,77 +76,77 @@ public class MerFlare : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 510));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(16, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack);
+            new Vector2(16, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack);
         Vector2 Im = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 600));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Im,
-        new Vector2(20, 0).RotatedBy((Im).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(20, 0).RotatedBy((Im).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 So = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 690));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), So,
-        new Vector2(26, 0).RotatedBy((So).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(26, 0).RotatedBy((So).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Fucking = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 780));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fucking,
-        new Vector2(18, 0).RotatedBy((Fucking).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(18, 0).RotatedBy((Fucking).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Bad = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 870));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Bad,
-        new Vector2(25, 0).RotatedBy((Bad).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(25, 0).RotatedBy((Bad).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 At = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 960));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), At,
-        new Vector2(48, 0).RotatedBy((At).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(48, 0).RotatedBy((At).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Coding = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Coding,
-        new Vector2(42, 0).RotatedBy((Coding).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(42, 0).RotatedBy((Coding).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Codinng = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1140));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Codinng,
-        new Vector2(23, 0).RotatedBy((Codinng).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(23, 0).RotatedBy((Codinng).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Cooding = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1230));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Cooding,
-        new Vector2(39, 0).RotatedBy((Cooding).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(39, 0).RotatedBy((Cooding).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Codingg = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1320));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Codingg,
-        new Vector2(32, 0).RotatedBy((Codingg).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(32, 0).RotatedBy((Codingg).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Codiing = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1410));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Codiing,
-        new Vector2(37, 0).RotatedBy((Codiing).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(37, 0).RotatedBy((Codiing).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Codiiing = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1500));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Codiiing,
-        new Vector2(51, 0).RotatedBy((Codiiing).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(51, 0).RotatedBy((Codiiing).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 Fuckking = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-15, 15), 1590));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fuckking,
-        new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Vector2 ImAFuckingDegenerate = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-5, 5), 1680));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Fuckking,
-        new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            new Vector2(20, 0).RotatedBy((Fuckking).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MinieMag>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     public override void AI()
     {
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -158,6 +159,7 @@ public class MerFlare : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.DungeonSpirit, 0f, 0f, 100, default, 0.55f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
@@ -180,6 +182,4 @@ public class MerFlare : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }
-

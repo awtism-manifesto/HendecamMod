@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -69,6 +69,7 @@ public class Bullshit4 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -79,13 +80,11 @@ public class Bullshit4 : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("GoldLobster", out ModItem GoldLobster)
-            && ThorMerica.TryFind("TheOmegaCore", out ModItem TheOmegaCore))
+                                                                  && ThorMerica.TryFind("TheOmegaCore", out ModItem TheOmegaCore))
 
         {
             recipe.AddIngredient(GoldLobster.Type);
             recipe.AddIngredient(TheOmegaCore.Type);
-
         }
     }
-
 }

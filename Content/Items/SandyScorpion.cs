@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -8,8 +8,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class SandyScorpion : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -39,11 +42,8 @@ public class SandyScorpion : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-    private int shotCounter = 0;
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.44f));
@@ -64,8 +64,10 @@ public class SandyScorpion : ModItem
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);
             shotCounter = 0;
         }
+
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,6 +93,7 @@ public class SandyScorpion : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-7.5f, -1f);

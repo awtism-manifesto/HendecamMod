@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class SchoolFood : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana, 4 Luck, 10% Damage Reduction, and 25 Safe Fall Distance"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building, Fishing, Food, or Exploration Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyLuck>().NastyEffect = true;
@@ -52,12 +53,13 @@ public class SchoolFood : ModItem
         player.buffImmune[BuffID.WellFed2] = true;
         player.buffImmune[BuffID.WellFed3] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<DustyMedal>(1);
-        recipe.AddIngredient<PrisonFood>(1);
+        recipe.AddIngredient<DustyMedal>();
+        recipe.AddIngredient<PrisonFood>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

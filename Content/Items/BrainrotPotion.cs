@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,7 +14,8 @@ public class BrainrotPotion : ModItem
         Item.ResearchUnlockCount = 20;
 
         // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(85, 32, 102),
             new Color(157, 55, 191),
             new Color(191, 81, 224)
@@ -37,10 +38,12 @@ public class BrainrotPotion : ModItem
         Item.buffType = ModContent.BuffType<BrainRotted>();
         Item.buffTime = 14480; // Ticks
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -53,6 +56,7 @@ public class BrainrotPotion : ModItem
         };
         tooltips.Add(line);
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -78,6 +82,4 @@ public class BrainrotPotion : ModItem
         recipe.AddTile(TileID.Kegs);
         recipe.Register();
     }
-
 }
-

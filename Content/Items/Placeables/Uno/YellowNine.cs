@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables.Uno;
@@ -12,6 +11,7 @@ public class YellowNine : ModItem
         ItemID.Sets.SortingPriorityMaterials[Type] = 2;
         Item.rare = ItemRarityID.Yellow;
     }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.YellowNine>());

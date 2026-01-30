@@ -1,5 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +17,13 @@ public class FlamingPeaceAgreement : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "The damned should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.WallofFlesh] = true;
@@ -38,14 +40,14 @@ public class FlamingPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.BoneSerpentBody] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.BoneSerpentHead] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.BoneSerpentTail] = true; //redundant in PAM
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.WallofFleshTrophy);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,13 +14,11 @@ public class PlutoArrowMinier : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -32,10 +30,12 @@ public class PlutoArrowMinier : ModProjectile
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 170);
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
@@ -60,9 +60,9 @@ public class PlutoArrowMinier : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
-
         // dust, all dust
 
         for (int i = 0; i < 2; i++)
@@ -74,10 +74,10 @@ public class PlutoArrowMinier : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.2f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
-
         }
 
         float maxDetectRadius = 3500f; // The maximum radius at which a projectile can detect a target
@@ -154,6 +154,7 @@ public class PlutoArrowMinier : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public override void OnKill(int timeLeft)
     {
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.

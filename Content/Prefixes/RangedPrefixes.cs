@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Prefixes;
+
 public class Disciplined : ModPrefix
 {
     // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
@@ -26,11 +27,12 @@ public class Disciplined : ModPrefix
     {
         // apply to all ranged classes
         if (item.DamageType == DamageClass.Ranged || item.DamageType == ModContent.GetInstance<MeleeRangedDamage>()
-            || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<RangedMagicDamage>() || item.DamageType == ModContent.GetInstance<RangedSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
-        { return true; }
-        else
-        { return false; }
+                                                  || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<RangedMagicDamage>() || item.DamageType == ModContent.GetInstance<RangedSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        {
+            return true;
+        }
 
+        return false;
     }
 
     // Use this function to modify these stats for items which have this prefix:
@@ -52,9 +54,9 @@ public class Disciplined : ModPrefix
     // This is used to modify most other stats of items which have this modifier.
     public override void Apply(Item item)
     {
-
     }
 }
+
 public class Switched : ModPrefix
 {
     // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
@@ -78,11 +80,12 @@ public class Switched : ModPrefix
     {
         // apply to all ranged classes
         if (item.DamageType == DamageClass.Ranged || item.DamageType == ModContent.GetInstance<MeleeRangedDamage>()
-            || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<RangedMagicDamage>() || item.DamageType == ModContent.GetInstance<RangedSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
-        { return true; }
-        else
-        { return false; }
+                                                  || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<RangedMagicDamage>() || item.DamageType == ModContent.GetInstance<RangedSummonDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        {
+            return true;
+        }
 
+        return false;
     }
 
     // Use this function to modify these stats for items which have this prefix:
@@ -105,6 +108,5 @@ public class Switched : ModPrefix
     // This is used to modify most other stats of items which have this modifier.
     public override void Apply(Item item)
     {
-
     }
 }

@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ObsidianGreatbow : ModItem
@@ -24,7 +25,7 @@ public class ObsidianGreatbow : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item102;
+        Item.UseSound = SoundID.Item102;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 30; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -42,8 +43,9 @@ public class ObsidianGreatbow : ModItem
     {
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<Projectiles.ObsidianArrow>();
+            type = ModContent.ProjectileType<ObsidianArrow>();
         }
+
         if (type == ModContent.ProjectileType<ObsidianArrow>())
         {
             damage = (int)(damage * 1.15f);
@@ -85,6 +87,7 @@ public class ObsidianGreatbow : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-18f, -1f);

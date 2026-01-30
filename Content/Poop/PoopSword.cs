@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Poop;
 
 // This is a basic item template.
@@ -44,11 +45,11 @@ public class PoopSword : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,6 +66,7 @@ public class PoopSword : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Inflict the OnFire debuff for 1 second onto any NPC/Monster that this hits.
@@ -78,8 +80,8 @@ public class PoopSword : ModItem
             dust.velocity *= 7.5f;
             dust.scale *= 1.25f;
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

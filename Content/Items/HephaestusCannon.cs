@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class HephaestusCannon : ModItem
@@ -28,7 +29,7 @@ public class HephaestusCannon : ModItem
 
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 49; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,17 +41,18 @@ public class HephaestusCannon : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 23.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.4f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<HephFlame>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
@@ -73,6 +75,7 @@ public class HephaestusCannon : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -103,7 +106,7 @@ public class HephaestusCannon : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.Pyrocannon>();
+        recipe.AddIngredient<Pyrocannon>();
         recipe.AddIngredient(ItemID.HallowedBar, 12);
         recipe.AddIngredient(ItemID.SoulofMight, 10);
         recipe.AddIngredient(ItemID.SoulofSight, 10);

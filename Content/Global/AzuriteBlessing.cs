@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Tiles.Blocks;
+﻿using System.Threading;
+using HendecamMod.Content.Tiles.Blocks;
 using Microsoft.Xna.Framework;
-using System.Threading;
 using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
@@ -11,7 +11,6 @@ namespace HendecamMod.Content.Global;
 
 public class AzuriteBlessing : GlobalNPC
 {
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.SkeletronHead;
@@ -22,11 +21,10 @@ public class AzuriteBlessing : GlobalNPC
         if (!NPC.downedBoss3)
         {
             ModContent.GetInstance<AzuriteSystem>().BlessWorldWithAzurite();
-
         }
-
     }
 }
+
 public class AzuriteSystem : ModSystem
 {
     public static LocalizedText AzuriteMessage { get; private set; }
@@ -54,7 +52,7 @@ public class AzuriteSystem : ModSystem
             // Broadcast a message to notify the user.
             if (Main.netMode == NetmodeID.SinglePlayer)
             {
-                Main.NewText(AzuriteBlessMessage.Value, 25, 50, 255);
+                Main.NewText(AzuriteBlessMessage.Value, 25, 50);
             }
             else if (Main.netMode == NetmodeID.Server)
             {
@@ -77,5 +75,4 @@ public class AzuriteSystem : ModSystem
     }
 
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
-
 }

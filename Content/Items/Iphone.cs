@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class Iphone : ModItem
@@ -36,13 +37,11 @@ public class Iphone : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.Bad5g>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -89,21 +88,23 @@ public class Iphone : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.UraniumBar>(15);
+        recipe.AddIngredient<UraniumBar>(15);
         recipe.AddIngredient(ItemID.CopperBar, 5);
         recipe.AddIngredient(ItemID.Glass, 10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-        recipe.AddIngredient<Items.UraniumBar>(15);
+        recipe.AddIngredient<UraniumBar>(15);
         recipe.AddIngredient(ItemID.TinBar, 5);
         recipe.AddIngredient(ItemID.Glass, 10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,6 +13,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class TransHat : ModItem
 {
+    public static readonly int AdditiveDamageBonus = 6;
+    public static readonly int GenericCritBonus = 5;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -25,8 +27,7 @@ public class TransHat : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+
     public override void UpdateEquip(Player player)
     {
         player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 106f;
@@ -41,6 +42,7 @@ public class TransHat : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -66,11 +68,13 @@ public class TransHat : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<TransBodyplate>() && legs.type == ModContent.ItemType<TransGreaves>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -79,11 +83,11 @@ public class TransHat : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     // Set bonus code
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "10% reduced mana costs";
         player.manaCost = 0.9f;
-
     }
 }

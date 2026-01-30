@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class Disenchanter : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 Defense and double generic armor penetration"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Weapon or Armor Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyPenetration>().NastyEffect = true;
@@ -59,12 +60,13 @@ public class Disenchanter : ModItem
         player.buffImmune[BuffID.SwordWhipPlayerBuff] = true;
         player.buffImmune[BuffID.ThornWhipPlayerBuff] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<LeadPlating>(1);
-        recipe.AddIngredient<Grindstone>(1);
+        recipe.AddIngredient<LeadPlating>();
+        recipe.AddIngredient<Grindstone>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -38,6 +38,7 @@ public class PoliceBaton : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -67,9 +68,8 @@ public class PoliceBaton : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Polymer>(6);
+        recipe.AddIngredient<Polymer>(6);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
 }

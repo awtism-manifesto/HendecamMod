@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -44,15 +44,16 @@ public class ChainThunderblade : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("StormlionMandible", out ModItem StormlionMandible))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("StormlionMandible", out ModItem StormlionMandible))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.DemoniteBar, 6);
-            recipe.AddIngredient<Items.RockSalt>(20);
+            recipe.AddIngredient<RockSalt>(20);
             recipe.AddIngredient(StormlionMandible.Type, 3);
             recipe.AddIngredient(ItemID.FossilOre, 10);
             recipe.AddTile(TileID.Anvils);
@@ -64,7 +65,7 @@ public class ChainThunderblade : ModItem
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 6);
-            recipe.AddIngredient<Items.RockSalt>(20);
+            recipe.AddIngredient<RockSalt>(20);
             recipe.AddIngredient(StormlionMandible.Type, 3);
             recipe.AddIngredient(ItemID.FossilOre, 10);
             recipe.AddTile(TileID.Anvils);
@@ -73,7 +74,6 @@ public class ChainThunderblade : ModItem
             {
                 recipe.AddIngredient(DissolvingEarth2.Type);
             }
-
         }
         else
         {
@@ -81,7 +81,7 @@ public class ChainThunderblade : ModItem
 
             recipe.AddIngredient(ItemID.DemoniteBar, 7);
             recipe.AddIngredient(ItemID.FossilOre, 12);
-            recipe.AddIngredient<Items.RockSalt>(25);
+            recipe.AddIngredient<RockSalt>(25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica2) && SOTSMerica2.TryFind("DissolvingEarth", out ModItem DissolvingEarth2))
@@ -93,7 +93,7 @@ public class ChainThunderblade : ModItem
             recipe.AddIngredient(ItemID.CrimtaneBar, 7);
 
             recipe.AddIngredient(ItemID.FossilOre, 12);
-            recipe.AddIngredient<Items.RockSalt>(25);
+            recipe.AddIngredient<RockSalt>(25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica3) && SOTSMerica3.TryFind("DissolvingEarth", out ModItem DissolvingEarth3))
@@ -101,7 +101,6 @@ public class ChainThunderblade : ModItem
                 recipe.AddIngredient(DissolvingEarth3.Type);
             }
         }
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

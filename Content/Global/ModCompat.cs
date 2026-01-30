@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -23,54 +23,41 @@ public class ModCompat : ModSystem
         ModLoader.TryGetMod("MagAF", out Mod MagMerica);
         ModLoader.TryGetMod("RecipeBrowser", out Mod RecipeBrowser);
     }
+
     public override void PostSetupContent()
     {
         if (ModLoader.TryGetMod("RecipeBrowser", out Mod mod) && !Main.dedServ)
         {
-            mod.Call(new object[5]
+            mod.Call("AddItemCategory", "Stupid", "Weapons", Mod.Assets.Request<Texture2D>("Content/Global/StupidIcon"), (Predicate<Item>)(item =>
             {
-        "AddItemCategory",
-        "Stupid",
-        "Weapons",
-        Mod.Assets.Request<Texture2D>("Content/Global/StupidIcon"), // 24x24 icon
-			(Predicate<Item>)((Item item) =>
-        {
-            if (item.damage > 0 && item.CountsAsClass<StupidDamage>() && !item.CountsAsClass<OmniDamage>())
-            {
-                return true;
+                if (item.damage > 0 && item.CountsAsClass<StupidDamage>() && !item.CountsAsClass<OmniDamage>())
+                {
+                    return true;
+                }
 
-            }
-            return false;
-        })
-            });
+                return false;
+            }));
         }
     }
 }
+
 public class MulticlassRecipe : ModSystem
 {
-
     public override void PostSetupContent()
     {
         if (ModLoader.TryGetMod("RecipeBrowser", out Mod mod) && !Main.dedServ)
         {
-            mod.Call(new object[5]
+            mod.Call("AddItemCategory", "Multiclass", "Weapons", Mod.Assets.Request<Texture2D>("Content/Global/MulticlassIcon"), (Predicate<Item>)(item =>
             {
-        "AddItemCategory",
-        "Multiclass",
-        "Weapons",
-        Mod.Assets.Request<Texture2D>("Content/Global/MulticlassIcon"), // 24x24 icon
-			(Predicate<Item>)((Item item) =>
-        {
-            if (item.damage > 0 & item.CountsAsClass<MeleeStupidDamage>() || item.CountsAsClass<RangedStupidDamage>() || item.CountsAsClass<AutismDamage>()
-            || item.CountsAsClass<OmniDamage>()|| item.CountsAsClass<MeleeMagicDamage>()|| item.CountsAsClass<RangedMagicDamage>()|| item.CountsAsClass<RangedSummonDamage>()
-            || item.CountsAsClass<MagicSummonDamage>()|| item.CountsAsClass<SummonStupidDamage>()|| item.CountsAsClass<MeleeRangedDamage>()|| item.CountsAsClass<MeleeSummonDamage>()|| item.CountsAsClass(DamageClass.Generic))
-            {
-                return true;
+                if ((item.damage > 0) & item.CountsAsClass<MeleeStupidDamage>() || item.CountsAsClass<RangedStupidDamage>() || item.CountsAsClass<AutismDamage>()
+                    || item.CountsAsClass<OmniDamage>() || item.CountsAsClass<MeleeMagicDamage>() || item.CountsAsClass<RangedMagicDamage>() || item.CountsAsClass<RangedSummonDamage>()
+                    || item.CountsAsClass<MagicSummonDamage>() || item.CountsAsClass<SummonStupidDamage>() || item.CountsAsClass<MeleeRangedDamage>() || item.CountsAsClass<MeleeSummonDamage>() || item.CountsAsClass(DamageClass.Generic))
+                {
+                    return true;
+                }
 
-            }
-            return false;
-        })
-            });
+                return false;
+            }));
         }
     }
 }

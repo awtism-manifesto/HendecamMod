@@ -65,4 +65,3 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe12345.Register();
     }
 }
-

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -43,8 +43,8 @@ public class FoundersDrumroll : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.PulseShot>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -68,6 +68,7 @@ public class FoundersDrumroll : ModItem
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -102,7 +103,6 @@ public class FoundersDrumroll : ModItem
         recipe.AddIngredient(ItemID.IllegalGunParts);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
 
     public override Vector2? HoldoutOffset()

@@ -23,13 +23,12 @@ public class AstatineBrickTile : ModTile
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;
     }
+
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 1f;
         g = 0.1f;
         b = 0.285f;
-
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

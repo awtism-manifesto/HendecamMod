@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class SeasonalPeaceAgreement : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Seasonal enemies should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Raven] = true;
@@ -40,15 +41,15 @@ public class SeasonalPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.SkeletonAlien] = true;
         player.npcTypeNoAggro[NPCID.ZombieXmas] = true;
         player.npcTypeNoAggro[NPCID.ZombieSweater] = true;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.EverscreamTrophy, 1);
-        recipe.AddIngredient(ItemID.MourningWoodTrophy, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.EverscreamTrophy);
+        recipe.AddIngredient(ItemID.MourningWoodTrophy);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);

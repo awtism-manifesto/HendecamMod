@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class ZapperGun : ModItem
@@ -24,7 +25,7 @@ public class ZapperGun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item158;
+        Item.UseSound = SoundID.Item158;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,13 +38,11 @@ public class ZapperGun : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.ZapinatorLaser;
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -71,16 +70,17 @@ public class ZapperGun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FallenStar, 3);
-        recipe.AddIngredient<Items.Polymer>(5);
-        recipe.AddIngredient<Items.PlasticScrap>(20);
+        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<PlasticScrap>(20);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

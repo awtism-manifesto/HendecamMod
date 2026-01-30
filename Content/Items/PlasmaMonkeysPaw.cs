@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class PlasmaMonkeysPaw : ModItem
@@ -27,7 +28,7 @@ public class PlasmaMonkeysPaw : ModItem
 
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item39;
+        Item.UseSound = SoundID.Item39;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 66; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -44,8 +45,8 @@ public class PlasmaMonkeysPaw : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PlasmaBlast>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 3; // The number of projectiles that this gun will shoot.
@@ -90,38 +91,36 @@ public class PlasmaMonkeysPaw : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe
-             recipe = CreateRecipe();
+            recipe = CreateRecipe();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("WhiteDwarfFragment", out ModItem WhiteDwarfFragment))
         {
-
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.LaserMonkeysPaw>();
+            recipe.AddIngredient<LaserMonkeysPaw>();
 
-            recipe.AddIngredient<Items.FissionDrive>();
+            recipe.AddIngredient<FissionDrive>();
 
             recipe.AddIngredient(WhiteDwarfFragment.Type, 8);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
         }
         else
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.LaserMonkeysPaw>();
+            recipe.AddIngredient<LaserMonkeysPaw>();
 
-            recipe.AddIngredient<Items.FissionDrive>();
+            recipe.AddIngredient<FissionDrive>();
             recipe.AddIngredient(ItemID.FragmentVortex, 8);
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
         }
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-28f, -3f);

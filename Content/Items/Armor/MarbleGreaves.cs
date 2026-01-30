@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,6 +12,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class MarbleGreaves : ModItem
 {
+    public static readonly int MoveSpeedBonus = 7;
+    public static readonly int AdditiveMeleeDamageBonus = 7;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -32,6 +34,7 @@ public class MarbleGreaves : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 5; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,14 +60,13 @@ public class MarbleGreaves : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<MarbleMask>() && body.type == ModContent.ItemType<MarbleChestplate>();
     }
 
-    public static readonly int MoveSpeedBonus = 7;
-    public static readonly int AdditiveMeleeDamageBonus = 7;
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -81,8 +83,8 @@ public class MarbleGreaves : ModItem
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 107f;
 
         player.moveSpeed += MoveSpeedBonus / 114f; // Increase the movement speed of the player
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -91,11 +93,9 @@ public class MarbleGreaves : ModItem
         recipe.AddRecipeGroup("IronBar", 25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

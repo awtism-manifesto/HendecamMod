@@ -1,14 +1,18 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class Sublimination : ModItem
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -28,7 +32,7 @@ public class Sublimination : ModItem
 
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,14 +44,13 @@ public class Sublimination : ModItem
         Item.shoot = ModContent.ProjectileType<SublimRay>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.8f;
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -65,13 +68,13 @@ public class Sublimination : ModItem
             {
                 nextSpawnTick = 2;
             }
+
             tickCounter++;
 
             if (tickCounter >= nextSpawnTick && tickCounter < 3)
             {
                 if (Main.rand.NextBool(2))
                 {
-
                     type = ModContent.ProjectileType<SublimRay2>();
                     Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 }
@@ -80,9 +83,9 @@ public class Sublimination : ModItem
                     type = ModContent.ProjectileType<SublimRay>();
                     Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 }
+
                 if (Main.rand.NextBool(2))
                 {
-
                     type = ModContent.ProjectileType<SublimRay>();
                     Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
                 }
@@ -104,7 +107,6 @@ public class Sublimination : ModItem
             }
             else if (tickCounter >= 5)
             {
-
                 type = ModContent.ProjectileType<SublimRay>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
                 type = ModContent.ProjectileType<SublimRay2>();
@@ -113,7 +115,6 @@ public class Sublimination : ModItem
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
                 tickCounter = 0;
                 nextSpawnTick = 2;
-
             }
             else
             {
@@ -123,9 +124,7 @@ public class Sublimination : ModItem
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 type = ModContent.ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-
             }
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
@@ -138,11 +137,13 @@ public class Sublimination : ModItem
         {
             damage = (int)(damage * 0.425f);
         }
+
         if (type == ModContent.ProjectileType<SublimRay2>())
         {
             damage = (int)(damage * 0.45f);
         }
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -168,6 +169,7 @@ public class Sublimination : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -181,6 +183,7 @@ public class Sublimination : ModItem
             recipe.AddIngredient(PhaseBar.Type, 12);
         }
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -26,6 +26,5 @@ public class OasisGrassPlaced : ModTile
         HitSound = SoundID.Dig;
 
         AddMapEntry(new Color(170, 142, 69));
-
     }
 }

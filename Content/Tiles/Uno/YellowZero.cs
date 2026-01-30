@@ -30,6 +30,7 @@ public class YellowZero : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

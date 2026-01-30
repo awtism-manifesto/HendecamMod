@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class GelShot : ModProjectile
@@ -12,7 +13,6 @@ public class GelShot : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-
     }
 
     public override void SetDefaults()
@@ -36,6 +36,7 @@ public class GelShot : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
@@ -62,6 +63,7 @@ public class GelShot : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
         Projectile.ai[0] += 1f;
@@ -79,9 +81,9 @@ public class GelShot : ModProjectile
         {
             Projectile.velocity.Y = 21f;
         }
+
         if (Projectile.alpha < 167)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;

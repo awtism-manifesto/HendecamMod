@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -23,8 +23,8 @@ public class TwinPoster : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.TwinPosterPlaced>());
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -36,14 +36,14 @@ public class TwinPoster : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<BlankCanvas>(1);
-        recipe.AddIngredient(ItemID.PaperAirplaneB, 1);
-        recipe.AddIngredient(ItemID.PaperAirplaneA, 1);
+        recipe.AddIngredient<BlankCanvas>();
+        recipe.AddIngredient(ItemID.PaperAirplaneB);
+        recipe.AddIngredient(ItemID.PaperAirplaneA);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

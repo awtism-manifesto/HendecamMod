@@ -1,16 +1,19 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items.Weapons;
 
 public class GlitterGun : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         // shoutouts to manifesto for this weapon
@@ -31,6 +34,7 @@ public class GlitterGun : ModItem
         Item.shoot = ModContent.ProjectileType<GlitterBullet>();
         Item.shootSpeed = 15.95f;
     }
+
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
@@ -39,10 +43,10 @@ public class GlitterGun : ModItem
         spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
         return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
     }
-    private int shotCounter = 0;
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -83,6 +87,7 @@ public class GlitterGun : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Rapidly casts Apex Plasma Bullets that pierce enemies and enemy armor");
@@ -101,6 +106,7 @@ public class GlitterGun : ModItem
             }
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-50f, -1.5f);

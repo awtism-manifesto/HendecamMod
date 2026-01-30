@@ -30,6 +30,7 @@ public class BlueReverse : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,12 +16,14 @@ public class ArmoredSling : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Weakness, Withered Weapon,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Broken Armor, Withered Armor, Bleeding,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Feral Bite, Poison, and Acid Venom"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Weak] = true;
@@ -34,12 +35,13 @@ public class ArmoredSling : ModItem
         player.buffImmune[BuffID.Poisoned] = true;
         player.buffImmune[BuffID.Venom] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.ArmorBracing, 1);
-        recipe.AddIngredient(ItemID.MedicatedBandage, 1);
+        recipe.AddIngredient(ItemID.ArmorBracing);
+        recipe.AddIngredient(ItemID.MedicatedBandage);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

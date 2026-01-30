@@ -30,6 +30,7 @@ public class RedNine : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

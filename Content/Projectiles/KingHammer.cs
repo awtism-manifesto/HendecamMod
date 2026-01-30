@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -16,7 +16,6 @@ public class KingHammer : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-
     }
 
     public override void SetDefaults()
@@ -35,13 +34,14 @@ public class KingHammer : ModProjectile
         Projectile.penetrate += -1;
         Projectile.scale = 1.67f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Midas, 480);
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
         Projectile.penetrate--;
         if (Projectile.penetrate <= 0)
         {
@@ -67,6 +67,7 @@ public class KingHammer : ModProjectile
 
         return false;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -77,7 +78,7 @@ public class KingHammer : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -110,7 +111,6 @@ public class KingHammer : ModProjectile
                 fireDust.velocity *= 0.05f;
             }
         }
-
     }
 
     public override void OnKill(int timeLeft)

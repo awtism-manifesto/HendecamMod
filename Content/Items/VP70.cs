@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -11,10 +11,8 @@ namespace HendecamMod.Content.Items;
 
 public class VP70 : ModItem
 {
-
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
 
@@ -36,7 +34,7 @@ public class VP70 : ModItem
 
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item38;
+        Item.UseSound = SoundID.Item38;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -55,23 +53,20 @@ public class VP70 : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             Item.useTime = 6;
             Item.useAnimation = 18;
             Item.reuseDelay = 8;
-
         }
         else
         {
-
             Item.useTime = 13;
             Item.useAnimation = 13;
             Item.reuseDelay = 0;
-
         }
 
         return base.CanUseItem(player);
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
@@ -86,7 +81,6 @@ public class VP70 : ModItem
         newVelocity *= 1f - Main.rand.NextFloat(0.39f);
         if (player.altFunctionUse == 2)
         {
-
             SoundEngine.PlaySound(SoundID.Item38, player.position);
             SoundEngine.PlaySound(SoundID.Item40, player.position);
 
@@ -107,7 +101,6 @@ public class VP70 : ModItem
 
             return false; // Prevent vanilla projectile spawn
         }
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -137,6 +130,7 @@ public class VP70 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -147,8 +141,8 @@ public class VP70 : ModItem
         recipe.AddIngredient<Polymer>(25);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-50f, -1.5f);

@@ -357,6 +357,7 @@ public class MericaRecipes : ModSystem
         {
             recipee.AddIngredient(ArteryPiece.Type, 10);
         }
+
         Recipe recipeee = Recipe.Create(ItemID.SharpTears);
         recipeee.AddIngredient(ItemID.DemoniteBar, 10);
         recipeee.AddIngredient(ItemID.CrimtaneBar, 10);
@@ -379,6 +380,7 @@ public class MericaRecipes : ModSystem
         {
             recipeeee.AddIngredient(ArteryPiece1.Type, 10);
         }
+
         Recipe recipeeeee = Recipe.Create(ItemID.BloodHamaxe);
         recipeeeee.AddIngredient(ItemID.DemoniteBar, 10);
         recipeeeee.AddIngredient(ItemID.CrimtaneBar, 10);
@@ -391,6 +393,7 @@ public class MericaRecipes : ModSystem
             Recipe recipeepee = Recipe.Create(ItemID.BloodHamaxe);
             recipeepee.AddIngredient(ArteryPiece11.Type, 10);
         }
+
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("GelatinousGlock", out ModItem GelatinousGlock))
         {
             Recipe glocknbawlz = Recipe.Create(GelatinousGlock.Type);
@@ -399,8 +402,8 @@ public class MericaRecipes : ModSystem
             glocknbawlz.AddIngredient(ItemID.Gel, 30);
             glocknbawlz.AddTile(TileID.Solidifier);
             glocknbawlz.Register();
-
         }
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("aDarksteelAlloy", out ModItem aDarksteelAlloy))
         {
             Recipe glocksnbawlz = Recipe.Create(aDarksteelAlloy.Type);
@@ -409,8 +412,8 @@ public class MericaRecipes : ModSystem
             glocksnbawlz.AddIngredient(ItemID.Bone);
             glocksnbawlz.AddTile(TileID.Anvils);
             glocksnbawlz.Register();
-
         }
+
         if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
         {
             Recipe glocksnbawlz = Recipe.Create(BlankPainting.Type);
@@ -419,8 +422,8 @@ public class MericaRecipes : ModSystem
 
             glocksnbawlz.AddTile(TileID.WorkBenches);
             glocksnbawlz.Register();
-
         }
+
         Recipe gay6 = Recipe.Create(ItemID.IceBow);
         gay6.AddIngredient(ItemID.FrostCore);
         gay6.AddIngredient(ItemID.PalladiumBar, 10);
@@ -486,7 +489,7 @@ public class MericaRecipes : ModSystem
         crrrc.Register();
 
         Recipe ckc = Recipe.Create(ItemID.WhoopieCushion);
-        ckc.AddIngredient(ItemID.PoopBlock, 1);
+        ckc.AddIngredient(ItemID.PoopBlock);
         ckc.AddIngredient<Items.PlasticScrap>(5);
         ckc.AddIngredient<Items.Rubber>(15);
         ckc.AddTile(TileID.TinkerersWorkbench);
@@ -509,4 +512,3 @@ public class MericaRecipes : ModSystem
         gayee5.Register();
     }
 }
-

@@ -1,15 +1,16 @@
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
+
 public class PykreteSword : ModItem
 {
+    private int shotCounter;
 
     public override void SetDefaults()
     {
@@ -30,6 +31,7 @@ public class PykreteSword : ModItem
         Item.shootSpeed = 4.25f;
         Item.useTurn = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,7 +48,7 @@ public class PykreteSword : ModItem
         };
         tooltips.Add(line);
     }
-    private int shotCounter = 0;
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.3f, 0.4f));
@@ -76,7 +78,6 @@ public class PykreteSword : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         if (Main.rand.NextBool(4))
         {
             target.AddBuff(BuffID.Frostburn, 150);

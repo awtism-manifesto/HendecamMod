@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,6 +22,7 @@ public class TintedLenses : ModItem
         Item.rare = ItemRarityID.Pink;
         Item.value = 98000;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -30,6 +31,7 @@ public class TintedLenses : ModItem
         recipe.AddIngredient(ItemID.SoulofSight, 5);
         recipe.Register();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

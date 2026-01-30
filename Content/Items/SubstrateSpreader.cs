@@ -1,15 +1,18 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SubstrateSpreader : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -41,17 +44,15 @@ public class SubstrateSpreader : ModItem
         Item.shoot = ModContent.ProjectileType<LycoShot>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
-    private int shotCounter = 0;
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.25f));
@@ -105,16 +106,16 @@ public class SubstrateSpreader : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
         {
-
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.AshSpewer>();
+            recipe.AddIngredient<AshSpewer>();
             recipe.AddIngredient(ThrowerParts.Type);
-            recipe.AddIngredient<Items.LycopiteBar>(13);
+            recipe.AddIngredient<LycopiteBar>(13);
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
@@ -122,13 +123,13 @@ public class SubstrateSpreader : ModItem
         else
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.AshSpewer>();
-            recipe.AddIngredient<Items.LycopiteBar>(13);
+            recipe.AddIngredient<AshSpewer>();
+            recipe.AddIngredient<LycopiteBar>(13);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,14 +1,14 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class Moonrise : ModItem
 {
-
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -27,7 +27,7 @@ public class Moonrise : ModItem
         Item.crit = 15;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item72;
+        Item.UseSound = SoundID.Item72;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 360; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -43,9 +43,9 @@ public class Moonrise : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         type = ModContent.ProjectileType<LunarDart>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -71,18 +71,18 @@ public class Moonrise : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Sunrise>();
+        recipe.AddIngredient<Sunrise>();
         recipe.AddIngredient(ItemID.LunarBar, 12);
         recipe.AddIngredient(ItemID.ShroomiteBar, 10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AstralBar", out ModItem AstralBar))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AstralBar", out ModItem AstralBar))
         {
             recipe.AddIngredient(AstralBar.Type, 5);
-
         }
     }
 

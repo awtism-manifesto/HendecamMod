@@ -20,15 +20,15 @@ public class Plasmoid : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.Pixie;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
         NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning>()] = true;
         NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning2>()] = true;
         NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning3>()] = true;
-
     }
 
     public override void SetDefaults()
@@ -54,11 +54,12 @@ public class Plasmoid : ModNPC
             NPC.damage = 48;
         }
     }
+
     public override void AI()
     {
         Lighting.AddLight(NPC.Center, 0.33f, 1, 0.33f);
-
     }
+
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
@@ -75,19 +76,21 @@ public class Plasmoid : ModNPC
         int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buffType, timeToAdd);
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"These odd, barely-corporeal creatures appear to feed on radiation. Their intelligence level is unknown\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"These odd, barely-corporeal creatures appear to feed on radiation. Their intelligence level is unknown\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 2, 5));
@@ -98,19 +101,21 @@ public class Plasmoid : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
         if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3 & NPC.downedEmpressOfLight)
         {
             return SpawnCondition.Sky.Chance * 0.13f;
         }
+
         if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3)
         {
             return SpawnCondition.Sky.Chance * 0.15f;
         }
+
         if (NPC.downedDeerclops & NPC.downedBoss2)
         {
             return SpawnCondition.Sky.Chance * 0.51f;
         }
+
         if (NPC.downedDeerclops)
         {
             return SpawnCondition.Sky.Chance * 0.43f;
@@ -121,9 +126,6 @@ public class Plasmoid : ModNPC
             return SpawnCondition.Sky.Chance * 0.43f;
         }
 
-        else
-            return SpawnCondition.Sky.Chance * 0.00f;
-
+        return SpawnCondition.Sky.Chance * 0.00f;
     }
-
 }

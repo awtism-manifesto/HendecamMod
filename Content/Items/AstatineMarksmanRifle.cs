@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -41,11 +41,13 @@ public class AstatineMarksmanRifle : ModItem
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.AstatineBullet>();
         damage = (int)(damage * 0.8f);
     }
+
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.666f;
@@ -57,6 +59,7 @@ public class AstatineMarksmanRifle : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -81,6 +84,7 @@ public class AstatineMarksmanRifle : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -88,11 +92,12 @@ public class AstatineMarksmanRifle : ModItem
         recipe.AddIngredient<AstatineBar>(20);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("DMR", out ModItem DMR))//Only runs when thorium enabled
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("DMR", out ModItem DMR)) //Only runs when thorium enabled
         {
-            recipe.AddIngredient(DMR.Type);// add modded item
+            recipe.AddIngredient(DMR.Type); // add modded item
         }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-31f, -1f);

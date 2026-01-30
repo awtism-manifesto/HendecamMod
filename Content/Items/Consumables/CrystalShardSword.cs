@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +29,7 @@ public class CrystalShardSword : ModItem
         Item.buffTime = 300;
         Item.useTurn = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));

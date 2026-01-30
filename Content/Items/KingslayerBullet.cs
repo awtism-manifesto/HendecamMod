@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,15 +30,17 @@ public class KingslayerBullet : ModItem
         Item.shootSpeed = 6.6f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(200);
-        recipe.AddIngredient<Items.KingslayerBar>();
+        recipe.AddIngredient<KingslayerBar>();
         recipe.AddIngredient(ItemID.MusketBall, 200);
         recipe.AddTile(TileID.Solidifier);
 
         recipe.Register();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,5 +66,4 @@ public class KingslayerBullet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }

@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class HurricaneGun : ModItem
@@ -23,7 +24,7 @@ public class HurricaneGun : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 18;
 
-        Item.UseSound = Terraria.ID.SoundID.Item122;
+        Item.UseSound = SoundID.Item122;
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 51; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
@@ -35,13 +36,11 @@ public class HurricaneGun : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 14.25f;
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Hurricane>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -79,6 +78,7 @@ public class HurricaneGun : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -88,6 +88,7 @@ public class HurricaneGun : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-62f, -3.5f);

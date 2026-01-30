@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -32,23 +32,22 @@ public class MoonProjFunny : ModProjectile
         Projectile.light = 1f;
         Projectile.extraUpdates = 2;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<MoonBoom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<MoonBoom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(11, -10).RotatedBy((Peanits2).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            new Vector2(11, -10).RotatedBy((Peanits2).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(11, 11).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            new Vector2(11, 11).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         target.AddBuff(ModContent.BuffType<MoonBurn>(), 500);
-
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -98,6 +97,7 @@ public class MoonProjFunny : ModProjectile
             Projectile.velocity.Y = 17f;
         }
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -108,7 +108,7 @@ public class MoonProjFunny : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;

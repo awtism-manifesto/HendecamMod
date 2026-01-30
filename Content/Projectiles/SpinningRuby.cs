@@ -3,13 +3,13 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class SpinningRuby : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -31,7 +31,6 @@ public class SpinningRuby : ModProjectile
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
-
     }
 
     public override void AI()
@@ -54,12 +53,11 @@ public class SpinningRuby : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {
             Projectile.velocity *= 1.235f;
-
         }
-
     }
 
     public override void OnKill(int timeLeft)
@@ -68,5 +66,4 @@ public class SpinningRuby : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

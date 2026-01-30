@@ -1,7 +1,8 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class RazorLeafMage : ModProjectile
@@ -31,10 +32,9 @@ public class RazorLeafMage : ModProjectile
         if (Math.Abs(Projectile.velocity.X) <= 25.5f && Math.Abs(Projectile.velocity.Y) <= 25.5f)
         {
             Projectile.velocity *= 1.165f;
-
         }
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -62,6 +62,4 @@ public class RazorLeafMage : ModProjectile
 
         return false;
     }
-
 }
-

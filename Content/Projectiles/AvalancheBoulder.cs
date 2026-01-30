@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
@@ -15,7 +15,6 @@ public class AvalancheBoulder : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-
     }
 
     public override void SetDefaults()
@@ -33,12 +32,13 @@ public class AvalancheBoulder : ModProjectile
         Projectile.timeLeft = 195;
         AIType = ProjectileID.Bullet;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Frostburn, 390);
         target.AddBuff(BuffID.Frostburn2, 150);
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
@@ -65,6 +65,7 @@ public class AvalancheBoulder : ModProjectile
 
         return false;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -75,7 +76,7 @@ public class AvalancheBoulder : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -83,7 +84,6 @@ public class AvalancheBoulder : ModProjectile
 
     public override void AI()
     {
-
         if (Projectile.timeLeft <= 115)
 
             Projectile.ai[0] += 8.5f;

@@ -17,11 +17,13 @@ public class EmptyFishingBucket : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 4 luck, at the cost of Fishing Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyLuck>().NastyEffect = true;
@@ -30,11 +32,12 @@ public class EmptyFishingBucket : ModItem
         player.buffImmune[BuffID.Sonar] = true;
         player.buffImmune[BuffID.Lucky] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient(ItemID.EmptyBucket, 1);
+        recipe.AddIngredient(ItemID.EmptyBucket);
         recipe.AddIngredient<PlasticScrap>(10);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();

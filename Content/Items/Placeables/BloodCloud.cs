@@ -29,12 +29,12 @@ public class BloodCloud : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<BloodCloudPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Cloud, 1);
+        recipe.AddIngredient(ItemID.Cloud);
         recipe.AddTile(TileID.SkyMill);
         recipe.Register();
     }

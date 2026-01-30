@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class KingslayerWarBow : ModItem
@@ -41,6 +42,7 @@ public class KingslayerWarBow : ModItem
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ModContent.ProjectileType<GelShotMini>();
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<GelShotMini>();
@@ -48,13 +50,13 @@ public class KingslayerWarBow : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
         float ceilingLimit = target.Y;
         if (ceilingLimit > player.Center.Y - 200f)
         {
             ceilingLimit = player.Center.Y - 200f;
         }
+
         // Loop these functions 3 times.
         for (int i = 0; i < 1; i++)
         {
@@ -115,8 +117,8 @@ public class KingslayerWarBow : ModItem
 
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-1f, -1f);

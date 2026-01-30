@@ -2,13 +2,13 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class RosePetal : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 3;
     }
 
@@ -31,7 +31,6 @@ public class RosePetal : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -54,9 +53,7 @@ public class RosePetal : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Poisoned, 230);
-
     }
 
     public override void OnKill(int timeLeft)
@@ -65,5 +62,4 @@ public class RosePetal : ModProjectile
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-
 }

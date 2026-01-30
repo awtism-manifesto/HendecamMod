@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -25,6 +25,7 @@ public class ClimbingBoots : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(silver: 650); // Equivalent to Item.buyPrice(0, 1, 0, 0);
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -79,37 +80,38 @@ public class ClimbingBoots : ModItem
         player.vanityRocketBoots = 2;
         player.hellfireTreads = false;
     }
+
     public override void AddRecipes()
     {
         // Hermes Boots
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.HermesBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.HermesBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Flurry Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.FlurryBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.FlurryBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Dunerider Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SandBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.SandBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // Sailfish Boots
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SailfishBoots, 1);
-        recipe.AddIngredient(ItemID.Aglet, 1);
-        recipe.AddIngredient(ItemID.AnkletoftheWind, 1);
+        recipe.AddIngredient(ItemID.SailfishBoots);
+        recipe.AddIngredient(ItemID.Aglet);
+        recipe.AddIngredient(ItemID.AnkletoftheWind);
         recipe.AddIngredient<PyriteBar>(7);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class Electrobomb : ModProjectile
@@ -10,16 +11,13 @@ public class Electrobomb : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
     }
 
@@ -43,11 +41,13 @@ public class Electrobomb : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.PrepareBombToBlow();
         Projectile.timeLeft = 2;
     }
+
     public override void AI()
     {
         int frameSpeed = 7;
@@ -64,6 +64,7 @@ public class Electrobomb : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         float maxDetectRadius = 305f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -99,6 +100,7 @@ public class Electrobomb : ModProjectile
             Projectile.PrepareBombToBlow();
         }
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -139,6 +141,7 @@ public class Electrobomb : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -174,8 +177,6 @@ public class Electrobomb : ModProjectile
             fireDust.velocity *= 3f;
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
-
         }
-
     }
 }

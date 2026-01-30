@@ -27,6 +27,7 @@ public class TransBrickPlaced : ModTile
 
         AddMapEntry(new Color(255, 255, 255));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

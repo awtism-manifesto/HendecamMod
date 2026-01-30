@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,11 +18,13 @@ public class PoachersContract : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants light, at the cost of Light Pets");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyLight>().NastyEffect = true;
@@ -40,6 +41,7 @@ public class PoachersContract : ModItem
         player.ClearBuff(BuffID.GolemPet);
         player.ClearBuff(BuffID.Wisp);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

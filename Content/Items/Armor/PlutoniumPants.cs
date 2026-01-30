@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -12,7 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class PlutoniumPants : ModItem
 {
-
     public static readonly int MoveSpeedBonus = 17;
     public static readonly int AdditiveDamageBonus = 9;
     public static readonly int AdditiveThrowDamageBonus = 7;
@@ -37,6 +36,7 @@ public class PlutoniumPants : ModItem
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 15; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,7 +51,6 @@ public class PlutoniumPants : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             line = new TooltipLine(Mod, "Face", "7% increased throwing damage")
             {
                 OverrideColor = new Color(255, 255, 255)
@@ -61,11 +60,13 @@ public class PlutoniumPants : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<PlutoniumFacemask>() && body.type == ModContent.ItemType<PlutoniumChestplate>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -88,10 +89,10 @@ public class PlutoniumPants : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 107f;
         }
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -101,13 +102,14 @@ public class PlutoniumPants : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
+
     public class Penis : ModPlayer
     {
-        public bool BigPenis = false;
+        public bool BigPenis;
 
         public override void ResetEffects()
         {
@@ -121,6 +123,7 @@ public class PlutoniumPants : ModItem
             {
                 return;
             }
+
             Player.runAcceleration *= 1.21f;
             Player.maxRunSpeed *= 1.21f;
             Player.accRunSpeed *= 1.21f;

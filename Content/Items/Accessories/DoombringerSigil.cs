@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -22,12 +22,14 @@ public class DoombringerSigil : ModItem
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
+
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
     }
+
     public override void SetDefaults()
     {
         Item.width = 30;
@@ -63,13 +65,13 @@ public class DoombringerSigil : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - Also grants the same stat increases to Throwing class")
             {
                 OverrideColor = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
+
         line = new TooltipLine(Mod, "Face", "'Epicenter of entropy'")
         {
             OverrideColor = new Color(Main.rand.Next(166), Main.rand.Next(166), Main.rand.Next(166))
@@ -88,6 +90,7 @@ public class DoombringerSigil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -101,8 +104,8 @@ public class DoombringerSigil : ModItem
         {
             recipe.AddIngredient(AscendantSpiritEssence.Type, 5);
         }
-
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.

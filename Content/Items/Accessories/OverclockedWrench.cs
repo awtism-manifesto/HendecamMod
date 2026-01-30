@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,7 +18,6 @@ public class OverclockedWrench : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Lime;
         Item.value = 1499000;
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -49,9 +48,7 @@ public class OverclockedWrench : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-
         player.GetModPlayer<Overclockified>().Overclocked = true; // Put all boosts in the ModPlayer below to toggle dynamically
-
     }
 }
 
@@ -59,18 +56,20 @@ public class Overclockified : ModPlayer
 {
     public static readonly int MeleeAttackSpeedBonus = 13;
     public static readonly int MoveSpeedBonus = 13;
-    public bool Overclocked = false;
+    public bool Overclocked;
 
     public override void ResetEffects()
     {
         Overclocked = false;
     }
+
     public override void PostUpdateRunSpeeds()
     {
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == true || !Overclocked) //Disable when Ultraboosted
+        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted || !Overclocked) //Disable when Ultraboosted
         {
             return;
         }
+
         if (Main.rand.NextBool(8)) // 1-in-3 chance every tick
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustID.Electric,
@@ -78,13 +77,14 @@ public class Overclockified : ModPlayer
             Main.dust[dust].noGravity = true;
         }
     }
+
     public override void PostUpdateEquips()
     {
-
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted == true || !Overclocked) //Disable when Ultraboosted
+        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted || !Overclocked) //Disable when Ultraboosted
         {
             return;
         }
+
         Player.maxTurrets += 2;
         Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 112.5f;
         Player.runAcceleration *= 1.12f;

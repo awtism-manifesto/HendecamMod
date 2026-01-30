@@ -29,6 +29,7 @@ public class ChestItemWorldGen : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Frozen Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Frozen Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Frozen Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Frozen_Chest
@@ -53,6 +54,7 @@ public class ChestItemWorldGen : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {

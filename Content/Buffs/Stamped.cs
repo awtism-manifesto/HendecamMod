@@ -17,12 +17,10 @@ public class Stamped : ModBuff
     public override void Update(NPC npc, ref int buffIndex)
     {
         npc.GetGlobalNPC<DamageModificationGlobalNPC>().stamped = true;
-
     }
 
     public override void Update(Player player, ref int buffIndex)
     {
-
         player.statDefense *= DefenseMultiplier;
     }
 }

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -55,8 +55,8 @@ public class SplashPotionOfShine : ModItem // MAG THE COMMENTS ON THIS FILE ARE 
 
         //   tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         //  }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(25);

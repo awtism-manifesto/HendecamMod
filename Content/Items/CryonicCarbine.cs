@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -41,10 +41,12 @@ public class CryonicCarbine : ModItem
         Item.shootSpeed = 15.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<CryoBullet>();
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -75,6 +77,7 @@ public class CryonicCarbine : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -105,7 +108,7 @@ public class CryonicCarbine : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CryonicBar", out ModItem CryonicBar))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CryonicBar", out ModItem CryonicBar))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Uzi);
@@ -123,9 +126,7 @@ public class CryonicCarbine : ModItem
             recipe.AddIngredient(ItemID.FrostCore);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
         }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

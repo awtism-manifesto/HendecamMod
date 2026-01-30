@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -29,6 +29,7 @@ public class LycopitePickaxe : ModItem
         Item.pick = 95;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Can mine Hellstone");
@@ -40,6 +41,7 @@ public class LycopitePickaxe : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 2; i++)
@@ -48,9 +50,9 @@ public class LycopitePickaxe : ModItem
             dust.noGravity = true;
             dust.velocity *= 2.5f;
             dust.scale *= 0.66f;
-
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -59,6 +61,5 @@ public class LycopitePickaxe : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-
     }
 }

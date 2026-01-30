@@ -23,17 +23,17 @@ public class GrindGear2 : ModProjectile
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 18.67f;
     }
+
     public override void AI()
     {
-
         if (Main.rand.NextBool(11))
         {
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<DragonBreath2>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
-
+                ModContent.ProjectileType<DragonBreath2>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
         }
+
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -47,9 +47,7 @@ public class GrindGear2 : ModProjectile
             Dust kms = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.Torch, 0f, 0f, 100, default, 0.5f);
             kms.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             kms.velocity *= 0.25f;
-
         }
-
     }
 
     public override void SetDefaults()
@@ -62,6 +60,6 @@ public class GrindGear2 : ModProjectile
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
         Projectile.DamageType = DamageClass.MeleeNoSpeed; // Benefits from melee bonuses. MeleeNoSpeed means the item will not scale with attack speed.
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.
-        Projectile.scale = 1.075f;             // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
+        Projectile.scale = 1.075f; // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
     }
 }

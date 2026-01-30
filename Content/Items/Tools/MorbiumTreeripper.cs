@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class MorbiumTreeripper : ModItem
         Item.axe = 48;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -50,6 +51,5 @@ public class MorbiumTreeripper : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-
     }
 }

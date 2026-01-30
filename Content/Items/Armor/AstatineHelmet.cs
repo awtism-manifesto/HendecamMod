@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,7 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class AstatineHelmet : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 21;
     public static readonly int CritBonus = 11;
     public static readonly int StupidAttackSpeed = 13;
@@ -40,6 +39,7 @@ public class AstatineHelmet : ModItem
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 18; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,11 +65,13 @@ public class AstatineHelmet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<AstatineBreastplate>() && legs.type == ModContent.ItemType<AstatineGreaves>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -88,8 +90,8 @@ public class AstatineHelmet : ModItem
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 121f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -99,8 +101,8 @@ public class AstatineHelmet : ModItem
 
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

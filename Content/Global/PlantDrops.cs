@@ -22,6 +22,7 @@ public class PlantDrops : GlobalTile
                 }
             }
         }
+
         if (type == TileID.JungleThorns)
         {
             if (!fail && !effectOnly)
@@ -34,6 +35,7 @@ public class PlantDrops : GlobalTile
                 }
             }
         }
+
         // Check if the tile destroyed is a leaf tile
         if (type == TileID.CorruptVines || type == TileID.CrimsonVines)
         {

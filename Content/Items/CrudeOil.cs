@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -9,7 +9,6 @@ namespace HendecamMod.Content.Items;
 
 public class CrudeOil : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
@@ -32,7 +31,6 @@ public class CrudeOil : ModItem
         Item.shoot = ProjectileID.Flames;
         Item.shootSpeed = 0f; // The speed of the projectile.
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
-
     }
 
     public override void AddRecipes()
@@ -52,7 +50,6 @@ public class CrudeOil : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SmoothCoal", out ModItem SmoothCoal))
         {
-
             recipe = CreateRecipe(5);
             recipe.AddIngredient(SmoothCoal.Type);
 
@@ -86,5 +83,4 @@ public class CrudeOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }

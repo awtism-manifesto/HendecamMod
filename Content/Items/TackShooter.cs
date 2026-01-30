@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -37,6 +37,7 @@ public class TackShooter : ModItem
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<TackShooterProj>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,6 +50,7 @@ public class TackShooter : ModItem
         };
         tooltips.Add(line);
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         position = Main.MouseWorld;

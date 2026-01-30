@@ -10,7 +10,6 @@ public class BoomShroom : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -25,6 +24,7 @@ public class BoomShroom : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 15;
@@ -49,13 +49,12 @@ public class BoomShroom : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         if (Projectile.timeLeft < 210)
         {
-
             Projectile.friendly = true;
-
         }
 
         if (Projectile.timeLeft > 209)
@@ -75,6 +74,7 @@ public class BoomShroom : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 209)
         {
             int frameSpeed = 14;
@@ -92,6 +92,7 @@ public class BoomShroom : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 152)
         {
             int frameSpeed = 12;
@@ -109,6 +110,7 @@ public class BoomShroom : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 98)
         {
             int frameSpeed = 9;
@@ -126,6 +128,7 @@ public class BoomShroom : ModProjectile
                 }
             }
         }
+
         if (Projectile.timeLeft < 31)
         {
             int frameSpeed = 6;
@@ -143,14 +146,15 @@ public class BoomShroom : ModProjectile
                 }
             }
         }
+
         Projectile.velocity *= 0f;
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 5)
         {
             Projectile.PrepareBombToBlow();
         }
-
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -164,11 +168,12 @@ public class BoomShroom : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 5f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.96f);
-
     }
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because

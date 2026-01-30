@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -29,6 +29,7 @@ public class RunicCodexProjectile : ModProjectile
         Projectile.tileCollide = false;
         Projectile.extraUpdates = 1;
     }
+
     public override void AI()
     {
         Projectile.rotation += 0.25f;
@@ -64,5 +65,4 @@ public class RunicCodexProjectile : ModProjectile
             dust.scale *= 3f;
         }
     }
-
 }

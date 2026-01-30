@@ -12,6 +12,7 @@ public class PoorMahoganyLeggings : ModItem
         Item.defense = 2;
         Item.rare = ItemRarityID.White;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

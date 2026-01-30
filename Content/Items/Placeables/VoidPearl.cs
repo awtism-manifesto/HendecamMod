@@ -15,8 +15,8 @@ public class VoidPearl : ModItem
         Item.height = 32;
         Item.rare = ItemRarityID.White;
         Item.value = 999;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

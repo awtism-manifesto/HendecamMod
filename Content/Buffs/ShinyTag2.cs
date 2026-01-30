@@ -6,7 +6,6 @@ namespace HendecamMod.Content.Buffs;
 
 public class ShinyTag2 : ModBuff
 {
-
     public static readonly int TagDamage = 10;
 
     public override void SetStaticDefaults()
@@ -20,6 +19,7 @@ public class ShinyTag2 : ModBuff
     {
         Lighting.AddLight(npc.Center, 1.25f, 1.25f, 1.25f);
     }
+
     public class ShinyTagg2 : GlobalNPC
     {
         public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
@@ -32,12 +32,10 @@ public class ShinyTag2 : ModBuff
             if (npc.HasBuff<ShinyTag2>())
             {
                 // Apply a flat bonus to every hit
-                modifiers.FlatBonusDamage += ShinyTag2.TagDamage * projTagMultiplier;
+                modifiers.FlatBonusDamage += TagDamage * projTagMultiplier;
             }
 
             // if you have a lot of buffs in your mod, it might be faster to loop over the NPC.buffType and buffTime arrays once, and track the buffs you find, rather than calling HasBuff many times
-
         }
     }
-
 }

@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,6 +30,7 @@ public class FlatEarthPickaxe : ModItem
         Item.pick = 225;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -52,6 +53,5 @@ public class FlatEarthPickaxe : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-
     }
 }

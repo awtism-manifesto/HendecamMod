@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -12,6 +12,11 @@ namespace HendecamMod.Content.Poop;
 
 public class Pooperang : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -31,6 +36,7 @@ public class Pooperang : ModItem
         Item.shoot = ModContent.ProjectileType<PoopRang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 10.25f; // The velocity of the shot projectile.			
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         SoundEngine.PlaySound(SoundID.Item1, player.position);
@@ -38,6 +44,7 @@ public class Pooperang : ModItem
 
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,11 +71,6 @@ public class Pooperang : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.
@@ -88,6 +90,7 @@ public class Pooperang : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -97,6 +100,5 @@ public class Pooperang : ModItem
         recipe.AddTile(TileID.WorkBenches);
 
         recipe.Register();
-
     }
 }

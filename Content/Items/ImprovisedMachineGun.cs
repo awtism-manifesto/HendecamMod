@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -25,7 +25,7 @@ public class ImprovisedMachineGun : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item110;
+        Item.UseSound = SoundID.Item110;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 5; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -37,9 +37,10 @@ public class ImprovisedMachineGun : ModItem
         Item.shootSpeed = 7.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        int NumProjectiles = Main.rand.Next(0, 2);  // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(0, 2); // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.67f, 1.67f));
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -55,6 +56,7 @@ public class ImprovisedMachineGun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -80,10 +82,12 @@ public class ImprovisedMachineGun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -92,8 +96,8 @@ public class ImprovisedMachineGun : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

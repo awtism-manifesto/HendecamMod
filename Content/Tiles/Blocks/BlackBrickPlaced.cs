@@ -23,6 +23,7 @@ public class BlackBrickPlaced : ModTile
 
         AddMapEntry(new Color(13, 13, 13));
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

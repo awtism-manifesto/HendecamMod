@@ -24,7 +24,7 @@ public class MorbiumBrickWall : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(4);
-        recipe.AddIngredient<Items.Placeables.MorbiumBrick>(1);
+        recipe.AddIngredient<MorbiumBrick>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

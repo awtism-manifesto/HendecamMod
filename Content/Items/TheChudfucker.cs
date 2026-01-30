@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -40,18 +40,15 @@ public class TheChudfucker : ModItem
         Item.shootSpeed = 30f; // The speed of the projectile (measured in pixels per frame.)
 
         Item.shoot = ProjectileID.Seed;
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.SeedlerNut;
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         SoundEngine.PlaySound(SoundID.Item38, player.position);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }

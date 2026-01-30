@@ -26,9 +26,9 @@ public class TerraRound : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
-
         return Color.LimeGreen;
     }
 
@@ -40,7 +40,6 @@ public class TerraRound : ModProjectile
         // dust, all dust
         if (Projectile.alpha < 169)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -74,11 +73,10 @@ public class TerraRound : ModProjectile
             Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-216, 216), Main.rand.NextFloat(-216, 216));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
                 ProjectileID.ChlorophyteBullet, (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
         }
-        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
-          new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-          Projectile.owner);
-    }
 
+        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
+            new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+            Projectile.owner);
+    }
 }

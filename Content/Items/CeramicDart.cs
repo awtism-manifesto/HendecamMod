@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,10 +30,12 @@ public class CeramicDart : ModItem
         Item.shootSpeed = 8.8f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,26 +61,25 @@ public class CeramicDart : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
-
         Recipe recipe = CreateRecipe();
-        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("WoodenDart", out ModItem WoodenDart))
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("WoodenDart", out ModItem WoodenDart))
         {
             recipe = CreateRecipe(163);
 
             recipe.AddIngredient(WoodenDart.Type, 163);
-            recipe.AddIngredient<CeramicSheet>(1);
+            recipe.AddIngredient<CeramicSheet>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
         else
         {
             recipe = CreateRecipe(63);
-            recipe.AddIngredient<CeramicSheet>(1);
+            recipe.AddIngredient<CeramicSheet>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
-
     }
 }

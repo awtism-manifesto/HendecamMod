@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -30,6 +29,7 @@ public class BurntPan : ModItem
         Item.knockBack = 40.0f;
         Item.ChangePlayerDirectionOnShoot = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Used:"));
@@ -38,11 +38,13 @@ public class BurntPan : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health and Hellfire for all attacks"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks or Combat Buffs"));
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         player.lifeRegen += (int)(8f);
         return true;
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
@@ -75,12 +77,13 @@ public class BurntPan : ModItem
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<PacifistsMark>(1);
-        recipe.AddIngredient<HotWax>(1);
+        recipe.AddIngredient<PacifistsMark>();
+        recipe.AddIngredient<HotWax>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

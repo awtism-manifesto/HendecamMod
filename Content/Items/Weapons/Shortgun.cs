@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -36,7 +36,6 @@ public class Shortgun : ModItem
         // Gun Properties
         Item.shoot = ModContent.ProjectileType<Projectiles.ShortgunProjectile>();
         Item.shootSpeed = 6.1f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override Color? GetAlpha(Color lightColor)
@@ -73,19 +72,19 @@ public class Shortgun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.IronShortsword, 1);
-        recipe.AddIngredient(ItemID.Boomstick, 1);
+        recipe.AddIngredient(ItemID.IronShortsword);
+        recipe.AddIngredient(ItemID.Boomstick);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.ShortgunProjectile>();
-
     }
 }

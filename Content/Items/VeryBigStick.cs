@@ -32,25 +32,26 @@ public class VeryBigStick : ModItem
     {
         // With Ebonwood
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.WoodenSword, 1);
-        recipe.AddIngredient(ItemID.EbonwoodSword, 1);
-        recipe.AddIngredient(ItemID.BorealWoodSword, 1);
-        recipe.AddIngredient(ItemID.PalmWoodSword, 1);
-        recipe.AddIngredient(ItemID.RichMahoganySword, 1);
-        recipe.AddIngredient<Items.PoorMahoganySword>();
+        recipe.AddIngredient(ItemID.WoodenSword);
+        recipe.AddIngredient(ItemID.EbonwoodSword);
+        recipe.AddIngredient(ItemID.BorealWoodSword);
+        recipe.AddIngredient(ItemID.PalmWoodSword);
+        recipe.AddIngredient(ItemID.RichMahoganySword);
+        recipe.AddIngredient<PoorMahoganySword>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         // With Shadewood
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.WoodenSword, 1);
-        recipe.AddIngredient(ItemID.ShadewoodSword, 1);
-        recipe.AddIngredient(ItemID.BorealWoodSword, 1);
-        recipe.AddIngredient(ItemID.PalmWoodSword, 1);
-        recipe.AddIngredient(ItemID.RichMahoganySword, 1);
-        recipe.AddIngredient<Items.PoorMahoganySword>();
+        recipe.AddIngredient(ItemID.WoodenSword);
+        recipe.AddIngredient(ItemID.ShadewoodSword);
+        recipe.AddIngredient(ItemID.BorealWoodSword);
+        recipe.AddIngredient(ItemID.PalmWoodSword);
+        recipe.AddIngredient(ItemID.RichMahoganySword);
+        recipe.AddIngredient<PoorMahoganySword>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (Main.rand.NextBool(4))
@@ -58,6 +59,5 @@ public class VeryBigStick : ModItem
         {
             target.AddBuff(BuffID.Confused, 120);
         }
-
     }
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,6 +13,8 @@ namespace HendecamMod.Content.Items.Armor;
 public class GraniteChestguard : ModItem
 {
     public static readonly int MagicDamageBonus = 5;
+    public static readonly int MagicCritBonus = 6;
+    public static readonly int MaxManaIncrease = 50;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -34,6 +36,7 @@ public class GraniteChestguard : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,12 +62,13 @@ public class GraniteChestguard : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<GraniteHeadgear>() && legs.type == ModContent.ItemType<GraniteLeggings>();
     }
-    public static readonly int MagicCritBonus = 6;
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -80,8 +84,8 @@ public class GraniteChestguard : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage(DamageClass.Magic) += MagicDamageBonus / 106f;
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -90,9 +94,8 @@ public class GraniteChestguard : ModItem
         recipe.AddRecipeGroup("IronBar", 30);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
-    public static readonly int MaxManaIncrease = 50;
+
     public override void UpdateArmorSet(Player player)
     {
         player.statManaMax2 += MaxManaIncrease;

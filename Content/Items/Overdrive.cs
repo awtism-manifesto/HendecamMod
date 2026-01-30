@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -38,6 +38,7 @@ public class Overdrive : ModItem
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<OverdriveProj>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,6 +51,7 @@ public class Overdrive : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -59,8 +61,8 @@ public class Overdrive : ModItem
         recipe.AddIngredient<PlutoniumBar>(16);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         position = Main.MouseWorld;
@@ -73,6 +75,7 @@ public class Overdrive : ModItem
             // Spawn the sentry projectile at the calculated location.
             Projectile.NewProjectile(source, position, Vector2.Zero, type, damage, knockback, Main.myPlayer);
         }
+
         // Kills older sentry projectiles according to player.maxTurrets
         player.UpdateMaxTurrets();
         return false;

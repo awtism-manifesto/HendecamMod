@@ -1,11 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SkibidiToilet : ModItem
@@ -25,7 +26,7 @@ public class SkibidiToilet : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
 
@@ -39,20 +40,20 @@ public class SkibidiToilet : ModItem
         Item.shoot = ModContent.ProjectileType<SkibidiHead>();
 
         Item.shootSpeed = 9.1f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.85f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<SkibidiHead>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         int NumProjectiles = 2;
 
         for (int i = 0; i < NumProjectiles; i++)
@@ -69,6 +70,7 @@ public class SkibidiToilet : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -99,7 +101,7 @@ public class SkibidiToilet : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("RottenBrain", out ModItem RottenBrain))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("RottenBrain", out ModItem RottenBrain))
         {
             recipe = CreateRecipe();
 
@@ -108,12 +110,7 @@ public class SkibidiToilet : ModItem
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-        else
-        {
-        }
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

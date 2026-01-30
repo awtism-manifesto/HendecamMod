@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -39,6 +39,7 @@ public class KingslayerHelmet : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,7 +53,6 @@ public class KingslayerHelmet : ModItem
                 OverrideColor = new Color(255, 255, 255)
             };
             tooltips.Add(line);
-
         }
 
         line = new TooltipLine(Mod, "Face", "+5 armor penetration")
@@ -60,13 +60,14 @@ public class KingslayerHelmet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<KingslayerBreastplate>() && legs.type == ModContent.ItemType<KingslayerGreaves>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -87,6 +88,7 @@ public class KingslayerHelmet : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -97,10 +99,9 @@ public class KingslayerHelmet : ModItem
         recipe.AddTile(TileID.Solidifier);
 
         recipe.Register();
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

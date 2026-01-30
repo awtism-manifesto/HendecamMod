@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
@@ -29,6 +29,7 @@ public class ApacheElfShipSummon : ModItem
         Item.useTime = 30;
         Item.useStyle = ItemUseStyleID.HoldUp;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Show the commander of the elves that their commrades perished in vein");
@@ -62,7 +63,7 @@ public class ApacheElfShipSummon : ModItem
         {
             SoundEngine.PlaySound(SoundID.AbigailUpgrade, player.position);
             int type = ModContent.NPCType<ApacheElfShip>();
-            if (ApacheElfShipDown.downedApacheElfShip == true)
+            if (ApacheElfShipDown.downedApacheElfShip)
             {
                 ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Well, I'm not one to turn down a rematch."), new Color(185, 105, 105));
             }
@@ -70,6 +71,7 @@ public class ApacheElfShipSummon : ModItem
             {
                 ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Target found, firing at will."), new Color(185, 105, 105));
             }
+
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
                 NPC.SpawnOnPlayer(player.whoAmI, type);
@@ -79,8 +81,10 @@ public class ApacheElfShipSummon : ModItem
                 NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
             }
         }
+
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

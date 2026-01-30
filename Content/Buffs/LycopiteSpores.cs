@@ -17,12 +17,10 @@ public class LycopiteSpores : ModBuff
     public override void Update(NPC npc, ref int buffIndex)
     {
         npc.GetGlobalNPC<OrangeDebuff>().orange = true;
-
     }
 
     public override void Update(Player player, ref int buffIndex)
     {
-
         player.statDefense *= DefenseMultiplier;
     }
 }

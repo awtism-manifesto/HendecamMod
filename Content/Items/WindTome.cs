@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -10,6 +10,8 @@ namespace HendecamMod.Content.Items;
 
 public class WindTome : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -43,11 +45,8 @@ public class WindTome : ModItem
         Item.shootSpeed = 8.75f; // The speed of the projectile (measured in pixels per frame.)
     }
 
-    private int shotCounter = 0;
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
         Vector2 new1Velocity = velocity.RotatedBy(MathHelper.ToRadians(1.5f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
@@ -104,6 +103,7 @@ public class WindTome : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -133,18 +133,19 @@ public class WindTome : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SpellTome, 1);
+        recipe.AddIngredient(ItemID.SpellTome);
         recipe.AddIngredient(ItemID.SoulofFright, 5);
         recipe.AddIngredient(ItemID.SoulofFlight, 10);
         recipe.AddIngredient<AirBar>(100);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.WindTomeProjectile>();

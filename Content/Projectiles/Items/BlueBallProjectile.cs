@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,6 +24,7 @@ public class BlueBallProjectile : ModProjectile
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 17f;
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -49,6 +50,7 @@ public class BlueBallProjectile : ModProjectile
             }
         }
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 16; // The width of the projectile's hitbox.
@@ -59,6 +61,6 @@ public class BlueBallProjectile : ModProjectile
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
         Projectile.DamageType = DamageClass.MeleeNoSpeed; // Benefits from melee bonuses. MeleeNoSpeed means the item will not scale with attack speed.
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.
-                                   // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
+        // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
     }
 }

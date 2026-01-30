@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class AnkleMonitor : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Doubles your safe fall distance, at the cost of Exploration Buffs");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyFall>().NastyEffect = true;
@@ -39,12 +40,13 @@ public class AnkleMonitor : ModItem
         player.buffImmune[BuffID.WaterWalking] = true;
         player.buffImmune[BuffID.Gravitation] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient(ItemID.IronCrate, 1);
-        recipe.AddIngredient(ItemID.Ruby, 1);
+        recipe.AddIngredient(ItemID.IronCrate);
+        recipe.AddIngredient(ItemID.Ruby);
         recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.HeavyWorkBench);
         recipe.Register();

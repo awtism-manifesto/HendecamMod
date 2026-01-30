@@ -30,6 +30,7 @@ public class GreenOne : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BoggsGlove : ModItem
@@ -26,9 +27,9 @@ public class BoggsGlove : ModItem
 
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item1;
+        Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();  // Sets the damage type to ranged.
+        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 105; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -39,6 +40,7 @@ public class BoggsGlove : ModItem
 
         Item.shoot = ProjectileID.Ale;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -69,7 +71,7 @@ public class BoggsGlove : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind<ModItem>("Tavernkeep", out ModItem Tavernkeep))
+        if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind("Tavernkeep", out ModItem Tavernkeep))
         {
             recipe = CreateRecipe();
 
@@ -77,9 +79,6 @@ public class BoggsGlove : ModItem
             recipe.AddIngredient(ItemID.BossBagBetsy);
 
             recipe.Register();
-        }
-        else
-        {
         }
     }
 

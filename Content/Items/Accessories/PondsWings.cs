@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -27,6 +27,7 @@ public class PondsWings : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,6 +53,7 @@ public class PondsWings : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
         ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
     {
@@ -61,5 +63,4 @@ public class PondsWings : ModItem
         maxAscentMultiplier = 2.5f;
         constantAscend = 0.125f;
     }
-
 }

@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,6 +17,7 @@ public class ExpiredPetFood : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s, Light, 25% Crit Chance, Double Movement Speed,"));
@@ -25,6 +25,7 @@ public class ExpiredPetFood : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets, Light Pets, Summons, Mounts,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Minecarts, Weapon, Armor, or Accessory Buffs"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
@@ -252,12 +253,13 @@ public class ExpiredPetFood : ModItem
         player.buffImmune[BuffID.PaladinsShield] = true;
         player.buffImmune[BuffID.Panic] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<ZoologistHateLetter>(1);
-        recipe.AddIngredient<MoldyCheese>(1);
+        recipe.AddIngredient<ZoologistHateLetter>();
+        recipe.AddIngredient<MoldyCheese>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

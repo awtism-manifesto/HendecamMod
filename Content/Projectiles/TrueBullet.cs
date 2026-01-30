@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -65,9 +65,9 @@ public class TrueBullet : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
-
         // dust, all dust
         if (Projectile.alpha < 187)
         {
@@ -80,6 +80,7 @@ public class TrueBullet : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.HallowedWeapons, 0f, 0f, 100, default, 0.85f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
                 chudDust.velocity *= 0.25f;
@@ -94,10 +95,10 @@ public class TrueBullet : ModProjectile
                 fire2Dust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
                 fire2Dust.velocity *= 1.33f;
                 fire2Dust.noGravity = true;
-
             }
         }
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -108,7 +109,7 @@ public class TrueBullet : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;

@@ -1,8 +1,7 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -16,7 +15,9 @@ public class RadioactiveAura : ModItem
 
     public static readonly int AdditiveDamageBonus = 6;
     public static readonly int AttackSpeedBonus = 3;
+
     public static readonly int CritBonus = 6;
+
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
 
@@ -47,10 +48,10 @@ public class RadioactiveAura : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe
-
             recipe = CreateRecipe();
 
         recipe.AddIngredient<PlutoniumBar>(12);
@@ -58,8 +59,8 @@ public class RadioactiveAura : ModItem
         recipe.AddIngredient(ItemID.PutridScent);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -80,16 +81,19 @@ public class RadioactiveAura : ModItem
         player.aggro += -660;
     }
 }
+
 public class Rad2Apply : ModPlayer
 {
-    public bool rad2Effect; public override void ResetEffects()
+    public bool rad2Effect;
+
+    public override void ResetEffects()
     {
         rad2Effect = false;
     }
 
     public override void PostUpdateRunSpeeds()
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
             return;
         }
@@ -101,30 +105,26 @@ public class Rad2Apply : ModPlayer
             Main.dust[dust].noGravity = true;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
-            return;
         }
         else
         {
-
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-
         }
     }
+
     public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Player.GetModPlayer<Rad2Apply>().rad2Effect == false)
+        if (!Player.GetModPlayer<Rad2Apply>().rad2Effect)
         {
-            return;
         }
         else
         {
-
             target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
-
         }
     }
 }

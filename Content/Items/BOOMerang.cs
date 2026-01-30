@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,6 +10,8 @@ namespace HendecamMod.Content.Items;
 
 public class BOOMerang : ModItem
 {
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -31,6 +33,7 @@ public class BOOMerang : ModItem
         Item.shoot = ModContent.ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 25f; // The velocity of the shot projectile.			
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -47,9 +50,7 @@ public class BOOMerang : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
     }
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override bool AllowPrefix(int pre)
     {
@@ -70,6 +71,7 @@ public class BOOMerang : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -94,8 +96,6 @@ public class BOOMerang : ModItem
             recipe.AddIngredient(ItemID.Dynamite, 15);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-
     }
 }

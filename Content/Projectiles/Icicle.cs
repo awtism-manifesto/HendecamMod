@@ -2,6 +2,7 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class Icicle : ModProjectile
@@ -31,7 +32,6 @@ public class Icicle : ModProjectile
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
         Projectile.usesLocalNPCImmunity = true;
-
     }
 
     public override void AI()
@@ -56,11 +56,11 @@ public class Icicle : ModProjectile
     {
         target.AddBuff(BuffID.Frostburn, 240);
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item27, Projectile.position);
     }
-
 }

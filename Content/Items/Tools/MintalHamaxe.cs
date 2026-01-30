@@ -38,9 +38,8 @@ public class MintalHamaxe : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.MintalBar>(18);
+        recipe.AddIngredient<Placeables.MintalBar>(18);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 }

@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SolarRayRifle : ModItem
@@ -36,7 +37,6 @@ public class SolarRayRifle : ModItem
         Item.shoot = ModContent.ProjectileType<Projectiles.SolarRay>();
 
         Item.shootSpeed = 17.75f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -73,18 +73,19 @@ public class SolarRayRifle : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AerialiteBar", out ModItem AerialiteBar))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AerialiteBar", out ModItem AerialiteBar))
         {
             recipe = CreateRecipe();
 
             recipe.AddIngredient(AerialiteBar.Type, 7);
             recipe.AddIngredient(ItemID.HellstoneBar, 7);
-            recipe.AddIngredient<Items.PyriteBar>(7);
-            recipe.AddIngredient<Items.CrudeOil>(14);
+            recipe.AddIngredient<PyriteBar>(7);
+            recipe.AddIngredient<CrudeOil>(14);
             recipe.AddIngredient(ItemID.Lens, 4);
             recipe.AddIngredient(ItemID.IllegalGunParts);
             recipe.AddTile(TileID.Anvils);
@@ -93,18 +94,17 @@ public class SolarRayRifle : ModItem
         else
         {
             recipe = CreateRecipe();
-            recipe.AddIngredient<Items.PyriteBar>(11);
+            recipe.AddIngredient<PyriteBar>(11);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
 
-            recipe.AddIngredient<Items.CrudeOil>(15);
+            recipe.AddIngredient<CrudeOil>(15);
             recipe.AddIngredient(ItemID.Lens, 4);
             recipe.AddIngredient(ItemID.IllegalGunParts);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

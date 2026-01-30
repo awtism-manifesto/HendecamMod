@@ -10,6 +10,7 @@ namespace HendecamMod.Content.Biomes.Oasis;
 public class OasisWaterStyle : ModWaterStyle
 {
     private Asset<Texture2D> rainTexture;
+
     public override void Load()
     {
         rainTexture = Mod.Assets.Request<Texture2D>("Content/Biomes/Oasis/OasisRain");

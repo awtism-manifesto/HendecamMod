@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -44,6 +44,7 @@ public class MarbleGreatsword : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -51,7 +52,6 @@ public class MarbleGreatsword : ModItem
         recipe.AddRecipeGroup("IronBar", 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

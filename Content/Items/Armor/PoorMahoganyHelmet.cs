@@ -12,6 +12,7 @@ public class PoorMahoganyHelmet : ModItem
         Item.defense = 1;
         Item.rare = ItemRarityID.White;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -19,11 +20,13 @@ public class PoorMahoganyHelmet : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "Immune to the Poisoned debuff";
         player.buffImmune[BuffID.Poisoned] = true;
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PoorMahoganyChestplate>() && legs.type == ModContent.ItemType<PoorMahoganyLeggings>();

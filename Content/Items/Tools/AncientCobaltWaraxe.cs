@@ -35,12 +35,12 @@ public class AncientCobaltWaraxe : ModItem
         {
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AncientCobaltBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
 }

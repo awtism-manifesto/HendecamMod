@@ -5,7 +5,6 @@ namespace HendecamMod.Content.Buffs;
 
 public class MambaBuff : ModBuff
 {
-
     public static readonly int MoveSpeedBonus = 30;
 
     // player.wingTimeMax += 115;

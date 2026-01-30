@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,7 +13,8 @@ public class OtherworldlySixPack : ModItem
         Item.ResearchUnlockCount = 20;
 
         // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(255, 120, 255),
             new Color(111, 245, 6),
             new Color(122, 251, 114)
@@ -36,10 +37,12 @@ public class OtherworldlySixPack : ModItem
         Item.buffType = ModContent.BuffType<Buffs.OtherworldPoisoning>(); // Specify an existing buff to be applied when used.
         Item.buffTime = 69000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -67,4 +70,3 @@ public class OtherworldlySixPack : ModItem
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 }
-

@@ -1,8 +1,7 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Accessories.NastyPatty;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,8 +20,8 @@ public class SoulOfImmunityAccessory : ModItem
         Item.rare = ItemRarityID.Expert;
         Item.accessory = true;
         Item.defense = 32;
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
@@ -32,6 +31,7 @@ public class SoulOfImmunityAccessory : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Immune to every buff, debuff, knockback, fall damage, fire blocks, and liquids"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Every enemy should be friendly"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.CancelAllBootRunVisualEffects();
@@ -41,6 +41,7 @@ public class SoulOfImmunityAccessory : ModItem
             player.DoBootsEffect(player.DoBootsEffect_PlaceFlamesOnTile);
             player.DoBootsEffect(player.DoBootsEffect_PlaceFlamesOnTile);
         }
+
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
         player.GetModPlayer<NastyLight>().NastyEffect = true;
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -580,7 +581,7 @@ public class SoulOfImmunityAccessory : ModItem
         player.npcTypeNoAggro[NPCID.JungleBat] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.JungleCreeper] = true;
         player.npcTypeNoAggro[NPCID.JungleCreeperWall] = true;
-        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true;//redundant in PAM
+        player.npcTypeNoAggro[NPCID.SpikedJungleSlime] = true; //redundant in PAM
         player.npcTypeNoAggro[NPCID.Piranha] = true;
         player.npcTypeNoAggro[NPCID.Snatcher] = true;
         player.npcTypeNoAggro[NPCID.ManEater] = true;
@@ -1025,14 +1026,15 @@ public class SoulOfImmunityAccessory : ModItem
         player.npcTypeNoAggro[NPCID.IlluminantSlime] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<RampartAccessory>(1);
-        recipe.AddIngredient<NastyPattyAccessory>(1);
-        recipe.AddIngredient(ItemID.TerrasparkBoots, 1);
-        recipe.AddIngredient<PeaceAmongNationsAccessory>(1);
+        recipe.AddIngredient<RampartAccessory>();
+        recipe.AddIngredient<NastyPattyAccessory>();
+        recipe.AddIngredient(ItemID.TerrasparkBoots);
+        recipe.AddIngredient<PeaceAmongNationsAccessory>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

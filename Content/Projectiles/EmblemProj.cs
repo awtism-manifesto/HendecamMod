@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,17 +10,17 @@ using Terraria.ModLoader;
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class EmblemProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         Main.projFrames[Projectile.type] = 4;
-
     }
+
     public override void SetDefaults()
     {
         // This method right here is the backbone of what we're doing here; by using this method, we copy all of
@@ -45,7 +45,6 @@ public class EmblemProj : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
 
     public override void AI()
@@ -64,6 +63,7 @@ public class EmblemProj : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -76,6 +76,7 @@ public class EmblemProj : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.15f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 chudDust.velocity *= 0.25f;
@@ -85,10 +86,10 @@ public class EmblemProj : ModProjectile
                 Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.15f);
                 firee2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 firee2Dust.velocity *= 0.25f;
-
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<EmblemTag>(), 390);
@@ -97,16 +98,15 @@ public class EmblemProj : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 390);
         target.immune[Projectile.owner] = 3;
     }
+
     public override void OnKill(int timeLeft)
     {
-
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
 
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
     }
 }

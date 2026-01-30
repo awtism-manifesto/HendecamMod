@@ -29,12 +29,12 @@ public class MorbiumBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(5);
-        recipe.AddIngredient<MorbiumBar>(1);
+        recipe.AddIngredient<MorbiumBar>();
         recipe.AddIngredient(ItemID.StoneBlock, 5);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();

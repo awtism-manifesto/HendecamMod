@@ -1,6 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,11 +18,13 @@ public class NintendoPatent : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 25% Crit Chance, at the cost of Summons");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -49,14 +50,15 @@ public class NintendoPatent : ModItem
         player.ClearBuff(BuffID.UFOMinion);
         player.ClearBuff(BuffID.VampireFrog);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.GemBunnyDiamond, 5);
-        recipe.AddIngredient(ItemID.PlumbersHat, 1);
-        recipe.AddIngredient(ItemID.PlumbersShirt, 1);
-        recipe.AddIngredient(ItemID.PlumbersPants, 1);
+        recipe.AddIngredient(ItemID.PlumbersHat);
+        recipe.AddIngredient(ItemID.PlumbersShirt);
+        recipe.AddIngredient(ItemID.PlumbersPants);
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

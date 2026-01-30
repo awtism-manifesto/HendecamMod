@@ -1,12 +1,13 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class AuricSkibidiToilet : ModItem
@@ -28,7 +29,7 @@ public class AuricSkibidiToilet : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 333; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,17 +41,15 @@ public class AuricSkibidiToilet : ModItem
         Item.shoot = ModContent.ProjectileType<AuricSkibidiHead>();
 
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<AuricSkibidiHead>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         damage = (int)(damage * 0.5f);
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(15f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(7.5f));
@@ -64,6 +63,7 @@ public class AuricSkibidiToilet : ModItem
         Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -83,24 +83,21 @@ public class AuricSkibidiToilet : ModItem
             };
             tooltips.Add(line);
         }
-
     }
+
     public override void AddRecipes()
     {
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AuricToilet", out ModItem AuricToilet))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AuricToilet", out ModItem AuricToilet))
         {
             Recipe recipe = CreateRecipe();
 
-            recipe.AddIngredient<Items.TerraSkibidiToilet>();
+            recipe.AddIngredient<TerraSkibidiToilet>();
             recipe.AddIngredient(AuricToilet.Type);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
         }
-        else
-        {
-
-        }
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
@@ -10,7 +10,6 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Balloon)]
 public class CarbonDioxideCeram : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.DefaultToAccessory(20, 26);
@@ -24,6 +23,7 @@ public class CarbonDioxideCeram : ModItem
         player.jumpBoost = true;
         player.jumpSpeedBoost = 0.48f;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -33,8 +33,8 @@ public class CarbonDioxideCeram : ModItem
 
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -60,5 +60,4 @@ public class CarbonDioxideCeram : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }

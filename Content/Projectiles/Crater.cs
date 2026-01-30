@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -14,7 +14,6 @@ public class Crater : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -27,6 +26,7 @@ public class Crater : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -42,12 +42,14 @@ public class Crater : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 5;
         Projectile.damage = (int)(Projectile.damage * 0.95f);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 150);
     }
+
     public override void AI()
     {
         // Apply gravity after a quarter of a second
@@ -66,6 +68,7 @@ public class Crater : ModProjectile
         {
             Projectile.velocity.Y = 32f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -160,12 +163,12 @@ public class Crater : ModProjectile
             fireDust.velocity *= 3f;
             fireDust.noGravity = true;
         }
+
         for (int j = 0; j < 30; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.25f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-
         }
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

@@ -30,6 +30,7 @@ public class YellowDrawFour : ModTile
         {
             WorldGen.KillTile(i, j);
         }
+
         return true;
     }
 }

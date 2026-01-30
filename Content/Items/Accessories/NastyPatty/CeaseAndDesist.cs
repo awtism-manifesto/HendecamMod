@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,11 +17,13 @@ public class CeaseAndDesist : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25% Crit Chance and double movement speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Summons or Mounts"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyCrit>().NastyEffect = true;
@@ -76,12 +77,13 @@ public class CeaseAndDesist : ModItem
         player.ClearBuff(BuffID.WallOfFleshGoatMount);
         player.ClearBuff(BuffID.WolfMount);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<NintendoPatent>(1);
-        recipe.AddIngredient<TornSaddle>(1);
+        recipe.AddIngredient<NintendoPatent>();
+        recipe.AddIngredient<TornSaddle>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

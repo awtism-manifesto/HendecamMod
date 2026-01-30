@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Tiles.Blocks;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -31,6 +30,5 @@ public class MorbiumOre : ModItem
         Item.height = 12;
         Item.rare = ItemRarityID.Yellow;
         Item.value = 3150;
-
     }
 }

@@ -12,7 +12,6 @@ public class BladegunBomb : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -25,6 +24,7 @@ public class BladegunBomb : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.scale = 0.85f;
@@ -41,6 +41,7 @@ public class BladegunBomb : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -56,6 +57,7 @@ public class BladegunBomb : ModProjectile
             Projectile.ai[0] = 24f;
             Projectile.velocity.Y += 0.19f;
         }
+
         if (Projectile.velocity.Y > 15f)
         {
             Projectile.velocity.Y = 17f;
@@ -83,11 +85,12 @@ public class BladegunBomb : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 8f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because

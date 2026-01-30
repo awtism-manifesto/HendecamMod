@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -46,10 +46,12 @@ public class ShroomiteBladegun : ModItem
         Item.shootSpeed = 16.67f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.None; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override bool AltFunctionUse(Player player)
     {
         return true;
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -89,8 +91,8 @@ public class ShroomiteBladegun : ModItem
                 newVelocity *= 1f - Main.rand.NextFloat(0.25f);
 
                 Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
             }
+
             type = ModContent.ProjectileType<BladegunBomb>();
             Projectile.NewProjectileDirect(source, position, (velocity * 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
 
@@ -98,20 +100,17 @@ public class ShroomiteBladegun : ModItem
 
             return false;
         }
-        else
-        {
 
-            SoundEngine.PlaySound(SoundID.Item71, player.position);
-            damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
+        SoundEngine.PlaySound(SoundID.Item71, player.position);
+        damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
-            float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
-            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
-            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
+        float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
+        Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+        NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
-            return true; // Return false because we don't want tModLoader to shoot projectile}
-
-        }
+        return true; // Return false because we don't want tModLoader to shoot projectile}
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -133,6 +132,7 @@ public class ShroomiteBladegun : ModItem
         };
         tooltips.Add(line);
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-0.5f, -0.5f);
@@ -148,7 +148,5 @@ public class ShroomiteBladegun : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
-
 }

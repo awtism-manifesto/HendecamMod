@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class ElfMagicMissile : ModProjectile
@@ -12,13 +13,11 @@ public class ElfMagicMissile : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetDefaults()
     {
         Projectile.width = 24; // The width of projectile hitbox
@@ -41,12 +40,14 @@ public class ElfMagicMissile : ModProjectile
         Projectile.alpha = 255;
         Projectile.extraUpdates = 1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 225);
         Projectile.PrepareBombToBlow();
         Projectile.timeLeft = 2;
     }
+
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 0.67f, 0.38f, 1f);
@@ -106,6 +107,7 @@ public class ElfMagicMissile : ModProjectile
             Projectile.PrepareBombToBlow();
         }
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -146,6 +148,7 @@ public class ElfMagicMissile : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -181,8 +184,6 @@ public class ElfMagicMissile : ModProjectile
             fireDust.velocity *= 5.5f;
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
-
         }
-
     }
 }

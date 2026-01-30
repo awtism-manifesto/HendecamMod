@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class BillionaireBiter : ModItem
@@ -39,11 +40,12 @@ public class BillionaireBiter : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ModContent.ProjectileType<OrcaTooth>();
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<OrcaTooth>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.3f, 0.325f));
@@ -86,6 +88,7 @@ public class BillionaireBiter : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -94,7 +97,6 @@ public class BillionaireBiter : ModItem
         recipe.AddIngredient<DartShotgun>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
 
     public override Vector2? HoldoutOffset()

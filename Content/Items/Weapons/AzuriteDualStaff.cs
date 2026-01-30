@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -9,13 +9,16 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
+
 public class AzuriteDualStaff : ModItem
 {
+    private int shotCounter;
 
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -38,11 +41,8 @@ public class AzuriteDualStaff : ModItem
         Item.shootSpeed = 12.5f;
     }
 
-    private int shotCounter = 0;
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
@@ -62,6 +62,7 @@ public class AzuriteDualStaff : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");
@@ -81,6 +82,7 @@ public class AzuriteDualStaff : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -88,5 +90,4 @@ public class AzuriteDualStaff : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

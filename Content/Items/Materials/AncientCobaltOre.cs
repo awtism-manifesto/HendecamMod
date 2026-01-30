@@ -1,7 +1,6 @@
-﻿using HendecamMod.Content.Tiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Tiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,6 +12,7 @@ public class AncientCobaltOre : ModItem
     {
         Item.ResearchUnlockCount = 100;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -22,8 +22,8 @@ public class AncientCobaltOre : ModItem
         Item.value = 1250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltOrePlaced>());
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "'It's true power lies behind a fleshy wall'");
@@ -35,5 +35,4 @@ public class AncientCobaltOre : ModItem
         };
         tooltips.Add(line);
     }
-
 }

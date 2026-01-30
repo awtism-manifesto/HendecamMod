@@ -54,20 +54,20 @@ public class CeramArrow : ModProjectile
     {
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(6, 2).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.275f), Projectile.knockBack, Projectile.owner);
+            new Vector2(6, 2).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.275f), Projectile.knockBack, Projectile.owner);
         Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
-        new Vector2(-2, 6).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
+            new Vector2(-2, 6).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
         Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
-        new Vector2(5, -8).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
+            new Vector2(5, -8).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
         Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
-        new Vector2(-2, -7).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
+            new Vector2(-2, -7).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<CeramNop>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

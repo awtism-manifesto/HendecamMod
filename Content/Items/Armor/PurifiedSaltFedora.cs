@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -37,6 +37,7 @@ public class PurifiedSaltFedora : ModItem
         Item.rare = ItemRarityID.Yellow; // The rarity of the item
         Item.defense = 10; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -62,11 +63,13 @@ public class PurifiedSaltFedora : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PurifiedSaltChestplate>() && legs.type == ModContent.ItemType<PurifiedSaltLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -86,6 +89,7 @@ public class PurifiedSaltFedora : ModItem
 
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -97,6 +101,7 @@ public class PurifiedSaltFedora : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
     }

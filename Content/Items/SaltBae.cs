@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class SaltBae : ModItem
@@ -28,7 +29,7 @@ public class SaltBae : ModItem
         Item.reuseDelay = 7;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item151;
+        Item.UseSound = SoundID.Item151;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -40,18 +41,15 @@ public class SaltBae : ModItem
         Item.shoot = ModContent.ProjectileType<Salt>();
 
         Item.shootSpeed = 6.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<SaltMage>();
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
         float ceilingLimit = target.Y;
         if (ceilingLimit > player.Center.Y - 200f)
@@ -83,6 +81,7 @@ public class SaltBae : ModItem
 
         return false;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,16 +107,17 @@ public class SaltBae : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Book);
         recipe.AddIngredient(ItemID.FallenStar, 4);
-        recipe.AddIngredient<Items.RockSalt>(30);
+        recipe.AddIngredient<RockSalt>(30);
         recipe.AddTile(TileID.Bookcases);
         recipe.Register();
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

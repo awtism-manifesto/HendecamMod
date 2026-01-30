@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,6 +13,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class TransBodyplate : ModItem
 {
+    // Damage bonuses
+    public static readonly int AdditiveDamageBonus = 6;
+    public static readonly int GenericCritBonus = 5;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -25,6 +28,7 @@ public class TransBodyplate : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
+
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -33,14 +37,13 @@ public class TransBodyplate : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
-    // Damage bonuses
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+
     public override void UpdateEquip(Player player)
     {
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Tooltip code
@@ -64,11 +67,13 @@ public class TransBodyplate : ModItem
 
         // Please help
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<TransHat>() && legs.type == ModContent.ItemType<TransGreaves>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -77,8 +82,8 @@ public class TransBodyplate : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

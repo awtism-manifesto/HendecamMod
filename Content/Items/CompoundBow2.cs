@@ -1,10 +1,11 @@
-﻿using HendecamMod.Content.Global;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Global;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Items;
 
 public class CompoundBow2 : ModItem
@@ -25,7 +26,7 @@ public class CompoundBow2 : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item102;
+        Item.UseSound = SoundID.Item102;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -38,14 +39,14 @@ public class CompoundBow2 : ModItem
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ItemID.WoodenArrow;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
         return false; // Prevent vanilla projectile spawn
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,13 +77,13 @@ public class CompoundBow2 : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.Kevlar>(15);
+        recipe.AddIngredient<Kevlar>(15);
 
-        recipe.AddIngredient<Items.CompoundBow>();
+        recipe.AddIngredient<CompoundBow>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -38,6 +38,7 @@ public class LycopiteMask : ModItem
         Item.defense = 7; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -67,11 +68,13 @@ public class LycopiteMask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<LycopiteChestplate>() && legs.type == ModContent.ItemType<LycopiteLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -90,6 +93,7 @@ public class LycopiteMask : ModItem
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
         player.whipRangeMultiplier = 1.10f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -100,11 +104,10 @@ public class LycopiteMask : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
         player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
         player.setBonus = "+15% max life";
-
     }
 }

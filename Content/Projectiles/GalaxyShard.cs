@@ -1,9 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 namespace HendecamMod.Content.Projectiles;
 
 public class GalaxyShard : ModProjectile
@@ -12,13 +13,11 @@ public class GalaxyShard : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 16; // The length of old position to be recorded
@@ -43,8 +42,8 @@ public class GalaxyShard : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
 
         Projectile.extraUpdates = 1;
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
@@ -69,6 +68,7 @@ public class GalaxyShard : ModProjectile
 
         return false;
     }
+
     // Custom AI
     public override void AI()
     {
@@ -86,6 +86,7 @@ public class GalaxyShard : ModProjectile
                 Projectile.frame = 0;
             }
         }
+
         float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -116,7 +117,6 @@ public class GalaxyShard : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2f)).ToRotationVector2() * length;
-
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range

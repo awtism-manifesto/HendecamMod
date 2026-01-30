@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Tiles.Blocks;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -30,6 +29,5 @@ public class MintalOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Orange;
-
     }
 }

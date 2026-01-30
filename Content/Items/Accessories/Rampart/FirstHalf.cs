@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,11 +16,13 @@ public class FirstHalf : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Penetrated, Blood Butchered, Midas, and Dryad's Bane");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.BoneJavelin] = true;
@@ -29,12 +30,13 @@ public class FirstHalf : ModItem
         player.buffImmune[BuffID.Midas] = true;
         player.buffImmune[BuffID.DryadsWardDebuff] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<LostFragment1>(1);
-        recipe.AddIngredient<LostFragment2>(1);
+        recipe.AddIngredient<LostFragment1>();
+        recipe.AddIngredient<LostFragment2>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

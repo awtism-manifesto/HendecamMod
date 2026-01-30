@@ -18,9 +18,7 @@ public class UnstablePlasmoidMessage : GlobalNPC
     {
         if (!NPC.downedEmpressOfLight)
         {
-
             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Ominous red orbs can be seen looming high up in the night sky..."), new Color(185, 15, 15));
         }
-
     }
 }

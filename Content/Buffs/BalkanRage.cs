@@ -8,6 +8,7 @@ public class BalkanRage : ModBuff
     public static readonly int AttackSpeedBonus = 6;
     public static readonly int CritBonus = 12;
     public static readonly int DefenseBonus = -6;
+
     public override void Update(Player player, ref int buffIndex)
     {
         player.GetCritChance(DamageClass.Generic) += CritBonus;

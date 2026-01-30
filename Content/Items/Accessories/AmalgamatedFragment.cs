@@ -1,6 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -10,15 +10,16 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class AmalgamatedFragment : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 12;
 
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
+
     public override void SetStaticDefaults()
     {
         ItemID.Sets.ItemIconPulse[Item.type] = true;
         ItemID.Sets.ItemNoGravity[Item.type] = true;
     }
+
     public override void SetDefaults()
     {
         Item.width = 30;
@@ -41,13 +42,13 @@ public class AmalgamatedFragment : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage")
             {
                 OverrideColor = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
+
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -56,6 +57,7 @@ public class AmalgamatedFragment : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -71,10 +73,9 @@ public class AmalgamatedFragment : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("WhiteDwarfFragment", out ModItem WhiteDwarfFragment))
         {
             recipe.AddIngredient(WhiteDwarfFragment.Type, 15);
-
         }
-
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 112f;
@@ -87,7 +88,6 @@ public class AmalgamatedFragment : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 112f;
-
         }
     }
 }

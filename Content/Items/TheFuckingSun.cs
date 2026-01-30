@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -50,6 +50,7 @@ public class TheFuckingSun : ModItem
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -68,12 +69,13 @@ public class TheFuckingSun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("AshesofAnnihilation", out ModItem AshesofAnnihilation)
-            && CalMerica.TryFind<ModItem>("AuricBar", out ModItem AuricBar) && CalMerica.TryFind<ModItem>("YharonSoulFragment", out ModItem YharonSoulFragment))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AshesofAnnihilation", out ModItem AshesofAnnihilation)
+                                                                  && CalMerica.TryFind("AuricBar", out ModItem AuricBar) && CalMerica.TryFind("YharonSoulFragment", out ModItem YharonSoulFragment))
         {
             recipe = CreateRecipe();
 
@@ -85,7 +87,6 @@ public class TheFuckingSun : ModItem
             recipe.AddIngredient(ItemID.FragmentSolar, 25);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
         }
         else
         {
@@ -97,8 +98,6 @@ public class TheFuckingSun : ModItem
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
         }
     }
-
 }

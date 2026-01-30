@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,7 +8,6 @@ namespace HendecamMod.Content.Items;
 
 public class PrismaticBullet : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
@@ -34,18 +33,19 @@ public class PrismaticBullet : ModItem
         Item.shootSpeed = 19f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(1500);
-        recipe.AddIngredient<Items.AstatineBar>(5);
-        recipe.AddIngredient<Items.PlutoniumBar>(3);
-        recipe.AddIngredient<Items.UraniumBar>();
+        recipe.AddIngredient<AstatineBar>(5);
+        recipe.AddIngredient<PlutoniumBar>(3);
+        recipe.AddIngredient<UraniumBar>();
         recipe.AddIngredient(ItemID.HallowBossDye);
         recipe.AddIngredient(ItemID.EmptyBullet, 1500);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -71,5 +71,4 @@ public class PrismaticBullet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
 }

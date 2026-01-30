@@ -1,8 +1,8 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -26,6 +26,7 @@ public class PlutoShot : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 37;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -36,7 +37,7 @@ public class PlutoShot : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
@@ -44,7 +45,6 @@ public class PlutoShot : ModProjectile
 
     public override void AI()
     {
-
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -63,24 +63,24 @@ public class PlutoShot : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 220);
     }
 
     public override void OnKill(int timeLeft)
     {
-
         for (int i = -1; i <= 1; i++)
         {
             float angle = 11 * i; // gives -15, 0, 15
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         }
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

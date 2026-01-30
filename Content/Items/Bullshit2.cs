@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -69,16 +69,15 @@ public class Bullshit2 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Bullshit1>();
+        recipe.AddIngredient<Bullshit1>();
         recipe.AddIngredient(ItemID.TruffleWorm);
         recipe.AddIngredient(ItemID.RainbowSlimeBanner);
         recipe.AddIngredient(ItemID.GalaxyPearl);
         recipe.AddTile(TileID.LihzahrdFurnace);
         recipe.Register();
-
     }
-
 }

@@ -16,13 +16,13 @@ public class PoorMahogany : ModItem
         Item.consumable = true;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PoorMahoganyTile>(), 0);
+        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PoorMahoganyTile>());
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.RichMahogany, 1);
+        recipe.AddIngredient(ItemID.RichMahogany);
         recipe.AddTile(TileID.CookingPots);
         recipe.Register();
     }
