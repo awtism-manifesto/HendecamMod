@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class MandibleStaff : ModItem
@@ -25,20 +23,14 @@ public class MandibleStaff : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 10000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item8;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 11; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -47,8 +39,6 @@ public class MandibleStaff : ModItem
 
         Item.ArmorPenetration = 5;
         Item.mana = 6;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
@@ -63,18 +53,12 @@ public class MandibleStaff : ModItem
 
     }
 
-
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.66f));
-
-
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.66f));
-
-
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
@@ -94,8 +78,6 @@ public class MandibleStaff : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -109,15 +91,11 @@ public class MandibleStaff : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FossilOre, 10);
         recipe.AddIngredient(ItemID.AntlionMandible, 5);
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

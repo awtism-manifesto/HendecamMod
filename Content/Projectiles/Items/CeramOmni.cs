@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles.Items;
 
 public class CeramOmni : ModProjectile
@@ -43,8 +41,6 @@ public class CeramOmni : ModProjectile
     public override void AI()
     {
         Projectile.rotation += 0.33f;
-
-
         if (Math.Abs(Projectile.velocity.X) <= 15f && Math.Abs(Projectile.velocity.Y) <= 15f)
         {
             Projectile.velocity *= 1.15f;
@@ -95,8 +91,4 @@ public class CeramOmni : ModProjectile
 
         return true;
     }
-
-
-
-
 }

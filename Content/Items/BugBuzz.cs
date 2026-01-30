@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class BugBuzz : ModItem
@@ -22,8 +20,6 @@ public class BugBuzz : ModItem
         Item.scale = 0.995f;
         Item.rare = ItemRarityID.Lime; // The color that the item's name will be in-game.
         Item.value = 85000;
-
-
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -33,25 +29,17 @@ public class BugBuzz : ModItem
 
         // The sound that this item plays when used.
 
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ModContent.ProjectileType<BugWave>();
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -76,8 +64,6 @@ public class BugBuzz : ModItem
 
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -89,8 +75,6 @@ public class BugBuzz : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -106,13 +90,9 @@ public class BugBuzz : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
         recipe.AddIngredient(ItemID.BeetleHusk, 8);
         recipe.AddTile(TileID.MythrilAnvil);
@@ -123,12 +103,6 @@ public class BugBuzz : ModItem
             recipe.AddIngredient(LivingShard.Type, 4);
 
         }
-
-
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()

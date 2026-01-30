@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class TheXRay : ModItem
 {
 
@@ -33,8 +31,6 @@ public class TheXRay : ModItem
         Item.ArmorPenetration = 30;
         Item.value = 172000;
         Item.rare = ItemRarityID.LightPurple;
-
-
         Item.shoot = ModContent.ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
 
@@ -44,20 +40,10 @@ public class TheXRay : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Xray>();
-
-
-
-
-
-
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -70,8 +56,6 @@ public class TheXRay : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

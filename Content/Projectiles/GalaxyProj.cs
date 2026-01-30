@@ -57,14 +57,10 @@ public class GalaxyProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(11, 5).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
@@ -81,8 +77,6 @@ public class GalaxyProj : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
         new Vector2(-5, -11).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
-
-
 
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
 

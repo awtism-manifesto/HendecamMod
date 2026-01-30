@@ -19,8 +19,6 @@ public class BladegunWave : ModProjectile
     }
     public override void SetDefaults()
     {
-
-
         Projectile.width = 32; // The width of projectile hitbox
         Projectile.height = 32; // The height of projectile hitbox
 
@@ -60,8 +58,6 @@ public class BladegunWave : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         if (Projectile.timeLeft < 245)
@@ -99,8 +95,6 @@ public class BladegunWave : ModProjectile
 
                 tickCounter = 0;
                 nextSpawnTick = Main.rand.Next(15, 24);
-
-
                 Projectile.netUpdate = true;
             }
         }
@@ -109,12 +103,6 @@ public class BladegunWave : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
     }
 }

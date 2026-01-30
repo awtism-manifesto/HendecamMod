@@ -11,16 +11,12 @@ namespace HendecamMod.Content.Items.Accessories;
 public class TheAutismManifesto : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
     public static readonly int AdditiveStupidDamageBonus = 10;
 
     public static readonly int MagicCritBonus = 10;
     public static readonly int StupidCritBonus = 10;
     public static readonly int MaxManaIncrease = 75;
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -42,10 +38,6 @@ public class TheAutismManifesto : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
-
-
-
-
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -58,10 +50,6 @@ public class TheAutismManifesto : ModItem
             OverrideColor = new Color(255, 15, 85)
         };
         tooltips.Add(line);
-
-
-
-
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

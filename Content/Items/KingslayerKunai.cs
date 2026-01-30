@@ -5,10 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -53,22 +49,12 @@ public class KingslayerKunai : ModItem
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-4.8f));
         Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(4.8f));
 
-
-
-
-
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
 
-
-
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -87,8 +73,6 @@ public class KingslayerKunai : ModItem
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
     public override void AddRecipes()
     {
@@ -99,13 +83,5 @@ public class KingslayerKunai : ModItem
 
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

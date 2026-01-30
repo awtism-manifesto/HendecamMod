@@ -86,8 +86,6 @@ public class LycoSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -159,8 +157,6 @@ public class LycoSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         if (target.HasBuff(ModContent.BuffType<LycopiteSpores>()))
         {
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
@@ -196,13 +192,7 @@ public class LycoSwing : ModProjectile
 
             }
 
-
-
         }
-
-
-
-
         target.AddBuff(ModContent.BuffType<LycopiteSpores>(), 210);
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -213,8 +203,6 @@ public class LycoSwing : ModProjectile
             dust.scale *= 1.05f;
 
         }
-
-
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
@@ -267,8 +255,6 @@ public class LycoSwing : ModProjectile
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects, 0f);
         // Thin bottom line (final frame)
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
-
-
         // This draws a large star sparkle at the front of the projectile.
         Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
         DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos2, new Color(255, 165, 99, 0) * lerpTime * 0.5f, middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, 0f, new Vector2(2f, Utils.Remap(percentageOfLife, 0f, 1f, 4f, 1f)) * scale, Vector2.One * scale);

@@ -4,8 +4,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SublimRay2 : ModProjectile
@@ -52,8 +50,6 @@ public class SublimRay2 : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                 fireDust.noGravity = true;
@@ -68,8 +64,4 @@ public class SublimRay2 : ModProjectile
 
     }
 
-
-
 }
-
-

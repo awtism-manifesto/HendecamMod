@@ -42,8 +42,6 @@ public class FrostDart : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -61,8 +59,6 @@ public class FrostDart : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.IceTorch, 0f, 0f, 100, default, 0.3f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
             fireDust.velocity *= 0.05f;
@@ -77,8 +73,6 @@ public class FrostDart : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
@@ -97,8 +91,6 @@ public class FrostDart : ModProjectile
         Vector2 Peanits3 = Projectile.Center - new Vector2(0, 0);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
         ModContent.ProjectileType<FrostBoom>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
-
-
 
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.

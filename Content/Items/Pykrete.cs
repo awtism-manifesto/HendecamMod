@@ -3,8 +3,6 @@ using HendecamMod.Content.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class Pykrete : ModItem

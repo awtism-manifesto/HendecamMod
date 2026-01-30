@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class CompoundBow3 : ModItem
@@ -23,8 +21,6 @@ public class CompoundBow3 : ModItem
         Item.scale = 0.96f;
         Item.rare = ModContent.RarityType<HotPink>(); // The color that the item's name will be in-game.
         Item.value = 850000;
-
-
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 30; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -34,25 +30,17 @@ public class CompoundBow3 : ModItem
 
         // The sound that this item plays when used.
 
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 111; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 15.33f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
-
-
     }
 
     public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -68,11 +56,7 @@ public class CompoundBow3 : ModItem
         SoundEngine.PlaySound(SoundID.Item102, player.position);
         return false; // Prevent vanilla projectile spawn
 
-
-
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -84,8 +68,6 @@ public class CompoundBow3 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -101,8 +83,6 @@ public class CompoundBow3 : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -117,14 +97,6 @@ public class CompoundBow3 : ModItem
             recipe.AddIngredient(ArtemiteBar.Type, 5);
 
         }
-
-
-
-
-
-
-
-
     }
     public override Vector2? HoldoutOffset()
     {

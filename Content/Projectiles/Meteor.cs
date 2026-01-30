@@ -41,8 +41,6 @@ public class Meteor : ModProjectile
     public override void AI()
     {
 
-
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {

@@ -32,8 +32,6 @@ public class LunarContrail : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-
-
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
 
@@ -56,10 +54,6 @@ public class LunarContrail : ModProjectile
         if (Projectile.timeLeft < 317)
 
         {
-
-
-
-
             if (Math.Abs(Projectile.velocity.X) <= 20.5f && Math.Abs(Projectile.velocity.Y) <= 20.5f)
             {
                 Projectile.velocity *= 1.05f;
@@ -150,8 +144,6 @@ public class LunarContrail : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         for (int i = 0; i < 8; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Vortex);
@@ -160,8 +152,6 @@ public class LunarContrail : ModProjectile
             dust.scale *= 1.5f;
 
         }
-
-
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
@@ -178,6 +168,4 @@ public class LunarContrail : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-
 

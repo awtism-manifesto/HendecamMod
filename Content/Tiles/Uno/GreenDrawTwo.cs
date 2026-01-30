@@ -19,8 +19,6 @@ public class GreenDrawTwo : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
-
-
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(0, 200, 0), Language.GetText("Green Uno Card"));

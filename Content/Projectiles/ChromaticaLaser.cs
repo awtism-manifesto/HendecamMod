@@ -78,8 +78,6 @@ public class ChromaticaLaser : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -156,8 +154,6 @@ public class ChromaticaLaser : ModProjectile
             RubyDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemRuby, 0f, 0f, 100, default, 1.3f);
             RubyDust.velocity *= 9f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

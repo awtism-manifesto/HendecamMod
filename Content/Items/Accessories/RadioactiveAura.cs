@@ -17,8 +17,6 @@ public class RadioactiveAura : ModItem
     public static readonly int AdditiveDamageBonus = 6;
     public static readonly int AttackSpeedBonus = 3;
     public static readonly int CritBonus = 6;
-
-
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
 
@@ -48,14 +46,10 @@ public class RadioactiveAura : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
     }
     public override void AddRecipes()
     {
         Recipe
-
-
 
             recipe = CreateRecipe();
 
@@ -64,8 +58,6 @@ public class RadioactiveAura : ModItem
         recipe.AddIngredient(ItemID.PutridScent);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -107,11 +99,7 @@ public class Rad2Apply : ModPlayer
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
-
-
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PiercingLight : ModProjectile
@@ -37,8 +35,6 @@ public class PiercingLight : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -58,8 +54,6 @@ public class PiercingLight : ModProjectile
     {
 
         Projectile.damage = (int)(Projectile.damage * 0.8f);
-
-
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons);
@@ -68,13 +62,9 @@ public class PiercingLight : ModProjectile
             dust.scale *= 1.1f;
         }
 
-
-
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -110,6 +100,4 @@ public class PiercingLight : ModProjectile
     }
 
 }
-
-
 

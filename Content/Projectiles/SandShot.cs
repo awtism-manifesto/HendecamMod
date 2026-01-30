@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SandShot : ModProjectile
@@ -37,12 +35,6 @@ public class SandShot : ModProjectile
 
     public override void AI()
     {
-
-
-
-
-
-
         if (Projectile.alpha < 185)
         {
             for (int i = 0; i < 2; i++)
@@ -55,16 +47,12 @@ public class SandShot : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.Sand, 0f, 0f, 100, default, 1f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.2f;
             }
         }
-
-
 
     }
     public override bool PreDraw(ref Color lightColor)
@@ -82,8 +70,4 @@ public class SandShot : ModProjectile
 
         return true;
     }
-
-
-
-
 }

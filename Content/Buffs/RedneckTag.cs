@@ -23,6 +23,4 @@ public class RedneckTag : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

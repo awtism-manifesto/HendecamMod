@@ -32,13 +32,7 @@ public class SqueakyHammer : ModItem
         Item.value = Item.buyPrice(silver: 3);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.DSTMaleHurt;
-
-
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,8 +44,6 @@ public class SqueakyHammer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -74,10 +66,6 @@ public class SqueakyHammer : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
 
     }
 

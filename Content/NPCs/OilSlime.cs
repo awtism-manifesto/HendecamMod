@@ -29,8 +29,6 @@ public class OilSlime : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"Spoopy, Oopy, and goopy, these hard-to see, deceptively tanky slimes can ruin your day if you're not careful!\" "),
@@ -78,8 +76,6 @@ public class OilSlime : ModNPC
         // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-
-
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(), 1, 10, 21));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CarbonDioxideBottle>(), 20, 1, 1));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 150, 1, 1));

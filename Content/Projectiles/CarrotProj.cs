@@ -69,10 +69,6 @@ public class CarrotProj : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (ModContent.DustType<LycopiteDust>()));

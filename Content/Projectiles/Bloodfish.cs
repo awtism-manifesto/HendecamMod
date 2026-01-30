@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Bloodfish : ModProjectile
@@ -60,8 +58,6 @@ public class Bloodfish : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Blood, 0f, 0f, 100, default, 1.15f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
@@ -81,8 +77,6 @@ public class Bloodfish : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
@@ -156,8 +150,6 @@ public class Bloodfish : ModProjectile
 
         return closestNPC;
     }
-
-
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -210,11 +202,7 @@ public class Bloodfish : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

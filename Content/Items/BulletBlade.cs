@@ -30,8 +30,6 @@ public class BulletBlade : ModItem
         Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
         Item.damage = 51;
         Item.knockBack = 4;
-
-
         Item.value = Item.buyPrice(gold: 12);
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = SoundID.Item1;
@@ -48,8 +46,6 @@ public class BulletBlade : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
-
         if (type == ProjectileID.ChlorophyteBullet)
         {
             damage = (int)(damage * 0.25f);
@@ -65,8 +61,6 @@ public class BulletBlade : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360));
 
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
@@ -74,15 +68,11 @@ public class BulletBlade : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
-
-
         line = new TooltipLine(Mod, "Face", "Shoots a ring of bullets all around the player")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -101,8 +91,6 @@ public class BulletBlade : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -120,8 +108,6 @@ public class BulletBlade : ModItem
     {
 
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.AdamantiteBar, 12);
         recipe.AddIngredient(ItemID.SoulofMight, 10);
         recipe.AddIngredient(ItemID.MusketBall, 100);

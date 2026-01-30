@@ -71,8 +71,6 @@ public class GagGift : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -105,8 +103,6 @@ public class GagGift : ModProjectile
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
 
     }
-
-
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -150,7 +146,5 @@ public class GagGift : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3f;
         }
-
-
     }
 }

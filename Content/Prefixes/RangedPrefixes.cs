@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Prefixes;
-
-
 public class Disciplined : ModPrefix
 {
     // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.

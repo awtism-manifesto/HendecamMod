@@ -70,8 +70,6 @@ public class GeigerRocket : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -147,8 +145,6 @@ public class GeigerRocket : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(570, 570);
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -181,8 +177,6 @@ public class GeigerRocket : ModProjectile
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
         ModContent.ProjectileType<GeigerBoom>(), (int)(Projectile.damage * 0.6f), Projectile.knockBack, Projectile.owner);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 28; j++)
@@ -258,8 +252,6 @@ public class GeigerRocket : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeeDust.velocity *= 4f;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

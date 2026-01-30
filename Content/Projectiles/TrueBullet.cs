@@ -68,8 +68,6 @@ public class TrueBullet : ModProjectile
     public override void AI()
     {
 
-
-
         // dust, all dust
         if (Projectile.alpha < 187)
         {

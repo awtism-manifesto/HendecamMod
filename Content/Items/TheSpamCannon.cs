@@ -10,8 +10,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class TheSpamCannon : ModItem
 {
     public override void SetDefaults()
@@ -23,8 +21,6 @@ public class TheSpamCannon : ModItem
         Item.knockBack = 5.5f;
         Item.width = 40;
         Item.height = 40;
-
-
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
 
@@ -38,8 +34,6 @@ public class TheSpamCannon : ModItem
         }
 
         Item.mana = 2;
-
-
         Item.UseSound = SoundID.Item61;
         Item.rare = ItemRarityID.Yellow;
         Item.value = Item.buyPrice(gold: 115);
@@ -65,26 +59,18 @@ public class TheSpamCannon : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     private int spamcannoncooldown = 0;
     public override void UpdateInventory(Player player)
     {
 
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
-
-
         {
             if (Main.rand.NextBool(9))
             {
                 Item.damage = Main.rand.Next(75, 125);
             }
-
-
         }
         else
         {
@@ -121,8 +107,6 @@ public class TheSpamCannon : ModItem
         if (player.altFunctionUse == 2)
         {
 
-
-
             if (spamcannoncooldown > 0)
                 return false;
 
@@ -130,8 +114,6 @@ public class TheSpamCannon : ModItem
             { spamcannoncooldown = 100; }
             else
             { spamcannoncooldown = 150; }
-
-
 
             player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 150);
             SoundEngine.PlaySound(SoundID.Item14, player.position);
@@ -149,12 +131,8 @@ public class TheSpamCannon : ModItem
 
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
-
         return false;
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -173,8 +151,6 @@ public class TheSpamCannon : ModItem
             OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
         };
         tooltips.Add(line);
-
-
 
     }
     public override Vector2? HoldoutOffset()
@@ -199,17 +175,9 @@ public class TheSpamCannon : ModItem
         }
 
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseBar", out ModItem PhaseBar))
-
-
         {
             recipe.AddIngredient(PhaseBar.Type, 6);
-
-
         }
 
-
-
     }
-
-
 }

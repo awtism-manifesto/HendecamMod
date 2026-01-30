@@ -64,8 +64,6 @@ public class AncientCobaltSpear : ModProjectile
             Projectile.rotation += MathHelper.ToRadians(135f);
         }
 
-
-
         return false; // Don't execute vanilla AI.
     }
 }

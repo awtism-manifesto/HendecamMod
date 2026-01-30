@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class GelCube : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -40,8 +38,6 @@ public class GelCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

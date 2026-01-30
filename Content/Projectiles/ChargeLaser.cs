@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ChargeLaser : ModProjectile
@@ -69,15 +67,7 @@ public class ChargeLaser : ModProjectile
     public override void AI()
     {
 
-
-
         Lighting.AddLight(Projectile.Center, 0.66f, 0.2f, 0.2f);
-
-
-
-
-
-
     }
     public override bool PreDraw(ref Color lightColor)
     {
@@ -100,8 +90,6 @@ public class ChargeLaser : ModProjectile
         target.AddBuff(BuffID.Electrified, 240);
 
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
@@ -110,6 +98,4 @@ public class ChargeLaser : ModProjectile
     }
 
 }
-
-
 

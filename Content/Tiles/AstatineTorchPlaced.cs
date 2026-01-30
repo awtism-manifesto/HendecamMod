@@ -98,8 +98,6 @@ public class AstatineTorchPlaced : ModTile
         // A negative luck of 2 will cancel out all torch luck bonuses.
 
         // The influence positive torch luck can have overall is 0.1 (if positive luck is any number less than 1) or 0.2 (if positive luck is greater than or equal to 1)
-
-
         return 1.55f;
     }
 
@@ -167,8 +165,6 @@ public class AstatineTorchPlaced : ModTile
         int frameX = tile.TileFrameX;
         int frameY = tile.TileFrameY;
         int style = TileObjectData.GetTileStyle(Main.tile[i, j]);
-
-
         for (int k = 0; k < 7; k++)
         {
             float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;

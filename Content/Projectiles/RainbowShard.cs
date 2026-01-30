@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RainbowShard : ModProjectile
@@ -22,10 +20,6 @@ public class RainbowShard : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
 
@@ -52,8 +46,6 @@ public class RainbowShard : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -203,5 +195,3 @@ public class RainbowShard : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

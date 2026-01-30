@@ -22,8 +22,6 @@ public class UraniumPickaxe : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 4;
         Item.useTurn = true;
-
-
         Item.value = Item.buyPrice(gold: 1); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
@@ -48,8 +46,6 @@ public class UraniumPickaxe : ModItem
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 200);
-
-
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<UraniumDust>());
@@ -65,11 +61,7 @@ public class UraniumPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<UraniumBar>(18);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

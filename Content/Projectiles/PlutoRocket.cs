@@ -58,8 +58,6 @@ public class PlutoRocket : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // If timeLeft is <= 3, then explode the rocket.
@@ -81,8 +79,6 @@ public class PlutoRocket : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -164,8 +160,6 @@ public class PlutoRocket : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.35f);
             fireDust.velocity *= 3f;
         }
-
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

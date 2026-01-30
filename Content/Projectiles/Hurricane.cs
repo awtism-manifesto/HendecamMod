@@ -2,8 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Hurricane : ModProjectile
@@ -48,8 +46,6 @@ public class Hurricane : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
@@ -85,11 +81,7 @@ public class Hurricane : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

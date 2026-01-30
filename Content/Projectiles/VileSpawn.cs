@@ -3,14 +3,10 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class VileSpawn : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -37,10 +33,6 @@ public class VileSpawn : ModProjectile
         else
         { Projectile.velocity.X = (Main.rand.NextFloat(-1.5f, -0.66f)); }
     }
-
-
-
-
     public override void OnKill(int timeLeft)
     {
 
@@ -58,11 +50,7 @@ public class VileSpawn : ModProjectile
         Vector2 Peanits3 = Projectile.Center - new Vector2(-120, -120);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
             ProjectileID.VilethornBase, (int)(Projectile.damage * 1.1f), Projectile.knockBack, Projectile.owner);
-
-
     }
 
 }
-
-
 

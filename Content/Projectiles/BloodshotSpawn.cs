@@ -3,14 +3,10 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BloodshotSpawn : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -34,14 +30,8 @@ public class BloodshotSpawn : ModProjectile
     {
 
     }
-
-
-
-
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-105, 105), 940));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
@@ -59,11 +49,7 @@ public class BloodshotSpawn : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
         new Vector2(32, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<BloodIchor>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
-
     }
 
 }
-
-
 

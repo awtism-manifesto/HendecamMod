@@ -29,8 +29,6 @@ public class KingslayerBreastplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -53,10 +51,6 @@ public class KingslayerBreastplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -99,8 +93,6 @@ public class KingslayerBreastplate : ModItem
         if (NPC.AnyDanger())
         {
 
-
-
             player.statLifeMax2 = (int)(player.statLifeMax2 * 1.05f);
             player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 105f;
             player.moveSpeed += MoveSpeedBonus / 108f;
@@ -112,8 +104,6 @@ public class KingslayerBreastplate : ModItem
             player.statDefense += 5;
             player.statManaMax2 += 40;
         }
-
-
 
         player.setBonus = "Slightly increases all stats during a boss fight or invasion";
 

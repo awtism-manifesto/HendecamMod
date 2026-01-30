@@ -592,8 +592,6 @@ public class EmpressRoseToyMessage : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-
-
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can also be used to fish in the Shimmer") { OverrideColor = Color.DarkViolet });
 
     }

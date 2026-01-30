@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GraniteLaser : ModProjectile
@@ -35,8 +33,6 @@ public class GraniteLaser : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -70,22 +66,8 @@ public class GraniteLaser : ModProjectile
     }
     public override void AI()
     {
-
-
-
-
-
-
         Lighting.AddLight(Projectile.Center, 0.1f, 0.4f, 0.85f);
 
-
-
-
-
     }
-
-
 }
-
-
 

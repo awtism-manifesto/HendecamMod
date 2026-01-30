@@ -11,10 +11,6 @@ public class WeedLeaves : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
-
-
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -28,8 +24,6 @@ public class WeedLeaves : ModItem
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 2500;
         Item.maxStack = 9999;
-
-
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -42,8 +36,6 @@ public class WeedLeaves : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -58,7 +50,5 @@ public class WeedLeaves : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
 }

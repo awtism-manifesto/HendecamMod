@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ElectrifiedSand : ModProjectile
@@ -37,12 +35,6 @@ public class ElectrifiedSand : ModProjectile
     }
     public override void AI()
     {
-
-
-
-
-
-
         if (Projectile.alpha < 169)
         {
             for (int i = 0; i < 2; i++)
@@ -67,8 +59,6 @@ public class ElectrifiedSand : ModProjectile
             }
         }
 
-
-
     }
 
     public override bool PreDraw(ref Color lightColor)
@@ -86,8 +76,4 @@ public class ElectrifiedSand : ModProjectile
 
         return true;
     }
-
-
-
-
 }

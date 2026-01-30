@@ -18,19 +18,13 @@ public class TruthSeekersDMR : ModItem
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 210000;
-
-
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item68;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 96; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -62,10 +56,6 @@ public class TruthSeekersDMR : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -91,6 +81,4 @@ public class TruthSeekersDMR : ModItem
     {
         return new Vector2(-33f, -1f);
     }
-
-
 }

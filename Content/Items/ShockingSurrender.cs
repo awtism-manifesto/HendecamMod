@@ -81,7 +81,5 @@ public class ShockingSurrender : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
 
-
-
     }
 }

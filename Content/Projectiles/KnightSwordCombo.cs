@@ -49,8 +49,6 @@ public class KnightSwordCombo : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
     }
-
-
     public override void AI()
     {
 
@@ -135,6 +133,4 @@ public class KnightSwordCombo : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy();
     }
-
-
 }

@@ -16,8 +16,6 @@ public class AstatineGlassSword : ModItem
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 33);
         Item.rare = ItemRarityID.Red;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 9;
         Item.useAnimation = 9;

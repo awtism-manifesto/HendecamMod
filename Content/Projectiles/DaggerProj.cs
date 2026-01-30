@@ -131,8 +131,6 @@ public class DaggerProj : ModProjectile
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
                ModContent.ProjectileType<DragonSpawnShadow>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
 
-
-
             }
             if (Main.rand.NextBool(7))
             {

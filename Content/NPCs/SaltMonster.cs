@@ -49,8 +49,6 @@ public class SaltMonster : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"A seemingly cobbled together monster made of pure rock salt. It is extremely hydrophobic and prefers desert environments.\" "),
@@ -73,8 +71,6 @@ public class SaltMonster : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
-
         if (NPC.downedBoss1 & NPC.downedSlimeKing)
         {
             return SpawnCondition.DesertCave.Chance * 0.18f;

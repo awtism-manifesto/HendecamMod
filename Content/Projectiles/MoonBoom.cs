@@ -35,8 +35,6 @@ public class MoonBoom : ModProjectile
         Projectile.light = 0.8f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 4;
-
-
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -85,8 +83,6 @@ public class MoonBoom : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -148,13 +144,9 @@ public class MoonBoom : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(530, 530);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 33; j++)
@@ -172,8 +164,6 @@ public class MoonBoom : ModProjectile
             fireDust.velocity *= 2f;
             fireDust.noGravity = true;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

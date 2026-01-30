@@ -19,19 +19,13 @@ public class AstatineMarksmanRifle : ModItem
         Item.scale = 0.666f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 330000;
-
-
         // Use Properties
         Item.useTime = 21; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item68;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 144; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -74,10 +68,6 @@ public class AstatineMarksmanRifle : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -99,18 +89,12 @@ public class AstatineMarksmanRifle : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("DMR", out ModItem DMR))//Only runs when thorium enabled
-
-
         {
             recipe.AddIngredient(DMR.Type);// add modded item
-
-
         }
     }
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-31f, -1f);
     }
-
-
 }

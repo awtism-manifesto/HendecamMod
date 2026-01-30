@@ -35,12 +35,8 @@ public class VP70 : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item38;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -76,32 +72,18 @@ public class VP70 : ModItem
 
         return base.CanUseItem(player);
     }
-
-
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
-
-
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.05f));
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.39f);
-
-
-
-
         if (player.altFunctionUse == 2)
         {
 
@@ -113,8 +95,6 @@ public class VP70 : ModItem
             Main.projectile[proj].GetGlobalProjectile<VPCombo>().fromVP70 = true;
 
             Main.projectile[proj].GetGlobalProjectile<VPComboSetup>().fromtheVP70 = false;
-
-
             return false;
         }
 
@@ -129,8 +109,6 @@ public class VP70 : ModItem
         }
 
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

@@ -31,8 +31,6 @@ public class BrainOfCthulhuIcon : ModItem
         };
         tooltips.Add(line);
 
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))

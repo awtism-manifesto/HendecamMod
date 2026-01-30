@@ -36,8 +36,6 @@ public class Ligma : ModBuff
         }
 
         npc.GetGlobalNPC<WhoTfIsSteveJobs>().DyingOfLigma = true;
-
-
     }
 
     public class LigmaPlayer : ModPlayer

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class SaltGun : ModItem
@@ -20,8 +18,6 @@ public class SaltGun : ModItem
         Item.scale = 1.15f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 25000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
@@ -32,17 +28,11 @@ public class SaltGun : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item151;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -58,10 +48,6 @@ public class SaltGun : ModItem
 
     }
 
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,8 +59,6 @@ public class SaltGun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -105,11 +89,7 @@ public class SaltGun : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
     }
-
-
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

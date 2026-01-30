@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class KingShot : ModProjectile
@@ -41,8 +39,6 @@ public class KingShot : ModProjectile
     {
 
         Projectile.damage = (int)(Projectile.damage * 0.75f);
-
-
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons);
@@ -50,8 +46,6 @@ public class KingShot : ModProjectile
             dust.velocity *= 9.5f;
             dust.scale *= 1f;
         }
-
-
 
     }
     public override void AI()
@@ -83,11 +77,5 @@ public class KingShot : ModProjectile
                 fireDust.noGravity = true;
             }
         }
-
-
-
-
     }
 }
-
-

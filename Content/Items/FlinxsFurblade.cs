@@ -64,26 +64,18 @@ public class FlinxsFurblade : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         if (ModLoader.TryGetMod("Fargowiltas", out Mod FargoMerica2) && FargoMerica2.TryFind<ModItem>("Cyborg", out ModItem Cyborg))
         {
             recipe = CreateRecipe();
 
             recipe.AddIngredient(ItemID.DeerclopsBossBag);
-
-
             recipe.Register();
         }
 
         else
         {
-
-
         }
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -95,8 +87,6 @@ public class FlinxsFurblade : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -111,6 +101,4 @@ public class FlinxsFurblade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

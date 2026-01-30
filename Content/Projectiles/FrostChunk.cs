@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class FrostChunk : ModProjectile
@@ -34,8 +32,6 @@ public class FrostChunk : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1;
         Projectile.scale = 2f;
-
-
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -58,8 +54,6 @@ public class FrostChunk : ModProjectile
             Projectile.velocity.Y += 0.26f;
         }
 
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -76,8 +70,6 @@ public class FrostChunk : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-
-
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.IceTorch, 0f, 0f, 100, default, 0.15f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
@@ -130,8 +122,6 @@ public class FrostChunk : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

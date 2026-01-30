@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RainbowBullet : ModProjectile
@@ -85,15 +83,9 @@ public class RainbowBullet : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
-
-
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Projectile.alpha < 190)
@@ -171,8 +163,6 @@ public class RainbowBullet : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         }
-
-
         for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.RedTorch);
@@ -208,6 +198,4 @@ public class RainbowBullet : ModProjectile
     }
 
 }
-
-
 

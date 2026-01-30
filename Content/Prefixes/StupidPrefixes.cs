@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Prefixes;
-
-
 public class Dumb : ModPrefix
 {
     // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
@@ -357,8 +355,6 @@ public class Smart : ModPrefix
         damageMult *= 1f - 0.07f * Power;
         critBonus = -1;
         useTimeMult *= 1f + 0.05f * Power;
-
-
     }
 
     // Modify the cost of items with this modifier with this function.
@@ -410,8 +406,6 @@ public class Skibidi : ModPrefix
         damageMult *= 1f + 0.05f * Power;
         critBonus = 3;
         useTimeMult *= 1f - 0.09f * Power;
-
-
     }
 
     // Modify the cost of items with this modifier with this function.
@@ -675,8 +669,6 @@ public class Tiktokified : ModPrefix
         damageMult *= 1f - 0.125f * Power;
 
         useTimeMult *= 1f - 0.225f * Power;
-
-
     }
 
     // Modify the cost of items with this modifier with this function.
@@ -728,8 +720,6 @@ public class Sigma : ModPrefix
         damageMult *= 1f + 0.20f * Power;
         critBonus = -25;
         useTimeMult *= 1f - 0.20f * Power;
-
-
     }
 
     // Modify the cost of items with this modifier with this function.

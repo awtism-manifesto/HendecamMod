@@ -27,8 +27,6 @@ public class OilMonster : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"Super Spoopy, Extremely Oopy, and INCREDIBLY goopy, these speedy little bastards will ruin your day if you're not careful\" "),
@@ -69,14 +67,10 @@ public class OilMonster : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<OilMonsterStaff>(), 25));
         npcLoot.Add(ItemDropRule.Common(ItemID.DarkShard, 49));
 
-
-
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
-
 
         if (Main.hardMode)
         {

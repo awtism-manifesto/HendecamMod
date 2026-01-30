@@ -15,8 +15,6 @@ public class TacticalLaserSight : ModItem
     public static readonly int RangedCritBonus = 12;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 30;
@@ -38,8 +36,6 @@ public class TacticalLaserSight : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -57,16 +53,12 @@ public class TacticalLaserSight : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Lens, 2);
         recipe.AddIngredient<PlutoniumBar>(9);
         recipe.AddIngredient<ImprovisedLaserSight>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)

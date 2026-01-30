@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class ZazaPipegun : ModItem
@@ -22,52 +20,34 @@ public class ZazaPipegun : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 9999;
-
-
         // Use Properties
         Item.useTime = 24; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 14.20f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.67f, 0.710f));
 
-
-
         type = ModContent.ProjectileType<ZazaSmoke>();
         Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
-
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -80,8 +60,6 @@ public class ZazaPipegun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -97,8 +75,6 @@ public class ZazaPipegun : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -107,16 +83,8 @@ public class ZazaPipegun : ModItem
         recipe.AddIngredient(ItemID.JungleSpores, 3);
         recipe.AddIngredient(ItemID.Torch, 10);
 
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
     public override Vector2? HoldoutOffset()
     {

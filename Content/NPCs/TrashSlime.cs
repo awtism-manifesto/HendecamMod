@@ -47,8 +47,6 @@ public class TrashSlime : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"A natural result of the horrific ecological overshoot that has been brought upon this world by humanity...\" "),

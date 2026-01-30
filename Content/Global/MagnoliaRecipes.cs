@@ -910,8 +910,4 @@ public class MagnoliaRecipes : ModSystem
         A195.AddTile<CobaltWorkBenchPlaced>();
         A195.Register();
     }
-
-
-
-
 }

@@ -48,15 +48,11 @@ public class JevilScythe2 : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
         Projectile.Kill();
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -64,8 +60,6 @@ public class JevilScythe2 : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {

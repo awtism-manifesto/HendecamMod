@@ -22,8 +22,6 @@ public class SlimeMine : ModProjectile
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         Main.projFrames[Projectile.type] = 2;
 
-
-
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
@@ -53,12 +51,8 @@ public class SlimeMine : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-
-
     public override void AI()
     {
-
-
 
         if (Projectile.timeLeft < 546)
         {
@@ -81,12 +75,8 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 453)
         {
@@ -102,12 +92,8 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 302)
         {
@@ -123,12 +109,8 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 151)
         {
@@ -144,22 +126,14 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
 
         if (Projectile.timeLeft < 7)
         {
             ProjectileID.Sets.IsARocketThatDealsDoubleDamageToPrimaryEnemy[Type] = false;
-
-
         }
-
-
         Projectile.velocity *= 0f;
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 5)
@@ -167,13 +141,7 @@ public class SlimeMine : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
     }
-
-
-
-
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -222,11 +190,7 @@ public class SlimeMine : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 5f;
         }
-
-
     }
-
-
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

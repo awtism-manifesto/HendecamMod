@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class SisyphusPrime : ModItem
@@ -22,8 +20,6 @@ public class SisyphusPrime : ModItem
         Item.scale = 1.6f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 185000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
@@ -31,11 +27,7 @@ public class SisyphusPrime : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-
-
 
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
@@ -44,8 +36,6 @@ public class SisyphusPrime : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         Item.mana = 9;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
@@ -59,8 +49,6 @@ public class SisyphusPrime : ModItem
         type = ModContent.ProjectileType<SisyphusBoulder>();
 
     }
-
-
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -93,8 +81,6 @@ public class SisyphusPrime : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -108,8 +94,6 @@ public class SisyphusPrime : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -120,15 +104,9 @@ public class SisyphusPrime : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LodeStoneIngot", out ModItem LodeStoneIngot))
-
-
         {
             recipe.AddIngredient(LodeStoneIngot.Type, 9);
-
-
         }
-
-
 
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

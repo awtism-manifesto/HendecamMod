@@ -54,8 +54,6 @@ public class TerraRoundCopy : ModProjectile
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
               new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
               Projectile.owner);
-
-
     }
 
     public override void AI()
@@ -74,8 +72,6 @@ public class TerraRoundCopy : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.TerraBlade, 0f, 0f, 100, default, 0.45f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.05f;
@@ -155,6 +151,4 @@ public class TerraRoundCopy : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy();
     }
-
-
 }

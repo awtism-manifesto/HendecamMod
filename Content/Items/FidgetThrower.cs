@@ -7,8 +7,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class FidgetThrower : ModItem
 {
     public override void SetDefaults()
@@ -20,8 +18,6 @@ public class FidgetThrower : ModItem
         Item.useTime = 23;
         Item.useAnimation = 23;
         Item.autoReuse = true;
-
-
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 45;
         Item.knockBack = 4f;
@@ -41,10 +37,6 @@ public class FidgetThrower : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -56,8 +48,6 @@ public class FidgetThrower : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

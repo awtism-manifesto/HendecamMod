@@ -19,19 +19,13 @@ public class AK47 : ModItem
         Item.scale = 0.64f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(gold: 25);
-
-
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item38;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -63,8 +57,6 @@ public class AK47 : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,8 +68,6 @@ public class AK47 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -92,8 +82,6 @@ public class AK47 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-27f, 3f);

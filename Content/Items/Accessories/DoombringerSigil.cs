@@ -26,11 +26,7 @@ public class DoombringerSigil : ModItem
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
-
-
     }
     public override void SetDefaults()
     {
@@ -66,8 +62,6 @@ public class DoombringerSigil : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - Also grants the same stat increases to Throwing class")
@@ -96,24 +90,16 @@ public class DoombringerSigil : ModItem
     }
     public override void AddRecipes()
     {
-
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.CelestialSigil);
         recipe.AddIngredient<RadioactiveEmblem>();
         recipe.AddIngredient<AmalgamatedFragment>();
-
-
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AscendantSpiritEssence", out ModItem AscendantSpiritEssence))
-
-
         {
             recipe.AddIngredient(AscendantSpiritEssence.Type, 5);
-
-
         }
 
     }
@@ -143,8 +129,6 @@ public class DoombringerSigil : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
         player.GetCritChance(DamageClass.Magic) += CritBonus;
         player.GetCritChance(DamageClass.Summon) += CritBonus;
-
-
         player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 107f;
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 107f;
         player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 107f;
@@ -160,8 +144,6 @@ public class DoombringerSigil : ModItem
         player.GetCritChance<OmniDamage>() += OmniArmorPenBonus;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 115f;
             player.GetAttackSpeed(DamageClass.Throwing) += AttackSpeedBonus / 107f;

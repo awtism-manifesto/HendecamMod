@@ -38,11 +38,7 @@ public class KingslayerMultiaxe : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -100,10 +96,6 @@ public class KingslayerMultiaxe : ModItem
         recipe.AddIngredient<KingslayerBar>(6);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
 
     }
 

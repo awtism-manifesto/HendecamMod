@@ -80,8 +80,6 @@ public class LargePlasmoid : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"Like their normal-sized counterparts, Large Plasmoids feed on radiation. Unlike normal Plasmoids, however, they seem to return to the edge of space when it's daytime\" "),
@@ -98,8 +96,6 @@ public class LargePlasmoid : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 5, 10));
 
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 3, 15, 30));
-
-
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

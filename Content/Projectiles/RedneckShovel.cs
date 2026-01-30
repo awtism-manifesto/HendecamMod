@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RedneckShovel : ModProjectile
@@ -25,8 +23,6 @@ public class RedneckShovel : ModProjectile
     {
 
         target.AddBuff(ModContent.BuffType<RedneckTag>(), 108);
-
-
     }
     public override void AI()
     {

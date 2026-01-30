@@ -21,14 +21,10 @@ public class PlutoArrowMinier : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-
-
         Projectile.friendly = true;
         Projectile.penetrate = 1;
         Projectile.DamageType = DamageClass.Ranged;
@@ -38,14 +34,10 @@ public class PlutoArrowMinier : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 170);
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -53,8 +45,6 @@ public class PlutoArrowMinier : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -120,8 +110,6 @@ public class PlutoArrowMinier : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(6)).ToRotationVector2() * length;
-
-
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range
@@ -168,10 +156,6 @@ public class PlutoArrowMinier : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class MidnightAfterburner : ModItem
@@ -22,14 +20,10 @@ public class MidnightAfterburner : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 5950);
-
-
         // Use Properties
 
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item74;
 
@@ -43,22 +37,12 @@ public class MidnightAfterburner : ModItem
         Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 5;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<OilBallRanged>();
 
         Item.shootSpeed = 14.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
-
-
-
-
-
-
-
-
 
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -76,8 +60,6 @@ public class MidnightAfterburner : ModItem
 
         for (int i = 0; i < NumProjectiles; i++)
         {
-
-
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(52.5f));
 
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(15));
@@ -87,8 +69,6 @@ public class MidnightAfterburner : ModItem
             Vector2 new6Velocity = velocity.RotatedBy(MathHelper.ToRadians(-52.5f));
             Vector2 new7Velocity = velocity.RotatedBy(MathHelper.ToRadians(-32.5f));
             Vector2 new8Velocity = velocity.RotatedBy(MathHelper.ToRadians(-15));
-
-
 
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.15f);
@@ -121,8 +101,6 @@ public class MidnightAfterburner : ModItem
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -134,8 +112,6 @@ public class MidnightAfterburner : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -161,29 +137,17 @@ public class MidnightAfterburner : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("DarkMatter", out ModItem DarkMatter))
-
-
         {
-
-
             recipe.AddIngredient(DarkMatter.Type, 10);
         }
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
-
-
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
 
-
-
         }
 
-
-
     }
-
-
 
     public override Vector2? HoldoutOffset()
     {

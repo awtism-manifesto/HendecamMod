@@ -7,8 +7,6 @@ namespace HendecamMod.Content.Buffs;
 public class Sauced : ModBuff
 {
     public static readonly int DefenseBonus = 6;
-
-
     public override LocalizedText Description => base.Description.WithFormatArgs(DefenseBonus);
 
     public override void Update(Player player, ref int buffIndex)

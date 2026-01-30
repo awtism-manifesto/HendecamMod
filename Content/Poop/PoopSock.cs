@@ -5,14 +5,10 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Poop;
 
 public class PoopSock : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -45,8 +41,6 @@ public class PoopSock : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -64,8 +58,6 @@ public class PoopSock : ModItem
     {
 
         player.AddBuff(BuffID.Stinky, 61);
-
-
         return true;
     }
     public override void AddRecipes()

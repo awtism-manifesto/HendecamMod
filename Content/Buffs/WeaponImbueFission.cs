@@ -5,8 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
-
-
 public class WeaponImbueFission : ModBuff
 {
     public override void SetStaticDefaults()

@@ -42,8 +42,6 @@ public class CausticCarrot : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -59,8 +57,6 @@ public class CausticCarrot : ModItem
     }
     public override void AddRecipes()
     {
-
-
 
         Recipe recipe = CreateRecipe(125);
         recipe.AddIngredient<Items.LycopiteBar>();

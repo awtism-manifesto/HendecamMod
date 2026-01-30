@@ -47,8 +47,6 @@ public class DragonBreathShell : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -65,11 +63,7 @@ public class DragonBreathShell : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SoulofPlight", out ModItem SoulofPlight))
-
-
         {
 
             recipe = CreateRecipe(400);

@@ -93,8 +93,6 @@ public class MarbleSwing : ModProjectile
 
         }
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -170,15 +168,11 @@ public class MarbleSwing : ModProjectile
         // The particles from the Particle Orchestra are predefined by vanilla and most can not be customized that much.
         // Use auto complete to see the other ParticleOrchestraType types there are.
         // Here we are spawning the Excalibur particle randomly inside of the target's hitbox.
-
-
         // You could also spawn dusts at the enemy position. Here is simple an example:
         // Dust.NewDust(Main.rand.NextVector2FromRectangle(target.Hitbox), 0, 0, ModContent.DustType<Content.Dusts.Sparkle>());
 
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
-
-
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Marble);
@@ -187,8 +181,6 @@ public class MarbleSwing : ModProjectile
             dust.scale *= 1.1f;
 
         }
-
-
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)

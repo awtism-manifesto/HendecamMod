@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ObsidianArrow : ModProjectile
@@ -48,8 +46,6 @@ public class ObsidianArrow : ModProjectile
 
     public override void AI()
     {
-
-
         float maxDetectRadius = 165f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -128,8 +124,4 @@ public class ObsidianArrow : ModProjectile
         target.immune[Projectile.owner] = 6;
 
     }
-
-
 }
-
-

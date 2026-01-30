@@ -18,8 +18,6 @@ public class ShadowCrystalSword : ModItem
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 999);
         Item.rare = ModContent.RarityType<Seizure>();
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 12;
         Item.useAnimation = 12;

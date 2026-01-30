@@ -11,14 +11,10 @@ public class PlutoniumGlassTile : ModTile
     {
         Main.tileSolid[Type] = true;
 
-
-
         DustType = DustID.PurpleTorch;
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(215, 171, 255));
     }
-
-
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 2 : 5;

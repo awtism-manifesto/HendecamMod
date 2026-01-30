@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class WaterDart : ModProjectile
@@ -41,8 +39,6 @@ public class WaterDart : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.833f);
-
-
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
@@ -93,8 +89,6 @@ public class WaterDart : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.WaterCandle, 0f, 0f, 100, default, 1f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             fireDust.velocity *= 3.99f;
@@ -117,8 +111,6 @@ public class WaterDart : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

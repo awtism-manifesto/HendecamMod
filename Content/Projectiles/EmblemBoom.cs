@@ -54,8 +54,6 @@ public class EmblemBoom : ModProjectile
     }
     public override void AI()
     {
-
-
         // Apply gravity after a quarter of a second
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 7f)
@@ -92,15 +90,11 @@ public class EmblemBoom : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
-
-
                 }
             }
 
@@ -119,10 +113,6 @@ public class EmblemBoom : ModProjectile
             Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + MathHelper.PiOver2;
         }
     }
-
-
-
-
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -150,10 +140,6 @@ public class EmblemBoom : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(275, 275);
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
         {
@@ -228,8 +214,6 @@ public class EmblemBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeeDust.velocity *= 4f;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

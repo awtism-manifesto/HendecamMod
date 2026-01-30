@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class LigmaLazerProj : ModProjectile
@@ -36,8 +34,6 @@ public class LigmaLazerProj : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -101,22 +97,8 @@ public class LigmaLazerProj : ModProjectile
     }
     public override void AI()
     {
-
-
-
-
-
-
         Lighting.AddLight(Projectile.Center, 0.5f, 0.1f, 0.1f);
 
-
-
-
-
     }
-
-
 }
-
-
 

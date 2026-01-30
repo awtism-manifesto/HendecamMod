@@ -92,8 +92,6 @@ public class HotShotsProj : ModProjectile
             dust.velocity *= 0.8f;
         }
 
-
-
         // Find an enemy to target.
         float closestTargetDistance = TargetingRange;
         NPC targetNPC = null;
@@ -141,8 +139,6 @@ public class HotShotsProj : ModProjectile
 
         // Count down the shoot timer
         ShootTimer--;
-
-
     }
 
     // Checks if npc is closer than current targetNPC. If so, adjust targetNPC and closestTargetDistance.

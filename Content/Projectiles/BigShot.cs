@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BigShot : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 90; // The width of projectile hitbox
@@ -45,14 +41,10 @@ public class BigShot : ModProjectile
             dust2.velocity *= 17.5f;
             dust2.scale *= 2.25f;
         }
-
-
     }
 
     public override void AI()
     {
-
-
 
         if (Projectile.timeLeft < 292)
         {
@@ -242,14 +234,6 @@ public class BigShot : ModProjectile
             Projectile.Resize(165, 165);
         }
 
-
-
-
-
-
-
     }
 
 }
-
-

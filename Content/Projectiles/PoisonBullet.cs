@@ -5,8 +5,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PoisonBullet : ModProjectile
@@ -35,8 +33,6 @@ public class PoisonBullet : ModProjectile
         Projectile.scale = 1.5f;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {

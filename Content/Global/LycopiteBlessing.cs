@@ -12,8 +12,6 @@ namespace HendecamMod.Content.Global;
 public class LycopiteBlessing : GlobalNPC
 {
 
-
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.Deerclops;
@@ -29,8 +27,6 @@ public class LycopiteBlessing : GlobalNPC
 
     }
 }
-
-
 public class LycopiteSystem : ModSystem
 {
     public static LocalizedText LycopiteMessage { get; private set; }
@@ -83,11 +79,3 @@ public class LycopiteSystem : ModSystem
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
 
 }
-
-
-
-
-
-
-
-

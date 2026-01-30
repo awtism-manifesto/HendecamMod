@@ -12,8 +12,6 @@ namespace HendecamMod.Content.Global;
 public class AzuriteBlessing : GlobalNPC
 {
 
-
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.SkeletronHead;
@@ -29,8 +27,6 @@ public class AzuriteBlessing : GlobalNPC
 
     }
 }
-
-
 public class AzuriteSystem : ModSystem
 {
     public static LocalizedText AzuriteMessage { get; private set; }
@@ -83,11 +79,3 @@ public class AzuriteSystem : ModSystem
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
 
 }
-
-
-
-
-
-
-
-

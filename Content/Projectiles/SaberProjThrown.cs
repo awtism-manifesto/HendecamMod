@@ -1,8 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SaberProjThrown : ModProjectile
@@ -32,8 +30,6 @@ public class SaberProjThrown : ModProjectile
             dust.scale *= 0.95f;
 
         }
-
-
 
     }
     public override void AI()

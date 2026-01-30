@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DemonFlame : ModProjectile
@@ -79,8 +77,4 @@ public class DemonFlame : ModProjectile
         target.immune[Projectile.owner] = 5;
         target.AddBuff(BuffID.ShadowFlame, 500);
     }
-
-
 }
-
-

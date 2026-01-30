@@ -12,8 +12,6 @@ public class PrismaticBullet : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
 
@@ -39,10 +37,6 @@ public class PrismaticBullet : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(1500);
-
-
-
-
         recipe.AddIngredient<Items.AstatineBar>(5);
         recipe.AddIngredient<Items.PlutoniumBar>(3);
         recipe.AddIngredient<Items.UraniumBar>();
@@ -51,11 +45,7 @@ public class PrismaticBullet : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-
-
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -67,8 +57,6 @@ public class PrismaticBullet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

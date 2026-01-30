@@ -3,14 +3,10 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PurifiedSaltRanged : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 14; // The width of projectile hitbox
@@ -39,8 +35,6 @@ public class PurifiedSaltRanged : ModProjectile
     public override void AI()
     {
 
-
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -65,13 +59,5 @@ public class PurifiedSaltRanged : ModProjectile
         }
     }
 
-
-
-
-
-
-
 }
-
-
 

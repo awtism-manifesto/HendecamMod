@@ -9,8 +9,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class LunarStaff : ModItem
 {
 
@@ -33,8 +31,6 @@ public class LunarStaff : ModItem
         Item.noMelee = true;
         Item.value = 75000;
         Item.rare = ItemRarityID.Orange;
-
-
         Item.shoot = ModContent.ProjectileType<LunarBolt>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.5f; // Speed of the projectiles the sword will shoot
 
@@ -45,21 +41,13 @@ public class LunarStaff : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
-
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
 
         SoundEngine.PlaySound(SoundID.Item91, player.position);
 
         return true;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -71,10 +59,6 @@ public class LunarStaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override Vector2? HoldoutOffset()
     {

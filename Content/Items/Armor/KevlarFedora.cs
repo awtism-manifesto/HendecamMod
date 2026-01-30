@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class KevlarFedora : ModItem
 {
-
-
     public static readonly int StupidArmorPenetration = 5;
     public static readonly int StupidAttackSpeedBonus = 11;
     public static readonly int MoveSpeedBonus = -3;
@@ -52,8 +50,6 @@ public class KevlarFedora : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -85,8 +81,6 @@ public class KevlarFedora : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 111f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.moveSpeed += MoveSpeedBonus / 97f;

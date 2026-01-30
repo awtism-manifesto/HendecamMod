@@ -18,8 +18,6 @@ public class LycopitePickaxe : ModItem
         Item.useTime = 8;
         Item.useAnimation = 14;
         Item.useTurn = true;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
 
@@ -57,11 +55,7 @@ public class LycopitePickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<LycopiteBar>(17);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

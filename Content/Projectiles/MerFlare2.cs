@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MerFlare2 : ModProjectile
@@ -85,8 +83,6 @@ public class MerFlare2 : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-5, 5), 775));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(16, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
@@ -146,15 +142,9 @@ public class MerFlare2 : ModProjectile
 
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-
-
-
-
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -192,6 +182,4 @@ public class MerFlare2 : ModProjectile
     }
 
 }
-
-
 

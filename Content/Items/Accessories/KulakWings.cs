@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Wings)]
 public class KulakWings : ModItem
 {
-
-
     public override void SetStaticDefaults()
     {
 
@@ -38,8 +36,6 @@ public class KulakWings : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -62,7 +58,5 @@ public class KulakWings : ModItem
         maxAscentMultiplier = 3f;
         constantAscend = 0.135f;
     }
-
-
 
 }

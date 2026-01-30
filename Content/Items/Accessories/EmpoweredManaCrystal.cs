@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Accessories;
 
 public class EmpoweredManaCrystal : ModItem

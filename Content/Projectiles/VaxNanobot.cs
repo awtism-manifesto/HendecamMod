@@ -19,8 +19,6 @@ public class VaxNanobot : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -137,10 +135,6 @@ public class VaxNanobot : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Electric);

@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class BionicBoomer : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 44; // The width of the item's hitbox.
@@ -47,13 +45,7 @@ public class BionicBoomer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
 
     public override Vector2? HoldoutOffset()
     {

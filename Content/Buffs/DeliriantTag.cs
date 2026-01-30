@@ -23,6 +23,4 @@ public class DeliriantTag : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

@@ -32,15 +32,11 @@ public class Bundlebuss : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item40;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 9.25f; // The speed of the projectile (measured in pixels per frame.)
@@ -70,8 +66,6 @@ public class Bundlebuss : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

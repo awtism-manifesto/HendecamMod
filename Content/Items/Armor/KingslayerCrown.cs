@@ -11,8 +11,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class KingslayerCrown : ModItem
 {
-
-
     public override void SetStaticDefaults()
     {
         // If your head equipment should draw hair while drawn, use one of the following:
@@ -24,8 +22,6 @@ public class KingslayerCrown : ModItem
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
 
     }
-
-
 
     public override void SetDefaults()
     {
@@ -46,8 +42,6 @@ public class KingslayerCrown : ModItem
         recipe.AddIngredient<KingslayerBar>(2);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.PlatinumCrown);
         recipe.AddIngredient<KingslayerBar>(2);
@@ -59,10 +53,6 @@ public class KingslayerCrown : ModItem
         recipe.AddIngredient<KingslayerBar>(5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -76,8 +66,6 @@ public class KingslayerCrown : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -93,7 +81,5 @@ public class KingslayerCrown : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-
-
 
 }

@@ -19,8 +19,6 @@ public class YellowOne : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
-
-
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(200, 200, 0), Language.GetText("Yellow Uno Card"));

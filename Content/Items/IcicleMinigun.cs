@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class IcicleMinigun : ModItem
@@ -22,20 +20,14 @@ public class IcicleMinigun : ModItem
         Item.scale = 0.85f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 88000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 9; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item27;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 49; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -44,8 +36,6 @@ public class IcicleMinigun : ModItem
 
         Item.ArmorPenetration = 5;
         Item.mana = 7;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<IcicleRanged>();
@@ -59,8 +49,6 @@ public class IcicleMinigun : ModItem
         type = ModContent.ProjectileType<IcicleRanged>();
 
     }
-
-
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -94,8 +82,6 @@ public class IcicleMinigun : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -109,8 +95,6 @@ public class IcicleMinigun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

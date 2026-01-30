@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Electrobomb : ModProjectile
@@ -64,12 +62,8 @@ public class Electrobomb : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
         float maxDetectRadius = 305f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -104,8 +98,6 @@ public class Electrobomb : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-
-
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -174,10 +166,6 @@ public class Electrobomb : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(75, 75);
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 25; j++)
         {
@@ -189,13 +177,5 @@ public class Electrobomb : ModProjectile
 
         }
 
-
-
-
-
     }
-
-
 }
-
-

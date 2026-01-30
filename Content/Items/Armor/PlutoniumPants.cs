@@ -26,8 +26,6 @@ public class PlutoniumPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -51,11 +49,7 @@ public class PlutoniumPants : ModItem
         };
         tooltips.Add(line);
 
-
-
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "7% increased throwing damage")
@@ -93,13 +87,9 @@ public class PlutoniumPants : ModItem
         player.lifeRegen += -1;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 107f;
-
-
         }
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -131,8 +121,6 @@ public class PlutoniumPants : ModItem
             {
                 return;
             }
-
-
             Player.runAcceleration *= 1.21f;
             Player.maxRunSpeed *= 1.21f;
             Player.accRunSpeed *= 1.21f;

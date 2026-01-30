@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class Casanova : ModItem
@@ -23,39 +21,25 @@ public class Casanova : ModItem
         Item.scale = 0.875f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 225000;
-
-
         // Use Properties
         Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 10; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item5;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 17.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ModContent.ProjectileType<CasaShot>();
-
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -76,8 +60,6 @@ public class Casanova : ModItem
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-
-
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -118,10 +100,6 @@ public class Casanova : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
-
-
 
     public override Vector2? HoldoutOffset()
     {

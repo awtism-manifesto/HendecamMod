@@ -57,8 +57,6 @@ public class PlasmaLaser : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // If timeLeft is <= 3, then explode the rocket.
@@ -80,8 +78,6 @@ public class PlasmaLaser : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {

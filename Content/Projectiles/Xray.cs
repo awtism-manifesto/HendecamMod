@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Xray : ModProjectile
@@ -65,8 +63,4 @@ public class Xray : ModProjectile
         target.immune[Projectile.owner] = 5;
 
     }
-
-
 }
-
-

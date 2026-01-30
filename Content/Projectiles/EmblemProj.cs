@@ -50,8 +50,6 @@ public class EmblemProj : ModProjectile
 
     public override void AI()
     {
-
-
         int frameSpeed = 5;
 
         Projectile.frameCounter++;
@@ -64,8 +62,6 @@ public class EmblemProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // dust, all dust

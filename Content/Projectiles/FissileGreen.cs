@@ -51,8 +51,6 @@ public class FissileGreen : ModProjectile
     }
     public override void AI()
     {
-
-
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -71,16 +69,12 @@ public class FissileGreen : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-
-
                     Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.2f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 1.15f;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -121,13 +115,9 @@ public class FissileGreen : ModProjectile
 
         // Play an exploding sound.
 
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(18, 19);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -147,8 +137,6 @@ public class FissileGreen : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1f);
             fireDust.velocity *= 1f;
         }
-
-
 
     }
 }

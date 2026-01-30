@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
-
-
 public class PlutoParticle : ModProjectile
 {
     private NPC HomingTarget
@@ -143,6 +141,4 @@ public class PlutoParticle : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
 

@@ -12,8 +12,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class Blackshard : ModItem
 {
 
@@ -40,8 +38,6 @@ public class Blackshard : ModItem
         Item.ArmorPenetration = 50;
         Item.value = 6666666;
         Item.rare = ModContent.RarityType<Seizure>();
-
-
         Item.shoot = ModContent.ProjectileType<KnightSpawn>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.25f; // Speed of the projectiles the sword will shoot
 
@@ -60,44 +56,22 @@ public class Blackshard : ModItem
         }
 
     }
-
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<KnightSpawn>();
-
-
-
-
-
-
     }
 
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
-
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
-
-
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(24.5f));
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.375f);
-
-
-
-
         if (player.altFunctionUse == 2)
         {
 
@@ -116,8 +90,6 @@ public class Blackshard : ModItem
                 Main.projectile[proj2].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
 
             }
-
-
             return false;
         }
 
@@ -182,11 +154,7 @@ public class Blackshard : ModItem
         recipe.AddIngredient(ItemID.UnholyTrident);
 
         recipe.AddIngredient(ItemID.EmpressBlade);
-
-
         recipe.AddIngredient(ItemID.CandyCaneSword);
-
-
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
@@ -196,19 +164,13 @@ public class Blackshard : ModItem
         }
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariansLastKnife", out ModItem TerrariansLastKnife) && ThorMerica.TryFind("DarkMatter", out ModItem DarkMatter))
-
-
         {
 
             recipe.AddIngredient(TerrariansLastKnife.Type);
             recipe.AddIngredient(ItemID.DarkShard, 3);
             recipe.AddIngredient(DarkMatter.Type, 10);
         }
-
-
         if (!ModLoader.TryGetMod("ThoriumMod", out Mod SkillIssue))
-
-
         {
 
             recipe.AddIngredient(ItemID.DarkShard, 3);

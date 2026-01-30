@@ -84,8 +84,6 @@ public class OilSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -166,8 +164,6 @@ public class OilSwing : ModProjectile
             ModContent.ProjectileType<OilBoom>(), (int)(Projectile.damage * 1.5f), Projectile.knockBack, Projectile.owner);
 
         }
-
-
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }

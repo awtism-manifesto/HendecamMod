@@ -62,8 +62,6 @@ public class MintLeafProjectile : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
@@ -138,10 +136,4 @@ public class MintLeafProjectile : ModProjectile
         return closestNPC;
     }
 
-
-
-
-
 }
-
-

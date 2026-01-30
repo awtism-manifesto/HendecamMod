@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DragonSpawnShadow : ModProjectile
@@ -83,12 +81,8 @@ public class DragonSpawnShadow : ModProjectile
         return true;
     }
 
-
-
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
@@ -155,14 +149,10 @@ public class DragonSpawnShadow : ModProjectile
         Vector2 Peanits16 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits16, velocity16,
         ModContent.ProjectileType<DragonBreath3Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-
-
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
     }
 
 }
-
-
 

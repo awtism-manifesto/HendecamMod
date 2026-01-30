@@ -15,8 +15,6 @@ public class Plasmophobia : ModAchievement
     {
         Achievement.SetCategory(AchievementCategory.Slayer);
 
-
-
         AddNPCKilledCondition(ModContent.NPCType<UnstablePlasmoid>());
     }
 

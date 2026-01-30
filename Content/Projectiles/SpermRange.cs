@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SpermRange : ModProjectile
@@ -58,8 +56,6 @@ public class SpermRange : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
@@ -134,10 +130,4 @@ public class SpermRange : ModProjectile
         return closestNPC;
     }
 
-
-
-
-
 }
-
-

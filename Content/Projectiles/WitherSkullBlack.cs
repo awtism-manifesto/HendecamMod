@@ -48,11 +48,7 @@ public class WitherSkullBlack : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
         Projectile.rotation += 0.15f;
-
-
 
     }
 
@@ -110,8 +106,6 @@ public class WitherSkullBlack : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -119,6 +113,4 @@ public class WitherSkullBlack : ModProjectile
         target.AddBuff(BuffID.Poisoned, 240);
 
     }
-
-
 }

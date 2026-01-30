@@ -23,8 +23,6 @@ public class CrystalBeef : GlobalProjectile
         {
 
             projectile.scale = 1.66f;
-
-
         }
     }
 }
@@ -41,8 +39,6 @@ public class FastBow : GlobalProjectile
         {
 
             projectile.extraUpdates = 1;
-
-
         }
     }
 }
@@ -59,8 +55,6 @@ public class FastBees : GlobalProjectile
         {
 
             projectile.extraUpdates = 3;
-
-
         }
     }
 }
@@ -78,8 +72,6 @@ public class FastLaserSwords : GlobalProjectile
         {
 
             projectile.extraUpdates = 2;
-
-
         }
     }
 }
@@ -122,8 +114,6 @@ public class HarpyBuff : GlobalProjectile
             nextSpawnTick = 1;
         }
 
-
-
         if (tickCounter >= nextSpawnTick && projectile.type == ProjectileID.HarpyFeather && Main.expertMode)
         {
             Vector2 velocity = projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
@@ -141,8 +131,6 @@ public class HarpyBuff : GlobalProjectile
         }
 
     }
-
-
 }
 public class FrostCoreTack : GlobalProjectile
 {
@@ -159,8 +147,6 @@ public class FrostCoreTack : GlobalProjectile
             tickCounter++;
             nextSpawnTick = 1;
         }
-
-
 
         if (tickCounter >= nextSpawnTick && projectile.type == ProjectileID.FrostBeam && Main.masterMode)
         {
@@ -187,16 +173,12 @@ public class FrostCoreTack : GlobalProjectile
         }
 
     }
-
-
 }
 public class DeerBurn : GlobalProjectile
 {
     public bool DeerclopsAttack;
 
     public override bool InstancePerEntity => true;
-
-
 
     public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info)
     {
@@ -250,8 +232,6 @@ public class VPCombo : GlobalProjectile
         {
 
             projectile.extraUpdates = 4;
-
-
         }
     }
 
@@ -293,23 +273,15 @@ public class VPComboSetup : GlobalProjectile
         {
 
             projectile.extraUpdates = 3;
-
-
         }
     }
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         if (!fromtheVP70)
             return;
 
         target.AddBuff(ModContent.BuffType<VpTag>(), 95);
-
-
-
-
     }
 }
 public class KnightComboSetup : GlobalProjectile
@@ -321,20 +293,12 @@ public class KnightComboSetup : GlobalProjectile
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         if (!fromtheBlackshard)
             return;
 
         target.AddBuff(ModContent.BuffType<BlackshardDebuff>(), 196);
-
-
-
-
     }
 }
-
-
 public class DeliriantComboSetup : GlobalProjectile
 {
     public bool fromtheDeliriantDagger;
@@ -344,23 +308,11 @@ public class DeliriantComboSetup : GlobalProjectile
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         if (!fromtheDeliriantDagger)
             return;
-
-
-
-
         target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
-
-
-
-
     }
 }
-
-
 public class VerdantComboSetup : GlobalProjectile
 {
     public bool fromtheVerdantClaymore;
@@ -370,20 +322,12 @@ public class VerdantComboSetup : GlobalProjectile
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         if (!fromtheVerdantClaymore)
             return; // Only apply buff if this is a left-click setup shot
 
         target.AddBuff(ModContent.BuffType<VerdantTag>(), 125);
-
-
-
-
     }
 }
-
-
 public class VerdantCombo : GlobalProjectile
 {
     public bool fromVerdantClaymore;
@@ -407,10 +351,6 @@ public class VerdantCombo : GlobalProjectile
             player.AddBuff(ModContent.BuffType<JungleHealing>(), 100); // 300 = 5 seconds (60 ticks per second)
 
         }
-
-
-
-
     }
     public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
     {
@@ -419,11 +359,5 @@ public class VerdantCombo : GlobalProjectile
             modifiers.SourceDamage *= 1.85f;
         }
     }
-
-
-
-
-
-
 
 }

@@ -87,10 +87,6 @@ public class AstaSwing : ModProjectile
 
         // Here we spawn some dust inside the arc of the swing.
 
-
-
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -112,15 +108,9 @@ public class AstaSwing : ModProjectile
     // Or if the projectile hasn't already hit all of the targets it can with Projectile.penetrate
     public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
     {
-
-
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
 
-
-
         float coneLength = 85f * Projectile.scale;
-
-
 
         // This number affects how much the start and end of the collision will be rotated.
         // Bigger Pi numbers will rotate the collision counter clockwise.
@@ -183,8 +173,6 @@ public class AstaSwing : ModProjectile
 
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
-
-
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
@@ -199,8 +187,6 @@ public class AstaSwing : ModProjectile
         ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
-
-
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)

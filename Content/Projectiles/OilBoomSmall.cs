@@ -86,8 +86,6 @@ public class OilBoomSmall : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -148,13 +146,9 @@ public class OilBoomSmall : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(130, 130);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)

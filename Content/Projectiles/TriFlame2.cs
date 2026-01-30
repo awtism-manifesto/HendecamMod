@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class TriFlame2 : ModProjectile
@@ -57,8 +55,6 @@ public class TriFlame2 : ModProjectile
                 fire1Dust.noGravity = true;
                 fire1Dust.velocity *= 3.5f;
 
-
-
             }
         }
     }
@@ -69,8 +65,4 @@ public class TriFlame2 : ModProjectile
 
         target.AddBuff(BuffID.Frostburn2, 240);
     }
-
-
 }
-
-

@@ -26,8 +26,6 @@ public class SteelAnvilPlaced : ModTile
         TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
         TileObjectData.newTile.CoordinateHeights = new[] { 18 };
         TileObjectData.addTile(Type);
-
-
         AddMapEntry(new Color(45, 45, 45), Language.GetText("Steel Anvil"));
     }
 

@@ -84,8 +84,6 @@ public class ManeSwing : ModProjectile
         // The other sword projectiles that use AI Style 190 have different effects.
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -209,8 +207,6 @@ public class ManeSwing : ModProjectile
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects, 0f);
         // Thin bottom line (final frame)
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
-
-
         return false;
     }
 

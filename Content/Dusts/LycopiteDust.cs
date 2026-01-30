@@ -33,8 +33,6 @@ public class LycopiteDust : ModDust
 
         Lighting.AddLight(dust.position, lightR, lightG, lightB);
 
-
-
         return true; // RETURN TRUE
     }
     public override Color? GetAlpha(Dust dust, Color lightColor)

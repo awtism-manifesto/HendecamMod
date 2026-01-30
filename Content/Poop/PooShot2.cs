@@ -3,14 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Poop;
 
 public class PooShot2 : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 9; // The width of projectile hitbox
@@ -92,8 +88,4 @@ public class PooShot2 : ModProjectile
         target.AddBuff(BuffID.Poisoned, 180);
         target.AddBuff(BuffID.Stinky, 900);
     }
-
-
 }
-
-

@@ -42,8 +42,6 @@ public class PoopSword : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.15f));
 
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 
@@ -66,10 +64,6 @@ public class PoopSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {

@@ -14,8 +14,6 @@ public class RadPoisoning : ModBuff
         Main.buffNoSave[Type] = true;
 
     }
-
-
     public override void Update(Player player, ref int buffIndex)
     {
         player.GetModPlayer<RadPlayer>().Rad = true;
@@ -23,8 +21,6 @@ public class RadPoisoning : ModBuff
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-
-
         if (Main.rand.NextBool(3))
         {
             int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<UraniumDust>(),
@@ -33,8 +29,6 @@ public class RadPoisoning : ModBuff
         }
 
         npc.GetGlobalNPC<RadTick>().Radded = true;
-
-
     }
 
     public class RadPlayer : ModPlayer

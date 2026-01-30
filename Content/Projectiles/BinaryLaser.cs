@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BinaryLaser : ModProjectile
@@ -36,8 +34,6 @@ public class BinaryLaser : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -56,8 +52,6 @@ public class BinaryLaser : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
 
         for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
         {

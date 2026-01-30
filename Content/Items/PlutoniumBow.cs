@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PlutoniumBow : ModItem
@@ -20,44 +18,30 @@ public class PlutoniumBow : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 172000;
-
-
         // Use Properties
         Item.useTime = 58; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 58; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item102;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 84; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 15;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 14.8f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ModContent.ProjectileType<PlutoArrow>();
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PlutoArrow>();
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -70,8 +54,6 @@ public class PlutoniumBow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -97,8 +79,6 @@ public class PlutoniumBow : ModItem
         recipe = CreateRecipe();
 
     }
-
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

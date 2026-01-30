@@ -59,8 +59,6 @@ public class River : ModNPC
         NPCID.Sets.ShimmerTownTransform[NPC.type] = true; // This set says that the Town NPC has a Shimmered form. Otherwise, the Town NPC will become transparent when touching Shimmer like other enemies.
 
         NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
-
-
         // Influences how the NPC looks in the Bestiary
         NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
         {
@@ -79,8 +77,6 @@ public class River : ModNPC
             .SetBiomeAffection<OceanBiome>(AffectionLevel.Hate) // Example Person dislikes the snow.
               .SetBiomeAffection<SnowBiome>(AffectionLevel.Like) // Example Person prefers the forest.
                 .SetBiomeAffection<JungleBiome>(AffectionLevel.Dislike) // Example Person prefers the forest.
-
-
             .SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike) // Loves living near the dryad.
             .SetNPCAffection(ModContent.NPCType<NPCs.Politician>(), AffectionLevel.Hate) // Likes living near the guide.
             .SetNPCAffection(NPCID.Angler, AffectionLevel.Love) // Dislikes living near the merchant.
@@ -152,8 +148,6 @@ public class River : ModNPC
     {
         int num = NPC.life > 0 ? 1 : 5;
 
-
-
         // Create gore when the NPC is killed.
         if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
         {
@@ -208,8 +202,6 @@ public class River : ModNPC
     public override string GetChat()
     {
         WeightedRandom<string> chat = new WeightedRandom<string>();
-
-
         // These are things that the NPC has a chance of telling you when you talk to it.
 
         if (NPC.IsShimmerVariant)
@@ -234,22 +226,16 @@ public class River : ModNPC
         {
             chat.Add(Language.GetTextValue("Sitting outside while it's raining, letting the drops run off my horns... It's a feeling like no other."));
 
-
-
         }
 
         if (Main.raining && Main.WindyEnoughForKiteDrops)
         {
 
             chat.Add(Language.GetTextValue("Both rain AND wind??? What's not to love!"));
-
-
         }
         if (Main.bloodMoon)
         {
             chat.Add(Language.GetTextValue("Hehe, I'm in danger"));
-
-
         }
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica)))
         {
@@ -258,8 +244,6 @@ public class River : ModNPC
 
         chat.Add(Language.GetTextValue("I've been having nightmares about this terrifying monster. It looks like an amalgamation of the bosses we've fought..."));
         chat.Add(Language.GetTextValue("Why do we keep recruiting enemies to our town? this is like the sixth or seventh time, dude"));
-
-
         chat.Add(Language.GetTextValue("c-crab...b-bannerss... Bwuh- Sorry, did you need something?"));
         chat.Add(Language.GetTextValue("Some may call this junk. Me? I call them treasures"));
         chat.Add(Language.GetTextValue("You ever stick your head out of a window and let the wind blow in your face like a dog? N-no..? Heh, yeah, me neither..."));
@@ -269,11 +253,7 @@ public class River : ModNPC
         chat.Add(Language.GetTextValue("Turns out the Stupidest Fucking Pickaxe is NOT better than The Second Amendment"));
 
         NumberOfTimesTalkedTo++;
-
-
         string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
-
-
 
         return chosenChat;
     }
@@ -306,8 +286,6 @@ public class River : ModNPC
 
         return false;
     }
-
-
     public override void OnChatButtonClicked(bool firstButton, ref string shop)
     {
         if (firstButton)
@@ -322,8 +300,6 @@ public class River : ModNPC
     public override void AddShops()
     {
         var npcShop = new NPCShop(Type, ShopName)
-
-
                 .Add<AnUnoDeck>()
              .Add<Items.RockSalt>(Condition.DownedEarlygameBoss)
           .Add<Items.PurifiedSalt>(Condition.DownedMechBossAny)
@@ -344,15 +320,9 @@ public class River : ModNPC
             .Add<Items.PridePartyHat>()
                .Add<Items.CollarOfTheDamned>()
             .Add(ItemID.FishingBobberGlowingStar)
-
-
          .Add(ItemID.Extractinator, Condition.DownedEarlygameBoss)
 
                 .Add<Items.OtherworldlySixPack>(Condition.DownedPlantera)
-
-
-
-
                .Add<StupidestFuckingPickaxe>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<StupiderFuckingPickaxe>()))
              .Add<Bullshit1>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit1>()))
                .Add<Bullshit2>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit2>()))
@@ -365,38 +335,30 @@ public class River : ModNPC
 
                       .Add(ItemID.CrabBanner, Condition.InBeach)
 
-
-
-
-
         ;
-
-
         npcShop.Register(); // Name of this shop tab
 
         if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
         {
-
-
             npcShop.Add(ItemID.PoopBlock);
 
         }
 
         if (ModLoader.TryGetMod("PrideDye", out Mod PrideMerica) && PrideMerica.TryFind<ModItem>("GenderfluidDye", out ModItem GenderfluidDye)
             && PrideMerica.TryFind<ModItem>("GayDye", out ModItem GayDye)
-             && PrideMerica.TryFind<ModItem>("BisexualDye", out ModItem BisexualDye)
-              && PrideMerica.TryFind<ModItem>("DemiboyDye", out ModItem DemiboyDye)
-               && PrideMerica.TryFind<ModItem>("NonbinaryDye", out ModItem NonbinaryDye)
-                && PrideMerica.TryFind<ModItem>("AgenderDye", out ModItem AgenderDye)
-                  && PrideMerica.TryFind<ModItem>("AsexualDye", out ModItem AsexualDye)
-                    && PrideMerica.TryFind<ModItem>("AromanticDye", out ModItem AromanticDye)
-                 && PrideMerica.TryFind<ModItem>("DemigenderDye", out ModItem DemigenderDye)
+            && PrideMerica.TryFind<ModItem>("BisexualDye", out ModItem BisexualDye)
+            && PrideMerica.TryFind<ModItem>("DemiboyDye", out ModItem DemiboyDye)
+            && PrideMerica.TryFind<ModItem>("NonbinaryDye", out ModItem NonbinaryDye)
+            && PrideMerica.TryFind<ModItem>("AgenderDye", out ModItem AgenderDye)
+            && PrideMerica.TryFind<ModItem>("AsexualDye", out ModItem AsexualDye)
+            && PrideMerica.TryFind<ModItem>("AromanticDye", out ModItem AromanticDye)
+            && PrideMerica.TryFind<ModItem>("DemigenderDye", out ModItem DemigenderDye)
             && PrideMerica.TryFind<ModItem>("AroaceDye", out ModItem AroaceDye)
-             && PrideMerica.TryFind<ModItem>("LesbianDye", out ModItem LesbianDye)
-                && PrideMerica.TryFind<ModItem>("PansexualDye", out ModItem PansexualDye)
-                  && PrideMerica.TryFind<ModItem>("DemigirlDye", out ModItem DemigirlDye)
-                  && PrideMerica.TryFind<ModItem>("TransgenderDye", out ModItem TransgenderDye)
-              && PrideMerica.TryFind<ModItem>("OmnisexualDye", out ModItem OmnisexualDye))
+            && PrideMerica.TryFind<ModItem>("LesbianDye", out ModItem LesbianDye)
+            && PrideMerica.TryFind<ModItem>("PansexualDye", out ModItem PansexualDye)
+            && PrideMerica.TryFind<ModItem>("DemigirlDye", out ModItem DemigirlDye)
+            && PrideMerica.TryFind<ModItem>("TransgenderDye", out ModItem TransgenderDye)
+            && PrideMerica.TryFind<ModItem>("OmnisexualDye", out ModItem OmnisexualDye))
 
         {
             npcShop.Add(GenderfluidDye.Type);
@@ -416,10 +378,6 @@ public class River : ModNPC
             npcShop.Add(OmnisexualDye.Type);
         }
     }
-
-
-
-
     public override void ModifyActiveShop(string shopName, Item[] items)
     {
         foreach (Item item in items)
@@ -444,17 +402,11 @@ public class River : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverGun>(), 2));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverMachinegun>(), 25));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bullshit1>(), 201));
-
-
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit2>(), chanceDenominator: 911, chanceNumerator: 2));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit3>(), chanceDenominator: 42069, chanceNumerator: 15));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit4>(), chanceDenominator: 420691984, chanceNumerator: 3996));
         npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<Bullshit5>(), chanceDenominator: 911676767, chanceNumerator: 67));
     }
-
-
-
-
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
     {
         damage = 9;
@@ -489,10 +441,4 @@ public class River : ModNPC
     {
         tag["numberOfTimesTalkedTo"] = NumberOfTimesTalkedTo;
     }
-
-
 }// autism manifesto was here
-
-
-
-

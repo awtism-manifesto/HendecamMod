@@ -26,8 +26,6 @@ public class PlutoniumOrePlaced : ModTile
         DustType = DustID.PurpleTorch;
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(205, 151, 245));
-
-
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;
     }

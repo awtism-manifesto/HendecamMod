@@ -52,8 +52,6 @@ public class FlyingPig : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),

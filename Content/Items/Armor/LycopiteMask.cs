@@ -12,8 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class LycopiteMask : ModItem
 {
-
-
     public static readonly int MeleeCritBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 5;
     public static readonly int AttackSpeedBonus = 14;
@@ -56,8 +54,6 @@ public class LycopiteMask : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -89,8 +85,6 @@ public class LycopiteMask : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
         player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 114f;
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;

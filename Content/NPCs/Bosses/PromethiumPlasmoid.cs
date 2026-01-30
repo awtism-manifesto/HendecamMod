@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.NPCs.Bosses;
 
 [AutoloadBossHead]

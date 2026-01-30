@@ -21,8 +21,6 @@ public class UraniumDust : ModDust
         dust.color = Color.LimeGreen;
         dust.scale = 1f;
         dust.alpha = 100;
-
-
     }
     public override bool Update(Dust dust)
     {
@@ -32,8 +30,6 @@ public class UraniumDust : ModDust
         float lightB = 0.6f * dust.scale;
 
         Lighting.AddLight(dust.position, lightR, lightG, lightB);
-
-
 
         return true; // RETURN TRUE
     }

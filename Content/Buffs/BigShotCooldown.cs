@@ -10,8 +10,6 @@ public class BigShotCooldown : ModBuff
     {
         Main.debuff[Type] = true;
 
-
-
     }
 
 }

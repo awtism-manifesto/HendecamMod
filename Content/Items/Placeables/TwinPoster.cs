@@ -37,8 +37,6 @@ public class TwinPoster : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     public override void AddRecipes()
     {
@@ -48,7 +46,5 @@ public class TwinPoster : ModItem
         recipe.AddIngredient(ItemID.PaperAirplaneA, 1);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
     }
 }

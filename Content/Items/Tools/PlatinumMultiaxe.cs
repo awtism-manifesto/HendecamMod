@@ -33,11 +33,7 @@ public class PlatinumMultiaxe : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -88,12 +84,6 @@ public class PlatinumMultiaxe : ModItem
         recipe.AddIngredient(ItemID.PlatinumPickaxe);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
 
 }

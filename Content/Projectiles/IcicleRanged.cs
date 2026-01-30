@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class IcicleRanged : ModProjectile
@@ -52,8 +50,6 @@ public class IcicleRanged : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         if (Math.Abs(Projectile.velocity.X) >= 7.5f && Math.Abs(Projectile.velocity.Y) >= 7.5f)
@@ -75,8 +71,6 @@ public class IcicleRanged : ModProjectile
             fireDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             fireDust.velocity *= 0.15f;
             fireDust.noGravity = true;
-
-
         }
     }
 
@@ -85,8 +79,6 @@ public class IcicleRanged : ModProjectile
         target.AddBuff(BuffID.Frostburn, 240);
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.AddBuff(BuffID.Frostburn2, 120);
-
-
     }
     public override void OnKill(int timeLeft)
     {
@@ -96,5 +88,3 @@ public class IcicleRanged : ModProjectile
     }
 
 }
-
-

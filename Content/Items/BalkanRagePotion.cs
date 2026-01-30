@@ -50,8 +50,6 @@ public class BalkanRagePotion : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -68,8 +66,6 @@ public class BalkanRagePotion : ModItem
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
-
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<LeadskinPotion>();
         recipe.AddIngredient<WeedLeaves>();
@@ -85,10 +81,6 @@ public class BalkanRagePotion : ModItem
         recipe.AddIngredient<UraniumOre>();
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-
-
-
-
 
     }
 

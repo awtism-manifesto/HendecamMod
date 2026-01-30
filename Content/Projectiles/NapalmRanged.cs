@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class NapalmRanged : ModProjectile
@@ -93,8 +91,6 @@ public class NapalmRanged : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Lava, 0f, 0f, 100, default, 0.35f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
             fireDust.velocity *= 0.05f;
@@ -117,8 +113,6 @@ public class NapalmRanged : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

@@ -8,8 +8,6 @@ namespace HendecamMod.Content.Buffs;
 public class BrainRotted : ModBuff
 {
     public static readonly int AdditiveStupidDamageBonus = 10;
-
-
     public override LocalizedText Description => base.Description.WithFormatArgs(AdditiveStupidDamageBonus);
 
     public override void Update(Player player, ref int buffIndex)

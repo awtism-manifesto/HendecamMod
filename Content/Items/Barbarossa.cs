@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class Barbarossa : ModItem
@@ -21,35 +19,25 @@ public class Barbarossa : ModItem
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 9705);
-
-
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 15;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 22f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -77,8 +65,6 @@ public class Barbarossa : ModItem
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -90,8 +76,6 @@ public class Barbarossa : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -115,15 +99,7 @@ public class Barbarossa : ModItem
         recipe.AddIngredient<StalingradSpewer>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 
     public override Vector2? HoldoutOffset()
     {

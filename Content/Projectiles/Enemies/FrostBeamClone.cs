@@ -28,6 +28,4 @@ public class FrostBeamClone : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-
-
 }

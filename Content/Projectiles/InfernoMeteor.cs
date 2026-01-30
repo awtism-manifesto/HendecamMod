@@ -37,8 +37,6 @@ public class InfernoMeteor : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-
-
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
 
@@ -64,8 +62,6 @@ public class InfernoMeteor : ModProjectile
             Projectile.velocity.Y = Main.rand.NextFloat(-1f, 1f);
 
         }
-
-
         Projectile.scale = Main.rand.NextFloat(0.85f, 1.15f);
 
         Lighting.AddLight(Projectile.Center, 1.95f, 0.8f, 0.35f);
@@ -167,8 +163,6 @@ public class InfernoMeteor : ModProjectile
 
         }
 
-
-
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
     public bool IsValidTarget(NPC target)
@@ -184,6 +178,4 @@ public class InfernoMeteor : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-
 

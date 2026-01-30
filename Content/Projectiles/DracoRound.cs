@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DracoRound : ModProjectile
@@ -82,8 +80,6 @@ public class DracoRound : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
 
@@ -110,6 +106,4 @@ public class DracoRound : ModProjectile
     }
 
 }
-
-
 

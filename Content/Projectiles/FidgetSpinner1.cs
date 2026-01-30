@@ -100,8 +100,6 @@ public class FidgetSpinner1 : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 

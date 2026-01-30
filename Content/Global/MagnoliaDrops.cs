@@ -8,8 +8,6 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 
-
-
 public class MagnoliaDrops : GlobalNPC
 {
     // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
@@ -78,8 +76,6 @@ public class MagnoliaDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
 
         }
-
-
         if (npc.type == NPCID.PossessedArmor)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteelBar>(), chanceDenominator: 5, 1, 3));
@@ -143,8 +139,6 @@ public class MagnoliaDrops : GlobalNPC
         if (npc.type == NPCID.Wraith)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
-
-
         }
         if (npc.type == NPCID.WanderingEye)
         {

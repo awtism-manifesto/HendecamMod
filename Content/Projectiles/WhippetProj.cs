@@ -36,12 +36,8 @@ public class WhippetProj : ModProjectile
         set => Projectile.ai[0] = value;
     }
 
-
-
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<LilTMan>(), 240);
@@ -50,14 +46,10 @@ public class WhippetProj : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
-
-
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.

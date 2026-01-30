@@ -21,21 +21,15 @@ public class GeigersGambit : ModItem
         Item.value = 22500000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 75; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 75; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
 
         Item.UseSound = Terraria.ID.SoundID.Item46;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 1190; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -43,21 +37,13 @@ public class GeigersGambit : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 50;
 
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 2f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.RocketI;
-
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -69,8 +55,6 @@ public class GeigersGambit : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient<Items.Autocannon>();
         recipe.AddIngredient<Items.FissionDrive>(2);
@@ -78,11 +62,7 @@ public class GeigersGambit : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
-
-
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -94,8 +74,6 @@ public class GeigersGambit : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -110,8 +88,6 @@ public class GeigersGambit : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

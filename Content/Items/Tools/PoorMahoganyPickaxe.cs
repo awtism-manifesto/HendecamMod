@@ -47,11 +47,7 @@ public class PoorMahoganyPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<PoorMahogany>(14);
-
-
         recipe.AddTile(TileID.WorkBenches);
 
         recipe.Register();

@@ -4,13 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
-
-
 public class SporeShiv : ModItem
 {
     public override void SetDefaults()
@@ -39,12 +33,6 @@ public class SporeShiv : ModItem
 
         }
     }
-
-
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -62,25 +50,13 @@ public class SporeShiv : ModItem
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<LycopiteBar>(10);
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

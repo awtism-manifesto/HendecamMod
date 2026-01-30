@@ -16,8 +16,6 @@ public class PlutoniumGlassSword : ModItem
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 25);
         Item.rare = ItemRarityID.LightPurple;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 11;
         Item.useAnimation = 11;

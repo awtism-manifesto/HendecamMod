@@ -4,8 +4,6 @@ using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Poop;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Global;
 
 public class MericaNPCShops : GlobalNPC
@@ -20,12 +18,8 @@ public class MericaNPCShops : GlobalNPC
             shop.Add<Shitballs>(condition: Terraria.Condition.DrunkWorld);
             shop.Add<KingslayerBullet>(condition: Terraria.Condition.ForTheWorthyWorld);
             shop.Add<CeramicDart>(condition: Terraria.Condition.Hardmode);
-
-
             shop.Add<Glock>(condition: Terraria.Condition.DownedEyeOfCthulhu);
             shop.Add<AK47>(condition: Terraria.Condition.DownedSkeletron);
-
-
             shop.Add(ItemID.Handgun, condition: Terraria.Condition.DownedSkeletron);
             shop.Add(ItemID.QuadBarrelShotgun, condition: Terraria.Condition.DownedSkeletron);
             shop.Add<TommyGun>(condition: Terraria.Condition.Hardmode);
@@ -34,10 +28,6 @@ public class MericaNPCShops : GlobalNPC
             shop.Add<DiseaseBlaster>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<SacrificialPistol>()));
             shop.Add<Brainderbuss>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<ToothlessWyrm>()));
             shop.Add<ToothlessWyrm>(condition: Terraria.Condition.PlayerCarriesItem(ModContent.ItemType<Brainderbuss>()));
-
-
-
-
 
         }
         if (shop.NpcType == NPCID.Merchant)
@@ -48,8 +38,6 @@ public class MericaNPCShops : GlobalNPC
             shop.Add<M1Garand>(condition: Terraria.Condition.Hardmode);
 
             shop.Add(ItemID.Blowpipe);
-
-
 
         }
         if (shop.NpcType == NPCID.Demolitionist)
@@ -149,11 +137,5 @@ public class MericaNPCShops : GlobalNPC
             shop.Add<ShadowflameArrow>(condition: Terraria.Condition.DownedMechBossAny);
 
         }
-
-
-
-
     }
 }
-
-

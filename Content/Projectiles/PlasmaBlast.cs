@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PlasmaBlast : ModProjectile
@@ -36,14 +34,10 @@ public class PlasmaBlast : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
             Projectile.DamageType = DamageClass.Throwing;
         }
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -66,7 +60,5 @@ public class PlasmaBlast : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.85f);
 
     }
-
-
 
 }

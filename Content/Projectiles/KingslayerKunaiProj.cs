@@ -5,8 +5,6 @@ using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class KingslayerKunaiProj : ModProjectile
@@ -44,18 +42,10 @@ public class KingslayerKunaiProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
           new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
           Projectile.owner);
-
-
-
-
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -73,11 +63,5 @@ public class KingslayerKunaiProj : ModProjectile
         return true;
     }
 
-
-
-
-
 }
-
-
 

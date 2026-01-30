@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PlasmaRifle3 : ModItem
@@ -21,20 +19,14 @@ public class PlasmaRifle3 : ModItem
         Item.scale = 0.83f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 313000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 13; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item92;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -43,8 +35,6 @@ public class PlasmaRifle3 : ModItem
 
         Item.ArmorPenetration = 20;
         Item.mana = 12;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
@@ -68,16 +58,12 @@ public class PlasmaRifle3 : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.22f));
 
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -90,8 +76,6 @@ public class PlasmaRifle3 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -106,8 +90,6 @@ public class PlasmaRifle3 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -116,10 +98,6 @@ public class PlasmaRifle3 : ModItem
         recipe.AddIngredient<Items.AstatineBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

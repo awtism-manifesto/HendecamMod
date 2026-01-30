@@ -42,8 +42,6 @@ public class LycoSporeRanged : ModProjectile
         Projectile.tileCollide = true;
         Projectile.width = 1; // The width of projectile hitbox
         Projectile.height = 1; // The height of projectile hitbox
-
-
     }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
@@ -58,10 +56,6 @@ public class LycoSporeRanged : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
@@ -81,13 +75,9 @@ public class LycoSporeRanged : ModProjectile
             SoundEngine.PlaySound(SoundID.Item37, target.position);
 
         }
-
-
     }
     public override void AI()
     {
-
-
         // dust, all dust
         if (Projectile.alpha < 198)
         {
@@ -182,6 +172,4 @@ public class LycoSporeRanged : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
 

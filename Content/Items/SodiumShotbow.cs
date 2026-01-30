@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class SodiumShotbow : ModItem
@@ -20,36 +18,24 @@ public class SodiumShotbow : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 44000;
-
-
         // Use Properties
         Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item102;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 7.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ItemID.WoodenArrow;
-
-
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -59,22 +45,14 @@ public class SodiumShotbow : ModItem
     {
 
         damage = (int)(damage * Main.rand.NextFloat(0.825f, 0.875f));
-
-
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.75f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.75f));
-
-
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-
-
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -87,8 +65,6 @@ public class SodiumShotbow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -104,8 +80,6 @@ public class SodiumShotbow : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -114,12 +88,6 @@ public class SodiumShotbow : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()

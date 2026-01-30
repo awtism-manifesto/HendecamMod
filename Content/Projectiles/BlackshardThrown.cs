@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BlackshardThrown : ModProjectile

@@ -35,8 +35,6 @@ public class GlockAndBalls : ModItem
         Item.knockBack = 1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 10.33f; // The speed of the projectile (measured in pixels per frame.)
@@ -73,8 +71,6 @@ public class GlockAndBalls : ModItem
     {
         return Main.rand.NextFloat() >= 0.33f;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -86,8 +82,6 @@ public class GlockAndBalls : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

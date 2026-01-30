@@ -12,8 +12,6 @@ public class FissionDrive : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
 
@@ -43,8 +41,6 @@ public class FissionDrive : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -58,12 +54,8 @@ public class FissionDrive : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
-
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(20);
         recipe.AddIngredient<PlutoniumBar>(18);
@@ -72,17 +64,9 @@ public class FissionDrive : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariumCore", out ModItem TerrariumCore))
-
-
         {
             recipe.AddIngredient(TerrariumCore.Type, 5);
-
-
         }
-
-
-
-
     }
 
 }

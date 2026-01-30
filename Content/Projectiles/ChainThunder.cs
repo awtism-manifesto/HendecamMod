@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ChainThunder : ModProjectile
@@ -62,8 +60,6 @@ public class ChainThunder : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustID.Electric, 0f, 0f, 100, default, 0.5f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
@@ -149,8 +145,4 @@ public class ChainThunder : ModProjectile
         target.immune[Projectile.owner] = 10;
 
     }
-
-
 }
-
-

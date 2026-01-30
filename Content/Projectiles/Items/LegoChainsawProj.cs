@@ -87,8 +87,6 @@ public class LegoChainsawProj : ModProjectile
 
         // Gives the drill a slight jiggle
         Projectile.velocity.X *= 1f + Main.rand.Next(-3, 4) * 0.01f;
-
-
         // Spawning dust
         if (Main.rand.NextBool(10))
         {

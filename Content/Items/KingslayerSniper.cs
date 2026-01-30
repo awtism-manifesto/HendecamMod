@@ -19,8 +19,6 @@ public class KingslayerSniper : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 190000;
-
-
         // Use Properties
         Item.useTime = 39; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 39; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -30,15 +28,11 @@ public class KingslayerSniper : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.NPCDeath56;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
         Item.shoot = ProjectileID.Bullet;
         Item.useAmmo = AmmoID.Bullet; // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
 
@@ -71,10 +65,6 @@ public class KingslayerSniper : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -95,22 +85,14 @@ public class KingslayerSniper : ModItem
         recipe.AddIngredient<Items.DeadSoldiersRifle>();
         recipe.AddIngredient<Items.PondsSniper>();
         recipe.AddIngredient<Items.KingslayerBar>(10);
-
-
         recipe.AddIngredient(ItemID.Diamond, 2);
         recipe.AddIngredient(ItemID.Ruby, 2);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-9f, -1f);
     }
-
-
 }

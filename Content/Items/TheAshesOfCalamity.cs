@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class TheAshesOfCalamity : ModItem
@@ -22,8 +20,6 @@ public class TheAshesOfCalamity : ModItem
         Item.scale = 1.33f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 12500000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
@@ -34,8 +30,6 @@ public class TheAshesOfCalamity : ModItem
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
         Item.damage = 111; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -43,8 +37,6 @@ public class TheAshesOfCalamity : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 20;
         Item.mana = 15;
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -71,8 +63,6 @@ public class TheAshesOfCalamity : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
             Vector2 new1Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5f));
-
-
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.44f);
 
@@ -81,16 +71,10 @@ public class TheAshesOfCalamity : ModItem
             type = ModContent.ProjectileType<DemonBall>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
             type = ModContent.ProjectileType<Pentagram>();
-
-
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -102,10 +86,6 @@ public class TheAshesOfCalamity : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -138,12 +118,6 @@ public class TheAshesOfCalamity : ModItem
             recipe.AddIngredient(AshesofCalamity.Type, 15);
 
         }
-
-
-
-
-
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

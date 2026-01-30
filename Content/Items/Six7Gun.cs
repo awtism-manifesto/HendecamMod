@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class Six7Gun : ModItem
@@ -35,17 +33,11 @@ public class Six7Gun : ModItem
         Item.ArmorPenetration = 676767;
 
         Item.ArmorPenetration = 5;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -56,11 +48,7 @@ public class Six7Gun : ModItem
     }
     public override void UpdateInventory(Player player)
     {
-
-
         Item.damage = 67;
-
-
     }
     private int shotCounter = 0;
 
@@ -88,8 +76,6 @@ public class Six7Gun : ModItem
             shotCounter = 0;
         }
 
-
-
         return false;
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -100,8 +86,6 @@ public class Six7Gun : ModItem
     public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
     {
         damage = damage * 1;
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -120,11 +104,7 @@ public class Six7Gun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

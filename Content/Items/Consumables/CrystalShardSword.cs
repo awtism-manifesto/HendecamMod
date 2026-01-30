@@ -15,8 +15,6 @@ public class CrystalShardSword : ModItem
         Item.height = 32;
         Item.value = Item.sellPrice(copper: 1250);
         Item.rare = ItemRarityID.LightRed;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 14;
         Item.useAnimation = 14;

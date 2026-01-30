@@ -49,8 +49,6 @@ public class HephBall : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 3f;
-
-
             }
         }
     }

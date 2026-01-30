@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-
-
 namespace HendecamMod.Content.NPCs;
 
 // Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
@@ -61,8 +59,6 @@ public class PoisonSlime : ModNPC
         // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-
-
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

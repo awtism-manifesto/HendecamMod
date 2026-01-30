@@ -37,8 +37,6 @@ public class ThrowablePoop : ModItem
     {
 
         player.AddBuff(BuffID.Stinky, 61);
-
-
         return true;
     }
     public override Color? GetAlpha(Color lightColor)
@@ -56,8 +54,6 @@ public class ThrowablePoop : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

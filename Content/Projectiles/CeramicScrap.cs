@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class CeramicScrap : ModProjectile
@@ -86,8 +84,4 @@ public class CeramicScrap : ModProjectile
 
         return true;
     }
-
-
-
-
 }

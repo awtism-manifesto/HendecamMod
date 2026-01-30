@@ -25,16 +25,12 @@ public class PyriteSparkler : ModItem
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 51000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 15; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 30; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
 
         Item.UseSound = Terraria.ID.SoundID.Item13 with
@@ -82,10 +78,6 @@ public class PyriteSparkler : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -97,8 +89,6 @@ public class PyriteSparkler : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -113,8 +103,6 @@ public class PyriteSparkler : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe

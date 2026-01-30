@@ -25,8 +25,6 @@ public class BeetleFriend : ModProjectile
         Main.projFrames[Projectile.type] = 2;
     }
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -88,13 +86,9 @@ public class BeetleFriend : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
-
 
         float maxDetectRadius = 800f; // The maximum radius at which a projectile can detect a target
 
@@ -173,10 +167,6 @@ public class BeetleFriend : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
-
-
 
     }
 }

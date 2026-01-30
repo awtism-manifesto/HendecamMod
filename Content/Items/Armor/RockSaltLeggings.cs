@@ -14,8 +14,6 @@ namespace HendecamMod.Content.Items.Armor;
 public class RockSaltLeggings : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 7;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -48,8 +46,6 @@ public class RockSaltLeggings : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -97,7 +93,5 @@ public class RockSaltLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

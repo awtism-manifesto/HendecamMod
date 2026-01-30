@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
@@ -14,14 +12,10 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class AstatineBreastplate : ModItem
 {
-
-
     public static readonly int AdditiveDamageBonus = 17;
     public static readonly int AttackSpeedBonus = 8;
     public static readonly int RangedCritBonus = 16;
     public static readonly int MeleeArmorPenetration = 14;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -31,8 +25,6 @@ public class AstatineBreastplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -55,8 +47,6 @@ public class AstatineBreastplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -109,15 +99,9 @@ public class AstatineBreastplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "Gives +30% crit chance at max life, Taking damage releases a large nuclear explosion but removes this boost";
-
-
         player.GetModPlayer<AstaSetBoom>().AstaBlam = true;
-
-
     }
 }
-
-
 public class AstaSetBoom : ModPlayer
 {
     public const int CritBonus = 30;
@@ -172,9 +156,5 @@ public class AstaSetBoom : ModPlayer
         // Start cooldown
         explosionCooldown = ExplosionCooldownMax;
     }
-
-
-
-
 
 }

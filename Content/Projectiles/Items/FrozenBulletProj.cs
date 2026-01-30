@@ -32,8 +32,6 @@ public class FrozenBulletProj : ModProjectile
     public override void AI()
     {
 
-
-
         if (Projectile.alpha < 200)
         {
 

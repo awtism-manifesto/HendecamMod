@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ZoneSpawn : ModProjectile
@@ -32,12 +30,6 @@ public class ZoneSpawn : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
-
-
-
-
 
     public override void OnKill(int timeLeft)
     {
@@ -89,11 +81,7 @@ public class ZoneSpawn : ModProjectile
                 );
             }
         }
-
-
     }
 
 }
-
-
 

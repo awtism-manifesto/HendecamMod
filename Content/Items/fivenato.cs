@@ -46,8 +46,6 @@ public class fivenato : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -71,12 +69,8 @@ public class fivenato : ModItem
 
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
-
-
         {
             recipe.AddIngredient(SoulOfPlight.Type);
-
-
         }
     }
 }

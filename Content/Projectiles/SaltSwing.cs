@@ -93,8 +93,6 @@ public class SaltSwing : ModProjectile
 
         }
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -179,8 +177,6 @@ public class SaltSwing : ModProjectile
 
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
-
-
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(5, 55)));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
@@ -213,8 +209,6 @@ public class SaltSwing : ModProjectile
         Vector2 Peanits9 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits9, velocity9,
         ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
-
-
 
     }
 

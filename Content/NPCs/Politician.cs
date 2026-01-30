@@ -54,8 +54,6 @@ public class Politician : ModNPC
         NPCID.Sets.ShimmerTownTransform[NPC.type] = true; // This set says that the Town NPC has a Shimmered form. Otherwise, the Town NPC will become transparent when touching Shimmer like other enemies.
 
         NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
-
-
         // Influences how the NPC looks in the Bestiary
         NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
         {
@@ -213,12 +211,8 @@ public class Politician : ModNPC
     public override string GetChat()
     {
         WeightedRandom<string> chat = new WeightedRandom<string>();
-
-
         if (NPC.IsShimmerVariant)
         {
-
-
 
         }
 
@@ -245,11 +239,7 @@ public class Politician : ModNPC
         chat.Add(Language.GetTextValue("I, for one, think that our government doesnt bomb children enough."), 0.4);
         chat.Add(Language.GetTextValue("Yeah i have one night stands with men half my age i met on grindr. Yeah i'm also gonna take your gay rights. Why? Because fuck you, thats why!"));
         NumberOfTimesTalkedTo++;
-
-
         string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
-
-
 
         return chosenChat;
     }
@@ -282,8 +272,6 @@ public class Politician : ModNPC
 
         return false;
     }
-
-
     public override void OnChatButtonClicked(bool firstButton, ref string shop)
     {
         if (firstButton)
@@ -298,52 +286,32 @@ public class Politician : ModNPC
     public override void AddShops()
     {
         var npcShop = new NPCShop(Type, ShopName)
-
-
-
-              .Add<Beer>()
-             .Add<CrudeOil>()
-              .Add<RefinedOil>(Condition.Hardmode)
-                .Add(ItemID.GelBalloon, Condition.DownedQueenSlime)
-                .Add<FragmentFlatEarth>(Condition.DownedMoonLord)
-
-
-               .Add(ItemID.DemoniteBar, Condition.DownedEowOrBoc)
-               .Add(ItemID.CrimtaneBar, Condition.DownedEowOrBoc)
-                .Add(ItemID.TissueSample, Condition.DownedEowOrBoc)
-               .Add(ItemID.ShadowScale, Condition.DownedEowOrBoc)
-                 .Add<KetamineInjection>(condition: Terraria.Condition.NpcIsPresent(NPCID.TaxCollector))
-                 .Add<TarriffStamper>()
-                 .Add<CarbonDioxideBottle>(Condition.DownedEarlygameBoss)
-
-
-
-                 .Add<UnicornPoacher>(Condition.InHallow)
-        .Add<BrokenHeroGun>(Condition.Eclipse)
-
-
-          .Add<LuckyCigarette>(Condition.DownedSkeletron)
-          .Add<CorruptLawman>(Condition.Hardmode)
-           .Add<CapitalistCarbine>(Condition.Hardmode)
+            .Add<Beer>()
+            .Add<CrudeOil>()
+            .Add<RefinedOil>(Condition.Hardmode)
+            .Add(ItemID.GelBalloon, Condition.DownedQueenSlime)
+            .Add<FragmentFlatEarth>(Condition.DownedMoonLord)
+            .Add(ItemID.DemoniteBar, Condition.DownedEowOrBoc)
+            .Add(ItemID.CrimtaneBar, Condition.DownedEowOrBoc)
+            .Add(ItemID.TissueSample, Condition.DownedEowOrBoc)
+            .Add(ItemID.ShadowScale, Condition.DownedEowOrBoc)
+            .Add<KetamineInjection>(condition: Terraria.Condition.NpcIsPresent(NPCID.TaxCollector))
+            .Add<TarriffStamper>()
+            .Add<CarbonDioxideBottle>(Condition.DownedEarlygameBoss)
+            .Add<UnicornPoacher>(Condition.InHallow)
+            .Add<BrokenHeroGun>(Condition.Eclipse)
+            .Add<LuckyCigarette>(Condition.DownedSkeletron)
+            .Add<CorruptLawman>(Condition.Hardmode)
+            .Add<CapitalistCarbine>(Condition.Hardmode)
             .Add<SmallSausageSpammer>(Condition.DownedPumpking)
             .Add<TheAirFlare>(Condition.DownedEmpressOfLight)
-              .Add<CIAJournalismAward>(Condition.DownedMoonLord)
-
-         ;
-
-
+            .Add<CIAJournalismAward>(Condition.DownedMoonLord);
         npcShop.Register(); // Name of this shop tab
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
-
-
         {
             npcShop.Add(SoulofBlight.Type, Condition.DownedEmpressOfLight);
         }
     }
-
-
-
-
     public override void ModifyActiveShop(string shopName, Item[] items)
     {
         foreach (Item item in items)
@@ -369,8 +337,6 @@ public class Politician : ModNPC
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Glock>(), 3));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AR15>(), 5));
     }
-
-
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
     {
@@ -406,10 +372,4 @@ public class Politician : ModNPC
     {
         tag["numberOfTimesTalkedTo"] = NumberOfTimesTalkedTo;
     }
-
-
 }
-
-
-
-

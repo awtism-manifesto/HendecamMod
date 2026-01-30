@@ -14,8 +14,6 @@ namespace HendecamMod.Content.Global;
 public class PlutoniumBlessing : GlobalNPC
 {
 
-
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == ModContent.NPCType<ApacheElfShip>();
@@ -31,8 +29,6 @@ public class PlutoniumBlessing : GlobalNPC
 
     }
 }
-
-
 public class PlutoniumSystem : ModSystem
 {
     public static LocalizedText PlutoniumMessage { get; private set; }
@@ -85,11 +81,3 @@ public class PlutoniumSystem : ModSystem
     // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
 
 }
-
-
-
-
-
-
-
-

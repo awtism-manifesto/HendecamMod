@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
-
-
 public class AzuritePickaxe : ModItem
 {
     public override void SetDefaults()
@@ -33,8 +31,6 @@ public class AzuritePickaxe : ModItem
 
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -49,8 +45,6 @@ public class AzuritePickaxe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         foreach (var l in tooltips)
         {

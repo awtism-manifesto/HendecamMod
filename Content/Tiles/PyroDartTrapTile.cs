@@ -29,13 +29,9 @@ public class PyroDartTrapTile : ModTile
     }
 
     // Read the comments above on AddMapEntry.
-
-
     public override bool IsTileDangerous(int i, int j, Player player) => true;
 
     // Because this tile does not use a TileObjectData, and consequently does not have "real" tile styles, the correct tile style value can't be determined automatically. This means that the correct item won't automatically drop, so we must use GetItemDrops to calculate the tile style to determine the item drop. 
-
-
     public override bool CreateDust(int i, int j, ref int type)
     {
         int style = Main.tile[i, j].TileFrameY / 18;

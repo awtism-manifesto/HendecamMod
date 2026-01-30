@@ -2,8 +2,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PlutoAura : ModProjectile
@@ -30,15 +28,11 @@ public class PlutoAura : ModProjectile
 
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 90);
 
-
-
     }
     public override void AI()
     {
 
         Player player = Main.player[Projectile.owner];
-
-
         Projectile.Center = player.Center;
 
         if (Main.rand.NextBool(2))
@@ -50,19 +44,7 @@ public class PlutoAura : ModProjectile
             Projectile.rotation += -0.2f;
         }
 
-
-
-
-
         Lighting.AddLight(Projectile.Center, 0.81f, 0.25f, 0.95f);
-
-
         Projectile.velocity = Vector2.Zero;
-
-
     }
-
-
 }
-
-

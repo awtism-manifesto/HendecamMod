@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DaeRound : ModProjectile
@@ -84,8 +82,6 @@ public class DaeRound : ModProjectile
         return true;
     }
 
-
-
     public override void OnKill(int timeLeft)
     {
         Player player = Main.player[Projectile.owner];
@@ -120,6 +116,4 @@ public class DaeRound : ModProjectile
     }
 
 }
-
-
 

@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PlasmoidWand : ModItem
@@ -59,8 +57,6 @@ public class PlasmoidWand : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -82,10 +78,6 @@ public class PlasmoidWand : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -100,7 +92,5 @@ public class PlasmoidWand : ModItem
         // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
         return false;
     }
-
-
 
 }

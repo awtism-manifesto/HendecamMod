@@ -7,8 +7,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles.Items;
 
 public class ApexPlasmaBullet : ModProjectile
@@ -44,8 +42,6 @@ public class ApexPlasmaBullet : ModProjectile
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hit)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
 
     }
@@ -67,8 +63,4 @@ public class ApexPlasmaBullet : ModProjectile
 
         return true;
     }
-
-
-
-
 }

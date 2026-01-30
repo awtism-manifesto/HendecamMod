@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class CrimSpark : ModProjectile
@@ -151,8 +149,4 @@ public class CrimSpark : ModProjectile
         target.immune[Projectile.owner] = 6;
 
     }
-
-
 }
-
-

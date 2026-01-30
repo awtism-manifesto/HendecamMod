@@ -29,8 +29,6 @@ public class SaltShaker : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 44;
         Item.knockBack = 5.5f;
-
-
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
@@ -68,8 +66,6 @@ public class SaltShaker : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -81,8 +77,6 @@ public class SaltShaker : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

@@ -35,8 +35,6 @@ public class PoopAxe : ModItem
     {
 
         player.AddBuff(BuffID.Stinky, 61);
-
-
         return true;
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

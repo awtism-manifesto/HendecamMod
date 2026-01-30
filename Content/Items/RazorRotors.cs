@@ -14,8 +14,6 @@ public class RazorRotors : ModItem
 
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
-
-
     public override void SetDefaults()
     {
         // Common Properties
@@ -42,11 +40,7 @@ public class RazorRotors : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -84,12 +78,6 @@ public class RazorRotors : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
 
 }

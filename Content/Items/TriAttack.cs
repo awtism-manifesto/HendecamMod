@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class TriAttack : ModItem
@@ -21,8 +19,6 @@ public class TriAttack : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 150000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,19 +29,13 @@ public class TriAttack : ModItem
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 63; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 20;
-
-
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica))
-
-
         {
             Item.damage = 39;
         }
@@ -78,8 +68,6 @@ public class TriAttack : ModItem
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(3.66f));
             Vector2 new1Velocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-3.66f));
-
-
             if (nextSpawnTick == 0)
             {
                 nextSpawnTick = 2;
@@ -126,10 +114,6 @@ public class TriAttack : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -141,8 +125,6 @@ public class TriAttack : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -157,19 +139,11 @@ public class TriAttack : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("FrostburnIgniter", out ModItem FrostburnIgniter))
-
-
         {
-
-
-
-
 
             recipe = CreateRecipe();
 
@@ -180,8 +154,6 @@ public class TriAttack : ModItem
 
             recipe.Register();
 
-
-
         }
         else
         {
@@ -191,8 +163,6 @@ public class TriAttack : ModItem
             recipe.AddIngredient<Items.VenomThrower>();
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
-
 
         }
 

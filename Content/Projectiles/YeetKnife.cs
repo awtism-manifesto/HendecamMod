@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class YeetKnife : ModProjectile
@@ -37,8 +35,6 @@ public class YeetKnife : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override void AI()
     {
 
@@ -55,8 +51,6 @@ public class YeetKnife : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -108,6 +102,4 @@ public class YeetKnife : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.67f);
 
     }
-
-
 }

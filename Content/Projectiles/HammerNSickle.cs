@@ -38,8 +38,6 @@ public class HammerNSickle : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -47,8 +45,6 @@ public class HammerNSickle : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -86,8 +82,6 @@ public class HammerNSickle : ModProjectile
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
-
-
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -100,8 +94,6 @@ public class HammerNSickle : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CrimsonTorch, 0f, 0f, 100, default, 0.22f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
@@ -111,10 +103,6 @@ public class HammerNSickle : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);

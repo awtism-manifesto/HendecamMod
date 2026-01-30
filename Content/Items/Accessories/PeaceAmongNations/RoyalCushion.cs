@@ -60,6 +60,4 @@ public class RoyalCushion : ModItem
         recipe.Register();
     }
 }
-
-
 // Balls

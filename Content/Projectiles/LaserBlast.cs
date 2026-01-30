@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class LaserBlast : ModProjectile
@@ -38,8 +36,6 @@ public class LaserBlast : ModProjectile
 
     public override Color? GetAlpha(Color lightColor)
     {
-
-
         return Color.Red;
     }
 
@@ -66,15 +62,11 @@ public class LaserBlast : ModProjectile
 
             Projectile.Resize(35, 35);
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.67f);
         target.immune[Projectile.owner] = 2;
     }
-
-
 
 }

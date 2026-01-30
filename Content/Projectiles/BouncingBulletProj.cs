@@ -39,11 +39,7 @@ public class BouncingBulletProj : ModProjectile
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
-
-
         Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
         // If the projectile hits the left or right side of the tile, reverse the X velocity
         if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
         {
@@ -55,8 +51,6 @@ public class BouncingBulletProj : ModProjectile
         {
             Projectile.velocity.Y = -oldVelocity.Y;
         }
-
-
         return false;
     }
     public override bool PreDraw(ref Color lightColor)
@@ -90,9 +84,5 @@ public class BouncingBulletProj : ModProjectile
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-
-
-
-
 
 }

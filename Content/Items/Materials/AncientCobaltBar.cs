@@ -12,8 +12,6 @@ public class AncientCobaltBar : ModItem
     public override void SetStaticDefaults()
     {
 
-
-
         Item.ResearchUnlockCount = 25;
     }
     public override void SetDefaults()
@@ -36,25 +34,13 @@ public class AncientCobaltBar : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<AncientCobaltOre>(3);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-
-
-
-
 
     }
 }

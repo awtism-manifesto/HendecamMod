@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class OrbitTracer : ModProjectile
@@ -89,10 +87,6 @@ public class OrbitTracer : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(70, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
         ModContent.ProjectileType<OrbitalDeathRay>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-
-
-
-
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
@@ -104,8 +98,6 @@ public class OrbitTracer : ModProjectile
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -122,8 +114,6 @@ public class OrbitTracer : ModProjectile
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.IceTorch, 0f, 0f, 100, default, 0.55f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.05f;
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.GemRuby, 0f, 0f, 100, default, 0.25f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
@@ -139,6 +129,4 @@ public class OrbitTracer : ModProjectile
     }
 
 }
-
-
 

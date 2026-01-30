@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PlasmaRifle2 : ModItem
@@ -20,20 +18,14 @@ public class PlasmaRifle2 : ModItem
         Item.scale = 0.825f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 172000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 18; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 18; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item92;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -42,8 +34,6 @@ public class PlasmaRifle2 : ModItem
 
         Item.ArmorPenetration = 15;
         Item.mana = 10;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
@@ -58,10 +48,6 @@ public class PlasmaRifle2 : ModItem
 
     }
 
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,8 +59,6 @@ public class PlasmaRifle2 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -89,8 +73,6 @@ public class PlasmaRifle2 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -99,10 +81,6 @@ public class PlasmaRifle2 : ModItem
         recipe.AddIngredient<Items.PlutoniumBar>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

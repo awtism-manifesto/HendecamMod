@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Weapons;
 
 public class LigmaLazer : ModItem
@@ -23,8 +21,6 @@ public class LigmaLazer : ModItem
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 676767;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
@@ -32,26 +28,16 @@ public class LigmaLazer : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
-
-
         // The sound that this item plays when used.
-
-
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 1; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<LigmaLazerProj>();
-
-
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
 
     }
@@ -63,15 +49,9 @@ public class LigmaLazer : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
         SoundEngine.PlaySound(SoundID.Item114, player.position);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -83,16 +63,10 @@ public class LigmaLazer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
 
     public override void AddRecipes()
     {
-
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

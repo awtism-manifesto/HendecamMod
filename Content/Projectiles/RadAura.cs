@@ -2,8 +2,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RadAura : ModProjectile
@@ -30,15 +28,11 @@ public class RadAura : ModProjectile
 
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 75);
 
-
-
     }
     public override void AI()
     {
 
         Player player = Main.player[Projectile.owner];
-
-
         Projectile.Center = player.Center;
 
         if (Main.rand.NextBool(2))
@@ -50,19 +44,7 @@ public class RadAura : ModProjectile
             Projectile.rotation += -0.2f;
         }
 
-
-
-
-
         Lighting.AddLight(Projectile.Center, 0.25f, 0.95f, 0.05f);
-
-
         Projectile.velocity = Vector2.Zero;
-
-
     }
-
-
 }
-
-

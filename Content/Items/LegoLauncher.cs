@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class LegoLauncher : ModItem
@@ -22,29 +20,19 @@ public class LegoLauncher : ModItem
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 2500;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 50; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 50; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item61;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 18; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -77,10 +65,6 @@ public class LegoLauncher : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -92,8 +76,6 @@ public class LegoLauncher : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

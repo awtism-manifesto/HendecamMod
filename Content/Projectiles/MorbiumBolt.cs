@@ -5,14 +5,10 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MorbiumBolt : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 15; // The width of projectile hitbox
@@ -78,8 +74,6 @@ public class MorbiumBolt : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 3.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fireDust.noGravity = true;
@@ -91,12 +85,6 @@ public class MorbiumBolt : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         Projectile.damage = (int)(Projectile.damage * 0.85f); // lose a bit of damage as it pierces
     }
-
-
 }
-
-

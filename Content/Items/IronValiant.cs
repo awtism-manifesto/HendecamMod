@@ -78,8 +78,6 @@ public class IronValiant : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -102,10 +100,6 @@ public class IronValiant : ModItem
         recipe.AddRecipeGroup("IronBar", 8);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
 }

@@ -21,15 +21,11 @@ public class PhotonShotgun : ModItem
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 510000;
-
-
         // Use Properties
         Item.useTime = 40; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item12 with
         {
@@ -40,16 +36,12 @@ public class PhotonShotgun : ModItem
             SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
         }
         ;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 8.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 45;
-
-
 
         // Gun Properties
         Item.shoot = ProjectileID.Bullet; // For some reason, all the guns in the vanilla source have this.
@@ -59,19 +51,7 @@ public class PhotonShotgun : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 6; // The number of projectiles that this gun will shoot.
-
-
         SoundEngine.PlaySound(SoundID.Item72, player.position);
-
-
-
-
-
-
-
-
-
-
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -111,10 +91,6 @@ public class PhotonShotgun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -137,20 +113,14 @@ public class PhotonShotgun : ModItem
             recipe = CreateRecipe();
 
             recipe.AddIngredient(ItemID.BossBagBetsy);
-
-
             recipe.Register();
         }
         else
         {
-
-
         }
     }
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-29f, -1f);
     }
-
-
 }

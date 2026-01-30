@@ -68,8 +68,6 @@ public class DvdRed : ModProjectile
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
-
-
         Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 
@@ -84,8 +82,6 @@ public class DvdRed : ModProjectile
         {
             Projectile.velocity.Y = -oldVelocity.Y;
         }
-
-
         return false;
     }
 
@@ -116,16 +112,10 @@ public class DvdRed : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(175, 175);
-
-
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
         ModContent.ProjectileType<DvdGreen>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
-
-
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
@@ -166,8 +156,6 @@ public class DvdRed : ModProjectile
         }
 
         // Spawn a bunch of fire dusts.
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

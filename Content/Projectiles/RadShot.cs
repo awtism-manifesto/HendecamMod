@@ -54,8 +54,6 @@ public class RadShot : ModProjectile
 
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 160);
         Projectile.damage = (int)(Projectile.damage * 0.6f);
-
-
     }
     public override void AI()
     {
@@ -71,8 +69,6 @@ public class RadShot : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.1f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
@@ -92,8 +88,6 @@ public class RadShot : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<RadShotMini>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
         }
-
-
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

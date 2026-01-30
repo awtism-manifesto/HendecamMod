@@ -29,8 +29,6 @@ public class CrackedNut : ModProjectile
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
         // dust
         if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
@@ -43,8 +41,6 @@ public class CrackedNut : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.BorealWood, 0f, 0f, 100, default, 1f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;

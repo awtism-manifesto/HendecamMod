@@ -37,11 +37,7 @@ public class ValiantYoyo : ModProjectile
                 ModContent.ProjectileType<ValiantLance>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
             }
-
-
         }
-
-
         if (Math.Abs(Projectile.velocity.X) >= 4.05f || Math.Abs(Projectile.velocity.Y) >= 4.05f)
         {
             if (Main.rand.NextBool(15))
@@ -52,8 +48,6 @@ public class ValiantYoyo : ModProjectile
                 ModContent.ProjectileType<ValiantLance>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
             }
-
-
         }
         if (Math.Abs(Projectile.velocity.X) <= 4.04f && Math.Abs(Projectile.velocity.Y) <= 4.04f)
         {
@@ -65,11 +59,7 @@ public class ValiantYoyo : ModProjectile
                 ModContent.ProjectileType<ValiantLance>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
             }
-
-
         }
-
-
         // dust, all dust
         if (Projectile.alpha < 187)
         {

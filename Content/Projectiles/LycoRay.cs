@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class LycoRay : ModProjectile
@@ -104,17 +102,11 @@ public class LycoRay : ModProjectile
         }
         if (Main.rand.NextBool(3))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
-
-
         if (Main.rand.NextBool(4))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
             ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
@@ -122,29 +114,17 @@ public class LycoRay : ModProjectile
         }
         if (Main.rand.NextBool(5))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
         if (Main.rand.NextBool(6))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
             ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
-
-
-
-
-
-
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Projectile.alpha < 188)
@@ -166,9 +146,5 @@ public class LycoRay : ModProjectile
         }
     }
 
-
-
 }
-
-
 

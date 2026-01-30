@@ -13,8 +13,6 @@ public class RefinedOil : ModItem
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-
         Item.ResearchUnlockCount = 99; // Configure the amount of this item that's needed to research it in Journey mode.
     }
 
@@ -35,8 +33,6 @@ public class RefinedOil : ModItem
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -48,8 +44,6 @@ public class RefinedOil : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -73,10 +67,6 @@ public class RefinedOil : ModItem
         recipe.AddIngredient(ItemID.LivingFireBlock);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
-
-
-
 
     }
 }

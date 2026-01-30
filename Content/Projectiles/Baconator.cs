@@ -46,8 +46,6 @@ public class Baconator : ModProjectile
 
     public override void AI()
     {
-
-
         int frameSpeed = 9;
 
         Projectile.frameCounter++;
@@ -60,8 +58,6 @@ public class Baconator : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
@@ -69,9 +65,5 @@ public class Baconator : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
     }
 }

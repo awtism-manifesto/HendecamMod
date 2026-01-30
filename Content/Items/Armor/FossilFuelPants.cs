@@ -26,8 +26,6 @@ public class FossilFuelPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -50,8 +48,6 @@ public class FossilFuelPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -123,8 +119,6 @@ public class FossilFuelPants : ModItem
             {
                 return;
             }
-
-
             Player.runAcceleration *= 1.44f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.44f;
             Player.accRunSpeed *= 1.44f;

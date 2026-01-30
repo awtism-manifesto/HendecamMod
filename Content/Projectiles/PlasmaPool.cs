@@ -1,16 +1,12 @@
 ﻿using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PlasmaPool : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
-
         Main.projFrames[Projectile.type] = 3;
     }
     public override void SetDefaults()
@@ -34,8 +30,6 @@ public class PlasmaPool : ModProjectile
 
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 60);
 
-
-
     }
     public override void AI()
     {
@@ -51,12 +45,8 @@ public class PlasmaPool : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         Projectile.velocity *= 0f;
 
@@ -102,8 +92,4 @@ public class PlasmaPool : ModProjectile
         }
 
     }
-
-
 }
-
-

@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DragonBreath4Shadow : ModProjectile
@@ -39,12 +37,6 @@ public class DragonBreath4Shadow : ModProjectile
 
     public override void AI()
     {
-
-
-
-
-
-
         if (Projectile.alpha < 196)
         {
 
@@ -57,8 +49,6 @@ public class DragonBreath4Shadow : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Shadowflame, 0f, 0f, 100, default, 0.66f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
@@ -74,8 +64,4 @@ public class DragonBreath4Shadow : ModProjectile
         target.immune[Projectile.owner] = 1;
         target.AddBuff(BuffID.ShadowFlame, 450);
     }
-
-
 }
-
-

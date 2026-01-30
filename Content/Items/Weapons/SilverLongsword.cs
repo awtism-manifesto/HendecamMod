@@ -5,8 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class SilverLongsword : ModItem
 {
     public override void SetDefaults()
@@ -26,13 +24,9 @@ public class SilverLongsword : ModItem
         Item.ChangePlayerDirectionOnShoot = true;
         Item.scale = 1.29f;
         Item.useTurn = true;
-
-
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
-
-
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -40,8 +34,6 @@ public class SilverLongsword : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -58,8 +50,6 @@ public class SilverLongsword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

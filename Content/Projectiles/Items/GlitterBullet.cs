@@ -18,8 +18,6 @@ public class GlitterBullet : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 4; // The width of projectile hitbox
@@ -137,10 +135,6 @@ public class GlitterBullet : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch);

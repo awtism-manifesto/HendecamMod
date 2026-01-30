@@ -30,6 +30,4 @@ public class SteakProj : ModProjectile
         Projectile.extraUpdates = 1;
     }
 
-
-
 }

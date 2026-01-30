@@ -16,8 +16,6 @@ public class UraniumGlassSword : ModItem
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 10);
         Item.rare = ItemRarityID.Green;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 19;
         Item.useAnimation = 19;
@@ -45,8 +43,6 @@ public class UraniumGlassSword : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

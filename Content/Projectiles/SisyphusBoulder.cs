@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SisyphusBoulder : ModProjectile
@@ -50,8 +48,6 @@ public class SisyphusBoulder : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -83,8 +79,6 @@ public class SisyphusBoulder : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

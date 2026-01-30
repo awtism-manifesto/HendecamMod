@@ -36,8 +36,6 @@ public class MoonBurn : ModBuff
         }
 
         npc.GetGlobalNPC<MoonBurning>().MoonCooked = true;
-
-
     }
 
     public class MoonBurntPlayer : ModPlayer

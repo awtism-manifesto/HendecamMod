@@ -58,8 +58,6 @@ public class PlutoBlob : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // If timeLeft is <= 3, then explode the rocket.
@@ -81,8 +79,6 @@ public class PlutoBlob : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -176,8 +172,6 @@ public class PlutoBlob : ModProjectile
         target.immune[Projectile.owner] = 4;
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 170);
     }
-
-
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {
     //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

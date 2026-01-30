@@ -43,8 +43,6 @@ public class StarfishOnAString : ModItem
         Item.shoot = ModContent.ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
 
-
-
     }
 
     // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
@@ -83,8 +81,6 @@ public class StarfishOnAString : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -98,6 +94,4 @@ public class StarfishOnAString : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

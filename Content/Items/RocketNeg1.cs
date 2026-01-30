@@ -62,8 +62,6 @@ public class RocketNeg1 : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -85,18 +83,12 @@ public class RocketNeg1 : ModItem
         recipe.AddIngredient(ItemID.Dynamite);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
         recipe = CreateRecipe(225);
         recipe.AddIngredient<SteelBar>(2);
         recipe.AddIngredient<Items.CrudeOil>(2);
         recipe.AddIngredient(ItemID.Dynamite);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
 
     }
 }

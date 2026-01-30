@@ -25,8 +25,6 @@ public class SodiumHamaxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.useTurn = true;
-
-
         Item.hammer = 75;
         Item.axe = 18;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
@@ -49,11 +47,7 @@ public class SodiumHamaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<RockSalt>(40);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

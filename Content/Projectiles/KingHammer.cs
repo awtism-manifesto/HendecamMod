@@ -85,8 +85,6 @@ public class KingHammer : ModProjectile
 
     public override void AI()
     {
-
-
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -113,16 +111,10 @@ public class KingHammer : ModProjectile
             }
         }
 
-
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);

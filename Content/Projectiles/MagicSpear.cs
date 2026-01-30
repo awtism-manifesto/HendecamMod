@@ -31,8 +31,6 @@ public class MagicSpear : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.WaterCandle, 0f, 0f, 100, default, 0.5f);
             fireDust.velocity *= 4.75f;
         }
-
-
     }
     public override bool PreAI()
     {
@@ -76,8 +74,6 @@ public class MagicSpear : ModProjectile
             // If sprite is facing right, rotate 135 degrees
             Projectile.rotation += MathHelper.ToRadians(135f);
         }
-
-
 
         return false; // Don't execute vanilla AI.
     }

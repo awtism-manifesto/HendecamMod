@@ -45,10 +45,6 @@ public class AzuriteArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {

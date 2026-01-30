@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PooShot : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -24,8 +20,6 @@ public class PooShot : ModProjectile
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-
-
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -79,13 +73,7 @@ public class PooShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(BuffID.Poisoned, 300);
         target.AddBuff(BuffID.Stinky, 900);
     }
-
-
 }
-
-

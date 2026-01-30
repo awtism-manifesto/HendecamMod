@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RingFireProj : ModProjectile
@@ -35,8 +33,6 @@ public class RingFireProj : ModProjectile
 
         target.AddBuff(BuffID.OnFire3, 360);
 
-
-
     }
     public override void OnKill(int timeLeft)
     {
@@ -48,20 +44,10 @@ public class RingFireProj : ModProjectile
             dust.scale *= 2.5f;
         }
 
-
-
-
-
     }
     public override void AI()
     {
-
-
-
-
         Projectile.rotation += 0.11f;
-
-
         int frameSpeed = 6;
 
         Projectile.frameCounter++;
@@ -74,22 +60,10 @@ public class RingFireProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
-
-
         Lighting.AddLight(Projectile.Center, 2.25f, 1.45f, 0.65f);
-
-
         Projectile.velocity = Vector2.Zero;
-
-
     }
-
-
 }
-
-

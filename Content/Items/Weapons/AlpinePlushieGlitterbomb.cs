@@ -5,13 +5,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class AlpinePlushieGlitterbomb : ModItem
 {
     public override void SetDefaults()
@@ -37,12 +31,6 @@ public class AlpinePlushieGlitterbomb : ModItem
         Item.autoReuse = true;
 
     }
-
-
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -66,10 +54,6 @@ public class AlpinePlushieGlitterbomb : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
-
-
 
 }

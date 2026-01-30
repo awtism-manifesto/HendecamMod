@@ -41,8 +41,6 @@ public class PitVipers : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -59,20 +57,12 @@ public class PitVipers : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<TintedLenses>();
         recipe.AddIngredient<TrenboloneAcetate>();
         recipe.AddIngredient<MediocreGrades>();
         recipe.AddIngredient<FragmentFlatEarth>(10);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
-
-
-
-
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
     {

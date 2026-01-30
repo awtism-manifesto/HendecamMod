@@ -39,11 +39,7 @@ public class ThePurifier : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -107,8 +103,6 @@ public class ThePurifier : ModItem
 
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
-
-
         }
 
     }

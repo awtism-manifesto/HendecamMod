@@ -40,8 +40,6 @@ public class SpaceTrash2 : ModProjectile
         target.AddBuff(BuffID.OnFire, 300);
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -73,12 +71,8 @@ public class SpaceTrash2 : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         if (Projectile.timeLeft <= 115)
 
@@ -110,8 +104,6 @@ public class SpaceTrash2 : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 60, Projectile.height - 60, DustID.Torch, 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 2f;
@@ -122,8 +114,6 @@ public class SpaceTrash2 : ModProjectile
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.DeerclopsRubbleAttack, Projectile.position);
-
-
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

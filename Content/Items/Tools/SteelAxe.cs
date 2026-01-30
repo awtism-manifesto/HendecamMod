@@ -45,9 +45,5 @@ public class SteelAxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

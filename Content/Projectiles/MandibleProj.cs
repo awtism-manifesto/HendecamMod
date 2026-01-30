@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MandibleProj : ModProjectile
@@ -52,12 +50,8 @@ public class MandibleProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -79,8 +73,6 @@ public class MandibleProj : ModProjectile
             }
         }
     }
-
-
 
     public override void OnKill(int timeLeft)
     {
@@ -105,11 +97,7 @@ public class MandibleProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

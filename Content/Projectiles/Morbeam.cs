@@ -4,14 +4,10 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Morbeam : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
@@ -49,8 +45,6 @@ public class Morbeam : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MorbiumDust>(), 0f, 0f, 100, default, 2.67f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(7) * 0.1f;
                 fireDust.noGravity = true;
@@ -71,8 +65,6 @@ public class Morbeam : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -90,12 +82,6 @@ public class Morbeam : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         Projectile.damage = (int)(Projectile.damage * 0.93f); // lose a bit of damage as it pierces
     }
-
-
 }
-
-

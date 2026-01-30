@@ -45,9 +45,5 @@ public class SteelHammer : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

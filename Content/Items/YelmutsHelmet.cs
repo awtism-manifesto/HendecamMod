@@ -20,8 +20,6 @@ public class YelmutsHelmet : ModItem
     public static readonly int ThrowingDamageBonus = 6;
     public static readonly int AdditiveSummonDamageBonus = 5;
     public static readonly int MaxMinionIncrease = 1;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -63,8 +61,6 @@ public class YelmutsHelmet : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 5% increased throwing damage")
@@ -85,8 +81,6 @@ public class YelmutsHelmet : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -96,8 +90,6 @@ public class YelmutsHelmet : ModItem
     public override void UpdateEquip(Player player)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             player.GetDamage(DamageClass.Throwing) += ThrowingDamageBonus / 106f;

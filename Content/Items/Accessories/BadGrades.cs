@@ -11,11 +11,7 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class BadGrades : ModItem
 {
-
-
     public static readonly int AdditiveStupidDamageBonus = 6;
-
-
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs();
 
     public override void SetDefaults()
@@ -37,10 +33,6 @@ public class BadGrades : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {

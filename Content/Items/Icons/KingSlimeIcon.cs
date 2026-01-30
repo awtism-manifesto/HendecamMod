@@ -30,8 +30,6 @@ public class KingSlimeIcon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))

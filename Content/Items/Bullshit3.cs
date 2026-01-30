@@ -45,8 +45,6 @@ public class Bullshit3 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -58,8 +56,6 @@ public class Bullshit3 : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -84,12 +80,8 @@ public class Bullshit3 : ModItem
         recipe.AddTile(TileID.LihzahrdFurnace);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("GoldDuck", out ModItem GoldDuck))
-
-
         {
             recipe.AddIngredient(GoldDuck.Type);
-
-
         }
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CoreofCalamity", out ModItem CoreofCalamity))
@@ -97,8 +89,6 @@ public class Bullshit3 : ModItem
             recipe.AddIngredient(CoreofCalamity.Type);
 
         }
-
-
     }
 
 }

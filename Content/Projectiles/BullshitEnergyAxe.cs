@@ -142,7 +142,5 @@ public class BullshitEnergyAxe : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
-
     }
 }

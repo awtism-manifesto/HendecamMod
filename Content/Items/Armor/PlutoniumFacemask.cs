@@ -51,8 +51,6 @@ public class PlutoniumFacemask : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -84,8 +82,6 @@ public class PlutoniumFacemask : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
@@ -106,7 +102,5 @@ public class PlutoniumFacemask : ModItem
         player.armorEffectDrawShadow = true;
         player.armorEffectDrawOutlines = true;
         player.armorEffectDrawOutlinesForbidden = true;
-
-
     }
 }

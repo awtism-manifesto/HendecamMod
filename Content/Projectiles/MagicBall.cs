@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MagicBall : ModProjectile
@@ -18,8 +16,6 @@ public class MagicBall : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 20; // The width of projectile hitbox
@@ -64,8 +60,6 @@ public class MagicBall : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 1.5f;
-
-
             }
         }
         float maxDetectRadius = 350f; // The maximum radius at which a projectile can detect a target
@@ -141,8 +135,4 @@ public class MagicBall : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 
-
-
 }
-
-

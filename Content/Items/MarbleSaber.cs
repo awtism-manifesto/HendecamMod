@@ -7,8 +7,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class MarbleSaber : ModItem
 {
 
@@ -35,8 +33,6 @@ public class MarbleSaber : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
 
     }
@@ -44,28 +40,16 @@ public class MarbleSaber : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
 
-
-
         if (player.altFunctionUse == 2)
         {
             Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
             return false;
         }
-
-
-
-
-
-
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-
-
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(12f));
-
-
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -86,10 +70,6 @@ public class MarbleSaber : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {

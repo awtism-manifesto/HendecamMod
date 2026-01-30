@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class KnightSpawn : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -28,16 +24,8 @@ public class KnightSpawn : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
-
-
-
-
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(66, 66);
@@ -62,6 +50,4 @@ public class KnightSpawn : ModProjectile
     }
 
 }
-
-
 

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class EbonPocket : ModProjectile
@@ -40,12 +38,6 @@ public class EbonPocket : ModProjectile
 
     public override void AI()
     {
-
-
-
-
-
-
         if (Projectile.alpha < 222)
         {
             for (int i = 0; i < 2; i++)
@@ -58,16 +50,12 @@ public class EbonPocket : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 16, Projectile.height - 16, DustID.Ebonwood, 0f, 0f, 100, default, 1.05f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 1f;
             }
         }
-
-
 
     }
     public override bool PreDraw(ref Color lightColor)

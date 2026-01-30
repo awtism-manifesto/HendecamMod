@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class GraniteBlaster : ModItem
@@ -23,8 +21,6 @@ public class GraniteBlaster : ModItem
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
         Item.value = 10000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 6; // The item's use time in ticks (60 ticks == 1 second.)
@@ -32,11 +28,7 @@ public class GraniteBlaster : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
-
-
         // The sound that this item plays when used.
-
-
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
@@ -45,8 +37,6 @@ public class GraniteBlaster : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 6;
         Item.consumeAmmoOnLastShotOnly = true;
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -81,10 +71,6 @@ public class GraniteBlaster : ModItem
         SoundEngine.PlaySound(SoundID.Item114, player.position);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,8 +82,6 @@ public class GraniteBlaster : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

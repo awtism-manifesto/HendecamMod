@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GelShotMini : ModProjectile
@@ -101,8 +99,6 @@ public class GelShotMini : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 0.55f;
-
-
             }
         }
     }
@@ -114,8 +110,4 @@ public class GelShotMini : ModProjectile
         target.AddBuff(ModContent.BuffType<KingTag>(), 300);
 
     }
-
-
 }
-
-

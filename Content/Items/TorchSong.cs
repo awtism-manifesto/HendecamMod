@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class TorchSong : ModItem
@@ -21,8 +19,6 @@ public class TorchSong : ModItem
         Item.scale = 1.5f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = 39500;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,17 +29,11 @@ public class TorchSong : ModItem
         Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 21; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -71,16 +61,12 @@ public class TorchSong : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.75f));
 
-
-
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -93,8 +79,6 @@ public class TorchSong : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -113,8 +97,6 @@ public class TorchSong : ModItem
     public override void AddRecipes()
     {
         Recipe
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Bone, 50);
         recipe.AddIngredient(ItemID.Obsidian, 20);
@@ -123,15 +105,9 @@ public class TorchSong : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SpiritDroplet", out ModItem SpiritDroplet))
-
-
         {
             recipe.AddIngredient(SpiritDroplet.Type, 5);
-
-
         }
-
-
 
     }
 

@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class TackSpawn : ModProjectile
@@ -33,12 +31,6 @@ public class TackSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-
-
-
-
-
-
     public override void OnKill(int timeLeft)
     {
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
@@ -48,8 +40,6 @@ public class TackSpawn : ModProjectile
             dust.velocity *= 9.5f;
             dust.scale *= 1.55f;
         }
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -82,11 +72,7 @@ public class TackSpawn : ModProjectile
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
         ModContent.ProjectileType<Tack>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
-
     }
 
 }
-
-
 

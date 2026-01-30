@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class InfernoProj : ModProjectile
@@ -36,8 +34,6 @@ public class InfernoProj : ModProjectile
         target.AddBuff(BuffID.OnFire, 1360);
         target.AddBuff(BuffID.OnFire3, 1360);
 
-
-
     }
     public override void OnKill(int timeLeft)
     {
@@ -54,18 +50,10 @@ public class InfernoProj : ModProjectile
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
         ModContent.ProjectileType<InfernoMeteor>(), (int)(Projectile.damage * 22.5f), Projectile.knockBack, Projectile.owner);
 
-
-
     }
     public override void AI()
     {
-
-
-
-
         Projectile.rotation += -0.14f;
-
-
         int frameSpeed = 6;
 
         Projectile.frameCounter++;
@@ -78,22 +66,10 @@ public class InfernoProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
-
-
         Lighting.AddLight(Projectile.Center, 3.15f, 1.85f, 0.95f);
-
-
         Projectile.velocity = Vector2.Zero;
-
-
     }
-
-
 }
-
-

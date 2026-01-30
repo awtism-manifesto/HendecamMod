@@ -58,8 +58,6 @@ public class RadioactiveEmblem : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(12);
         recipe.AddIngredient<PlutoniumBar>(12);
@@ -67,8 +65,6 @@ public class RadioactiveEmblem : ModItem
         recipe.AddIngredient(ItemID.DestroyerEmblem);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -109,24 +105,18 @@ public class RadApply : ModPlayer
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<UraniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
-
-
         }
         if (Main.rand.NextBool(6)) // 1-in-3 chance every tick
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
-
-
         }
         if (Main.rand.NextBool(6)) // 1-in-3 chance every tick
         {
             int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<AstatineDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
-
-
         }
 
     }

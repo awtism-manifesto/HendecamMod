@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class HarpoonProj : ModProjectile
@@ -36,8 +34,6 @@ public class HarpoonProj : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -59,7 +55,5 @@ public class HarpoonProj : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.75f);
         target.immune[Projectile.owner] = 8;
     }
-
-
 
 }

@@ -14,12 +14,8 @@ public class TheSun : ModProjectile
 
     public override void SetDefaults()
     {
-
-
         Projectile.width = 536; // The width of projectile hitbox
         Projectile.height = 536; // The height of projectile hitbox
-
-
         Projectile.timeLeft = 500;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
@@ -48,18 +44,10 @@ public class TheSun : ModProjectile
     {
         Projectile.scale = Main.rand.NextFloat(1.25f, 1.275f);
 
-
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
     }
 }

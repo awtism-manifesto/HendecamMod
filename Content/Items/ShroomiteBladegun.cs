@@ -28,8 +28,6 @@ public class ShroomiteBladegun : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 255000;
-
-
         // Use Properties
         Item.useTime = 28; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 28; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -37,32 +35,20 @@ public class ShroomiteBladegun : ModItem
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
-
-
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
         Item.damage = 125; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         Item.shoot = ModContent.ProjectileType<BladegunWave>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 16.67f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.None; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
-
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -116,8 +102,6 @@ public class ShroomiteBladegun : ModItem
         {
 
             SoundEngine.PlaySound(SoundID.Item71, player.position);
-
-
             damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
             float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
@@ -128,8 +112,6 @@ public class ShroomiteBladegun : ModItem
 
         }
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -150,10 +132,6 @@ public class ShroomiteBladegun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override Vector2? HoldoutOffset()
     {
@@ -168,14 +146,8 @@ public class ShroomiteBladegun : ModItem
         recipe.AddIngredient<BulletBlade>();
         recipe.AddIngredient(ItemID.ShroomiteBar, 12);
 
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
 

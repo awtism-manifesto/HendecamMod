@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
-
-
 public class AncientCobaltPickaxe : ModItem
 {
     public override void SetDefaults()
@@ -25,17 +23,11 @@ public class AncientCobaltPickaxe : ModItem
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 60;
-
-
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -51,8 +43,6 @@ public class AncientCobaltPickaxe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         foreach (var l in tooltips)
         {

@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MorbiumArrowProj : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -28,23 +24,13 @@ public class MorbiumArrowProj : ModProjectile
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
-
-
     public override void AI()
     {
 
         Projectile.velocity = Projectile.velocity * 0.225f;
-
-
     }
-
-
-
-
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.5f));
         Vector2 spawn = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
@@ -63,13 +49,7 @@ public class MorbiumArrowProj : ModProjectile
         Vector2 spawn4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn4, velocity4,
         ModContent.ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-
-
-
-
     }
 
 }
-
-
 

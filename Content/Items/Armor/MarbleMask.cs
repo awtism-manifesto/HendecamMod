@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 public class MarbleMask : ModItem
 {
 
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -48,8 +46,6 @@ public class MarbleMask : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -87,8 +83,6 @@ public class MarbleMask : ModItem
 
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 108f;
         player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 108f;
-
-
     }
 
     public override void AddRecipes()
@@ -102,7 +96,5 @@ public class MarbleMask : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

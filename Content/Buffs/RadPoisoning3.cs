@@ -36,8 +36,6 @@ public class RadPoisoning3 : ModBuff
         }
 
         npc.GetGlobalNPC<Rad3Tick>().Radded3 = true;
-
-
     }
 
     public class Rad3Player : ModPlayer

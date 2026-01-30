@@ -44,8 +44,6 @@ public class Bullshit4 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,8 +55,6 @@ public class Bullshit4 : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -90,10 +86,6 @@ public class Bullshit4 : ModItem
             recipe.AddIngredient(TheOmegaCore.Type);
 
         }
-
-
-
-
     }
 
 }

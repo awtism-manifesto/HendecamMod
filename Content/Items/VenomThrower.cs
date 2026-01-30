@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class VenomThrower : ModItem
@@ -20,8 +18,6 @@ public class VenomThrower : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 27500;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,17 +29,11 @@ public class VenomThrower : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -62,10 +52,6 @@ public class VenomThrower : ModItem
 
     }
 
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -77,8 +63,6 @@ public class VenomThrower : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -93,16 +77,10 @@ public class VenomThrower : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
-
-
         {
 
             recipe = CreateRecipe();
@@ -121,8 +99,6 @@ public class VenomThrower : ModItem
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
-
 
         }
         else
@@ -131,16 +107,12 @@ public class VenomThrower : ModItem
             recipe.AddIngredient(ItemID.SpiderFang, 12);
             recipe.AddIngredient<Items.RefinedOil>(30);
             recipe.AddIngredient(ItemID.CobaltBar, 12);
-
-
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpiderFang, 12);
             recipe.AddIngredient<Items.RefinedOil>(30);
             recipe.AddIngredient(ItemID.PalladiumBar, 12);
-
-
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 

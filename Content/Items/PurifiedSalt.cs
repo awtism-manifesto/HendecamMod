@@ -32,8 +32,6 @@ public class PurifiedSalt : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -47,8 +45,6 @@ public class PurifiedSalt : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(9);
@@ -58,11 +54,5 @@ public class PurifiedSalt : ModItem
         recipe.AddIngredient<Items.RockSalt>(9);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-
-
-
-
-
-
     }
 }

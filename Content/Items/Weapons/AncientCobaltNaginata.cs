@@ -53,8 +53,6 @@ public class AncientCobaltNaginata : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     public override bool CanUseItem(Player player)
     {

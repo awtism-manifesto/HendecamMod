@@ -16,8 +16,6 @@ public class KingslayerGreaves : ModItem
     public static readonly int MoveSpeedBonus = 25;
     public static readonly int AdditiveDamageBonus = 6;
     public static readonly int AttackSpeedBonus = 5;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,8 +25,6 @@ public class KingslayerGreaves : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -57,8 +53,6 @@ public class KingslayerGreaves : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -110,8 +104,6 @@ public class KingslayerGreaves : ModItem
         recipe.AddIngredient(ItemID.SandBoots);
 
         recipe.AddTile(TileID.Solidifier);
-
-
         recipe.Register();
 
     }
@@ -135,8 +127,6 @@ public class KingslayerGreaves : ModItem
             {
                 return;
             }
-
-
             Player.runAcceleration *= 1.33f;
             Player.maxRunSpeed *= 1.33f;
             Player.accRunSpeed *= 1.33f;

@@ -26,10 +26,6 @@ public class MorbiumOrePlaced : ModTile
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileLighted[Type] = true;
-
-
-
-
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(89, 255, 167), Language.GetText("Morbium Ore"));
 
@@ -48,6 +44,4 @@ public class MorbiumOrePlaced : ModTile
         b = 0.5f;
 
     }
-
-
 }

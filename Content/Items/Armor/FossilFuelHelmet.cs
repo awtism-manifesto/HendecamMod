@@ -12,8 +12,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class FossilFuelHelmet : ModItem
 {
-
-
     public static readonly int AdditiveSummonDamageBonus = 15;
     public static readonly int CritBonus = 8;
 
@@ -52,8 +50,6 @@ public class FossilFuelHelmet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -107,7 +103,5 @@ public class FossilFuelHelmet : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

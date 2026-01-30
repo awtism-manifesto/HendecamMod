@@ -39,8 +39,6 @@ public class MediocreGrades : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -64,19 +62,11 @@ public class MediocreGrades : ModItem
         recipe.AddIngredient(ItemID.SoulofMight, 5);
 
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
-
-
         {
             recipe.AddIngredient(SoulOfPlight.Type, 5);
-
-
         }
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)

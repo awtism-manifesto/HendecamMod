@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
-
-
 public class GenderBreaker : ModItem
 {
     public override void SetDefaults()
@@ -25,16 +23,10 @@ public class GenderBreaker : ModItem
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 60;
         Item.useTurn = true;
-
-
         Item.value = Item.buyPrice(silver: 15);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
-
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -50,8 +42,6 @@ public class GenderBreaker : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         foreach (var l in tooltips)
         {

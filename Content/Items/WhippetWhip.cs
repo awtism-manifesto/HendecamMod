@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class WhippetWhip : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -40,8 +38,6 @@ public class WhippetWhip : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -55,8 +51,6 @@ public class WhippetWhip : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     // Makes the whip receive melee prefixes
     public override bool MeleePrefix()
     {

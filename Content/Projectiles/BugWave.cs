@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BugWave : ModProjectile
@@ -52,19 +50,13 @@ public class BugWave : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
-
-
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
         Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
         // If the projectile hits the left or right side of the tile, reverse the X velocity
         if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
         {
@@ -76,8 +68,6 @@ public class BugWave : ModProjectile
         {
             Projectile.velocity.Y = -oldVelocity.Y;
         }
-
-
         return false;
     }
     public override void OnKill(int timeLeft)
@@ -88,5 +78,3 @@ public class BugWave : ModProjectile
     }
 
 }
-
-

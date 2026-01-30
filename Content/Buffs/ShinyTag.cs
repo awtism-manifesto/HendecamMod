@@ -16,13 +16,9 @@ public class ShinyTag : ModBuff
         BuffID.Sets.IsATagBuff[Type] = true;
     }
 
-
-
     public override void Update(NPC npc, ref int buffIndex)
     {
         Lighting.AddLight(npc.Center, 1f, 1f, 1f);
-
-
     }
     public class ShinyTagg : GlobalNPC
     {
@@ -31,8 +27,6 @@ public class ShinyTag : ModBuff
             // Only player attacks should benefit from this buff, hence the NPC and trap checks.
             if (projectile.npcProj || projectile.trap || !projectile.IsMinionOrSentryRelated)
                 return;
-
-
             // SummonTagDamageMultiplier scales down tag damage for some specific minion and sentry projectiles for balance purposes.
             var projTagMultiplier = ProjectileID.Sets.SummonTagDamageMultiplier[projectile.type];
             if (npc.HasBuff<ShinyTag>())

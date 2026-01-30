@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class TungstenCube : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 26;
@@ -36,8 +34,6 @@ public class TungstenCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))

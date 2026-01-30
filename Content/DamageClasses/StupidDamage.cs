@@ -55,8 +55,4 @@ public class StupidDamage : DamageClass
         // You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
     }
 
-
-
-
-
 }

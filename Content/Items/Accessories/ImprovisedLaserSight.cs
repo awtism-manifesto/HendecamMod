@@ -15,8 +15,6 @@ public class ImprovisedLaserSight : ModItem
     public static readonly int RangedCritBonus = 7;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 30;
@@ -38,8 +36,6 @@ public class ImprovisedLaserSight : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -53,13 +49,9 @@ public class ImprovisedLaserSight : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe = CreateRecipe();
 
@@ -67,8 +59,6 @@ public class ImprovisedLaserSight : ModItem
         recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
@@ -87,9 +77,5 @@ public class ImprovisedLaserSight : ModItem
         player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 104f;
 
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-
-
-
-
     }
 }

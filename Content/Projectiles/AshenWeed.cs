@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class AshenWeed : ModProjectile
@@ -34,8 +32,6 @@ public class AshenWeed : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -90,6 +86,4 @@ public class AshenWeed : ModProjectile
         target.AddBuff(BuffID.OnFire, 240);
         target.immune[Projectile.owner] = 6;
     }
-
-
 }

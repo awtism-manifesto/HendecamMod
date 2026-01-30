@@ -1,8 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class VerdantProjThrown : ModProjectile
@@ -25,8 +23,6 @@ public class VerdantProjThrown : ModProjectile
     {
 
         target.AddBuff(BuffID.Poisoned, 120);
-
-
     }
     public override void AI()
     {

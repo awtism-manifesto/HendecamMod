@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RuneShot : ModProjectile
@@ -51,8 +49,6 @@ public class RuneShot : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.RuneWizard, 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
@@ -68,8 +64,4 @@ public class RuneShot : ModProjectile
         target.immune[Projectile.owner] = 6;
 
     }
-
-
 }
-
-

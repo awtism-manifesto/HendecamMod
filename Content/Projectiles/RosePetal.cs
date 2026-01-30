@@ -2,8 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RosePetal : ModProjectile
@@ -50,8 +48,6 @@ public class RosePetal : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
@@ -71,5 +67,3 @@ public class RosePetal : ModProjectile
     }
 
 }
-
-

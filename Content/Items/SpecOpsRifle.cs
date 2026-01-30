@@ -17,19 +17,13 @@ public class SpecOpsRifle : ModItem
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
         Item.value = 150000;
-
-
         // Use Properties
         Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item68;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 92; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.

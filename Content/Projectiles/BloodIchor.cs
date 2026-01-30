@@ -35,8 +35,6 @@ public class BloodIchor : ModProjectile
     }
     public override void AI()
     {
-
-
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;

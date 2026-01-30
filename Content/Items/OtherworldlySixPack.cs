@@ -52,8 +52,6 @@ public class OtherworldlySixPack : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -68,7 +66,5 @@ public class OtherworldlySixPack : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-
-
 }
 

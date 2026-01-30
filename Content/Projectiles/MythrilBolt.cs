@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MythrilBolt : ModProjectile
@@ -51,8 +49,6 @@ public class MythrilBolt : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 11, Projectile.height - 11, DustID.CoralTorch, 0f, 0f, 100, default, 2.15f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fireDust.noGravity = true;
@@ -71,8 +67,4 @@ public class MythrilBolt : ModProjectile
         target.immune[Projectile.owner] = 6;
 
     }
-
-
 }
-
-

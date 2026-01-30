@@ -9,10 +9,6 @@ public class MorbinTime : ModBuff
     public static readonly int AttackSpeedBonus = 11;
     public static readonly int CritBonus = 17;
     public static readonly int AdditiveDamageBonus = 23;
-
-
-
-
     public override void Update(Player player, ref int buffIndex)
     {
 

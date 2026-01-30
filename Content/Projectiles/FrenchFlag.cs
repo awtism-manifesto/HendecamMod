@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class FrenchFlag : ModProjectile
@@ -20,18 +18,12 @@ public class FrenchFlag : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
         ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
     }
-
-
     public override void SetDefaults()
     {
         Projectile.width = 70; // The width of projectile hitbox

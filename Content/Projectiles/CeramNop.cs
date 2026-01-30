@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class CeramNop : ModProjectile
@@ -33,8 +31,6 @@ public class CeramNop : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-
-
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
@@ -84,8 +80,4 @@ public class CeramNop : ModProjectile
 
         return true;
     }
-
-
-
-
 }

@@ -73,8 +73,4 @@ public class MulticlassRecipe : ModSystem
             });
         }
     }
-
-
 }
-
-

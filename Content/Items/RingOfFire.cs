@@ -49,10 +49,6 @@ public class RingOfFire : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {
@@ -61,27 +57,15 @@ public class RingOfFire : ModItem
         recipe.AddIngredient<CyberneticGunParts>(2);
         recipe.AddIngredient(ItemID.LivingFireBlock, 48);
         recipe.AddIngredient<PlutoniumBar>(16);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
-
 
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
         position = Main.MouseWorld;
         player.LimitPointToPlayerReachableArea(ref position);
         int halfProjectileHeight = (int)Math.Ceiling(ContentSamples.ProjectilesByType[type].height / 2f);
-
-
         position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
 
         if (player.maxTurrets >= 2)

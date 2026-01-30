@@ -23,6 +23,4 @@ public class BlackshardDebuff : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

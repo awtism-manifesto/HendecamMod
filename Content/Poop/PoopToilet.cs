@@ -11,10 +11,6 @@ public class PoopToilet : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
-
-
         Item.ResearchUnlockCount = 2; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -43,8 +39,6 @@ public class PoopToilet : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     public override void AddRecipes()
     {
@@ -54,6 +48,4 @@ public class PoopToilet : ModItem
 
         recipe.Register();
     }
-
-
 }

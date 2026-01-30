@@ -44,8 +44,6 @@ public class Bullshit1 : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,8 +55,6 @@ public class Bullshit1 : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -83,17 +79,9 @@ public class Bullshit1 : ModItem
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
         if (ModLoader.TryGetMod("SpiritReforged", out Mod SpiritMerica) && SpiritMerica.TryFind("GoldGarItem", out ModItem GoldGarItem))
-
-
         {
             recipe.AddIngredient(GoldGarItem.Type);
-
-
         }
-
-
-
-
     }
 
 }

@@ -47,8 +47,6 @@ public class SplashPotionShine : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
         Projectile.rotation += 0.18f;
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 24f)
@@ -60,8 +58,6 @@ public class SplashPotionShine : ModProjectile
         {
             Projectile.velocity.Y = 20f;
         }
-
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -99,10 +95,6 @@ public class SplashPotionShine : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(134, 134);
 
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 25; j++)
         {
@@ -112,8 +104,6 @@ public class SplashPotionShine : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.YellowStarDust, 0f, 0f, 100, default, 1.15f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -122,6 +112,4 @@ public class SplashPotionShine : ModProjectile
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
     }
-
-
 }

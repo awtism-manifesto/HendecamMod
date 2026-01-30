@@ -22,8 +22,6 @@ public class TheChudfucker : ModItem
         Item.scale = 1.6f;
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.value = 67000000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
@@ -31,23 +29,13 @@ public class TheChudfucker : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
-
-
         // The sound that this item plays when used.
-
-
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.damage = 670; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
-
-
 
         Item.shootSpeed = 30f; // The speed of the projectile (measured in pixels per frame.)
 
@@ -65,12 +53,8 @@ public class TheChudfucker : ModItem
     {
 
         SoundEngine.PlaySound(SoundID.Item38, player.position);
-
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -90,8 +74,6 @@ public class TheChudfucker : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -105,8 +87,6 @@ public class TheChudfucker : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class CeramMag : ModProjectile
@@ -86,7 +84,5 @@ public class CeramMag : ModProjectile
 
         return true;
     }
-
-
 
 }

@@ -49,8 +49,6 @@ public class BladegunBomb : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
         Projectile.rotation += 0.33f;
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 24f)
@@ -62,8 +60,6 @@ public class BladegunBomb : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
-
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -124,11 +120,7 @@ public class BladegunBomb : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
-
-
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {
     //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

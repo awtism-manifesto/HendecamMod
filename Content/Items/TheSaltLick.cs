@@ -77,10 +77,6 @@ public class TheSaltLick : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
 
     public override void AddRecipes()
@@ -89,10 +85,6 @@ public class TheSaltLick : ModItem
         recipe.AddIngredient<RockSalt>(35);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
 
     }
 }

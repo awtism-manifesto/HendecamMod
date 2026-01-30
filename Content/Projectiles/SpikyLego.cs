@@ -36,9 +36,5 @@ public class SpikyLego : ModProjectile
 
         Projectile.damage = (int)(Projectile.damage * 0.825f);
 
-
-
-
-
     }
 }

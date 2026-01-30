@@ -14,8 +14,6 @@ namespace HendecamMod.Content.Projectiles;
 // This example is similar to the Wooden Arrow projectile
 public class PlutoShot : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 12; // The width of projectile hitbox
@@ -59,8 +57,6 @@ public class PlutoShot : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.557f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
@@ -85,8 +81,6 @@ public class PlutoShot : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<PlutoShotMini>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         }
-
-
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

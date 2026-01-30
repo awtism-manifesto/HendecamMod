@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Seven : ModProjectile
@@ -46,8 +44,6 @@ public class Seven : ModProjectile
 
     }
 
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -64,11 +60,5 @@ public class Seven : ModProjectile
         return true;
     }
 
-
-
-
-
 }
-
-
 

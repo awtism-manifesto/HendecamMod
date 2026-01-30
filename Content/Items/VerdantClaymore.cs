@@ -8,8 +8,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class VerdantClaymore : ModItem
 {
 
@@ -35,10 +33,6 @@ public class VerdantClaymore : ModItem
         Item.shoot = ModContent.ProjectileType<VerdantProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 5f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
 
-
-
-
-
     }
     public override bool AltFunctionUse(Player player)
     {
@@ -51,10 +45,6 @@ public class VerdantClaymore : ModItem
     {
 
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(9f));
-
-
-
-
         if (player.altFunctionUse == 2)
         {
             int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
@@ -72,8 +62,6 @@ public class VerdantClaymore : ModItem
             return false; // Prevent vanilla projectile spawn
 
         }
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -87,8 +75,6 @@ public class VerdantClaymore : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         line = new TooltipLine(Mod, "Face", "Right click to throw the claymore")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -105,17 +91,5 @@ public class VerdantClaymore : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
-
-
-
-
-
-
     }
-
-
 }

@@ -12,8 +12,6 @@ namespace HendecamMod.Content.Global;
 public class MorbiumOreBlessed : GlobalNPC
 {
 
-
-
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
         return npc.type == NPCID.Plantera;
@@ -29,8 +27,6 @@ public class MorbiumOreBlessed : GlobalNPC
 
     }
 }
-
-
 public class MorbiumSystem : ModSystem
 {
     public static LocalizedText MorbiumMessage { get; private set; }

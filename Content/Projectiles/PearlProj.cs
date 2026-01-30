@@ -4,8 +4,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PearlProj : ModProjectile
@@ -21,10 +19,6 @@ public class PearlProj : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 16; // The length of old position to be recorded
@@ -46,8 +40,6 @@ public class PearlProj : ModProjectile
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-
-
 
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -135,5 +127,3 @@ public class PearlProj : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

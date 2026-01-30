@@ -5,8 +5,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ShortgunProjectile : ModProjectile
@@ -38,8 +36,6 @@ public class ShortgunProjectile : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -55,8 +51,6 @@ public class ShortgunProjectile : ModProjectile
 
         return true;
     }
-
-
 
     public override void OnKill(int timeLeft)
     {

@@ -11,12 +11,6 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Beard)]
 public class CollarOfTheDamned : ModItem
 {
-
-
-
-
-
-
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -30,18 +24,10 @@ public class CollarOfTheDamned : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.PinkDye);
         recipe.AddIngredient(ItemID.CrabBanner);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
-
-
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -55,8 +41,6 @@ public class CollarOfTheDamned : ModItem
             OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -72,7 +56,5 @@ public class CollarOfTheDamned : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-
-
 
 }

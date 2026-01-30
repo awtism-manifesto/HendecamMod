@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Censored : ModProjectile
@@ -20,10 +18,6 @@ public class Censored : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10; // The length of old position to be recorded
@@ -45,8 +39,6 @@ public class Censored : ModProjectile
         Projectile.light = 1f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-
-
 
     }
 
@@ -129,5 +121,3 @@ public class Censored : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

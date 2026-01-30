@@ -11,10 +11,6 @@ public class UraniumGlass : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
-
-
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -43,8 +39,6 @@ public class UraniumGlass : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -58,8 +52,6 @@ public class UraniumGlass : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(15);
@@ -68,10 +60,6 @@ public class UraniumGlass : ModItem
         recipe.AddIngredient(ItemID.Glass);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-
-
-
-
 
     }
 }

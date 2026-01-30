@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class BOOMerang : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -27,8 +25,6 @@ public class BOOMerang : ModItem
         Item.damage = 63; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
-
-
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
 
@@ -52,11 +48,7 @@ public class BOOMerang : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
-
-
     private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override bool AllowPrefix(int pre)

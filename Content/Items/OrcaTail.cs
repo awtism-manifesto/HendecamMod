@@ -47,8 +47,6 @@ public class OrcaTail : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -80,8 +78,6 @@ public class OrcaTail : ModItem
 
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
-
-
     public override void UpdateArmorSet(Player player)
     {
 

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Photon : ModProjectile
@@ -38,8 +36,6 @@ public class Photon : ModProjectile
     }
     public override Color? GetAlpha(Color lightColor)
     {
-
-
         return Color.Orange;
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -95,11 +91,5 @@ public class Photon : ModProjectile
         target.AddBuff(BuffID.OnFire3, 235);
         target.AddBuff(BuffID.BetsysCurse, 240);
     }
-
-
-
-
 }
-
-
 

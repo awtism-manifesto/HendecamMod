@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.GameContent.Drawing;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class RedneckShovelHallow : ModProjectile
@@ -28,8 +26,6 @@ public class RedneckShovelHallow : ModProjectile
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);
         target.AddBuff(ModContent.BuffType<RedneckTag>(), 136);
-
-
     }
     public override void AI()
     {

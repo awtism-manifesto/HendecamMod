@@ -47,11 +47,7 @@ public class PoorMahoganyHammer : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<PoorMahogany>(12);
-
-
         recipe.AddTile(TileID.WorkBenches);
 
         recipe.Register();

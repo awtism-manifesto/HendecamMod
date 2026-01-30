@@ -5,8 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class SteelLongsword : ModItem
 {
     public override void SetDefaults()
@@ -30,11 +28,7 @@ public class SteelLongsword : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -50,8 +44,6 @@ public class SteelLongsword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         foreach (var l in tooltips)
         {

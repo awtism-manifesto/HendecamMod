@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class OilBallRanged : ModProjectile
@@ -57,8 +55,6 @@ public class OilBallRanged : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         Projectile.ai[0] += 1f;
@@ -76,8 +72,6 @@ public class OilBallRanged : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
-
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -111,8 +105,6 @@ public class OilBallRanged : ModProjectile
         }
     }
 
-
-
     public override void OnKill(int timeLeft)
     {
 
@@ -144,11 +136,7 @@ public class OilBallRanged : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

@@ -52,10 +52,6 @@ public class BrainrotPotion : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()

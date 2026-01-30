@@ -16,12 +16,8 @@ public class AmalgamatedFragment : ModItem
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
     public override void SetStaticDefaults()
     {
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true;
         ItemID.Sets.ItemNoGravity[Item.type] = true;
-
-
     }
     public override void SetDefaults()
     {
@@ -44,8 +40,6 @@ public class AmalgamatedFragment : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage")
@@ -64,8 +58,6 @@ public class AmalgamatedFragment : ModItem
     }
     public override void AddRecipes()
     {
-
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FragmentSolar, 15);
         recipe.AddIngredient(ItemID.FragmentVortex, 15);
@@ -77,8 +69,6 @@ public class AmalgamatedFragment : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("WhiteDwarfFragment", out ModItem WhiteDwarfFragment))
-
-
         {
             recipe.AddIngredient(WhiteDwarfFragment.Type, 15);
 
@@ -95,8 +85,6 @@ public class AmalgamatedFragment : ModItem
         player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 112f;
         player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 92f;
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 112f;
 

@@ -44,8 +44,6 @@ public class GunThatKillsPeople : ModItem
 
         return false;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -73,10 +71,6 @@ public class GunThatKillsPeople : ModItem
         recipe.AddIngredient<Items.Placeables.MorbiumBar>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
 

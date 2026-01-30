@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class JevilishScythe : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -27,8 +25,6 @@ public class JevilishScythe : ModItem
         Item.damage = 30; // The amount of damage the item does to an enemy or player.
         Item.DamageType = ModContent.GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
-
-
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
 
@@ -52,8 +48,6 @@ public class JevilishScythe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -67,8 +61,6 @@ public class JevilishScythe : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -87,7 +79,5 @@ public class JevilishScythe : ModItem
             recipe.AddIngredient(PurifiedGel.Type, 10);
 
         }
-
-
     }
 }

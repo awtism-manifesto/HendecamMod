@@ -7,8 +7,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class AncientCobaltSword : ModItem
 {
     public override void SetDefaults()
@@ -37,8 +35,6 @@ public class AncientCobaltSword : ModItem
 
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -53,10 +49,6 @@ public class AncientCobaltSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
 
     }
     public override void AddRecipes()

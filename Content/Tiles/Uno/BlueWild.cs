@@ -19,8 +19,6 @@ public class BlueWild : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
-
-
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(0, 0, 200), Language.GetText("Blue Uno Card"));

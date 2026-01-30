@@ -64,8 +64,6 @@ public class KingslayerRocket : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -177,8 +175,6 @@ public class KingslayerRocket : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
-
-
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {
     //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

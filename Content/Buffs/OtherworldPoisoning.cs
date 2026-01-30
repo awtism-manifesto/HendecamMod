@@ -10,16 +10,10 @@ public class OtherworldPoisoning : ModBuff
     {
         Main.debuff[Type] = true;
 
-
-
     }
-
-
 
     public override void Update(Player player, ref int buffIndex)
     {
         player.lifeRegen = (int)(player.lifeRegen - 625f);
-
-
     }
 }

@@ -26,10 +26,6 @@ public class LycopiteOreTile : ModTile
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileLighted[Type] = true;
-
-
-
-
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(255, 95, 66), Language.GetText("Lycopite Ore"));
 
@@ -48,6 +44,4 @@ public class LycopiteOreTile : ModTile
         b = 0.05f;
 
     }
-
-
 }

@@ -8,12 +8,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class SandyScorpion : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -33,8 +29,6 @@ public class SandyScorpion : ModItem
 
         Item.value = 110000;
         Item.rare = ItemRarityID.LightRed;
-
-
         Item.shoot = ModContent.ProjectileType<SandShot>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.25f; // Speed of the projectiles the sword will shoot
 
@@ -70,16 +64,8 @@ public class SandyScorpion : ModItem
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);
             shotCounter = 0;
         }
-
-
-
-
         return false;
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,8 +77,6 @@ public class SandyScorpion : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -111,6 +95,4 @@ public class SandyScorpion : ModItem
     {
         return new Vector2(-7.5f, -1f);
     }
-
-
 }

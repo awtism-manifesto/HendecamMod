@@ -2,8 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Icicle : ModProjectile
@@ -50,8 +48,6 @@ public class Icicle : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
@@ -59,10 +55,6 @@ public class Icicle : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Frostburn, 240);
-
-
-
-
     }
     public override void OnKill(int timeLeft)
     {
@@ -72,5 +64,3 @@ public class Icicle : ModProjectile
     }
 
 }
-
-

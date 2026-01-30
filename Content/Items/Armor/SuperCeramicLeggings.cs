@@ -50,8 +50,6 @@ public class SuperCeramicLeggings : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -91,8 +89,6 @@ public class SuperCeramicLeggings : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(35);
         recipe.AddIngredient<EbonceramicSheet>(15);
 
@@ -100,8 +96,6 @@ public class SuperCeramicLeggings : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(35);
 
         recipe.AddIngredient<CrimceramicSheet>(15);
@@ -109,14 +103,8 @@ public class SuperCeramicLeggings : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

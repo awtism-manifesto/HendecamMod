@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class FerrousThornSmooth : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -46,8 +44,6 @@ public class FerrousThornSmooth : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     public override bool CanRightClick()
     {
@@ -68,8 +64,6 @@ public class FerrousThornSmooth : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-
-
     }
 
     // Makes the whip receive melee prefixes

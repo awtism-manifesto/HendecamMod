@@ -38,8 +38,6 @@ public class PyriteHood : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;
 
@@ -55,10 +53,6 @@ public class PyriteHood : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void UpdateArmorSet(Player player)
     {

@@ -63,12 +63,8 @@ public class PyriteArrowProj : ModProjectile
 
             tickCounter = 0;
             nextSpawnTick = Main.rand.Next(22, 23);
-
-
             Projectile.netUpdate = true;
         }
 
     }
-
-
 }

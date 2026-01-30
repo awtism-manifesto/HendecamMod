@@ -79,8 +79,6 @@ public class GreaseBomb2 : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -93,11 +91,7 @@ public class GreaseBomb2 : ModProjectile
                     smokeDust.velocity *= 0.05f;
                 }
             }
-
-
         }
-
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.

@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class TheImperialBoomerangs : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -27,8 +25,6 @@ public class TheImperialBoomerangs : ModItem
         Item.damage = 40; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.75f; // The amount of knockback the item inflicts.
-
-
         Item.rare = ItemRarityID.Green; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 6); // The amount of money that the item is can be bought for.
 
@@ -46,8 +42,6 @@ public class TheImperialBoomerangs : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -90,8 +84,6 @@ public class TheImperialBoomerangs : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe.AddIngredient(ItemID.WoodenBoomerang, 2);
         recipe.AddIngredient<Items.KingslayerBar>(8);

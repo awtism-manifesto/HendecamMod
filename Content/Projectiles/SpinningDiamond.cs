@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SpinningDiamond : ModProjectile
@@ -54,14 +52,8 @@ public class SpinningDiamond : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
-
-
         if (Math.Abs(Projectile.velocity.X) <= 25.5f && Math.Abs(Projectile.velocity.Y) <= 25.5f)
         {
             Projectile.velocity *= 1.32f;
@@ -69,10 +61,6 @@ public class SpinningDiamond : ModProjectile
         }
 
     }
-
-
-
-
 
     public override void OnKill(int timeLeft)
     {

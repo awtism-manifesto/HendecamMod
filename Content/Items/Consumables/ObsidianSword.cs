@@ -15,8 +15,6 @@ public class ObsidianSword : ModItem
         Item.height = 36;
         Item.value = Item.sellPrice(silver: 3);
         Item.rare = ItemRarityID.Orange;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 14;
         Item.useAnimation = 14;

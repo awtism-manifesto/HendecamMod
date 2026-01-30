@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class OilMonsterStaff : ModItem
@@ -86,10 +84,6 @@ public class OilMonsterStaff : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -104,7 +98,5 @@ public class OilMonsterStaff : ModItem
         // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
         return false;
     }
-
-
 
 }

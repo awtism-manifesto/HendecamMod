@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class DiseaseBlaster : ModItem
@@ -20,8 +18,6 @@ public class DiseaseBlaster : ModItem
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 160000;
-
-
         // Use Properties
         Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 30; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -31,25 +27,17 @@ public class DiseaseBlaster : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item99;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 11.8f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
-
-
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -64,8 +52,6 @@ public class DiseaseBlaster : ModItem
         {
             // Rotate the velocity randomly by 30 degrees at max.
 
-
-
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.75f));
 
             // Decrease velocity randomly for nicer visuals.
@@ -75,14 +61,10 @@ public class DiseaseBlaster : ModItem
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             type = ProjectileID.TinyEater;
-
-
         }
 
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -95,8 +77,6 @@ public class DiseaseBlaster : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -112,23 +92,15 @@ public class DiseaseBlaster : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.DemoniteBar, 12);
         recipe.AddIngredient(ItemID.ShadowScale, 10);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("LivingFleshItem", out ModItem LivingFleshItem))
-
-
         {
 
             recipe.AddIngredient(LivingFleshItem.Type, 45);

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class ChristianCrossbow : ModItem
@@ -19,44 +17,30 @@ public class ChristianCrossbow : ModItem
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 35000;
-
-
         // Use Properties
         Item.useTime = 25; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item102;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 9.4f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.HolyArrow;
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.HolyArrow;
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -69,13 +53,7 @@ public class ChristianCrossbow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
 
     public override void AddRecipes()
     {
@@ -94,10 +72,6 @@ public class ChristianCrossbow : ModItem
         recipe.AddIngredient(ItemID.Ruby);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()

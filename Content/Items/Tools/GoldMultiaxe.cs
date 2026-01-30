@@ -38,11 +38,7 @@ public class GoldMultiaxe : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -81,8 +77,6 @@ public class GoldMultiaxe : ModItem
         };
         tooltips.Add(line);
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -93,12 +87,6 @@ public class GoldMultiaxe : ModItem
         recipe.AddIngredient(ItemID.GoldPickaxe);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
 
 }

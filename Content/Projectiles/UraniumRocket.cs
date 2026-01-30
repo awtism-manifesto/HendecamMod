@@ -22,8 +22,6 @@ public class UraniumRocket : ModProjectile
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
-
-
     }
     public override void SetDefaults()
     {
@@ -63,8 +61,6 @@ public class UraniumRocket : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -146,14 +142,10 @@ public class UraniumRocket : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.25f);
             fireDust.velocity *= 3f;
         }
-
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 250);
 
         target.immune[Projectile.owner] = 4;

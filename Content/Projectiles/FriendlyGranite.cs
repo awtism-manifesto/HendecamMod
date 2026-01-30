@@ -62,8 +62,6 @@ public class FriendlyGranite : ModProjectile
         SearchForTargets(owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter);
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
-
-
     }
     private bool CheckActive(Player owner)
     {

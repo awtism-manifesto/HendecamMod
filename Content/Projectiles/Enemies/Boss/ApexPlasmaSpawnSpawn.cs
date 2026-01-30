@@ -63,8 +63,6 @@ public class ApexPlasmaSpawnSpawn : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.1f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.08f;
@@ -73,8 +71,6 @@ public class ApexPlasmaSpawnSpawn : ModProjectile
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hit)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
 
     }
@@ -89,8 +85,6 @@ public class ApexPlasmaSpawnSpawn : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<ApexPlasmaSpawn>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
         }
-
-
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

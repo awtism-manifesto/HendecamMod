@@ -28,8 +28,6 @@ public class CraterCreator : ModItem
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.damage = 208;
         Item.knockBack = 12.5f;
-
-
         Item.value = Item.buyPrice(gold: 50);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item14;
@@ -43,10 +41,6 @@ public class CraterCreator : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -58,8 +52,6 @@ public class CraterCreator : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -77,8 +69,6 @@ public class CraterCreator : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.MeteoriteBar, 15);
         recipe.AddIngredient<Items.AstatineBar>(10);
         recipe.AddIngredient<Items.FragmentFlatEarth>(5);
@@ -90,12 +80,6 @@ public class CraterCreator : ModItem
             recipe.AddIngredient(AstralBar.Type, 5);
 
         }
-
-
-
-
-
-
     }
 
 }

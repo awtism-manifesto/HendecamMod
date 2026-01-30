@@ -28,6 +28,4 @@ public class HarpyFeatherClone : ModProjectile
         // This can be done by modifying projectile.penetrate
 
     }
-
-
 }

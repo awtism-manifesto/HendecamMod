@@ -15,8 +15,6 @@ public class LunarBolt : ModProjectile
 
     public override void SetDefaults()
     {
-
-
         Projectile.width = 3; // The width of projectile hitbox
         Projectile.height = 3; // The height of projectile hitbox
 
@@ -82,8 +80,6 @@ public class LunarBolt : ModProjectile
 
                 tickCounter = 0;
                 nextSpawnTick = Main.rand.Next(265, 315);
-
-
                 Projectile.netUpdate = true;
             }
         }
@@ -91,8 +87,6 @@ public class LunarBolt : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         for (int i = 0; i < 8; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Vortex);
@@ -101,8 +95,6 @@ public class LunarBolt : ModProjectile
             dust.scale *= 1.5f;
 
         }
-
-
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }

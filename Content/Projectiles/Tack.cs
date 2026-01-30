@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Tack : ModProjectile
@@ -39,15 +37,7 @@ public class Tack : ModProjectile
 
     public override void AI()
     {
-
-
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
-
-
-
 
     }
     public override bool PreDraw(ref Color lightColor)
@@ -65,8 +55,4 @@ public class Tack : ModProjectile
 
         return true;
     }
-
-
-
-
 }

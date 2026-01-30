@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SpartanRageSpear : ModProjectile
@@ -39,20 +37,12 @@ public class SpartanRageSpear : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.9f);
-
-
     }
     public override void AI()
     {
 
-
-
         Lighting.AddLight(Projectile.Center, 0.55f, 0f, 0f);
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
-
-
-
 
     }
     public override bool PreDraw(ref Color lightColor)
@@ -70,8 +60,4 @@ public class SpartanRageSpear : ModProjectile
 
         return true;
     }
-
-
-
-
 }

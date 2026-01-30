@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ModLoader;
 
-
-
 namespace HendecamMod.Content.Buffs;
 
 public class Stamped : ModBuff
@@ -14,8 +12,6 @@ public class Stamped : ModBuff
     public override void SetStaticDefaults()
     {
         Main.pvpBuff[Type] = true; // This buff can be applied by other players in Pvp, so we need this to be true.
-
-
     }
 
     public override void Update(NPC npc, ref int buffIndex)

@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ElfMagicMissile : ModProjectile
@@ -21,8 +19,6 @@ public class ElfMagicMissile : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 24; // The width of projectile hitbox
@@ -109,8 +105,6 @@ public class ElfMagicMissile : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-
-
     }
     public NPC FindClosestNPC(float maxDetectDistance)
     {
@@ -179,10 +173,6 @@ public class ElfMagicMissile : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(235, 235);
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 25; j++)
         {
@@ -194,13 +184,5 @@ public class ElfMagicMissile : ModProjectile
 
         }
 
-
-
-
-
     }
-
-
 }
-
-

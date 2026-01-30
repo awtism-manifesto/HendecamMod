@@ -50,10 +50,6 @@ public class RadiologicalRavager : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -65,8 +61,6 @@ public class RadiologicalRavager : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -87,8 +81,6 @@ public class RadiologicalRavager : ModItem
 
         recipe.AddIngredient<TheIcebreaker>();
         recipe.AddIngredient<FissionDrive>();
-
-
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("UltimusCleaver", out ModItem UltimusCleaver) && CalMerica.TryFind<ModItem>("BloodstoneCore", out ModItem BloodstoneCore))

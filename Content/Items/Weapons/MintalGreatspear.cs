@@ -46,8 +46,6 @@ public class MintalGreatspear : ModItem
 
         type = ModContent.ProjectileType<MintLeafProjectile>();
         Projectile.NewProjectileDirect(source, position, velocity * 2.67f, type, (int)(damage * 0.69), knockback, player.whoAmI);
-
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
     public override bool CanUseItem(Player player)

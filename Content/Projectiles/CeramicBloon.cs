@@ -248,9 +248,5 @@ public class CeramicBloon : ModProjectile
     {
         // So it will lean slightly towards the direction it's moving
         Projectile.rotation = Projectile.velocity.X * 0.05f;
-
-
-
-
     }
 }

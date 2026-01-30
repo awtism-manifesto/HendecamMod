@@ -9,15 +9,11 @@ namespace HendecamMod.Content.Items.Accessories;
 public class TintedLenses : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
     public static readonly int ArmorPenetration = 10;
 
     public static readonly int CritBonus = 5;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -45,10 +41,6 @@ public class TintedLenses : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

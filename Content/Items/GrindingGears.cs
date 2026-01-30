@@ -28,8 +28,6 @@ public class GrindingGears : ModItem
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 3f;
         Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);
-
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -43,8 +41,6 @@ public class GrindingGears : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

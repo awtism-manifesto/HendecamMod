@@ -19,8 +19,6 @@ public class MorbiumBrickPlaced : ModTile
 
         AddMapEntry(new Color(41, 72, 92));
     }
-
-
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

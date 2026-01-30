@@ -52,8 +52,6 @@ public class KingslayerBar : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -91,8 +89,6 @@ public class KingslayerBar : ModItem
         recipe.AddIngredient(ItemID.Gel, 5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
     }
 
 }

@@ -58,8 +58,6 @@ public class Plasmoid : ModNPC
     {
         Lighting.AddLight(NPC.Center, 0.33f, 1, 0.33f);
 
-
-
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
     {
@@ -71,8 +69,6 @@ public class Plasmoid : ModNPC
             dust.scale *= 1.25f;
         }
 
-
-
         int buffType = ModContent.BuffType<RadPoisoning>();
         // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
@@ -83,8 +79,6 @@ public class Plasmoid : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"These odd, barely-corporeal creatures appear to feed on radiation. Their intelligence level is unknown\" "),
@@ -96,8 +90,6 @@ public class Plasmoid : ModNPC
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-
-
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 2, 5));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(), 1, 34, 69));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlasmoidWand>(), 15));

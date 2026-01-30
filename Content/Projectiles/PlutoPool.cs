@@ -1,16 +1,12 @@
 ﻿using HendecamMod.Content.Buffs;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class PlutoPool : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
-
         Main.projFrames[Projectile.type] = 3;
     }
     public override void SetDefaults()
@@ -48,12 +44,8 @@ public class PlutoPool : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         Projectile.velocity *= 0f;
 
@@ -99,8 +91,4 @@ public class PlutoPool : ModProjectile
         }
 
     }
-
-
 }
-
-

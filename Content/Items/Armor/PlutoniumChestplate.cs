@@ -29,8 +29,6 @@ public class PlutoniumChestplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -53,8 +51,6 @@ public class PlutoniumChestplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -110,8 +106,6 @@ public class PlutoniumChestplate : ModItem
         player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
-
-
     }
 
 }

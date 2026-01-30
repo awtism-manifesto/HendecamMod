@@ -23,8 +23,6 @@ public class SmoothTagg : GlobalNPC
         // Only player attacks should benefit from this buff, hence the NPC and trap checks.
         if (projectile.npcProj || projectile.trap || !projectile.IsMinionOrSentryRelated)
             return;
-
-
         // SummonTagDamageMultiplier scales down tag damage for some specific minion and sentry projectiles for balance purposes.
         var projTagMultiplier = ProjectileID.Sets.SummonTagDamageMultiplier[projectile.type];
         if (npc.HasBuff<SmoothTag>())

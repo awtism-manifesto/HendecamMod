@@ -18,8 +18,6 @@ public class PlutoniumPickaxe : ModItem
         Item.height = 35;
         Item.useTime = 5;
         Item.useAnimation = 14;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
 
@@ -63,11 +61,7 @@ public class PlutoniumPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<PlutoniumBar>(21);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();

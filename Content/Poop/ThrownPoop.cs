@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Poop;
 
 public class ThrownPoop : ModProjectile
@@ -28,11 +26,7 @@ public class ThrownPoop : ModProjectile
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
 
-
-
         Projectile.Kill();
-
-
 
         return false;
     }
@@ -51,14 +45,8 @@ public class ThrownPoop : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
-
-
         for (int i = 0; i < 1; i++)
         {
             float posOffsetX = 0f;
@@ -73,11 +61,7 @@ public class ThrownPoop : ModProjectile
             fire2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 0.25f;
-
-
         }
-
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -93,8 +77,4 @@ public class ThrownPoop : ModProjectile
         target.AddBuff(BuffID.Poisoned, 90);
         target.AddBuff(BuffID.Stinky, 900);
     }
-
-
 }
-
-

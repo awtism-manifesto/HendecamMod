@@ -47,8 +47,6 @@ public class FlatEarthHamaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<FragmentFlatEarth>(14);
         recipe.AddIngredient(ItemID.LunarBar, 12);
 

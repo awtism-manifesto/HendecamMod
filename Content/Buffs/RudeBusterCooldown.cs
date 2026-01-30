@@ -10,8 +10,6 @@ public class RudeBusterCooldown : ModBuff
     {
         Main.debuff[Type] = true;
 
-
-
     }
 
 }

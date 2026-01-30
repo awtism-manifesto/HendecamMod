@@ -19,12 +19,8 @@ public class KnightStar : ModProjectile
     }
     public override void SetDefaults()
     {
-
-
         Projectile.width = 50; // The width of projectile hitbox
         Projectile.height = 50; // The height of projectile hitbox
-
-
         Projectile.timeLeft = 48;
         Projectile.aiStyle = -1;
 
@@ -59,8 +55,6 @@ public class KnightStar : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
@@ -93,10 +87,6 @@ public class KnightStar : ModProjectile
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
         ModContent.ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
-
-
-
-
 
     }
 }

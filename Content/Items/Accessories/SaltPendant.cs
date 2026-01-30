@@ -10,10 +10,6 @@ namespace HendecamMod.Content.Items.Accessories;
 public class SaltPendant : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
-
-
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs();
 
@@ -38,8 +34,6 @@ public class SaltPendant : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

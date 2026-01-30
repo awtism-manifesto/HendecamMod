@@ -8,8 +8,6 @@ using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class KnightSwordUp : ModProjectile
@@ -50,10 +48,6 @@ public class KnightSwordUp : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
@@ -69,13 +63,7 @@ public class KnightSwordUp : ModProjectile
                     ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.75f), Projectile.knockBack, Projectile.owner);
             }
         }
-
-
-
-
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -92,11 +80,5 @@ public class KnightSwordUp : ModProjectile
         return true;
     }
 
-
-
-
-
 }
-
-
 

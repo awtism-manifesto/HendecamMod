@@ -24,8 +24,6 @@ public class Zablade : ModItem
         Item.useTime = 25;
         Item.useAnimation = 23;
         Item.autoReuse = true;
-
-
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.damage = 16;
         Item.knockBack = 5.5f;
@@ -60,10 +58,6 @@ public class Zablade : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -87,8 +81,6 @@ public class Zablade : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -102,6 +94,4 @@ public class Zablade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

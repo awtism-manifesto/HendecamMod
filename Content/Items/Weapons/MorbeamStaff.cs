@@ -8,8 +8,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class MorbeamStaff : ModItem
 {
 
@@ -46,15 +44,9 @@ public class MorbeamStaff : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Morbeam>();
-
-
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -63,20 +55,14 @@ public class MorbeamStaff : ModItem
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.5f));
 
-
-
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
 
-
-
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-
-
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
@@ -91,8 +77,6 @@ public class MorbeamStaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

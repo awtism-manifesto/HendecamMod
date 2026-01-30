@@ -317,7 +317,5 @@ public class RiverBanner : ModItem
         recipe.AddIngredient<UnstablePlasmoidBanner>();
         recipe.AddIngredient<LoreAccurateBlackshard>(9999);
         recipe.Register();
-
-
     }
 }

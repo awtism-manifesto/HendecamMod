@@ -48,8 +48,6 @@ public class AlpineGlitterbomb : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
         Projectile.rotation += 0.18f;
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 28f)
@@ -61,8 +59,6 @@ public class AlpineGlitterbomb : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
-
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -125,8 +121,6 @@ public class AlpineGlitterbomb : ModProjectile
                 Projectile.owner
             );
         }
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
         {
@@ -136,8 +130,6 @@ public class AlpineGlitterbomb : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 100, default, 0.5f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
@@ -146,6 +138,4 @@ public class AlpineGlitterbomb : ModProjectile
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
     }
-
-
 }

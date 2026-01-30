@@ -18,19 +18,13 @@ public class M1Garand : ModItem
         Item.scale = 0.6f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 1250);
-
-
         // Use Properties
         Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item89;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 57; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -38,8 +32,6 @@ public class M1Garand : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 9;
         Item.ArmorPenetration = 11;
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
@@ -74,8 +66,6 @@ public class M1Garand : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-
-
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.PalladiumBar, 5);
             recipe.AddIngredient(SteelRifle.Type);
@@ -91,8 +81,6 @@ public class M1Garand : ModItem
             recipe.AddIngredient<Items.EnfieldRifle>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
-
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.PalladiumBar, 5);

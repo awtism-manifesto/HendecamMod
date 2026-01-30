@@ -50,12 +50,6 @@ public class GunbladeSpore : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
-
-
     }
     public override void AI()
     {
@@ -153,6 +147,4 @@ public class GunbladeSpore : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
 

@@ -28,8 +28,6 @@ public class AstatineSpear : ModProjectile
     {
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
-
-
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),

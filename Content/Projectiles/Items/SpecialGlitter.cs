@@ -21,8 +21,6 @@ public class SpecialGlitter : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 4; // The width of projectile hitbox

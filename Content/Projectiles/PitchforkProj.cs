@@ -34,22 +34,14 @@ public class PitchforkProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         Projectile.Kill();
     }
-
-
 
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
-
-
 
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)

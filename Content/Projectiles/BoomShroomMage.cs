@@ -49,12 +49,8 @@ public class BoomShroomMage : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
-
-
     public override void AI()
     {
-
-
         if (Projectile.timeLeft < 69)
         {
 
@@ -76,12 +72,8 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 152)
         {
@@ -97,12 +89,8 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 151)
         {
@@ -118,12 +106,8 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
         if (Projectile.timeLeft < 76)
         {
@@ -139,17 +123,9 @@ public class BoomShroomMage : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
-
-
-
-
         Projectile.velocity *= 0f;
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 5)
@@ -157,13 +133,7 @@ public class BoomShroomMage : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
     }
-
-
-
-
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.
@@ -190,8 +160,6 @@ public class BoomShroomMage : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.DD2_ExplosiveTrapExplode, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(100, 100);
@@ -212,11 +180,7 @@ public class BoomShroomMage : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 5f;
         }
-
-
     }
-
-
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

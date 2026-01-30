@@ -47,8 +47,6 @@ public class LunarElemental : ModNPC
     {
         Lighting.AddLight(NPC.Center, 0.1f, 0.67f, 0.67f);
 
-
-
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {

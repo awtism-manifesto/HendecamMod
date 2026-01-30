@@ -53,8 +53,6 @@ public class BushPlane : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -75,8 +73,6 @@ public class BushPlane : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // If timeLeft is <= 3, then explode the rocket.
@@ -98,8 +94,6 @@ public class BushPlane : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -157,13 +151,9 @@ public class BushPlane : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(290, 290);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 55; j++)
@@ -183,8 +173,6 @@ public class BushPlane : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 1f;
         }
-
-
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {
         //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

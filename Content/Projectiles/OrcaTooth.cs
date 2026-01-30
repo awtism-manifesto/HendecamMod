@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class OrcaTooth : ModProjectile
@@ -33,8 +31,6 @@ public class OrcaTooth : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
-
-
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
@@ -113,8 +109,6 @@ public class OrcaTooth : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

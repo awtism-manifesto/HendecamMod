@@ -54,8 +54,6 @@ public class Alpine : ModNPC
         NPCID.Sets.ShimmerTownTransform[NPC.type] = true; // This set says that the Town NPC has a Shimmered form. Otherwise, the Town NPC will become transparent when touching Shimmer like other enemies.
 
         NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
-
-
         // Influences how the NPC looks in the Bestiary
         NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
         {
@@ -74,8 +72,6 @@ public class Alpine : ModNPC
             .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Hate) // Example Person dislikes the snow.
             .SetBiomeAffection<OceanBiome>(AffectionLevel.Like) // Example Person prefers the forest.
             .SetBiomeAffection<DesertBiome>(AffectionLevel.Dislike) // Example Person prefers the forest.
-
-
             .SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike) // Loves living near the dryad.
             .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Hate) // Likes living near the guide.
             .SetNPCAffection(NPCID.Pirate, AffectionLevel.Love) // Dislikes living near the merchant.
@@ -190,8 +186,6 @@ public class Alpine : ModNPC
     public override string GetChat()
     {
         WeightedRandom<string> chat = new WeightedRandom<string>();
-
-
         // These are things that the NPC has a chance of telling you when you talk to it.
         if (NPC.IsShimmerVariant)
         {
@@ -257,8 +251,6 @@ public class Alpine : ModNPC
         }
         return false;
     }
-
-
     public override void OnChatButtonClicked(bool firstButton, ref string shop)
     {
         if (firstButton)
@@ -275,8 +267,6 @@ public class Alpine : ModNPC
         var npcShop = new NPCShop(Type, ShopName)
 
              .Add<OverclockedWrench>()
-
-
 
         ;
         npcShop.Register(); // Name of this shop tab
@@ -351,7 +341,3 @@ public class Alpine : ModNPC
         }
     }
 }
-
-
-
-

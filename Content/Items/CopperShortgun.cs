@@ -7,8 +7,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class CopperShortgun : ModItem
 {
     public override void SetDefaults()
@@ -20,8 +18,6 @@ public class CopperShortgun : ModItem
         Item.useTime = 27;
         Item.useAnimation = 27;
         Item.autoReuse = true;
-
-
         Item.DamageType = DamageClass.Ranged;
         Item.damage = 11;
         Item.knockBack = 3;
@@ -60,8 +56,6 @@ public class CopperShortgun : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,8 +67,6 @@ public class CopperShortgun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

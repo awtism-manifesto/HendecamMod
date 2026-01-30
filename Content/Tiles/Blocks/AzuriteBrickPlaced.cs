@@ -18,8 +18,6 @@ public class AzuriteBrickPlaced : ModTile
 
         AddMapEntry(new Color(130, 0, 13));
     }
-
-
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

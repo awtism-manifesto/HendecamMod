@@ -23,6 +23,4 @@ public class VpTag : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

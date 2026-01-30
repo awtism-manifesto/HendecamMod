@@ -80,8 +80,6 @@ public class BeetleBombProj : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -100,8 +98,6 @@ public class BeetleBombProj : ModProjectile
             // Instead, increase extraUpdates in SetDefaults() to make the rocket move faster.
 
         }
-
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -110,8 +106,6 @@ public class BeetleBombProj : ModProjectile
         Projectile.timeLeft = 5; // Set the timeLeft to 3 so it can get ready to explode.
 
     }
-
-
     public override void PrepareBombToBlow()
     {
         Projectile.tileCollide = false; // This is important or the explosion will be in the wrong place if the rocket explodes on slopes.

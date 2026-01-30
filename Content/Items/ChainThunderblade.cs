@@ -44,8 +44,6 @@ public class ChainThunderblade : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -60,12 +58,8 @@ public class ChainThunderblade : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("DissolvingEarth", out ModItem DissolvingEarth))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth.Type);
-
-
             }
 
             recipe = CreateRecipe();
@@ -76,12 +70,8 @@ public class ChainThunderblade : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica2) && SOTSMerica2.TryFind("DissolvingEarth", out ModItem DissolvingEarth2))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth2.Type);
-
-
             }
 
         }
@@ -95,12 +85,8 @@ public class ChainThunderblade : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica2) && SOTSMerica2.TryFind("DissolvingEarth", out ModItem DissolvingEarth2))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth2.Type);
-
-
             }
 
             recipe = CreateRecipe();
@@ -111,12 +97,8 @@ public class ChainThunderblade : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica3) && SOTSMerica3.TryFind("DissolvingEarth", out ModItem DissolvingEarth3))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth3.Type);
-
-
             }
         }
 
@@ -134,8 +116,6 @@ public class ChainThunderblade : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -149,6 +129,4 @@ public class ChainThunderblade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

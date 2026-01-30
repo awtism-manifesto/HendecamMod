@@ -21,18 +21,12 @@ public class ATFsNightmare : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 400000; // The value of the weapon in copper coins
-
-
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 2;
-
-
-
-
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -41,8 +35,6 @@ public class ATFsNightmare : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 15;
         Item.ArmorPenetration = 65;
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 33.3f; // The speed of the projectile (measured in pixels per frame.)
@@ -56,8 +48,6 @@ public class ATFsNightmare : ModItem
     {
 
         type = ModContent.ProjectileType<TerraRound>();
-
-
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -83,8 +73,6 @@ public class ATFsNightmare : ModItem
     {
         return Main.rand.NextFloat() >= 0.85f;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -133,12 +121,8 @@ public class ATFsNightmare : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("HellfireMinigun", out ModItem HellfireMinigun))
-
-
         {
             recipe.AddIngredient(HellfireMinigun.Type);
-
-
         }
 
     }

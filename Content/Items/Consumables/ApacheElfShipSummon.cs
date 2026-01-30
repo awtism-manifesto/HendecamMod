@@ -81,8 +81,6 @@ public class ApacheElfShipSummon : ModItem
         }
         return true;
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Pentagram : ModProjectile
@@ -19,10 +17,6 @@ public class Pentagram : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10; // The length of old position to be recorded
@@ -45,15 +39,11 @@ public class Pentagram : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
 
-
-
     }
 
     // Custom AI
     public override void AI()
     {
-
-
 
         if (Projectile.alpha < 133)
         {
@@ -155,5 +145,3 @@ public class Pentagram : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

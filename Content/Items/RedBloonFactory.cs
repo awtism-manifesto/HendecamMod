@@ -43,8 +43,6 @@ public class RedBloonFactory : ModItem
         Item.shootSpeed = 4.5f;
     }
 
-
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         // This is needed so the buff that keeps your minion alive and allows you to despawn it properly applies
@@ -69,8 +67,6 @@ public class RedBloonFactory : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -94,12 +90,6 @@ public class RedBloonFactory : ModItem
         recipe.AddIngredient<Polymer>(5);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

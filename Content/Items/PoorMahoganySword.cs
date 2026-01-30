@@ -24,17 +24,7 @@ public class PoorMahoganySword : ModItem
         Item.value = Item.buyPrice(gold: 0);
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
-
-
-
-
     }
-
-
-
-
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

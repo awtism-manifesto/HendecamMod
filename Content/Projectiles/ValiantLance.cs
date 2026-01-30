@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ValiantLance : ModProjectile
@@ -43,16 +41,8 @@ public class ValiantLance : ModProjectile
             Projectile.velocity *= 1.32f;
 
         }
-
-
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
-
-
-
-
-
     }
     public override bool PreDraw(ref Color lightColor)
     {
@@ -69,8 +59,4 @@ public class ValiantLance : ModProjectile
 
         return true;
     }
-
-
-
-
 }

@@ -44,9 +44,5 @@ public class MorbiumBattleaxe : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-
-
-
-
     }
 }

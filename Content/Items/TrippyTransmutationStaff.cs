@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class TrippyTransmutationStaff : ModItem
 {
 
@@ -33,8 +31,6 @@ public class TrippyTransmutationStaff : ModItem
 
         Item.value = 72000;
         Item.rare = ItemRarityID.Orange;
-
-
         Item.shoot = ModContent.ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.05f; // Speed of the projectiles the sword will shoot
 
@@ -44,20 +40,10 @@ public class TrippyTransmutationStaff : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<LycoRay>();
-
-
-
-
-
-
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -70,8 +56,6 @@ public class TrippyTransmutationStaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -97,8 +81,6 @@ public class TrippyTransmutationStaff : ModItem
         recipe.AddIngredient<LycopiteBar>(13);
         recipe.AddIngredient(ItemID.GlowingMushroom, 10);
         recipe.AddIngredient(ItemID.Mushroom, 5);
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

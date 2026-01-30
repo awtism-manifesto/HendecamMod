@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class AuricSkibidiHead : ModProjectile
@@ -20,10 +18,6 @@ public class AuricSkibidiHead : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
 
@@ -54,8 +48,6 @@ public class AuricSkibidiHead : ModProjectile
     public override void AI()
     {
 
-
-
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -65,8 +57,6 @@ public class AuricSkibidiHead : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-
-
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Electric, 0f, 0f, 100, Color.Orange, 0.5f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
@@ -152,5 +142,3 @@ public class AuricSkibidiHead : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-

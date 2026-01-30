@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class TheWither : ModItem
@@ -22,20 +20,14 @@ public class TheWither : ModItem
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 330000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 36; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.damage = 48; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -45,8 +37,6 @@ public class TheWither : ModItem
         Item.mana = 6;
 
         if (ModLoader.TryGetMod("Consolaria", out Mod Cons2Merica))
-
-
         {
             Item.damage = 66;
             Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
@@ -73,10 +63,6 @@ public class TheWither : ModItem
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
 
-
-
-
-
             if (nextSpawnTick == 0)
             {
                 nextSpawnTick = 2;
@@ -101,10 +87,6 @@ public class TheWither : ModItem
 
                 type = ModContent.ProjectileType<WitherSkullBlack>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
-
-
-
 
                 tickCounter = 5;
                 nextSpawnTick = 5;
@@ -143,10 +125,6 @@ public class TheWither : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -158,8 +136,6 @@ public class TheWither : ModItem
             OverrideColor = new Color(25, 25, 25)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -174,8 +150,6 @@ public class TheWither : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -192,34 +166,22 @@ public class TheWither : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
-
-
         {
             recipe.AddIngredient(SoulofBlight.Type, 18);
-
-
 
         }
 
         if (!ModLoader.TryGetMod("Consolaria", out Mod Cons2Merica))
-
-
         {
 
             recipe.AddIngredient(ItemID.SoulofFlight, 18);
-
-
         }
 
         if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind<ModItem>("NetherStar", out ModItem NetherStar))
 
-
-
         {
 
             recipe.AddIngredient(NetherStar.Type);
-
-
         }
 
     }

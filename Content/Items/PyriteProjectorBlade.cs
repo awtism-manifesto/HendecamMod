@@ -26,8 +26,6 @@ public class PyriteProjectorBlade : ModItem
         Item.useTime = 9;
         Item.useAnimation = 27;
         Item.autoReuse = true;
-
-
         Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Item.damage = 22;
         Item.knockBack = 3f;
@@ -49,15 +47,9 @@ public class PyriteProjectorBlade : ModItem
     private int shotCounter = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
-
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(6.25f));
-
-
             SoundEngine.PlaySound(SoundID.Item90, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 0.7f), knockback, player.whoAmI);
@@ -66,8 +58,6 @@ public class PyriteProjectorBlade : ModItem
         else if (shotCounter == 2)
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
-
-
             SoundEngine.PlaySound(SoundID.Item90, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.7f), knockback, player.whoAmI);
@@ -76,19 +66,13 @@ public class PyriteProjectorBlade : ModItem
         else if (shotCounter == 3)
         {
             Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(-6.25f));
-
-
             SoundEngine.PlaySound(SoundID.Item90, player.position);
 
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, (int)(damage * 0.7f), knockback, player.whoAmI);
             shotCounter = 0;
         }
-
-
         return false;
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -98,12 +82,6 @@ public class PyriteProjectorBlade : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
 
     }
 
@@ -119,8 +97,6 @@ public class PyriteProjectorBlade : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -134,6 +110,4 @@ public class PyriteProjectorBlade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

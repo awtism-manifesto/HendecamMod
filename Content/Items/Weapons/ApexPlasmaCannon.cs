@@ -9,8 +9,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Weapons;
 
 public class ApexPlasmaCannon : ModItem
@@ -20,8 +18,6 @@ public class ApexPlasmaCannon : ModItem
 
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
-
-
     public override void SetDefaults()
     {
         // shoutouts to manifesto for this weapon
@@ -46,11 +42,7 @@ public class ApexPlasmaCannon : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -79,8 +71,6 @@ public class ApexPlasmaCannon : ModItem
 
         return base.CanUseItem(player);
     }
-
-
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
@@ -94,17 +84,11 @@ public class ApexPlasmaCannon : ModItem
         if (player.altFunctionUse == 2)
         {
             type = ModContent.ProjectileType<ElfMagicMissile>();
-
-
         }
         else
         {
             type = ModContent.ProjectileType<ApexPlasmaBullet>();
-
-
         }
-
-
 
     }
     private int shotCounter = 0;
@@ -113,8 +97,6 @@ public class ApexPlasmaCannon : ModItem
     {
 
         // golden sigma
-
-
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
@@ -128,8 +110,6 @@ public class ApexPlasmaCannon : ModItem
         else if (shotCounter == 2)
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.33f));
-
-
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);
@@ -140,8 +120,6 @@ public class ApexPlasmaCannon : ModItem
         else if (shotCounter == 3)
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.25f));
-
-
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);

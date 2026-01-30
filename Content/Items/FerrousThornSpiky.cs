@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class FerrousThornSpiky : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -44,8 +42,6 @@ public class FerrousThornSpiky : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
     }
     public override bool CanRightClick()
     {
@@ -58,8 +54,6 @@ public class FerrousThornSpiky : ModItem
     public override void AddRecipes()
     {
         Recipe
-
-
         recipe = CreateRecipe();
         recipe.AddRecipeGroup("IronBar", 15);
         recipe.AddIngredient<Items.CrudeOil>(35);
@@ -67,8 +61,6 @@ public class FerrousThornSpiky : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-
-
 
     }
 

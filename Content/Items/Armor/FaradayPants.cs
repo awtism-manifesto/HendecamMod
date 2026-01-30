@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
@@ -51,8 +49,6 @@ public class FaradayPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -103,7 +99,5 @@ public class FaradayPants : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

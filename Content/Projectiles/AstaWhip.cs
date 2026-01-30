@@ -47,8 +47,6 @@ public class AstaWhip : ModProjectile
 
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
@@ -72,8 +70,6 @@ public class AstaWhip : ModProjectile
         // Vanilla uses Vector2.Dot(Projectile.velocity, Vector2.UnitX) here. Dot Product returns the difference between two vectors, 0 meaning they are perpendicular.
         // However, the use of UnitX basically turns it into a more complicated way of checking if the projectile's velocity is above or equal to zero on the X axis.
         Projectile.spriteDirection = Projectile.velocity.X >= 0f ? 1 : -1;
-
-
 
         Timer++;
 
@@ -105,8 +101,6 @@ public class AstaWhip : ModProjectile
             int pointIndex = Main.rand.Next(points.Count - 10, points.Count);
             Rectangle spawnArea = Utils.CenteredRectangle(points[pointIndex], new Vector2(30f, 30f));
             int dustType = ModContent.DustType<AstatineDust>();
-
-
             // After choosing a randomized dust and a whip segment to spawn from, dust is spawned.
             Dust dust = Dust.NewDustDirect(spawnArea.TopLeft(), spawnArea.Width, spawnArea.Height, dustType, 0f, 0f, 100, Color.Red);
             dust.position = points[pointIndex];
@@ -125,8 +119,6 @@ public class AstaWhip : ModProjectile
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
-
-
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.

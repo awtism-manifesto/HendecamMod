@@ -22,18 +22,12 @@ public class RednecksRustBucket : ModItem
         Item.scale = 0.8f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 100000;
-
-
         // Use Properties
         Item.useTime = 21; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-
-
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -48,15 +42,9 @@ public class RednecksRustBucket : ModItem
         Item.shootSpeed = 10.15f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
-
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -95,8 +83,6 @@ public class RednecksRustBucket : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -118,8 +104,6 @@ public class RednecksRustBucket : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -146,8 +130,6 @@ public class RednecksRustBucket : ModItem
         recipe.AddIngredient<ToothlessWyrm>();
         recipe.AddIngredient<Brainderbuss>();
         recipe.AddIngredient<UraniumShotgun>();
-
-
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel))

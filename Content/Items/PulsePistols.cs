@@ -28,8 +28,6 @@ public class PulsePistols : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.reuseDelay = 34;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         Item.ArmorPenetration = 10;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -82,8 +80,6 @@ public class PulsePistols : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -99,8 +95,6 @@ public class PulsePistols : ModItem
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-
-
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PlasmaMonkeysPaw : ModItem
@@ -21,8 +19,6 @@ public class PlasmaMonkeysPaw : ModItem
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 10400000;
-
-
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -32,28 +28,18 @@ public class PlasmaMonkeysPaw : ModItem
         Item.noUseGraphic = true;
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item39;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 66; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 15;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 17.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ModContent.ProjectileType<PlasmaBlast>();
-
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -63,8 +49,6 @@ public class PlasmaMonkeysPaw : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 3; // The number of projectiles that this gun will shoot.
-
-
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -93,8 +77,6 @@ public class PlasmaMonkeysPaw : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -108,19 +90,13 @@ public class PlasmaMonkeysPaw : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe
              recipe = CreateRecipe();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("WhiteDwarfFragment", out ModItem WhiteDwarfFragment))
-
-
         {
-
-
 
             recipe = CreateRecipe();
             recipe.AddIngredient<Items.LaserMonkeysPaw>();
@@ -131,15 +107,9 @@ public class PlasmaMonkeysPaw : ModItem
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
 
-
-
-
-
         }
         else
         {
-
-
             recipe = CreateRecipe();
             recipe.AddIngredient<Items.LaserMonkeysPaw>();
 
@@ -149,13 +119,9 @@ public class PlasmaMonkeysPaw : ModItem
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
 
-
-
         }
 
     }
-
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-28f, -3f);

@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class WeedHeadgear : ModItem
 {
-
-
     public static readonly int StupidAttackSpeed = 6;
     public static readonly int MaxManaIncrease = 40;
     public static LocalizedText SetBonusText { get; private set; }
@@ -26,8 +24,6 @@ public class WeedHeadgear : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -50,8 +46,6 @@ public class WeedHeadgear : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -87,8 +81,6 @@ public class WeedHeadgear : ModItem
         player.statManaMax2 += MaxManaIncrease;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeed / 106f;
         player.GetAttackSpeed(DamageClass.Magic) += StupidAttackSpeed / 106f;
-
-
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
@@ -99,18 +91,12 @@ public class WeedHeadgear : ModItem
 
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LivingLeaf", out ModItem LivingLeaf))
-
-
         {
             recipe.AddIngredient(LivingLeaf.Type, 4);
-
-
         }
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
 
     }
 }

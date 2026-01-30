@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SaltMelee : ModProjectile
@@ -30,8 +28,6 @@ public class SaltMelee : ModProjectile
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 18f)
         {

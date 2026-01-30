@@ -42,9 +42,5 @@ public class MintalHamaxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

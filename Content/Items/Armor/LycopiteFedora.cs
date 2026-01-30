@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class LycopiteFedora : ModItem
 {
-
-
     public static readonly int StupidCritBonus = 9;
 
     public static readonly int StupidAttackSpeedBonus = 9;
@@ -48,8 +46,6 @@ public class LycopiteFedora : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 9% increased throwing crit chance and attack speed")
@@ -63,8 +59,6 @@ public class LycopiteFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -98,16 +92,12 @@ public class LycopiteFedora : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
             player.GetCritChance(DamageClass.Throwing) += StupidCritBonus;
 
             player.GetAttackSpeed(DamageClass.Throwing) += StupidAttackSpeedBonus / 109f;
 
         }
-
-
 
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 

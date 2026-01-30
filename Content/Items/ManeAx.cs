@@ -8,10 +8,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -60,11 +56,7 @@ public class ManeAx : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     private int maneaxcooldown = 0;
     public override void UpdateInventory(Player player)
@@ -85,8 +77,6 @@ public class ManeAx : ModItem
             else
             { maneaxcooldown = 75; }
 
-
-
             player.AddBuff(ModContent.BuffType<RudeBusterCooldown>(), 75);
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
@@ -103,8 +93,6 @@ public class ManeAx : ModItem
         return true;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -116,8 +104,6 @@ public class ManeAx : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -150,11 +136,5 @@ public class ManeAx : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
-
-
 }

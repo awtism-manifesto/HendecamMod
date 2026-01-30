@@ -73,8 +73,6 @@ public class TheNanoshot : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

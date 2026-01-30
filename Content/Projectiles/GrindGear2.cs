@@ -26,8 +26,6 @@ public class GrindGear2 : ModProjectile
     public override void AI()
     {
 
-
-
         if (Main.rand.NextBool(11))
         {
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
@@ -36,12 +34,6 @@ public class GrindGear2 : ModProjectile
             ModContent.ProjectileType<DragonBreath2>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
 
         }
-
-
-
-
-
-
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -55,8 +47,6 @@ public class GrindGear2 : ModProjectile
             Dust kms = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.Torch, 0f, 0f, 100, default, 0.5f);
             kms.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             kms.velocity *= 0.25f;
-
-
 
         }
 

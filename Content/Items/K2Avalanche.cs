@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class K2Avalanche : ModItem
@@ -21,8 +19,6 @@ public class K2Avalanche : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 14500000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,18 +29,12 @@ public class K2Avalanche : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.DeerclopsRubbleAttack;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 145; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 21;
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<AvalancheBoulder>();
@@ -93,10 +83,6 @@ public class K2Avalanche : ModItem
 
         return false;
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -108,8 +94,6 @@ public class K2Avalanche : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -134,13 +118,7 @@ public class K2Avalanche : ModItem
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
-
-
-
-
     }
-
-
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

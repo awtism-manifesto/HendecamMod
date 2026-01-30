@@ -10,15 +10,9 @@ namespace HendecamMod.Content.Items.Accessories;
 public class SpiritProtectionCharm : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
-
-
     public static readonly int MagicCritBonus = 7;
     public static readonly int MaxManaIncrease = 70;
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -51,8 +45,6 @@ public class SpiritProtectionCharm : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

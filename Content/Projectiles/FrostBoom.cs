@@ -85,8 +85,6 @@ public class FrostBoom : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -147,13 +145,9 @@ public class FrostBoom : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(66, 66);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 9; j++)
@@ -164,8 +158,6 @@ public class FrostBoom : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3f;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

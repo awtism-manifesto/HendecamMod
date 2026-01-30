@@ -62,8 +62,6 @@ public class NapalmDart : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Torch, 0f, 0f, 100, default, 0.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
@@ -82,8 +80,6 @@ public class NapalmDart : ModProjectile
             ModContent.ProjectileType<NapalmRanged>(), Projectile.damage = (int)(Projectile.damage * 0.3f), Projectile.knockBack);
 
         }
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);

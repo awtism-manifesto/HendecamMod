@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SodiumBolt : ModProjectile
@@ -40,8 +38,6 @@ public class SodiumBolt : ModProjectile
     public override void AI()
     {
 
-
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -54,8 +50,6 @@ public class SodiumBolt : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.Ghost, 0f, 0f, 100, default, 0.15f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -80,8 +74,6 @@ public class SodiumBolt : ModProjectile
         return true;
     }
 
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
@@ -90,6 +82,4 @@ public class SodiumBolt : ModProjectile
     }
 
 }
-
-
 

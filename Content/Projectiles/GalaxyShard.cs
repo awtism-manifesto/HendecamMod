@@ -4,8 +4,6 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GalaxyShard : ModProjectile
@@ -21,10 +19,6 @@ public class GalaxyShard : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
-
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 16; // The length of old position to be recorded
@@ -53,8 +47,6 @@ public class GalaxyShard : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -62,8 +54,6 @@ public class GalaxyShard : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -94,8 +84,6 @@ public class GalaxyShard : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
@@ -174,5 +162,3 @@ public class GalaxyShard : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-

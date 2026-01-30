@@ -5,10 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -45,14 +41,8 @@ public class SporeSower : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-
-
         return true;
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -64,8 +54,6 @@ public class SporeSower : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -85,17 +73,7 @@ public class SporeSower : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<LycopiteBar>(13);
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

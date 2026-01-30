@@ -11,8 +11,6 @@ public class IedThrown : ModProjectile
     public override void SetStaticDefaults()
     {
 
-
-
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
@@ -49,8 +47,6 @@ public class IedThrown : ModProjectile
         {
             Projectile.timeLeft = 5;
         }
-
-
         Projectile.rotation += 0.275f;
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 28f)
@@ -62,8 +58,6 @@ public class IedThrown : ModProjectile
         {
             Projectile.velocity.Y = 17f;
         }
-
-
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -120,8 +114,6 @@ public class IedThrown : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

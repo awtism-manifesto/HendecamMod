@@ -6,10 +6,6 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.GlobalItems;
 
-
-
-
-
 public class BowMage1 : GlobalItem
 {
 
@@ -27,19 +23,13 @@ public class BowMage1 : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-
-
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
-
-
 
     }
     public override void SetDefaults(Item item)
     {
 
         item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
-
-
     }
 
 }
@@ -60,19 +50,13 @@ public class BowMage12 : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-
-
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
-
-
 
     }
     public override void SetDefaults(Item item)
     {
 
         item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
-
-
     }
 
 }
@@ -95,19 +79,13 @@ public class BowMage123 : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-
-
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
-
-
 
     }
     public override void SetDefaults(Item item)
     {
 
         item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
-
-
     }
 
 }
@@ -131,11 +109,7 @@ public class ConsolariaForSomeReason : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-
-
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Consolaria) - Now deals Ranged AND Stupid damage, fires in a two round burst") { OverrideColor = Color.LimeGreen });
-
-
 
     }
     public override void SetDefaults(Item item)

@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class TheMeltdown : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -41,8 +39,6 @@ public class TheMeltdown : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -59,10 +55,6 @@ public class TheMeltdown : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
-
-
         recipe.AddIngredient(ItemID.FireWhip);
         recipe.AddIngredient<Items.ChainReaction>();
         recipe.AddIngredient<FissionDrive>();

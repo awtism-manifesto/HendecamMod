@@ -6,8 +6,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class SkibidiToilet : ModItem
@@ -22,30 +20,20 @@ public class SkibidiToilet : ModItem
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = 250000;
-
-
         // Use Properties
 
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
 
         Item.knockBack = 0.5f;
         Item.noMelee = true;
-
-
         Item.damage = 29;
         Item.useTime = 27;
         Item.useAnimation = 27;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<SkibidiHead>();
@@ -81,10 +69,6 @@ public class SkibidiToilet : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -96,8 +80,6 @@ public class SkibidiToilet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -130,8 +112,6 @@ public class SkibidiToilet : ModItem
         }
         else
         {
-
-
         }
 
     }

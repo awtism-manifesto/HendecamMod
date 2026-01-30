@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class PrideFlag : ModItem
@@ -37,8 +35,6 @@ public class PrideFlag : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -61,7 +57,5 @@ public class PrideFlag : ModItem
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
-
 
 }

@@ -19,8 +19,6 @@ public class RedWild : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
-
-
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(200, 0, 0), Language.GetText("Red Uno Card"));

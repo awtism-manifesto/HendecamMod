@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class JfkBullet : ModProjectile
@@ -85,8 +83,6 @@ public class JfkBullet : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(70, 20);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -107,8 +103,6 @@ public class JfkBullet : ModProjectile
         Vector2 Peanits5 = Projectile.Center - new Vector2(60, -60);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
         ModContent.ProjectileType<JfkBlood>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-
-
         for (int i = 0; i < 20; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);
@@ -117,13 +111,9 @@ public class JfkBullet : ModProjectile
             dust.scale *= 2f;
         }
 
-
-
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -159,6 +149,4 @@ public class JfkBullet : ModProjectile
     }
 
 }
-
-
 

@@ -9,8 +9,6 @@ using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class LycoShot : ModProjectile
@@ -52,10 +50,6 @@ public class LycoShot : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
@@ -75,8 +69,6 @@ public class LycoShot : ModProjectile
             SoundEngine.PlaySound(SoundID.Item37, target.position);
 
         }
-
-
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -128,8 +120,6 @@ public class LycoShot : ModProjectile
     public override void AI()
     {
 
-
-
         // dust, all dust
         if (Projectile.alpha < 198)
         {
@@ -150,9 +140,5 @@ public class LycoShot : ModProjectile
         }
     }
 
-
-
 }
-
-
 

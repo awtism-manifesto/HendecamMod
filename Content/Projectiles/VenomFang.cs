@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class VenomFang : ModProjectile
@@ -52,12 +50,8 @@ public class VenomFang : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -86,8 +80,6 @@ public class VenomFang : ModProjectile
         target.AddBuff(BuffID.Venom, 180);
     }
 
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
@@ -96,5 +88,3 @@ public class VenomFang : ModProjectile
     }
 
 }
-
-

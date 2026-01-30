@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BeerYeet : ModProjectile
@@ -81,8 +79,4 @@ public class BeerYeet : ModProjectile
         }
     }
 
-
-
 }
-
-

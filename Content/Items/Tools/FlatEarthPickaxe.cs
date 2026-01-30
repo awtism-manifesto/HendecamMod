@@ -46,8 +46,6 @@ public class FlatEarthPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<FragmentFlatEarth>(12);
         recipe.AddIngredient(ItemID.LunarBar, 10);
 

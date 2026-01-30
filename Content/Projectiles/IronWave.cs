@@ -14,8 +14,6 @@ public class IronWave : ModProjectile
 
     public override void SetDefaults()
     {
-
-
         Projectile.width = 145; // The width of projectile hitbox
         Projectile.height = 145; // The height of projectile hitbox
 
@@ -42,11 +40,7 @@ public class IronWave : ModProjectile
     public override void AI()
     {
 
-
-
         Projectile.scale = Main.rand.NextFloat(0.98f, 1.15f);
-
-
         if (Projectile.timeLeft < 17)
         {
             Projectile.alpha = 190;
@@ -63,18 +57,10 @@ public class IronWave : ModProjectile
         {
             Projectile.alpha = 35;
         }
-
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
     }
 }

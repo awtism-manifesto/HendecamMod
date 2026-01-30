@@ -11,8 +11,6 @@ public class PlutoniumOre : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
 
         Item.ResearchUnlockCount = 100; // Configure the amount of this item that's needed to research it in Journey mode.
@@ -42,12 +40,6 @@ public class PlutoniumOre : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
 
 }

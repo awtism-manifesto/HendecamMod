@@ -94,8 +94,6 @@ public class IronFistProj : ModProjectile
     public override void OnKill(int timeLeft)
     {
 
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Bottom - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,

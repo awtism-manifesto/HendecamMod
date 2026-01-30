@@ -44,14 +44,10 @@ public class AstaArrowProj : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
     }
     public override void AI()
     {
-
-
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -71,8 +67,6 @@ public class AstaArrowProj : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -86,8 +80,6 @@ public class AstaArrowProj : ModProjectile
                     smokeDust.noGravity = true;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -128,13 +120,9 @@ public class AstaArrowProj : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(150, 150);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 15; j++)
@@ -154,8 +142,6 @@ public class AstaArrowProj : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 1f;
         }
-
-
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {
         //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

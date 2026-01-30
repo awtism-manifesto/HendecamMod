@@ -16,8 +16,6 @@ public class SuperCeramicChestplate : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 10;
     public static readonly int StupidArmorPenetration = 5;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,8 +25,6 @@ public class SuperCeramicChestplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -51,8 +47,6 @@ public class SuperCeramicChestplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -85,8 +79,6 @@ public class SuperCeramicChestplate : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 110f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
 
@@ -95,8 +87,6 @@ public class SuperCeramicChestplate : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(40);
         recipe.AddIngredient<EbonceramicSheet>(20);
 
@@ -104,22 +94,14 @@ public class SuperCeramicChestplate : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(40);
 
         recipe.AddIngredient<CrimceramicSheet>(20);
         recipe.AddIngredient<PearlceramicSheet>(20);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

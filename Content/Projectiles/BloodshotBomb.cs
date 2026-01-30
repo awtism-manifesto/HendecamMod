@@ -48,11 +48,7 @@ public class BloodshotBomb : ModProjectile
             Projectile.PrepareBombToBlow();
         }
 
-
-
         Projectile.rotation += 0.275f;
-
-
         Lighting.AddLight(Projectile.Center, 0.8f, 0.09f, 0.09f);
     }
 
@@ -117,8 +113,6 @@ public class BloodshotBomb : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.RedTorch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

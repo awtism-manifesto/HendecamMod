@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class DevilFlame : ModProjectile
@@ -71,8 +69,4 @@ public class DevilFlame : ModProjectile
         target.immune[Projectile.owner] = 7;
 
     }
-
-
 }
-
-

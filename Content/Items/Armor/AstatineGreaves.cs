@@ -27,8 +27,6 @@ public class AstatineGreaves : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -53,8 +51,6 @@ public class AstatineGreaves : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             line = new TooltipLine(Mod, "Face", "13% increased throwing damage")
@@ -63,8 +59,6 @@ public class AstatineGreaves : ModItem
             };
             tooltips.Add(line);
         }
-
-
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
@@ -94,13 +88,9 @@ public class AstatineGreaves : ModItem
         player.runAcceleration *= 1.35f;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
 
             player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 113f;
-
-
         }
 
     }
@@ -133,8 +123,6 @@ public class AstatineGreaves : ModItem
             {
                 return;
             }
-
-
             Player.runAcceleration *= 1.35f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.35f;
             Player.accRunSpeed *= 1.35f;

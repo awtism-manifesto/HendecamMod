@@ -16,8 +16,6 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe.AddIngredient<AzuriteBar>(10);
         recipe.AddIngredient(ItemID.BottledWater, 30);
         recipe.AddIngredient(ItemID.FallenStar, 3);
-
-
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
@@ -25,15 +23,11 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe1.AddIngredient<AzuriteBar>(15);
         recipe1.AddIngredient(ItemID.Mace);
 
-
-
         recipe1.AddTile(TileID.Anvils);
         recipe1.Register();
         Recipe recipe12 = Recipe.Create(ItemID.Muramasa);
         recipe12.AddIngredient<AzuriteBar>(10);
         recipe12.AddIngredient(ItemID.Katana);
-
-
 
         recipe12.AddTile(TileID.Anvils);
         recipe12.Register();
@@ -60,8 +54,6 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe1234.AddIngredient(ItemID.FallenStar, 3);
         recipe1234.AddIngredient(ItemID.Book);
 
-
-
         recipe1234.AddTile(TileID.Bookcases);
         recipe1234.Register();
 
@@ -69,18 +61,8 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe12345.AddIngredient<AzuriteBar>(10);
         recipe12345.AddIngredient<WoodenStick>(5);
         recipe12345.AddIngredient(ItemID.FallenStar, 3);
-
-
-
-
         recipe12345.AddTile(TileID.Anvils);
         recipe12345.Register();
-
-
     }
-
-
-
-
 }
 

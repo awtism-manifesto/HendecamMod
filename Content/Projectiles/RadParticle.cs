@@ -49,8 +49,6 @@ public class RadParticle : ModProjectile
 
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
 
-
-
     }
     public override void AI()
     {
@@ -148,6 +146,4 @@ public class RadParticle : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-
 

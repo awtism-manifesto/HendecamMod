@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class PlutoniumCube : ModItem
 {
-
-
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -43,10 +41,6 @@ public class PlutoniumCube : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {

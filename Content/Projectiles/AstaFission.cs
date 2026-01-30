@@ -8,8 +8,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
-
-
 public class AstaFission : ModProjectile
 {
     public override void SetStaticDefaults()
@@ -62,12 +60,8 @@ public class AstaFission : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -97,8 +91,6 @@ public class AstaFission : ModProjectile
                     fireDust.velocity *= 1.95f;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -192,8 +184,6 @@ public class AstaFission : ModProjectile
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
         ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-
-
 
     }
 

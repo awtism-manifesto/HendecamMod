@@ -71,8 +71,6 @@ public class HeadOfCthulhuSummon : ModItem
         }
         return true;
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

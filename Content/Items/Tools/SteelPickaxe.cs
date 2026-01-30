@@ -6,8 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
-
-
 public class SteelPickaxe : ModItem
 {
     public override void SetDefaults()
@@ -26,13 +24,9 @@ public class SteelPickaxe : ModItem
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 43;
-
-
         Item.value = Item.buyPrice(silver: 15);
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
-
-
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -40,8 +34,6 @@ public class SteelPickaxe : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -58,8 +50,6 @@ public class SteelPickaxe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

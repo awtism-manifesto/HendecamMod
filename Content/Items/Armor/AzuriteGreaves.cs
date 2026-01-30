@@ -15,8 +15,6 @@ public class AzuriteGreaves : ModItem
 
     public override void SetStaticDefaults()
     {
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
     public static readonly int AdditiveDamageBonus = 10;
@@ -44,8 +42,6 @@ public class AzuriteGreaves : ModItem
         };
         tooltips.Add(line);
 
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -68,7 +64,5 @@ public class AzuriteGreaves : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

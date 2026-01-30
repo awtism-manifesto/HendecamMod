@@ -28,8 +28,6 @@ public class MorbiumWarrior : ModNPC
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("\"They're here to usher in Morbin Time. Fast and erratic. Do not trust them.\" "),
@@ -61,19 +59,11 @@ public class MorbiumWarrior : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-
-
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumOre>(), 1, 11, 33));
-
-
-
-
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
-
 
         if (NPC.downedPlantBoss)
         {

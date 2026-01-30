@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Carbon02 : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 25; // The width of projectile hitbox
@@ -49,8 +45,6 @@ public class Carbon02 : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 2.25f;
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Cloud, 0f, 0f, 100, default, 1.5f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
                 fireDust.noGravity = true;
@@ -59,14 +53,10 @@ public class Carbon02 : ModProjectile
         }
     }
 
-
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
         target.immune[Projectile.owner] = 5;
     }
-
-
 
 }

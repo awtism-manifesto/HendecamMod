@@ -27,8 +27,6 @@ public class FranceYoyo : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
         new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
@@ -40,8 +38,6 @@ public class FranceYoyo : ModProjectile
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
         // dust
         if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {

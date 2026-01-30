@@ -26,8 +26,6 @@ public class PyriteBlessing : GlobalNPC
 
     }
 }
-
-
 public class PyriteSystem : ModSystem
 {
     public static LocalizedText PyriteMessage { get; private set; }

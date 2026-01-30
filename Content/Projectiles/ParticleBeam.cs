@@ -78,8 +78,6 @@ public class ParticleBeam : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -142,8 +140,6 @@ public class ParticleBeam : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(20, 20);
 
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
         {
@@ -158,15 +154,11 @@ public class ParticleBeam : ModProjectile
             RubyDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemEmerald, 0f, 0f, 100, default, 1f);
             RubyDust.velocity *= 3f;
         }
-
-
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
         target.AddBuff(BuffID.Electrified, 240);
-
-
     }
 
     // Rocket II explosion that damages tiles.

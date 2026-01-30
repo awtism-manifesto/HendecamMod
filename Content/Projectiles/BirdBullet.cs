@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class BirdBullet : ModProjectile
@@ -52,8 +50,6 @@ public class BirdBullet : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Enchanted_Gold, 0f, 0f, 100, default, 1.115f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                 fireDust.noGravity = true;
@@ -64,12 +60,6 @@ public class BirdBullet : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.8f);
-
-
     }
 
-
-
 }
-
-

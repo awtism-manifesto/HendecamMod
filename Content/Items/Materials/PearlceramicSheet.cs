@@ -32,13 +32,7 @@ public class PearlceramicSheet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(5);
@@ -55,8 +49,6 @@ public class PearlceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
-
 
     }
 }

@@ -97,8 +97,6 @@ public class InfernoRingProj : ModProjectile
             dust.velocity *= 1.5f;
         }
 
-
-
         // Find an enemy to target.
         float closestTargetDistance = TargetingRange;
         NPC targetNPC = null;
@@ -146,8 +144,6 @@ public class InfernoRingProj : ModProjectile
 
         // Count down the shoot timer
         ShootTimer--;
-
-
     }
 
     // Checks if npc is closer than current targetNPC. If so, adjust targetNPC and closestTargetDistance.

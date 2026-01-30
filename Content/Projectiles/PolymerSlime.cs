@@ -9,8 +9,6 @@ public class PolymerSlime : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
-
         Main.projFrames[Projectile.type] = 6;
         Main.projPet[Projectile.type] = true;
 
@@ -27,8 +25,6 @@ public class PolymerSlime : ModProjectile
 
             target.AddBuff(BuffID.Oiled, 240);
         }
-
-
 
     }
     public override void SetDefaults()

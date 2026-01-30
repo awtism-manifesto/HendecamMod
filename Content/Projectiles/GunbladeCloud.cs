@@ -2,8 +2,6 @@
 using System;
 using Terraria;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GunbladeCloud : ModProjectile
@@ -32,8 +30,6 @@ public class GunbladeCloud : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
         Projectile.aiStyle = -1;
-
-
     }
 
     public override void AI()
@@ -55,16 +51,8 @@ public class GunbladeCloud : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 
-
-
-
-
 }
-
-

@@ -43,10 +43,6 @@ public class Xray2 : ModProjectile
     }
     public override void AI()
     {
-
-
-
-
         if (Projectile.alpha < 169)
         {
             for (int i = 0; i < 2; i++)
@@ -58,8 +54,6 @@ public class Xray2 : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 4, Projectile.height - 4, DustID.PurpleTorch, 0f, 0f, 100, default, 1.2f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
@@ -144,6 +138,4 @@ public class Xray2 : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
 

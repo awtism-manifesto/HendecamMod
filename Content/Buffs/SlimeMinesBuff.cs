@@ -1,6 +1,4 @@
-﻿
-
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 using Terraria;
 using Terraria.ModLoader;
 

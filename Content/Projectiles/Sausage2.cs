@@ -34,8 +34,6 @@ public class Sausage2 : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate == 0)
         {
             Projectile.Kill();

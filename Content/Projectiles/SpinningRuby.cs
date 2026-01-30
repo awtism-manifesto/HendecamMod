@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SpinningRuby : ModProjectile
@@ -54,14 +52,8 @@ public class SpinningRuby : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
-
-
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {
             Projectile.velocity *= 1.235f;
@@ -69,10 +61,6 @@ public class SpinningRuby : ModProjectile
         }
 
     }
-
-
-
-
 
     public override void OnKill(int timeLeft)
     {

@@ -64,8 +64,6 @@ public class PocketCrimsand : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -81,8 +79,6 @@ public class PocketCrimsand : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -106,12 +102,6 @@ public class PocketCrimsand : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
-
-
 
     }
 

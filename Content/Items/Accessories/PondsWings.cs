@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Wings)]
 public class PondsWings : ModItem
 {
-
-
     public override void SetStaticDefaults()
     {
         // These wings use the same values as the solar wings
@@ -41,8 +39,6 @@ public class PondsWings : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -65,7 +61,5 @@ public class PondsWings : ModItem
         maxAscentMultiplier = 2.5f;
         constantAscend = 0.125f;
     }
-
-
 
 }

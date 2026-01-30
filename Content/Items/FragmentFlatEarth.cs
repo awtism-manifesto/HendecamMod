@@ -11,8 +11,6 @@ public class FragmentFlatEarth : ModItem
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
 
@@ -42,8 +40,6 @@ public class FragmentFlatEarth : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -57,8 +53,6 @@ public class FragmentFlatEarth : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe
@@ -70,10 +64,6 @@ public class FragmentFlatEarth : ModItem
         recipe.AddIngredient(ItemID.FragmentVortex);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
-
-
 
     }
 

@@ -42,9 +42,5 @@ public class AncientCobaltWaraxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

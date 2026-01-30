@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MagnumShot : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 12; // The width of projectile hitbox
@@ -46,8 +42,6 @@ public class MagnumShot : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.Electric, 0f, 0f, 100, default, 0.425f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
                 fireDust.noGravity = true;
@@ -55,10 +49,4 @@ public class MagnumShot : ModProjectile
             }
         }
     }
-
-
-
-
 }
-
-

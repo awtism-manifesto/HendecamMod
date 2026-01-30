@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ZazaMagic : ModProjectile
@@ -37,8 +35,6 @@ public class ZazaMagic : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
-
-
     public override void OnSpawn(IEntitySource source)
     {
         if (Main.rand.NextBool(2))
@@ -49,8 +45,6 @@ public class ZazaMagic : ModProjectile
 
     public override void AI()
     {
-
-
         Projectile.velocity.Y = -9.5f;
 
         for (int i = 0; i < 2; i++)
@@ -66,8 +60,6 @@ public class ZazaMagic : ModProjectile
             fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 1.33f;
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
             fireDust.noGravity = true;
@@ -86,8 +78,4 @@ public class ZazaMagic : ModProjectile
 
         Projectile.damage = (int)(Projectile.damage * 0.875f);
     }
-
-
 }
-
-

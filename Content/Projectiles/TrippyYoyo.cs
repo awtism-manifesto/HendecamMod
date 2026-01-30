@@ -29,8 +29,6 @@ public class TrippyYoyo : ModProjectile
 
     public override void AI()
     {
-
-
         if (nextSpawnTick == 0)
         {
             nextSpawnTick = Main.rand.Next(24, 26);
@@ -47,12 +45,8 @@ public class TrippyYoyo : ModProjectile
 
             tickCounter = 0;
             nextSpawnTick = Main.rand.Next(27, 28);
-
-
             Projectile.netUpdate = true;
         }
-
-
         // dust code (visual only, fine to run on all clients)
         if (Projectile.alpha < 187)
         {

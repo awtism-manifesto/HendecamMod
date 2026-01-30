@@ -5,8 +5,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class HurricaneGun : ModItem
@@ -26,8 +24,6 @@ public class HurricaneGun : ModItem
         Item.reuseDelay = 18;
 
         Item.UseSound = Terraria.ID.SoundID.Item122;
-
-
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 51; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
@@ -47,8 +43,6 @@ public class HurricaneGun : ModItem
         type = ModContent.ProjectileType<Hurricane>();
 
     }
-
-
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -85,8 +79,6 @@ public class HurricaneGun : ModItem
             }
         }
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

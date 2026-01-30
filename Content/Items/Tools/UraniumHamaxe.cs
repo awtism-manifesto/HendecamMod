@@ -19,8 +19,6 @@ public class UraniumHamaxe : ModItem
         Item.useTime = 14;
         Item.useAnimation = 20;
         Item.useTurn = true;
-
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
 
@@ -28,8 +26,6 @@ public class UraniumHamaxe : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-
-
         Item.hammer = 65;
         Item.axe = 19;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
@@ -66,11 +62,7 @@ public class UraniumHamaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<UraniumBar>(12);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

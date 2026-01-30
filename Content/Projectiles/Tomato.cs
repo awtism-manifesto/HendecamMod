@@ -48,8 +48,6 @@ public class Tomato : ModProjectile
 
     public override void AI()
     {
-
-
         int frameSpeed = 9;
 
         Projectile.frameCounter++;
@@ -62,8 +60,6 @@ public class Tomato : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         // dust, all dust
@@ -97,7 +93,5 @@ public class Tomato : ModProjectile
             dust.velocity *= 9.95f;
             dust.scale *= 1.25f;
         }
-
-
     }
 }

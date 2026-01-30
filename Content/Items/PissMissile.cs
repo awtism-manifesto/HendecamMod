@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Items;
 
 public class PissMissile : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.damage = 34; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
@@ -61,8 +59,6 @@ public class PissMissile : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

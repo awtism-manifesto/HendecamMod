@@ -39,11 +39,7 @@ public class AstatineAnnihilator : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     public override bool CanUseItem(Player player)
     {
@@ -99,14 +95,10 @@ public class AstatineAnnihilator : ModItem
 
         }
     }
-
-
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe.AddIngredient<AstatineBar>(25);
         recipe.AddIngredient<ThePurifier>();

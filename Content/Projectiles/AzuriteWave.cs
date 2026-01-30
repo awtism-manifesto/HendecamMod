@@ -17,8 +17,6 @@ public class AzuriteWave : ModProjectile
     }
     public override void SetDefaults()
     {
-
-
         Projectile.width = 100; // The width of projectile hitbox
         Projectile.height = 100; // The height of projectile hitbox
 
@@ -57,8 +55,6 @@ public class AzuriteWave : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         if (Projectile.timeLeft < 42)
@@ -79,20 +75,12 @@ public class AzuriteWave : ModProjectile
         }
         if (Projectile.timeLeft > 178)
         {
-
-
         }
         Lighting.AddLight(Projectile.Center, 0.2f, 0.2f, 0.8f);
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
     }
 }

@@ -13,10 +13,6 @@ public class LuckyCigarette : ModItem
 {
 
     public static readonly int CritBonus = 10;
-
-
-
-
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -28,8 +24,6 @@ public class LuckyCigarette : ModItem
     }
     public override void UpdateEquip(Player player)
     {
-
-
         player.breathMax = 167;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
     }
@@ -38,8 +32,6 @@ public class LuckyCigarette : ModItem
 
         var line = new TooltipLine(Mod, "Face", "10% increased crit chance");
         tooltips.Add(line);
-
-
         line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -51,10 +43,6 @@ public class LuckyCigarette : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -62,13 +50,5 @@ public class LuckyCigarette : ModItem
                 l.Hide();
             }
         }
-
-
     }
-
-
-
-
-
-
 }

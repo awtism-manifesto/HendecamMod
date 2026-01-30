@@ -9,8 +9,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class AzuriteDualStaff : ModItem
 {
 
@@ -36,13 +34,9 @@ public class AzuriteDualStaff : ModItem
 
         Item.value = 105000;
         Item.rare = ItemRarityID.Orange;
-
-
         Item.shoot = ModContent.ProjectileType<AzuriteBeam>();
         Item.shootSpeed = 12.5f;
     }
-
-
 
     private int shotCounter = 0;
 
@@ -52,8 +46,6 @@ public class AzuriteDualStaff : ModItem
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
-
-
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
@@ -62,20 +54,14 @@ public class AzuriteDualStaff : ModItem
         else if (shotCounter == 2)
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(180f));
-
-
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 2f), knockback, player.whoAmI);
             shotCounter = 0;
         }
 
-
-
         return false;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");

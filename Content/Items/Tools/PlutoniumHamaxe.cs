@@ -27,8 +27,6 @@ public class PlutoniumHamaxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.useTurn = true;
-
-
         Item.hammer = 115;
         Item.axe = 29;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
@@ -49,8 +47,6 @@ public class PlutoniumHamaxe : ModItem
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 245);
-
-
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PlutoniumDust>());
@@ -66,11 +62,7 @@ public class PlutoniumHamaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<PlutoniumBar>(15);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();

@@ -78,8 +78,6 @@ public class DaedalusStormgun : ModItem
 
         return false;
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,8 +89,6 @@ public class DaedalusStormgun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -107,8 +103,6 @@ public class DaedalusStormgun : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -118,17 +112,11 @@ public class DaedalusStormgun : ModItem
 
         recipe.AddIngredient<Items.CyberneticGunParts>();
         recipe.AddIngredient<FissionDrive>();
-
-
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseBar", out ModItem PhaseBar))
-
-
         {
             recipe.AddIngredient(PhaseBar.Type, 12);
-
-
         }
     }
 

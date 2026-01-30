@@ -24,8 +24,6 @@ public class KevlarPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -48,8 +46,6 @@ public class KevlarPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -82,8 +78,6 @@ public class KevlarPants : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.runAcceleration *= 0.91f;
         player.moveSpeed += MoveSpeedBonus / 91f;
@@ -99,7 +93,5 @@ public class KevlarPants : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

@@ -5,8 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
-
-
 public class TinLongsword : ModItem
 {
     public override void SetDefaults()
@@ -25,14 +23,10 @@ public class TinLongsword : ModItem
         Item.ArmorPenetration = 2;
         Item.ChangePlayerDirectionOnShoot = true;
         Item.scale = 1.2f;
-
-
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-
-
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -40,8 +34,6 @@ public class TinLongsword : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
@@ -58,8 +50,6 @@ public class TinLongsword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

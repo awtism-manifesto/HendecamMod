@@ -10,8 +10,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class TheSecondAmendment : ModItem
@@ -19,10 +17,6 @@ public class TheSecondAmendment : ModItem
 
     public override void SetDefaults()
     {
-
-
-
-
         Item.width = 130;
         Item.height = 60;
         Item.scale = 1f;
@@ -34,22 +28,16 @@ public class TheSecondAmendment : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 1776; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 20f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-
-
         Item.ArmorPenetration = 176;
 
         Item.shoot = ProjectileID.Bullet;
         Item.shootSpeed = 19.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
-
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -61,10 +49,6 @@ public class TheSecondAmendment : ModItem
         {
             damage = (int)(damage * 0.45f);
         }
-
-
-
-
         SoundEngine.PlaySound(SoundID.Item68, player.position);
         SoundEngine.PlaySound(SoundID.Item61, player.position);
         for (int i = 0; i < 3; i++) // Fire 3 random projectiles
@@ -76,8 +60,6 @@ public class TheSecondAmendment : ModItem
 
             int projType = type;
             int projDamage = damage;
-
-
             switch (choice)
             {
                 case 0:
@@ -296,8 +278,6 @@ public class TheSecondAmendment : ModItem
 
             Projectile.NewProjectileDirect(source, position, newVelocity, projType, projDamage, knockback, player.whoAmI);
         }
-
-
         if (Main.rand.NextBool(69))
         {
             int bonusType = ModContent.ProjectileType<RiverHead>();
@@ -311,8 +291,6 @@ public class TheSecondAmendment : ModItem
         else return false;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -324,10 +302,6 @@ public class TheSecondAmendment : ModItem
             OverrideColor = new Color(255, 45, 95)
         };
         tooltips.Add(line);
-
-
-
-
     }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
@@ -364,8 +338,6 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<CopperShortmachinegun>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
         if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind<ModItem>("BrenGun", out ModItem BrenGun))
         {
             recipe.AddIngredient(BrenGun.Type);
@@ -373,8 +345,6 @@ public class TheSecondAmendment : ModItem
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("SomaPrime", out ModItem SomaPrime)
             && CalMerica.TryFind<ModItem>("HalibutCannon", out ModItem HalibutCannon))
-
-
         {
 
             recipe.AddIngredient(SomaPrime.Type);
@@ -383,20 +353,12 @@ public class TheSecondAmendment : ModItem
         }
 
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind<ModItem>("Hyperion", out ModItem Hyperion))
-
-
         {
             recipe.AddIngredient(Hyperion.Type);
-
-
         }
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("VolcanicRepeater", out ModItem VolcanicRepeater))
-
-
         {
             recipe.AddIngredient(VolcanicRepeater.Type);
-
-
 
         }
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("ArtemiteMagnum", out ModItem ArtemiteMagnum)
@@ -407,12 +369,8 @@ public class TheSecondAmendment : ModItem
             recipe.AddIngredient(TychoDesertEagle.Type);
         }
         if (ModLoader.TryGetMod("ZenithGunReturn", out Mod ZenithMerica) && ZenithMerica.TryFind<ModItem>("ZenithGun", out ModItem ZenithGun))
-
-
         {
             recipe.AddIngredient(ZenithGun.Type);
-
-
         }
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind<ModItem>("TerrariumPulseRifle", out ModItem TerrariumPulseRifle)
            && ThorMerica.TryFind<ModItem>("OmniCannon", out ModItem OmniCannon)
@@ -457,8 +415,6 @@ public class TheSecondAmendment : ModItem
 
            && HomeMerica.TryFind<ModItem>("ClockworkMinigun", out ModItem ClockworkMinigun)
             && HomeMerica.TryFind<ModItem>("EssenceofBright", out ModItem EssenceofBright))
-
-
         {
             recipe.AddIngredient(ClockworkMinigun.Type);
             recipe.AddIngredient(Blackout.Type);
@@ -469,8 +425,6 @@ public class TheSecondAmendment : ModItem
         }
 
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

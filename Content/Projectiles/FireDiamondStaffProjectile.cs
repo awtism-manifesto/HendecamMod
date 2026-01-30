@@ -15,15 +15,11 @@ public class FireDiamondStaffProjectile : ModProjectile
 
     public override void SetDefaults()
     {
-
-
         Projectile.width = 12; // The width of projectile hitbox
         Projectile.height = 12; // The height of projectile hitbox
 
         Projectile.scale = 1f;
         Projectile.timeLeft = 150;
-
-
         Projectile.tileCollide = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Magic;
@@ -58,8 +54,6 @@ public class FireDiamondStaffProjectile : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 0f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Torch, 0f, 0f, 100, default, 0.67f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.velocity *= 0.15f;
@@ -68,6 +62,4 @@ public class FireDiamondStaffProjectile : ModProjectile
         }
 
     }
-
-
 }

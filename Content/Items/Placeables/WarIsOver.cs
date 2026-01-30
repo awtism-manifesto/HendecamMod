@@ -30,8 +30,6 @@ public class WarIsOver : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     public override void AddRecipes()
     {
@@ -41,9 +39,5 @@ public class WarIsOver : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
     }
-
-
 }

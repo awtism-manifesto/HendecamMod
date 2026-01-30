@@ -53,8 +53,6 @@ public class SporeShivDupe : ModProjectile
 
         }
     }
-
-
     public override void AI()
     {
 
@@ -139,6 +137,4 @@ public class SporeShivDupe : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy();
     }
-
-
 }

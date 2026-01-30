@@ -11,12 +11,6 @@ namespace HendecamMod.Content.Items.Accessories;
 [AutoloadEquip(EquipType.Beard)]
 public class PhatBlunt : ModItem
 {
-
-
-
-
-
-
     public override void SetDefaults()
     {
         Item.width = 22; // Width of the item
@@ -43,8 +37,6 @@ public class PhatBlunt : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -84,18 +76,8 @@ public class PhatBlunt : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<LuckyCigarette>();
         recipe.AddIngredient<WeedLeaves>(28);
-
-
-
-
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
-
-
     }
 
 }

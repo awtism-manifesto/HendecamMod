@@ -61,8 +61,6 @@ public class KingslayerHelmet : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -87,11 +85,7 @@ public class KingslayerHelmet : ModItem
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
 
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-
-
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
-
-
     }
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
@@ -103,10 +97,6 @@ public class KingslayerHelmet : ModItem
         recipe.AddTile(TileID.Solidifier);
 
         recipe.Register();
-
-
-
-
 
     }
     public override void UpdateArmorSet(Player player)

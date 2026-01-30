@@ -4,8 +4,6 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class Pipis : ModProjectile
@@ -24,8 +22,6 @@ public class Pipis : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -66,8 +62,6 @@ public class Pipis : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -75,8 +69,6 @@ public class Pipis : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {

@@ -27,8 +27,6 @@ public class MorbiumTreeripper : ModItem
         Item.UseSound = SoundID.Item23;
         Item.autoReuse = true;
         Item.tileBoost = 3;
-
-
         Item.axe = 48;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
@@ -48,11 +46,7 @@ public class MorbiumTreeripper : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<MorbiumBar>(12);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();

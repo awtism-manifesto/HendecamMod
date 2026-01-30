@@ -46,8 +46,6 @@ public class TheFuckingSun : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -57,10 +55,6 @@ public class TheFuckingSun : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -103,8 +97,6 @@ public class TheFuckingSun : ModItem
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
-
-
 
         }
     }

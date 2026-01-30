@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PurifiedSaltFedora : ModItem
 {
-
-
     public static readonly int StupidCritBonus = 16;
     public static readonly int StupidArmorPenetration = 12;
     public static LocalizedText SetBonusText { get; private set; }
@@ -50,8 +48,6 @@ public class PurifiedSaltFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -103,7 +99,5 @@ public class PurifiedSaltFedora : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

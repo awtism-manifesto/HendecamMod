@@ -84,8 +84,6 @@ public class BladegunSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -158,17 +156,11 @@ public class BladegunSwing : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
-
-
-
-
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
-
-
         info.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
 
@@ -212,8 +204,6 @@ public class BladegunSwing : ModProjectile
         // Thin bottom line (final frame)
         Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
 
-
-
         // This draws a large star sparkle at the front of the projectile.
         Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
         DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos2, new Color(200, 200, 255, 0) * lerpTime * 0.5f, middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, 0f, new Vector2(2f, Utils.Remap(percentageOfLife, 0f, 1f, 4f, 1f)) * scale, Vector2.One * scale);
@@ -225,8 +215,6 @@ public class BladegunSwing : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

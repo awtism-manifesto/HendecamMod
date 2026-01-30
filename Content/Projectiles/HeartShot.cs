@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class HeartShot : ModProjectile
@@ -85,18 +83,8 @@ public class HeartShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         //player.Heal((int)(Projectile.damage * 0.1f));
         base.OnHitNPC(target, hit, damageDone);
     }
-
-
-
-
-
-
 
 }

@@ -83,10 +83,6 @@ public class MacuaSwing : ModProjectile
 
         // Here we spawn some dust inside the arc of the swing.
 
-
-
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -160,8 +156,6 @@ public class MacuaSwing : ModProjectile
     {
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
         SoundEngine.PlaySound(SoundID.Item178, Projectile.position);
-
-
         for (int i = -1; i <= 1; i++)
         {
             float angle = 11 * i; // gives -15, 0, 15
@@ -170,12 +164,6 @@ public class MacuaSwing : ModProjectile
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<ObsidianScrap>(), (int)(Projectile.damage * 0.6f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
         }
-
-
     }
-
-
-
-
 
 }

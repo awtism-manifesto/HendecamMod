@@ -29,16 +29,10 @@ public class AutismDiagnosis : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<Paper>();
         recipe.AddIngredient<AutismOrb>(2);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-
-
-
-
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -57,8 +51,6 @@ public class AutismDiagnosis : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
     }
     public override void UpdateAccessory(Player player, bool hideVisual)

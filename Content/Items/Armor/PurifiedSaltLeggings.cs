@@ -50,8 +50,6 @@ public class PurifiedSaltLeggings : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -102,8 +100,6 @@ public class PurifiedSaltLeggings : ModItem
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
     public class PurePants : ModPlayer
     {
@@ -121,8 +117,6 @@ public class PurifiedSaltLeggings : ModItem
             {
                 return;
             }
-
-
             Player.runAcceleration *= 1.2f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.2f;
             Player.accRunSpeed *= 1.2f;

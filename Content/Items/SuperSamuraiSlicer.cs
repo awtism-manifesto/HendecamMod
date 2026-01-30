@@ -61,8 +61,6 @@ public class SuperSamuraiSlicer : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -74,15 +72,7 @@ public class SuperSamuraiSlicer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

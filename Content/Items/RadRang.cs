@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class RadRang : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -46,8 +44,6 @@ public class RadRang : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -91,11 +87,7 @@ public class RadRang : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<UraniumBar>(15);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

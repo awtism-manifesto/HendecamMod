@@ -57,8 +57,6 @@ public class AstaBoomOmni : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-
-
         // Rotate the rocket in the direction that it is moving.
         if (Projectile.velocity != Vector2.Zero)
         {
@@ -97,13 +95,9 @@ public class AstaBoomOmni : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(666, 666);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 85; j++)
@@ -115,8 +109,6 @@ public class AstaBoomOmni : ModProjectile
             fireDust.velocity *= 6f;
             fireDust.noGravity = true;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

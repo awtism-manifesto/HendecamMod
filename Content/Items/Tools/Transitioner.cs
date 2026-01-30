@@ -45,9 +45,5 @@ public class Transitioner : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

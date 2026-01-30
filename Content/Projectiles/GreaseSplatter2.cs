@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GreaseSplatter2 : ModProjectile
@@ -39,8 +37,6 @@ public class GreaseSplatter2 : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(BuffID.OnFire3, 240);
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -88,8 +84,4 @@ public class GreaseSplatter2 : ModProjectile
 
         return true;
     }
-
-
-
-
 }

@@ -86,8 +86,6 @@ public class BlackshardProj : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -189,8 +187,6 @@ public class BlackshardProj : ModProjectile
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 1.67f), Projectile.knockBack, Projectile.owner);
-
-
         }
     }
 

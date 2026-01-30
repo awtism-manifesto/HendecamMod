@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class IchSpark : ModProjectile
@@ -18,8 +16,6 @@ public class IchSpark : ModProjectile
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
     public override void SetDefaults()
     {
         Projectile.width = 3; // The width of projectile hitbox
@@ -30,8 +26,6 @@ public class IchSpark : ModProjectile
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 91;
-
-
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -143,11 +137,5 @@ public class IchSpark : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Ichor, 120);
-
-
     }
-
-
 }
-
-

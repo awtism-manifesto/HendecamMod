@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items.Accessories;
 public class IrradiatedFisticuffs : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
     public static readonly int MeleeAttackSpeedBonus = 14;
 
     public static readonly int AdditiveMeleeDamageBonus = 14;
@@ -40,8 +38,6 @@ public class IrradiatedFisticuffs : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

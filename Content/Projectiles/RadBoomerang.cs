@@ -34,8 +34,6 @@ public class RadBoomerang : ModProjectile
     }
     public override void AI()
     {
-
-
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -45,8 +43,6 @@ public class RadBoomerang : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-
-
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.33f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -62,8 +58,6 @@ public class RadBoomerang : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
         ModContent.ProjectileType<RadParticle>(), (int)(Projectile.damage * 0.667f), Projectile.knockBack, Projectile.owner);
-
-
     }
     public override void OnKill(int timeLeft)
     {

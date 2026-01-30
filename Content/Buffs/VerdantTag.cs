@@ -23,6 +23,4 @@ public class VerdantTag : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

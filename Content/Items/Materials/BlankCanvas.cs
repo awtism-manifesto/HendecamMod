@@ -60,20 +60,12 @@ public class BlankCanvas : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
-
-
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(BlankPainting.Type);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
-
-
         }
-
-
     }
-
-
 
 }

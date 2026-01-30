@@ -3,14 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class WaterJetMelee : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 10; // The width of projectile hitbox
@@ -30,14 +26,8 @@ public class WaterJetMelee : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-
-
-
-
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Projectile.alpha < 233)
@@ -59,9 +49,5 @@ public class WaterJetMelee : ModProjectile
         }
     }
 
-
-
 }
-
-
 

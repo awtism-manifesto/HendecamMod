@@ -32,8 +32,6 @@ public class CarbonDioxideBottle : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -53,8 +51,6 @@ public class CarbonDioxideBottle : ModItem
 public class SimpleExtraJump : ExtraJump
 {
     public override Position GetDefaultPosition() => new After(BlizzardInABottle);
-
-
 
     public override float GetDurationMultiplier(Player player)
     {
@@ -86,8 +82,6 @@ public class SimpleExtraJump : ExtraJump
             Dust dust = Dust.NewDustDirect(player.position + new Vector2(-34f, offsetY), 102, 32, DustID.Cloud, -player.velocity.X * 0.5f, player.velocity.Y * 0.5f, 100, Color.Gray, 1.5f);
             dust.velocity = dust.velocity * 0.5f - player.velocity * new Vector2(0.1f, 0.3f);
         }
-
-
     }
 
     private static void SpawnCloudPoof(Player player, Vector2 position)

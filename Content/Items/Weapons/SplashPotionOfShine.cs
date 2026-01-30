@@ -50,17 +50,11 @@ public class SplashPotionOfShine : ModItem // MAG THE COMMENTS ON THIS FILE ARE 
         };
         tooltips.Add(line);
 
-
-
         // if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         // {
 
         //   tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         //  }
-
-
-
-
 
     }
     public override void AddRecipes()
@@ -69,7 +63,5 @@ public class SplashPotionOfShine : ModItem // MAG THE COMMENTS ON THIS FILE ARE 
         recipe.AddIngredient(ItemID.ShinePotion);
 
         recipe.Register();
-
-
     }
 }

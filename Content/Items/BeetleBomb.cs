@@ -56,17 +56,11 @@ public class BeetleBomb : ModItem
         };
         tooltips.Add(line);
 
-
-
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
 
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -88,7 +82,5 @@ public class BeetleBomb : ModItem
         recipe.AddIngredient(ItemID.BeetleHusk, 2);
 
         recipe.Register();
-
-
     }
 }

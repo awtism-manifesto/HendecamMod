@@ -60,8 +60,6 @@ public class Rad2Tick : GlobalNPC
         {
             DOTDebuff(npc, 13, ref damage);
         }
-
-
     }
 
 }
@@ -91,8 +89,6 @@ public class Rad3Tick : GlobalNPC
         {
             DOTDebuff(npc, 21, ref damage);
         }
-
-
     }
 
 }
@@ -122,8 +118,6 @@ public class MoonBurning : GlobalNPC
         {
             DOTDebuff(npc, 66, ref damage);
         }
-
-
     }
 
 }
@@ -153,8 +147,6 @@ public class WhoTfIsSteveJobs : GlobalNPC
         {
             DOTDebuff(npc, 911, ref damage);
         }
-
-
     }
 
 }

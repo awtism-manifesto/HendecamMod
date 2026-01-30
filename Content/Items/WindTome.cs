@@ -20,8 +20,6 @@ public class WindTome : ModItem
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
         Item.value = 140000;
-
-
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 35; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -32,8 +30,6 @@ public class WindTome : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item32;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 30; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -61,10 +57,6 @@ public class WindTome : ModItem
         Vector2 new6Velocity = velocity.RotatedBy(MathHelper.ToRadians(-4.5f));
         Vector2 new7Velocity = velocity.RotatedBy(MathHelper.ToRadians(6f));
         Vector2 new8Velocity = velocity.RotatedBy(MathHelper.ToRadians(-6f));
-
-
-
-
         if (shotCounter <= 0)
         {
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -124,8 +116,6 @@ public class WindTome : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -144,17 +134,11 @@ public class WindTome : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SpellTome, 1);
-
-
         recipe.AddIngredient(ItemID.SoulofFright, 5);
         recipe.AddIngredient(ItemID.SoulofFlight, 10);
         recipe.AddIngredient<AirBar>(100);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()

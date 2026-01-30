@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class GayFrogAlchemyGuide : ModItem
@@ -21,30 +19,20 @@ public class GayFrogAlchemyGuide : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
         Item.value = 150000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 15; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item13;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<AutismDamage>(); // Sets the damage type to ranged.
         Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 9;
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<GayFrogChemicals>();
@@ -59,10 +47,6 @@ public class GayFrogAlchemyGuide : ModItem
 
     }
 
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -74,8 +58,6 @@ public class GayFrogAlchemyGuide : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -90,8 +72,6 @@ public class GayFrogAlchemyGuide : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

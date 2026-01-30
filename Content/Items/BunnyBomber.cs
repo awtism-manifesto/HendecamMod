@@ -20,29 +20,19 @@ public class BunnyBomber : ModItem
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 225000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 23; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 23; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 192; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -50,11 +40,7 @@ public class BunnyBomber : ModItem
 
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Rocket;
-
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -91,34 +77,20 @@ public class BunnyBomber : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.RocketLauncher);
         recipe.AddIngredient(ItemID.ExplosiveBunny, 5);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SuspiciousLookingEgg", out ModItem SuspiciousLookingEgg))
-
-
         {
             recipe.AddIngredient(SuspiciousLookingEgg.Type);
 
-
-
         }
-
-
 
     }
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

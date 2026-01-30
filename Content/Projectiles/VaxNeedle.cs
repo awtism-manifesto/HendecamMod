@@ -43,8 +43,6 @@ public class VaxNeedle : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-
-
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -61,8 +59,6 @@ public class VaxNeedle : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-
-
 
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Blood, 0f, 0f, 100, default, 0.85f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
@@ -93,8 +89,6 @@ public class VaxNeedle : ModProjectile
         Vector2 velocity5 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits5 = Projectile.Center - new Vector2(-50, 50);
 
-
-
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
@@ -108,8 +102,6 @@ public class VaxNeedle : ModProjectile
         ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
 
         }
-
-
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
@@ -123,17 +115,9 @@ public class VaxNeedle : ModProjectile
        ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
 
         }
-
-
     }
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

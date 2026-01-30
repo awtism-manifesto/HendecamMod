@@ -13,10 +13,6 @@ public class Bergentrucking : ModItem
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-
-
-
         Item.ResearchUnlockCount = 1; // Configure the amount of this item that's needed to research it in Journey mode.
     }
     public override void SetDefaults()
@@ -74,8 +70,6 @@ public class Bergentrucking : ModItem
         };
         tooltips.Add(line);
 
-
-
     }
 
     public override void AddRecipes()
@@ -86,8 +80,6 @@ public class Bergentrucking : ModItem
         recipe.AddIngredient<Beer>(7);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
     }
 
 }

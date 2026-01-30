@@ -14,12 +14,8 @@ public class KnightStarSpawn : ModProjectile
 
     public override void SetDefaults()
     {
-
-
         Projectile.width = 12; // The width of projectile hitbox
         Projectile.height = 12; // The height of projectile hitbox
-
-
         Projectile.timeLeft = 53;
         Projectile.aiStyle = -1;
         Projectile.extraUpdates = 1;
@@ -38,18 +34,10 @@ public class KnightStarSpawn : ModProjectile
     {
         Projectile.scale = Main.rand.NextFloat(0.66f, 1.25f);
 
-
-
     }
 
     public override void OnKill(int timeLeft)
     {
-
-
-
-
-
-
 
     }
 }

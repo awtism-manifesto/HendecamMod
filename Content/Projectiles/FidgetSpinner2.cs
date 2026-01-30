@@ -99,8 +99,6 @@ public class FidgetSpinner2 : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
 
@@ -122,8 +120,6 @@ public class FidgetSpinner2 : ModProjectile
 
             target.AddBuff(BuffID.Confused, 240);
         }
-
-
         if (Main.rand.NextBool(6))
         {
 

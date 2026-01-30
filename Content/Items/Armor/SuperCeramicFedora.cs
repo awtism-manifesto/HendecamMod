@@ -52,8 +52,6 @@ public class SuperCeramicFedora : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -93,8 +91,6 @@ public class SuperCeramicFedora : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(25);
         recipe.AddIngredient<EbonceramicSheet>(10);
 
@@ -102,18 +98,12 @@ public class SuperCeramicFedora : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
-
         recipe.AddIngredient<CeramicSheet>(25);
 
         recipe.AddIngredient<CrimceramicSheet>(10);
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
     }
     public override void UpdateArmorSet(Player player)
     {
@@ -139,8 +129,6 @@ public class CeramMultiscale : ModPlayer
 
         if (ShatterCooldown > 0)
             ShatterCooldown--;
-
-
         if (Multiscale && Player.statLife == Player.statLifeMax2)
         {
             Player.endurance = 1f - 0.8f * (1f - Player.endurance);
@@ -152,16 +140,12 @@ public class CeramMultiscale : ModPlayer
 
         if (!Multiscale)
             return;
-
-
         if (ShatterCooldown > 0)
             return;
 
         int baseDamage = 35;
         float defenseScale = 0.75f;
         int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
-
-
         Projectile.NewProjectile(
             Player.GetSource_FromThis(),
             Player.Center,
@@ -175,9 +159,5 @@ public class CeramMultiscale : ModPlayer
         // Start cooldown
         ShatterCooldown = ShatterCooldownMax;
     }
-
-
-
-
 
 }

@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class HotTack : ModProjectile
@@ -44,8 +42,6 @@ public class HotTack : ModProjectile
 
     public override void AI()
     {
-
-
         for (int i = 0; i < 1; i++)
         {
             float posOffsetX = 0f;
@@ -55,8 +51,6 @@ public class HotTack : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.Torch, 0f, 0f, 100, default, 0.5f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
             fireDust.noGravity = true;
@@ -65,10 +59,6 @@ public class HotTack : ModProjectile
         }
 
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
-
-
-
-
 
     }
     public override bool PreDraw(ref Color lightColor)
@@ -86,8 +76,4 @@ public class HotTack : ModProjectile
 
         return true;
     }
-
-
-
-
 }

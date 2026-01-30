@@ -8,10 +8,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -47,11 +43,7 @@ public class JusticeAxe : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
     private int justiceaxecooldown = 0;
     public override bool CanUseItem(Player player)
@@ -78,8 +70,6 @@ public class JusticeAxe : ModItem
         if (player.altFunctionUse == 2)
         {
 
-
-
             if (justiceaxecooldown > 0)
                 return false;
 
@@ -87,8 +77,6 @@ public class JusticeAxe : ModItem
             { justiceaxecooldown = 45; }
             else
             { justiceaxecooldown = 60; }
-
-
 
             player.AddBuff(ModContent.BuffType<RudeBusterCooldown>(), 60);
             SoundEngine.PlaySound(SoundID.Item82, player.position);
@@ -106,8 +94,6 @@ public class JusticeAxe : ModItem
         return true;
     }
 
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -119,8 +105,6 @@ public class JusticeAxe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -145,13 +129,5 @@ public class JusticeAxe : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-
-
-
-
-
-
     }
-
-
 }

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class MushyPeas : ModProjectile
@@ -36,8 +34,6 @@ public class MushyPeas : ModProjectile
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
-
-
 
     public override bool PreDraw(ref Color lightColor)
     {

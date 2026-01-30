@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
@@ -51,8 +49,6 @@ public class LycopiteLeggings : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -94,15 +90,11 @@ public class LycopiteLeggings : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<LycopiteBar>(25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
     public override void UpdateArmorSet(Player player)
     {
-
-
     }
 }

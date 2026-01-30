@@ -11,12 +11,8 @@ namespace HendecamMod.Content.Items;
 // ExampleRocketLauncher will inherit the variants specified by the Rocket Launcher weapon
 public class TheJfkExperience : ModItem
 {
-
-
     public override void SetDefaults()
     {
-
-
 
         Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 5; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -69,8 +65,6 @@ public class TheJfkExperience : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

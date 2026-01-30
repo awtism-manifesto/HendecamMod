@@ -7,8 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Items;
 
 public class BlackMamba : ModItem
@@ -23,39 +21,25 @@ public class BlackMamba : ModItem
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 825000;
-
-
         // Use Properties
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item5;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 98; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 23.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ModContent.ProjectileType<MambaShot>();
-
-
     }
-
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -76,8 +60,6 @@ public class BlackMamba : ModItem
         {
             // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-
-
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -118,8 +100,6 @@ public class BlackMamba : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -127,15 +107,11 @@ public class BlackMamba : ModItem
         recipe.AddIngredient<Casanova>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<AstatineBar>(15);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
 
     }
-
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-20.5f, 0f);

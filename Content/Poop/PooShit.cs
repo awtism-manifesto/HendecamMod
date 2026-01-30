@@ -3,14 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Poop;
 
 public class PooShit : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
@@ -25,8 +21,6 @@ public class PooShit : ModProjectile
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-
-
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -91,8 +85,4 @@ public class PooShit : ModProjectile
         target.AddBuff(BuffID.Poisoned, 180);
         target.AddBuff(BuffID.Stinky, 900);
     }
-
-
 }
-
-

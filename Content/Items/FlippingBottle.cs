@@ -31,8 +31,6 @@ public class FlippingBottle : ModItem
         Item.knockBack = 2.5f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-
-
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
@@ -64,8 +62,6 @@ public class FlippingBottle : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -81,8 +77,6 @@ public class FlippingBottle : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -106,12 +100,6 @@ public class FlippingBottle : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
-
-
 
     }
 

@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class GelShot : ModProjectile
@@ -40,8 +38,6 @@ public class GelShot : ModProjectile
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -100,21 +96,11 @@ public class GelShot : ModProjectile
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 1.15f;
-
-
             }
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
     }
-
-
 }
-
-

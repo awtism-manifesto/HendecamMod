@@ -52,10 +52,6 @@ public class StupidFuckingPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.NightsEdge);
-
-
-
-
         recipe.AddIngredient(ItemID.GoldBrickWall, 333);
         recipe.AddIngredient(ItemID.BladeofGrass, 1);
         recipe.AddIngredient(ItemID.PortableStool, 67);
@@ -65,8 +61,6 @@ public class StupidFuckingPickaxe : ModItem
 
         recipe.AddIngredient(ItemID.TinShortsword, 167);
         recipe.AddIngredient(ItemID.SpectreBoots, 1);
-
-
         recipe.AddIngredient<WeedLeaves>(420);
         recipe.AddIngredient<LunarGem>(911);
         recipe.AddIngredient<BadGrades>();
@@ -81,6 +75,4 @@ public class StupidFuckingPickaxe : ModItem
 
         recipe.Register();
     }
-
-
 }

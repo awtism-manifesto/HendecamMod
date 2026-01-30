@@ -13,8 +13,6 @@ namespace HendecamMod.Content.Items.Armor;
 public class KevlarBeret : ModItem
 {
 
-
-
     public static readonly int MoveSpeedBonus = -3;
     public static readonly int MeleeAttackSpeedBonus = 5;
     public static readonly int AdditiveSummonDamageBonus = 14;
@@ -53,8 +51,6 @@ public class KevlarBeret : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

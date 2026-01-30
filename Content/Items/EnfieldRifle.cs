@@ -19,29 +19,19 @@ public class EnfieldRifle : ModItem
         Item.scale = 0.36f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 70);
-
-
-
-
         // Use Properties
         Item.useTime = 50; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 50; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = Terraria.ID.SoundID.Item88;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 3;
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 5.66f; // The speed of the projectile (measured in pixels per frame.)
@@ -65,8 +55,6 @@ public class EnfieldRifle : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -105,10 +93,6 @@ public class EnfieldRifle : ModItem
         recipe.AddRecipeGroup("IronBar", 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
 
     }
     public override Vector2? HoldoutOffset()

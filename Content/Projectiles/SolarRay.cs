@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SolarRay : ModProjectile
@@ -36,8 +34,6 @@ public class SolarRay : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -57,8 +53,6 @@ public class SolarRay : ModProjectile
     {
 
         Projectile.damage = (int)(Projectile.damage * 0.5f);
-
-
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons);
@@ -72,8 +66,6 @@ public class SolarRay : ModProjectile
     }
     public override void AI()
     {
-
-
 
         // dust, all dust
         if (Projectile.alpha < 198)
@@ -109,6 +101,4 @@ public class SolarRay : ModProjectile
     }
 
 }
-
-
 

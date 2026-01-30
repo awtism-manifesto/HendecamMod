@@ -45,8 +45,6 @@ public class DvdLogo : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -62,8 +60,6 @@ public class DvdLogo : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -87,14 +83,10 @@ public class DvdLogo : ModItem
             recipe = CreateRecipe();
 
             recipe.AddIngredient(Cyborg.Type);
-
-
             recipe.Register();
         }
         else
         {
-
-
         }
     }
 

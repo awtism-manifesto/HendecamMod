@@ -78,8 +78,6 @@ public class ElephantsThrow : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -100,10 +98,6 @@ public class ElephantsThrow : ModItem
         recipe.AddIngredient<Items.PlutoniumBar>(18);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
 
     }
 }

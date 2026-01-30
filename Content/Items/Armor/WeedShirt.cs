@@ -13,13 +13,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class WeedShirt : ModItem
 {
-
-
     public static readonly int AdditiveDamageBonus = 6;
 
     public static readonly int StupidArmorPenetration = 3;
-
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -29,8 +25,6 @@ public class WeedShirt : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -53,8 +47,6 @@ public class WeedShirt : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -102,12 +94,8 @@ public class WeedShirt : ModItem
 
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("LivingLeaf", out ModItem LivingLeaf))
-
-
         {
             recipe.AddIngredient(LivingLeaf.Type, 7);
-
-
         }
     }
     public override void UpdateArmorSet(Player player)

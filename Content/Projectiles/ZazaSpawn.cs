@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class ZazaSpawn : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -28,27 +24,15 @@ public class ZazaSpawn : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
-
-
-
-
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(0, -325);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<ZazaMagic>(), (int)(Projectile.damage * 0.99f), Projectile.knockBack, Projectile.owner);
 
-
-
     }
 
 }
-
-
 

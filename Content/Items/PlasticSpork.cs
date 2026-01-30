@@ -29,8 +29,6 @@ public class PlasticSpork : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 9;
         Item.knockBack = 0.5f;
-
-
         Item.value = Item.buyPrice(silver: 3);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
@@ -63,8 +61,6 @@ public class PlasticSpork : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,8 +72,6 @@ public class PlasticSpork : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -100,10 +94,6 @@ public class PlasticSpork : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
 
     }
 

@@ -26,8 +26,6 @@ public class MintalOreBlessed : GlobalNPC
 
     }
 }
-
-
 public class MintalSystem : ModSystem
 {
     public static LocalizedText MintalMessage { get; private set; }

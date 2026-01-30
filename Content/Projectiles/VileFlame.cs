@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class VileFlame : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 30; // The width of projectile hitbox
@@ -54,8 +50,6 @@ public class VileFlame : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.CursedTorch, 0f, 0f, 100, default, 2.05f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
@@ -70,8 +64,4 @@ public class VileFlame : ModProjectile
 
         target.AddBuff(BuffID.CursedInferno, 240);
     }
-
-
 }
-
-

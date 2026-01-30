@@ -45,8 +45,6 @@ public class Macuahuitl : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
-
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -55,10 +53,6 @@ public class Macuahuitl : ModItem
         recipe.AddIngredient(ItemID.Obsidian, 25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -73,8 +67,6 @@ public class Macuahuitl : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -88,6 +80,4 @@ public class Macuahuitl : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 }

@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Items.Accessories;
 public class UltraboostedWrench : ModItem
 {
 
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -25,8 +23,6 @@ public class UltraboostedWrench : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<OverclockedWrench>();
-
-
         recipe.AddIngredient<FissionDrive>();
 
         recipe.AddIngredient(ItemID.FragmentStardust, 10);
@@ -51,16 +47,10 @@ public class UltraboostedWrench : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-
-
         player.GetModPlayer<Ultraboostified>().Ultraboosted = true;// Put all boosts in the ModPlayer below to toggle dynamically
     }
 }
@@ -101,7 +91,5 @@ public class Ultraboostified : ModPlayer
             Player.runAcceleration *= 1.21f;
             Player.moveSpeed += MoveSpeedBonus / 121f;
         }
-
-
     }
 }

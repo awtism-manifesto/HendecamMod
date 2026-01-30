@@ -41,9 +41,5 @@ public class AzuriteWaraxe : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
-
-
-
-
     }
 }

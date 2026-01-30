@@ -83,8 +83,6 @@ public class VerdantProj : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(BuffID.Poisoned, 120);
     }
     private void SetVisualOffsets()

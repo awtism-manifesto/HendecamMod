@@ -7,10 +7,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
-
-
 namespace HendecamMod.Content.Items;
 
 /// <summary>
@@ -38,16 +34,10 @@ public class ViciousGreatstaff : ModItem
         Item.shootSpeed = 15.95f;
         Item.scale = 1.05f;
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
-
-
         {
 
             Item.damage = 89;
-
-
         }
-
-
         Item.rare = ItemRarityID.Lime;
         Item.value = Item.buyPrice(gold: 20); // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Magic;
@@ -59,11 +49,7 @@ public class ViciousGreatstaff : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -71,30 +57,18 @@ public class ViciousGreatstaff : ModItem
         if (player.altFunctionUse == 2)
         {
 
-
-
-
-
-
-
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item13, player.position);
 
             Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ModContent.ProjectileType<BloodshotSpawn>(), (int)(damage * 0.45f), (int)(knockback * 0.5f), player.whoAmI);
             return false;
         }
-
-
-
-
         else
         {
             SoundEngine.PlaySound(SoundID.Item100, player.position);
             return true;
         }
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -107,8 +81,6 @@ public class ViciousGreatstaff : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -135,20 +107,10 @@ public class ViciousGreatstaff : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
-
-
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
 
-
-
         }
 
-
-
-
-
     }
-
-
 }

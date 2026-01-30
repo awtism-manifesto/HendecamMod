@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class FrostySpark : ModProjectile
 {
-
-
 
     public override void SetDefaults()
     {
@@ -21,8 +17,6 @@ public class FrostySpark : ModProjectile
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 35;
-
-
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -60,8 +54,6 @@ public class FrostySpark : ModProjectile
             }
         }
 
-
-
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -72,8 +64,4 @@ public class FrostySpark : ModProjectile
         }
 
     }
-
-
 }
-
-

@@ -85,8 +85,6 @@ public class UraniumSwing : ModProjectile
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
-
-
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
         // If the projectile is as old as the max animation time, kill the projectile.
@@ -117,8 +115,6 @@ public class UraniumSwing : ModProjectile
         float collisionRotation = MathHelper.Pi * 2f / 25f * Projectile.ai[0];
         float maximumAngle = MathHelper.PiOver4; // The maximumAngle is used to limit the rotation to create a dead zone.
         float coneRotation = Projectile.rotation + collisionRotation;
-
-
         if (targetHitbox.IntersectsConeSlowMoreAccurate(Projectile.Center, coneLength, coneRotation, maximumAngle))
         {
             return true;
@@ -238,8 +234,6 @@ public class UraniumSwing : ModProjectile
     }
     public override void OnKill(int timeLeft)
     {
-
-
 
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));

@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class CryoBullet : ModProjectile
@@ -88,8 +86,6 @@ public class CryoBullet : ModProjectile
         {
             Projectile.timeLeft = 5;
         }
-
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -102,8 +98,6 @@ public class CryoBullet : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.IceTorch, 0f, 0f, 100, default, 0.25f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -118,8 +112,6 @@ public class CryoBullet : ModProjectile
         target.AddBuff(BuffID.Frostburn2, 200);
 
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

@@ -58,8 +58,6 @@ public class MoonProjFunnier : ModProjectile
             Projectile.velocity *= 1.05f;
 
         }
-
-
         float maxDetectRadius = 2250f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired

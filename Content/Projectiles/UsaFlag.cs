@@ -6,8 +6,6 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class UsaFlag : ModProjectile
@@ -36,8 +34,6 @@ public class UsaFlag : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -53,8 +49,6 @@ public class UsaFlag : ModProjectile
 
         return true;
     }
-
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.

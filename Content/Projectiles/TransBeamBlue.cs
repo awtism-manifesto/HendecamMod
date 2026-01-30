@@ -2,14 +2,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class TransBeamBlue : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
@@ -20,8 +16,6 @@ public class TransBeamBlue : ModProjectile
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 200;
-
-
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 4; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -35,8 +29,6 @@ public class TransBeamBlue : ModProjectile
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 0.4f, 0.4f, 0.95f);
-
-
         if (Projectile.alpha < 180)
         {
 
@@ -49,8 +41,6 @@ public class TransBeamBlue : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.IceTorch, 0f, 0f, 100, Color.Blue, 1.33f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
@@ -62,12 +52,6 @@ public class TransBeamBlue : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         Projectile.damage = (int)(Projectile.damage * 0.8f); // lose a bit of damage as it pierces
     }
-
-
 }
-
-

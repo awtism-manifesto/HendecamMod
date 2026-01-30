@@ -45,10 +45,6 @@ public class UraniumSword : ModItem
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
-
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -60,8 +56,6 @@ public class UraniumSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

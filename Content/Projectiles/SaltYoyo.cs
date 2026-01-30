@@ -29,8 +29,6 @@ public class SaltYoyo : ModProjectile
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
         // dust
         if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
@@ -43,8 +41,6 @@ public class SaltYoyo : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Ghost, 0f, 0f, 100, default, 0.9f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
@@ -59,8 +55,6 @@ public class SaltYoyo : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
         ModContent.ProjectileType<SaltMelee>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
-
-
 
     }
     public override void SetDefaults()

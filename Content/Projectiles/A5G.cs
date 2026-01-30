@@ -2,8 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class A5G : ModProjectile
@@ -34,16 +32,10 @@ public class A5G : ModProjectile
 
     }
 
-
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 
         target.immune[Projectile.owner] = 4;
 
     }
-
-
 }
-
-

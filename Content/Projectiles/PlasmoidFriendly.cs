@@ -23,8 +23,6 @@ public class PlasmoidFriendly : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 150);
     }
     public override void SetDefaults()
@@ -69,8 +67,6 @@ public class PlasmoidFriendly : ModProjectile
         SearchForTargets(owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter);
         Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
         Visuals();
-
-
     }
     private bool CheckActive(Player owner)
     {

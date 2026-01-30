@@ -9,8 +9,6 @@ namespace HendecamMod.Content.Dusts;
 
 public class MoonburnDust : ModDust
 {
-
-
     public override string Texture => null;
 
     public override void OnSpawn(Dust dust)
@@ -23,8 +21,6 @@ public class MoonburnDust : ModDust
         dust.color = Color.DarkCyan;
         dust.scale = 1f;
         dust.alpha = 100;
-
-
     }
     public override bool Update(Dust dust)
     {
@@ -34,8 +30,6 @@ public class MoonburnDust : ModDust
         float lightB = 0.8f * dust.scale;
 
         Lighting.AddLight(dust.position, lightR, lightG, lightB);
-
-
 
         return true; // RETURN TRUE
     }

@@ -14,8 +14,6 @@ public class CrudeOil : ModItem
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-
         Item.ResearchUnlockCount = 99; // Configure the amount of this item that's needed to research it in Journey mode.
     }
 
@@ -53,11 +51,7 @@ public class CrudeOil : ModItem
         recipe.Register();
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SmoothCoal", out ModItem SmoothCoal))
-
-
         {
-
-
 
             recipe = CreateRecipe(5);
             recipe.AddIngredient(SmoothCoal.Type);
@@ -65,8 +59,6 @@ public class CrudeOil : ModItem
             recipe.AddTile(TileID.Bottles);
             recipe.Register();
         }
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -80,8 +72,6 @@ public class CrudeOil : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method

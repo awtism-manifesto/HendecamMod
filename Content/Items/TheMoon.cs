@@ -9,8 +9,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
-
-
 public class TheMoon : ModItem
 {
     public override void SetDefaults()
@@ -35,8 +33,6 @@ public class TheMoon : ModItem
 
         Item.shoot = ModContent.ProjectileType<TheFuckingMoon>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16f; // Speed of the projectiles the sword will shoot
-
-
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -56,8 +52,6 @@ public class TheMoon : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -73,16 +67,10 @@ public class TheMoon : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
 
         recipe.AddIngredient<LunarGem>(100);
         recipe.AddIngredient<FragmentFlatEarth>(10);
@@ -90,8 +78,6 @@ public class TheMoon : ModItem
 
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
     }
 
 }

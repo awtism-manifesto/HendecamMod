@@ -10,8 +10,6 @@ namespace HendecamMod.Content.Items;
 
 public class ShatteringShell : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.damage = 22; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
@@ -59,8 +57,6 @@ public class ShatteringShell : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
     }
     public override void AddRecipes()

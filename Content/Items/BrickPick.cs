@@ -46,11 +46,7 @@ public class BrickPick : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<Items.LegoBricks>(64);
-
-
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

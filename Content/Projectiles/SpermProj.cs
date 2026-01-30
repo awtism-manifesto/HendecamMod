@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class SpermProj : ModProjectile
@@ -60,8 +58,6 @@ public class SpermProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
@@ -135,8 +131,6 @@ public class SpermProj : ModProjectile
 
         return closestNPC;
     }
-
-
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -189,11 +183,7 @@ public class SpermProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

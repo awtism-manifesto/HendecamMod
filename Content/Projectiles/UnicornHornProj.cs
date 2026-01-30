@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-
 namespace HendecamMod.Content.Projectiles;
 
 public class UnicornHornProj : ModProjectile
@@ -35,8 +33,6 @@ public class UnicornHornProj : ModProjectile
         Projectile.localNPCHitCooldown = 3;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
-
     public override void AI()
     {
 
@@ -82,7 +78,5 @@ public class UnicornHornProj : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.8f);
 
     }
-
-
 
 }
