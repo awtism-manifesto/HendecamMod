@@ -23,7 +23,7 @@ public class FissionDrive : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.22f;
         Item.rare = ModContent.RarityType<Seizure2>();
-        Item.value = 5000000;
+        Item.value = 5050505;
         Item.maxStack = 9999;
     }
 

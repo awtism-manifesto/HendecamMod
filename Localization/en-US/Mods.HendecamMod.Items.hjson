@@ -4770,6 +4770,7 @@ MorbiumMinesweeper: {
 	DisplayName: Morbium Minesweeper
 }
 
+<<<<<<< HEAD
 BetsyIcon: {
 	DisplayName: Betsy Icon
 	Tooltip: ""
@@ -4837,5 +4838,9 @@ StardustPillarIcon: {
 
 VortexPillarIcon: {
 	DisplayName: Vortex Pillar Icon
+=======
+OffenseShield: {
+	DisplayName: Offense Shield
+>>>>>>> d3c70f9502664925cf41302d378ccf7e73eaef83
 	Tooltip: ""
 }
