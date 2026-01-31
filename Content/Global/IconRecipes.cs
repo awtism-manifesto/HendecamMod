@@ -639,5 +639,89 @@ public class IconRecipes : ModSystem
         Recipe BallsAA = Recipe.Create(ItemID.MourningWoodTrophy);
         BallsAA.AddIngredient<Items.Icons.MouringWoodIcon>();
         BallsAA.Register();
+
+        Recipe Ballfart = Recipe.Create(ItemID.CandyCornRifle);
+        Ballfart.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfart.Register();
+
+        Recipe Ballfarting = Recipe.Create(ItemID.JackOLanternLauncher);
+        Ballfarting.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfarting.Register();
+
+        Recipe Ballfart1 = Recipe.Create(ItemID.TheHorsemansBlade);
+        Ballfart1.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfart1.Register();
+
+        Recipe Ballfart2 = Recipe.Create(ItemID.BatScepter);
+        Ballfart2.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfart2.Register();
+
+        Recipe Ballfart3 = Recipe.Create(ItemID.RavenStaff);
+        Ballfart3.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfart3.Register();
+
+        Recipe Ballfart4 = Recipe.Create(ItemID.ScytheWhip);
+        Ballfart4.AddIngredient<Items.Icons.PumpkingIcon>();
+        Ballfart4.Register();
+
+        Recipe Riverfuckingdied = Recipe.Create(ItemID.PumpkingTrophy);
+        Riverfuckingdied.AddIngredient<Items.Icons.PumpkingIcon>();
+        Riverfuckingdied.Register();
+
+        Recipe Massivejewtits = Recipe.Create(ItemID.ChristmasTreeSword);
+        Ballfart.AddIngredient<Items.Icons.EverscreamIcon>();
+        Ballfart.Register();
+
+        Recipe Ballfartass = Recipe.Create(ItemID.ChristmasHook);
+        Ballfartass.AddIngredient<Items.Icons.EverscreamIcon>();
+        Ballfartass.Register();
+
+        Recipe laserpiss = Recipe.Create(ItemID.Razorpine);
+        laserpiss.AddIngredient<Items.Icons.EverscreamIcon>();
+        laserpiss.Register();
+
+        Recipe nineleven = Recipe.Create(ItemID.FestiveWings);
+        nineleven.AddIngredient<Items.Icons.EverscreamIcon>();
+        nineleven.Register();
+
+        Recipe imgay = Recipe.Create(ItemID.EverscreamTrophy);
+        imgay.AddIngredient<Items.Icons.EverscreamIcon>();
+        imgay.Register();
+
+        Recipe Alpinehatestheelfmelter = Recipe.Create(ItemID.ElfMelter);
+        Alpinehatestheelfmelter.AddIngredient<Items.Icons.SantankIcon>();
+        Alpinehatestheelfmelter.Register();
+
+        Recipe gattlinggun = Recipe.Create(ItemID.ChainGun);
+        gattlinggun.AddIngredient<Items.Icons.SantankIcon>();
+        gattlinggun.Register();
+
+        Recipe blitz = Recipe.Create(ItemID.SantaNK1Trophy);
+        blitz.AddIngredient<Items.Icons.SantankIcon>();
+        blitz.Register();
+
+        Recipe blizzardof78 = Recipe.Create(ItemID.BlizzardStaff);
+        blizzardof78.AddIngredient<Items.Icons.IceQueenIcon>();
+        blizzardof78.Register();
+
+        Recipe lemonster = Recipe.Create(ItemID.SnowmanCannon);
+        lemonster.AddIngredient<Items.Icons.IceQueenIcon>();
+        lemonster.Register();
+
+        Recipe santa = Recipe.Create(ItemID.NorthPole);
+        santa.AddIngredient<Items.Icons.IceQueenIcon>();
+        santa.Register();
+
+        Recipe brome = Recipe.Create(ItemID.BabyGrinchMischiefWhistle);
+        brome.AddIngredient<Items.Icons.IceQueenIcon>();
+        brome.Register();
+
+        Recipe chudtasmic = Recipe.Create(ItemID.ReindeerBells);
+        chudtasmic.AddIngredient<Items.Icons.IceQueenIcon>();
+        chudtasmic.Register();
+
+        Recipe saygex = Recipe.Create(ItemID.IceQueenTrophy);
+        saygex.AddIngredient<Items.Icons.IceQueenIcon>();
+        saygex.Register();
     }
 }
