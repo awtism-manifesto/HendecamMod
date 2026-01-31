@@ -10,7 +10,7 @@ public class FlamingPeaceAgreement : ModItem
     {
         Item.width = 16;
         Item.height = 16;
-        Item.value = Item.sellPrice(copper: 676767);
+        Item.value = Item.sellPrice(copper: 100000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }

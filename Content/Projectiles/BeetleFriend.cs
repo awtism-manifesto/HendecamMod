@@ -3,7 +3,7 @@ using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
-// This example is similar to the Wooden Arrow projectile
+
 public class BeetleFriend : ModProjectile
 {
     private NPC HomingTarget

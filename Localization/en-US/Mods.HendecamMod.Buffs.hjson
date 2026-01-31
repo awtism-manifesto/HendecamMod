@@ -272,3 +272,8 @@ PoopSocked: {
 	DisplayName: Poop Socked
 	Description: Mods.HendecamMod.Buffs.PoopSocked.Description
 }
+
+SheildOffense: {
+	Description: Mods.HendecamMod.Buffs.SheildOffense.Description
+	DisplayName: Sheild Offense
+}

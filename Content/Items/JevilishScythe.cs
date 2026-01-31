@@ -22,7 +22,7 @@ public class JevilishScythe : ModItem
         Item.DamageType = ModContent.GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
+        Item.value = 450000;
 
         Item.shoot = ModContent.ProjectileType<JevilScythe>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 17.33f; // The velocity of the shot projectile.			
@@ -45,18 +45,7 @@ public class JevilishScythe : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()

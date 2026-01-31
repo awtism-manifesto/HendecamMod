@@ -4769,3 +4769,8 @@ MorbiumMinesweeper: {
 	Tooltip: ""
 	DisplayName: Morbium Minesweeper
 }
+
+OffenseShield: {
+	DisplayName: Offense Shield
+	Tooltip: ""
+}
