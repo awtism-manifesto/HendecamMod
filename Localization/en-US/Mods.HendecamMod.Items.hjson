@@ -4769,3 +4769,73 @@ MorbiumMinesweeper: {
 	Tooltip: ""
 	DisplayName: Morbium Minesweeper
 }
+
+BetsyIcon: {
+	DisplayName: Betsy Icon
+	Tooltip: ""
+}
+
+DarkMageIcon: {
+	DisplayName: Dark Mage Icon
+	Tooltip: ""
+}
+
+EverscreamIcon: {
+	DisplayName: Everscream Icon
+	Tooltip: ""
+}
+
+FlyingDutchmanIcon: {
+	DisplayName: Flying Dutchman Icon
+	Tooltip: ""
+}
+
+IceQueenIcon: {
+	DisplayName: Ice Queen Icon
+	Tooltip: ""
+}
+
+MartainSaucerIcon: {
+	DisplayName: Martain Saucer Icon
+	Tooltip: ""
+}
+
+MouringWoodIcon: {
+	DisplayName: Mouring Wood Icon
+	Tooltip: ""
+}
+
+NebulaPillarIcon: {
+	DisplayName: Nebula Pillar Icon
+	Tooltip: ""
+}
+
+OgreIcon: {
+	DisplayName: Ogre Icon
+	Tooltip: ""
+}
+
+PumpkingIcon: {
+	DisplayName: Pumpking Icon
+	Tooltip: ""
+}
+
+SantankIcon: {
+	DisplayName: Santank Icon
+	Tooltip: ""
+}
+
+SolarPillarIcon: {
+	DisplayName: Solar Pillar Icon
+	Tooltip: ""
+}
+
+StardustPillarIcon: {
+	DisplayName: Stardust Pillar Icon
+	Tooltip: ""
+}
+
+VortexPillarIcon: {
+	DisplayName: Vortex Pillar Icon
+	Tooltip: ""
+}
