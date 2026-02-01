@@ -37,6 +37,26 @@ public class FuckRedDevils : GlobalProjectile
     }
 
 }
+public class FuckRedDevilsHarder : GlobalProjectile
+{
+    public bool frommRedDevil;
+
+    public override bool InstancePerEntity => true;
+
+    public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
+    {
+        {
+            if (projectile.type == ProjectileID.HolyArrow && target.type == NPCID.RedDevil)
+            {
+                modifiers.SourceDamage *= 777f;
+            }
+        }
+    }
+    
+
+    
+
+}
 public class HarpyBuff : GlobalProjectile
 {
     public bool fromHarpy;

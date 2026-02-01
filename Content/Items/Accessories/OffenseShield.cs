@@ -46,9 +46,9 @@ public class OffenseShield : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.PanicNecklace);
+        recipe.AddIngredient(ItemID.AvengerEmblem);
        
-        recipe.AddIngredient<DefenseShield>();
+        recipe.AddIngredient<PanicShield>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
        
@@ -56,10 +56,10 @@ public class OffenseShield : ModItem
     public class OffenseProc : ModPlayer
     {
       
-        private const int ExplosionCooldownMax = 60 * 15;
+        private const int buffCooldownMax = 60 * 8;
 
         public bool Offended;
-        private int explosionCooldown;
+        private int buffCooldown;
 
         public override void ResetEffects()
         {
@@ -69,8 +69,8 @@ public class OffenseShield : ModItem
         public override void PostUpdate()
         {
             // Cooldown ticking down
-            if (explosionCooldown > 0)
-                explosionCooldown--;
+            if (buffCooldown > 0)
+                buffCooldown--;
 
           
         }
@@ -83,13 +83,13 @@ public class OffenseShield : ModItem
 
             Player.AddBuff(BuffID.Panic, 480);
 
-            if (explosionCooldown > 0)
+            if (buffCooldown > 0)
                 return;
-            Player.AddBuff(ModContent.BuffType<SheildOffense>(), 90);
+            Player.AddBuff(ModContent.BuffType<SheildOffense>(), 240);
            
 
             // Start cooldown
-            explosionCooldown = ExplosionCooldownMax;
+            buffCooldown = buffCooldownMax;
         }
     }
 }

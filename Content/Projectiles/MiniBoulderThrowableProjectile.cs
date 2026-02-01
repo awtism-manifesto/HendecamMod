@@ -19,8 +19,10 @@ public class MiniBoulderThrowableProjectile : ModProjectile
         Projectile.arrow = false;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
-        Projectile.timeLeft = 400;
-        Projectile.penetrate = 7;
+        Projectile.timeLeft = 200;
+        Projectile.penetrate = 3;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 12;
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)

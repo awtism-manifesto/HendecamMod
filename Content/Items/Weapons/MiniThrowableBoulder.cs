@@ -16,21 +16,21 @@ public class MiniThrowableBoulder : ModItem
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useAnimation = 15;
-        Item.useTime = 15;
+        Item.useAnimation = 25;
+        Item.useTime = 25;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.consumable = true;
 
         // Weapon Properties			
-        Item.damage = 13;
+        Item.damage = 19;
         Item.knockBack = 5f;
         Item.noUseGraphic = true; // The item should not be visible when used
         Item.noMelee = true; // The projectile will do the damage and not the item
         Item.DamageType = DamageClass.Ranged;
 
         // Projectile Properties
-        Item.shootSpeed = 9f;
+        Item.shootSpeed = 8.9f;
         Item.shoot = ModContent.ProjectileType<MiniBoulderThrowableProjectile>(); // The projectile that will be thrown
     }
 

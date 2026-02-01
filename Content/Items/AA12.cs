@@ -30,7 +30,7 @@ public class AA12 : ModItem
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-        Item.shootSpeed = 6.7f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 9.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 

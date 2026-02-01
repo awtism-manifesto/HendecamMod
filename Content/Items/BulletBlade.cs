@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -43,7 +44,7 @@ public class BulletBlade : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ProjectileID.ChlorophyteBullet)
+        if (type == ProjectileID.ChlorophyteBullet || type == ModContent.ProjectileType<ChloroShit>())
         {
             damage = (int)(damage * 0.25f);
         }

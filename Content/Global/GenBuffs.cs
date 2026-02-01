@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items;
+using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -810,7 +811,7 @@ public class Anal12 : GlobalItem
 
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ProjectileID.ChlorophyteBullet)
+        if (type == ProjectileID.ChlorophyteBullet || type == ModContent.ProjectileType<ChloroShit>())
         {
             damage = (int)(damage * 0.5f);
         }
@@ -831,7 +832,7 @@ public class Blowie : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.StatsModifiedBy.Add(Mod);
+        
 
         item.useTime = 8;
         item.useAnimation = 32;
@@ -885,7 +886,20 @@ public class EEEEEEEE : GlobalItem
         item.damage = 33;
     }
 }
+public class Evil : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.HolyArrow;
+    }
 
+   
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals 777x damage to Red Devils") { OverrideColor = Color.DarkViolet });
+    }
+}
 public class DrillBuff1 : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

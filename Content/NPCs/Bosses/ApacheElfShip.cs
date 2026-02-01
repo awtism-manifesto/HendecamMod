@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
-using HendecamMod.Common.Systems;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
+using System.Threading.Tasks;
 using Terraria.Audio;
 using Terraria.Chat;
 using Terraria.GameContent.ItemDropRules;
@@ -108,9 +109,20 @@ public class ApacheElfShip : ModNPC
     {
         var source2 = NPC.GetSource_FromAI();
         ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("AGH!"), new Color(185, 105, 105));
-        NPC.SetEventFlagCleared(ref ApacheElfShipDown.downedApacheElfShip, -1);
+      
+       
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
         NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
+        if (!ApacheElfShipDown.downedApacheElfShip)
+        {
+            ApacheElfShipDown.downedApacheElfShip = true;
+
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
+            }
+        }
+
     }
 
     public override bool CanHitPlayer(Player target, ref int cooldownSlot)

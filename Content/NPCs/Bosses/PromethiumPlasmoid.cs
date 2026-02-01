@@ -1,4 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Projectiles.Enemies;
+using Terraria;
 
 namespace HendecamMod.Content.NPCs.Bosses;
 
@@ -59,9 +61,13 @@ public class PromethiumPlasmoid : ModNPC
         cooldownSlot = ImmunityCooldownID.Bosses;
         return true;
     }
-
+    
     public override void AI()
     {
+       
+
+
+
         if (!NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
         {
             NPC.SetDefaults(0);
