@@ -834,5 +834,37 @@ public class IconRecipes : ModSystem
         Recipe saygex = Recipe.Create(ItemID.IceQueenTrophy);
         saygex.AddIngredient<Items.Icons.IceQueenIcon>();
         saygex.Register();
+
+        Recipe saygex2 = Recipe.Create(ModContent.ItemType<PulsePistols>());
+        saygex2.AddIngredient<MartainSaucerIcon>();
+        saygex2.Register();
+
+        Recipe saygex3 = Recipe.Create(ItemID.Xenopopper);
+        saygex3.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        saygex3.Register();
+
+        Recipe saygex4 = Recipe.Create(ItemID.XenoStaff);
+        saygex4.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        saygex4.Register();
+
+        Recipe hi = Recipe.Create(ItemID.LaserMachinegun);
+        hi.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        hi.Register();
+
+        Recipe hi2 = Recipe.Create(ItemID.ElectrosphereLauncher);
+        hi2.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        hi2.Register();
+
+        Recipe hello = Recipe.Create(ItemID.InfluxWaver);
+        hello.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        hello.Register();
+
+        Recipe hi5 = Recipe.Create(ItemID.CosmicCarKey);
+        hi5.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        hi5.Register();
+
+        Recipe riseofhey = Recipe.Create(ItemID.MartianSaucerTrophy);
+        riseofhey.AddIngredient<Items.Icons.MartainSaucerIcon>();
+        riseofhey.Register();
     }
 }
