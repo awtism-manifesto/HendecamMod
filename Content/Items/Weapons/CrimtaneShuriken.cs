@@ -10,7 +10,7 @@ public class CrimtaneShuriken : ModItem
 
         // Common Properties
         Item.rare = ItemRarityID.Blue;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 335;
         Item.maxStack = 9999;
 
         // Use Properties

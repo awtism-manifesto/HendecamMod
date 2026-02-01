@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -15,7 +16,7 @@ public class TheComet : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.95f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 25000;
+        Item.value = 185000;
         // Use Properties
         Item.useTime = 39; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 39; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -24,11 +25,11 @@ public class TheComet : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item102;
         // Weapon Properties
-        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
+        Item.mana = 10;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 9.25f; // The speed of the projectile (measured in pixels per frame.)
@@ -38,15 +39,10 @@ public class TheComet : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ProjectileID.WoodenArrowFriendly)
-        {
-            type = ModContent.ProjectileType<Meteor>();
-        }
+        type = ModContent.ProjectileType<Meteor>();
+        
 
-        if (type == ModContent.ProjectileType<Meteor>())
-        {
-            damage = (int)(damage * 1.33f);
-        }
+        
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -55,24 +51,13 @@ public class TheComet : ModItem
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Converts wooden arrows into large, powerfully explosive meteors")
+        line = new TooltipLine(Mod, "Face", "Converts arrows into large, powerfully explosive meteors using magic")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()

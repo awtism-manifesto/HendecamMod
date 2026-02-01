@@ -23,8 +23,8 @@ public class DirgeFlame : ModProjectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
-        Projectile.usesLocalNPCImmunity = true;
-        Projectile.localNPCHitCooldown = 9;
+        Projectile.usesIDStaticNPCImmunity = true;
+        Projectile.idStaticNPCHitCooldown = 9;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;

@@ -10,19 +10,19 @@ public class MintalPickaxe : ModItem
         Item.height = 36;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 8;
+        Item.useTime = 7;
         Item.useAnimation = 19;
         Item.autoReuse = true;
         Item.useTurn = true;
-
+        Item.scale = 1.1f;
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 11;
+        Item.damage = 14;
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
-        Item.pick = 105;
-        Item.tileBoost = 1;
+        Item.pick = 145;
+        Item.tileBoost = 2;
 
-        Item.value = Item.buyPrice(gold: 5);
+        Item.value = 205000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
 

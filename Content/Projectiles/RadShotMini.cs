@@ -14,8 +14,8 @@ public class RadShotMini : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 6; // The width of projectile hitbox
-        Projectile.height = 6; // The height of projectile hitbox
+        Projectile.width = 3; // The width of projectile hitbox
+        Projectile.height = 3; // The height of projectile hitbox
         Projectile.aiStyle = 1;
         Projectile.extraUpdates = 1;
         Projectile.friendly = true;

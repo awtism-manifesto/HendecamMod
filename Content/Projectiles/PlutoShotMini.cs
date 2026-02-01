@@ -16,8 +16,8 @@ public class PlutoShotMini : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 6; // The width of projectile hitbox
-        Projectile.height = 6; // The height of projectile hitbox
+        Projectile.width = 3; // The width of projectile hitbox
+        Projectile.height = 3; // The height of projectile hitbox
 
         Projectile.extraUpdates = 2;
         Projectile.friendly = true;
@@ -47,7 +47,7 @@ public class PlutoShotMini : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.2f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.2f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
         }

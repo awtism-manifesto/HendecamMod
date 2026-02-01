@@ -16,13 +16,13 @@ public class FissionRod : ModItem
         Item.height = 33;
         Item.scale = 0.5f;
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 36;
-        Item.useAnimation = 36;
+        Item.useTime = 54;
+        Item.useAnimation = 54;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Item72;
         Item.mana = 30;
         Item.DamageType = DamageClass.Magic;
-        Item.damage = 990;
+        Item.damage = 540;
         Item.knockBack = 20;
         Item.noMelee = true;
         Item.ArmorPenetration = 30;

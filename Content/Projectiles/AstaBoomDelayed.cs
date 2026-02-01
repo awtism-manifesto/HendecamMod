@@ -27,12 +27,14 @@ public class AstaBoomDelayed : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = DamageClass.Melee;
-        Projectile.light = 0.4f; // How much light emit around the projectile
+        Projectile.DamageType = DamageClass.Magic;
+        Projectile.light = 0f; // How much light emit around the projectile
+       
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.timeLeft = 28;
         Projectile.extraUpdates = 3;
-
+        Projectile.tileCollide = false;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -41,7 +43,7 @@ public class AstaBoomDelayed : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.immune[Projectile.owner] = 4;
+        target.immune[Projectile.owner] = 2;
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
     }
 
@@ -109,13 +111,7 @@ public class AstaBoomDelayed : ModProjectile
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
-        Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-
-        return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
-    }
+   
 
     public override void PrepareBombToBlow()
     {
@@ -133,11 +129,25 @@ public class AstaBoomDelayed : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
-        // this projectile is ProjectileID.Sets.Explosive[Type] = true;. It also takes care of hurting the owner. The Projectile.PrepareBombToBlow
-        // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
 
-        // Play an exploding sound.
+        for (int i = 0; i < 8; i++)
+        {
+            float rotation = MathHelper.ToRadians(i * 45f);
+            Vector2 velocity = Projectile.velocity.RotatedBy(rotation);
+            Vector2 position = Projectile.Center;
+
+            Projectile.NewProjectile(
+                Projectile.GetSource_FromThis(),
+                position,
+                velocity,
+                ModContent.ProjectileType<AstaBoomRecurse>(),
+                (int)(Projectile.damage *0.33f),
+                Projectile.knockBack,
+                Projectile.owner
+            );
+        }
+
+
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
@@ -154,22 +164,6 @@ public class AstaBoomDelayed : ModProjectile
             fireDust.noGravity = true;
         }
 
-        // Rocket II explosion that damages tiles.
-        //if (Projectile.owner == Main.myPlayer) {
-        //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7
-
-        //	int minTileX = (int)(Projectile.Center.X / 16f - blastRadius);
-        //	int maxTileX = (int)(Projectile.Center.X / 16f + blastRadius);
-        //	int minTileY = (int)(Projectile.Center.Y / 16f - blastRadius);
-        //	int maxTileY = (int)(Projectile.Center.Y / 16f + blastRadius);
-
-        // Make sure the tiles are inside the world.
-        // Utils.ClampWithinWorld(ref minTileX, ref maxTileX, ref minTileY, ref maxTileY);
-
-        // Check to see if the walls should be destroyed, too.
-        //	bool wallSplode = Projectile.ShouldWallExplode(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY);
-        // Do the damage.
-        //	Projectile.ExplodeTiles(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY, wallSplode);
-        //}
+       
     }
 }

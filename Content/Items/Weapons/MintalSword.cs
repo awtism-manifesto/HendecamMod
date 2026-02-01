@@ -16,7 +16,7 @@ public class MintalSword : ModItem
         Item.damage = 146;
         Item.knockBack = 12;
         Item.ChangePlayerDirectionOnShoot = true;
-        Item.value = Item.buyPrice(gold: 1);
+        Item.value = 155000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
         Item.scale = 2f;
@@ -62,7 +62,7 @@ public class MintalSword : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Placeables.MintalBar>(8);
+        recipe.AddIngredient<Placeables.MintalBar>(14);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

@@ -10,7 +10,7 @@ public class MoltenShuriken : ModItem
 
         // Common Properties
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 775;
         Item.maxStack = 9999;
 
         // Use Properties

@@ -21,7 +21,7 @@ public class MintalArrow : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 0.5f;
-        Item.value = Item.sellPrice(silver: 2);
+        Item.value = 350;
         Item.shoot = ModContent.ProjectileType<MintalArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 2.66f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.

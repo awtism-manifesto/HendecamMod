@@ -11,7 +11,7 @@ public class SteelShuriken : ModItem
 
         // Common Properties
         Item.rare = ItemRarityID.White;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 255;
         Item.maxStack = 9999;
 
         // Use Properties

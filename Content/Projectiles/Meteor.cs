@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using Terraria.Audio;
+
+namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
 ///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
@@ -68,6 +70,7 @@ public class Meteor : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
+        SoundEngine.PlaySound(SoundID.DD2_ExplosiveTrapExplode, Projectile.position);
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),

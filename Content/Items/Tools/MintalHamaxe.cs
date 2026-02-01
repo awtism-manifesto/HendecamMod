@@ -12,7 +12,7 @@ public class MintalHamaxe : ModItem
         Item.useAnimation = 34;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-        Item.value = 10000;
+        Item.value = 170000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
@@ -33,7 +33,7 @@ public class MintalHamaxe : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Placeables.MintalBar>(18);
+        recipe.AddIngredient<Placeables.MintalBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
