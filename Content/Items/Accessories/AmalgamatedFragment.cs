@@ -22,7 +22,7 @@ public class AmalgamatedFragment : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 999000;
+        Item.value = 1199000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

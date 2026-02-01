@@ -17,7 +17,7 @@ public class MintalBar : ModItem
         Item.width = 20; // Hitbox width of the item.
         Item.height = 20; // Hitbox height of the item.
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 500;
+        Item.value = 25000;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;

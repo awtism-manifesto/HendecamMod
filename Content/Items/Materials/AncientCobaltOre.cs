@@ -16,7 +16,7 @@ public class AncientCobaltOre : ModItem
         Item.height = 32;
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green;
-        Item.value = 1250;
+        Item.value = 2950;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltOrePlaced>());
     }

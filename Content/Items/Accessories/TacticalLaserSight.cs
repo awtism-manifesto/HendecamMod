@@ -17,7 +17,7 @@ public class TacticalLaserSight : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.LightPurple;
-        Item.value = 15000;
+        Item.value = 315000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

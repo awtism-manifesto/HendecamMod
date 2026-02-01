@@ -10,7 +10,7 @@ public class GunThatKillsPeople : ModItem
         Item.width = 62;
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Yellow;
-        Item.value = 140000;
+        Item.value = 275000;
         Item.useTime = 6;
         Item.useAnimation = 6;
         Item.useStyle = ItemUseStyleID.Shoot;

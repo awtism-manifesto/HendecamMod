@@ -25,7 +25,7 @@ public class RainbowBloonFactory : ModItem
         Item.useTime = 22;
         Item.useAnimation = 22;
         Item.useStyle = ItemUseStyleID.Shoot; // how the player's arm moves when using the item
-        Item.value = Item.sellPrice(gold: 1);
+        Item.value = 215000;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item44; // What sound should play when using the item
 

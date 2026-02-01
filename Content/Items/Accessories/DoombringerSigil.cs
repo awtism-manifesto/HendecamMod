@@ -32,7 +32,7 @@ public class DoombringerSigil : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 4900000;
+        Item.value = 21500000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

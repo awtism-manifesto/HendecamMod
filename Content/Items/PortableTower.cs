@@ -34,7 +34,7 @@ public class PortableTower : ModItem
         Item.knockBack = 0;
         Item.noMelee = true;
 
-        Item.value = 420000;
+        Item.value = 1320000;
         Item.rare = ItemRarityID.Red;
         Item.shoot = ModContent.ProjectileType<A5G>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.5f; // Speed of the projectiles the sword will shoot

@@ -13,7 +13,7 @@ public class MorbiumBar : ModItem
         Item.width = 20; // Hitbox width of the item.
         Item.height = 20; // Hitbox height of the item.
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 13500;
+        Item.value = 26500;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;

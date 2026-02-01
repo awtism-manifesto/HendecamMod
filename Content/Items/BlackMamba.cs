@@ -17,7 +17,7 @@ public class BlackMamba : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 825000;
+        Item.value = 1225000;
         // Use Properties
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)

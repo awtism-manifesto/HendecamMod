@@ -14,7 +14,7 @@ public class ImpulseBow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 570000;
+        Item.value = 1275000;
         // Use Properties
         Item.useTime = 17; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 17; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -34,7 +34,7 @@ public class ImpulseBow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 28.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ItemID.WoodenArrow;
+        Item.shoot = ProjectileID.WoodenArrowFriendly;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

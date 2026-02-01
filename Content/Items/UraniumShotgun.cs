@@ -14,7 +14,7 @@ public class UraniumShotgun : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 0.775f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 45000;
+        Item.value = 122000;
         Item.ArmorPenetration = 15;
         // Use Properties
         Item.useTime = 24; // The item's use time in ticks (60 ticks == 1 second.)

@@ -23,7 +23,7 @@ public class AstatineAnnihilator : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 10;
         Item.useTurn = true;
-        Item.value = Item.buyPrice(gold: 70); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
+        Item.value = 1550000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

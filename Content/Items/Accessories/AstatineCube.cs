@@ -13,7 +13,7 @@ public class AstatineCube : ModItem
         Item.width = 26; // Hitbox width of the item.
         Item.height = 26; // Hitbox height of the item.
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 335000;
+        Item.value = 615000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 15;

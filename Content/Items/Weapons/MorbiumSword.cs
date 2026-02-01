@@ -21,7 +21,7 @@ public class MorbiumSword : ModItem
         Item.knockBack = 9.25f;
         Item.useTurn = true;
 
-        Item.value = Item.buyPrice(gold: 15);
+        Item.value = 310000;
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
 

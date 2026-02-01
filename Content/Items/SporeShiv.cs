@@ -19,7 +19,7 @@ public class SporeShiv : ModItem
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.buyPrice(gold: 9); // Sell price is 5 times less than the buy price.
+        Item.value = 128000;
         Item.DamageType = DamageClass.Ranged;
         Item.shoot = ModContent.ProjectileType<SporeShivProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

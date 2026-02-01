@@ -17,7 +17,7 @@ public class ImprovisedLaserSight : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
-        Item.value = 3000;
+        Item.value = 85000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

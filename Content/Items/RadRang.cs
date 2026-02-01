@@ -28,7 +28,7 @@ public class RadRang : ModItem
         Item.ArmorPenetration = 10;
 
         Item.rare = ItemRarityID.Green; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
+        Item.value = 108000;
 
         Item.shoot = ModContent.ProjectileType<RadBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			

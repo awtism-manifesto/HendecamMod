@@ -27,5 +27,6 @@ public class MintalOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Orange;
+        Item.value = 6250;
     }
 }

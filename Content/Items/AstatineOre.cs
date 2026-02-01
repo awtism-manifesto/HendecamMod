@@ -21,7 +21,7 @@ public class AstatineOre : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
-        Item.value = 13500;
+        Item.value = 12250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineOrePlaced>());
     }

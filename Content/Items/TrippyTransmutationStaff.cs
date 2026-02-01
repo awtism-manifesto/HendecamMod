@@ -26,7 +26,7 @@ public class TrippyTransmutationStaff : ModItem
         Item.knockBack = 3.5f;
         Item.noMelee = true;
 
-        Item.value = 72000;
+        Item.value = 142000;
         Item.rare = ItemRarityID.Orange;
         Item.shoot = ModContent.ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.05f; // Speed of the projectiles the sword will shoot

@@ -17,8 +17,8 @@ public class UraniumHamaxe : ModItem
         Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 7;
-
-        Item.value = Item.buyPrice(gold: 1); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
+        Item.value = 142000;
+       
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

@@ -20,7 +20,7 @@ public class PlutoniumBar : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 37000;
+        Item.value = 51250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PlutoniumBarPlaced>());
     }

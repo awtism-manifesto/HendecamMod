@@ -15,7 +15,7 @@ public class DracoMeteor : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 450000;
+        Item.value = 1450000;
 
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)

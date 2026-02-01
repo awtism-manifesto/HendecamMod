@@ -51,6 +51,6 @@ public class TransOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 1590;
+        Item.value = 1390;
     }
 }

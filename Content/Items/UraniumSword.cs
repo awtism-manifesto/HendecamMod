@@ -25,7 +25,7 @@ public class UraniumSword : ModItem
 
         Item.UseSound = SoundID.Item15;
         Item.rare = ItemRarityID.Green;
-        Item.value = Item.buyPrice(gold: 5); // Sell price is 5 times less than the buy price.
+        Item.value = 132000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<UraniumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

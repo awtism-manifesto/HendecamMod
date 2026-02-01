@@ -20,7 +20,7 @@ public class AstatineBar : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 98000;
+        Item.value = 101000;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineBarPlaced>());
     }
