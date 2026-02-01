@@ -2,7 +2,7 @@
 
 public class MambaBuff : ModBuff
 {
-    public static readonly int MoveSpeedBonus = 30;
+    public static readonly int MoveSpeedBonus = 25;
 
     // player.wingTimeMax += 115;
     // player.jumpSpeedBoost += 1.15f;
@@ -13,7 +13,7 @@ public class MambaBuff : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         player.lifeRegen = (int)(player.lifeRegen + 4f);
-        player.moveSpeed += MoveSpeedBonus / 136f;
+        player.moveSpeed += MoveSpeedBonus / 100f;
         player.runAcceleration *= 1.33f;
         player.wingRunAccelerationMult += 1.25f;
     }

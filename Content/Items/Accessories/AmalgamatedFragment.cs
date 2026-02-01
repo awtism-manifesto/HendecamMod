@@ -74,16 +74,16 @@ public class AmalgamatedFragment : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 112f;
-        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
-        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 112f;
-        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 112f;
+        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 100f;
 
-        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 112f;
-        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 92f;
+        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 100f;
+        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 100f;
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 112f;
+            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 100f;
         }
     }
 }

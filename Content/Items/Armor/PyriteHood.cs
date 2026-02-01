@@ -5,7 +5,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PyriteHood : ModItem
 {
-    public static readonly int AdditiveMagicDamageBonus = 16;
+    public static readonly int AdditiveMagicDamageBonus = 15;
     public static readonly int MaxManaIncrease = 70;
     public static readonly int MagicCritBonus = 7;
 
@@ -26,17 +26,7 @@ public class PyriteHood : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
+      
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;
     }
@@ -57,7 +47,7 @@ public class PyriteHood : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "15% increased magic damage";
-        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 116f;
+        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 100f;
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

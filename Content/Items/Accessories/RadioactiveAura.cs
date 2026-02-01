@@ -9,10 +9,10 @@ public class RadioactiveAura : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
 
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int AttackSpeedBonus = 3;
+    public static readonly int AdditiveDamageBonus = 8;
+    public static readonly int AttackSpeedBonus = 5;
 
-    public static readonly int CritBonus = 6;
+    public static readonly int CritBonus = 8;
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
@@ -32,7 +32,7 @@ public class RadioactiveAura : ModItem
         var line = new TooltipLine(Mod, "Face", "Enemies are much less likely to target you");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "6% increased damage and critical strike chance, and 3% increased attack speed")
+        line = new TooltipLine(Mod, "Face", "8% increased damage and critical strike chance, and 5% increased attack speed")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -70,8 +70,8 @@ public class RadioactiveAura : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 103f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.GetModPlayer<Rad2Apply>().rad2Effect = true;
         player.aggro += -660;

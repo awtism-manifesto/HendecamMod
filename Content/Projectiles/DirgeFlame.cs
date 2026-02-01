@@ -16,7 +16,7 @@ public class DirgeFlame : ModProjectile
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 6; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+        Projectile.penetrate = 7; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 49;
 
         Projectile.light = 0.5f;
@@ -24,6 +24,7 @@ public class DirgeFlame : ModProjectile
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 9;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -46,14 +47,18 @@ public class DirgeFlame : ModProjectile
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 20, Projectile.height - 20, DustID.DungeonSpirit, 0f, 0f, 100, default, 2.75f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
-                fireDust.velocity *= 2.5f;
+                fireDust.velocity *= 2.25f;
+                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 20, Projectile.height - 20, DustID.WaterCandle, 0f, 0f, 100, default, 2.05f);
+                fire2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
+                fire2Dust.noGravity = true;
+                fire2Dust.velocity *= 2.25f;
             }
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        Projectile.damage = (int)(Projectile.damage * 1.1f);
-        target.immune[Projectile.owner] = 9;
+        Projectile.damage = (int)(Projectile.damage * 1.11f);
+       
     }
 }

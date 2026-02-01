@@ -78,7 +78,7 @@ public class KevlarBodysuit : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 111f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
 
         player.moveSpeed += MoveSpeedBonus / 94f;
         player.runAcceleration *= 0.94f;

@@ -69,8 +69,8 @@ public class KevlarBeret : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 114f;
-        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 105f;
+        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 100f;
         player.maxMinions += MaxMinionIncrease;
         player.moveSpeed += MoveSpeedBonus / 97f;
         player.runAcceleration *= 0.97f;

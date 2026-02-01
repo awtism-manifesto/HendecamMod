@@ -25,8 +25,8 @@ public class AzuriteHat : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
-        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 110f;
+        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
     }
 
     public override void SetDefaults()
@@ -49,13 +49,7 @@ public class AzuriteHat : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+        
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -73,7 +67,8 @@ public class AzuriteHat : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+2 max summon slots";
+        player.setBonus = "+2 max minion slots, +1 max sentry slot";
         player.maxMinions += MaxMinionIncrease;
+        player.maxTurrets += 1;
     }
 }

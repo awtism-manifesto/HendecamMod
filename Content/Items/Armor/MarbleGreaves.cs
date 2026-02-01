@@ -76,9 +76,9 @@ public class MarbleGreaves : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 107f;
+        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 100f;
 
-        player.moveSpeed += MoveSpeedBonus / 114f; // Increase the movement speed of the player
+        player.moveSpeed += MoveSpeedBonus / 100f; // Increase the movement speed of the player
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

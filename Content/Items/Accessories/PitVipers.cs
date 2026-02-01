@@ -75,8 +75,8 @@ public class PitVipers : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 112f;
-        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 112f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }

@@ -17,7 +17,7 @@ public class AzuriteGreaves : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 110f;
+        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 100f;
         player.statManaMax2 += 50;
     }
 

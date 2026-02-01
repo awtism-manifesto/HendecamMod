@@ -9,8 +9,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class TransGreaves : ModItem
 {
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+    public static readonly int AdditiveDamageBonus = 3;
+    public static readonly int GenericCritBonus = 6;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -25,7 +25,7 @@ public class TransGreaves : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
     }
 
@@ -41,7 +41,7 @@ public class TransGreaves : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "3% increased damage and 6% increased crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -50,18 +50,7 @@ public class TransGreaves : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

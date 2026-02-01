@@ -80,7 +80,7 @@ public class KevlarFedora : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 111f;
+        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.moveSpeed += MoveSpeedBonus / 97f;
         player.runAcceleration *= 0.97f;

@@ -45,18 +45,7 @@ public class KevlarHelmet : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -79,7 +68,7 @@ public class KevlarHelmet : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 107f;
+        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 100f;
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;
         player.moveSpeed += MoveSpeedBonus / 97f;

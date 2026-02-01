@@ -73,8 +73,8 @@ public class IrradiatedFisticuffs : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 114f;
-        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 114f;
+        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
         player.aggro += 660;
         player.lifeRegen += -4;
     }

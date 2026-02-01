@@ -115,12 +115,12 @@ public class DoombringerSigil : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 115f;
-        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 115f;
-        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 93f;
+        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 100f;
+        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 100f;
+        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 100f;
 
         player.GetCritChance<OmniDamage>() += OmniCritBonus;
         player.GetCritChance<StupidDamage>() += CritBonus;
@@ -128,12 +128,12 @@ public class DoombringerSigil : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
         player.GetCritChance(DamageClass.Magic) += CritBonus;
         player.GetCritChance(DamageClass.Summon) += CritBonus;
-        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Summon) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed<StupidDamage>() += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 90f;
+        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Summon) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed<StupidDamage>() += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 100f;
 
         player.GetArmorPenetration(DamageClass.Melee) += ArmorPenBonus;
         player.GetArmorPenetration(DamageClass.Ranged) += ArmorPenBonus;
@@ -144,8 +144,8 @@ public class DoombringerSigil : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 115f;
-            player.GetAttackSpeed(DamageClass.Throwing) += AttackSpeedBonus / 107f;
+            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 100f;
+            player.GetAttackSpeed(DamageClass.Throwing) += AttackSpeedBonus / 100f;
             player.GetCritChance(DamageClass.Throwing) += CritBonus;
             player.GetArmorPenetration(DamageClass.Throwing) += ArmorPenBonus;
         }

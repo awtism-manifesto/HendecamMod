@@ -78,15 +78,15 @@ public class AstatineGreaves : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.maxTurrets += 1;
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 107f;
+        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.maxMinions += MaxMinionIncrease;
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 108f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.moveSpeed += MoveSpeedBonus / 135f;
         player.runAcceleration *= 1.35f;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 113f;
+            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 100f;
         }
     }
 

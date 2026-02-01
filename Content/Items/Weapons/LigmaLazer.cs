@@ -55,11 +55,19 @@ public class LigmaLazer : ModItem
         var line = new TooltipLine(Mod, "Face", "Gives your enemies Ligma");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
         {
-            OverrideColor = new Color(255, 255, 255)
+            OverrideColor = new Color(255, 15, 85)
         };
         tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
+        {
+            OverrideColor = new Color(255, 15, 85)
+        };
+        tooltips.Add(line);
+
+
     }
 
     public override void AddRecipes()

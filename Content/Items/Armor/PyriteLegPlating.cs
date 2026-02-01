@@ -28,7 +28,7 @@ public class PyriteLegPlating : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 104f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.endurance = 1f - 0.96f * (1f - player.endurance);
     }
 
@@ -44,18 +44,7 @@ public class PyriteLegPlating : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

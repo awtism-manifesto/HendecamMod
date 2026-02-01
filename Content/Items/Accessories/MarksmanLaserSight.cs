@@ -71,7 +71,7 @@ public class MarksmanLaserSight : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 116f;
+        player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 100f;
 
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
     }

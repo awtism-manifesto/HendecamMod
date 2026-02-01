@@ -84,7 +84,7 @@ public class Ultraboostified : ModPlayer
         else
         {
             Player.maxTurrets += 4;
-            Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 121f;
+            Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 100f;
             Player.runAcceleration *= 1.21f;
             Player.moveSpeed += MoveSpeedBonus / 121f;
         }

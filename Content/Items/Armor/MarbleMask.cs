@@ -80,8 +80,8 @@ public class MarbleMask : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 108f;
-        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 108f;
+        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
+        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 100f;
     }
 
     public override void AddRecipes()

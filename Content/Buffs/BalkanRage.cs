@@ -9,7 +9,7 @@ public class BalkanRage : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 105f;
+        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.statDefense += DefenseBonus; // Grant a +10 defense boost to the player while the buff is active.
     }
 }

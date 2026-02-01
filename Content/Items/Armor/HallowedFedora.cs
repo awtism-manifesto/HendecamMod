@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class HallowedFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 18;
-    public static readonly int StupidArmorPenetration = 13;
+    public static readonly int StupidArmorPenetration = 10;
     public static readonly int StupidCritBonus = 20;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -41,24 +41,13 @@ public class HallowedFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "18% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases stupid armor penetration by 13")
+        line = new TooltipLine(Mod, "Face", "Increases stupid armor penetration by 10")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -80,7 +69,7 @@ public class HallowedFedora : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 118f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
     }
 

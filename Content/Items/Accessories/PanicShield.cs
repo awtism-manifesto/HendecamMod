@@ -18,7 +18,7 @@ public class PanicShield : ModItem
         Item.value = 216000;
         Item.maxStack = 1;
         Item.accessory = true;
-        Item.defense = 2;
+        Item.defense = 3;
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

@@ -85,11 +85,11 @@ public class KingslayerGreaves : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.desertBoots = true;
 
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.moveSpeed += MoveSpeedBonus / 125f;
         player.runAcceleration *= 1.25f;
 
-        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 105f;
+        player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += AttackSpeedBonus / 100f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

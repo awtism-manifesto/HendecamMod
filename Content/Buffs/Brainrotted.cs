@@ -10,6 +10,6 @@ public class BrainRotted : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 110f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }
 }

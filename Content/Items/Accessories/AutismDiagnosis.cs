@@ -63,7 +63,7 @@ public class AutismDiagnosis : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 113f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.endurance = 1f - 0.92f * (1f - player.endurance); // The percentage of damage reduction
     }
 }

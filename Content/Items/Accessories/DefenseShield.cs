@@ -16,7 +16,7 @@ public class DefenseShield : ModItem
         Item.value = 54000;
         Item.maxStack = 1;
         Item.accessory = true;
-        Item.defense = 1;
+        Item.defense = 2;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -48,8 +48,8 @@ public class DefenseShield : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddRecipeGroup("IronBar", 4);
-        recipe.AddTile(TileID.WorkBenches);
+        recipe.AddRecipeGroup("IronBar", 15);
+        recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
 }

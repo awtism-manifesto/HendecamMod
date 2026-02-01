@@ -78,7 +78,7 @@ public class MarbleChestplate : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 106f;
+        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 100f;
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
     }
 

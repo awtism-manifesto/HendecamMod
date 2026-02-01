@@ -26,7 +26,7 @@ public class AdderallPill : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
-        Item.value = Item.buyPrice(copper: 4);
+        Item.value = Item.buyPrice(silver: 10);
         Item.buffType = BuffID.Swiftness;
         Item.buffTime = 18000;
     }

@@ -28,7 +28,7 @@ public class SaltCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            item.defense = 5;
+            item.defense = 3;
         }
     }
 }

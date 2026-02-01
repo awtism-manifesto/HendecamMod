@@ -85,8 +85,8 @@ public class LycopiteMask : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonus;
-        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 114f;
-        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
+        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 100f;
+        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 100f;
         player.whipRangeMultiplier = 1.10f;
     }
 

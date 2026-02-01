@@ -77,12 +77,12 @@ public class KingslayerHelmet : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 105f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
 
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
 
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
+        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 100f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

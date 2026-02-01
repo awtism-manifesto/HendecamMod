@@ -75,8 +75,8 @@ public class RadioactiveEmblem : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 122f;
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 108f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.85f);
         player.GetModPlayer<RadApply>().radEffect = true;

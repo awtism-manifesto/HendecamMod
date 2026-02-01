@@ -62,7 +62,7 @@ public class GoodGrades : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 95f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
 }

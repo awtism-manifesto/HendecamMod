@@ -43,18 +43,7 @@ public class KevlarPants : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -78,7 +67,7 @@ public class KevlarPants : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.runAcceleration *= 0.91f;
-        player.moveSpeed += MoveSpeedBonus / 91f;
+        player.moveSpeed += MoveSpeedBonus / 100f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

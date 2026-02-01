@@ -9,7 +9,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class AzuritePlatemail : ModItem
 {
-    public static readonly int AdditiveDamageBonus = 12;
+    public static readonly int AdditiveDamageBonus = 11;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -25,8 +25,8 @@ public class AzuritePlatemail : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
-        player.GetCritChance(DamageClass.Ranged) += 8;
+        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
+        player.GetCritChance(DamageClass.Ranged) += 9;
     }
 
     public override void SetDefaults()
@@ -41,10 +41,10 @@ public class AzuritePlatemail : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "12% increased ranged damage");
+        var line = new TooltipLine(Mod, "Face", "11% increased ranged damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "8% increased ranged crit chance")
+        line = new TooltipLine(Mod, "Face", "9% increased ranged crit chance")
         {
             OverrideColor = new Color(255, 255, 255)
         };

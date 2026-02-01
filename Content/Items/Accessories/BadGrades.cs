@@ -42,6 +42,6 @@ public class BadGrades : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 106f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }
 }

@@ -11,7 +11,7 @@ public class TransBodyplate : ModItem
 {
     // Damage bonuses
     public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+    public static readonly int GenericCritBonus = 3;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,14 +36,14 @@ public class TransBodyplate : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Tooltip code
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "6% increased damage and 3% increased crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -52,16 +52,7 @@ public class TransBodyplate : ModItem
         };
         tooltips.Add(line);
 
-        // Idfk how it works
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Please help
+      
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

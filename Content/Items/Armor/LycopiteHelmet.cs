@@ -50,18 +50,7 @@ public class LycopiteHelmet : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -84,8 +73,8 @@ public class LycopiteHelmet : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetCritChance(DamageClass.Magic) += CritBonus;
-        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 109f;
-        player.GetDamage(DamageClass.Ranged) += AdditiveMagicDamageBonus / 109f;
+        player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 100f;
+        player.GetDamage(DamageClass.Ranged) += AdditiveMagicDamageBonus / 100f;
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
 
         player.statManaMax2 += MaxManaIncrease;

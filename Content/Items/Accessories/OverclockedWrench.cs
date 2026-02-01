@@ -82,7 +82,7 @@ public class Overclockified : ModPlayer
         }
 
         Player.maxTurrets += 2;
-        Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 112.5f;
+        Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 100f;
         Player.runAcceleration *= 1.12f;
         Player.moveSpeed += MoveSpeedBonus / 112f;
     }

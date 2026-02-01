@@ -11,6 +11,7 @@ public class FlinxFurEarmuffs : ModItem
     {
         Item.defense = 1;
         Item.rare = ItemRarityID.Blue;
+        Item.value = 155000;
     }
 
     public override void UpdateEquip(Player player)
@@ -30,18 +31,7 @@ public class FlinxFurEarmuffs : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void SetStaticDefaults()
@@ -60,7 +50,7 @@ public class FlinxFurEarmuffs : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "8% increased summon damage";
-        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 109f;
+        player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 100f;
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
