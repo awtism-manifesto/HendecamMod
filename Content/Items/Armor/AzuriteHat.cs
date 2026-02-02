@@ -33,7 +33,7 @@ public class AzuriteHat : ModItem
     {
         Item.width = 32;
         Item.height = 28;
-        Item.value = Item.sellPrice(gold: 2);
+        Item.value = 354000;
         Item.rare = ItemRarityID.Orange;
         Item.defense = 5;
     }

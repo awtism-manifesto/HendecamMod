@@ -15,7 +15,7 @@ public class MaximGelgun : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
-        Item.value = 69000;
+        Item.value = 188000;
         // Use Properties
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)

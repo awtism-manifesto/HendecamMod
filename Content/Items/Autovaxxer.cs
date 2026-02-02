@@ -18,7 +18,7 @@ public class Autovaxxer : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.8f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 690000;
+        Item.value = 6050000;
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)

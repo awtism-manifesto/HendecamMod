@@ -19,7 +19,7 @@ public class StupidEmblem : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.LightRed;
-        Item.value = 20000;
+        Item.value = 100000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

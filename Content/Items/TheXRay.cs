@@ -26,7 +26,7 @@ public class TheXRay : ModItem
         Item.knockBack = 0.01f;
         Item.noMelee = true;
         Item.ArmorPenetration = 30;
-        Item.value = 172000;
+        Item.value = 1050000;
         Item.rare = ItemRarityID.LightPurple;
         Item.shoot = ModContent.ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot

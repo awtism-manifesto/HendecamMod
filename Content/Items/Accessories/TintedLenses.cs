@@ -16,7 +16,7 @@ public class TintedLenses : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Pink;
-        Item.value = 98000;
+        Item.value = 236000;
     }
 
     public override void AddRecipes()

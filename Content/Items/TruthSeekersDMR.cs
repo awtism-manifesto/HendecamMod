@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,7 +14,7 @@ public class TruthSeekersDMR : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 210000;
+        Item.value = 630000;
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -29,7 +30,7 @@ public class TruthSeekersDMR : ModItem
         Item.crit = 10;
         Item.ArmorPenetration = 15;
         Item.shoot = ModContent.ProjectileType<Projectiles.TrueBullet>();
-        Item.useAmmo = ModContent.ProjectileType<Projectiles.TrueBullet>(); // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
+       
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -39,32 +40,29 @@ public class TruthSeekersDMR : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.TrueBullet>();
+        if (type == ProjectileID.Bullet)
+        {
+            type = ModContent.ProjectileType<TrueBullet>();
+        }
+
+        if (type == ModContent.ProjectileType<TrueBullet>())
+        {
+            damage = (int)(damage * 1.1f);
+        }
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Effectively Hitscan");
+        var line = new TooltipLine(Mod, "Face", "Converts musket balls into hitscan True Bullets");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Ignores 15 enemy defense")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

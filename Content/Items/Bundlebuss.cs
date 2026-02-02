@@ -16,7 +16,7 @@ public class Bundlebuss : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.66f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 225000;
+        Item.value = 685000;
 
         // Use Properties
         Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)

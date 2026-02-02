@@ -34,7 +34,7 @@ public class PortableTower : ModItem
         Item.knockBack = 0;
         Item.noMelee = true;
 
-        Item.value = 1320000;
+        Item.value = 2050000; // The number and type of coins item can be sold for to an NPC
         Item.rare = ItemRarityID.Red;
         Item.shoot = ModContent.ProjectileType<A5G>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.5f; // Speed of the projectiles the sword will shoot

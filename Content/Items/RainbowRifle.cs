@@ -17,7 +17,7 @@ public class RainbowRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.66f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 915000;
+        Item.value = 1090000;
         // Use Properties
         Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 10; // The length of the item's use animation in ticks (60 ticks == 1 second.)

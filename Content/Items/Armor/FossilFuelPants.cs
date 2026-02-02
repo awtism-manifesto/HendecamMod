@@ -28,7 +28,7 @@ public class FossilFuelPants : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 17); // How many coins the item is worth
+        Item.value = Item.sellPrice(gold: 17, silver: 50); // How many coins the item is worth
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 9; // The amount of defense the item will give when equipped
     }

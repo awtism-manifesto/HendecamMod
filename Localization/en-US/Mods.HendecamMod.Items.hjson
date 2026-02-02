@@ -706,7 +706,7 @@ MoldyCheese: {
 }
 
 NastyPattyAccessory: {
-	DisplayName: Nasty Patty Accessory
+	DisplayName: Nasty Patty
 	Tooltip: ""
 }
 
@@ -781,7 +781,7 @@ MoltenRose: {
 }
 
 SoulOfImmunityAccessory: {
-	DisplayName: Soul Of Immunity Accessory
+	DisplayName: Soul Of Immunity
 	Tooltip: ""
 }
 
@@ -856,7 +856,7 @@ PeaceAmongEvents: {
 }
 
 PeaceAmongNationsAccessory: {
-	DisplayName: Peace Among Nations Accessory
+	DisplayName: Peace Among Nations
 	Tooltip: ""
 }
 
@@ -1086,7 +1086,7 @@ QuestionableVial: {
 }
 
 RampartAccessory: {
-	DisplayName: Rampart Accessory
+	DisplayName: Rampart
 	Tooltip: ""
 }
 
@@ -2081,7 +2081,7 @@ FlatEarthBlock: {
 }
 
 FlinxsFurblade: {
-	DisplayName: Flinxs Furblade
+	DisplayName: Flinx's Furblade
 	Tooltip: ""
 }
 
@@ -2096,7 +2096,7 @@ FlyingPigBanner: {
 }
 
 FoundersDrumroll: {
-	DisplayName: Founders Drumroll
+	DisplayName: Founder's Drumroll
 	Tooltip: ""
 }
 
@@ -2441,7 +2441,7 @@ Liquidation: {
 }
 
 LoreAccurateBlackshard: {
-	DisplayName: Lore Accurate Blackshard
+	DisplayName: Shadow Crystal
 	Tooltip: ""
 }
 

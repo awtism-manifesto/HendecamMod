@@ -30,7 +30,7 @@ public class MorbiumMask : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.value = 495000;
         Item.rare = ItemRarityID.Yellow; // The rarity of the item
         Item.defense = 16; // The amount of defense the item will give when equipped
     }

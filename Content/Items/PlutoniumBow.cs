@@ -14,7 +14,7 @@ public class PlutoniumBow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 172000;
+        Item.value = 1050000;
         // Use Properties
         Item.useTime = 58; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 58; // The length of the item's use animation in ticks (60 ticks == 1 second.)

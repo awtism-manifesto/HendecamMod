@@ -14,7 +14,7 @@ public class AnthraxRocket : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 3f;
-        Item.value = 1500;
+        Item.value = 139;
         Item.rare = ItemRarityID.Lime;
         Item.shoot = ModContent.ProjectileType<CiaRocket>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 13f; // The speed of the projectile.

@@ -13,7 +13,7 @@ public class Autocannon : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.4f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 375000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
         // Use Properties

@@ -16,7 +16,7 @@ public class ATFsNightmare : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 400000; // The value of the weapon in copper coins
+        Item.value = 4500000; // The value of the weapon in copper coins
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)

@@ -14,7 +14,7 @@ public class SuperSamuraiSlicer : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 1.4f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = 20000;
+        Item.value = 48000;
 
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)

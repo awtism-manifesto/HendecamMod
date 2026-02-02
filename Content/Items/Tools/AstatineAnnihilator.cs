@@ -23,7 +23,7 @@ public class AstatineAnnihilator : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 10;
         Item.useTurn = true;
-        Item.value = 1550000;
+        Item.value = 2350000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

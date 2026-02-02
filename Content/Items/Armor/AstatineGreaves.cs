@@ -29,7 +29,7 @@ public class AstatineGreaves : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 70); // How many coins the item is worth
+        Item.value = Item.sellPrice(gold: 97, silver: 50); // How many coins the item is worth
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 22; // The amount of defense the item will give when equipped
     }

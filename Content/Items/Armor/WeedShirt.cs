@@ -28,7 +28,7 @@ public class WeedShirt : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(silver: 45); // How many coins the item is worth
+        Item.value = Item.sellPrice(silver: 365); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }

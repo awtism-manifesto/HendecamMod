@@ -31,7 +31,7 @@ public class AzuriteDualStaff : ModItem
         Item.knockBack = 6.7f;
         Item.noMelee = true;
 
-        Item.value = 105000;
+        Item.value = 215000;
         Item.rare = ItemRarityID.Orange;
         Item.shoot = ModContent.ProjectileType<AzuriteBeam>();
         Item.shootSpeed = 12.5f;

@@ -22,7 +22,7 @@ public class UraniumLeggings : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.value = 467000;
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 8; // The amount of defense the item will give when equipped
     }

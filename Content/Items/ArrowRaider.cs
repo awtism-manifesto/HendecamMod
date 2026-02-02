@@ -14,7 +14,7 @@ public class ArrowRaider : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 660000;
+        Item.value = 6450000;
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -82,18 +82,7 @@ public class ArrowRaider : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

@@ -17,7 +17,7 @@ public class MarksmanLaserSight : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 625000;
+        Item.value = 1010000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

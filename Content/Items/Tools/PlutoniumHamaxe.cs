@@ -18,7 +18,7 @@ public class PlutoniumHamaxe : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 8.5f;
 
-        Item.value = 190000; // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
+        Item.value = 1080000;
         Item.rare = ItemRarityID.LightPurple;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;

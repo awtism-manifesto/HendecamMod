@@ -19,7 +19,7 @@ public class IrradiatedFisticuffs : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 980000;
+        Item.value = 1425000;
         Item.defense = 11;
     }
 

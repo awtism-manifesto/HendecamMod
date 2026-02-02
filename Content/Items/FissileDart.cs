@@ -20,7 +20,7 @@ public class FissileDart : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 4.5f;
-        Item.value = 500;
+        Item.value = 933;
         Item.rare = ItemRarityID.Red;
         Item.shoot = ModContent.ProjectileType<FissileSpawn>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 1.1f; // The speed of the projectile.

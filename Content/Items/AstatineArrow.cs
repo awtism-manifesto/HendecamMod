@@ -21,7 +21,7 @@ public class AstatineArrow : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 7.5f;
-        Item.value = 3500;
+        Item.value = 595;
         Item.shoot = ModContent.ProjectileType<Projectiles.AstaArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 9.4f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.

@@ -27,7 +27,7 @@ public class BulletBlade : ModItem
         Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
         Item.damage = 51;
         Item.knockBack = 4;
-        Item.value = Item.buyPrice(gold: 12);
+        Item.value = 458000;
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = SoundID.Item1;
 

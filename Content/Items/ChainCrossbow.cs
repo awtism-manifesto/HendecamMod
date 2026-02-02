@@ -14,7 +14,7 @@ public class ChainCrossbow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 328000;
         // Use Properties
         Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 9; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -32,7 +32,7 @@ public class ChainCrossbow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ItemID.WoodenArrow;
+        Item.shoot = ProjectileID.WoodenArrowFriendly;
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

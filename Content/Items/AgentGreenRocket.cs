@@ -14,7 +14,7 @@ public class AgentGreenRocket : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 3.5f;
-        Item.value = 250;
+        Item.value = 101;
         Item.rare = ItemRarityID.LightRed;
         Item.shoot = ModContent.ProjectileType<AgentGreenProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 12.85f; // The speed of the projectile.

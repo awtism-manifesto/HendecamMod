@@ -23,7 +23,7 @@ public class AzuriteArrow : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 0.5f;
-        Item.value = Item.sellPrice(silver: 2);
+        Item.value = 77;
         Item.shoot = ModContent.ProjectileType<AzuriteArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 0.67f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.

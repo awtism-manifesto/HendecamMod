@@ -21,7 +21,7 @@ public class BeetleRounds : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 4.5f;
-        Item.value = 700;
+        Item.value = 96;
         Item.rare = ItemRarityID.Yellow;
         Item.shoot = ModContent.ProjectileType<BeetleRoundProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 6.75f; // The speed of the projectile.

@@ -28,7 +28,7 @@ public class WeedPants : ModItem
     {
         Item.width = 22; // Width of the item
         Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(silver: 30); // How many coins the item is worth
+        Item.value = Item.sellPrice(silver: 330); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
     }

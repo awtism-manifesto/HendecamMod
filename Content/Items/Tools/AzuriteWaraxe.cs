@@ -14,13 +14,13 @@ public class AzuriteWaraxe : ModItem
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-        Item.value = 10000;
+        Item.value = 224000;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.useTurn = true;
-        Item.axe = 22;
-        Item.hammer = 75;
+        Item.axe = 24;
+       
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
@@ -34,7 +34,7 @@ public class AzuriteWaraxe : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<AzuriteBar>(15);
+        recipe.AddIngredient<AzuriteBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

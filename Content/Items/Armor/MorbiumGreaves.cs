@@ -30,7 +30,7 @@ public class MorbiumGreaves : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.value = 515000;
         Item.rare = ItemRarityID.Yellow; // The rarity of the item
         Item.defense = 20; // The amount of defense the item will give when equipped
     }

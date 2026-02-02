@@ -20,7 +20,7 @@ public class CopperShortmachinegun : ModItem
         Item.knockBack = 3;
 
         Item.noMelee = true;
-        Item.value = Item.buyPrice(gold: 7);
+        Item.value = Item.buyPrice(gold: 9, silver: 67);
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
         Item.scale = 1f;

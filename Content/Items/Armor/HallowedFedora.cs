@@ -30,7 +30,7 @@ public class HallowedFedora : ModItem
     {
         Item.width = 22; // Width of the item
         Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
+        Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
         Item.rare = ItemRarityID.Pink; // The rarity of the item
         Item.defense = 8; // The amount of defense the item will give when equipped
     }

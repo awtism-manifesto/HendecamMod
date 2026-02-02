@@ -16,7 +16,7 @@ public class BlueMaticHorn : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 140000;
+        Item.value = 740000;
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)

@@ -21,7 +21,7 @@ public class AzuriteSaber : ModItem
 
         Item.UseSound = SoundID.Item60;
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.buyPrice(gold: 1); // Sell price is 5 times less than the buy price.
+        Item.value = 215000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<AzuriteSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

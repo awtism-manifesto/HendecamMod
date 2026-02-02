@@ -29,7 +29,7 @@ public class AstatineBreastplate : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 75); // How many coins the item is worth
+        Item.value = Item.sellPrice(gold: 105); // How many coins the item is worth
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 25; // The amount of defense the item will give when equipped
     }

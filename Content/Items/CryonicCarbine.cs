@@ -16,7 +16,7 @@ public class CryonicCarbine : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 0.5f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
-        Item.value = 120000;
+        Item.value = 585000;
 
         // Use Properties
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)

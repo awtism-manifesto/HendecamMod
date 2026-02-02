@@ -5,37 +5,37 @@ AlpineTagBuff: {
 
 BalkanRage: {
 	DisplayName: Balkan Rage
-	Description: Mods.HendecamMod.Buffs.BalkanRage.Description
+	Description: Those Who Know...
 }
 
 BigShotCooldown: {
 	DisplayName: Big Shot Cooldown
-	Description: Mods.HendecamMod.Buffs.BigShotCooldown.Description
+	Description: Now's NOT your chance to be a [BIG SHOT]
 }
 
 BlackshardDebuff: {
 	DisplayName: Blackshard Debuff
-	Description: Mods.HendecamMod.Buffs.BlackshardDebuff.Description
+	Description: The Blackshard is lending you it's terrifying power...
 }
 
 BrainRotted: {
 	DisplayName: Brain Rotted
-	Description: Mods.HendecamMod.Buffs.BrainRotted.Description
+	Description: You watched too much Skibidi Toilet...
 }
 
 CasaBuff: {
-	DisplayName: Casa Buff
-	Description: Mods.HendecamMod.Buffs.CasaBuff.Description
+	DisplayName: Casanova
+	Description: The Casanova is buffing your health (regen) and stealth!
 }
 
 CeramicBloonBuff: {
 	DisplayName: Ceramic Bloon Buff
-	Description: Mods.HendecamMod.Buffs.CeramicBloonBuff.Description
+	Description: A Ceramic bloon is fighting on your behalf!
 }
 
 DarkPower: {
 	DisplayName: Dark Power
-	Description: Mods.HendecamMod.Buffs.DarkPower.Description
+	Description: The Blackshard is lending you it's terrifying power...
 }
 
 DeliriantTag: {
@@ -65,12 +65,12 @@ Gay: {
 
 GraniteFriend: {
 	DisplayName: Granite Friend
-	Description: Mods.HendecamMod.Buffs.GraniteFriend.Description
+	Description: A Granite Elemental is fighting on your behalf!
 }
 
 HeartBuff: {
-	DisplayName: Heart Buff
-	Description: Mods.HendecamMod.Buffs.HeartBuff.Description
+	DisplayName: Heartache
+	Description: The Heartache is buffing your life regen!
 }
 
 JevilTag: {
@@ -80,7 +80,7 @@ JevilTag: {
 
 JungleHealing: {
 	DisplayName: Jungle Healing
-	Description: Mods.HendecamMod.Buffs.JungleHealing.Description
+	Description: Heals the player and cures poison
 }
 
 KevlarTag: {
@@ -94,13 +94,13 @@ KingTag: {
 }
 
 LeadPoisoningDebuff: {
-	DisplayName: Lead Poisoning Debuff
-	Description: Mods.HendecamMod.Buffs.LeadPoisoningDebuff.Description
+	DisplayName: Lead Poisoning
+	Description: Bro why did you drink that potion you dumbass
 }
 
 Ligma: {
 	DisplayName: Ligma
-	Description: Mods.HendecamMod.Buffs.Ligma.Description
+	Description: Who the hell is steve jobs?
 }
 
 LilTMan: {
@@ -110,32 +110,32 @@ LilTMan: {
 
 LycopiteSpores: {
 	DisplayName: Lycopite Spores
-	Description: Mods.HendecamMod.Buffs.LycopiteSpores.Description
+	Description: Lycopite Spores ruin your defenses
 }
 
 MambaBuff: {
-	DisplayName: Mamba Buff
-	Description: Mods.HendecamMod.Buffs.MambaBuff.Description
+	DisplayName: Black Mamba
+	Description: The Black Mamba is buffing your health regen and speed!
 }
 
 MoonBurn: {
 	DisplayName: Moon Burn
-	Description: Mods.HendecamMod.Buffs.MoonBurn.Description
+	Description: OWIE OW OW OWWWWW IT BURNS IT BURNS OH GOD PLEASEEEEE MAKE IT STOPPPPPP
 }
 
 MorbinTime: {
 	DisplayName: Morbin Time
-	Description: Mods.HendecamMod.Buffs.MorbinTime.Description
+	Description: It's Morbin Time.
 }
 
 OilMonsterBuff: {
 	DisplayName: Oil Monster Buff
-	Description: Mods.HendecamMod.Buffs.OilMonsterBuff.Description
+	Description: A mini oil monster is fighting for you!
 }
 
 OtherworldPoisoning: {
 	DisplayName: Otherworld Poisoning
-	Description: Mods.HendecamMod.Buffs.OtherworldPoisoning.Description
+	Description: "'Unfortunate' doesn't begin to describe your series, this game rewards blind luck and nothing else, you are beyond convinced at this point."
 }
 
 PearlTag: {
@@ -145,7 +145,7 @@ PearlTag: {
 
 PlasmoidFriend: {
 	DisplayName: Plasmoid Friend
-	Description: Mods.HendecamMod.Buffs.PlasmoidFriend.Description
+	Description: You have a plasmoid friend protecting you!
 }
 
 PlutoWhipBuff: {
@@ -155,32 +155,32 @@ PlutoWhipBuff: {
 
 PolymerSlimeBuff: {
 	DisplayName: Polymer Slime Buff
-	Description: Mods.HendecamMod.Buffs.PolymerSlimeBuff.Description
+	Description: silly little guy :3
 }
 
 RadPoisoning: {
 	DisplayName: Rad Poisoning
-	Description: Mods.HendecamMod.Buffs.RadPoisoning.Description
+	Description: You don't feel so good...
 }
 
 RadPoisoning2: {
-	DisplayName: Rad Poisoning2
-	Description: Mods.HendecamMod.Buffs.RadPoisoning2.Description
+	DisplayName: Rad Poisoning Lv.II
+	Description: You are overwhelmed with pain...
 }
 
 RadPoisoning3: {
-	DisplayName: Rad Poisoning3
-	Description: Mods.HendecamMod.Buffs.RadPoisoning3.Description
-}
-
-RainbowBloonBuff: {
-	DisplayName: Rainbow Bloon Buff
-	Description: Mods.HendecamMod.Buffs.RainbowBloonBuff.Description
+	Description: Your atomic fortitude is fading...
+	DisplayName: Rad Poisoning Lv.III
 }
 
 RedBloonBuff: {
 	DisplayName: Red Bloon Buff
-	Description: Mods.HendecamMod.Buffs.RedBloonBuff.Description
+	Description: A red bloon is fighting on your behalf!
+}
+
+RainbowBloonBuff: {
+	DisplayName: Rainbow Bloon Buff
+	Description: A rainbow bloon is fighting on your behalf!
 }
 
 RedneckTag: {
@@ -195,7 +195,7 @@ RudeBusterCooldown: {
 
 Sauced: {
 	DisplayName: Sauced
-	Description: Mods.HendecamMod.Buffs.Sauced.Description
+	Description: ur totallyyyyyy sauceddddd brooooooo (too sauced to feel pain)
 }
 
 ShinyTag: {
@@ -229,8 +229,8 @@ Stamped: {
 }
 
 SuperCeramBuff: {
-	DisplayName: Super Ceram Buff
-	Description: Mods.HendecamMod.Buffs.SuperCeramBuff.Description
+	DisplayName: Super Ceramic Bloon Buff
+	Description: A Super Ceramic bloon is fighting on your behalf!
 }
 
 VerdantTag: {
@@ -245,27 +245,27 @@ VpTag: {
 
 WeaponImbueFission: {
 	DisplayName: Weapon Imbue Fission
-	Description: Mods.HendecamMod.Buffs.WeaponImbueFission.Description
+	Description: Melee and Whip attacks inflict level 2 Rad Poisoning on the target
 }
 
 WeaponImbueFusion: {
 	DisplayName: Weapon Imbue Fusion
-	Description: Mods.HendecamMod.Buffs.WeaponImbueFusion.Description
+	Description: Melee and Whip attacks inflict level 3 Rad Poisoning on the target
 }
 
 WeaponImbueOil: {
 	DisplayName: Weapon Imbue Oil
-	Description: Mods.HendecamMod.Buffs.WeaponImbueOil.Description
+	Description: Melee and Whip attacks inflict Oiled on the target
 }
 
 WeaponImbueRadiation: {
 	DisplayName: Weapon Imbue Radiation
-	Description: Mods.HendecamMod.Buffs.WeaponImbueRadiation.Description
+	Description: Melee and Whip attacks inflict level 1 Rad Poisoning on the target
 }
 
 WeaponImbueShadowflame: {
 	DisplayName: Weapon Imbue Shadowflame
-	Description: Mods.HendecamMod.Buffs.WeaponImbueShadowflame.Description
+	Description: Melee and Whip attacks inflict Shadowflame on the target
 }
 
 PoopSocked: {
@@ -274,6 +274,6 @@ PoopSocked: {
 }
 
 SheildOffense: {
-	Description: Mods.HendecamMod.Buffs.SheildOffense.Description
+	Description: Overall DPS massively increased
 	DisplayName: Sheild Offense
 }

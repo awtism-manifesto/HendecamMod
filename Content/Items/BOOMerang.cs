@@ -23,7 +23,7 @@ public class BOOMerang : ModItem
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
+        Item.value = 296000;
 
         Item.shoot = ModContent.ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 25f; // The velocity of the shot projectile.			

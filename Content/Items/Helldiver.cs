@@ -13,7 +13,7 @@ public class Helldiver : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.5f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 228000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
         // Use Properties

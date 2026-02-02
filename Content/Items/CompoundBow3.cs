@@ -17,7 +17,7 @@ public class CompoundBow3 : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.96f;
         Item.rare = ModContent.RarityType<HotPink>(); // The color that the item's name will be in-game.
-        Item.value = 850000;
+        Item.value = 1980000;
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 30; // The length of the item's use animation in ticks (60 ticks == 1 second.)

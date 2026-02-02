@@ -17,7 +17,7 @@ public class SpiritProtectionCharm : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Pink;
-        Item.value = 99000;
+        Item.value = 222000;
         Item.defense = 5;
     }
 

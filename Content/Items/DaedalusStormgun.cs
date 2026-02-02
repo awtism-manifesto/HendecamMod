@@ -15,7 +15,7 @@ public class DaedalusStormgun : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 1.4f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 750000;
+        Item.value = 6350000;
 
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)

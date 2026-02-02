@@ -9,7 +9,7 @@ public class MoltenRose : ModItem
     {
         Item.width = 16;
         Item.height = 16;
-        Item.value = Item.sellPrice(silver: 300);
+        Item.value = Item.sellPrice(silver: 825);
         Item.rare = ItemRarityID.Green;
         Item.accessory = true;
     }

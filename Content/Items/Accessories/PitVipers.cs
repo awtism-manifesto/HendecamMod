@@ -22,7 +22,7 @@ public class PitVipers : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 250000;
+        Item.value = 1225000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -12,7 +12,7 @@ public class PrideFlag : ModItem
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
-        Item.value = 100;
+        Item.value = 2950;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 15;

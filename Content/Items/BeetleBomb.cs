@@ -25,7 +25,7 @@ public class BeetleBomb : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 7f;
-        Item.value = 1900;
+        Item.value = 3400;
         Item.rare = ItemRarityID.Lime;
         Item.shoot = ModContent.ProjectileType<BeetleBombProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.25f; // The speed of the projectile.

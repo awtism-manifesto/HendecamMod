@@ -26,7 +26,7 @@ public class PlutoniumSword : ModItem
         Item.ArmorPenetration = 25;
 
         Item.rare = ItemRarityID.LightPurple;
-        Item.value = 172000; // Sell price is 5 times less than the buy price.
+        Item.value = 1050000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<PlutoniumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

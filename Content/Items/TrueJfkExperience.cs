@@ -13,7 +13,7 @@ public class TrueJfkExperience : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.5f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 17500000;
+        Item.value = 22500000;
         // Use Properties
         Item.useTime = 48; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 48; // The length of the item's use animation in ticks (60 ticks == 1 second.)

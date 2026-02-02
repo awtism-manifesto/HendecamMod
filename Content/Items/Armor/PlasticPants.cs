@@ -29,7 +29,7 @@ public class PlasticPants : ModItem
     {
         Item.width = 22; // Width of the item
         Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
+        Item.value = 19500;
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
     }

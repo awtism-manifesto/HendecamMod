@@ -14,7 +14,7 @@ public class PissMissile : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 3f;
-        Item.value = 250;
+        Item.value = 106;
         Item.rare = ItemRarityID.LightRed;
         Item.shoot = ModContent.ProjectileType<PissMissileProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 11.5f; // The speed of the projectile.

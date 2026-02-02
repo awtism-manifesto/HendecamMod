@@ -22,7 +22,7 @@ public class TrenboloneAcetate : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Orange;
-        Item.value = 80000;
+        Item.value = 198000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

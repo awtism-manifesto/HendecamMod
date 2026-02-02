@@ -16,7 +16,7 @@ public class MidnightAfterburner : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(silver: 5950);
+        Item.value = Item.buyPrice(silver: 7495);
         // Use Properties
 
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)

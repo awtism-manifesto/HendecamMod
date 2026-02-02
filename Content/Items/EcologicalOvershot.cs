@@ -14,7 +14,7 @@ public class EcologicalOvershot : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.6f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 98000;
+        Item.value = 498000;
         // Use Properties
         // Use Properties
         Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)

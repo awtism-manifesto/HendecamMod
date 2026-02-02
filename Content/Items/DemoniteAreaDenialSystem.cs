@@ -15,7 +15,7 @@ public class DemoniteAreaDenialSystem : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.22f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 240000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
         // Use Properties

@@ -16,7 +16,7 @@ public class EyePoker : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.Blue;
-        Item.value = 11000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 50000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)

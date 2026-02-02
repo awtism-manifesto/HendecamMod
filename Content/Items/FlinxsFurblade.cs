@@ -22,11 +22,11 @@ public class FlinxsFurblade : ModItem
         Item.autoReuse = true;
 
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 35;
+        Item.damage = 34;
         Item.knockBack = 2.5f;
         Item.scale = 1.2f;
 
-        Item.value = Item.buyPrice(gold: 4);
+        Item.value = 120000;
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
 
@@ -43,7 +43,7 @@ public class FlinxsFurblade : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-        damage = (int)(damage * 0.75f);
+        damage = (int)(damage * 0.8f);
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -83,17 +83,6 @@ public class FlinxsFurblade : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 }

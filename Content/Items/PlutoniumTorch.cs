@@ -23,7 +23,7 @@ public class PlutoniumTorch : ModItem
         Item.maxStack = 9999;
 
         Item.DefaultToTorch(ModContent.TileType<Tiles.PlutoniumTorchPlaced>(), 0);
-        Item.value = 525;
+        Item.value = 265;
     }
 
     public override void HoldItem(Player player)

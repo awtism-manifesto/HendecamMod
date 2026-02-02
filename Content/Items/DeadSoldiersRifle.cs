@@ -14,7 +14,7 @@ public class DeadSoldiersRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 140000;
+        Item.value = 265000;
         // Use Properties
         Item.useTime = 25; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -60,18 +60,7 @@ public class DeadSoldiersRifle : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

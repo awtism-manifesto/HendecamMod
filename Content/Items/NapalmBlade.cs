@@ -22,9 +22,9 @@ public class NapalmBlade : ModItem
         Item.autoReuse = true;
         Item.scale = 1.75f;
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 156;
+        Item.damage = 163;
         Item.knockBack = 3;
-        Item.value = Item.buyPrice(gold: 5);
+        Item.value = 9800000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
 

@@ -25,7 +25,7 @@ public class AzuriteGreaves : ModItem
     {
         Item.width = 32;
         Item.height = 28;
-        Item.value = Item.sellPrice(gold: 2);
+        Item.value = 372000;
         Item.rare = ItemRarityID.Orange;
         Item.defense = 7;
     }

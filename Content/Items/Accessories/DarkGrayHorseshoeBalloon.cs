@@ -9,7 +9,7 @@ public class DarkGrayHorseshoeBalloon : ModItem
     public override void SetDefaults()
     {
         Item.DefaultToAccessory(29, 26);
-        Item.SetShopValues(ItemRarityColor.LightRed4, Item.buyPrice(silver: 50));
+        Item.SetShopValues(ItemRarityColor.LightRed4, Item.buyPrice(silver: 779));
     }
 
     public override void UpdateAccessory(Player player, bool showVisual)

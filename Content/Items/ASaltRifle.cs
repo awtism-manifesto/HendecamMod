@@ -15,7 +15,7 @@ public class ASaltRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 90000;
+        Item.value = 390000;
         // Use Properties
         // Use Properties
         Item.useTime = 2; // The item's use time in ticks (60 ticks == 1 second.)

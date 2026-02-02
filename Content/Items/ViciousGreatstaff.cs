@@ -37,7 +37,7 @@ public class ViciousGreatstaff : ModItem
         }
 
         Item.rare = ItemRarityID.Lime;
-        Item.value = Item.buyPrice(gold: 20); // Sell price is 5 times less than the buy price.
+        Item.value = 1335000;
         Item.DamageType = DamageClass.Magic;
         Item.shoot = ModContent.ProjectileType<BloodshotBomb>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

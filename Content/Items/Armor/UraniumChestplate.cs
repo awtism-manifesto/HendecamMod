@@ -27,7 +27,7 @@ public class UraniumChestplate : ModItem
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.value = 545000;
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 9; // The amount of defense the item will give when equipped
     }

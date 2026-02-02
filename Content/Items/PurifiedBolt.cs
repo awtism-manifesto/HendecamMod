@@ -21,7 +21,7 @@ public class PurifiedBolt : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 1.5f;
-        Item.value = Item.sellPrice(copper: 122);
+        Item.value = Item.sellPrice(copper: 61);
         Item.shoot = ModContent.ProjectileType<Projectiles.PurifiedBoltProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 4.7f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.

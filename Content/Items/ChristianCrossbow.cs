@@ -13,7 +13,7 @@ public class ChristianCrossbow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = 35000;
+        Item.value = 108000;
         // Use Properties
         Item.useTime = 25; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)

@@ -16,7 +16,7 @@ public class AstatinePolearm : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.Red;
-        Item.value = 1110000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 1835000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)

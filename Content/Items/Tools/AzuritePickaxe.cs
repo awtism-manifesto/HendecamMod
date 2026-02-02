@@ -22,7 +22,7 @@ public class AzuritePickaxe : ModItem
         Item.pick = 105;
         Item.useTurn = true;
 
-        Item.value = Item.buyPrice(gold: 5);
+        Item.value = 265000;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
     }

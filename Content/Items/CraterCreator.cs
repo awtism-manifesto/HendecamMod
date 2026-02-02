@@ -24,7 +24,7 @@ public class CraterCreator : ModItem
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.damage = 208;
         Item.knockBack = 12.5f;
-        Item.value = Item.buyPrice(gold: 50);
+        Item.value = 9650000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item14;
 
