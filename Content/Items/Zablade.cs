@@ -25,7 +25,7 @@ public class Zablade : ModItem
         Item.knockBack = 5.5f;
         Item.scale = 1.15f;
 
-        Item.value = Item.buyPrice(silver: 99);
+        Item.value = 62000;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
 
@@ -77,17 +77,6 @@ public class Zablade : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 }

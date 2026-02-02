@@ -15,7 +15,7 @@ public class BunnyBomber : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 795000;
+        Item.value = 725000;
         // Use Properties
         // Use Properties
         Item.useTime = 23; // The item's use time in ticks (60 ticks == 1 second.)

@@ -24,7 +24,7 @@ public class NapalmBlade : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.damage = 163;
         Item.knockBack = 3;
-        Item.value = 9800000;
+        Item.value = 3200000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
 

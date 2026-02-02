@@ -15,7 +15,7 @@ public class ZazaBreath : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.15f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 9500;
+        Item.value = 62500;
         // Use Properties
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)

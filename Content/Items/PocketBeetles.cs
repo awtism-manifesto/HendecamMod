@@ -28,7 +28,7 @@ public class PocketBeetles : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.ArmorPenetration = 15;
-        Item.value = Item.buyPrice(silver: 300);
+        Item.value = Item.buyPrice(silver: 3500);
         Item.rare = ItemRarityID.Lime;
         Item.UseSound = SoundID.Item45;
 

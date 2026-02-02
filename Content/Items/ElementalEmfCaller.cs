@@ -25,7 +25,7 @@ public class ElementalEmfCaller : ModItem
         Item.useTime = 36;
         Item.useAnimation = 36;
         Item.useStyle = ItemUseStyleID.Shoot; // how the player's arm moves when using the item
-        Item.value = Item.sellPrice(gold: 1);
+        Item.value = 52000;
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item44; // What sound should play when using the item
 
@@ -46,7 +46,7 @@ public class ElementalEmfCaller : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "uses EMF frequences to summon a friendly Granite Elemental");
+        var line = new TooltipLine(Mod, "Face", "uses electromagnetic frequences to summon a friendly Granite Elemental");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

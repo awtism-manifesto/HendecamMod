@@ -21,7 +21,7 @@ public class CrossbowBolt : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 1.5f;
-        Item.value = Item.sellPrice(copper: 23);
+        Item.value = Item.sellPrice(copper: 14);
         Item.shoot = ModContent.ProjectileType<Projectiles.BowBoltProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 3f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.

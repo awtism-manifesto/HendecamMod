@@ -15,7 +15,7 @@ public class LeafStorm : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.8f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
-        Item.value = 85000;
+        Item.value = 1080000;
         // Use Properties
         // Use Properties
         Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)

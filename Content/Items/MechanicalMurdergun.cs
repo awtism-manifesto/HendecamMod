@@ -12,7 +12,7 @@ public class MechanicalMurdergun : ModItem
         Item.height = 32;
         Item.scale = 0.85f;
         Item.rare = ItemRarityID.Pink;
-        Item.value = 196000;
+        Item.value = 796000;
 
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)

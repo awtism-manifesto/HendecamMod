@@ -15,7 +15,7 @@ public class SaltBae : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.85f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 25000;
+        Item.value = 105000;
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)

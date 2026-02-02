@@ -25,7 +25,7 @@ public class SaltShaker : ModItem
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 44;
         Item.knockBack = 5.5f;
-        Item.value = Item.buyPrice(gold: 1);
+        Item.value = 105000;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
 

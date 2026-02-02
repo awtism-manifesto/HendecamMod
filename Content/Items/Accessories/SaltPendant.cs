@@ -15,7 +15,7 @@ public class SaltPendant : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
-        Item.value = 5000;
+        Item.value = 75000;
         Item.defense = 1;
     }
 

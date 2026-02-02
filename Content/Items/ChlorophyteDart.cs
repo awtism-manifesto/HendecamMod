@@ -20,7 +20,7 @@ public class ChlorophyteDart : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 3.5f;
-        Item.value = 160;
+        Item.value = 235;
         Item.rare = ItemRarityID.Lime;
         Item.shoot = ModContent.ProjectileType<ChloroDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 8.25f; // The speed of the projectile.

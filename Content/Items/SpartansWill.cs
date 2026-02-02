@@ -18,7 +18,7 @@ public class SpartansWill : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.White;
-        Item.value = 11000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 52000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)

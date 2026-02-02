@@ -13,7 +13,7 @@ public class M1Garand : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.6f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(silver: 1250);
+        Item.value = Item.buyPrice(silver: 4250);
         // Use Properties
         Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)

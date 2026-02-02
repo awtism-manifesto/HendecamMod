@@ -31,7 +31,7 @@ public class JusticeAxe : ModItem
         Item.axe = 45;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.LightPurple;
-        Item.value = Item.buyPrice(gold: 50); // Sell price is 5 times less than the buy price.
+        Item.value = Item.buyPrice(gold: 95); // Sell price is 5 times less than the buy price.
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.shoot = ModContent.ProjectileType<JusticeSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).

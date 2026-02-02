@@ -9,7 +9,7 @@ public class GlassSword : ModItem
     {
         Item.width = 36;
         Item.height = 36;
-        Item.value = Item.sellPrice(silver: 1);
+        Item.value = 150;
         Item.rare = ItemRarityID.White;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 16;

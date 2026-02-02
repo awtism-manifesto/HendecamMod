@@ -19,7 +19,7 @@ public class FerrousThornSpiky : ModItem
         Item.ArmorPenetration = 15;
         Item.width = 18;
         Item.height = 18;
-        Item.value = 90000;
+        Item.value = 390000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -16,7 +16,7 @@ public class PurifiedPolearm : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.Yellow;
-        Item.value = 290000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 950000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)

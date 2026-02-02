@@ -20,7 +20,7 @@ public class CeramicDart : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 3.5f;
-        Item.value = 60;
+        Item.value = 52;
         Item.rare = ItemRarityID.Orange;
         Item.shoot = ModContent.ProjectileType<CeramDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 8.8f; // The speed of the projectile.

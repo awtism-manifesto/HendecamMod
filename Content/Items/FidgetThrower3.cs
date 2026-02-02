@@ -20,7 +20,7 @@ public class FidgetThrower3 : ModItem
         Item.knockBack = 7.5f;
 
         Item.noMelee = true;
-        Item.value = Item.buyPrice(gold: 27);
+        Item.value = 1075000;
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item99;
         Item.scale = 1.175f;

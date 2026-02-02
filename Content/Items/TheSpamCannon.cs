@@ -109,19 +109,19 @@ public class TheSpamCannon : ModItem
 
             if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica)) //fixing weird fargos bug
             {
-                spamcannoncooldown = 100;
+                spamcannoncooldown = 70;
             }
             else
             {
-                spamcannoncooldown = 150;
+                spamcannoncooldown = 90;
             }
 
-            player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 150);
+            player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 90);
             SoundEngine.PlaySound(SoundID.Item14, player.position);
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath56, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 13.5f), (int)(knockback * 25f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 17.5f), (int)(knockback * 25f), player.whoAmI);
             return false;
         }
 

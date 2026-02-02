@@ -31,7 +31,7 @@ public class ManeAx : ModItem
 
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
+        Item.value = Item.buyPrice(gold: 25); // Sell price is 5 times less than the buy price.
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.shoot = ModContent.ProjectileType<ManeSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
