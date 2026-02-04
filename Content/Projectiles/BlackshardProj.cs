@@ -34,7 +34,7 @@ public class BlackshardProj : ModProjectile
         Projectile.tileCollide = false;
         Projectile.ignoreWater = true;
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
-        Projectile.ownerHitCheckDistance = 75f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
+        Projectile.ownerHitCheckDistance = 82f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
         // Normally, projectiles die after they have hit all the enemies they can.
         // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
@@ -71,8 +71,8 @@ public class BlackshardProj : ModProjectile
         float adjustedRotation = MathHelper.Pi * direction * percentageOfLife + velocityRotation + direction * MathHelper.Pi + player.fullRotation;
         Projectile.rotation = adjustedRotation; // Set the rotation to our to the new rotation we calculated.
 
-        float scaleMulti = 0.675f; // Excalibur, Terra Blade, and The Horseman's Blade is 0.6f; True Excalibur is 1f; default is 0.2f 
-        float scaleAdder = 0.71f; // Excalibur, Terra Blade, and The Horseman's Blade is 1f; True Excalibur is 1.2f; default is 1f 
+        float scaleMulti = 0.7f; // Excalibur, Terra Blade, and The Horseman's Blade is 0.6f; True Excalibur is 1f; default is 0.2f 
+        float scaleAdder = 0.75f; // Excalibur, Terra Blade, and The Horseman's Blade is 1f; True Excalibur is 1.2f; default is 1f 
 
         Projectile.Center = player.RotatedRelativePoint(player.MountedCenter) - Projectile.velocity;
         Projectile.scale = scaleAdder + percentageOfLife * scaleMulti;
@@ -103,7 +103,7 @@ public class BlackshardProj : ModProjectile
     public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
     {
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
-        float coneLength = 50f * Projectile.scale;
+        float coneLength = 56f * Projectile.scale;
         // This number affects how much the start and end of the collision will be rotated.
         // Bigger Pi numbers will rotate the collision counter clockwise.
         // Smaller Pi numbers will rotate the collision clockwise.
