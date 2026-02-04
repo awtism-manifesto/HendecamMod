@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -74,7 +75,7 @@ public class Bullshit3 : ModItem
         recipe.AddIngredient(ItemID.EmpressButterfly);
         recipe.AddIngredient(ItemID.PaladinBanner);
         recipe.AddIngredient<RadioactiveEmblem>();
-        recipe.AddTile(TileID.LihzahrdFurnace);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("GoldDuck", out ModItem GoldDuck))
         {

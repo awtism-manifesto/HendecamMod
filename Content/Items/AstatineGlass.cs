@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -57,7 +58,7 @@ public class AstatineGlass : ModItem
 
         recipe.AddIngredient<AstatineOre>();
         recipe.AddIngredient(ItemID.Glass);
-        recipe.AddTile(TileID.AdamantiteForge);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

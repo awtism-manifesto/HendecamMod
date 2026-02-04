@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -51,7 +52,7 @@ public class EternalCrab : ModItem
         recipe.AddIngredient(ItemID.AncientCultistTrophy);
         recipe.AddIngredient(ItemID.MoonLordTrophy);
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

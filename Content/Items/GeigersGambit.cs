@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Items;
@@ -55,7 +56,7 @@ public class GeigersGambit : ModItem
         recipe.AddIngredient<Autocannon>();
         recipe.AddIngredient<FissionDrive>(2);
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 
@@ -71,18 +72,7 @@ public class GeigersGambit : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

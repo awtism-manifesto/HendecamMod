@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -55,7 +56,7 @@ public class IrradiatedFisticuffs : ModItem
         recipe.AddIngredient(ItemID.BerserkerGlove);
         recipe.AddIngredient(ItemID.WarriorEmblem);
         recipe.AddIngredient<AstatineBar>(15);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

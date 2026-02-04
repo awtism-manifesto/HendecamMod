@@ -9,7 +9,7 @@ public class CasaShot : ModProjectile
     public override void SetStaticDefaults()
     {
         Main.projFrames[Projectile.type] = 3;
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 3; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 

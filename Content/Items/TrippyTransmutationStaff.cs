@@ -22,7 +22,7 @@ public class TrippyTransmutationStaff : ModItem
 
         Item.mana = 13;
         Item.DamageType = DamageClass.Magic;
-        Item.damage = 39;
+        Item.damage = 37;
         Item.knockBack = 3.5f;
         Item.noMelee = true;
 
@@ -49,24 +49,13 @@ public class TrippyTransmutationStaff : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots a beam of Lycopite energy that randomly splits into other projectiles upon hitting an enemy");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The beam can split into homing lycopite spores or an explosive mushroom")
+        line = new TooltipLine(Mod, "Face", "The beam can split into homing lycopite spores, a magic lycopite dagger, or an explosive mushroom")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override Vector2? HoldoutOffset()

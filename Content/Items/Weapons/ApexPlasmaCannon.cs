@@ -48,7 +48,7 @@ public class ApexPlasmaCannon : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            Item.damage = 120;
+            Item.damage = 102;
             Item.useTime = 4;
             Item.useAnimation = 28;
             Item.reuseDelay = 44;
@@ -59,7 +59,7 @@ public class ApexPlasmaCannon : ModItem
         }
         else
         {
-            Item.damage = 69;
+            Item.damage = 66;
             Item.useTime = 5;
             Item.useAnimation = 15;
             Item.reuseDelay = 0;

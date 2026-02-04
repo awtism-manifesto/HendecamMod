@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -34,7 +35,7 @@ public class TheAutismManifesto : ModItem
         recipe.AddIngredient<AutismOrb>(2);
         recipe.AddIngredient<PlutoniumBar>(6);
         recipe.AddIngredient<AstatineBar>(7);
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

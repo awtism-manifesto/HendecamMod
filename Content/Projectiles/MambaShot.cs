@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
 
@@ -9,7 +10,7 @@ public class MambaShot : ModProjectile
     public override void SetStaticDefaults()
     {
         Main.projFrames[Projectile.type] = 3;
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 
@@ -72,7 +73,8 @@ public class MambaShot : ModProjectile
     {
         target.AddBuff(BuffID.Venom, 360);
         target.AddBuff(BuffID.Poisoned, 480);
-        Projectile.damage = (int)(Projectile.damage * 0.7f);
+        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 240);
+        
     }
 
     public override void OnKill(int timeLeft)
@@ -82,24 +84,5 @@ public class MambaShot : ModProjectile
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
 
-    private void Visuals()
-    {
-        Projectile.rotation = Projectile.velocity.X * 0.05f;
-
-        // This is a simple "loop through all frames from top to bottom" animation
-        int frameSpeed = 5;
-
-        Projectile.frameCounter++;
-
-        if (Projectile.frameCounter >= frameSpeed)
-        {
-            Projectile.frameCounter = 0;
-            Projectile.frame++;
-
-            if (Projectile.frame >= Main.projFrames[Projectile.type])
-            {
-                Projectile.frame = 0;
-            }
-        }
-    }
+ 
 }

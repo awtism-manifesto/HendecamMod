@@ -18,19 +18,19 @@ public class SaltShaker : ModItem
         Item.height = 73;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 38;
-        Item.useAnimation = 38;
+        Item.useTime = 36;
+        Item.useAnimation = 36;
         Item.autoReuse = true;
-
+        Item.scale = 1.25f;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 44;
+        Item.damage = 39;
         Item.knockBack = 5.5f;
         Item.value = 105000;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
-
+        Item.ArmorPenetration = 10;
         Item.shoot = ModContent.ProjectileType<SaltGrav>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 3.22f; // Speed of the projectiles the sword will shoot
+        Item.shootSpeed = 3.67f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -47,7 +47,7 @@ public class SaltShaker : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 7; // The number of projectiles that this gun will shoot.
-        damage = (int)(damage * 0.36f);
+        damage = (int)(damage * 0.425f);
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.

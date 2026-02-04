@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -97,7 +98,7 @@ public class AstatineTorch : ModItem
 
         recipe.AddIngredient<AstatineOre>();
         recipe.AddIngredient(ItemID.Torch, 50);
-
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

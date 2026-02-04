@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -337,7 +338,7 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient(ItemID.SnowballCannon);
 
         recipe.AddIngredient<CopperShortmachinegun>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind("BrenGun", out ModItem BrenGun))
         {

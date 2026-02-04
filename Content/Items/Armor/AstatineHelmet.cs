@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -72,7 +73,7 @@ public class AstatineHelmet : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(32);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }

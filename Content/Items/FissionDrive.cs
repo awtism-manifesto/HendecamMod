@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -60,7 +61,7 @@ public class FissionDrive : ModItem
         recipe.AddIngredient<PlutoniumBar>(18);
         recipe.AddIngredient<UraniumBar>(15);
         recipe.AddIngredient(ItemID.LunarBar, 10);
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariumCore", out ModItem TerrariumCore))
         {

@@ -185,7 +185,7 @@ public class Politician : ModNPC
             "Barack Obama",
             "Ron DeSantis",
             "Ted Cruz",
-            "Tim Walz",
+            "Andrew Cuomo",
             "Gavin Newsome",
             "John Fetterman",
             "Mitch McConnell"
@@ -302,7 +302,7 @@ public class Politician : ModNPC
             .Add<TarriffStamper>()
             .Add<CarbonDioxideBottle>(Condition.DownedEarlygameBoss)
             .Add<UnicornPoacher>(Condition.InHallow)
-            .Add<BrokenHeroGun>(Condition.Eclipse)
+            .Add<BrokenHeroGun>(Condition.Eclipse, Condition.DownedPlantera)
             .Add<LuckyCigarette>(Condition.DownedSkeletron)
             .Add<CorruptLawman>(Condition.Hardmode)
             .Add<CapitalistCarbine>(Condition.Hardmode)

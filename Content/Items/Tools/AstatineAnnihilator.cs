@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -102,7 +103,7 @@ public class AstatineAnnihilator : ModItem
         recipe.AddIngredient<AstatineBar>(25);
         recipe.AddIngredient<ThePurifier>();
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }

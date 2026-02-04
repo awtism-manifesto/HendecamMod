@@ -4844,3 +4844,8 @@ OffenseShield: {
 	Tooltip: ""
 	DisplayName: Offense Shield
 }
+
+CultistCyclotron: {
+	Tooltip: ""
+	DisplayName: Cultist's Cyclotron
+}

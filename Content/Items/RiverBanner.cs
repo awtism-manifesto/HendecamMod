@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles;
+using HendecamMod.Content.Tiles.Furniture;
 using Terraria.Enums;
 
 namespace HendecamMod.Content.Items;
@@ -314,6 +315,7 @@ public class RiverBanner : ModItem
         recipe.AddIngredient<LargePlasmoidBanner>();
         recipe.AddIngredient<UnstablePlasmoidBanner>();
         recipe.AddIngredient<LoreAccurateBlackshard>(9999);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

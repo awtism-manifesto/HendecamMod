@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -101,7 +102,7 @@ public class PlasmaMonkeysPaw : ModItem
             recipe.AddIngredient<FissionDrive>();
 
             recipe.AddIngredient(WhiteDwarfFragment.Type, 8);
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CultistCyclotronPlaced>();
             recipe.Register();
         }
         else
@@ -112,7 +113,7 @@ public class PlasmaMonkeysPaw : ModItem
             recipe.AddIngredient<FissionDrive>();
             recipe.AddIngredient(ItemID.FragmentVortex, 8);
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CultistCyclotronPlaced>();
             recipe.Register();
         }
     }

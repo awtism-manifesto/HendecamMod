@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -87,7 +88,7 @@ public class TedGun : ModItem
         recipe.AddIngredient<Shadowflame>(5);
         recipe.AddIngredient<RefinedOil>(5);
 
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

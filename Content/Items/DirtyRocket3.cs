@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -34,7 +35,7 @@ public class DirtyRocket3 : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 9.5f;
-        Item.value = 8000;
+        Item.value = 2150;
         Item.rare = ItemRarityID.Red;
         Item.shoot = ModContent.ProjectileType<AstaRocketProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.75f; // The speed of the projectile.
@@ -59,18 +60,7 @@ public class DirtyRocket3 : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -78,6 +68,7 @@ public class DirtyRocket3 : ModItem
         Recipe recipe = CreateRecipe(75);
         recipe.AddIngredient<AstatineBar>();
         recipe.AddIngredient<DirtyRocket2>(75);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

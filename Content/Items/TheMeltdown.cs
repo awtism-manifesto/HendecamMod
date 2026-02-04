@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -55,7 +56,7 @@ public class TheMeltdown : ModItem
         recipe.AddIngredient(ItemID.FireWhip);
         recipe.AddIngredient<ChainReaction>();
         recipe.AddIngredient<FissionDrive>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }

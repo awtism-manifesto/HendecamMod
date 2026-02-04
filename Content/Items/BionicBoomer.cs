@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -58,7 +59,7 @@ public class BionicBoomer : ModItem
         recipe.AddIngredient<AstatineBar>(5);
         recipe.AddIngredient(ItemID.LunarBar, 5);
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }

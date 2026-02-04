@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -50,7 +51,7 @@ public class AstatineCube : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<CubicMold>();
         recipe.AddIngredient<AstatineBar>(12);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

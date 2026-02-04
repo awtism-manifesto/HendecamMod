@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -54,7 +55,7 @@ public class MarksmanLaserSight : ModItem
         recipe.AddIngredient(ItemID.BlackLens, 2);
         recipe.AddIngredient<AstatineBar>(12);
         recipe.AddIngredient<TacticalLaserSight>();
-        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

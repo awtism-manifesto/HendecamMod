@@ -2,6 +2,7 @@
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Global;
 
@@ -28,21 +29,21 @@ public class MericaRecipes : ModSystem
         brecipe.AddIngredient(ItemID.FireworksLauncher);
 
         brecipe.AddIngredient<Items.FissionDrive>();
-        brecipe.AddTile(TileID.LunarCraftingStation);
+        brecipe.AddTile<CultistCyclotronPlaced>();
         brecipe.Register();
 
         Recipe bbrecipe = Recipe.Create(ItemID.StarWrath);
         bbrecipe.AddIngredient(ItemID.Starfury);
 
         bbrecipe.AddIngredient<Items.FissionDrive>();
-        bbrecipe.AddTile(TileID.LunarCraftingStation);
+        bbrecipe.AddTile<CultistCyclotronPlaced>();
         bbrecipe.Register();
 
         Recipe bebrecipe = Recipe.Create(ItemID.RainbowCrystalStaff);
         bebrecipe.AddIngredient(ItemID.RainbowGun);
 
         bebrecipe.AddIngredient<Items.FissionDrive>();
-        bebrecipe.AddTile(TileID.LunarCraftingStation);
+       bebrecipe.AddTile<CultistCyclotronPlaced>();
         bebrecipe.Register();
 
         Recipe sbebrecipe = Recipe.Create(ItemID.LastPrism);
@@ -51,7 +52,7 @@ public class MericaRecipes : ModSystem
         sbebrecipe.AddIngredient<Items.AstatineGlass>(33);
 
         sbebrecipe.AddIngredient<Items.FissionDrive>(2);
-        sbebrecipe.AddTile(TileID.LunarCraftingStation);
+        sbebrecipe.AddTile<CultistCyclotronPlaced>();
         sbebrecipe.Register();
 
         Recipe recipenis = Recipe.Create(ItemID.LesionStation);

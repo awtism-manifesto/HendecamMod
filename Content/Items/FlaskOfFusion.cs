@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
+using Terraria;
 
 namespace HendecamMod.Content.Items;
 
@@ -65,7 +67,7 @@ public class FlaskOfFusion : ModItem
         CreateRecipe()
             .AddIngredient<FlaskOfFission>()
             .AddIngredient<AstatineOre>()
-            .AddTile(TileID.ImbuingStation)
+            .AddTile<CultistCyclotronPlaced>()
             .Register();
     }
 }

@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Accessories.NastyPatty;
+﻿using HendecamMod.Content.Items.Accessories.NastyPatty;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes;
@@ -1032,8 +1033,7 @@ public class SoulOfImmunityAccessory : ModItem
         recipe.AddIngredient<NastyPattyAccessory>();
         recipe.AddIngredient(ItemID.TerrasparkBoots);
         recipe.AddIngredient<PeaceAmongNationsAccessory>();
-        recipe.AddTile(TileID.TinkerersWorkbench);
-        recipe.AddTile(TileID.AlchemyTable);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -58,6 +59,7 @@ public class AstatineArrow : ModItem
         Recipe recipe = CreateRecipe(150);
         recipe.AddIngredient<AstatineBar>();
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

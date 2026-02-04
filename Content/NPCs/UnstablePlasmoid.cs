@@ -92,8 +92,7 @@ public class UnstablePlasmoid : ModNPC
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AstatineOre>(), 1, 191, 251));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AstatineMarksmanRifle>(), 18));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AstatinePolearm>(), 18));
+       
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlutoniumOre>(), 4, 101, 179));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(), 4, 41, 79));
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 4, 19, 39));

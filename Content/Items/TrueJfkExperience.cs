@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -93,7 +94,7 @@ public class TrueJfkExperience : ModItem
         recipe.AddIngredient<TheDeposer>();
         recipe.AddIngredient<FissionDrive>();
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
 

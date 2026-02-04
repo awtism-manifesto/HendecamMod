@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -92,7 +93,7 @@ public class ArrowRaider : ModItem
         recipe.AddIngredient<ChainCrossbow>();
         recipe.AddIngredient(ItemID.DaedalusStormbow);
         recipe.AddIngredient<FissionDrive>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

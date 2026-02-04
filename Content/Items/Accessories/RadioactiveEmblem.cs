@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -58,7 +59,7 @@ public class RadioactiveEmblem : ModItem
         recipe.AddIngredient<PlutoniumBar>(12);
         recipe.AddIngredient<UraniumBar>(12);
         recipe.AddIngredient(ItemID.DestroyerEmblem);
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

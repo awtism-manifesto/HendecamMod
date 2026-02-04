@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -73,7 +74,7 @@ public class BigBertha : ModItem
         recipe.AddIngredient(ItemID.BreakerBlade);
         recipe.AddIngredient(ItemID.Excalibur);
         recipe.AddIngredient<AstatineBar>(25);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         recipe = CreateRecipe();
     }

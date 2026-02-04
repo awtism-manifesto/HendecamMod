@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -157,7 +158,7 @@ public class Bullshit5 : ModItem
         recipe.AddIngredient<RiverBanner>();
         recipe.AddIngredient<BlackHole>();
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

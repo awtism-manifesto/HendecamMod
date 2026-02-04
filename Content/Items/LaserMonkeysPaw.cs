@@ -16,8 +16,8 @@ public class LaserMonkeysPaw : ModItem
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 1910000;
         // Use Properties
-        Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 

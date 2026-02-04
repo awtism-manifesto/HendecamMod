@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Consumables;
@@ -45,7 +46,7 @@ public class ShadowCrystalSword : ModItem
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<LoreAccurateBlackshard>(10);
-        recipe.AddTile(TileID.GlassKiln);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

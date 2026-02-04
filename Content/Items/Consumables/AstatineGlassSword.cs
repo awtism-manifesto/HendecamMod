@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Consumables;
 
@@ -45,7 +46,7 @@ public class AstatineGlassSword : ModItem
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient<AstatineGlass>(10);
-        recipe.AddTile(TileID.GlassKiln);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 }

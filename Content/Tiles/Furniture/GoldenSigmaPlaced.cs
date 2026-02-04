@@ -24,7 +24,7 @@ public class GoldenSigmaPlaced : ModTile
             16,
             16,
             16,
-            18
+            16
         };
         TileObjectData.addTile(Type);
 

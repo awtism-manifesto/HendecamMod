@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -112,7 +113,7 @@ public class Autovaxxer : ModItem
         recipe.AddIngredient(ItemID.VialofVenom, 20);
         recipe.AddIngredient(ItemID.Nanites, 20);
 
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("Syringe", out ModItem Syringe))
         {

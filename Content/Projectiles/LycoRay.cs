@@ -106,15 +106,24 @@ public class LycoRay : ModProjectile
         if (Main.rand.NextBool(4))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+            
         }
 
         if (Main.rand.NextBool(5))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
                 ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
+        }
+        if (Main.rand.NextBool(4))
+        {
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+        }
+        if (Main.rand.NextBool(7))
+        {
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(6))

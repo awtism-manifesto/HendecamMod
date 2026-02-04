@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -21,7 +22,7 @@ public class UltraboostedWrench : ModItem
         recipe.AddIngredient<FissionDrive>();
 
         recipe.AddIngredient(ItemID.FragmentStardust, 10);
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

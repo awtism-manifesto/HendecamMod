@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes;
 
@@ -39,7 +40,8 @@ public class Godhood : ModItem
 
         recipe.AddIngredient<Bullshit5>();
         recipe.AddIngredient<SoulOfImmunityAccessory>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
+       
         recipe.AddTile(TileID.VoidMonolith);
         recipe.Register();
     }

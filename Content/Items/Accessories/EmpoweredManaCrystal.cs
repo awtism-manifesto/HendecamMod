@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -6,7 +7,26 @@ public class EmpoweredManaCrystal : ModItem
 {
     public static readonly int MaxManaIncrease = 50;
     public static readonly int MagicCritBonus = 5;
+    public override void SetStaticDefaults()
+    {
+        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
+        Main.RegisterItemAnimation(Type, new DrawAnimationVertical(6, 4));
+        ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
 
+      
+        ItemID.Sets.ItemNoGravity[Type] = true; // Makes the item have no gravity
+
+       
+    }
+    public override void PostUpdate()
+    {
+        Lighting.AddLight(Item.Center, Color.BlueViolet.ToVector3() * 0.55f * Main.essScale); // Makes this item glow when thrown out of inventory.
+    }
+
+    public override Color? GetAlpha(Color lightColor)
+    {
+        return new Color(255, 255, 255, 50); // Makes this item render at full brightness.
+    }
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.

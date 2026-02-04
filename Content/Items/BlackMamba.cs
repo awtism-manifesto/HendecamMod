@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -19,15 +20,15 @@ public class BlackMamba : ModItem
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 1995000; // The number and type of coins item can be sold for to an NPC
         // Use Properties
-        Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item5;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 98; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 109; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -69,7 +70,7 @@ public class BlackMamba : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts darts into highly dangerous, even more venomous petals");
+        var line = new TooltipLine(Mod, "Face", "Converts darts into highly dangerous petals coated in radioactive venom");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Increases life regen and movement speed while fired")
@@ -84,18 +85,7 @@ public class BlackMamba : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()
@@ -105,7 +95,7 @@ public class BlackMamba : ModItem
         recipe.AddIngredient<Casanova>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<AstatineBar>(15);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }

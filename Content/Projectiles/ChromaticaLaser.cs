@@ -31,6 +31,7 @@ public class ChromaticaLaser : ModProjectile
         Projectile.light = 0.5f; // How much light emit around the projectile
         Projectile.extraUpdates = 6;
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -117,7 +118,7 @@ public class ChromaticaLaser : ModProjectile
         // Resize the hitbox of the projectile for the blast "radius".
         // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
         // Measurements are in pixels, so 128 / 16 = 8 tiles.
-        Projectile.Resize(60, 60);
+        Projectile.Resize(166, 166);
         // Set the knockback of the blast.
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 5f;
@@ -134,7 +135,7 @@ public class ChromaticaLaser : ModProjectile
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
-        Projectile.Resize(9, 9);
+        Projectile.Resize(12, 12);
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 13; j++)
@@ -156,7 +157,7 @@ public class ChromaticaLaser : ModProjectile
     {
         target.AddBuff(BuffID.Electrified, 240);
         target.AddBuff(BuffID.CursedInferno, 240);
-        target.immune[Projectile.owner] = 4;
+        
     }
 
     // Rocket II explosion that damages tiles.

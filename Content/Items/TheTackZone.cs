@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -58,7 +59,7 @@ public class TheTackZone : ModItem
         recipe.AddIngredient<FissionDrive>(3);
         recipe.AddIngredient(ItemID.Cog, 72);
 
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("NightmareFuel", out ModItem NightmareFuel) && CalMerica.TryFind("CosmiliteBar", out ModItem CosmiliteBar))

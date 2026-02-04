@@ -22,7 +22,7 @@ public class TheXRay : ModItem
 
         Item.mana = 6;
         Item.DamageType = DamageClass.Magic;
-        Item.damage = 70;
+        Item.damage = 79;
         Item.knockBack = 0.01f;
         Item.noMelee = true;
         Item.ArmorPenetration = 30;

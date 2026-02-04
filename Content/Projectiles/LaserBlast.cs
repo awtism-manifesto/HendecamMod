@@ -62,7 +62,7 @@ public class LaserBlast : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        Projectile.damage = (int)(Projectile.damage * 0.67f);
+        Projectile.damage = (int)(Projectile.damage * 0.825f);
         target.immune[Projectile.owner] = 2;
     }
 }

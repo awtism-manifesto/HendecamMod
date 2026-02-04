@@ -5,7 +5,7 @@
 ///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
 ///     version of the Meowmere.
 /// </summary>
-public class SporeShivDupe : ModProjectile
+public class LycoShivMage : ModProjectile
 {
     private NPC HomingTarget
     {
@@ -31,18 +31,15 @@ public class SporeShivDupe : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.tileCollide = false;
-        Projectile.DamageType = DamageClass.Ranged;
+        Projectile.DamageType = DamageClass.Magic;
         Projectile.timeLeft = 205;
-        Projectile.scale = 0.85f;
+        Projectile.scale = 0.65f;
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            Projectile.DamageType = DamageClass.Throwing;
-        }
+        
     }
 
     public override void AI()

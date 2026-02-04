@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -18,15 +19,15 @@ public class PlasmaRifle3 : ModItem
         Item.value = 1950000;
         // Use Properties
         // Use Properties
-        Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 13; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item92;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-        Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 70; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -72,18 +73,7 @@ public class PlasmaRifle3 : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()
@@ -92,7 +82,7 @@ public class PlasmaRifle3 : ModItem
 
         recipe.AddIngredient<PlasmaRifle2>();
         recipe.AddIngredient<AstatineBar>(18);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 
