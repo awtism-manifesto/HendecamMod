@@ -41,9 +41,9 @@ public class MorbiumWarrior : ModNPC
     {
         NPC.width = 24;
         NPC.height = 36;
-        NPC.damage = 91;
-        NPC.defense = 13;
-        NPC.lifeMax = 1670;
+        NPC.damage = 82;
+        NPC.defense = 39;
+        NPC.lifeMax = 1090;
         NPC.HitSound = SoundID.NPCHit4;
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 6700f;
@@ -53,7 +53,7 @@ public class MorbiumWarrior : ModNPC
         AIType = NPCID.WalkingAntlion; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.PossessedArmor; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<OilMonsterBanner>();
+        BannerItem = ModContent.ItemType<MorbiumWarriorBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)

@@ -20,6 +20,8 @@ public class PlutoniumOrePlaced : ModTile
         Main.tileShine[Type] = 400;
         DustType = DustID.PurpleTorch;
         HitSound = SoundID.Tink;
+        MineResist = 3.5f;
+        MinPick = 200;
         AddMapEntry(new Color(205, 151, 245));
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;

@@ -21,7 +21,8 @@ public class AstatineOrePlaced : ModTile
         DustType = DustID.CrimsonTorch;
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(156, 42, 65));
-
+        MineResist = 5f;
+        MinPick = 210;
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;
     }

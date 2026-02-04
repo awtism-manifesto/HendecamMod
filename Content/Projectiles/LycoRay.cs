@@ -85,11 +85,11 @@ public class LycoRay : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Vector2 velocity4 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 70), (Main.rand.NextFloat(-70, 70)));
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Vector2 velocity5 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-200, 200), (Main.rand.NextFloat(-200, 200)));
 
         if (Main.rand.NextBool(2))
         {
@@ -117,12 +117,12 @@ public class LycoRay : ModProjectile
         }
         if (Main.rand.NextBool(4))
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
                 ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
         }
         if (Main.rand.NextBool(7))
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
                 ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
         }
 

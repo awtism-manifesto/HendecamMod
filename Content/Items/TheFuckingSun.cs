@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
 public class TheFuckingSun : ModItem
 {
     public override void SetDefaults()
@@ -52,18 +48,7 @@ public class TheFuckingSun : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -81,7 +66,7 @@ public class TheFuckingSun : ModItem
             recipe.AddIngredient(AuricBar.Type, 5);
             recipe.AddIngredient(YharonSoulFragment.Type, 10);
             recipe.AddIngredient(ItemID.FragmentSolar, 25);
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CultistCyclotronPlaced>();
             recipe.Register();
         }
         else
@@ -92,7 +77,7 @@ public class TheFuckingSun : ModItem
             recipe.AddIngredient<FissionDrive>(99);
             recipe.AddIngredient(ItemID.FragmentSolar, 999);
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CultistCyclotronPlaced>();
             recipe.Register();
         }
     }

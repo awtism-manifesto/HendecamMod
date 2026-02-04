@@ -17,8 +17,8 @@ public class KnightSwordUp : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 45; // The width of projectile hitbox
-        Projectile.height = 45; // The height of projectile hitbox
+        Projectile.width = 85; // The width of projectile hitbox
+        Projectile.height = 85; // The height of projectile hitbox
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -35,12 +35,16 @@ public class KnightSwordUp : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
+    public override void AI()
+    {
+        Vector2 forward = Projectile.velocity.SafeNormalize(Vector2.UnitX);
+        Projectile.rotation = forward.ToRotation();
+    }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
         {
-            modifiers.SourceDamage *= 1.93f;
+            modifiers.SourceDamage *= 2f;
         }
     }
 
@@ -58,7 +62,7 @@ public class KnightSwordUp : ModProjectile
                 Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.75f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.5f), Projectile.knockBack, Projectile.owner);
             }
         }
     }

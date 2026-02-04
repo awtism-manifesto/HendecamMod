@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -112,7 +113,7 @@ public class DaedalusStormgun : ModItem
 
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FissionDrive>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseBar", out ModItem PhaseBar))
         {

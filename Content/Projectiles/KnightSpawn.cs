@@ -23,24 +23,35 @@ public class KnightSpawn : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-        Vector2 Peanits = Projectile.Center - new Vector2(66, 66);
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<KnightSwordDown>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Vector2 forward = Projectile.velocity.SafeNormalize(Vector2.UnitX);
+        Vector2 perpendicular = forward.RotatedBy(MathHelper.PiOver2);
+        float sideOffset = 72f;
+       
+        float forwardOffset = 0f;  
+        Vector2 center = Projectile.Center + forward * forwardOffset;
 
-        Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-        Vector2 Peanits3 = Projectile.Center - new Vector2(-66, 66);
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<KnightSwordDown>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Vector2 above = center + perpendicular * sideOffset;
+        Vector2 below = center - perpendicular * sideOffset;
+        Vector2 velocity = forward * Projectile.velocity.Length();
 
-        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-        Vector2 Peanits2 = Projectile.Center - new Vector2(-66, -66);
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Projectile.NewProjectile(
+            Projectile.GetSource_FromThis(),
+            above,
+            velocity,
+            ModContent.ProjectileType<KnightSwordUp>(),
+            (int)(Projectile.damage * 0.66f),
+            Projectile.knockBack,
+            Projectile.owner
+        );
 
-        Vector2 velocity24 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
-        Vector2 Peanits24 = Projectile.Center - new Vector2(66, -66);
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits24, velocity24,
-            ModContent.ProjectileType<KnightSwordUp>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+        Projectile.NewProjectile(
+            Projectile.GetSource_FromThis(),
+            below,
+            velocity,
+            ModContent.ProjectileType<KnightSwordDown>(),
+            (int)(Projectile.damage * 0.66f),
+            Projectile.knockBack,
+            Projectile.owner
+        );
     }
 }
