@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class BrokenMouse : ModItem
 {
     public override void SetDefaults()
@@ -35,8 +34,6 @@ public class BrokenMouse : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
-
         recipe.AddIngredient(ItemID.IronBar, 5);
         recipe.AddIngredient(ItemID.Wire, 10);
         recipe.AddIngredient<ShatteredKeyboard>();

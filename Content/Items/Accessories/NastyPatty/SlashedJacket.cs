@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class SlashedJacket : ModItem
 {
     public override void SetDefaults()
@@ -74,7 +73,6 @@ public class SlashedJacket : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient<BurntPan>();
         recipe.AddIngredient<TornFilter>();
         recipe.AddTile(TileID.TinkerersWorkbench);

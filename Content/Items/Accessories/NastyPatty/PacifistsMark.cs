@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class PacifistsMark : ModItem
 {
     public override void SetDefaults()
@@ -48,7 +47,6 @@ public class PacifistsMark : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.FallenStar, 4);
         recipe.AddIngredient(ItemID.DemonHeart);
         recipe.AddTile(TileID.AdamantiteForge);

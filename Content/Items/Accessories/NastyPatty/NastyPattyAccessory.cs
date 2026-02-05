@@ -2,7 +2,6 @@
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class NastyPattyAccessory : ModItem
 {
     public override void SetDefaults()

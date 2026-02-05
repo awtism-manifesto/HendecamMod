@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class DustyMedal : ModItem
 {
     public override void SetDefaults()

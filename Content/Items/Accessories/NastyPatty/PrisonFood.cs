@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class PrisonFood : ModItem
 {
     public override void SetDefaults()
@@ -45,7 +44,6 @@ public class PrisonFood : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient<DietSchedule>();
         recipe.AddIngredient<AnkleMonitor>();
         recipe.AddTile(TileID.TinkerersWorkbench);

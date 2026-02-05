@@ -8,12 +8,9 @@ public class AstatineCube : ModItem
 {
     public override void SetDefaults()
     {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
-        // Common Properties
-        Item.width = 26; // Hitbox width of the item.
-        Item.height = 26; // Hitbox height of the item.
-        Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
+        Item.width = 26; 
+        Item.height = 26; 
+        Item.rare = ItemRarityID.Red; 
         Item.value = 1230000;
         Item.maxStack = 1;
         Item.accessory = true;
@@ -30,7 +27,6 @@ public class AstatineCube : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Randomizes your max run speed and fall speed");
         tooltips.Add(line);
 

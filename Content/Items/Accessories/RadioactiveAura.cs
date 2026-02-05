@@ -7,14 +7,10 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class RadioactiveAura : ModItem
 {
-    // By declaring these here, changing the values will alter the effect, and the tooltip
-
     public static readonly int AdditiveDamageBonus = 8;
     public static readonly int AttackSpeedBonus = 5;
-
     public static readonly int CritBonus = 8;
 
-    // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
 
     public override void SetDefaults()
@@ -28,7 +24,6 @@ public class RadioactiveAura : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Enemies are much less likely to target you");
         tooltips.Add(line);
 
@@ -47,11 +42,8 @@ public class RadioactiveAura : ModItem
 
     public override void AddRecipes()
     {
-        Recipe
-            recipe = CreateRecipe();
-
+        Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(8);
-
         recipe.AddIngredient(ItemID.PutridScent);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
@@ -59,7 +51,6 @@ public class RadioactiveAura : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;

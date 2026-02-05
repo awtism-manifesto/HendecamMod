@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard))
 public class TornSaddle : ModItem
 {
     public override void SetDefaults()
@@ -56,7 +55,6 @@ public class TornSaddle : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DarkHorseSaddle);
         recipe.AddIngredient(ItemID.MajesticHorseSaddle);
         recipe.AddIngredient(ItemID.PaintedHorseSaddle);

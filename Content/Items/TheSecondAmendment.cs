@@ -294,7 +294,6 @@ public class TheSecondAmendment : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions. ");
         tooltips.Add(line);
 
@@ -305,7 +304,6 @@ public class TheSecondAmendment : ModItem
         tooltips.Add(line);
     }
 
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -327,7 +325,6 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<PoopyAutoPistol>();
         recipe.AddIngredient(ItemID.CandyCornRifle);
         recipe.AddIngredient(ItemID.VenusMagnum);
-
         recipe.AddIngredient<ThePrimeTime>();
         recipe.AddIngredient(ItemID.Megashark);
         recipe.AddIngredient<CryonicCarbine>();
@@ -336,7 +333,6 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<VP70>();
         recipe.AddIngredient<GenderDefender>();
         recipe.AddIngredient(ItemID.SnowballCannon);
-
         recipe.AddIngredient<CopperShortmachinegun>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
@@ -428,7 +424,6 @@ public class TheSecondAmendment : ModItem
         }
     }
 
-    // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-45f, -4f);

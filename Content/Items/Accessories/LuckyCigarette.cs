@@ -2,8 +2,6 @@
 
 namespace HendecamMod.Content.Items.Accessories;
 
-// The AutoloadEquip attribute automatically attaches an equip texture to this item.
-// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
 [AutoloadEquip(EquipType.Beard)]
 public class LuckyCigarette : ModItem
 {
@@ -11,10 +9,10 @@ public class LuckyCigarette : ModItem
 
     public override void SetDefaults()
     {
-        Item.width = 22; // Width of the item
-        Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(silver: 66); // How many coins the item is worth
-        Item.rare = ItemRarityID.Orange; // The rarity of the item
+        Item.width = 22; 
+        Item.height = 18; 
+        Item.value = Item.sellPrice(silver: 66); 
+        Item.rare = ItemRarityID.Orange; 
         Item.accessory = true;
     }
 

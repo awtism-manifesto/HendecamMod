@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class TornFilter : ModItem
 {
     public override void SetDefaults()
@@ -45,7 +44,6 @@ public class TornFilter : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient<GasMask>();
         recipe.AddIngredient<BrokenMouse>();
         recipe.AddTile(TileID.TinkerersWorkbench);

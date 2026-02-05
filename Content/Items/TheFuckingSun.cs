@@ -12,12 +12,10 @@ public class TheFuckingSun : ModItem
     {
         Item.width = 33;
         Item.height = 33;
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 66;
         Item.useAnimation = 66;
         Item.autoReuse = true;
-
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 11111;
         Item.knockBack = 333;
@@ -27,15 +25,8 @@ public class TheFuckingSun : ModItem
         Item.value = Item.buyPrice(gold: 99999);
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.UseSound = SoundID.Item1;
-
-        Item.shoot = ModContent.ProjectileType<TheSun>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 12.5f; // Speed of the projectiles the sword will shoot
-
-        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
-        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-
-        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
-        // Item.ChangePlayerDirectionOnShoot = false;
+        Item.shoot = ModContent.ProjectileType<TheSun>(); 
+        Item.shootSpeed = 12.5f; 
     }
 
     public override Color? GetAlpha(Color lightColor)
@@ -45,7 +36,6 @@ public class TheFuckingSun : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
        
@@ -72,11 +62,9 @@ public class TheFuckingSun : ModItem
         else
         {
             recipe = CreateRecipe();
-
             recipe.AddIngredient<TheMoon>();
             recipe.AddIngredient<FissionDrive>(99);
             recipe.AddIngredient(ItemID.FragmentSolar, 999);
-
             recipe.AddTile<CultistCyclotronPlaced>();
             recipe.Register();
         }

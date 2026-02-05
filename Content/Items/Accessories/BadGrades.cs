@@ -20,7 +20,6 @@ public class BadGrades : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "6% increased stupid damage");
         tooltips.Add(line);
 

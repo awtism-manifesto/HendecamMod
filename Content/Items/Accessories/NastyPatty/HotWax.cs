@@ -4,7 +4,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class HotWax : ModItem
 {
     public override void SetDefaults()
@@ -38,7 +37,6 @@ public class HotWax : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
         recipe.AddIngredient<SteelBar>(5);
         recipe.AddIngredient(ItemID.BeeWax, 30);
         recipe.AddIngredient(ItemID.MagmaStone);

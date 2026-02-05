@@ -4,11 +4,6 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
 public class TheOilBaron : ModItem
 {
     public override void SetDefaults()
@@ -25,11 +20,11 @@ public class TheOilBaron : ModItem
         Item.ArmorPenetration = 10;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.LightRed;
-        Item.value = Item.buyPrice(gold: 50); // Sell price is 5 times less than the buy price.
+        Item.value = Item.buyPrice(gold: 50); 
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<OilSwing>();
-        Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
-        Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
+        Item.noMelee = true; 
+        Item.shootsEveryUse = true; 
         Item.autoReuse = true;
     }
 
@@ -46,7 +41,6 @@ public class TheOilBaron : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Flings a small oil ball that inflicts Oiled");
         tooltips.Add(line);
 
@@ -55,27 +49,12 @@ public class TheOilBaron : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
         recipe.AddIngredient<WaterflameSword>();
-
         recipe.AddIngredient(ItemID.SoulofNight, 10);
         recipe.AddIngredient<RefinedOil>(50);
         recipe.AddTile(TileID.MythrilAnvil);

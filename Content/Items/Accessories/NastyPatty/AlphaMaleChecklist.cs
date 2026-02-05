@@ -4,7 +4,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class AlphaMaleChecklist : ModItem
 {
     public override void SetDefaults()
@@ -35,7 +34,6 @@ public class AlphaMaleChecklist : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
         recipe.AddIngredient(ItemID.RagePotion, 10);
         recipe.AddIngredient(ItemID.WrathPotion, 10);
         recipe.AddIngredient<Paper>();

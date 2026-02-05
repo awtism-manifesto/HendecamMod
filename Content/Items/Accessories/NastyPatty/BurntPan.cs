@@ -4,7 +4,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class BurntPan : ModItem
 {
     public override void SetDefaults()
@@ -14,7 +13,6 @@ public class BurntPan : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 60;
         Item.useAnimation = 60;

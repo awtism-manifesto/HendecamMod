@@ -7,10 +7,9 @@ public class CultistCyclotron : ModItem
 {
     public override void SetDefaults()
     {
-        // Common Properties
-        Item.width = 20; // Hitbox width of the item.
-        Item.height = 20; // Hitbox height of the item.
-        Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
+        Item.width = 20;
+        Item.height = 20;
+        Item.rare = ItemRarityID.Red;
         Item.value = 7500000;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
@@ -21,7 +20,6 @@ public class CultistCyclotron : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Used for crafting higher-tier radioactive items");
         tooltips.Add(line);
 

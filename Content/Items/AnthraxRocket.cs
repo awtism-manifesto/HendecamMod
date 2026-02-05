@@ -23,22 +23,12 @@ public class AnthraxRocket : ModItem
 
     public override void SetStaticDefaults()
     {
-        AmmoID.Sets.IsSpecialist[Type] = true; // This item will benefit from the Shroomite Helmet.
-
-        // This is where we tell the game which projectile to spawn when using this rocket as ammo with certain launchers.
-        // This specific rocket ammo is like Rocket I's.
+        AmmoID.Sets.IsSpecialist[Type] = true; 
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ModContent.ProjectileType<CiaRocket>());
-        // We also need to say which type of Celebration Mk2 rockets to use.
-        // The Celebration Mk 2 only has four types of rockets. Change the projectile to match your ammo type.
-        // Rocket I like   == ProjectileID.Celeb2Rocket
-        // Rocket II like  == ProjectileID.Celeb2RocketExplosive
-        // Rocket III like == ProjectileID.Celeb2RocketLarge
-        // Rocket IV like  == ProjectileID.Celeb2RocketExplosiveLarge
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
-        // The Celebration and Electrosphere Launcher will always use their own projectiles no matter which rocket you use as ammo.
     }
 
     public override Color? GetAlpha(Color lightColor)
@@ -48,7 +38,6 @@ public class AnthraxRocket : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Huge blast radius");
         tooltips.Add(line);
 
@@ -58,8 +47,6 @@ public class AnthraxRocket : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -67,9 +54,6 @@ public class AnthraxRocket : ModItem
                 l.Hide();
             }
         }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()
@@ -77,7 +61,6 @@ public class AnthraxRocket : ModItem
         Recipe recipe = CreateRecipe(50);
         recipe.AddIngredient(ItemID.VialofVenom);
         recipe.AddIngredient(ItemID.RocketI, 50);
-
         recipe.Register();
     }
 }

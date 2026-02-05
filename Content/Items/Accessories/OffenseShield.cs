@@ -5,17 +5,14 @@ using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
-[AutoloadEquip(EquipType.Shield)] // Load the spritesheet you create as a shield for the player when it is equipped.
+[AutoloadEquip(EquipType.Shield)] 
 public class OffenseShield : ModItem
 {
     public override void SetDefaults()
     {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
-        // Common Properties
-        Item.width = 32; // Hitbox width of the item.
-        Item.height = 32; // Hitbox height of the item.
-        Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
+        Item.width = 32; 
+        Item.height = 32; 
+        Item.rare = ItemRarityID.LightPurple;
         Item.value = 750000;
         Item.maxStack = 1;
         Item.accessory = true;
@@ -30,7 +27,6 @@ public class OffenseShield : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Massively increases damage output for a short time after being hit");
         tooltips.Add(line);
 
@@ -47,7 +43,6 @@ public class OffenseShield : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.AvengerEmblem);
-       
         recipe.AddIngredient<PanicShield>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
@@ -68,27 +63,20 @@ public class OffenseShield : ModItem
 
         public override void PostUpdate()
         {
-            // Cooldown ticking down
             if (buffCooldown > 0)
                 buffCooldown--;
-
-          
         }
 
         public override void OnHurt(Player.HurtInfo info)
         {
-            // Only trigger if set bonus is active
             if (!Offended)
                 return;
-
             Player.AddBuff(BuffID.Panic, 480);
 
             if (buffCooldown > 0)
                 return;
             Player.AddBuff(ModContent.BuffType<SheildOffense>(), 240);
            
-
-            // Start cooldown
             buffCooldown = buffCooldownMax;
         }
     }

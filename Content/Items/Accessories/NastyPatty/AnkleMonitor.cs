@@ -3,7 +3,6 @@ using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessor
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class AnkleMonitor : ModItem
 {
     public override void SetDefaults()
@@ -41,7 +40,6 @@ public class AnkleMonitor : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
         recipe.AddIngredient(ItemID.IronCrate);
         recipe.AddIngredient(ItemID.Ruby);
         recipe.AddIngredient<Polymer>(10);
