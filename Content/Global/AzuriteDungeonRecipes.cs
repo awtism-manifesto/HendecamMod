@@ -34,17 +34,10 @@ public class AzuriteDungeonRecipes : ModSystem
 
         recipe123.AddIngredient<DefenseShield>();
 
-        recipe123.AddTile<CobaltWorkBenchPlaced>();
+        recipe123.AddTile<CobaltWorkBenchPlaced>(); // Palladium also counts as cobalt workbench
 
         recipe123.Register();
-        Recipe recipe1233 = Recipe.Create(ItemID.CobaltShield);
-        recipe1233.AddIngredient<AzuriteBar>(10);
-
-        recipe1233.AddIngredient<DefenseShield>();
-
-        recipe1233.AddTile<PalladiumWorkBenchPlaced>();
-
-        recipe1233.Register();
+        
 
         Recipe recipe1234 = Recipe.Create(ItemID.WaterBolt);
         recipe1234.AddIngredient<AzuriteBar>(10);

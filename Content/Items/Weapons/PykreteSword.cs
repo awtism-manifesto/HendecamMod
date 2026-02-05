@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons;
 
 public class PykreteSword : ModItem
 {

@@ -24,7 +24,7 @@ public class TheMoon : ModItem
         Item.noMelee = true;
         Item.noUseGraphic = true;
         Item.ArmorPenetration = 35;
-        Item.value = 3050000;
+        Item.value = 4250000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
 

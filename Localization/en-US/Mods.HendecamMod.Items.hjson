@@ -4849,3 +4849,13 @@ CultistCyclotron: {
 	Tooltip: ""
 	DisplayName: Cultist's Cyclotron
 }
+
+SpookyWoodBow: {
+	Tooltip: ""
+	DisplayName: Spooky Wood Bow
+}
+
+SpookyWoodSword: {
+	Tooltip: ""
+	DisplayName: Spooky Wood Sword
+}
