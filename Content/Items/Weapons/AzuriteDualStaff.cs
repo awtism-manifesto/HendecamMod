@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -21,13 +22,13 @@ public class AzuriteDualStaff : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 33;
-        Item.useAnimation = 33;
+        Item.useTime = 16;
+        Item.useAnimation = 32;
         Item.autoReuse = true;
 
-        Item.mana = 16;
+        Item.mana = 11;
         Item.DamageType = DamageClass.Magic;
-        Item.damage = 77;
+        Item.damage = 47;
         Item.knockBack = 6.7f;
         Item.noMelee = true;
 
@@ -49,10 +50,11 @@ public class AzuriteDualStaff : ModItem
         }
         else if (shotCounter == 2)
         {
+            type = ModContent.ProjectileType<AzuriteBeamBackwards>();
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(180f));
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
-            Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 2f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);
             shotCounter = 0;
         }
 
@@ -64,19 +66,13 @@ public class AzuriteDualStaff : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The backwards bolt deals double damage")
+        line = new TooltipLine(Mod, "Face", "The forwards bolt pierces, the backwards bolt homes")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

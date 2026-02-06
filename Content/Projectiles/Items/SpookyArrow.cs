@@ -1,4 +1,7 @@
-﻿namespace HendecamMod.Content.Projectiles.Items;
+﻿using Terraria;
+using Terraria.Audio;
+
+namespace HendecamMod.Content.Projectiles.Items;
 
 // This example is similar to the Wooden Arrow projectile
 public class SpookyArrow : ModProjectile
@@ -42,6 +45,7 @@ public class SpookyArrow : ModProjectile
 
         if (tickCounter >= nextSpawnTick)
         {
+            SoundEngine.PlaySound(SoundID.Item13, Projectile.position);
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.75f));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,

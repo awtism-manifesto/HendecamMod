@@ -24,7 +24,7 @@ public class MidnightAfterburner : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item74;
 
-        Item.damage = 66;
+        Item.damage = 72;
         Item.useTime = 35;
         Item.useAnimation = 35;
 

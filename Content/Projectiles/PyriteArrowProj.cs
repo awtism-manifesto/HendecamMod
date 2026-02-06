@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using Terraria.Audio;
+
+namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class PyriteArrowProj : ModProjectile
@@ -48,20 +50,21 @@ public class PyriteArrowProj : ModProjectile
 
         if (nextSpawnTick == 0)
         {
-            nextSpawnTick = Main.rand.Next(22, 23);
+            nextSpawnTick = Main.rand.Next(6, 7);
         }
 
         tickCounter++;
 
         if (tickCounter >= nextSpawnTick)
         {
+            SoundEngine.PlaySound(SoundID.Item13, Projectile.position);
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(5));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<IchSpark>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
 
             tickCounter = 0;
-            nextSpawnTick = Main.rand.Next(22, 23);
+            nextSpawnTick = 25;
             Projectile.netUpdate = true;
         }
     }

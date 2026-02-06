@@ -796,6 +796,7 @@ public class ImImpulsiveLol : GlobalItem
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
+        SoundEngine.PlaySound(SoundID.Item5, player.position);
         Projectile.NewProjectileDirect(source, player.Center, velocity * 17.5f, ModContent.ProjectileType<AstatineBullet>(), (int)(damage * 0.75f), knockback, player.whoAmI);
 
         return true;

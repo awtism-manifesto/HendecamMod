@@ -1,6 +1,9 @@
-﻿namespace HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Dusts;
 
-public class SpookySpark : ModProjectile
+namespace HendecamMod.Content.Projectiles.Items;
+
+
+public class AzuriteBeamBackwards : ModProjectile
 {
     private NPC HomingTarget
     {
@@ -12,56 +15,51 @@ public class SpookySpark : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 3; // The width of projectile hitbox
-        Projectile.height = 3; // The height of projectile hitbox
+        // This method right here is the backbone of what we're doing here; by using this method, we copy all of
+        // the Meowmere Projectile's SetDefault stats (such as projectile.friendly and projectile.penetrate) on to our projectile,
+        // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
+        // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-        Projectile.friendly = true; // Can the projectile deal damage to enemies?
-        Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 90;
-        Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
-        Projectile.tileCollide = true; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
-        Projectile.usesLocalNPCImmunity = true;
-        AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-        Projectile.aiStyle = 1;
-        Projectile.alpha = 255;
+        Projectile.CloneDefaults(ProjectileID.BloodArrow);
+
+        // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
+        // the projectile to essentially behave the same way as the vanilla projectile.
+        Projectile.aiStyle = -1;
+        Projectile.DamageType = DamageClass.Magic;
+        Projectile.timeLeft = 140;
+        Projectile.extraUpdates = 1;
+        Projectile.tileCollide = false;
+        Projectile.width = 1; // The width of projectile hitbox
+        Projectile.height = 1; // The height of projectile hitbox
+        // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
+        // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
+        // This can be done by modifying projectile.penetrate
     }
 
     public override void AI()
     {
-        if (Projectile.alpha < 180)
+        // dust, all dust
+
+        for (int i = 0; i < 2; i++)
         {
-            for (int i = 0; i < 1; i++)
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Torch, 0f, 0f, 100, default, 0.95f);
-                fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-                fire2Dust.noGravity = true;
-                fire2Dust.velocity *= 0.75f;
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Torch, 0f, 0f, 100, default, 0.8f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 0.75f;
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        }
-        if (Math.Abs(Projectile.velocity.X) <= 20f && Math.Abs(Projectile.velocity.Y) <= 20f)
-        {
-            Projectile.velocity *= 1.035f;
+
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.BlueTorch, 0f, 0f, 100, Color.Blue, 2.33f);
+            fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
+            fireDust.noGravity = true;
+            fireDust.velocity *= 0.25f;
         }
 
-        float maxDetectRadius = 225f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 700f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
-        if (DelayTimer < 14)
+        if (DelayTimer < 15)
         {
             DelayTimer += 1;
             return;
@@ -87,10 +85,12 @@ public class SpookySpark : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.95f)).ToRotationVector2() * length;
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(5f)).ToRotationVector2() * length;
         Projectile.rotation = Projectile.velocity.ToRotation();
     }
 
+    // Finding the closest NPC to attack within maxDetectDistance range
+    // If not found then returns null
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -129,11 +129,6 @@ public class SpookySpark : ModProjectile
         // 5. hostile (!friendly)
         // 6. not immortal (e.g. not a target dummy)
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
-        return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
-    }
-
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.AddBuff(BuffID.OnFire3, 120);
+        return target.CanBeChasedBy();
     }
 }

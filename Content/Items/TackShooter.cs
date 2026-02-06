@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -44,6 +45,16 @@ public class TackShooter : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+    }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<SteelBar>(8);
+        recipe.AddIngredient(ItemID.IllegalGunParts);
+        recipe.AddIngredient(ItemID.PinkGel, 32);
+       
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

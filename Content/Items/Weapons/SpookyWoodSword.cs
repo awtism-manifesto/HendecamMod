@@ -2,6 +2,7 @@ using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons;
@@ -32,7 +33,7 @@ public class SpookyWoodSword : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        
         var line = new TooltipLine(Mod, "Face", "Inflicts Hellfire on hit");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Flings tons of hellfire sparks everywhere")
@@ -46,7 +47,11 @@ public class SpookyWoodSword : ModItem
         };
         tooltips.Add(line);
     }
-
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        SoundEngine.PlaySound(SoundID.Item13, player.position); // Adding second use sound to item 
+        return true;
+    }
    
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
