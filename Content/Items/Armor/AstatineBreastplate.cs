@@ -5,8 +5,6 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
-// The AutoloadEquip attribute automatically attaches an equip texture to this item.
-// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
 [AutoloadEquip(EquipType.Body)]
 public class AstatineBreastplate : ModItem
 {
@@ -18,11 +16,6 @@ public class AstatineBreastplate : ModItem
 
     public override void SetStaticDefaults()
     {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -37,7 +30,6 @@ public class AstatineBreastplate : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "14% increased damage and 7% increased attack speed");
         tooltips.Add(line);
 
@@ -46,8 +38,6 @@ public class AstatineBreastplate : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -58,10 +48,7 @@ public class AstatineBreastplate : ModItem
 
     public override void UpdateEquip(Player player)
     {
-       
-
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.GetArmorPenetration(DamageClass.Melee) += MeleeArmorPenetration;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
@@ -73,7 +60,6 @@ public class AstatineBreastplate : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(48);
         recipe.AddTile<CultistCyclotronPlaced>();
-
         recipe.Register();
     }
 

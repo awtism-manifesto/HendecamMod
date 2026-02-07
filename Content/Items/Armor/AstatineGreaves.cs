@@ -96,7 +96,6 @@ public class AstatineGreaves : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(40);
-
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
