@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS THE WORST NIGHT OF MY LIFE ATTEMPTING TO VIBE CODE THE LOBOTOMETER MADE ME WANT TO KILL MYSELF
@@ -43,6 +45,15 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
                 if (Current < 0f)
                     Current = 0f;
             }
+        }
+
+        public override void PostUpdateMiscEffects()
+        {
+            // Activating shader
+            ScreenShaderData shaderData = Filters.Scene.Activate("HendecamMod:LobotomyScreen").GetShader();
+            // Moving to [0, 1] range
+            float effectIntensityMultiplier = 0.5f;
+            shaderData.UseIntensity((Current / Max) * effectIntensityMultiplier);
         }
 
         public void AddLobotometer()
@@ -115,10 +126,10 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
             if (lobo == null) return;
 
             // Remove the spammy debug line - only show when significant changes happen
-             float lastDisplayedValue = -1f;
+            float lastDisplayedValue = -1f;
             if (Math.Abs(lobo.Current - lastDisplayedValue) > 1f)
             {
-               
+
                 lastDisplayedValue = lobo.Current;
             }
 
@@ -167,7 +178,7 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
             }
             catch (Exception ex)
             {
-               
+
             }
         }
     }

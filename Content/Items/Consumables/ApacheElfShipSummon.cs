@@ -45,11 +45,6 @@ public class ApacheElfShipSummon : ModItem
 
     public override bool CanUseItem(Player player)
     {
-        if (NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>()))
-            return false;
-
-        return true;
-
         return !NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>());
     }
 
