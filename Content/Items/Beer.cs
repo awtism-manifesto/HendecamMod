@@ -7,8 +7,6 @@ public class Beer : ModItem
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 20;
-
-        // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
         ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
         {
             new Color(92, 42, 9),
@@ -50,22 +48,8 @@ public class Beer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

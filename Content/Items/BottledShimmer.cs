@@ -5,8 +5,6 @@ public class BottledShimmer : ModItem
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 20;
-
-        // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
         ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
         {
             new Color(240, 240, 240),
@@ -28,8 +26,8 @@ public class BottledShimmer : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(copper: 42);
-        Item.buffType = BuffID.Shimmer; // Specify an existing buff to be applied when used.
-        Item.buffTime = 600; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+        Item.buffType = BuffID.Shimmer; 
+        Item.buffTime = 600;
     }
 
     public override void AddRecipes()

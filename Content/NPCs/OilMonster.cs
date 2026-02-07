@@ -5,7 +5,6 @@ using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
 
-// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
 public class OilMonster : ModNPC
 {
     public override void SetStaticDefaults()
@@ -16,8 +15,7 @@ public class OilMonster : ModNPC
 
         NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
-            // Influences how the NPC looks in the Bestiary
-            Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+            Velocity = 1f 
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
@@ -47,7 +45,7 @@ public class OilMonster : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 9770f;
         NPC.knockBackResist = 0.2f;
-        NPC.aiStyle = 3; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Fighter; 
 
         AIType = NPCID.WalkingAntlion; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BloodZombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

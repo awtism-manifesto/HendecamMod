@@ -8,8 +8,6 @@ public class BrainrotPotion : ModItem
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 20;
-
-        // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
         ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
         {
             new Color(85, 32, 102),
@@ -42,7 +40,6 @@ public class BrainrotPotion : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 10%");
         tooltips.Add(line);
 
@@ -74,7 +71,6 @@ public class BrainrotPotion : ModItem
 
         recipe = CreateRecipe(100);
         recipe.AddIngredient(ItemID.BrainOfConfusion);
-
         recipe.AddTile(TileID.Kegs);
         recipe.Register();
     }

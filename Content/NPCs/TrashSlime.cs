@@ -33,7 +33,7 @@ public class TrashSlime : ModNPC
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 125f;
         NPC.knockBackResist = 0.6f;
-        NPC.aiStyle = 1; // Fighter AI, important to choose the aiStyle that matches the NPCID that we want to mimic
+        NPC.aiStyle = NPCAIStyleID.Slime; 
 
         AIType = NPCID.GreenSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

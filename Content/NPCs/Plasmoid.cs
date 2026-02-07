@@ -39,7 +39,7 @@ public class Plasmoid : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 10000f;
         NPC.knockBackResist = 0.35f;
-        NPC.aiStyle = 14; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Bat; 
         NPC.noTileCollide = true;
         AIType = NPCID.CaveBat; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.Pixie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

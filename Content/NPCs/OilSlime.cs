@@ -49,7 +49,7 @@ public class OilSlime : ModNPC
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 2925f;
         NPC.knockBackResist = 0.7f;
-        NPC.aiStyle = 1; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Slime; 
 
         AIType = NPCID.YellowSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BlueSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

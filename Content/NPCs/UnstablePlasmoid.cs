@@ -38,7 +38,7 @@ public class UnstablePlasmoid : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 300000f;
         NPC.knockBackResist = 0f;
-        NPC.aiStyle = 63; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Flocko;
         NPC.noGravity = true;
         NPC.despawnEncouraged = false;
         NPC.noTileCollide = true;

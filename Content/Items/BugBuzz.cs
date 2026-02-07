@@ -17,23 +17,15 @@ public class BugBuzz : ModItem
         Item.scale = 0.995f;
         Item.rare = ItemRarityID.Lime; // The color that the item's name will be in-game.
         Item.value = 715000;
-        // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.reuseDelay = 16;
-
-        // The sound that this item plays when used.
-
-        // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-        Item.noMelee = true; // So the item's animation doesn't do damage.
-
-        // Gun Properties
-        // For some reason, all the guns in the vanilla source have this.
+        Item.noMelee = true; 
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ModContent.ProjectileType<BugWave>();
@@ -61,7 +53,6 @@ public class BugBuzz : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Converts arrows into a tightly-packed burst of multiple soundwaves");
         tooltips.Add(line);
 
@@ -70,19 +61,6 @@ public class BugBuzz : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()

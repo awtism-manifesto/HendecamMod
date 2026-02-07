@@ -32,7 +32,7 @@ public class PearlsandSlime : ModNPC
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 1075f;
         NPC.knockBackResist = 0.7f;
-        NPC.aiStyle = 1; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Slime; 
 
         AIType = NPCID.SandSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.SandSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

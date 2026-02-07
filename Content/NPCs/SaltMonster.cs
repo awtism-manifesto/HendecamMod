@@ -35,7 +35,7 @@ public class SaltMonster : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 3000f;
         NPC.knockBackResist = 0.08f;
-        NPC.aiStyle = 3; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Fighter; 
 
         AIType = NPCID.BloodZombie; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BloodZombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

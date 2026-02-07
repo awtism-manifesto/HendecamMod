@@ -8,7 +8,6 @@ using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
 
-// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
 public class LargePlasmoid : ModNPC
 {
     public override void SetStaticDefaults()
@@ -39,7 +38,7 @@ public class LargePlasmoid : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 95000f;
         NPC.knockBackResist = 0.03f;
-        NPC.aiStyle = 63; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Flocko;
         NPC.noGravity = true;
         AIType = NPCID.Flocko; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.Harpy; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
@@ -71,7 +70,6 @@ public class LargePlasmoid : ModNPC
         }
 
         int buffType = ModContent.BuffType<RadPoisoning2>();
-        // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
         int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buffType, timeToAdd);
@@ -79,14 +77,10 @@ public class LargePlasmoid : ModNPC
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
-        // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
-            // Sets your NPC's flavor text in the bestiary.
             new FlavorTextBestiaryInfoElement("\"Like their normal-sized counterparts, Large Plasmoids feed on radiation. Unlike normal Plasmoids, however, they seem to return to the edge of space when it's daytime\" "),
 
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
             new FlavorTextBestiaryInfoElement("")
         });
     }

@@ -15,7 +15,6 @@ public class AquaticSlime : ModNPC
 
         NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
-            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -32,7 +31,7 @@ public class AquaticSlime : ModNPC
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 700f;
         NPC.knockBackResist = 0.7f;
-        NPC.aiStyle = 1; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Slime;
 
         AIType = NPCID.BlueSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
