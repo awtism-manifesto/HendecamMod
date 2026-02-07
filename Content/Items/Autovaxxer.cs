@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
@@ -39,6 +40,15 @@ public class Autovaxxer : ModItem
         Item.shoot = ModContent.ProjectileType<VaxNeedle>();
 
         Item.shootSpeed = 17.25f; // The speed of the projectile (measured in pixels per frame.)
+    }
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer();
+        }
+        return base.UseItem(player);
     }
 
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

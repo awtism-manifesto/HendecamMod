@@ -7,6 +7,12 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <AdditionalFiles Remove="Content\Effects\Lobotometer.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Content\Effects\Lobotometer.png" />
+	</ItemGroup>
 
 	<!-- References -->
 	
@@ -332,9 +338,12 @@
 	  <None Remove="Content\Tiles\LegosPlaced.png" />
 	  <None Remove="Content\Tiles\PureSaltTile.png" />
 	  <None Remove="Content\Tiles\RockSaltTile.png" />
+	
 	  <None Remove="icon_workshop.png" />
 		
 	</ItemGroup>
+	
+	
 	
 	<ItemGroup>
 	  <Folder Include="Content\Sounds\" />
