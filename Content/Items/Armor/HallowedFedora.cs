@@ -48,7 +48,7 @@ public class HallowedFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+100 max Lobotometer and +25% Lobotometer Decay Rate")
+        line = new TooltipLine(Mod, "Face", "+100 max Lobotometer and +33% Lobotometer Decay Rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -74,7 +74,7 @@ public class HallowedFedora : ModItem
 
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 1.25f;
+        loboDecay.DecayRateMultiplier *= 1.33f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

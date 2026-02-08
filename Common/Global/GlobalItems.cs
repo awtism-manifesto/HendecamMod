@@ -8,7 +8,7 @@ public class RodOfHarmonyBuff : GlobalItem
     {
         return item.type == ItemID.RodOfHarmony;
     }
-
+    
     public override void SetDefaults(Item item)
     {
         item.value = Item.sellPrice(silver: 500);

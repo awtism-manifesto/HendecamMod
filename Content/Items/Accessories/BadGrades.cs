@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -16,6 +17,7 @@ public class BadGrades : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.White;
+        Item.value = 67;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -23,7 +25,13 @@ public class BadGrades : ModItem
         var line = new TooltipLine(Mod, "Face", "6% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The F students are inventors")
+        line = new TooltipLine(Mod, "Face", "+30 max Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "'The F students are inventors'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -42,5 +50,8 @@ public class BadGrades : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 30f;
     }
 }

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -38,7 +39,7 @@ public class RockSaltLeggings : ModItem
         var line = new TooltipLine(Mod, "Face", "7% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 max life")
+        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -57,7 +58,8 @@ public class RockSaltLeggings : ModItem
     {
        
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
-        player.statLifeMax2 += 10;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 25f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

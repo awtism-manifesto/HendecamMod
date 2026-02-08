@@ -13,11 +13,11 @@ public class OmniDamage : DamageClass
         // Generic, on the other hand, scales off of all universal stat bonuses and nothing else; it's the base damage class upon which all others that aren't Default are built.
         if (damageClass == Generic)
             return new StatInheritanceData(
-                damageInheritance: 0.67f,
-                critChanceInheritance: 0.67f,
-                attackSpeedInheritance: 0.67f,
-                armorPenInheritance: 0.67f,
-                knockbackInheritance: 0.67f);
+                damageInheritance: 1f,
+                critChanceInheritance: 1f,
+                attackSpeedInheritance: 1f,
+                armorPenInheritance: 1f,
+                knockbackInheritance: 1f);
         if (damageClass == Summon)
             return new StatInheritanceData(
                 damageInheritance: 0.67f,

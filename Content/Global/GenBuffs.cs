@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -1371,7 +1372,7 @@ public class Peanix : GlobalItem
 
 public class Banana : GlobalItem
 {
-    // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.Bananarang;
@@ -1383,54 +1384,44 @@ public class Banana : GlobalItem
         item.DamageType = ModContent.GetInstance<StupidDamage>();
         item.damage = 61;
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
 }
 
-public class GolemStupid : GlobalItem
-{
-    // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.GolemFist;
-    }
 
-    public override void SetDefaults(Item item)
-    {
-        item.StatsModifiedBy.Add(Mod); // Notify the game that we've made a functional change to this item.
-        item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-        item.damage = 135;
-        item.shootSpeed = 32.5f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-    {
-        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6));
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 0.8f, ProjectileID.GolemFist, damage, knockback, player.whoAmI);
-
-        return true;
-    }
-}
 
 public class RulerStupid : GlobalItem
 {
-    // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.Ruler;
     }
-
+    public float LobotometerCost = 1f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, uses 1 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1442,7 +1433,7 @@ public class RulerStupid : GlobalItem
 
 public class PewStupid : GlobalItem
 {
-    // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.PewMaticHorn;
@@ -1450,9 +1441,18 @@ public class PewStupid : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, uses 2 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
-
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void SetDefaults(Item item)
     {
         item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
@@ -1464,14 +1464,24 @@ public class PewStupid : GlobalItem
 
 public class SandStupid : GlobalItem
 {
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.Sandgun;
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1482,6 +1492,7 @@ public class SandStupid : GlobalItem
 
 public class YouShouldDriveDrunk : GlobalItem
 {
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.AleThrowingGlove;
@@ -1489,9 +1500,18 @@ public class YouShouldDriveDrunk : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage, costs 6 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
-
+    public float LobotometerCost = 6f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void SetDefaults(Item item)
     {
         item.DamageType = ModContent.GetInstance<StupidDamage>();
@@ -1507,6 +1527,7 @@ public class YouShouldDriveDrunk : GlobalItem
 
 public class HamBattt : GlobalItem
 {
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.HamBat;
@@ -1514,9 +1535,18 @@ public class HamBattt : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void SetDefaults(Item item)
     {
         item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
@@ -1529,27 +1559,7 @@ public class HamBattt : GlobalItem
     }
 }
 
-public class KeyBuff : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.Keybrand;
-    }
 
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Obtainable earlier, but with reworked stats") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.rare = ItemRarityID.LightPurple;
-        item.damage = 65;
-        item.scale = 2f;
-        item.useTime = 12;
-        item.useAnimation = 12;
-    }
-}
 
 public class Pirahna : GlobalItem
 {
@@ -2218,6 +2228,7 @@ public class Harpussy : GlobalItem
 
 public class WaffleTime : GlobalItem
 {
+    public override bool InstancePerEntity => true;
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         return item.type == ItemID.WaffleIron;
@@ -2225,9 +2236,18 @@ public class WaffleTime : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, stats increased") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, uses 2 Lobotometer, and has buffed stats") { OverrideColor = Color.DarkViolet });
     }
-
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Item item, Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(item, player);
+    }
     public override void SetDefaults(Item item)
     {
         item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();

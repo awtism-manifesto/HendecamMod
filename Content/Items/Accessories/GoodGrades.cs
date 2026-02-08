@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -18,7 +19,7 @@ public class GoodGrades : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
-        Item.value = 20000;
+        Item.value = 25000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -26,19 +27,19 @@ public class GoodGrades : ModItem
         var line = new TooltipLine(Mod, "Face", "5% decreased stupid damage, 12% increased stupid critical strike chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Now your parents might finally be proud of you")
+        line = new TooltipLine(Mod, "Face", "25% increased Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "'Now your parents might finally be proud of you'")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
 
     }
 
@@ -46,5 +47,8 @@ public class GoodGrades : ModItem
     {
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.25f;
     }
 }

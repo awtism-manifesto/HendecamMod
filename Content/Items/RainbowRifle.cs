@@ -29,12 +29,12 @@ public class RainbowRifle : ModItem
         Item.UseSound = SoundID.Item38;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedMagicDamage>(); // Sets the damage type to ranged.
-        Item.damage = 58; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
         {
-            Item.damage = 60;
+            Item.damage = 63;
         }
 
         // Gun Properties
@@ -81,18 +81,7 @@ public class RainbowRifle : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()
@@ -104,9 +93,9 @@ public class RainbowRifle : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CoreofSunlight", out ModItem CoreofSunlight))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CoreofCalamity", out ModItem CoreofCalamity))
         {
-            recipe.AddIngredient(CoreofSunlight.Type, 9);
+            recipe.AddIngredient(CoreofCalamity.Type, 9);
         }
 
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("RainbowPiece", out ModItem RainbowPiece))

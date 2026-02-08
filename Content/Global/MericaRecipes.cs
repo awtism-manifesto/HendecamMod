@@ -84,13 +84,7 @@ public class MericaRecipes : ModSystem
         penile2.AddTile(TileID.Anvils);
         penile2.Register();
 
-        Recipe penises = Recipe.Create(ItemID.Keybrand);
-        penises.AddIngredient(ItemID.Cutlass);
-
-        penises.AddIngredient(ItemID.GoldenKey);
-        penises.AddIngredient(ItemID.HallowedBar, 9);
-        penises.AddTile(TileID.MythrilAnvil);
-        penises.Register();
+       
 
         Recipe aaa = Recipe.Create(ItemID.LunarHook);
 

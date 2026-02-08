@@ -45,7 +45,7 @@ public class Bullshit1 : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
         {
-            OverrideColor = new Color(252, 141, 204)
+            OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "-Developer Item-")

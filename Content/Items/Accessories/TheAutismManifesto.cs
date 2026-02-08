@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -33,8 +34,8 @@ public class TheAutismManifesto : ModItem
         recipe.AddIngredient<SpiritProtectionCharm>();
         recipe.AddIngredient<AutismDiagnosis>();
         recipe.AddIngredient<AutismOrb>(2);
-        recipe.AddIngredient<PlutoniumBar>(6);
-        recipe.AddIngredient<AstatineBar>(7);
+       
+        recipe.AddIngredient<FissionDrive>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
@@ -43,6 +44,12 @@ public class TheAutismManifesto : ModItem
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "+75 mana, 10% increased magic and stupid crit chance and +15% stupid damage");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Increases attack speed as Lobotometer increases, up to 25% at max")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
@@ -61,5 +68,15 @@ public class TheAutismManifesto : ModItem
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;
         player.endurance = 1f - 0.95f * (1f - player.endurance);
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+
+
+
+        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
+        float speedBonus = lobotometerPercent * 0.25f;
+
+        player.GetAttackSpeed(DamageClass.Generic) += speedBonus;
+
     }
 }

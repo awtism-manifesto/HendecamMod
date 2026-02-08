@@ -32,6 +32,9 @@ public class AstatineOrePlaced : ModTile
         r = 1.4f;
         g = 0.1f;
         b = 0.47f;
+
+        Lighting.Mode = Terraria.Graphics.Light.LightMode.Color;
+
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

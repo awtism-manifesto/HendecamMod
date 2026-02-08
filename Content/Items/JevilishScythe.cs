@@ -41,14 +41,14 @@ public class JevilishScythe : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "5 summon tag damage");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Splits into smaller, homing clones of itself upon contact with an enemy")
+        line = new TooltipLine(Mod, "Face", "5 summon tag damage")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Splits into smaller, homing clones of itself upon contact with an enemy")
         {
             OverrideColor = new Color(255, 255, 255)
         };

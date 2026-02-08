@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -9,8 +10,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class RockSaltFedora : ModItem
 {
-    public static readonly int AdditiveStupidDamageBonus = 6;
-    public static readonly int StupidCritBonus = 6;
+    public static readonly int AdditiveStupidDamageBonus = 5;
+    public static readonly int StupidCritBonus = 5;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -22,7 +23,7 @@ public class RockSaltFedora : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         ArmorIDs.Head.Sets.IsTallHat[Item.headSlot] = true;
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
+       
     }
 
     public override void SetDefaults()
@@ -37,10 +38,10 @@ public class RockSaltFedora : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased stupid damage and critical strike");
+        var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and critical strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+5 max life")
+        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -57,9 +58,10 @@ public class RockSaltFedora : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        
 
-        player.statLifeMax2 += 5;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 25f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }

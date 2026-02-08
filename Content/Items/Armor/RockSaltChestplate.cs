@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -9,8 +10,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class RockSaltChestplate : ModItem
 {
-    public static readonly int StupidAttackSpeedBonus = 7;
-    public static readonly int StupidCritBonus = 7;
+    public static readonly int StupidAttackSpeedBonus = 4;
+    public static readonly int StupidCritBonus = 4;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,10 +37,10 @@ public class RockSaltChestplate : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and crit strike");
+        var line = new TooltipLine(Mod, "Face", "4% increased stupid attack speed and crit strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 max life")
+        line = new TooltipLine(Mod, "Face", "+40 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -58,8 +59,10 @@ public class RockSaltChestplate : ModItem
     {
        
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
-        player.statLifeMax2 += 10;
+       
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 40f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -74,8 +77,11 @@ public class RockSaltChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.lifeRegen += 5;
+       
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and increases life regen";
+        player.setBonus = "Negates fall damage and increases Lobotometer decay rate by 40%";
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.40f;
     }
 }

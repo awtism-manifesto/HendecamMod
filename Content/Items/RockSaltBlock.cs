@@ -13,7 +13,7 @@ public class RockSaltBlock : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.22f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 1100;
+        Item.value = 10250;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.RockSaltTile>());
     }

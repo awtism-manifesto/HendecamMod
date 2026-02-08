@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -17,7 +19,7 @@ public class MediocreGrades : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.LightPurple;
-        Item.value = 90000;
+        Item.value = 15000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -25,19 +27,19 @@ public class MediocreGrades : ModItem
         var line = new TooltipLine(Mod, "Face", "11% increased stupid damage, 11% increased stupid critical strike chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "C's get degrees bro")
+        line = new TooltipLine(Mod, "Face", "+70 Max Lobotometer and +35% Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "'C's get degrees bro'")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
     }
 
     public override void AddRecipes()
@@ -54,7 +56,7 @@ public class MediocreGrades : ModItem
             recipe.AddIngredient(SoulOfPlight.Type, 5);
         }
 
-        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.AddTile<CobaltWorkBenchPlaced>();
         recipe.Register();
     }
 
@@ -62,5 +64,12 @@ public class MediocreGrades : ModItem
     {
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 70f; 
+
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.35f;
+
     }
 }
