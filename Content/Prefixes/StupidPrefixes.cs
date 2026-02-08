@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Prefixes;
 
@@ -73,7 +75,6 @@ public class Lobotomized : ModPrefix
     // Use this to control if a prefix can be rolled or not.
     public override bool CanRoll(Item item)
     {
-        // 
         if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
                                                                       || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
         {
@@ -96,646 +97,649 @@ public class Lobotomized : ModPrefix
     // Modify the cost of items with this modifier with this function.
     public override void ModifyValue(ref float valueMult)
     {
-        valueMult *= 1f + 1.825f * Power;
+        valueMult *= 1f + 0.925f * Power;
     }
 
-    // This is used to modify most other stats of items which have this modifier.
+    // This is where we apply Lobotometer modifications
     public override void Apply(Item item)
     {
+        // No item modifications needed here since we'll handle it in GlobalItem
     }
 }
 
-public class Intelligent : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
 
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
 
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
+    public class Intelligent : ModPrefix
     {
-        return 1.99f;
-    }
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
 
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
         {
-            return true;
+            return 1.99f;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.18f * Power;
-        critBonus = -6;
-
-        knockbackMult *= 1f - 0.36f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.2f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Brainy : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 3.15f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
         {
-            return true;
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.1f * Power;
-
-        useTimeMult *= 1f + 0.075f * Power;
-        knockbackMult *= 1f - 0.15f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.5f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Serious : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 2.95f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            return true;
+            damageMult *= 1f - 0.18f * Power;
+            critBonus = -6;
+
+            knockbackMult *= 1f - 0.36f * Power;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f + 0.075f * Power;
-
-        useTimeMult *= 1f + 0.1f * Power;
-        knockbackMult *= 1f - 0.15f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.65f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Academic : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 3.25f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
         {
-            return true;
+            valueMult *= 0f + 0.2f * Power;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.05f * Power;
-
-        useTimeMult *= 1f + 0.15f * Power;
-        knockbackMult *= 1f + 0.10f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.45f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Smart : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 3.85f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
         {
-            return true;
+        }
+    }
+
+    public class Brainy : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 3.15f;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.07f * Power;
-        critBonus = -1;
-        useTimeMult *= 1f + 0.05f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.69f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Skibidi : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 3.33f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
         {
-            return true;
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f + 0.05f * Power;
-        critBonus = 3;
-        useTimeMult *= 1f - 0.09f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.815f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Brainrotted : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 1.95f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            return true;
+            damageMult *= 1f - 0.1f * Power;
+
+            useTimeMult *= 1f + 0.075f * Power;
+            knockbackMult *= 1f - 0.15f * Power;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f + 0.125f * Power;
-        critBonus = 3;
-        useTimeMult *= 1f - 0.085f * Power;
-        knockbackMult *= 1f + 0.175f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 1f + 1.1f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Idiotic : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 2.95f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
         {
-            return true;
+            valueMult *= 0f + 0.5f * Power;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f + 0.09f * Power;
-        critBonus = 10;
-        useTimeMult *= 1f - 0.05f * Power;
-        knockbackMult *= 1f + 0.05f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 1f + 1.01f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Clunky : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 2.5f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
         {
-            return true;
+        }
+    }
+
+    public class Serious : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 2.95f;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f + 0.22f * Power;
-        critBonus = 2;
-        useTimeMult *= 1f + 0.15f * Power;
-        knockbackMult *= 1f + 0.05f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 1f + 0.05f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Thoughtless : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 2.75f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
         {
-            return true;
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.10f * Power;
-        critBonus = 15;
-        useTimeMult *= 1f - 0.075f * Power;
-        knockbackMult *= 1f - 0.25f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 1f + 0.05f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Tiktokified : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 3.05f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            return true;
+            damageMult *= 1f + 0.075f * Power;
+
+            useTimeMult *= 1f + 0.1f * Power;
+            knockbackMult *= 1f - 0.15f * Power;
         }
 
-        return false;
-    }
-
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
-    {
-        damageMult *= 1f - 0.125f * Power;
-
-        useTimeMult *= 1f - 0.225f * Power;
-    }
-
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
-    {
-        valueMult *= 0f + 0.88f * Power;
-    }
-
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
-    {
-    }
-}
-
-public class Sigma : ModPrefix
-{
-    // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
-    public virtual float Power => 1f;
-
-    // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
-    public override PrefixCategory Category => PrefixCategory.AnyWeapon;
-
-    // See documentation for vanilla weights and more information.
-    // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
-    // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
-    // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
-    public override float RollChance(Item item)
-    {
-        return 2.25f;
-    }
-
-    // Determines if it can roll at all.
-    // Use this to control if a prefix can be rolled or not.
-    public override bool CanRoll(Item item)
-    {
-        // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
         {
-            return true;
+            valueMult *= 0f + 0.65f * Power;
         }
 
-        return false;
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
     }
 
-    // Use this function to modify these stats for items which have this prefix:
-    // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
-    public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+    public class Academic : ModPrefix
     {
-        damageMult *= 1f + 0.20f * Power;
-        critBonus = -25;
-        useTimeMult *= 1f - 0.20f * Power;
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 3.25f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f - 0.05f * Power;
+
+            useTimeMult *= 1f + 0.15f * Power;
+            knockbackMult *= 1f + 0.10f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 0f + 0.45f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
     }
 
-    // Modify the cost of items with this modifier with this function.
-    public override void ModifyValue(ref float valueMult)
+    public class Smart : ModPrefix
     {
-        valueMult *= 1f + 0.55f * Power;
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 3.85f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f - 0.07f * Power;
+            critBonus = -1;
+            useTimeMult *= 1f + 0.05f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 0f + 0.69f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
     }
 
-    // This is used to modify most other stats of items which have this modifier.
-    public override void Apply(Item item)
+    public class Skibidi : ModPrefix
     {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 3.33f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f + 0.05f * Power;
+            critBonus = 3;
+            useTimeMult *= 1f - 0.09f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 0f + 0.815f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
     }
-}
+
+    public class Brainrotted : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 1.95f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f + 0.125f * Power;
+            critBonus = 3;
+            useTimeMult *= 1f - 0.085f * Power;
+            knockbackMult *= 1f + 0.175f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 1.1f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
+
+    public class Idiotic : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 2.95f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f + 0.09f * Power;
+            critBonus = 10;
+            useTimeMult *= 1f - 0.05f * Power;
+            knockbackMult *= 1f + 0.05f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 1.01f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
+
+    public class Clunky : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 2.5f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f + 0.22f * Power;
+            critBonus = 2;
+            useTimeMult *= 1f + 0.15f * Power;
+            knockbackMult *= 1f + 0.05f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 0.05f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
+
+    public class Thoughtless : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 2.75f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f - 0.10f * Power;
+            critBonus = 15;
+            useTimeMult *= 1f - 0.075f * Power;
+            knockbackMult *= 1f - 0.25f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 0.05f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
+
+    public class Tiktokified : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 3.05f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f - 0.125f * Power;
+
+            useTimeMult *= 1f - 0.225f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 0.12f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
+
+    public class Sigma : ModPrefix
+    {
+        // We declare a custom *virtual* property here, so that another type, ExampleDerivedPrefix, could override it and change the effective power for itself.
+        public virtual float Power => 1f;
+
+        // Change your category this way, defaults to PrefixCategory.Custom. Affects which items can get this prefix.
+        public override PrefixCategory Category => PrefixCategory.AnyWeapon;
+
+        // See documentation for vanilla weights and more information.
+        // In case of multiple prefixes with similar functions this can be used with a switch/case to provide different chances for different prefixes
+        // Note: a weight of 0f might still be rolled. See CanRoll to exclude prefixes.
+        // Note: if you use PrefixCategory.Custom, actually use ModItem.ChoosePrefix instead.
+        public override float RollChance(Item item)
+        {
+            return 2.25f;
+        }
+
+        // Determines if it can roll at all.
+        // Use this to control if a prefix can be rolled or not.
+        public override bool CanRoll(Item item)
+        {
+            // 
+            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
+                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use this function to modify these stats for items which have this prefix:
+        // Damage Multiplier, Knockback Multiplier, Use Time Multiplier, Scale Multiplier (Size), Shoot Speed Multiplier, Mana Multiplier (Mana cost), Crit Bonus.
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
+        {
+            damageMult *= 1f + 0.20f * Power;
+            critBonus = -25;
+            useTimeMult *= 1f - 0.20f * Power;
+        }
+
+        // Modify the cost of items with this modifier with this function.
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 0.55f * Power;
+        }
+
+        // This is used to modify most other stats of items which have this modifier.
+        public override void Apply(Item item)
+        {
+        }
+    }
 
 public class Silly : ModPrefix
 {

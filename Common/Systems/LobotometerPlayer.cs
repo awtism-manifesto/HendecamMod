@@ -6,7 +6,7 @@ using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS THE WORST NIGHT OF MY LIFE ATTEMPTING TO VIBE CODE THE LOBOTOMETER MADE ME WANT TO KILL MYSELF
+namespace HendecamMod.Common.Systems 
 {
     public class LobotometerPlayer : ModPlayer
     {
