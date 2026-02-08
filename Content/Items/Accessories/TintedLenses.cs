@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -39,13 +40,23 @@ public class TintedLenses : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "+50% increased Lobotometer decay rate")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
        
 
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.5f;
+
     }
 }

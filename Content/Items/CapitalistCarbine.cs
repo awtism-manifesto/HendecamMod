@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -38,7 +39,16 @@ public class CapitalistCarbine : ModItem
 
         Item.shootSpeed = 13.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.Money>();
@@ -66,7 +76,7 @@ public class CapitalistCarbine : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'If you throw money at the problem it might go away...'")

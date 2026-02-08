@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -16,7 +17,7 @@ public class ScreamingSoyjak : ModItem
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 20000;
         Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 39; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 13; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.UseSound = SoundID.DD2_WyvernDeath;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
@@ -35,7 +36,16 @@ public class ScreamingSoyjak : ModItem
 
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.Soundwave>();
@@ -47,24 +57,13 @@ public class ScreamingSoyjak : ModItem
         var line = new TooltipLine(Mod, "Face", "Emits horrible soundwaves of screeching soyjaks");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

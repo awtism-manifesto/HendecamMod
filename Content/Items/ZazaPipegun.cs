@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -36,7 +37,16 @@ public class ZazaPipegun : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.67f, 0.710f));
@@ -52,7 +62,7 @@ public class ZazaPipegun : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots a cloud of weed smoke along with your dart");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

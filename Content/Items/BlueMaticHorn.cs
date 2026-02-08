@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -35,7 +36,16 @@ public class BlueMaticHorn : ModItem
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
+    public float LobotometerCost = 6f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -66,24 +76,13 @@ public class BlueMaticHorn : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into Blue Moons");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

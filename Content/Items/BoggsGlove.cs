@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -29,17 +30,31 @@ public class BoggsGlove : ModItem
 
         Item.shoot = ProjectileID.Ale;
     }
-
+    public float LobotometerCost = 6f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Rapidly throws ale at your target");
         tooltips.Add(line);
-
+        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Dedicated to the drinking legend Wade Boggs'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+
     }
 
     public override void AddRecipes()

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Poop;
@@ -21,7 +22,16 @@ public class PoopSock : ModItem
         Item.value = 1;
         Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -32,24 +42,18 @@ public class PoopSock : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Represents the average Summoner player'")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Represents the average Summoner player (until whipstacking gets removed in 1.4.5)")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

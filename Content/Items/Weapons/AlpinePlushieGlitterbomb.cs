@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -28,7 +29,16 @@ public class AlpinePlushieGlitterbomb : ModItem
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -40,8 +50,11 @@ public class AlpinePlushieGlitterbomb : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
         line = new TooltipLine(Mod, "Face", "13 summon tag damage")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

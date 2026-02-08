@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Consumables;
 
@@ -26,10 +27,20 @@ public class GlassSword : ModItem
         Item.buffTime = 300;
         Item.useTurn = true;
     }
-
+    public float LobotometerCost = 7f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Lobotometer"));
     }
 
     public override void AddRecipes()

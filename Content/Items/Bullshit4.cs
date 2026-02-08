@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ public class Bullshit4 : ModItem
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
         Item.damage = 175;
         Item.knockBack = 15.5f;
-        Item.mana = 5;
+        Item.mana = 11;
         Item.ArmorPenetration = 50;
         Item.value = Item.buyPrice(gold: 550);
         Item.rare = ItemRarityID.Red;
@@ -27,13 +28,27 @@ public class Bullshit4 : ModItem
         Item.shoot = ModContent.ProjectileType<MoonProjFunny>();
         Item.shootSpeed = 15.95f;
     }
-
+    public float LobotometerCost = 11f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Shoots moons that cause a chain reaction of bullshit upon hitting an enemy");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "-Dedicated Item-")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
+        {
+            OverrideColor = new Color(252, 141, 204)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
             OverrideColor = new Color(252, 141, 204)
         };

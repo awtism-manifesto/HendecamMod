@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -37,7 +38,16 @@ public class Tomatonator : ModItem
 
         Item.shootSpeed = 16.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Tomato>();
@@ -72,19 +82,12 @@ public class Tomatonator : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()

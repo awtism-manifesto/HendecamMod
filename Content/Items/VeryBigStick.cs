@@ -1,3 +1,7 @@
+using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
+
 namespace HendecamMod.Content.Items;
 
 // This is a basic item template.
@@ -9,7 +13,7 @@ public class VeryBigStick : ModItem
     public override void SetDefaults()
     {
         Item.damage = 25;
-        Item.DamageType = DamageClass.Melee;
+        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.scale = 1.5f;
         Item.width = 34;
         Item.height = 34;
@@ -23,7 +27,30 @@ public class VeryBigStick : ModItem
         Item.autoReuse = true;
         Item.useTurn = true;
     }
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "'Very confusing, it's not a stick'")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+
+    }
     public override void AddRecipes()
     {
         // With Ebonwood

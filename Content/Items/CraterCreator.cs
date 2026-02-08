@@ -1,15 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class CraterCreator : ModItem
 {
     public override void SetDefaults()
@@ -38,14 +35,23 @@ public class CraterCreator : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 9f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Creates a massive explosion with every swing");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

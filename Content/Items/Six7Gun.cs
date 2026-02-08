@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -44,10 +45,20 @@ public class Six7Gun : ModItem
 
         Item.shootSpeed = 11.67f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 6.7f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void UpdateInventory(Player player)
     {
         Item.damage = 67;
+        LobotometerCost = Main.rand.NextFloat(6, 7);
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -93,12 +104,12 @@ public class Six7Gun : ModItem
         var line = new TooltipLine(Mod, "Face", "Always deals exactly 67 damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Six Seven'")
+        line = new TooltipLine(Mod, "Face", "Uses 6 or 7 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "'Six Seven'")
         {
             OverrideColor = new Color(255, 255, 255)
         };

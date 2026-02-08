@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -37,7 +38,16 @@ public class MoonLandingFakingDevice : ModItem
 
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 9f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<FakeRocket>();
@@ -48,7 +58,11 @@ public class MoonLandingFakingDevice : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "shoots FAKE rockets that summon FAKE US flags from the FAKE moon");
         tooltips.Add(line);
-
+        line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "The elites aint gonna like this one")
         {
             OverrideColor = new Color(255, 255, 255)

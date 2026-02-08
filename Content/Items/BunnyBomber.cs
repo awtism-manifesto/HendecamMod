@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -37,7 +38,16 @@ public class BunnyBomber : ModItem
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Rocket;
     }
-
+    public float LobotometerCost = 7f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.ExplosiveBunny;
@@ -67,8 +77,12 @@ public class BunnyBomber : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "converts rockets into explosive bunnies");
         tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "you are a depraved person.")
+        line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "'you are a depraved person.'")
         {
             OverrideColor = new Color(255, 255, 255)
         };

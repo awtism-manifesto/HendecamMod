@@ -4859,3 +4859,27 @@ SpookyWoodSword: {
 	Tooltip: ""
 	DisplayName: Spooky Wood Sword
 }
+
+TransMask: {
+	Tooltip: ""
+	DisplayName: Trans Mask
+	SetBonus: Mods.HendecamMod.Items.TransMask.SetBonus
+}
+
+TransHelmet: {
+	Tooltip: ""
+	DisplayName: Trans Helmet
+	SetBonus: Mods.HendecamMod.Items.TransHelmet.SetBonus
+}
+
+TransHeadgear: {
+	Tooltip: ""
+	DisplayName: Trans Headgear
+	SetBonus: Mods.HendecamMod.Items.TransHeadgear.SetBonus
+}
+
+TransFedora: {
+	Tooltip: ""
+	DisplayName: Trans Fedora
+	SetBonus: Mods.HendecamMod.Items.TransFedora.SetBonus
+}

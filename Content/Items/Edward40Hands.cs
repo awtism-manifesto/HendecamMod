@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -41,7 +42,16 @@ public class Edward40Hands : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -67,24 +77,13 @@ public class Edward40Hands : ModItem
         var line = new TooltipLine(Mod, "Face", "Inaccurately throws beer at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

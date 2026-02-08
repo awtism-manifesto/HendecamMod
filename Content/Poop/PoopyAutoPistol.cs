@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Poop;
@@ -60,7 +61,16 @@ public class PoopyAutoPistol : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
+    public float LobotometerCost = 4f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -72,19 +82,13 @@ public class PoopyAutoPistol : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

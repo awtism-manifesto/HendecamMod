@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
@@ -50,7 +51,7 @@ public class Bullshit5 : ModItem
     {
         return true;
     }
-
+    public float LobotometerCost = 10f;
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -62,6 +63,7 @@ public class Bullshit5 : ModItem
             Item.ArmorPenetration = 225;
             Item.autoReuse = true;
             Item.mana = 10;
+            LobotometerCost = 10f;
         }
         else
         {
@@ -71,6 +73,7 @@ public class Bullshit5 : ModItem
             Item.ArmorPenetration = 75;
             Item.shoot = ModContent.ProjectileType<BullshitEnergyAxe>();
             Item.mana = 25;
+            LobotometerCost = 25f;
         }
 
         return base.CanUseItem(player);
@@ -122,7 +125,16 @@ public class Bullshit5 : ModItem
             return true; // Return false because we don't want tModLoader to shoot projectile}
         }
     }
-
+   
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -138,9 +150,14 @@ public class Bullshit5 : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 25 Lobotometer on left click, 10 on right click")
         {
-            OverrideColor = new Color(255, 255, 255)
+            OverrideColor = new Color(252, 141, 204)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
+        {
+            OverrideColor = new Color(252, 141, 204)
         };
         tooltips.Add(line);
     }

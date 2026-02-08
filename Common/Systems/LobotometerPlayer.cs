@@ -11,13 +11,12 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
     public class LobotometerPlayer : ModPlayer
     {
         public float Current;
-        public float Max = 250f;
-
-        // --- Tuning knobs ---
-        public float GainPerUse = 5f;
+        public float BaseMax = 200f; // Store the base max
+        public float Max; // This will be calculated
+        public float MaxBonus = 0f; // Track bonus from equipment
 
         // Base decay per second (before modifiers)
-        public float BaseDecayRate = 20f;
+        public float BaseDecayRate = 40f;
 
         // Multipliers for armor / buffs / accessories
         public float DecayRateMultiplier = 1f;
@@ -29,10 +28,20 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
         {
             // Accessories / buffs can modify this
             DecayRateMultiplier = 1f;
+
+            // Reset the bonus each frame first
+            MaxBonus = 0f;
         }
 
         public override void PostUpdate()
         {
+            // Calculate the actual Max after all bonuses have been applied
+            Max = BaseMax + MaxBonus;
+
+            // Clamp current to the new max (in case max decreased)
+            if (Current > Max)
+                Current = Max;
+
             ticksSinceLastUse++;
 
             // Start decaying after ~2 seconds (120 ticks)
@@ -56,9 +65,9 @@ namespace HendecamMod.Common.Systems // DO NOT FUCKING VIBE CODE EVER THIS WAS T
             shaderData.UseIntensity((Current / Max) * effectIntensityMultiplier);
         }
 
-        public void AddLobotometer()
+        public void AddLobotometer(float amount = 5f)
         {
-            Current += GainPerUse;
+            Current += amount;
             if (Current > Max)
                 Current = Max;
 

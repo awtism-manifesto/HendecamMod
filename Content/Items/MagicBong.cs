@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -34,14 +35,23 @@ public class MagicBong : ModItem
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 12;
+        Item.mana = 11;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<ZazaMagic>();
 
         Item.shootSpeed = 4.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 11f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<ZazaSpawn>();
@@ -70,24 +80,13 @@ public class MagicBong : ModItem
         var line = new TooltipLine(Mod, "Face", "Creates magic, tile-ignoring smoke that rises up at enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

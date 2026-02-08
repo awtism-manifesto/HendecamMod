@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -17,7 +18,7 @@ public class JevilishScythe : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item71; // The sound that will play when the item is used.
-        Item.mana = 5;
+        Item.mana = 3;
         Item.damage = 30; // The amount of damage the item does to an enemy or player.
         Item.DamageType = ModContent.GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
@@ -27,14 +28,27 @@ public class JevilishScythe : ModItem
         Item.shoot = ModContent.ProjectileType<JevilScythe>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 17.33f; // The velocity of the shot projectile.			
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "5 summon tag damage");
         tooltips.Add(line);
-
         line = new TooltipLine(Mod, "Face", "Splits into smaller, homing clones of itself upon contact with an enemy")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

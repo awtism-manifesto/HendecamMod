@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -39,16 +40,27 @@ public class TheSpamCannon : ModItem
 
         Item.autoReuse = true;
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
         {
             Item.mana = 20;
+           
         }
         else
         {
             Item.mana = 2;
+           
         }
 
         return base.CanUseItem(player);
@@ -61,6 +73,8 @@ public class TheSpamCannon : ModItem
 
     public override void UpdateInventory(Player player)
     {
+        LobotometerCost = Main.rand.NextFloat(1,9);
+
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
             if (Main.rand.NextBool(9))
@@ -68,6 +82,7 @@ public class TheSpamCannon : ModItem
                 Item.damage = Main.rand.Next(75, 125);
             }
         }
+
         else
         {
             if (Main.rand.NextBool(9))
@@ -143,6 +158,12 @@ public class TheSpamCannon : ModItem
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Right click to fire a [BIG SHOT] that destroys any living thing in your path")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Uses a random amount of Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

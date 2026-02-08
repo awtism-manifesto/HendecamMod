@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Poop;
@@ -34,7 +35,16 @@ public class ThrowablePoop : ModItem
         player.AddBuff(BuffID.Stinky, 61);
         return true;
     }
-
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -46,24 +56,13 @@ public class ThrowablePoop : ModItem
         var line = new TooltipLine(Mod, "Face", "Makes both you and enemies stinky");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()

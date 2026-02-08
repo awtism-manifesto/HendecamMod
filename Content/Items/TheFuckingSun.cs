@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
@@ -8,6 +9,7 @@ namespace HendecamMod.Content.Items;
 
 public class TheFuckingSun : ModItem
 {
+    public float LobotometerCost = 36f;
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -25,10 +27,23 @@ public class TheFuckingSun : ModItem
         Item.value = Item.buyPrice(gold: 99999);
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<TheSun>(); 
-        Item.shootSpeed = 12.5f; 
+        Item.shoot = ModContent.ProjectileType<TheSun>();
+        Item.shootSpeed = 12.5f;
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
+        {
+            Item.useTime = 55;
+            Item.useAnimation = 55;
+        }
     }
-
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -38,7 +53,12 @@ public class TheFuckingSun : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
         tooltips.Add(line);
-       
+        line = new TooltipLine(Mod, "Face", "Uses 36 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
     }
 
     public override void AddRecipes()

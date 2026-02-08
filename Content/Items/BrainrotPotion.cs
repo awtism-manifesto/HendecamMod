@@ -40,7 +40,7 @@ public class BrainrotPotion : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 10%");
+        var line = new TooltipLine(Mod, "Face", "Increases Lobotometer decay rate by 20%");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

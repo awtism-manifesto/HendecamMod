@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -20,7 +21,7 @@ public class RiverMachinegun : ModItem
         // Use Properties
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 4; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 1; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.crit = -696969;
@@ -39,7 +40,16 @@ public class RiverMachinegun : ModItem
 
         Item.shootSpeed = 12.75f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public float LobotometerCost = 1f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<RiverHead>();
@@ -69,25 +79,18 @@ public class RiverMachinegun : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Rapidly shoots homing river heads");
         tooltips.Add(line);
-
+        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'WHO THE FUCK TURNED ME INTO A MACHINE GUN????'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+     
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -17,8 +18,8 @@ public class Reversibow : ModItem
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 66000;
         // Use Properties
-        Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
@@ -27,7 +28,7 @@ public class Reversibow : ModItem
         Item.UseSound = SoundID.Item102;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-        Item.damage = 144; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 151; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -37,7 +38,16 @@ public class Reversibow : ModItem
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.ShimmerArrow;
     }
-
+    public float LobotometerCost = 4f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.ShimmerArrow;
@@ -67,25 +77,18 @@ public class Reversibow : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Converts arrows into Shimmer Arrows");
         tooltips.Add(line);
-
         line = new TooltipLine(Mod, "Face", "Shoots arrows backwards lol xd")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()

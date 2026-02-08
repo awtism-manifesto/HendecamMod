@@ -19,7 +19,7 @@ public class NapalmBlade : ModItem
         Item.autoReuse = true;
         Item.scale = 1.75f;
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 163;
+        Item.damage = 166;
         Item.knockBack = 3;
         Item.value = 3200000;
         Item.rare = ItemRarityID.Red;
@@ -83,6 +83,7 @@ public class NapalmBlade : ModItem
         recipe.AddIngredient(ItemID.FragmentSolar, 5);
         recipe.AddIngredient(ItemID.Ichor, 10);
         recipe.AddIngredient<RefinedOil>(50);
+        recipe.AddIngredient<FissionDrive>();
         recipe.AddIngredient<SpookyWoodSword>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -38,7 +39,7 @@ public class WeedHeadgear : ModItem
         var line = new TooltipLine(Mod, "Face", "6% increased magic and stupid attack speed");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+40 max mana")
+        line = new TooltipLine(Mod, "Face", "+40 max mana and lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -59,6 +60,8 @@ public class WeedHeadgear : ModItem
         player.statManaMax2 += MaxManaIncrease;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeed / 100f;
         player.GetAttackSpeed(DamageClass.Magic) += StupidAttackSpeed / 100f;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 40f; // This is safe - it resets every frame in ResetEffects
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

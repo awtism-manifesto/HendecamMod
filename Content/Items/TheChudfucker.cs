@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -42,7 +43,16 @@ public class TheChudfucker : ModItem
     {
         type = ProjectileID.SeedlerNut;
     }
-
+    public float LobotometerCost = 67f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         SoundEngine.PlaySound(SoundID.Item38, player.position);
@@ -52,7 +62,7 @@ public class TheChudfucker : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 67 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")

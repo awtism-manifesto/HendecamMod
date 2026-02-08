@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -80,8 +81,10 @@ public class WeedShirt : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increased life and mana regen";
-        player.lifeRegen += 5;
+        player.setBonus = "Increased mana regen and Lobotometer decay rate";
+        
         player.manaRegenBonus += 25;
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.33f;
     }
 }

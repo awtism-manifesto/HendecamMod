@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -28,7 +29,16 @@ public class TheMoon : ModItem
         Item.shoot = ModContent.ProjectileType<TheFuckingMoon>();
         Item.shootSpeed = 16f;
     }
-
+    public float LobotometerCost = 18f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; 
@@ -56,6 +66,11 @@ public class TheMoon : ModItem
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Inflicts hit enemies with Moon Burn for a long time")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Uses 18 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

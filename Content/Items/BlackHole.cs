@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -42,7 +43,16 @@ public class BlackHole : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 666f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -56,7 +66,7 @@ public class BlackHole : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 666 Lobotometer");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does everything it can to escape this world")
         {

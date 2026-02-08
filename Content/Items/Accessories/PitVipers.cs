@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -29,19 +30,18 @@ public class PitVipers : ModItem
         var line = new TooltipLine(Mod, "Face", "12% incrased damage, crit chance, and attack speed as well as 12 armor penetration for the Stupid class");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The unofficial logo of frat boys, the stupidest demographic in existence")
+        line = new TooltipLine(Mod, "Face", "+135 Max Lobotometer and 67% increased lobotometer decay rate")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "'The unofficial logo of frat boys, the stupidest demographic in existence'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()
@@ -61,5 +61,12 @@ public class PitVipers : ModItem
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 135f; // This is safe - it resets every frame in ResetEffects
+
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.67f;
+
     }
 }

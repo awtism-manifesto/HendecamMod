@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -31,7 +32,17 @@ public class TrenboloneAcetate : ModItem
         var line = new TooltipLine(Mod, "Face", "9% incrased damage and attack speed for both the Stupid and Melee classes");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "For only the truest of meatheads")
+        line = new TooltipLine(Mod, "Face", "+90 Max Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Enemies are more likely to target the player")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "'For only the truest of meatheads'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -48,5 +59,11 @@ public class TrenboloneAcetate : ModItem
         player.GetDamage(DamageClass.Melee) += AdditiveStupidDamageBonus / 100f;
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
         player.aggro += 400;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 90f; // This is safe - it resets every frame in ResetEffects
+
+
+       
     }
 }

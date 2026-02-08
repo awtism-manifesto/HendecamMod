@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class Zablade : ModItem
 {
     public override void SetDefaults()
@@ -17,8 +14,8 @@ public class Zablade : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 25;
-        Item.useAnimation = 23;
+        Item.useTime = 24;
+        Item.useAnimation = 24;
         Item.autoReuse = true;
         Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
         Item.damage = 16;
@@ -38,7 +35,16 @@ public class Zablade : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -71,7 +77,7 @@ public class Zablade : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots a bouncing razor leaf with every swing");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

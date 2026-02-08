@@ -66,13 +66,7 @@ public class HurricaneGun : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

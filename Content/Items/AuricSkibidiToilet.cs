@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -20,8 +21,8 @@ public class AuricSkibidiToilet : ModItem
         Item.value = 125000000;
         // Use Properties
         // Use Properties
-        Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 50; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 27; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
@@ -59,14 +60,23 @@ public class AuricSkibidiToilet : ModItem
         Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
+    public float LobotometerCost = 20f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 20 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

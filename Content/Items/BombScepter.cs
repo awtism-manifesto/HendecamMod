@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -23,15 +25,24 @@ public class BombScepter : ModItem
         Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true;
-        Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
+        Item.DamageType = ModContent.GetInstance<AutismDamage>();
         Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 10;
+        Item.mana = 9;
         Item.shoot = ProjectileID.PurificationPowder;
         Item.shootSpeed = 0.01f;
     }
-
+    public float LobotometerCost = 9f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<BombBoom>();
@@ -41,9 +52,14 @@ public class BombScepter : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Creates a small explosion at the mouse position");
+        var line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer");
         tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "Creates a small explosion at the mouse position")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Ok, which drunk ass wizard drew up the blueprints for this one'")
         {
             OverrideColor = new Color(255, 255, 255)

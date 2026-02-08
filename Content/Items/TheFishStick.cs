@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -17,8 +18,8 @@ public class TheFishStick : ModItem
         Item.height = 24; // The height of the item's hitbox.
 
         Item.useStyle = ItemUseStyleID.Shoot; // The way the item is used (e.g. swinging, throwing, etc.)
-        Item.useTime = 23; // All vanilla yoyos have a useTime of 25.
-        Item.useAnimation = 23; // All vanilla yoyos have a useAnimation of 25.
+        Item.useTime = 22; // All vanilla yoyos have a useTime of 25.
+        Item.useAnimation = 22; // All vanilla yoyos have a useAnimation of 25.
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
@@ -32,11 +33,20 @@ public class TheFishStick : ModItem
         Item.shoot = ModContent.ProjectileType<FishStick>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 10f; // The velocity of the shot projectile.			
     }
-
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'kanye's favorite'")
@@ -45,18 +55,7 @@ public class TheFishStick : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override bool AllowPrefix(int pre)

@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -33,7 +34,7 @@ public class PocketSand : ModItem
         Item.UseSound = SoundID.Item45;
 
         Item.shoot = ModContent.ProjectileType<SandPocket>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 5.75f; // Speed of the projectiles the sword will shoot
+        Item.shootSpeed = 5.95f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -41,7 +42,16 @@ public class PocketSand : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -64,7 +74,7 @@ public class PocketSand : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -73,18 +83,7 @@ public class PocketSand : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -92,7 +91,7 @@ public class PocketSand : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<PlasticScrap>(5);
-        recipe.AddIngredient(ItemID.SandBlock, 150);
+        recipe.AddIngredient(ItemID.SandBlock, 50);
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();

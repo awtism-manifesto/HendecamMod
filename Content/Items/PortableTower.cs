@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ public class PortableTower : ModItem
 
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.useTime = 1;
-        Item.useAnimation = 5;
+        Item.useAnimation = 6;
         Item.autoReuse = true;
         Item.reuseDelay = 3;
         Item.scale = 1.25f;
@@ -46,7 +47,16 @@ public class PortableTower : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 6f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 3; // The number of projectiles that this gun will shoot.
@@ -71,7 +81,11 @@ public class PortableTower : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Irradiates the area in front of you with harmful 5G that you cannot see or hear");
         tooltips.Add(line);
-
+        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Bill Gates aint gonna like this one")
         {
             OverrideColor = new Color(255, 255, 255)

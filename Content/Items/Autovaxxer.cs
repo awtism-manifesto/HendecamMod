@@ -11,8 +11,10 @@ namespace HendecamMod.Content.Items;
 
 public class Autovaxxer : ModItem
 {
+    public float LobotometerCost = 6f;
     public override void SetDefaults()
     {
+        
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
 
         // Common Properties
@@ -34,7 +36,7 @@ public class Autovaxxer : ModItem
         Item.damage = 93; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
+       
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<VaxNeedle>();
@@ -46,7 +48,7 @@ public class Autovaxxer : ModItem
         if (player.whoAmI == Main.myPlayer)
         {
             player.GetModPlayer<LobotometerPlayer>()
-                  .AddLobotometer();
+                  .AddLobotometer(LobotometerCost);
         }
         return base.UseItem(player);
     }
@@ -99,19 +101,12 @@ public class Autovaxxer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
+        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
         {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()

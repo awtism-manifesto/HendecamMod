@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Poop;
@@ -28,7 +29,16 @@ public class PoopSword : ModItem
         Item.shoot = ModContent.ProjectileType<PooShit>();
         Item.shootSpeed = 5.75f;
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
@@ -56,7 +66,7 @@ public class PoopSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
