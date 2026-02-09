@@ -469,7 +469,7 @@ public class Lobotomized : ModPrefix
         // Modify the cost of items with this modifier with this function.
         public override void ModifyValue(ref float valueMult)
         {
-            valueMult *= 1f + 1.1f * Power;
+            valueMult *= 1f + 0.67f * Power;
         }
 
         // This is used to modify most other stats of items which have this modifier.

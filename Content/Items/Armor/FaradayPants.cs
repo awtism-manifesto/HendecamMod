@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -9,9 +10,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class FaradayPants : ModItem
 {
-    public static readonly int StupidAttackSpeedBonus = 23;
+    public static readonly int StupidAttackSpeedBonus = 19;
     public static readonly int AdditiveStupidDamageBonus = 9;
-    public static readonly int MoveSpeedBonus = 23;
+    public static readonly int MoveSpeedBonus = 19;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -38,10 +39,10 @@ public class FaradayPants : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "23% increased movement speed and stupid attack speed");
+        var line = new TooltipLine(Mod, "Face", "19% increased movement speed and stupid attack speed");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "9% increased stupid damage")
+        line = new TooltipLine(Mod, "Face", "9% increased stupid damage and 30% increased Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -64,10 +65,11 @@ public class FaradayPants : ModItem
 
     public override void UpdateEquip(Player player)
     {
-       
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.30f;
 
         player.moveSpeed += MoveSpeedBonus / 100f;
-        player.runAcceleration *= 1.23f;
+        player.runAcceleration *= 1.19f;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }

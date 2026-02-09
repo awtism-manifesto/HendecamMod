@@ -11,7 +11,7 @@ namespace HendecamMod.Content.Items;
 
 public class Autovaxxer : ModItem
 {
-    public float LobotometerCost = 6f;
+   
     public override void SetDefaults()
     {
         
@@ -43,6 +43,7 @@ public class Autovaxxer : ModItem
 
         Item.shootSpeed = 17.25f; // The speed of the projectile (measured in pixels per frame.)
     }
+    public float LobotometerCost = 5f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -101,7 +102,7 @@ public class Autovaxxer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

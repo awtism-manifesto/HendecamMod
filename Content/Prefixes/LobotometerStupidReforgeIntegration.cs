@@ -411,6 +411,72 @@ namespace HendecamMod.Content.Prefixes
                     
                 }
             }
+            if (item.prefix == ModContent.PrefixType<Brainrotted>())
+            {
+                // Get the actual prefix instance to access Power property
+                if (PrefixLoader.GetPrefix(item.prefix) is Brainrotted loboPrefix)
+                {
+                    // Find where to insert the tooltips
+                    int insertIndex = -1;
+
+                    // Option 1: Look for the specific "Prefix..." tooltip lines
+                    for (int i = 0; i < tooltips.Count; i++)
+                    {
+                        var line = tooltips[i];
+
+                        // Vanilla prefix lines have names like "PrefixDamage", "PrefixSpeed", etc.
+                        if (line.Name.StartsWith("Prefix") && line.Mod == "Terraria")
+                        {
+                            insertIndex = i + 1;
+                        }
+                    }
+
+                    // Option 2: If we can't find vanilla prefix lines, insert before tooltips like "Material" or "SetBonus"
+                    if (insertIndex == -1)
+                    {
+                        for (int i = 0; i < tooltips.Count; i++)
+                        {
+                            var line = tooltips[i];
+                            if (line.Name == "Material" || line.Name == "SetBonus" ||
+                                line.Name == "Consumable" || line.Name == "Quest")
+                            {
+                                insertIndex = i;
+                                break;
+                            }
+                        }
+                    }
+
+                    // Option 3: Default to near the end
+                    if (insertIndex == -1)
+                    {
+                        insertIndex = tooltips.Count;
+                        for (int i = tooltips.Count - 1; i >= 0; i--)
+                        {
+                            if (tooltips[i].Name == "Price" || tooltips[i].Name == "SpecialPrice")
+                            {
+                                insertIndex = i;
+                                break;
+                            }
+                        }
+                    }
+
+                    // Create tooltips with exact vanilla colors
+                    // Good modifiers: new Color(120, 190, 120) - light green
+                    // Bad modifiers: new Color(190, 120, 120) - light red
+
+
+
+                    TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
+                        $"+{loboPrefix.Power * 0.5f:P0} Lobotometer decay rate")
+                    {
+                        OverrideColor = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
+                    };
+
+                    // Insert the tooltips
+                    tooltips.Insert(insertIndex, decayBonusLine);
+
+                }
+            }
         }
 
         public override void HoldItem(Item item, Player player)
@@ -438,6 +504,18 @@ namespace HendecamMod.Content.Prefixes
 
                    
                     loboPlayer.DecayRateMultiplier *= 1.67f;
+                }
+            }
+            if (item.prefix == ModContent.PrefixType<Brainrotted>())
+            {
+                var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+
+                if (PrefixLoader.GetPrefix(item.prefix) is Brainrotted loboPrefix)
+                {
+
+
+
+                    loboPlayer.DecayRateMultiplier *= 1.5f;
                 }
             }
             if (item.prefix == ModContent.PrefixType<Serious>())

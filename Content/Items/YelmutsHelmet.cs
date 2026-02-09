@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items;
@@ -50,7 +51,7 @@ public class YelmutsHelmet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+5% summon damage and +4 stupid armor penetration")
+        line = new TooltipLine(Mod, "Face", "+5% summon damage and +30 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -96,7 +97,8 @@ public class YelmutsHelmet : ModItem
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 105f;
         //player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-        player.GetArmorPenetration<StupidDamage>() += StupidArmorPenBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

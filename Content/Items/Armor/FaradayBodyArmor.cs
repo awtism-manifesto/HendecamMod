@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -38,7 +39,7 @@ public class FaradayBodyArmor : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+15 stupid armor penetration");
+        var line = new TooltipLine(Mod, "Face", "+15 stupid armor penetration and +40% Lobotometer decay rate");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+9% stupid damage and crit chance")
@@ -65,6 +66,9 @@ public class FaradayBodyArmor : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.40f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -80,8 +84,11 @@ public class FaradayBodyArmor : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "The globalist 5G waves are no longer reducing your max life";
+        player.setBonus = "The globalist 5G waves are no longer reducing your max life and lobotometer";
 
-        player.statLifeMax2 = (int)(player.statLifeMax2*1.05)+95;
+        player.statLifeMax2 = (int)(player.statLifeMax2*1.1)+95;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus +=  175f;
     }
 }

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -43,6 +44,12 @@ public class FaradayFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "21% increased stupid damage and 15% increased stupid crit chance");
         tooltips.Add(line);
 
+
+        line = new TooltipLine(Mod, "Face", "+30% increased Lobotometer decay rate")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "+2 HP/Sec life regen")
         {
             OverrideColor = new Color(255, 255, 255)
@@ -64,6 +71,9 @@ public class FaradayFedora : ModItem
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
 
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
