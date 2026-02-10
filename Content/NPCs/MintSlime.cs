@@ -23,9 +23,9 @@ public class MintSlime : ModNPC
     {
         NPC.width = 34;
         NPC.height = 24;
-        NPC.damage = 55;
+        NPC.damage = 52;
         NPC.defense = 25;
-        NPC.lifeMax = 170;
+        NPC.lifeMax = 230;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 1075f;

@@ -31,9 +31,9 @@ public class LargePlasmoid : ModNPC
     {
         NPC.width = 150;
         NPC.height = 100;
-        NPC.damage = 89;
+        NPC.damage = 81;
         NPC.defense = 5;
-        NPC.lifeMax = 5950;
+        NPC.lifeMax = 3615;
         NPC.HitSound = SoundID.NPCHit44;
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 95000f;
@@ -49,8 +49,8 @@ public class LargePlasmoid : ModNPC
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            NPC.lifeMax = 5950;
-            NPC.damage = 96;
+            NPC.lifeMax = 4125;
+            NPC.damage = 92;
         }
     }
 

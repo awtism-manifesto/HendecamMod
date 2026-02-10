@@ -23,7 +23,8 @@ public class BannerTile : ModBannerTile
         SaltMonster,
         OilMonster,
         River,
-        MorbiumWarrior
+        MorbiumWarrior,
+        FlatEarther
     }
 }
 

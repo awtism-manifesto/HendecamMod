@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Accessories;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent;
@@ -22,7 +23,7 @@ namespace HendecamMod.Common.Systems
         public float DecayRateMultiplier = 1f;
 
         // Time since last stupid weapon use
-        private int ticksSinceLastUse;
+        public int ticksSinceLastUse;
 
         public override void ResetEffects()
         {
@@ -45,7 +46,7 @@ namespace HendecamMod.Common.Systems
             ticksSinceLastUse++;
 
             // Start decaying after ~2 seconds (120 ticks)
-            if (ticksSinceLastUse > 120 && Current > 0f)
+            if (ticksSinceLastUse > 120 && Current > 0f && !Player.GetModPlayer<BaseSpike>().Spiked)
             {
                 float decayPerTick =
                     (BaseDecayRate * DecayRateMultiplier) / 60f;

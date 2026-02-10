@@ -12,7 +12,7 @@ public class AlpinePlushieGlitterbomb : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 21;
         Item.useTime = 21;
-        Item.damage = 156;
+        Item.damage = 149;
         Item.knockBack = 7.5f;
         Item.width = 40;
         Item.height = 40;
@@ -50,15 +50,17 @@ public class AlpinePlushieGlitterbomb : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "13 summon tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
         line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "11 summon tag damage")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+       
         line = new TooltipLine(Mod, "Face", "'Huh, so that's why they won't tell us where glitter comes from'")
         {
             OverrideColor = new Color(255, 255, 255)

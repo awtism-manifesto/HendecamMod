@@ -4883,3 +4883,18 @@ TransFedora: {
 	DisplayName: Trans Fedora
 	SetBonus: Mods.HendecamMod.Items.TransFedora.SetBonus
 }
+
+FlatEartherBanner: {
+	DisplayName: Flat Earther Banner
+	Tooltip: ""
+}
+
+LobotomySpike: {
+	DisplayName: Lobotomy Spike
+	Tooltip: ""
+}
+
+IQTest: {
+	DisplayName: IQ Test
+	Tooltip: ""
+}

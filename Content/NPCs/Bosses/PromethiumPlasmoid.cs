@@ -20,7 +20,7 @@ public class PromethiumPlasmoid : ModNPC
     {
         NPC.damage = 225;
         NPC.defense = 15;
-        NPC.lifeMax = 250000;
+        NPC.lifeMax = 225000;
         NPC.width = 60;
         NPC.height = 60;
         NPC.scale = 3f;

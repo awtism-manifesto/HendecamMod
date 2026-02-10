@@ -1,12 +1,18 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 
-namespace HendecamMod.Content.Projectiles;
+namespace HendecamMod.Content.Projectiles.Items;
 
 // This example is similar to the Wooden Arrow projectile
-public class AvalancheBoulder : ModProjectile
+public class PureSaltBoulder : ModProjectile
 {
-   
+    public override void SetStaticDefaults()
+    {
+        // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
+        //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
+    }
+
     public override void SetDefaults()
     {
         Projectile.width = 45; // The width of projectile hitbox
@@ -14,20 +20,16 @@ public class AvalancheBoulder : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.extraUpdates = 3;
         Projectile.friendly = true;
-        Projectile.penetrate = 6;
-
+        Projectile.penetrate = 3;
+        Projectile.tileCollide = false;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
-        Projectile.DamageType = DamageClass.Magic;
+        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.timeLeft = 195;
         AIType = ProjectileID.Bullet;
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.AddBuff(BuffID.Frostburn, 390);
-        target.AddBuff(BuffID.Frostburn2, 150);
-    }
+    
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
@@ -56,11 +58,28 @@ public class AvalancheBoulder : ModProjectile
         return false;
     }
 
-    
+    public override bool PreDraw(ref Color lightColor)
+    {
+        Texture2D texture = TextureAssets.Projectile[Type].Value;
+
+        // Redraw the projectile with the color not influenced by light
+        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+        for (int k = 0; k < Projectile.oldPos.Length; k++)
+        {
+            Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+            Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
+        }
+
+        return true;
+    }
 
     public override void AI()
     {
-        if (Projectile.timeLeft <= 115)
+        if (Projectile.timeLeft <= 138)
+        {
+            Projectile.tileCollide = true;
+        }
 
             Projectile.ai[0] += 8.5f;
         if (Projectile.ai[0] >= 8.5f)
@@ -90,7 +109,7 @@ public class AvalancheBoulder : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Snow, 0f, 0f, 100, default, 0.4f);
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Ghost, 0f, 0f, 100, Color.LightPink, 0.4f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.2f;
             }
@@ -99,16 +118,17 @@ public class AvalancheBoulder : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
+        for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Snow);
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ghost);
             dust.noGravity = true;
             dust.velocity *= 5.5f;
             dust.scale *= 1.9f;
-            Dust dusty = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ice);
+            Dust dusty = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ghost);
             dusty.noGravity = true;
             dusty.velocity *= 3.5f;
             dusty.scale *= 1.1f;
+            dusty.color = Color.LightPink;
         }
     }
 }

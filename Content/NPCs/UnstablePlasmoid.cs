@@ -31,9 +31,9 @@ public class UnstablePlasmoid : ModNPC
     {
         NPC.width = 60;
         NPC.height = 60;
-        NPC.damage = 128;
+        NPC.damage = 124;
         NPC.defense = 1;
-        NPC.lifeMax = 11990;
+        NPC.lifeMax = 9625;
         NPC.HitSound = SoundID.NPCHit44;
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 300000f;
@@ -49,8 +49,8 @@ public class UnstablePlasmoid : ModNPC
         BannerItem = ModContent.ItemType<UnstablePlasmoidBanner>();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            NPC.lifeMax = 13295;
-            NPC.damage = 145;
+            NPC.lifeMax = 10450;
+            NPC.damage = 136;
         }
     }
 

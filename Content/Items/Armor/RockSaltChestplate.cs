@@ -1,7 +1,10 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -77,11 +80,59 @@ public class RockSaltChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-       
+        player.GetModPlayer<LobotoSalt>().Salting = true;
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and increases Lobotometer decay rate by 40%";
+        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at max lobotometer";
 
-        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 1.40f;
+       
+    }
+    public class LobotoSalt : ModPlayer
+    {
+
+        private const int SaltUseTimeMax = 7;
+
+        public bool Salting;
+        private int SaltUseTime;
+
+        public override void ResetEffects()
+        {
+            Salting = false;
+        }
+
+        public override void PostUpdate()
+        {
+            // Cooldown ticking down
+            if (SaltUseTime > 0)
+                SaltUseTime--;
+            var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
+
+            // Only trigger if set bonus is active
+            if (!Salting)
+                return;
+
+            // Cooldown check
+            if (SaltUseTime > 0)
+                return;
+
+            int baseDamage = 10;
+
+            if (loboPlayer.Current == loboPlayer.Max)
+            {
+                Projectile.NewProjectile(
+                    Player.GetSource_FromThis(),
+                   Player.Center - new Vector2(Main.rand.Next(-110, 110), 790),
+                    new Vector2(Main.rand.Next(-3, 3), 15f),
+                    ModContent.ProjectileType<SaltOmni>(),
+                    baseDamage,
+                    1.5f,
+                    Player.whoAmI
+                );
+            }
+            // Start cooldown
+            SaltUseTime = SaltUseTimeMax;
+
+        }
+
+
     }
 }

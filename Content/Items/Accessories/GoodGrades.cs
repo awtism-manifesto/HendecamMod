@@ -24,10 +24,10 @@ public class GoodGrades : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "5% decreased stupid damage, 12% increased stupid critical strike chance");
+        var line = new TooltipLine(Mod, "Face", "Increases Stupid attack speed by 10%, bonus decays as Lobotometer rises");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "25% increased Lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -45,10 +45,14 @@ public class GoodGrades : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
-        player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
-        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 1.25f;
+
+
+        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
+       // float damageBonus = lobotometerPercent * 0.10f;
+        float speedBonus = (1f - lobotometerPercent) * 0.10f; 
+
+        player.GetAttackSpeed(ModContent.GetInstance<StupidDamage>()) += speedBonus;
     }
 }

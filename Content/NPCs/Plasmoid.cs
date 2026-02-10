@@ -34,7 +34,7 @@ public class Plasmoid : ModNPC
         NPC.height = 30;
         NPC.damage = 41;
         NPC.defense = 3;
-        NPC.lifeMax = 315;
+        NPC.lifeMax = 285;
         NPC.HitSound = SoundID.NPCHit44;
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 10000f;

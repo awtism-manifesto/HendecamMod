@@ -14,7 +14,7 @@ public class TheAutismManifesto : ModItem
     public static readonly int MagicCritBonus = 10;
     public static readonly int StupidCritBonus = 10;
 
-    public static readonly int MaxManaIncrease = 75;
+   
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override void SetDefaults()
@@ -43,10 +43,16 @@ public class TheAutismManifesto : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+75 mana, 10% increased magic and stupid crit chance and +15% stupid damage");
+        var line = new TooltipLine(Mod, "Face", "+100 mana and Lobotometer, +10% damage reduction");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases attack speed as Lobotometer increases, up to 25% at max")
+        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your max Lobotometer ")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Increases all attack speed as Lobotometer increases, up to 25% at max")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -61,22 +67,20 @@ public class TheAutismManifesto : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
 
-        player.GetCritChance<StupidDamage>() += StupidCritBonus;
-        player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
-        player.statManaMax2 += MaxManaIncrease;
-        player.endurance = 1f - 0.95f * (1f - player.endurance);
+        player.statManaMax2 += 100;
+        player.endurance = 1f - 0.9f * (1f - player.endurance);
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 100f;
 
-
-
+        float damageBonus = loboPlayer.Max / 2000;
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
         float speedBonus = lobotometerPercent * 0.25f;
+        //float speedBonus = (1f - lobotometerPercent) * 0.25f; // inverse
 
         player.GetAttackSpeed(DamageClass.Generic) += speedBonus;
+        player.GetDamage(DamageClass.Generic) += damageBonus;
 
     }
 }

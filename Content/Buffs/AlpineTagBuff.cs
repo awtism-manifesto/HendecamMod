@@ -2,7 +2,7 @@
 
 public class AlpineTagBuff : ModBuff
 {
-    public static readonly int TagDamage = 13;
+    public static readonly int TagDamage = 11;
 
     public override void SetStaticDefaults()
     {

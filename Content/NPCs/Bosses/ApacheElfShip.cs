@@ -38,7 +38,7 @@ public class ApacheElfShip : ModNPC
     {
         NPC.damage = 80;
         NPC.defense = 45;
-        NPC.lifeMax = 75000;
+        NPC.lifeMax = 69500;
 
         NPC.width = 100;
         NPC.height = 100;

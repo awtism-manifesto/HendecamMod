@@ -133,25 +133,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EcologicalOvershot>(), 2));
         }
 
-        if (npc.type == NPCID.LunarTowerVortex)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 24, 49));
-        }
-
-        if (npc.type == NPCID.LunarTowerSolar)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 24, 49));
-        }
-
-        if (npc.type == NPCID.LunarTowerStardust)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 24, 49));
-        }
-
-        if (npc.type == NPCID.LunarTowerNebula)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 24, 49));
-        }
+       
 
         if (npc.type == NPCID.GoblinSummoner)
         {

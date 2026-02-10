@@ -26,9 +26,9 @@ public class FlyingPig : ModNPC
     {
         NPC.width = 70;
         NPC.height = 50;
-        NPC.damage = 25;
+        NPC.damage = 22;
         NPC.defense = 8;
-        NPC.lifeMax = 179;
+        NPC.lifeMax = 165;
         NPC.HitSound = SoundID.NPCHit10;
         NPC.DeathSound = SoundID.NPCDeath20;
         NPC.value = 99999f;

@@ -36,7 +36,7 @@ public class AutismDiagnosis : ModItem
         var line = new TooltipLine(Mod, "Face", "8% increased damage reduction");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases stupid damage as your Lobotometer goes up, up to a 20% boost at max")
+        line = new TooltipLine(Mod, "Face", "Increases damage by 12% at either low or maximum Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -47,7 +47,7 @@ public class AutismDiagnosis : ModItem
         };
         tooltips.Add(line);
     }
-   
+    public static readonly int AdditiveStupidDamageBonus = 12;
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
        
@@ -55,13 +55,14 @@ public class AutismDiagnosis : ModItem
         player.endurance = 1f - 0.92f * (1f - player.endurance); 
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-      
 
-        
-        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
-        float damageBonus = lobotometerPercent * 0.20f;
 
-        player.GetDamage<StupidDamage>() += damageBonus;
+
+        if (loboPlayer.Current <= loboPlayer.Max/3 || loboPlayer.Current == loboPlayer.Max)
+        {
+
+            player.GetDamage(DamageClass.Generic) += AdditiveStupidDamageBonus / 100f;
+        }
 
     }
 }

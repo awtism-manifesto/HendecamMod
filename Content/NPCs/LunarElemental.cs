@@ -26,7 +26,7 @@ public class LunarElemental : ModNPC
         NPC.height = 40;
         NPC.damage = 27;
         NPC.defense = 8;
-        NPC.lifeMax = 130;
+        NPC.lifeMax = 105;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 550f;

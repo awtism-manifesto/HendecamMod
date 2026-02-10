@@ -28,7 +28,7 @@ public class TrashSlime : ModNPC
         NPC.height = 32;
         NPC.damage = 25;
         NPC.defense = 4;
-        NPC.lifeMax = 66;
+        NPC.lifeMax = 42;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 125f;

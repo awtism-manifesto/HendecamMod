@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Global;
 
 namespace HendecamMod.Content.NPCs.Bosses;
 
@@ -76,7 +77,13 @@ public class HeadOfCthulhu : ModNPC
 
     public override void OnKill()
     {
-        NPC.SetEventFlagCleared(ref HeadOfCthulhuDown.downedHeadOfCthulhu, -1);
+       // NPC.SetEventFlagCleared(ref HeadOfCthulhuDown.downedHeadOfCthulhu, -1);
+        if (!HeadOfCthulhuDown.downedHeadOfCthulhu)
+        {
+            HeadOfCthulhuDown.downedHeadOfCthulhu = true;
+
+           
+        }
     }
 
     public override bool CanHitPlayer(Player target, ref int cooldownSlot)

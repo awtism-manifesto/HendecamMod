@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -77,8 +81,58 @@ public class PurifiedSaltChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.lifeRegen += 11;
 
-        player.setBonus = "Massively increased life regen";
+        player.GetModPlayer<LobotoBoulder>().Bouldering = true;
+        player.setBonus = "Friendly boulders of purified salt cascade down upon the player's position at max Lobotometer";
     }
+    public class LobotoBoulder : ModPlayer
+    {
+       
+        private const int BoulderUseTimeMax = 9;
+
+        public bool Bouldering;
+        private int BoulderUseTime;
+
+        public override void ResetEffects()
+        {
+            Bouldering = false;
+        }
+
+        public override void PostUpdate()
+        {
+            // Cooldown ticking down
+            if (BoulderUseTime > 0)
+                BoulderUseTime--;
+            var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
+
+            // Only trigger if set bonus is active
+            if (!Bouldering)
+                return;
+
+            // Cooldown check
+            if (BoulderUseTime > 0)
+                return;
+
+            int baseDamage = 105;
+
+            if (loboPlayer.Current == loboPlayer.Max)
+            {
+                Projectile.NewProjectile(
+                    Player.GetSource_FromThis(),
+                   Player.Center - new Vector2(Main.rand.Next(-150, 150), 940),
+                    new Vector2(Main.rand.Next(-3, 3), 20f),
+                    ModContent.ProjectileType<PureSaltBoulder>(),
+                    baseDamage,
+                    10.5f,
+                    Player.whoAmI
+                );
+            }
+            // Start cooldown
+            BoulderUseTime = BoulderUseTimeMax;
+
+        }
+
+       
+    }
+
 }

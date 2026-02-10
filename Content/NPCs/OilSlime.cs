@@ -44,7 +44,7 @@ public class OilSlime : ModNPC
         NPC.height = 25;
         NPC.damage = 19;
         NPC.defense = 1;
-        NPC.lifeMax = 51;
+        NPC.lifeMax = 48;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 2925f;

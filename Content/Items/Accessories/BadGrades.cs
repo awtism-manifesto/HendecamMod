@@ -8,6 +8,12 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class BadGrades : ModItem
 {
+
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<IQTest>();
+    }
+
     public static readonly int AdditiveStupidDamageBonus = 6;
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs();
 
@@ -22,10 +28,10 @@ public class BadGrades : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "6% increased stupid damage");
+        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage as Lobotometer increases, up to 10% at max");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+30 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -49,9 +55,14 @@ public class BadGrades : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
-
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 30f;
+
+
+
+        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
+        float damageBonus = lobotometerPercent * 0.10f;
+        //float speedBonus = (1f - lobotometerPercent) * 0.25f; // inverse
+
+        player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
     }
 }

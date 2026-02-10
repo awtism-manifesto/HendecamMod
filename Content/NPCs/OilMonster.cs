@@ -40,10 +40,10 @@ public class OilMonster : ModNPC
         NPC.height = 36;
         NPC.damage = 79;
         NPC.defense = 13;
-        NPC.lifeMax = 515;
+        NPC.lifeMax = 508;
         NPC.HitSound = SoundID.NPCHit41;
         NPC.DeathSound = SoundID.NPCDeath39;
-        NPC.value = 9770f;
+        NPC.value = 9250f;
         NPC.knockBackResist = 0.2f;
         NPC.aiStyle = NPCAIStyleID.Fighter; 
 
