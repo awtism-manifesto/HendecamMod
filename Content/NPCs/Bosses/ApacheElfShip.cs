@@ -109,13 +109,13 @@ public class ApacheElfShip : ModNPC
     {
         var source2 = NPC.GetSource_FromAI();
         ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("AGH!"), new Color(185, 105, 105));
-      
-       
+
+
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
         NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
-        if (!ApacheElfShipDown.downedApacheElfShip)
+        if (!BossDownedSystem.downedApacheElfShip)
         {
-            ApacheElfShipDown.downedApacheElfShip = true;
+            BossDownedSystem.downedApacheElfShip = true;
 
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
@@ -137,7 +137,7 @@ public class ApacheElfShip : ModNPC
         {
             NPC.SetDefaults(0);
             NPC.active = false;
-            if (ApacheElfShipDown.downedApacheElfShip)
+            if (BossDownedSystem.downedApacheElfShip)
             {
                 var source2 = NPC.GetSource_FromAI();
                 AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;

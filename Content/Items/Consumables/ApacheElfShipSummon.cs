@@ -54,7 +54,7 @@ public class ApacheElfShipSummon : ModItem
         {
             SoundEngine.PlaySound(SoundID.AbigailUpgrade, player.position);
             int type = ModContent.NPCType<ApacheElfShip>();
-            if (ApacheElfShipDown.downedApacheElfShip)
+            if (BossDownedSystem.downedApacheElfShip)
             {
                 ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Well, I'm not one to turn down a rematch."), new Color(185, 105, 105));
             }
