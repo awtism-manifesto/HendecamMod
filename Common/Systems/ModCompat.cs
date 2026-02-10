@@ -26,7 +26,7 @@ public class ApacheElfShipEntry : ModSystem
 
         string publicName = "ApacheElfShip";
         float weight = 13.54f;
-        Func<bool> downed = () => ApacheElfShipDown.downedApacheElfShip;
+        Func<bool> downed = () => BossDownedSystem.downedApacheElfShip;
         int bossType = ModContent.NPCType<ApacheElfShip>();
         int spawnItem = ModContent.ItemType<ApacheElfShipSummon>();
         List<int> collectibles = new List<int>
@@ -80,7 +80,7 @@ public class HeadOfCthulhuEntry : ModSystem
 
         string publicName = "HeadOfCthulhu";
         float weight = 6.5f;
-        Func<bool> downed = () => HeadOfCthulhuDown.downedHeadOfCthulhu;
+        Func<bool> downed = () => BossDownedSystem.downedHeadOfCthulhu;
         int bossType = ModContent.NPCType<HeadOfCthulhu>();
         int spawnItem = ModContent.ItemType<HeadOfCthulhuSummon>();
         List<int> collectibles = new List<int>
@@ -134,7 +134,7 @@ public class PromethiumPlasmoidEntry : ModSystem
 
         string publicName = "PromethiumPlasmoid";
         float weight = 19f;
-        Func<bool> downed = () => PromethiumPlasmoidDown.downedPromethiumPlasmoid;
+        Func<bool> downed = () => BossDownedSystem.downedPromethiumPlasmoid;
         int bossType = ModContent.NPCType<PromethiumPlasmoid>();
         int spawnItem = ModContent.ItemType<AstatineGlassSword>();
         List<int> collectibles = new List<int>
