@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Accessories.NormalOnes;
+﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Placeables;
@@ -168,6 +169,13 @@ public class RiverRecipes : ModSystem
                 recipe.AddIngredient(ItemID.AmphibianBoots);
                 recipe.AddIngredient(ItemID.FairyBoots);
                 recipe.AddIngredient(ItemID.LuckyHorseshoe);
+            }
+
+            if (recipe.HasResult(ItemID.PDA))
+            {
+              
+             
+                recipe.AddIngredient(ModContent.ItemType<IQTest>());
             }
 
             if (recipe.HasResult(ItemID.HellfireTreads))

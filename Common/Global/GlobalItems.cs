@@ -1,3 +1,4 @@
+using HendecamMod.Content.Global;
 using System.Collections.Generic;
 
 namespace HendecamMod.Common.Global;
@@ -1199,7 +1200,140 @@ public class RocketBuff : GlobalItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
     }
 }
+public class Peebotomy : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.PDA;
+    }
 
+    
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Cellbotomy : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.CellPhone;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Shellbotomy : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.Shellphone;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+    
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Shellbotomy2 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ShellphoneSpawn;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Shellbotomy3 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ShellphoneHell;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Shellbotomy4 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ShellphoneOcean;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+
+    public override void UpdateInfoAccessory(Item item, Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+    }
+}
 public class FairyBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

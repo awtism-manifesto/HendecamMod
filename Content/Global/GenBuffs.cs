@@ -2480,26 +2480,9 @@ public class DemonCock : GlobalItem
     }
 }
 
-public class MagicFagic1 : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.CellPhone;
-    }
 
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
-    }
 
-    public override void SetDefaults(Item item)
-    {
-        item.useTime = 15;
-        item.useAnimation = 15;
-    }
-}
-
-public class MagicFagic2 : GlobalItem
+public class SnowgraveMirror : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
@@ -2518,81 +2501,7 @@ public class MagicFagic2 : GlobalItem
     }
 }
 
-public class Shelly : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.Shellphone;
-    }
 
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.useTime = 15;
-        item.useAnimation = 15;
-    }
-}
-
-public class Shelly1 : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.ShellphoneSpawn;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.useTime = 15;
-        item.useAnimation = 15;
-    }
-}
-
-public class Shelly2 : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.ShellphoneHell;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.useTime = 15;
-        item.useAnimation = 15;
-    }
-}
-
-public class Shelly3 : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.ShellphoneOcean;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.useTime = 15;
-        item.useAnimation = 15;
-    }
-}
 
 public class FalconPUNCH : GlobalItem
 {
