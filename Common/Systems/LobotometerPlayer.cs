@@ -2,12 +2,14 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Chat;
 using Terraria.GameContent;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Common.Systems 
+namespace HendecamMod.Common.Systems
 {
     public class LobotometerPlayer : ModPlayer
     {
@@ -59,11 +61,29 @@ namespace HendecamMod.Common.Systems
 
         public override void PostUpdateMiscEffects()
         {
-            // Activating shader
-            ScreenShaderData shaderData = Filters.Scene.Activate("HendecamMod:LobotomyScreen").GetShader();
-            // Moving to [0, 1] range
-            float effectIntensityMultiplier = 0.5f;
-            shaderData.UseIntensity((Current / Max) * effectIntensityMultiplier);
+            /*if (Main.myPlayer == 0)
+            {
+                Main.NewText("0: " + Current / Max);
+            }
+            else if (Main.myPlayer == 1)
+            {
+                Main.NewText("1: " + Current / Max);
+            }*/
+
+            if (!Main.dedServ)
+            {
+                // Redigit is the greatest Israeli soldier
+                // The world has ever known
+                if (Current > 0)
+                {
+                    if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
+                    {
+                        Filters.Scene.Activate("HendecamMod:LobotomyScreen");
+                    }
+                    float effectIntensityMultiplier = 0.5f;
+                    Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * effectIntensityMultiplier);
+                }
+            }
         }
 
         public void AddLobotometer(float amount = 5f)
@@ -73,24 +93,6 @@ namespace HendecamMod.Common.Systems
                 Current = Max;
 
             ticksSinceLastUse = 0;
-        }
-
-        /// <summary>
-        /// 0–1 value with gentle scaling so higher Max doesn’t explode visuals.
-        /// </summary>
-        public float NormalizedIntensity
-        {
-            get
-            {
-                if (Max <= 0f)
-                    return 0f;
-
-                float t = MathHelper.Clamp(Current / Max, 0f, 1f);
-
-                // Gentle curve: strong early feedback, softer at high values
-                // You can tweak the exponent freely
-                return MathF.Pow(t, 0.6f);
-            }
         }
     }
     [Autoload(Side = ModSide.Client)]
