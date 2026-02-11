@@ -4898,3 +4898,23 @@ IQTest: {
 	DisplayName: IQ Test
 	Tooltip: ""
 }
+
+TurboDartTrap: {
+	Tooltip: ""
+	DisplayName: Turbo Dart Trap
+}
+
+UnhygenicLobotomySpike: {
+	Tooltip: ""
+	DisplayName: Unhygenic Lobotomy Spike
+}
+
+HaemophilicLobotomySpike: {
+	Tooltip: ""
+	DisplayName: Haemophilic Lobotomy Spike
+}
+
+ContentEmblem: {
+	Tooltip: ""
+	DisplayName: Content Emblem
+}

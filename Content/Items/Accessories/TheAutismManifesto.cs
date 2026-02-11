@@ -74,7 +74,7 @@ public class TheAutismManifesto : ModItem
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         loboPlayer.MaxBonus += 100f;
 
-        float damageBonus = loboPlayer.Max / 2000;
+        float damageBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 2000;
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
         float speedBonus = lobotometerPercent * 0.25f;
         //float speedBonus = (1f - lobotometerPercent) * 0.25f; // inverse

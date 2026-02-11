@@ -29,23 +29,17 @@ public class PlasticScrap : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+       
+
+        recipe.AddIngredient<CrudeOil>(3);
+
+        recipe.AddTile(TileID.Furnaces);
+        recipe.Register();
 
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("Plastic", out ModItem Plastic))
         {
@@ -56,14 +50,13 @@ public class PlasticScrap : ModItem
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
         }
-        else
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("Garbage", out ModItem Garbage))
         {
             recipe = CreateRecipe();
-
-            recipe.AddIngredient<CrudeOil>(3);
-
+            recipe.AddIngredient(Garbage.Type, 10);
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }
+        
     }
 }

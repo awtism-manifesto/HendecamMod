@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
+using Terraria;
 
 namespace HendecamMod.Content.GlobalItems;
 
@@ -99,5 +100,55 @@ public class ConsolariaForSomeReason : GlobalItem
         item.useTime = 10;
         item.useAnimation = 20;
         item.reuseDelay = 15;
+    }
+}
+public class Arse : GlobalItem
+{
+    // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
+
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse) && Arse.TryFind("SlingerShooter", out ModItem SlingerShooter))
+        {
+            return item.type == SlingerShooter.Type;
+        }
+
+        return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+       
+    }
+}
+public class Arse2 : GlobalItem
+{
+    // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
+
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse) && Arse.TryFind("Crackshot", out ModItem Crackshot))
+        {
+            return item.type == Crackshot.Type;
+        }
+
+        return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+
     }
 }
