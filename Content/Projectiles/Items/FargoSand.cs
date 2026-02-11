@@ -3,12 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
 
-namespace HendecamMod.Content.Projectiles;
+namespace HendecamMod.Content.Projectiles.Items;
 
-public class SandPocket : ModProjectile
+public class FargoSand : ModProjectile
 {
-    
-
+   
     public override void SetDefaults()
     {
         Projectile.width = 18; // The width of projectile hitbox
@@ -16,10 +15,10 @@ public class SandPocket : ModProjectile
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
       
         Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 38; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+        Projectile.timeLeft = 280; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 72; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
 
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
@@ -54,15 +53,7 @@ public class SandPocket : ModProjectile
 
    
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.AddBuff(BuffID.Confused, 60);
-    }
+    
 
-    public override void OnKill(int timeLeft)
-    {
-        // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-        Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-    }
+    
 }

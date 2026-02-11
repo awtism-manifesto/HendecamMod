@@ -6,7 +6,7 @@ namespace HendecamMod.Content.Tiles;
 
 // This class shows off a number of less common ModTile methods. These methods help our trap tile behave like vanilla traps. 
 // In particular, hammer behavior is particularly tricky. The logic here is setup for multiple styles as well.
-public class PyroDartTrapTile : ModTile
+public class TurboDartTrapTile : ModTile
 {
     // This progression matches vanilla tiles, you don't have to follow it if you don't want. Some vanilla traps don't have 6 states, only 4. This can be implemented with different logic in Slope. Making 8 directions is also easily done in a similar manner.
     private static readonly int[] frameXCycle = [2, 3, 4, 5, 1, 0];
@@ -23,7 +23,7 @@ public class PyroDartTrapTile : ModTile
         Main.tileFrameImportant[Type] = true;
 
         // These 2 AddMapEntry and GetMapOption show off multiple Map Entries per Tile. Delete GetMapOption and all but 1 of these for your own ModTile if you don't actually need it.
-        AddMapEntry(new Color(21, 179, 192), Language.GetText("MapObject.Trap")); // localized text for "Trap"
+        AddMapEntry(new Color(172, 29, 192), Language.GetText("MapObject.Trap")); // localized text for "Trap"
     }
 
     // Read the comments above on AddMapEntry.
@@ -84,13 +84,13 @@ public class PyroDartTrapTile : ModTile
         if (style == 0)
         {
             // Wiring.CheckMech checks if the wiring cooldown has been reached. Put a longer number here for less frequent projectile spawns. 200 is the dart/flame cooldown. Spear is 90, spiky ball is 300
-            if (Wiring.CheckMech(i, j, 60))
+            if (Wiring.CheckMech(i, j, 15))
             {
                 spawnPosition = new Vector2(i * 16 + 8 + 0 * horizontalDirection, j * 16 + 9 + 0 * verticalDirection); // The extra numbers here help center the projectile spawn position if you need to.
                 SoundEngine.PlaySound(SoundID.Item99, spawnPosition);
                 // In a real mod you should be spawning projectiles that are both hostile and friendly to do damage to both players and NPC, as Terraria traps do.
                 // Make sure to change velocity, projectile, damage, and knockback.
-                Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
+                Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<CarbonFiberDart>(), 55, 2.5f, Main.myPlayer);
             }
         }
     }

@@ -27,7 +27,7 @@ public class LobotomySpike : ModItem
         var line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4%");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Once Lobotometer reaches maximum, it can no longer decay until accessory is removed")
+        line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -56,11 +56,11 @@ public class LobotomySpike : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-  
+    public static readonly int AdditiveStupidDamageBonus = 4;
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
 
-
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
 
 
 
@@ -76,7 +76,7 @@ public class BaseSpike : ModPlayer
 
     public bool Spiked;
 
-    public static readonly int AdditiveStupidDamageBonus = 4;
+   
     public override void ResetEffects()
     {
         Spiked = false;
@@ -84,7 +84,7 @@ public class BaseSpike : ModPlayer
 
     public override void PostUpdate()
     {
-        Player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+       
 
     }
 

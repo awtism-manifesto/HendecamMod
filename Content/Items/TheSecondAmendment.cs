@@ -336,9 +336,9 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<CopperShortmachinegun>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind("BrenGun", out ModItem BrenGun))
+        if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse) && Arse.TryFind("SeconndAmendment", out ModItem SeconndAmendment))
         {
-            recipe.AddIngredient(BrenGun.Type);
+            recipe.AddIngredient(SeconndAmendment.Type);
         }
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SomaPrime", out ModItem SomaPrime)

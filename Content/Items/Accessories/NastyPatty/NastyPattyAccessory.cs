@@ -368,7 +368,7 @@ public class NastyPattyAccessory : ModItem
             }
             else
             {
-                Lighting.AddLight(Player.Center, 2.25f, 2.25f, 2.25f);
+                Lighting.AddLight(Player.Center, 2.75f, 2.75f, 2.75f);
             }
         }
     }
