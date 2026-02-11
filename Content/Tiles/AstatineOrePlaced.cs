@@ -33,7 +33,7 @@ public class AstatineOrePlaced : ModTile
         g = 0.1f;
         b = 0.47f;
 
-        Lighting.Mode = Terraria.Graphics.Light.LightMode.Color;
+      
 
     }
 

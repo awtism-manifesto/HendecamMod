@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -93,9 +94,18 @@ public class ContentEmblem : ModItem
         {
             Item.value += 105000;
         }
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica))
+        {
+            Item.value += 25000;
+        }
         if (ModLoader.TryGetMod("StarsAbove", out Mod Stars))
         {
             Item.value += 9500000;
+        }
+        if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis))
+        {
+            Item.value += 750000;
+
         }
         if (ModLoader.TryGetMod("TerrorMod", out Mod Terror))
         {
@@ -103,10 +113,29 @@ public class ContentEmblem : ModItem
                 Item.value += 105000;
             
         }
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica))
+        {
+            Item.value += 135000;
+
+        }
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))
+
+        {
+            Item.value += 500000;
+        }
 
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
         {
             Item.value += 950000;
+        }
+        if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod))
+        {
+            Item.value += 120000;
+        }
+
+        if (ModLoader.TryGetMod("Clamity", out Mod Clam))
+        {
+            Item.value += 150000;
         }
     }
 
@@ -124,6 +153,23 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
 
+        }
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica))
+        {
+            line = new TooltipLine(Mod, "Face", "Calamity Fables- Drops a shroom mine when hurt")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+
+        }
+        if (ModLoader.TryGetMod("Clamity", out Mod Clam))
+        {
+            line = new TooltipLine(Mod, "Face", "Clamity Addon- Permanent Crate, Fishing, and Sonar buffs while equipped")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
         }
         if (ModLoader.TryGetMod("InfernumMode", out Mod Infernum))
         {
@@ -143,6 +189,7 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+       
         if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica))
         {
             line = new TooltipLine(Mod, "Face", "Fargo's Souls- Causes friendly sand to rain down upon enemies near you at low health")
@@ -163,6 +210,15 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("ThoriumRework", out Mod ThorRework))
         {
             line = new TooltipLine(Mod, "Face", "Thorium Hellheim- +10% max life during any bossfight or invasion")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))
+
+        {
+            line = new TooltipLine(Mod, "Face", "Homeward Journey- doubled mining speed")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -195,6 +251,14 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("SpiritMod", out Mod SpiritMerica))
         {
             line = new TooltipLine(Mod, "Face", "Spirit Classic- +1.5 hp/s life regen")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica))
+        {
+            line = new TooltipLine(Mod, "Face", "Spirit Reforged- +5 Defense")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -233,6 +297,23 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+        if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod))
+        {
+            line = new TooltipLine(Mod, "Face", "Enigma Mod- All attacks inflict on fire and frostburn")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis))
+        {
+
+            line = new TooltipLine(Mod, "Face", "Ebonian Mod- All attacks have a 1/100 chance to give your enemies ligma")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
         if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse))
         {
             line = new TooltipLine(Mod, "Face", "Arsenal- 5% increased attack speed")
@@ -265,9 +346,18 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+       
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica))
         {
             line = new TooltipLine(Mod, "Face", "Flamethrowers Plus- 5% increased ranged crit chance")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("gunsandguns2", out Mod gun))
+        {
+            line = new TooltipLine(Mod, "Face", "Guns and Guns 2- 25% reduced ammo usage")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -282,6 +372,15 @@ public class ContentEmblem : ModItem
             tooltips.Add(line);
 
         }
+        if (ModLoader.TryGetMod("RhymesWithGrug", out Mod Grug))
+        {
+            line = new TooltipLine(Mod, "Face", "Rhymes With Grug Mod- Rhymes with Grug")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+
+        }
     }
 
     public override void AddRecipes()
@@ -289,7 +388,7 @@ public class ContentEmblem : ModItem
         Recipe recipe = CreateRecipe();
 
 
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile(TileID.Anvils);
         recipe.Register();
         if (ModLoader.TryGetMod("StarsAbove", out Mod StarMerica) && StarMerica.TryFind("TwinStars", out ModItem TwinStars))
         {
@@ -303,6 +402,16 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("InfernumMode", out Mod Infernum) && Infernum.TryFind("CallUponTheEggs", out ModItem CallUponTheEggs))
         {
             recipe.AddIngredient(CallUponTheEggs.Type);
+        }
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("MoldyPicklaw", out ModItem MoldyPicklaw))
+        {
+            recipe.AddIngredient(MoldyPicklaw.Type);
+
+        }
+        if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis)&& EbonflyHasASmallPenis.TryFind("Equilibrium", out ModItem Equilibrium))
+        {
+
+            recipe.AddIngredient(Equilibrium.Type);
         }
         if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind("CoffinSummon", out ModItem CoffinSummon))
         {
@@ -331,6 +440,19 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind("CorruptedDragonHeart", out ModItem CorruptedDragonHeart))
         {
             recipe.AddIngredient(CorruptedDragonHeart.Type);
+        }
+        if (ModLoader.TryGetMod("Clamity", out Mod Clam) && Clam.TryFind("ClamitousPearl", out ModItem ClamitousPearl))
+        {
+            recipe.AddIngredient(ClamitousPearl.Type);
+        }
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind("NetherStar", out ModItem NetherStar))
+
+        {
+            recipe.AddIngredient(NetherStar.Type);
+        }
+        if (ModLoader.TryGetMod("gunsandguns2", out Mod gun) && gun.TryFind("invalidator", out ModItem invalidator))
+        {
+            recipe.AddIngredient(invalidator.Type);
         }
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AshesofCalamity", out ModItem AshesofCalamity))
         {
@@ -362,9 +484,18 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(SoulofVitality.Type, 10);
         }
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("MineralSlag", out ModItem MineralSlag))
+        {
+            recipe.AddIngredient(MineralSlag.Type, 10);
+        }
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("Moonstone", out ModItem Moonstone))
         {
             recipe.AddIngredient(Moonstone.Type, 15);
+        }
+
+        if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod) && EnigmaMod.TryFind("ObsidiumOre", out ModItem ObsidiumOre))
+        {
+            recipe.AddIngredient(ObsidiumOre.Type, 50);
         }
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseOre", out ModItem PhaseOre))
         {
@@ -383,7 +514,25 @@ public class ContentEmblem : ModItem
     public static readonly int TerrorDamageBonus = 33;
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica))
+        {
+            player.statDefense += 5;
+        }
+        if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))
 
+        {
+            player.pickSpeed = player.pickSpeed * 0.5f;
+        }
+        if (ModLoader.TryGetMod("gunsandguns2", out Mod gun))
+        {
+            player.ammoCost75 = true;
+        }
+        if (ModLoader.TryGetMod("Clamity", out Mod Clam))
+        {
+            player.AddBuff(BuffID.Crate, 61);
+            player.AddBuff(BuffID.Fishing, 61);
+            player.AddBuff(BuffID.Sonar, 61);
+        }
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
         {
             if (player.HasBuff(BuffID.Invisibility))
@@ -437,6 +586,16 @@ public class ContentEmblem : ModItem
             {
                 player.statDefense += 5;
             }
+        }
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica))
+        {
+
+            player.GetModPlayer<FableShroom>().ShroomMines = true;
+        }
+        if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis))
+        {
+
+            player.GetModPlayer<EbonflyLigma>().EbonLigma = true;
         }
         if (ModLoader.TryGetMod("TerrorMod", out Mod Terror))
         {
@@ -497,6 +656,10 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
         {
             player.GetModPlayer<JoystickMovement>().JoySticky = true;
+        }
+        if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod))
+        {
+            player.GetModPlayer<EnigmaBurn>().Enigma = true;
         }
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica))
         {
@@ -586,6 +749,93 @@ public class FargoSandDrop : ModPlayer
 
 
 }
+public class FableShroom : ModPlayer
+{
+
+   
+    private const int ExplosionCooldownMax = 60 * 5;
+
+    public bool ShroomMines;
+    private int shroomCooldown;
+
+    public override void ResetEffects()
+    {
+        ShroomMines = false;
+    }
+
+    public override void PostUpdate()
+    {
+        // Cooldown ticking down
+        if (shroomCooldown > 0)
+            shroomCooldown--;
+
+       
+    }
+
+    public override void OnHurt(Player.HurtInfo info)
+    {
+        // Only trigger if set bonus is active
+        if (!ShroomMines)
+            return;
+
+        // Cooldown check
+        if (shroomCooldown > 0)
+            return;
+
+        int baseDamage = 25;
+        float defenseScale = 2.5f;
+        int finalDamage = baseDamage + Player.statDefense * defenseScale;
+
+        // Spawn explosion
+        Projectile.NewProjectile(
+            Player.GetSource_FromThis(),
+            Player.Center,
+            new Vector2(0f, -1f),
+            ModContent.ProjectileType<ShroomBoom>(),
+            finalDamage,
+            7f,
+            Player.whoAmI
+        );
+
+        // Start cooldown
+        shroomCooldown = ExplosionCooldownMax;
+    }
+
+
+}
+public class EnigmaBurn : ModPlayer
+{
+    public bool Enigma;
+
+    public override void ResetEffects()
+    {
+        Enigma = false;
+    }
+
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!Player.GetModPlayer<EnigmaBurn>().Enigma)
+        {
+        }
+        else
+        {
+            target.AddBuff(BuffID.OnFire, 300);
+            target.AddBuff(BuffID.Frostburn, 300);
+        }
+    }
+
+    public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!Player.GetModPlayer<EnigmaBurn>().Enigma)
+        {
+        }
+        else
+        {
+            target.AddBuff(BuffID.OnFire, 300);
+            target.AddBuff(BuffID.Frostburn, 300);
+        }
+    }
+}
 public class Starlife : ModPlayer
 {
     public bool Starlifed;
@@ -604,8 +854,47 @@ public class Starlife : ModPlayer
         {
           
 
-            float healthBonus = Player.statManaMax2 /1.5f;
+            float healthBonus = Player.statManaMax2 / 10;
             health.Flat += (int)healthBonus;
+        }
+    }
+}
+public class EbonflyLigma : ModPlayer
+{
+    public bool EbonLigma;
+
+    public override void ResetEffects()
+    {
+        EbonLigma = false;
+    }
+
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!Player.GetModPlayer<EbonflyLigma>().EbonLigma)
+        {
+        }
+        else
+        {
+            if (Main.rand.NextBool(100))
+            {
+                target.AddBuff(ModContent.BuffType<Ligma>(), 180);
+            }
+            
+        }
+    }
+
+    public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!Player.GetModPlayer<EbonflyLigma>().EbonLigma)
+        {
+        }
+        else
+        {
+            if (Main.rand.NextBool(100))
+            {
+                target.AddBuff(ModContent.BuffType<Ligma>(), 180);
+            }
+
         }
     }
 }
