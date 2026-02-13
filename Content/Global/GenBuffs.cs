@@ -3,9 +3,12 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
+using Mono.Cecil;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.GlobalItems;
 
@@ -108,19 +111,19 @@ public class CockworkAssGun : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and Velocity significantly increased") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage, Knockback, and Velocity significantly increased") { OverrideColor = Color.DarkViolet });
 
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 33;
-        item.shootSpeed = 15.66f;
+        item.damage = 48;
+        item.shootSpeed = 15.95f;
         item.useTime = 3;
         item.knockBack = 3.33f;
         item.useAnimation = 9;
-        item.reuseDelay = 24;
+        item.reuseDelay = 27;
     }
 }
 
@@ -643,8 +646,45 @@ public class Tittyanium : GlobalItem
         return false;
     }
 }
+public class CIAAwardInJournalism : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
+        {
+            return item.type == ItemID.SniperRifle;
+        }
+        else return false;
+    }
 
-public class Chudfucker6969 : GlobalItem
+    public override void SetDefaults(Item item)
+    {
+       
+       
+            item.shoot = ModContent.ProjectileType<CiaSpawn>();
+        item.damage = 255;
+      
+      
+    }
+    public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+       
+            type = ModContent.ProjectileType<CiaSpawn>();
+        
+       
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+       
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots an enhanced triplex round") { OverrideColor = Color.DarkViolet });
+        
+       
+    }
+
+    
+}
+
+public class BoneSwordBuffChudfucker6969 : GlobalItem // review in 1.4.5
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
@@ -673,6 +713,47 @@ public class Chudfucker6969 : GlobalItem
         return false;
     }
 }
+public class TxkrpBff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.Toxikarp;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+       
+        item.useTime = 9;
+        item.useAnimation = 9;
+
+      
+        item.shootSpeed = 12f;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster attack speed and velocity") { OverrideColor = Color.DarkViolet });
+    }
+
+   
+}
+public class ToxiFast : GlobalProjectile
+{
+
+
+    public override bool InstancePerEntity => true;
+
+
+    public override void AI(Projectile projectile)
+    {
+        if (projectile.type == ProjectileID.ToxicBubble && Math.Abs(projectile.velocity.X) <= 10.25f && Math.Abs(projectile.velocity.Y) <= 10.25f)
+        {
+            projectile.velocity *= 1.09f;
+        }
+    }
+
+
+}
 
 public class DrugsNir : GlobalItem
 {
@@ -684,8 +765,8 @@ public class DrugsNir : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.damage = 77;
-        item.useTime = 17;
-        item.useAnimation = 17;
+        item.useTime = 21;
+        item.useAnimation = 21;
 
         item.shoot = ModContent.ProjectileType<PiercingLight>();
         item.shootSpeed = 11.25f;
@@ -702,6 +783,175 @@ public class DrugsNir : GlobalItem
         Projectile.NewProjectileDirect(source, player.Center, velocity * 1f, ProjectileID.Gungnir, (int)(damage * 1.01f), knockback, player.whoAmI);
         return false;
     }
+}
+public class ChloroshitFartisan : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ChlorophytePartisan;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 61;
+      
+
+       
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+       
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 6f, ProjectileID.SporeCloud, (int)(damage * 0.5f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.575f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 4f, ProjectileID.SporeCloud, (int)(damage * 0.62f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ProjectileID.SporeCloud, (int)(damage * 0.67f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 2f, ProjectileID.SporeCloud, (int)(damage * 0.71f), knockback, player.whoAmI);
+        return true;
+    }
+}
+public class ChloroshitSaber : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ChlorophyteSaber;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 67;
+
+        item.useTime = 16;
+        item.useAnimation = 16;
+        item.scale = 1.1f;
+
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(6f));
+        Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-6f));
+        Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(12f));
+        Vector2 new4Velocity = velocity.RotatedBy(MathHelper.ToRadians(-12f));
+
+        Projectile.NewProjectileDirect(source, player.Center, newVelocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new2Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new3Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new4Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+
+        return false;
+    }
+}
+public class ChloroshitGaymore : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ChlorophyteClaymore;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 106;
+
+        item.useTime = 20;
+       
+        item.scale = 1.33f;
+
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, size and orb speed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+       
+
+       
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 1.9f, ProjectileID.ChlorophyteOrb, (int)(damage * 1f), knockback, player.whoAmI);
+        
+
+        return false;
+    }
+}
+
+public class ChloroLessShitIframes : GlobalProjectile
+{
+
+
+    public override bool InstancePerEntity => true;
+    public override void SetDefaults(Projectile projectile)
+    {
+        if (projectile.type == ProjectileID.SporeCloud)
+        {
+            projectile.usesLocalNPCImmunity = true;
+            projectile.localNPCHitCooldown =  -1;
+            projectile.usesOwnerMeleeHitCD = false;
+            projectile.usesIDStaticNPCImmunity = false;  
+
+        }
+    }
+
+
+   
+
+
+}
+public class ThunderZappies : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ThunderStaff;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 8;
+
+        item.useTime = 5;
+        item.useAnimation = 20;
+
+        item.ArmorPenetration = 5;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased attack and projectile speed at the cost of damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also ignores 5 enemy defense") { OverrideColor = Color.DarkViolet });
+    }
+
+   
+}
+public class LightningFast : GlobalProjectile
+{
+
+
+    public override bool InstancePerEntity => true;
+    public override void SetDefaults(Projectile projectile)
+    {
+        if (projectile.type == ProjectileID.ThunderStaffShot)
+        {
+            projectile.extraUpdates += 1;
+
+        }
+    }
+
+
+
+
+
 }
 
 public class HorsemansBladeBuff : GlobalItem
@@ -767,7 +1017,54 @@ public class FlyingKnifeBuff : GlobalItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage increased by 35%") { OverrideColor = Color.DarkViolet });
     }
 }
+public class HelFireCompNerf : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.HelFire;
+    }
 
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 33;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Sightly lower base damage, now explodes upon hitting enemies") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class HelFireBoom : GlobalProjectile
+{
+
+
+    public override bool InstancePerEntity => true;
+    public override void SetDefaults(Projectile entity)
+    {
+        if (entity.type == ProjectileID.HelFire)
+        {
+            entity.usesLocalNPCImmunity = true;
+            entity.localNPCHitCooldown = 10;
+            entity.usesOwnerMeleeHitCD = false;
+
+        }
+    }
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (projectile.type == ProjectileID.HelFire)
+        {
+            target.immune[projectile.owner] = 5;
+            Vector2 velocity2 = Vector2.Zero;
+            Vector2 Peanits2 = projectile.Center;
+            Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits2, velocity2,
+            ModContent.ProjectileType<BoomSmallish>(), (int)(projectile.damage * 1f), projectile.knockBack, projectile.owner);
+        }
+    }
+
+
+
+
+}
 public class BigBoner : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -2578,7 +2875,7 @@ public class Stiingeer : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 39;
+        item.damage = 42;
         item.useTime = 14;
         item.useAnimation = 14;
     }

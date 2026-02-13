@@ -729,6 +729,14 @@ public class FargoSandDrop : ModPlayer
             return;
 
         int baseDamage = 25;
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) 
+            || ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) || ModLoader.TryGetMod("StarsAbove", out Mod Stars) 
+            || ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) || ModLoader.TryGetMod("VitalityMod", out Mod Vital) || ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
+        {
+            baseDamage = baseDamage * 3;
+
+        }
+
 
         if (Player.statLife <= Player.statLifeMax2 /4)
         {
@@ -753,24 +761,17 @@ public class FableShroom : ModPlayer
 {
 
    
-    private const int ExplosionCooldownMax = 60 * 5;
+   
 
     public bool ShroomMines;
-    private int shroomCooldown;
+   
 
     public override void ResetEffects()
     {
         ShroomMines = false;
     }
 
-    public override void PostUpdate()
-    {
-        // Cooldown ticking down
-        if (shroomCooldown > 0)
-            shroomCooldown--;
-
-       
-    }
+   
 
     public override void OnHurt(Player.HurtInfo info)
     {
@@ -778,13 +779,16 @@ public class FableShroom : ModPlayer
         if (!ShroomMines)
             return;
 
-        // Cooldown check
-        if (shroomCooldown > 0)
-            return;
 
-        int baseDamage = 25;
-        float defenseScale = 2.5f;
-        int finalDamage = baseDamage + Player.statDefense * defenseScale;
+        int baseDamage = 35;
+
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica)
+            || ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) || ModLoader.TryGetMod("StarsAbove", out Mod Stars)
+            || ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) || ModLoader.TryGetMod("VitalityMod", out Mod Vital) || ModLoader.TryGetMod("SOTS", out Mod SOTSMerica))
+        {
+            baseDamage = baseDamage * 3;
+
+        }
 
         // Spawn explosion
         Projectile.NewProjectile(
@@ -792,13 +796,12 @@ public class FableShroom : ModPlayer
             Player.Center,
             new Vector2(0f, -1f),
             ModContent.ProjectileType<ShroomBoom>(),
-            finalDamage,
+            baseDamage,
             7f,
             Player.whoAmI
         );
 
-        // Start cooldown
-        shroomCooldown = ExplosionCooldownMax;
+        
     }
 
 

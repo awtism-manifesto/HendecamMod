@@ -86,7 +86,12 @@ public class MarbleChestplate : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Marble, 90);
-        recipe.AddRecipeGroup("IronBar", 30);
+        recipe.AddIngredient(ItemID.SilverBar, 30);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 90);
+        recipe.AddIngredient(ItemID.TungstenBar, 30);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

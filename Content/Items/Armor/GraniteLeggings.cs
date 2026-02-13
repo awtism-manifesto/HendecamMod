@@ -65,7 +65,12 @@ public class GraniteLeggings : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Granite, 75);
-        recipe.AddRecipeGroup("IronBar", 25);
+        recipe.AddIngredient(ItemID.SilverBar, 25);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Granite, 75);
+        recipe.AddIngredient(ItemID.TungstenBar, 25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

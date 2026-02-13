@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -26,6 +27,7 @@ public class TintedLenses : ModItem
         recipe.AddIngredient(ItemID.Sunglasses);
         recipe.AddIngredient(ItemID.SoulofLight, 5);
         recipe.AddIngredient(ItemID.SoulofSight, 5);
+        recipe.AddTile<CobaltWorkBenchPlaced>();
         recipe.Register();
     }
 

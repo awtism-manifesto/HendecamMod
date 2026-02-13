@@ -71,7 +71,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.075f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.05f);
 
                     }
 
@@ -80,7 +80,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.15f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.11f);
 
                     }
                     if (!NPC.downedMoonlord && NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
@@ -88,7 +88,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.275f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.22f);
 
                     }
                     if (NPC.downedMoonlord && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
@@ -96,7 +96,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.45f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.35f);
 
                     }
                 }
@@ -107,7 +107,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.125f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.1f);
 
                     }
 
@@ -116,7 +116,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.25f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.2f);
 
                     }
                     if (!NPC.downedMoonlord && NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
@@ -124,7 +124,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.35f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.33f);
 
                     }
                     if (NPC.downedMoonlord && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
@@ -132,7 +132,7 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.55f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.5f);
 
                     }
                 }
@@ -152,7 +152,43 @@ namespace HendecamMod.Common.Global
 
 
 
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.3f);
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.25f);
+
+                    }
+                    if (!NPC.downedMoonlord && NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
+                    {
+
+
+
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.4f);
+
+                    }
+                    if (NPC.downedMoonlord && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
+                    {
+
+
+
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.66f);
+
+                    }
+                }
+                if (Main.getGoodWorld)
+                {
+                    if (NPC.downedBoss2 && !Main.hardMode && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
+                    {
+
+
+
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.2f);
+
+                    }
+
+                    if (Main.hardMode && !NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
+                    {
+
+
+
+                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.33f);
 
                     }
                     if (!NPC.downedMoonlord && NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
@@ -169,42 +205,6 @@ namespace HendecamMod.Common.Global
 
 
                         npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.75f);
-
-                    }
-                }
-                if (Main.getGoodWorld)
-                {
-                    if (NPC.downedBoss2 && !Main.hardMode && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
-                    {
-
-
-
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.25f);
-
-                    }
-
-                    if (Main.hardMode && !NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
-                    {
-
-
-
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.375f);
-
-                    }
-                    if (!NPC.downedMoonlord && NPC.downedPlantBoss && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
-                    {
-
-
-
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.6f);
-
-                    }
-                    if (NPC.downedMoonlord && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
-                    {
-
-
-
-                        npc.lifeMax = (int)Math.Round(npc.lifeMax * 1.85f);
 
                     }
                 }

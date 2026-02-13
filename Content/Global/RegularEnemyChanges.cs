@@ -95,6 +95,7 @@ public class HarpyBuff : GlobalProjectile
  
 
 }
+
 public class FrostCoreTack : GlobalProjectile
 {
     public bool fromIceGolem;

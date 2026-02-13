@@ -32,7 +32,7 @@ public class Sublimination : ModItem
         Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 75; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.1f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 50;
@@ -132,12 +132,12 @@ public class Sublimination : ModItem
         type = ModContent.ProjectileType<SublimRay>();
         if (type == ModContent.ProjectileType<SublimRay>())
         {
-            damage = (int)(damage * 0.425f);
+            damage = (int)(damage * 0.48f);
         }
 
         if (type == ModContent.ProjectileType<SublimRay2>())
         {
-            damage = (int)(damage * 0.45f);
+            damage = (int)(damage * 0.5f);
         }
     }
 

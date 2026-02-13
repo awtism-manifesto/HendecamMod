@@ -16,8 +16,9 @@ public class AncientCobaltRepeater : ModItem
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = 74000;
         // Use Properties
-        Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 18; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.reuseDelay = 15;
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
@@ -42,7 +43,7 @@ public class AncientCobaltRepeater : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Fires in a two round burst");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

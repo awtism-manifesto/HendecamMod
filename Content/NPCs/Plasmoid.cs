@@ -47,8 +47,8 @@ public class Plasmoid : ModNPC
         BannerItem = ModContent.ItemType<PlasmoidBanner>();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            NPC.lifeMax = 405;
-            NPC.damage = 48;
+            NPC.lifeMax = 325;
+            NPC.damage = 45;
         }
     }
 

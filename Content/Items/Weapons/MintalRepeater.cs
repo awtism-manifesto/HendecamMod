@@ -16,8 +16,9 @@ public class MintalRepeater : ModItem
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 140000;
         // Use Properties
-        Item.useTime = 17; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 17; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 14; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.reuseDelay = 11;
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
@@ -53,24 +54,13 @@ public class MintalRepeater : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts wooden arrows into mintal arrows");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Fires in a two round burst")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

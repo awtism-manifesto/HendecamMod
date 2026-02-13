@@ -88,7 +88,12 @@ public class MarbleMask : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Marble, 55);
-        recipe.AddRecipeGroup("IronBar", 20);
+        recipe.AddIngredient(ItemID.SilverBar, 20);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 55);
+        recipe.AddIngredient(ItemID.TungstenBar, 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

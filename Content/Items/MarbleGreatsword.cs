@@ -44,11 +44,17 @@ public class MarbleGreatsword : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Marble, 60);
-        recipe.AddRecipeGroup("IronBar", 20);
+        recipe.AddIngredient(ItemID.Marble, 66);
+        recipe.AddIngredient(ItemID.SilverBar, 18);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 66);
+        recipe.AddIngredient(ItemID.TungstenBar, 18);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

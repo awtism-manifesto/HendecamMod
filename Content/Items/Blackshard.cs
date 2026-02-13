@@ -67,6 +67,7 @@ public class Blackshard : ModItem
     {
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(24.5f));
+        Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(23.5f));
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.375f);
@@ -80,9 +81,9 @@ public class Blackshard : ModItem
             SoundEngine.PlaySound(SoundID.NPCDeath55, player.position);
             SoundEngine.PlaySound(SoundID.Item32, player.position);
             SoundEngine.PlaySound(SoundID.Item103, player.position);
-            if (Main.rand.NextBool(2))
+            if (Main.rand.NextBool(3))
             {
-                int proj2 = Projectile.NewProjectile(source, position, newVelocity * 2.1f, ModContent.ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
+                int proj2 = Projectile.NewProjectile(source, position, new2Velocity * 2.1f, ModContent.ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
 
                 Main.projectile[proj2].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
             }

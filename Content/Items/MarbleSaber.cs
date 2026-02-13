@@ -53,7 +53,19 @@ public class MarbleSaber : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 40);
+        recipe.AddIngredient(ItemID.SilverBar, 12);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 40);
+        recipe.AddIngredient(ItemID.TungstenBar, 12);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -67,12 +79,5 @@ public class MarbleSaber : ModItem
         tooltips.Add(line);
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Marble, 35);
-        recipe.AddRecipeGroup("IronBar", 15);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
-    }
+    
 }

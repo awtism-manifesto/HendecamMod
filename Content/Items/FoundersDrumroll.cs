@@ -14,7 +14,7 @@ public class FoundersDrumroll : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
-        Item.value = 4200000; // The value of the weapon in copper coins
+        Item.value = 2050000; // The value of the weapon in copper coins
         // Use Properties
         Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 4; // The length of the item's use animation in ticks (60 ticks == 1 second.)

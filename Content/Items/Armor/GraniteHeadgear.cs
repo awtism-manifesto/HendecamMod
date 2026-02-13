@@ -64,7 +64,12 @@ public class GraniteHeadgear : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Granite, 55);
-        recipe.AddRecipeGroup("IronBar", 20);
+        recipe.AddIngredient(ItemID.SilverBar, 20);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Granite, 55);
+        recipe.AddIngredient(ItemID.TungstenBar, 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
