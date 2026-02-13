@@ -23,7 +23,8 @@ public class BasicBitchXenopopperBuff : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.damage = 54;
-        
+        item.useTime = 19;
+        item.useAnimation = 19;
     }
 
    
@@ -191,6 +192,59 @@ public class BasicBitchHallowBuff : GlobalItem
     }
 
 }
+public class ChlorophyteShitbow : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.ChlorophyteShotbow;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 51;
+        item.useTime = 18;
+        item.useAnimation = 18;
+       
+    }
+   
+
+}
+public class PhantomPeenix : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.DD2PhoenixBow;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 43;
+        item.useTime = 16;
+        item.useAnimation = 16;
+
+    }
+
+
+}
+public class Speccterrrr : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.SpectreStaff;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 86;
+        item.useTime = 22;
+        item.useAnimation = 22;
+
+    }
+
+
+}
+
+
 
 
 

@@ -75,6 +75,7 @@ public class FossilFuelChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
+
         player.wingTimeMax += 115;
         player.jumpSpeedBoost += 1.15f;
         player.maxFallSpeed = player.maxFallSpeed * 1.05f;

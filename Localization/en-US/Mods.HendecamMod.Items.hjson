@@ -4918,3 +4918,13 @@ ContentEmblem: {
 	Tooltip: ""
 	DisplayName: Content Emblem
 }
+
+YelmutFaeChestplate: {
+	Tooltip: ""
+	DisplayName: Yelmut Fae Chestplate
+}
+
+YelmutLeggings: {
+	Tooltip: ""
+	DisplayName: Yelmut Leggings
+}

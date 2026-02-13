@@ -71,6 +71,6 @@ public class TransFedora : ModItem
     {
         player.setBonus = "+50 Max Lobotometer";
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 50f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.MaxBonus += 50f; 
     }
 }

@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -266,11 +267,19 @@ public class Politician : ModNPC
 
         foreach (var player in Main.ActivePlayers)
         {
-            // Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-            if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre))
+            if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("BacciliteOre", out ModItem BacciliteOre))
+            {
+                if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre || item.type == BacciliteOre.Type))
+                {
+                    return true;
+                }
+            }
+            else if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre ))
             {
                 return true;
             }
+
+
         }
 
         return false;

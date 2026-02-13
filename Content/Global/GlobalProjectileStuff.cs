@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles.Enemies;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 
 namespace HendecamMod.Content.Global;
@@ -228,5 +229,125 @@ public class VerdantCombo : GlobalProjectile
         {
             modifiers.SourceDamage *= 1.85f;
         }
+    }
+}
+
+public class MagnetSphereActuallyGoodNow : GlobalProjectile //shoutout to my clanka deepseek for this one
+{
+    public override bool InstancePerEntity => true;
+
+    private const int MAX_SPHERES = 8;
+    private bool isModified = false;
+
+    // Static counter to track total spheres globally
+    private static int totalSpheres = 0;
+
+    public override void SetDefaults(Projectile projectile)
+    {
+        if (projectile.type == ProjectileID.MagnetSphereBall)
+        {
+            projectile.timeLeft = 3600;
+            projectile.penetrate = -1;
+            projectile.maxPenetrate = -1;
+            projectile.alpha = 0;
+            isModified = true;
+        }
+    }
+    private int timeLeft2 = 3600; 
+
+    public override void OnSpawn(Projectile projectile, IEntitySource source)
+    {
+        if (projectile.type == ProjectileID.MagnetSphereBall)
+        {
+            totalSpheres++;
+
+            // If we have too many spheres, immediately despawn the oldest
+            if (totalSpheres > MAX_SPHERES)
+            {
+                // Find and kill the oldest sphere
+                int oldestTime = int.MaxValue;
+                int oldestIndex = -1;
+
+                for (int i = 0; i < Main.maxProjectiles; i++)
+                {
+                    Projectile p = Main.projectile[i];
+                    if (p != null && p.active && p.type == ProjectileID.MagnetSphereBall && p.whoAmI != projectile.whoAmI)
+                    {
+                        if (p.timeLeft < oldestTime)
+                        {
+                            oldestTime = p.timeLeft;
+                            oldestIndex = i;
+                        }
+                    }
+                }
+
+                if (oldestIndex != -1)
+                {
+                    Main.projectile[oldestIndex].Kill();
+                    totalSpheres--;
+                }
+            }
+        }
+    }
+
+    public override void AI(Projectile projectile)
+    {
+        if (projectile.type == ProjectileID.MagnetSphereBall)
+        {
+            timeLeft2--;
+            if (timeLeft2 < 3000)
+            {
+                projectile.Kill();
+            }
+
+            // Always keep the projectile alive if we're under the cap
+            if (projectile.timeLeft < 60)
+            {
+                // Verify we're still under the cap
+                int currentCount = 0;
+                for (int i = 0; i < Main.maxProjectiles; i++)
+                {
+                    Projectile other = Main.projectile[i];
+                    if (other != null && other.active && other.type == ProjectileID.MagnetSphereBall)
+                    {
+                        currentCount++;
+                    }
+                }
+
+                totalSpheres = currentCount;
+
+                if (currentCount <= MAX_SPHERES)
+                {
+                    projectile.timeLeft = 3600;
+                    projectile.alpha = 0;
+                }
+            }
+        }
+    }
+
+    public override void OnKill(Projectile projectile, int timeLeft)
+    {
+        if (projectile.type == ProjectileID.MagnetSphereBall)
+        {
+            totalSpheres--;
+            if (totalSpheres < 0) totalSpheres = 0;
+        }
+    }
+
+    public override bool PreKill(Projectile projectile, int timeLeft)
+    {
+        if (projectile.type == ProjectileID.MagnetSphereBall)
+        {
+            // Only prevent vanilla despawns, let our cap system handle excess kills
+            if (totalSpheres <= MAX_SPHERES && projectile.timeLeft < 60)
+            {
+                projectile.timeLeft = 3600;
+                projectile.alpha = 0;
+                projectile.active = true;
+                return false;
+            }
+        }
+
+        return base.PreKill(projectile, timeLeft);
     }
 }

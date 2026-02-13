@@ -3,6 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using Mono.Cecil;
 using System.Collections.Generic;
 using Terraria;
@@ -646,6 +647,42 @@ public class Tittyanium : GlobalItem
         return false;
     }
 }
+public class MagnetSphereGoodNow : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+
+        return item.type == ItemID.MagnetSphere;
+
+    }
+
+    public override void SetDefaults(Item item)
+    {
+
+
+        item.shoot = ModContent.ProjectileType<MagnetSpawn>();
+        item.damage = 40;
+        item.shootSpeed = 6.67f;
+
+    }
+    public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+
+        type = ModContent.ProjectileType<MagnetSpawn>();
+
+
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now shoots eight Magnet Spheres in all directions") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Auxillary magnets take a moment to power up") { OverrideColor = Color.DarkViolet });
+
+    }
+
+
+}
+
 public class CIAAwardInJournalism : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -793,7 +830,7 @@ public class ChloroshitFartisan : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 61;
+        item.damage = 58;
       
 
        
@@ -807,11 +844,11 @@ public class ChloroshitFartisan : GlobalItem
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
        
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 6f, ProjectileID.SporeCloud, (int)(damage * 0.5f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.575f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 4f, ProjectileID.SporeCloud, (int)(damage * 0.62f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ProjectileID.SporeCloud, (int)(damage * 0.67f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 2f, ProjectileID.SporeCloud, (int)(damage * 0.71f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 6f, ProjectileID.SporeCloud, (int)(damage * 0.45f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.5f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 4f, ProjectileID.SporeCloud, (int)(damage * 0.55f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ProjectileID.SporeCloud, (int)(damage * 0.6f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 2f, ProjectileID.SporeCloud, (int)(damage * 0.67f), knockback, player.whoAmI);
         return true;
     }
 }
@@ -824,10 +861,10 @@ public class ChloroshitSaber : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 67;
+        item.damage = 64;
 
-        item.useTime = 16;
-        item.useAnimation = 16;
+        item.useTime = 17;
+        item.useAnimation = 17;
         item.scale = 1.1f;
 
     }
@@ -844,11 +881,11 @@ public class ChloroshitSaber : GlobalItem
         Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(12f));
         Vector2 new4Velocity = velocity.RotatedBy(MathHelper.ToRadians(-12f));
 
-        Projectile.NewProjectileDirect(source, player.Center, newVelocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, new2Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, new3Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, player.Center, new4Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.7f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, newVelocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.667f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new2Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.667f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.667f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new3Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.667f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, new4Velocity * 5f, ProjectileID.SporeCloud, (int)(damage * 0.667f), knockback, player.whoAmI);
 
         return false;
     }
@@ -982,21 +1019,22 @@ public class HeatRayBuff : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.useTime = 7;
-        item.useAnimation = 7;
+        item.useTime = 6;
+        item.useAnimation = 6;
+        item.mana = 7;
     }
 
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (Main.dayTime)
         {
-            damage = (int)(damage * Main.rand.NextFloat(1.15f, 1.16f));
+            damage = (int)(damage * 1.15f);
         }
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, also deals increased damage during daytime") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, decreased mana cost, also deals increased damage during daytime") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -1046,14 +1084,14 @@ public class HelFireBoom : GlobalProjectile
             entity.usesLocalNPCImmunity = true;
             entity.localNPCHitCooldown = 10;
             entity.usesOwnerMeleeHitCD = false;
-
+            entity.usesIDStaticNPCImmunity = false;
         }
     }
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (projectile.type == ProjectileID.HelFire)
         {
-            target.immune[projectile.owner] = 5;
+           // target.immune[projectile.owner] = 5;
             Vector2 velocity2 = Vector2.Zero;
             Vector2 Peanits2 = projectile.Center;
             Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits2, velocity2,

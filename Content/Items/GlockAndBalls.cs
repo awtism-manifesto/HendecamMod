@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -36,7 +37,16 @@ public class GlockAndBalls : ModItem
         Item.shootSpeed = 10.33f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override float UseSpeedMultiplier(Player player)
     {
         return 1f;
@@ -74,7 +84,13 @@ public class GlockAndBalls : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots exactly what you'd expect it to shoot");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Shoots exactly what you'd expect it to shoot")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "So does firing this weapon count as failing no nut november?")
@@ -83,18 +99,7 @@ public class GlockAndBalls : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
 
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
