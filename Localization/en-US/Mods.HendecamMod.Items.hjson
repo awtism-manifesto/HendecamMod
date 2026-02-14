@@ -4921,10 +4921,15 @@ ContentEmblem: {
 
 YelmutFaeChestplate: {
 	Tooltip: ""
-	DisplayName: Yelmut Fae Chestplate
+	DisplayName: Yelmut's Fae-Chestplate
 }
 
 YelmutLeggings: {
 	Tooltip: ""
-	DisplayName: Yelmut Leggings
+	DisplayName: Yelmut's Leggings
+}
+
+CaptainsCannon: {
+	Tooltip: ""
+	DisplayName: Captain's Cannon
 }

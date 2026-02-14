@@ -2,6 +2,7 @@
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Tools;
+using HendecamMod.Content.Items.Weapons;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Global;
@@ -25,7 +26,8 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShatteredKeyboard>(), chanceDenominator: 15));
 
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bundlebuss>(), chanceDenominator: 7));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CaptainsCannon>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bundlebuss>(), chanceDenominator: 10));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScreamingSoyjak>(), chanceDenominator: 20));
         }
 
@@ -426,7 +428,7 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShatteredKeyboard>(), chanceDenominator: 66));
 
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bundlebuss>(), chanceDenominator: 33));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bundlebuss>(), chanceDenominator: 20));
         }
 
         if (npc.type == NPCID.Scutlix)

@@ -2,11 +2,7 @@
 
 namespace HendecamMod.Content.Buffs;
 
-/// <summary>
-///     Only a single weapon imbue buff can apply to a player at a time, Main.meleeBuff ensures that this restriction is
-///     met.
-///     See also ExampleFlask and ExampleWeaponEnchantmentPlayer.
-/// </summary>
+
 public class WeaponImbueShadowflame : ModBuff
 {
     public override void SetStaticDefaults()

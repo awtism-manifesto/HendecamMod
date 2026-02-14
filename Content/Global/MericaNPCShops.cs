@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Poop;
 
@@ -92,8 +93,10 @@ public class MericaNPCShops : GlobalNPC
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
-            shop.Add<Bundlebuss>();
-            shop.Add<BigBuddy>(condition: Terraria.Condition.DownedMechBossAny);
+            shop.Add<CaptainsCannon>(condition: Terraria.Condition.MoonPhases26);
+            shop.Add<CaptainsCannon>(condition: Terraria.Condition.MoonPhases37);
+            shop.Add<Bundlebuss>(condition: Terraria.Condition.MoonPhases04);
+            shop.Add<BigBuddy>(condition: Terraria.Condition.MoonPhases15);
         }
 
         if (shop.NpcType == NPCID.DD2Bartender)

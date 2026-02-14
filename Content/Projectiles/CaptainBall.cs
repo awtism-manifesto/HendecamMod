@@ -1,0 +1,56 @@
+﻿using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.Audio;
+using Terraria.GameContent;
+
+namespace HendecamMod.Content.Projectiles;
+
+// This example is similar to the Wooden Arrow projectile
+public class CaptainBall : ModProjectile
+{
+   
+    public override void SetDefaults()
+    {
+        Projectile.width = 42; // The width of projectile hitbox
+        Projectile.height = 42; // The height of projectile hitbox
+        Projectile.penetrate = 7;
+        Projectile.arrow = true;
+        Projectile.friendly = true;
+        Projectile.DamageType =  DamageClass.Ranged;
+        Projectile.timeLeft = 330;
+        Projectile.scale = 0.75f;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 18;
+    }
+
+   
+
+   
+
+    public override void AI()
+    {
+        // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
+        // like some examples do, this example has custom AI code that is better suited for modifying directly.
+        // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
+
+        Projectile.ai[0] += 1f;
+        if (Projectile.ai[0] >= 17f)
+        {
+            Projectile.ai[0] = 17f;
+            Projectile.velocity.Y += 0.27f;
+        }
+
+        // Cap downward velocity
+        if (Projectile.velocity.Y > 17f)
+        {
+            Projectile.velocity.Y = 17f;
+        }
+
+       
+
+    }
+
+  
+
+  
+}

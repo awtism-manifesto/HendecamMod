@@ -3,7 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.Localization;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Armor;
 
 // The AutoloadEquip attribute automatically attaches an equip texture to this item.
 // Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
@@ -46,12 +46,12 @@ public class YelmutsHelmet : ModItem
         var line = new TooltipLine(Mod, "Face", "+7% increased melee speed and ranged crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+30 max mana")
+        line = new TooltipLine(Mod, "Face", "+30 max mana and Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+5% summon damage and +30 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+5% summon damage")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -65,6 +65,11 @@ public class YelmutsHelmet : ModItem
             };
             tooltips.Add(line);
         }
+        line = new TooltipLine(Mod, "Face", "Set Bonus compatible with Poor Mahogany armor")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "May attract a visitor to your town")
         {
@@ -72,7 +77,7 @@ public class YelmutsHelmet : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "-Contributor Item-")
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
             OverrideColor = new Color(220, 40, 245)
         };
@@ -82,7 +87,12 @@ public class YelmutsHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ItemID.RichMahoganyBreastplate && legs.type == ItemID.RichMahoganyGreaves;
+        if ( body.type == ModContent.ItemType<PoorMahoganyChestplate>() || body.type == ModContent.ItemType<YelmutFaeChestplate>() 
+            && legs.type == ModContent.ItemType<PoorMahoganyLeggings>() || legs.type == ModContent.ItemType<YelmutLeggings>())
+        {
+            return true;
+        }
+        return false;
     }
 
     public override void UpdateEquip(Player player)
@@ -105,10 +115,12 @@ public class YelmutsHelmet : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.RichMahogany, 20);
-        recipe.AddIngredient(ItemID.Pumpkin, 15);
-        recipe.AddIngredient(ItemID.Deathweed, 6);
+        recipe.AddIngredient<PoorMahogany>(20);
+        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
         recipe.AddIngredient(ItemID.Feather, 4);
+        recipe.AddIngredient(ItemID.YellowMarigold, 2);
+       
+       
 
         recipe.AddTile(TileID.Loom);
         recipe.Register();
@@ -116,8 +128,8 @@ public class YelmutsHelmet : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.statDefense += 1;
+        player.statDefense += 5;
         player.maxMinions += MaxMinionIncrease;
-        player.setBonus = SetBonusText.Value;
+        player.setBonus = "+5 Defense, +1 max Minions";
     }
 }

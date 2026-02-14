@@ -20,7 +20,7 @@ public class Bundlebuss : ModItem
         Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 32; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-        Item.reuseDelay = 22;
+        Item.reuseDelay = 24;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.consumeAmmoOnLastShotOnly = true;
         Item.UseSound = SoundID.Item40;
@@ -42,7 +42,7 @@ public class Bundlebuss : ModItem
 
         if (type == ModContent.ProjectileType<MusketBallSpinny>())
         {
-            damage = (int)(damage * 1.25f);
+            damage = (int)(damage * 1.2f);
         }
     }
 

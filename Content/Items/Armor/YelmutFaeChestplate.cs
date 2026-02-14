@@ -50,12 +50,20 @@ public class YelmutFaeChestplate : ModItem
         };
         tooltips.Add(line);
 
+
+
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
+        {
+            OverrideColor = new Color(220, 40, 245)
+        };
+        tooltips.Add(line);
+
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<YelmutsHelmet>() && legs.type == ModContent.ItemType<PlutoniumPants>();
+        return head.type == ModContent.ItemType<YelmutsHelmet>() && legs.type == ModContent.ItemType<YelmutLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -94,7 +102,7 @@ public class YelmutFaeChestplate : ModItem
         }
     }
 
-    // UpdateArmorSet allows you to give set bonuses to the armor.
+   
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -112,7 +120,16 @@ public class YelmutFaeChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
-      
+        player.setBonus = "Increases damage further the higher your max Mana and Lobotometer";
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+
+
+
+
+        // float damageBonus = lobotometerPercent * 0.10f;
+        float damageBonus = (loboPlayer.Max + player.statManaMax2) * 0.0003f;
+
+        player.GetDamage(DamageClass.Generic) += damageBonus;
+
     }
 }

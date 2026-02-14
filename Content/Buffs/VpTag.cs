@@ -7,6 +7,7 @@ public class VpTag : ModBuff
         Main.debuff[Type] = true;
         Main.buffNoSave[Type] = true;
         Main.buffNoTimeDisplay[Type] = false;
+        BuffID.Sets.IsATagBuff[Type] = true;
     }
 
     public override void Update(NPC npc, ref int buffIndex)

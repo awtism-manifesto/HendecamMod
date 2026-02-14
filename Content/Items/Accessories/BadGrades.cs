@@ -57,12 +57,9 @@ public class BadGrades : ModItem
     {
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
-
-
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
         float damageBonus = lobotometerPercent * 0.10f;
-        //float speedBonus = (1f - lobotometerPercent) * 0.25f; // inverse
-
+     
         player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
     }
 }
