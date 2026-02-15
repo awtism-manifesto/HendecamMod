@@ -35,7 +35,7 @@ public class Iphone : ModItem
 
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
     }
-    public float LobotometerCost = 3f;
+    public float LobotometerCost = 1f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -74,7 +74,7 @@ public class Iphone : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Weakly emits harmful 5g radiation that is both invisible and silent");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

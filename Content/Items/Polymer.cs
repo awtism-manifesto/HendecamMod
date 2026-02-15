@@ -51,5 +51,18 @@ public class Polymer : ModItem
         recipe.AddIngredient<CrudeOil>(5);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("SpiderChitin", out ModItem SpiderChitin))
+        {
+            recipe = CreateRecipe(2);
+            recipe.AddIngredient(SpiderChitin.Type);
+            recipe.AddIngredient<PlasticScrap>();
+            recipe.AddIngredient<CrudeOil>(3);
+            recipe.AddTile(TileID.Furnaces);
+            recipe.Register();
+
+
+           
+        }
     }
 }

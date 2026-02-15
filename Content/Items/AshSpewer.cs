@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -81,36 +82,55 @@ public class AshSpewer : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.AshBlock, 100);
-        recipe.AddIngredient(ItemID.SilverBar, 5);
 
-        recipe.AddIngredient(ItemID.Torch, 15);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
-        recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.AshBlock, 100);
-        recipe.AddIngredient(ItemID.TungstenBar, 5);
 
-        recipe.AddIngredient(ItemID.Torch, 15);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("CharredWood", out ModItem CharredWood))
+        {
+            Recipe
+          recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.AshBlock, 100);
+            recipe.AddIngredient(CharredWood.Type, 15);
+            recipe.AddIngredient(ItemID.SilverBar, 5);
+         
+            recipe.AddIngredient(ItemID.Torch, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+            recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.AshBlock, 100);
+            recipe.AddIngredient(CharredWood.Type, 15);
+            recipe.AddIngredient(ItemID.TungstenBar, 5);
+          
+            recipe.AddIngredient(ItemID.Torch, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+        else
+        {
+            Recipe
+         recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.AshBlock, 100);
+            recipe.AddIngredient(ItemID.SilverBar, 10);
+           
+            recipe.AddIngredient(ItemID.Torch, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+            recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.AshBlock, 100);
+            recipe.AddIngredient(ItemID.TungstenBar, 10);
+           
+            recipe.AddIngredient(ItemID.Torch, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+
+       
+
+       
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

@@ -56,8 +56,13 @@ public class CausticCarrot : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(125);
-        recipe.AddIngredient<LycopiteBar>();
+       
         recipe.AddIngredient(ItemID.WoodenArrow, 125);
+        recipe.AddIngredient<LycopiteBar>();
         recipe.Register();
+        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("RottenChunk", out ModItem RottenChunk))
+        {
+            recipe.AddIngredient(RottenChunk.Type);
+        }
     }
 }

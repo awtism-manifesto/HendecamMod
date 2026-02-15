@@ -19,15 +19,15 @@ public class PocketMortar : ModItem
 
         // Use Properties
         // Use Properties
-        Item.useTime = 26; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 26; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 27; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 27; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 12; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 

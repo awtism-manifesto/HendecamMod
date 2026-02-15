@@ -5,6 +5,7 @@ using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -123,7 +124,11 @@ public class ContentEmblem : ModItem
         {
             Item.value += 500000;
         }
+        if (ModLoader.TryGetMod("StormDiversMod", out Mod StormMerica))
 
+        {
+            Item.value += 500000;
+        }
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
         {
             Item.value += 950000;
@@ -132,10 +137,17 @@ public class ContentEmblem : ModItem
         {
             Item.value += 120000;
         }
-
+        if (ModLoader.TryGetMod("GMR", out Mod GerdsLab))
+        {
+            Item.value += 700000;
+        }
         if (ModLoader.TryGetMod("Clamity", out Mod Clam))
         {
             Item.value += 150000;
+        }
+        if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
+        {
+            Item.value += 1000000;
         }
     }
 
@@ -305,6 +317,14 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
+        {
+            line = new TooltipLine(Mod, "Face", "Paracosm- Increases life regen by the number of debuffs you have")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
         if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis))
         {
 
@@ -330,9 +350,26 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
-        if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
+        if (ModLoader.TryGetMod("StormDiversMod", out Mod StormMerica))
+
         {
-            line = new TooltipLine(Mod, "Face", "Paracosm- Increases life regen by the number of debuffs you have")
+            line = new TooltipLine(Mod, "Face", "Storm's Additions- Occasionally causes lightning to strike enemies")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
+        {
+            line = new TooltipLine(Mod, "Face", "BeatriceMod- causes beams of trans energy to be radially fired out of the player periodically")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("GMR", out Mod GerdsLab))
+        {
+            line = new TooltipLine(Mod, "Face", "Gerd's Lab- Increases max Mana by 100")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -347,6 +384,7 @@ public class ContentEmblem : ModItem
             tooltips.Add(line);
         }
        
+
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica))
         {
             line = new TooltipLine(Mod, "Face", "Flamethrowers Plus- 5% increased ranged crit chance")
@@ -403,6 +441,10 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(CallUponTheEggs.Type);
         }
+        if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat) && Beat.TryFind("MidnightEve", out ModItem MidnightEve))
+        {
+            recipe.AddIngredient(MidnightEve.Type);
+        }
         if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("MoldyPicklaw", out ModItem MoldyPicklaw))
         {
             recipe.AddIngredient(MoldyPicklaw.Type);
@@ -450,6 +492,11 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(NetherStar.Type);
         }
+        if (ModLoader.TryGetMod("StormDiversMod", out Mod StormMerica) && StormMerica.TryFind("StormWings", out ModItem StormWings))
+
+        {
+            recipe.AddIngredient(StormWings.Type);
+        }
         if (ModLoader.TryGetMod("gunsandguns2", out Mod gun) && gun.TryFind("invalidator", out ModItem invalidator))
         {
             recipe.AddIngredient(invalidator.Type);
@@ -492,6 +539,10 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(Moonstone.Type, 15);
         }
+        if (ModLoader.TryGetMod("GMR", out Mod GerdsLab) && GerdsLab.TryFind("InfraRedCrystalShard", out ModItem InfraRedCrystalShard))
+        {
+            recipe.AddIngredient(InfraRedCrystalShard.Type, 25);
+        }
 
         if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod) && EnigmaMod.TryFind("ObsidiumOre", out ModItem ObsidiumOre))
         {
@@ -526,6 +577,10 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("gunsandguns2", out Mod gun))
         {
             player.ammoCost75 = true;
+        }
+        if (ModLoader.TryGetMod("GMR", out Mod GerdsLab))
+        {
+            player.statManaMax2 += 100;
         }
         if (ModLoader.TryGetMod("Clamity", out Mod Clam))
         {
@@ -641,6 +696,15 @@ public class ContentEmblem : ModItem
         {
             player.GetModPlayer<Starlife>().Starlifed = true;
         }
+        if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
+        {
+            player.GetModPlayer<BeatriceEnergy>().Beamin = true;
+        }
+        if (ModLoader.TryGetMod("StormDiversMod", out Mod StormMerica))
+
+        {
+            player.GetModPlayer<StormLightning>().Thundrrr = true;
+        }
         if (ModLoader.TryGetMod("SpiritMod", out Mod SpiritMerica))
         {
 
@@ -752,6 +816,106 @@ public class FargoSandDrop : ModPlayer
         }
        
         SandUseTime = SandUseTimeMax;
+
+    }
+
+
+}
+public class StormLightning : ModPlayer
+{
+
+   
+
+    public bool Thundrrr;
+    private int LightUseTime;
+
+    public override void ResetEffects()
+    {
+        Thundrrr = false;
+    }
+
+    public override void PostUpdate()
+    {
+
+        if (LightUseTime > 0)
+            LightUseTime--;
+
+
+
+        if (!Thundrrr)
+            return;
+
+
+        if (LightUseTime > 0)
+            return;
+
+        int baseDamage = (int)Main.rand.NextFloat(100, 300);
+       
+
+
+       
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+               Player.Center - new Vector2(Main.rand.Next(-90, 90), 910),
+                new Vector2(Main.rand.Next(-2, 2), 20f),
+                ModContent.ProjectileType<ChainThunder2>(),
+                baseDamage,
+                3f,
+                Player.whoAmI
+            );
+        SoundEngine.PlaySound(SoundID.Thunder, Player.position);
+
+        LightUseTime = (int)Main.rand.NextFloat(45, 180);
+
+    }
+
+
+}
+public class BeatriceEnergy : ModPlayer
+{
+
+    private const int BeamUseTimeMax = 30;
+
+    public bool Beamin;
+    private int BeamUseTime;
+
+    public override void ResetEffects()
+    {
+        Beamin = false;
+    }
+
+    public override void PostUpdate()
+    {
+
+        if (BeamUseTime > 0)
+            BeamUseTime--;
+
+
+
+        if (!Beamin)
+            return;
+
+
+        if (BeamUseTime > 0)
+            return;
+
+        int baseDamage = 150;
+       
+
+
+        
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+               Player.Center,
+                new Vector2(10f, 10f),
+                ModContent.ProjectileType<BeatSpawn>(),
+                baseDamage,
+                7.5f,
+                Player.whoAmI
+            );
+        SoundEngine.PlaySound(SoundID.Item91, Player.position);
+
+        BeamUseTime = BeamUseTimeMax;
 
     }
 

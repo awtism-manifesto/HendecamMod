@@ -24,7 +24,7 @@ public class LobotomySpike : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4%");
+        var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed")
@@ -32,7 +32,7 @@ public class LobotomySpike : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4%")
         {
             OverrideColor = new Color(255, 255, 255)
         };

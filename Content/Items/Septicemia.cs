@@ -71,18 +71,7 @@ public class Septicemia : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -95,10 +84,7 @@ public class Septicemia : ModItem
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("ArteryPiece", out ModItem ArteryPiece))
-        {
-            recipe.AddIngredient(ArteryPiece.Type, 10);
-        }
+       
 
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica) && ParaMerica.TryFind("NightmareScale", out ModItem NightmareScale)
                                                                 && ParaMerica.TryFind("DivineFlesh", out ModItem DivineFlesh))
@@ -107,6 +93,10 @@ public class Septicemia : ModItem
             recipe.AddIngredient(NightmareScale.Type, 6);
 
             recipe.AddIngredient(DivineFlesh.Type, 6);
+        }
+        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("BloodSoaker", out ModItem BloodSoaker))
+        {
+            recipe.AddIngredient(BloodSoaker.Type);
         }
     }
 

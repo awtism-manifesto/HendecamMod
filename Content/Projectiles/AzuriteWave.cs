@@ -18,7 +18,7 @@ public class AzuriteWave : ModProjectile
         Projectile.height = 100; // The height of projectile hitbox
 
         Projectile.scale = 1f;
-        Projectile.timeLeft = 50;
+        Projectile.timeLeft = 51;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
 
@@ -74,9 +74,7 @@ public class AzuriteWave : ModProjectile
             Projectile.alpha = 35;
         }
 
-        if (Projectile.timeLeft > 178)
-        {
-        }
+       
 
         Lighting.AddLight(Projectile.Center, 0.2f, 0.2f, 0.8f);
     }

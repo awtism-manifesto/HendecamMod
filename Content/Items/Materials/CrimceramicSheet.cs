@@ -1,10 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Placeables;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Materials;
 
 public class CrimceramicSheet : ModItem
 {
+
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<EbonceramicSheet>();
+    }
     public override void SetDefaults()
     {
         Item.width = 32;

@@ -65,5 +65,15 @@ public class ToxicBullet : ModItem
         recipe.AddIngredient(ItemID.Stinger);
 
         recipe.Register();
+
+        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("RottenChunk", out ModItem RottenChunk))
+        {
+            recipe = CreateRecipe(100);
+            recipe.AddIngredient(ItemID.MusketBall, 100);
+           
+            recipe.AddIngredient(RottenChunk.Type);
+            recipe.Register();
+           
+        }
     }
 }

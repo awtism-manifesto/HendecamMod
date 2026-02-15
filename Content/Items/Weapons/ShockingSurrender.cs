@@ -1,7 +1,6 @@
-﻿using HendecamMod.Content.Items.Weapons;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons;
 
 public class ShockingSurrender : ModItem
 {

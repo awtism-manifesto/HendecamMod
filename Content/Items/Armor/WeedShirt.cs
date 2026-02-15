@@ -77,6 +77,10 @@ public class WeedShirt : ModItem
         {
             recipe.AddIngredient(LivingLeaf.Type, 7);
         }
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("DissolvingNature", out ModItem DissolvingNature))
+        {
+            recipe.AddIngredient(DissolvingNature.Type);
+        }
     }
 
     public override void UpdateArmorSet(Player player)

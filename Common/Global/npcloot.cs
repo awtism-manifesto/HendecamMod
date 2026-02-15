@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Consumables;
+using HendecamMod.Content.Items.Weapons;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Common.Global;
@@ -31,6 +32,7 @@ public class MagUrLazy : GlobalNPC
         if (npc.type == NPCID.ElfArcher)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CandyHeart>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CandyCaneCompoundBow>(), chanceDenominator: 20));
         }
     }
 }

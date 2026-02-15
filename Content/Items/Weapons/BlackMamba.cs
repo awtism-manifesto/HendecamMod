@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons;
 
 public class BlackMamba : ModItem
 {

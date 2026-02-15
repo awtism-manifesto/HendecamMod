@@ -1,11 +1,13 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons;
 
-public class Reversibow : ModItem
+public class ImprovisedGrenadeLauncher : ModItem
 {
     public override void SetDefaults()
     {
@@ -14,43 +16,34 @@ public class Reversibow : ModItem
         // Common Properties
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.scale = 1.4f;
-        Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 66000;
+        Item.scale = 1.15f;
+        Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
+        Item.value = 22500;
         // Use Properties
-        Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        // Use Properties
+        Item.useTime = 22; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 22; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-        Item.consumeAmmoOnFirstShotOnly = true;
         // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item102;
+        Item.UseSound = SoundID.Item61;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-        Item.damage = 151; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-        Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.DamageType = DamageClass.Ranged;
+        Item.damage = 12; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
-        Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ProjectileID.ShimmerArrow;
+        Item.shoot = ModContent.ProjectileType<ImprovNade>();
+
+        Item.shootSpeed = 7f; // The speed of the projectile (measured in pixels per frame.)
+        Item.useAmmo = AmmoID.Rocket;
     }
-    public float LobotometerCost = 4f;
-    public override bool? UseItem(Player player)
-    {
-        if (player.whoAmI == Main.myPlayer)
-        {
-            player.GetModPlayer<LobotometerPlayer>()
-                  .AddLobotometer(LobotometerCost);
-        }
-        return base.UseItem(player);
-    }
+    
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ProjectileID.ShimmerArrow;
+        type = ModContent.ProjectileType<ImprovNade>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -60,10 +53,10 @@ public class Reversibow : ModItem
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.65f));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(3));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= -24f;
+            newVelocity *= 1f - Main.rand.NextFloat(0.2f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -75,35 +68,36 @@ public class Reversibow : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts arrows into Shimmer Arrows");
+        var line = new TooltipLine(Mod, "Face", "Uses rockets as ammo");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Shoots arrows backwards lol xd")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
-        recipe.AddIngredient(ItemID.HallowedBar, 10);
-        recipe.AddIngredient(ItemID.WoodenBow);
-        recipe.AddTile(TileID.MythrilAnvil);
+        
+        recipe.AddRecipeGroup("IronBar", 12);
+        recipe.AddIngredient<CrudeOil>(15);
+        recipe.AddIngredient(ItemID.Grenade, 20);
+        recipe.AddTile(TileID.Anvils);
         recipe.Register();
+
+       
     }
 
+    // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-14f, -1f);
+        return new Vector2(-2f, -1f);
     }
 }

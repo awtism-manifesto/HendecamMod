@@ -28,10 +28,7 @@ public class BigBall : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.2f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
-        // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
-        // But, using our own AI allows us to customize things like the dusts that the rocket creates.
-        // Projectile.aiStyle = ProjAIStyleID.Explosive;
-        // AIType = ProjectileID.RocketI;
+        Projectile.timeLeft = 630;
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -42,6 +39,8 @@ public class BigBall : ModProjectile
 
     public override void AI()
     {
+
+        Projectile.rotation += 0.2f;
         // Apply gravity after a quarter of a second
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 7f)
@@ -50,8 +49,10 @@ public class BigBall : ModProjectile
             Projectile.velocity.Y += 0.5f;
         }
 
-        // The projectile is rotated to face the direction of travel
-        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+        if (Projectile.timeLeft <= 615)
+        {
+            Projectile.Resize(48, 48);
+        }
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 32f)
@@ -101,11 +102,7 @@ public class BigBall : ModProjectile
             }
         }
 
-        // Rotate the rocket in the direction that it is moving.
-        if (Projectile.velocity != Vector2.Zero)
-        {
-            Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + MathHelper.PiOver2;
-        }
+       
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.

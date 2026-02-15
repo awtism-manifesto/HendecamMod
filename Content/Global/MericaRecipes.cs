@@ -405,6 +405,15 @@ public class MericaRecipes : ModSystem
             glocksnbawlz.AddTile(TileID.Anvils);
             glocksnbawlz.Register();
         }
+        if (ModLoader.TryGetMod("SOTS", out Mod SotsMerica) && SotsMerica.TryFind("AncientSteelBar", out ModItem AncientSteelBar))
+        {
+            Recipe glocksnbawlzz = Recipe.Create(AncientSteelBar.Type, 2);
+
+            glocksnbawlzz.AddIngredient<SteelBar>();
+            glocksnbawlzz.AddIngredient(ItemID.SpikyBall, 5);
+            glocksnbawlzz.AddTile(TileID.Anvils);
+            glocksnbawlzz.Register();
+        }
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("BlankPainting", out ModItem BlankPainting))
         {

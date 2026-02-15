@@ -89,20 +89,7 @@ public class DeliriantDagger : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe();
-
-        if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish) && TerBritish.TryFind("PlutoniumShank", out ModItem PlutoniumShank))
-        {
-            recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.ShadowFlameKnife);
-            recipe.AddIngredient(ItemID.PsychoKnife);
-
-            recipe.AddIngredient(PlutoniumShank.Type);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
-        }
-        else
-        {
+        Recipe 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ShadowFlameKnife);
             recipe.AddIngredient(ItemID.PsychoKnife);
@@ -110,6 +97,11 @@ public class DeliriantDagger : ModItem
             recipe.AddIngredient<PlutoniumBar>(12);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
+
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("ValadiumIngot", out ModItem ValadiumIngot))
+        {
+            recipe.AddIngredient(ValadiumIngot.Type, 8);
         }
+
     }
 }

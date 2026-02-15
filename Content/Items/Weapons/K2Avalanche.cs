@@ -3,7 +3,7 @@ using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons;
 
 public class K2Avalanche : ModItem
 {

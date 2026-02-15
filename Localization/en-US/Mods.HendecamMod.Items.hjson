@@ -4933,3 +4933,28 @@ CaptainsCannon: {
 	Tooltip: ""
 	DisplayName: Captain's Cannon
 }
+
+CandyCaneCompoundBow: {
+	Tooltip: ""
+	DisplayName: Candy Cane Compound Bow
+}
+
+ImprovisedGrenadeLauncher: {
+	Tooltip: ""
+	DisplayName: Improvised Grenade Launcher
+}
+
+BladeShooter: {
+	DisplayName: Blade Shooter
+	Tooltip: ""
+}
+
+BladeMaelstrom: {
+	DisplayName: Blade Maelstrom
+	Tooltip: ""
+}
+
+SuperMaelstrom: {
+	DisplayName: Super Maelstrom
+	Tooltip: ""
+}

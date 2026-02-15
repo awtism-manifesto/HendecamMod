@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Global;
+﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -85,5 +86,27 @@ public class VerdantClaymore : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+    }
+
+    public override void AddRecipes()
+    {
+       
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("VibrantBar", out ModItem VibrantBar))
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.JungleSpores, 10);
+            recipe.AddIngredient(VibrantBar.Type, 5);
+            recipe.AddIngredient(ItemID.Stinger, 5);
+         
+          
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+          
+        }
+        else 
+        {
+        
+        
+        }
     }
 }

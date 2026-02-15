@@ -8,22 +8,18 @@ namespace HendecamMod.Content.Projectiles;
 // This example is similar to the Wooden Arrow projectile
 public class BigCannonBall : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 3; // The length of old position to be recorded
-        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-    }
+   
 
     public override void SetDefaults()
     {
-        Projectile.width = 34; // The width of projectile hitbox
-        Projectile.height = 34; // The height of projectile hitbox
+        Projectile.width = 32; // The width of projectile hitbox
+        Projectile.height = 32; // The height of projectile hitbox
         Projectile.penetrate = 1;
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
-        Projectile.timeLeft = 195;
-        Projectile.scale = 2f;
+        Projectile.timeLeft = 225;
+       
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -58,49 +54,28 @@ public class BigCannonBall : ModProjectile
 
     public override void AI()
     {
-        // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
-        // like some examples do, this example has custom AI code that is better suited for modifying directly.
-        // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
 
+        if (Projectile.timeLeft <= 215)
+        {
+            Projectile.Resize(72, 72);
+        }
+
+        Projectile.rotation += 0.2f;
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
             Projectile.ai[0] = 17f;
-            Projectile.velocity.Y += 0.27f;
+            Projectile.velocity.Y += 0.285f;
         }
 
         // Cap downward velocity
-        if (Projectile.velocity.Y > 17f)
+        if (Projectile.velocity.Y > 26f)
         {
-            Projectile.velocity.Y = 17f;
+            Projectile.velocity.Y = 26f;
         }
     }
 
-    public override bool PreDraw(ref Color lightColor)
-    {
-        Texture2D texture = TextureAssets.Projectile[Type].Value;
+    
 
-        // Redraw the projectile with the color not influenced by light
-        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-        for (int k = 0; k < Projectile.oldPos.Length; k++)
-        {
-            Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-            Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
-        }
-
-        return true;
-    }
-
-    public override void OnKill(int timeLeft)
-    {
-        SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-        for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
-        {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Silver);
-            dust.noGravity = true;
-            dust.velocity *= 1.5f;
-            dust.scale *= 0.9f;
-        }
-    }
+   
 }

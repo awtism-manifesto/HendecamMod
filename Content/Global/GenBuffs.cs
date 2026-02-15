@@ -102,6 +102,30 @@ public class MetalAmogus : GlobalItem
         item.useStyle = ItemUseStyleID.Swing;
     }
 }
+public class PeeminScythe : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.DemonScythe;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now fires in a four round burst") { OverrideColor = Color.DarkViolet });
+
+      
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 40;
+        item.shootSpeed = 2.5f;
+        item.useTime = 13;
+        item.mana = 19;
+        item.useAnimation = 52;
+        item.reuseDelay = 39;
+    }
+}
 
 public class CockworkAssGun : GlobalItem
 {

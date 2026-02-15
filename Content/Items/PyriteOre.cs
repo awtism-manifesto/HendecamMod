@@ -9,7 +9,7 @@ public class PyriteOre : ModItem
         Item.useTime = 10;
         Item.useAnimation = 10;
         Item.autoReuse = true;
-        Item.rare = ItemRarityID.White;
+        Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(copper: 555);
         Item.consumable = true;
         Item.maxStack = 9999;

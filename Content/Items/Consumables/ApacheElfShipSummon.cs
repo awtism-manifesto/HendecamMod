@@ -83,5 +83,9 @@ public class ApacheElfShipSummon : ModItem
         recipe.AddIngredient<CandyHeart>(15);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("HelicopterParts", out ModItem HelicopterParts))
+        {
+            recipe.AddIngredient(HelicopterParts.Type);
+        }
     }
 }

@@ -29,7 +29,7 @@ public class TheTackZone : ModItem
         Item.noMelee = true;
         Item.knockBack = 6.5f;
         Item.ArmorPenetration = 30;
-        Item.value = Item.buyPrice(gold: 565);
+        Item.value = Item.buyPrice(gold: 595);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<TackZoneProj>();

@@ -234,7 +234,6 @@
 	  <None Remove="Content\Projectiles\BarbBullet.png" />
 	  <None Remove="Content\Projectiles\BeadsNDick.png" />
 	  <None Remove="Content\Projectiles\BeetleRoundProjectile.png" />
-	  <None Remove="Content\Projectiles\BigBall.png" />
 	  <None Remove="Content\Projectiles\BirdBullet.png" />
 	  <None Remove="Content\Projectiles\Bitcoin.png" />
 	  <None Remove="Content\Projectiles\BombBoom.png" />

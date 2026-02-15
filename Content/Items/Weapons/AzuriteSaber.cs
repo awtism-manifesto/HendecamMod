@@ -16,7 +16,7 @@ public class AzuriteSaber : ModItem
         Item.knockBack = 7.25f;
         Item.width = 40;
         Item.height = 40;
-        Item.shootSpeed = 6f;
+        Item.shootSpeed = 9.25f;
         Item.scale = 1.15f;
 
         Item.UseSound = SoundID.Item60;

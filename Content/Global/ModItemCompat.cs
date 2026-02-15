@@ -74,7 +74,53 @@ public class BowMage123 : GlobalItem
         item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
     }
 }
+public class DoorStupid1 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("SOTS", out Mod SotsMerica) && SotsMerica.TryFind("DoorPants", out ModItem DoorPants))
+        {
+            return item.type == DoorPants.Type;
+        }
 
+        return false;
+    }
+    public static readonly int StupidSpeed = 5;
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        player.GetAttackSpeed<StupidDamage>() += StupidSpeed / 100f;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid attack speed by 5%") { OverrideColor = Color.OrangeRed});
+    }
+
+    
+}
+public class DoorStupid2 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("SOTS", out Mod SotsMerica) && SotsMerica.TryFind("BandOfDoor", out ModItem BandOfDoor))
+        {
+            return item.type == BandOfDoor.Type;
+        }
+
+        return false;
+    }
+    public static readonly int StupidSpeed = 5;
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        player.GetAttackSpeed<StupidDamage>() += StupidSpeed / 100f;
+        player.GetDamage<StupidDamage>() += StupidSpeed / 100f;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid damage and attack speed by 5%") { OverrideColor = Color.OrangeRed });
+    }
+
+
+}
 public class ConsolariaForSomeReason : GlobalItem
 {
     // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))

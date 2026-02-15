@@ -89,40 +89,25 @@ public class SubstrateSpreader : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<AshSpewer>();
+            recipe.AddIngredient<LycopiteBar>(13);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        
+        if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("RottenChunk", out ModItem RottenChunk))
+        {
+            recipe.AddIngredient(RottenChunk.Type, 10);
+        }
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica) && FireMerica.TryFind("ThrowerParts", out ModItem ThrowerParts))
         {
-            recipe = CreateRecipe();
-            recipe.AddIngredient<AshSpewer>();
             recipe.AddIngredient(ThrowerParts.Type);
-            recipe.AddIngredient<LycopiteBar>(13);
-
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
-        else
-        {
-            recipe = CreateRecipe();
-            recipe.AddIngredient<AshSpewer>();
-            recipe.AddIngredient<LycopiteBar>(13);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
         }
     }
 

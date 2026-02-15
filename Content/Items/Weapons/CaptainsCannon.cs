@@ -34,7 +34,7 @@ public class CaptainsCannon : ModItem
         Item.noMelee = true;
      
         Item.shoot = ProjectileID.PurificationPowder;
-        Item.shootSpeed = 17.5f;
+        Item.shootSpeed = 17f;
     }
 
     public override bool AltFunctionUse(Player player)
@@ -49,8 +49,8 @@ public class CaptainsCannon : ModItem
           
             Item.useTime = 39;
             Item.useAnimation = 39;
-            Item.UseSound = SoundID.Item61;
-
+            Item.UseSound = SoundID.Item62;
+            Item.shootSpeed = 17f;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.None;
             Item.shoot = ModContent.ProjectileType<CaptainBall>();
@@ -61,7 +61,8 @@ public class CaptainsCannon : ModItem
             Item.damage = 35;
             Item.useTime = 8;
             Item.useAnimation = 8;
-            Item.UseSound = SoundID.Item40;
+            Item.shootSpeed = 17f;
+            Item.UseSound = SoundID.Item11;
             Item.shoot = ProjectileID.PurificationPowder;
             Item.useAmmo = AmmoID.Bullet;
           
@@ -106,7 +107,7 @@ public class CaptainsCannon : ModItem
         var line = new TooltipLine(Mod, "Face", "Left click to rapidly shoot bullets");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Right click to shoot a huge, piercing cannonball")
+        line = new TooltipLine(Mod, "Face", "Right click to shoot a powerful, piercing cannonball")
         {
             OverrideColor = new Color(255, 255, 255)
         };

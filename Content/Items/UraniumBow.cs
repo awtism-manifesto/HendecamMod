@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,7 +28,10 @@ public class UraniumBow : ModItem
         Item.damage = 28; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("RecursiveBow", out ModItem RecursiveBow))
+        {
+            Item.damage = 32;
+        }
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 13.3f; // The speed of the projectile (measured in pixels per frame.)
@@ -52,18 +56,7 @@ public class UraniumBow : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -73,6 +66,11 @@ public class UraniumBow : ModItem
         recipe.AddIngredient<UraniumBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("RecursiveBow", out ModItem RecursiveBow))
+        {
+            recipe.AddIngredient(RecursiveBow.Type);
+        }
     }
 
     public override Vector2? HoldoutOffset()
