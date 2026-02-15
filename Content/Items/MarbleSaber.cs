@@ -65,6 +65,10 @@ public class MarbleSaber : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("ArcaneGoldShard", out ModItem ArcaneGoldShard))
+        {
+            recipe.AddIngredient(ArcaneGoldShard.Type, 12);
+        }
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

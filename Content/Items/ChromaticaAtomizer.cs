@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -71,12 +72,23 @@ public class ChromaticaAtomizer : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<ParticleGun>();
-        recipe.AddIngredient(ItemID.HallowedBar, 12);
-        recipe.AddIngredient(ItemID.SoulofSight, 15);
 
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<ParticleGun>();
+            recipe.AddIngredient(NeapoliniteBar.Type, 12);
+            recipe.AddIngredient(ItemID.SoulofSight, 15);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<ParticleGun>();
+            recipe.AddIngredient(ItemID.HallowedBar, 12);
+            recipe.AddIngredient(ItemID.SoulofSight, 15);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

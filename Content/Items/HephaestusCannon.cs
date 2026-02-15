@@ -91,13 +91,26 @@ public class HephaestusCannon : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Pyrocannon>();
-        recipe.AddIngredient(ItemID.HallowedBar, 12);
-        recipe.AddIngredient(ItemID.SoulofMight, 10);
-        recipe.AddIngredient(ItemID.SoulofSight, 10);
-        recipe.AddIngredient(ItemID.SoulofFright, 10);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<Pyrocannon>();
+            recipe.AddIngredient(NeapoliniteBar.Type, 12);
+            recipe.AddIngredient(ItemID.SoulofMight, 10);
+            recipe.AddIngredient(ItemID.SoulofSight, 10);
+            recipe.AddIngredient(ItemID.SoulofFright, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<Pyrocannon>();
+            recipe.AddIngredient(ItemID.HallowedBar, 12);
+            recipe.AddIngredient(ItemID.SoulofMight, 10);
+            recipe.AddIngredient(ItemID.SoulofSight, 10);
+            recipe.AddIngredient(ItemID.SoulofFright, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("SoulOfPlight", out ModItem SoulOfPlight))
         {
             recipe.AddIngredient(SoulOfPlight.Type, 10);

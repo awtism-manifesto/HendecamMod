@@ -422,6 +422,14 @@ public class TheSecondAmendment : ModItem
 
             recipe.AddIngredient(EssenceofBright.Type, 5);
         }
+
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("AutomaticPeacemakerM2", out ModItem AutomaticPeacemakerM2)
+                                                                  && PixelMerica.TryFind("Ultimatum", out ModItem Ultimatum))
+
+        {
+            recipe.AddIngredient(AutomaticPeacemakerM2.Type);
+            recipe.AddIngredient(Ultimatum.Type);
+        }
     }
 
     public override Vector2? HoldoutOffset()

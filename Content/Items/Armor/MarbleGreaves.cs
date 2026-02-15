@@ -94,6 +94,10 @@ public class MarbleGreaves : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 25);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("ArcaneGoldShard", out ModItem ArcaneGoldShard))
+        {
+            recipe.AddIngredient(ArcaneGoldShard.Type, 25);
+        }
     }
 
     public override void UpdateArmorSet(Player player)

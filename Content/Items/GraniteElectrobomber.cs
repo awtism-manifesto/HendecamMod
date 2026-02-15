@@ -73,6 +73,10 @@ public class GraniteElectrobomber : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("GlowingGranitePowder", out ModItem GlowingGranitePowder))
+        {
+            recipe.AddIngredient(GlowingGranitePowder.Type, 20);
+        }
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

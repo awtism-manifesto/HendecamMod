@@ -80,12 +80,25 @@ public class PurifiedSaltLeggings : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<RockSaltLeggings>();
-        recipe.AddIngredient<PurifiedSalt>(72);
-        recipe.AddIngredient(ItemID.HallowedBar, 10);
-        recipe.AddIngredient(ItemID.SpectreBar, 10);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
+
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<RockSaltLeggings>();
+            recipe.AddIngredient<PurifiedSalt>(72);
+            recipe.AddIngredient(NeapoliniteBar.Type, 10);
+            recipe.AddIngredient(ItemID.SpectreBar, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<RockSaltChestplate>();
+            recipe.AddIngredient<PurifiedSalt>(72);
+            recipe.AddIngredient(ItemID.HallowedBar, 10);
+            recipe.AddIngredient(ItemID.SpectreBar, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
 
     public override void UpdateArmorSet(Player player)

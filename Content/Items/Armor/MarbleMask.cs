@@ -96,6 +96,10 @@ public class MarbleMask : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("ArcaneGoldShard", out ModItem ArcaneGoldShard))
+        {
+            recipe.AddIngredient(ArcaneGoldShard.Type, 15);
+        }
     }
 
     public override void UpdateArmorSet(Player player)

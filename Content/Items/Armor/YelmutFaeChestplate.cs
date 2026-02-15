@@ -106,16 +106,31 @@ public class YelmutFaeChestplate : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<PoorMahogany>(40);
-        recipe.AddIngredient(ItemID.HallowedBar, 10);
-        recipe.AddIngredient(ItemID.PalladiumBar, 10);
-        recipe.AddIngredient(ItemID.SoulofMight, 5);
-        recipe.AddIngredient(ItemID.SoulofFright, 5);
-        recipe.AddIngredient(ItemID.SoulofSight, 5);
-        recipe.AddIngredient(ItemID.SoulofFlight, 5);
-        recipe.AddTile(TileID.MythrilAnvil);
 
-        recipe.Register();
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<PoorMahogany>(40);
+            recipe.AddIngredient(NeapoliniteBar.Type, 10);
+            recipe.AddIngredient(ItemID.PalladiumBar, 10);
+            recipe.AddIngredient(ItemID.SoulofMight, 5);
+            recipe.AddIngredient(ItemID.SoulofFright, 5);
+            recipe.AddIngredient(ItemID.SoulofSight, 5);
+            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<PoorMahogany>(40);
+            recipe.AddIngredient(ItemID.HallowedBar, 10);
+            recipe.AddIngredient(ItemID.PalladiumBar, 10);
+            recipe.AddIngredient(ItemID.SoulofMight, 5);
+            recipe.AddIngredient(ItemID.SoulofFright, 5);
+            recipe.AddIngredient(ItemID.SoulofSight, 5);
+            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
 
     public override void UpdateArmorSet(Player player)

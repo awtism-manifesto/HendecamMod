@@ -71,15 +71,28 @@ public class LaserMonkeysPaw : ModItem
     public override void AddRecipes()
     {
         Recipe
-            recipe = CreateRecipe();
-        recipe.AddIngredient<SuperMonkeysPaw>();
+        recipe = CreateRecipe();
 
-        recipe.AddIngredient<PlutoniumBar>(15);
-        recipe.AddIngredient(ItemID.HallowedBar, 10);
-        recipe.AddIngredient(ItemID.SoulofLight, 5);
-        recipe.AddIngredient(ItemID.SoulofNight, 5);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<SuperMonkeysPaw>();
+            recipe.AddIngredient<PlutoniumBar>(15);
+            recipe.AddIngredient(NeapoliniteBar.Type, 10);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
+            recipe.AddIngredient(ItemID.SoulofNight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<SuperMonkeysPaw>();
+            recipe.AddIngredient<PlutoniumBar>(15);
+            recipe.AddIngredient(ItemID.HallowedBar, 10);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
+            recipe.AddIngredient(ItemID.SoulofNight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
 
     public override Vector2? HoldoutOffset()

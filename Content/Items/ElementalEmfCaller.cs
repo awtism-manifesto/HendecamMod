@@ -70,6 +70,10 @@ public class ElementalEmfCaller : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("GlowingGranitePowder", out ModItem GlowingGranitePowder))
+        {
+            recipe.AddIngredient(GlowingGranitePowder.Type, 20);
+        }
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

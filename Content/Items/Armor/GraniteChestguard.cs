@@ -74,6 +74,10 @@ public class GraniteChestguard : ModItem
         recipe.AddIngredient(ItemID.TungstenBar, 30);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("GlowingGranitePowder", out ModItem GlowingGranitePowder))
+        {
+            recipe.AddIngredient(GlowingGranitePowder.Type, 35);
+        }
     }
 
     public override void UpdateArmorSet(Player player)
