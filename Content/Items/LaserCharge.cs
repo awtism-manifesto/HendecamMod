@@ -20,7 +20,7 @@ public class LaserCharge : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 0.5f;
-        Item.value = 10;
+        Item.value = 39;
         Item.rare = ItemRarityID.Orange;
         Item.shoot = ModContent.ProjectileType<ChargeLaser>();
         Item.shootSpeed = 15f; // The speed of the projectile.

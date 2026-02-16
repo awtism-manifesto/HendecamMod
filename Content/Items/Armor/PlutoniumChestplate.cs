@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -9,10 +15,10 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class PlutoniumChestplate : ModItem
 {
-    public static readonly int CritBonus = 8;
-    public static readonly int AdditiveDamageBonus = 15;
-    public static readonly int AttackSpeedBonus = 15;
-    public static readonly int StupidArmorPenetration = 10;
+    public static readonly int CritBonus = 7;
+    public static readonly int AdditiveDamageBonus = 14;
+   
+   
 
     public static readonly int MeleeAttackSpeedBonus = 11;
     public static LocalizedText SetBonusText { get; private set; }
@@ -33,16 +39,16 @@ public class PlutoniumChestplate : ModItem
         Item.height = 28; // Height of the item
         Item.value = Item.sellPrice(gold: 27); // How many coins the item is worth
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-        Item.defense = 17; // The amount of defense the item will give when equipped
+        Item.defense = 21; // The amount of defense the item will give when equipped
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "15% increased damage and 8% increased crit chance");
+        var line = new TooltipLine(Mod, "Face", "14% increased damage and 7% increased crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 stupid armor penetration and +11% melee speed")
+        line = new TooltipLine(Mod, "Face", "+11% melee speed and +55% lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -61,12 +67,15 @@ public class PlutoniumChestplate : ModItem
     {
         
 
-        player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
+       
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.lifeRegen += -1;
+      
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.55f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -81,8 +90,42 @@ public class PlutoniumChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increases attack speed by 15% at the cost of 10% max life";
-        player.statLifeMax2 = (int)(player.statLifeMax2 * 0.9f);
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 115f;
+        player.setBonus = "All projectile weapons have a 1-in-5 chance to spawn a powerful, homing beam of Plutonium energy";
+        player.GetModPlayer<PlutoBeams>().ImBeamin = true;
+
     }
+
+}
+public class PlutoBeams : ModPlayer
+{
+    public bool ImBeamin;
+
+    public override void ResetEffects()
+    {
+        ImBeamin = false;
+    }
+
+    public override void ModifyShootStats(Item item, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        // Keep the original projectile type
+        // Don't override 'type'
+        if (ImBeamin)
+        {
+            if (Main.rand.NextBool(5))
+            {
+                // Spawn additional projectile while keeping the original
+                Projectile.NewProjectile(
+                    Player.GetSource_ItemUse(item),
+                    position,
+                    velocity,
+                    ModContent.ProjectileType<PlutoParticleOmni>(),
+                    (int)(damage * 1.25f),
+                    knockback,
+                    Player.whoAmI
+                );
+            }
+        }
+    }
+
+
 }

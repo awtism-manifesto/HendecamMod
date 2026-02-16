@@ -25,7 +25,7 @@ public class TheDarkKnight : ModTile
         };
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(225, 173, 66), Language.GetText("Rory Nite"));
+        AddMapEntry(new Color(5, 3, 6), Language.GetText("Rory Nite"));
         DustType = DustID.ArgonMoss;
     }
 }

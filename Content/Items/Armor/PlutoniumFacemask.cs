@@ -8,9 +8,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PlutoniumFacemask : ModItem
 {
-    public static readonly int AdditiveDamageBonus = 13;
-    public static readonly int CritBonus = 13;
-    public static readonly int MaxManaIncrease = 90;
+    public static readonly int AdditiveDamageBonus = 11;
+    public static readonly int CritBonus = 11;
+    public static readonly int MaxManaIncrease = 95;
     public static readonly int RangedCritBonus = 10;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -32,13 +32,13 @@ public class PlutoniumFacemask : ModItem
         Item.height = 28; // Height of the item
         Item.value = Item.sellPrice(gold: 20); // How many coins the item is worth
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-        Item.defense = 12; // The amount of defense the item will give when equipped
+        Item.defense = 14; // The amount of defense the item will give when equipped
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "13% increased damage and crit chance");
+        var line = new TooltipLine(Mod, "Face", "11% increased damage and crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+95 max mana and +10% ranged crit chance")
@@ -63,7 +63,7 @@ public class PlutoniumFacemask : ModItem
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.lifeRegen += -1;
+       
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

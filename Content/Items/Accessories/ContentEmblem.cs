@@ -145,6 +145,12 @@ public class ContentEmblem : ModItem
         {
             Item.value += 150000;
         }
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica))
+
+        {
+
+            Item.value += 500000;
+        }
         if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
         {
             Item.value += 1000000;
@@ -270,7 +276,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica))
         {
-            line = new TooltipLine(Mod, "Face", "Spirit Reforged- +5 Defense")
+            line = new TooltipLine(Mod, "Face", "Spirit Reforged- Increases luck by 1% of your current defense")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -383,7 +389,16 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
-       
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica))
+
+        {
+            line = new TooltipLine(Mod, "Face", "PG3D Weapons Pack- Projectile attacks have a chance to fire an extra bullet")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+
+        }
 
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica))
         {
@@ -393,6 +408,7 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+
         if (ModLoader.TryGetMod("gunsandguns2", out Mod gun))
         {
             line = new TooltipLine(Mod, "Face", "Guns and Guns 2- 25% reduced ammo usage")
@@ -462,6 +478,13 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse) && Arse.TryFind("SlingerShooter", out ModItem SlingerShooter))
         {
             recipe.AddIngredient(SlingerShooter.Type);
+        }
+
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("AutomaticPeacemaker", out ModItem AutomaticPeacemaker))
+
+        {
+            recipe.AddIngredient(AutomaticPeacemaker.Type);
+
         }
         if (ModLoader.TryGetMod("FishGunsPlus", out Mod Fish) && Fish.TryFind("BrokenFish", out ModItem BrokenFish))
         {
@@ -567,7 +590,7 @@ public class ContentEmblem : ModItem
     {
         if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica))
         {
-            player.statDefense += 5;
+            player.luck += player.statDefense / 100f;
         }
         if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))
 
@@ -646,6 +669,12 @@ public class ContentEmblem : ModItem
         {
 
             player.GetModPlayer<FableShroom>().ShroomMines = true;
+        }
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica))
+
+        {
+
+            player.GetModPlayer<PixelBullet>().Shooty = true;
         }
         if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis))
         {
@@ -1042,14 +1071,13 @@ public class EbonflyLigma : ModPlayer
         }
         else
         {
-            if (Main.rand.NextBool(100))
+            if (Main.rand.NextBool(500))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 180);
+                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
             }
             
         }
     }
-
     public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (!Player.GetModPlayer<EbonflyLigma>().EbonLigma)
@@ -1059,9 +1087,42 @@ public class EbonflyLigma : ModPlayer
         {
             if (Main.rand.NextBool(100))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 180);
+                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
             }
 
         }
     }
+}
+public class PixelBullet : ModPlayer
+{
+    public bool Shooty;
+
+    public override void ResetEffects()
+    {
+        Shooty = false;
+    }
+
+    public override void ModifyShootStats(Item item, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        // Keep the original projectile type
+        // Don't override 'type'
+        if (Shooty)
+        {
+            if (Main.rand.NextBool(6))
+            {
+                // Spawn additional projectile while keeping the original
+                Projectile.NewProjectile(
+                    Player.GetSource_ItemUse(item),
+                    position,
+                    velocity,
+                    ProjectileID.Bullet,
+                    damage,
+                    knockback,
+                    Player.whoAmI
+                );
+            }
+        }
+    }
+
+
 }

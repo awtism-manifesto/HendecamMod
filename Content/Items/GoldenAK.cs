@@ -15,7 +15,7 @@ public class GoldenAK : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.65f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(gold: 49);
+        Item.value = Item.sellPrice(gold: 33);
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -79,18 +79,7 @@ public class GoldenAK : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()
@@ -101,6 +90,18 @@ public class GoldenAK : ModItem
         recipe.AddIngredient(ItemID.GoldDust, 100);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("AKMini", out ModItem AKMini)
+                                                                 && PixelMerica.TryFind("GoldenFriend", out ModItem GoldenFriend))
+
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(AKMini.Type);
+            recipe.AddIngredient(GoldenFriend.Type);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
 
     public override Vector2? HoldoutOffset()

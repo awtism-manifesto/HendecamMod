@@ -1,108 +1,98 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
+using Terraria.ModLoader.IO;
+using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
-
-[AutoloadEquip(EquipType.Body)]
+[AutoloadEquip( EquipType.Wings, EquipType.Body)]
 public class YelmutFaeChestplate : ModItem
 {
-   
     public static readonly int AdditiveDamageBonus = 15;
-   
-   
     public static readonly int MeleeAttackSpeedBonus = 12;
 
 
-   
-
-    public override void SetDefaults()
-    {
-        Item.width = 32; // Width of the item
-        Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 30); // How many coins the item is worth
-        Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-        Item.defense = 22; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "12% increased melee speed and 15% increased ranged damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+80 max Mana and max Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+1 max minions and +2 max sentries")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Counts as wings, enhances other wings when combined")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
-
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(220, 40, 245)
-        };
-        tooltips.Add(line);
-
-    }
-
-    // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-    public override bool IsArmorSet(Item head, Item body, Item legs)
-    {
-        return head.type == ModContent.ItemType<YelmutsHelmet>() && legs.type == ModContent.ItemType<YelmutLeggings>();
-    }
-
-    public override void UpdateEquip(Player player)
+    public override void SetStaticDefaults()
     {
        
+      
+            ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(135, 7f, 1.33f);
+        
+    }
+    public override void SetDefaults()
+    {
+        Item.width = 32;
+        Item.height = 28;
+        Item.value = Item.sellPrice(gold: 30);
+        Item.rare = ItemRarityID.LightPurple;
+        Item.defense = 22;
 
-
+       
+    }
+    
+    public override void UpdateEquip(Player player)
+    {
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         loboPlayer.MaxBonus += 80f;
 
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
-
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
 
         player.statManaMax2 += 80;
         player.maxMinions += 1;
         player.maxTurrets += 2;
-        if (player.wings <= 0)
-        {
-            player.wingsLogic = 34;
-            player.wingTimeMax += 150;
-            player.jumpSpeedBoost += 1.33f;
-            player.moveSpeed += 0.1f;
-            player.wingRunAccelerationMult += 2f;
-            player.wingAccRunSpeed += 2f;
-            player.noFallDmg = true;
-        }
-        else
-        {
-            player.wingTimeMax += 100;
-            player.jumpSpeedBoost += 0.5f;
-            player.moveSpeed += 0.1f;
-            player.wingRunAccelerationMult += 1.25f;
-            player.wingAccRunSpeed += 1.25f;
 
-        }
+      
+            player.wingsLogic = Item.wingSlot;
+            player.wingTimeMax += 150;
+            player.noFallDmg = true;
+        player.jumpSpeedBoost += 0.67f;
+        player.moveSpeed += 0.1f;
+        player.wingRunAccelerationMult += 1.5f;
+        player.wingAccRunSpeed += 1.5f;
+    
+
     }
 
-   
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+      
+        tooltips.Add(new TooltipLine(Mod, "Face", "12% increased melee speed and 15% increased ranged damage"));
+
+        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and max Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        });
+
+        tooltips.Add(new TooltipLine(Mod, "Face", "+1 max minions and +2 max sentries")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        });
+
+        tooltips.Add(new TooltipLine(Mod, "Face", "Counts as wings, enhances other wings when combined")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        });
+
+        tooltips.Add(new TooltipLine(Mod, "Face", "-Developer Item-")
+        {
+            OverrideColor = new Color(220, 40, 245)
+        });
+    }
+
+    public override bool IsArmorSet(Item head, Item body, Item legs)
+    {
+        return head.type == ModContent.ItemType<YelmutsHelmet>() &&
+               legs.type == ModContent.ItemType<YelmutLeggings>();
+    }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -115,7 +105,7 @@ public class YelmutFaeChestplate : ModItem
             recipe.AddIngredient(ItemID.SoulofMight, 5);
             recipe.AddIngredient(ItemID.SoulofFright, 5);
             recipe.AddIngredient(ItemID.SoulofSight, 5);
-            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddIngredient(ItemID.SoulofFlight, 15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -127,7 +117,7 @@ public class YelmutFaeChestplate : ModItem
             recipe.AddIngredient(ItemID.SoulofMight, 5);
             recipe.AddIngredient(ItemID.SoulofFright, 5);
             recipe.AddIngredient(ItemID.SoulofSight, 5);
-            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddIngredient(ItemID.SoulofFlight, 15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -139,7 +129,7 @@ public class YelmutFaeChestplate : ModItem
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
 
-
+        player.GetModPlayer<YelmutStupidPixieWings>().YelWings = true;
 
         // float damageBonus = lobotometerPercent * 0.10f;
         float damageBonus = (loboPlayer.Max + player.statManaMax2) * 0.0003f;
@@ -147,4 +137,37 @@ public class YelmutFaeChestplate : ModItem
         player.GetDamage(DamageClass.Generic) += damageBonus;
 
     }
+}
+public class YelmutStupidPixieWings: ModPlayer
+{
+    public bool YelWings;
+
+    public override void ResetEffects()
+    {
+        YelWings = false;
+    }
+    public override void FrameEffects()
+    {
+
+        if (YelWings)
+        {
+            Player.wings = EquipLoader.GetEquipSlot(Mod, "YelmutFaeChestplate", EquipType.Wings);
+            if (Player.velocity.Y != 0)
+            {
+                if (Main.rand.NextBool(4))
+                {
+                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<LycopiteDust>(), 0, 0, 100, default);
+                }
+                if (Main.rand.NextBool(4))
+                {
+                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(), 0, 0, 100, Color.LightPink);
+                }
+
+
+            }
+        }
+    }
+   
+
+
 }

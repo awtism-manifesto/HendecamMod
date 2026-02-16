@@ -444,6 +444,7 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.MartianSaucerCore)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PulsePistols>(), chanceDenominator: 7));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDronegun>(), chanceDenominator: 7));
             npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<FissionDrive>(), chanceDenominator: 4, chanceNumerator: 3));
         }
 

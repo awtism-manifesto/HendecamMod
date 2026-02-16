@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -43,7 +44,7 @@ public class AstatineHelmet : ModItem
         var line = new TooltipLine(Mod, "Face", "19% increased damage and 10% increased crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+110 max mana and +11% stupid attack speed")
+        line = new TooltipLine(Mod, "Face", "+110 max mana and lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -66,6 +67,9 @@ public class AstatineHelmet : ModItem
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 110f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

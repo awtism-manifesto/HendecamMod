@@ -1,8 +1,10 @@
-﻿using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons;
 
 namespace HendecamMod.Common.Systems;
 
@@ -173,8 +175,8 @@ public class RiverRecipes : ModSystem
 
             if (recipe.HasResult(ItemID.PDA))
             {
-              
-             
+
+
                 recipe.AddIngredient(ModContent.ItemType<IQTest>());
             }
 
@@ -189,6 +191,20 @@ public class RiverRecipes : ModSystem
                 recipe.RemoveIngredient(ItemID.SpectreBoots);
                 recipe.AddIngredient(ItemID.RocketBoots);
             }
+
+
+            if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("Ultimatum", out ModItem Ultimatum))
+            {
+                if (recipe.HasResult(Ultimatum.Type))
+                {
+                    recipe.AddIngredient(ModContent.ItemType<BigBuddy>());
+                    recipe.AddIngredient(ModContent.ItemType<IcicleMinigun>());
+                    recipe.AddIngredient(ModContent.ItemType<SolarRayRifle>());
+                    recipe.AddIngredient(ModContent.ItemType<BlackMamba>());
+                }
+            }
+
         }
     }
 }
+

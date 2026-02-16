@@ -591,7 +591,7 @@ LuckyCigarette: {
 }
 
 MarksmanLaserSight: {
-	DisplayName: Marksman Laser Sight
+	DisplayName: Marksman's Laser Sight
 	Tooltip: ""
 }
 
@@ -1756,7 +1756,7 @@ AlpineTreasureBag: {
 }
 
 ApacheElfShipSummon: {
-	DisplayName: Apache Elf Ship Summon
+	DisplayName: Candy Heart Box
 	Tooltip: ""
 }
 
@@ -4956,5 +4956,15 @@ BladeMaelstrom: {
 
 SuperMaelstrom: {
 	DisplayName: Super Maelstrom
+	Tooltip: ""
+}
+
+MartianDronegun: {
+	DisplayName: Martian Dronegun
+	Tooltip: ""
+}
+
+CanofLasers: {
+	DisplayName: Can of Lasers
 	Tooltip: ""
 }
