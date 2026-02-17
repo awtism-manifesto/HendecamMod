@@ -1,17 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -26,103 +17,72 @@ public class ZazaPipegun : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 9999;
-
-
+        Item.value = 62250;
         // Use Properties
         Item.useTime = 24; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 14.20f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileID.PoisonDart;
-
-
     }
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.67f, 0.710f));
 
-
-
         type = ModContent.ProjectileType<ZazaSmoke>();
         Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
-        
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Shoots a cloud of weed smoke along with your dart");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
-
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Blowpipe);
-        recipe.AddIngredient< WeedLeaves>(21);
+        recipe.AddIngredient<WeedLeaves>(21);
         recipe.AddIngredient(ItemID.JungleSpores, 3);
         recipe.AddIngredient(ItemID.Torch, 10);
-       
 
-       
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-      
-
-
-
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

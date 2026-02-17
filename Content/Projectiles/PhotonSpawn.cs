@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -28,7 +22,7 @@ public class PhotonSpawn : ModProjectile
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 1; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        
+
         Projectile.light = 0f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -77,39 +71,27 @@ public class PhotonSpawn : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-   
-   
 
     public override void OnKill(int timeLeft)
     {
-        
-
-
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<Photon>(), (int)(Projectile.damage * 0.52f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<Photon>(), (int)(Projectile.damage * 0.52f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
-            Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<Photon>(), (int)(Projectile.damage * 0.52f), Projectile.knockBack, Projectile.owner);
-           
-        
+        Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(6));
+        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
+            ModContent.ProjectileType<Photon>(), (int)(Projectile.damage * 0.52f), Projectile.knockBack, Projectile.owner);
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
     }
-
 }
-
-
-

@@ -1,15 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -24,32 +17,34 @@ public class BlueMaticHorn : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 140000;
-
-
+        Item.value = 740000;
         // Use Properties
         Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item61;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
         Item.damage = 116; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
+    }
+    public float LobotometerCost = 6f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -69,6 +64,7 @@ public class BlueMaticHorn : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
@@ -80,26 +76,13 @@ public class BlueMaticHorn : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into Blue Moons");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -107,22 +90,23 @@ public class BlueMaticHorn : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.ShroomiteBar, 10);
         recipe.AddIngredient<AzuriteBar>(10);
-        recipe.AddIngredient(ItemID.PewMaticHorn, 1);
-       
-        recipe.AddIngredient(ItemID.BlueMoon, 1);
+        recipe.AddIngredient(ItemID.PewMaticHorn);
+
+        recipe.AddIngredient(ItemID.BlueMoon);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind<ModItem>("SpikedBall", out ModItem SpikedBall))
+        if (ModLoader.TryGetMod("CalamityFables", out Mod CalamityFablesMerica) && CalamityFablesMerica.TryFind("SpikedBall", out ModItem SpikedBall))
         {
             recipe.AddIngredient(SpikedBall.Type);
         }
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-10f, -1f);
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.BlueMaticHornProjectile>();

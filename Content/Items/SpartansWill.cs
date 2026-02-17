@@ -1,12 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,7 +18,7 @@ public class SpartansWill : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.White;
-        Item.value = 11000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 52000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -42,15 +38,14 @@ public class SpartansWill : ModItem
         Item.shootSpeed = 3f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<SpartanSpear>(); // The projectile that is fired from this weapon
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         type = ModContent.ProjectileType<SpartanRageSpear>();
-        Projectile.NewProjectileDirect(source, position, velocity*2.25f, type, (int)(damage*0.9f), knockback, player.whoAmI);
-
-
+        Projectile.NewProjectileDirect(source, position, velocity * 2.25f, type, (int)(damage * 0.9f), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -63,21 +58,9 @@ public class SpartansWill : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
@@ -87,11 +70,21 @@ public class SpartansWill : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Marble, 55);
-        recipe.AddRecipeGroup("IronBar", 15);
+        recipe.AddIngredient(ItemID.SilverBar, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 55);
+        recipe.AddIngredient(ItemID.TungstenBar, 15);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("ArcaneGoldShard", out ModItem ArcaneGoldShard))
+        {
+            recipe.AddIngredient(ArcaneGoldShard.Type, 18);
+        }
     }
+   
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

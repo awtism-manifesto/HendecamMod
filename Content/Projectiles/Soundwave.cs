@@ -1,12 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -23,7 +15,7 @@ public class Soundwave : ModProjectile
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -37,7 +29,6 @@ public class Soundwave : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -54,19 +45,15 @@ public class Soundwave : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
-       
         target.immune[Projectile.owner] = 8;
-        
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -79,8 +66,6 @@ public class Soundwave : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -96,13 +81,11 @@ public class Soundwave : ModProjectile
 
         return false;
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
-    
 }
-
-

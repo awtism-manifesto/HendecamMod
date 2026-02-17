@@ -1,14 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -39,8 +32,6 @@ public class LigmaLazerProj : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
-
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -51,12 +42,12 @@ public class LigmaLazerProj : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -65,20 +56,19 @@ public class LigmaLazerProj : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.33f;
             dust.scale *= 0.75f;
-
         }
+
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);
             dust.noGravity = true;
             dust.velocity *= 1.33f;
             dust.scale *= 0.75f;
-
         }
 
         target.AddBuff(ModContent.BuffType<Ligma>(), 600);
-
     }
+
     public override void OnHitPlayer(Player target, Player.HurtInfo hit)
     {
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -87,38 +77,21 @@ public class LigmaLazerProj : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.33f;
             dust.scale *= 0.75f;
-
         }
+
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Blood);
             dust.noGravity = true;
             dust.velocity *= 1.33f;
             dust.scale *= 0.75f;
-
         }
 
         target.AddBuff(ModContent.BuffType<Ligma>(), 600);
-
     }
+
     public override void AI()
     {
-
-       
-
-
-
-
         Lighting.AddLight(Projectile.Center, 0.5f, 0.1f, 0.1f);
-
-
-       
-
-
     }
-
-
 }
-
-
-

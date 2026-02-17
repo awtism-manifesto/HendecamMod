@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -28,7 +24,7 @@ public class ChainThunderblade : ModItem
         Item.shootSpeed = 20f;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Blue;
-        Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
+        Item.value = Item.buyPrice(gold: 13, silver: 50); // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<ThunderSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
@@ -45,81 +41,62 @@ public class ChainThunderblade : ModItem
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("StormlionMandible", out ModItem StormlionMandible))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("StormlionMandible", out ModItem StormlionMandible))
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.DemoniteBar, 6);
-            recipe.AddIngredient<Items.RockSalt>(20);
+            recipe.AddIngredient<RockSalt>(20);
             recipe.AddIngredient(StormlionMandible.Type, 3);
             recipe.AddIngredient(ItemID.FossilOre, 10);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("DissolvingEarth", out ModItem DissolvingEarth))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth.Type);
-
-
             }
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 6);
-            recipe.AddIngredient<Items.RockSalt>(20);
+            recipe.AddIngredient<RockSalt>(20);
             recipe.AddIngredient(StormlionMandible.Type, 3);
             recipe.AddIngredient(ItemID.FossilOre, 10);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica2) && SOTSMerica2.TryFind("DissolvingEarth", out ModItem DissolvingEarth2))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth2.Type);
-
-
             }
-
         }
         else
         {
             recipe = CreateRecipe();
-            
+
             recipe.AddIngredient(ItemID.DemoniteBar, 7);
             recipe.AddIngredient(ItemID.FossilOre, 12);
-            recipe.AddIngredient<Items.RockSalt>(25);
+            recipe.AddIngredient<RockSalt>(25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica2) && SOTSMerica2.TryFind("DissolvingEarth", out ModItem DissolvingEarth2))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth2.Type);
-
-
             }
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 7);
-          
+
             recipe.AddIngredient(ItemID.FossilOre, 12);
-            recipe.AddIngredient<Items.RockSalt>(25);
+            recipe.AddIngredient<RockSalt>(25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
             if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica3) && SOTSMerica3.TryFind("DissolvingEarth", out ModItem DissolvingEarth3))
-
-
             {
                 recipe.AddIngredient(DissolvingEarth3.Type);
-
-
             }
         }
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -134,8 +111,6 @@ public class ChainThunderblade : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -149,6 +124,4 @@ public class ChainThunderblade : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
-
 }

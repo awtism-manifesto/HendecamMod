@@ -1,19 +1,26 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 public class AstaWhip : ModProjectile
 {
+    private float Timer
+    {
+        get => Projectile.ai[0];
+        set => Projectile.ai[0] = value;
+    }
+
+    private float ChargeTime
+    {
+        get => Projectile.ai[1];
+        set => Projectile.ai[1] = value;
+    }
+
     public override void SetStaticDefaults()
     {
         // This makes the projectile use whip collision detection and allows flasks to be applied to it.
@@ -33,30 +40,15 @@ public class AstaWhip : ModProjectile
         // Projectile.WhipSettings.RangeMultiplier = 1f;
     }
 
-    private float Timer
-    {
-        get => Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
-
-    private float ChargeTime
-    {
-        get => Projectile.ai[1];
-        set => Projectile.ai[1] = value;
-    }
-
     // This example uses PreAI to implement a charging mechanic.
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
-    
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-       
-            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
-            Vector2 Peanits = Projectile.Center - new Vector2 (Main.rand.NextFloat(-1,1));
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-1, 1));
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
 
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
@@ -72,8 +64,6 @@ public class AstaWhip : ModProjectile
         // Vanilla uses Vector2.Dot(Projectile.velocity, Vector2.UnitX) here. Dot Product returns the difference between two vectors, 0 meaning they are perpendicular.
         // However, the use of UnitX basically turns it into a more complicated way of checking if the projectile's velocity is above or equal to zero on the X axis.
         Projectile.spriteDirection = Projectile.velocity.X >= 0f ? 1 : -1;
-
-       
 
         Timer++;
 
@@ -105,8 +95,6 @@ public class AstaWhip : ModProjectile
             int pointIndex = Main.rand.Next(points.Count - 10, points.Count);
             Rectangle spawnArea = Utils.CenteredRectangle(points[pointIndex], new Vector2(30f, 30f));
             int dustType = ModContent.DustType<AstatineDust>();
-
-
             // After choosing a randomized dust and a whip segment to spawn from, dust is spawned.
             Dust dust = Dust.NewDustDirect(spawnArea.TopLeft(), spawnArea.Width, spawnArea.Height, dustType, 0f, 0f, 100, Color.Red);
             dust.position = points[pointIndex];
@@ -125,8 +113,6 @@ public class AstaWhip : ModProjectile
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);
-
-       
 
         //Main.DrawWhip_WhipBland(Projectile, list);
         // The code below is for custom drawing.
@@ -185,10 +171,11 @@ public class AstaWhip : ModProjectile
             float rotation = diff.ToRotation() - MathHelper.PiOver2; // This projectile's sprite faces down, so PiOver2 is used to correct rotation.
             Color color = Lighting.GetColor(element.ToTileCoordinates());
 
-            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip, 0);
+            Main.EntitySpriteDraw(texture, pos - Main.screenPosition, frame, color, rotation, origin, scale, flip);
 
             pos += diff;
         }
+
         return false;
     }
 }

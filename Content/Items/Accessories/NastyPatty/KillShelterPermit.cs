@@ -1,17 +1,9 @@
-﻿
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Weapons;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class KillShelterPermit : ModItem
 {
     public override void SetDefaults()
@@ -22,11 +14,13 @@ public class KillShelterPermit : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants 3hp/s Life Regen, at the cost of Pets");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.GetModPlayer<NastyRegen>().NastyEffect = true;
@@ -97,6 +91,7 @@ public class KillShelterPermit : ModItem
         player.ClearBuff(BuffID.VoltBunny);
         player.ClearBuff(BuffID.ZephyrFish);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

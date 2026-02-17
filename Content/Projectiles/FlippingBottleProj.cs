@@ -1,15 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class FlippingBottleProj : ModProjectile
 {
@@ -30,12 +24,10 @@ public class FlippingBottleProj : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate == 0)
         {
             Projectile.Kill();
@@ -43,8 +35,6 @@ public class FlippingBottleProj : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -60,10 +50,9 @@ public class FlippingBottleProj : ModProjectile
 
         return false;
     }
+
     public override void AI()
     {
-
-
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -74,18 +63,15 @@ public class FlippingBottleProj : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-           
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Water, 0f, 0f, 100, default, 0.33f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             fireDust.velocity *= 0.05f;
         }
-
     }
+
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        
     }
 }

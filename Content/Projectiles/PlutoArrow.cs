@@ -1,11 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 using HendecamMod.Content.Dusts;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -16,23 +11,21 @@ public class PlutoArrow : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-        
     }
-   
+
     public override void SetDefaults()
     {
         Projectile.width = 12; // The width of projectile hitbox
         Projectile.height = 12; // The height of projectile hitbox
-        
+
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 29;
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
-
-
         if (Projectile.penetrate <= 0)
         {
             Projectile.Kill();
@@ -40,8 +33,6 @@ public class PlutoArrow : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -57,12 +48,13 @@ public class PlutoArrow : ModProjectile
 
         return false;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.7f);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -85,6 +77,7 @@ public class PlutoArrow : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -97,42 +90,37 @@ public class PlutoArrow : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.8f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
             }
         }
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-       
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(9, 9).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
+        Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
             new Vector2(-9, 9).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
+        Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
             new Vector2(9, -9).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-            Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
+        Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
             new Vector2(-9, -9).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
-        
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 13; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
             dust.noGravity = true;
-            dust.velocity *=5.75f;
+            dust.velocity *= 5.75f;
             dust.scale *= 1.8f;
         }
     }

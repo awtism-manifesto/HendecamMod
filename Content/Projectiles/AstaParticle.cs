@@ -1,27 +1,19 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class AstaParticle : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
@@ -47,9 +39,9 @@ public class AstaParticle : ModProjectile
         // This can be done by modifying projectile.penetrate
         Projectile.extraUpdates = 15;
     }
+
     public override void AI()
     {
-
         // dust, all dust
 
         for (int i = 0; i < 2; i++)
@@ -61,10 +53,11 @@ public class AstaParticle : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
-            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1f);
+            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100);
             chud2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
             chud2Dust.velocity *= 0.05f;
         }
@@ -131,23 +124,23 @@ public class AstaParticle : ModProjectile
 
         return closestNPC;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
     }
+
     public override void OnKill(int timeLeft)
     {
-        
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<AstaBoom2>(), (int)(Projectile.damage* 0.666f), Projectile.knockBack, Projectile.owner);
-        
+            ModContent.ProjectileType<AstaBoom2>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
     }
+
     public bool IsValidTarget(NPC target)
     {
         // This method checks that the NPC is:
@@ -161,6 +154,3 @@ public class AstaParticle : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-
-
-

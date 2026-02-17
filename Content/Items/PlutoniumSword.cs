@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,15 +18,15 @@ public class PlutoniumSword : ModItem
         Item.useAnimation = 14;
         Item.useTime = 7;
         Item.reuseDelay = 24;
-        Item.damage = 112;
+        Item.damage = 134;
         Item.knockBack = 9.5f;
         Item.width = 40;
         Item.height = 40;
         Item.scale = 1.33f;
         Item.ArmorPenetration = 25;
-        
+
         Item.rare = ItemRarityID.LightPurple;
-        Item.value = 172000; // Sell price is 5 times less than the buy price.
+        Item.value = 1050000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<PlutoniumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
@@ -47,9 +43,6 @@ public class PlutoniumSword : ModItem
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
-
-
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -68,8 +61,6 @@ public class PlutoniumSword : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -83,15 +74,14 @@ public class PlutoniumSword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.PlutoniumBar>(18);
+        recipe.AddIngredient<PlutoniumBar>(18);
 
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-       
     }
-
 }

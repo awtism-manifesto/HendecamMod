@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Build.Evaluation;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Items;
 
@@ -33,6 +28,7 @@ public class EldritchArrow : ModItem
         Item.shootSpeed = 2.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -44,8 +40,6 @@ public class EldritchArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -64,20 +58,15 @@ public class EldritchArrow : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(666);
-      
+
         recipe.AddIngredient(ItemID.CursedArrow, 222);
-        recipe.AddIngredient<Items.ShadowflameArrow>(222);
+        recipe.AddIngredient<ShadowflameArrow>(222);
         recipe.AddIngredient(ItemID.IchorArrow, 222);
         recipe.AddIngredient(ItemID.Ectoplasm, 3);
         recipe.Register();
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("CursedCloth", out ModItem CursedCloth))
-
-
         {
             recipe.AddIngredient(CursedCloth.Type, 2);
-
-
         }
     }
-
 }

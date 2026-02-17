@@ -1,21 +1,13 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using Terraria;
+﻿using System.Collections.Generic;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 [AutoloadEquip(EquipType.Wings)]
 public class KulakWings : ModItem
 {
-  
-
     public override void SetStaticDefaults()
     {
-       
         ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(21, 6.75f, 1.25f);
     }
 
@@ -23,13 +15,13 @@ public class KulakWings : ModItem
     {
         Item.width = 22;
         Item.height = 20;
-        Item.value = 15000;
+        Item.value = 950000;
         Item.rare = ItemRarityID.Green;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Allows flight and slow fall");
         tooltips.Add(line);
 
@@ -39,10 +31,6 @@ public class KulakWings : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -50,20 +38,15 @@ public class KulakWings : ModItem
                 l.Hide();
             }
         }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
         ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
     {
-        ascentWhenFalling = 0.85f; // Falling glide speed
-        ascentWhenRising = 0.15f; // Rising speed
+        ascentWhenFalling = 0.85f; 
+        ascentWhenRising = 0.15f; 
         maxCanAscendMultiplier = 1f;
         maxAscentMultiplier = 3f;
         constantAscend = 0.135f;
     }
-
-    
-   
 }

@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -15,6 +12,7 @@ public class PlatinumChest : ModItem
         Item.value = 500;
     }
 }
+
 // Item to unlock locked platinum chests
 public class PlatinumKey : ModItem
 {

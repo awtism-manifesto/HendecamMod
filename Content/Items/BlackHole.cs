@@ -1,13 +1,9 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -47,39 +43,36 @@ public class BlackHole : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-
+    public float LobotometerCost = 666f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<TheFuckingSun>();
         recipe.AddIngredient<TheMoon>();
         recipe.AddIngredient<StupiderFuckingPickaxe>();
-       
-
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-
-
-
-
-
     }
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 666 Lobotometer");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does everything it can to escape this world")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-        
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -94,6 +87,4 @@ public class BlackHole : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
-
 }

@@ -1,14 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class AzuriteSaber : ModItem
 {
@@ -21,12 +16,12 @@ public class AzuriteSaber : ModItem
         Item.knockBack = 7.25f;
         Item.width = 40;
         Item.height = 40;
-        Item.shootSpeed = 6f;
+        Item.shootSpeed = 9.25f;
         Item.scale = 1.15f;
-       
+
         Item.UseSound = SoundID.Item60;
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.buyPrice(gold: 1); // Sell price is 5 times less than the buy price.
+        Item.value = 215000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<AzuriteSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
@@ -39,14 +34,11 @@ public class AzuriteSaber : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-        type = ModContent.ProjectileType<AzuriteWave>();                                             // Create a projectile.
+        type = ModContent.ProjectileType<AzuriteWave>(); // Create a projectile.
         Projectile.NewProjectileDirect(source, position, velocity * 1.5f, type, (int)(damage * 0.8f), knockback, player.whoAmI);
 
         return true;
     }
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -59,8 +51,6 @@ public class AzuriteSaber : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -75,21 +65,12 @@ public class AzuriteSaber : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-       
-
-       
         recipe.AddIngredient<AzuriteBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
 }

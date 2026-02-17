@@ -1,20 +1,12 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
 public class PrismaticBullet : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
         ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
 
@@ -25,7 +17,7 @@ public class PrismaticBullet : ModItem
     {
         Item.damage = 19; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -37,25 +29,18 @@ public class PrismaticBullet : ModItem
         Item.shootSpeed = 19f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(1500);
-
-       
-
-            
-            recipe.AddIngredient<Items.AstatineBar>(5);
-            recipe.AddIngredient<Items.PlutoniumBar>(3);
-            recipe.AddIngredient<Items.UraniumBar>();
-            recipe.AddIngredient(ItemID.HallowBossDye);
-            recipe.AddIngredient(ItemID.EmptyBullet, 1500);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
-
-        
-
+        recipe.AddIngredient<AstatineBar>(5);
+        recipe.AddIngredient<PlutoniumBar>(3);
+        recipe.AddIngredient<UraniumBar>();
+        recipe.AddIngredient(ItemID.HallowBossDye);
+        recipe.AddIngredient(ItemID.EmptyBullet, 1500);
+        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
     }
-    
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -68,8 +53,6 @@ public class PrismaticBullet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -84,5 +67,4 @@ public class PrismaticBullet : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    
 }

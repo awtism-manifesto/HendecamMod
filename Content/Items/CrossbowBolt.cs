@@ -1,9 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -26,11 +21,12 @@ public class CrossbowBolt : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 1.5f;
-        Item.value = Item.sellPrice(copper: 92);
+        Item.value = Item.sellPrice(copper: 14);
         Item.shoot = ModContent.ProjectileType<Projectiles.BowBoltProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 3f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -42,8 +38,6 @@ public class CrossbowBolt : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -62,7 +56,7 @@ public class CrossbowBolt : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);
-        
+
         recipe.AddIngredient(ItemID.CobaltBar);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
@@ -72,9 +66,5 @@ public class CrossbowBolt : ModItem
         recipe.AddIngredient(ItemID.PalladiumBar);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
     }
-
 }

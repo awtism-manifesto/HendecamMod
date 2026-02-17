@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global;
 
@@ -30,6 +27,7 @@ public class MeAndMagAreFuckingLazy : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -54,6 +52,7 @@ public class MeAndMagAreFuckingLazy : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {
@@ -61,8 +60,8 @@ public class MeAndMagAreFuckingLazy : ModSystem
             }
         }
     }
-
 }
+
 public class SigmaChests : ModSystem
 {
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
@@ -84,6 +83,7 @@ public class SigmaChests : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -108,6 +108,7 @@ public class SigmaChests : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {
@@ -115,8 +116,8 @@ public class SigmaChests : ModSystem
             }
         }
     }
-
 }
+
 public class WattaChests : ModSystem
 {
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
@@ -138,6 +139,7 @@ public class WattaChests : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -162,6 +164,7 @@ public class WattaChests : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {
@@ -169,8 +172,8 @@ public class WattaChests : ModSystem
             }
         }
     }
-
 }
+
 public class TreeChests : ModSystem
 {
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
@@ -192,6 +195,7 @@ public class TreeChests : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -216,6 +220,7 @@ public class TreeChests : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {
@@ -223,8 +228,8 @@ public class TreeChests : ModSystem
             }
         }
     }
-
 }
+
 public class FuckDesertChests : ModSystem
 {
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
@@ -246,6 +251,7 @@ public class FuckDesertChests : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -270,6 +276,7 @@ public class FuckDesertChests : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {
@@ -278,6 +285,7 @@ public class FuckDesertChests : ModSystem
         }
     }
 }
+
 public class UrDeadLolXD : ModSystem
 {
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
@@ -299,6 +307,7 @@ public class UrDeadLolXD : ModSystem
             {
                 continue;
             }
+
             Tile chestTile = Main.tile[chest.x, chest.y];
             // We need to check if the current chest is the Surface Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Surface Chest.
             // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Surface Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "public Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Surface_Chest
@@ -323,6 +332,7 @@ public class UrDeadLolXD : ModSystem
                     }
                 }
             }
+
             // Once we've placed as many items as we wanted, break out of the loop
             if (itemsPlaced >= maxItems)
             {

@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture;
@@ -20,7 +16,8 @@ public class PalladiumWorkBenchPlaced : ModTile
         TileID.Sets.IgnoredByNpcStepUp[Type] = true;
 
         DustType = DustID.Palladium;
-        AdjTiles = [TileID.WorkBenches];
+        AdjTiles = [TileID.WorkBenches, ModContent.TileType<CobaltWorkBenchPlaced>()] ;
+        ;
 
         TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
         TileObjectData.newTile.CoordinateHeights = [18];

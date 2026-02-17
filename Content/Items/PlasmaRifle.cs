@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -25,49 +14,35 @@ public class PlasmaRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.825f;
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 44000;
-
-
+        Item.value = 152500;
         // Use Properties
         // Use Properties
-        Item.useTime = 22; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 22; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 21; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item92;
-
-
+        Item.UseSound = SoundID.Item92;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-        Item.damage = 24; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 10;
         Item.mana = 8;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PlasmaLaser>();
-
     }
 
-
-
-   
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -80,36 +55,18 @@ public class PlasmaRifle : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        recipe.AddIngredient<Items.UraniumBar>(15);
+
+        recipe.AddIngredient<UraniumBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

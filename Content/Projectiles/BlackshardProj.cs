@@ -1,13 +1,8 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -39,10 +34,10 @@ public class BlackshardProj : ModProjectile
         Projectile.tileCollide = false;
         Projectile.ignoreWater = true;
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
-        Projectile.ownerHitCheckDistance = 75f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
+        Projectile.ownerHitCheckDistance = 82f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
-                                               // Normally, projectiles die after they have hit all the enemies they can.
-                                               // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
+        // Normally, projectiles die after they have hit all the enemies they can.
+        // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
         Projectile.stopsDealingDamageAfterPenetrateHits = true;
 
         // We will be using custom AI for this projectile. The original Excalibur uses aiStyle 190.
@@ -76,8 +71,8 @@ public class BlackshardProj : ModProjectile
         float adjustedRotation = MathHelper.Pi * direction * percentageOfLife + velocityRotation + direction * MathHelper.Pi + player.fullRotation;
         Projectile.rotation = adjustedRotation; // Set the rotation to our to the new rotation we calculated.
 
-        float scaleMulti = 0.675f; // Excalibur, Terra Blade, and The Horseman's Blade is 0.6f; True Excalibur is 1f; default is 0.2f 
-        float scaleAdder = 0.71f; // Excalibur, Terra Blade, and The Horseman's Blade is 1f; True Excalibur is 1.2f; default is 1f 
+        float scaleMulti = 0.7f; // Excalibur, Terra Blade, and The Horseman's Blade is 0.6f; True Excalibur is 1f; default is 0.2f 
+        float scaleAdder = 0.75f; // Excalibur, Terra Blade, and The Horseman's Blade is 1f; True Excalibur is 1.2f; default is 1f 
 
         Projectile.Center = player.RotatedRelativePoint(player.MountedCenter) - Projectile.velocity;
         Projectile.scale = scaleAdder + percentageOfLife * scaleMulti;
@@ -85,8 +80,6 @@ public class BlackshardProj : ModProjectile
         // The other sword projectiles that use AI Style 190 have different effects.
         // This example only includes the Excalibur.
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
-
-       
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -110,7 +103,7 @@ public class BlackshardProj : ModProjectile
     public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
     {
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
-        float coneLength = 50f * Projectile.scale;
+        float coneLength = 56f * Projectile.scale;
         // This number affects how much the start and end of the collision will be rotated.
         // Bigger Pi numbers will rotate the collision counter clockwise.
         // Smaller Pi numbers will rotate the collision clockwise.
@@ -156,6 +149,7 @@ public class BlackshardProj : ModProjectile
         float width = 60f * Projectile.scale;
         Utils.PlotTileLine(Projectile.Center + starting, Projectile.Center + ending, width, DelegateMethods.CutTiles);
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
@@ -163,6 +157,7 @@ public class BlackshardProj : ModProjectile
             modifiers.SourceDamage *= 1.5f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Vanilla has several particles that can easily be used anywhere.
@@ -182,15 +177,13 @@ public class BlackshardProj : ModProjectile
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
-           new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-           Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
             SoundEngine.PlaySound(SoundID.Item82, Projectile.position);
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 1.67f), Projectile.knockBack, Projectile.owner);
-
-
         }
     }
 
@@ -220,7 +213,7 @@ public class BlackshardProj : ModProjectile
 
         Color backDarkColor = new Color(98, 2, 10); // Original Excalibur color: Color(180, 160, 60)
         Color middleMediumColor = new Color(102, 5, 15); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(135,14 , 26); // Original Excalibur color: Color(255, 240, 150)
+        Color frontLightColor = new Color(135, 14, 26); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.White * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));
@@ -229,30 +222,30 @@ public class BlackshardProj : ModProjectile
         faintLightingColor.B = (byte)(faintLightingColor.R * (0.25f + lightingColor * 0.75f));
 
         // Back part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, backDarkColor * lightingColor * lerpTime, Projectile.rotation + Projectile.ai[0] * MathHelper.PiOver4 * -1f * (1f - percentageOfLife), origin, scale, spriteEffects);
         // Very faint part affected by the light color
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, faintLightingColor * 0.15f, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Middle part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, middleMediumColor * lightingColor * lerpTime * 0.3f, Projectile.rotation, origin, scale, spriteEffects);
         // Front part
-        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, sourceRectangle, frontLightColor * lightingColor * lerpTime * 0.5f, Projectile.rotation, origin, scale * 0.975f, spriteEffects);
         // Thin top line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.6f * lerpTime, Projectile.rotation + Projectile.ai[0] * 0.01f, origin, scale, spriteEffects);
         // Thin middle line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.5f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.05f, origin, scale * 0.8f, spriteEffects);
         // Thin bottom line (final frame)
-        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects, 0f);
+        Main.EntitySpriteDraw(texture, position, texture.Frame(1, 4, 0, 3), Color.White * 0.4f * lerpTime, Projectile.rotation + Projectile.ai[0] * -0.1f, origin, scale * 0.6f, spriteEffects);
 
         // This draws some sparkles around the circumference of the swing.
         for (float i = 0f; i < 8f; i += 1f)
         {
             float edgeRotation = Projectile.rotation + Projectile.ai[0] * i * (MathHelper.Pi * -2f) * 0.025f + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0];
-            Vector2 drawPos = position + edgeRotation.ToRotationVector2() * ((float)texture.Width * 0.5f - 6f) * scale;
+            Vector2 drawPos = position + edgeRotation.ToRotationVector2() * (texture.Width * 0.5f - 6f) * scale;
             DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos, new Color(255, 255, 255, 0) * lerpTime * (i / 9f), middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, edgeRotation, new Vector2(0f, Utils.Remap(percentageOfLife, 0f, 1f, 3f, 0f)) * scale, Vector2.One * scale);
         }
 
         // This draws a large star sparkle at the front of the projectile.
-        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * ((float)texture.Width * 0.5f - 4f) * scale;
+        Vector2 drawPos2 = position + (Projectile.rotation + Utils.Remap(percentageOfLife, 0f, 1f, 0f, MathHelper.PiOver4) * Projectile.ai[0]).ToRotationVector2() * (texture.Width * 0.5f - 4f) * scale;
         DrawPrettyStarSparkle(Projectile.Opacity, SpriteEffects.None, drawPos2, new Color(255, 255, 255, 0) * lerpTime * 0.5f, middleMediumColor, percentageOfLife, 0f, 0.5f, 0.5f, 1f, 0f, new Vector2(2f, Utils.Remap(percentageOfLife, 0f, 1f, 4f, 1f)) * scale, Vector2.One * scale);
 
         // Uncomment this line for a visual representation of the projectile's size.

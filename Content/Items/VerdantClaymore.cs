@@ -1,18 +1,13 @@
 ﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
-
 public class VerdantClaymore : ModItem
 {
-
     public override void SetDefaults()
     {
         Item.damage = 23;
@@ -34,46 +29,34 @@ public class VerdantClaymore : ModItem
 
         Item.shoot = ModContent.ProjectileType<VerdantProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 5f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
-
-
-
-
-
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
         return true;
     }
+
     // if (ModLoader.TryGetMod("Terbritish", out Mod TerBritish))
     // Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(9f));
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(9f));
+        if (player.altFunctionUse == 2)
+        {
+            int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
+            player.AddBuff(BuffID.Poisoned, 24);
 
-
-      
-       
-            if (player.altFunctionUse == 2)
-            {
-                int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
-                player.AddBuff(BuffID.Poisoned, 24);
-
-                return false;
-            }
-            else
-            {
-                int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<VerdantCombo>().fromVerdantClaymore = true;
-                Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = false;
-                player.AddBuff(BuffID.Poisoned, 24);
-                return false; // Prevent vanilla projectile spawn
-
-            }
-        
-       
+            return false;
+        }
+        else
+        {
+            int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            Main.projectile[proj].GetGlobalProjectile<VerdantCombo>().fromVerdantClaymore = true;
+            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = false;
+            player.AddBuff(BuffID.Poisoned, 24);
+            return false; // Prevent vanilla projectile spawn
+        }
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -87,35 +70,43 @@ public class VerdantClaymore : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Right click to throw the claymore")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
 
-       
-            line = new TooltipLine(Mod, "Face", "Right click to throw the claymore")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-            line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the claymore, complete it by stabbing")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-            line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and grant the player a powerful but short life regen buff")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-
-
-        
-      
-
-
-
-          
-
-       
+        line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the claymore, complete it by stabbing")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and grant the player a powerful but short life regen buff")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
     }
-   
 
+    public override void AddRecipes()
+    {
+       
+        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("VibrantBar", out ModItem VibrantBar))
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.JungleSpores, 10);
+            recipe.AddIngredient(VibrantBar.Type, 5);
+            recipe.AddIngredient(ItemID.Stinger, 5);
+         
+          
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+          
+        }
+        else 
+        {
+        
+        
+        }
+    }
 }

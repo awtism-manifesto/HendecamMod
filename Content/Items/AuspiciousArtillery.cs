@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
@@ -19,10 +14,8 @@ public class AuspiciousArtillery : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.4f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 240000;
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
-
-
 
         // Use Properties
         // Use Properties
@@ -30,21 +23,13 @@ public class AuspiciousArtillery : ModItem
         Item.useAnimation = 43; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 92; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -52,10 +37,7 @@ public class AuspiciousArtillery : ModItem
 
         Item.shootSpeed = 19f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.RocketI;
-
-
     }
-
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
@@ -63,11 +45,7 @@ public class AuspiciousArtillery : ModItem
         {
             damage = (int)(damage * 1.25f);
         }
-
     }
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -80,21 +58,15 @@ public class AuspiciousArtillery : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<DemoniteAreaDenialSystem>();
         recipe.AddIngredient(ItemID.CrystalShard, 10);
-        recipe.AddIngredient<PurifiedSalt>(99); ;
-
-
+        recipe.AddIngredient<PurifiedSalt>(99);
+        ;
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -102,16 +74,10 @@ public class AuspiciousArtillery : ModItem
         recipe.AddIngredient<CrimtaneAmr>();
         recipe.AddIngredient(ItemID.CrystalShard, 10);
         recipe.AddIngredient<PurifiedSalt>(99);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

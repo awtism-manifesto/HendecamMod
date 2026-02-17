@@ -7,6 +7,14 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <AdditionalFiles Remove="Assets\Shaders\Screen\LobotomyScreen.fx" />
+	  <AdditionalFiles Remove="Content\Effects\Lobotometer.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Shaders\Screen\LobotomyScreen.fx" />
+		<Content Include="Content\Effects\Lobotometer.png" />
+	</ItemGroup>
 
 	<!-- References -->
 	
@@ -226,7 +234,6 @@
 	  <None Remove="Content\Projectiles\BarbBullet.png" />
 	  <None Remove="Content\Projectiles\BeadsNDick.png" />
 	  <None Remove="Content\Projectiles\BeetleRoundProjectile.png" />
-	  <None Remove="Content\Projectiles\BigBall.png" />
 	  <None Remove="Content\Projectiles\BirdBullet.png" />
 	  <None Remove="Content\Projectiles\Bitcoin.png" />
 	  <None Remove="Content\Projectiles\BombBoom.png" />
@@ -332,9 +339,12 @@
 	  <None Remove="Content\Tiles\LegosPlaced.png" />
 	  <None Remove="Content\Tiles\PureSaltTile.png" />
 	  <None Remove="Content\Tiles\RockSaltTile.png" />
+	
 	  <None Remove="icon_workshop.png" />
 		
 	</ItemGroup>
+	
+	
 	
 	<ItemGroup>
 	  <Folder Include="Content\Sounds\" />

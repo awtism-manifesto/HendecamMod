@@ -1,20 +1,9 @@
-﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.GameContent.Drawing;
 
 namespace HendecamMod.Content.Projectiles;
 
 public class TerraRound : ModProjectile
 {
-    
-
     public override void SetDefaults()
     {
         Projectile.width = 5; // The width of projectile hitbox
@@ -33,9 +22,9 @@ public class TerraRound : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override Color? GetAlpha(Color lightColor)
     {
-
         return Color.LimeGreen;
     }
 
@@ -44,12 +33,9 @@ public class TerraRound : ModProjectile
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-
         // dust, all dust
         if (Projectile.alpha < 169)
         {
-            
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -59,8 +45,6 @@ public class TerraRound : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.TerraBlade, 0f, 0f, 100, default, 0.45f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.05f;
@@ -85,17 +69,10 @@ public class TerraRound : ModProjectile
             Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-216, 216), Main.rand.NextFloat(-216, 216));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
                 ProjectileID.ChlorophyteBullet, (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-
         }
 
-
-            ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
-
-
+        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
+            new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+            Projectile.owner);
     }
-
-
-
 }

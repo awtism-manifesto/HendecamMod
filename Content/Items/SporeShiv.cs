@@ -1,16 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-
-
-
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
-
 
 public class SporeShiv : ModItem
 {
@@ -28,7 +19,7 @@ public class SporeShiv : ModItem
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
-        Item.value = Item.buyPrice(gold: 9); // Sell price is 5 times less than the buy price.
+        Item.value = 128000;
         Item.DamageType = DamageClass.Ranged;
         Item.shoot = ModContent.ProjectileType<SporeShivProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
@@ -37,14 +28,8 @@ public class SporeShiv : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             Item.DamageType = DamageClass.Throwing;
-           
         }
     }
-
-  
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -60,28 +45,16 @@ public class SporeShiv : ModItem
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<LycopiteBar>(10);
-
-       
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
-
     }
-
-
 }

@@ -1,18 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class JevilishScythe : ModItem
 {
-
-
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
@@ -24,51 +18,49 @@ public class JevilishScythe : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item71; // The sound that will play when the item is used.
-        Item.mana = 5;
+        Item.mana = 3;
         Item.damage = 30; // The amount of damage the item does to an enemy or player.
         Item.DamageType = ModContent.GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
-       
-
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
+        Item.value = 450000;
 
         Item.shoot = ModContent.ProjectileType<JevilScythe>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 17.33f; // The velocity of the shot projectile.			
     }
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "5 summon tag damage");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
-
+        line = new TooltipLine(Mod, "Face", "5 summon tag damage")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Splits into smaller, homing clones of itself upon contact with an enemy")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
+
         line = new TooltipLine(Mod, "Face", "'I CAN DO ANYTHING'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
-
 
     public override void AddRecipes()
     {
@@ -83,12 +75,9 @@ public class JevilishScythe : ModItem
 
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("PurifiedGel", out ModItem PurifiedGel))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PurifiedGel", out ModItem PurifiedGel))
         {
             recipe.AddIngredient(PurifiedGel.Type, 10);
-
         }
-
-
     }
 }

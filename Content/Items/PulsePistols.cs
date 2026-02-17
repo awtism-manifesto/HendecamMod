@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -28,8 +24,6 @@ public class PulsePistols : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.reuseDelay = 34;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-       
-      
         Item.ArmorPenetration = 10;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
@@ -42,19 +36,22 @@ public class PulsePistols : ModItem
         Item.shootSpeed = 14.45f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<PulseShot>();
     }
+
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.54f, 0.55f));
-       
+
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
@@ -69,7 +66,7 @@ public class PulsePistols : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -81,8 +78,6 @@ public class PulsePistols : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -99,8 +94,6 @@ public class PulsePistols : ModItem
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-   
-
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

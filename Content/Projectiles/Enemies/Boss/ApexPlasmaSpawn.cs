@@ -1,12 +1,8 @@
-﻿using System;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Enemies.Boss;
 
@@ -17,7 +13,6 @@ public class ApexPlasmaSpawn : ModProjectile
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
         //ProjectileID.Sets.FiresFewerFromDaedalusStormbow[Type] = true;
-
     }
 
     public override void SetDefaults()
@@ -32,6 +27,7 @@ public class ApexPlasmaSpawn : ModProjectile
 
         Projectile.timeLeft = 31;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -42,14 +38,14 @@ public class ApexPlasmaSpawn : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void AI()
     {
-
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -62,8 +58,6 @@ public class ApexPlasmaSpawn : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.CursedTorch, 0f, 0f, 100, default, 0.1f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.08f;
@@ -71,18 +65,20 @@ public class ApexPlasmaSpawn : ModProjectile
         }
     }
 
+    public override void OnHitPlayer(Player target, Player.HurtInfo hit)
+    {
+        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+    }
+
     public override void OnKill(int timeLeft)
     {
-
         for (int i = -1; i <= 1; i++)
         {
-
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<ApexPlasmaBulletHostile>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<ApexPlasmaBulletHostile>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
         }
-
 
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.

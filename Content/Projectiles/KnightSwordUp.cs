@@ -1,15 +1,9 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -23,8 +17,8 @@ public class KnightSwordUp : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 45; // The width of projectile hitbox
-        Projectile.height = 45; // The height of projectile hitbox
+        Projectile.width = 85; // The width of projectile hitbox
+        Projectile.height = 85; // The height of projectile hitbox
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -41,25 +35,26 @@ public class KnightSwordUp : ModProjectile
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
-
+    public override void AI()
+    {
+        Vector2 forward = Projectile.velocity.SafeNormalize(Vector2.UnitX);
+        Projectile.rotation = forward.ToRotation();
+    }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
         {
-            modifiers.SourceDamage *= 1.93f;
+            modifiers.SourceDamage *= 2f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-
-
-
         if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
-              new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
-              Projectile.owner);
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                Projectile.owner);
 
             if (Main.rand.NextBool(3))
             {
@@ -67,15 +62,10 @@ public class KnightSwordUp : ModProjectile
                 Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.75f), Projectile.knockBack, Projectile.owner);
+                    ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.5f), Projectile.knockBack, Projectile.owner);
             }
         }
-
-
-
-
     }
-
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -87,17 +77,9 @@ public class KnightSwordUp : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-   
-
-
-   
-
 }
-
-
-

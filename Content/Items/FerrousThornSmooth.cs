@@ -1,20 +1,11 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class FerrousThornSmooth : ModItem
 {
-    
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -28,8 +19,7 @@ public class FerrousThornSmooth : ModItem
         Item.ArmorPenetration = 1;
         Item.width = 18;
         Item.height = 18;
-        Item.value = 90000;
-       
+        Item.value = 390000;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -48,31 +38,28 @@ public class FerrousThornSmooth : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-        
     }
+
     public override bool CanRightClick()
     {
         return true;
     }
+
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>(), 1));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>()));
     }
+
     public override void AddRecipes()
     {
-        Recipe 
-
-        recipe = CreateRecipe();
+        Recipe
+            recipe = CreateRecipe();
         recipe.AddRecipeGroup("IronBar", 15);
-        recipe.AddIngredient<Items.CrudeOil>(35);
-        recipe.AddIngredient<Items.RefinedOil>(35);
+        recipe.AddIngredient<CrudeOil>(35);
+        recipe.AddIngredient<RefinedOil>(35);
         recipe.AddTile(TileID.MythrilAnvil);
 
         recipe.Register();
-       
-
     }
 
     // Makes the whip receive melee prefixes

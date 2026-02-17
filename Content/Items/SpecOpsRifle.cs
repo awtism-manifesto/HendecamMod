@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-
-namespace HendecamMod.Content.Items;
+﻿namespace HendecamMod.Content.Items;
 
 public class SpecOpsRifle : ModItem
 {
@@ -22,20 +11,14 @@ public class SpecOpsRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
-        Item.value = 150000;
-
-
+        Item.value = 315000;
         // Use Properties
         Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item68;
-
-
+        Item.UseSound = SoundID.Item68;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 92; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -49,14 +32,16 @@ public class SpecOpsRifle : ModItem
         Item.shootSpeed = 55f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.HallowedBar, 12);
-        recipe.AddIngredient<Items.AR15>();
+        recipe.AddIngredient<AR15>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-32f, -1f);

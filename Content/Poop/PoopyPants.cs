@@ -1,10 +1,5 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Poop;
 
@@ -13,11 +8,8 @@ namespace HendecamMod.Content.Poop;
 [AutoloadEquip(EquipType.Legs)]
 public class PoopyPants : ModItem
 {
-
     public static readonly int AdditiveDamageBonus = 1;
-   
-   
-  
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,8 +19,6 @@ public class PoopyPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-       
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -40,6 +30,7 @@ public class PoopyPants : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 1; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -51,8 +42,6 @@ public class PoopyPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -67,11 +56,13 @@ public class PoopyPants : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<PoopyHelmet>() && body.type == ModContent.ItemType<PoopyShirt>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -85,26 +76,21 @@ public class PoopyPants : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-      
-       
-       
+
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 101f;
-       
-        
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.PoopBlock, 16);
         recipe.AddTile(TileID.WorkBenches);
-       
+
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-
-       
     }
 }

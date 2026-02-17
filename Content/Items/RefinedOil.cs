@@ -1,20 +1,12 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
 public class RefinedOil : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-
-
 
         Item.ResearchUnlockCount = 99; // Configure the amount of this item that's needed to research it in Journey mode.
     }
@@ -23,7 +15,7 @@ public class RefinedOil : ModItem
     {
         Item.damage = 6; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
-        
+
         Item.width = 16;
         Item.height = 16;
         Item.maxStack = Item.CommonMaxStack;
@@ -35,8 +27,6 @@ public class RefinedOil : ModItem
         Item.shootSpeed = 0f; // The speed of the projectile.
         Item.ammo = AmmoID.Gel; // The ammo class this ammo belongs to.
     }
-   
-    
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -49,8 +39,6 @@ public class RefinedOil : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -65,19 +53,15 @@ public class RefinedOil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(7);
 
-        recipe.AddIngredient<Items.CrudeOil>(10);
-        recipe.AddIngredient<Materials.FireDiamond>(1);
+        recipe.AddIngredient<CrudeOil>(10);
+        recipe.AddIngredient<Materials.FireDiamond>();
         recipe.AddIngredient(ItemID.LivingFireBlock);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
-       
-       
-
-
     }
 }

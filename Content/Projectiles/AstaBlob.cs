@@ -1,12 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using HendecamMod.Content.Dusts;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +8,6 @@ public class AstaBlob : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -29,6 +22,7 @@ public class AstaBlob : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 25;
@@ -48,6 +42,7 @@ public class AstaBlob : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         int frameSpeed = 7;
@@ -62,11 +57,8 @@ public class AstaBlob : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -86,16 +78,12 @@ public class AstaBlob : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-
-
                     Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.3f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 0.95f;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -156,13 +144,13 @@ public class AstaBlob : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 5f;
         }
+
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<AstaPool>(), (int)(Projectile.damage * 0.8f), Projectile.knockBack, Projectile.owner);
-
     }
-  
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);

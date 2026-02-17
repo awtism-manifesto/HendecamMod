@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
+using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,6 +9,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class TransGreaves : ModItem
 {
+    public static readonly int AdditiveDamageBonus = 3;
+    public static readonly int GenericCritBonus = 6;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -22,18 +20,15 @@ public class TransGreaves : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
-
     }
+
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -42,10 +37,11 @@ public class TransGreaves : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.defense = 5; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "3% increased damage and 6% increased crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -54,26 +50,15 @@ public class TransGreaves : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<TransHat>() && body.type == ModContent.ItemType<TransBodyplate>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -82,9 +67,8 @@ public class TransGreaves : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
-       
     }
 }

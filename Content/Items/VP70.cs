@@ -1,26 +1,14 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Global;
-using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class VP70 : ModItem
 {
-
     public override void SetStaticDefaults()
     {
-
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
 
@@ -36,20 +24,16 @@ public class VP70 : ModItem
         Item.value = 90000;
 
         // Use Properties
-        Item.useTime = 13; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 13; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item38;
-
-
+        Item.UseSound = SoundID.Item38;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 2;
@@ -65,52 +49,34 @@ public class VP70 : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-
             Item.useTime = 6;
             Item.useAnimation = 18;
             Item.reuseDelay = 8;
-
         }
         else
         {
-
-            Item.useTime = 13;
-            Item.useAnimation = 13;
+            Item.useTime = 12;
+            Item.useAnimation = 12;
             Item.reuseDelay = 0;
-
         }
 
         return base.CanUseItem(player);
     }
 
-
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-
-
-
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.05f));
 
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.39f);
-
-
-
-
         if (player.altFunctionUse == 2)
         {
-
             SoundEngine.PlaySound(SoundID.Item38, player.position);
             SoundEngine.PlaySound(SoundID.Item40, player.position);
 
@@ -119,8 +85,6 @@ public class VP70 : ModItem
             Main.projectile[proj].GetGlobalProjectile<VPCombo>().fromVP70 = true;
 
             Main.projectile[proj].GetGlobalProjectile<VPComboSetup>().fromtheVP70 = false;
-
-
             return false;
         }
 
@@ -133,10 +97,7 @@ public class VP70 : ModItem
 
             return false; // Prevent vanilla projectile spawn
         }
-
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -165,6 +126,7 @@ public class VP70 : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -175,8 +137,8 @@ public class VP70 : ModItem
         recipe.AddIngredient<Polymer>(25);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-50f, -1.5f);

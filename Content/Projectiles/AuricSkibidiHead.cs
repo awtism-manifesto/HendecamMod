@@ -1,13 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -17,20 +8,13 @@ public class AuricSkibidiHead : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
 
-
-
-
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
     }
 
@@ -51,35 +35,28 @@ public class AuricSkibidiHead : ModProjectile
         Projectile.extraUpdates = 5;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-
     }
 
     // Custom AI
     public override void AI()
     {
-
-      
-
-            for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
-               
-               
-
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Electric, 0f, 0f, 100, Color.Orange, 0.5f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
-                fireDust.noGravity = true;
-            fireDust.color = Color.Orange;
-                fireDust.velocity *= 1.15f;
-            
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
             }
-        
+
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Electric, 0f, 0f, 100, Color.Orange, 0.5f);
+            fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
+            fireDust.noGravity = true;
+            fireDust.color = Color.Orange;
+            fireDust.velocity *= 1.15f;
+        }
+
         float maxDetectRadius = 2000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -156,5 +133,3 @@ public class AuricSkibidiHead : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-

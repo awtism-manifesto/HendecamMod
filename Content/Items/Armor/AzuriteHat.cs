@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
+using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -12,7 +8,9 @@ namespace HendecamMod.Content.Items.Armor;
 public class AzuriteHat : ModItem
 {
     public static readonly int MaxMinionIncrease = 2;
-    
+    public static readonly int AdditiveDamageBonus = 15;
+    public static readonly int MeleeAttackSpeedBonus = 10;
+
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -22,26 +20,24 @@ public class AzuriteHat : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 15;
-    public static readonly int MeleeAttackSpeedBonus = 10;
+
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
-        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 110f;
+        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
     }
 
     public override void SetDefaults()
     {
         Item.width = 32;
         Item.height = 28;
-        Item.value = Item.sellPrice(gold: 2);
+        Item.value = 354000;
         Item.rare = ItemRarityID.Orange;
         Item.defense = 5;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "15% increased melee damage and 10% increased melee speed");
@@ -53,18 +49,14 @@ public class AzuriteHat : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+        
     }
+
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<AzuritePlatemail>() && legs.type == ModContent.ItemType<AzuriteGreaves>();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -72,9 +64,11 @@ public class AzuriteHat : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+2 max summon slots";
+        player.setBonus = "+2 max minion slots, +1 max sentry slot";
         player.maxMinions += MaxMinionIncrease;
+        player.maxTurrets += 1;
     }
 }

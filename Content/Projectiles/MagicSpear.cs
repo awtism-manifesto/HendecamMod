@@ -1,10 +1,4 @@
-﻿
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class MagicSpear : ModProjectile
 {
@@ -17,9 +11,10 @@ public class MagicSpear : ModProjectile
         Projectile.width = 14;
         Projectile.height = 14;
         Projectile.usesOwnerMeleeHitCD = true;
-       
+
         Projectile.CloneDefaults(ProjectileID.Trident); // Clone the default values for a vanilla spear. Spear specific values set for width, height, aiStyle, friendly, penetrate, tileCollide, scale, hide, ownerHitCheck, and melee.
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Spawn a bunch of fire dusts.
@@ -31,9 +26,8 @@ public class MagicSpear : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.WaterCandle, 0f, 0f, 100, default, 0.5f);
             fireDust.velocity *= 4.75f;
         }
-
-
     }
+
     public override bool PreAI()
     {
         Player player = Main.player[Projectile.owner]; // Since we access the owner player instance so much, it's useful to create a helper local variable for this
@@ -76,8 +70,6 @@ public class MagicSpear : ModProjectile
             // If sprite is facing right, rotate 135 degrees
             Projectile.rotation += MathHelper.ToRadians(135f);
         }
-
-       
 
         return false; // Don't execute vanilla AI.
     }

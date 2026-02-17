@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles;
+﻿namespace HendecamMod.Content.Tiles;
 
 public class FlatEarthTile : ModTile
 {
@@ -22,11 +16,9 @@ public class FlatEarthTile : ModTile
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.1f;
         g = 0.95f;
         b = 0.85f;
-
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

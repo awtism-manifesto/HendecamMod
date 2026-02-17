@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture;
@@ -30,7 +25,7 @@ public class TheDarkKnight : ModTile
         };
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(225, 173, 66), Language.GetText("Rory Nite"));
+        AddMapEntry(new Color(5, 3, 6), Language.GetText("Rory Nite"));
         DustType = DustID.ArgonMoss;
     }
 }

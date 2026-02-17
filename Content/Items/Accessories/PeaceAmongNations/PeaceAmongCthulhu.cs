@@ -1,29 +1,27 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class PeaceAmongCthulhu : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Cthulhu and his parts should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.EyeofCthulhu] = true;
         player.npcTypeNoAggro[NPCID.WanderingEye] = true;
         player.npcTypeNoAggro[NPCID.DemonEye] = true;
@@ -166,19 +164,19 @@ public class PeaceAmongCthulhu : ModItem
         player.npcTypeNoAggro[NPCID.PossessedArmor] = true;
         player.npcTypeNoAggro[NPCID.Poltergeist] = true;
         player.npcTypeNoAggro[NPCID.SwampThing] = true;
+    }
 
-        }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<OcularPeaceAgreement>(1);
-        recipe.AddIngredient<MechanicalPeaceAgreement>(1);
-        recipe.AddIngredient<MoonlordPeaceAgreement>(1);
-        recipe.AddIngredient<UndeadPeaceAgreement>(1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<OcularPeaceAgreement>();
+        recipe.AddIngredient<MechanicalPeaceAgreement>();
+        recipe.AddIngredient<MoonlordPeaceAgreement>();
+        recipe.AddIngredient<UndeadPeaceAgreement>();
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

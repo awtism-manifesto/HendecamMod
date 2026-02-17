@@ -1,10 +1,5 @@
-﻿using Microsoft.Build.Evaluation;
+﻿using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,7 +22,7 @@ public class AstatineArrow : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 7.5f;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 595;
         Item.shoot = ModContent.ProjectileType<Projectiles.AstaArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 9.4f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
@@ -44,8 +39,6 @@ public class AstatineArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -66,7 +59,7 @@ public class AstatineArrow : ModItem
         Recipe recipe = CreateRecipe(150);
         recipe.AddIngredient<AstatineBar>();
         recipe.AddIngredient(ItemID.WoodenArrow, 150);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
-
 }

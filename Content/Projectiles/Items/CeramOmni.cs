@@ -1,13 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
-
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -40,16 +34,16 @@ public class CeramOmni : ModProjectile
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
+
     public override void AI()
     {
         Projectile.rotation += 0.33f;
-
-        
         if (Math.Abs(Projectile.velocity.X) <= 15f && Math.Abs(Projectile.velocity.Y) <= 15f)
         {
             Projectile.velocity *= 1.15f;
         }
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -90,13 +84,9 @@ public class CeramOmni : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
-
-
-   
-
 }

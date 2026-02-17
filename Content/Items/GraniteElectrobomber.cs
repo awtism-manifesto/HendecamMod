@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -20,6 +9,7 @@ public class GraniteElectrobomber : ModItem
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -29,49 +19,33 @@ public class GraniteElectrobomber : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
-        Item.value = 10000;
-
-
+        Item.value = 52000;
         // Use Properties
         // Use Properties
         Item.useTime = 22; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 22; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item8;
-
-
+        Item.UseSound = SoundID.Item8;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 18; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-       
         Item.mana = 7;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Electrobomb>();
 
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
-       
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Electrobomb>();
-
     }
 
-
-
-    
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -84,32 +58,27 @@ public class GraniteElectrobomber : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Granite, 60);
-        recipe.AddRecipeGroup("IronBar", 20);
+        recipe.AddIngredient(ItemID.Granite, 55);
+        recipe.AddIngredient(ItemID.SilverBar, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Granite, 55);
+        recipe.AddIngredient(ItemID.TungstenBar, 15);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("GlowingGranitePowder", out ModItem GlowingGranitePowder))
+        {
+            recipe.AddIngredient(GlowingGranitePowder.Type, 20);
+        }
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

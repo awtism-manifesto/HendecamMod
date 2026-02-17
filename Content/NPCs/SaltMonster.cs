@@ -1,11 +1,8 @@
 ﻿using HendecamMod.Content.Global;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
-using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
@@ -19,8 +16,9 @@ public class SaltMonster : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.Demon;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -37,32 +35,30 @@ public class SaltMonster : ModNPC
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 3000f;
         NPC.knockBackResist = 0.08f;
-        NPC.aiStyle = 3; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Fighter; 
 
         AIType = NPCID.BloodZombie; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BloodZombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<SaltMonsterBanner>();
-
     }
+
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
     {
         // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			
-				
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
+        {
+            // Sets your NPC's flavor text in the bestiary.
+            new FlavorTextBestiaryInfoElement("\"A seemingly cobbled together monster made of pure rock salt. It is extremely hydrophobic and prefers desert environments.\" "),
 
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("\"A seemingly cobbled together monster made of pure rock salt. It is extremely hydrophobic and prefers desert environments.\" "),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("")
+            // You can add multiple elements if you really wanted to
+            // You can also use localization keys (see Localization/en-US.lang)
+            new FlavorTextBestiaryInfoElement("")
         });
     }
+
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RockSalt>(), 1, 11, 24));
 
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Naclslash>(), 11));
@@ -73,23 +69,21 @@ public class SaltMonster : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
-       
         if (NPC.downedBoss1 & NPC.downedSlimeKing)
         {
             return SpawnCondition.DesertCave.Chance * 0.18f;
         }
+
         if (NPC.downedBoss1)
         {
             return SpawnCondition.DesertCave.Chance * 0.066f;
         }
+
         if (NPC.downedSlimeKing)
         {
             return SpawnCondition.DesertCave.Chance * 0.033f;
         }
-        else
-            return SpawnCondition.DesertCave.Chance * 0.00f;
 
+        return SpawnCondition.DesertCave.Chance * 0.00f;
     }
-
 }

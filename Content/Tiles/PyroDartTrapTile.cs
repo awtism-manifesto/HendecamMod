@@ -1,11 +1,6 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -13,6 +8,9 @@ namespace HendecamMod.Content.Tiles;
 // In particular, hammer behavior is particularly tricky. The logic here is setup for multiple styles as well.
 public class PyroDartTrapTile : ModTile
 {
+    // This progression matches vanilla tiles, you don't have to follow it if you don't want. Some vanilla traps don't have 6 states, only 4. This can be implemented with different logic in Slope. Making 8 directions is also easily done in a similar manner.
+    private static readonly int[] frameXCycle = [2, 3, 4, 5, 1, 0];
+
     public override void SetStaticDefaults()
     {
         TileID.Sets.DrawsWalls[Type] = true;
@@ -26,17 +24,12 @@ public class PyroDartTrapTile : ModTile
 
         // These 2 AddMapEntry and GetMapOption show off multiple Map Entries per Tile. Delete GetMapOption and all but 1 of these for your own ModTile if you don't actually need it.
         AddMapEntry(new Color(21, 179, 192), Language.GetText("MapObject.Trap")); // localized text for "Trap"
-       
     }
 
     // Read the comments above on AddMapEntry.
-  
-
     public override bool IsTileDangerous(int i, int j, Player player) => true;
 
     // Because this tile does not use a TileObjectData, and consequently does not have "real" tile styles, the correct tile style value can't be determined automatically. This means that the correct item won't automatically drop, so we must use GetItemDrops to calculate the tile style to determine the item drop. 
-   
-
     public override bool CreateDust(int i, int j, ref int type)
     {
         int style = Main.tile[i, j].TileFrameY / 18;
@@ -44,7 +37,7 @@ public class PyroDartTrapTile : ModTile
         {
             type = DustID.Torch; // A blue dust to match the tile
         }
-       
+
         return true;
     }
 
@@ -58,14 +51,13 @@ public class PyroDartTrapTile : ModTile
         {
             tile.TileFrameX += 18;
         }
+
         if (Main.netMode == NetmodeID.MultiplayerClient)
         {
-            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1, TileChangeType.None);
+            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1);
         }
     }
 
-    // This progression matches vanilla tiles, you don't have to follow it if you don't want. Some vanilla traps don't have 6 states, only 4. This can be implemented with different logic in Slope. Making 8 directions is also easily done in a similar manner.
-    private static int[] frameXCycle = [2, 3, 4, 5, 1, 0];
     // We can use the Slope method to override what happens when this tile is hammered.
     public override bool Slope(int i, int j)
     {
@@ -74,8 +66,9 @@ public class PyroDartTrapTile : ModTile
         tile.TileFrameX = (short)(nextFrameX * 18);
         if (Main.netMode == NetmodeID.MultiplayerClient)
         {
-            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1, TileChangeType.None);
+            NetMessage.SendTileSquare(-1, Player.tileTargetX, Player.tileTargetY, 1);
         }
+
         return false;
     }
 
@@ -91,7 +84,7 @@ public class PyroDartTrapTile : ModTile
         if (style == 0)
         {
             // Wiring.CheckMech checks if the wiring cooldown has been reached. Put a longer number here for less frequent projectile spawns. 200 is the dart/flame cooldown. Spear is 90, spiky ball is 300
-            if (Wiring.CheckMech(i, j, 25))
+            if (Wiring.CheckMech(i, j, 60))
             {
                 spawnPosition = new Vector2(i * 16 + 8 + 0 * horizontalDirection, j * 16 + 9 + 0 * verticalDirection); // The extra numbers here help center the projectile spawn position if you need to.
                 SoundEngine.PlaySound(SoundID.Item99, spawnPosition);
@@ -100,6 +93,5 @@ public class PyroDartTrapTile : ModTile
                 Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
             }
         }
-       
     }
 }

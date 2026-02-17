@@ -1,15 +1,13 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class PyriteArrowProj : ModProjectile
 {
+    private int nextSpawnTick;
+    private int tickCounter;
+
     public override void SetStaticDefaults()
     {
         // If this arrow would have strong effects (like Holy Arrow pierce), we can make it fire fewer projectiles from Daedalus Stormbow for game balance considerations like this:
@@ -26,8 +24,7 @@ public class PyriteArrowProj : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 660;
     }
-    private int tickCounter = 0;
-    private int nextSpawnTick = 0;
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
@@ -50,28 +47,25 @@ public class PyriteArrowProj : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (nextSpawnTick == 0)
         {
-            nextSpawnTick = Main.rand.Next(22, 23);
+            nextSpawnTick = Main.rand.Next(6, 7);
         }
 
         tickCounter++;
 
         if (tickCounter >= nextSpawnTick)
         {
+            SoundEngine.PlaySound(SoundID.Item13, Projectile.position);
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(5));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<IchSpark>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
 
             tickCounter = 0;
-            nextSpawnTick = Main.rand.Next(22, 23);
-
-
+            nextSpawnTick = 25;
             Projectile.netUpdate = true;
         }
-
     }
-   
-   
 }

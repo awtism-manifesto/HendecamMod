@@ -1,13 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.GlobalItems;
 
@@ -26,23 +20,19 @@ public class SaltCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
         }
-
-
     }
 
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            item.defense = 5;
+            item.defense = 3;
         }
     }
-
-   
 }
+
 public class PureSaltCalBuff : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -50,16 +40,15 @@ public class PureSaltCalBuff : GlobalItem
     {
         return item.type == ModContent.ItemType<SpiritProtectionCharm>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
@@ -67,9 +56,8 @@ public class PureSaltCalBuff : GlobalItem
             item.defense = 8;
         }
     }
-
-
 }
+
 public class PlanetoidThorium : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -77,12 +65,11 @@ public class PlanetoidThorium : GlobalItem
     {
         return item.type == ModContent.ItemType<PlanetoidPunisher>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -92,9 +79,8 @@ public class PlanetoidThorium : GlobalItem
             item.useAnimation = 36;
         }
     }
-
-
 }
+
 public class ThoriumModOiledUp : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -102,16 +88,15 @@ public class ThoriumModOiledUp : GlobalItem
     {
         return item.type == ModContent.ItemType<BottledOil>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -119,9 +104,8 @@ public class ThoriumModOiledUp : GlobalItem
             item.DamageType = DamageClass.Throwing;
         }
     }
-
-
 }
+
 public class ThoriumMonke : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -129,16 +113,15 @@ public class ThoriumMonke : GlobalItem
     {
         return item.type == ModContent.ItemType<TheMonkeysPaw>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -149,9 +132,8 @@ public class ThoriumMonke : GlobalItem
             item.shoot = ModContent.ProjectileType<CeramDart>();
         }
     }
-
-
 }
+
 public class ThoriumMonkeSuper : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -159,16 +141,15 @@ public class ThoriumMonkeSuper : GlobalItem
     {
         return item.type == ModContent.ItemType<SuperMonkeysPaw>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -179,9 +160,8 @@ public class ThoriumMonkeSuper : GlobalItem
             item.shoot = ModContent.ProjectileType<CeramDart>();
         }
     }
-
-
 }
+
 public class ThoriumMonkeSuperLaser : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -189,16 +169,15 @@ public class ThoriumMonkeSuperLaser : GlobalItem
     {
         return item.type == ModContent.ItemType<LaserMonkeysPaw>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -209,9 +188,8 @@ public class ThoriumMonkeSuperLaser : GlobalItem
             item.shoot = ModContent.ProjectileType<LaserBlast>();
         }
     }
-
-
 }
+
 public class ThoriumMonkeSuperLaserPlasma : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -219,16 +197,15 @@ public class ThoriumMonkeSuperLaserPlasma : GlobalItem
     {
         return item.type == ModContent.ItemType<PlasmaMonkeysPaw>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -239,9 +216,8 @@ public class ThoriumMonkeSuperLaserPlasma : GlobalItem
             item.shoot = ModContent.ProjectileType<PlasmaBlast>();
         }
     }
-
-
 }
+
 public class PeopleThorium : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -249,16 +225,15 @@ public class PeopleThorium : GlobalItem
     {
         return item.type == ModContent.ItemType<ThePeoplesPitchfork>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -266,9 +241,8 @@ public class PeopleThorium : GlobalItem
             item.DamageType = DamageClass.Throwing;
         }
     }
-
-
 }
+
 public class ThoriumsBullshit : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -276,12 +250,11 @@ public class ThoriumsBullshit : GlobalItem
     {
         return item.type == ModContent.ItemType<Bullshit4>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-       
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -292,9 +265,8 @@ public class ThoriumsBullshit : GlobalItem
             item.useAnimation = 15;
         }
     }
-
-
 }
+
 public class ParaSepta : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -302,16 +274,15 @@ public class ParaSepta : GlobalItem
     {
         return item.type == ModContent.ItemType<Septicemia>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Paracosm): Supercharged by the remains of an eldritch being") { OverrideColor = Color.MediumVioletRed });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
@@ -322,9 +293,8 @@ public class ParaSepta : GlobalItem
             item.useAnimation = 7;
         }
     }
-
-
 }
+
 public class FabsolKillingTheClimate : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -341,9 +311,8 @@ public class FabsolKillingTheClimate : GlobalItem
             item.shootSpeed = 19.95f;
         }
     }
-
-
 }
+
 public class FabsolKillingTheClimat2e : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -356,13 +325,11 @@ public class FabsolKillingTheClimat2e : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            item.damage = 39/2;
-           
+            item.damage = 39 / 2;
         }
     }
-
-
 }
+
 public class CeramCalBuff : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -370,16 +337,15 @@ public class CeramCalBuff : GlobalItem
     {
         return item.type == ModContent.ItemType<CarbonDioxideCeram>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
@@ -387,9 +353,8 @@ public class CeramCalBuff : GlobalItem
             item.defense = 4;
         }
     }
-
-
 }
+
 public class RadCalBuff : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -397,16 +362,15 @@ public class RadCalBuff : GlobalItem
     {
         return item.type == ModContent.ItemType<IrradiatedFisticuffs>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
@@ -414,9 +378,8 @@ public class RadCalBuff : GlobalItem
             item.defense = 17;
         }
     }
-
-
 }
+
 public class CeramHorseCalBuff : GlobalItem
 {
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
@@ -424,16 +387,15 @@ public class CeramHorseCalBuff : GlobalItem
     {
         return item.type == ModContent.ItemType<CeramicHorseshoeBalloon>();
     }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
         }
-
-
     }
+
     public override void SetDefaults(Item item)
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
@@ -441,10 +403,4 @@ public class CeramHorseCalBuff : GlobalItem
             item.defense = 5;
         }
     }
-
-
 }
-
-
-
-

@@ -1,15 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Placeables;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Materials;
 
 public class CrimceramicSheet : ModItem
 {
+
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<EbonceramicSheet>();
+    }
     public override void SetDefaults()
     {
         Item.width = 32;
@@ -19,6 +20,7 @@ public class CrimceramicSheet : ModItem
         Item.value = 2250;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -29,12 +31,7 @@ public class CrimceramicSheet : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-       
     }
-
 
     public override void AddRecipes()
     {
@@ -52,8 +49,5 @@ public class CrimceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
-
-
     }
 }

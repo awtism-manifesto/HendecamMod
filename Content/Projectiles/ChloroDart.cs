@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -44,8 +39,6 @@ public class ChloroDart : ModProjectile
             Projectile.velocity.Y += 0.19f;
         }
 
-       
-       
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
         // Cap downward velocity
@@ -53,6 +46,7 @@ public class ChloroDart : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
+
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;
@@ -63,39 +57,31 @@ public class ChloroDart : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
-
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Chlorophyte, 0f, 0f, 100, default, 0.2f);
             fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             fireDust.velocity *= 0.05f;
         }
-
     }
-   
+
     public override void OnKill(int timeLeft)
     {
-       
-            
-               
-                Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
-                Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
-            Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
-            Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
+        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
+        Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
+        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
+        Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
             ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
         Vector2 Peanits3 = Projectile.Center - new Vector2(0, 0);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-        ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity23 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(13));
         Vector2 Peanits23 = Projectile.Center - new Vector2(0, 0);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits23, velocity23,
-        ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
-
-
+            ModContent.ProjectileType<ChloroDartMini>(), (int)(Projectile.damage * 0.2f), Projectile.knockBack, Projectile.owner);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {

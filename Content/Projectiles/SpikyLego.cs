@@ -1,15 +1,11 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class SpikyLego : ModProjectile
 {
@@ -31,16 +27,10 @@ public class SpikyLego : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         Projectile.damage = (int)(Projectile.damage * 0.825f);
-
-
-     
-
-
     }
 }

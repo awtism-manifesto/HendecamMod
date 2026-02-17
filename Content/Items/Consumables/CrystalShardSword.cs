@@ -1,24 +1,17 @@
-﻿
-using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Consumables;
 
 public class CrystalShardSword : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 32;
         Item.height = 32;
         Item.value = Item.sellPrice(copper: 1250);
         Item.rare = ItemRarityID.LightRed;
-       
-
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 14;
         Item.useAnimation = 14;
@@ -30,21 +23,32 @@ public class CrystalShardSword : ModItem
         Item.knockBack = 6.0f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
-        Item.buffType = BuffID.Bleeding; 
+        Item.buffType = BuffID.Bleeding;
         Item.buffTime = 300;
         Item.useTurn = true;
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    public float LobotometerCost = 7f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
         {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
         }
-    
+        return base.UseItem(player);
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Lobotometer"));
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.CrystalShard, 10);
         recipe.AddTile(TileID.GlassKiln);
         recipe.Register();
-        }
     }
+}

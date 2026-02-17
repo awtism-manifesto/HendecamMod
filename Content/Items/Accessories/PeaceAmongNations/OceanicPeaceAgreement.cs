@@ -1,29 +1,28 @@
-﻿using HendecamMod.Content.Items.Materials;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Buttplug)]
 public class OceanicPeaceAgreement : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
-        Item.value = Item.sellPrice(copper: 676767);
+        Item.value = Item.sellPrice(copper: 100000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "The depths of the ocean should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Crab] = true;
         player.npcTypeNoAggro[NPCID.Shark] = true;
         player.npcTypeNoAggro[NPCID.Sharkron] = true;
@@ -31,17 +30,17 @@ public class OceanicPeaceAgreement : ModItem
         player.npcTypeNoAggro[NPCID.Squid] = true;
         player.npcTypeNoAggro[NPCID.SeaSnail] = true;
         player.npcTypeNoAggro[NPCID.BloodNautilus] = true;
+    }
 
-        }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.DukeFishronTrophy);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles;
+﻿namespace HendecamMod.Content.Tiles;
 
 public class UraniumBrickTile : ModTile
 {
@@ -21,20 +15,17 @@ public class UraniumBrickTile : ModTile
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(89, 255, 119));
 
-
-
         Main.tileShine2[Type] = true; // Modifies the draw color slightly.
         Main.tileLighted[Type] = true;
     }
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.6f;
         g = 1f;
         b = 0.6f;
-
     }
+
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

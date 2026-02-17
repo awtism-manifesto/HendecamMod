@@ -1,8 +1,4 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -41,5 +37,4 @@ public class UltrabrightArrow : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

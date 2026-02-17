@@ -1,9 +1,4 @@
-﻿using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Blocks;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -31,8 +26,8 @@ public class LimestoneBrick : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<LimestoneBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);

@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Blocks;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -30,7 +26,7 @@ public class AzuriteOre : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<AzuriteOrePlaced>());
         Item.width = 12;
         Item.height = 12;
+        Item.value = 3350;
         Item.rare = ItemRarityID.Blue;
-
     }
 }

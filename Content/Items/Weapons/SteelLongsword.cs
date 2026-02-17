@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class SteelLongsword : ModItem
 {
@@ -31,16 +25,13 @@ public class SteelLongsword : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-
-
     }
-
-
 
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "It does 6 armor penetration");
@@ -52,8 +43,6 @@ public class SteelLongsword : ModItem
         };
         tooltips.Add(line);
 
-
-
         foreach (var l in tooltips)
         {
             if (l.Name.EndsWith(":RemoveMe"))
@@ -61,24 +50,23 @@ public class SteelLongsword : ModItem
                 l.Hide();
             }
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.SteelBar>(12);
+        recipe.AddIngredient<Placeables.SteelBar>(12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.GoldBroadsword, 1);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(4);
+        recipe.AddIngredient(ItemID.GoldBroadsword);
+        recipe.AddIngredient<Placeables.SteelBar>(4);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(4);
+        recipe.AddIngredient(ItemID.PlatinumBroadsword);
+        recipe.AddIngredient<Placeables.SteelBar>(4);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

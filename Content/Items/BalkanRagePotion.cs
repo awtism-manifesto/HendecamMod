@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Consumables;
 
 namespace HendecamMod.Content.Items;
@@ -14,8 +9,8 @@ public class BalkanRagePotion : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        // Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
-        ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+        ItemID.Sets.DrinkParticleColors[Type] = new Color[3]
+        {
             new Color(195, 32, 102),
             new Color(17, 155, 11),
             new Color(91, 21, 224)
@@ -35,13 +30,12 @@ public class BalkanRagePotion : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(silver: 20);
-        Item.buffType = ModContent.BuffType<Buffs.BalkanRage>(); // Specify an existing buff to be applied when used.
-        Item.buffTime = 21600; // Ticks
+        Item.buffType = ModContent.BuffType<Buffs.BalkanRage>(); 
+        Item.buffTime = 21600;
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
@@ -50,48 +44,24 @@ public class BalkanRagePotion : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+
     public override void AddRecipes()
     {
-
-        
-            Recipe recipe = CreateRecipe();
+        Recipe recipe = CreateRecipe();
         recipe.AddIngredient<LeadskinPotion>();
-        recipe.AddIngredient< WeedLeaves>();
-            recipe.AddIngredient< PurifiedSalt>();
-            recipe.AddIngredient< UraniumOre>();
-            recipe.AddTile(TileID.Bottles);
-            recipe.Register();
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient<UraniumOre>();
+        recipe.AddTile(TileID.Bottles);
+        recipe.Register();
 
-            recipe = CreateRecipe();
+        recipe = CreateRecipe();
         recipe.AddIngredient<LeadskinPotion>();
-        recipe.AddIngredient< WeedLeaves>();
-            recipe.AddIngredient< PurifiedSalt>();
-            recipe.AddIngredient< UraniumOre>();
-            recipe.AddTile(TileID.AlchemyTable);
-            recipe.Register();
-
-
-
-        
-       
+        recipe.AddIngredient<WeedLeaves>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient<UraniumOre>();
+        recipe.AddTile(TileID.AlchemyTable);
+        recipe.Register();
     }
-
 }
-

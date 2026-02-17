@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -21,6 +16,7 @@ public class PlasticScrap : ModItem
         Item.value = 10;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -33,49 +29,34 @@ public class PlasticScrap : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+       
 
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("Plastic", out ModItem Plastic))
+        recipe.AddIngredient<CrudeOil>(3);
+
+        recipe.AddTile(TileID.Furnaces);
+        recipe.Register();
+
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("Plastic", out ModItem Plastic))
         {
             recipe = CreateRecipe(20);
 
             recipe.AddIngredient(Plastic.Type);
-           
+
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
         }
-        else
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("Garbage", out ModItem Garbage))
         {
-             recipe = CreateRecipe();
-
-            recipe.AddIngredient<Items.CrudeOil>(3);
-          
+            recipe = CreateRecipe();
+            recipe.AddIngredient(Garbage.Type, 10);
             recipe.AddTile(TileID.Furnaces);
             recipe.Register();
-
-
-
         }
-
-
+        
     }
-
 }

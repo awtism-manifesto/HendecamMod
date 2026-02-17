@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Tiles.Furniture;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -19,17 +13,18 @@ public class MorbiumBar : ModItem
         Item.width = 20; // Hitbox width of the item.
         Item.height = 20; // Hitbox height of the item.
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 500;
+        Item.value = 26500;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBarPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Its morbin time");
+        var line = new TooltipLine(Mod, "Face", "It's morbin time.");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -37,20 +32,14 @@ public class MorbiumBar : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-}}
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<MorbiumOre>(5);
+
+        recipe.AddTile(TileID.AdamantiteForge);
+        recipe.Register();
+    }
+}

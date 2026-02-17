@@ -1,12 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -23,7 +15,7 @@ public class MandibleProj : ModProjectile
     {
         Projectile.width = 8; // The width of projectile hitbox
         Projectile.height = 8; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -37,7 +29,6 @@ public class MandibleProj : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
 
     public override void AI()
@@ -54,12 +45,8 @@ public class MandibleProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
-
 
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
@@ -73,7 +60,7 @@ public class MandibleProj : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
+
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.GemAmber, 0f, 0f, 100, default, 0.25f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
                 fireDust.velocity *= 0.05f;
@@ -82,14 +69,13 @@ public class MandibleProj : ModProjectile
         }
     }
 
-   
-   
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     private void Visuals()
     {
         Projectile.rotation = Projectile.velocity.X * 0.05f;
@@ -107,11 +93,7 @@ public class MandibleProj : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

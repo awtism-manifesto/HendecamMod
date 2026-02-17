@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +8,6 @@ public class ChromaticaLaser : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
@@ -27,6 +20,7 @@ public class ChromaticaLaser : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 12;
@@ -37,11 +31,13 @@ public class ChromaticaLaser : ModProjectile
         Projectile.light = 0.5f; // How much light emit around the projectile
         Projectile.extraUpdates = 6;
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -52,11 +48,12 @@ public class ChromaticaLaser : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -79,8 +76,6 @@ public class ChromaticaLaser : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
@@ -88,7 +83,6 @@ public class ChromaticaLaser : ModProjectile
                     // }
 
                     // Spawn smoke dusts at the back of the rocket.
-                   
                 }
             }
 
@@ -124,7 +118,7 @@ public class ChromaticaLaser : ModProjectile
         // Resize the hitbox of the projectile for the blast "radius".
         // Rocket I: 128, Rocket III: 200, Mini Nuke Rocket: 250
         // Measurements are in pixels, so 128 / 16 = 8 tiles.
-        Projectile.Resize(60, 60);
+        Projectile.Resize(166, 166);
         // Set the knockback of the blast.
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 5f;
@@ -141,7 +135,7 @@ public class ChromaticaLaser : ModProjectile
 
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
-        Projectile.Resize(9, 9);
+        Projectile.Resize(12, 12);
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 13; j++)
@@ -157,15 +151,13 @@ public class ChromaticaLaser : ModProjectile
             RubyDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GemRuby, 0f, 0f, 100, default, 1.3f);
             RubyDust.velocity *= 9f;
         }
-
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(BuffID.Electrified, 240);
         target.AddBuff(BuffID.CursedInferno, 240);
-        target.immune[Projectile.owner] = 4;
+        
     }
 
     // Rocket II explosion that damages tiles.

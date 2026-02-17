@@ -1,25 +1,16 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Buffs;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class ImprovisedLaserSight : ModItem
 {
-    // By declaring these here, changing the values will alter the effect, and the tooltip
 
     public static readonly int AdditiveRangedDamageBonus = 4;
-  
-    public static readonly int RangedCritBonus = 7;
 
-    // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-    
+    public static readonly int RangedCritBonus = 6;
 
     public override void SetDefaults()
     {
@@ -27,16 +18,21 @@ public class ImprovisedLaserSight : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
-        Item.value = 3000;
+        Item.value = 85000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "4% increased ranged damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "7% increased ranged crit chance")
+        line = new TooltipLine(Mod, "Face", "6% increased ranged crit chance")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -44,56 +40,155 @@ public class ImprovisedLaserSight : ModItem
 
 
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
+        recipe = CreateRecipe();
 
-        
-            recipe = CreateRecipe();
-       
         recipe.AddIngredient<UraniumBar>(6);
         recipe.AddIngredient<Polymer>(10);
         recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.Register();
-
-        
-
+        recipe.Register();
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 104f;
-      
+        player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 100f;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
+        player.GetModPlayer<LaserDrawGreen>().Laser = true;
 
-        
-
-        
     }
+
+    public class LaserDrawGreen : ModPlayer
+    {
+
+
+
+        public bool Laser;
+        public Vector2 laserEndPosition;
+
+        public override void ResetEffects()
+        {
+            Laser = false;
+        }
+        public override void PreUpdate()
+        {
+            if (Laser)
+            {
+                // Get mouse position in world coordinates
+                laserEndPosition = Main.MouseWorld;
+            }
+        }
+
+    }
+    public class LaserSightPlayerDrawLayer : PlayerDrawLayer
+    {
+        // Define where in the draw order this layer appears
+        public override Position GetDefaultPosition() => new AfterParent(PlayerDrawLayers.BackAcc);
+
+        // Control when this layer is visible
+        public override bool GetDefaultVisibility(PlayerDrawSet drawInfo)
+        {
+            return drawInfo.drawPlayer.GetModPlayer<LaserDrawGreen>().Laser && !drawInfo.drawPlayer.dead;
+        }
+
+        protected override void Draw(ref PlayerDrawSet drawInfo)
+        {
+            Player player = drawInfo.drawPlayer;
+            var modPlayer = player.GetModPlayer<LaserDrawGreen>();
+
+            if (modPlayer.laserEndPosition == Vector2.Zero)
+                return;
+
+            // Calculate laser start position (from player center)
+            Vector2 startPos = player.Center;
+            Vector2 endPos = modPlayer.laserEndPosition;
+
+            // Calculate direction and distance
+            Vector2 direction = endPos - startPos;
+            float distance = direction.Length();
+            direction.Normalize();
+
+            // Don't draw if too far
+            if (distance > 424f) return;
+
+            // Get screen position
+            Vector2 screenStart = startPos - Main.screenPosition;
+            Vector2 screenEnd = endPos - Main.screenPosition;
+
+            // Draw the laser beam
+            DrawLaserBeam(drawInfo, screenStart, screenEnd, distance);
+        }
+
+        private void DrawLaserBeam(PlayerDrawSet drawInfo, Vector2 start, Vector2 end, float distance)
+        {
+            // You'll need these textures - create them in your Assets folder
+            Texture2D laserTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserBeam").Value;
+            Texture2D circleTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserEnd").Value;
+
+            // Fallback if textures don't exist - creates simple textures
+            if (laserTexture == null || laserTexture.IsDisposed)
+            {
+                laserTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, 1);
+                laserTexture.SetData(new[] { Color.White });
+            }
+
+            if (circleTexture == null || circleTexture.IsDisposed)
+            {
+                circleTexture = new Texture2D(Main.graphics.GraphicsDevice, 5, 5);
+                Color[] data = new Color[25];
+                for (int i = 0; i < data.Length; i++)
+                    data[i] = Color.White;
+                circleTexture.SetData(data);
+            }
+
+            Color laserColor = new Color(0, 255, 0, 100) * 0.6f; // Green with transparency
+
+            Vector2 direction = end - start;
+            float rotation = direction.ToRotation();
+
+            // Draw main beam
+            drawInfo.DrawDataCache.Add(new DrawData(
+                laserTexture,
+                new Vector2(start.X, start.Y),
+                null,
+                laserColor,
+                rotation,
+                new Vector2(0, laserTexture.Height / 2),
+                new Vector2(distance, 2f),
+                SpriteEffects.None,
+                0
+            ));
+
+            // Draw glow effect (wider, more transparent)
+            drawInfo.DrawDataCache.Add(new DrawData(
+                laserTexture,
+                new Vector2(start.X, start.Y),
+                null,
+                laserColor * 0.3f,
+                rotation,
+                new Vector2(0, laserTexture.Height / 2),
+                new Vector2(distance, 6f),
+                SpriteEffects.None,
+                0
+            ));
+
+            // Draw end cap (circle at the end)
+            drawInfo.DrawDataCache.Add(new DrawData(
+                circleTexture,
+                end,
+                null,
+                laserColor,
+                0f,
+                new Vector2(circleTexture.Width / 2, circleTexture.Height / 2),
+                1f,
+                SpriteEffects.None,
+                0
+            ));
+        }
+    }
+
 }

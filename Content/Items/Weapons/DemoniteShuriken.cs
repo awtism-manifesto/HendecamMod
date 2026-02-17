@@ -1,8 +1,4 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -14,7 +10,7 @@ public class DemoniteShuriken : ModItem
 
         // Common Properties
         Item.rare = ItemRarityID.Blue;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 325;
         Item.maxStack = 9999;
 
         // Use Properties

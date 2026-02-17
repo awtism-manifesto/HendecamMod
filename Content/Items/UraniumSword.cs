@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -26,10 +22,10 @@ public class UraniumSword : ModItem
         Item.width = 40;
         Item.height = 40;
         Item.scale = 1.15f;
-        
+
         Item.UseSound = SoundID.Item15;
         Item.rare = ItemRarityID.Green;
-        Item.value = Item.buyPrice(gold: 5); // Sell price is 5 times less than the buy price.
+        Item.value = 132000;
         Item.DamageType = DamageClass.Melee;
         Item.shoot = ModContent.ProjectileType<UraniumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
@@ -46,9 +42,6 @@ public class UraniumSword : ModItem
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
-
-
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -60,8 +53,6 @@ public class UraniumSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -76,15 +67,14 @@ public class UraniumSword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.UraniumBar>(15);
+        recipe.AddIngredient<UraniumBar>(15);
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
         recipe = CreateRecipe();
-       
     }
-
 }

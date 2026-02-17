@@ -1,10 +1,4 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -24,11 +18,12 @@ public class BlackshardThrown : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 15;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<BlackshardDebuff>(), 296);
-      
     }
+
     public override void AI()
     {
         Projectile.rotation += 0.66f;
@@ -38,6 +33,7 @@ public class BlackshardThrown : ModProjectile
             Projectile.ai[0] = 19f;
             Projectile.velocity.Y += 0.15f;
         }
+
         if (Projectile.velocity.Y > 15f)
         {
             Projectile.velocity.Y = 16f;

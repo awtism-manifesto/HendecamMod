@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -25,7 +21,7 @@ public class BeetleRounds : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
         Item.knockBack = 4.5f;
-        Item.value = 700;
+        Item.value = 96;
         Item.rare = ItemRarityID.Yellow;
         Item.shoot = ModContent.ProjectileType<BeetleRoundProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 6.75f; // The speed of the projectile.
@@ -44,8 +40,6 @@ public class BeetleRounds : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -59,6 +53,7 @@ public class BeetleRounds : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(150);

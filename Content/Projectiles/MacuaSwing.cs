@@ -1,12 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.GameContent.Drawing;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -22,7 +14,6 @@ public class MacuaSwing : ModProjectile
         // This set has the projectiles for the Night's Edge, Excalibur, Terra Blade (close range), and The Horseman's Blade (close range).
         // This set does not have the True Night's Edge, True Excalibur, or the long range Terra Beam projectiles.
         ProjectileID.Sets.AllowsContactDamageFromJellyfish[Type] = true;
-      
     }
 
     public override void SetDefaults()
@@ -40,8 +31,8 @@ public class MacuaSwing : ModProjectile
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
         Projectile.ownerHitCheckDistance = 104f; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
-                                               // Normally, projectiles die after they have hit all the enemies they can.
-                                               // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
+        // Normally, projectiles die after they have hit all the enemies they can.
+        // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
         Projectile.stopsDealingDamageAfterPenetrateHits = true;
 
         // We will be using custom AI for this projectile. The original Excalibur uses aiStyle 190.
@@ -86,10 +77,6 @@ public class MacuaSwing : ModProjectile
         // Look at AI_190_NightsEdge() in Projectile.cs for the others.
 
         // Here we spawn some dust inside the arc of the swing.
-        
-       
-
-      
 
         Projectile.scale *= Projectile.ai[2]; // Set the scale of the projectile to the scale of the item.
 
@@ -164,22 +151,13 @@ public class MacuaSwing : ModProjectile
     {
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
         SoundEngine.PlaySound(SoundID.Item178, Projectile.position);
-
-
         for (int i = -1; i <= 1; i++)
         {
             float angle = 11 * i; // gives -15, 0, 15
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(70));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<ObsidianScrap>(), (int)(Projectile.damage * 0.6f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                ModContent.ProjectileType<ObsidianScrap>(), (int)(Projectile.damage * 0.6f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
         }
-
-
     }
-
-
-
-
-
 }

@@ -1,8 +1,4 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -41,7 +37,7 @@ public class SteelKnife : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
-        recipe.AddIngredient<Items.Placeables.SteelBar>(2);
+        recipe.AddIngredient<Placeables.SteelBar>(2);
         recipe.AddIngredient(ItemID.ThrowingKnife, 50);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

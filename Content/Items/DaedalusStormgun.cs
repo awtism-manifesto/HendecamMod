@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -19,7 +16,7 @@ public class DaedalusStormgun : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 1.4f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 750000;
+        Item.value = 6350000;
 
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,12 +30,13 @@ public class DaedalusStormgun : ModItem
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-   
+
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DaeRound>();
@@ -53,6 +51,7 @@ public class DaedalusStormgun : ModItem
         {
             ceilingLimit = player.Center.Y - 200f;
         }
+
         // Loop these functions 3 times.
         for (int i = 0; i < 1; i++)
         {
@@ -79,7 +78,6 @@ public class DaedalusStormgun : ModItem
         return false;
     }
 
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -91,8 +89,6 @@ public class DaedalusStormgun : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -108,27 +104,20 @@ public class DaedalusStormgun : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.DracoMeteor>();
-       
-        recipe.AddIngredient<Items.CyberneticGunParts>();
+        recipe.AddIngredient<DracoMeteor>();
+
+        recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FissionDrive>();
-
-
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("PhaseBar", out ModItem PhaseBar))
-
-
         {
             recipe.AddIngredient(PhaseBar.Type, 12);
-
-
         }
     }
 

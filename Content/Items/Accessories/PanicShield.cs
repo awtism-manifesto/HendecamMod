@@ -1,37 +1,31 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Armor;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using HendecamMod.Content.Items.Accessories;
 
 namespace HendecamMod.Content.Items.Accessories;
 
-[AutoloadEquip(EquipType.Shield)] // Load the spritesheet you create as a shield for the player when it is equipped.
+[AutoloadEquip(EquipType.Shield)] 
 public class PanicShield : ModItem
 {
     public override void SetDefaults()
     {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
-        // Common Properties
-        Item.width = 32; // Hitbox width of the item.
-        Item.height = 32; // Hitbox height of the item.
-        Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = 10;
+        Item.width = 32; 
+        Item.height = 32; 
+        Item.rare = ItemRarityID.Orange; 
+        Item.value = 216000;
         Item.maxStack = 1;
         Item.accessory = true;
-        Item.defense = 2;
+        Item.defense = 3;
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.AddBuff(BuffID.Panic, 2);
+       
+        player.GetModPlayer<PanicProc>().Panicked = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
@@ -41,35 +35,50 @@ public class PanicShield : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.PanicNecklace, 1);
-        recipe.AddIngredient(ItemID.ShadowScale, 8);
-        recipe.AddIngredient<DefenseShield>(1);
-        recipe.AddTile(TileID.Hellforge);
+        recipe.AddIngredient(ItemID.PanicNecklace);
+        recipe.AddIngredient<DefenseShield>();
+        recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-        recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.PanicNecklace, 1);
-        recipe.AddIngredient(ItemID.TissueSample, 8);
-        recipe.AddIngredient<DefenseShield>(1);
-        recipe.AddTile(TileID.Hellforge);
-        recipe.Register();
+       
     }
+    public class PanicProc : ModPlayer
+    {
+      
+        //private const int ExplosionCooldownMax = 60 * 15;
 
+        public bool Panicked;
+       // private int explosionCooldown;
+
+        public override void ResetEffects()
+        {
+            Panicked = false;
+        }
+
+        public override void PostUpdate()
+        {
+            // Cooldown ticking down
+           // if (explosionCooldown > 0)
+               // explosionCooldown--;
+
+          
+        }
+
+        public override void OnHurt(Player.HurtInfo info)
+        {
+            // Only trigger if set bonus is active
+            if (!Panicked)
+                return;
+
+            Player.AddBuff(BuffID.Panic, 480);
+
+            // Start cooldown
+           // explosionCooldown = ExplosionCooldownMax;
+        }
+    }
 }

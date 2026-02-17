@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -12,7 +6,6 @@ public class AgentGreenProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -25,6 +18,7 @@ public class AgentGreenProj : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -40,6 +34,7 @@ public class AgentGreenProj : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         // If timeLeft is <= 3, then explode the rocket.
@@ -61,8 +56,6 @@ public class AgentGreenProj : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -170,6 +163,7 @@ public class AgentGreenProj : ModProjectile
             smokeGore.velocity -= Vector2.One;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.CursedInferno, 600);

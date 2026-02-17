@@ -1,13 +1,7 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -78,11 +72,12 @@ public class LycoRay : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
@@ -90,64 +85,58 @@ public class LycoRay : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Vector2 velocity4 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-70, 70), (Main.rand.NextFloat(-70, 70)));
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
         Vector2 velocity5 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
+        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-200, 200), (Main.rand.NextFloat(-200, 200)));
 
         if (Main.rand.NextBool(2))
         {
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
                 ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
+
         if (Main.rand.NextBool(3))
         {
-
-           
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
 
-      
         if (Main.rand.NextBool(4))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+            
         }
+
         if (Main.rand.NextBool(5))
         {
-
-            
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
+        if (Main.rand.NextBool(4))
+        {
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+        }
+        if (Main.rand.NextBool(7))
+        {
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
+                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+        }
+
         if (Main.rand.NextBool(6))
         {
-
-
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
-
-
-
-
-
-
     }
+
     public override void AI()
     {
-
-        
-
-            // dust, all dust
-            if (Projectile.alpha <188)
+        // dust, all dust
+        if (Projectile.alpha < 188)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -165,10 +154,4 @@ public class LycoRay : ModProjectile
             }
         }
     }
-
-   
-
 }
-
-
-

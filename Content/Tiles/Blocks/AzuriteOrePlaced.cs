@@ -1,14 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Threading;
-using Terraria;
-using Terraria.Chat;
-using Terraria.ID;
-using Terraria.IO;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria.WorldBuilding;
-using Terraria.GameContent.Generation;
+﻿using Terraria.Localization;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -37,16 +27,12 @@ public class AzuriteOrePlaced : ModTile
         HitSound = SoundID.Tink;
         MineResist = 2f;
         MinPick = 70;
-        
     }
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.1f;
         g = 0.1f;
         b = 0.75f;
-
     }
-
 }

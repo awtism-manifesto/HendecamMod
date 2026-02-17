@@ -1,15 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class PyroFlame : ModProjectile
 {
@@ -17,14 +6,13 @@ public class PyroFlame : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
     }
-  
+
     public override void SetDefaults()
     {
         Projectile.width = 22; // The width of projectile hitbox
         Projectile.height = 22; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -38,16 +26,14 @@ public class PyroFlame : ModProjectile
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-      
+
         Projectile.alpha = 255;
     }
 
     public override void AI()
     {
-
-        if (Projectile.alpha <159)
+        if (Projectile.alpha < 159)
         {
-           
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -57,8 +43,6 @@ public class PyroFlame : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-               
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Torch, 0f, 0f, 100, default, 2.75f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
@@ -74,8 +58,4 @@ public class PyroFlame : ModProjectile
         target.immune[Projectile.owner] = 8;
         target.AddBuff(BuffID.OnFire3, 120);
     }
-    
-    
 }
-
-

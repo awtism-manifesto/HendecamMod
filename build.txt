@@ -1,3 +1,5 @@
 displayName = Hendecam Mod
 author = Hendecam Team
 version = 0.1
+includePDB = true
+modReferences = FixRetroLighting

@@ -1,16 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace HendecamMod.Content.Dusts;
 
 public class MoonburnDust : ModDust
 {
-
-
     public override string Texture => null;
 
     public override void OnSpawn(Dust dust)
@@ -23,22 +16,19 @@ public class MoonburnDust : ModDust
         dust.color = Color.DarkCyan;
         dust.scale = 1f;
         dust.alpha = 100;
-
-
     }
+
     public override bool Update(Dust dust)
     {
-
         float lightR = 0.2f * dust.scale;
         float lightG = 0.8f * dust.scale;
         float lightB = 0.8f * dust.scale;
 
         Lighting.AddLight(dust.position, lightR, lightG, lightB);
 
-
-
         return true; // RETURN TRUE
     }
+
     public override Color? GetAlpha(Dust dust, Color lightColor)
     {
         lightColor = Color.Lerp(lightColor, Color.DarkCyan, 0.8f);
@@ -66,5 +56,4 @@ public class MoonburnDust : ModDust
 
         return true;
     }
-
 }

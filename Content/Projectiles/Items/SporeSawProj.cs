@@ -1,9 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -88,12 +84,10 @@ public class SporeSawProj : ModProjectile
 
         // Gives the drill a slight jiggle
         Projectile.velocity.X *= 1f + Main.rand.Next(-3, 4) * 0.01f;
-        
-
         // Spawning dust
         if (Main.rand.NextBool(10))
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>(), 0f, 0f, 80, Color.OrangeRed, 1f);
+            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>(), 0f, 0f, 80, Color.OrangeRed);
             dust.position.X -= 4f;
             dust.noGravity = true;
             dust.velocity.X *= 0.5f;

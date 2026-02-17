@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,7 +8,6 @@ namespace HendecamMod.Content.Items;
 [AutoloadEquip(EquipType.Legs)]
 public class PowerPants : ModItem
 {
-
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -23,8 +17,6 @@ public class PowerPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -34,8 +26,8 @@ public class PowerPants : ModItem
         Item.height = 18; // Height of the item
         Item.value = 150000;
         Item.rare = ItemRarityID.Gray; // The rarity of the item
-       
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -47,8 +39,6 @@ public class PowerPants : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -78,13 +68,10 @@ public class PowerPants : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    
-   
     public override void UpdateArmorSet(Player player)
     {
-
     }
 }

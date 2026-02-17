@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -30,7 +25,7 @@ public class BallisticKnife : ModItem
         Item.damage = 33;
         Item.knockBack = 4;
 
-
+        Item.useTurn = true;
         Item.value = Item.buyPrice(gold: 21);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item14;
@@ -45,9 +40,6 @@ public class BallisticKnife : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,8 +51,6 @@ public class BallisticKnife : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -75,6 +65,4 @@ public class BallisticKnife : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-   
-
 }

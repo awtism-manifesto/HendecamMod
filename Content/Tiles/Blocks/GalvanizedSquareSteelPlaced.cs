@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles.Blocks;
+﻿namespace HendecamMod.Content.Tiles.Blocks;
 
 public class GalvanizedSquareSteelPlaced : ModTile
 {
@@ -19,7 +13,6 @@ public class GalvanizedSquareSteelPlaced : ModTile
 
         AddMapEntry(new Color(28, 28, 28));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

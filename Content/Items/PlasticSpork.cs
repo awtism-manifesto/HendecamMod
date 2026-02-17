@@ -1,19 +1,12 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class PlasticSpork : ModItem
 {
     public override void SetDefaults()
@@ -25,12 +18,10 @@ public class PlasticSpork : ModItem
         Item.useTime = 18;
         Item.useAnimation = 18;
         Item.autoReuse = true;
-
+        Item.scale = 1.1f;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 9;
         Item.knockBack = 0.5f;
-
-
         Item.value = Item.buyPrice(silver: 3);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
@@ -63,48 +54,38 @@ public class PlasticSpork : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-    
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Flings vile, poisonous mushy peas at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Why do the British still eat like the Luftwaffe is flying overhead?")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.PlasticScrap>(12);
+        recipe.AddIngredient<PlasticScrap>(12);
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
-
     }
-
 }

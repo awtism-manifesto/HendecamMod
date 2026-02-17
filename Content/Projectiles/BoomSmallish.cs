@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -13,7 +6,6 @@ public class BoomSmallish : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -26,6 +18,7 @@ public class BoomSmallish : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -37,27 +30,24 @@ public class BoomSmallish : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.timeLeft = 7;
-
-
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-       
         target.AddBuff(BuffID.OnFire, 300);
     }
+
     public override void AI()
     {
-       
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
         }
-       
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -91,13 +81,9 @@ public class BoomSmallish : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(180, 180);
-
-
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
@@ -108,8 +94,6 @@ public class BoomSmallish : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3f;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

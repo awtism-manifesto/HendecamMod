@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture;
@@ -27,8 +23,6 @@ public class AncientFurnacePlaced : ModTile
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
         TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
         TileObjectData.addTile(Type);
-
-
         // Etc
         AddMapEntry(new Color(64, 64, 64), Language.GetText(""));
     }

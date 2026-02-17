@@ -1,16 +1,6 @@
-﻿using System;
+﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using HendecamMod.Content.Projectiles;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -26,48 +16,34 @@ public class OrbitalLaserGun : ModItem
         Item.scale = 1.1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 15950000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 99; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 99; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item67;
-
-
+        Item.UseSound = SoundID.Item67;
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 185; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
+
         Item.ArmorPenetration = 80;
         Item.mana = 100;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
 
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<OrbitTracer>();
-
     }
 
-
-
-    
- 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -80,58 +56,30 @@ public class OrbitalLaserGun : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.LaserMachinegun);
-        recipe.AddIngredient<Items.TheAirFlare>();
-        recipe.AddIngredient<Items.TedGun>();
+        recipe.AddIngredient<TheAirFlare>();
+        recipe.AddIngredient<TedGun>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddIngredient(ItemID.FragmentNebula, 12);
-
-
-
-
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-
-       
-        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind<ModItem>("DianiteBar", out ModItem DianiteBar))
+        if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica) && MacroMerica.TryFind("DianiteBar", out ModItem DianiteBar))
         {
             recipe.AddIngredient(DianiteBar.Type, 5);
-
         }
 
-
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CosmiliteBar", out ModItem CosmiliteBar))
-
-
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CosmiliteBar", out ModItem CosmiliteBar))
         {
             recipe.AddIngredient(CosmiliteBar.Type, 5);
-
-
         }
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

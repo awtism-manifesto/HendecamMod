@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -14,12 +7,13 @@ public class PlatinumMultiaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 20;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 10;
         Item.useAnimation = 24;
-       
+        Item.useTurn = true;
+
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 5;
         Item.scale = 1.25f;
@@ -29,18 +23,16 @@ public class PlatinumMultiaxe : ModItem
         Item.autoReuse = true;
         Item.tileBoost = 1;
         Item.pick = 61;
-      
+
         Item.axe = 19;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override bool AltFunctionUse(Player player)
     {
-
-
         return true;
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)
@@ -52,7 +44,6 @@ public class PlatinumMultiaxe : ModItem
 
             Item.axe = 0;
             Item.hammer = 77;
-
         }
         else
         {
@@ -90,12 +81,5 @@ public class PlatinumMultiaxe : ModItem
         recipe.AddIngredient(ItemID.PlatinumPickaxe);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-       
-
-
-
-
     }
-
 }

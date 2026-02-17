@@ -1,9 +1,5 @@
-﻿using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Blocks;
-using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -31,13 +27,13 @@ public class FireDiamondStoneBlock : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<FireDiamondStoneBlockPlaced>());
         Item.width = 12;
         Item.height = 12;
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.StoneBlock, 1);
-        recipe.AddIngredient<FireDiamond>(1);
+        recipe.AddIngredient(ItemID.StoneBlock);
+        recipe.AddIngredient<FireDiamond>();
         recipe.AddTile(TileID.HeavyWorkBench);
         recipe.Register();
     }

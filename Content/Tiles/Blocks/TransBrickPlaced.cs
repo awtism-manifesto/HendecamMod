@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -28,7 +23,6 @@ public class TransBrickPlaced : ModTile
 
         AddMapEntry(new Color(255, 255, 255));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

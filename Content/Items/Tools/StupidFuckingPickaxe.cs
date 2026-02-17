@@ -1,11 +1,10 @@
-﻿using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Rarities;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -19,6 +18,8 @@ public class StupidFuckingPickaxe : ModItem
         Item.height = 500;
         Item.useTime = 1;
         Item.useAnimation = 10;
+        Item.useTurn = true;
+
         Item.scale = 2.25f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 0;
@@ -31,6 +32,7 @@ public class StupidFuckingPickaxe : ModItem
         Item.pick = 2; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -44,6 +46,31 @@ public class StupidFuckingPickaxe : ModItem
         tooltips.Add(line);
     }
 
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-   
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.NightsEdge);
+        recipe.AddIngredient(ItemID.GoldBrickWall, 333);
+        recipe.AddIngredient(ItemID.BladeofGrass);
+        recipe.AddIngredient(ItemID.PortableStool, 67);
+        recipe.AddIngredient(ItemID.CrabBanner);
+
+        recipe.AddIngredient(ItemID.WhitePearl, 69);
+
+        recipe.AddIngredient(ItemID.TinShortsword, 167);
+        recipe.AddIngredient(ItemID.SpectreBoots);
+        recipe.AddIngredient<WeedLeaves>(420);
+        recipe.AddIngredient<LunarGem>(911);
+        recipe.AddIngredient<BadGrades>();
+        recipe.AddIngredient<SuperMonkeysPaw>();
+        recipe.AddIngredient<PhatBlunt>();
+        recipe.AddIngredient<AzuriteSaber>();
+        recipe.AddIngredient<GunOfRoses>();
+        recipe.AddIngredient<RednecksRustBucket>();
+
+        recipe.AddIngredient<DirtBar>(6767);
+        recipe.AddIngredient(ItemID.RedDye, 500);
+
+        recipe.Register();
+    }
 }

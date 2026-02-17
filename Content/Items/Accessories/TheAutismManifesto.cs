@@ -1,29 +1,22 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Humanizer;
-using Microsoft.Build.Tasks.Deployment.ManifestUtilities;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class TheAutismManifesto : ModItem
 {
     // By declaring these here, changing the values will alter the effect, and the tooltip
-
-
     public static readonly int AdditiveStupidDamageBonus = 10;
 
     public static readonly int MagicCritBonus = 10;
     public static readonly int StupidCritBonus = 10;
-    public static readonly int MaxManaIncrease = 75;
+
+   
+
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
-
-
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -33,27 +26,36 @@ public class TheAutismManifesto : ModItem
         Item.value = 9999000;
         Item.defense = 10;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
+
         recipe.AddIngredient<SpiritProtectionCharm>();
         recipe.AddIngredient<AutismDiagnosis>();
         recipe.AddIngredient<AutismOrb>(2);
-        recipe.AddIngredient<PlutoniumBar>(6);
-        recipe.AddIngredient<AstatineBar>(7);
-        recipe.AddTile(TileID.LunarCraftingStation);
-        recipe.Register();
        
-
-
-
-
+        recipe.AddIngredient<FissionDrive>();
+        recipe.AddTile<CultistCyclotronPlaced>();
+        recipe.Register();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+75 mana, 10% increased magic and stupid crit chance and +15% stupid damage");
+        var line = new TooltipLine(Mod, "Face", "+100 mana and Lobotometer, +10% damage reduction");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your max Lobotometer ")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Increases all attack speed as Lobotometer increases, up to 25% at max")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
@@ -61,30 +63,24 @@ public class TheAutismManifesto : ModItem
             OverrideColor = new Color(255, 15, 85)
         };
         tooltips.Add(line);
-
-
-
-      
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 115f;
-       
-        player.GetCritChance<StupidDamage>() += StupidCritBonus;
-        player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
-        player.statManaMax2 += MaxManaIncrease;
-        player.endurance = 1f - 0.95f * (1f - player.endurance);
+
+        player.statManaMax2 += 100;
+        player.endurance = 1f - 0.9f * (1f - player.endurance);
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 100f;
+
+        float damageBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 2000;
+        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
+        float speedBonus = lobotometerPercent * 0.25f;
+        //float speedBonus = (1f - lobotometerPercent) * 0.25f; // inverse
+
+        player.GetAttackSpeed(DamageClass.Generic) += speedBonus;
+        player.GetDamage(DamageClass.Generic) += damageBonus;
+
     }
 }

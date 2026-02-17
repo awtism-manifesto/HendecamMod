@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -22,7 +17,7 @@ public class CeramDart : ModProjectile
         Projectile.height = 8; // The height of projectile hitbox
         Projectile.usesLocalNPCImmunity = true;
         Projectile.penetrate = 1;
-        
+
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
@@ -51,9 +46,8 @@ public class CeramDart : ModProjectile
         {
             Projectile.velocity.Y = 19f;
         }
-       
     }
-   
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.

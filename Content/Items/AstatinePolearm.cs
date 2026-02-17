@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
@@ -20,7 +17,7 @@ public class AstatinePolearm : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.Red;
-        Item.value = 510000; // The number and type of coins item can be sold for to an NPC
+        Item.value = 1835000; // The number and type of coins item can be sold for to an NPC
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -40,6 +37,7 @@ public class AstatinePolearm : ModItem
         Item.shootSpeed = 3.7f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<AstatineSpear>(); // The projectile that is fired from this weapon
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,34 +50,24 @@ public class AstatinePolearm : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
         return player.ownedProjectileCounts[Item.shoot] < 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<AstatineBar>(20);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
     }
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

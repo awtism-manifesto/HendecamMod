@@ -1,12 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +8,6 @@ public class AstaRocketProj : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -24,11 +17,12 @@ public class AstaRocketProj : ModProjectile
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
-       
+
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 20;
@@ -39,7 +33,7 @@ public class AstaRocketProj : ModProjectile
         Projectile.light = 0.7f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 2;
-        
+
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -48,12 +42,9 @@ public class AstaRocketProj : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
-        
-        
-
-
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -72,16 +63,12 @@ public class AstaRocketProj : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-
-
                     Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.3f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 0.95f;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -132,7 +119,7 @@ public class AstaRocketProj : ModProjectile
             Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 2.4f;
         }
-        
+
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 50; j++)
         {
@@ -142,17 +129,13 @@ public class AstaRocketProj : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 4f;
         }
-
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
         target.immune[Projectile.owner] = 4;
     }
-   
-
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {
     //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7

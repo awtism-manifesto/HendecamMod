@@ -1,17 +1,8 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Items;
 
@@ -27,8 +18,6 @@ public class BinaryRifle : ModItem
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 225000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
@@ -39,8 +28,6 @@ public class BinaryRifle : ModItem
 
         // The sound that this item plays when used.
         Item.UseSound = SoundID.NPCDeath56;
-
-
         // Weapon Properties
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
         Item.damage = 355; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -49,15 +36,13 @@ public class BinaryRifle : ModItem
         Item.crit = 10;
         Item.ArmorPenetration = 25;
         Item.mana = 22;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot =  ModContent.ProjectileType<BinaryLaser>();
+        Item.shoot = ModContent.ProjectileType<BinaryLaser>();
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
-
     }
+
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
@@ -69,16 +54,13 @@ public class BinaryRifle : ModItem
 
         return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<BinaryLaser>();
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         SoundEngine.PlaySound(SoundID.Item114, player.position);
     }
-
-
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -92,22 +74,8 @@ public class BinaryRifle : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
-
 
     public override void AddRecipes()
     {
@@ -116,14 +84,10 @@ public class BinaryRifle : ModItem
         recipe.AddIngredient<MechanicalMurdergun>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient(ItemID.FragmentNebula, 8);
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-
-
-
-
-
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

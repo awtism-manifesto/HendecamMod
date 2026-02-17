@@ -1,9 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,12 +9,9 @@ public class AstatineGlass : ModItem
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-       
-       
-
         Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -32,6 +25,7 @@ public class AstatineGlass : ModItem
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineGlassTile>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -43,8 +37,6 @@ public class AstatineGlass : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -60,21 +52,13 @@ public class AstatineGlass : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(15);
 
-        recipe.AddIngredient<Items.AstatineOre>();
-
-
+        recipe.AddIngredient<AstatineOre>();
         recipe.AddIngredient(ItemID.Glass);
-        recipe.AddTile(TileID.AdamantiteForge);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-
-
-
-
-
     }
 }

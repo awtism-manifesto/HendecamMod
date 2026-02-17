@@ -1,12 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -14,7 +7,7 @@ public class Napalm : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 7; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 
@@ -29,20 +22,27 @@ public class Napalm : ModProjectile
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 60; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 10; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
-        Projectile.light = 1.75f; // How much light emit around the projectile
+      
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
+        Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1; 
 
-        AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
+        AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+    }
+    public override void AI()
+    {
+        Lighting.AddLight(Projectile.Center, 0.95f, 0.6f, 0.1f);
+        Projectile.rotation += -0.215f;
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.immune[Projectile.owner] = 4;
-        target.AddBuff(BuffID.OnFire, 500);
+       
+        target.AddBuff(BuffID.OnFire3, 500);
         target.AddBuff(BuffID.Ichor, 300);
     }
+
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
@@ -55,8 +55,6 @@ public class Napalm : ModProjectile
         else
         {
             Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-           
-
             // If the projectile hits the left or right side of the tile, reverse the X velocity
             if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
             {
@@ -83,18 +81,15 @@ public class Napalm : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
 
-
     public override void OnKill(int timeLeft)
     {
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-       
     }
-
 }

@@ -1,11 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -14,17 +8,17 @@ public class FlatEarthPickaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 80;
-        Item.DamageType =  DamageClass.Melee;
+        Item.DamageType = DamageClass.Melee;
         Item.width = 50;
         Item.height = 50;
         Item.useTime = 6;
         Item.useAnimation = 11;
-        
+        Item.useTurn = true;
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-        
-        Item.value = Item.buyPrice(gold: 69); 
+
+        Item.value = Item.buyPrice(gold: 69);
         Item.rare = ModContent.RarityType<HotPink>();
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
@@ -32,6 +26,7 @@ public class FlatEarthPickaxe : ModItem
         Item.pick = 225;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "");
@@ -48,14 +43,11 @@ public class FlatEarthPickaxe : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<FragmentFlatEarth>(12);
-        recipe.AddIngredient(ItemID.LunarBar,10);
-        
+        recipe.AddIngredient(ItemID.LunarBar, 10);
+
         recipe.AddTile(TileID.LunarCraftingStation);
 
         recipe.Register();
-        
     }
 }

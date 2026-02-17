@@ -1,13 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -15,7 +9,6 @@ public class EmblemBoom : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -28,6 +21,7 @@ public class EmblemBoom : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 3;
@@ -37,7 +31,7 @@ public class EmblemBoom : ModProjectile
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.timeLeft =9;
+        Projectile.timeLeft = 9;
         Projectile.extraUpdates = 0;
         Projectile.tileCollide = false;
 
@@ -46,6 +40,7 @@ public class EmblemBoom : ModProjectile
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 5;
@@ -53,10 +48,9 @@ public class EmblemBoom : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 130);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 130);
     }
+
     public override void AI()
     {
-
-
         // Apply gravity after a quarter of a second
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 7f)
@@ -73,6 +67,7 @@ public class EmblemBoom : ModProjectile
         {
             Projectile.velocity.Y = 32f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -93,15 +88,11 @@ public class EmblemBoom : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
 
-
-
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
                     //	fireDust.scale *= 0.65f;
                     //	fireDust.velocity += Projectile.velocity * 0.1f;
                     // }
-
-                   
                 }
             }
 
@@ -120,9 +111,6 @@ public class EmblemBoom : ModProjectile
             Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + MathHelper.PiOver2;
         }
     }
-
-    
-    
 
     public override void PrepareBombToBlow()
     {
@@ -151,10 +139,6 @@ public class EmblemBoom : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(275, 275);
-
-
-
-
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 20; j++)
         {
@@ -174,6 +158,7 @@ public class EmblemBoom : ModProjectile
             fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.4f);
             fire11Dust.velocity *= 6.5f;
         }
+
         for (int j = 0; j < 8; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
@@ -192,6 +177,7 @@ public class EmblemBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
             fireeeDust.velocity *= 3f;
         }
+
         for (int j = 0; j < 17; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
@@ -210,6 +196,7 @@ public class EmblemBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.2f);
             fireeeDust.velocity *= 10f;
         }
+
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 14; j++)
         {
@@ -229,8 +216,6 @@ public class EmblemBoom : ModProjectile
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeeDust.velocity *= 4f;
         }
-
-
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

@@ -1,11 +1,7 @@
 ﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -21,7 +17,7 @@ public class MintalGreatspear : ModItem
     {
         // Common Properties
         Item.rare = ItemRarityID.LightRed; // Assign this item a rarity level of Pink
-        Item.value = Item.sellPrice(silver: 10); // The number and type of coins item can be sold for to an NPC
+        Item.value = 145000;
 
         // Use Properties
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
@@ -38,18 +34,17 @@ public class MintalGreatspear : ModItem
         Item.noMelee = true; // Allows the item's animation to do damage. This is important because the spear is actually a projectile instead of an item. This prevents the melee hitbox of this item.
 
         // Projectile Properties
-        Item.shootSpeed = 3.7f; // The speed of the projectile measured in pixels per frame.
+        Item.shootSpeed = 3.9f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<MintalGreatspearProjectile>(); // The projectile that is fired from this weapon
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         type = ModContent.ProjectileType<MintLeafProjectile>();
-        Projectile.NewProjectileDirect(source, position, velocity * 2.67f, type, (int)(damage * 0.69), knockback, player.whoAmI);
-
-
+        Projectile.NewProjectileDirect(source, position, velocity * 3.75f, type, (int)(damage * 0.69), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
@@ -66,6 +61,7 @@ public class MintalGreatspear : ModItem
 
         return null;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

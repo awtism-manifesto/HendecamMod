@@ -1,9 +1,4 @@
-﻿using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles;
-using HendecamMod.Content.Tiles.Blocks;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -32,6 +27,6 @@ public class MorbiumOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Yellow;
-
+        Item.value = 4350;
     }
 }

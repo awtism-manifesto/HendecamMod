@@ -1,11 +1,6 @@
-﻿using Terraria;
-using Terraria.GameContent.Bestiary;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using HendecamMod.Content.Items.Placeables;
-
 
 namespace HendecamMod.Content.NPCs;
 
@@ -18,8 +13,9 @@ public class PearlsandSlime : ModNPC
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.ShimmerSlime;
 
-        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers()
-        { // Influences how the NPC looks in the Bestiary
+        NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
+        {
+            // Influences how the NPC looks in the Bestiary
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -36,13 +32,12 @@ public class PearlsandSlime : ModNPC
         NPC.DeathSound = SoundID.NPCDeath1;
         NPC.value = 1075f;
         NPC.knockBackResist = 0.7f;
-        NPC.aiStyle = 1; // slime ai
+        NPC.aiStyle = NPCAIStyleID.Slime; 
 
         AIType = NPCID.SandSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.SandSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
         BannerItem = ModContent.ItemType<PearlsandSlimeBanner>();
-
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -70,10 +65,6 @@ public class PearlsandSlime : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-
-
         return SpawnCondition.RainbowSlime.Chance * 0.75f;
-
     }
-
 }

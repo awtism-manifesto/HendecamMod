@@ -1,30 +1,27 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class TornFilter : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 30% more Attack Speed and double your breath timer"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Activated or Enviornmental Buffs"));
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
         player.GetModPlayer<NastySpeed>().NastyEffect = true;
         player.buffImmune[BuffID.AmmoBox] = true;
@@ -42,14 +39,14 @@ public class TornFilter : ModItem
         player.buffImmune[BuffID.StarInBottle] = true;
         player.buffImmune[BuffID.CatBast] = true;
         player.buffImmune[BuffID.MonsterBanner] = true;
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
-        recipe.AddIngredient<GasMask>(1);
-        recipe.AddIngredient<BrokenMouse>(1);
+        recipe.AddIngredient<GasMask>();
+        recipe.AddIngredient<BrokenMouse>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-        }
     }
+}

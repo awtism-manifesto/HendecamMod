@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -18,7 +12,7 @@ public class PrideFlag : ModItem
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
-        Item.value = 100;
+        Item.value = 2950;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 15;
@@ -26,6 +20,7 @@ public class PrideFlag : ModItem
         Item.autoReuse = true;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PrideFlagPlaced>());
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -37,8 +32,6 @@ public class PrideFlag : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -57,12 +50,9 @@ public class PrideFlag : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<BlankFlag>(1);
+        recipe.AddIngredient<BlankFlag>();
         recipe.AddIngredient(ItemID.Wood, 2);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
-
-
-
 }

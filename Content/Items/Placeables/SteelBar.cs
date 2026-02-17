@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -13,6 +8,7 @@ public class SteelBar : ModItem
     {
         Item.ResearchUnlockCount = 25;
     }
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -21,14 +17,14 @@ public class SteelBar : ModItem
         Item.width = 20; // Hitbox width of the item.
         Item.height = 20; // Hitbox height of the item.
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
-        Item.value = 525;
+        Item.value = 1215;
         Item.maxStack = 9999;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.SteelBarPlaced>());
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -41,8 +37,6 @@ public class SteelBar : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -53,16 +47,16 @@ public class SteelBar : ModItem
             }
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(2);
-        recipe.AddIngredient<Items.Materials.CoalLump>(1);
-        recipe.AddRecipeGroup("IronBar", 1);
+        recipe.AddIngredient<Materials.CoalLump>();
+        recipe.AddRecipeGroup("IronBar");
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
         recipe = CreateRecipe();
         recipe.AddIngredient<SteelShelf>(2);
         recipe.Register();
     }
-
 }

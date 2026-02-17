@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
+using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,6 +9,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class TransBodyplate : ModItem
 {
+    // Damage bonuses
+    public static readonly int AdditiveDamageBonus = 6;
+    public static readonly int GenericCritBonus = 3;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -23,10 +22,9 @@ public class TransBodyplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
+
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -35,18 +33,17 @@ public class TransBodyplate : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.defense = 6; // The amount of defense the item will give when equipped
     }
-    // Damage bonuses
-    public static readonly int AdditiveDamageBonus = 6;
-    public static readonly int GenericCritBonus = 5;
+
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 106f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Tooltip code
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "6% increased damage and 3% increased crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -55,24 +52,15 @@ public class TransBodyplate : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Idfk how it works
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Please help
+      
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<TransHat>() && legs.type == ModContent.ItemType<TransGreaves>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -81,8 +69,8 @@ public class TransBodyplate : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-        
     }
 }

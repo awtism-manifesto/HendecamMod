@@ -1,13 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -15,7 +6,6 @@ public class GunbladeCloud : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-      
         Main.projFrames[Projectile.type] = 5;
     }
 
@@ -26,7 +16,7 @@ public class GunbladeCloud : ModProjectile
         Projectile.scale = 1.33f;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();  // Is the projectile shoot by a ranged weapon?
+        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>(); // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 4; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 55; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 85; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
@@ -37,8 +27,6 @@ public class GunbladeCloud : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
         Projectile.aiStyle = -1;
-       
-
     }
 
     public override void AI()
@@ -46,8 +34,8 @@ public class GunbladeCloud : ModProjectile
         if (Math.Abs(Projectile.velocity.X) <= 15f && Math.Abs(Projectile.velocity.Y) <= 15f)
         {
             Projectile.velocity *= 1.25f;
-
         }
+
         int frameSpeed = 11;
 
         Projectile.frameCounter++;
@@ -60,16 +48,7 @@ public class GunbladeCloud : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
-
-   
-   
-    
-    
 }
-
-

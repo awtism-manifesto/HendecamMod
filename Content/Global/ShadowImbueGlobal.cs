@@ -1,18 +1,12 @@
-﻿
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Global;
+﻿namespace HendecamMod.Content.Global;
 
 /// <summary>
-/// Handles the effects and weapon visuals of the shadow Weapon Imbue.
-/// See also ExampleFlask and ExampleWeaponImbue.
+///     Handles the effects and weapon visuals of the shadow Weapon Imbue.
+///     See also ExampleFlask and ExampleWeaponImbue.
 /// </summary>
 public class ShadowImbueGlobal : ModPlayer
 {
-    public bool shadowWeaponImbue = false;
+    public bool shadowWeaponImbue;
 
     public override void ResetEffects()
     {

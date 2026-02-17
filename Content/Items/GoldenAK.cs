@@ -1,17 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Global;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -26,73 +15,59 @@ public class GoldenAK : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.65f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = Item.buyPrice(gold: 49);
-
-
+        Item.value = Item.sellPrice(gold: 33);
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item38;
-
-
+        Item.UseSound = SoundID.Item38;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 40; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-       
-       
-       
-
         // Gun Properties
         Item.shoot = ProjectileID.Bullet; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 13.33f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         if (type == ProjectileID.Bullet)
         {
             type = ProjectileID.CrystalBullet;
         }
+
         if (type == ProjectileID.CrystalBullet)
         {
             damage = (int)(damage * 1.1f);
         }
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.5f));
-        
-
+        // Rotate the velocity randomly by 30 degrees at max.
+        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.5f));
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.225f);
 
-            // Create a projectile.
-          
+        // Create a projectile.
+
         if (type == ProjectileID.CrystalBullet)
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<CrystalBeef>().fromGoldenAK = true;
             return false; // Prevent vanilla projectile spawn
         }
-        else { 
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-        }
-      
+
+        Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-       
-       
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -104,40 +79,33 @@ public class GoldenAK : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-       
-
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-      
         recipe.AddIngredient<AK47>();
         recipe.AddIngredient(ItemID.SoulofLight, 5);
         recipe.AddIngredient(ItemID.GoldDust, 100);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
+        if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("AKMini", out ModItem AKMini)
+                                                                 && PixelMerica.TryFind("GoldenFriend", out ModItem GoldenFriend))
 
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(AKMini.Type);
+            recipe.AddIngredient(GoldenFriend.Type);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-27f, -3f);
     }
-
-
 }

@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using HendecamMod.Content.Items.Placeables;
+using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,6 +9,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class AzuritePlatemail : ModItem
 {
+    public static readonly int AdditiveDamageBonus = 11;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -23,37 +20,35 @@ public class AzuritePlatemail : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
-    public static readonly int AdditiveDamageBonus = 12;
+
     public override void UpdateEquip(Player player)
     {
-        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 112f;
-        player.GetCritChance(DamageClass.Ranged) += 8;
+        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
+        player.GetCritChance(DamageClass.Ranged) += 9;
     }
+
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
         Item.height = 28; // Height of the item
-        Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+        Item.value = 410000;
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 10; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "12% increased ranged damage");
+        var line = new TooltipLine(Mod, "Face", "11% increased ranged damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "8% increased ranged crit chance")
+        line = new TooltipLine(Mod, "Face", "9% increased ranged crit chance")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -68,11 +63,13 @@ public class AzuritePlatemail : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<AzuriteHat>() && legs.type == ModContent.ItemType<AzuriteGreaves>();
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -81,8 +78,8 @@ public class AzuritePlatemail : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
     }
 }

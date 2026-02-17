@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Enums;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -56,11 +52,9 @@ public class SaberProj : ModProjectile
             Projectile.Kill();
             return;
         }
-        else
-        {
-            // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
-            player.heldProj = Projectile.whoAmI;
-        }
+
+        // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
+        player.heldProj = Projectile.whoAmI;
 
         // Fade in and out
         // GetLerpValue returns a value between 0f and 1f - if clamped is true - representing how far Timer got along the "distance" defined by the first two parameters
@@ -81,6 +75,7 @@ public class SaberProj : ModProjectile
         // The code in this method is important to align the sprite with the hitbox how we want it to
         SetVisualOffsets();
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
@@ -89,12 +84,11 @@ public class SaberProj : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.66f;
             dust.scale *= 0.95f;
-
         }
 
         target.immune[Projectile.owner] = 6;
-
     }
+
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)

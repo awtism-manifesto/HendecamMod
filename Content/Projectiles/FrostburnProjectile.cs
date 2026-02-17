@@ -1,19 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class FrostburnProjectile : ModProjectile
 {
-
-
     public override void SetDefaults()
     {
         Projectile.width = 30; // The width of projectile hitbox
@@ -35,19 +23,16 @@ public class FrostburnProjectile : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
+
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-
         modifiers.SourceDamage *= 1.125f;
-
     }
 
     public override void AI()
     {
-
         if (Projectile.alpha < 182)
         {
-
             for (int i = 0; i < 2; i++)
             {
                 float posOffsetX = 0f;
@@ -57,8 +42,6 @@ public class FrostburnProjectile : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-
-
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.IceTorch, 0f, 0f, 100, default, 2.05f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -74,6 +57,4 @@ public class FrostburnProjectile : ModProjectile
 
         target.AddBuff(BuffID.Frostburn, 240);
     }
-
-
 }

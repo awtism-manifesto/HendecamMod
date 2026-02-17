@@ -1,15 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class SteakProj : ModProjectile
 {
@@ -32,7 +26,4 @@ public class SteakProj : ModProjectile
         // This can be done by modifying projectile.penetrate
         Projectile.extraUpdates = 1;
     }
-   
-   
-   
 }

@@ -1,8 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Placeables;
+﻿namespace HendecamMod.Content.Items.Placeables;
 
 public class CobaltWorkBench : ModItem
 {
@@ -11,7 +7,7 @@ public class CobaltWorkBench : ModItem
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.CobaltWorkBenchPlaced>());
         Item.width = 28;
         Item.height = 14;
-        Item.value = 150;
+        Item.value = 49000;
     }
 
     public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)

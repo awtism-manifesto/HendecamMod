@@ -1,29 +1,27 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
 //[AutoloadEquip(EquipType.Beard)]
 public class RoyalAmalgamation : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         var line = new TooltipLine(Mod, "Face", "Various enemies across Terraria should be friendly");
         tooltips.Add(line);
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.npcTypeNoAggro[NPCID.Gnome] = true;
         player.npcTypeNoAggro[NPCID.CaveBat] = true;
         player.npcTypeNoAggro[NPCID.SporeBat] = true;
@@ -151,24 +149,24 @@ public class RoyalAmalgamation : ModItem
         player.npcTypeNoAggro[NPCID.Crimslime] = true;
         player.npcTypeNoAggro[NPCID.IlluminantSlime] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
+    }
 
-        }
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<RoyalChest>(1);
-        recipe.AddIngredient<RoyalCushion>(1);
-        recipe.AddIngredient<RoyalFeather>(1);
-        recipe.AddIngredient<RoyalGeode>(1);
-        recipe.AddIngredient<RoyalGnome>(1);
-        recipe.AddIngredient<RoyalMandibles>(1);
-        recipe.AddIngredient<RoyalMushroom>(1);
-        recipe.AddIngredient<RoyalWing>(1);
+        recipe.AddIngredient<RoyalChest>();
+        recipe.AddIngredient<RoyalCushion>();
+        recipe.AddIngredient<RoyalFeather>();
+        recipe.AddIngredient<RoyalGeode>();
+        recipe.AddIngredient<RoyalGnome>();
+        recipe.AddIngredient<RoyalMandibles>();
+        recipe.AddIngredient<RoyalMushroom>();
+        recipe.AddIngredient<RoyalWing>();
         recipe.AddIngredient(ItemID.RoyalGel);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

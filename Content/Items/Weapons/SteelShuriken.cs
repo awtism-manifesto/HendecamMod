@@ -1,9 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -15,7 +11,7 @@ public class SteelShuriken : ModItem
 
         // Common Properties
         Item.rare = ItemRarityID.White;
-        Item.value = Item.sellPrice(silver: 5);
+        Item.value = 255;
         Item.maxStack = 9999;
 
         // Use Properties

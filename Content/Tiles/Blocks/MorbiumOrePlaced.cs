@@ -1,15 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Threading;
-using Terraria;
-using Terraria.Chat;
-using Terraria.GameContent.Generation;
-using Terraria.ID;
-using Terraria.IO;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria.WorldBuilding;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -32,10 +22,6 @@ public class MorbiumOrePlaced : ModTile
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileLighted[Type] = true;
-
-
-
-
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(89, 255, 167), Language.GetText("Morbium Ore"));
 
@@ -48,12 +34,8 @@ public class MorbiumOrePlaced : ModTile
     // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
-
         r = 0.05f;
         g = 0.75f;
         b = 0.5f;
-
     }
-
-
 }

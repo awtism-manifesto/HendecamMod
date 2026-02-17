@@ -1,10 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -12,6 +7,26 @@ public class EmpoweredManaCrystal : ModItem
 {
     public static readonly int MaxManaIncrease = 50;
     public static readonly int MagicCritBonus = 5;
+    public override void SetStaticDefaults()
+    {
+        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
+        Main.RegisterItemAnimation(Type, new DrawAnimationVertical(6, 4));
+        ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
+
+      
+        ItemID.Sets.ItemNoGravity[Type] = true; // Makes the item have no gravity
+
+       
+    }
+    public override void PostUpdate()
+    {
+        Lighting.AddLight(Item.Center, Color.BlueViolet.ToVector3() * 0.55f * Main.essScale); // Makes this item glow when thrown out of inventory.
+    }
+
+    public override Color? GetAlpha(Color lightColor)
+    {
+        return new Color(255, 255, 255, 50); // Makes this item render at full brightness.
+    }
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -20,16 +35,17 @@ public class EmpoweredManaCrystal : ModItem
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
-        Item.value = 10;
+        Item.value = 35000;
         Item.maxStack = 1;
         Item.accessory = true;
     }
+
     public override void UpdateEquip(Player player)
     {
         player.statManaMax2 += MaxManaIncrease;
-        player.GetCritChance(damageClass: DamageClass.Magic) +=MagicCritBonus ;
-
+        player.GetCritChance(damageClass: DamageClass.Magic) += MagicCritBonus;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -42,26 +58,15 @@ public class EmpoweredManaCrystal : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.ManaCrystal, 1);
+        recipe.AddIngredient(ItemID.ManaCrystal);
         recipe.AddIngredient(ItemID.FallenStar, 4);
-        
+
         recipe.Register();
     }
-
 }

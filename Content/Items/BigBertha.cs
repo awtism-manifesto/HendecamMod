@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -45,9 +42,6 @@ public class BigBertha : ModItem
         return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
-
-
-
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -59,8 +53,6 @@ public class BigBertha : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -75,16 +67,15 @@ public class BigBertha : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BreakerBlade);
         recipe.AddIngredient(ItemID.Excalibur);
         recipe.AddIngredient<AstatineBar>(25);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         recipe = CreateRecipe();
-
     }
-
 }

@@ -1,10 +1,10 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,8 +13,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class RockSaltChestplate : ModItem
 {
-    public static readonly int StupidAttackSpeedBonus = 7;
-    public static readonly int StupidCritBonus = 7;
+    public static readonly int StupidAttackSpeedBonus = 4;
+    public static readonly int StupidCritBonus = 4;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -25,8 +25,6 @@ public class RockSaltChestplate : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -38,57 +36,38 @@ public class RockSaltChestplate : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 5; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and crit strike");
+        var line = new TooltipLine(Mod, "Face", "4% increased stupid attack speed and crit strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 max life")
+        line = new TooltipLine(Mod, "Face", "+40 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<RockSaltFedora>() && legs.type == ModContent.ItemType<RockSaltLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-
-        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 107f;
-        player.statLifeMax2 += 10;
+       
+        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
+       
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 40f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -98,10 +77,62 @@ public class RockSaltChestplate : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-        player.lifeRegen += 5;
+        player.GetModPlayer<LobotoSalt>().Salting = true;
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and increases life regen";
+        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at max lobotometer";
+
+       
+    }
+    public class LobotoSalt : ModPlayer
+    {
+
+        private const int SaltUseTimeMax = 7;
+
+        public bool Salting;
+        private int SaltUseTime;
+
+        public override void ResetEffects()
+        {
+            Salting = false;
+        }
+
+        public override void PostUpdate()
+        {
+            // Cooldown ticking down
+            if (SaltUseTime > 0)
+                SaltUseTime--;
+            var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
+
+            // Only trigger if set bonus is active
+            if (!Salting)
+                return;
+
+            // Cooldown check
+            if (SaltUseTime > 0)
+                return;
+
+            int baseDamage = 10;
+
+            if (loboPlayer.Current == loboPlayer.Max)
+            {
+                Projectile.NewProjectile(
+                    Player.GetSource_FromThis(),
+                   Player.Center - new Vector2(Main.rand.Next(-110, 110), 790),
+                    new Vector2(Main.rand.Next(-3, 3), 15f),
+                    ModContent.ProjectileType<SaltOmni>(),
+                    baseDamage,
+                    1.5f,
+                    Player.whoAmI
+                );
+            }
+            // Start cooldown
+            SaltUseTime = SaltUseTimeMax;
+
+        }
+
+
     }
 }

@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -38,6 +33,7 @@ public class Overdrive : ModItem
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<OverdriveProj>();
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,11 +45,8 @@ public class Overdrive : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -61,36 +54,23 @@ public class Overdrive : ModItem
         recipe.AddIngredient<CyberneticGunParts>(2);
         recipe.AddIngredient(ItemID.Cog, 48);
         recipe.AddIngredient<PlutoniumBar>(16);
-
-
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-       
-
-
-
-
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
-
         position = Main.MouseWorld;
         player.LimitPointToPlayerReachableArea(ref position);
         int halfProjectileHeight = (int)Math.Ceiling(ContentSamples.ProjectilesByType[type].height / 2f);
-
-       
-            position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
+        position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
 
         if (player.maxTurrets >= 2)
         {
             // Spawn the sentry projectile at the calculated location.
             Projectile.NewProjectile(source, position, Vector2.Zero, type, damage, knockback, Main.myPlayer);
-
-           
         }
+
         // Kills older sentry projectiles according to player.maxTurrets
         player.UpdateMaxTurrets();
         return false;

@@ -1,23 +1,15 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using Mono.Cecil;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
-
 public class TheXRay : ModItem
 {
-
     public override void SetStaticDefaults()
     {
         Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
     }
+
     public override void SetDefaults()
     {
         Item.width = 33;
@@ -27,17 +19,15 @@ public class TheXRay : ModItem
         Item.useTime = 1;
         Item.useAnimation = 10;
         Item.autoReuse = true;
-      
+
         Item.mana = 6;
         Item.DamageType = DamageClass.Magic;
-        Item.damage = 70;
+        Item.damage = 79;
         Item.knockBack = 0.01f;
         Item.noMelee = true;
         Item.ArmorPenetration = 30;
-        Item.value = 172000;
+        Item.value = 1050000;
         Item.rare = ItemRarityID.LightPurple;
-       
-
         Item.shoot = ModContent.ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
 
@@ -48,20 +38,11 @@ public class TheXRay : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Xray>();
-       
-
-
-
-       
-
     }
-   
 
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -73,8 +54,6 @@ public class TheXRay : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -89,18 +68,19 @@ public class TheXRay : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(6f, -15f);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient< PlutoniumBar>(18);
-       
+        recipe.AddIngredient<PlutoniumBar>(18);
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

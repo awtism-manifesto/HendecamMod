@@ -1,15 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class BirdBullet : ModProjectile
 {
@@ -17,21 +6,20 @@ public class BirdBullet : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-       
     }
 
     public override void SetDefaults()
     {
         Projectile.width = 11; // The width of projectile hitbox
         Projectile.height = 11; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 6; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 359; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-         // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
-       
+        // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
+
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 3; // Set to above 0 if you want the projectile to update multiple time in a frame
@@ -44,8 +32,7 @@ public class BirdBullet : ModProjectile
 
     public override void AI()
     {
-
-        if (Projectile.alpha <183)
+        if (Projectile.alpha < 183)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -57,8 +44,6 @@ public class BirdBullet : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustID.Enchanted_Gold, 0f, 0f, 100, default, 1.115f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                 fireDust.noGravity = true;
@@ -66,15 +51,9 @@ public class BirdBullet : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.8f);
-
-
     }
-   
-    
-    
 }
-
-

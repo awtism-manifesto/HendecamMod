@@ -1,31 +1,18 @@
-﻿
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Poop;
+﻿namespace HendecamMod.Content.Poop;
 
 public class PoopSpark : ModProjectile
 {
-   
-
     public override void SetDefaults()
     {
         Projectile.width = 6; // The width of projectile hitbox
         Projectile.height = 6; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 58; 
-                               
+        Projectile.timeLeft = 58;
+
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -55,9 +42,8 @@ public class PoopSpark : ModProjectile
             Projectile.velocity.Y = 13f;
         }
 
-        if (Projectile.alpha <180)
+        if (Projectile.alpha < 180)
         {
-           
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -76,12 +62,10 @@ public class PoopSpark : ModProjectile
                 fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 0.75f;
-               
             }
         }
-        
     }
-   
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
@@ -91,12 +75,9 @@ public class PoopSpark : ModProjectile
             dust.velocity *= 3.5f;
             dust.scale *= 1.25f;
         }
+
         target.immune[Projectile.owner] = 6;
         target.AddBuff(BuffID.Poisoned, 90);
         target.AddBuff(BuffID.Stinky, 900);
     }
-    
-    
 }
-
-

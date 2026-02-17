@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,7 +8,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class KevlarPants : ModItem
 {
-
     public static readonly int CritBonus = 9;
     public static readonly int MoveSpeedBonus = -5;
     public static LocalizedText SetBonusText { get; private set; }
@@ -25,8 +19,6 @@ public class KevlarPants : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-
-
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
     }
 
@@ -38,6 +30,7 @@ public class KevlarPants : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 10; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,26 +43,15 @@ public class KevlarPants : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return head.type == ModContent.ItemType<KevlarMask>() && body.type == ModContent.ItemType<KevlarBodysuit>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -83,12 +65,11 @@ public class KevlarPants : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-       
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.runAcceleration *= 0.91f;
-        player.moveSpeed += MoveSpeedBonus / 91f;
+        player.moveSpeed += MoveSpeedBonus / 100f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -98,9 +79,8 @@ public class KevlarPants : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-
-       
     }
 }

@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -19,7 +16,7 @@ public class DracoMeteor : ModItem
         Item.height = 18; // Hitbox height of the item.
         Item.scale = 0.725f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 450000;
+        Item.value = 1450000;
 
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
@@ -39,6 +36,7 @@ public class DracoMeteor : ModItem
         Item.shootSpeed = 21f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<DracoRound>();
@@ -63,7 +61,6 @@ public class DracoMeteor : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -76,33 +73,17 @@ public class DracoMeteor : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
-
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
-        
         recipe.AddIngredient(ItemID.MeteoriteBar, 10);
-        recipe.AddIngredient<Items.AstatineBar>(15);
-        recipe.AddIngredient<Items.AK47>();
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddIngredient<AstatineBar>(15);
+        recipe.AddIngredient<AK47>();
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 

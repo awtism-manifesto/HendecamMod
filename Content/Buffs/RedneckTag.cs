@@ -1,11 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class RedneckTag : ModBuff
 {
@@ -14,6 +7,7 @@ public class RedneckTag : ModBuff
         Main.debuff[Type] = true;
         Main.buffNoSave[Type] = true;
         Main.buffNoTimeDisplay[Type] = false;
+        BuffID.Sets.IsATagBuff[Type] = true;
     }
 
     public override void Update(NPC npc, ref int buffIndex)
@@ -26,6 +20,4 @@ public class RedneckTag : ModBuff
             Main.dust[dust].noGravity = true;
         }
     }
-
-
 }

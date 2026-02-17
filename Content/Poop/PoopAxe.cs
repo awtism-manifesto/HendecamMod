@@ -1,12 +1,7 @@
-﻿
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Poop;
 
@@ -25,33 +20,42 @@ public class PoopAxe : ModItem
         Item.knockBack = 3.33f;
 
         Item.value = Item.buyPrice(copper: 70); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
-     
+
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-       
+
         Item.axe = 9;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         player.AddBuff(BuffID.Stinky, 61);
-
-
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Makes the user stinky");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Inflict the OnFire debuff for 1 second onto any NPC/Monster that this hits.
@@ -65,8 +69,8 @@ public class PoopAxe : ModItem
             dust.velocity *= 7.5f;
             dust.scale *= 1.25f;
         }
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -75,5 +79,4 @@ public class PoopAxe : ModItem
 
         recipe.Register();
     }
-
 }

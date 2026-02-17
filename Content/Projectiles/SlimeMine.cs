@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -12,7 +6,6 @@ public class SlimeMine : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -23,13 +16,12 @@ public class SlimeMine : ModProjectile
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         Main.projFrames[Projectile.type] = 2;
-      
-     
-       
+
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 25;
@@ -38,7 +30,7 @@ public class SlimeMine : ModProjectile
         Projectile.scale = 1.5f;
         Projectile.friendly = false;
         Projectile.hostile = false;
-     
+
         Projectile.penetrate = 696969; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Summon;
         Projectile.light = 0.7f; // How much light emit around the projectile
@@ -56,20 +48,14 @@ public class SlimeMine : ModProjectile
         // AIType = ProjectileID.RocketI;
     }
 
-    
     public override void AI()
     {
-
-
-      
         if (Projectile.timeLeft < 546)
         {
-           
             Projectile.friendly = true;
-          
         }
 
-        if (Projectile.timeLeft> 453)
+        if (Projectile.timeLeft > 453)
         {
             int frameSpeed = 18;
 
@@ -83,13 +69,10 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 453)
         {
             int frameSpeed = 14;
@@ -104,13 +87,10 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 302)
         {
             int frameSpeed = 10;
@@ -125,13 +105,10 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
+
         if (Projectile.timeLeft < 151)
         {
             int frameSpeed = 8;
@@ -146,21 +123,14 @@ public class SlimeMine : ModProjectile
                 if (Projectile.frame >= Main.projFrames[Projectile.type])
                 {
                     Projectile.frame = 0;
-
-
                 }
             }
-
-
         }
 
         if (Projectile.timeLeft < 7)
         {
             ProjectileID.Sets.IsARocketThatDealsDoubleDamageToPrimaryEnemy[Type] = false;
-
-
         }
-
 
         Projectile.velocity *= 0f;
 
@@ -168,13 +138,7 @@ public class SlimeMine : ModProjectile
         {
             Projectile.PrepareBombToBlow();
         }
-       
-
-       
     }
-
-   
-  
 
     public override void PrepareBombToBlow()
     {
@@ -189,11 +153,12 @@ public class SlimeMine : ModProjectile
         // Rocket I: 8f, Rocket III: 10f, Mini Nuke Rocket: 12f
         Projectile.knockBack = 10f;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.96f);
-        
     }
+
     public override void OnKill(int timeLeft)
     {
         // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
@@ -224,11 +189,7 @@ public class SlimeMine : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 5f;
         }
-
-       
     }
-    
-    
 
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

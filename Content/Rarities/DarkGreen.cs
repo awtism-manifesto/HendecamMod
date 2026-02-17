@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Rarities;
+﻿namespace HendecamMod.Content.Rarities;
 
 public class DarkGreen : ModRarity //for icons
 {

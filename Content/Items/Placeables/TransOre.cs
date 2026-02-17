@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.Tiles.Blocks;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -26,6 +21,7 @@ public class TransOre : ModItem
         // Portuguese: "Bloco de exemplo", "Este é um bloco modded"
         // Polish: "Przykładowy blok", "Jest to modded blok"
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -37,8 +33,6 @@ public class TransOre : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -57,7 +51,6 @@ public class TransOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 1590;
-
+        Item.value = 1390;
     }
 }

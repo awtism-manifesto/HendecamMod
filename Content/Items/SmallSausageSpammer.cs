@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,8 +18,6 @@ public class SmallSausageSpammer : ModItem
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 450000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
@@ -38,35 +27,37 @@ public class SmallSausageSpammer : ModItem
         Item.reuseDelay = 9;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item61;
-
-
+        Item.UseSound = SoundID.Item61;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 40; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Sausage>();
 
         Item.shootSpeed = 18.15f; // The speed of the projectile (measured in pixels per frame.)
-
     }
-    
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Sausage>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next(2, 4); // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(2, 4); // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -83,35 +74,19 @@ public class SmallSausageSpammer : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Originally designed by Trump Corporation for use by its leader");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Originally designed by Trump Corporation for use by its leader")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -122,7 +97,6 @@ public class SmallSausageSpammer : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

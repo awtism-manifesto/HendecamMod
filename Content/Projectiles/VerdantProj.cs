@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Enums;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -36,7 +32,7 @@ public class VerdantProj : ModProjectile
         Projectile.width = 119;
         Projectile.height = 99;
         Projectile.scale = 1.33f;
-      
+
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
@@ -56,11 +52,9 @@ public class VerdantProj : ModProjectile
             Projectile.Kill();
             return;
         }
-        else
-        {
-            // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
-            player.heldProj = Projectile.whoAmI;
-        }
+
+        // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
+        player.heldProj = Projectile.whoAmI;
 
         // Fade in and out
         // GetLerpValue returns a value between 0f and 1f - if clamped is true - representing how far Timer got along the "distance" defined by the first two parameters
@@ -81,12 +75,12 @@ public class VerdantProj : ModProjectile
         // The code in this method is important to align the sprite with the hitbox how we want it to
         SetVisualOffsets();
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-
-      
         target.AddBuff(BuffID.Poisoned, 120);
     }
+
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)

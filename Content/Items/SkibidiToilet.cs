@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -27,50 +18,49 @@ public class SkibidiToilet : ModItem
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = 250000;
-
-
         // Use Properties
 
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item45;
-
-
+        Item.UseSound = SoundID.Item45;
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
 
         Item.knockBack = 0.5f;
         Item.noMelee = true;
-
-
         Item.damage = 29;
         Item.useTime = 27;
         Item.useAnimation = 27;
-
-
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<SkibidiHead>();
 
         Item.shootSpeed = 9.1f; // The speed of the projectile (measured in pixels per frame.)
-
+    }
+    public float LobotometerCost = 10f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
     }
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.85f;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<SkibidiHead>();
-
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
-         int NumProjectiles = 2; 
+        int NumProjectiles = 2;
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -87,13 +77,10 @@ public class SkibidiToilet : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
-
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 10 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -102,43 +89,23 @@ public class SkibidiToilet : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("RottenBrain", out ModItem RottenBrain))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("RottenBrain", out ModItem RottenBrain))
         {
             recipe = CreateRecipe();
 
             recipe.AddIngredient(RottenBrain.Type);
             recipe.AddIngredient(ItemID.Toilet);
-         
+
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-        else
-        {
-            
-
-        }
-        
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

@@ -1,35 +1,20 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class MagicBall : ModProjectile
 {
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-   
 
     public override void SetDefaults()
     {
         Projectile.width = 20; // The width of projectile hitbox
         Projectile.height = 20; // The height of projectile hitbox
-       
+
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
@@ -41,20 +26,18 @@ public class MagicBall : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-     
+
         Projectile.aiStyle = -1;
-       
+
         Projectile.localNPCHitCooldown = 24;
     }
 
     public override void AI()
     {
-
         Lighting.AddLight(Projectile.Center, 0.08f, 0.08f, 0.55f);
         Projectile.rotation += 0.133f;
-        if (Projectile.alpha <180)
+        if (Projectile.alpha < 180)
         {
-           
             for (int i = 0; i < 1; i++)
             {
                 float posOffsetX = 0f;
@@ -65,14 +48,13 @@ public class MagicBall : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.WaterCandle, 0f, 0f, 100, default, 1f);
+                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.WaterCandle, 0f, 0f, 100);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 1.5f;
-               
-               
             }
         }
+
         float maxDetectRadius = 350f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -103,8 +85,8 @@ public class MagicBall : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(4f)).ToRotationVector2() * length;
-       
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -145,9 +127,4 @@ public class MagicBall : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
-    
-    
-    
 }
-
-

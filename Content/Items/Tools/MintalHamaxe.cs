@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Tools;
+﻿namespace HendecamMod.Content.Items.Tools;
 
 public class MintalHamaxe : ModItem
 {
@@ -17,33 +12,29 @@ public class MintalHamaxe : ModItem
         Item.useAnimation = 34;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-        Item.value = 10000;
+        Item.value = 170000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
-        Item.autoReuse = true; 
+        Item.autoReuse = true;
+        Item.useTurn = true;
 
-        Item.axe = 25; 
+        Item.axe = 25;
         Item.hammer = 80;
-        Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
+        Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { 
+        {
         }
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.MintalBar>(18);
+        recipe.AddIngredient<Placeables.MintalBar>(15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
 }

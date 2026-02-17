@@ -1,10 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -19,30 +15,20 @@ public class ChromaticaAtomizer : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
-        Item.value = 195000;
-
-
+        Item.value = 1625000;
         // Use Properties
         // Use Properties
         Item.useTime = 11; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 11; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item125;
-
-
+        Item.UseSound = SoundID.Item125;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 37; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-
-
-
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
@@ -50,20 +36,13 @@ public class ChromaticaAtomizer : ModItem
 
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.RocketI;
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<ChromaticaLaser>();
-
     }
 
-
-
-   
-   
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,8 +54,6 @@ public class ChromaticaAtomizer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -92,22 +69,28 @@ public class ChromaticaAtomizer : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.ParticleGun>();
-        recipe.AddIngredient(ItemID.HallowedBar, 12);
-        recipe.AddIngredient(ItemID.SoulofSight, 15);
-       
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
 
-
-
-
-
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<ParticleGun>();
+            recipe.AddIngredient(NeapoliniteBar.Type, 12);
+            recipe.AddIngredient(ItemID.SoulofSight, 15);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<ParticleGun>();
+            recipe.AddIngredient(ItemID.HallowedBar, 12);
+            recipe.AddIngredient(ItemID.SoulofSight, 15);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
+
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

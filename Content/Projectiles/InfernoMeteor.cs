@@ -1,36 +1,26 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles;
 
 /// <summary>
-/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
+///     version of the Meowmere.
 /// </summary>
 public class InfernoMeteor : ModProjectile
 {
-
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
+
+    public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.SentryShot[Type] = true;
-       
     }
-    public ref float DelayTimer => ref Projectile.ai[1];
 
     public override void SetDefaults()
     {
@@ -39,11 +29,9 @@ public class InfernoMeteor : ModProjectile
         // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
         // if you're going to copy the stats of a projectile, use CloneDefaults().
 
-       
-
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-       
+
         Projectile.DamageType = DamageClass.Summon;
         Projectile.friendly = true;
         Projectile.hostile = false;
@@ -55,18 +43,15 @@ public class InfernoMeteor : ModProjectile
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
-
     }
-   
+
     public override void AI()
     {
         if (Math.Abs(Projectile.velocity.X) <= 0.9f && Math.Abs(Projectile.velocity.Y) <= 0.9f)
         {
-            Projectile.velocity.X = Main.rand.NextFloat(-1f,1f);
+            Projectile.velocity.X = Main.rand.NextFloat(-1f, 1f);
             Projectile.velocity.Y = Main.rand.NextFloat(-1f, 1f);
-
         }
-       
 
         Projectile.scale = Main.rand.NextFloat(0.85f, 1.15f);
 
@@ -74,7 +59,6 @@ public class InfernoMeteor : ModProjectile
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {
             Projectile.velocity *= 1.05f;
-
         }
 
         for (int i = 0; i < 2; i++)
@@ -86,10 +70,10 @@ public class InfernoMeteor : ModProjectile
                 posOffsetX = Projectile.velocity.X * 2.5f;
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
+
             Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.25f);
             chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             chudDust.velocity *= 0.1f;
-
         }
 
         float maxDetectRadius = 1500f; // The maximum radius at which a projectile can detect a target
@@ -154,6 +138,7 @@ public class InfernoMeteor : ModProjectile
 
         return closestNPC;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Oiled, 960);
@@ -166,13 +151,11 @@ public class InfernoMeteor : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 15.5f;
             dust.scale *= 3.5f;
-
         }
-
-
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
+
     public bool IsValidTarget(NPC target)
     {
         // This method checks that the NPC is:
@@ -186,6 +169,3 @@ public class InfernoMeteor : ModProjectile
         return target.CanBeChasedBy();
     }
 }
-
-
-

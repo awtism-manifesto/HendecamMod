@@ -1,13 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -35,17 +26,16 @@ public class OilBallRanged : ModProjectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-       
+
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
-
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-      
         target.AddBuff(BuffID.Oiled, 240);
-       
     }
+
     public override void AI()
     {
         int frameSpeed = 6;
@@ -60,10 +50,9 @@ public class OilBallRanged : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
+
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 17f)
         {
@@ -80,7 +69,6 @@ public class OilBallRanged : ModProjectile
             Projectile.velocity.Y = 17f;
         }
 
-
         // dust, all dust
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
@@ -93,6 +81,7 @@ public class OilBallRanged : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
+
                 Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustID.BlueFairy, 0f, 0f, 100, default, 0.4f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fire2Dust.velocity *= 0.15f;
@@ -114,11 +103,8 @@ public class OilBallRanged : ModProjectile
         }
     }
 
-   
-   
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Wraith);
@@ -126,10 +112,12 @@ public class OilBallRanged : ModProjectile
             dust.velocity *= 10.5f;
             dust.scale *= 1.15f;
         }
+
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
     }
+
     private void Visuals()
     {
         Projectile.rotation = Projectile.velocity.X * 0.05f;
@@ -147,11 +135,7 @@ public class OilBallRanged : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
     }
 }
-
-

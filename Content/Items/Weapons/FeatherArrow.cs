@@ -1,8 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -27,7 +23,7 @@ public class FeatherArrow : ModItem
         Item.knockBack = 1.5f;
         Item.value = Item.sellPrice(copper: 30);
         Item.shoot = ModContent.ProjectileType<FeatherArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
-        Item.shootSpeed = 0.12f; // The speed of the projectile.
+        Item.shootSpeed = 1.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.White;
     }
@@ -36,8 +32,7 @@ public class FeatherArrow : ModItem
     {
         Recipe recipe = CreateRecipe(20);
         recipe.AddIngredient(ItemID.WoodenArrow, 20);
-        recipe.AddIngredient(ItemID.Feather, 1);
+        recipe.AddIngredient(ItemID.Feather);
         recipe.Register();
     }
-
 }

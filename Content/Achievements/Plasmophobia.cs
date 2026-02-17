@@ -1,9 +1,6 @@
-﻿using Terraria;
+﻿using HendecamMod.Content.NPCs;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
-using Terraria.ModLoader;
-
-using HendecamMod.Content.NPCs;
 
 namespace HendecamMod.Content.Achievements;
 
@@ -16,9 +13,7 @@ public class Plasmophobia : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Slayer);
-       
 
-       
         AddNPCKilledCondition(ModContent.NPCType<UnstablePlasmoid>());
     }
 

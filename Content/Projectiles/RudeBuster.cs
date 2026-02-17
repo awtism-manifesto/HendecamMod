@@ -1,13 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -16,16 +10,10 @@ public class RudeBuster : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
-
-
-
 
     public override void SetStaticDefaults()
     {
@@ -33,7 +21,6 @@ public class RudeBuster : ModProjectile
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
         ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
     }
-
 
     public override void SetDefaults()
     {
@@ -53,6 +40,7 @@ public class RudeBuster : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
@@ -63,11 +51,12 @@ public class RudeBuster : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void AI()
     {
         float maxDetectRadius = 195f; // The maximum radius at which a projectile can detect a target
@@ -100,13 +89,13 @@ public class RudeBuster : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.1f)).ToRotationVector2() * length;
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
         SoundEngine.PlaySound(SoundID.NPCHit42, Projectile.position);
     }
+
     // Finding the closest NPC to attack within maxDetectDistance range
     // If not found then returns null
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -150,4 +139,3 @@ public class RudeBuster : ModProjectile
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
 }
-

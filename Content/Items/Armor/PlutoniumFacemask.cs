@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,10 +8,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PlutoniumFacemask : ModItem
 {
-
-    public static readonly int AdditiveDamageBonus = 13;
-    public static readonly int CritBonus = 13;
-    public static readonly int MaxManaIncrease = 85;
+    public static readonly int AdditiveDamageBonus = 11;
+    public static readonly int CritBonus = 11;
+    public static readonly int MaxManaIncrease = 95;
     public static readonly int RangedCritBonus = 10;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -38,76 +32,54 @@ public class PlutoniumFacemask : ModItem
         Item.height = 28; // Height of the item
         Item.value = Item.sellPrice(gold: 20); // How many coins the item is worth
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
-        Item.defense = 12; // The amount of defense the item will give when equipped
+        Item.defense = 14; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "13% increased damage and crit chance");
+        var line = new TooltipLine(Mod, "Face", "11% increased damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+85 max mana and +10% ranged crit chance")
+        line = new TooltipLine(Mod, "Face", "+95 max mana and +10% ranged crit chance")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PlutoniumChestplate>() && legs.type == ModContent.ItemType<PlutoniumPants>();
     }
+
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
         
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 113f;
+        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-        player.lifeRegen += -1;
+       
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PlutoniumBar>(25);
         recipe.AddTile(TileID.MythrilAnvil);
-       
+
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
         player.armorEffectDrawShadow = true;
         player.armorEffectDrawOutlines = true;
         player.armorEffectDrawOutlinesForbidden = true;
-
-       
     }
 }

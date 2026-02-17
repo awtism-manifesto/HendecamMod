@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
-
-namespace HendecamMod.Content.Tiles.Blocks;
+﻿namespace HendecamMod.Content.Tiles.Blocks;
 
 public class AzuriteBrickPlaced : ModTile
 {
@@ -19,7 +13,6 @@ public class AzuriteBrickPlaced : ModTile
 
         AddMapEntry(new Color(130, 0, 13));
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

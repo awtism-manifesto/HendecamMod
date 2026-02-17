@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -18,9 +13,10 @@ public class PurifiedSalt : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.22f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
-        Item.value = 950;
+        Item.value = 6750;
         Item.maxStack = 9999;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -32,8 +28,6 @@ public class PurifiedSalt : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -49,21 +43,14 @@ public class PurifiedSalt : ModItem
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(9);
 
         recipe.AddIngredient(ItemID.PixieDust, 2);
         recipe.AddIngredient(ItemID.SoulofLight);
-        recipe.AddIngredient<Items.RockSalt>(9);
+        recipe.AddIngredient<RockSalt>(9);
         recipe.AddTile(TileID.Furnaces);
         recipe.Register();
-
-        
-
-
-
-
     }
 }

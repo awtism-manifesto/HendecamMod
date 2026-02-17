@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -25,7 +20,7 @@ public class FlamingKnifeProjectile : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.timeLeft = 1200;
-       
+
         Projectile.CloneDefaults(ProjectileID.ThrowingKnife);
         Projectile.penetrate = 3;
         AIType = ProjectileID.ThrowingKnife;
@@ -47,13 +42,12 @@ public class FlamingKnifeProjectile : ModProjectile
             Projectile.velocity.Y += 0.21f;
         }
 
-       
-
         // Cap downward velocity
         if (Projectile.velocity.Y > 13f)
         {
             Projectile.velocity.Y = 19f;
         }
+
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
         {
             for (int i = 0; i < 2; i++)
@@ -66,14 +60,13 @@ public class FlamingKnifeProjectile : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-
-
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustID.Lava, 0f, 0f, 100, default, 0.1f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
             }
         }
     }
+
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Dig, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
@@ -85,13 +78,13 @@ public class FlamingKnifeProjectile : ModProjectile
             dust.scale *= 0.9f;
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
-        new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-        ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage*0.75), Projectile.knockBack, Projectile.owner);
-      
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<BoomSmall>(), (int)(Projectile.damage * 0.75), Projectile.knockBack, Projectile.owner);
     }
 }

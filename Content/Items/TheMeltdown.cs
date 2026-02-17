@@ -1,19 +1,12 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Microsoft.Xna.Framework;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Items;
 
 public class TheMeltdown : ModItem
 {
-    
-
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
@@ -27,7 +20,7 @@ public class TheMeltdown : ModItem
         Item.ArmorPenetration = 35;
         Item.width = 14;
         Item.height = 14;
-        Item.value = 22555555;
+        Item.value = 19500000;
         Item.DamageType = ModContent.GetInstance<MeleeSummonDamage>();
     }
 
@@ -43,8 +36,6 @@ public class TheMeltdown : ModItem
         };
         tooltips.Add(line);
 
-
-
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
         foreach (var l in tooltips)
@@ -58,20 +49,16 @@ public class TheMeltdown : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
-
-      
         recipe.AddIngredient(ItemID.FireWhip);
-        recipe.AddIngredient<Items.ChainReaction>();
+        recipe.AddIngredient<ChainReaction>();
         recipe.AddIngredient<FissionDrive>();
-        recipe.AddTile(TileID.LunarCraftingStation);
+        recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
-
     }
 
     // Makes the whip receive melee prefixes

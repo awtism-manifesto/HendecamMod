@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.DataStructures;
 
 namespace HendecamMod.Common.Systems;
 
@@ -47,6 +43,7 @@ public class RiverFish : ModPlayer
                         break;
                 }
             }
+
             if (inShimmer && fishRod)
             {
                 int choice = Main.rand.Next(9);
@@ -81,6 +78,7 @@ public class RiverFish : ModPlayer
                         break;
                 }
             }
+
             if (inShimmer && itemRod)
             {
                 int choice = Main.rand.Next(23);
@@ -155,9 +153,9 @@ public class RiverFish : ModPlayer
                     case 22:
                         itemDrop = ItemID.LadyOfTheLake;
                         break;
-
                 }
             }
+
             if (inShimmer && potionRod)
             {
                 int choice = Main.rand.Next(14);
@@ -206,8 +204,10 @@ public class RiverFish : ModPlayer
                         itemDrop = ItemID.VariegatedLardfish;
                         break;
                 }
+
                 return;
             }
+
             if (inShimmer && enemyRod)
             {
                 int choice = Main.rand.Next(5);
@@ -234,8 +234,10 @@ public class RiverFish : ModPlayer
                         npcSpawn = npc5;
                         break;
                 }
+
                 itemDrop = -1;
             }
+
             if (inShimmer && baitRod)
             {
                 int choice = Main.rand.Next(50);
@@ -393,6 +395,7 @@ public class RiverFish : ModPlayer
                         break;
                 }
             }
+
             if (inShimmer && crateRod)
             {
                 int choice = Main.rand.Next(13);
@@ -437,9 +440,9 @@ public class RiverFish : ModPlayer
                     case 12:
                         itemDrop = ItemID.OceanCrateHard;
                         break;
-
                 }
             }
+
             if (inShimmer && merchantRod)
             {
                 int choice = Main.rand.Next(51);
@@ -448,9 +451,9 @@ public class RiverFish : ModPlayer
                     case 0:
                         itemDrop = ItemID.Oyster;
                         break;
-
                 }
             }
+
             if (inShimmer && questRod)
             {
                 int choice = Main.rand.Next(41);
@@ -581,12 +584,14 @@ public class RiverFish : ModPlayer
                         break;
                 }
             }
+
             if (inShimmer && goldRod)
             {
                 itemDrop = ItemID.GoldenCarp;
             }
         }
     }
+
     public override void ModifyCaughtFish(Item fish)
     {
         if (Player.GetFishingConditions().BaitItemType != ItemID.EmpressButterfly && fish.rare != ItemRarityID.Quest)
@@ -598,4 +603,3 @@ public class RiverFish : ModPlayer
         }
     }
 }
-

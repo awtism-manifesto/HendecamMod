@@ -1,9 +1,4 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles;
@@ -26,15 +21,14 @@ public class ElephantYoyo : ModProjectile
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 14.1f;
     }
+
     public override void AI()
     {
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
         // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-
-       
         // dust
-        if (Math.Abs(Projectile.velocity.X) >=0f || Math.Abs(Projectile.velocity.Y) >= 0f)
+        if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -45,7 +39,6 @@ public class ElephantYoyo : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.5f;
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
-                
 
                 Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.9f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
@@ -54,20 +47,21 @@ public class ElephantYoyo : ModProjectile
             }
         }
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 110);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-        ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
         target.immune[Projectile.owner] = 9;
-    
-}
+    }
+
     public override void SetDefaults()
     {
         Projectile.width = 16; // The width of the projectile's hitbox.
@@ -78,6 +72,6 @@ public class ElephantYoyo : ModProjectile
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
         Projectile.DamageType = DamageClass.MeleeNoSpeed; // Benefits from melee bonuses. MeleeNoSpeed means the item will not scale with attack speed.
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.
-                                   // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
+        // Projectile.scale = 1f; // The scale of the projectile. Most yoyos are 1f, but a few are larger. The Kraken is the largest at 1.2f
     }
 }

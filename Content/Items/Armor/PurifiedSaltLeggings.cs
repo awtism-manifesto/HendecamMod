@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -14,7 +10,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class PurifiedSaltLeggings : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 17;
-   
+
     public static readonly int MoveSpeedBonus = 17;
 
     public static LocalizedText SetBonusText { get; private set; }
@@ -26,7 +22,7 @@ public class PurifiedSaltLeggings : ModItem
         // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
         // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        
+
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
     }
 
@@ -38,6 +34,7 @@ public class PurifiedSaltLeggings : ModItem
         Item.rare = ItemRarityID.Yellow; // The rarity of the item
         Item.defense = 14; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -50,26 +47,15 @@ public class PurifiedSaltLeggings : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<PurifiedSaltChestplate>() && head.type == ModContent.ItemType<PurifiedSaltFedora>();
     }
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -85,29 +71,43 @@ public class PurifiedSaltLeggings : ModItem
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 117f;
         player.statLifeMax2 += 25;
-        
+
         player.moveSpeed += MoveSpeedBonus / 120f;
         player.runAcceleration *= 1.2f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<RockSaltLeggings>();
-        recipe.AddIngredient<PurifiedSalt>(72);
-        recipe.AddIngredient(ItemID.HallowedBar, 10);
-        recipe.AddIngredient(ItemID.SpectreBar, 10);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
+
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
+        {
+            recipe.AddIngredient<RockSaltLeggings>();
+            recipe.AddIngredient<PurifiedSalt>(72);
+            recipe.AddIngredient(NeapoliniteBar.Type, 10);
+            recipe.AddIngredient(ItemID.SpectreBar, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+        else
+        {
+            recipe.AddIngredient<RockSaltChestplate>();
+            recipe.AddIngredient<PurifiedSalt>(72);
+            recipe.AddIngredient(ItemID.HallowedBar, 10);
+            recipe.AddIngredient(ItemID.SpectreBar, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-        
     }
+
     public class PurePants : ModPlayer
     {
-        public bool PurePantys = false;
+        public bool PurePantys;
 
         public override void ResetEffects()
         {
@@ -121,7 +121,6 @@ public class PurifiedSaltLeggings : ModItem
             {
                 return;
             }
-
 
             Player.runAcceleration *= 1.2f; // Modifies player run acceleration
             Player.maxRunSpeed *= 1.2f;

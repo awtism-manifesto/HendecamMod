@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles.Items;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles.Items;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -41,6 +37,7 @@ public class AncientCobaltNaginata : ModItem
         Item.shootSpeed = 2.7f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<AncientCobaltSpear>(); // The projectile that is fired from this weapon
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -52,15 +49,14 @@ public class AncientCobaltNaginata : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
         return player.ownedProjectileCounts[Item.shoot] < 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -69,6 +65,7 @@ public class AncientCobaltNaginata : ModItem
 
         recipe.Register();
     }
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

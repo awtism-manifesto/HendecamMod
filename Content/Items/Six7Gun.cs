@@ -1,23 +1,16 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.WorldBuilding;
-
 
 namespace HendecamMod.Content.Items;
 
 public class Six7Gun : ModItem
 {
+    private int shotCounter;
+
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -40,34 +33,33 @@ public class Six7Gun : ModItem
         Item.ArmorPenetration = 676767;
 
         Item.ArmorPenetration = 5;
-
-
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
         Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-        
-       
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<Six>();
-       
-        Item.shootSpeed = 11.67f; // The speed of the projectile (measured in pixels per frame.)
 
+        Item.shootSpeed = 11.67f; // The speed of the projectile (measured in pixels per frame.)
+    }
+    public float LobotometerCost = 6.7f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
     }
     public override void UpdateInventory(Player player)
     {
-
-       
-                Item.damage = 67;
-          
-
+        Item.damage = 67;
+        LobotometerCost = Main.rand.NextFloat(6, 7);
     }
-    private int shotCounter = 0;
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -93,20 +85,17 @@ public class Six7Gun : ModItem
             shotCounter = 0;
         }
 
-      
-
-        return false; 
+        return false;
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         damage = 67;
-      
     }
+
     public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
     {
         damage = damage * 1;
-
-
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -115,22 +104,18 @@ public class Six7Gun : ModItem
         var line = new TooltipLine(Mod, "Face", "Always deals exactly 67 damage");
         tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "Uses 6 or 7 Lobotometer")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Six Seven'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
     }
 
-
-   
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {

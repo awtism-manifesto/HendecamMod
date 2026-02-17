@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,11 +13,13 @@ public class TwoInOne : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Slimed, Sparkle Slime, Wet, Lovestruck, and Stinky");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Slimed] = true;
@@ -32,12 +28,13 @@ public class TwoInOne : ModItem
         player.buffImmune[BuffID.Lovestruck] = true;
         player.buffImmune[BuffID.Stinky] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<Shampoo>(1);
-        recipe.AddIngredient<Conditioner>(1);
+        recipe.AddIngredient<Shampoo>();
+        recipe.AddIngredient<Conditioner>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }

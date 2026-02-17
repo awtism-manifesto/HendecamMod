@@ -1,12 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -77,26 +71,20 @@ public class RainbowBullet : ModProjectile
         {
             Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
             Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
         }
 
         return true;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        
-            
-        
-
-
     }
+
     public override void AI()
     {
-
-
-
         // dust, all dust
-         if (Projectile.alpha < 190)
+        if (Projectile.alpha < 190)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -107,6 +95,7 @@ public class RainbowBullet : ModProjectile
                     posOffsetX = Projectile.velocity.X * 2.75f;
                     posOffsetY = Projectile.velocity.Y * 2.75f;
                 }
+
                 Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 16, Projectile.height - 16, DustID.RedTorch, 0f, 0f, 100, default, 1.15f);
                 chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.64f;
@@ -145,7 +134,6 @@ public class RainbowBullet : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
@@ -155,23 +143,24 @@ public class RainbowBullet : ModProjectile
             Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         }
+
         if (Main.rand.NextBool(3))
         {
             Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         }
+
         if (Main.rand.NextBool(5))
         {
             Vector2 velocity4 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+                ModContent.ProjectileType<RainbowShard>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         }
-
 
         for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
         {
@@ -204,10 +193,5 @@ public class RainbowBullet : ModProjectile
             dust7.velocity *= 11.5f;
             dust7.scale *= 1.66f;
         }
-
     }
-
 }
-
-
-

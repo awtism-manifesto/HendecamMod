@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -24,37 +13,25 @@ public class ChristianCrossbow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.2f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = 44000;
-
-
+        Item.value = 108000;
         // Use Properties
         Item.useTime = 25; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-
-
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item102;
-
-
+        Item.UseSound = SoundID.Item102;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        
-
         Item.shootSpeed = 9.4f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.HolyArrow;
-
-
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -62,8 +39,6 @@ public class ChristianCrossbow : ModItem
         type = ProjectileID.HolyArrow;
     }
 
-
-    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -75,29 +50,12 @@ public class ChristianCrossbow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.GoldBar, 10);
         recipe.AddIngredient(ItemID.PurificationPowder, 25);
         recipe.AddIngredient(ItemID.Ruby);
@@ -105,18 +63,14 @@ public class ChristianCrossbow : ModItem
         recipe.Register();
 
         recipe = CreateRecipe();
-        
+
         recipe.AddIngredient(ItemID.PlatinumBar, 10);
         recipe.AddIngredient(ItemID.PurificationPowder, 25);
         recipe.AddIngredient(ItemID.Ruby);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
+
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-6f, -1f);

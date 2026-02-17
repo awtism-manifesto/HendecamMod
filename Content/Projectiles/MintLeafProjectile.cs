@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class MintLeafProjectile : ModProjectile
@@ -13,19 +6,16 @@ public class MintLeafProjectile : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
+
     public override void SetStaticDefaults()
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
         Main.projFrames[Projectile.type] = 5;
-
     }
 
     public override void SetDefaults()
@@ -64,10 +54,9 @@ public class MintLeafProjectile : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
+
         float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
@@ -98,8 +87,8 @@ public class MintLeafProjectile : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(4.75f)).ToRotationVector2() * length;
-
     }
+
     public bool IsValidTarget(NPC target)
     {
         // This method checks that the NPC is:
@@ -112,6 +101,7 @@ public class MintLeafProjectile : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -139,11 +129,4 @@ public class MintLeafProjectile : ModProjectile
 
         return closestNPC;
     }
-
-
-
-
-
 }
-
-

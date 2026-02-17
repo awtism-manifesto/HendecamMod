@@ -1,10 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Audio;
+﻿using HendecamMod.Content.Items.Materials;
 using Terraria.Localization;
-using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -28,12 +23,11 @@ public class FireDiamondStoneBlockPlaced : ModTile
         AddMapEntry(new Color(101, 101, 101), Language.GetText("Fire Diamond"));
 
         // I don't think this works but I'm leaving it in just because
-        RegisterItemDrop(ModContent.ItemType<FireDiamond>(),0);
+        RegisterItemDrop(ModContent.ItemType<FireDiamond>(), 0);
 
         DustType = DustID.Stone;
         HitSound = SoundID.Tink;
     }
-
 
     public override void NumDust(int i, int j, bool fail, ref int num)
     {

@@ -1,11 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -15,10 +10,7 @@ public class GalaxyProj2 : ModProjectile
     private NPC HomingTarget
     {
         get => Projectile.ai[0] == 0 ? null : Main.npc[(int)Projectile.ai[0] - 1];
-        set
-        {
-            Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1;
-        }
+        set { Projectile.ai[0] = value == null ? 0 : value.whoAmI + 1; }
     }
 
     public ref float DelayTimer => ref Projectile.ai[1];
@@ -32,20 +24,19 @@ public class GalaxyProj2 : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.timeLeft = 480;
-       
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(ModContent.BuffType<GalaxyTag>(), 330);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-
     }
+
     public override void AI()
     {
         if (Math.Abs(Projectile.velocity.X) <= 22.9f && Math.Abs(Projectile.velocity.Y) <= 22.9f)
         {
             Projectile.velocity *= 1.1f;
-
         }
         // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
         // like some examples do, this example has custom AI code that is better suited for modifying directly.
@@ -98,8 +89,8 @@ public class GalaxyProj2 : ModProjectile
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(60f)).ToRotationVector2() * length;
-        
     }
+
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
@@ -140,34 +131,30 @@ public class GalaxyProj2 : ModProjectile
         // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy();
     }
+
     public override void OnKill(int timeLeft)
     {
-
-        
-            Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(11, 5).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyBoom>(), Projectile.damage = (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
+        Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
             new Vector2(-3, 8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
+        Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
             new Vector2(6, -10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<PearlProj>(), Projectile.damage = (int)(Projectile.damage * 1.025f), Projectile.knockBack, Projectile.owner);
-            Vector2 JorkinMy2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy2,
+        Vector2 JorkinMy2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy2,
             new Vector2(3, -8).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
-            Vector2 InDaClerb2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb2,
+        Vector2 InDaClerb2 = Projectile.Center - new Vector2(Main.rand.Next(-4, 4), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb2,
             new Vector2(-6, 10).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
             ModContent.ProjectileType<GalaxyShard>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
 
-        
-
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
-       
     }
 }

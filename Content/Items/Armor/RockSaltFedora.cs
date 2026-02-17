@@ -1,10 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,9 +10,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class RockSaltFedora : ModItem
 {
-
-    public static readonly int AdditiveStupidDamageBonus = 6;
-    public static readonly int StupidCritBonus =6;
+    public static readonly int AdditiveStupidDamageBonus = 5;
+    public static readonly int StupidCritBonus = 5;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -27,7 +23,7 @@ public class RockSaltFedora : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         ArmorIDs.Head.Sets.IsTallHat[Item.headSlot] = true;
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
+       
     }
 
     public override void SetDefaults()
@@ -38,56 +34,38 @@ public class RockSaltFedora : ModItem
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased stupid damage and critical strike");
+        var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and critical strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+5 max life")
+        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<RockSaltChestplate>() && legs.type == ModContent.ItemType<RockSaltLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        
-        player.statLifeMax2 += 5;
+
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 25f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 106f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }
+
     // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
@@ -97,9 +75,8 @@ public class RockSaltFedora : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateArmorSet(Player player)
     {
-      
-        
     }
 }

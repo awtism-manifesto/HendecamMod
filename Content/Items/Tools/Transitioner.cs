@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Tools;
+﻿namespace HendecamMod.Content.Items.Tools;
 
 public class Transitioner : ModItem
 {
@@ -16,6 +11,8 @@ public class Transitioner : ModItem
         Item.useTime = 12;
         Item.useAnimation = 34;
         Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTurn = true;
+
         Item.knockBack = 6;
         Item.value = 10000;
         Item.rare = ItemRarityID.Green;
@@ -30,8 +27,9 @@ public class Transitioner : ModItem
     public override void MeleeEffects(Player player, Rectangle hitbox)
     {
         if (Main.rand.NextBool(10))
-        { // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
-          // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
+        {
+            // This creates a 1/10 chance that a dust will spawn every frame that this item is in its 'Swinging' animation.
+            // Creates a dust at the hitbox rectangle, following the rules of our 'if' conditional.
         }
     }
 
@@ -39,13 +37,8 @@ public class Transitioner : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.TransBar>(16);
+        recipe.AddIngredient<Placeables.TransBar>(16);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-
-
-
-
     }
 }

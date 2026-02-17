@@ -1,10 +1,4 @@
 ﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Buffs;
 

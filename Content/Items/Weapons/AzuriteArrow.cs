@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -28,13 +23,14 @@ public class AzuriteArrow : ModItem
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 0.5f;
-        Item.value = Item.sellPrice(silver: 2);
+        Item.value = 77;
         Item.shoot = ModContent.ProjectileType<AzuriteArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 0.67f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.Orange;
         Item.ArmorPenetration = 5;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -46,17 +42,13 @@ public class AzuriteArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-      
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(75);
-        recipe.AddIngredient<AzuriteBar>(1);
+        recipe.AddIngredient<AzuriteBar>();
         recipe.AddIngredient(ItemID.WoodenArrow, 75);
         recipe.Register();
     }
-
 }

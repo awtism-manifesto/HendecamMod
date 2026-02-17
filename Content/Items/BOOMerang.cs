@@ -1,43 +1,33 @@
-﻿using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
 public class BOOMerang : ModItem
 {
-
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override void SetDefaults()
     {
         Item.width = 24; // The width of the item's hitbox.
-        Item.height = 24; // The height of the item's hitbox.
-
+        Item.height = 24;
         Item.useStyle = ItemUseStyleID.Shoot; // The way the item is used (e.g. swinging, throwing, etc.)
         Item.useTime = 19; // All vanilla yoyos have a useTime of 25.
         Item.useAnimation = 19; // All vanilla yoyos have a useAnimation of 25.
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-        Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
-
+        Item.UseSound = SoundID.Item1;
         Item.damage = 63; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
-      
-
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
-
+        Item.value = 296000;
         Item.shoot = ModContent.ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 25f; // The velocity of the shot projectile.			
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "it goes boom, duh");
         tooltips.Add(line);
 
@@ -51,26 +41,7 @@ public class BOOMerang : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
     public override bool AllowPrefix(int pre)
     {
@@ -91,6 +62,7 @@ public class BOOMerang : ModItem
         // Don't reroll
         return true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -115,8 +87,6 @@ public class BOOMerang : ModItem
             recipe.AddIngredient(ItemID.Dynamite, 15);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-
         }
-
     }
 }

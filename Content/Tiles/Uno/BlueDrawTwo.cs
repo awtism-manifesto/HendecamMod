@@ -1,16 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Uno;
 
 public class BlueDrawTwo : ModTile
-    {
+{
     public override void SetStaticDefaults()
-        {
+    {
         Main.tileSolid[Type] = true;
         Main.tileSolidTop[Type] = true;
         Main.tileFrameImportant[Type] = true;
@@ -19,19 +15,18 @@ public class BlueDrawTwo : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
-
-
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
         AddMapEntry(new Color(0, 0, 200), Language.GetText("Blue Uno Card"));
-        }
+    }
 
     public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
-        {
+    {
         if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1))
-            {
+        {
             WorldGen.KillTile(i, j);
-            }
-        return true;
         }
+
+        return true;
     }
+}

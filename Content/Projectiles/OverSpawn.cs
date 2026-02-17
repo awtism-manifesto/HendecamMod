@@ -1,23 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class OverSpawn : ModProjectile
 {
-
     public override void SetStaticDefaults()
     {
-       
         ProjectileID.Sets.SentryShot[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 1; // The width of projectile hitbox
@@ -37,15 +26,8 @@ public class OverSpawn : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-   
-
-   
-   
-   
-
     public override void OnKill(int timeLeft)
     {
-
         for (int i = 0; i < 14; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke);
@@ -70,11 +52,5 @@ public class OverSpawn : ModProjectile
                 Projectile.owner
             );
         }
-
-
     }
-
 }
-
-
-

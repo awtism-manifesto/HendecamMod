@@ -1,9 +1,4 @@
-﻿
-using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -17,13 +12,12 @@ public class SpartanSpear : ModProjectile
     {
         Projectile.width = 20;
         Projectile.height = 20;
-       
-       
         Projectile.CloneDefaults(ProjectileID.Trident); // Clone the default values for a vanilla spear. Spear specific values set for width, height, aiStyle, friendly, penetrate, tileCollide, scale, hide, ownerHitCheck, and melee.
         Projectile.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
@@ -32,10 +26,9 @@ public class SpartanSpear : ModProjectile
             dust.noGravity = true;
             dust.velocity *= 1.9f;
             dust.scale *= 1.1f;
-
         }
-        
     }
+
     public override bool PreAI()
     {
         Player player = Main.player[Projectile.owner]; // Since we access the owner player instance so much, it's useful to create a helper local variable for this
@@ -78,8 +71,6 @@ public class SpartanSpear : ModProjectile
             // If sprite is facing right, rotate 135 degrees
             Projectile.rotation += MathHelper.ToRadians(135f);
         }
-
-       
 
         return false; // Don't execute vanilla AI.
     }

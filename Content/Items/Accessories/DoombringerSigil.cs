@@ -1,10 +1,6 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -22,25 +18,23 @@ public class DoombringerSigil : ModItem
 
     // Insert the modifier values into the tooltip localization. More info on this approach can be found on the wiki: https://github.com/tModLoader/tModLoader/wiki/Localization#binding-values-to-localizations
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(AdditiveDamageBonus);
+
     public override void SetStaticDefaults()
     {
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 
-
-       
         ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
-
-       
     }
+
     public override void SetDefaults()
     {
         Item.width = 30;
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
-        Item.value = 4900000;
+        Item.value = 21500000;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -66,16 +60,14 @@ public class DoombringerSigil : ModItem
         tooltips.Add(line);
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
-
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - Also grants the same stat increases to Throwing class")
             {
                 OverrideColor = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
+
         line = new TooltipLine(Mod, "Face", "'Epicenter of entropy'")
         {
             OverrideColor = new Color(Main.rand.Next(166), Main.rand.Next(166), Main.rand.Next(166))
@@ -94,29 +86,22 @@ public class DoombringerSigil : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
-
-
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.CelestialSigil);
         recipe.AddIngredient<RadioactiveEmblem>();
         recipe.AddIngredient<AmalgamatedFragment>();
-      
-
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AscendantSpiritEssence", out ModItem AscendantSpiritEssence))
-
-
         {
             recipe.AddIngredient(AscendantSpiritEssence.Type, 5);
-
-
         }
-
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -130,12 +115,12 @@ public class DoombringerSigil : ModItem
         // - Adding 4 base damage.
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 115f;
-        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 115f;   
-        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 115f;
-        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 93f;
+        player.GetDamage(DamageClass.Melee) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Magic) += AdditiveDamageBonus / 100f;
+        player.GetDamage(DamageClass.Summon) += AdditiveDamageBonus / 100f;
+        player.GetDamage<StupidDamage>() += AdditiveDamageBonus / 100f;
+        player.GetDamage<OmniDamage>() -= AdditiveDamageBonus / 100f;
 
         player.GetCritChance<OmniDamage>() += OmniCritBonus;
         player.GetCritChance<StupidDamage>() += CritBonus;
@@ -143,14 +128,12 @@ public class DoombringerSigil : ModItem
         player.GetCritChance(DamageClass.Ranged) += CritBonus;
         player.GetCritChance(DamageClass.Magic) += CritBonus;
         player.GetCritChance(DamageClass.Summon) += CritBonus;
-
-
-        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed(DamageClass.Summon) += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed<StupidDamage>() += AttackSpeedBonus / 107f;
-        player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 90f;
+        player.GetAttackSpeed(DamageClass.Melee) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Magic) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed(DamageClass.Summon) += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed<StupidDamage>() += AttackSpeedBonus / 100f;
+        player.GetAttackSpeed<OmniDamage>() -= AttackSpeedBonus / 100f;
 
         player.GetArmorPenetration(DamageClass.Melee) += ArmorPenBonus;
         player.GetArmorPenetration(DamageClass.Ranged) += ArmorPenBonus;
@@ -160,11 +143,9 @@ public class DoombringerSigil : ModItem
         player.GetCritChance<OmniDamage>() += OmniArmorPenBonus;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-
-
         {
-            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 115f;
-            player.GetAttackSpeed(DamageClass.Throwing) += AttackSpeedBonus / 107f;
+            player.GetDamage(DamageClass.Throwing) += AdditiveDamageBonus / 100f;
+            player.GetAttackSpeed(DamageClass.Throwing) += AttackSpeedBonus / 100f;
             player.GetCritChance(DamageClass.Throwing) += CritBonus;
             player.GetArmorPenetration(DamageClass.Throwing) += ArmorPenBonus;
         }

@@ -1,17 +1,17 @@
-﻿
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
 public class StarfishOnAString : ModItem
 {
+    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
+    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
+    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
     public override void SetStaticDefaults()
     {
         // These are all related to gamepad controls and don't seem to affect anything else
@@ -42,16 +42,17 @@ public class StarfishOnAString : ModItem
 
         Item.shoot = ModContent.ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
-
-       
-
     }
-
-    // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
-    // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
-    // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
-    private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
+    public float LobotometerCost = 5f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.
@@ -71,10 +72,11 @@ public class StarfishOnAString : ModItem
         // Don't reroll
         return true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Has a chance to release water jets upon hitting an enemy")
@@ -83,21 +85,6 @@ public class StarfishOnAString : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
-
-  
 }

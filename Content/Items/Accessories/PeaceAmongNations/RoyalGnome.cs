@@ -1,11 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items.Accessories.NastyPatty;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
@@ -20,21 +13,24 @@ public class RoyalGnome : ModItem
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Gnomes should be friendly");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.npcTypeNoAggro[NPCID.Gnome] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.GardenGnome, 1);
-        recipe.AddIngredient<FriendCore>(1);
+        recipe.AddIngredient(ItemID.GardenGnome);
+        recipe.AddIngredient<FriendCore>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

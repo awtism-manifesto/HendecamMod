@@ -37,3 +37,23 @@ KnockEmDown: {
 	Description: Eliminate the Apache Elf Ship.
 	FriendlyName: Knock Em Down
 }
+
+TheSniper: {
+	Description: Mods.HendecamMod.Achievements.TheSniper.Description
+	FriendlyName: The Sniper
+}
+
+SandyShores: {
+	Description: Mods.HendecamMod.Achievements.SandyShores.Description
+	FriendlyName: Sandy Shores
+}
+
+MintyFresh: {
+	Description: Mods.HendecamMod.Achievements.MintyFresh.Description
+	FriendlyName: Minty Fresh
+}
+
+FlintAndSteel: {
+	Description: Mods.HendecamMod.Achievements.FlintAndSteel.Description
+	FriendlyName: Flint And Steel
+}

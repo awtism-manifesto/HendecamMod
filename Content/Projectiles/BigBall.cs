@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -12,7 +6,6 @@ public class BigBall : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
@@ -25,6 +18,7 @@ public class BigBall : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 30;
@@ -34,20 +28,19 @@ public class BigBall : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.2f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
-
-
-        // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
-        // But, using our own AI allows us to customize things like the dusts that the rocket creates.
-        // Projectile.aiStyle = ProjAIStyleID.Explosive;
-        // AIType = ProjectileID.RocketI;
+        Projectile.timeLeft = 630;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 5;
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
+
     public override void AI()
     {
+
+        Projectile.rotation += 0.2f;
         // Apply gravity after a quarter of a second
         Projectile.ai[0] += 1f;
         if (Projectile.ai[0] >= 7f)
@@ -56,14 +49,17 @@ public class BigBall : ModProjectile
             Projectile.velocity.Y += 0.5f;
         }
 
-        // The projectile is rotated to face the direction of travel
-        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+        if (Projectile.timeLeft <= 615)
+        {
+            Projectile.Resize(48, 48);
+        }
 
         // Cap downward velocity
         if (Projectile.velocity.Y > 32f)
         {
             Projectile.velocity.Y = 32f;
         }
+
         // If timeLeft is <= 3, then explode the rocket.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -83,8 +79,6 @@ public class BigBall : ModProjectile
                         posOffsetX = Projectile.velocity.X * 0.5f;
                         posOffsetY = Projectile.velocity.Y * 0.5f;
                     }
-
-
 
                     // Used by the liquid rockets which leave trails of their liquid instead of fire.
                     // if (fireDust.type == Dust.dustWater()) {
@@ -108,11 +102,7 @@ public class BigBall : ModProjectile
             }
         }
 
-        // Rotate the rocket in the direction that it is moving.
-        if (Projectile.velocity != Vector2.Zero)
-        {
-            Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + MathHelper.PiOver2;
-        }
+       
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
@@ -146,13 +136,9 @@ public class BigBall : ModProjectile
 
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
-
-
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(363, 363);
-
-        
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 60; j++)
@@ -163,8 +149,6 @@ public class BigBall : ModProjectile
             fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 2.5f);
             fireDust.velocity *= 3f;
         }
-
-       
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {

@@ -1,12 +1,9 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,20 +19,14 @@ public class TheChudfucker : ModItem
         Item.scale = 1.6f;
         Item.rare = ModContent.RarityType<Seizure2>();
         Item.value = 67000000;
-
-
         // Use Properties
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 32; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-      
-        
 
         // The sound that this item plays when used.
-     
-
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<OmniDamage>();
@@ -43,39 +34,35 @@ public class TheChudfucker : ModItem
         Item.knockBack = 6.9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
-
-
-
-
-       
-
         Item.shootSpeed = 30f; // The speed of the projectile (measured in pixels per frame.)
-      
-        Item.shoot = ProjectileID.Seed;
 
+        Item.shoot = ProjectileID.Seed;
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.SeedlerNut;
-
     }
-
+    public float LobotometerCost = 67f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-       
         SoundEngine.PlaySound(SoundID.Item38, player.position);
-        
-
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
-
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 67 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
@@ -90,23 +77,8 @@ public class TheChudfucker : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
-
-    
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

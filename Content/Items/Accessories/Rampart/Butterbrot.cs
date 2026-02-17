@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,12 +13,14 @@ public class Butterbrot : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Peckish, Hungry, Starving, Frostburn,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Shadowflame, Hellfire, Cursed Inferno, Chilled, Frozen,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Frostbite, Obstructed, and Electrified"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.NeutralHunger] = true;
@@ -40,12 +36,13 @@ public class Butterbrot : ModItem
         player.buffImmune[BuffID.Obstructed] = true;
         player.buffImmune[BuffID.Electrified] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<SpiceKingStarterKit>(1);
-        recipe.AddIngredient<Ushanka>(1);
+        recipe.AddIngredient<SpiceKingStarterKit>();
+        recipe.AddIngredient<Ushanka>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();

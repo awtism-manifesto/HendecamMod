@@ -1,10 +1,4 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -19,6 +13,7 @@ public class SecondDinner : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Cursed, Mana Sickness, Suffocation,"));
@@ -26,6 +21,7 @@ public class SecondDinner : ModItem
         tooltips.Add(new TooltipLine(Mod, "Face", "Starving, Frostburn, Shadowflame, Hellfire, Cursed Inferno,"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Chilled, Frozen, Frostbite, Obstructed, and Electrified"));
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.Cursed] = true;
@@ -49,12 +45,13 @@ public class SecondDinner : ModItem
         player.buffImmune[BuffID.Obstructed] = true;
         player.buffImmune[BuffID.Electrified] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe = CreateRecipe();
-        recipe.AddIngredient<BackupPlan>(1);
-        recipe.AddIngredient<Butterbrot>(1);
+        recipe.AddIngredient<BackupPlan>();
+        recipe.AddIngredient<Butterbrot>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();

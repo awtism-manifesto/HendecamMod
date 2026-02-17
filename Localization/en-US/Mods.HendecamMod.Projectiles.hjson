@@ -48,6 +48,7 @@ BladegunBomb.DisplayName: Bladegun Bomb
 BladegunSwing.DisplayName: Bladegun Swing
 BladegunWave.DisplayName: Bladegun Wave
 BladegunWave2.DisplayName: Bladegun Wave2
+Blade.DisplayName: Blade
 Bloodfish.DisplayName: Bloodfish
 BloodIchor.DisplayName: Blood Ichor
 BloodshotArrowProjectile.DisplayName: Bloodshot Arrow Projectile
@@ -489,3 +490,32 @@ LegoChainsawProj.DisplayName: Lego Chainsaw Proj
 SporeSawProj.DisplayName: Spore Saw Proj
 MorbiumTreeripperProj.DisplayName: Morbium Treeripper Proj
 ElfMagicMissile.DisplayName: Elf Magic Missile
+HarpyFeatherClone.DisplayName: Harpy Feather Clone
+FrostBeamClone.DisplayName: Frost Beam Clone
+MorbiumPickaxeSpear.DisplayName: Morbium Pickaxe Spear
+AstaBoomRecurse.DisplayName: Asta Boom Recurse
+LycoShivMage.DisplayName: Lyco Shiv Mage
+SpookySpark.DisplayName: Spooky Spark
+SpookyArrow.DisplayName: Spooky Arrow
+SpookySpawn.DisplayName: Spooky Spawn
+SpookySparkMelee.DisplayName: Spooky Spark Melee
+AzuriteBeamBackwards.DisplayName: Azurite Beam Backwards
+PureSaltBoulder.DisplayName: Pure Salt Boulder
+SaltOmni.DisplayName: Salt Omni
+CarbonFiberDart.DisplayName: Carbon Fiber Dart
+FargoSand.DisplayName: Fargo Sand
+MagnetSpawn.DisplayName: Magnet Spawn
+CaptainBall.DisplayName: Captain Ball
+CandyCaneShard.DisplayName: Candy Cane Shard
+CandyCaneArrow.DisplayName: Candy Cane Arrow
+ImprovNade.DisplayName: Improv Nade
+BladeShooterProj.DisplayName: Blade Shooter Proj
+BladeSpawn.DisplayName: Blade Spawn
+BladeMaelSpawn.DisplayName: Blade Mael Spawn
+BladeMaelstromProj.DisplayName: Blade Maelstrom Proj
+SuperMaelstromProj.DisplayName: Super Maelstrom Proj
+BeatSpawn.DisplayName: Beat Spawn
+ChainThunder2.DisplayName: Chain Thunder2
+MartianDrone.DisplayName: Martian Drone
+MartianDroneBolt.DisplayName: Martian Drone Bolt
+PlutoParticleOmni.DisplayName: Pluto Particle Omni

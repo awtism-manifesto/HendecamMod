@@ -1,24 +1,13 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-
 
 namespace HendecamMod.Content.Items;
 
 public class RainbowRifle : ModItem
 {
-    
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
@@ -28,9 +17,7 @@ public class RainbowRifle : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.66f;
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
-        Item.value = 915000;
-
-
+        Item.value = 1090000;
         // Use Properties
         Item.useTime = 10; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 10; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -39,41 +26,28 @@ public class RainbowRifle : ModItem
         Item.mana = 5;
 
         // The sound that this item plays when used.
-        Item.UseSound = Terraria.ID.SoundID.Item38;
-
-
+        Item.UseSound = SoundID.Item38;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();  // Sets the damage type to ranged.
-        Item.damage = 58; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>(); // Sets the damage type to ranged.
+        Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
-
-
         {
-
-            Item.damage = 60;
-
-
+            Item.damage = 63;
         }
-
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-
-
         Item.shootSpeed = 15.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet;
         Item.shoot = ModContent.ProjectileType<RainbowBullet>();
-
-
     }
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-
         type = ModContent.ProjectileType<RainbowBullet>();
     }
-  
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
@@ -89,12 +63,11 @@ public class RainbowRifle : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-
         }
+
         SoundEngine.PlaySound(SoundID.Item114, player.position);
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
@@ -108,48 +81,27 @@ public class RainbowRifle : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient<GoldenAK>();
         recipe.AddIngredient<OtherworldlySixPack>();
         recipe.AddIngredient<KingslayerBar>(12);
-     
+
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind<ModItem>("CoreofSunlight", out ModItem CoreofSunlight))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CoreofCalamity", out ModItem CoreofCalamity))
         {
-            recipe.AddIngredient(CoreofSunlight.Type, 9);
-
+            recipe.AddIngredient(CoreofCalamity.Type, 9);
         }
+
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("RainbowPiece", out ModItem RainbowPiece))
-
-
         {
             recipe.AddIngredient(RainbowPiece.Type, 50);
-
-
-
         }
-
     }
 
     public override Vector2? HoldoutOffset()

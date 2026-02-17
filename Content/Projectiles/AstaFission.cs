@@ -1,21 +1,13 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles;
-
 
 public class AstaFission : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-
         ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -30,6 +22,7 @@ public class AstaFission : ModProjectile
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
     }
+
     public override void SetDefaults()
     {
         Projectile.width = 21;
@@ -39,16 +32,19 @@ public class AstaFission : ModProjectile
         Projectile.DamageType = DamageClass.Magic;
         Projectile.light = 0.7f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 15;
         Projectile.timeLeft = 3;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
+        Projectile.tileCollide = false;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
     }
+
     public override void AI()
     {
         int frameSpeed = 3;
@@ -63,11 +59,8 @@ public class AstaFission : ModProjectile
             if (Projectile.frame >= Main.projFrames[Projectile.type])
             {
                 Projectile.frame = 0;
-
-
             }
         }
-
 
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
@@ -98,8 +91,6 @@ public class AstaFission : ModProjectile
                     fireDust.velocity *= 1.95f;
                 }
             }
-
-
         }
 
         // Rotate the rocket in the direction that it is moving.
@@ -110,12 +101,7 @@ public class AstaFission : ModProjectile
     }
 
     // When the rocket hits a tile, NPC, or player, get ready to explode.
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        Projectile.velocity *= 0f; // Stop moving so the explosion is where the rocket was.
-        Projectile.timeLeft = 3; // Set the timeLeft to 3 so it can get ready to explode.
-        return false; // Returning false is important here. Otherwise the projectile will die without being resized (no blast radius).
-    }
+   
 
     public override void PrepareBombToBlow()
     {
@@ -161,47 +147,28 @@ public class AstaFission : ModProjectile
             fireDust.velocity *= 4f;
         }
 
-        Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
-        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(65));
-        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(110));
-        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(155));
-        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(200));
-        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(245));
-        Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(290));
-        Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(335));
-        Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-40, 40));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-        ModContent.ProjectileType<AstaBoomDelayed>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+        for (int i = 0; i < 8; i++)
+        {
+            float rotation = MathHelper.ToRadians(i * 45f);
+            Vector2 velocity = Projectile.velocity.RotatedBy(rotation);
+            Vector2 position = Projectile.Center;
 
-
-
+            Projectile.NewProjectile(
+                Projectile.GetSource_FromThis(),
+                position,
+                velocity,
+                ModContent.ProjectileType<AstaBoomDelayed>(),
+                (int)(Projectile.damage * 0.67f),
+                Projectile.knockBack,
+                Projectile.owner
+            );
+        }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.95f);
-        target.immune[Projectile.owner] = 4;
+        target.immune[Projectile.owner] = 2;
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
     }
 
@@ -223,4 +190,3 @@ public class AstaFission : ModProjectile
     //	Projectile.ExplodeTiles(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY, wallSplode);
     //}
 }
-

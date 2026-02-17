@@ -1,8 +1,4 @@
 ﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -18,6 +14,7 @@ public class WarIsOver : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.value = 350;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -29,21 +26,15 @@ public class WarIsOver : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Materials.BlankCanvas>(1);
+        recipe.AddIngredient<Materials.BlankCanvas>();
         recipe.AddIngredient(ItemID.AshBlock, 10);
-       
+
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
     }
-
-
 }

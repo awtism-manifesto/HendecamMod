@@ -1,9 +1,5 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items;
 
@@ -38,7 +34,7 @@ public class IED : ModItem
             Item.DamageType = DamageClass.Throwing;
         }
     }
-   
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,16 +50,10 @@ public class IED : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-    
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-
             tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
         }
-
-
-    
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -78,6 +68,7 @@ public class IED : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(50);
@@ -92,6 +83,5 @@ public class IED : ModItem
         recipe.AddIngredient(ItemID.Dynamite, 3);
         recipe.AddIngredient<RefinedOil>(5);
         recipe.Register();
-
     }
 }

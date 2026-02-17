@@ -1,12 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
 using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -20,19 +13,19 @@ public class LycopitePickaxe : ModItem
         Item.height = 35;
         Item.useTime = 8;
         Item.useAnimation = 14;
-        
-
+        Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;
-           
-        Item.value = 69000;
+
+        Item.value = 189000;
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 1;
-        Item.pick = 95; 
+        Item.pick = 95;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Can mine Hellstone");
@@ -44,6 +37,7 @@ public class LycopitePickaxe : ModItem
         };
         tooltips.Add(line);
     }
+
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         for (int i = 0; i < 2; i++)
@@ -52,21 +46,16 @@ public class LycopitePickaxe : ModItem
             dust.noGravity = true;
             dust.velocity *= 2.5f;
             dust.scale *= 0.66f;
-
         }
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-
-
         recipe.AddIngredient<LycopiteBar>(17);
-        
-        
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
-        
     }
 }

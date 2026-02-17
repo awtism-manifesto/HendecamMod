@@ -1,10 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,8 +7,6 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class KingslayerCrown : ModItem
 {
-
-
     public override void SetStaticDefaults()
     {
         // If your head equipment should draw hair while drawn, use one of the following:
@@ -24,10 +16,7 @@ public class KingslayerCrown : ModItem
         // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
-
     }
-
-
 
     public override void SetDefaults()
     {
@@ -37,8 +26,8 @@ public class KingslayerCrown : ModItem
         Item.rare = ItemRarityID.Blue; // The rarity of the item
         Item.accessory = true;
         Item.vanity = true;
-        
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -48,8 +37,6 @@ public class KingslayerCrown : ModItem
         recipe.AddIngredient<KingslayerBar>(2);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.PlatinumCrown);
         recipe.AddIngredient<KingslayerBar>(2);
@@ -61,12 +48,8 @@ public class KingslayerCrown : ModItem
         recipe.AddIngredient<KingslayerBar>(5);
         recipe.AddTile(TileID.Solidifier);
         recipe.Register();
-
-       
-
-
-
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -79,23 +62,7 @@ public class KingslayerCrown : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-   
-    
-   
 }

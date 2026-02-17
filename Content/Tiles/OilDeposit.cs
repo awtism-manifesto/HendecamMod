@@ -1,14 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
-using Terraria;
 using Terraria.Chat;
-using Terraria.ID;
 using Terraria.IO;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using Terraria.GameContent.Generation;
 
 namespace HendecamMod.Content.Tiles;
 
@@ -30,7 +25,7 @@ public class OilDeposit : ModTile
         Main.tileMerge[TileID.SnowBlock][Type] = true;
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
-        
+
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(2, 2, 2), Language.GetText("Oil Deposit"));
 

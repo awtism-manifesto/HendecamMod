@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.DamageClasses;
+﻿namespace HendecamMod.Content.DamageClasses;
 
 public class AutismDamage : DamageClass
 {
@@ -14,19 +11,19 @@ public class AutismDamage : DamageClass
         // Default is, you guessed it, the default damage class. It doesn't scale off of any class-specific stat bonuses or universal stat bonuses.
         // There are a number of items and projectiles that use this, such as thrown waters and the Bone Glove's bones.
         // Generic, on the other hand, scales off of all universal stat bonuses and nothing else; it's the base damage class upon which all others that aren't Default are built.
-        if (damageClass == DamageClass.Generic)
+        if (damageClass == Generic)
             return StatInheritanceData.Full;
-        if (damageClass == DamageClass.Magic)
+        if (damageClass == Magic)
             return StatInheritanceData.Full;
         if (damageClass == ModContent.GetInstance<StupidDamage>())
             return StatInheritanceData.Full;
-        if (damageClass == DamageClass.Melee)
+        if (damageClass == Melee)
             return StatInheritanceData.None;
-        if (damageClass == DamageClass.Throwing)
+        if (damageClass == Throwing)
             return StatInheritanceData.None;
-        if (damageClass == DamageClass.Ranged)
+        if (damageClass == Ranged)
             return StatInheritanceData.None;
-        if (damageClass == DamageClass.Summon)
+        if (damageClass == Summon)
             return StatInheritanceData.None;
 
         return new StatInheritanceData(
@@ -37,6 +34,7 @@ public class AutismDamage : DamageClass
             knockbackInheritance: 0f
         );
     }
+
     public override bool GetEffectInheritance(DamageClass damageClass)
     {
         // This method allows you to make your damage class benefit from and be able to activate other classes' effects (e.g. Spectre bolts, Magma Stone) based on what returns true.
@@ -44,7 +42,7 @@ public class AutismDamage : DamageClass
         // For this example, we'll make our class able to activate melee- and magic-specifically effects.
         if (damageClass == ModContent.GetInstance<StupidDamage>())
             return true;
-        if (damageClass == DamageClass.Magic)
+        if (damageClass == Magic)
             return true;
 
         return false;
@@ -52,10 +50,9 @@ public class AutismDamage : DamageClass
 
     public override bool GetPrefixInheritance(DamageClass damageClass)
     {
-
-        if (damageClass == DamageClass.Generic)
+        if (damageClass == Generic)
             return true;
-        if (damageClass == DamageClass.Magic)
+        if (damageClass == Magic)
             return true;
         if (damageClass == ModContent.GetInstance<StupidDamage>())
             return true;
@@ -67,14 +64,7 @@ public class AutismDamage : DamageClass
     {
         // This method lets you set default statistical modifiers for your example damage class.
         // Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-        
-       
         // These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
         // You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
     }
-
-
-
-
-
 }

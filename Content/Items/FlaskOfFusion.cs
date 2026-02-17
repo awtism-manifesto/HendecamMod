@@ -1,14 +1,9 @@
 ﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework;
-using HendecamMod.Content.Items;
-using Newtonsoft.Json.Linq;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
+using Terraria;
 
 namespace HendecamMod.Content.Items;
-
 
 public class FlaskOfFusion : ModItem
 {
@@ -16,12 +11,14 @@ public class FlaskOfFusion : ModItem
     {
         Item.ResearchUnlockCount = 20;
 
-        ItemID.Sets.DrinkParticleColors[Type] = [
+        ItemID.Sets.DrinkParticleColors[Type] =
+        [
             new Color(255, 25, 55),
             new Color(255, 115, 150),
             new Color(255, 85, 160)
         ];
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -33,8 +30,6 @@ public class FlaskOfFusion : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -72,7 +67,7 @@ public class FlaskOfFusion : ModItem
         CreateRecipe()
             .AddIngredient<FlaskOfFission>()
             .AddIngredient<AstatineOre>()
-            .AddTile(TileID.ImbuingStation)
+            .AddTile<CultistCyclotronPlaced>()
             .Register();
     }
 }

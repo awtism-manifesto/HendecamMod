@@ -1,13 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class MintalSword : ModItem
 {
@@ -23,13 +16,11 @@ public class MintalSword : ModItem
         Item.damage = 146;
         Item.knockBack = 12;
         Item.ChangePlayerDirectionOnShoot = true;
-        Item.value = Item.buyPrice(gold: 1);
+        Item.value = 155000;
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item1;
         Item.scale = 2f;
-
-
-
+        Item.useTurn = true;
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
 
@@ -37,12 +28,11 @@ public class MintalSword : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -54,8 +44,6 @@ public class MintalSword : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -70,12 +58,12 @@ public class MintalSword : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<Items.Placeables.MintalBar>(8);
+        recipe.AddIngredient<Placeables.MintalBar>(14);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
 }

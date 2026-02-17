@@ -1,22 +1,20 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class BadGrades : ModItem
 {
-   
 
-     public static readonly int AdditiveStupidDamageBonus = 6;
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<IQTest>();
+    }
 
-  
+    public static readonly int AdditiveStupidDamageBonus = 6;
     public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs();
 
     public override void SetDefaults()
@@ -25,24 +23,27 @@ public class BadGrades : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.White;
+        Item.value = 67;
     }
-    
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased stupid damage");
+        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage as Lobotometer increases, up to 10% at max");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The F students are inventors")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-
-
-      
+        line = new TooltipLine(Mod, "Face", "'The F students are inventors'")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -51,9 +52,14 @@ public class BadGrades : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
+
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 106f;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+
+        float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
+        float damageBonus = lobotometerPercent * 0.10f;
+     
+        player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
     }
 }

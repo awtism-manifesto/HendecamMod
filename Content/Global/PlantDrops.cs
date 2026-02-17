@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items;
 
 namespace HendecamMod.Content.Global;
 
@@ -22,6 +19,7 @@ public class PlantDrops : GlobalTile
                 }
             }
         }
+
         if (type == TileID.JungleThorns)
         {
             if (!fail && !effectOnly)
@@ -34,6 +32,7 @@ public class PlantDrops : GlobalTile
                 }
             }
         }
+
         // Check if the tile destroyed is a leaf tile
         if (type == TileID.CorruptVines || type == TileID.CrimsonVines)
         {

@@ -1,13 +1,7 @@
-﻿using HendecamMod.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Weapons;
-
 
 public class FireyPhaseblade : ModItem
 {
@@ -25,14 +19,10 @@ public class FireyPhaseblade : ModItem
         Item.damage = 26;
         Item.knockBack = 3;
         Item.ChangePlayerDirectionOnShoot = true;
-
-
         Item.value = Item.sellPrice(silver: 54);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item15;
-
-
-
+        Item.useTurn = true;
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
 
@@ -40,12 +30,11 @@ public class FireyPhaseblade : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
 
-
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -57,8 +46,6 @@ public class FireyPhaseblade : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -80,6 +67,7 @@ public class FireyPhaseblade : ModItem
         // 60 frames = 1 second
         target.AddBuff(BuffID.OnFire, 180);
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -88,5 +76,4 @@ public class FireyPhaseblade : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-
 }

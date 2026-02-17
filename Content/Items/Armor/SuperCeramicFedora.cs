@@ -1,33 +1,21 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Armor;
 
-// The AutoloadEquip attribute automatically attaches an equip texture to this item.
-// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
 [AutoloadEquip(EquipType.Head)]
 public class SuperCeramicFedora : ModItem
 {
     public static readonly int AdditiveStupidDamageBonus = 13;
     public static readonly int StupidAttackSpeedBonus = 10;
-    public static readonly int StupidCritBonus =9;
+    public static readonly int StupidCritBonus = 9;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
     {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
         ArmorIDs.Head.Sets.IsTallHat[Item.headSlot] = true;
         ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
         SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
@@ -35,15 +23,15 @@ public class SuperCeramicFedora : ModItem
 
     public override void SetDefaults()
     {
-        Item.width = 22; // Width of the item
-        Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(gold: 13); // How many coins the item is worth
-        Item.rare = ItemRarityID.LightRed; // The rarity of the item
-        Item.defense = 7; // The amount of defense the item will give when equipped
+        Item.width = 22; 
+        Item.height = 18; 
+        Item.value = Item.sellPrice(gold: 13); 
+        Item.rare = ItemRarityID.LightRed; 
+        Item.defense = 7; 
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "13% increased stupid damage");
         tooltips.Add(line);
 
@@ -52,79 +40,45 @@ public class SuperCeramicFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
-    // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<SuperCeramicChestplate>() && legs.type == ModContent.ItemType<SuperCeramicLeggings>();
     }
+
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 113f;
-        
+       
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 10f;
+
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
     }
-    // UpdateArmorSet allows you to give set bonuses to the armor.
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-      
         recipe.AddIngredient<CeramicSheet>(25);
         recipe.AddIngredient<EbonceramicSheet>(10);
-      
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
         recipe = CreateRecipe();
-
-       
         recipe.AddIngredient<CeramicSheet>(25);
-     
         recipe.AddIngredient<CrimceramicSheet>(10);
         recipe.AddIngredient<PearlceramicSheet>(10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-
-
-
     }
+
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "20% increased damage reduction at max HP, getting hit causes ceramic shards to shatter off the player but removes the boost";
+        player.setBonus = "35% increased damage reduction at max HP, getting hit causes ceramic shards to shatter off the player but removes the boost";
         player.GetModPlayer<CeramMultiscale>().Multiscale = true;
     }
 }
+
 public class CeramMultiscale : ModPlayer
 {
-   
     private const int ShatterCooldownMax = 60 * 10;
 
     public bool Multiscale;
@@ -137,32 +91,24 @@ public class CeramMultiscale : ModPlayer
 
     public override void PostUpdate()
     {
-     
         if (ShatterCooldown > 0)
             ShatterCooldown--;
-
-      
         if (Multiscale && Player.statLife == Player.statLifeMax2)
         {
-            Player.endurance = 1f - 0.8f * (1f - Player.endurance);
+            Player.endurance = 1f - 0.65f * (1f - Player.endurance);
         }
     }
 
     public override void OnHurt(Player.HurtInfo info)
     {
-      
         if (!Multiscale)
             return;
-
-      
         if (ShatterCooldown > 0)
             return;
 
         int baseDamage = 35;
         float defenseScale = 0.75f;
-        int finalDamage = baseDamage + (int)(Player.statDefense * defenseScale);
-
-        
+        int finalDamage = baseDamage + Player.statDefense * defenseScale;
         Projectile.NewProjectile(
             Player.GetSource_FromThis(),
             Player.Center,
@@ -176,9 +122,4 @@ public class CeramMultiscale : ModPlayer
         // Start cooldown
         ShatterCooldown = ShatterCooldownMax;
     }
-
-
-
-
-
 }

@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using HendecamMod.Content.Tiles.Walls;
+﻿using HendecamMod.Content.Tiles.Walls;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -24,7 +21,7 @@ public class MintalBrickWall : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(4);
-        recipe.AddIngredient<Items.Placeables.MintalBrick>(1);
+        recipe.AddIngredient<MintalBrick>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

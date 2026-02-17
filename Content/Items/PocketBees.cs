@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -32,7 +28,7 @@ public class PocketBees : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
 
-        Item.value = Item.buyPrice(silver: 100);
+        Item.value = Item.buyPrice(silver: 600);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item45;
 
@@ -45,9 +41,19 @@ public class PocketBees : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+    public float LobotometerCost = 8f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-         int NumProjectiles = Main.rand.Next(6, 10);  // The number of projectiles that this gun will shoot.
+        int NumProjectiles = Main.rand.Next(6, 10); // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -64,15 +70,15 @@ public class PocketBees : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Uses 8 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -81,37 +87,17 @@ public class PocketBees : ModItem
         };
         tooltips.Add(line);
 
-
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<Items.PlasticScrap>(5);
+        recipe.AddIngredient<PlasticScrap>(5);
         recipe.AddIngredient(ItemID.BeeWax, 15);
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
-
-
-
-
-
-
-
     }
-
 }

@@ -1,11 +1,7 @@
-﻿using HendecamMod.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items;
 
@@ -41,15 +37,14 @@ public class VerminImpaler : ModItem
         Item.shootSpeed = 3f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ModContent.ProjectileType<VenomSpear>(); // The projectile that is fired from this weapon
     }
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-
         type = ModContent.ProjectileType<VenomFang>();
-        Projectile.NewProjectileDirect(source, position, velocity*2.75f, type, (int)(damage*0.67f), knockback, player.whoAmI);
-
-
+        Projectile.NewProjectileDirect(source, position, velocity * 2.75f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -61,8 +56,6 @@ public class VerminImpaler : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -77,26 +70,22 @@ public class VerminImpaler : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     public override bool CanUseItem(Player player)
     {
         // Ensures no more than one spear can be thrown out, use this when using autoReuse
         return player.ownedProjectileCounts[Item.shoot] < 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SpiderFang, 12);
-        recipe.AddIngredient< EyePoker>();
-
-
+        recipe.AddIngredient<EyePoker>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-       
-
-
-
-
     }
+
     public override bool? UseItem(Player player)
     {
         // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.

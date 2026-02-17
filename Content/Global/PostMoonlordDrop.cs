@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.GameContent.ItemDropRules;
+﻿using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;

@@ -1,11 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
-using Microsoft.Build.Evaluation;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -32,6 +27,7 @@ public class MorbiumArrow : ModItem
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.Yellow;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -43,11 +39,8 @@ public class MorbiumArrow : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
-
-
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(200);
@@ -55,5 +48,4 @@ public class MorbiumArrow : ModItem
         recipe.AddIngredient(ItemID.WoodenArrow, 200);
         recipe.Register();
     }
-
 }

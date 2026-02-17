@@ -1,11 +1,4 @@
-﻿
-using HendecamMod.Content.Items.Placeables;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -20,17 +13,20 @@ public class SmellingSalts : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         var line = new TooltipLine(Mod, "Face", "Grants immunity to Cerebral Mindtrick, Tipsy, and the Water Candle");
         tooltips.Add(line);
     }
+
     public override void UpdateEquip(Player player)
     {
         player.buffImmune[BuffID.BrainOfConfusionBuff] = true;
         player.buffImmune[BuffID.Tipsy] = true;
         player.buffImmune[BuffID.WaterCandle] = true;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

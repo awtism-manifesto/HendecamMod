@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace HendecamMod.Content.Tiles.Furniture;
@@ -29,7 +24,7 @@ public class GoldenSigmaPlaced : ModTile
             16,
             16,
             16,
-            18
+            16
         };
         TileObjectData.addTile(Type);
 

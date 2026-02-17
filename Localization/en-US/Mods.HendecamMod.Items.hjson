@@ -591,7 +591,7 @@ LuckyCigarette: {
 }
 
 MarksmanLaserSight: {
-	DisplayName: Marksman Laser Sight
+	DisplayName: Marksman's Laser Sight
 	Tooltip: ""
 }
 
@@ -706,7 +706,7 @@ MoldyCheese: {
 }
 
 NastyPattyAccessory: {
-	DisplayName: Nasty Patty Accessory
+	DisplayName: Nasty Patty
 	Tooltip: ""
 }
 
@@ -781,7 +781,7 @@ MoltenRose: {
 }
 
 SoulOfImmunityAccessory: {
-	DisplayName: Soul Of Immunity Accessory
+	DisplayName: Soul Of Immunity
 	Tooltip: ""
 }
 
@@ -856,7 +856,7 @@ PeaceAmongEvents: {
 }
 
 PeaceAmongNationsAccessory: {
-	DisplayName: Peace Among Nations Accessory
+	DisplayName: Peace Among Nations
 	Tooltip: ""
 }
 
@@ -1086,7 +1086,7 @@ QuestionableVial: {
 }
 
 RampartAccessory: {
-	DisplayName: Rampart Accessory
+	DisplayName: Rampart
 	Tooltip: ""
 }
 
@@ -1756,7 +1756,7 @@ AlpineTreasureBag: {
 }
 
 ApacheElfShipSummon: {
-	DisplayName: Apache Elf Ship Summon
+	DisplayName: Candy Heart Box
 	Tooltip: ""
 }
 
@@ -1861,7 +1861,7 @@ CraterCreator: {
 }
 
 CrimtaneAmr: {
-	DisplayName: Crimtane Amr
+	DisplayName: Crimtane Anti-Material Rifle
 	Tooltip: ""
 }
 
@@ -1906,7 +1906,7 @@ DeadSoldiersRifle: {
 }
 
 DeathBreathShell: {
-	DisplayName: Death Breath Shell
+	DisplayName: Death's Breath Shell
 	Tooltip: ""
 }
 
@@ -1926,17 +1926,17 @@ DirtBullet: {
 }
 
 DirtyRocket1: {
-	DisplayName: Dirty Rocket1
+	DisplayName: Dirty Rocket I
 	Tooltip: ""
 }
 
 DirtyRocket2: {
-	DisplayName: Dirty Rocket2
+	DisplayName: Dirty Rocket II
 	Tooltip: ""
 }
 
 DirtyRocket3: {
-	DisplayName: Dirty Rocket3
+	DisplayName: Dirty Rocket III
 	Tooltip: ""
 }
 
@@ -1951,12 +1951,12 @@ DracoMeteor: {
 }
 
 DragonBreathShell: {
-	DisplayName: Dragon Breath Shell
+	DisplayName: Dragon's Breath Shell
 	Tooltip: ""
 }
 
 DvdLogo: {
-	DisplayName: Dvd Logo
+	DisplayName: DVD Logo
 	Tooltip: ""
 }
 
@@ -1981,7 +1981,7 @@ EldritchArrow: {
 }
 
 ElementalEmfCaller: {
-	DisplayName: Elemental Emf Caller
+	DisplayName: Elemental EMF Caller
 	Tooltip: ""
 }
 
@@ -2026,7 +2026,7 @@ FidgetThrower2: {
 }
 
 FidgetThrower3: {
-	DisplayName: Fidget Thrower Mk.II
+	DisplayName: Fidget Thrower Mk.III
 	Tooltip: ""
 }
 
@@ -2046,7 +2046,7 @@ FissionRod: {
 }
 
 fivenato: {
-	DisplayName: fivenato
+	DisplayName: .556 Nato Round
 	Tooltip: ""
 }
 
@@ -2081,7 +2081,7 @@ FlatEarthBlock: {
 }
 
 FlinxsFurblade: {
-	DisplayName: Flinxs Furblade
+	DisplayName: Flinx's Furblade
 	Tooltip: ""
 }
 
@@ -2096,12 +2096,12 @@ FlyingPigBanner: {
 }
 
 FoundersDrumroll: {
-	DisplayName: Founders Drumroll
+	DisplayName: Founder's Drumroll
 	Tooltip: ""
 }
 
 FragmentFlatEarth: {
-	DisplayName: Fragment Flat Earth
+	DisplayName: Flat Earth Fragment
 	Tooltip: ""
 }
 
@@ -2341,7 +2341,7 @@ IronValiant: {
 }
 
 JevilishScythe: {
-	DisplayName: Jevilish Scythe
+	DisplayName: Devilsknife
 	Tooltip: ""
 }
 
@@ -2431,7 +2431,7 @@ LegoLauncher: {
 }
 
 Libeerator: {
-	DisplayName: Libeerator
+	DisplayName: Li-bee-rator
 	Tooltip: ""
 }
 
@@ -2441,7 +2441,7 @@ Liquidation: {
 }
 
 LoreAccurateBlackshard: {
-	DisplayName: Lore Accurate Blackshard
+	DisplayName: Shadow Crystal
 	Tooltip: ""
 }
 
@@ -2601,7 +2601,7 @@ MechanicalMurdergun: {
 }
 
 MG42: {
-	DisplayName: M G42
+	DisplayName: MG42
 	Tooltip: ""
 }
 
@@ -3541,12 +3541,12 @@ RedBloonFactory: {
 }
 
 RednecksRevenge: {
-	DisplayName: Rednecks Revenge
+	DisplayName: Redneck's Revenge
 	Tooltip: ""
 }
 
 RednecksRustBucket: {
-	DisplayName: Rednecks Rust Bucket
+	DisplayName: Redneck's Rust Bucket
 	Tooltip: ""
 }
 
@@ -3591,7 +3591,7 @@ RivetGun: {
 }
 
 RocketNeg1: {
-	DisplayName: Rocket Neg1
+	DisplayName: Rocket -I
 	Tooltip: ""
 }
 
@@ -3651,7 +3651,7 @@ SandyShocks: {
 }
 
 SawedOffSparkplug: {
-	DisplayName: Sawed Off Sparkplug
+	DisplayName: Sawed-Off Sparkplug
 	Tooltip: ""
 }
 
@@ -3711,7 +3711,7 @@ SisyphusPrime: {
 }
 
 Six7Gun: {
-	DisplayName: Six7 Gun
+	DisplayName: 67 Gun
 	Tooltip: ""
 }
 
@@ -3756,7 +3756,7 @@ SpaceTrasher: {
 }
 
 SpartansWill: {
-	DisplayName: Spartans Will
+	DisplayName: Spartan's Will
 	Tooltip: ""
 }
 
@@ -3786,7 +3786,7 @@ StarfishOnAString: {
 }
 
 Stg44: {
-	DisplayName: Stg44
+	DisplayName: Stg-44
 	Tooltip: ""
 }
 
@@ -3901,7 +3901,7 @@ TheImperialBoomerangs: {
 }
 
 TheJfkExperience: {
-	DisplayName: The Jfk Experience
+	DisplayName: The JFK Experience
 	Tooltip: ""
 }
 
@@ -4231,7 +4231,7 @@ TrippyTransmutationStaff: {
 }
 
 TrueJfkExperience: {
-	DisplayName: True Jfk Experience
+	DisplayName: True JFK Experience
 	Tooltip: ""
 }
 
@@ -4291,7 +4291,7 @@ UraniumTorch: {
 }
 
 VenomThrower: {
-	DisplayName: Venom Thrower
+	DisplayName: Venom-Thrower
 	Tooltip: ""
 }
 
@@ -4456,7 +4456,7 @@ GoldLongsword: {
 }
 
 GunThatKillsPeople: {
-	DisplayName: Gun That Kills People
+	DisplayName: Morbium Mini Rifle
 	Tooltip: ""
 }
 
@@ -4753,4 +4753,218 @@ ShatteringShell: {
 VoidPearl: {
 	Tooltip: ""
 	DisplayName: Void Pearl
+}
+
+MorbiumWarriorBanner: {
+	Tooltip: ""
+	DisplayName: Morbium Warrior Banner
+}
+
+MorbiumEarthquaker: {
+	DisplayName: Morbium Earthquaker
+	Tooltip: ""
+}
+
+MorbiumMinesweeper: {
+	Tooltip: ""
+	DisplayName: Morbium Minesweeper
+}
+
+BetsyIcon: {
+	DisplayName: Betsy Icon
+	Tooltip: ""
+}
+
+DarkMageIcon: {
+	DisplayName: Dark Mage Icon
+	Tooltip: ""
+}
+
+EverscreamIcon: {
+	DisplayName: Everscream Icon
+	Tooltip: ""
+}
+
+FlyingDutchmanIcon: {
+	DisplayName: Flying Dutchman Icon
+	Tooltip: ""
+}
+
+IceQueenIcon: {
+	DisplayName: Ice Queen Icon
+	Tooltip: ""
+}
+
+MartainSaucerIcon: {
+	DisplayName: Martain Saucer Icon
+	Tooltip: ""
+}
+
+MouringWoodIcon: {
+	DisplayName: Mouring Wood Icon
+	Tooltip: ""
+}
+
+NebulaPillarIcon: {
+	DisplayName: Nebula Pillar Icon
+	Tooltip: ""
+}
+
+OgreIcon: {
+	DisplayName: Ogre Icon
+	Tooltip: ""
+}
+
+PumpkingIcon: {
+	DisplayName: Pumpking Icon
+	Tooltip: ""
+}
+
+SantankIcon: {
+	DisplayName: Santank Icon
+	Tooltip: ""
+}
+
+SolarPillarIcon: {
+	DisplayName: Solar Pillar Icon
+	Tooltip: ""
+}
+
+StardustPillarIcon: {
+	DisplayName: Stardust Pillar Icon
+	Tooltip: ""
+}
+
+VortexPillarIcon: {
+	DisplayName: Vortex Pillar Icon
+	Tooltip: ""
+}
+
+OffenseShield: {
+	Tooltip: ""
+	DisplayName: Offense Shield
+}
+
+CultistCyclotron: {
+	Tooltip: ""
+	DisplayName: Cultist's Cyclotron
+}
+
+SpookyWoodBow: {
+	Tooltip: ""
+	DisplayName: Spooky Wood Bow
+}
+
+SpookyWoodSword: {
+	Tooltip: ""
+	DisplayName: Spooky Wood Sword
+}
+
+TransMask: {
+	Tooltip: ""
+	DisplayName: Trans Mask
+	SetBonus: Mods.HendecamMod.Items.TransMask.SetBonus
+}
+
+TransHelmet: {
+	Tooltip: ""
+	DisplayName: Trans Helmet
+	SetBonus: Mods.HendecamMod.Items.TransHelmet.SetBonus
+}
+
+TransHeadgear: {
+	Tooltip: ""
+	DisplayName: Trans Headgear
+	SetBonus: Mods.HendecamMod.Items.TransHeadgear.SetBonus
+}
+
+TransFedora: {
+	Tooltip: ""
+	DisplayName: Trans Fedora
+	SetBonus: Mods.HendecamMod.Items.TransFedora.SetBonus
+}
+
+FlatEartherBanner: {
+	DisplayName: Flat Earther Banner
+	Tooltip: ""
+}
+
+LobotomySpike: {
+	DisplayName: Lobotomy Spike
+	Tooltip: ""
+}
+
+IQTest: {
+	DisplayName: IQ Test
+	Tooltip: ""
+}
+
+TurboDartTrap: {
+	Tooltip: ""
+	DisplayName: Turbo Dart Trap
+}
+
+UnhygenicLobotomySpike: {
+	Tooltip: ""
+	DisplayName: Unhygenic Lobotomy Spike
+}
+
+HaemophilicLobotomySpike: {
+	Tooltip: ""
+	DisplayName: Haemophilic Lobotomy Spike
+}
+
+ContentEmblem: {
+	Tooltip: ""
+	DisplayName: Content Emblem
+}
+
+YelmutFaeChestplate: {
+	Tooltip: ""
+	DisplayName: Yelmut's Fae-Chestplate
+}
+
+YelmutLeggings: {
+	Tooltip: ""
+	DisplayName: Yelmut's Leggings
+}
+
+CaptainsCannon: {
+	Tooltip: ""
+	DisplayName: Captain's Cannon
+}
+
+CandyCaneCompoundBow: {
+	Tooltip: ""
+	DisplayName: Candy Cane Compound Bow
+}
+
+ImprovisedGrenadeLauncher: {
+	Tooltip: ""
+	DisplayName: Improvised Grenade Launcher
+}
+
+BladeShooter: {
+	DisplayName: Blade Shooter
+	Tooltip: ""
+}
+
+BladeMaelstrom: {
+	DisplayName: Blade Maelstrom
+	Tooltip: ""
+}
+
+SuperMaelstrom: {
+	DisplayName: Super Maelstrom
+	Tooltip: ""
+}
+
+MartianDronegun: {
+	DisplayName: Martian Dronegun
+	Tooltip: ""
+}
+
+CanofLasers: {
+	DisplayName: Can of Lasers
+	Tooltip: ""
 }

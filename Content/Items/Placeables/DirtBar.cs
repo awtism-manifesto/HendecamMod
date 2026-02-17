@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
-
-namespace HendecamMod.Content.Items.Placeables;
+﻿namespace HendecamMod.Content.Items.Placeables;
 
 public class DirtBar : ModItem
 {
@@ -17,6 +7,7 @@ public class DirtBar : ModItem
         Item.ResearchUnlockCount = 25;
         ItemID.Sets.SortingPriorityMaterials[Type] = 2;
     }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.DirtBar>());
@@ -24,6 +15,7 @@ public class DirtBar : ModItem
         Item.height = 20;
         Item.value = 1;
     }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

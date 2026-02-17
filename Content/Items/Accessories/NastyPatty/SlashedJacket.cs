@@ -1,30 +1,27 @@
-﻿
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
-//[AutoloadEquip(EquipType.Beard)]
 public class SlashedJacket : ModItem
-    {
+{
     public override void SetDefaults()
-        {
+    {
         Item.width = 16;
         Item.height = 16;
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
+    }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
+    {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, and Hellfire for all attacks"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, or Enviornmental Buffs"));
-        }
+    }
+
     public override void UpdateEquip(Player player)
-        {
+    {
         player.GetModPlayer<NastyBreath>().NastyEffect = true;
         player.GetModPlayer<NastySpeed>().NastyEffect = true;
         player.GetModPlayer<NastyHealth>().NastyEffect = true;
@@ -71,15 +68,15 @@ public class SlashedJacket : ModItem
         player.buffImmune[BuffID.StarInBottle] = true;
         player.buffImmune[BuffID.CatBast] = true;
         player.buffImmune[BuffID.MonsterBanner] = true;
-        }
+    }
+
     public override void AddRecipes()
-        {
+    {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
-        recipe.AddIngredient<BurntPan>(1);
-        recipe.AddIngredient<TornFilter>(1);
+        recipe.AddIngredient<BurntPan>();
+        recipe.AddIngredient<TornFilter>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
-        }
     }
+}

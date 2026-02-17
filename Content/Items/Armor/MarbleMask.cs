@@ -1,10 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
+﻿using System.Collections.Generic;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -13,9 +8,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class MarbleMask : ModItem
 {
+    public static readonly int AdditiveMeleeDamageBonus = 8;
+    public static readonly int MeleeAttackSpeedBonus = 8;
 
-    
-   
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -38,6 +33,7 @@ public class MarbleMask : ModItem
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
     }
+
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
@@ -49,8 +45,6 @@ public class MarbleMask : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-
-
 
         // Here we will hide all tooltips whose title end with ':RemoveMe'
         // One like that is added at the start of this method
@@ -65,13 +59,13 @@ public class MarbleMask : ModItem
         // Another method of hiding can be done if you want to hide just one line.
         // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
+
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         return body.type == ModContent.ItemType<MarbleChestplate>() && legs.type == ModContent.ItemType<MarbleGreaves>();
     }
-    public static readonly int AdditiveMeleeDamageBonus = 8;
-    public static readonly int MeleeAttackSpeedBonus = 8;
+
     public override void UpdateEquip(Player player)
     {
         // GetDamage returns a reference to the specified damage class' damage StatModifier.
@@ -86,24 +80,29 @@ public class MarbleMask : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 108f;
-        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 108f;
-       
-        
+        player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
+        player.GetDamage(DamageClass.Melee) += AdditiveMeleeDamageBonus / 100f;
     }
-    
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Marble, 55);
-        recipe.AddRecipeGroup("IronBar", 20);
+        recipe.AddIngredient(ItemID.SilverBar, 20);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Marble, 55);
+        recipe.AddIngredient(ItemID.TungstenBar, 20);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("ArcaneGoldShard", out ModItem ArcaneGoldShard))
+        {
+            recipe.AddIngredient(ArcaneGoldShard.Type, 15);
+        }
     }
+
     public override void UpdateArmorSet(Player player)
     {
-       
-      
     }
 }
