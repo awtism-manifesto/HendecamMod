@@ -4969,7 +4969,12 @@ CanofLasers: {
 	Tooltip: ""
 }
 
-EyesOfArchangelsSummon: {
-	DisplayName: Eyes Of Archangels Summon
+CrucibleOfFlameAndSteel: {
+	DisplayName: Crucible Of Steel And Flame
 	Tooltip: ""
+}
+
+SarahIdol: {
+	Tooltip: ""
+	DisplayName: Sarah's Idol
 }

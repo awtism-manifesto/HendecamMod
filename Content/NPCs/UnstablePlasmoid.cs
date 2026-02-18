@@ -42,6 +42,7 @@ public class UnstablePlasmoid : ModNPC
         NPC.noGravity = true;
         NPC.despawnEncouraged = false;
         NPC.noTileCollide = true;
+        
 
         AIType = NPCID.Flocko; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.Harpy; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.

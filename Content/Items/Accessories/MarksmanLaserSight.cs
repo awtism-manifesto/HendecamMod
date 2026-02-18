@@ -53,6 +53,8 @@ public class MarksmanLaserSight : ModItem
         player.GetDamage(DamageClass.Ranged) += AdditiveRangedDamageBonus / 100f;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         player.GetModPlayer<LaserDrawRed>().Laser = true;
+
+       
     }
     public class LaserDrawRed : ModPlayer
     {
@@ -105,7 +107,7 @@ public class MarksmanLaserSight : ModItem
             direction.Normalize();
 
             // Don't draw if too far
-            if (distance > 1272f) return;
+            if (distance > 1454f) return;
 
             // Get screen position
             Vector2 screenStart = startPos - Main.screenPosition;

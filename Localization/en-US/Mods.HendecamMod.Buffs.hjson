@@ -282,3 +282,8 @@ YelmutTag: {
 	Description: Mods.HendecamMod.Buffs.YelmutTag.Description
 	DisplayName: Yelmut Tag
 }
+
+ParagonCooldown: {
+	DisplayName: Paragon Maelstrom Cooldown
+	Description: Cannot use Paragon Maelstrom
+}

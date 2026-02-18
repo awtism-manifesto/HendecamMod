@@ -113,7 +113,7 @@ public class ImprovisedLaserSight : ModItem
             direction.Normalize();
 
             // Don't draw if too far
-            if (distance > 424f) return;
+            if (distance > 556f) return;
 
             // Get screen position
             Vector2 screenStart = startPos - Main.screenPosition;

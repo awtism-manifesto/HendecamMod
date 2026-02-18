@@ -49,8 +49,8 @@ public class YelmutFaeChestplate : ModItem
         player.maxMinions += 1;
         player.maxTurrets += 2;
 
-      
-            player.wingsLogic = Item.wingSlot;
+        player.GetModPlayer<YelmutStupidPixieWings>().YelWings = true;
+        player.wingsLogic = Item.wingSlot;
             player.wingTimeMax += 150;
             player.noFallDmg = true;
         player.jumpSpeedBoost += 0.67f;
@@ -129,7 +129,7 @@ public class YelmutFaeChestplate : ModItem
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
 
-        player.GetModPlayer<YelmutStupidPixieWings>().YelWings = true;
+      
 
         // float damageBonus = lobotometerPercent * 0.10f;
         float damageBonus = (loboPlayer.Max + player.statManaMax2) * 0.0003f;

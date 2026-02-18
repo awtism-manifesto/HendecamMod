@@ -109,7 +109,7 @@ public class TacticalLaserSight : ModItem
             direction.Normalize();
 
             // Don't draw if too far
-            if (distance > 756f) return;
+            if (distance > 924f) return;
 
             // Get screen position
             Vector2 screenStart = startPos - Main.screenPosition;
