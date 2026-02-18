@@ -42,7 +42,7 @@ Politician: {
 
 	TownNPCMood: {
 		Content: I am content with the lack of poor people in this locale.
-		NoHome: Is this what the poors go through??? Maybe I am a monster...
+		NoHome: Is this what the poors go through? Maybe I AM a monster...
 		FarFromHome: Where the fuck am I? I'll call the CIA on your ass!
 		LoveSpace: I love being away from all the POORS...
 		DislikeCrowded: I don't like how many POORS are around.
@@ -116,3 +116,7 @@ TrashSlime.DisplayName: Trash Slime
 UnstablePlasmoid.DisplayName: Unstable Plasmoid
 MorbiumWarrior.DisplayName: Morbium Warrior
 FlatEarther.DisplayName: Flat Earther
+EyesOfGabriel.DisplayName: Eyes Of Gabriel
+EyesOfMichael.DisplayName: Eyes Of Michael
+EyesOfRaphael.DisplayName: Eyes Of Raphael
+HeavenCloud.DisplayName: Heaven Cloud

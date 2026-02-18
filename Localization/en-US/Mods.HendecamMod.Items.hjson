@@ -4968,3 +4968,8 @@ CanofLasers: {
 	DisplayName: Can of Lasers
 	Tooltip: ""
 }
+
+EyesOfArchangelsSummon: {
+	DisplayName: Eyes Of Archangels Summon
+	Tooltip: ""
+}
