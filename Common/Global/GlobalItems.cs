@@ -1,3 +1,4 @@
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Global;
 using System.Collections.Generic;
 
@@ -756,7 +757,11 @@ public class FlurryBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.FlurryBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FlurryBoots;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -779,7 +784,11 @@ public class SailfishBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.SailfishBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.SailfishBoots;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -802,7 +811,11 @@ public class AmphBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.AmphibianBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.AmphibianBoots;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -827,7 +840,11 @@ public class FrogBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.FrogLeg;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FrogLeg;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -852,7 +869,11 @@ public class WaterWalkingBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.WaterWalkingBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.WaterWalkingBoots;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -871,7 +892,11 @@ public class ObsidianWaterWalkingBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.ObsidianWaterWalkingBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.ObsidianWaterWalkingBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -893,10 +918,16 @@ public class ObsidianWaterWalkingBuff : GlobalItem
 
 public class LavaWaderBuff : GlobalItem
 {
+
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.LavaWaders;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.LavaWaders;
+        }
+        else return false;
     }
+    
 
     public override void SetDefaults(Item item)
     {
@@ -924,7 +955,11 @@ public class FlameBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.FlameWakerBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FlameWakerBoots;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -944,7 +979,12 @@ public class FlowerBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.FlowerBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FlowerBoots;
+        }
+        else return false;
+      
     }
 
     public override void SetDefaults(Item item)
@@ -973,7 +1013,11 @@ public class HellfireBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.HellfireTreads;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.HellfireTreads;
+        }
+        else return false;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -994,7 +1038,11 @@ public class HermesBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.HermesBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.HermesBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1018,7 +1066,11 @@ public class SpectreBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.SpectreBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.SpectreBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1042,7 +1094,11 @@ public class IceBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.IceSkates;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.IceSkates;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1065,7 +1121,11 @@ public class DuneBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.SandBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.SandBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1083,7 +1143,11 @@ public class LightningBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.LightningBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.LightningBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1107,7 +1171,11 @@ public class FrostBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.FrostsparkBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FrostsparkBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1132,7 +1200,11 @@ public class TerraBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.TerrasparkBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.TerrasparkBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1172,7 +1244,11 @@ public class RocketBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.RocketBoots;
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.RocketBoots;
+        }
+        else return false;
     }
 
     public override void SetDefaults(Item item)
@@ -1193,6 +1269,33 @@ public class RocketBuff : GlobalItem
                 player.DoBootsEffect(player.DoBootsEffect_PlaceFlamesOnTile);
             }
         }
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class FairyBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            return item.type == ItemID.FairyBoots;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.rare = ItemRarityID.Green;
+    }
+
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        player.moveSpeed += 1f;
+        player.accRunSpeed = 12f;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -1332,28 +1435,5 @@ public class Shellbotomy4 : GlobalItem
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
-    }
-}
-public class FairyBuff : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.FairyBoots;
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.rare = ItemRarityID.Green;
-    }
-
-    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
-    {
-        player.moveSpeed += 1f;
-        player.accRunSpeed = 12f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
     }
 }

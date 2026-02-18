@@ -70,7 +70,7 @@ public class HallowedFedora : ModItem
        
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 100f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.MaxBonus += 100f;
 
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();

@@ -20,11 +20,11 @@ public class SarahIdol : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        
         var line = new TooltipLine(Mod, "Face", "Permanently makes the player upside down");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Dedicated to my girlfriend, who i love very much despite the fact that she's upside down'")
+        line = new TooltipLine(Mod, "Face", "'Dedicated to my girlfriend, who i love very much despite the fact that she's upside down'- Autism Manifesto")
         {
             OverrideColor = new Color(255,255,255)
         };
@@ -32,7 +32,21 @@ public class SarahIdol : ModItem
 
        
     }
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
 
+
+        recipe.AddIngredient(ItemID.Silk, 10);
+        recipe.AddIngredient(ItemID.Amethyst, 5);
+     
+        recipe.AddIngredient(ItemID.SoulofLight, 5);
+        recipe.AddIngredient(ItemID.SliceOfCake);
+
+        recipe.AddTile(TileID.Loom);
+        recipe.Register();
+    }
+    
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.GetModPlayer<Australian>().UpsideDown = true;

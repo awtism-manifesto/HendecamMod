@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -32,10 +33,10 @@ public class SuperCeramicFedora : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "13% increased stupid damage");
+        var line = new TooltipLine(Mod, "Face", "9% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "9% increased stupid critical strike")
+        line = new TooltipLine(Mod, "Face", "+45 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -52,6 +53,9 @@ public class SuperCeramicFedora : ModItem
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 10f;
 
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 45f;
     }
 
     public override void AddRecipes()

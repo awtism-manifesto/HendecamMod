@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -40,7 +44,7 @@ public class PlasticPants : ModItem
         var line = new TooltipLine(Mod, "Face", "3% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "6% increased movement speed")
+        line = new TooltipLine(Mod, "Face", "+10 max Lobotometer and +10% Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -54,8 +58,14 @@ public class PlasticPants : ModItem
     {
        
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
-        player.moveSpeed += MoveSpeedBonus / 100f; // Increase the movement speed of the player
+      
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 10f;
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.1f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -75,7 +85,35 @@ public class PlasticPants : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
-        player.setBonus = "Increases stupid class armor penetration by 5";
+        player.GetModPlayer<PlasticApply>().Plasticy = true;
+
+        player.setBonus = "Stupid-class weapons apply one stack of Microplastic Poisoning with every hit";
     }
+}
+public class PlasticApply : ModPlayer
+{
+    public bool Plasticy;
+
+    public override void ResetEffects()
+    {
+        Plasticy = false;
+    }
+
+    public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (Plasticy && item.DamageType.CountsAsClass<StupidDamage>())
+        {
+            target.ApplyMicroplasticPoison(durationInSeconds: 3, stacks: 1);
+        }
+    }
+
+    public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (Plasticy && proj.DamageType.CountsAsClass<StupidDamage>())
+        {
+            target.ApplyMicroplasticPoison(durationInSeconds: 3, stacks: 1);
+        }
+    }
+
+
 }

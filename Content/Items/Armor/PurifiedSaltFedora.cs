@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -9,8 +10,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PurifiedSaltFedora : ModItem
 {
-    public static readonly int StupidCritBonus = 16;
-    public static readonly int StupidArmorPenetration = 12;
+    public static readonly int StupidCritBonus = 19;
+   
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -37,10 +38,10 @@ public class PurifiedSaltFedora : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "16% increased stupid critical strike and +12 stupid armor penetration");
+        var line = new TooltipLine(Mod, "Face", "19% increased stupid critical strike chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max life")
+        line = new TooltipLine(Mod, "Face", "+25% Lobotometer decay rate and +2.5% max life")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -59,10 +60,13 @@ public class PurifiedSaltFedora : ModItem
     {
         
 
-        player.statLifeMax2 += 25;
+       
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.025f);
 
-        player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.25f;
+
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

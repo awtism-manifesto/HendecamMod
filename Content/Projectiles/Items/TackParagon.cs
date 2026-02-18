@@ -58,8 +58,8 @@ public class TackParagon : ModProjectile
         Player player = Main.player[Projectile.owner];
         CrucibleOfFlameAndSteel instance = new CrucibleOfFlameAndSteel();
 
-       
-      
+        Lighting.AddLight(Projectile.Center, 2.25f, 1.65f, 0.65f);
+
 
         const int ShootFrequency = 1; // How long the sentry waits between shots.
         const int TargetingRange = 90 * 16; // The sentry's targeting range, 50 tiles.
@@ -145,7 +145,7 @@ public class TackParagon : ModProjectile
                         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                         Vector2 Peanits = Projectile.Center;
                         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                            ModContent.ProjectileType<ParagonMeteor>(), (int)(Projectile.damage * 33.333f), Projectile.knockBack, Projectile.owner);
+                            ModContent.ProjectileType<ParagonMeteor>(), (int)(Projectile.damage * 30f), Projectile.knockBack, Projectile.owner);
 
                         tickCounter = 0;
                         nextSpawnTick = 240;

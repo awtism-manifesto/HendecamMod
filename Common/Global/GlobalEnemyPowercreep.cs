@@ -60,7 +60,7 @@ namespace HendecamMod.Common.Global
         public override bool InstancePerEntity => true;
         public override bool PreAI(NPC npc)
         {
-            if (FirstFrame)
+            if (ModContent.GetInstance<HendecamConfig>().ProgressionBasedEnemyPowercreep == true && FirstFrame)
             {
                 FirstFrame = false;
                 float lifeFraction = npc.GetLifePercent();
@@ -100,7 +100,7 @@ namespace HendecamMod.Common.Global
 
                     }
                 }
-                if (Main.expertMode)
+                if (Main.expertMode && !Main.masterMode)
                 {
                     if (NPC.downedBoss2 && !Main.hardMode && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
                     {
@@ -136,7 +136,7 @@ namespace HendecamMod.Common.Global
 
                     }
                 }
-                if (Main.masterMode) 
+                if (Main.masterMode && !Main.getGoodWorld) 
                 {
                     if (NPC.downedBoss2 && !Main.hardMode && !npc.townNPC && !npc.CountsAsACritter && npc.life > 10)
                     {

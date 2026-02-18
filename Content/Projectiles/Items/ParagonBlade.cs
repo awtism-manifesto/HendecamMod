@@ -41,7 +41,7 @@ public class ParagonBlade : ModProjectile
 
     public override void AI()
     {
-       
+        Lighting.AddLight(Projectile.Center, 1.25f, 0.65f, 0.15f);
 
         Projectile.rotation += 0.25f;
     }

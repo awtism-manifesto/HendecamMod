@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -142,6 +143,13 @@ public class ParagonMeteor : ModProjectile
         target.AddBuff(BuffID.OnFire3, 960);
         target.AddBuff(BuffID.Frostburn, 960);
         target.AddBuff(BuffID.Frostburn2, 960);
+
+        SoundEngine.PlaySound(SoundID.Item14);
+        SoundEngine.PlaySound(SoundID.DD2_BetsyFlameBreath);
+        Vector2 Peanits = Projectile.Center;
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+            new Vector2(0, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ModContent.ProjectileType<ParagonMeteorBoom>(), (int)(Projectile.damage * 0.33f), Projectile.knockBack, Projectile.owner);
 
         for (int i = 0; i < 16; i++) // Creates a splash of dust around the position the projectile dies.
         {

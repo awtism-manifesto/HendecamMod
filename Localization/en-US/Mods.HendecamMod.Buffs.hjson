@@ -287,3 +287,8 @@ ParagonCooldown: {
 	DisplayName: Paragon Maelstrom Cooldown
 	Description: Cannot use Paragon Maelstrom
 }
+
+MicroplasticPoison: {
+	DisplayName: Microplastic Poison
+	Description: Mods.HendecamMod.Buffs.MicroplasticPoison.Description
+}

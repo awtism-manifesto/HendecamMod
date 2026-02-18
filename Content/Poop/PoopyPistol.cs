@@ -20,15 +20,15 @@ public class PoopyPistol : ModItem
         Item.value = 20;
 
         // Use Properties
-        Item.useTime = 21; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 21; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 22; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 22; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.UseSound = SoundID.Item40; // The sound that this item plays when used.
 
         // Weapon Properties
         Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-        Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 14; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 

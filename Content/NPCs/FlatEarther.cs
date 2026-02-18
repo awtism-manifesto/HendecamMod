@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Enemies;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -49,7 +51,14 @@ public class FlatEarther : ModNPC
         Banner = Type;
         BannerItem = ModContent.ItemType<FlatEartherBanner>();
     }
+    public override void OnKill()
+    {
+        var source = NPC.GetSource_FromAI();
 
+        
+
+        Projectile.NewProjectile(source, NPC.Center, Vector2.Zero * 0.01f, ModContent.ProjectileType<FlatExplosion>(), 79, 6f, Main.myPlayer);
+    }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 1, 4));

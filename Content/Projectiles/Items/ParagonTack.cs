@@ -39,6 +39,7 @@ public class ParagonTack : ModProjectile
     public override void AI()
     {
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+        Lighting.AddLight(Projectile.Center, 1f, 0.5f, 0.1f);
     }
 
    

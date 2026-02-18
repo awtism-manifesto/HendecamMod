@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -9,20 +10,12 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class PlasticHeadgear : ModItem
 {
-    public static readonly int AdditiveStupidDamageBonus = 2;
-    public static readonly int StupidArmorPenetration = 5;
-    public static readonly int StupidCritBonus = 7;
-    public static LocalizedText SetBonusText { get; private set; }
+   
+    
+  
+   
 
-    public override void SetStaticDefaults()
-    {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveStupidDamageBonus);
-    }
+  
 
     public override void SetDefaults()
     {
@@ -36,10 +29,10 @@ public class PlasticHeadgear : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "2% increased stupid damage");
+        var line = new TooltipLine(Mod, "Face", "6% increased stupid crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "7% increased stupid crit chance")
+        line = new TooltipLine(Mod, "Face", "+30 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -57,9 +50,12 @@ public class PlasticHeadgear : ModItem
     public override void UpdateEquip(Player player)
     {
         
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+       
 
-        player.GetCritChance<StupidDamage>() += StupidCritBonus;
+        player.GetCritChance<StupidDamage>() += 6;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

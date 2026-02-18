@@ -17,17 +17,21 @@ public class CanofLasers : ModItem
         Item.height = 30;
         Item.accessory = true;
         Item.rare = ItemRarityID.Orange;
-        Item.value = 33000;
+        Item.value = 35500;
         Item.defense = 1;
     }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddRecipeGroup("IronBar", 5);
+        recipe.AddIngredient(ItemID.CanOfWorms);
         recipe.AddIngredient<LaserCharge>(1000);
        
         recipe.AddTile(TileID.Anvils);
-
+        recipe.AddOnCraftCallback(GiveWorms);
+        void GiveWorms(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
+        {
+            Main.LocalPlayer.GetItem(Main.myPlayer, new Item(ItemID.Worm, Main.rand.Next(5, 12)), default(GetItemSettings));
+        }
         recipe.Register();
     }
 
