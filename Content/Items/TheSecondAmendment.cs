@@ -7,6 +7,7 @@ using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
 namespace HendecamMod.Content.Items;
 
@@ -294,7 +295,7 @@ public class TheSecondAmendment : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions. ");
+        var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions and has a built-in laser sight");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "We once fought for the false promise of freedom. Now we must fight for true freedom. 161.")
@@ -302,6 +303,11 @@ public class TheSecondAmendment : ModItem
             OverrideColor = new Color(255, 45, 95)
         };
         tooltips.Add(line);
+    }
+
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<LaserDrawRed>().Laser = true;
     }
 
     public override void AddRecipes()

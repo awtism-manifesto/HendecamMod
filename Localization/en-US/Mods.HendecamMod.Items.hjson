@@ -4968,3 +4968,13 @@ CanofLasers: {
 	DisplayName: Can of Lasers
 	Tooltip: ""
 }
+
+CrucibleOfFlameAndSteel: {
+	DisplayName: Crucible Of Steel And Flame
+	Tooltip: ""
+}
+
+SarahIdol: {
+	Tooltip: ""
+	DisplayName: Sarah's Idol
+}

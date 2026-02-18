@@ -1,8 +1,10 @@
-﻿using Terraria.Audio;
+﻿using HendecamMod.Content.Items.Weapons;
+using Terraria.Audio;
+using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
-public class BladeMaelstromProj : ModProjectile
+public class TackParagon : ModProjectile
 {
     public ref float ShootTimer => ref Projectile.ai[0];
     public ref float RotationAngle => ref Projectile.ai[1]; // Store the current rotation angle
@@ -18,13 +20,13 @@ public class BladeMaelstromProj : ModProjectile
     public override void SetStaticDefaults()
     {
         Main.projFrames[Type] = 1;
-        ProjectileID.Sets.MinionTargettingFeature[Type] = true;
+      
     }
 
     public override void SetDefaults()
     {
-        Projectile.width = 64;
-        Projectile.height = 64;
+        Projectile.width = 110;
+        Projectile.height = 110;
         Projectile.DamageType = DamageClass.Summon;
         Projectile.sentry = true;
         Projectile.timeLeft = Projectile.SentryLifeTime;
@@ -49,23 +51,34 @@ public class BladeMaelstromProj : ModProjectile
     {
         return Color.White;
     }
-
+    private int nextSpawnTick;
+    private int tickCounter;
     public override void AI()
     {
-        const int ShootFrequency = 2; // How long the sentry waits between shots.
-        const int TargetingRange = 60 * 16; // The sentry's targeting range, 50 tiles.
-        const float FireVelocity = 16.1f; // The velocity the sentry's shot projectile will travel.
-
-
         Player player = Main.player[Projectile.owner];
-        player.maxTurrets += -1;
+        CrucibleOfFlameAndSteel instance = new CrucibleOfFlameAndSteel();
+
+       
+      
+
+        const int ShootFrequency = 1; // How long the sentry waits between shots.
+        const int TargetingRange = 90 * 16; // The sentry's targeting range, 50 tiles.
+      
+
+       
+        var modPlayer = player.GetModPlayer<TackCD>();
+
+        float FireVelocity = modPlayer.TackStormActive ? 17.5f : 8.25f;
+
+        player.maxTurrets += -9;
         player.UpdateMaxTurrets();
         // Initialize rotation angle if this is the first time running
         if (JustSpawned)
         {
             JustSpawned = false;
-            ShootTimer = ShootFrequency * 1.75f; // Delay the first shot slightly
+            ShootTimer = ShootFrequency * 30f; // Delay the first shot slightly
             RotationAngle = 0f; // Start at 0 degrees
+           
 
             SoundEngine.PlaySound(SoundID.Item99, Projectile.position);
 
@@ -111,26 +124,54 @@ public class BladeMaelstromProj : ModProjectile
 
                 if (Main.myPlayer == Projectile.owner)
                 {
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < 15; i++)
                     {
-                        Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke);
+                        Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);
                         dust.noGravity = true;
                         dust.velocity *= 11.5f;
                         dust.scale *= 1.45f;
                     }
 
-                   
+
+                    if (nextSpawnTick == 0)
+                    {
+                        nextSpawnTick = 120;
+                    }
+
+                    tickCounter++;
+
+                    if (tickCounter >= nextSpawnTick)
+                    {
+                        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
+                        Vector2 Peanits = Projectile.Center;
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+                            ModContent.ProjectileType<ParagonMeteor>(), (int)(Projectile.damage * 33.333f), Projectile.knockBack, Projectile.owner);
+
+                        tickCounter = 0;
+                        nextSpawnTick = 240;
+                        Projectile.netUpdate = true;
+                    }
+
+                    // Calculate rotation in radians - increase by 6 degrees each shot
                     float rotationInRadians = MathHelper.ToRadians(RotationAngle);
 
-                   
+                    float backRotationInRadians = MathHelper.ToRadians(0f - RotationAngle);
+
+                    // Create direction vectors at the current rotation and opposite direction
                     Vector2 baseDirection = new Vector2(1, 0).RotatedBy(rotationInRadians);
-                    Vector2 oppositeDirection = -baseDirection; 
-                    
-                   
+                    Vector2 oppositeDirection = -baseDirection; // 180 degrees opposite
+
+                    Vector2 base2Direction = new Vector2(1, 0).RotatedBy(backRotationInRadians);
+                    Vector2 opposite2Direction = -base2Direction; // 180 degrees opposite
+
+                    // Scale by FireVelocity to get final velocity
                     Vector2 shootVelocity = baseDirection * FireVelocity;
                     Vector2 shoot2Velocity = oppositeDirection * FireVelocity;
 
-                    int type = ModContent.ProjectileType<Blade>();
+                    Vector2 shoot3Velocity = base2Direction * FireVelocity;
+                    Vector2 shoot4Velocity = opposite2Direction * FireVelocity;
+
+                    int type = ModContent.ProjectileType<ParagonBlade>();
 
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(),
                         new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),
@@ -140,8 +181,16 @@ public class BladeMaelstromProj : ModProjectile
                         new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),
                         shoot2Velocity, type, Projectile.damage, 3, Projectile.owner);
 
-                    
-                    RotationAngle += 15f;
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(),
+                       new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),
+                       shoot3Velocity, type, Projectile.damage, 3, Projectile.owner);
+
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(),
+                        new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),
+                        shoot4Velocity, type, Projectile.damage, 3, Projectile.owner);
+
+                    // Increase rotation angle by 6 degrees for next shot
+                    RotationAngle += 10f;
 
                     
                     RotationAngle %= 360f;
