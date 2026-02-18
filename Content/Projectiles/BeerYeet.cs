@@ -12,8 +12,8 @@ public class BeerYeet : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 12; // The width of projectile hitbox
-        Projectile.height = 12; // The height of projectile hitbox
+        Projectile.width = 17; // The width of projectile hitbox
+        Projectile.height = 17; // The height of projectile hitbox
 
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -62,11 +62,11 @@ public class BeerYeet : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.DynastyWood, 0f, 0f, 100, default, 1.45f);
+                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.DynastyWood, 0f, 0f, 100, default, 1.45f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 1.25f;
-                Dust fire3Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.MeteorHead, 0f, 0f, 100, default, 1.2f);
+                Dust fire3Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.MeteorHead, 0f, 0f, 100, default, 1.2f);
                 fire3Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
                 fire3Dust.noGravity = true;
                 fire3Dust.velocity *= 1.2f;

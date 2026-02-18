@@ -1,1 +1,22 @@
-Mods.HendecamMod.InfoDisplays.IQDisplay.DisplayName: I Q Display
+Mods: {
+	HendecamMod: {
+		InfoDisplays.IQDisplay.DisplayName: I Q Display
+
+		Configs: {
+			HendecamConfig: {
+				ProgressionBasedEnemyPowercreep: {
+					Tooltip: Scales all enemy HP higher and higher based on world difficulty and progression stage
+					Label: Progression Based Enemy Powercreep
+				}
+
+				Headers.Reworks: Reworks
+				DisplayName: Hendecam Mod Config
+
+				BootsTreeRework: {
+					Label: Boots Tree Rework
+					Tooltip: Changes the Terraspark Boots crafting tree and buffs many of it's components
+				}
+			}
+		}
+	}
+}

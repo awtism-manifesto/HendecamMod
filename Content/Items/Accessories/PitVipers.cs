@@ -62,7 +62,7 @@ public class PitVipers : ModItem
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 175f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.MaxBonus += 175f;
 
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();

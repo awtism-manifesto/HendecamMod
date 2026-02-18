@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -10,20 +11,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class SuperCeramicChestplate : ModItem
 {
-    public static readonly int AdditiveStupidDamageBonus = 10;
+    public static readonly int AdditiveStupidDamageBonus = 5;
     public static readonly int StupidArmorPenetration = 5;
-    public static LocalizedText SetBonusText { get; private set; }
-
-    public override void SetStaticDefaults()
-    {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
-
+   
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -36,10 +26,10 @@ public class SuperCeramicChestplate : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "10% increased stupid damage");
+        var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and +5 stupid armor penetration");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+5 stupid armor penetration")
+        line = new TooltipLine(Mod, "Face", "+65 max Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -59,6 +49,9 @@ public class SuperCeramicChestplate : ModItem
        
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.MaxBonus += 65f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

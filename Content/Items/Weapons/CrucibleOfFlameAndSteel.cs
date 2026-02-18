@@ -30,8 +30,8 @@ public class CrucibleOfFlameAndSteel : ModItem
         Item.noUseGraphic = true;
         Item.noMelee = true;
         Item.knockBack = 6.5f;
-        Item.ArmorPenetration = 5;
-        Item.value = Item.buyPrice(gold: 115);
+        Item.ArmorPenetration = 25;
+        Item.value = 47500000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ModContent.ProjectileType<TackParagon>();
@@ -44,7 +44,7 @@ public class CrucibleOfFlameAndSteel : ModItem
         tooltips.Add(line);
 
 
-        line = new TooltipLine(Mod, "Face", "Right-click with the item in hand to activate Paragon Maelstrom")
+        line = new TooltipLine(Mod, "Face", "Right-click with this item in hand to activate Paragon Maelstrom")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -66,7 +66,7 @@ public class CrucibleOfFlameAndSteel : ModItem
         recipe.AddIngredient<InfernoRing>();
         recipe.AddIngredient<SuperMaelstrom>();
         recipe.AddIngredient<TheTackZone>();
-
+        recipe.AddIngredient<FissionDrive>(9);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }

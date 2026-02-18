@@ -13,21 +13,10 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class PurifiedSaltChestplate : ModItem
 {
-    public static readonly int StupidAttackSpeedBonus = 10;
+    public static readonly int StupidAttackSpeedBonus = 9;
 
-    public static readonly int AdditiveStupidDamageBonus = 10;
-    public static LocalizedText SetBonusText { get; private set; }
-
-    public override void SetStaticDefaults()
-    {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
-
+    public static readonly int AdditiveStupidDamageBonus = 9;
+   
     public override void SetDefaults()
     {
         Item.width = 32; // Width of the item
@@ -40,10 +29,10 @@ public class PurifiedSaltChestplate : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "10% increased stupid damage and attack speed");
+        var line = new TooltipLine(Mod, "Face", "9% increased stupid damage and attack speed");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max life")
+        line = new TooltipLine(Mod, "Face", "+50% Lobotometer decay rate and +5% max life")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -64,7 +53,10 @@ public class PurifiedSaltChestplate : ModItem
 
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
-        player.statLifeMax2 += 25;
+        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.05f);
+
+        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
+        loboDecay.DecayRateMultiplier *= 1.5f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

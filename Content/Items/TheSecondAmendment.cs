@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -19,7 +20,7 @@ public class TheSecondAmendment : ModItem
         Item.height = 60;
         Item.scale = 1f;
         Item.rare = ModContent.RarityType<HotPink>();
-        Item.value = 250000000;
+        Item.value = 330000000;
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -45,7 +46,7 @@ public class TheSecondAmendment : ModItem
         }
         else
         {
-            damage = (int)(damage * 0.45f);
+            damage = (int)(damage * 0.5f);
         }
 
         SoundEngine.PlaySound(SoundID.Item68, player.position);
@@ -340,6 +341,7 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<GenderDefender>();
         recipe.AddIngredient(ItemID.SnowballCannon);
         recipe.AddIngredient<CopperShortmachinegun>();
+        recipe.AddIngredient<MarksmanLaserSight>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
         if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse) && Arse.TryFind("SeconndAmendment", out ModItem SeconndAmendment))

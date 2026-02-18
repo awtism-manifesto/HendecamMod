@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class Edward40Hands : ModItem
 {
     public override void SetDefaults()
@@ -20,8 +16,8 @@ public class Edward40Hands : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 10;
-        Item.useAnimation = 20;
+        Item.useTime = 9;
+        Item.useAnimation = 18;
         Item.reuseDelay = 12;
         Item.autoReuse = true;
 

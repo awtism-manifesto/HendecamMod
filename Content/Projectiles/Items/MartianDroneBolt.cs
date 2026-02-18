@@ -30,6 +30,7 @@ public class MartianDroneBolt : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+        Projectile.minion = true;
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {

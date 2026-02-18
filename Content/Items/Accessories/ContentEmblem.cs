@@ -252,7 +252,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("StarsAbove", out Mod Stars))
         {
-            line = new TooltipLine(Mod, "Face", "The Stars Above- Increases max life by 2/3 of max mana")
+            line = new TooltipLine(Mod, "Face", "The Stars Above- Increases max life by max mana")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -652,7 +652,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("VitalityMod", out Mod Vital))
         {
-            player.statLifeMax2 += (int)(player.statLifeMax2 * 1.15f);
+            player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
         }
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica2))
         {
@@ -723,7 +723,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("StarsAbove", out Mod Stars))
         {
-            player.GetModPlayer<Starlife>().Starlifed = true;
+            player.statLifeMax2 = (int)(player.statLifeMax2 + player.statManaMax2);
         }
         if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
         {
@@ -1032,29 +1032,7 @@ public class EnigmaBurn : ModPlayer
         }
     }
 }
-public class Starlife : ModPlayer
-{
-    public bool Starlifed;
 
-    public override void ResetEffects()
-    {
-        Starlifed = false;
-    }
-
-    public override void ModifyMaxStats(out StatModifier health, out StatModifier mana)
-    {
-        health = StatModifier.Default;
-        mana = StatModifier.Default;
-
-        if (Starlifed)
-        {
-          
-
-            float healthBonus = Player.statManaMax2 / 10;
-            health.Flat += (int)healthBonus;
-        }
-    }
-}
 public class EbonflyLigma : ModPlayer
 {
     public bool EbonLigma;

@@ -29,26 +29,42 @@ public class RiverRecipes : ModSystem
         fraudcopp.AddTile(TileID.Autohammer);
         fraudcopp.Register();
 
-        Recipe flamespectre = Recipe.Create(ItemID.SpectreBoots);
-        flamespectre.AddIngredient(ItemID.FlameWakerBoots);
-        flamespectre.AddIngredient(ItemID.RocketBoots);
-        flamespectre.AddTile(TileID.TinkerersWorkbench);
-        flamespectre.Register();
-        Recipe flowerspectre = Recipe.Create(ItemID.SpectreBoots);
-        flowerspectre.AddIngredient(ItemID.FlowerBoots);
-        flowerspectre.AddIngredient(ItemID.RocketBoots);
-        flowerspectre.AddTile(TileID.TinkerersWorkbench);
-        flowerspectre.Register();
-        Recipe althotskull = Recipe.Create(ItemID.MoltenSkullRose);
-        althotskull.AddIngredient(ItemID.ObsidianSkull);
-        althotskull.AddIngredient<MoltenRose>();
-        althotskull.AddTile(TileID.TinkerersWorkbench);
-        althotskull.Register();
-        Recipe althotboots = Recipe.Create(ItemID.LavaWaders);
-        althotboots.AddIngredient(ItemID.ObsidianWaterWalkingBoots);
-        althotboots.AddIngredient<MoltenRose>();
-        althotboots.AddTile(TileID.TinkerersWorkbench);
-        althotboots.Register();
+        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        {
+            Recipe flamespectre = Recipe.Create(ItemID.SpectreBoots);
+            flamespectre.AddIngredient(ItemID.FlameWakerBoots);
+            flamespectre.AddIngredient(ItemID.RocketBoots);
+            flamespectre.AddTile(TileID.TinkerersWorkbench);
+            flamespectre.Register();
+            Recipe flowerspectre = Recipe.Create(ItemID.SpectreBoots);
+            flowerspectre.AddIngredient(ItemID.FlowerBoots);
+            flowerspectre.AddIngredient(ItemID.RocketBoots);
+            flowerspectre.AddTile(TileID.TinkerersWorkbench);
+            flowerspectre.Register();
+            Recipe althotskull = Recipe.Create(ItemID.MoltenSkullRose);
+            althotskull.AddIngredient(ItemID.ObsidianSkull);
+            althotskull.AddIngredient<MoltenRose>();
+            althotskull.AddTile(TileID.TinkerersWorkbench);
+            althotskull.Register();
+            Recipe althotboots = Recipe.Create(ItemID.LavaWaders);
+            althotboots.AddIngredient(ItemID.ObsidianWaterWalkingBoots);
+            althotboots.AddIngredient<MoltenRose>();
+            althotboots.AddTile(TileID.TinkerersWorkbench);
+            althotboots.Register();
+
+
+            Recipe spectrerecipe = Recipe.Create(ItemID.SpectreBoots);
+            spectrerecipe.AddIngredient(ItemID.SandBoots);
+            spectrerecipe.AddIngredient(ItemID.HermesBoots);
+            spectrerecipe.AddIngredient(ItemID.FlurryBoots);
+            spectrerecipe.AddTile(TileID.TinkerersWorkbench);
+            spectrerecipe.Register();
+
+
+
+
+
+        }
 
         Recipe unshimmerstone = Recipe.Create(ItemID.CopperBar);
         unshimmerstone.AddIngredient<StoneBar>(10);
@@ -136,12 +152,7 @@ public class RiverRecipes : ModSystem
         royalgel.AddTile(TileID.AlchemyTable);
         royalgel.Register();
 
-        Recipe spectrerecipe = Recipe.Create(ItemID.SpectreBoots);
-        spectrerecipe.AddIngredient(ItemID.SandBoots);
-        spectrerecipe.AddIngredient(ItemID.HermesBoots);
-        spectrerecipe.AddIngredient(ItemID.FlurryBoots);
-        spectrerecipe.AddTile(TileID.TinkerersWorkbench);
-        spectrerecipe.Register();
+       
     }
 
     public override void PostAddRecipes()
@@ -159,18 +170,35 @@ public class RiverRecipes : ModSystem
                 recipe.DisableRecipe();
             }
 
-            if (recipe.HasIngredient(ItemID.RocketBoots) && recipe.HasResult(ItemID.SpectreBoots))
+            if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
             {
-                recipe.DisableRecipe();
-            }
+                if (recipe.HasIngredient(ItemID.RocketBoots) && recipe.HasResult(ItemID.SpectreBoots))
+                {
+                    recipe.DisableRecipe();
+                }
 
-            if (recipe.HasResult(ItemID.TerrasparkBoots))
-            {
-                recipe.RemoveIngredient(ItemID.LavaWaders);
-                recipe.AddIngredient(ItemID.HellfireTreads);
-                recipe.AddIngredient(ItemID.AmphibianBoots);
-                recipe.AddIngredient(ItemID.FairyBoots);
-                recipe.AddIngredient(ItemID.LuckyHorseshoe);
+                if (recipe.HasResult(ItemID.TerrasparkBoots))
+                {
+                    recipe.RemoveIngredient(ItemID.LavaWaders);
+                    recipe.AddIngredient(ItemID.HellfireTreads);
+                    recipe.AddIngredient(ItemID.AmphibianBoots);
+                    recipe.AddIngredient(ItemID.FairyBoots);
+                    recipe.AddIngredient(ItemID.LuckyHorseshoe);
+                }
+
+               
+
+                if (recipe.HasResult(ItemID.HellfireTreads))
+                {
+                    recipe.RemoveIngredient(ItemID.SpectreBoots);
+                    recipe.AddIngredient(ItemID.LavaWaders);
+                }
+
+                if (recipe.HasResult(ItemID.FairyBoots))
+                {
+                    recipe.RemoveIngredient(ItemID.SpectreBoots);
+                    recipe.AddIngredient(ItemID.RocketBoots);
+                }
             }
 
             if (recipe.HasResult(ItemID.PDA))
@@ -179,20 +207,6 @@ public class RiverRecipes : ModSystem
 
                 recipe.AddIngredient(ModContent.ItemType<IQTest>());
             }
-
-            if (recipe.HasResult(ItemID.HellfireTreads))
-            {
-                recipe.RemoveIngredient(ItemID.SpectreBoots);
-                recipe.AddIngredient(ItemID.LavaWaders);
-            }
-
-            if (recipe.HasResult(ItemID.FairyBoots))
-            {
-                recipe.RemoveIngredient(ItemID.SpectreBoots);
-                recipe.AddIngredient(ItemID.RocketBoots);
-            }
-
-
             if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("Ultimatum", out ModItem Ultimatum))
             {
                 if (recipe.HasResult(Ultimatum.Type))

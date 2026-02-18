@@ -40,8 +40,8 @@ public class MartianDrone : ModProjectile
         Projectile.localNPCHitCooldown = -1;
         Projectile.alpha = 255;
         Projectile.extraUpdates = 0;
-        Projectile.sentry = true; // Sets the weapon as a sentry for sentry accessories to properly work.
-        
+        Projectile.minion = true;
+
         Projectile.ignoreWater = true;
         Projectile.netImportant = true; // Sentries need this so they are synced to newly joining players
     }
