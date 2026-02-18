@@ -1,5 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.NPCs.Enemies;
+using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.NPCs.Bosses;
 
@@ -51,7 +54,23 @@ public class EyesOfMichael : ModNPC
         Main.npcFrameCount[Type] = 6;
         AnimationType = NPCID.EyeofCthulhu;
         }
+    public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+            {
 
+            }
+        else
+            {
+            LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+            // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
+            npcLoot.Add(ItemDropRule.ByCondition(new MichaelDrop(), ModContent.ItemType<AngelShard>(), chanceDenominator: 1, chanceNumerator: 1, minimumDropped: 67 / 10, maximumDropped: 69));
+            npcLoot.Add(notExpertRule);
+            // npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AlpineTreasureBag>()));
+            // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
+            // npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
+            }
+        }
     public override void OnKill()
         {
         NPC.SetEventFlagCleared(ref BossDownedSystem.downedPromethiumPlasmoid, -1);

@@ -77,7 +77,15 @@ public class DustKill : ModSystem
                 {
                 d.active = false;
                 }
-            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                {
+                d.active = false;
+                }
+            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                {
+                d.active = false;
+                }
+            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
                 {
                 d.active = false;
                 }
@@ -93,15 +101,39 @@ public class GoreKill : ModSystem
             Gore g = Main.gore[i];
             if (g.active)
                 {
-                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                    {
+                    g.active = false;
+                    }
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
                     {
                     g.active = false;
                     }

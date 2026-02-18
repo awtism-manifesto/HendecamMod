@@ -4978,3 +4978,13 @@ SarahIdol: {
 	Tooltip: ""
 	DisplayName: Sarah's Idol
 }
+
+EyesOfArchangelsSummon: {
+	DisplayName: Eyes Of Archangels Summon
+	Tooltip: ""
+}
+
+AngelShard: {
+	DisplayName: Angel Shard
+	Tooltip: ""
+}

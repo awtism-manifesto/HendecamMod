@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HendecamMod.Content.NPCs.Bosses;
+using HendecamMod.Content.Tiles.Furniture;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Items.Consumables;
@@ -78,13 +79,9 @@ public class EyesOfArchangelsSummon : ModItem
     public override void AddRecipes()
         {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.HallowedBar, 5);
-        recipe.AddIngredient<CandyHeart>(15);
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddIngredient(ItemID.LunarBar, 15);
+        recipe.AddIngredient<FissionDrive>(1);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-        if (ModLoader.TryGetMod("SOTS", out Mod SOTSMerica) && SOTSMerica.TryFind("HelicopterParts", out ModItem HelicopterParts))
-            {
-            recipe.AddIngredient(HelicopterParts.Type);
-            }
         }
     }
