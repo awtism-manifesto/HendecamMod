@@ -9,10 +9,10 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class AstatineGreaves : ModItem
 {
-    public static readonly int MoveSpeedBonus = 35;
+    public static readonly int MoveSpeedBonus = 27;
     public static readonly int AdditiveDamageBonus = 8;
     public static readonly int AdditiveThrowDamageBonus = 13;
-    public static readonly int AttackSpeedBonus = 7;
+    public static readonly int AttackSpeedBonus = 9;
     public static readonly int MaxMinionIncrease = 1;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -38,7 +38,7 @@ public class AstatineGreaves : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "35% increased movement speed and 7% increased attack speed ");
+        var line = new TooltipLine(Mod, "Face", "27% increased movement speed and 9% increased attack speed ");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slots and 8% increased damage")
@@ -55,8 +55,7 @@ public class AstatineGreaves : ModItem
             };
             tooltips.Add(line);
         }
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -67,23 +66,14 @@ public class AstatineGreaves : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
+       
         player.maxTurrets += 1;
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
         player.maxMinions += MaxMinionIncrease;
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
-        player.moveSpeed += MoveSpeedBonus / 135f;
-        player.runAcceleration *= 1.35f;
+        player.moveSpeed += MoveSpeedBonus / 100f;
+        player.runAcceleration *= 1.27f;
+        player.GetModPlayer<AstatinePantsSpeed>().AstatinePantyspeed = true;
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
@@ -104,27 +94,28 @@ public class AstatineGreaves : ModItem
     {
     }
 
-    public class AstatinePants : ModPlayer
+   
+}
+public class AstatinePantsSpeed : ModPlayer
+{
+    public bool AstatinePantyspeed;
+
+    public override void ResetEffects()
     {
-        public bool AstatinePantys;
+        AstatinePantyspeed = false;
+    }
 
-        public override void ResetEffects()
+    public override void PostUpdateRunSpeeds()
+    {
+        // We only want our additional changes to apply if ExampleStatBonusAccessory is equipped and not on a mount.
+        if (!AstatinePantyspeed)
         {
-            AstatinePantys = false;
+            return;
         }
 
-        public override void PostUpdateRunSpeeds()
-        {
-            // We only want our additional changes to apply if ExampleStatBonusAccessory is equipped and not on a mount.
-            if (Player.mount.Active || !AstatinePantys)
-            {
-                return;
-            }
-
-            Player.runAcceleration *= 1.35f; // Modifies player run acceleration
-            Player.maxRunSpeed *= 1.35f;
-            Player.accRunSpeed *= 1.35f;
-            Player.runSlowdown *= 1.35f;
-        }
+        Player.runAcceleration *= 1.27f; // Modifies player run acceleration
+        Player.maxRunSpeed *= 1.27f;
+        Player.accRunSpeed *= 1.27f;
+        Player.runSlowdown *= 1.27f;
     }
 }

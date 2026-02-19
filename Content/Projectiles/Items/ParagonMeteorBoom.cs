@@ -47,7 +47,7 @@ public class ParagonMeteorBoom : ModProjectile
         }
 
         // Scale both hitbox and visual size proportionally
-        Projectile.scale += 0.15f;
+        Projectile.scale += 0.185f;
 
         // Update the hitbox based on scale
         int newWidth = (int)(50 * Projectile.scale);
@@ -66,7 +66,7 @@ public class ParagonMeteorBoom : ModProjectile
 
         // Add a slow upward drift to the VISUAL ONLY
         // This value controls how fast the sprite drifts upward
-        float driftPerFrame = 2f; // Adjust this to control drift speed (pixels per frame)
+        float driftPerFrame = 0.25f; // Adjust this to control drift speed (pixels per frame)
         _spriteOffset.Y -= driftPerFrame;
 
         Projectile.velocity.X = 0;

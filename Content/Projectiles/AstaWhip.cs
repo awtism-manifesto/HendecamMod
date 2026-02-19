@@ -31,10 +31,11 @@ public class AstaWhip : ModProjectile
     {
         // This method quickly sets the whip's properties.
         Projectile.DefaultToWhip();
-        Projectile.WhipSettings.Segments = 30;
+        Projectile.WhipSettings.Segments = 25;
         Projectile.WhipSettings.RangeMultiplier = 1.66f;
         Projectile.width = 180;
         Projectile.height = 140;
+      
         // use these to change from the vanilla defaults
         // Projectile.WhipSettings.Segments = 20;
         // Projectile.WhipSettings.RangeMultiplier = 1f;
@@ -47,7 +48,7 @@ public class AstaWhip : ModProjectile
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
-        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-1, 1));
+        Vector2 Peanits = target.Center;
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
 

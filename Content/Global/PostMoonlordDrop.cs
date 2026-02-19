@@ -3,7 +3,7 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
 
-// Very simple drop condition: drop during daytime
+
 public class PostMoonlordDrop : IItemDropRuleCondition
 {
     private static LocalizedText Description;

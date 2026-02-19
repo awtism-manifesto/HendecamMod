@@ -40,7 +40,7 @@ public class CrucibleOfFlameAndSteel : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons The Crucible of Flame And Steel");
+        var line = new TooltipLine(Mod, "Face", "Summons The Crucible of Steel and Flame");
         tooltips.Add(line);
 
 

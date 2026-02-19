@@ -13,7 +13,7 @@ public class AstatineHelmet : ModItem
 {
     public static readonly int AdditiveDamageBonus = 19;
     public static readonly int CritBonus = 10;
-    public static readonly int StupidAttackSpeed = 11;
+   
     public static readonly int MaxManaIncrease = 110;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -63,7 +63,7 @@ public class AstatineHelmet : ModItem
     {
        
         player.statManaMax2 += MaxManaIncrease;
-        player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeed / 100f;
+       
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(DamageClass.Generic) += CritBonus;

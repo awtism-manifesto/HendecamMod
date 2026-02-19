@@ -89,6 +89,6 @@ public class FaradayBodyArmor : ModItem
         player.statLifeMax2 = (int)(player.statLifeMax2*1.1)+95;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus +=  175f;
+        loboPlayer.MaxBonus = (float)(loboPlayer.Max *1.1)+100;
     }
 }

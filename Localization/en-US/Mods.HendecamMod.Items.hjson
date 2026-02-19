@@ -4988,3 +4988,19 @@ AngelShard: {
 	DisplayName: Angel Shard
 	Tooltip: ""
 }
+
+ArchangelHelmet: {
+	Tooltip: ""
+	DisplayName: Archangel Helmet
+}
+
+ArchangelGreaves: {
+	Tooltip: ""
+	DisplayName: Archangel Greaves
+	SetBonus: Mods.HendecamMod.Items.ArchangelGreaves.SetBonus
+}
+
+ArchangelChestguard: {
+	Tooltip: ""
+	DisplayName: Archangel Chestguard
+}
