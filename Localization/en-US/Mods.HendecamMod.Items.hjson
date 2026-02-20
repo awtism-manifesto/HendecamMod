@@ -5004,3 +5004,13 @@ ArchangelChestguard: {
 	Tooltip: ""
 	DisplayName: Archangel Chestguard
 }
+
+WoodenBlocks: {
+	Tooltip: ""
+	DisplayName: Wooden Blocks
+}
+
+FakeGodhood: {
+	DisplayName: Fake Godhood
+	Tooltip: ""
+}

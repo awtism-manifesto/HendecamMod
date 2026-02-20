@@ -292,3 +292,8 @@ MicroplasticPoison: {
 	DisplayName: Microplastic Poison
 	Description: Mods.HendecamMod.Buffs.MicroplasticPoison.Description
 }
+
+Splinters: {
+	Description: Mods.HendecamMod.Buffs.Splinters.Description
+	DisplayName: Splinters
+}

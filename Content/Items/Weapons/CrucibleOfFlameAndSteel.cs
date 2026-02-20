@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
@@ -66,6 +67,7 @@ public class CrucibleOfFlameAndSteel : ModItem
         recipe.AddIngredient<InfernoRing>();
         recipe.AddIngredient<SuperMaelstrom>();
         recipe.AddIngredient<TheTackZone>();
+        recipe.AddIngredient<AngelShard>(5);
         recipe.AddIngredient<FissionDrive>(9);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();

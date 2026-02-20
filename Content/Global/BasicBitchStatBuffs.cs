@@ -243,6 +243,40 @@ public class Speccterrrr : GlobalItem
 
 
 }
+public class BasicBitchVilethornBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.Vilethorn;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 12;
+        item.mana = 8;
+
+    }
+
+
+}
+public class BasicBitchRottedForkBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.TheRottedFork;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 19;
+        item.useTime = 25;
+        item.useAnimation = 25;
+        item.shootSpeed = 5.33f;
+
+    }
+
+
+}
 
 
 
