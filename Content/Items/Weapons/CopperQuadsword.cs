@@ -30,10 +30,10 @@ public class CopperQuadsword : ModItem
         Item.crit = 4; // The percent chance for the weapon to deal a critical strike. Defaults to 4.
 
         Item.rare = ItemRarityID.White; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.buyPrice(copper: 240); // The amount of money that the item is can be bought for.
+        Item.value = Item.buyPrice(copper: 480); // The amount of money that the item is can be bought for.
 
         Item.shoot = ModContent.ProjectileType<CopperQuadswordProjectile>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
-        Item.shootSpeed = 13f; // The velocity of the shot projectile.			
+        Item.shootSpeed = 16.5f; // The velocity of the shot projectile.			
     }
     public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
@@ -82,17 +82,13 @@ public class CopperQuadsword : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe();
+        Recipe 
 
-        {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CopperShortsword, 4);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-            recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.TinShortsword, 4);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
+           
+        
     }
 }

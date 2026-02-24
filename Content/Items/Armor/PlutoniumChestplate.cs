@@ -90,7 +90,7 @@ public class PlutoniumChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "All projectile weapons have a 1-in-5 chance to spawn a powerful, homing beam of Plutonium energy";
+        player.setBonus = "All projectile weapons spawn a homing beam of plutonium energy every 5th attack";
         player.GetModPlayer<PlutoBeams>().ImBeamin = true;
 
     }
@@ -99,7 +99,7 @@ public class PlutoniumChestplate : ModItem
 public class PlutoBeams : ModPlayer
 {
     public bool ImBeamin;
-
+    private int shotCounter = 0;
     public override void ResetEffects()
     {
         ImBeamin = false;
@@ -107,13 +107,13 @@ public class PlutoBeams : ModPlayer
 
     public override void ModifyShootStats(Item item, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        // Keep the original projectile type
-        // Don't override 'type'
+        
         if (ImBeamin)
         {
-            if (Main.rand.NextBool(5))
+            shotCounter++;
+            if (shotCounter == 5)
             {
-                // Spawn additional projectile while keeping the original
+                
                 Projectile.NewProjectile(
                     Player.GetSource_ItemUse(item),
                     position,
@@ -122,7 +122,9 @@ public class PlutoBeams : ModPlayer
                     (int)(damage * 1.25f),
                     knockback,
                     Player.whoAmI
+
                 );
+                shotCounter = 0;
             }
         }
     }
