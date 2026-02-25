@@ -1,46 +1,39 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
-public class PocketSand : ModItem
+
+public class LeadVape : ModItem
 {
     public override void SetDefaults()
     {
         Item.width = 33;
         Item.height = 33;
 
-        Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 13;
-        Item.useAnimation = 13;
+        Item.useStyle = ItemUseStyleID.Shoot;
+        Item.useTime = 10;
+        Item.useAnimation = 30;
         Item.autoReuse = true;
-
+        Item.reuseDelay = 7;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 10;
-        Item.knockBack = 1;
+        Item.damage = 11;
+        Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
-        Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
+       
 
-        Item.value = Item.buyPrice(silver: 50);
-        Item.rare = ItemRarityID.Blue;
+        Item.value = Item.sellPrice(silver: 35);
+        Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<SandPocket>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 5.95f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<LeadVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 7.5f; // Speed of the projectiles the sword will shoot
 
-        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
-        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-
-        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
-        // Item.ChangePlayerDirectionOnShoot = false;
+       
     }
     public float LobotometerCost = 2f;
     public override bool? UseItem(Player player)
@@ -59,10 +52,10 @@ public class PocketSand : ModItem
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(10.75f));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.01f);
+            newVelocity *= 1f - Main.rand.NextFloat(0.31f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -90,19 +83,10 @@ public class PocketSand : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<PlasticScrap>(5);
-        recipe.AddIngredient(ItemID.SandBlock, 50);
-
-        recipe.AddTile(TileID.WorkBenches);
+       
+        recipe.AddIngredient(ItemID.LeadBar, 9);
+        recipe.AddIngredient<Polymer>(5);
+        recipe.AddTile(TileID.Anvils);
         recipe.Register();
-
-        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("PocketSand", out ModItem PocketSand))
-        {
-            recipe = CreateRecipe();
-            recipe.AddIngredient(PocketSand.Type, 50);
-            recipe.AddIngredient<PlasticScrap>(5);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
-        }
     }
 }

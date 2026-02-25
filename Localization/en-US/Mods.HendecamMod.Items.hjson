@@ -5014,3 +5014,43 @@ FakeGodhood: {
 	DisplayName: Fake Godhood
 	Tooltip: ""
 }
+
+CopperVape: {
+	Tooltip: ""
+	DisplayName: Copper Vape
+}
+
+TinVape: {
+	Tooltip: ""
+	DisplayName: Tin Vape
+}
+
+SilverVape: {
+	Tooltip: ""
+	DisplayName: Silver Vape
+}
+
+LeadVape: {
+	Tooltip: ""
+	DisplayName: Lead Vape
+}
+
+IronVape: {
+	Tooltip: ""
+	DisplayName: Iron Vape
+}
+
+TungstenVape: {
+	Tooltip: ""
+	DisplayName: Tungsten Vape
+}
+
+PlatinumVape: {
+	Tooltip: ""
+	DisplayName: Platinum Vape
+}
+
+GoldVape: {
+	Tooltip: ""
+	DisplayName: Gold Vape
+}

@@ -173,6 +173,7 @@ public class Arse : GlobalItem
        
     }
 }
+ 
 public class Arse2 : GlobalItem
 {
     // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
@@ -195,6 +196,31 @@ public class Arse2 : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+
+    }
+}
+public class StupidSand : GlobalItem
+{
+    // if (ModLoader.TryGetMod("HendecamMod", out Mod ShitMerica))
+
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("PocketSand", out ModItem PocketSand))
+        {
+            return item.type == PocketSand.Type;
+        }
+
+        return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Vitality) - Now deals stupid damage") { OverrideColor = Color.MediumVioletRed });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.DamageType = ModContent.GetInstance<StupidDamage>();
 
     }
 }

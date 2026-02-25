@@ -89,7 +89,7 @@ public class GrossSpike : ModPlayer
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
 
 
-            float damageBonus = (loboPlayer.DecayRateMultiplier * 0.01f) + (loboPlayer.Max * 0.00025f);
+            float damageBonus = (loboPlayer.DecayRateMultiplier * 0.03f) + (loboPlayer.Max * 0.0002f);
 
             Player.GetDamage(DamageClass.Generic) += damageBonus;
         }

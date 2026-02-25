@@ -1,4 +1,5 @@
 using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 
@@ -77,10 +78,8 @@ public class VeryBigStick : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Main.rand.NextBool(4))
-
-        {
-            target.AddBuff(BuffID.Confused, 120);
-        }
+        
+            target.AddBuff(ModContent.BuffType<Splinters>(), 360);
+        
     }
 }
