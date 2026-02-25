@@ -22,7 +22,7 @@ public class CeramOmni : ModProjectile
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 20; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+        Projectile.timeLeft = 35; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 10; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
         Projectile.light = 0f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?

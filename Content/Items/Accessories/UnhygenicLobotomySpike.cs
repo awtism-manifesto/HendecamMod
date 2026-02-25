@@ -28,7 +28,7 @@ public class UnhygenicLobotomySpike : ModItem
         var line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into stupid damage")
+        line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into damage")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -56,11 +56,14 @@ public class UnhygenicLobotomySpike : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
         player.GetModPlayer<GrossSpike>().GrossSpiked = true;
 
-        player.GetModPlayer<BaseSpike>().Spiked = true;
+        if (loboPlayer.Current == loboPlayer.Max)
+        {
+            player.GetModPlayer<BaseSpike>().Spiked = true;
+        }
 
     }
    
@@ -78,7 +81,7 @@ public class GrossSpike : ModPlayer
         GrossSpiked = false;
     }
 
-    public override void PostUpdate()
+    public override void UpdateEquips()
     {
         if (GrossSpiked && !Player.GetModPlayer<BloodSpike>().BloodySpiked)
         {
@@ -86,11 +89,11 @@ public class GrossSpike : ModPlayer
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
 
 
-            float damageBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 600;
+            float damageBonus = (loboPlayer.DecayRateMultiplier * 0.01f) + (loboPlayer.Max * 0.00025f);
 
-            Player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
+            Player.GetDamage(DamageClass.Generic) += damageBonus;
         }
-        else return;
+      
 
     }
 

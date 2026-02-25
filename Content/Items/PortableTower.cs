@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class PortableTower : ModItem
 {
     public override void SetStaticDefaults()
@@ -47,7 +43,7 @@ public class PortableTower : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    public float LobotometerCost = 6f;
+    public float LobotometerCost = 2f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -81,7 +77,7 @@ public class PortableTower : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Irradiates the area in front of you with harmful 5G that you cannot see or hear");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

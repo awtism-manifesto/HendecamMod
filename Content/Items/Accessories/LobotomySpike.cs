@@ -32,7 +32,7 @@ public class LobotomySpike : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4%")
+        line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4% and Stupid armor penetration by 4")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -61,10 +61,15 @@ public class LobotomySpike : ModItem
     {
 
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
+        player.GetArmorPenetration<StupidDamage>() += 4;
 
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
-
-        player.GetModPlayer<BaseSpike>().Spiked = true;
+        if (loboPlayer.Current == loboPlayer.Max)
+        { 
+            player.GetModPlayer<BaseSpike>().Spiked = true;
+        }
+       
 
     }
    

@@ -27,9 +27,9 @@ public class CeramOmniSpawn : ModProjectile
     public override void OnKill(int timeLeft)
     {
         SoundEngine.PlaySound(SoundID.Shatter, Projectile.position);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 12; i++)
         {
-            float rotation = MathHelper.ToRadians(i * 36f);
+            float rotation = MathHelper.ToRadians(i * 30f);
             Vector2 velocity = Projectile.velocity.RotatedBy(rotation);
             Vector2 position = Projectile.Center;
 

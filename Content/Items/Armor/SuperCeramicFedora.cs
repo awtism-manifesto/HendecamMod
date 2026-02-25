@@ -50,7 +50,7 @@ public class SuperCeramicFedora : ModItem
     public override void UpdateEquip(Player player)
     {
        
-        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 10f;
+        player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
 
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
