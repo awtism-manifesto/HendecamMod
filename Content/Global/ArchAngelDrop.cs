@@ -59,7 +59,7 @@ public class RaphaelDrop : IItemDropRuleCondition
 
     public RaphaelDrop()
         {
-        Description ??= Language.GetOrRegister("Drops after defeating moon lord");
+        Description ??= Language.GetOrRegister("Drops after defeating moon lord.");
         }
 
     public bool CanDrop(DropAttemptInfo info)
