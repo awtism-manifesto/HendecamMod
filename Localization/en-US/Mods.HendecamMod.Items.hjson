@@ -5054,3 +5054,33 @@ GoldVape: {
 	Tooltip: ""
 	DisplayName: Gold Vape
 }
+
+CobaltVape: {
+	Tooltip: ""
+	DisplayName: Cobalt Vape
+}
+
+AdamantiteVape: {
+	DisplayName: Adamantite Vape
+	Tooltip: ""
+}
+
+MythrilVape: {
+	DisplayName: Mythril Vape
+	Tooltip: ""
+}
+
+OrichalcumVape: {
+	DisplayName: Orichalcum Vape
+	Tooltip: ""
+}
+
+PalladiumVape: {
+	DisplayName: Palladium Vape
+	Tooltip: ""
+}
+
+TitaniumVape: {
+	DisplayName: Titanium Vape
+	Tooltip: ""
+}

@@ -8,7 +8,7 @@ using Terraria.DataStructures;
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
-public class TungstenVape : ModItem
+public class OrichalcumVape : ModItem
 {
     public override void SetDefaults()
     {
@@ -16,26 +16,26 @@ public class TungstenVape : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 10;
-        Item.useAnimation = 30;
+        Item.useTime = 9;
+        Item.useAnimation = 27;
         Item.autoReuse = true;
-        Item.reuseDelay = 7;
+        Item.reuseDelay = 3;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 13;
-        Item.knockBack = 0.2f;
+        Item.damage = 44;
+        Item.knockBack = 0.33f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        
 
-        Item.value = Item.sellPrice(silver: 63);
-        Item.rare = ItemRarityID.White;
+        Item.value = Item.sellPrice(silver: 566);
+        Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<TungstenVapeSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 7.95f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<OrichalcumVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 15.1f; // Speed of the projectiles the sword will shoot
 
        
     }
-    public float LobotometerCost = 2f;
+    public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -52,10 +52,10 @@ public class TungstenVape : ModItem
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(10.55f));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.9f));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.275f);
+            newVelocity *= 1f - Main.rand.NextFloat(0.2f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -67,7 +67,7 @@ public class TungstenVape : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -84,9 +84,9 @@ public class TungstenVape : ModItem
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.TungstenBar, 12);
-        recipe.AddIngredient<Polymer>(5);
-        recipe.AddTile(TileID.Anvils);
+        recipe.AddIngredient(ItemID.OrichalcumBar, 15);
+        recipe.AddIngredient<Polymer>(10);
+        recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
 }

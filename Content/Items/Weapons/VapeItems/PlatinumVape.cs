@@ -84,7 +84,7 @@ public class PlatinumVape : ModItem
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.PlatinumBar, 13);
+        recipe.AddIngredient(ItemID.PlatinumBar, 14);
         recipe.AddIngredient<Polymer>(5);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

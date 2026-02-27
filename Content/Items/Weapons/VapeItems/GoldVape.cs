@@ -84,7 +84,7 @@ public class GoldVape : ModItem
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.GoldBar, 12);
+        recipe.AddIngredient(ItemID.GoldBar, 13);
         recipe.AddIngredient<Polymer>(5);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
