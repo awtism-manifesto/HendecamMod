@@ -57,10 +57,13 @@ public class HaemophilicLobotomySpike : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
 
-
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         player.GetModPlayer<BloodSpike>().BloodySpiked = true;
 
-        player.GetModPlayer<BaseSpike>().Spiked = true;
+        if (loboPlayer.Current == loboPlayer.Max)
+        {
+            player.GetModPlayer<BaseSpike>().Spiked = true;
+        }
 
     }
    
@@ -74,17 +77,15 @@ public class BloodSpike : ModPlayer
         BloodySpiked = false;
     }
 
-    public override void ModifyMaxStats(out StatModifier health, out StatModifier mana)
+    public override void UpdateEquips()
     {
-        health = StatModifier.Default;
-        mana = StatModifier.Default;
-
         if (BloodySpiked && !Player.GetModPlayer<GrossSpike>().GrossSpiked)
         {
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
 
-            float healthBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 2;
-            health.Flat += (int)healthBonus;
+            float healthBonus = (loboPlayer.DecayRateMultiplier * 20) + (loboPlayer.Max * 0.075f);
+            Player.statLifeMax2 = (int)(Player.statLifeMax2 + healthBonus);
         }
     }
+    
 }

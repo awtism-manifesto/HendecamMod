@@ -15,8 +15,8 @@ public class PocketEbonsand : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 14;
-        Item.useAnimation = 14;
+        Item.useTime = 13;
+        Item.useAnimation = 13;
         Item.autoReuse = true;
 
         Item.DamageType = ModContent.GetInstance<StupidDamage>();

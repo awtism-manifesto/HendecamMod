@@ -1,12 +1,22 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
+using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Armor.ArchangelGreaves;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes;
 
-//[AutoloadEquip(EquipType.Beard)]
+[AutoloadEquip(EquipType.Wings)]
 public class Godhood : ModItem
 {
+
+    public override void SetStaticDefaults()
+    {
+        // Register wing stats - needed for flight time and basic functionality
+        ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(333, 14.44f, 3.33f);
+      
+    }
     public override void SetDefaults()
     {
         Item.width = 16;
@@ -32,6 +42,14 @@ public class Godhood : ModItem
         player.AddBuff(ModContent.BuffType<MambaBuff>(), 300);
         player.AddBuff(ModContent.BuffType<HeartBuff>(), 300);
         player.AddBuff(ModContent.BuffType<JungleHealing>(), 300);
+        player.GetModPlayer<ArchangelWings>().ArchWings = true;
+        player.GetModPlayer<AngelSpeed>().Angel = true;
+        player.wingTimeMax += 225;
+        player.noFallDmg = true;
+        player.jumpSpeedBoost += 1.25f;
+        player.moveSpeed += 0.35f;
+        player.wingRunAccelerationMult += 1.77f;
+        player.wingAccRunSpeed += 1.77f;
     }
 
     public override void AddRecipes()

@@ -38,7 +38,7 @@ public class CanofLasers : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "All projectile attacks have a 1-in-4 chance to spawn an extra laser projectile");
+        var line = new TooltipLine(Mod, "Face", "All projectile attacks shoot an extra laser projectile every 4th shot");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Why'")
@@ -58,6 +58,7 @@ public class CanofLasers : ModItem
     public class Lasering : ModPlayer
     {
         public bool HolUpImBeamin;
+        private int shotCounter = 0;
 
         public override void ResetEffects()
         {
@@ -66,13 +67,13 @@ public class CanofLasers : ModItem
 
         public override void ModifyShootStats(Item item, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            // Keep the original projectile type
-            // Don't override 'type'
+           
             if (HolUpImBeamin)
             {
-                if (Main.rand.NextBool(4))
+                shotCounter++;
+                if (shotCounter == 4)
                 {
-                    // Spawn additional projectile while keeping the original
+                   
                     Projectile.NewProjectile(
                         Player.GetSource_ItemUse(item),
                         position,
@@ -82,6 +83,7 @@ public class CanofLasers : ModItem
                         knockback,
                         Player.whoAmI
                     );
+                    shotCounter = 0;
                 }
             }
         }

@@ -1,37 +1,70 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿namespace HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Projectiles;
-
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
 public class CopperQuadswordProjectile : ModProjectile
 {
-    public override void SetDefaults()
+    public override void SetStaticDefaults()
     {
-        // This method right here is the backbone of what we're doing here; by using this method, we copy all of
-        // the Meowmere Projectile's SetDefault stats (such as projectile.friendly and projectile.penetrate) on to our projectile,
-        // so we don't have to go into the source and copy the stats ourselves. It saves a lot of time and looks much cleaner;
-        // if you're going to copy the stats of a projectile, use CloneDefaults().
-
-        Projectile.width = 25; // The width of projectile hitbox
-        Projectile.height = 25; // The height of projectile hitbox
-        Projectile.CloneDefaults(ProjectileID.WoodenBoomerang);
-
-        // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
-        // the projectile to essentially behave the same way as the vanilla projectile.
-        AIType = ProjectileID.WoodenBoomerang;
-        Projectile.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
-        // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
-        // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
-        // This can be done by modifying projectile.penetrate
     }
 
-    public override void OnKill(int timeLeft)
+    public override void SetDefaults()
     {
-        // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-        Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
+        Projectile.width = 64;
+        Projectile.height = 64;
+        Projectile.tileCollide = false;
+        Projectile.arrow = false;
+        Projectile.friendly = true;
+        Projectile.DamageType = DamageClass.MeleeNoSpeed;
+        Projectile.timeLeft = 44;
+        Projectile.penetrate = 4;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 8;
+    }
+
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Blood);
+            dust.noGravity = true;
+            dust.velocity *= 3.65f;
+            dust.scale *= 0.85f;
+        }
+    }
+
+    public override void AI()
+    {
+        Player player = Main.player[Projectile.owner];
+        Projectile.rotation -= 0.375f;
+       
+        if (Projectile.ai[0] == 0f)
+        {
+            if (Projectile.timeLeft <= 22)
+            {
+                Projectile.ai[0] = 1f;
+                Projectile.tileCollide = false;
+            }
+        }
+
+        else
+        {
+            Projectile.timeLeft = 10;
+
+            Vector2 toPlayer = player.Center - Projectile.Center;
+            float distance = toPlayer.Length();
+            if (distance < 24f)
+            {
+                Projectile.Kill();
+                return;
+            }
+
+            toPlayer.Normalize();
+
+            float returnSpeed = 17f;
+            float acceleration = 1.15f;
+
+            Projectile.velocity = (Projectile.velocity * acceleration + toPlayer * returnSpeed) / (acceleration + 1f);
+            if (Projectile.velocity.Length() < returnSpeed)
+                Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero) * returnSpeed;
+        }
     }
 }

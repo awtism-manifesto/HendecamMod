@@ -424,6 +424,15 @@ public class MericaRecipes : ModSystem
             glocksnbawlz.AddTile(TileID.WorkBenches);
             glocksnbawlz.Register();
         }
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("Paper", out ModItem Paper))
+        {
+            Recipe glocksnbawlz = Recipe.Create(Paper.Type);
+
+            glocksnbawlz.AddIngredient<Paper>();
+
+           
+            glocksnbawlz.Register();
+        }
 
         Recipe gay6 = Recipe.Create(ItemID.IceBow);
         gay6.AddIngredient(ItemID.FrostCore);

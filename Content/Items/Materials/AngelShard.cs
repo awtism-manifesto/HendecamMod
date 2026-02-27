@@ -12,8 +12,8 @@ public class AngelShard : ModItem
         {
         Item.width = 44;
         Item.height = 50;
-        Item.rare = ItemRarityID.LightRed;
-        Item.value = 500;
+        Item.rare = ItemRarityID.Red;
+        Item.value = 777777;
         Item.maxStack = Item.CommonMaxStack;
         }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

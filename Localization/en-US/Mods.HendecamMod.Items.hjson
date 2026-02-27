@@ -5004,3 +5004,83 @@ ArchangelChestguard: {
 	Tooltip: ""
 	DisplayName: Archangel Chestguard
 }
+
+WoodenBlocks: {
+	Tooltip: ""
+	DisplayName: Wooden Blocks
+}
+
+FakeGodhood: {
+	DisplayName: Fake Godhood
+	Tooltip: ""
+}
+
+CopperVape: {
+	Tooltip: ""
+	DisplayName: Copper Vape
+}
+
+TinVape: {
+	Tooltip: ""
+	DisplayName: Tin Vape
+}
+
+SilverVape: {
+	Tooltip: ""
+	DisplayName: Silver Vape
+}
+
+LeadVape: {
+	Tooltip: ""
+	DisplayName: Lead Vape
+}
+
+IronVape: {
+	Tooltip: ""
+	DisplayName: Iron Vape
+}
+
+TungstenVape: {
+	Tooltip: ""
+	DisplayName: Tungsten Vape
+}
+
+PlatinumVape: {
+	Tooltip: ""
+	DisplayName: Platinum Vape
+}
+
+GoldVape: {
+	Tooltip: ""
+	DisplayName: Gold Vape
+}
+
+CobaltVape: {
+	Tooltip: ""
+	DisplayName: Cobalt Vape
+}
+
+AdamantiteVape: {
+	DisplayName: Adamantite Vape
+	Tooltip: ""
+}
+
+MythrilVape: {
+	DisplayName: Mythril Vape
+	Tooltip: ""
+}
+
+OrichalcumVape: {
+	DisplayName: Orichalcum Vape
+	Tooltip: ""
+}
+
+PalladiumVape: {
+	DisplayName: Palladium Vape
+	Tooltip: ""
+}
+
+TitaniumVape: {
+	DisplayName: Titanium Vape
+	Tooltip: ""
+}

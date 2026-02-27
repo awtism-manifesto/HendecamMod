@@ -33,18 +33,7 @@ public class Paper : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -53,5 +42,13 @@ public class Paper : ModItem
         recipe.AddIngredient(ItemID.Wood);
         recipe.AddTile(TileID.Sawmill);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("Paper", out ModItem Paper))
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(Paper.Type);
+          
+            recipe.Register();
+        }
     }
 }

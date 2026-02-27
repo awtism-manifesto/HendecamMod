@@ -1,0 +1,92 @@
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
+using System.Collections.Generic;
+using Terraria.DataStructures;
+
+namespace HendecamMod.Content.Items.Weapons.VapeItems;
+
+
+public class TinVape : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.width = 33;
+        Item.height = 33;
+
+        Item.useStyle = ItemUseStyleID.Shoot;
+        Item.useTime = 11;
+        Item.useAnimation = 33;
+        Item.autoReuse = true;
+        Item.reuseDelay = 10;
+        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.damage = 10;
+        Item.knockBack = 0.2f;
+        Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
+       
+
+        Item.value = Item.sellPrice(silver: 24);
+        Item.rare = ItemRarityID.White;
+        Item.UseSound = SoundID.Item45;
+
+        Item.shoot = ModContent.ProjectileType<TinVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 7.33f; // Speed of the projectiles the sword will shoot
+
+       
+    }
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+
+        for (int i = 0; i < NumProjectiles; i++)
+        {
+            // Rotate the velocity randomly by 30 degrees at max.
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(10.95f));
+
+            // Decrease velocity randomly for nicer visuals.
+            newVelocity *= 1f - Main.rand.NextFloat(0.33f);
+
+            // Create a projectile.
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+        }
+
+        return false; // Return false because we don't want tModLoader to shoot projectile
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+
+       
+        recipe.AddIngredient(ItemID.TinBar, 8);
+        recipe.AddIngredient<Polymer>(5);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+    }
+}

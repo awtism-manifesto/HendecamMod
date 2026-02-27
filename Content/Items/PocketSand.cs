@@ -19,8 +19,8 @@ public class PocketSand : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 14;
-        Item.useAnimation = 14;
+        Item.useTime = 13;
+        Item.useAnimation = 13;
         Item.autoReuse = true;
 
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
@@ -95,5 +95,14 @@ public class PocketSand : ModItem
 
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("VitalityMod", out Mod VitalMerica) && VitalMerica.TryFind("PocketSand", out ModItem PocketSand))
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(PocketSand.Type, 50);
+            recipe.AddIngredient<PlasticScrap>(5);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+        }
     }
 }

@@ -27,18 +27,31 @@ namespace HendecamMod.Common.Systems
         // Time since last stupid weapon use
         public int ticksSinceLastUse;
 
+        // Public decay per tick - now properly calculated
+        public float decayPerTick = 0.66f;
+
+       
+        public float MaxScalingFactor = 0.1f;
+
         public override void ResetEffects()
         {
-            // Accessories / buffs can modify this
+           
             DecayRateMultiplier = 1f;
 
-            // Reset the bonus each frame first
+            decayPerTick = 0.66f;
+           
             MaxBonus = 0f;
-        }
 
-        public override void PostUpdate()
+            if (Player.dead)
+            {
+                Current = 0f;
+            }
+        }
+        public override void PreUpdate()
         {
+
             // Calculate the actual Max after all bonuses have been applied
+            float previousMax = Max;
             Max = BaseMax + MaxBonus;
 
             // Clamp current to the new max (in case max decreased)
@@ -47,18 +60,27 @@ namespace HendecamMod.Common.Systems
 
             ticksSinceLastUse++;
 
+
+            
+
             // Start decaying after ~2 seconds (120 ticks)
             if (ticksSinceLastUse > 120 && Current > 0f && !Player.GetModPlayer<BaseSpike>().Spiked)
             {
-                float decayPerTick =
-                    (BaseDecayRate * DecayRateMultiplier) / 60f;
+                // Calculate decay per tick based on max value
+                // Base decay (converted to per tick) * multiplier + scaling based on total max
+                float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
+                float maxScaling = (Max * MaxScalingFactor) / 60f; 
+
+
+
+                decayPerTick = basePerTick + maxScaling;
 
                 Current -= decayPerTick;
                 if (Current < 0f)
                     Current = 0f;
             }
         }
-
+       
         public override void PostUpdateMiscEffects()
         {
             /*if (Main.myPlayer == 0)
@@ -70,17 +92,29 @@ namespace HendecamMod.Common.Systems
                 Main.NewText("1: " + Current / Max);
             }*/
 
+           
+
             if (!Main.dedServ)
             {
                 // Redigit is the greatest Israeli soldier
                 // The world has ever known
-                if (Current > 0)
+                if (Current > 0 && !Player.dead)  // does player.dead even do anything? this code does not fucking work
                 {
                     if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
                     {
                         Filters.Scene.Activate("HendecamMod:LobotomyScreen");
+                        if (Player.dead)
+                        {
+                            Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
+                        }
+                        
                     }
                     float effectIntensityMultiplier = 0.5f;
+                    if (Main.zenithWorld)
+                    {
+                        effectIntensityMultiplier = 0.9f;
+                    }
+
                     Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * effectIntensityMultiplier);
                 }
             }
