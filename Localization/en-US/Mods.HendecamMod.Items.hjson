@@ -5084,3 +5084,18 @@ TitaniumVape: {
 	DisplayName: Titanium Vape
 	Tooltip: ""
 }
+
+PromethiumOre: {
+	Tooltip: ""
+	DisplayName: Promethium Ore
+}
+
+AncientCobaltBrick: {
+	Tooltip: ""
+	DisplayName: Ancient Cobalt Brick
+}
+
+PromethiumBar: {
+	Tooltip: ""
+	DisplayName: Promethium Bar
+}
