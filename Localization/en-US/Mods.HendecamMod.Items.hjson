@@ -5085,12 +5085,17 @@ TitaniumVape: {
 	Tooltip: ""
 }
 
-IronLung: {
+PromethiumOre: {
 	Tooltip: ""
-	DisplayName: Iron Lung
+	DisplayName: Promethium Ore
 }
 
-BrainScanner: {
-	DisplayName: Brain Scanner
+AncientCobaltBrick: {
 	Tooltip: ""
+	DisplayName: Ancient Cobalt Brick
+}
+
+PromethiumBar: {
+	Tooltip: ""
+	DisplayName: Promethium Bar
 }

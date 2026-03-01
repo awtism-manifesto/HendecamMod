@@ -1,0 +1,41 @@
+﻿using HendecamMod.Content.Dusts;
+using Terraria.Localization;
+
+namespace HendecamMod.Content.Tiles.Blocks;
+
+public class PromethiumOreTile : ModTile
+{
+    public override void SetStaticDefaults()
+    {
+        TileID.Sets.Ore[Type] = true;
+        Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
+        Main.tileOreFinderPriority[Type] = 515; // Metal Detector value, see https://terraria.wiki.gg/wiki/Metal_Detector
+        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine[Type] = 250; // How often tiny dust appear off this tile. Larger is less frequently
+        Main.tileMergeDirt[Type] = true;
+        Main.tileMerge[TileID.Stone][Type] = true;
+        Main.tileMerge[TileID.Ebonstone][Type] = true;
+        Main.tileMerge[TileID.Crimstone][Type] = true;
+        Main.tileMerge[TileID.Pearlstone][Type] = true;
+        Main.tileMerge[TileID.Mud][Type] = true;
+        Main.tileMerge[TileID.SnowBlock][Type] = true;
+        Main.tileSolid[Type] = true;
+        Main.tileBlockLight[Type] = true;
+        Main.tileLighted[Type] = true;
+        LocalizedText name = CreateMapEntryName();
+        AddMapEntry(new Color(85, 145, 166), Language.GetText("Promethium Ore"));
+
+        DustType = (ModContent.DustType<MorbiumDust>());
+        HitSound = SoundID.Tink;
+        MineResist = 1.75f;
+        MinPick = 225;
+    }
+
+    // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
+    public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+    {
+        r = 1.75f;
+        g = 1.85f;
+        b = 3.25f;
+    }
+}
