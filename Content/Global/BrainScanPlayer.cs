@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items.Accessories;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -9,41 +10,41 @@ namespace HendecamMod.Content.Global
     /// ModPlayer class coupled with <seealso cref="ExampleInfoDisplay"/> and <seealso cref="ExampleInfoAccessory"/> to show off how to properly add a
     /// new info accessory (such as a Radar, Lifeform Analyzer, etc.)
     /// </summary>
-    public class IQTestPlayer : ModPlayer
+    public class BrainScanPlayer : ModPlayer
     {
         // Flag checking when information display should be activated
-        public bool showLobotometer;
+        public bool showLobotometerDecay;
 
         // Make sure to use the right Reset hook. This one is unique, as it will still be
         // called when the game is paused; this allows for info accessories to keep updating properly.
         public override void ResetInfoAccessories()
         {
-            showLobotometer = false;
+            showLobotometerDecay = false;
         }
 
         // If we have another nearby player on our team, we want to get their info accessories working on us,
         // just like in vanilla. This is what this hook is for.
         public override void RefreshInfoAccessoriesFromTeamPlayers(Player otherPlayer)
         {
-            if (otherPlayer.GetModPlayer<IQTestPlayer>().showLobotometer)
+            if (otherPlayer.GetModPlayer<BrainScanPlayer>().showLobotometerDecay)
             {
-                showLobotometer = true;
+                showLobotometerDecay = true;
             }
         }
     }
 
 
-    public class IQDisplay : InfoDisplay
+    public class ScanDisplay : InfoDisplay
     {
-       
+        public static Color RedInfoTextColor => new(255, 19, 19, Main.mouseTextColor);
 
         public override string HoverTexture => Texture + "_Hover";
 
         public override bool Active()
         {
             return Main.LocalPlayer
-                .GetModPlayer<IQTestPlayer>()
-                .showLobotometer;
+                .GetModPlayer<BrainScanPlayer>()
+                .showLobotometerDecay;
         }
 
         public override string DisplayValue(
@@ -53,35 +54,20 @@ namespace HendecamMod.Content.Global
             Player player = Main.LocalPlayer;
             var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
-            float current = loboPlayer.Current;
-            float max = loboPlayer.Max;
+            float current = loboPlayer.decayPerTick;
+
+            displayColor = InactiveInfoTextColor;
+
+
+            if (player.GetModPlayer<BaseSpike>().Spiked)
+            {
+                displayColor = RedInfoTextColor;
+                return $"Lobotometer decay rate: 0/sec (pinned)";
+            }
 
           
-            if (max <= 0f)
-            {
-                displayColor = InactiveInfoTextColor;
-                return "Not Lobotomized";
-            }
 
-            bool empty = current <= 0f;
-
-            if (empty)
-            {
-                displayColor = InactiveInfoTextColor;
-                return "Not Lobotomized";
-            }
-
-           
-            if (current == max)
-            {
-                displayColor = GoldInfoTextColor;
-            }
-
-           
-            int currentInt = (int)current;
-            int maxInt = (int)max;
-
-            return $"Lobotometer: {currentInt} / {maxInt}";
+            return $"Lobotometer decay rate: {current * 60}/sec";
         }
     }
 }

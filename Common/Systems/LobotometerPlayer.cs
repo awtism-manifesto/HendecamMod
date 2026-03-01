@@ -30,6 +30,8 @@ namespace HendecamMod.Common.Systems
         // Public decay per tick - now properly calculated
         public float decayPerTick = 0.66f;
 
+        public int decayPerSecond = 40;
+
        
         public float MaxScalingFactor = 0.1f;
 
@@ -37,16 +39,30 @@ namespace HendecamMod.Common.Systems
         {
            
             DecayRateMultiplier = 1f;
+            if (Max == 200 && DecayRateMultiplier == 1f)
+            {
+                decayPerTick = 0.66f;
+            }
+            else
+            {
+                float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
+                float maxScaling = (Max * MaxScalingFactor) / 60f;
 
-            decayPerTick = 0.66f;
-           
-            MaxBonus = 0f;
+
+
+                decayPerTick = basePerTick + maxScaling;
+
+                decayPerSecond = (int)(decayPerTick * 60);
+            }
+
+                MaxBonus = 0f;
 
             if (Player.dead)
             {
                 Current = 0f;
             }
         }
+        
         public override void PreUpdate()
         {
 

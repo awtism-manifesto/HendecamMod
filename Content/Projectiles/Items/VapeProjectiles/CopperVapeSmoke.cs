@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
+using static HendecamMod.Content.Items.Accessories.IronLung;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -27,16 +28,23 @@ public class CopperVapeSmoke : ModProjectile
 
     public override void AI()
     {
-       
 
-        // Apply gravity after a quarter of a second
-        Projectile.ai[0] += 1f;
-        if (Projectile.ai[0] >= 5f)
+
+        Player player = Main.player[Projectile.owner];
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == true)
         {
-            Projectile.ai[0] = 5f;
-            Projectile.velocity.Y -= 0.144f;
+            Projectile.extraUpdates = 1;
         }
-
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
+        {
+            // Apply gravity after a quarter of a second
+            Projectile.ai[0] += 1f;
+            if (Projectile.ai[0] >= 5f)
+            {
+                Projectile.ai[0] = 5f;
+                Projectile.velocity.Y -= 0.144f;
+            }
+        }
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 

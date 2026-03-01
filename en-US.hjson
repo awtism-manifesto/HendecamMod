@@ -1,6 +1,9 @@
 Mods: {
 	HendecamMod: {
-		InfoDisplays.IQDisplay.DisplayName: I Q Display
+		InfoDisplays: {
+			IQDisplay.DisplayName: I Q Display
+			ScanDisplay.DisplayName: Scan Display
+		}
 
 		Configs: {
 			HendecamConfig: {

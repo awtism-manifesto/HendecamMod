@@ -5084,3 +5084,13 @@ TitaniumVape: {
 	DisplayName: Titanium Vape
 	Tooltip: ""
 }
+
+IronLung: {
+	Tooltip: ""
+	DisplayName: Iron Lung
+}
+
+BrainScanner: {
+	DisplayName: Brain Scanner
+	Tooltip: ""
+}
