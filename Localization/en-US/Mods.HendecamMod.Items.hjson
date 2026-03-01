@@ -5099,3 +5099,13 @@ PromethiumBar: {
 	Tooltip: ""
 	DisplayName: Promethium Bar
 }
+
+BrainScanner: {
+	DisplayName: Brain Scanner
+	Tooltip: ""
+}
+
+IronLung: {
+	DisplayName: Iron Lung
+	Tooltip: ""
+}
