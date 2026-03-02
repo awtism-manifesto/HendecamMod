@@ -37,12 +37,12 @@ public class RazorRotorsProj : ModProjectile
 
         if (player.direction == 1)
         {
-            Projectile.rotation += 0.425f;
+            Projectile.rotation += 0.335f;
         }
         else
 
         {
-            Projectile.rotation += -0.425f;
+            Projectile.rotation += -0.335f;
         }
 
         Lighting.AddLight(Projectile.Center, 0.5f, 0.05f, 0.05f);

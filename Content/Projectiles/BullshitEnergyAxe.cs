@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Global;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -51,7 +53,7 @@ public class BullshitEnergyAxe : ModProjectile
         target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
         Projectile.Kill();
     }
-
+    
     public override void AI()
     {
         Lighting.AddLight(Projectile.Center, 2.25f, 1.65f, 0.65f);

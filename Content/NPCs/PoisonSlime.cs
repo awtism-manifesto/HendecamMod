@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Placeables;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
@@ -54,13 +56,12 @@ public class PoisonSlime : ModNPC
             npcLoot.Add(zombieDropRule);
         }
 
-        // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
-        // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
-        // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
+        npcLoot.Add(ItemDropRule.Common(ItemID.PoisonStaff, 25));
+        npcLoot.Add(ItemDropRule.Common(ItemID.FlaskofPoison, 5, 2, 5));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        return SpawnCondition.HardmodeJungle.Chance * 0.7f;
+        return SpawnCondition.HardmodeJungle.Chance * 0.67f;
     }
 }

@@ -15,7 +15,7 @@ public class PlantDrops : GlobalTile
                 if (Main.rand.Next(15) == 0)
                 {
                     // Spawn your custom item at the tile position
-                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>());
+                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>(), Main.rand.Next(2, 4));
                 }
             }
         }
@@ -28,7 +28,19 @@ public class PlantDrops : GlobalTile
                 if (Main.rand.Next(20) == 0)
                 {
                     // Spawn your custom item at the tile position
-                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>());
+                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>(), Main.rand.Next(2, 4));
+                }
+            }
+        }
+        if (type == TileID.JungleVines)
+        {
+            if (!fail && !effectOnly)
+            {
+                // Roll a 1 in 25 chance
+                if (Main.rand.Next(33) == 0)
+                {
+                    // Spawn your custom item at the tile position
+                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>(), Main.rand.Next(1, 2));
                 }
             }
         }
@@ -42,7 +54,7 @@ public class PlantDrops : GlobalTile
                 if (Main.rand.Next(20) == 0)
                 {
                     // Spawn your custom item at the tile position
-                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>());
+                    Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<WeedLeaves>(), Main.rand.Next(1, 3));
                 }
             }
         }

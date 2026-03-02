@@ -6,10 +6,7 @@ using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global
 {
-    /// <summary>
-    /// ModPlayer class coupled with <seealso cref="ExampleInfoDisplay"/> and <seealso cref="ExampleInfoAccessory"/> to show off how to properly add a
-    /// new info accessory (such as a Radar, Lifeform Analyzer, etc.)
-    /// </summary>
+    
     public class BrainScanPlayer : ModPlayer
     {
         // Flag checking when information display should be activated

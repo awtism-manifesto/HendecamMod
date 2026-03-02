@@ -21,20 +21,6 @@ public class CrystalBeef : GlobalProjectile
     }
 }
 
-public class VapeMark : GlobalProjectile
-{
-    public bool VapeProj;
-
-    public override bool InstancePerEntity => true;
-
-    public override void AI(Projectile projectile)
-    {
-        if (VapeProj)
-        {
-           
-        }
-    }
-}
 
 public class FastBow : GlobalProjectile
 {

@@ -187,7 +187,7 @@ namespace HendecamMod.Common.Systems
             var lobo = player.GetModPlayer<LobotometerPlayer>();
             if (lobo == null) return;
 
-            // Remove the spammy debug line - only show when significant changes happen
+           
             float lastDisplayedValue = -1f;
             if (Math.Abs(lobo.Current - lastDisplayedValue) > 1f)
             {
@@ -200,7 +200,7 @@ namespace HendecamMod.Common.Systems
             try
             {
                 // Position above player's head
-                Vector2 worldPos = player.Center + new Vector2(-87f, 25f);
+                Vector2 worldPos = player.Center + new Vector2(-86f, 25f);
                 Vector2 screenPos = worldPos - Main.screenPosition;
 
                 // Only draw if on screen
@@ -220,13 +220,13 @@ namespace HendecamMod.Common.Systems
                 int fillHeight = frame.Height - (border * 2);
 
                 float fillPercent = MathHelper.Clamp(lobo.Current / lobo.Max, 0f, 1f);
-                int currentWidth = (int)(fillWidth * fillPercent);
+                int currentWidth = (int)((int)(fillWidth * fillPercent) * 0.9f);
 
                 if (currentWidth > 0)
                 {
                     Rectangle fillRect = new Rectangle(
-                        (int)(screenPos.X - origin.X + border),
-                        (int)(screenPos.Y - origin.Y + border),
+                        (int)(screenPos.X - origin.X + border + 16),
+                        (int)(screenPos.Y - origin.Y + border + 0.1f),
                         currentWidth,
                         fillHeight
                     );

@@ -22,5 +22,10 @@ public class HendecamConfig : ModConfig
     [ReloadRequired]
     public bool BootsTreeRework;
 
+    [DefaultValue(true)]
+
+    [ReloadRequired]
+    public bool VanillaWeaponClassChanges;
+
 
 }

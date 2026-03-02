@@ -5099,3 +5099,33 @@ PromethiumBar: {
 	Tooltip: ""
 	DisplayName: Promethium Bar
 }
+
+IronLung: {
+	Tooltip: ""
+	DisplayName: Iron Lung
+}
+
+BrainScanner: {
+	Tooltip: ""
+	DisplayName: Brain Scanner
+}
+
+Red40VapeDye: {
+	Tooltip: ""
+	DisplayName: Red 40 Vape Dye
+}
+
+Yellow5VapeDye: {
+	Tooltip: ""
+	DisplayName: Yellow 5 Vape Dye
+}
+
+Green3VapeDye: {
+	Tooltip: ""
+	DisplayName: Green 3 Vape Dye
+}
+
+Blue1VapeDye: {
+	Tooltip: ""
+	DisplayName: Blue 1 Vape Dye
+}

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
 
+
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
@@ -54,7 +55,7 @@ public class AdamantiteVape : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.75f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.95f));
 
                 // Decrease velocity randomly for nicer visuals.
                 newVelocity *= 1f - Main.rand.NextFloat(0.195f);

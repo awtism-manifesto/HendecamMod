@@ -54,7 +54,7 @@ public class TinVape : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(10.95f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(7.55f));
 
                 // Decrease velocity randomly for nicer visuals.
                 newVelocity *= 1f - Main.rand.NextFloat(0.33f);

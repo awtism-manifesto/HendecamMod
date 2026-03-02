@@ -54,7 +54,7 @@ public class PlatinumVape : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(10f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
 
                 // Decrease velocity randomly for nicer visuals.
                 newVelocity *= 1f - Main.rand.NextFloat(0.24f);

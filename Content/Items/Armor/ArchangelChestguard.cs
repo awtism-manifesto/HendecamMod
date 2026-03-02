@@ -113,12 +113,12 @@ public class ArchangelWings : ModPlayer
         if (ArchWings && !starboardPlayer.hasCelestialStarboard)
         {
             // Check if player is actively flying (holding jump/up AND has flight time)
-            if ((Player.controlJump || Player.controlUp) && Player.wingTime > 0)
+            if ((Player.controlJump) && Player.wingTime > 0)
             {
                 wasFlying = true;
 
                 // Override vertical speed when holding UP or JUMP
-                if (Player.controlUp || Player.controlJump)
+                if ( Player.controlJump)
                 {
                     float boostStrength = 7.77f;
                     Player.velocity.Y -= boostStrength;

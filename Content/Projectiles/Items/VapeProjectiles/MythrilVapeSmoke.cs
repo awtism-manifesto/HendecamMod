@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
+using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
+using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -24,7 +26,14 @@ public class MythrilVapeSmoke : ModProjectile
         Projectile.timeLeft = 65;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
     }
+    public override void OnSpawn(IEntitySource source)
+    {
+        var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
+        vapeMark.VapeProj = true;
+        vapeMark.DustScale = 3.33f;
 
+
+    }
     public override void AI()
     {
 
@@ -59,10 +68,8 @@ public class MythrilVapeSmoke : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 166, default, 3.33f);
-            fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-            fire2Dust.noGravity = true;
-            fire2Dust.velocity *= 1.33f;
+           
+           
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Mythril, 0f, 0f, 100, default, 1.5f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             fireDust.noGravity = true;

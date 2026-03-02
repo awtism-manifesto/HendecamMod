@@ -19,6 +19,11 @@ Mods: {
 					Label: Boots Tree Rework
 					Tooltip: Changes the Terraspark Boots crafting tree and buffs many of it's components
 				}
+
+				VanillaWeaponClassChanges: {
+					Label: Vanilla Weapon Class Changes
+					Tooltip: Changes certain vanilla weapons to be stupid and/or multiclass
+				}
 			}
 		}
 	}
