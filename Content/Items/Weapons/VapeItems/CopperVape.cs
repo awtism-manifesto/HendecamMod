@@ -34,7 +34,7 @@ public class CopperVape : ModItem
 
         Item.shoot = ModContent.ProjectileType<CopperVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 7.25f; // Speed of the projectiles the sword will shoot
-
+        
        
     }
     public float LobotometerCost = 2f;
@@ -83,7 +83,10 @@ public class CopperVape : ModItem
 
        
     }
-
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

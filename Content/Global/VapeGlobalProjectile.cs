@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Accessories.VapeDyes;
+using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -109,29 +110,78 @@ public class VapeMark : GlobalProjectile
     }
     private void SpawnVapeDust(Projectile projectile)
     {
-        // Your existing dust spawning logic, but using MixedDyeColor
-        for (int i = 0; i < 2; i++) // Spawn multiple dust for better effect
+
+        if (projectile.type == ModContent.ProjectileType<TorchGodVapeSmoke>())
         {
-            float posOffsetX = Main.rand.NextFloat(-5f, 5f);
-            float posOffsetY = Main.rand.NextFloat(-5f, 5f);
+            for (int i = 0; i < 2; i++) // Spawn multiple dust for better effect
+            {
+                float posOffsetX = Main.rand.NextFloat(-5f, 5f);
+                float posOffsetY = Main.rand.NextFloat(-5f, 5f);
 
-            Dust fire2Dust = Dust.NewDustDirect(
-                new Vector2(
-                    projectile.position.X + 1f + posOffsetX,
-                    projectile.position.Y + 1f + posOffsetY
-                ) - projectile.velocity * 0.1f,
-                projectile.width - 10,
-                projectile.height - 10,
-                DustID.Smoke,
-                0f, 0f, 166,
-                MixedDyeColor,
-                DustScale
-                
-            );
+                Dust fire2Dust = Dust.NewDustDirect(
+                    new Vector2(
+                        projectile.position.X + 1f + posOffsetX,
+                        projectile.position.Y + 1f + posOffsetY
+                    ) - projectile.velocity * 0.1f,
+                    projectile.width - 10,
+                    projectile.height - 10,
+                    DustID.Torch,
+                    0f, 0f, 166,
+                    MixedDyeColor,
+                    DustScale
 
-            fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-            fire2Dust.noGravity = true;
-            fire2Dust.velocity *= 1.33f;
+                );
+
+                fire2Dust.fadeIn = 0.3f + Main.rand.Next(5) * 0.2f;
+                fire2Dust.noGravity = true;
+                fire2Dust.velocity *= 0.15f;
+
+                Dust fire22Dust = Dust.NewDustDirect(
+                    new Vector2(
+                        projectile.position.X + 1f + posOffsetX,
+                        projectile.position.Y + 1f + posOffsetY
+                    ) - projectile.velocity * 0.1f,
+                    projectile.width - 10,
+                    projectile.height - 10,
+                    DustID.IceTorch,
+                    0f, 0f, 166,
+                    MixedDyeColor,
+                    DustScale
+
+                );
+
+                fire22Dust.fadeIn = 0.3f + Main.rand.Next(5) * 0.2f;
+                fire22Dust.noGravity = true;
+                fire22Dust.velocity *= 0.15f;
+            }
         }
+        else
+        {
+            for (int i = 0; i < 2; i++) // Spawn multiple dust for better effect
+            {
+                float posOffsetX = Main.rand.NextFloat(-5f, 5f);
+                float posOffsetY = Main.rand.NextFloat(-5f, 5f);
+
+                Dust fire2Dust = Dust.NewDustDirect(
+                    new Vector2(
+                        projectile.position.X + 1f + posOffsetX,
+                        projectile.position.Y + 1f + posOffsetY
+                    ) - projectile.velocity * 0.1f,
+                    projectile.width - 10,
+                    projectile.height - 10,
+                    DustID.Smoke,
+                    0f, 0f, 166,
+                    MixedDyeColor,
+                    DustScale
+
+                );
+
+                fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
+                fire2Dust.noGravity = true;
+                fire2Dust.velocity *= 1.33f;
+            }
+        }
+           
+           
     }
 }

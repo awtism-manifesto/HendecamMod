@@ -453,7 +453,7 @@ PowerPants: {
 
 YelmutsHelmet: {
 	SetBonus: Mods.HendecamMod.Items.YelmutsHelmet.SetBonus
-	DisplayName: Yelmuts Helmet
+	DisplayName: Yelmut's Helmet
 	Tooltip: ""
 }
 
@@ -5128,4 +5128,9 @@ Green3VapeDye: {
 Blue1VapeDye: {
 	Tooltip: ""
 	DisplayName: Blue 1 Vape Dye
+}
+
+TorchGodsFervor: {
+	Tooltip: ""
+	DisplayName: Torch God's Fervor
 }

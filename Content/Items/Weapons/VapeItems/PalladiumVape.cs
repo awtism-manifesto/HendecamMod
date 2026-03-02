@@ -67,7 +67,10 @@ public class PalladiumVape : ModItem
         }
         else return true;
     }
-
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

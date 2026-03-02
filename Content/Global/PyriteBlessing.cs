@@ -14,7 +14,7 @@ public class PyriteBlessing : GlobalNPC
 
     public override void OnKill(NPC npc)
     {
-        if (!NPC.downedSlimeKing)
+        if (!NPC.downedBoss1)
         {
             ModContent.GetInstance<PyriteSystem>().BlessWorldWithPyrite();
         }

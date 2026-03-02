@@ -82,7 +82,10 @@ public class SilverVape : ModItem
 
        
     }
-
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
