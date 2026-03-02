@@ -25,10 +25,10 @@ public class PromethiumBar : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "It feels Tricky Tony Toby Tobias Tobiathan \"Don't call me Radiation\" \"Radiation\" \"Time signatures are a suggestion\" Fox to the touch");
+        var line = new TooltipLine(Mod, "Face", "It feels weirdly stable to the touch");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Also River's IP Address is 201 BRIDE LN COVINGTON TN 38019-5129 USA")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -46,7 +46,6 @@ public class PromethiumBar : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(1);
-
         recipe.AddIngredient<PromethiumOre>(5);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();

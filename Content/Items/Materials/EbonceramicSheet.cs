@@ -9,11 +9,10 @@ public class EbonceramicSheet : ModItem
     public override void SetStaticDefaults()
     {
         ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<CrimceramicSheet>();
+        Item.ResearchUnlockCount = 25;
     }
     public override void SetDefaults()
     {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-
         // Common Properties
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
@@ -25,7 +24,6 @@ public class EbonceramicSheet : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
@@ -44,9 +42,7 @@ public class EbonceramicSheet : ModItem
         recipe.AddIngredient<Ebonclay>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
         recipe = CreateRecipe(10);
-
         recipe.AddIngredient(ItemID.SoulofNight);
         recipe.AddIngredient<Ebonclay>();
         recipe.AddIngredient<CeramicSheet>(10);

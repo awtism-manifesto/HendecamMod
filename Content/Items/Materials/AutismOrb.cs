@@ -6,7 +6,7 @@ public class AutismOrb : ModItem
 {
     public override void SetStaticDefaults()
     {
-        Item.ResearchUnlockCount = 1;
+        Item.ResearchUnlockCount = 25;
         ItemID.Sets.ItemIconPulse[Item.type] = true;
     }
 
