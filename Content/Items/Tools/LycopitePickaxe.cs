@@ -11,7 +11,7 @@ public class LycopitePickaxe : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.width = 35;
         Item.height = 35;
-        Item.useTime = 8;
+        Item.useTime = 7;
         Item.useAnimation = 14;
         Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
@@ -22,13 +22,13 @@ public class LycopitePickaxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 1;
-        Item.pick = 95;
+        Item.pick = 105;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Can mine Hellstone");
+        var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

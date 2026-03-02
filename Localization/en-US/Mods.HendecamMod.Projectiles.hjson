@@ -543,3 +543,6 @@ MythrilVapeSmoke.DisplayName: Mythril Vape Smoke
 CobaltVapeSmoke.DisplayName: Cobalt Vape Smoke
 AdamantiteVapeSmoke.DisplayName: Adamantite Vape Smoke
 TorchGodVapeSmoke.DisplayName: Torch God Vape Smoke
+FireBlast.DisplayName: Fire Blast
+FireJet.DisplayName: Fire Jet
+FireJetRecurse.DisplayName: Fire Jet Recurse

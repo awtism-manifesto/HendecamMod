@@ -15,12 +15,12 @@ public class TorchGodVapeSmoke : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 22; // The width of projectile hitbox
-        Projectile.height = 22; // The height of projectile hitbox
+        Projectile.width = 18; // The width of projectile hitbox
+        Projectile.height = 18; // The height of projectile hitbox
         Projectile.usesLocalNPCImmunity = true;
         Projectile.penetrate = 3;
         Projectile.localNPCHitCooldown = 30;
-       
+        Projectile.alpha = 55;
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 90;
@@ -30,7 +30,7 @@ public class TorchGodVapeSmoke : ModProjectile
     {
         var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
         vapeMark.VapeProj = true;
-       // vapeMark.DustScale = 3.33f;
+        vapeMark.DustScale = 1.67f;
 
 
     }
@@ -55,9 +55,12 @@ public class TorchGodVapeSmoke : ModProjectile
         }
 
         // The projectile is rotated to face the direction of travel
-        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+        Projectile.rotation += 0.265f;
 
-       
+        if (Projectile.position == Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY))
+        {
+            Projectile.velocity = Vector2.Zero;
+        }
 
         for (int i = 0; i < 2; i++)
         {
@@ -69,7 +72,7 @@ public class TorchGodVapeSmoke : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-
+           
            
 
             Vector2 targetPos = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);

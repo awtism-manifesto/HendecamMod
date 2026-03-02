@@ -123,8 +123,8 @@ public class VapeMark : GlobalProjectile
                         projectile.position.X + 1f + posOffsetX,
                         projectile.position.Y + 1f + posOffsetY
                     ) - projectile.velocity * 0.1f,
-                    projectile.width - 10,
-                    projectile.height - 10,
+                    projectile.width - 2,
+                    projectile.height - 2,
                     DustID.Torch,
                     0f, 0f, 166,
                     MixedDyeColor,
@@ -134,15 +134,15 @@ public class VapeMark : GlobalProjectile
 
                 fire2Dust.fadeIn = 0.3f + Main.rand.Next(5) * 0.2f;
                 fire2Dust.noGravity = true;
-                fire2Dust.velocity *= 0.15f;
+                fire2Dust.velocity *= 0.166f;
 
                 Dust fire22Dust = Dust.NewDustDirect(
                     new Vector2(
                         projectile.position.X + 1f + posOffsetX,
                         projectile.position.Y + 1f + posOffsetY
                     ) - projectile.velocity * 0.1f,
-                    projectile.width - 10,
-                    projectile.height - 10,
+                    projectile.width - 2,
+                    projectile.height - 2,
                     DustID.IceTorch,
                     0f, 0f, 166,
                     MixedDyeColor,
@@ -152,7 +152,7 @@ public class VapeMark : GlobalProjectile
 
                 fire22Dust.fadeIn = 0.3f + Main.rand.Next(5) * 0.2f;
                 fire22Dust.noGravity = true;
-                fire22Dust.velocity *= 0.15f;
+                fire22Dust.velocity *= 0.166f;
             }
         }
         else

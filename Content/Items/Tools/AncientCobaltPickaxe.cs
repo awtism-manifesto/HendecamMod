@@ -11,12 +11,12 @@ public class AncientCobaltPickaxe : ModItem
         Item.height = 36;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 12;
+        Item.useTime = 8;
         Item.useAnimation = 21;
         Item.autoReuse = true;
 
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 11;
+        Item.damage = 14;
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
         Item.pick = 60;
