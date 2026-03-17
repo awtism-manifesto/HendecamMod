@@ -4,9 +4,9 @@ namespace HendecamMod.Content.Buffs;
 
 public class SheildOffense : ModBuff
 {
-    public static readonly int AttackSpeedBonus = 11;
-    public static readonly int CritBonus = 22;
-    public static readonly int AdditiveDamageBonus = 33;
+    public static readonly int AttackSpeedBonus = 10;
+    public static readonly int CritBonus = 12;
+    public static readonly int AdditiveDamageBonus = 15;
 
     public override void Update(Player player, ref int buffIndex)
     {

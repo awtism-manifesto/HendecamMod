@@ -92,7 +92,7 @@ public class GoldVape : ModItem
 
        
         recipe.AddIngredient(ItemID.GoldBar, 13);
-        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

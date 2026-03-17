@@ -93,7 +93,7 @@ public class CopperVape : ModItem
 
        
         recipe.AddIngredient(ItemID.CopperBar, 7);
-        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

@@ -92,7 +92,7 @@ public class OrichalcumVape : ModItem
 
        
         recipe.AddIngredient(ItemID.OrichalcumBar, 15);
-        recipe.AddIngredient<Polymer>(10);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

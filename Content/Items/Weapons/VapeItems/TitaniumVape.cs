@@ -93,7 +93,7 @@ public class TitaniumVape : ModItem
 
        
         recipe.AddIngredient(ItemID.TitaniumBar, 16);
-        recipe.AddIngredient<Polymer>(10);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

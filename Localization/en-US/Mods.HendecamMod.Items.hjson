@@ -5134,3 +5134,23 @@ TorchGodsFervor: {
 	Tooltip: ""
 	DisplayName: Torch God's Fervor
 }
+
+EchoKit: {
+	Tooltip: ""
+	DisplayName: Echo Kit
+}
+
+PyritePickaxe: {
+	DisplayName: Pyrite Pickaxe
+	Tooltip: ""
+}
+
+VapeKit: {
+	Tooltip: ""
+	DisplayName: DIY Vape Kit
+}
+
+ThePenjamin: {
+	DisplayName: The Penjamin
+	Tooltip: ""
+}

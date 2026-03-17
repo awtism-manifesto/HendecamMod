@@ -92,7 +92,7 @@ public class SilverVape : ModItem
 
        
         recipe.AddIngredient(ItemID.SilverBar, 11);
-        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

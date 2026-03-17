@@ -72,7 +72,7 @@ public class MartianDrone : ModProjectile
 
       
 
-        const int TargetingRange = 75 * 16; // The sentry's targeting range, 50 tiles.
+        const int TargetingRange = 69 * 16; 
         const float FireVelocity = 18f; // The velocity the sentry's shot projectile will travel.
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {

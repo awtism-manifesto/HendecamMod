@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;

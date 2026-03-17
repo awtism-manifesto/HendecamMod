@@ -93,7 +93,7 @@ public class CobaltVape : ModItem
 
        
         recipe.AddIngredient(ItemID.CobaltBar, 12);
-        recipe.AddIngredient<Polymer>(10);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

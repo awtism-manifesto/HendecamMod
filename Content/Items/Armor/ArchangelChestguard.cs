@@ -79,9 +79,9 @@ public class ArchangelChestguard : ModItem
         player.wingTimeMax += 225;
         player.noFallDmg = true;
         player.jumpSpeedBoost += 1.25f;
-        player.moveSpeed += 0.35f;
-        player.wingRunAccelerationMult += 1.77f;
-        player.wingAccRunSpeed += 1.77f;
+        player.moveSpeed += 0.33f;
+        player.wingRunAccelerationMult += 1.625f;
+        player.wingAccRunSpeed += 1.625f;
     }
 
    
@@ -120,11 +120,13 @@ public class ArchangelWings : ModPlayer
                 // Override vertical speed when holding UP or JUMP
                 if ( Player.controlJump)
                 {
-                    float boostStrength = 7.77f;
-                    Player.velocity.Y -= boostStrength;
+                    // float boostStrength = 7.77f;
+                    // Player.velocity.Y -= boostStrength;
+
+                    Player.velocity.Y = MathHelper.Lerp(Player.velocity.Y, -29.25f, 0.345f);
 
                     // Set our own high speed cap
-                    float maxUpwardSpeed = 100f;
+                    float maxUpwardSpeed = 122.5f;
                     if (Player.velocity.Y < -maxUpwardSpeed)
                     {
                         Player.velocity.Y = -maxUpwardSpeed;
@@ -135,7 +137,7 @@ public class ArchangelWings : ModPlayer
                 // Only apply if we have flight time
                 if (Player.velocity.Y == 0 && (Player.controlJump || Player.controlUp) && Player.wingTime > 0)
                 {
-                    Player.velocity.Y = -4f;
+                    Player.velocity.Y = -1.95f;
                 }
             }
             // Handle slow fall/hover - also check wingTime > 0

@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -94,7 +98,57 @@ public class LycopiteFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
-        player.setBonus = "+15% max life";
+        player.GetModPlayer<SporeGrow>().Sporeing = true;
+        player.setBonus = "Rapidly grows explosive mushrooms around the player while at critically low HP";
     }
 }
+public class SporeGrow : ModPlayer
+{
+
+    private const int SporeUseTimeMax = 13;
+
+    public bool Sporeing;
+    private int SporeUseTime;
+
+    public override void ResetEffects()
+    {
+        Sporeing = false;
+    }
+
+    public override void PostUpdate()
+    {
+        // Cooldown ticking down
+        if (SporeUseTime > 0)
+            SporeUseTime--;
+        
+
+        // Only trigger if set bonus is active
+        if (!Sporeing)
+            return;
+
+        // Cooldown check
+        if (SporeUseTime > 0)
+            return;
+
+        int baseDamage = 33;
+
+        if (Player.statLife <= Player.statLifeMax2 * 0.33)
+        {
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+               Player.Center - new Vector2(Main.rand.Next(-115, 115), Main.rand.Next(-115, 115)),
+                Vector2.Zero,
+                ModContent.ProjectileType<BoomShroom>(),
+                baseDamage,
+                8f,
+                Player.whoAmI
+            );
+        }
+        // Start cooldown
+        SporeUseTime = SporeUseTimeMax;
+
+    }
+
+
+}
+

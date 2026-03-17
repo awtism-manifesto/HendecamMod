@@ -92,7 +92,7 @@ public class LeadVape : ModItem
 
        
         recipe.AddIngredient(ItemID.LeadBar, 10);
-        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

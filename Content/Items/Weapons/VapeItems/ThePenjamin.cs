@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using static HendecamMod.Content.Items.Accessories.IronLung;
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
-public class TorchGodsFervor : ModItem
+public class ThePenjamin : ModItem
 {
     public override void SetDefaults()
     {
@@ -22,17 +23,17 @@ public class TorchGodsFervor : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 10;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 18;
-        Item.knockBack = 0.5f;
+        Item.damage = 22;
+        Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        
 
-        Item.value = Item.sellPrice(silver: 275);
-        Item.rare = ItemRarityID.Blue;
+        Item.value = Item.sellPrice(silver: 294);
+        Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<TorchGodVapeSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 9.25f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<PenjaminSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 25f; // Speed of the projectiles the sword will shoot
 
        
     }
@@ -54,9 +55,10 @@ public class TorchGodsFervor : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
+                Vector2 newVelocity = (velocity* 0.5f).RotatedByRandom(MathHelper.ToRadians(7.15f));
 
-               
+                // Decrease velocity randomly for nicer visuals.
+                newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
                 // Create a projectile.
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -66,14 +68,17 @@ public class TorchGodsFervor : ModItem
         }
         else return true;
     }
-
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Smoldering vapor drifts towards the mouse position")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -81,19 +86,14 @@ public class TorchGodsFervor : ModItem
 
        
     }
-    public override Vector2? HoldoutOffset()
-    {
-        return new Vector2(-10.25f, 0f);
-    }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<WeedLeaves>(28);
+        recipe.AddIngredient<SteelBar>(10);
 
-
-        recipe.AddIngredient<PyriteBar>(15);
-       
         recipe.AddIngredient<VapeKit>();
-        recipe.AddIngredient(ItemID.TorchGodsFavor);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
