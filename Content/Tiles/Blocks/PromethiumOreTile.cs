@@ -27,11 +27,9 @@ public class PromethiumOreTile : ModTile
 
         DustType = (ModContent.DustType<MorbiumDust>());
         HitSound = SoundID.Tink;
-        MineResist = 1.75f;
-        MinPick = 225;
+        MineResist = 2f;
+        MinPick = 255;
     }
-
-    // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
         r = 1.75f;

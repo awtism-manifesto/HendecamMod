@@ -5154,3 +5154,8 @@ ThePenjamin: {
 	DisplayName: The Penjamin
 	Tooltip: ""
 }
+
+PromethiumPickaxe: {
+	Tooltip: ""
+	DisplayName: Promethium Pickaxe
+}

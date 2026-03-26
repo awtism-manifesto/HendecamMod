@@ -99,12 +99,9 @@ public class AstatineAnnihilator : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
         recipe.AddIngredient<AstatineBar>(25);
         recipe.AddIngredient<ThePurifier>();
-
         recipe.AddTile<CultistCyclotronPlaced>();
-
         recipe.Register();
     }
 }
