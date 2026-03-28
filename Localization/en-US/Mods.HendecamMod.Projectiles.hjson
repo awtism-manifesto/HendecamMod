@@ -551,3 +551,8 @@ EchoStickyBomb.DisplayName: Echo Sticky Bomb
 EchoStickyBombExplosion.DisplayName: Echo Sticky Bomb Explosion
 FocusBeam.DisplayName: Focus Beam
 PenjaminSmoke.DisplayName: Penjamin Smoke
+FaradayMoonShot.DisplayName: Faraday Moon Shot
+FaradayMoonSentry.DisplayName: Faraday Moon Sentry
+FaradaySunSentry.DisplayName: Faraday Sun Sentry
+FaradaySunShot.DisplayName: Faraday Sun Shot
+EclipseLaser.DisplayName: Eclipse Laser
