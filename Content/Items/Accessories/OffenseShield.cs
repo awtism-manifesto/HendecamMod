@@ -51,21 +51,16 @@ public class OffenseShield : ModItem
     public class OffenseProc : ModPlayer
     {
       
-        private const int buffCooldownMax = 60 * 8;
+       
 
         public bool Offended;
-        private int buffCooldown;
-
+       
         public override void ResetEffects()
         {
             Offended = false;
         }
 
-        public override void PostUpdate()
-        {
-            if (buffCooldown > 0)
-                buffCooldown--;
-        }
+      
 
         public override void OnHurt(Player.HurtInfo info)
         {
@@ -73,11 +68,10 @@ public class OffenseShield : ModItem
                 return;
             Player.AddBuff(BuffID.Panic, 480);
 
-            if (buffCooldown > 0)
-                return;
-            Player.AddBuff(ModContent.BuffType<SheildOffense>(), 240);
+          
+            Player.AddBuff(ModContent.BuffType<SheildOffense>(), 480);
            
-            buffCooldown = buffCooldownMax;
+           
         }
     }
 }

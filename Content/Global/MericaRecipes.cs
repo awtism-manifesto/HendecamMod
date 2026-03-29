@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
@@ -160,22 +161,22 @@ public class MericaRecipes : ModSystem
 
         Recipe wass1 = Recipe.Create(ItemID.LaserMachinegun);
         wass1.AddIngredient(ItemID.MartianConduitPlating, 50);
-        wass1.AddIngredient<Items.CyberneticGunParts>();
+        wass1.AddIngredient<CyberneticGunParts>();
         wass1.AddTile(TileID.MythrilAnvil);
         wass1.Register();
         Recipe wass11 = Recipe.Create(ItemID.Xenopopper);
         wass11.AddIngredient(ItemID.MartianConduitPlating, 50);
-        wass11.AddIngredient<Items.CyberneticGunParts>();
+        wass11.AddIngredient<CyberneticGunParts>();
         wass11.AddTile(TileID.MythrilAnvil);
         wass11.Register();
         Recipe wass111 = Recipe.Create(ItemID.ElectrosphereLauncher);
         wass111.AddIngredient(ItemID.MartianConduitPlating, 50);
-        wass111.AddIngredient<Items.CyberneticGunParts>();
+        wass111.AddIngredient<CyberneticGunParts>();
         wass111.AddTile(TileID.MythrilAnvil);
         wass111.Register();
         Recipe wass1111 = Recipe.Create(ItemID.ChargedBlasterCannon);
         wass1111.AddIngredient(ItemID.MartianConduitPlating, 50);
-        wass1111.AddIngredient<Items.CyberneticGunParts>();
+        wass1111.AddIngredient<CyberneticGunParts>();
         wass1111.AddTile(TileID.MythrilAnvil);
         wass1111.Register();
         Recipe waess = Recipe.Create(ItemID.RodofDiscord);
@@ -247,7 +248,7 @@ public class MericaRecipes : ModSystem
         Recipe wadwess = Recipe.Create(ItemID.SDMG);
         wadwess.AddIngredient(ItemID.Megashark);
         wadwess.AddIngredient(ItemID.LunarBar, 8);
-        wadwess.AddIngredient<Items.CyberneticGunParts>();
+        wadwess.AddIngredient<CyberneticGunParts>();
 
         wadwess.AddTile(TileID.LunarCraftingStation);
         wadwess.Register();
@@ -441,7 +442,7 @@ public class MericaRecipes : ModSystem
         gay6.Register();
 
         Recipe gay69 = Recipe.Create(ItemID.ZapinatorOrange);
-        gay69.AddIngredient<Items.CyberneticGunParts>();
+        gay69.AddIngredient<CyberneticGunParts>();
         gay69.AddIngredient(ItemID.ZapinatorGray);
         gay69.AddTile(TileID.MythrilAnvil);
         gay69.Register();

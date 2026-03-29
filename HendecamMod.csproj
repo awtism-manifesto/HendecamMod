@@ -9,11 +9,9 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <AdditionalFiles Remove="Assets\Shaders\Screen\LobotomyScreen.fx" />
-	  <AdditionalFiles Remove="Content\Effects\Lobotometer.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="Assets\Shaders\Screen\LobotomyScreen.fx" />
-		<Content Include="Content\Effects\Lobotometer.png" />
 	</ItemGroup>
 
 	<!-- References -->

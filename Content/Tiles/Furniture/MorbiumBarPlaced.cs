@@ -20,6 +20,6 @@ public class MorbiumBarPlaced : ModTile
         HitSound = SoundID.Dig;
         DustType = ModContent.DustType<MorbiumDust>();
 
-        AddMapEntry(new Color(85, 229, 197), Language.GetText("Morbium Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(85, 229, 197), Language.GetText("Morbium Bar"));
     }
 }

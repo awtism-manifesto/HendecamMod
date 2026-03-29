@@ -1,4 +1,7 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Global;
+using Terraria.DataStructures;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class ZazaSmoke : ModProjectile
 {
@@ -29,27 +32,13 @@ public class ZazaSmoke : ModProjectile
         Projectile.alpha = 255;
     }
 
-    public override void AI()
+    public override void OnSpawn(IEntitySource source)
     {
-        for (int i = 0; i < 2; i++)
-        {
-            float posOffsetX = 0f;
-            float posOffsetY = 0f;
-            if (i == 1)
-            {
-                posOffsetX = Projectile.velocity.X * 2.5f;
-                posOffsetY = Projectile.velocity.Y * 2.5f;
-            }
+        var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
+        vapeMark.VapeProj = true;
+        vapeMark.DustScale = 1.5f;
 
-            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
-            fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-            fire2Dust.noGravity = true;
-            fire2Dust.velocity *= 1.33f;
-            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
-            fireDust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-            fireDust.noGravity = true;
-            fireDust.velocity *= 1.33f;
-        }
+
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

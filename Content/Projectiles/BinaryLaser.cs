@@ -8,7 +8,7 @@ public class BinaryLaser : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 196; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 108; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 

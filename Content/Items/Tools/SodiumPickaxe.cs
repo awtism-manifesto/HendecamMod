@@ -23,7 +23,7 @@ public class SodiumPickaxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
 
-        Item.pick = 64; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
+        Item.pick = 61; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
     }
 

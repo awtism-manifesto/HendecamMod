@@ -50,15 +50,5 @@ public class FakeGodhood : ModItem
         player.GetModPlayer<AngelSpeed>().Angel = true;
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-
-        recipe.AddIngredient<Bullshit5>();
-        recipe.AddIngredient<SoulOfImmunityAccessory>();
-        recipe.AddTile<CultistCyclotronPlaced>();
-       
-        recipe.AddTile(TileID.VoidMonolith);
-        recipe.Register();
-    }
+  
 }

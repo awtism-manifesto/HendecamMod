@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -94,7 +99,89 @@ public class LycopiteFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
-        player.setBonus = "+15% max life";
+        player.GetModPlayer<SporeGrow>().Sporeing = true;
+        player.setBonus = "Rapidly grows explosive mushrooms around the player while at critically low HP";
     }
 }
+public class SporeGrow : ModPlayer
+{
+
+    private const int SporeUseTimeMax = 11;
+
+    public bool Sporeing;
+    private int SporeUseTime;
+
+    public override void ResetEffects()
+    {
+        Sporeing = false;
+    }
+
+    public override void PostUpdate()
+    {
+        // Cooldown ticking down
+        if (SporeUseTime > 0)
+            SporeUseTime--;
+        
+
+        // Only trigger if set bonus is active
+        if (!Sporeing)
+            return;
+
+        // Cooldown check
+        if (SporeUseTime > 0)
+            return;
+
+        int baseDamage = 31;
+
+        // Manually calculate total multiplier
+        float totalMultiplier = 1f; // Base 100%
+
+        // Generic damage (100% effectiveness)
+        totalMultiplier += Player.GetDamage(DamageClass.Generic).Additive - 1f;
+
+        // Get all damage classes and check if they should contribute to OmniDamage
+        // OmniDamage gets 67% of specialized class bonuses
+        DamageClass[] specializedClasses = new DamageClass[] {
+        DamageClass.Magic,
+        DamageClass.Melee,
+        DamageClass.Ranged,
+        DamageClass.Summon,
+        DamageClass.Throwing,
+        ModContent.GetInstance<StupidDamage>()
+        };
+        foreach (var damageClass in specializedClasses)
+        {
+            // Add 67% of the class's bonus
+            float classBonus = Player.GetDamage(damageClass).Additive - 1f;
+            if (classBonus > 0)
+            {
+                totalMultiplier += classBonus * 0.67f;
+            }
+        }
+
+        // Calculate final damage
+        int calculatedDamage = (int)(baseDamage * totalMultiplier);
+
+        // Ensure minimum damage of 1
+        if (calculatedDamage < 1) calculatedDamage = 1;
+
+        if (Player.statLife <= Player.statLifeMax2 * 0.33)
+        {
+            Projectile.NewProjectile(
+                Player.GetSource_FromThis(),
+               Player.Center - new Vector2(Main.rand.Next(-120, 120), Main.rand.Next(-95, 95)),
+                Vector2.Zero,
+                ModContent.ProjectileType<BoomShroom>(),
+                calculatedDamage,
+                8f,
+                Player.whoAmI
+            );
+        }
+        // Start cooldown
+        SporeUseTime = SporeUseTimeMax;
+
+    }
+
+
+}
+

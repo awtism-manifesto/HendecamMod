@@ -453,7 +453,7 @@ PowerPants: {
 
 YelmutsHelmet: {
 	SetBonus: Mods.HendecamMod.Items.YelmutsHelmet.SetBonus
-	DisplayName: Yelmuts Helmet
+	DisplayName: Yelmut's Helmet
 	Tooltip: ""
 }
 
@@ -5083,4 +5083,79 @@ PalladiumVape: {
 TitaniumVape: {
 	DisplayName: Titanium Vape
 	Tooltip: ""
+}
+
+PromethiumOre: {
+	Tooltip: ""
+	DisplayName: Promethium Ore
+}
+
+AncientCobaltBrick: {
+	Tooltip: ""
+	DisplayName: Ancient Cobalt Brick
+}
+
+PromethiumBar: {
+	Tooltip: ""
+	DisplayName: Promethium Bar
+}
+
+IronLung: {
+	Tooltip: ""
+	DisplayName: Iron Lung
+}
+
+BrainScanner: {
+	Tooltip: ""
+	DisplayName: Brain Scanner
+}
+
+Red40VapeDye: {
+	Tooltip: ""
+	DisplayName: Red 40 Vape Dye
+}
+
+Yellow5VapeDye: {
+	Tooltip: ""
+	DisplayName: Yellow 5 Vape Dye
+}
+
+Green3VapeDye: {
+	Tooltip: ""
+	DisplayName: Green 3 Vape Dye
+}
+
+Blue1VapeDye: {
+	Tooltip: ""
+	DisplayName: Blue 1 Vape Dye
+}
+
+TorchGodsFervor: {
+	Tooltip: ""
+	DisplayName: Torch God's Fervor
+}
+
+EchoKit: {
+	Tooltip: ""
+	DisplayName: Echo Kit
+}
+
+PyritePickaxe: {
+	DisplayName: Pyrite Pickaxe
+	Tooltip: ""
+}
+
+VapeKit: {
+	Tooltip: ""
+	DisplayName: DIY Vape Kit
+}
+
+ThePenjamin: {
+	DisplayName: The Penjamin
+	Tooltip: ""
+}
+
+PromethiumPickaxe: {
+	Tooltip: ""
+	DisplayName: Promethium Pickaxe
 }

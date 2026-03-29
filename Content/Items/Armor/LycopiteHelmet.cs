@@ -92,7 +92,7 @@ public class LycopiteHelmet : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
-        player.setBonus = "+15% max life";
+        player.GetModPlayer<SporeGrow>().Sporeing = true;
+        player.setBonus = "Rapidly grows explosive mushrooms around the player while at critically low HP";
     }
 }

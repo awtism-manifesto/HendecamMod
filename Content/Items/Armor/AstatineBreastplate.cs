@@ -106,8 +106,8 @@ public class AstaSetBoom : ModPlayer
         if (explosionCooldown > 0)
             return;
 
-        int baseDamage = 850;
-        float defenseScale = 2.5f;
+        int baseDamage = 925;
+        float defenseScale = 3.33f;
         int finalDamage = baseDamage + Player.statDefense * defenseScale;
 
         // Spawn explosion

@@ -1,0 +1,89 @@
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Global;
+using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Accessories.IronLung;
+using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
+
+namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
+
+// This example is similar to the Wooden Arrow projectile
+public class PenjaminSmoke : ModProjectile
+{
+    public override void SetStaticDefaults()
+    {
+       
+    }
+
+    public override void SetDefaults()
+    {
+        Projectile.width = 16; // The width of projectile hitbox
+        Projectile.height = 16; // The height of projectile hitbox
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.penetrate = 3;
+        Projectile.localNPCHitCooldown = 20;
+       
+        Projectile.friendly = true;
+        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.timeLeft = 47;
+        Projectile.extraUpdates = 1;
+        Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
+    }
+    public override void OnSpawn(IEntitySource source)
+    {
+        var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
+        vapeMark.VapeProj = true;
+        vapeMark.DustScale = 2.66f;
+
+
+    }
+    public override void AI()
+    {
+
+
+        Player player = Main.player[Projectile.owner];
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == true)
+        {
+            Projectile.extraUpdates = 1;
+        }
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
+        {
+            // Apply gravity after a quarter of a second
+            Projectile.ai[0] += 1f;
+            if (Projectile.ai[0] >= 5f)
+            {
+                Projectile.ai[0] = 5f;
+                Projectile.velocity.Y -= 0.111f;
+            }
+        }
+
+        // The projectile is rotated to face the direction of travel
+        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+
+       
+
+        for (int i = 0; i < 2; i++)
+        {
+            float posOffsetX = 0f;
+            float posOffsetY = 0f;
+            if (i == 1)
+            {
+                posOffsetX = Projectile.velocity.X * 2.5f;
+                posOffsetY = Projectile.velocity.Y * 2.5f;
+            }
+
+           
+           
+           
+        }
+
+    }
+
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+       
+
+        Projectile.damage = (int)(Projectile.damage * 0.867f);
+    }
+
+   
+}

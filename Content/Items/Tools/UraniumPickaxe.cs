@@ -8,7 +8,7 @@ public class UraniumPickaxe : ModItem
 {
     public override void SetDefaults()
     {
-        Item.damage = 16;
+        Item.damage = 19;
         Item.DamageType = DamageClass.Melee;
         Item.width = 35;
         Item.height = 35;

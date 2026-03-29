@@ -11,15 +11,15 @@ public class AzuritePickaxe : ModItem
         Item.height = 36;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 14;
+        Item.useTime = 8;
         Item.useAnimation = 21;
         Item.autoReuse = true;
 
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 11;
+        Item.damage = 24;
         Item.knockBack = 6;
         Item.ChangePlayerDirectionOnShoot = false;
-        Item.pick = 105;
+        Item.pick = 115;
         Item.useTurn = true;
 
         Item.value = 265000;
@@ -43,13 +43,7 @@ public class AzuritePickaxe : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

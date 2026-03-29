@@ -40,16 +40,17 @@ public class BulletBlade : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 27; 
-        damage = (int)(damage * Main.rand.NextFloat(0.49f, 0.5f));
+        damage = (int)(damage * 0.48f);
         SoundEngine.PlaySound(SoundID.Item38, player.position);
         for (int i = 0; i < NumProjectiles; i++)
         {
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360));
+            float rotation = MathHelper.ToRadians(i * 13.34f);
+            Vector2 newVelocity = velocity.RotatedBy(rotation);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
-        return false; 
+        return true; 
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -35,7 +35,7 @@ namespace HendecamMod.Content.Global
 
     public class IQDisplay : InfoDisplay
     {
-        public static Color RedInfoTextColor => new(255, 19, 19, Main.mouseTextColor);
+       
 
         public override string HoverTexture => Texture + "_Hover";
 
@@ -77,7 +77,7 @@ namespace HendecamMod.Content.Global
                 displayColor = GoldInfoTextColor;
             }
 
-            // Round for cleaner display
+           
             int currentInt = (int)current;
             int maxInt = (int)max;
 

@@ -25,11 +25,11 @@ public class FlippingBottle : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.value = Item.buyPrice(silver: 10);
-        Item.rare = ItemRarityID.Blue;
+        Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
 
         Item.shoot = ModContent.ProjectileType<FlippingBottleProj>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 8.7f; // Speed of the projectiles the sword will shoot
+        Item.shootSpeed = 8.67f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;

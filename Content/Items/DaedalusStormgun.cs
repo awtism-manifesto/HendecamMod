@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Weapons.VapeItems;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -90,18 +91,7 @@ public class DaedalusStormgun : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

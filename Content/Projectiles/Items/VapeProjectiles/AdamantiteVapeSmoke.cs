@@ -1,5 +1,9 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
+using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Accessories.IronLung;
+using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
+using static HendecamMod.Content.Items.Accessories.VapeDyes.Yellow5VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -21,25 +25,39 @@ public class AdamantiteVapeSmoke : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
         Projectile.timeLeft = 75;
-        Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
+       
     }
-
+    public override void OnSpawn(IEntitySource source)
+    {
+        var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
+        vapeMark.VapeProj = true;
+        vapeMark.DustScale = 3.33f;
+        
+       
+    }
     public override void AI()
     {
-       
 
-        // Apply gravity after a quarter of a second
-        Projectile.ai[0] += 1f;
-        if (Projectile.ai[0] >= 8f)
+
+        Player player = Main.player[Projectile.owner];
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == true)
         {
-            Projectile.ai[0] = 8f;
-            Projectile.velocity.Y -= 0.125f;
+            Projectile.extraUpdates = 1;
+        }
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
+        {
+            // Apply gravity after a quarter of a second
+            Projectile.ai[0] += 1f;
+            if (Projectile.ai[0] >= 8f)
+            {
+                Projectile.ai[0] = 8f;
+                Projectile.velocity.Y -= 0.125f;
+            }
         }
 
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 
-       
 
         for (int i = 0; i < 2; i++)
         {
@@ -51,15 +69,14 @@ public class AdamantiteVapeSmoke : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Smoke, 0f, 0f, 166, default, 3.33f);
-            fire2Dust.fadeIn = 0.2f + Main.rand.Next(4) * 0.1f;
-            fire2Dust.noGravity = true;
-            fire2Dust.velocity *= 1.33f;
+        
+
             Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Adamantite, 0f, 0f, 100, default, 1.5f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             fireDust.noGravity = true;
             fireDust.velocity *= 1.33f;
         }
+
 
     }
 

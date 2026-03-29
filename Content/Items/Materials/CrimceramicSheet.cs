@@ -10,6 +10,7 @@ public class CrimceramicSheet : ModItem
     public override void SetStaticDefaults()
     {
         ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<EbonceramicSheet>();
+        Item.ResearchUnlockCount = 25;
     }
     public override void SetDefaults()
     {
@@ -41,9 +42,7 @@ public class CrimceramicSheet : ModItem
         recipe.AddIngredient<Crimclay>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
-
         recipe = CreateRecipe(10);
-
         recipe.AddIngredient(ItemID.SoulofNight);
         recipe.AddIngredient<Crimclay>();
         recipe.AddIngredient<CeramicSheet>(10);

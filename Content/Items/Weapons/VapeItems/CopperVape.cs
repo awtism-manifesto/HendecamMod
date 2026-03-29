@@ -4,6 +4,7 @@ using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Accessories.IronLung;
 
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
@@ -33,7 +34,7 @@ public class CopperVape : ModItem
 
         Item.shoot = ModContent.ProjectileType<CopperVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 7.25f; // Speed of the projectiles the sword will shoot
-
+        
        
     }
     public float LobotometerCost = 2f;
@@ -49,20 +50,23 @@ public class CopperVape : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-
-        for (int i = 0; i < NumProjectiles; i++)
+        if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
         {
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.15f));
+            for (int i = 0; i < NumProjectiles; i++)
+            {
+                // Rotate the velocity randomly by 30 degrees at max.
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(7.75f));
 
-            // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.35f);
+                // Decrease velocity randomly for nicer visuals.
+                newVelocity *= 1f - Main.rand.NextFloat(0.35f);
 
-            // Create a projectile.
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+                // Create a projectile.
+                Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            }
+            return false; // Return false because we don't want tModLoader to shoot projectile
         }
-
-        return false; // Return false because we don't want tModLoader to shoot projectile
+        else return true;
+       
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -79,14 +83,17 @@ public class CopperVape : ModItem
 
        
     }
-
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
        
         recipe.AddIngredient(ItemID.CopperBar, 7);
-        recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
