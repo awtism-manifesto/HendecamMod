@@ -24,7 +24,8 @@ public class FaradaySunShot : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
         Projectile.localNPCHitCooldown = -1;
-       
+        Projectile.tileCollide = false;
+
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

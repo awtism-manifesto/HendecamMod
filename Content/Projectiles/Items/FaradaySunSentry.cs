@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Dusts;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
@@ -208,7 +209,7 @@ public class FaradaySunSentry : ModProjectile
                     for (int i = 0; i < 50; i++)
                     {
                         Vector2 dustSpeed = Main.rand.NextVector2Circular(5f, 5f);
-                        Dust eclipseDust = Dust.NewDustPerfect(Projectile.Center, DustID.GoldFlame, dustSpeed, Scale: 1.5f);
+                        Dust eclipseDust = Dust.NewDustPerfect(Projectile.Center, ModContent.DustType<AstatineDust>(), dustSpeed, Scale: 1.5f);
                         eclipseDust.noGravity = true;
                     }
 
@@ -300,7 +301,7 @@ public class FaradaySunSentry : ModProjectile
         {
             float distanceToTargetNPC = Vector2.Distance(Projectile.Center, npc.Center);
             // Is this enemy closer than others? Is it in line of sight?
-            if (distanceToTargetNPC < closestTargetDistance && Collision.CanHit(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height))
+            if (distanceToTargetNPC < closestTargetDistance)
             {
                 closestTargetDistance = distanceToTargetNPC;
                 targetNPC = npc;

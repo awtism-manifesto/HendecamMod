@@ -317,8 +317,8 @@ public class FaradayMoonSentry : ModProjectile
         if (npc.CanBeChasedBy(this))
         {
             float distanceToTargetNPC = Vector2.Distance(Projectile.Center, npc.Center);
-            // Is this enemy closer than others? Is it in line of sight?
-            if (distanceToTargetNPC < closestTargetDistance && Collision.CanHit(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height))
+            
+            if (distanceToTargetNPC < closestTargetDistance)
             {
                 closestTargetDistance = distanceToTargetNPC;
                 targetNPC = npc;

@@ -82,6 +82,7 @@ public class ArchangelChestguard : ModItem
         player.moveSpeed += 0.33f;
         player.wingRunAccelerationMult += 1.625f;
         player.wingAccRunSpeed += 1.625f;
+        player.waterWalk2 = true;
     }
 
    
@@ -102,6 +103,8 @@ public class ArchangelWings : ModPlayer
         if (ArchWings)
         {
             Player.wingsLogic = EquipLoader.GetEquipSlot(Mod, "ArchangelChestguard", EquipType.Wings);
+
+            Player.waterWalk2 = true;
         }
 
         var starboardPlayer = Player.GetModPlayer<CelestialStarboardPlayer>();

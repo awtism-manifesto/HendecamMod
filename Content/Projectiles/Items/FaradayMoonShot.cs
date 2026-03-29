@@ -24,6 +24,7 @@ public class FaradayMoonShot : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
         Projectile.localNPCHitCooldown = -1;
+        Projectile.tileCollide = false;
        
     }
 
