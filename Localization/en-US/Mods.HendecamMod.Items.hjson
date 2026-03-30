@@ -5189,3 +5189,13 @@ PyrrhicClaymore: {
 	DisplayName: Pyrrhic Claymore
 	Tooltip: ""
 }
+
+PromethiumGreataxe: {
+	DisplayName: Promethium Greataxe
+	Tooltip: ""
+}
+
+PromethiumSword: {
+	DisplayName: Promethium Sword
+	Tooltip: ""
+}

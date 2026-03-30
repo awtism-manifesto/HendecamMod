@@ -27,13 +27,13 @@ public class PromethiumSwing : ModProjectile
         Projectile.height = 16;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
-        Projectile.penetrate = 7; // The projectile can hit 3 enemies.
+        Projectile.penetrate = 18; // The projectile can hit 3 enemies.
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = true;
         Projectile.ownerHitCheck = true; // A line of sight check so the projectile can't deal damage through tiles.
-        Projectile.ownerHitCheckDistance = 383; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
+        Projectile.ownerHitCheckDistance = 296; // The maximum range that the projectile can hit a target. 300 pixels is 18.75 tiles.
         Projectile.usesOwnerMeleeHitCD = true; // This will make the projectile apply the standard number of immunity frames as normal melee attacks.
         // Normally, projectiles die after they have hit all the enemies they can.
         // But, for this case, we want the projectile to continue to live so we can have the visuals of the swing.
@@ -102,7 +102,7 @@ public class PromethiumSwing : ModProjectile
     public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
     {
         // This is how large the circumference is, aka how big the range is. Vanilla uses 94f to match it to the size of the texture.
-        float coneLength = 78.5f * Projectile.scale;
+        float coneLength = 63.5f * Projectile.scale;
         // This number affects how much the start and end of the collision will be rotated.
         // Bigger Pi numbers will rotate the collision counter clockwise.
         // Smaller Pi numbers will rotate the collision clockwise.
@@ -185,9 +185,9 @@ public class PromethiumSwing : ModProjectile
         float lightingColor = Lighting.GetColor(Projectile.Center.ToTileCoordinates()).ToVector3().Length() / (float)Math.Sqrt(3.0);
         lightingColor = Utils.Remap(lightingColor, 0.2f, 1f, 0f, 1f);
 
-        Color backDarkColor = new Color(0, 255, 7); // Original Excalibur color: Color(180, 160, 60)
-        Color middleMediumColor = new Color(0, 232, 45); // Original Excalibur color: Color(255, 255, 80)
-        Color frontLightColor = new Color(117, 255, 95); // Original Excalibur color: Color(255, 240, 150)
+        Color backDarkColor = new Color(54, 192, 253); // Original Excalibur color: Color(180, 160, 60)
+        Color middleMediumColor = new Color(49, 178, 245); // Original Excalibur color: Color(255, 255, 80)
+        Color frontLightColor = new Color(67, 255, 255); // Original Excalibur color: Color(255, 240, 150)
 
         Color whiteTimesLerpTime = Color.SkyBlue * lerpTime * 0.5f;
         whiteTimesLerpTime.A = (byte)(whiteTimesLerpTime.A * (1f - lightingColor));
@@ -233,7 +233,7 @@ public class PromethiumSwing : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
+            ModContent.ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.39f), (Projectile.knockBack * 0.01f), Projectile.owner);
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

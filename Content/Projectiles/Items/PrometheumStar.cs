@@ -1,8 +1,9 @@
 ﻿using HendecamMod.Content.Dusts;
 
-namespace HendecamMod.Content.Projectiles;
+namespace HendecamMod.Content.Projectiles.Items;
 
-public class LunarContrail : ModProjectile
+
+public class PrometheumStar : ModProjectile
 {
     private NPC HomingTarget
     {
@@ -28,8 +29,8 @@ public class LunarContrail : ModProjectile
         Projectile.timeLeft = 330;
         Projectile.extraUpdates = 1;
         Projectile.tileCollide = false;
-        Projectile.width = 4; // The width of projectile hitbox
-        Projectile.height = 4; // The height of projectile hitbox
+        Projectile.width = 46; // The width of projectile hitbox
+        Projectile.height = 46; // The height of projectile hitbox
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
@@ -42,31 +43,14 @@ public class LunarContrail : ModProjectile
         {
             if (Math.Abs(Projectile.velocity.X) <= 20.5f && Math.Abs(Projectile.velocity.Y) <= 20.5f)
             {
-                Projectile.velocity *= 1.05f;
+                Projectile.velocity *= 1.025f;
             }
         }
+        Lighting.AddLight(Projectile.Center, 0.5f, 1.48f, 1.85f);
+      
+        Projectile.rotation -= 0.33f;
 
-        for (int i = 0; i < 2; i++)
-        {
-            float posOffsetX = 0f;
-            float posOffsetY = 0f;
-            if (i == 1)
-            {
-                posOffsetX = Projectile.velocity.X * 2.5f;
-                posOffsetY = Projectile.velocity.Y * 2.5f;
-            }
-
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustID.Vortex, 0f, 0f, 100, default, 1.25f);
-            chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
-            chudDust.velocity *= 0.1f;
-            chudDust.noGravity = true;
-            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.85f);
-            chud2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
-            chud2Dust.velocity *= 0.1f;
-            chud2Dust.noGravity = true;
-        }
-
-        float maxDetectRadius = 500f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 1950f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
         if (DelayTimer < 30)
@@ -95,10 +79,14 @@ public class LunarContrail : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(12f)).ToRotationVector2() * length;
-        Projectile.rotation = Projectile.velocity.ToRotation();
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(9f)).ToRotationVector2() * length;
+        
     }
-
+    public override Color? GetAlpha(Color lightColor)
+    {
+        // Always draw fully bright. This is important because sentries can usually be placed inside tiles where it would be dark.
+        return Color.White;
+    }
     // Finding the closest NPC to attack within maxDetectDistance range
     // If not found then returns null
     public NPC FindClosestNPC(float maxDetectDistance)
@@ -135,8 +123,8 @@ public class LunarContrail : ModProjectile
         {
             Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Vortex);
             dust.noGravity = true;
-            dust.velocity *= 7.5f;
-            dust.scale *= 1.5f;
+            dust.velocity *= 14.5f;
+            dust.scale *= 1.85f;
         }
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);

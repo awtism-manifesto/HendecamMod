@@ -10,15 +10,15 @@ public class RadAura2 : ModProjectile
         Projectile.height = 799;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
-        Projectile.penetrate = 10;
-        Projectile.timeLeft = 12;
+        Projectile.penetrate = 99;
+        Projectile.timeLeft = 16;
         Projectile.alpha = 205;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = false;
 
         Projectile.scale = 1f;
         Projectile.usesIDStaticNPCImmunity = true;
-        Projectile.idStaticNPCHitCooldown = 7;
+        Projectile.idStaticNPCHitCooldown = 5;
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -40,7 +40,7 @@ public class RadAura2 : ModProjectile
             Projectile.rotation += -0.2f;
         }
 
-        Lighting.AddLight(Projectile.Center, 0.25f, 0.95f, 0.05f);
+        Lighting.AddLight(Projectile.Center, 1f, 2.95f, 3.55f);
         Projectile.velocity = Vector2.Zero;
     }
 }
