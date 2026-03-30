@@ -3,6 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
 using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
@@ -105,7 +106,7 @@ public class LycopiteFedora : ModItem
 public class SporeGrow : ModPlayer
 {
 
-    private const int SporeUseTimeMax = 13;
+    private const int SporeUseTimeMax = 11;
 
     public bool Sporeing;
     private int SporeUseTime;
@@ -130,16 +131,48 @@ public class SporeGrow : ModPlayer
         if (SporeUseTime > 0)
             return;
 
-        int baseDamage = 33;
+        int baseDamage = 31;
+
+        // Manually calculate total multiplier
+        float totalMultiplier = 1f; // Base 100%
+
+        // Generic damage (100% effectiveness)
+        totalMultiplier += Player.GetDamage(DamageClass.Generic).Additive - 1f;
+
+        // Get all damage classes and check if they should contribute to OmniDamage
+        // OmniDamage gets 67% of specialized class bonuses
+        DamageClass[] specializedClasses = new DamageClass[] {
+        DamageClass.Magic,
+        DamageClass.Melee,
+        DamageClass.Ranged,
+        DamageClass.Summon,
+        DamageClass.Throwing,
+        ModContent.GetInstance<StupidDamage>()
+        };
+        foreach (var damageClass in specializedClasses)
+        {
+            // Add 67% of the class's bonus
+            float classBonus = Player.GetDamage(damageClass).Additive - 1f;
+            if (classBonus > 0)
+            {
+                totalMultiplier += classBonus * 0.67f;
+            }
+        }
+
+        // Calculate final damage
+        int calculatedDamage = (int)(baseDamage * totalMultiplier);
+
+        // Ensure minimum damage of 1
+        if (calculatedDamage < 1) calculatedDamage = 1;
 
         if (Player.statLife <= Player.statLifeMax2 * 0.33)
         {
             Projectile.NewProjectile(
                 Player.GetSource_FromThis(),
-               Player.Center - new Vector2(Main.rand.Next(-115, 115), Main.rand.Next(-115, 115)),
+               Player.Center - new Vector2(Main.rand.Next(-120, 120), Main.rand.Next(-95, 95)),
                 Vector2.Zero,
                 ModContent.ProjectileType<BoomShroom>(),
-                baseDamage,
+                calculatedDamage,
                 8f,
                 Player.whoAmI
             );

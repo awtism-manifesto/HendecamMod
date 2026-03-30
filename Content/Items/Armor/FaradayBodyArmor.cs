@@ -1,7 +1,10 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -84,11 +87,139 @@ public class FaradayBodyArmor : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "The globalist 5G waves are no longer reducing your max life and lobotometer";
+        player.setBonus = "Summons an orbiting sun and moon around the player that shoot deadly lasers at foes, and extra deadly Eclipse Lasers when aligned";
+        player.GetModPlayer<FlatEarthSunMoon>().Bodying = true;
 
-        player.statLifeMax2 = (int)(player.statLifeMax2*1.1)+95;
-
-        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 250;
     }
 }
+public class FlatEarthSunMoon : ModPlayer
+{
+    private const int BodyUseTimeMax = 1000000;
+
+    public bool Bodying;
+    private int BodyUseTime;
+
+    // Track the spawned sentries
+    public List<int> ActiveMoonSentryIndices = new List<int>();
+    public List<int> ActiveSunSentryIndices = new List<int>();
+
+    public override void ResetEffects()
+    {
+        bool wasBodying = Bodying;
+        Bodying = false;
+
+        // If set bonus was just removed and we're respawning sentries, reset cooldown
+        if (wasBodying && !Bodying)
+        {
+            BodyUseTime = 0; // Reset cooldown so sentries spawn immediately when re-equipped
+        }
+    }
+
+    public override void PostUpdate()
+    {
+        // Cooldown ticking down
+        if (BodyUseTime > 0)
+            BodyUseTime--;
+
+        // Clean up any dead projectiles from our tracking lists
+        CleanupDeadProjectiles();
+
+        // Check if set bonus is active
+        if (Bodying)
+        {
+            // Cooldown check - spawn new sentries if needed
+            if (BodyUseTime <= 0 && !HasActiveSentries())
+            {
+                int baseDamage = 67;
+
+                // Spawn moon sentry
+                int moonSentry = Projectile.NewProjectile(
+                    Player.GetSource_FromThis(),
+                    Player.Center,
+                    Vector2.Zero,
+                    ModContent.ProjectileType<FaradayMoonSentry>(),
+                    baseDamage,
+                    6.7f,
+                    Player.whoAmI
+                );
+                ActiveMoonSentryIndices.Add(moonSentry);
+
+                // Spawn sun sentry
+                int sunSentry = Projectile.NewProjectile(
+                    Player.GetSource_FromThis(),
+                    Player.Center,
+                    Vector2.Zero,
+                    ModContent.ProjectileType<FaradaySunSentry>(),
+                    baseDamage,
+                    6.7f,
+                    Player.whoAmI
+                );
+                ActiveSunSentryIndices.Add(sunSentry);
+
+                // Start cooldown
+                BodyUseTime = BodyUseTimeMax;
+            }
+        }
+        else
+        {
+            // Set bonus is NOT active - despawn all sentries
+            DespawnAllSentries();
+        }
+    }
+
+    private bool HasActiveSentries()
+    {
+        return ActiveMoonSentryIndices.Any(index => Main.projectile[index].active) ||
+               ActiveSunSentryIndices.Any(index => Main.projectile[index].active);
+    }
+
+    private void CleanupDeadProjectiles()
+    {
+        // Remove dead moon sentries from tracking list
+        ActiveMoonSentryIndices.RemoveAll(index =>
+            index < 0 ||
+            index >= Main.maxProjectiles ||
+            !Main.projectile[index].active ||
+            Main.projectile[index].type != ModContent.ProjectileType<FaradayMoonSentry>()
+        );
+
+        // Remove dead sun sentries from tracking list
+        ActiveSunSentryIndices.RemoveAll(index =>
+            index < 0 ||
+            index >= Main.maxProjectiles ||
+            !Main.projectile[index].active ||
+            Main.projectile[index].type != ModContent.ProjectileType<FaradaySunSentry>()
+        );
+    }
+
+    private void DespawnAllSentries()
+    {
+        // Despawn all moon sentries
+        foreach (int index in ActiveMoonSentryIndices.ToList())
+        {
+            if (index >= 0 && index < Main.maxProjectiles && Main.projectile[index].active)
+            {
+                Main.projectile[index].Kill();
+            }
+        }
+        ActiveMoonSentryIndices.Clear();
+
+        // Despawn all sun sentries
+        foreach (int index in ActiveSunSentryIndices.ToList())
+        {
+            if (index >= 0 && index < Main.maxProjectiles && Main.projectile[index].active)
+            {
+                Main.projectile[index].Kill();
+            }
+        }
+        ActiveSunSentryIndices.Clear();
+    }
+
+    public override void OnEnterWorld()
+    {
+        // Clear tracking lists when entering a world to prevent stale references
+        ActiveMoonSentryIndices.Clear();
+        ActiveSunSentryIndices.Clear();
+    }
+}
+

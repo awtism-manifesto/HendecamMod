@@ -4,10 +4,12 @@ namespace HendecamMod.Common.Systems;
 
 public class RiverFish : ModPlayer
 {
+    public bool inShimmer;
     public override void CatchFish(FishingAttempt attempt, ref int itemDrop, ref int npcSpawn, ref AdvancedPopupRequest sonar, ref Vector2 sonarPosition)
     {
+        inShimmer = !attempt.inLava && !attempt.inHoney && Player.ZoneShimmer;
         bool cheater = !Main.hardMode;
-        bool inShimmer = !attempt.inLava && !attempt.inHoney && Player.ZoneShimmer;
+       
         bool trashRod = attempt.playerFishingConditions.PoleItemType == ItemID.WoodFishingPole;
         bool fishRod = attempt.playerFishingConditions.PoleItemType == ItemID.ReinforcedFishingPole;
         bool itemRod = attempt.playerFishingConditions.PoleItemType == ItemID.FisherofSouls || attempt.playerFishingConditions.PoleItemType == ItemID.Fleshcatcher;
@@ -591,14 +593,20 @@ public class RiverFish : ModPlayer
             }
         }
     }
-
+    public override void ResetEffects()
+    {
+        inShimmer = false;
+    }
     public override void ModifyCaughtFish(Item fish)
     {
-        if (Player.GetFishingConditions().BaitItemType != ItemID.EmpressButterfly && fish.rare != ItemRarityID.Quest)
+        if (inShimmer && !Main.hardMode)
         {
-            if (Player.GetFishingConditions().BaitItemType != ItemID.Shimmerfly && fish.rare != ItemRarityID.Quest)
+            if (Player.GetFishingConditions().BaitItemType != ItemID.EmpressButterfly && fish.rare != ItemRarityID.Quest)
             {
-                fish.stack -= 999;
+                if (Player.GetFishingConditions().BaitItemType != ItemID.Shimmerfly && fish.rare != ItemRarityID.Quest)
+                {
+                    fish.stack -= 999;
+                }
             }
         }
     }
