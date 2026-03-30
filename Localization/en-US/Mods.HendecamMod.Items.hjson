@@ -5159,3 +5159,13 @@ PromethiumPickaxe: {
 	Tooltip: ""
 	DisplayName: Promethium Pickaxe
 }
+
+PromethiumGreataxe: {
+	Tooltip: ""
+	DisplayName: Promethium Greataxe
+}
+
+PromethiumSword: {
+	Tooltip: ""
+	DisplayName: Promethium Sword
+}

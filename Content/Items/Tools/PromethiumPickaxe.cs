@@ -18,7 +18,7 @@ public class PromethiumPickaxe : ModItem
         Item.knockBack = 1;
         Item.useTurn = true;
         Item.value = Item.buyPrice(gold: 8);
-        Item.rare = ItemRarityID.Red;
+        Item.rare = ItemRarityID.Purple;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.pick = 260;
