@@ -5159,3 +5159,33 @@ PromethiumPickaxe: {
 	Tooltip: ""
 	DisplayName: Promethium Pickaxe
 }
+
+MythrilRose: {
+	Tooltip: ""
+	DisplayName: Mythril Rose
+}
+
+OrichalcumRose: {
+	DisplayName: Orichalcum Rose
+	Tooltip: ""
+}
+
+FireDiamondHook: {
+	DisplayName: Fire Diamond Hook
+	Tooltip: ""
+}
+
+TheStickedBrick: {
+	DisplayName: The Sticked Brick
+	Tooltip: ""
+}
+
+SharpeningStone: {
+	DisplayName: Sharpening Stone
+	Tooltip: ""
+}
+
+PyrrhicClaymore: {
+	DisplayName: Pyrrhic Claymore
+	Tooltip: ""
+}

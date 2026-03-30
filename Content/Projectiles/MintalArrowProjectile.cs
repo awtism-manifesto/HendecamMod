@@ -1,13 +1,20 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.DamageClasses;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles;
 
 public class MintalArrowProjectile : ModProjectile
 {
+    
+    
+
+    private bool hasManaForHoming = true;
+
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 20; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 12; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 
@@ -16,45 +23,25 @@ public class MintalArrowProjectile : ModProjectile
         Projectile.width = 6;
         Projectile.height = 6;
         Projectile.friendly = true;
-        Projectile.penetrate = 1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = DamageClass.Ranged;
-        Projectile.light = 0.25f; // How much light emit around the projectile
+        Projectile.penetrate = 2; 
+        Projectile.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Projectile.light = 0.25f;
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.extraUpdates = 2;
-        Projectile.timeLeft = 330;
-        Projectile.usesIDStaticNPCImmunity = true;
-        Projectile.idStaticNPCHitCooldown = 10;
-        Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
-        AIType = ProjectileID.CrystalBullet; // Act exactly like default Bullet
-        // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
-        // But, using our own AI allows us to customize things like the dusts that the rocket creates.
-        // Projectile.aiStyle = ProjAIStyleID.Explosive;
-        // AIType = ProjectileID.RocketI;
+        Projectile.extraUpdates = 1;
+        Projectile.timeLeft = 240;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 20;
+        Projectile.aiStyle = 1;
+        AIType = ProjectileID.Bullet;
     }
 
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-        // If the projectile hits the left or right side of the tile, reverse the X velocity
-        if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-        {
-            Projectile.velocity.X = -oldVelocity.X;
-        }
 
-        // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-        if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-        {
-            Projectile.velocity.Y = -oldVelocity.Y;
-        }
-
-        return false;
-    }
 
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 
-        // Redraw the projectile with the color not influenced by light
+      
         Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
         for (int k = 0; k < Projectile.oldPos.Length; k++)
         {
@@ -66,18 +53,105 @@ public class MintalArrowProjectile : ModProjectile
         return true;
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 2;
-        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
-        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<MintalArrowProjectile>(), (int)(Projectile.damage * 0.95f), Projectile.knockBack, Projectile.owner);
-    }
+    public bool isHoming;
 
     public override void AI()
     {
+        Player player = Main.player[Projectile.owner];
+        isHoming = false;
+
+        hasManaForHoming = player.statMana > 0;
+        bool thisArrowControlled = false;
+
+        for (int i = 0; i < 2; i++)
+        {
+            if (!player.controlUseItem && hasManaForHoming)
+            {
+                Vector2 targetPos = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+                float length = Projectile.velocity.Length();
+                float targetAngle = Projectile.AngleTo(targetPos);
+                Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(5f)).ToRotationVector2() * length;
+                Projectile.velocity *= 1.01f;
+                isHoming = true;
+                thisArrowControlled = true;
+            }
+            else if (Projectile.timeLeft < 175)
+            {
+                Projectile.velocity *= 0.993f;
+            }
+        }
+
+       
+        
+
+        if (thisArrowControlled)
+        {
+            ManaDrainSystem.AnyControlledArrow = true;
+        }
+
     }
 
-    // When the rocket hits a tile, NPC, or player, get ready to explode.
+    
 }
+public class ManaDrainSystem : ModSystem
+{
+    public static bool AnyControlledArrow { get; set; }
+    private int manaDrainTimer;
+    private const int MANA_DRAIN_INTERVAL = 15; // 5 frames = about 0.083 seconds at 60 fps
+    private const int MANA_DRAIN_AMOUNT = 3;
+
+    // Track if we've reset the flag for this frame yet
+    private bool flagResetThisFrame = false;
+
+    public override void PreUpdateProjectiles()
+    {
+        // Reset the flag BEFORE projectiles update
+        AnyControlledArrow = false;
+        flagResetThisFrame = true;
+    }
+
+    public override void PostUpdateProjectiles()
+    {
+        // After all projectiles have updated, we can use the flag
+        // But we need to process mana drain BEFORE PostUpdatePlayers
+    }
+
+    public override void PostUpdatePlayers()
+    {
+        // Only run on the client player
+        if (Main.netMode == NetmodeID.Server)
+            return;
+
+        Player player = Main.LocalPlayer;
+
+        // Check if any controlled arrow exists
+        if (AnyControlledArrow)
+        {
+            manaDrainTimer++;
+
+            // Debug: Check if timer is working
+            // Main.NewText($"Timer: {manaDrainTimer}, AnyControlledArrow: {AnyControlledArrow}");
+
+            if (manaDrainTimer >= MANA_DRAIN_INTERVAL)
+            {
+                // Try to consume mana
+                if (player.CheckMana(MANA_DRAIN_AMOUNT, true))
+                {
+                    player.manaRegenDelay = (int)player.maxRegenDelay;
+                }
+
+                // Reset timer after attempting consumption
+                manaDrainTimer = 0;
+            }
+        }
+        else
+        {
+            // Reset timer when no arrows are controlled
+            manaDrainTimer = 0;
+        }
+
+        // Reset the frame flag for next cycle
+        flagResetThisFrame = false;
+    }
+}
+

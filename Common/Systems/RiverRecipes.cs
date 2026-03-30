@@ -154,6 +154,13 @@ public class RiverRecipes : ModSystem
 
        
     }
+    public override void AddRecipeGroups()
+    {
+
+
+        RecipeGroup.recipeGroups[RecipeGroupID.Wood].ValidItems.Add(ModContent.ItemType<Pykrete>());
+
+    }
 
     public override void PostAddRecipes()
     {

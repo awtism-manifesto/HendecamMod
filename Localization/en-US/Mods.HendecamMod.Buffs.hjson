@@ -297,3 +297,13 @@ Splinters: {
 	Description: Mods.HendecamMod.Buffs.Splinters.Description
 	DisplayName: Splinters
 }
+
+PyrrhicDefense: {
+	DisplayName: Pyrrhic Defense
+	Description: Mods.HendecamMod.Buffs.PyrrhicDefense.Description
+}
+
+PyrrhicTag: {
+	DisplayName: Pyrrhic Tag
+	Description: Mods.HendecamMod.Buffs.PyrrhicTag.Description
+}

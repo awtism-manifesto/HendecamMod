@@ -1,20 +1,20 @@
 ﻿using Terraria.Enums;
 
-namespace HendecamMod.Content.Projectiles;
+namespace HendecamMod.Content.Projectiles.Items;
 
 // Shortsword projectiles are handled in a special way with how they draw and damage things
 // The "hitbox" itself is closer to the player, the sprite is centered on it
 // However the interactions with the world will occur offset from this hitbox, closer to the sword's tip (CutTiles, Colliding)
 // Values chosen mostly correspond to Iron Shortsword
-public class VerdantProj : ModProjectile
+public class PyrrhicProj : ModProjectile
 {
     public const int FadeInDuration = 8;
     public const int FadeOutDuration = 5;
 
-    public const int TotalDuration = 17;
+    public const int TotalDuration = 15;
 
     // The "width" of the blade
-    public float CollisionWidth => 18f * Projectile.scale;
+    public float CollisionWidth => 22f * Projectile.scale;
 
     public int Timer
     {
@@ -29,10 +29,10 @@ public class VerdantProj : ModProjectile
         Projectile.friendly = true;
         Projectile.penetrate = -1;
         Projectile.tileCollide = false;
-        Projectile.width = 119;
-        Projectile.height = 99;
+        Projectile.width = 152;
+        Projectile.height = 152;
         Projectile.scale = 1.33f;
-        Projectile.Size = new Vector2(102);
+        Projectile.Size = new Vector2(236);
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
@@ -78,14 +78,14 @@ public class VerdantProj : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(BuffID.Poisoned, 120);
+        target.AddBuff(BuffID.Ichor, 180);
     }
 
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)
-        const int HalfSpriteWidth = 90 / 2;
-        const int HalfSpriteHeight = 90 / 2;
+        const int HalfSpriteWidth = 152 / 2;
+        const int HalfSpriteHeight = 152 / 2;
 
         int HalfProjWidth = Projectile.width / 2;
         int HalfProjHeight = Projectile.height / 2;
@@ -128,7 +128,7 @@ public class VerdantProj : ModProjectile
         // "Hit anything between the player and the tip of the sword"
         // shootSpeed is 2.1f for reference, so this is basically plotting 12 pixels ahead from the center
         Vector2 start = Projectile.Center;
-        Vector2 end = start + Projectile.velocity * 12f;
+        Vector2 end = start + Projectile.velocity * 19.25f;
         float collisionPoint = 0f; // Don't need that variable, but required as parameter
         return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
     }

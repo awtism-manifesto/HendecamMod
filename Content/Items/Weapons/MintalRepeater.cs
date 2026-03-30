@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons;
 
@@ -24,8 +25,10 @@ public class MintalRepeater : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item5;
         // Weapon Properties
-        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.mana = 6;
+       
+        Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -51,7 +54,7 @@ public class MintalRepeater : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts wooden arrows into mintal arrows");
+        var line = new TooltipLine(Mod, "Face", "Converts wooden arrows into magical mintal arrows at the cost of mana");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Fires in a two round burst")

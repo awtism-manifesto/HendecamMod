@@ -106,7 +106,7 @@ public class LycopiteFedora : ModItem
 public class SporeGrow : ModPlayer
 {
 
-    private const int SporeUseTimeMax = 11;
+    private const int SporeUseTimeMax = 9;
 
     public bool Sporeing;
     private int SporeUseTime;
@@ -131,7 +131,7 @@ public class SporeGrow : ModPlayer
         if (SporeUseTime > 0)
             return;
 
-        int baseDamage = 31;
+        int baseDamage = 28;
 
         // Manually calculate total multiplier
         float totalMultiplier = 1f; // Base 100%

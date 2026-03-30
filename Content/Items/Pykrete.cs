@@ -1,5 +1,6 @@
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles;
+using Terraria.Localization;
 
 namespace HendecamMod.Content.Items;
 
@@ -17,7 +18,7 @@ public class Pykrete : ModItem
         Item.height = 12;
         Item.value = 5;
     }
-
+   
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {

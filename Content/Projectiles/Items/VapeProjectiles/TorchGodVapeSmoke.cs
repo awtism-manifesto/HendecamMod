@@ -55,14 +55,7 @@ public class TorchGodVapeSmoke : ModProjectile
 
         for (int i = 0; i < 2; i++)
         {
-            float posOffsetX = 0f;
-            float posOffsetY = 0f;
-            if (i == 1)
-            {
-                posOffsetX = Projectile.velocity.X * 2.5f;
-                posOffsetY = Projectile.velocity.Y * 2.5f;
-            }
-
+           
 
 
             if (player.controlUseItem)
