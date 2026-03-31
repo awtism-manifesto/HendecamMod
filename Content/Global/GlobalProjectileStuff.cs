@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Enemies;
+using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
@@ -210,6 +212,27 @@ public class DeliriantComboSetup : GlobalProjectile
             return;
         target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
     }
+}
+public class XenonModX : GlobalProjectile
+{
+    public bool ContentXenon;
+
+    public override bool InstancePerEntity => true;
+
+   
+
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!ContentXenon)
+            return;
+        Vector2 velocity = projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
+        Vector2 Peanits = target.Center;
+        Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<XenonX>(), (int)(projectile.damage * 2f), projectile.knockBack, projectile.owner);
+
+    }
+
+   
 }
 
 public class VerdantComboSetup : GlobalProjectile

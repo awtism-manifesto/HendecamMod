@@ -90,7 +90,35 @@ public class Rad3Tick : GlobalNPC
         }
     }
 }
+public class Rad4Tick : GlobalNPC
+{
+    public bool Radded4;
+    public override bool InstancePerEntity => true;
 
+    public override void ResetEffects(NPC npc)
+    {
+        Radded4 = false;
+    }
+
+    // Helper method for DOT debuffs
+    void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
+    {
+        if (npc.lifeRegen > 0) npc.lifeRegen = 0;
+        npc.lifeRegen -= (int)(damagePerSecond * 11);
+        if (damage < damagePerSecond)
+        {
+            damage = (int)damagePerSecond;
+        }
+    }
+
+    public override void UpdateLifeRegen(NPC npc, ref int damage)
+    {
+        if (Radded4)
+        {
+            DOTDebuff(npc, 49, ref damage);
+        }
+    }
+}
 public class MoonBurning : GlobalNPC
 {
     public bool MoonCooked;
@@ -105,7 +133,7 @@ public class MoonBurning : GlobalNPC
     void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
     {
         if (npc.lifeRegen > 0) npc.lifeRegen = 0;
-        npc.lifeRegen -= (int)(damagePerSecond * 11);
+        npc.lifeRegen -= (int)(damagePerSecond * 6);
         if (damage < damagePerSecond)
         {
             damage = (int)damagePerSecond;

@@ -23,7 +23,7 @@ public class RadAura2 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 75);
+        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 150);
     }
 
     public override void AI()

@@ -5199,3 +5199,8 @@ PromethiumSword: {
 	DisplayName: Promethium Sword
 	Tooltip: ""
 }
+
+FlaskOfAnnihilation: {
+	DisplayName: Flask Of Annihilation
+	Tooltip: ""
+}

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -126,7 +127,14 @@ public class PrometheumStar : ModProjectile
             dust.velocity *= 14.5f;
             dust.scale *= 1.85f;
         }
-
+        for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
+        {
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PromethiumDust>());
+            dust.noGravity = true;
+            dust.velocity *= 9f;
+            dust.scale *= 1.35f;
+        }
+        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 210);
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
 

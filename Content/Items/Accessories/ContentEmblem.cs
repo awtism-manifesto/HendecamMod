@@ -1,11 +1,13 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -144,6 +146,10 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("Clamity", out Mod Clam))
         {
             Item.value += 150000;
+        }
+        if (ModLoader.TryGetMod("Xenon", out Mod X))
+        {
+            Item.value += 350000;
         }
         if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica))
 
@@ -340,6 +346,14 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+        if (ModLoader.TryGetMod("Xenon", out Mod X))
+        {
+            line = new TooltipLine(Mod, "Face", "Xenon Mod- Every 10th projectile attack spawns a large red X on the target")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
         if (ModLoader.TryGetMod("Arsenal_Mod", out Mod Arse))
         {
             line = new TooltipLine(Mod, "Face", "Arsenal- 5% increased attack speed")
@@ -465,6 +479,11 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(MoldyPicklaw.Type);
 
+        }
+        if (ModLoader.TryGetMod("Xenon", out Mod X) && X.TryFind("XenonWaraxe", out ModItem XenonWaraxe))
+        {
+
+            recipe.AddIngredient(XenonWaraxe.Type);
         }
         if (ModLoader.TryGetMod("EbonianMod", out Mod EbonflyHasASmallPenis)&& EbonflyHasASmallPenis.TryFind("Equilibrium", out ModItem Equilibrium))
         {
@@ -767,6 +786,7 @@ public class ContentEmblem : ModItem
             var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
             loboPlayer.MaxBonus += 50f;
         }
+        player.GetModPlayer<XenonXSpawn>().X = true;
     }
 }
 public class JoystickMovement : ModPlayer
@@ -1074,7 +1094,7 @@ public class EbonflyLigma : ModPlayer
 public class PixelBullet : ModPlayer
 {
     public bool Shooty;
-
+    private int shotCounter = 0;
     public override void ResetEffects()
     {
         Shooty = false;
@@ -1086,7 +1106,8 @@ public class PixelBullet : ModPlayer
         // Don't override 'type'
         if (Shooty)
         {
-            if (Main.rand.NextBool(6))
+            shotCounter++;
+            if (shotCounter == 3)
             {
                 // Spawn additional projectile while keeping the original
                 Projectile.NewProjectile(
@@ -1098,9 +1119,42 @@ public class PixelBullet : ModPlayer
                     knockback,
                     Player.whoAmI
                 );
+                shotCounter = 0;
             }
         }
     }
 
 
+}
+public class XenonXSpawn : ModPlayer
+{
+    public bool X;
+    private int shotCounter = 0;
+
+    public override void ResetEffects()
+    {
+        X = false;
+    }
+
+    public override bool Shoot(Item item, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        if (X)
+        {
+            shotCounter++;
+            if (shotCounter >= 10)
+            {
+                shotCounter = 0;
+
+                // Spawn the projectile manually so we can tag it
+                int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, Player.whoAmI);
+                Main.projectile[proj].GetGlobalProjectile<XenonModX>().ContentXenon = true;
+
+               
+                return false;
+            }
+        }
+
+        
+        return true;
+    }
 }

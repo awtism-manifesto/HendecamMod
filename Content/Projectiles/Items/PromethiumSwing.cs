@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Dusts;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
@@ -145,12 +146,12 @@ public class PromethiumSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 270);
+        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 360);
         // Vanilla has several particles that can easily be used anywhere.
         // The particles from the Particle Orchestra are predefined by vanilla and most can not be customized that much.
         // Use auto complete to see the other ParticleOrchestraType types there are.
         // Here we are spawning the Excalibur particle randomly inside of the target's hitbox.
-        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.ChlorophyteLeafCrystalShot,
+        ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.StardustPunch,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);
 
@@ -159,6 +160,14 @@ public class PromethiumSwing : ModProjectile
 
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
+
+        for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
+        {
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PromethiumDust>());
+            dust.noGravity = true;
+            dust.velocity *= 9f;
+            dust.scale *= 1.35f;
+        }
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
@@ -233,7 +242,7 @@ public class PromethiumSwing : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.39f), (Projectile.knockBack * 0.01f), Projectile.owner);
+            ModContent.ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.367f), (Projectile.knockBack * 0.01f), Projectile.owner);
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private
