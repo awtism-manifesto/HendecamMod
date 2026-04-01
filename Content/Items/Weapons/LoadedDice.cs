@@ -1,0 +1,74 @@
+﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
+
+namespace HendecamMod.Content.Items.Weapons;
+
+public class LoadedDice : ModItem
+{
+    public override void SetDefaults()
+    {
+        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
+
+        // Common Properties
+        Item.width = 62; // Hitbox width of the item.
+        Item.height = 32; // Hitbox height of the item.
+        Item.scale = 0.725f;
+        Item.rare = ItemRarityID.Lime; // The color that the item's name will be in-game.
+        Item.value = 425000;
+        Item.noUseGraphic = true;
+        // Use Properties
+        Item.useTime = 19; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 19; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
+        Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+        // The sound that this item plays when used.
+        Item.UseSound = SoundID.Item1;
+        // Weapon Properties
+        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.noMelee = true; // So the item's animation doesn't do damage.
+        Item.crit = 2;
+       
+        Item.shoot = ModContent.ProjectileType<LoadedDieProj>();
+
+
+        // Gun Properties
+        Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
+        Item.shootSpeed = 13.65f; // The speed of the projectile (measured in pixels per frame.)
+        Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+       type = ModContent.ProjectileType<LoadedDieProj>();
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Converts bullets into throwable dice which explode into the same type of bullet used to throw them");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+       
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.ChlorophyteBar, 18);
+        recipe.AddIngredient<Polymer>(36);
+        recipe.AddIngredient(ItemID.EmptyBullet, 600);
+        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
+    }
+
+   
+}

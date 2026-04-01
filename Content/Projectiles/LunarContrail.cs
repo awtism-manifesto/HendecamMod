@@ -27,7 +27,7 @@ public class LunarContrail : ModProjectile
         Projectile.hostile = false;
         Projectile.timeLeft = 330;
         Projectile.extraUpdates = 1;
-        Projectile.tileCollide = false;
+        Projectile.tileCollide = true;
         Projectile.width = 4; // The width of projectile hitbox
         Projectile.height = 4; // The height of projectile hitbox
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.

@@ -406,7 +406,7 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica))
 
         {
-            line = new TooltipLine(Mod, "Face", "PG3D Weapons Pack- Projectile attacks have a chance to fire an extra bullet")
+            line = new TooltipLine(Mod, "Face", "PG3D Weapons Pack- Every 3rd projectile attack fires an extra bullet projectile")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -786,7 +786,11 @@ public class ContentEmblem : ModItem
             var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
             loboPlayer.MaxBonus += 50f;
         }
-        player.GetModPlayer<XenonXSpawn>().X = true;
+        if (ModLoader.TryGetMod("Xenon", out Mod X))
+        {
+            player.GetModPlayer<XenonXSpawn>().X = true;
+        }
+      
     }
 }
 public class JoystickMovement : ModPlayer

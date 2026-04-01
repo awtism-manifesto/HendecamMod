@@ -5204,3 +5204,8 @@ FlaskOfAnnihilation: {
 	DisplayName: Flask Of Annihilation
 	Tooltip: ""
 }
+
+LoadedDice: {
+	Tooltip: ""
+	DisplayName: Loaded Dice
+}
