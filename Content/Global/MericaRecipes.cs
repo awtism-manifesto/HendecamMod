@@ -396,6 +396,16 @@ public class MericaRecipes : ModSystem
             glocknbawlz.AddTile(TileID.Solidifier);
             glocknbawlz.Register();
         }
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod Awful2Merica) && Awful2Merica.TryFind("HotGlock", out ModItem HotGlock) && Awful2Merica.TryFind("Candescite", out ModItem Candescite))
+        {
+            Recipe glocknbawlz = Recipe.Create(HotGlock.Type);
+            glocknbawlz.AddIngredient(Candescite, 40);
+            glocknbawlz.AddIngredient<Items.Glock>();
+            
+            glocknbawlz.AddTile(TileID.Anvils);
+            glocknbawlz.Register();
+        }
+       
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("aDarksteelAlloy", out ModItem aDarksteelAlloy))
         {

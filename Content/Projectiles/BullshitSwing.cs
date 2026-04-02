@@ -199,6 +199,7 @@ public class BullshitSwing : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
+        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 444);
         target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
         target.AddBuff(ModContent.BuffType<Ligma>(), 444);
     }
@@ -220,6 +221,7 @@ public class BullshitSwing : ModProjectile
         target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
         target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
+        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 444);
         target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
         target.AddBuff(ModContent.BuffType<Ligma>(), 444);
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.BlackLightningHit,

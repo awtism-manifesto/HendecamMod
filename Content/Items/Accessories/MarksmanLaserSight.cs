@@ -97,29 +97,29 @@ public class MarksmanLaserSight : ModItem
             if (modPlayer.laserEndPosition == Vector2.Zero)
                 return;
 
-            // Calculate laser start position (from player center)
+           
             Vector2 startPos = player.Center;
             Vector2 endPos = modPlayer.laserEndPosition;
 
-            // Calculate direction and distance
+           
             Vector2 direction = endPos - startPos;
             float distance = direction.Length();
             direction.Normalize();
 
-            // Don't draw if too far
+            // Set max range
             if (distance > 1454f) return;
 
-            // Get screen position
+            
             Vector2 screenStart = startPos - Main.screenPosition;
             Vector2 screenEnd = endPos - Main.screenPosition;
 
-            // Draw the laser beam
+           
             DrawLaserBeam(drawInfo, screenStart, screenEnd, distance);
         }
 
         private void DrawLaserBeam(PlayerDrawSet drawInfo, Vector2 start, Vector2 end, float distance)
         {
-            // You'll need these textures - create them in your Assets folder
+           
             Texture2D laserTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserBeamRed").Value;
             Texture2D circleTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserEndRed").Value;
 

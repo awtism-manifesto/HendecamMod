@@ -35,15 +35,49 @@ public class LoadedDieProj : ModProjectile
             // Get the player who used the item
             Player player = Main.player[Projectile.owner];
 
-            // Find what ammo the player is using
-            for (int i = 0; i < player.inventory.Length; i++)
+            // First, check dedicated ammo slots (slots 54-58 in vanilla)
+            // These are the 4 ammo slots in the inventory UI
+            for (int i = 54; i <= 58; i++)
             {
-                Item item = player.inventory[i];
-                if (!item.IsAir && item.ammo == AmmoID.Bullet && item.stack > 0)
+                if (i < player.inventory.Length)
                 {
-                    // Convert the ammo item to its corresponding projectile type
-                    originalAmmoType = GetProjectileFromAmmo(item.type);
-                    break;
+                    Item item = player.inventory[i];
+                    if (!item.IsAir && item.ammo == AmmoID.Bullet && item.stack > 0)
+                    {
+                        // Convert the ammo item to its corresponding projectile type
+                        originalAmmoType = GetProjectileFromAmmo(item.type);
+                        break;
+                    }
+                }
+            }
+
+            // If no ammo found in dedicated slots, check the main inventory
+            if (originalAmmoType == 0)
+            {
+                for (int i = 0; i < 54; i++) // Only check main inventory slots (0-53)
+                {
+                    Item item = player.inventory[i];
+                    if (!item.IsAir && item.ammo == AmmoID.Bullet && item.stack > 0)
+                    {
+                        // Convert the ammo item to its corresponding projectile type
+                        originalAmmoType = GetProjectileFromAmmo(item.type);
+                        break;
+                    }
+                }
+            }
+
+            // If still no ammo found, check hotbar and other slots as a fallback
+            if (originalAmmoType == 0)
+            {
+                for (int i = 0; i < player.inventory.Length; i++)
+                {
+                    Item item = player.inventory[i];
+                    if (!item.IsAir && item.ammo == AmmoID.Bullet && item.stack > 0)
+                    {
+                        // Convert the ammo item to its corresponding projectile type
+                        originalAmmoType = GetProjectileFromAmmo(item.type);
+                        break;
+                    }
                 }
             }
         }

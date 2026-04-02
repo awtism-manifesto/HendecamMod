@@ -97,7 +97,7 @@ public class ManaDrainSystem : ModSystem
 {
     public static bool AnyControlledArrow { get; set; }
     private int manaDrainTimer;
-    private const int MANA_DRAIN_INTERVAL = 15; // 5 frames = about 0.083 seconds at 60 fps
+    private const int MANA_DRAIN_INTERVAL = 10; // 5 frames = about 0.083 seconds at 60 fps
     private const int MANA_DRAIN_AMOUNT = 3;
 
     // Track if we've reset the flag for this frame yet

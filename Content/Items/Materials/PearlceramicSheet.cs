@@ -45,5 +45,13 @@ public class PearlceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("HallowedMetalChunk", out ModItem HallowedMetalChunk))
+        {
+            recipe = CreateRecipe(50);
+            recipe.AddIngredient(HallowedMetalChunk.Type);
+            recipe.AddIngredient<CeramicSheet>(48);
+            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.Register();
+        }
     }
 }

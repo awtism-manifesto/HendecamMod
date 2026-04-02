@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria;
+using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
 namespace HendecamMod.Content.GlobalItems;
 
@@ -117,6 +118,29 @@ public class DoorStupid2 : GlobalItem
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid damage and attack speed by 5%") { OverrideColor = Color.OrangeRed });
+    }
+
+
+}
+public class MechLaserGarbage : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("AncientGadgets", out ModItem AncientGadgets))
+        {
+            return item.type == AncientGadgets.Type;
+        }
+
+        return false;
+    }
+   
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        player.GetModPlayer<LaserDrawRed>().Laser = true;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now also provides the player with a laser sight") { OverrideColor = Color.DarkOrange });
     }
 
 

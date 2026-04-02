@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -40,7 +41,18 @@ public class LoadedDice : ModItem
         Item.shootSpeed = 13.65f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
+    public float LobotometerCost = 3f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
 
+            LobotometerCost = Main.rand.Next(1, 6);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
        type = ModContent.ProjectileType<LoadedDieProj>();
@@ -52,7 +64,7 @@ public class LoadedDice : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into throwable dice which explode into the same type of bullet used to throw them");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Costs between 1 and 6 lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons;
@@ -27,13 +29,24 @@ public class MiniThrowableBoulder : ModItem
         Item.knockBack = 5f;
         Item.noUseGraphic = true; // The item should not be visible when used
         Item.noMelee = true; // The projectile will do the damage and not the item
-        Item.DamageType = DamageClass.Ranged;
+        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
 
         // Projectile Properties
-        Item.shootSpeed = 8.9f;
+        Item.shootSpeed = 8.77f;
         Item.shoot = ModContent.ProjectileType<MiniBoulderThrowableProjectile>(); // The projectile that will be thrown
     }
+    public float LobotometerCost = 1f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
 
+           
+        }
+        return base.UseItem(player);
+    }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
@@ -45,5 +58,13 @@ public class MiniThrowableBoulder : ModItem
         recipe.AddIngredient<StoneBar>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("StonePellet", out ModItem StonePellet))
+        {
+            recipe = CreateRecipe(10);
+            recipe.AddIngredient(StonePellet.Type, 180);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+
+        }
     }
 }

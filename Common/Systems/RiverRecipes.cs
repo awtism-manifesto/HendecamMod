@@ -214,6 +214,15 @@ public class RiverRecipes : ModSystem
 
                 recipe.AddIngredient(ModContent.ItemType<IQTest>());
             }
+            if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("AncientGadgets", out ModItem AncientGadgets))
+            {
+                if (recipe.HasResult(AncientGadgets.Type))
+                {
+                    recipe.AddIngredient(ModContent.ItemType<MarksmanLaserSight>());
+                    
+                }
+
+            }
             if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("Ultimatum", out ModItem Ultimatum))
             {
                 if (recipe.HasResult(Ultimatum.Type))
