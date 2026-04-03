@@ -19,22 +19,22 @@ public class DemoniteAreaDenialSystem : ModItem
         AmmoID.Sets.SpecificLauncherAmmoProjectileFallback[Type] = ItemID.RocketLauncher;
 
         // Use Properties
-        Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 36; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 28; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-        Item.reuseDelay = 26;
+        Item.reuseDelay = 20;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.consumeAmmoOnLastShotOnly = true;
         // The sound that this item plays when used.
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 10; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica))
         {
-            Item.damage = 15;
+            Item.damage = 16;
         }
 
         // Gun Properties
@@ -76,18 +76,7 @@ public class DemoniteAreaDenialSystem : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -95,7 +84,7 @@ public class DemoniteAreaDenialSystem : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient(ItemID.DemoniteBar, 30);
-        recipe.AddIngredient(ItemID.CorruptSeeds);
+        recipe.AddIngredient(ItemID.ShadowScale, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

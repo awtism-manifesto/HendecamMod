@@ -5284,3 +5284,8 @@ SpoarGlaive: {
 	DisplayName: S.P.O.A.R. Glaive
 	Tooltip: ""
 }
+
+Caliburn: {
+	Tooltip: ""
+	DisplayName: Caliburn
+}

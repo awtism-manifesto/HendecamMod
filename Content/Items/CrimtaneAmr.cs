@@ -26,7 +26,7 @@ public class CrimtaneAmr : ModItem
         Item.UseSound = SoundID.Item88;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 10;
@@ -41,40 +41,33 @@ public class CrimtaneAmr : ModItem
         if (ModLoader.TryGetMod("Snipers_More", out Mod JfkMerica))
         {
             Item.damage = 36;
-            Item.useTime = 54;
-            Item.useAnimation = 54;
+            Item.useTime = 58;
+            Item.useAnimation = 58;
         }
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ModContent.ProjectileType<Projectiles.AMRRound>();
+        if (type == ModContent.ProjectileType<Projectiles.AMRRound>())
+        {
+            damage = (int)(damage * 0.85f);
+        }
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Shoots rapid, piercing rockets that deal massive damage on impact");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Shoots armor penetrating rockets that deal massive damage on impact")
+        line = new TooltipLine(Mod, "Face", "Explodes every time it pierces")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -82,7 +75,7 @@ public class CrimtaneAmr : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient(ItemID.CrimtaneBar, 30);
-        recipe.AddIngredient(ItemID.CrimsonSeeds);
+        recipe.AddIngredient(ItemID.TissueSample, 15);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 
