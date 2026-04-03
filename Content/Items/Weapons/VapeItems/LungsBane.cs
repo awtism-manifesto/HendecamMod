@@ -9,7 +9,7 @@ using static HendecamMod.Content.Items.Accessories.IronLung;
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
-public class SilverVape : ModItem
+public class LungsBane : ModItem
 {
     public override void SetDefaults()
     {
@@ -17,26 +17,26 @@ public class SilverVape : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 10;
-        Item.useAnimation = 30;
+        Item.useTime = 11;
+        Item.useAnimation = 33;
         Item.autoReuse = true;
-        Item.reuseDelay = 5;
+        Item.reuseDelay = 19;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 14;
+        Item.damage = 20;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        
 
-        Item.value = Item.sellPrice(silver: 55);
-        Item.rare = ItemRarityID.White;
+        Item.value = Item.sellPrice(silver: 254);
+        Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<SilverVapeSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 7.7f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<EvilVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 9.85f; // Speed of the projectiles the sword will shoot
 
        
     }
-    public float LobotometerCost = 2f;
+    public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -48,16 +48,16 @@ public class SilverVape : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+        const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
         if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
         {
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6.525f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
 
                 // Decrease velocity randomly for nicer visuals.
-                newVelocity *= 1f - Main.rand.NextFloat(0.295f);
+                newVelocity *= 1f - Main.rand.NextFloat(0.24f);
 
                 // Create a projectile.
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -65,16 +65,33 @@ public class SilverVape : ModItem
 
             return false; // Return false because we don't want tModLoader to shoot projectile
         }
-        else return true;
-    }
+        else {
 
+
+            for (int i = 0; i < NumProjectiles; i++)
+            {
+               
+
+                // Create a projectile.
+                Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
+            }
+
+            return false;
+        
+        
+        }
+    }
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1.83f, 6f);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Exhales twice as many vape clouds as usual")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -82,16 +99,14 @@ public class SilverVape : ModItem
 
        
     }
-    public override Vector2? HoldoutOffset()
-    {
-        return new Vector2(-1.83f, 6f);
-    }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.SilverBar, 11);
+        recipe.AddIngredient(ItemID.DemoniteBar, 12);
+        recipe.AddIngredient(ItemID.ShadowScale, 10);
         recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();

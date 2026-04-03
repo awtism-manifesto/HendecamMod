@@ -22,7 +22,7 @@ public class TinVape : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 10;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 10;
+        Item.damage = 11;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        

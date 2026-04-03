@@ -122,6 +122,29 @@ public class DoorStupid2 : GlobalItem
 
 
 }
+public class MagmaGarbage : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("MagmastoneRing", out ModItem MagmastoneRing))
+        {
+            return item.type == MagmastoneRing.Type;
+        }
+
+        return false;
+    }
+   
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        player.statManaMax2 += 20;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now gives 20 extra mana") { OverrideColor = Color.DarkOrange });
+    }
+
+
+}
 public class MechLaserGarbage : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

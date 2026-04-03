@@ -22,7 +22,7 @@ public class GoldVape : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 4;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 13;
+        Item.damage = 16;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        

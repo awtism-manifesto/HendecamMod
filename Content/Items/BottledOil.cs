@@ -55,5 +55,13 @@ public class BottledOil : ModItem
         recipe.AddIngredient(ItemID.Bottle);
         recipe.AddIngredient<CrudeOil>();
         recipe.Register();
+
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("BottledTrash", out ModItem BottledTrash))
+        {
+            Recipe recipee = CreateRecipe(150);
+            recipee.AddIngredient(BottledTrash.Type);
+            recipee.AddIngredient<CrudeOil>();
+            recipee.AddTile(TileID.Furnaces);
+        }
     }
 }

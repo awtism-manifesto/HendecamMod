@@ -3,6 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons;
 
@@ -220,6 +221,15 @@ public class RiverRecipes : ModSystem
                 {
                     recipe.AddIngredient(ModContent.ItemType<MarksmanLaserSight>());
                     
+                }
+
+            }
+            if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod Awful2Merica) && Awful2Merica.TryFind("MagmastoneRing", out ModItem MagmastoneRing))
+            {
+                if (recipe.HasResult(MagmastoneRing.Type))
+                {
+                    recipe.AddIngredient(ModContent.ItemType<FireDiamond>(), 9);
+
                 }
 
             }

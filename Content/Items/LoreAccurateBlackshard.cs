@@ -11,7 +11,6 @@ public class LoreAccurateBlackshard : ModItem
 {
     public override void SetStaticDefaults()
     {
-       
         ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
     }
     public override void SetDefaults()

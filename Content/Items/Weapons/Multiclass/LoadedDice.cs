@@ -4,7 +4,7 @@ using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items.Weapons;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
 public class LoadedDice : ModItem
 {

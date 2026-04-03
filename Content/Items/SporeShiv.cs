@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -20,7 +21,7 @@ public class SporeShiv : ModItem
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Orange;
         Item.value = 128000;
-        Item.DamageType = DamageClass.Ranged;
+        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
         Item.shoot = ModContent.ProjectileType<SporeShivProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
