@@ -6,11 +6,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class VileGreatstaff : ModItem
 {
     private int altClickCooldown;
@@ -110,6 +106,10 @@ public class VileGreatstaff : ModItem
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SoulofBlight", out ModItem SoulofBlight))
         {
             recipe.AddIngredient(SoulofBlight.Type, 10);
+        }
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("VileScepter", out ModItem VileScepter))
+        {
+            recipe.AddIngredient(VileScepter.Type);
         }
     }
 }

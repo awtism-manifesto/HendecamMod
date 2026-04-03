@@ -28,7 +28,7 @@ public class VerdantClaymore : ModItem
         Item.value = Item.sellPrice(0, 5, 0, 10);
 
         Item.shoot = ModContent.ProjectileType<VerdantProj>(); // The projectile is what makes a shortsword work
-        Item.shootSpeed = 5f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
+        Item.shootSpeed = 5.4f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 
     public override bool AltFunctionUse(Player player)

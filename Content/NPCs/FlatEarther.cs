@@ -57,7 +57,7 @@ public class FlatEarther : ModNPC
 
         
 
-        Projectile.NewProjectile(source, NPC.Center, Vector2.Zero * 0.01f, ModContent.ProjectileType<FlatExplosion>(), 79, 6f, Main.myPlayer);
+        Projectile.NewProjectile(source, NPC.Center, Vector2.Zero * 0.01f, ModContent.ProjectileType<FlatExplosion>(), 67, 6f, Main.myPlayer);
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {

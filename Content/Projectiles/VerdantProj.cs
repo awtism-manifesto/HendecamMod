@@ -14,7 +14,7 @@ public class VerdantProj : ModProjectile
     public const int TotalDuration = 17;
 
     // The "width" of the blade
-    public float CollisionWidth => 16f * Projectile.scale;
+    public float CollisionWidth => 18f * Projectile.scale;
 
     public int Timer
     {
@@ -24,7 +24,7 @@ public class VerdantProj : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.Size = new Vector2(99); // This sets width and height to the same value (important when projectiles can rotate)
+       
         Projectile.aiStyle = -1; // Use our own AI to customize how it behaves, if you don't want that, keep this at ProjAIStyleID.ShortSword. You would still need to use the code in SetVisualOffsets() though
         Projectile.friendly = true;
         Projectile.penetrate = -1;
@@ -32,7 +32,7 @@ public class VerdantProj : ModProjectile
         Projectile.width = 119;
         Projectile.height = 99;
         Projectile.scale = 1.33f;
-
+        Projectile.Size = new Vector2(102);
         Projectile.usesOwnerMeleeHitCD = true;
         Projectile.DamageType = DamageClass.Melee;
         Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
@@ -84,8 +84,8 @@ public class VerdantProj : ModProjectile
     private void SetVisualOffsets()
     {
         // 32 is the sprite size (here both width and height equal)
-        const int HalfSpriteWidth = 92 / 2;
-        const int HalfSpriteHeight = 92 / 2;
+        const int HalfSpriteWidth = 90 / 2;
+        const int HalfSpriteHeight = 90 / 2;
 
         int HalfProjWidth = Projectile.width / 2;
         int HalfProjHeight = Projectile.height / 2;

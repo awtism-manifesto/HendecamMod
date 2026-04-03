@@ -92,7 +92,7 @@ public class AdamantiteVape : ModItem
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.AdamantiteBar, 15);
+        recipe.AddIngredient(ItemID.AdamantiteBar, 16);
         recipe.AddIngredient<VapeKit>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();

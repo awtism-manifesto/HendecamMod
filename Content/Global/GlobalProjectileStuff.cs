@@ -1,5 +1,8 @@
 ﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Enemies;
+using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
@@ -66,7 +69,32 @@ public class FastLaserSwords : GlobalProjectile
         }
     }
 }
+public class SharpProjectiles : GlobalProjectile
+{
+    public bool firstFrame = true;
 
+    public override bool InstancePerEntity => true;
+
+    public override void AI(Projectile projectile)
+    {
+
+        Player player = Main.player[projectile.owner];
+
+        if (player.GetModPlayer<Sharpened>().Sharp == true && firstFrame && projectile.penetrate >= 1)
+        {
+            if (projectile.usesLocalNPCImmunity == false || projectile.usesIDStaticNPCImmunity == false)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 30;
+                projectile.usesOwnerMeleeHitCD = false;
+                projectile.usesIDStaticNPCImmunity = false;
+            }
+            projectile.penetrate += 2;
+
+            firstFrame = false;
+        }
+    }
+}
 public class RedneckCombo : GlobalProjectile
 {
     public bool fromRedneckGun;
@@ -185,6 +213,27 @@ public class DeliriantComboSetup : GlobalProjectile
         target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
     }
 }
+public class XenonModX : GlobalProjectile
+{
+    public bool ContentXenon;
+
+    public override bool InstancePerEntity => true;
+
+   
+
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!ContentXenon)
+            return;
+        Vector2 velocity = projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
+        Vector2 Peanits = target.Center;
+        Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
+            ModContent.ProjectileType<XenonX>(), (int)(projectile.damage * 2f), projectile.knockBack, projectile.owner);
+
+    }
+
+   
+}
 
 public class VerdantComboSetup : GlobalProjectile
 {
@@ -232,7 +281,51 @@ public class VerdantCombo : GlobalProjectile
         }
     }
 }
+public class PyrrhicComboSetup : GlobalProjectile
+{
+    public bool fromthePyrrhicClaymore;
 
+    public override bool InstancePerEntity => true;
+
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!fromthePyrrhicClaymore)
+            return; // Only apply buff if this is a left-click setup shot
+
+        target.AddBuff(ModContent.BuffType<PyrrhicTag>(), 175);
+    }
+}
+public class PyrrhicCombo : GlobalProjectile
+{
+    public bool fromPyrrhicClaymore;
+
+    public override bool InstancePerEntity => true;
+
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (!fromPyrrhicClaymore)
+            return; // Don't run if this isn't a right-click combo shot
+
+        if (target.HasBuff(ModContent.BuffType<PyrrhicTag>()))
+        {
+            ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueExcalibur,
+                new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
+                projectile.owner);
+
+            // Apply a buff to the player
+            Player player = Main.player[projectile.owner];
+            player.AddBuff(ModContent.BuffType<PyrrhicDefense>(), 120);
+        }
+    }
+
+    public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
+    {
+        if (fromPyrrhicClaymore && target.HasBuff(ModContent.BuffType<PyrrhicTag>()))
+        {
+            modifiers.SourceDamage *= 2.25f;
+        }
+    }
+}
 public class MagnetSphereActuallyGoodNow : GlobalProjectile //shoutout to my clanka deepseek for this one
 {
     public override bool InstancePerEntity => true;

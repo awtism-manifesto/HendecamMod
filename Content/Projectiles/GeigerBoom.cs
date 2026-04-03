@@ -140,8 +140,25 @@ public class GeigerBoom : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(335, 335);
+
+        for (int i = 0; i < 6; i++)
+        {
+            float rotation = MathHelper.ToRadians(i * 60f);
+            Vector2 velocity = Projectile.velocity.RotatedBy(rotation);
+            Vector2 position = Projectile.Center;
+
+            Projectile.NewProjectile(
+                Projectile.GetSource_FromThis(),
+                position,
+                velocity,
+                ModContent.ProjectileType<GeigerBoomRecurse>(),
+                (int)(Projectile.damage * 0.5f),
+                Projectile.knockBack,
+                Projectile.owner
+            );
+        }
         // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 24; j++)
+        for (int j = 0; j < 17; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
             fireDust.noGravity = true;
@@ -160,7 +177,7 @@ public class GeigerBoom : ModProjectile
             fire11Dust.velocity *= 6.5f;
         }
 
-        for (int j = 0; j < 33; j++)
+        for (int j = 0; j < 20; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
             fireDust.noGravity = true;
@@ -179,7 +196,7 @@ public class GeigerBoom : ModProjectile
             fireeeDust.velocity *= 3f;
         }
 
-        for (int j = 0; j < 17; j++)
+        for (int j = 0; j < 10; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
             fireDust.noGravity = true;
@@ -199,7 +216,7 @@ public class GeigerBoom : ModProjectile
         }
 
         // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
+        for (int j = 0; j < 12; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
             fireDust.noGravity = true;

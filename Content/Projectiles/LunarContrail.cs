@@ -2,11 +2,6 @@
 
 namespace HendecamMod.Content.Projectiles;
 
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
 public class LunarContrail : ModProjectile
 {
     private NPC HomingTarget
@@ -32,7 +27,7 @@ public class LunarContrail : ModProjectile
         Projectile.hostile = false;
         Projectile.timeLeft = 330;
         Projectile.extraUpdates = 1;
-        Projectile.tileCollide = false;
+        Projectile.tileCollide = true;
         Projectile.width = 4; // The width of projectile hitbox
         Projectile.height = 4; // The height of projectile hitbox
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.

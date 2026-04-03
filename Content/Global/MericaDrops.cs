@@ -3,6 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Global;
@@ -668,7 +669,8 @@ public class ExampleNPCLoot : GlobalNPC
 
         if (npc.type == NPCID.QueenSlimeBoss)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MaximGelgun>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MaximGelgun>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<QueensShank>(), chanceDenominator: 4));
         }
 
         if (npc.type == NPCID.BrainofCthulhu)

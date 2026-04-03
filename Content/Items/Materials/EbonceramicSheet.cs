@@ -48,5 +48,13 @@ public class EbonceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("CorruptedMetalChunk", out ModItem CorruptedMetalChunk))
+        {
+            recipe = CreateRecipe(50);
+            recipe.AddIngredient(CorruptedMetalChunk.Type);
+            recipe.AddIngredient<CeramicSheet>(48);
+            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.Register();
+        }
     }
 }

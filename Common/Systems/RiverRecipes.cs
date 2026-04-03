@@ -3,6 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons;
 
@@ -154,6 +155,13 @@ public class RiverRecipes : ModSystem
 
        
     }
+    public override void AddRecipeGroups()
+    {
+
+
+        RecipeGroup.recipeGroups[RecipeGroupID.Wood].ValidItems.Add(ModContent.ItemType<Pykrete>());
+
+    }
 
     public override void PostAddRecipes()
     {
@@ -206,6 +214,24 @@ public class RiverRecipes : ModSystem
 
 
                 recipe.AddIngredient(ModContent.ItemType<IQTest>());
+            }
+            if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("AncientGadgets", out ModItem AncientGadgets))
+            {
+                if (recipe.HasResult(AncientGadgets.Type))
+                {
+                    recipe.AddIngredient(ModContent.ItemType<MarksmanLaserSight>());
+                    
+                }
+
+            }
+            if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod Awful2Merica) && Awful2Merica.TryFind("MagmastoneRing", out ModItem MagmastoneRing))
+            {
+                if (recipe.HasResult(MagmastoneRing.Type))
+                {
+                    recipe.AddIngredient(ModContent.ItemType<FireDiamond>(), 9);
+
+                }
+
             }
             if (ModLoader.TryGetMod("PixelGunsTest", out Mod PixelMerica) && PixelMerica.TryFind("Ultimatum", out ModItem Ultimatum))
             {

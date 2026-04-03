@@ -5160,7 +5160,117 @@ PromethiumPickaxe: {
 	DisplayName: Promethium Pickaxe
 }
 
-TwoStepGoodbye: {
-	DisplayName: Two Step Goodbye
+MythrilRose: {
 	Tooltip: ""
+	DisplayName: Mythril Rose
+}
+
+OrichalcumRose: {
+	DisplayName: Orichalcum Rose
+	Tooltip: ""
+}
+
+FireDiamondHook: {
+	DisplayName: Fire Diamond Hook
+	Tooltip: ""
+}
+
+TheStickedBrick: {
+	DisplayName: The Sticked Brick
+	Tooltip: ""
+}
+
+SharpeningStone: {
+	DisplayName: Sharpening Stone
+	Tooltip: ""
+}
+
+PyrrhicClaymore: {
+	DisplayName: Pyrrhic Claymore
+	Tooltip: ""
+}
+
+PromethiumGreataxe: {
+	DisplayName: Promethium Greataxe
+	Tooltip: ""
+}
+
+PromethiumSword: {
+	DisplayName: Promethium Sword
+	Tooltip: ""
+}
+
+FlaskOfAnnihilation: {
+	DisplayName: Flask Of Annihilation
+	Tooltip: ""
+}
+
+LoadedDice: {
+	Tooltip: ""
+	DisplayName: Loaded Dice
+}
+
+TungstenQuadsword: {
+	Tooltip: ""
+	DisplayName: Tungsten Quadsword
+}
+
+TinQuadsword: {
+	Tooltip: ""
+	DisplayName: Tin Quadsword
+}
+
+SilverQuadsword: {
+	Tooltip: ""
+	DisplayName: Silver Quadsword
+}
+
+PlatinumQuadsword: {
+	Tooltip: ""
+	DisplayName: Platinum Quadsword
+}
+
+LeadQuadsword: {
+	Tooltip: ""
+	DisplayName: Lead Quadsword
+}
+
+IronQuadsword: {
+	Tooltip: ""
+	DisplayName: Iron Quadsword
+}
+
+GoldQuadsword: {
+	Tooltip: ""
+	DisplayName: Gold Quadsword
+}
+
+AirBrickWall: {
+	Tooltip: ""
+	DisplayName: Air Brick Wall
+}
+
+AirBrick: {
+	Tooltip: ""
+	DisplayName: Air Brick
+}
+
+PulmonaryHemorrhage: {
+	Tooltip: ""
+	DisplayName: Pulmonary Hemorrhage
+}
+
+LungsBane: {
+	DisplayName: Lung's Bane
+	Tooltip: ""
+}
+
+ClawTechnique: {
+	DisplayName: Claw Technique
+	Tooltip: ""
+}
+
+QueensShank: {
+	Tooltip: ""
+	DisplayName: Queen's Shank
 }

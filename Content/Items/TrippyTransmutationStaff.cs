@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria;
 
 namespace HendecamMod.Content.Items;
 
@@ -65,12 +66,35 @@ public class TrippyTransmutationStaff : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<LycopiteBar>(13);
-        recipe.AddIngredient(ItemID.GlowingMushroom, 10);
-        recipe.AddIngredient(ItemID.Mushroom, 5);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("GlowingMushroomFlask", out ModItem GlowingMushroomFlask))
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<LycopiteBar>(13);
+            recipe.AddIngredient(ItemID.Mushroom, 5);
+            recipe.AddIngredient(GlowingMushroomFlask.Type);
+          
+            recipe.AddTile(TileID.Anvils);
+           
+          
+            recipe.Register();
+
+        }
+
+
+        else
+        {
+            Recipe recipe = CreateRecipe();
+
+            recipe.AddIngredient<LycopiteBar>(13);
+            recipe.AddIngredient(ItemID.GlowingMushroom, 10);
+            recipe.AddIngredient(ItemID.Mushroom, 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+
+           
+
+
     }
 }

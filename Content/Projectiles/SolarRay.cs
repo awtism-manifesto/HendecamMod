@@ -50,7 +50,7 @@ public class SolarRay : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        Projectile.damage = (int)(Projectile.damage * 0.5f);
+        Projectile.damage = (int)(Projectile.damage * 0.75f);
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons);

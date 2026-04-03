@@ -45,8 +45,8 @@ public class PromethiumBar : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(1);
-        recipe.AddIngredient<PromethiumOre>(5);
+        Recipe recipe = CreateRecipe(3);
+        recipe.AddIngredient<PromethiumOre>(27);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }

@@ -297,3 +297,23 @@ Splinters: {
 	Description: Mods.HendecamMod.Buffs.Splinters.Description
 	DisplayName: Splinters
 }
+
+PyrrhicDefense: {
+	DisplayName: Pyrrhic Defense
+	Description: Greatly increased defense
+}
+
+PyrrhicTag: {
+	DisplayName: Pyrrhic Tag
+	Description: Mods.HendecamMod.Buffs.PyrrhicTag.Description
+}
+
+RadPoisoning4: {
+	Description: Your atoms are being dramatically split apart at the seams!
+	DisplayName: Rad Poisoning4
+}
+
+WeaponImbueAnnihilation: {
+	DisplayName: Weapon Imbue Annihilation
+	Description: Mods.HendecamMod.Buffs.WeaponImbueAnnihilation.Description
+}

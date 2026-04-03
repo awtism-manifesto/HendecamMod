@@ -52,7 +52,7 @@ public class EmpoweredManaCrystal : ModItem
         var line = new TooltipLine(Mod, "Face", "A mana crystal infused with extra fallen stars");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases Mana by 50 and Magic damage by 5% when equipped")
+        line = new TooltipLine(Mod, "Face", "Increases Mana by 50 and Magic crit chance by 5% when equipped")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -33,6 +34,16 @@ public class ChainCrossbow : ModItem
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
+
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("MechanicalQuiver", out ModItem MechanicalQuiver))
+        {
+            Item.useTime = 8;
+            Item.useAnimation = 8;
+            Item.damage = 40;
+            Item.knockBack = 3.25f;
+            Item.value = 728000;
+            Item.shootSpeed = 15.75f;
+        }
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -66,18 +77,7 @@ public class ChainCrossbow : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()
@@ -90,6 +90,12 @@ public class ChainCrossbow : ModItem
         recipe.AddIngredient(ItemID.Wire, 55);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("MechanicalQuiver", out ModItem MechanicalQuiver))
+        {
+           
+            recipe.AddIngredient(MechanicalQuiver.Type);
+            
+        }
     }
 
     public override Vector2? HoldoutOffset()

@@ -23,7 +23,7 @@ public class CopperVape : ModItem
         Item.autoReuse = true;
 
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 9;
+        Item.damage = 10;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        

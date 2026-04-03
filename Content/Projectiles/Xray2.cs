@@ -21,7 +21,7 @@ public class Xray2 : ModProjectile
         Projectile.aiStyle = 1;
         Projectile.DamageType = DamageClass.Magic;
         Projectile.extraUpdates = 6;
-        Projectile.aiStyle = ProjectileID.Bullet;
+       
         Projectile.timeLeft = 180;
         Projectile.tileCollide = false;
         Projectile.width = 1;

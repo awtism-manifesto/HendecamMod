@@ -62,7 +62,7 @@ public class LunarBolt : ModProjectile
         {
             if (nextSpawnTick == 0)
             {
-                nextSpawnTick = Main.rand.Next(20, 25);
+                nextSpawnTick = Main.rand.Next(8, 13);
             }
 
             tickCounter++;
@@ -75,7 +75,7 @@ public class LunarBolt : ModProjectile
                     ModContent.ProjectileType<LunarContrail>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
 
                 tickCounter = 0;
-                nextSpawnTick = Main.rand.Next(265, 315);
+                nextSpawnTick = 6767;
                 Projectile.netUpdate = true;
             }
         }

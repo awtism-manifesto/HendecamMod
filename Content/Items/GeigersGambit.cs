@@ -20,8 +20,8 @@ public class GeigersGambit : ModItem
 
         // Use Properties
         // Use Properties
-        Item.useTime = 75; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 75; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 83; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 83; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
@@ -29,16 +29,16 @@ public class GeigersGambit : ModItem
         Item.UseSound = SoundID.Item46;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 1190; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-        Item.knockBack = 25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.damage = 833; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 45f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.ArmorPenetration = 50;
+        Item.ArmorPenetration = 105;
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileID.PurificationPowder;
 
-        Item.shootSpeed = 2f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 2.05f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.RocketI;
     }
 
@@ -52,7 +52,7 @@ public class GeigersGambit : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe = CreateRecipe();
+       
         recipe.AddIngredient<Autocannon>();
         recipe.AddIngredient<FissionDrive>(2);
 
@@ -63,7 +63,7 @@ public class GeigersGambit : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts all rockets into huge, potent nuclear warheads");
+        var line = new TooltipLine(Mod, "Face", "Converts all rockets into huge, potent nuclear warheads, which split into more warheads");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'I don't want to set the world on fire...'")

@@ -48,5 +48,13 @@ public class CrimceramicSheet : ModItem
         recipe.AddIngredient<CeramicSheet>(10);
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("CrimsonMetalChunk", out ModItem CrimsonMetalChunk))
+        {
+            recipe = CreateRecipe(50);
+            recipe.AddIngredient(CrimsonMetalChunk.Type);
+            recipe.AddIngredient<CeramicSheet>(48);
+            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.Register();
+        }
     }
 }

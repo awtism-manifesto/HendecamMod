@@ -104,7 +104,8 @@ public class ClimateChanger : ModItem
 
             recipe.AddIngredient(ScoriaBar.Type, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
-            recipe.AddIngredient<RefinedOil>(35);
+            recipe.AddIngredient<RefinedOil>(50);
+            recipe.AddIngredient<RefinedOil>(25);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
@@ -113,6 +114,7 @@ public class ClimateChanger : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
+            recipe.AddIngredient<RefinedOil>(60);
             recipe.AddIngredient<RefinedOil>(35);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();

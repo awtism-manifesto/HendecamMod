@@ -12,7 +12,7 @@ public class HurricaneGun : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.75f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
-        Item.value = 299000;
+        Item.value = 364000;
 
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -31,7 +31,7 @@ public class HurricaneGun : ModItem
 
         Item.shoot = ProjectileID.PurificationPowder;
 
-        Item.shootSpeed = 14.25f;
+        Item.shootSpeed = 11.95f;
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -77,6 +77,11 @@ public class HurricaneGun : ModItem
         recipe.AddIngredient(ItemID.NimbusRod);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("CloudBlaster", out ModItem CloudBlaster))
+        {
+            recipe.AddIngredient(CloudBlaster.Type);
+        }
     }
 
     public override Vector2? HoldoutOffset()
