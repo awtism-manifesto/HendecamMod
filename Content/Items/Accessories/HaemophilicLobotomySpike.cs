@@ -49,6 +49,7 @@ public class HaemophilicLobotomySpike : ModItem
         recipe.AddIngredient<CrimceramicSheet>(15);
         recipe.AddIngredient(ItemID.CrimtaneBar, 5);
         recipe.AddIngredient(ItemID.SoulofNight, 5);
+        recipe.AddIngredient<LobotomySpike>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
        

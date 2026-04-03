@@ -81,6 +81,8 @@ public class AncientCobaltDrillProj : ModProjectile
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
         player.itemRotation = (Projectile.velocity * Projectile.direction).ToRotation();
 
+       
+
         // Gives the drill a slight jiggle
         Projectile.velocity.X *= 1f + Main.rand.Next(-3, 4) * 0.01f;
 

@@ -5274,3 +5274,13 @@ QueensShank: {
 	Tooltip: ""
 	DisplayName: Queen's Shank
 }
+
+LycopiteGlaive: {
+	Tooltip: ""
+	DisplayName: Lycopite Glaive
+}
+
+SpoarGlaive: {
+	DisplayName: S.P.O.A.R. Glaive
+	Tooltip: ""
+}

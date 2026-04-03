@@ -49,6 +49,7 @@ public class UnhygenicLobotomySpike : ModItem
         recipe.AddIngredient<EbonceramicSheet>(15);
         recipe.AddIngredient(ItemID.DemoniteBar, 5);
         recipe.AddIngredient(ItemID.SoulofNight, 5);
+        recipe.AddIngredient<LobotomySpike>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
        

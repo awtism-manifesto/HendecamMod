@@ -1,61 +1,42 @@
-﻿using HendecamMod.Content.Global;
-using Terraria.Enums;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items.UnarmedProjectiles;
 
-// Shortsword projectiles are handled in a special way with how they draw and damage things
-// The "hitbox" itself is closer to the player, the sprite is centered on it
-// However the interactions with the world will occur offset from this hitbox, closer to the sword's tip (CutTiles, Colliding)
-// Values chosen mostly correspond to Iron Shortsword
 public class ClawProj : ModProjectile
 {
-    public const int FadeInDuration = 9;
-    public const int FadeOutDuration = 9;
-
-    public const int TotalDuration = 23;
-
-    // The "width" of the blade
-    public float CollisionWidth => 12f * Projectile.scale;
-
-    public int Timer
-    {
-        get => (int)Projectile.ai[0];
-        set => Projectile.ai[0] = value;
-    }
     public override void SetStaticDefaults()
     {
-        Main.projFrames[Projectile.type] = 4;
+        // Prevents jitter when stepping up and down blocks and half blocks
+        ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY[Type] = true;
+        Main.projFrames[Projectile.type] = 4; //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT
     }
 
     public override void SetDefaults()
     {
-        Projectile.Size = new Vector2(25); // This sets width and height to the same value (important when projectiles can rotate)
-        Projectile.aiStyle = -1; // Use our own AI to customize how it behaves, if you don't want that, keep this at ProjAIStyleID.ShortSword. You would still need to use the code in SetVisualOffsets() though
-        Projectile.friendly = true;
-        Projectile.penetrate = -1;
-        Projectile.light = 0.1f;
-        Projectile.tileCollide = false;
-        Projectile.width = 25;
-        Projectile.height = 25;
-        Projectile.scale = 3.33f;
+        Projectile.width = 22;
+        Projectile.height = 22;
+        Projectile.friendly = true; //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT
+        Projectile.tileCollide = false; //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT
+        Projectile.penetrate = -1; //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT
+        Projectile.DamageType = DamageClass.Melee;
+        Projectile.ownerHitCheck = true;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 6;
-        Projectile.DamageType = DamageClass.Melee;
-        Projectile.ownerHitCheck = true; // Prevents hits through tiles. Most melee weapons that use projectiles have this
-        Projectile.extraUpdates = 1; // Update 1+extraUpdates times per tick
-        Projectile.timeLeft = 360; // This value does not matter since we manually kill it earlier, it just has to be higher than the duration we use in AI
-        Projectile.hide = true; // Important when used alongside player.heldProj. "Hidden" projectiles have special draw conditions
-        Projectile.GetGlobalProjectile<UnarmedGlobal>().UnarmedWeapon = true;
-        Projectile.GetGlobalProjectile<ClawGlobalProjectile>().ClawWeapon = true;
+       
+        Projectile.aiStyle = -1; // Replace with 20 if you do not want custom code
+        Projectile.hide = true; // Hides the projectile, so it will draw in the player's hand when we set the player's heldProj to this one.
     }
-    public override Color? GetAlpha(Color lightColor)
-    {
-        // Always draw fully bright.
-        return Color.White;
-    }
+
+    // This code is adapted and simplified from aiStyle 20 to use a different dust and more noises. If you want to use aiStyle 20, you do not need to do any of this.
+    // It should be noted that this projectile has no effect on mining and is mostly visual.
     public override void AI()
     {
-        int frameSpeed = 6;
+        Player player = Main.player[Projectile.owner];
+
+        Projectile.timeLeft = 24;
+
+       
+        int frameSpeed = 6; //TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT TAKE CURRENT
 
         Projectile.frameCounter++;
 
@@ -69,88 +50,51 @@ public class ClawProj : ModProjectile
                 Projectile.frame = 0;
             }
         }
-        Player player = Main.player[Projectile.owner];
 
-        Timer += 1;
-        if (Timer >= TotalDuration)
+
+        Vector2 playerCenter = player.RotatedRelativePoint(player.MountedCenter);
+        if (Main.myPlayer == Projectile.owner)
         {
-            // Kill the projectile if it reaches it's intended lifetime
-            Projectile.Kill();
-            return;
+            // This code must only be ran on the client of the projectile owner
+            if (player.channel)
+            {
+                float holdoutDistance = player.HeldItem.shootSpeed * Projectile.scale;
+                // Calculate a normalized vector from player to mouse and multiply by holdoutDistance to determine resulting holdoutOffset
+                Vector2 holdoutOffset = holdoutDistance * Vector2.Normalize(Main.MouseWorld - playerCenter);
+                if (holdoutOffset.X != Projectile.velocity.X || holdoutOffset.Y != Projectile.velocity.Y)
+                {
+                    // This will sync the projectile, most importantly, the velocity.
+                    Projectile.netUpdate = true;
+                }
+
+                // Projectile.velocity acts as a holdoutOffset for held projectiles.
+                Projectile.velocity = holdoutOffset;
+            }
+            else
+            {
+                Projectile.Kill();
+            }
         }
 
-        // Important so that the sprite draws "in" the player's hand and not fully in front or behind the player
-        player.heldProj = Projectile.whoAmI;
+        if (Projectile.velocity.X > 0f)
+        {
+            player.ChangeDir(1);
+        }
+        else if (Projectile.velocity.X < 0f)
+        {
+            player.ChangeDir(-1);
+        }
 
-        // Fade in and out
-        // GetLerpValue returns a value between 0f and 1f - if clamped is true - representing how far Timer got along the "distance" defined by the first two parameters
-        // The first call handles the fade in, the second one the fade out.
-        // Notice the second call's parameters are swapped, this means the result will be reverted
-        Projectile.Opacity = Utils.GetLerpValue(0f, FadeInDuration, Timer, clamped: true) * Utils.GetLerpValue(TotalDuration, TotalDuration - FadeOutDuration, Timer, clamped: true);
-
-        // Keep locked onto the player, but extend further based on the given velocity (Requires ShouldUpdatePosition returning false to work)
-        Vector2 playerCenter = player.RotatedRelativePoint(player.MountedCenter, reverseRotation: false, addGfxOffY: false);
-        Projectile.Center = playerCenter + Projectile.velocity * (Timer - 1f);
-
-        // Set spriteDirection based on moving left or right. Left -1, right 1
-        Projectile.spriteDirection = (Vector2.Dot(Projectile.velocity, Vector2.UnitX) >= 0f).ToDirectionInt();
-
-        // Point towards where it is moving, applied offset for top right of the sprite respecting spriteDirection
-        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2 - MathHelper.PiOver4 * Projectile.spriteDirection;
-
-        // The code in this method is important to align the sprite with the hitbox how we want it to
-        SetVisualOffsets();
-    }
-
-   
-
-    private void SetVisualOffsets()
-    {
-        // 32 is the sprite size (here both width and height equal)
-        const int HalfSpriteWidth = 16 / 2;
-        const int HalfSpriteHeight = 16 / 2;
-
-        int HalfProjWidth = Projectile.width / 2;
-        int HalfProjHeight = Projectile.height / 2;
-
-        // Vanilla configuration for "hitbox in middle of sprite"
-        DrawOriginOffsetX = 0;
-        DrawOffsetX = -(HalfSpriteWidth - HalfProjWidth);
-        DrawOriginOffsetY = -(HalfSpriteHeight - HalfProjHeight);
+        Projectile.spriteDirection = Projectile.direction;
+        player.ChangeDir(Projectile.direction); // Change the player's direction based on the projectile's own
+        player.heldProj = Projectile.whoAmI; // We tell the player that the drill is the held projectile, so it will draw in their hand
+        player.SetDummyItemTime(2); // Make sure the player's item time does not change while the projectile is out
+        Projectile.Center = playerCenter; // Centers the projectile on the player. Projectile.velocity will be added to this in later Terraria code causing the projectile to be held away from the player at a set distance.
+        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+        player.itemRotation = (Projectile.velocity * Projectile.direction).ToRotation();
 
         
-    }
 
-    public override bool ShouldUpdatePosition()
-    {
-        // Update Projectile.Center manually
-        return false;
-    }
-
-    public override void CutTiles()
-    {
-        // "cutting tiles" refers to breaking pots, grass, queen bee larva, etc.
-        DelegateMethods.tilecut_0 = TileCuttingContext.AttackProjectile;
-        Vector2 start = Projectile.Center;
-        Vector2 end = start + Projectile.velocity.SafeNormalize(-Vector2.UnitY) * 10f;
-        Utils.PlotTileLine(start, end, CollisionWidth, DelegateMethods.CutTiles);
-    }
-
-    public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
-    {
-        Player player = Main.player[Projectile.owner];
-        Vector2 start = player.Center;
-        if (player.direction == -1) // Dynamically change to make extreme close range hits more consistent (autism manifesto comment)
-        {
-            start = player.Right;
-        }
-        else
-        {
-            start = player.Left;
-        }
-           
-        Vector2 end = start + Projectile.velocity * 31.15f; // HEY RIVER!!!! HITBOX NOT MATCHING VISUALS???? FUCK WITH THIS NUMBER, IT'LL FIX IT!
-        float collisionPoint = 0f;
-        return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
+       
     }
 }
