@@ -17,6 +17,6 @@ public class AncientCobaltBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(160, 225, 255), Language.GetText("Ancient Cobalt Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(160, 225, 255), Language.GetText("Ancient Cobalt Bar"));
     }
 }

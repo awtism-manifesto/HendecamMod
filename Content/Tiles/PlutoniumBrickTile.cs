@@ -15,7 +15,7 @@ public class PlutoniumBrickTile : ModTile
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(205, 151, 245));
 
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine2[Type] = true;
         Main.tileLighted[Type] = true;
     }
 

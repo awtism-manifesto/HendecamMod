@@ -1,5 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Ranger;
 
 namespace HendecamMod.Content.Global;
 

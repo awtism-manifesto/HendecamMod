@@ -1,6 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;

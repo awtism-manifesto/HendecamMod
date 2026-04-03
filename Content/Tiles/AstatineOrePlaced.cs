@@ -23,7 +23,7 @@ public class AstatineOrePlaced : ModTile
         AddMapEntry(new Color(156, 42, 65));
         MineResist = 5f;
         MinPick = 210;
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine2[Type] = true;
         Main.tileLighted[Type] = true;
     }
 
@@ -32,9 +32,6 @@ public class AstatineOrePlaced : ModTile
         r = 1.4f;
         g = 0.1f;
         b = 0.47f;
-
-      
-
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

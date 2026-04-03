@@ -15,7 +15,7 @@ public class AstatineBrickTile : ModTile
         DustType = DustID.CrimsonTorch;
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(156, 42, 65));
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine2[Type] = true; 
         Main.tileLighted[Type] = true;
     }
 

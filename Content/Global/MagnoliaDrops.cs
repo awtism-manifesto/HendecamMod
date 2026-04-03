@@ -1,6 +1,6 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Magic;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Global;

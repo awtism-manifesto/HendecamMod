@@ -9,7 +9,7 @@ public class FlatEarthTile : ModTile
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 400;
         DustType = DustID.CursedTorch;
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine2[Type] = true;
         Main.tileLighted[Type] = true;
         AddMapEntry(new Color(45, 200, 178));
     }

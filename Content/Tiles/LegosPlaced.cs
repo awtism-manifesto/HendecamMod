@@ -17,6 +17,6 @@ public class LegosPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(212, 6, 31), Language.GetText("Lego Bricks")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(212, 6, 31), Language.GetText("Lego Bricks"));
     }
 }

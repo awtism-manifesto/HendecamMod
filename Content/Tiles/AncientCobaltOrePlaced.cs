@@ -12,9 +12,9 @@ public class AncientCobaltOrePlaced : ModTile
     public override void SetStaticDefaults()
     {
         TileID.Sets.Ore[Type] = true;
-        Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
-        Main.tileOreFinderPriority[Type] = 295; // Metal Detector value, see https://terraria.wiki.gg/wiki/Metal_Detector
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileSpelunker[Type] = true;
+        Main.tileOreFinderPriority[Type] = 295;
+        Main.tileShine2[Type] = true; 
         Main.tileShine[Type] = 750; // How often tiny dust appear off this tile. Larger is less frequently
         Main.tileMergeDirt[Type] = true;
         Main.tileMerge[TileID.Stone][Type] = true;

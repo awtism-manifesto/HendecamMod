@@ -17,6 +17,6 @@ public class AstatineBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(255, 45, 59), Language.GetText("Astatine Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(255, 45, 59), Language.GetText("Astatine Bar")); 
     }
 }

@@ -20,7 +20,7 @@ public class AA12 : ModItem
         Item.damage = 27; 
         Item.knockBack = 6f;
         Item.noMelee = true;
-        Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileID.PurificationPowder;
         Item.shootSpeed = 9.25f; 
         Item.useAmmo = AmmoID.Bullet;
     }

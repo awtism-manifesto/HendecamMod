@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Weapons.Summon;
 using Terraria.Audio;
 using Terraria.ModLoader;
 

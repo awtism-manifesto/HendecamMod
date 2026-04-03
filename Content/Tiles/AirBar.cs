@@ -24,6 +24,6 @@ public class AirBar : ModTile
 
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
-        AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
+        AddMapEntry(new Color(200, 200, 200), Language.GetText("Air Bar"));
     }
 }

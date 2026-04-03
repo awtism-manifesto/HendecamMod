@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 

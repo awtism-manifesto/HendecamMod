@@ -17,6 +17,6 @@ public class PlutoniumBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(172, 93, 245), Language.GetText("Plutonium Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(172, 93, 245), Language.GetText("Plutonium Bar"));
     }
 }
