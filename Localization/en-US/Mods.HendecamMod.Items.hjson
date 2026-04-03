@@ -5159,3 +5159,8 @@ PromethiumPickaxe: {
 	Tooltip: ""
 	DisplayName: Promethium Pickaxe
 }
+
+TwoStepGoodbye: {
+	DisplayName: Two Step Goodbye
+	Tooltip: ""
+}

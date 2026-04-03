@@ -10,3 +10,4 @@ MeleeRangedDamage.DisplayName: melee+ranged damage
 MeleeMagicDamage.DisplayName: melee+magic damage
 MagicSummonDamage.DisplayName: magic+summon damage
 AutismDamage.DisplayName: magic+stupid damage
+UnarmedDamage.DisplayName: Unarmed Damage
