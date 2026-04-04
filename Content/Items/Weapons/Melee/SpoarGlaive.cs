@@ -46,7 +46,7 @@ public class SpoarGlaive : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Stands for Spore Perception Object Advanced Ricochet'")
+        line = new TooltipLine(Mod, "Face", "'It stands for Spore Perception Optimized Advanced Ricochet'")
         {
             OverrideColor = new Color(255, 255, 255)
         };

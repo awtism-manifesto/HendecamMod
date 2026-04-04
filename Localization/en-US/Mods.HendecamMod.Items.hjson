@@ -5289,3 +5289,13 @@ Caliburn: {
 	Tooltip: ""
 	DisplayName: Caliburn
 }
+
+DragonsBreath: {
+	Tooltip: ""
+	DisplayName: Dragon's Breath
+}
+
+TrueCaliburn: {
+	DisplayName: True Caliburn
+	Tooltip: ""
+}

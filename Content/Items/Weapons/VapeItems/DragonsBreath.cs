@@ -10,7 +10,7 @@ using static HendecamMod.Content.Items.Accessories.IronLung;
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
-public class MythrilVape : ModItem
+public class DragonsBreath : ModItem
 {
     public override void SetDefaults()
     {
@@ -18,26 +18,31 @@ public class MythrilVape : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 9;
-        Item.useAnimation = 27;
+        Item.useTime = 8;
+        Item.useAnimation = 24;
         Item.autoReuse = true;
-        Item.reuseDelay = 6;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 41;
-        Item.knockBack = 0.33f;
-        Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        
+        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.damage = 19;
+        Item.knockBack = 0.2f;
+        Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
+        Item.ArmorPenetration = 5;
 
-        Item.value = Item.sellPrice(silver: 510);
-        Item.rare = ItemRarityID.LightRed;
-        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound") { Volume = 2.67f, PitchVariance = 0.2f, MaxInstances = 3 };
+        Item.value = Item.sellPrice(silver: 321);
+        Item.rare = ItemRarityID.Orange;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        };
 
-        Item.shoot = ModContent.ProjectileType<MythrilVapeSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 14.33f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<DragonVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 14.75f; // Speed of the projectiles the sword will shoot
 
        
     }
-    public float LobotometerCost = 3f;
+    public float LobotometerCost = 2f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -55,10 +60,10 @@ public class MythrilVape : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6.67f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
 
                 // Decrease velocity randomly for nicer visuals.
-                newVelocity *= 1f - Main.rand.NextFloat(0.22f);
+                newVelocity *= 1f - Main.rand.NextFloat(0.24f);
 
                 // Create a projectile.
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -66,16 +71,33 @@ public class MythrilVape : ModItem
 
             return false; // Return false because we don't want tModLoader to shoot projectile
         }
-        else return true;
-    }
+        else {
 
+
+            for (int i = 0; i < NumProjectiles; i++)
+            {
+               
+
+                // Create a projectile.
+                Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
+            }
+
+            return false;
+        
+        
+        }
+    }
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-5.5f, -5f);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Exhales a constant stream of fiery vape smoke")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -83,18 +105,16 @@ public class MythrilVape : ModItem
 
        
     }
-    public override Vector2? HoldoutOffset()
-    {
-        return new Vector2(-1.83f, 6f);
-    }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
 
        
-        recipe.AddIngredient(ItemID.MythrilBar, 14);
+        recipe.AddIngredient(ItemID.HellstoneBar, 15);
+        recipe.AddIngredient(ItemID.Obsidian, 15);
         recipe.AddIngredient<VapeKit>();
-        recipe.AddTile(TileID.MythrilAnvil);
+        recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
 }
