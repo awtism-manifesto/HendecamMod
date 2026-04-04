@@ -3,7 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
 public class BeetleBomb : ModItem
 {

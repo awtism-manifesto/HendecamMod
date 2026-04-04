@@ -1,11 +1,12 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 
 public class Edward40Hands : ModItem

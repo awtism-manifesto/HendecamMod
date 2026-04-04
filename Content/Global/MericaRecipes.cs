@@ -48,9 +48,9 @@ public class MericaRecipes : ModSystem
         bebrecipe.Register();
 
         Recipe sbebrecipe = Recipe.Create(ItemID.LastPrism);
-        sbebrecipe.AddIngredient<Items.UraniumGlass>(33);
-        sbebrecipe.AddIngredient<Items.PlutoniumGlass>(33);
-        sbebrecipe.AddIngredient<Items.AstatineGlass>(33);
+        sbebrecipe.AddIngredient<UraniumGlass>(33);
+        sbebrecipe.AddIngredient<PlutoniumGlass>(33);
+        sbebrecipe.AddIngredient<AstatineGlass>(33);
 
         sbebrecipe.AddIngredient<Items.FissionDrive>(2);
         sbebrecipe.AddTile<CultistCyclotronPlaced>();

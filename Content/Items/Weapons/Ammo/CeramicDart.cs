@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Ammo;
 
 public class CeramicDart : ModItem
 {

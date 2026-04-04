@@ -4,7 +4,7 @@ using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Ranger;
 
 public class Casanova : ModItem
 {

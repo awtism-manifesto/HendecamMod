@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Consumables;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Consumables;
 
 public class BalkanRagePotion : ModItem
 {

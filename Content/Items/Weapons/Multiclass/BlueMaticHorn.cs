@@ -4,7 +4,7 @@ using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
 public class BlueMaticHorn : ModItem
 {

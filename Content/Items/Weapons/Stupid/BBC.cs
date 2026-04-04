@@ -1,9 +1,10 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 public class BBC : ModItem
 {

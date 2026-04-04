@@ -1,7 +1,7 @@
 ﻿using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Placeables;
 
 public class AstatineTorch : ModItem
 {

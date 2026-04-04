@@ -2,7 +2,7 @@
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 public class BoggsGlove : ModItem
 {

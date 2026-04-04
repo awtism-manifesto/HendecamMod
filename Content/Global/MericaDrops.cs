@@ -1,9 +1,11 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Stupid;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Global;

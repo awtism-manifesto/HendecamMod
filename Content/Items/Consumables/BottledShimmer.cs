@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Content.Items;
+﻿namespace HendecamMod.Content.Items.Consumables;
 
 public class BottledShimmer : ModItem
 {

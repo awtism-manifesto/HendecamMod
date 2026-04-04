@@ -5,7 +5,7 @@ using HendecamMod.Content.Rarities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Crossmod;
 
 public class AuricSkibidiToilet : ModItem
 {

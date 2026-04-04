@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Consumables;
 
 public class BrainrotPotion : ModItem
 {

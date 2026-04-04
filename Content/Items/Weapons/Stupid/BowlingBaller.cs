@@ -3,7 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 public class BowlingBaller : ModItem
 {

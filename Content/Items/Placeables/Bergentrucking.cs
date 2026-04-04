@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Placeables;
 
 public class Bergentrucking : ModItem
 {

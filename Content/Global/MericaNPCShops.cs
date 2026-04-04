@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Stupid;
 using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Poop;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Consumables;
 
 public class Beer : ModItem
 {

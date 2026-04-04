@@ -1,9 +1,9 @@
 ﻿using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Placeables;
 
-public class AstatineBrick : ModItem
+public class AstatineGlass : ModItem
 {
     public override void SetStaticDefaults()
     {
@@ -23,7 +23,7 @@ public class AstatineBrick : ModItem
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 8000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineBrickTile>());
+        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineGlassTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -54,10 +54,10 @@ public class AstatineBrick : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(5);
+        Recipe recipe = CreateRecipe(15);
 
         recipe.AddIngredient<AstatineOre>();
-        recipe.AddIngredient(ItemID.StoneBlock);
+        recipe.AddIngredient(ItemID.Glass);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }

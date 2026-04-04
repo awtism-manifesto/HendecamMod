@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Ammo;
 
 // This example is similar to the Wooden Arrow item
 public class CausticCarrot : ModItem

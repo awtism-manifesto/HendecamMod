@@ -1,10 +1,9 @@
-﻿using HendecamMod.Content.Tiles.Furniture;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Ammo;
 
 // This example is similar to the Wooden Arrow item
-public class AstatineArrow : ModItem
+public class CeramicArrow : ModItem
 {
     public override void SetStaticDefaults()
     {
@@ -16,25 +15,25 @@ public class AstatineArrow : ModItem
         Item.width = 14;
         Item.height = 36;
 
-        Item.damage = 25; // Keep in mind that the arrow's final damage is combined with the bow weapon damage.
+        Item.damage = 8; // Keep in mind that the arrow's final damage is combined with the bow weapon damage.
         Item.DamageType = DamageClass.Ranged;
-        Item.rare = ItemRarityID.Red;
+        Item.rare = ItemRarityID.Orange;
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
-        Item.knockBack = 7.5f;
-        Item.value = 595;
-        Item.shoot = ModContent.ProjectileType<Projectiles.AstaArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
-        Item.shootSpeed = 9.4f; // The speed of the projectile.
+        Item.knockBack = 1.5f;
+        Item.value = Item.sellPrice(copper: 19);
+        Item.shoot = ModContent.ProjectileType<Projectiles.CeramArrow>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shootSpeed = 1.8f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Explodes shortly after being fired");
+        var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Flies incredibly fast")
+        line = new TooltipLine(Mod, "Face", "Shatters into multiple ceramic shards on impact")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -56,10 +55,9 @@ public class AstatineArrow : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(150);
-        recipe.AddIngredient<AstatineBar>();
-        recipe.AddIngredient(ItemID.WoodenArrow, 150);
-        recipe.AddTile<CultistCyclotronPlaced>();
+        Recipe recipe = CreateRecipe(63);
+        recipe.AddIngredient<CeramicSheet>();
+        recipe.AddIngredient(ItemID.WoodenArrow, 63);
         recipe.Register();
     }
 }

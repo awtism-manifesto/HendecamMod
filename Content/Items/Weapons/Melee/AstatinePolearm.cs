@@ -3,7 +3,7 @@ using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Audio;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Melee;
 
 public class AstatinePolearm : ModItem
 {
