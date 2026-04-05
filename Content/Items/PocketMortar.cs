@@ -28,7 +28,7 @@ public class PocketMortar : ModItem
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-        Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.knockBack = 4.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties

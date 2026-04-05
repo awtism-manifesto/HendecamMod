@@ -10,7 +10,7 @@ using static HendecamMod.Content.Items.Accessories.IronLung;
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
 
 
-public class TrueCaliburn : ModItem
+public class TerraVape : ModItem
 {
     public override void SetDefaults()
     {
@@ -18,17 +18,17 @@ public class TrueCaliburn : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 9;
-        Item.useAnimation = 27;
+        Item.useTime = 10;
+        Item.useAnimation = 30;
         Item.autoReuse = true;
-        Item.reuseDelay = 11;
+        Item.reuseDelay = 12;
         Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.damage = 53;
-        Item.knockBack = 0.67f;
+        Item.damage = 64;
+        Item.knockBack = 1.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        
 
-        Item.value = Item.sellPrice(silver: 932);
+        Item.value = Item.sellPrice(silver: 1325);
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound")
         {
@@ -37,12 +37,12 @@ public class TrueCaliburn : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TrueCaliburnSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 17.1f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ModContent.ProjectileType<TerraVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 19.1f; // Speed of the projectiles the sword will shoot
 
        
     }
-    public float LobotometerCost = 3f;
+    public float LobotometerCost = 1f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -61,10 +61,10 @@ public class TrueCaliburn : ModItem
             for (int i = 0; i < NumProjectiles; i++)
             {
                 // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.01f));
+                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.6f));
 
                 // Decrease velocity randomly for nicer visuals.
-                newVelocity *= 1f - Main.rand.NextFloat(0.158f);
+                newVelocity *= 1f - Main.rand.NextFloat(0.111f);
 
                 // Create a projectile.
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -78,10 +78,10 @@ public class TrueCaliburn : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to float upwards or downwards at them at random");
+        var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to surround them from all four sides");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -97,9 +97,10 @@ public class TrueCaliburn : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-       
-        recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
-        recipe.AddIngredient<Caliburn>();
+
+        recipe.AddIngredient<TrueCaliburn>();
+        recipe.AddIngredient<TrueNightsFog>();
+        recipe.AddIngredient<BrokenHeroVape>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

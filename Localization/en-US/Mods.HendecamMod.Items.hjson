@@ -5299,3 +5299,28 @@ TrueCaliburn: {
 	DisplayName: True Caliburn
 	Tooltip: ""
 }
+
+CacklingCadaver: {
+	Tooltip: ""
+	DisplayName: Cackling Cadaver
+}
+
+NightsFog: {
+	Tooltip: ""
+	DisplayName: Night's Fog
+}
+
+TrueNightsFog: {
+	Tooltip: ""
+	DisplayName: True Night's Fog
+}
+
+TerraVape: {
+	Tooltip: ""
+	DisplayName: Terra Vape
+}
+
+BrokenHeroVape: {
+	Tooltip: ""
+	DisplayName: Broken Hero Vape
+}

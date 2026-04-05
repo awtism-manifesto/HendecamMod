@@ -19,8 +19,8 @@ public class AncientCobaltWaraxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.scale = 1.15f;
-        Item.axe = 22;
-        Item.hammer = 75;
+        Item.axe = 19;
+      
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
         Item.useTurn = true;
     }

@@ -7,7 +7,7 @@ using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
-public class TrueCaliburnSmoke2 : ModProjectile
+public class TerraVapeSmoke2 : ModProjectile
 {
     public override void SetStaticDefaults()
     {
@@ -16,36 +16,28 @@ public class TrueCaliburnSmoke2 : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.width = 25; // The width of projectile hitbox
-        Projectile.height = 25; // The height of projectile hitbox
+        Projectile.width = 28; // The width of projectile hitbox
+        Projectile.height = 28; // The height of projectile hitbox
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.penetrate = 4;
-        Projectile.localNPCHitCooldown = 17;
-        Projectile.tileCollide = false;
+        Projectile.penetrate = 8;
+        Projectile.localNPCHitCooldown = 15;
+
         Projectile.friendly = true;
         Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
-        Projectile.timeLeft = 85;
+        Projectile.timeLeft = 67;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
+        Projectile.extraUpdates = 1;
         Projectile.tileCollide = false;
-
        
     }
+
     public override void OnSpawn(IEntitySource source)
     {
         var vapeMark = Projectile.GetGlobalProjectile<VapeMark>();
         vapeMark.VapeProj = true;
-        vapeMark.DustScale = 3.4f;
+        vapeMark.DustScale = 3.5f;
 
-        if (Main.rand.NextBool(2))
-        {
-            Projectile.velocity.X = (Main.rand.NextFloat(0.1f, 0.6f));
-        }
-        else
-        {
-            Projectile.velocity.X = (Main.rand.NextFloat(-0.6f, -0.1f));
-        }
-       
-
+        
 
     }
     public override void AI()
@@ -56,18 +48,33 @@ public class TrueCaliburnSmoke2 : ModProjectile
             Projectile.extraUpdates = 1;
         }
 
-        // Apply velocity based on spawn direction (check ai[0])
-        if (Projectile.ai[0] == 1f) // Spawned above player
+
+        
+        if (Projectile.ai[0] == 1f)
         {
-            Projectile.velocity.Y = 12.5f; // Moving downward
+            Projectile.velocity.Y = 14.5f;
+            Projectile.velocity.X = 14.5f;  // Moving right
         }
-        else // Spawned below player
+        else if (Projectile.ai[0] == 2f)
         {
-            Projectile.velocity.Y = -12.5f; // Moving upward
+            Projectile.velocity.X = 14.5f;
+            Projectile.velocity.Y = -14.5f;  // Moving down
+        }
+        else if (Projectile.ai[0] == 3f)
+        {
+            Projectile.velocity.X = -14.5f;
+            Projectile.velocity.Y = -14.5f; // Moving up
+        }
+        else 
+        {
+            Projectile.velocity.X = -14.5f; // Moving left
+            Projectile.velocity.Y = 14.5f;
         }
 
         // The projectile is rotated to face the direction of travel
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+
+       
 
         for (int i = 0; i < 2; i++)
         {
@@ -79,28 +86,26 @@ public class TrueCaliburnSmoke2 : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.HallowedWeapons, 0f, 0f, 100, default, 1.5f);
+
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.TerraBlade, 0f, 0f, 100, default, 1.5f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             fireDust.noGravity = true;
             fireDust.velocity *= 1.25f;
-
-            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Terragrim, 0f, 0f, 100, Color.LightSkyBlue, 2.25f);
+            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.ChlorophyteWeapon, 0f, 0f, 100, default, 1.5f);
             fire2Dust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 1.25f;
-
-            Dust fire23Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 10, Projectile.height - 10, DustID.Gastropod, 0f, 0f, 100, Color.Pink, 0.9f);
-            fire23Dust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
-            fire23Dust.noGravity = true;
-            fire23Dust.velocity *= 1.25f;
         }
+
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
        
 
-        Projectile.damage = (int)(Projectile.damage * 0.925f);
+
+
+            Projectile.damage = (int)(Projectile.damage * 0.901f);
     }
 
    
