@@ -50,7 +50,6 @@ public class BrainrotPotion : ModItem
         tooltips.Add(line);
     }
 
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -7,6 +7,7 @@ public class AirBrickWallTile : ModWall
     public override void SetStaticDefaults()
     {
         Main.wallHouse[Type] = true;
+        Main.wallLight[Type] = true;
 
         AddMapEntry(new Color(191, 191, 191));
     }
