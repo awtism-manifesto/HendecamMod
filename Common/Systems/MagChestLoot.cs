@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Magic;
+using HendecamMod.Content.Items.Weapons.Melee;
 
 namespace HendecamMod.Common.Systems;
 

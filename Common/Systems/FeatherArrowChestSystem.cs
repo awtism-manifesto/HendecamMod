@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons;
+﻿using HendecamMod.Content.Items.Weapons.Ammo;
 
 namespace HendecamMod.Common.Systems;
 

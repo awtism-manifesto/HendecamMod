@@ -5,7 +5,7 @@ using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Ranger;
 
 namespace HendecamMod.Common.Systems;
 

@@ -1,6 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Consumables;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.NPCs.Bosses;
 using Terraria.GameContent.ItemDropRules;
 

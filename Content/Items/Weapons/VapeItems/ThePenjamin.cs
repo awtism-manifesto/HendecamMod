@@ -4,6 +4,7 @@ using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
 
@@ -30,7 +31,12 @@ public class ThePenjamin : ModItem
 
         Item.value = Item.sellPrice(silver: 294);
         Item.rare = ItemRarityID.Green;
-        Item.UseSound = SoundID.Item45;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        };
 
         Item.shoot = ModContent.ProjectileType<PenjaminSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 25f; // Speed of the projectiles the sword will shoot

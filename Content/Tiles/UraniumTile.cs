@@ -23,7 +23,7 @@ public class UraniumTile : ModTile
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(89, 255, 119));
 
-        Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+        Main.tileShine2[Type] = true; 
         Main.tileLighted[Type] = true;
     }
 

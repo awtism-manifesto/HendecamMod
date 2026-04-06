@@ -1,9 +1,12 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Tools;
-using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Stupid;
+using HendecamMod.Content.Items.Weapons.VapeItems;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Global;
@@ -885,6 +888,7 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuckyCigarette>(), chanceDenominator: 20));
         }
+       
 
         if (npc.type == NPCID.FireImp)
         {
@@ -904,6 +908,10 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Drippler)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Terragrim, 200));
+        }
+        if (npc.type == NPCID.DrManFly)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrokenHeroVape>(), chanceDenominator: 10));
         }
 
         if (npc.type == NPCID.WallofFlesh)

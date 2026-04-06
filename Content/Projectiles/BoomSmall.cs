@@ -25,7 +25,7 @@ public class BoomSmall : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = DamageClass.Throwing;
+        Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -34,6 +34,11 @@ public class BoomSmall : ModProjectile
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
         // AIType = ProjectileID.RocketI;
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod mod))
+        {
+            Projectile.DamageType = DamageClass.Throwing;
+        }
+        
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

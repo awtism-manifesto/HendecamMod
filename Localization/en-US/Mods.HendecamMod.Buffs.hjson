@@ -310,10 +310,15 @@ PyrrhicTag: {
 
 RadPoisoning4: {
 	Description: Your atoms are being dramatically split apart at the seams!
-	DisplayName: Rad Poisoning4
+	DisplayName: Rad Poisoning Lv.IV
 }
 
 WeaponImbueAnnihilation: {
 	DisplayName: Weapon Imbue Annihilation
 	Description: Mods.HendecamMod.Buffs.WeaponImbueAnnihilation.Description
+}
+
+SkeletalDefense: {
+	Description: Increased defense and damage reduction due to calcified lungs
+	DisplayName: Extra-Skeletal Defense
 }

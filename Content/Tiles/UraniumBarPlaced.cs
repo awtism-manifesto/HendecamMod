@@ -17,6 +17,6 @@ public class UraniumBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(1, 255, 11), Language.GetText("Uranium Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(1, 255, 11), Language.GetText("Uranium Bar"));
     }
 }

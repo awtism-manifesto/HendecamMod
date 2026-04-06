@@ -3,6 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
 
@@ -29,7 +30,7 @@ public class MythrilVape : ModItem
 
         Item.value = Item.sellPrice(silver: 510);
         Item.rare = ItemRarityID.LightRed;
-        Item.UseSound = SoundID.Item45;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound") { Volume = 2.67f, PitchVariance = 0.2f, MaxInstances = 3 };
 
         Item.shoot = ModContent.ProjectileType<MythrilVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.33f; // Speed of the projectiles the sword will shoot

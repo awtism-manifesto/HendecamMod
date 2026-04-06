@@ -16,6 +16,6 @@ public class BlankFlagPlaced : ModTile
         TileObjectData.newTile.LavaDeath = true;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag"));
     }
 }

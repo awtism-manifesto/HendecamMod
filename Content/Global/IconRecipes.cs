@@ -4,6 +4,8 @@ using HendecamMod.Content.Items.Icons;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.Rampart;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Ranger;
 
 namespace HendecamMod.Content.Global;
 

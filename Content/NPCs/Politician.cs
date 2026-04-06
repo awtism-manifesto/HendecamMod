@@ -2,6 +2,7 @@
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;

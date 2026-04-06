@@ -14,7 +14,7 @@ public class PyriteBarTile : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         Main.tileMergeDirt[Type] = false;
         Main.tileBlockLight[Type] = true;
-        Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
+        Main.tileSpelunker[Type] = true;
         HitSound = SoundID.Tink;
     }
 }

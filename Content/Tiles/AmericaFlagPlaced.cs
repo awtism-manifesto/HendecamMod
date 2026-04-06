@@ -17,6 +17,6 @@ public class AmericaFlagPlaced : ModTile
         TileObjectData.addTile(Type);
         TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 
-        AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(142, 142, 142), Language.GetText("Flag"));
     }
 }

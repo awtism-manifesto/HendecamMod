@@ -28,6 +28,15 @@ public class AdderallPill : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(silver: 10);
         Item.buffType = BuffID.Swiftness;
-        Item.buffTime = 18000;
+        Item.buffTime = 86400;
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.SwiftnessPotion,3);
+        recipe.AddIngredient<WeedLeaves>(25);
+        recipe.AddTile(TileID.Bottles);
+        recipe.Register();
     }
 }

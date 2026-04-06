@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 

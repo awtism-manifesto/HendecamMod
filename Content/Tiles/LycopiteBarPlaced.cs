@@ -17,6 +17,6 @@ public class LycopiteBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
 
-        AddMapEntry(new Color(248, 88, 59), Language.GetText("Lycopite Bar")); // localized text for "Metal Bar"
+        AddMapEntry(new Color(248, 88, 59), Language.GetText("Lycopite Bar"));
     }
 }

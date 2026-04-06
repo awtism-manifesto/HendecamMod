@@ -19,7 +19,7 @@ public class StoneBar : ModTile
 
         VanillaFallbackOnModDeletion = TileID.MetalBars;
 
-        AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
+        AddMapEntry(new Color(200, 200, 200), Language.GetText("Stone Bar"));
     }
 
     public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)

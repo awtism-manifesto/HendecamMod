@@ -11,7 +11,7 @@ public class PyriteOreTile : ModTile
         Main.tileMergeDirt[Type] = true;
         Main.tileBlockLight[Type] = true;
         TileID.Sets.Ore[Type] = true;
-        Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
+        Main.tileSpelunker[Type] = true;
         Main.tileOreFinderPriority[Type] = 290;
         HitSound = SoundID.Tink;
     }

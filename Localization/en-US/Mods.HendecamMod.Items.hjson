@@ -5275,22 +5275,52 @@ QueensShank: {
 	DisplayName: Queen's Shank
 }
 
-RingTechnique: {
+LycopiteGlaive: {
 	Tooltip: ""
-	DisplayName: Ring Technique
+	DisplayName: Lycopite Glaive
 }
 
-KnuckleTechnique: {
+SpoarGlaive: {
+	DisplayName: S.P.O.A.R. Glaive
 	Tooltip: ""
-	DisplayName: Knuckle Technique
 }
 
-GauntletTechnique: {
+Caliburn: {
 	Tooltip: ""
-	DisplayName: Gauntlet Technique
+	DisplayName: Caliburn
 }
 
-BandTechnique: {
+DragonsBreath: {
 	Tooltip: ""
-	DisplayName: Band Technique
+	DisplayName: Dragon's Breath
+}
+
+TrueCaliburn: {
+	DisplayName: True Caliburn
+	Tooltip: ""
+}
+
+CacklingCadaver: {
+	Tooltip: ""
+	DisplayName: Cackling Cadaver
+}
+
+NightsFog: {
+	Tooltip: ""
+	DisplayName: Night's Fog
+}
+
+TrueNightsFog: {
+	Tooltip: ""
+	DisplayName: True Night's Fog
+}
+
+TerraVape: {
+	Tooltip: ""
+	DisplayName: Terra Vape
+}
+
+BrokenHeroVape: {
+	Tooltip: ""
+	DisplayName: Broken Hero Vape
 }
