@@ -1,7 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Terraria.Enums;
 namespace HendecamMod.Content.Projectiles.Items.UnarmedProjectiles;
-public class ClawProj : ModProjectile
+public class GauntletProj : ModProjectile
     {
     public const int FadeInDuration = 9;
     public const int FadeOutDuration = 9;
@@ -35,7 +35,7 @@ public class ClawProj : ModProjectile
         Projectile.timeLeft = 360;
         Projectile.hide = true;
         Projectile.GetGlobalProjectile<UnarmedGlobal>().UnarmedWeapon = true;
-        Projectile.GetGlobalProjectile<ClawGlobalProjectile>().ClawWeapon = true;
+        Projectile.GetGlobalProjectile<GauntletGlobalProjectile>().GauntletWeapon = true;
         }
     public override Color? GetAlpha(Color lightColor)
         {

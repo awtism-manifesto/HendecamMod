@@ -1,14 +1,14 @@
 ﻿namespace HendecamMod.Content.Projectiles.Items.UnarmedProjectiles;
 
-public class ClawGlobalProjectile : GlobalProjectile
+public class KnuckleGlobalProjectile : GlobalProjectile
     {
-    public bool ClawWeapon;
+    public bool KnuckleWeapon;
 
     public override bool InstancePerEntity => true;
 
     public override void AI(Projectile projectile)
         {
-        if (ClawWeapon)
+        if (KnuckleWeapon)
             {
             // do stuff
             }

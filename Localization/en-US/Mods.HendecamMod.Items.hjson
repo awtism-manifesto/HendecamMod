@@ -5274,3 +5274,23 @@ QueensShank: {
 	Tooltip: ""
 	DisplayName: Queen's Shank
 }
+
+RingTechnique: {
+	Tooltip: ""
+	DisplayName: Ring Technique
+}
+
+KnuckleTechnique: {
+	Tooltip: ""
+	DisplayName: Knuckle Technique
+}
+
+GauntletTechnique: {
+	Tooltip: ""
+	DisplayName: Gauntlet Technique
+}
+
+BandTechnique: {
+	Tooltip: ""
+	DisplayName: Band Technique
+}
