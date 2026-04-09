@@ -26,7 +26,7 @@ public class KingslayerSniper : ModItem
         Item.UseSound = SoundID.NPCDeath56;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.shoot = ProjectileID.Bullet;
@@ -54,7 +54,7 @@ public class KingslayerSniper : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts musket balls into powerful, piercing Kingslayer Bullets");
+        var line = new TooltipLine(Mod, "Face", "Converts musket balls into powerful, piercing Kingslayer Bullets that deal extra crit damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -62,18 +62,7 @@ public class KingslayerSniper : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

@@ -3,7 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
 public class GayFrogAlchemyGuide : ModItem
 {
@@ -19,8 +19,8 @@ public class GayFrogAlchemyGuide : ModItem
         Item.value = 150000;
         // Use Properties
         // Use Properties
-        Item.useTime = 5; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 15; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 6; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 6; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
@@ -30,14 +30,14 @@ public class GayFrogAlchemyGuide : ModItem
         Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 7;
+        Item.mana = 3;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ModContent.ProjectileType<GayFrogChemicals>();
 
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
     }
-    public float LobotometerCost = 7f;
+    public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -55,7 +55,7 @@ public class GayFrogAlchemyGuide : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Sprays chemicals so toxic that they turn the friggin frogs gay!")

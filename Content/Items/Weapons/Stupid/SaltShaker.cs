@@ -4,7 +4,7 @@ using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 /// <summary>
 ///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.

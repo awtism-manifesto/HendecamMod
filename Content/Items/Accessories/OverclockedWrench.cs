@@ -1,9 +1,21 @@
 ﻿using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 public class OverclockedWrench : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
+        Main.RegisterItemAnimation(Type, new DrawAnimationVertical(3, 26));
+        ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
+
+
+      
+
+
+    }
     public override void SetDefaults()
     {
         Item.width = 45;

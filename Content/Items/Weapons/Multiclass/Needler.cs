@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
-public class ASaltRifle : ModItem
+public class Needler : ModItem
 {
     public override void SetDefaults()
     {
@@ -13,63 +15,64 @@ public class ASaltRifle : ModItem
         // Common Properties
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.scale = 1f;
+        Item.scale = 0.85f;
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-        Item.value = 390000;
+        Item.value = 990000;
         // Use Properties
         // Use Properties
-        Item.useTime = 2; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 10; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 7; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        Item.reuseDelay = 15;
-
         // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item74;
+        Item.UseSound = SoundID.Item114;
         // Weapon Properties
-        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>(); // Sets the damage type to ranged.
+        Item.damage = 47; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
+        Item.ArmorPenetration = 15;
+        Item.mana = 6;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<PurifiedSaltRanged>();
-
-        Item.shootSpeed = 16.75f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shoot = ModContent.ProjectileType<Needle>();
+        Item.useAmmo = AmmoID.Bullet;
+        Item.shootSpeed = 6.95f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PurifiedSaltRanged>();
+        type = ModContent.ProjectileType<Needle>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-
+        int NumProjectiles = Main.rand.Next(2, 3);
+        damage = (int)(damage * Main.rand.NextFloat(0.85f, 0.875f));
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.33f));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.75f));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.13f);
+            newVelocity *= 1f - Main.rand.NextFloat(0.33f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
+        SoundEngine.PlaySound(SoundID.Item99, player.position);
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Does not require ammo");
+        var line = new TooltipLine(Mod, "Face", "Converts bullets into a swarm of needles that ignore 15 enemy armor");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Gains damage as it pierces enemies")
+        line = new TooltipLine(Mod, "Face", "'Which idiot from the Covenant left this one here?'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -92,10 +95,8 @@ public class ASaltRifle : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<SaltGun>();
-        recipe.AddIngredient<PurifiedSalt>(81);
-        recipe.AddIngredient(ItemID.SpectreBar, 9);
-
+        recipe.AddIngredient<PlutoniumBar>(15);
+        recipe.AddIngredient(ItemID.CrystalShard, 10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
@@ -103,6 +104,6 @@ public class ASaltRifle : ModItem
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-22f, -2f);
+        return new Vector2(-30f, 0f);
     }
 }

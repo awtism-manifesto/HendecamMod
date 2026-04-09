@@ -16,7 +16,7 @@ public class BrokenMouse : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants 30% more Attack Speed, at the cost of Activated Buffs");
+        var line = new TooltipLine(Mod, "Face", "Grants 15% more Attack Speed, at the cost of Activated Buffs");
         tooltips.Add(line);
     }
 

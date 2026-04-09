@@ -2,21 +2,21 @@
 using HendecamMod.Content.Projectiles;
 using Terraria.GameContent.ItemDropRules;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Summon;
 
-public class FerrousThornSpiky : ModItem
+public class FerrousThornSmooth : ModItem
 {
     public override void SetDefaults()
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<FerroWhipSpiky>(), 33, 9, 5f, 33);
+        Item.DefaultToWhip(ModContent.ProjectileType<FerroWhipSmooth>(), 33, 9, 5.15f, 27);
         Item.rare = ItemRarityID.LightRed;
-        Item.damage = 72;
-        Item.useTime = 33;
-        Item.useAnimation = 33;
-        Item.knockBack = 7f;
-        Item.ArmorPenetration = 15;
+        Item.damage = 54;
+        Item.useTime = 27;
+        Item.useAnimation = 27;
+        Item.knockBack = 5.75f;
+        Item.ArmorPenetration = 1;
         Item.width = 18;
         Item.height = 18;
         Item.value = 390000;
@@ -25,7 +25,7 @@ public class FerrousThornSpiky : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "9 summon tag damage");
+        var line = new TooltipLine(Mod, "Face", "14 summon tag damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Right click in the inventory to swap variants")
@@ -33,7 +33,7 @@ public class FerrousThornSpiky : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Spiky variant: Higher direct damage and +15 armor penetration, but lower speed and tag damage")
+        line = new TooltipLine(Mod, "Face", "Smooth variant: Higher speed and tag damage, but lower direct damage and no base armor penetration")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -47,7 +47,7 @@ public class FerrousThornSpiky : ModItem
 
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSmooth>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSpiky>()));
     }
 
     public override void AddRecipes()

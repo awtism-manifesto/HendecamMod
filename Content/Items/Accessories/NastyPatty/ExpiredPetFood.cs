@@ -17,7 +17,7 @@ public class ExpiredPetFood : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s, Light, 25% Crit Chance, Double Movement Speed,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 Defense, Doubled Armor Penetraton, and 50% more Generic Damage"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 Defense, Doubled Armor Penetraton, and 33% more Generic Damage"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets, Light Pets, Summons, Mounts,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Minecarts, Weapon, Armor, or Accessory Buffs"));
     }

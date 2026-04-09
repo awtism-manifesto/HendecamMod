@@ -22,9 +22,9 @@ public class SoulOfImmunityAccessory : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 30% increased attack speed, double the breath timer, Hellfire for all attacks,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 30% Damage Reduction, 35 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 extra Defense, Doubled Armor Penetraton, 50% more Generic Damage, MUCH higher jump speed, Flight, Liquid walking,"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 20% Damage Reduction, 35 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 extra Defense, Doubled Armor Penetraton, 33% more Generic Damage, MUCH higher jump speed, Flight, Liquid walking,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Super fast movement, More mobility on ice, Faster running speed on sand, 30 fishing power, and Auto jump"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Immune to every buff, debuff, knockback, fall damage, fire blocks, and liquids"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Every enemy should be friendly"));

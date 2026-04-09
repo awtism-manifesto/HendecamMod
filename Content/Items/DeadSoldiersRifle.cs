@@ -45,7 +45,7 @@ public class DeadSoldiersRifle : ModItem
 
         if (type == ModContent.ProjectileType<PoisonBullet>())
         {
-            damage = (int)(damage * 1.33f);
+            damage = (int)(damage * 1.25f);
         }
     }
 

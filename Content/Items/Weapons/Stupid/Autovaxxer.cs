@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 public class Autovaxxer : ModItem
 {
@@ -23,7 +23,7 @@ public class Autovaxxer : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.8f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 6050000;
+        Item.value = 6330000;
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
@@ -114,11 +114,11 @@ public class Autovaxxer : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<MartianDrugs>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FragmentFlatEarth>(12);
-        recipe.AddIngredient(ItemID.VialofVenom, 20);
-        recipe.AddIngredient(ItemID.Nanites, 20);
+        recipe.AddIngredient(ItemID.Nanites, 100);
 
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();

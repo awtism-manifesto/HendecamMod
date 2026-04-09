@@ -443,6 +443,32 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.RayGunner)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PulsePistols>(), chanceDenominator: 18));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.GrayGrunt)
+        {
+           
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.MartianEngineer)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.MartianOfficer)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 40));
+        }
+        if (npc.type == NPCID.GigaZapper)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.BrainScrambler)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MartianDrugs>(), chanceDenominator: 50));
         }
 
         if (npc.type == NPCID.MartianSaucerCore)

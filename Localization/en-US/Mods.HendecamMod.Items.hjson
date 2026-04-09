@@ -5324,3 +5324,8 @@ BrokenHeroVape: {
 	Tooltip: ""
 	DisplayName: Broken Hero Vape
 }
+
+MartianDrugs: {
+	Tooltip: ""
+	DisplayName: Martian Drugs
+}

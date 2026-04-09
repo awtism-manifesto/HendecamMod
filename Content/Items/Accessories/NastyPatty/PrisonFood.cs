@@ -16,7 +16,7 @@ public class PrisonFood : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25 fall distance and 10% Damage Reduction"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25 fall distance and 20% Damage Reduction"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Food or Exploration Buffs"));
     }
 
