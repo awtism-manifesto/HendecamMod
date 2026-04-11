@@ -18,14 +18,14 @@ public class UraniumGlassSword : ModItem
         Item.useAnimation = 19;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 60;
         Item.knockBack = 6.7f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
         Item.buffType = BuffID.Bleeding;
-        Item.buffType = ModContent.BuffType<RadPoisoning>();
+        Item.buffType = BuffType<RadPoisoning>();
         Item.buffTime = 300;
         Item.useTurn = true;
     }
@@ -41,7 +41,7 @@ public class UraniumGlassSword : ModItem
     }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+        target.AddBuff(BuffType<RadPoisoning>(), 300);
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

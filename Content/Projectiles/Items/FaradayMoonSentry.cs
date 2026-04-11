@@ -44,7 +44,7 @@ public class FaradayMoonSentry : ModProjectile
         Projectile.light = 0.67f;
         Projectile.tileCollide = false;
         Projectile.friendly = false;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.penetrate = -1;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -200,7 +200,7 @@ public class FaradayMoonSentry : ModProjectile
                     }
 
                     // Spawn the eclipse laser
-                    int type = ModContent.ProjectileType<EclipseLaser>();
+                    int type = ProjectileType<EclipseLaser>();
                     Vector2 laserVelocity = laserDirection * 25f; // Fast velocity for the laser
 
                     Projectile.NewProjectile(
@@ -238,7 +238,7 @@ public class FaradayMoonSentry : ModProjectile
         // ----- SENTRY FIRING LOGIC -----
 
         // Calculate attack speed based on player's equipment
-        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(ModContent.GetInstance<StupidDamage>()));
+        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(GetInstance<StupidDamage>()));
 
         // Base delay in frames between shots (adjust as needed)
         int baseDelay = 15;
@@ -289,7 +289,7 @@ public class FaradayMoonSentry : ModProjectile
                     Vector2 shootVelocity = shootDirection * FireVelocity;
 
                     // Determine projectile type to shoot
-                    int type = ModContent.ProjectileType<FaradayMoonShot>();
+                    int type = ProjectileType<FaradayMoonShot>();
 
                     // Spawn the projectile
                     Projectile.NewProjectile(
@@ -346,7 +346,7 @@ public class FaradayMoonSentry : ModProjectile
             Projectile proj = Main.projectile[i];
             if (proj.active &&
                 proj.owner == Projectile.owner &&
-                proj.type == ModContent.ProjectileType<FaradaySunSentry>())
+                proj.type == ProjectileType<FaradaySunSentry>())
             {
                 return proj;
             }

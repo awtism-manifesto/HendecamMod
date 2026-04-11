@@ -38,7 +38,7 @@ public class VileGreatstaff : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.value = 1222500;
         Item.DamageType = DamageClass.Magic;
-        Item.shoot = ModContent.ProjectileType<VileFlame>();
+        Item.shoot = ProjectileType<VileFlame>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
 
         Item.autoReuse = true;
@@ -69,7 +69,7 @@ public class VileGreatstaff : ModItem
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
 
-            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ModContent.ProjectileType<VileSpawn>(), (int)(damage * 1.33f), (int)(knockback * 1f), player.whoAmI);
+            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ProjectileType<VileSpawn>(), (int)(damage * 1.33f), (int)(knockback * 1f), player.whoAmI);
             return false;
         }
 

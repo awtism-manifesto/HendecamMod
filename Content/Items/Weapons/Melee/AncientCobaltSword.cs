@@ -26,7 +26,7 @@ public class AncientCobaltSword : ModItem
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<CobaltBolt>();
+        Item.shoot = ProjectileType<CobaltBolt>();
         Item.shootSpeed = 10.25f;
         Item.useTurn = true;
     }

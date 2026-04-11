@@ -88,21 +88,21 @@ public class RadApply : ModPlayer
 
         if (Main.rand.NextBool(6)) 
         {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<UraniumDust>(),
+            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustType<UraniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
 
         if (Main.rand.NextBool(6)) 
         {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
+            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustType<PlutoniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
 
         if (Main.rand.NextBool(6)) 
         {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<AstatineDust>(),
+            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustType<AstatineDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
@@ -115,9 +115,9 @@ public class RadApply : ModPlayer
         }
         else
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 120);
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 280);
-            target.AddBuff(ModContent.BuffType<RadPoisoning>(), 540);
+            target.AddBuff(BuffType<RadPoisoning3>(), 120);
+            target.AddBuff(BuffType<RadPoisoning2>(), 280);
+            target.AddBuff(BuffType<RadPoisoning>(), 540);
         }
     }
 
@@ -128,9 +128,9 @@ public class RadApply : ModPlayer
         }
         else
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 120);
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 280);
-            target.AddBuff(ModContent.BuffType<RadPoisoning>(), 540);
+            target.AddBuff(BuffType<RadPoisoning3>(), 120);
+            target.AddBuff(BuffType<RadPoisoning2>(), 280);
+            target.AddBuff(BuffType<RadPoisoning>(), 540);
         }
     }
 }

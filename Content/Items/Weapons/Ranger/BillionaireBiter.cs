@@ -34,12 +34,12 @@ public class BillionaireBiter : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 15.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
-        Item.shoot = ModContent.ProjectileType<OrcaTooth>();
+        Item.shoot = ProjectileType<OrcaTooth>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<OrcaTooth>();
+        type = ProjectileType<OrcaTooth>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

@@ -18,7 +18,7 @@ public class MorbiumBar : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<MorbiumBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

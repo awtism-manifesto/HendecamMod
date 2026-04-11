@@ -80,11 +80,11 @@ public class CactusSpawn : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(25));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(25));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<CactusSpike>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
     }
 }

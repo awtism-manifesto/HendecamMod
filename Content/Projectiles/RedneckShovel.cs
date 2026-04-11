@@ -21,7 +21,7 @@ public class RedneckShovel : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RedneckTag>(), 108);
+        target.AddBuff(BuffType<RedneckTag>(), 108);
     }
 
     public override void AI()

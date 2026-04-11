@@ -40,7 +40,7 @@ public class ElephantYoyo : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.9f);
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + -5f + posOffsetX, Projectile.position.Y + 5f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.9f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 1.6f;
@@ -50,15 +50,15 @@ public class ElephantYoyo : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 110);
+        target.AddBuff(BuffType<RadPoisoning2>(), 110);
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
         target.immune[Projectile.owner] = 9;
     }
 

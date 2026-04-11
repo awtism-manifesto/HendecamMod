@@ -22,7 +22,7 @@ public class CeramicArrow : ModItem
         Item.consumable = true;
         Item.knockBack = 1.5f;
         Item.value = Item.sellPrice(copper: 19);
-        Item.shoot = ModContent.ProjectileType<Projectiles.CeramArrow>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<Projectiles.CeramArrow>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 1.8f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }

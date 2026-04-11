@@ -81,14 +81,14 @@ public class CrackedNuts : ModItem
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
         Item.damage = 136; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+        Item.DamageType = GetInstance<MeleeStupidDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
 
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.Cyan; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<CrackedNut>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<CrackedNut>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 15.95f; // The velocity of the shot projectile.			
     }
 

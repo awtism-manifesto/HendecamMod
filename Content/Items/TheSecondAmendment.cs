@@ -19,7 +19,7 @@ public class TheSecondAmendment : ModItem
         Item.width = 130;
         Item.height = 60;
         Item.scale = 1f;
-        Item.rare = ModContent.RarityType<HotPink>();
+        Item.rare = RarityType<HotPink>();
         Item.value = 330000000;
         // Use Properties
         Item.useTime = 1; // The item's use time in ticks (60 ticks == 1 second.)
@@ -63,64 +63,64 @@ public class TheSecondAmendment : ModItem
             switch (choice)
             {
                 case 0:
-                    projType = ModContent.ProjectileType<DracoRound>();
+                    projType = ProjectileType<DracoRound>();
                     break;
                 case 1:
-                    projType = ModContent.ProjectileType<PhotonSpawn>();
+                    projType = ProjectileType<PhotonSpawn>();
                     break;
                 case 2:
-                    projType = ModContent.ProjectileType<RadShot>();
+                    projType = ProjectileType<RadShot>();
                     break;
                 case 3:
-                    projType = ModContent.ProjectileType<ChargeLaser>();
+                    projType = ProjectileType<ChargeLaser>();
                     break;
                 case 4:
-                    projType = ModContent.ProjectileType<PlutoShot>();
+                    projType = ProjectileType<PlutoShot>();
                     break;
                 case 5:
-                    projType = ModContent.ProjectileType<MagnumShot>();
+                    projType = ProjectileType<MagnumShot>();
                     break;
                 case 6:
-                    projType = ModContent.ProjectileType<AstatineBullet>();
+                    projType = ProjectileType<AstatineBullet>();
                     break;
                 case 7:
-                    projType = ModContent.ProjectileType<MerFlare>();
+                    projType = ProjectileType<MerFlare>();
                     break;
                 case 8:
-                    projType = ModContent.ProjectileType<BeetleRoundProjectile>();
+                    projType = ProjectileType<BeetleRoundProjectile>();
                     break;
                 case 9:
-                    projType = ModContent.ProjectileType<fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 10:
-                    projType = ModContent.ProjectileType<DragonSpawn>();
+                    projType = ProjectileType<DragonSpawn>();
                     break;
                 case 11:
-                    projType = ModContent.ProjectileType<fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 12:
-                    projType = ModContent.ProjectileType<ZazaSmoke>();
+                    projType = ProjectileType<ZazaSmoke>();
                     break;
                 case 13:
-                    projType = ModContent.ProjectileType<JfkBullet>();
+                    projType = ProjectileType<JfkBullet>();
                     break;
                 case 14:
-                    projType = ModContent.ProjectileType<DaeRound>();
+                    projType = ProjectileType<DaeRound>();
                     break;
                 case 15:
-                    projType = ModContent.ProjectileType<FakeRocket2>();
+                    projType = ProjectileType<FakeRocket2>();
                     break;
                 case 16:
-                    projType = ModContent.ProjectileType<SpermRange>();
+                    projType = ProjectileType<SpermRange>();
                     break;
                 case 17:
-                    projType = ModContent.ProjectileType<CiaSpawn>();
+                    projType = ProjectileType<CiaSpawn>();
                     break;
                 case 18:
-                    projType = ModContent.ProjectileType<PulseShot>();
+                    projType = ProjectileType<PulseShot>();
                     break;
                 case 19:
-                    projType = ModContent.ProjectileType<TerraRound>();
+                    projType = ProjectileType<TerraRound>();
                     break;
                 case 20:
                     projType = ProjectileID.IchorBullet;
@@ -135,7 +135,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.VenomBullet;
                     break;
                 case 24:
-                    projType = ModContent.ProjectileType<CryoBullet>();
+                    projType = ProjectileType<CryoBullet>();
                     break;
                 case 25:
                     projType = ProjectileID.NanoBullet;
@@ -147,7 +147,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.ZapinatorLaser;
                     break;
                 case 28:
-                    projType = ModContent.ProjectileType<LycoSpawn>();
+                    projType = ProjectileType<LycoSpawn>();
                     break;
                 case 29:
                     projType = ProjectileID.SnowBallFriendly;
@@ -160,7 +160,7 @@ public class TheSecondAmendment : ModItem
 
                     break;
                 case 32:
-                    projType = ModContent.ProjectileType<OilBallRanged>();
+                    projType = ProjectileType<OilBallRanged>();
                     projDamage = (int)(damage * 1.5f);
                     break;
                 case 33:
@@ -182,25 +182,25 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.MoonlordBullet;
                     break;
                 case 39:
-                    projType = ModContent.ProjectileType<CopperShort>();
+                    projType = ProjectileType<CopperShort>();
                     break;
                 case 40:
                     projType = ProjectileID.FairyQueenRangedItemShot;
                     break;
                 case 41:
-                    projType = ModContent.ProjectileType<ApexPlasmaBullet>();
+                    projType = ProjectileType<ApexPlasmaBullet>();
                     break;
                 case 42:
-                    projType = ModContent.ProjectileType<TerraRound>();
+                    projType = ProjectileType<TerraRound>();
                     break;
                 case 43:
-                    projType = ModContent.ProjectileType<TerraRound>();
+                    projType = ProjectileType<TerraRound>();
                     break;
                 case 44:
                     projType = ProjectileID.ChlorophyteBullet;
                     break;
                 case 45:
-                    projType = ModContent.ProjectileType<ApexPlasmaBullet>();
+                    projType = ProjectileType<ApexPlasmaBullet>();
                     break;
                 case 46:
                     projType = ProjectileID.GoldenBullet;
@@ -224,10 +224,10 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.Bullet;
                     break;
                 case 53:
-                    projType = ModContent.ProjectileType<fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 54:
-                    projType = ModContent.ProjectileType<BouncingBulletProj>();
+                    projType = ProjectileType<BouncingBulletProj>();
                     break;
                 case 55:
                     projType = ProjectileID.MoonlordBullet;
@@ -236,43 +236,43 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.MoonlordBullet;
                     break;
                 case 57:
-                    projType = ModContent.ProjectileType<MerFlare>();
+                    projType = ProjectileType<MerFlare>();
                     break;
                 case 58:
-                    projType = ModContent.ProjectileType<MerFlare>();
+                    projType = ProjectileType<MerFlare>();
                     break;
                 case 59:
-                    projType = ModContent.ProjectileType<MerFlare>();
+                    projType = ProjectileType<MerFlare>();
                     break;
                 case 60:
-                    projType = ModContent.ProjectileType<PhotonSpawn>();
+                    projType = ProjectileType<PhotonSpawn>();
                     break;
                 case 61:
                     projType = ProjectileID.ZapinatorLaser;
                     break;
                 case 62:
-                    projType = ModContent.ProjectileType<BeetleRoundProjectile>();
+                    projType = ProjectileType<BeetleRoundProjectile>();
                     break;
                 case 63:
-                    projType = ModContent.ProjectileType<DragonSpawnShadow>();
+                    projType = ProjectileType<DragonSpawnShadow>();
                     break;
                 case 64:
                     projType = ProjectileID.SilverBullet;
                     break;
                 case 65:
-                    projType = ModContent.ProjectileType<RadShot>();
+                    projType = ProjectileType<RadShot>();
                     break;
                 case 66:
-                    projType = ModContent.ProjectileType<DracoRound>();
+                    projType = ProjectileType<DracoRound>();
                     break;
                 case 67:
-                    projType = ModContent.ProjectileType<LycoSpawn>();
+                    projType = ProjectileType<LycoSpawn>();
                     break;
                 case 68:
-                    projType = ModContent.ProjectileType<PlutoShot>();
+                    projType = ProjectileType<PlutoShot>();
                     break;
                 case 69:
-                    projType = ModContent.ProjectileType<fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
             }
 
@@ -281,7 +281,7 @@ public class TheSecondAmendment : ModItem
 
         if (Main.rand.NextBool(69))
         {
-            int bonusType = ModContent.ProjectileType<RiverHead>();
+            int bonusType = ProjectileType<RiverHead>();
             Vector2 bonusVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8));
             Projectile.NewProjectileDirect(source, position, bonusVelocity, bonusType, damage, knockback, player.whoAmI);
         }

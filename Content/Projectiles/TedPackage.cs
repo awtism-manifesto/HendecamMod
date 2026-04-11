@@ -167,20 +167,20 @@ public class TedPackage : ModProjectile
             fire1Dust23546.velocity *= 7f;
             fire1Dust23546 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Poisoned, 0f, 0f, 100, default, 0.7f);
             fire1Dust23546.velocity *= 3f;
-            Dust fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fire1Dust235467.noGravity = true;
             fire1Dust235467.velocity *= 7f;
-            fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
+            fire1Dust235467 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
             fire1Dust235467.velocity *= 3f;
-            Dust fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
             fire1Dust235468.noGravity = true;
             fire1Dust235468.velocity *= 7f;
-            fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
+            fire1Dust235468 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
             fire1Dust235468.velocity *= 3f;
-            Dust fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fire1Dust235469.noGravity = true;
             fire1Dust235469.velocity *= 7f;
-            fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
+            fire1Dust235469 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
             fire1Dust235469.velocity *= 3f;
         }
     }
@@ -199,9 +199,9 @@ public class TedPackage : ModProjectile
         target.AddBuff(BuffID.OnFire3, 444);
         target.AddBuff(BuffID.OnFire, 444);
         target.AddBuff(BuffID.TentacleSpike, 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
+        target.AddBuff(BuffType<RadPoisoning>(), 444);
+        target.AddBuff(BuffType<RadPoisoning2>(), 444);
+        target.AddBuff(BuffType<RadPoisoning3>(), 444);
     }
 
     // Rocket II explosion that damages tiles.

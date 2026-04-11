@@ -22,7 +22,7 @@ public class IronVape : ModItem
         Item.useAnimation = 33;
         Item.autoReuse = true;
         Item.reuseDelay = 6;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 12;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class IronVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<IronVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<IronVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 7.65f; // Speed of the projectiles the sword will shoot
 
        

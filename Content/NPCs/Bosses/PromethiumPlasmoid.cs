@@ -115,7 +115,7 @@ public class PromethiumPlasmoid : ModNPC
                 }
 
                 int damage = NPC.damage;
-                NPC.NewNPCDirect(source, (int)NPC.Center.X + randX, (int)NPC.Center.Y + randY, ModContent.NPCType<UnstablePlasmoid>(), NPC.whoAmI);
+                NPC.NewNPCDirect(source, (int)NPC.Center.X + randX, (int)NPC.Center.Y + randY, NPCType<UnstablePlasmoid>(), NPC.whoAmI);
             }
 
             tickCounter = 0;

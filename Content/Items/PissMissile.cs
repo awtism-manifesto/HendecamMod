@@ -16,7 +16,7 @@ public class PissMissile : ModItem
         Item.knockBack = 3f;
         Item.value = 106;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<PissMissileProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<PissMissileProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 11.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
     }
@@ -27,10 +27,10 @@ public class PissMissile : ModItem
 
         // This is where we tell the game which projectile to spawn when using this rocket as ammo with certain launchers.
         // This specific rocket ammo is like Rocket I's.
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ModContent.ProjectileType<PissMissileProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ModContent.ProjectileType<PissMissileProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ModContent.ProjectileType<PissMissileProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ModContent.ProjectileType<PissMissileProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ProjectileType<PissMissileProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ProjectileType<PissMissileProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ProjectileType<PissMissileProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ProjectileType<PissMissileProj>());
         // We also need to say which type of Celebration Mk2 rockets to use.
         // The Celebration Mk 2 only has four types of rockets. Change the projectile to match your ammo type.
         // Rocket I like   == ProjectileID.Celeb2Rocket

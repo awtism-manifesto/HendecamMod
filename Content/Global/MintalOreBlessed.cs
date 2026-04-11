@@ -16,7 +16,7 @@ public class MintalOreBlessed : GlobalNPC
     {
         if (!Main.hardMode)
         {
-            ModContent.GetInstance<MintalSystem>().BlessWorldWithMintal();
+            GetInstance<MintalSystem>().BlessWorldWithMintal();
         }
     }
 }
@@ -65,7 +65,7 @@ public class MintalSystem : ModSystem
                 int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                 // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(6, 9), WorldGen.genRand.Next(7, 11), (ushort)ModContent.TileType<MintalOrePlaced>());
+                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(6, 9), WorldGen.genRand.Next(7, 11), (ushort)TileType<MintalOrePlaced>());
             }
         });
     }

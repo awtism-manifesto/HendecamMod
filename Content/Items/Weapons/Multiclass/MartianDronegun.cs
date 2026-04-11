@@ -25,7 +25,7 @@ public class MartianDronegun : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item102;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedSummonDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<RangedSummonDamage>(); // Sets the damage type to ranged.
         Item.damage = 90; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -34,12 +34,12 @@ public class MartianDronegun : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 9.66f; // The speed of the projectile (measured in pixels per frame.)
        
-        Item.shoot = ModContent.ProjectileType<MartianDrone>();
+        Item.shoot = ProjectileType<MartianDrone>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<MartianDrone>();
+        type = ProjectileType<MartianDrone>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

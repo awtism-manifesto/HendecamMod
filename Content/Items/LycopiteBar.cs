@@ -22,7 +22,7 @@ public class LycopiteBar : ModItem
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
         Item.value = 11900;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.LycopiteBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.LycopiteBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -47,7 +47,7 @@ public class TransOre : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<TransOrePlaced>());
+        Item.DefaultToPlaceableTile(TileType<TransOrePlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Blue;

@@ -33,12 +33,12 @@ public class SodiumShotbow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 7.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ModContent.ProjectileType<SodiumBolt>();
+        Item.shoot = ProjectileType<SodiumBolt>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SodiumBolt>();
+        type = ProjectileType<SodiumBolt>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

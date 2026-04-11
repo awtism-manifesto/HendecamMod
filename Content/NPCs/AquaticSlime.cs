@@ -36,7 +36,7 @@ public class AquaticSlime : ModNPC
         AIType = NPCID.BlueSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<AquaticSlimeBanner>();
+        BannerItem = ItemType<AquaticSlimeBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)

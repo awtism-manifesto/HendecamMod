@@ -21,7 +21,7 @@ public class GayFrogChemicals : ModProjectile
         Projectile.penetrate = 6;
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 500;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 1;
@@ -69,7 +69,7 @@ public class GayFrogChemicals : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Gay>(), 900);
+        target.AddBuff(BuffType<Gay>(), 900);
 
         target.AddBuff(BuffID.Venom, 900);
 

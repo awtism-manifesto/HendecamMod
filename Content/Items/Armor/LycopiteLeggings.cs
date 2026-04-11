@@ -63,7 +63,7 @@ public class LycopiteLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<LycopiteChestplate>() && head.type == ModContent.ItemType<LycopiteFedora>();
+        return body.type == ItemType<LycopiteChestplate>() && head.type == ItemType<LycopiteFedora>();
     }
 
     public override void UpdateEquip(Player player)

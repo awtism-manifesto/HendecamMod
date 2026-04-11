@@ -24,7 +24,7 @@ public class MarbleSaber : ModItem
         Item.rare = ItemRarityID.White;
         Item.value = 63000;
 
-        Item.shoot = ModContent.ProjectileType<SaberProj>(); // The projectile is what makes a shortsword work
+        Item.shoot = ProjectileType<SaberProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 4.85f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 
@@ -37,7 +37,7 @@ public class MarbleSaber : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ProjectileType<SaberProjThrown>(), (int)(damage * 0.7f), knockback, player.whoAmI);
             return false;
         }
 

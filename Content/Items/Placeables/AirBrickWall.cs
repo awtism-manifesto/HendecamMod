@@ -11,7 +11,7 @@ public class AirBrickWall : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableWall(ModContent.WallType<LimestoneBrickWallPlaced>());
+        Item.DefaultToPlaceableWall(WallType<LimestoneBrickWallPlaced>());
     }
 
     public override void AddRecipes()

@@ -34,14 +34,14 @@ public class ASaltRifle : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<PurifiedSaltRanged>();
+        Item.shoot = ProjectileType<PurifiedSaltRanged>();
 
         Item.shootSpeed = 16.75f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PurifiedSaltRanged>();
+        type = ProjectileType<PurifiedSaltRanged>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

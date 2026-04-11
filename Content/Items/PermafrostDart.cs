@@ -22,7 +22,7 @@ public class PermafrostDart : ModItem
         Item.knockBack = 4.5f;
         Item.value = 80;
         Item.rare = ItemRarityID.Pink;
-        Item.shoot = ModContent.ProjectileType<FrostDart>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<FrostDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 5.8f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

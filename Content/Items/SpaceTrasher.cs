@@ -33,14 +33,14 @@ public class SpaceTrasher : ModItem
         Item.mana = 19;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<SpaceTrash>();
+        Item.shoot = ProjectileType<SpaceTrash>();
 
         Item.shootSpeed = 21.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SpaceTrash>();
+        type = ProjectileType<SpaceTrash>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -72,12 +72,12 @@ public class SpaceTrasher : ModItem
         heading.Y += Main.rand.Next(-70, 71) * 0.02f;
         if (Main.rand.NextBool(3))
         {
-            type = ModContent.ProjectileType<SpaceTrash2>();
+            type = ProjectileType<SpaceTrash2>();
         }
 
         if (Main.rand.NextBool(3))
         {
-            type = ModContent.ProjectileType<SpaceTrash3>();
+            type = ProjectileType<SpaceTrash3>();
         }
 
         Projectile.NewProjectile(source, position, heading, type, damage, knockback, player.whoAmI, 0f, ceilingLimit);

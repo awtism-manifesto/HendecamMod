@@ -26,7 +26,7 @@ public class DvdYellow : ModProjectile
         Projectile.height = 28;
         Projectile.friendly = true;
         Projectile.penetrate = 6969; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 0;

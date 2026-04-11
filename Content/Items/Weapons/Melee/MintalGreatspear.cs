@@ -35,12 +35,12 @@ public class MintalGreatspear : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 3.9f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<MintalGreatspearProjectile>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<MintalGreatspearProjectile>(); // The projectile that is fired from this weapon
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        type = ModContent.ProjectileType<MintLeafProjectile>();
+        type = ProjectileType<MintLeafProjectile>();
         Projectile.NewProjectileDirect(source, position, velocity * 3.75f, type, (int)(damage * 0.69), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }

@@ -27,7 +27,7 @@ public class AlpineGlitterbomb : ModProjectile
         Projectile.height = 35;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = GetInstance<SummonStupidDamage>();
         Projectile.light = 0.2f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 1;
@@ -113,7 +113,7 @@ public class AlpineGlitterbomb : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<SpecialGlitter>(),
+                ProjectileType<SpecialGlitter>(),
                 Projectile.damage,
                 Projectile.knockBack,
                 Projectile.owner
@@ -133,7 +133,7 @@ public class AlpineGlitterbomb : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<AlpineTagBuff>(), 300);
+        target.AddBuff(BuffType<AlpineTagBuff>(), 300);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
     }

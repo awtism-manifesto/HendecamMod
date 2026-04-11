@@ -33,14 +33,14 @@ public class StarfishOnAString : ModItem
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
         Item.damage = 13; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.knockBack = 2.5f; // The amount of knockback the item inflicts.
 
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
         Item.rare = ItemRarityID.Blue; // The item's rarity. This changes the color of the item's name.
         Item.value = 25000; // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<StarfishYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
     public float LobotometerCost = 5f;

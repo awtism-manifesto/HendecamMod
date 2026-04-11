@@ -66,12 +66,12 @@ public class RedBloon : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<RedBloonBuff>());
+            owner.ClearBuff(BuffType<RedBloonBuff>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<RedBloonBuff>()))
+        if (owner.HasBuff(BuffType<RedBloonBuff>()))
         {
             Projectile.timeLeft = 2;
         }

@@ -28,7 +28,7 @@ public class CardinalSin : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item45;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -49,7 +49,7 @@ public class CardinalSin : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<DevilFlame>();
+        type = ProjectileType<DevilFlame>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -67,9 +67,9 @@ public class CardinalSin : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DevilFlame>();
+            type = ProjectileType<DevilFlame>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<Pentagram>();
+            type = ProjectileType<Pentagram>();
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile

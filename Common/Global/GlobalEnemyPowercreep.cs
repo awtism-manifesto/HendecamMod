@@ -52,15 +52,15 @@ namespace HendecamMod.Common.Global
             NPCID.SantaNK1,
             NPCID.HeadlessHorseman,
             NPCID.PirateShip,
-            ModContent.NPCType<ApacheElfShip>(),
-            ModContent.NPCType<HeadOfCthulhu>(),
-            ModContent.NPCType<PromethiumPlasmoid>(),
+            NPCType<ApacheElfShip>(),
+            NPCType<HeadOfCthulhu>(),
+            NPCType<PromethiumPlasmoid>(),
         ];
         public bool FirstFrame = true;
         public override bool InstancePerEntity => true;
         public override bool PreAI(NPC npc)
         {
-            if (ModContent.GetInstance<HendecamConfig>().ProgressionBasedEnemyPowercreep == true && FirstFrame)
+            if (GetInstance<HendecamConfig>().ProgressionBasedEnemyPowercreep == true && FirstFrame)
             {
                 FirstFrame = false;
                 float lifeFraction = npc.GetLifePercent();

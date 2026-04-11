@@ -16,7 +16,7 @@ public class TarriffStamper : ModItem
         Item.useAnimation = 20;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 25;
         Item.knockBack = 9f;
         Item.ChangePlayerDirectionOnShoot = true;
@@ -36,7 +36,7 @@ public class TarriffStamper : ModItem
     {
         // Inflict the OnFire debuff for 1 second onto any NPC/Monster that this hits.
         // 60 frames = 1 second
-        target.AddBuff(ModContent.BuffType<Stamped>(), 450);
+        target.AddBuff(BuffType<Stamped>(), 450);
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

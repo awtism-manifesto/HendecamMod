@@ -23,7 +23,7 @@ public class PocketBeetles : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Item.DamageType = GetInstance<SummonStupidDamage>();
         Item.damage = 33;
         Item.knockBack = 2.75f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -33,7 +33,7 @@ public class PocketBeetles : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<BeetleFriend>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<BeetleFriend>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.95f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

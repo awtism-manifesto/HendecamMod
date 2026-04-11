@@ -72,7 +72,7 @@ public class BouncingBulletProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<BouncingBulletProj>(), (int)(Projectile.damage * 0.95f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<BouncingBulletProj>(), (int)(Projectile.damage * 0.95f), Projectile.knockBack, Projectile.owner);
     }
 
     public override void AI()

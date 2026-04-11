@@ -861,7 +861,7 @@ public class FargoSandDrop : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center - new Vector2(Main.rand.Next(-90, 90), 910),
                 new Vector2(Main.rand.Next(-2, 2), 20f),
-                ModContent.ProjectileType<FargoSand>(),
+                ProjectileType<FargoSand>(),
                 baseDamage,
                 1.5f,
                 Player.whoAmI
@@ -911,7 +911,7 @@ public class StormLightning : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center - new Vector2(Main.rand.Next(-90, 90), 910),
                 new Vector2(Main.rand.Next(-2, 2), 20f),
-                ModContent.ProjectileType<ChainThunder2>(),
+                ProjectileType<ChainThunder2>(),
                 baseDamage,
                 3f,
                 Player.whoAmI
@@ -961,7 +961,7 @@ public class BeatriceEnergy : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center,
                 new Vector2(10f, 10f),
-                ModContent.ProjectileType<BeatSpawn>(),
+                ProjectileType<BeatSpawn>(),
                 baseDamage,
                 7.5f,
                 Player.whoAmI
@@ -1012,7 +1012,7 @@ public class FableShroom : ModPlayer
             Player.GetSource_FromThis(),
             Player.Center,
             new Vector2(0f, -1f),
-            ModContent.ProjectileType<ShroomBoom>(),
+            ProjectileType<ShroomBoom>(),
             baseDamage,
             7f,
             Player.whoAmI
@@ -1075,7 +1075,7 @@ public class EbonflyLigma : ModPlayer
         {
             if (Main.rand.NextBool(500))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
+                target.AddBuff(BuffType<Ligma>(), 60);
             }
             
         }
@@ -1089,7 +1089,7 @@ public class EbonflyLigma : ModPlayer
         {
             if (Main.rand.NextBool(100))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
+                target.AddBuff(BuffType<Ligma>(), 60);
             }
 
         }

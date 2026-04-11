@@ -28,7 +28,7 @@ public class ZazaBreath : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item45;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -42,7 +42,7 @@ public class ZazaBreath : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<ZazaSmoke>();
+        type = ProjectileType<ZazaSmoke>();
     }
 
     public override bool CanConsumeAmmo(Item ammo, Player player)

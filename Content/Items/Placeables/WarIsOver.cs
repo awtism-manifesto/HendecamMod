@@ -7,7 +7,7 @@ public class WarIsOver : ModItem
     public override void SetDefaults()
     {
         // Vanilla has many useful methods like these, use them! This substitutes setting Item.createTile and Item.placeStyle as well as setting a few values that are common across all placeable items
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.FabsolDeadPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.FabsolDeadPlaced>());
 
         Item.width = 32;
         Item.height = 32;

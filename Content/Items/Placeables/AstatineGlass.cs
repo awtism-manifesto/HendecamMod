@@ -23,7 +23,7 @@ public class AstatineGlass : ModItem
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 8000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineGlassTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.AstatineGlassTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

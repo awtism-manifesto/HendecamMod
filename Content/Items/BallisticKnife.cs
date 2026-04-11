@@ -21,7 +21,7 @@ public class BallisticKnife : ModItem
         Item.useAnimation = 18;
         Item.autoReuse = true;
         Item.scale = 1.2f;
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.damage = 33;
         Item.knockBack = 4;
 
@@ -30,7 +30,7 @@ public class BallisticKnife : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item14;
 
-        Item.shoot = ModContent.ProjectileType<YeetKnife>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<YeetKnife>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.2f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

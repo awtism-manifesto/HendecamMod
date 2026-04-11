@@ -37,7 +37,7 @@ public class SubstrateSpreader : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<LycoShot>();
+        Item.shoot = ProjectileType<LycoShot>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -53,7 +53,7 @@ public class SubstrateSpreader : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.25f));
 
-            type = ModContent.ProjectileType<LycoShot>();
+            type = ProjectileType<LycoShot>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
@@ -63,7 +63,7 @@ public class SubstrateSpreader : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-0.25f));
 
-            type = ModContent.ProjectileType<LycoSporeRanged>();
+            type = ProjectileType<LycoSporeRanged>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.67f), knockback, player.whoAmI);

@@ -14,7 +14,7 @@ public class BeetleRounds : ModItem
     public override void SetDefaults()
     {
         Item.damage = 20; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.ArmorPenetration = 8;
         Item.width = 16;
         Item.height = 16;
@@ -23,7 +23,7 @@ public class BeetleRounds : ModItem
         Item.knockBack = 4.5f;
         Item.value = 96;
         Item.rare = ItemRarityID.Yellow;
-        Item.shoot = ModContent.ProjectileType<BeetleRoundProjectile>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<BeetleRoundProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 6.75f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

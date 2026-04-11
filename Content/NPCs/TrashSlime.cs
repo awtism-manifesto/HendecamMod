@@ -39,7 +39,7 @@ public class TrashSlime : ModNPC
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
 
         Banner = Type;
-        BannerItem = ModContent.ItemType<TrashSlimeBanner>();
+        BannerItem = ItemType<TrashSlimeBanner>();
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -77,12 +77,12 @@ public class TrashSlime : ModNPC
 
         // Finally, we can add additional drops. Many Zombie variants have their own unique drops: https://terraria.fandom.com/wiki/Zombie
 
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlasticScrap>(), 1, 7, 10));
+        npcLoot.Add(ItemDropRule.Common(ItemType<PlasticScrap>(), 1, 7, 10));
         npcLoot.Add(ItemDropRule.Common(ItemID.TinCan, 4));
         npcLoot.Add(ItemDropRule.Common(ItemID.OldShoe, 4));
         npcLoot.Add(ItemDropRule.Common(ItemID.FishingSeaweed, 4));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LegoBricks>(), 25, 50, 101));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 101));
+        npcLoot.Add(ItemDropRule.Common(ItemType<LegoBricks>(), 25, 50, 101));
+        npcLoot.Add(ItemDropRule.Common(ItemType<PolymerSlimeStaff>(), 101));
 
         npcLoot.Add(ItemDropRule.Common(ItemID.JojaCola, 20));
         npcLoot.Add(ItemDropRule.Common(ItemID.ChainKnife, 33));

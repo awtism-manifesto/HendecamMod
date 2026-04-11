@@ -23,14 +23,14 @@ public class SaltShaker : ModItem
         Item.useAnimation = 36;
         Item.autoReuse = true;
         Item.scale = 1.25f;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 39;
         Item.knockBack = 5.5f;
         Item.value = 105000;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
         Item.ArmorPenetration = 10;
-        Item.shoot = ModContent.ProjectileType<SaltGrav>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<SaltGrav>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 3.67f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -51,7 +51,7 @@ public class SaltShaker : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SaltGrav>();
+        type = ProjectileType<SaltGrav>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

@@ -23,7 +23,7 @@ public class RadBullet : ModItem
         Item.value = 89;
 
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<RadShot>();
+        Item.shoot = ProjectileType<RadShot>();
         Item.shootSpeed = 9.95f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

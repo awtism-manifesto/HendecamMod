@@ -25,17 +25,17 @@ public class ThePrimeTime : ModItem
         Item.ArmorPenetration = 8;
         Item.shootSpeed = 90f; 
         Item.useAmmo = ItemID.MusketBall;
-        Item.shoot = ModContent.ProjectileType<ChargeLaser>();
+        Item.shoot = ProjectileType<ChargeLaser>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<ChargeLaser>();
+            type = ProjectileType<ChargeLaser>();
         }
 
-        if (type == ModContent.ProjectileType<ChargeLaser>())
+        if (type == ProjectileType<ChargeLaser>())
         {
             damage = (int)(damage * 1.25f);
         }

@@ -23,7 +23,7 @@ public class MintalOrePlaced : ModTile
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(86, 226, 192), Language.GetText("Mintal Ore"));
 
-        DustType = ModContent.DustType<MintalDust>();
+        DustType = DustType<MintalDust>();
         HitSound = SoundID.Tink;
         MineResist = 2f;
         MinPick = 115;

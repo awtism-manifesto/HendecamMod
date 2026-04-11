@@ -38,7 +38,7 @@ public class IronValiant : ModItem
         Item.rare = ItemRarityID.Pink; // The item's rarity. This changes the color of the item's name.
         Item.value = 122000; // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<ValiantYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<ValiantYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
 

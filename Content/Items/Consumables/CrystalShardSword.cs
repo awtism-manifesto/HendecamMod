@@ -17,7 +17,7 @@ public class CrystalShardSword : ModItem
         Item.useAnimation = 14;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 80;
         Item.knockBack = 6.0f;

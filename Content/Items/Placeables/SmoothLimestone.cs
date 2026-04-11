@@ -23,7 +23,7 @@ public class SmoothLimestone : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<SmoothLimestonePlaced>());
+        Item.DefaultToPlaceableTile(TileType<SmoothLimestonePlaced>());
         Item.width = 12;
         Item.height = 12;
     }

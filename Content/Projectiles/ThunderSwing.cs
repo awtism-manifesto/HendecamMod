@@ -176,7 +176,7 @@ public class ThunderSwing : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(Main.rand.Next(1, 360)));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<ChainThunder>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<ChainThunder>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
     }
 
     // Taken from Main.DrawProj_Excalibur()

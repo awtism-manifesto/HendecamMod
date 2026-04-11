@@ -90,7 +90,7 @@ public class PlutoniumSwing : ModProjectile
         {
             // Original Excalibur color: Color.Gold, Color.White
             Color dustColor = Color.Lerp(Color.Purple, Color.Magenta, Main.rand.NextFloat() * 0.3f);
-            Dust coloredDust = Dust.NewDustPerfect(Projectile.Center + dustRotation.ToRotationVector2() * (Main.rand.NextFloat() * 80f * Projectile.scale + 20f * Projectile.scale), ModContent.DustType<PlutoniumDust>(), dustVelocity * 1f, 100, dustColor, 0.4f);
+            Dust coloredDust = Dust.NewDustPerfect(Projectile.Center + dustRotation.ToRotationVector2() * (Main.rand.NextFloat() * 80f * Projectile.scale + 20f * Projectile.scale), DustType<PlutoniumDust>(), dustVelocity * 1f, 100, dustColor, 0.4f);
             coloredDust.fadeIn = 0.4f + Main.rand.NextFloat() * 0.15f;
             coloredDust.noGravity = true;
         }
@@ -172,7 +172,7 @@ public class PlutoniumSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
 
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.BlackLightningHit,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -187,7 +187,7 @@ public class PlutoniumSwing : ModProjectile
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.ChlorophyteLeafCrystalShot,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);
@@ -258,7 +258,7 @@ public class PlutoniumSwing : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
+            ProjectileType<PlutoAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

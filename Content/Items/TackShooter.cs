@@ -31,7 +31,7 @@ public class TackShooter : ModItem
         Item.value = Item.buyPrice(gold: 10);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<TackShooterProj>();
+        Item.shoot = ProjectileType<TackShooterProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

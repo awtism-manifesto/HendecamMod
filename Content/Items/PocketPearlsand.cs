@@ -19,7 +19,7 @@ public class PocketPearlsand : ModItem
         Item.useAnimation = 13;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 51;
         Item.knockBack = 1;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -29,7 +29,7 @@ public class PocketPearlsand : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item45;
 
-        Item.shoot = ModContent.ProjectileType<PearlPocket>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<PearlPocket>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 18f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

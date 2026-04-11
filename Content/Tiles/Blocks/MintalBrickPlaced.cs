@@ -10,7 +10,7 @@ public class MintalBrickPlaced : ModTile
         Main.tileMergeDirt[Type] = false;
         Main.tileBlockLight[Type] = true;
 
-        DustType = ModContent.DustType<MintalDust>();
+        DustType = DustType<MintalDust>();
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(76, 196, 166));

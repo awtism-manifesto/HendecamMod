@@ -25,6 +25,6 @@ public class PoorMahoganyHelmet : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PoorMahoganyChestplate>() && legs.type == ModContent.ItemType<PoorMahoganyLeggings>();
+        return body.type == ItemType<PoorMahoganyChestplate>() && legs.type == ItemType<PoorMahoganyLeggings>();
     }
 }

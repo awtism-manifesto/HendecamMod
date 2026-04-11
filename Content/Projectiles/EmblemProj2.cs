@@ -42,7 +42,7 @@ public class EmblemProj2 : ModProjectile
         Projectile.tileCollide = true;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
@@ -146,7 +146,7 @@ public class EmblemProj2 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<EmblemTag>(), 390);
+        target.AddBuff(BuffType<EmblemTag>(), 390);
         target.immune[Projectile.owner] = 2;
     }
 
@@ -155,15 +155,15 @@ public class EmblemProj2 : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.1f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits2).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<GalaxyProj2>(), (int)(Projectile.damage * 0.49f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<GalaxyProj2>(), (int)(Projectile.damage * 0.49f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<GalaxyProj2>(), (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<GalaxyProj2>(), (int)(Projectile.damage * 0.999f), Projectile.knockBack, Projectile.owner);
 
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);

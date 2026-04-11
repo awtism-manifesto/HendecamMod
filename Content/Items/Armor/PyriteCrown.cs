@@ -60,6 +60,6 @@ public class PyriteCrown : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PyriteChestguard>() && legs.type == ModContent.ItemType<PyriteLegPlating>();
+        return body.type == ItemType<PyriteChestguard>() && legs.type == ItemType<PyriteLegPlating>();
     }
 }

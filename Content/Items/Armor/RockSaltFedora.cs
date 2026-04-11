@@ -53,7 +53,7 @@ public class RockSaltFedora : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<RockSaltChestplate>() && legs.type == ModContent.ItemType<RockSaltLeggings>();
+        return body.type == ItemType<RockSaltChestplate>() && legs.type == ItemType<RockSaltLeggings>();
     }
 
     public override void UpdateEquip(Player player)

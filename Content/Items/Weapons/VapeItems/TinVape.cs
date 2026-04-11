@@ -22,7 +22,7 @@ public class TinVape : ModItem
         Item.useAnimation = 33;
         Item.autoReuse = true;
         Item.reuseDelay = 10;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 11;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -36,7 +36,7 @@ public class TinVape : ModItem
             PitchVariance = 0.2f,
             MaxInstances = 3,
         };
-        Item.shoot = ModContent.ProjectileType<TinVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TinVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 7.33f; // Speed of the projectiles the sword will shoot
 
        

@@ -41,7 +41,7 @@ public class FocusBeam : ModProjectile
     {
         Projectile.width = 18;
         Projectile.height = 18;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = -1;
         Projectile.alpha = 255;
         Projectile.tileCollide = false;
@@ -80,7 +80,7 @@ public class FocusBeam : ModProjectile
 
         // Check if the player is still holding the Echo Kit and both buttons
         bool shouldContinue = player.active && !player.dead &&
-                             player.HeldItem.type == ModContent.ItemType<EchoKit>() &&
+                             player.HeldItem.type == ItemType<EchoKit>() &&
                              Main.mouseLeft && Main.mouseRight &&
                              (player.itemAnimation > 0 || player.itemTime > 0);
 
@@ -90,7 +90,7 @@ public class FocusBeam : ModProjectile
             return;
         }
 
-        if (player.HeldItem.type == ModContent.ItemType<EchoKit>())
+        if (player.HeldItem.type == ItemType<EchoKit>())
         {
             // Get the base damage from the held item
             
@@ -110,7 +110,7 @@ public class FocusBeam : ModProjectile
         DamageClass.Ranged,
         DamageClass.Summon,
         DamageClass.Throwing,
-        ModContent.GetInstance<StupidDamage>()
+        GetInstance<StupidDamage>()
         // Add any other classes here
     };
 
@@ -134,7 +134,7 @@ public class FocusBeam : ModProjectile
         }
 
         pulseTimer++;
-        float pulseScale = 0.75f + (float)System.Math.Sin(pulseTimer * 0.05f);
+        float pulseScale = 0.75f + (float)Math.Sin(pulseTimer * 0.05f);
 
         if (pulseTimer >= 63)
         {
@@ -180,7 +180,7 @@ public class FocusBeam : ModProjectile
         {
             float progress = Main.rand.NextFloat();
             Vector2 dustPos = Projectile.Center + Projectile.velocity * BeamLength * progress;
-            Dust dust = Dust.NewDustPerfect(dustPos, isEmpowered ? ModContent.DustType<PlutoniumDust>() : DustID.Electric,
+            Dust dust = Dust.NewDustPerfect(dustPos, isEmpowered ? DustType<PlutoniumDust>() : DustID.Electric,
                (Projectile.velocity.RotatedByRandom(0.3f)) * Main.rand.NextFloat(2.5f, 5f), 100,
                 isEmpowered ? EmpoweredColor : BeamColor, isEmpowered ? 2.25f : 1.2f);
             dust.noGravity = true;
@@ -205,7 +205,7 @@ public class FocusBeam : ModProjectile
                 for (int i = 0; i < 10; i++)
                 {
                     Vector2 dustPos = target.Center + Main.rand.NextVector2Circular(70, 70);
-                    Dust dust = Dust.NewDustPerfect(dustPos, ModContent.DustType<PlutoniumDust>(),
+                    Dust dust = Dust.NewDustPerfect(dustPos, DustType<PlutoniumDust>(),
                        Projectile.velocity.RotatedByRandom(0.3f), 100, EmpoweredColor, 1.5f);
                     dust.noGravity = true;
                 }

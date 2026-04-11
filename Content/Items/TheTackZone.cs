@@ -32,7 +32,7 @@ public class TheTackZone : ModItem
         Item.value = Item.buyPrice(gold: 595);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<TackZoneProj>();
+        Item.shoot = ProjectileType<TackZoneProj>();
         if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
         {
             Item.damage = 72;

@@ -31,7 +31,7 @@ public class NihilImbueGlobal : ModPlayer
     {
         if (NihilWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>())
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning4>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -39,7 +39,7 @@ public class NihilImbueGlobal : ModPlayer
     {
         if (NihilWeaponImbue && (proj.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[proj.type]) && !proj.noEnchantments)
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning4>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -50,7 +50,7 @@ public class NihilImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<PromethiumDust>());
+                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustType<PromethiumDust>());
                 dust.velocity *= 0.5f;
             }
         }
@@ -62,7 +62,7 @@ public class NihilImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<PromethiumDust>());
+                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, DustType<PromethiumDust>());
                 dust.velocity *= 0.5f;
             }
         }

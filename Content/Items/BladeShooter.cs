@@ -32,7 +32,7 @@ public class BladeShooter : ModItem
         Item.value = Item.buyPrice(gold: 45);
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<BladeShooterProj>();
+        Item.shoot = ProjectileType<BladeShooterProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

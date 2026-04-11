@@ -44,7 +44,7 @@ public class TransHeadgear : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<TransBodyplate>() && legs.type == ModContent.ItemType<TransGreaves>();
+        return body.type == ItemType<TransBodyplate>() && legs.type == ItemType<TransGreaves>();
     }
 
     public override void AddRecipes()

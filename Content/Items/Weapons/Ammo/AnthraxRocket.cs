@@ -16,7 +16,7 @@ public class AnthraxRocket : ModItem
         Item.knockBack = 3f;
         Item.value = 139;
         Item.rare = ItemRarityID.Lime;
-        Item.shoot = ModContent.ProjectileType<CiaRocket>();
+        Item.shoot = ProjectileType<CiaRocket>();
         Item.shootSpeed = 13f; 
         Item.ammo = AmmoID.Rocket;
     }
@@ -24,10 +24,10 @@ public class AnthraxRocket : ModItem
     public override void SetStaticDefaults()
     {
         AmmoID.Sets.IsSpecialist[Type] = true; 
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ModContent.ProjectileType<CiaRocket>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ModContent.ProjectileType<CiaRocket>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ProjectileType<CiaRocket>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ProjectileType<CiaRocket>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ProjectileType<CiaRocket>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ProjectileType<CiaRocket>());
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
     }
 

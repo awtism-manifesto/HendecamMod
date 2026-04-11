@@ -13,7 +13,7 @@ public class ZincCube : ModItem
             // Common Properties
             Item.width = 26; // Hitbox width of the item.
         Item.height = 26; // Hitbox height of the item.
-        Item.rare = ModContent.RarityType<BurntOrange>();
+        Item.rare = RarityType<BurntOrange>();
         Item.value = 36250;
         Item.maxStack = 1;
         Item.accessory = true;

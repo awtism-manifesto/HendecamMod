@@ -27,14 +27,14 @@ public class GagGifter : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item61;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<RangedStupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 83; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.useAmmo = AmmoID.Rocket;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<GagGift>();
+        Item.shoot = ProjectileType<GagGift>();
 
         Item.shootSpeed = 20.25f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -50,7 +50,7 @@ public class GagGifter : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<GagGift>();
+        type = ProjectileType<GagGift>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

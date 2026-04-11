@@ -23,8 +23,8 @@ public class KingslayerKunai : ModItem
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.Green;
         Item.value = Item.buyPrice(gold: 6); // Sell price is 5 times less than the buy price.
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
-        Item.shoot = ModContent.ProjectileType<KingslayerKunaiProj>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
+        Item.shoot = ProjectileType<KingslayerKunaiProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

@@ -31,7 +31,7 @@ public class LycopiteGlaive : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.value = 210000;
 
-        Item.shoot = ModContent.ProjectileType<LycoGlaiveProj>();
+        Item.shoot = ProjectileType<LycoGlaiveProj>();
         Item.shootSpeed = 16.33f;
     }
    

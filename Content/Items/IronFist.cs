@@ -23,7 +23,7 @@ public class IronFist : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = Item.sellPrice(0, 3);
 
-        Item.shoot = ModContent.ProjectileType<IronFistProj>(); // The projectile is what makes a shortsword work
+        Item.shoot = ProjectileType<IronFistProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 2.15f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 

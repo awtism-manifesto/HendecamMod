@@ -25,7 +25,7 @@ public class ScreamingSoyjak : ModItem
 
         // The sound that this item plays when used.
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 59; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -48,7 +48,7 @@ public class ScreamingSoyjak : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.Soundwave>();
+        type = ProjectileType<Projectiles.Soundwave>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

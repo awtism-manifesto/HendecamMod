@@ -28,7 +28,7 @@ public class Crater : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.light = 0.8f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 1;
@@ -42,7 +42,7 @@ public class Crater : ModProjectile
     {
         target.immune[Projectile.owner] = 5;
         Projectile.damage = (int)(Projectile.damage * 0.95f);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 150);
+        target.AddBuff(BuffType<RadPoisoning3>(), 150);
     }
 
     public override void AI()
@@ -161,7 +161,7 @@ public class Crater : ModProjectile
 
         for (int j = 0; j < 30; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.25f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 2.25f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
         }

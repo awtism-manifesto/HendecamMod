@@ -22,7 +22,7 @@ public class DragonsBreath : ModItem
         Item.useAnimation = 24;
         Item.autoReuse = true;
        
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 19;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class DragonsBreath : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<DragonVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<DragonVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.75f; // Speed of the projectiles the sword will shoot
 
        

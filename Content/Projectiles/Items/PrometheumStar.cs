@@ -129,12 +129,12 @@ public class PrometheumStar : ModProjectile
         }
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PromethiumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PromethiumDust>());
             dust.noGravity = true;
             dust.velocity *= 9f;
             dust.scale *= 1.35f;
         }
-        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 210);
+        target.AddBuff(BuffType<RadPoisoning4>(), 210);
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
     }
 

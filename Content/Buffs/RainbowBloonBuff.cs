@@ -22,7 +22,7 @@ public class RainbowBloonBuff : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         // If the minions exist reset the buff time, otherwise remove the buff from the player
-        if (player.ownedProjectileCounts[ModContent.ProjectileType<RainbowBloon>()] > 0)
+        if (player.ownedProjectileCounts[ProjectileType<RainbowBloon>()] > 0)
         {
             player.buffTime[buffIndex] = 18000;
         }

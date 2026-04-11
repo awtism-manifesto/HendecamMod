@@ -15,7 +15,7 @@ public class EternalCrab : ModItem
         Item.width = 45;
         Item.height = 30;
         Item.accessory = true;
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.value = 99988700;
     }
 

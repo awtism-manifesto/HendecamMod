@@ -50,7 +50,7 @@ public class FossilFuelChestplate : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<FossilFuelHelmet>() && legs.type == ModContent.ItemType<FossilFuelPants>();
+        return head.type == ItemType<FossilFuelHelmet>() && legs.type == ItemType<FossilFuelPants>();
     }
 
     public override void UpdateEquip(Player player)

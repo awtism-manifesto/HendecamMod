@@ -28,7 +28,7 @@ public class SandyScorpion : ModItem
 
         Item.value = 110000;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<SandShot>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<SandShot>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -44,7 +44,7 @@ public class SandyScorpion : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.44f));
 
-            type = ModContent.ProjectileType<SandBall>();
+            type = ProjectileType<SandBall>();
             SoundEngine.PlaySound(SoundID.Item97, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.11f), knockback, player.whoAmI);
@@ -54,7 +54,7 @@ public class SandyScorpion : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-0.44f));
 
-            type = ModContent.ProjectileType<VenomBall>();
+            type = ProjectileType<VenomBall>();
             SoundEngine.PlaySound(SoundID.Item97, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);

@@ -77,7 +77,7 @@ public class SpoarGlaiveProj : ModProjectile
         }
         for (int i = 0; i < 6; i++)
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<BlueLycopiteDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<BlueLycopiteDust>());
             dust.noGravity = true;
             dust.velocity *= 8.3f;
             dust.scale *= 1f;

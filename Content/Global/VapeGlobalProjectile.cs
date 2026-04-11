@@ -111,7 +111,7 @@ public class VapeMark : GlobalProjectile
     private void SpawnVapeDust(Projectile projectile)
     {
 
-        if (projectile.type == ModContent.ProjectileType<TorchGodVapeSmoke>())
+        if (projectile.type == ProjectileType<TorchGodVapeSmoke>())
         {
             for (int i = 0; i < 2; i++) // Spawn multiple dust for better effect
             {

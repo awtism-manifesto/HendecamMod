@@ -24,7 +24,7 @@ public class Iphone : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 15; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -47,7 +47,7 @@ public class Iphone : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.Bad5g>();
+        type = ProjectileType<Projectiles.Bad5g>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

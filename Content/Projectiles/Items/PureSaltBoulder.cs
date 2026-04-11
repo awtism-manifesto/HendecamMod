@@ -24,7 +24,7 @@ public class PureSaltBoulder : ModProjectile
         Projectile.tileCollide = false;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 25;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.timeLeft = 195;
         AIType = ProjectileID.Bullet;
     }

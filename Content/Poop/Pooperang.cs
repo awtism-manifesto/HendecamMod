@@ -24,12 +24,12 @@ public class Pooperang : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.damage = 20; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.knockBack = 5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.White; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(copper: 6); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<PoopRang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<PoopRang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 10.25f; // The velocity of the shot projectile.			
     }
     public float LobotometerCost = 3f;

@@ -45,7 +45,7 @@ public class PyriteSparkler : ModItem
         Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.shoot = ModContent.ProjectileType<IchSpark>();
+        Item.shoot = ProjectileType<IchSpark>();
 
         Item.mana = 9;
 
@@ -54,7 +54,7 @@ public class PyriteSparkler : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<IchSpark>();
+        type = ProjectileType<IchSpark>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

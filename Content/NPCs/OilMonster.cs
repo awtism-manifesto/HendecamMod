@@ -51,17 +51,17 @@ public class OilMonster : ModNPC
         AIType = NPCID.WalkingAntlion; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BloodZombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<OilMonsterBanner>();
+        BannerItem = ItemType<OilMonsterBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RefinedOil>(), 2, 9, 19));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(), 1, 31, 61));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FerrousThornSmooth>(), 33));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FerrousThornSpiky>(), 33));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheOilBaron>(), 16));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<OilMonsterStaff>(), 25));
+        npcLoot.Add(ItemDropRule.Common(ItemType<RefinedOil>(), 2, 9, 19));
+        npcLoot.Add(ItemDropRule.Common(ItemType<CrudeOil>(), 1, 31, 61));
+        npcLoot.Add(ItemDropRule.Common(ItemType<FerrousThornSmooth>(), 33));
+        npcLoot.Add(ItemDropRule.Common(ItemType<FerrousThornSpiky>(), 33));
+        npcLoot.Add(ItemDropRule.Common(ItemType<TheOilBaron>(), 16));
+        npcLoot.Add(ItemDropRule.Common(ItemType<OilMonsterStaff>(), 25));
         npcLoot.Add(ItemDropRule.Common(ItemID.DarkShard, 49));
     }
 

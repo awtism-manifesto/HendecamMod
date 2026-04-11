@@ -16,7 +16,7 @@ public class FidgetThrower : ModItem
         Item.useTime = 23;
         Item.useAnimation = 23;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 45;
         Item.knockBack = 4f;
 
@@ -26,7 +26,7 @@ public class FidgetThrower : ModItem
         Item.UseSound = SoundID.Item99;
         Item.scale = 1f;
 
-        Item.shoot = ModContent.ProjectileType<FidgetSpinner1>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FidgetSpinner1>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 17.75f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

@@ -27,7 +27,7 @@ public class AstatineTorchPlaced : ModTile
         TileID.Sets.DisableSmartInteract[Type] = true;
         TileID.Sets.Torch[Type] = true;
 
-        DustType = ModContent.DustType<AstatineDust>();
+        DustType = DustType<AstatineDust>();
         AdjTiles = [TileID.Torches];
         VanillaFallbackOnModDeletion = TileID.Torches;
 
@@ -66,7 +66,7 @@ public class AstatineTorchPlaced : ModTile
         AddMapEntry(new Color(200, 200, 200), Language.GetText("ItemName.Torch"));
 
         // Assets
-        flameTexture = ModContent.Request<Texture2D>(Texture + "_Flame");
+        flameTexture = Request<Texture2D>(Texture + "_Flame");
     }
 
     public override void MouseOver(int i, int j)
@@ -178,7 +178,7 @@ public class AstatineTorchPlaced : ModTile
 
         if (Main.rand.NextBool(40) && tileFrameX < 66)
         {
-            int dustChoice = ModContent.DustType<AstatineDust>();
+            int dustChoice = DustType<AstatineDust>();
             Dust dust;
             Vector2 spawnPosition = tileFrameX switch
             {

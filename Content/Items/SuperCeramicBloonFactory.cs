@@ -33,9 +33,9 @@ public class SuperCeramicBloonFactory : ModItem
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
-        Item.buffType = ModContent.BuffType<SuperCeramBuff>();
+        Item.buffType = BuffType<SuperCeramBuff>();
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
-        Item.shoot = ModContent.ProjectileType<SuperCeramicBloon>(); // This item creates the minion projectile
+        Item.shoot = ProjectileType<SuperCeramicBloon>(); // This item creates the minion projectile
         Item.shootSpeed = 11f;
     }
 

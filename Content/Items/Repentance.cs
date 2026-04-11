@@ -34,7 +34,7 @@ public class Repentance : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 3.3f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<MoltenSpear>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<MoltenSpear>(); // The projectile that is fired from this weapon
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

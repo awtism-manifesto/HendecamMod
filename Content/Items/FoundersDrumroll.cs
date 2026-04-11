@@ -32,14 +32,14 @@ public class FoundersDrumroll : ModItem
 
         Item.ArmorPenetration = 5;
         // Gun Properties
-        Item.shoot = ModContent.ProjectileType<Projectiles.PulseShot>(); // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileType<Projectiles.PulseShot>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 25.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.PulseShot>();
+        type = ProjectileType<Projectiles.PulseShot>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

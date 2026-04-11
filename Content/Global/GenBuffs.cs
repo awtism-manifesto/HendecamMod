@@ -312,7 +312,7 @@ public class CactusDildo : GlobalItem
     {
         item.damage = 10;
 
-        item.shoot = ModContent.ProjectileType<CactusSpawn>();
+        item.shoot = ProjectileType<CactusSpawn>();
         item.shootSpeed = 3f;
     }
 
@@ -323,7 +323,7 @@ public class CactusDildo : GlobalItem
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 4f, ModContent.ProjectileType<CactusSpawn>(), damage, knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 4f, ProjectileType<CactusSpawn>(), damage, knockback, player.whoAmI);
 
         return false;
     }
@@ -468,7 +468,7 @@ public class Coballs : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 25;
-        item.shoot = ModContent.ProjectileType<CobaltBolt>();
+        item.shoot = ProjectileType<CobaltBolt>();
         item.shootSpeed = 5f;
     }
 
@@ -481,11 +481,11 @@ public class Coballs : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<CobaltBolt>(), (int)(damage * 0.6f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<CobaltBolt>(), (int)(damage * 0.6f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<CobaltBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<CobaltBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
         }
 
         return false;
@@ -504,7 +504,7 @@ public class Mlady : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 28;
-        item.shoot = ModContent.ProjectileType<PalladiumBolt>();
+        item.shoot = ProjectileType<PalladiumBolt>();
         item.shootSpeed = 7.25f;
     }
 
@@ -517,11 +517,11 @@ public class Mlady : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<PalladiumBolt>(), (int)(damage * 0.5f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<PalladiumBolt>(), (int)(damage * 0.5f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<PalladiumBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<PalladiumBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
         }
 
         return false;
@@ -540,7 +540,7 @@ public class Milady : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 26;
-        item.shoot = ModContent.ProjectileType<MythrilBolt>();
+        item.shoot = ProjectileType<MythrilBolt>();
         item.shootSpeed = 9.5f;
     }
 
@@ -553,11 +553,11 @@ public class Milady : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<MythrilBolt>(), (int)(damage * 0.5f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<MythrilBolt>(), (int)(damage * 0.5f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<MythrilBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<MythrilBolt>(), (int)(damage * 0.999f), knockback, player.whoAmI);
         }
 
         return false;
@@ -576,7 +576,7 @@ public class PinkPussy : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 28;
-        item.shoot = ModContent.ProjectileType<OrichalcumBolt>();
+        item.shoot = ProjectileType<OrichalcumBolt>();
         item.shootSpeed = 12.25f;
     }
 
@@ -589,11 +589,11 @@ public class PinkPussy : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<OrichalcumBolt>(), (int)(damage * 0.66f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<OrichalcumBolt>(), (int)(damage * 0.66f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<OrichalcumBolt>(), (int)(damage * 1.001f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<OrichalcumBolt>(), (int)(damage * 1.001f), knockback, player.whoAmI);
         }
 
         return false;
@@ -612,7 +612,7 @@ public class Adamantitties : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 27;
-        item.shoot = ModContent.ProjectileType<AdamantiteBolt>();
+        item.shoot = ProjectileType<AdamantiteBolt>();
         item.shootSpeed = 4f;
     }
 
@@ -625,11 +625,11 @@ public class Adamantitties : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<AdamantiteBolt>(), (int)(damage * 0.9f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<AdamantiteBolt>(), (int)(damage * 0.9f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<AdamantiteBolt>(), (int)(damage * 1.02f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<AdamantiteBolt>(), (int)(damage * 1.02f), knockback, player.whoAmI);
         }
 
         return false;
@@ -648,7 +648,7 @@ public class Tittyanium : GlobalItem
         item.StatsModifiedBy.Add(Mod);
         item.DamageType = DamageClass.Melee;
         item.useTime = 26;
-        item.shoot = ModContent.ProjectileType<TitaniumBolt>();
+        item.shoot = ProjectileType<TitaniumBolt>();
         item.shootSpeed = 4.5f;
     }
 
@@ -661,11 +661,11 @@ public class Tittyanium : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<TitaniumBolt>(), (int)(damage * 0.92f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<TitaniumBolt>(), (int)(damage * 0.92f), knockback, player.whoAmI);
         }
         else
         {
-            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ModContent.ProjectileType<TitaniumBolt>(), (int)(damage * 1.025f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, player.Center, velocity * 5f, ProjectileType<TitaniumBolt>(), (int)(damage * 1.025f), knockback, player.whoAmI);
         }
 
         return false;
@@ -684,7 +684,7 @@ public class MagnetSphereGoodNow : GlobalItem
     {
 
 
-        item.shoot = ModContent.ProjectileType<MagnetSpawn>();
+        item.shoot = ProjectileType<MagnetSpawn>();
         item.damage = 40;
         item.shootSpeed = 6.67f;
 
@@ -692,7 +692,7 @@ public class MagnetSphereGoodNow : GlobalItem
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
 
-        type = ModContent.ProjectileType<MagnetSpawn>();
+        type = ProjectileType<MagnetSpawn>();
 
 
     }
@@ -722,7 +722,7 @@ public class CIAAwardInJournalism : GlobalItem
     {
        
        
-            item.shoot = ModContent.ProjectileType<CiaSpawn>();
+            item.shoot = ProjectileType<CiaSpawn>();
         item.damage = 255;
       
       
@@ -730,7 +730,7 @@ public class CIAAwardInJournalism : GlobalItem
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
        
-            type = ModContent.ProjectileType<CiaSpawn>();
+            type = ProjectileType<CiaSpawn>();
         
        
     }
@@ -829,7 +829,7 @@ public class DrugsNir : GlobalItem
         item.useTime = 21;
         item.useAnimation = 21;
 
-        item.shoot = ModContent.ProjectileType<PiercingLight>();
+        item.shoot = ProjectileType<PiercingLight>();
         item.shootSpeed = 11.25f;
     }
 
@@ -840,7 +840,7 @@ public class DrugsNir : GlobalItem
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 4.5f, ModContent.ProjectileType<PiercingLight>(), (int)(damage * 0.777f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 4.5f, ProjectileType<PiercingLight>(), (int)(damage * 0.777f), knockback, player.whoAmI);
         Projectile.NewProjectileDirect(source, player.Center, velocity * 1f, ProjectileID.Gungnir, (int)(damage * 1.01f), knockback, player.whoAmI);
         return false;
     }
@@ -1119,7 +1119,7 @@ public class HelFireBoom : GlobalProjectile
             Vector2 velocity2 = Vector2.Zero;
             Vector2 Peanits2 = projectile.Center;
             Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<BoomSmallish>(), (int)(projectile.damage * 1f), projectile.knockBack, projectile.owner);
+            ProjectileType<BoomSmallish>(), (int)(projectile.damage * 1f), projectile.knockBack, projectile.owner);
         }
     }
 
@@ -1131,7 +1131,7 @@ public class BigBoner : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<TheBoner>();
+        return item.type == ItemType<TheBoner>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -1151,13 +1151,13 @@ public class ImImpulsiveLol : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<ImpulseBow>();
+        return item.type == ItemType<ImpulseBow>();
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         SoundEngine.PlaySound(SoundID.Item5, player.position);
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 17.5f, ModContent.ProjectileType<AstatineBullet>(), (int)(damage * 0.75f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 17.5f, ProjectileType<AstatineBullet>(), (int)(damage * 0.75f), knockback, player.whoAmI);
 
         return true;
     }
@@ -1167,12 +1167,12 @@ public class Anal12 : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<AA12>();
+        return item.type == ItemType<AA12>();
     }
 
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ProjectileID.ChlorophyteBullet || type == ModContent.ProjectileType<ChloroShit>())
+        if (type == ProjectileID.ChlorophyteBullet || type == ProjectileType<ChloroShit>())
         {
             damage = (int)(damage * 0.5f);
         }
@@ -1929,7 +1929,7 @@ public class Pinkeeeee : GlobalItem
         item.DamageType = DamageClass.Ranged;
         item.ammo = AmmoID.Gel;
         item.rare = ItemRarityID.Blue;
-        item.shoot = ModContent.ProjectileType<GelShot>();
+        item.shoot = ProjectileType<GelShot>();
         item.shootSpeed = 1.33f;
     }
 
@@ -2120,7 +2120,7 @@ public class Harpussy : GlobalItem
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ModContent.ProjectileType<HarpoonProj>(), (int)(damage * 1.05f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 3f, ProjectileType<HarpoonProj>(), (int)(damage * 1.05f), knockback, player.whoAmI);
 
         return false;
     }

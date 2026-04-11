@@ -26,7 +26,7 @@ public class Bullshit5 : ModItem
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.value = Item.buyPrice(gold: 99888);
 
         // Use Properties
@@ -37,13 +37,13 @@ public class Bullshit5 : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.mana = 25;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 6969; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 99f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
-        Item.shoot = ModContent.ProjectileType<BullshitEnergyAxe>(); // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileType<BullshitEnergyAxe>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 9f; // The speed of the projectile (measured in pixels per frame.)
         }
 
@@ -71,7 +71,7 @@ public class Bullshit5 : ModItem
             Item.useTime = 16;
             Item.useAnimation = 16;
             Item.ArmorPenetration = 75;
-            Item.shoot = ModContent.ProjectileType<BullshitEnergyAxe>();
+            Item.shoot = ProjectileType<BullshitEnergyAxe>();
             Item.mana = 25;
             LobotometerCost = 25f;
             }
@@ -114,7 +114,7 @@ public class Bullshit5 : ModItem
             damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
             float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
-            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BullshitSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ProjectileType<BullshitSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
             NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(22.5f));

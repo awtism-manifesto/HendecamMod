@@ -13,7 +13,7 @@ public class SkullCracker : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Slayer);
-        AddNPCKilledCondition(ModContent.NPCType<HeadOfCthulhu>());
+        AddNPCKilledCondition(NPCType<HeadOfCthulhu>());
     }
 
     public override Position GetDefaultPosition() => new After("MINER_FOR_FIRE");

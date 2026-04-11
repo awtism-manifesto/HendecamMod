@@ -19,7 +19,7 @@ public class BowlingBaller : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true;
         Item.UseSound = SoundID.Item61;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true;
@@ -38,7 +38,7 @@ public class BowlingBaller : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.BowlingBall>();
+        type = ProjectileType<Projectiles.BowlingBall>();
         Item.damage = Main.rand.Next(15, 40);
     }
 

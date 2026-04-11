@@ -22,7 +22,7 @@ public class DeathBreathShell : ModItem
         Item.knockBack = 0f;
         Item.value = 76;
         Item.rare = ItemRarityID.Pink;
-        Item.shoot = ModContent.ProjectileType<DragonSpawnShadow>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<DragonSpawnShadow>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 7.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

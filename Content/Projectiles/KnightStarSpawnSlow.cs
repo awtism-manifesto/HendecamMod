@@ -19,7 +19,7 @@ public class KnightStarSpawnSlow : ModProjectile
         Projectile.alpha = 0;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 3;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;

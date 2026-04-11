@@ -20,7 +20,7 @@ public class SpectralArrowProj : ModProjectile
         Projectile.extraUpdates = 1;
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<RangedSummonDamage>();
+        Projectile.DamageType = GetInstance<RangedSummonDamage>();
         Projectile.timeLeft = 1200;
     }
 
@@ -73,7 +73,7 @@ public class SpectralArrowProj : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<ShinyTag2>(), 300);
+        target.AddBuff(BuffType<ShinyTag2>(), 300);
     }
 
     public override void OnKill(int timeLeft)

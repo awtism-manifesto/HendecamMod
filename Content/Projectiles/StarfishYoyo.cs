@@ -54,7 +54,7 @@ public class StarfishYoyo : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(60));
             Vector2 Spawn = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Spawn, velocity,
-                ModContent.ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(5))
@@ -62,7 +62,7 @@ public class StarfishYoyo : ModProjectile
             Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(120));
             Vector2 Spawn2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Spawn2, velocity2,
-                ModContent.ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(5))
@@ -70,7 +70,7 @@ public class StarfishYoyo : ModProjectile
             Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(180));
             Vector2 Spawn3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Spawn3, velocity3,
-                ModContent.ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(5))
@@ -78,7 +78,7 @@ public class StarfishYoyo : ModProjectile
             Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(240));
             Vector2 Spawn4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Spawn4, velocity4,
-                ModContent.ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(5))
@@ -86,7 +86,7 @@ public class StarfishYoyo : ModProjectile
             Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(300));
             Vector2 Spawn5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Spawn5, velocity5,
-                ModContent.ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<WaterJetMelee>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         }
     }
 
@@ -101,7 +101,7 @@ public class StarfishYoyo : ModProjectile
         Projectile.height = 16; // The height of the projectile's hitbox.
 
         Projectile.aiStyle = ProjAIStyleID.Yoyo; // The projectile's ai style. Yoyos use aiStyle 99 (ProjAIStyleID.Yoyo). A lot of yoyo code checks for this aiStyle to work properly.
-        Projectile.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Projectile.DamageType = GetInstance<MeleeStupidDamage>();
         Projectile.friendly = true; // Player shot projectile. Does damage to enemies but not to friendly Town NPCs.
 
         Projectile.penetrate = -1; // All vanilla yoyos have infinite penetration. The number of enemies the yoyo can hit before being pulled back in is based on YoyosLifeTimeMultiplier.

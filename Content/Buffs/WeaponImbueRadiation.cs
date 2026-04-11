@@ -31,7 +31,7 @@ public class RadImbueGlobal : ModPlayer
     {
         if (radWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>())
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -39,7 +39,7 @@ public class RadImbueGlobal : ModPlayer
     {
         if (radWeaponImbue && (proj.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[proj.type]) && !proj.noEnchantments)
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -50,7 +50,7 @@ public class RadImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<UraniumDust>());
+                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustType<UraniumDust>());
                 dust.velocity *= 0.5f;
             }
         }
@@ -62,7 +62,7 @@ public class RadImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<UraniumDust>());
+                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, DustType<UraniumDust>());
                 dust.velocity *= 0.5f;
             }
         }

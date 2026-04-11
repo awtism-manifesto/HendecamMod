@@ -31,7 +31,7 @@ public class InfernoRing : ModItem
         Item.value = Item.buyPrice(gold: 720);
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<InfernoRingProj>();
+        Item.shoot = ProjectileType<InfernoRingProj>();
         if (ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
         {
             Item.damage = 126;

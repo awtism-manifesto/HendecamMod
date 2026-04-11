@@ -35,7 +35,7 @@ public class CrucibleOfFlameAndSteel : ModItem
         Item.value = 47500000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<TackParagon>();
+        Item.shoot = ProjectileType<TackParagon>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -87,7 +87,7 @@ public class CrucibleOfFlameAndSteel : ModItem
 
 
 
-            player.AddBuff(ModContent.BuffType<ParagonCooldown>(), 1200);
+            player.AddBuff(BuffType<ParagonCooldown>(), 1200);
             CDPlayer.TackStormCooldown = 1200;
 
             SoundEngine.PlaySound(SoundID.Item62, player.position);

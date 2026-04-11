@@ -39,7 +39,7 @@ public class ElfMagicMissile : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 225);
+        target.AddBuff(BuffType<RadPoisoning2>(), 225);
         Projectile.PrepareBombToBlow();
         Projectile.timeLeft = 2;
     }
@@ -57,7 +57,7 @@ public class ElfMagicMissile : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.55f);
+            Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.55f);
             fire2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
             fire2Dust.noGravity = true;
             fire2Dust.velocity *= 0.45f;
@@ -178,7 +178,7 @@ public class ElfMagicMissile : ModProjectile
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 100, default, 1.1f);
             fireDust.noGravity = true;
             fireDust.velocity *= 5.5f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.66f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.66f);
             fireDust.velocity *= 3.5f;
         }
     }

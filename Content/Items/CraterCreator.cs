@@ -19,14 +19,14 @@ public class CraterCreator : ModItem
         Item.useAnimation = 25;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 208;
         Item.knockBack = 12.5f;
         Item.value = 9650000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item14;
 
-        Item.shoot = ModContent.ProjectileType<Crater>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Crater>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.2f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

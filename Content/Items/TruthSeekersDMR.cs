@@ -29,7 +29,7 @@ public class TruthSeekersDMR : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 10;
         Item.ArmorPenetration = 15;
-        Item.shoot = ModContent.ProjectileType<Projectiles.TrueBullet>();
+        Item.shoot = ProjectileType<TrueBullet>();
        
 
         // Gun Properties
@@ -42,10 +42,10 @@ public class TruthSeekersDMR : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<TrueBullet>();
+            type = ProjectileType<TrueBullet>();
         }
 
-        if (type == ModContent.ProjectileType<TrueBullet>())
+        if (type == ProjectileType<TrueBullet>())
         {
             damage = (int)(damage * 1.1f);
         }

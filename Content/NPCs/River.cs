@@ -78,9 +78,9 @@ public class River : ModNPC
             .SetBiomeAffection<SnowBiome>(AffectionLevel.Like) // Example Person prefers the forest.
             .SetBiomeAffection<JungleBiome>(AffectionLevel.Dislike) // Example Person prefers the forest.
             .SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike) // Loves living near the dryad.
-            .SetNPCAffection(ModContent.NPCType<Politician>(), AffectionLevel.Hate) // Likes living near the guide.
+            .SetNPCAffection(NPCType<Politician>(), AffectionLevel.Hate) // Likes living near the guide.
             .SetNPCAffection(NPCID.Angler, AffectionLevel.Love) // Dislikes living near the merchant.
-            .SetNPCAffection(ModContent.NPCType<Asshole>(), AffectionLevel.Like) // Hates living near the demolitionist.
+            .SetNPCAffection(NPCType<Asshole>(), AffectionLevel.Like) // Hates living near the demolitionist.
             ; // < Mind the semicolon!
 
         // This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
@@ -106,7 +106,7 @@ public class River : ModNPC
 
         AnimationType = NPCID.Angler;
         Banner = Type;
-        BannerItem = ModContent.ItemType<RiverBanner>();
+        BannerItem = ItemType<RiverBanner>();
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -281,7 +281,7 @@ public class River : ModNPC
         foreach (var player in Main.ActivePlayers)
         {
             // Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-            if (player.inventory.Any(item => item.type == ModContent.ItemType<CollarOfTheDamned>()))
+            if (player.inventory.Any(item => item.type == ItemType<CollarOfTheDamned>()))
             {
                 return true;
             }
@@ -324,15 +324,15 @@ public class River : ModNPC
                 .Add(ItemID.FishingBobberGlowingStar)
                 .Add(ItemID.Extractinator, Condition.DownedEarlygameBoss)
                 .Add<OtherworldlySixPack>(Condition.DownedPlantera)
-                .Add<StupidestFuckingPickaxe>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<StupiderFuckingPickaxe>()))
-                .Add<Bullshit1>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit1>()))
-                .Add<Bullshit2>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit2>()))
-                .Add<Bullshit3>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit3>()))
-                .Add<Bullshit4>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit4>()))
-                .Add<SoulOfImmunityAccessory>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit4>()))
-                .Add<LoreAccurateBlackshard>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Blackshard>()))
-                .Add<TheSecondAmendment>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<TheSecondAmendment>()))
-                .Add<Bullshit5>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit5>()))
+                .Add<StupidestFuckingPickaxe>(condition: Condition.PlayerCarriesItem(ItemType<StupiderFuckingPickaxe>()))
+                .Add<Bullshit1>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit1>()))
+                .Add<Bullshit2>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit2>()))
+                .Add<Bullshit3>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit3>()))
+                .Add<Bullshit4>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit4>()))
+                .Add<SoulOfImmunityAccessory>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit4>()))
+                .Add<LoreAccurateBlackshard>(condition: Condition.PlayerCarriesItem(ItemType<Blackshard>()))
+                .Add<TheSecondAmendment>(condition: Condition.PlayerCarriesItem(ItemType<TheSecondAmendment>()))
+                .Add<Bullshit5>(condition: Condition.PlayerCarriesItem(ItemType<Bullshit5>()))
                 .Add(ItemID.CrabBanner, Condition.InBeach)
             ;
         npcShop.Register(); // Name of this shop tab
@@ -398,13 +398,13 @@ public class River : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverGun>(), 2));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverMachinegun>(), 25));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bullshit1>(), 201));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit2>(), chanceDenominator: 911, chanceNumerator: 2));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit3>(), chanceDenominator: 42069, chanceNumerator: 15));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit4>(), chanceDenominator: 420691984, chanceNumerator: 3996));
-        npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ModContent.ItemType<Bullshit5>(), chanceDenominator: 911676767, chanceNumerator: 67));
+        npcLoot.Add(ItemDropRule.Common(ItemType<RiverGun>(), 2));
+        npcLoot.Add(ItemDropRule.Common(ItemType<RiverMachinegun>(), 25));
+        npcLoot.Add(ItemDropRule.Common(ItemType<Bullshit1>(), 201));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<Bullshit2>(), chanceDenominator: 911, chanceNumerator: 2));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<Bullshit3>(), chanceDenominator: 42069, chanceNumerator: 15));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<Bullshit4>(), chanceDenominator: 420691984, chanceNumerator: 3996));
+        npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<Bullshit5>(), chanceDenominator: 911676767, chanceNumerator: 67));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -421,7 +421,7 @@ public class River : ModNPC
 
     public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
     {
-        projType = ModContent.ProjectileType<RiverHead>();
+        projType = ProjectileType<RiverHead>();
         attackDelay = 1;
     }
 

@@ -45,7 +45,7 @@ public class TheBrainFreeze : ModItem
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.5f));
 
-            type = ModContent.ProjectileType<FrostburnProjectile>();
+            type = ProjectileType<FrostburnProjectile>();
             SoundEngine.PlaySound(SoundID.Item32, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.1f), knockback, player.whoAmI);
@@ -55,7 +55,7 @@ public class TheBrainFreeze : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(8.5f));
 
-            type = ModContent.ProjectileType<MintLeafProjectileMagic>();
+            type = ProjectileType<MintLeafProjectileMagic>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity * 1.85f, type, (int)(damage * 1f), knockback, player.whoAmI);

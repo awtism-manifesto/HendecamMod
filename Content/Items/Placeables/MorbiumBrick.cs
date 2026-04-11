@@ -23,7 +23,7 @@ public class MorbiumBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<MorbiumBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

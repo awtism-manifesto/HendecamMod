@@ -89,8 +89,8 @@ public class YelmutFaeChestplate : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<YelmutsHelmet>() &&
-               legs.type == ModContent.ItemType<YelmutLeggings>();
+        return head.type == ItemType<YelmutsHelmet>() &&
+               legs.type == ItemType<YelmutLeggings>();
     }
 
     public override void AddRecipes()
@@ -156,11 +156,11 @@ public class YelmutStupidPixieWings: ModPlayer
             {
                 if (Main.rand.NextBool(4))
                 {
-                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<LycopiteDust>(), 0, 0, 100, default);
+                    Dust.NewDust(Player.position, Player.width, Player.height, DustType<LycopiteDust>(), 0, 0, 100, default);
                 }
                 if (Main.rand.NextBool(4))
                 {
-                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(), 0, 0, 100, Color.LightPink);
+                    Dust.NewDust(Player.position, Player.width, Player.height, DustType<PlutoniumDust>(), 0, 0, 100, Color.LightPink);
                 }
 
 

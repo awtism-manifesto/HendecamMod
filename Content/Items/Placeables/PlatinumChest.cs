@@ -6,7 +6,7 @@ public class PlatinumChest : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<PlatinumChestPlaced>());
+        Item.DefaultToPlaceableTile(TileType<PlatinumChestPlaced>());
         Item.width = 26;
         Item.height = 22;
         Item.value = 500;

@@ -14,7 +14,7 @@ public class MagChestLoot1 : ModSystem
     {
         // Place some additional items in Frozen Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInFrozenChests = [ModContent.ItemType<FrozenMace>()];
+        int[] itemsToPlaceInFrozenChests = [ItemType<FrozenMace>()];
         // This variable will help cycle through the items so that different Frozen Chests get different items
         int itemsToPlaceInFrozenChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -70,7 +70,7 @@ public class MagChestLoot2 : ModSystem
     {
         // Place some additional items in Frozen Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInHellChests = [ModContent.ItemType<MeteorCube>(), ModContent.ItemType<FireDiamondStaff>()];
+        int[] itemsToPlaceInHellChests = [ItemType<MeteorCube>(), ItemType<FireDiamondStaff>()];
         // This variable will help cycle through the items so that different Frozen Chests get different items
         int itemsToPlaceInHellChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 

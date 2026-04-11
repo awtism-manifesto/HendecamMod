@@ -22,9 +22,9 @@ public class LargePlasmoid : ModNPC
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning>()] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning2>()] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning3>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning2>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning3>()] = true;
     }
 
     public override void SetDefaults()
@@ -45,7 +45,7 @@ public class LargePlasmoid : ModNPC
         NPC.despawnEncouraged = false;
         NPC.noTileCollide = true;
         Banner = Type;
-        BannerItem = ModContent.ItemType<LargePlasmoidBanner>();
+        BannerItem = ItemType<LargePlasmoidBanner>();
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
@@ -63,13 +63,13 @@ public class LargePlasmoid : ModNPC
     {
         for (int i = 0; i < 10; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PlutoniumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PlutoniumDust>());
             dust.noGravity = true;
             dust.velocity *= 9.5f;
             dust.scale *= 1.55f;
         }
 
-        int buffType = ModContent.BuffType<RadPoisoning2>();
+        int buffType = BuffType<RadPoisoning2>();
 
         int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
         target.AddBuff(buffType, timeToAdd);
@@ -87,8 +87,8 @@ public class LargePlasmoid : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlutoniumOre>(), 1, 121, 166));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheXRay>(), 10));
+        npcLoot.Add(ItemDropRule.Common(ItemType<PlutoniumOre>(), 1, 121, 166));
+        npcLoot.Add(ItemDropRule.Common(ItemType<TheXRay>(), 10));
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 5, 10));
 
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 3, 15, 30));

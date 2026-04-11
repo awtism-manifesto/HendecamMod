@@ -56,7 +56,7 @@ public class TransGreaves : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<TransHat>() && body.type == ModContent.ItemType<TransBodyplate>();
+        return head.type == ItemType<TransHat>() && body.type == ItemType<TransBodyplate>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

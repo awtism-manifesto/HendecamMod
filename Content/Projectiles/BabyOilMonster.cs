@@ -27,7 +27,7 @@ public class BabyOilMonster : ModProjectile
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ModContent.ProjectileType<OilBoomSmall>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<OilBoomSmall>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
         }
     }
 
@@ -86,12 +86,12 @@ public class BabyOilMonster : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<OilMonsterBuff>());
+            owner.ClearBuff(BuffType<OilMonsterBuff>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<OilMonsterBuff>()))
+        if (owner.HasBuff(BuffType<OilMonsterBuff>()))
         {
             Projectile.timeLeft = 3;
         }

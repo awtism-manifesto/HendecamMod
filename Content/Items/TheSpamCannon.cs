@@ -35,8 +35,8 @@ public class TheSpamCannon : ModItem
         Item.UseSound = SoundID.Item61;
         Item.rare = ItemRarityID.Yellow;
         Item.value = Item.buyPrice(gold: 115);
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
-        Item.shoot = ModContent.ProjectileType<Pipis>();
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.shoot = ProjectileType<Pipis>();
         Item.noMelee = true;
 
         Item.autoReuse = true;
@@ -132,12 +132,12 @@ public class TheSpamCannon : ModItem
                 spamcannoncooldown = 90;
             }
 
-            player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 90);
+            player.AddBuff(BuffType<BigShotCooldown>(), 90);
             SoundEngine.PlaySound(SoundID.Item14, player.position);
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath56, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 17.5f), (int)(knockback * 25f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 1.5f, ProjectileType<BigShot>(), (int)(damage * 17.5f), (int)(knockback * 25f), player.whoAmI);
             return false;
         }
 

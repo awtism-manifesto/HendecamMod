@@ -27,13 +27,13 @@ public class LoadedDice : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 2;
        
-        Item.shoot = ModContent.ProjectileType<LoadedDieProj>();
+        Item.shoot = ProjectileType<LoadedDieProj>();
 
 
         // Gun Properties
@@ -55,7 +55,7 @@ public class LoadedDice : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       type = ModContent.ProjectileType<LoadedDieProj>();
+       type = ProjectileType<LoadedDieProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

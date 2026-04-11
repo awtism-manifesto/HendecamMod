@@ -56,7 +56,7 @@ public class PlutoniumSystem : ModSystem
                     j,
                     WorldGen.genRand.Next(6, 7),
                     WorldGen.genRand.Next(7, 8),
-                    (ushort)ModContent.TileType<PlutoniumOrePlaced>()
+                    (ushort)TileType<PlutoniumOrePlaced>()
                 );
             }
         });

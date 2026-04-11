@@ -23,7 +23,7 @@ public class WoodSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 240);
+        target.AddBuff(BuffType<Splinters>(), 240);
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -40,7 +40,7 @@ public class EbonwoodSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 270);
+        target.AddBuff(BuffType<Splinters>(), 270);
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
@@ -57,7 +57,7 @@ public class ShadewoodSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 270);
+        target.AddBuff(BuffType<Splinters>(), 270);
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
@@ -74,7 +74,7 @@ public class PalmSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 240);
+        target.AddBuff(BuffType<Splinters>(), 240);
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -92,7 +92,7 @@ public class BorSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 240);
+        target.AddBuff(BuffType<Splinters>(), 240);
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
@@ -109,7 +109,7 @@ public class AshSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 240);
+        target.AddBuff(BuffType<Splinters>(), 240);
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
@@ -126,7 +126,7 @@ public class PearlSplinters : GlobalItem
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 240);
+        target.AddBuff(BuffType<Splinters>(), 240);
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {

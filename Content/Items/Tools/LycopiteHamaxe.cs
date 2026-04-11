@@ -45,7 +45,7 @@ public class LycopiteHamaxe : ModItem
     {
         for (int i = 0; i < 3; i++)
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<LycopiteDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<LycopiteDust>());
             dust.noGravity = true;
             dust.velocity *= 3.5f;
             dust.scale *= 0.75f;

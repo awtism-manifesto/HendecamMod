@@ -32,8 +32,8 @@ public class JusticeAxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.LightPurple;
         Item.value = Item.buyPrice(gold: 95); // Sell price is 5 times less than the buy price.
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
-        Item.shoot = ModContent.ProjectileType<JusticeSwing>();
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.shoot = ProjectileType<JusticeSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -81,11 +81,11 @@ public class JusticeAxe : ModItem
                 justiceaxecooldown = 60;
             }
 
-            player.AddBuff(ModContent.BuffType<RudeBusterCooldown>(), 60);
+            player.AddBuff(BuffType<RudeBusterCooldown>(), 60);
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 2.85f, ModContent.ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.85f, ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
             return false;
         }
 

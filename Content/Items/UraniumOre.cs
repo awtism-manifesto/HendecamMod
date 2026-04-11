@@ -23,7 +23,7 @@ public class UraniumOre : ModItem
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 2400;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.UraniumTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.UraniumTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

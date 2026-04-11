@@ -174,35 +174,35 @@ public class SaltSwing : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(5, 55)));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(65, 105)));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(115, 165)));
         Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(175, 225)));
         Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(235, 285)));
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(295, 345)));
         Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 359)));
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         Vector2 velocity9 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 359)));
         Vector2 Peanits9 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits9, velocity9,
-            ModContent.ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+            ProjectileType<SaltMelee2>(), (int)(Projectile.damage * 0.3f), Projectile.knockBack);
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)

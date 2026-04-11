@@ -56,7 +56,7 @@ public class EyesOfMichael : ModNPC
         }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+        if (NPC.AnyNPCs(NPCType<EyesOfGabriel>()) || NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
             {
 
             }
@@ -64,7 +64,7 @@ public class EyesOfMichael : ModNPC
             {
             LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
             // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
-            npcLoot.Add(ItemDropRule.ByCondition(new MichaelDrop(), ModContent.ItemType<AngelShard>(), chanceDenominator: 1, chanceNumerator: 1, minimumDropped: 67 / 10, maximumDropped: 69));
+            npcLoot.Add(ItemDropRule.ByCondition(new MichaelDrop(), ItemType<AngelShard>(), chanceDenominator: 1, chanceNumerator: 1, minimumDropped: 67 / 10, maximumDropped: 69));
             npcLoot.Add(notExpertRule);
             // npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AlpineTreasureBag>()));
             // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
@@ -102,13 +102,13 @@ public class EyesOfMichael : ModNPC
                 Vector2 position = NPC.Center;
                 Vector2 targetPosition = Main.player[NPC.target].Center;
                 Vector2 direction = targetPosition - position;
-                NPC.NewNPCDirect(source, (int)NPC.Center.X, (int)NPC.Center.Y, (ModContent.NPCType<HeavenCloud>()), NPC.whoAmI);
+                NPC.NewNPCDirect(source, (int)NPC.Center.X, (int)NPC.Center.Y, (NPCType<HeavenCloud>()), NPC.whoAmI);
                 direction.Normalize();
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                     {
 
                     }
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
 
                     }

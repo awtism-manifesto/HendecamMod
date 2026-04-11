@@ -41,7 +41,7 @@ public class AuspiciousArtillery : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ModContent.ProjectileType<KingslayerRocket>())
+        if (type == ProjectileType<KingslayerRocket>())
         {
             damage = (int)(damage * 1.25f);
         }

@@ -15,7 +15,7 @@ public class RectumsRequiem : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<BeadsNDick>(), 20, 2, 7);
+        Item.DefaultToWhip(ProjectileType<BeadsNDick>(), 20, 2, 7);
         Item.rare = ItemRarityID.Pink;
         Item.damage = 45;
         Item.useTime = 23;
@@ -24,7 +24,7 @@ public class RectumsRequiem : ModItem
         Item.width = 14;
         Item.height = 14;
         Item.value = Item.buyPrice(silver: 2500);
-        Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Item.DamageType = GetInstance<SummonStupidDamage>();
     }
     public float LobotometerCost = 7f;
     public override bool? UseItem(Player player)

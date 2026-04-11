@@ -42,7 +42,7 @@ public class LycopitePickaxe : ModItem
     {
         for (int i = 0; i < 2; i++)
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<LycopiteDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<LycopiteDust>());
             dust.noGravity = true;
             dust.velocity *= 2.5f;
             dust.scale *= 0.66f;

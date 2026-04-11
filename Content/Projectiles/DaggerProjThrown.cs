@@ -23,7 +23,7 @@ public class DaggerProjThrown : ModProjectile
     {
         target.AddBuff(BuffID.ShadowFlame, 300);
         target.AddBuff(BuffID.Venom, 180);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 120);
+        target.AddBuff(BuffType<RadPoisoning2>(), 120);
     }
 
     public override void AI()

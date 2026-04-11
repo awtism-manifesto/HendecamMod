@@ -23,14 +23,14 @@ public class Shortgun : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item102;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.UseSound = SoundID.Item99;
 
         // Gun Properties
-        Item.shoot = ModContent.ProjectileType<Projectiles.ShortgunProjectile>();
+        Item.shoot = ProjectileType<Projectiles.ShortgunProjectile>();
         Item.shootSpeed = 6.1f; // The speed of the projectile (measured in pixels per frame.)
     }
 
@@ -70,6 +70,6 @@ public class Shortgun : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.ShortgunProjectile>();
+        type = ProjectileType<Projectiles.ShortgunProjectile>();
     }
 }

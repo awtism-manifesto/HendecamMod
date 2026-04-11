@@ -19,7 +19,7 @@ public class PlasmoidFriendly : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 150);
+        target.AddBuff(BuffType<RadPoisoning>(), 150);
     }
 
     public override void SetDefaults()
@@ -71,12 +71,12 @@ public class PlasmoidFriendly : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<PlasmoidFriend>());
+            owner.ClearBuff(BuffType<PlasmoidFriend>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<PlasmoidFriend>()))
+        if (owner.HasBuff(BuffType<PlasmoidFriend>()))
         {
             Projectile.timeLeft = 3;
         }

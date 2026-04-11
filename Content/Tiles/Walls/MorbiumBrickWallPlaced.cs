@@ -8,7 +8,7 @@ public class MorbiumBrickWallPlaced : ModWall
     {
         Main.wallHouse[Type] = true;
 
-        DustType = ModContent.DustType<MorbiumDust>();
+        DustType = DustType<MorbiumDust>();
 
         AddMapEntry(new Color(19, 15, 68));
     }

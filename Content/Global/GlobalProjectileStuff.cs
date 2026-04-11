@@ -106,7 +106,7 @@ public class RedneckCombo : GlobalProjectile
         if (!fromRedneckGun)
             return; // Don't run if this isn't a right-click combo shot
 
-        if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
+        if (target.HasBuff(BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -117,7 +117,7 @@ public class RedneckCombo : GlobalProjectile
 
     public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (fromRedneckGun && target.HasBuff(ModContent.BuffType<RedneckTag>()))
+        if (fromRedneckGun && target.HasBuff(BuffType<RedneckTag>()))
         {
             modifiers.SourceDamage *= 1.5f;
         }
@@ -143,7 +143,7 @@ public class VPCombo : GlobalProjectile
         if (!fromVP70)
             return; // Don't run if this isn't a right-click combo shot
 
-        if (target.HasBuff(ModContent.BuffType<VpTag>()))
+        if (target.HasBuff(BuffType<VpTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -155,7 +155,7 @@ public class VPCombo : GlobalProjectile
 
     public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (fromVP70 && target.HasBuff(ModContent.BuffType<VpTag>()))
+        if (fromVP70 && target.HasBuff(BuffType<VpTag>()))
         {
             modifiers.SourceDamage *= 1.65f;
         }
@@ -181,7 +181,7 @@ public class VPComboSetup : GlobalProjectile
         if (!fromtheVP70)
             return;
 
-        target.AddBuff(ModContent.BuffType<VpTag>(), 95);
+        target.AddBuff(BuffType<VpTag>(), 95);
     }
 }
 
@@ -196,7 +196,7 @@ public class KnightComboSetup : GlobalProjectile
         if (!fromtheBlackshard)
             return;
 
-        target.AddBuff(ModContent.BuffType<BlackshardDebuff>(), 196);
+        target.AddBuff(BuffType<BlackshardDebuff>(), 196);
     }
 }
 
@@ -210,7 +210,7 @@ public class DeliriantComboSetup : GlobalProjectile
     {
         if (!fromtheDeliriantDagger)
             return;
-        target.AddBuff(ModContent.BuffType<DeliriantTag>(), 155);
+        target.AddBuff(BuffType<DeliriantTag>(), 155);
     }
 }
 public class XenonModX : GlobalProjectile
@@ -228,7 +228,7 @@ public class XenonModX : GlobalProjectile
         Vector2 velocity = projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = target.Center;
         Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<XenonX>(), (int)(projectile.damage * 2f), projectile.knockBack, projectile.owner);
+            ProjectileType<XenonX>(), (int)(projectile.damage * 2f), projectile.knockBack, projectile.owner);
 
     }
 
@@ -246,7 +246,7 @@ public class VerdantComboSetup : GlobalProjectile
         if (!fromtheVerdantClaymore)
             return; // Only apply buff if this is a left-click setup shot
 
-        target.AddBuff(ModContent.BuffType<VerdantTag>(), 125);
+        target.AddBuff(BuffType<VerdantTag>(), 125);
     }
 }
 
@@ -261,7 +261,7 @@ public class VerdantCombo : GlobalProjectile
         if (!fromVerdantClaymore)
             return; // Don't run if this isn't a right-click combo shot
 
-        if (target.HasBuff(ModContent.BuffType<VerdantTag>()))
+        if (target.HasBuff(BuffType<VerdantTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -269,13 +269,13 @@ public class VerdantCombo : GlobalProjectile
 
             // Apply a buff to the player
             Player player = Main.player[projectile.owner];
-            player.AddBuff(ModContent.BuffType<JungleHealing>(), 100); // 300 = 5 seconds (60 ticks per second)
+            player.AddBuff(BuffType<JungleHealing>(), 100); // 300 = 5 seconds (60 ticks per second)
         }
     }
 
     public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (fromVerdantClaymore && target.HasBuff(ModContent.BuffType<VerdantTag>()))
+        if (fromVerdantClaymore && target.HasBuff(BuffType<VerdantTag>()))
         {
             modifiers.SourceDamage *= 1.85f;
         }
@@ -292,7 +292,7 @@ public class PyrrhicComboSetup : GlobalProjectile
         if (!fromthePyrrhicClaymore)
             return; // Only apply buff if this is a left-click setup shot
 
-        target.AddBuff(ModContent.BuffType<PyrrhicTag>(), 175);
+        target.AddBuff(BuffType<PyrrhicTag>(), 175);
     }
 }
 public class PyrrhicCombo : GlobalProjectile
@@ -306,7 +306,7 @@ public class PyrrhicCombo : GlobalProjectile
         if (!fromPyrrhicClaymore)
             return; // Don't run if this isn't a right-click combo shot
 
-        if (target.HasBuff(ModContent.BuffType<PyrrhicTag>()))
+        if (target.HasBuff(BuffType<PyrrhicTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueExcalibur,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -314,13 +314,13 @@ public class PyrrhicCombo : GlobalProjectile
 
             // Apply a buff to the player
             Player player = Main.player[projectile.owner];
-            player.AddBuff(ModContent.BuffType<PyrrhicDefense>(), 120);
+            player.AddBuff(BuffType<PyrrhicDefense>(), 120);
         }
     }
 
     public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (fromPyrrhicClaymore && target.HasBuff(ModContent.BuffType<PyrrhicTag>()))
+        if (fromPyrrhicClaymore && target.HasBuff(BuffType<PyrrhicTag>()))
         {
             modifiers.SourceDamage *= 2.25f;
         }

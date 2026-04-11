@@ -12,10 +12,10 @@ public class DirtyRocket3 : ModItem
 
         // This is where we tell the game which projectile to spawn when using this rocket as ammo with certain launchers.
         // This specific rocket ammo is like Rocket I's.
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ModContent.ProjectileType<AstaRocketProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ModContent.ProjectileType<AstaRocketProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ModContent.ProjectileType<AstaRocketProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ModContent.ProjectileType<AstaRocketProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ProjectileType<AstaRocketProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ProjectileType<AstaRocketProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ProjectileType<AstaRocketProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ProjectileType<AstaRocketProj>());
         // We also need to say which type of Celebration Mk2 rockets to use.
         // The Celebration Mk 2 only has four types of rockets. Change the projectile to match your ammo type.
         // Rocket I like   == ProjectileID.Celeb2Rocket
@@ -37,7 +37,7 @@ public class DirtyRocket3 : ModItem
         Item.knockBack = 9.5f;
         Item.value = 2150;
         Item.rare = ItemRarityID.Red;
-        Item.shoot = ModContent.ProjectileType<AstaRocketProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<AstaRocketProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.75f; // The speed of the projectile.
         Item.ammo = AmmoID.Rocket; // The ammo class this ammo belongs to.
         AmmoID.Sets.IsSpecialist[Type] = true;

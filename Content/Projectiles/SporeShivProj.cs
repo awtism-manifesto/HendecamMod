@@ -41,7 +41,7 @@ public class SporeShivProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-330, 330), Main.rand.NextFloat(-250, 250));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<SporeShivDupe>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SporeShivDupe>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
     }
 
     public override bool PreDraw(ref Color lightColor)

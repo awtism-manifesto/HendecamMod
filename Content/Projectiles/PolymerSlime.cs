@@ -78,12 +78,12 @@ public class PolymerSlime : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<PolymerSlimeBuff>());
+            owner.ClearBuff(BuffType<PolymerSlimeBuff>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<PolymerSlimeBuff>()))
+        if (owner.HasBuff(BuffType<PolymerSlimeBuff>()))
         {
             Projectile.timeLeft = 3;
         }

@@ -20,14 +20,14 @@ public class BionicBoomer : ModItem
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
         Item.damage = 180; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+        Item.DamageType = GetInstance<MeleeRangedDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 5.5f; // The amount of knockback the item inflicts.
         Item.ArmorPenetration = 45;
 
         Item.rare = ItemRarityID.Red; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1150); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<AstaGlaive>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<AstaGlaive>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 21.25f; // The velocity of the shot projectile.			
     }
 

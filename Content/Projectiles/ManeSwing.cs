@@ -26,7 +26,7 @@ public class ManeSwing : ModProjectile
         Projectile.width = 16;
         Projectile.height = 16;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 6; // The projectile can hit 3 enemies.
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;

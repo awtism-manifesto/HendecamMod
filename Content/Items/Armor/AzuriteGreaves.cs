@@ -52,7 +52,7 @@ public class AzuriteGreaves : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<AzuriteHat>() && body.type == ModContent.ItemType<AzuritePlatemail>();
+        return head.type == ItemType<AzuriteHat>() && body.type == ItemType<AzuritePlatemail>();
     }
 
     public override void AddRecipes()

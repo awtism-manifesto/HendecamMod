@@ -50,7 +50,7 @@ public class SaltYoyo : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<SaltMelee>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SaltMelee>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
     }
 
     public override void SetDefaults()

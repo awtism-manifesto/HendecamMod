@@ -29,7 +29,7 @@ public class AncientCobaltDrill : ModItem
         Item.value = Item.buyPrice(gold: 1, silver: 85);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item23;
-        Item.shoot = ModContent.ProjectileType<AncientCobaltDrillProj>(); // Create the drill projectile
+        Item.shoot = ProjectileType<AncientCobaltDrillProj>(); // Create the drill projectile
         Item.shootSpeed = 32f; // Adjusts how far away from the player to hold the projectile
         Item.noMelee = true; // Turns off damage from the item itself, as we have a projectile
         Item.noUseGraphic = true; // Stops the item from drawing in your hands, for the aforementioned reason

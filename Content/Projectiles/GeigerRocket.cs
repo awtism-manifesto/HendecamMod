@@ -41,9 +41,9 @@ public class GeigerRocket : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
        
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 1111);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 1111);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 1111);
+        target.AddBuff(BuffType<RadPoisoning>(), 1111);
+        target.AddBuff(BuffType<RadPoisoning2>(), 1111);
+        target.AddBuff(BuffType<RadPoisoning3>(), 1111);
     }
 
     public override void AI()
@@ -75,15 +75,15 @@ public class GeigerRocket : ModProjectile
                     // }
 
                     // Spawn smoke dusts at the back of the rocket.
-                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
+                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustType<UraniumDust>(), 0f, 0f, 100, default, 0.7f);
                     smokeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                     smokeDust.velocity *= 0.05f;
                     smokeDust.noGravity = true;
-                    Dust smokeyDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
+                    Dust smokeyDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustType<AstatineDust>(), 0f, 0f, 100, default, 0.7f);
                     smokeyDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                     smokeyDust.velocity *= 0.05f;
                     smokeyDust.noGravity = true;
-                    Dust smokeyeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
+                    Dust smokeyeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
                     smokeyeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                     smokeyeDust.velocity *= 0.05f;
                     smokeyeDust.noGravity = true;
@@ -153,7 +153,7 @@ public class GeigerRocket : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<GeigerBoom>(),
+                ProjectileType<GeigerBoom>(),
                 (int)(Projectile.damage * 0.67f),
                 Projectile.knockBack,
                 Projectile.owner
@@ -163,20 +163,20 @@ public class GeigerRocket : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 22; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
             fireDust.noGravity = true;
             fireDust.velocity *= 12f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
             fireDust.velocity *= 8.5f;
-            Dust fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.3f);
+            Dust fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.3f);
             fire1Dust.noGravity = true;
             fire1Dust.velocity *= 12f;
-            fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.1f);
+            fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.1f);
             fire1Dust.velocity *= 8.5f;
-            Dust fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.6f);
+            Dust fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.6f);
             fire11Dust.noGravity = true;
             fire11Dust.velocity *= 12f;
-            fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.4f);
+            fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.4f);
             fire11Dust.velocity *= 8.5f;
         }
 
@@ -201,40 +201,40 @@ public class GeigerRocket : ModProjectile
 
         for (int j = 0; j < 18; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 12f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.3f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.3f);
             fireDust.velocity *= 10f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3f);
+            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3f);
             fireeDust.noGravity = true;
             fireeDust.velocity *= 12f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.8f);
+            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.8f);
             fireeDust.velocity *= 10f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.7f);
+            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.7f);
             fireeeDust.noGravity = true;
             fireeeDust.velocity *= 12f;
-            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.2f);
+            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.2f);
             fireeeDust.velocity *= 10f;
         }
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 19; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 8f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 4f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
             fireeDust.noGravity = true;
             fireeDust.velocity *= 8f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
+            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeDust.velocity *= 4f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
             fireeeDust.noGravity = true;
             fireeeDust.velocity *= 8f;
-            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
+            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeeDust.velocity *= 4f;
         }
 

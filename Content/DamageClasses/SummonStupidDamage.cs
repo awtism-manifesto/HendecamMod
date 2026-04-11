@@ -15,7 +15,7 @@ public class SummonStupidDamage : DamageClass
             return StatInheritanceData.Full;
         if (damageClass == Magic)
             return StatInheritanceData.None;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.Full;
         if (damageClass == Melee)
             return StatInheritanceData.None;
@@ -44,7 +44,7 @@ public class SummonStupidDamage : DamageClass
         // For this example, we'll make our class able to activate melee- and magic-specifically effects.
         if (damageClass == Summon)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;
@@ -56,7 +56,7 @@ public class SummonStupidDamage : DamageClass
             return true;
         if (damageClass == Melee)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
         if (damageClass == SummonMeleeSpeed)
             return true;

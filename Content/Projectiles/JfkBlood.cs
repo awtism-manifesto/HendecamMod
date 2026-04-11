@@ -41,7 +41,7 @@ public class JfkBlood : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Stamped>(), 300);
+        target.AddBuff(BuffType<Stamped>(), 300);
     }
 
     public override void AI()

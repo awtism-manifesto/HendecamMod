@@ -11,6 +11,6 @@ public class TheSniper : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Collector);
-        Condition = AddItemCraftCondition(ModContent.ItemType<TrueJfkExperience>());
+        Condition = AddItemCraftCondition(ItemType<TrueJfkExperience>());
     }
 }

@@ -35,7 +35,7 @@ public class EmblemProj : ModProjectile
         Projectile.tileCollide = true;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
@@ -72,13 +72,13 @@ public class EmblemProj : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.15f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.15f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 chudDust.velocity *= 0.25f;
-                Dust fireeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.16f);
+                Dust fireeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.16f);
                 fireeDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 fireeDust.velocity *= 0.25f;
-                Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 1.15f);
+                Dust firee2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 24, Projectile.height - 24, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.15f);
                 firee2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 firee2Dust.velocity *= 0.25f;
             }
@@ -87,10 +87,10 @@ public class EmblemProj : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<EmblemTag>(), 390);
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 390);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 390);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 390);
+        target.AddBuff(BuffType<EmblemTag>(), 390);
+        target.AddBuff(BuffType<RadPoisoning>(), 390);
+        target.AddBuff(BuffType<RadPoisoning2>(), 390);
+        target.AddBuff(BuffType<RadPoisoning3>(), 390);
         target.immune[Projectile.owner] = 3;
     }
 
@@ -99,7 +99,7 @@ public class EmblemProj : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<EmblemBoom>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
 
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);

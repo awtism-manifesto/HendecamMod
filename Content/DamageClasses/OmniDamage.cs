@@ -53,7 +53,7 @@ public class OmniDamage : DamageClass
                 attackSpeedInheritance: 0.67f,
                 armorPenInheritance: 0.67f,
                 knockbackInheritance: 0.67f);
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return new StatInheritanceData(
                 damageInheritance: 0.67f,
                 critChanceInheritance: 0.67f,
@@ -73,7 +73,7 @@ public class OmniDamage : DamageClass
     {
         if (damageClass == Generic)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return true;

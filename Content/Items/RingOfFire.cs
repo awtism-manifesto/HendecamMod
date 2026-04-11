@@ -32,7 +32,7 @@ public class RingOfFire : ModItem
         Item.value = Item.buyPrice(gold: 130);
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<RingOfFireProj>();
+        Item.shoot = ProjectileType<RingOfFireProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

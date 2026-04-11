@@ -53,6 +53,6 @@ public class GoodGrades : ModItem
        // float damageBonus = lobotometerPercent * 0.10f;
         float speedBonus = (1f - lobotometerPercent) * 0.10f; 
 
-        player.GetAttackSpeed(ModContent.GetInstance<StupidDamage>()) += speedBonus;
+        player.GetAttackSpeed(GetInstance<StupidDamage>()) += speedBonus;
     }
 }

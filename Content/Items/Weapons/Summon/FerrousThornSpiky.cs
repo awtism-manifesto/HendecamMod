@@ -10,7 +10,7 @@ public class FerrousThornSpiky : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<FerroWhipSpiky>(), 33, 9, 5f, 33);
+        Item.DefaultToWhip(ProjectileType<FerroWhipSpiky>(), 33, 9, 5f, 33);
         Item.rare = ItemRarityID.LightRed;
         Item.damage = 72;
         Item.useTime = 33;
@@ -47,7 +47,7 @@ public class FerrousThornSpiky : ModItem
 
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<FerrousThornSmooth>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<FerrousThornSmooth>()));
     }
 
     public override void AddRecipes()

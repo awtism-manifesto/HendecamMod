@@ -23,7 +23,7 @@ public class MeleeSummonDamage : DamageClass
             return StatInheritanceData.Full;
         if (damageClass == Throwing)
             return StatInheritanceData.None;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.None;
         return new StatInheritanceData(
             damageInheritance: 0f,

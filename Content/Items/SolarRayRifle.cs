@@ -30,14 +30,14 @@ public class SolarRayRifle : ModItem
         Item.mana = 6;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Projectiles.SolarRay>();
+        Item.shoot = ProjectileType<Projectiles.SolarRay>();
 
         Item.shootSpeed = 17.75f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.SolarRay>();
+        type = ProjectileType<Projectiles.SolarRay>();
         if (Main.dayTime)
         {
             damage = (int)(damage * Main.rand.NextFloat(1.15f, 1.16f));

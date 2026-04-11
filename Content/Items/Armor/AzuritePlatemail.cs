@@ -67,7 +67,7 @@ public class AzuritePlatemail : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<AzuriteHat>() && legs.type == ModContent.ItemType<AzuriteGreaves>();
+        return head.type == ItemType<AzuriteHat>() && legs.type == ItemType<AzuriteGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -66,7 +66,7 @@ public class MintalBreastplate : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<MintalHelmet>() && legs.type == ModContent.ItemType<MintalLeggings>();
+        return head.type == ItemType<MintalHelmet>() && legs.type == ItemType<MintalLeggings>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

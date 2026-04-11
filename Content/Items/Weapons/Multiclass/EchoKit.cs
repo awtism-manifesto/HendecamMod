@@ -47,12 +47,12 @@ public class EchoKit : ModItem
         Item.useAnimation = 21;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 33;
         Item.knockBack = 2.5f;
         Item.noMelee = true;
         Item.noUseGraphic = true;
-        Item.shoot = ModContent.ProjectileType<TriShot>();
+        Item.shoot = ProjectileType<TriShot>();
         Item.shootSpeed = 15.5f;
         Item.channel = true;
     }
@@ -95,7 +95,7 @@ public class EchoKit : ModItem
             Item.useAnimation = 30;
             Item.reuseDelay = 0;
             Item.autoReuse = false;
-            Item.shoot = ModContent.ProjectileType<EchoStickyBomb>();
+            Item.shoot = ProjectileType<EchoStickyBomb>();
             Item.useAmmo = AmmoID.None;
         }
         else
@@ -104,7 +104,7 @@ public class EchoKit : ModItem
             Item.useAnimation = 21;
             Item.reuseDelay = 0;
             Item.autoReuse = true;
-            Item.shoot = ModContent.ProjectileType<TriShot>();
+            Item.shoot = ProjectileType<TriShot>();
             Item.useAmmo = AmmoID.None;
         }
 
@@ -212,7 +212,7 @@ public class EchoKit : ModItem
         // In HoldItem method, when Focus Beam is activated:
         if (leftMouseHeld && rightMouseHeld && player.whoAmI == Main.myPlayer)
         {
-            if (player.ownedProjectileCounts[ModContent.ProjectileType<FocusBeam>()] < 1)
+            if (player.ownedProjectileCounts[ProjectileType<FocusBeam>()] < 1)
             {
                 Vector2 direction = Vector2.Normalize(Main.MouseWorld - player.Center);
                 SoundEngine.PlaySound(SoundID.Item15, player.position);
@@ -221,7 +221,7 @@ public class EchoKit : ModItem
                     player.GetSource_ItemUse(Item),
                     player.Center,
                     direction,
-                    ModContent.ProjectileType<FocusBeam>(),
+                    ProjectileType<FocusBeam>(),
                     Item.damage,
                     Item.knockBack,
                     player.whoAmI

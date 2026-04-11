@@ -26,13 +26,13 @@ public class QueensShank : ModItem
         Item.width = 32;
         Item.height = 32;
         Item.UseSound = SoundID.Item1;
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.autoReuse = false;
         Item.noUseGraphic = true;
         Item.noMelee = true;
         Item.rare = ItemRarityID.Pink;
         Item.value = Item.sellPrice(0, 5, 50, 0);
-        Item.shoot = ModContent.ProjectileType<QueensShankStab>();
+        Item.shoot = ProjectileType<QueensShankStab>();
         Item.shootSpeed = 5.25f;
     }
    
@@ -60,7 +60,7 @@ public class QueensShank : ModItem
     {
 
        
-        if (type == ModContent.ProjectileType<QueensShankStab>())
+        if (type == ProjectileType<QueensShankStab>())
         {
             damage = (int)(damage * 1.5f);
         }
@@ -70,7 +70,7 @@ public class QueensShank : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            Projectile.NewProjectile(source, position, velocity*3.25f, ModContent.ProjectileType<QueensShankThrown>(), (int)(damage * 0.67f), knockback, player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity*3.25f, ProjectileType<QueensShankThrown>(), (int)(damage * 0.67f), knockback, player.whoAmI);
             return false;
         }
         return true;

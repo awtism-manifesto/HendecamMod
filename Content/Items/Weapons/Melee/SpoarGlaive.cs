@@ -31,7 +31,7 @@ public class SpoarGlaive : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.value = 460000;
 
-        Item.shoot = ModContent.ProjectileType<SpoarGlaiveProj>();
+        Item.shoot = ProjectileType<SpoarGlaiveProj>();
         Item.shootSpeed = 14.33f;
     }
    

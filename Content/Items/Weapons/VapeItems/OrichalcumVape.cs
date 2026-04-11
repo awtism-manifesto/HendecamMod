@@ -22,7 +22,7 @@ public class OrichalcumVape : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 3;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 44;
         Item.knockBack = 0.33f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -32,7 +32,7 @@ public class OrichalcumVape : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound") { Volume = 2.67f, PitchVariance = 0.2f, MaxInstances = 3 };
 
-        Item.shoot = ModContent.ProjectileType<OrichalcumVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<OrichalcumVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.1f; // Speed of the projectiles the sword will shoot
 
        

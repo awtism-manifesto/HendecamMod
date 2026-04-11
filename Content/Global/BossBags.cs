@@ -18,7 +18,7 @@ public class BossBagLoot : GlobalItem
                 if (rule is OneFromOptionsNotScaledWithLuckDropRule oneFromOptionsDrop && oneFromOptionsDrop.dropIds.Contains(ItemID.KingSlimeMask))
                 {
                     var original = oneFromOptionsDrop.dropIds.ToList();
-                    original.Add(ModContent.ItemType<SuperSamuraiSlicer>());
+                    original.Add(ItemType<SuperSamuraiSlicer>());
                     oneFromOptionsDrop.dropIds = original.ToArray();
                 }
             }

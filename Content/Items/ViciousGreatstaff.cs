@@ -35,7 +35,7 @@ public class ViciousGreatstaff : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.value = 1335000;
         Item.DamageType = DamageClass.Magic;
-        Item.shoot = ModContent.ProjectileType<BloodshotBomb>();
+        Item.shoot = ProjectileType<BloodshotBomb>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
 
         Item.autoReuse = true;
@@ -53,7 +53,7 @@ public class ViciousGreatstaff : ModItem
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item13, player.position);
 
-            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ModContent.ProjectileType<BloodshotSpawn>(), (int)(damage * 0.45f), (int)(knockback * 0.5f), player.whoAmI);
+            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ProjectileType<BloodshotSpawn>(), (int)(damage * 0.45f), (int)(knockback * 0.5f), player.whoAmI);
             return false;
         }
 

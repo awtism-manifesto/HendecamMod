@@ -9,7 +9,7 @@ public class AcidCloud : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Blocks.AcidCloudPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Blocks.AcidCloudPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

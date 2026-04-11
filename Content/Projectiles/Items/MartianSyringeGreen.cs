@@ -16,7 +16,7 @@ public class MartianSyringeGreen : ModProjectile
         Projectile.aiStyle = -1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
+        Projectile.DamageType = GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 333; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
 
@@ -75,7 +75,7 @@ public class MartianSyringeGreen : ModProjectile
         }
         if (Main.rand.NextBool(4))
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning>(), 300);
+            target.AddBuff(BuffType<RadPoisoning>(), 300);
         }
 
         if (Main.rand.NextBool(5))
@@ -92,7 +92,7 @@ public class MartianSyringeGreen : ModProjectile
         }
         if (Main.rand.NextBool(50))
         {
-            target.AddBuff(ModContent.BuffType<MoonBurn>(), 300);
+            target.AddBuff(BuffType<MoonBurn>(), 300);
         }
     }
 }

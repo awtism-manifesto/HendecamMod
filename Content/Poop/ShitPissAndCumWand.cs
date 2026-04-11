@@ -32,21 +32,21 @@ public class ShitPissAndCumWand : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item8;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<AutismDamage>();
+        Item.DamageType = GetInstance<AutismDamage>();
         Item.damage = 61; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 11;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<PooShot2>();
+        Item.shoot = ProjectileType<PooShot2>();
 
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PooShot2>();
+        type = ProjectileType<PooShot2>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -63,9 +63,9 @@ public class ShitPissAndCumWand : ModItem
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             type = ProjectileID.GoldenShowerFriendly;
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<SpermProj>();
+            type = ProjectileType<SpermProj>();
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<PooShot2>();
+            type = ProjectileType<PooShot2>();
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile

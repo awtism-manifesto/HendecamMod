@@ -10,7 +10,7 @@ public class PoopAxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 8;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.width = 30;
         Item.height = 30;
         Item.useTime = 9;

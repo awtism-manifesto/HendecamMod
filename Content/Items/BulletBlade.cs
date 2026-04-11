@@ -18,20 +18,20 @@ public class BulletBlade : ModItem
         Item.useTime = 30;
         Item.useAnimation = 30;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.damage = 51;
         Item.knockBack = 4;
         Item.value = 458000;
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = SoundID.Item1;
         Item.useAmmo = AmmoID.Bullet;
-        Item.shoot = ModContent.ProjectileType<MinieProj>(); 
+        Item.shoot = ProjectileType<MinieProj>(); 
         Item.shootSpeed = 20f;
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ProjectileID.ChlorophyteBullet || type == ModContent.ProjectileType<ChloroShit>())
+        if (type == ProjectileID.ChlorophyteBullet || type == ProjectileType<ChloroShit>())
         {
             damage = (int)(damage * 0.25f);
         }

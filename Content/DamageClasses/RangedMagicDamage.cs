@@ -23,7 +23,7 @@ public class RangedMagicDamage : DamageClass
             return StatInheritanceData.None;
         if (damageClass == Throwing)
             return StatInheritanceData.None;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.None;
         return new StatInheritanceData(
             damageInheritance: 0f,

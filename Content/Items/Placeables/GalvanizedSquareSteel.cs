@@ -23,7 +23,7 @@ public class GalvanizedSquareSteel : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<GalvanizedSquareSteelPlaced>());
+        Item.DefaultToPlaceableTile(TileType<GalvanizedSquareSteelPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

@@ -22,7 +22,7 @@ public class LaserCharge : ModItem
         Item.knockBack = 0.5f;
         Item.value = 39;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<ChargeLaser>();
+        Item.shoot = ProjectileType<ChargeLaser>();
         Item.shootSpeed = 15f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

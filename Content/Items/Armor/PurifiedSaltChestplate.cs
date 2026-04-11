@@ -44,7 +44,7 @@ public class PurifiedSaltChestplate : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<PurifiedSaltFedora>() && legs.type == ModContent.ItemType<PurifiedSaltLeggings>();
+        return head.type == ItemType<PurifiedSaltFedora>() && legs.type == ItemType<PurifiedSaltLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -126,7 +126,7 @@ public class PurifiedSaltChestplate : ModItem
                     Player.GetSource_FromThis(),
                    Player.Center - new Vector2(Main.rand.Next(-150, 150), 940),
                     new Vector2(Main.rand.Next(-3, 3), 20f),
-                    ModContent.ProjectileType<PureSaltBoulder>(),
+                    ProjectileType<PureSaltBoulder>(),
                     baseDamage,
                     10.5f,
                     Player.whoAmI

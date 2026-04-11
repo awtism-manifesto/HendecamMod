@@ -31,7 +31,7 @@ public class TheSaltLick : ModItem
         Item.rare = ItemRarityID.Green; 
         Item.value = 105000; 
 
-        Item.shoot = ModContent.ProjectileType<SaltYoyo>(); 
+        Item.shoot = ProjectileType<SaltYoyo>(); 
         Item.shootSpeed = 16f; 		
     }
 

@@ -21,14 +21,14 @@ public class AstatineGlassSword : ModItem
         Item.useAnimation = 9;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 240;
         Item.knockBack = 11.5f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
         Item.buffType = BuffID.Bleeding;
-        Item.buffType = ModContent.BuffType<RadPoisoning3>();
+        Item.buffType = BuffType<RadPoisoning3>();
         Item.buffTime = 300;
         Item.useTurn = true;
     }
@@ -45,7 +45,7 @@ public class AstatineGlassSword : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
+        target.AddBuff(BuffType<RadPoisoning3>(), 300);
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

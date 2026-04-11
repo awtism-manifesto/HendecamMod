@@ -18,7 +18,7 @@ public class BlankFlag : ModItem
         Item.useTime = 15;
         Item.useAnimation = 15;
         Item.autoReuse = true;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.BlankFlagPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.BlankFlagPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

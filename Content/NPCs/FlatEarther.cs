@@ -49,7 +49,7 @@ public class FlatEarther : ModNPC
         AIType = NPCID.WalkingAntlion;
         AnimationType = NPCID.BaldZombie; 
         Banner = Type;
-        BannerItem = ModContent.ItemType<FlatEartherBanner>();
+        BannerItem = ItemType<FlatEartherBanner>();
     }
     public override void OnKill()
     {
@@ -57,11 +57,11 @@ public class FlatEarther : ModNPC
 
         
 
-        Projectile.NewProjectile(source, NPC.Center, Vector2.Zero * 0.01f, ModContent.ProjectileType<FlatExplosion>(), 67, 6f, Main.myPlayer);
+        Projectile.NewProjectile(source, NPC.Center, Vector2.Zero * 0.01f, ProjectileType<FlatExplosion>(), 67, 6f, Main.myPlayer);
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FragmentFlatEarth>(), 1, 1, 4));
+        npcLoot.Add(ItemDropRule.Common(ItemType<FragmentFlatEarth>(), 1, 1, 4));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

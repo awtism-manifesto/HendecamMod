@@ -16,7 +16,7 @@ public class PyriteBlessing : GlobalNPC
     {
         if (!NPC.downedBoss1)
         {
-            ModContent.GetInstance<PyriteSystem>().BlessWorldWithPyrite();
+            GetInstance<PyriteSystem>().BlessWorldWithPyrite();
         }
     }
 }
@@ -65,7 +65,7 @@ public class PyriteSystem : ModSystem
                 int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                 // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(4, 7), WorldGen.genRand.Next(7, 10), (ushort)ModContent.TileType<PyriteOreTile>());
+                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(4, 7), WorldGen.genRand.Next(7, 10), (ushort)TileType<PyriteOreTile>());
             }
         });
     }

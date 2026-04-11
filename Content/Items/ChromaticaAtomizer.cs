@@ -40,7 +40,7 @@ public class ChromaticaAtomizer : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<ChromaticaLaser>();
+        type = ProjectileType<ChromaticaLaser>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -70,7 +70,7 @@ public class NapalmDart : ModProjectile
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 1);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(Main.rand.Next(-2, 2), 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ModContent.ProjectileType<NapalmRanged>(), Projectile.damage = (int)(Projectile.damage * 0.3f), Projectile.knockBack);
+                ProjectileType<NapalmRanged>(), Projectile.damage = (int)(Projectile.damage * 0.3f), Projectile.knockBack);
         }
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.

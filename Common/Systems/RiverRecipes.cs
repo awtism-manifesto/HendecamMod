@@ -30,7 +30,7 @@ public class RiverRecipes : ModSystem
         fraudcopp.AddTile(TileID.Autohammer);
         fraudcopp.Register();
 
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             Recipe flamespectre = Recipe.Create(ItemID.SpectreBoots);
             flamespectre.AddIngredient(ItemID.FlameWakerBoots);
@@ -159,7 +159,7 @@ public class RiverRecipes : ModSystem
     {
 
 
-        RecipeGroup.recipeGroups[RecipeGroupID.Wood].ValidItems.Add(ModContent.ItemType<Pykrete>());
+        RecipeGroup.recipeGroups[RecipeGroupID.Wood].ValidItems.Add(ItemType<Pykrete>());
 
     }
 
@@ -178,7 +178,7 @@ public class RiverRecipes : ModSystem
                 recipe.DisableRecipe();
             }
 
-            if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+            if (GetInstance<HendecamConfig>().BootsTreeRework == true)
             {
                 if (recipe.HasIngredient(ItemID.RocketBoots) && recipe.HasResult(ItemID.SpectreBoots))
                 {
@@ -213,13 +213,13 @@ public class RiverRecipes : ModSystem
             {
 
 
-                recipe.AddIngredient(ModContent.ItemType<IQTest>());
+                recipe.AddIngredient(ItemType<IQTest>());
             }
             if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("AncientGadgets", out ModItem AncientGadgets))
             {
                 if (recipe.HasResult(AncientGadgets.Type))
                 {
-                    recipe.AddIngredient(ModContent.ItemType<MarksmanLaserSight>());
+                    recipe.AddIngredient(ItemType<MarksmanLaserSight>());
                     
                 }
 
@@ -228,7 +228,7 @@ public class RiverRecipes : ModSystem
             {
                 if (recipe.HasResult(MagmastoneRing.Type))
                 {
-                    recipe.AddIngredient(ModContent.ItemType<FireDiamond>(), 9);
+                    recipe.AddIngredient(ItemType<FireDiamond>(), 9);
 
                 }
 
@@ -237,10 +237,10 @@ public class RiverRecipes : ModSystem
             {
                 if (recipe.HasResult(Ultimatum.Type))
                 {
-                    recipe.AddIngredient(ModContent.ItemType<BigBuddy>());
-                    recipe.AddIngredient(ModContent.ItemType<IcicleMinigun>());
-                    recipe.AddIngredient(ModContent.ItemType<SolarRayRifle>());
-                    recipe.AddIngredient(ModContent.ItemType<BlackMamba>());
+                    recipe.AddIngredient(ItemType<BigBuddy>());
+                    recipe.AddIngredient(ItemType<IcicleMinigun>());
+                    recipe.AddIngredient(ItemType<SolarRayRifle>());
+                    recipe.AddIngredient(ItemType<BlackMamba>());
                 }
             }
 

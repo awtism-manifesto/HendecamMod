@@ -24,7 +24,7 @@ public class NightsFog : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
         Item.reuseDelay = 13;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 32;
         Item.knockBack = 0.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -39,7 +39,7 @@ public class NightsFog : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<FogSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FogSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.99f; // Speed of the projectiles the sword will shoot
 
        

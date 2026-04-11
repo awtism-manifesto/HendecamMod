@@ -17,7 +17,7 @@ public class ObsidianSword : ModItem
         Item.useAnimation = 14;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 40;
         Item.knockBack = 40.0f;

@@ -21,7 +21,7 @@ public class OilBlock : ModItem
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 1150;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.OilDeposit>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.OilDeposit>());
     }
 
     public override void AddRecipes()

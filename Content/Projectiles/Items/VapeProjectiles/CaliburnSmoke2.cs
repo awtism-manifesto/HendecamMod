@@ -23,7 +23,7 @@ public class CaliburnSmoke2 : ModProjectile
         Projectile.localNPCHitCooldown = 17;
 
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 80;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
         Projectile.tileCollide = false;

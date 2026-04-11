@@ -25,7 +25,7 @@ public class LycopiteOreTile : ModTile
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(255, 95, 66), Language.GetText("Lycopite Ore"));
 
-        DustType = (ModContent.DustType<LycopiteDust>());
+        DustType = (DustType<LycopiteDust>());
         HitSound = SoundID.Item50;
         MineResist = 2.75f;
         MinPick = 63;

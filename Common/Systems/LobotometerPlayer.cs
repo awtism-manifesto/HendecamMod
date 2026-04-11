@@ -158,7 +158,7 @@ namespace HendecamMod.Common.Systems
             try
             {
                 // Updated path to match where you moved it
-                frame = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/Lobotometer", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                frame = Request<Texture2D>("HendecamMod/Content/Effects/Lobotometer", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
 
                 if (frame != null && !frame.IsDisposed)
                 {

@@ -23,7 +23,7 @@ public class TitaniumVapeSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 20;
 
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 79;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
 

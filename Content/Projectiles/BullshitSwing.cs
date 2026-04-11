@@ -27,7 +27,7 @@ public class BullshitSwing : ModProjectile
         Projectile.width = 16;
         Projectile.height = 16;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 1500; // The projectile can hit 3 enemies.
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -196,12 +196,12 @@ public class BullshitSwing : ModProjectile
         target.AddBuff(BuffID.OnFire3, 444);
         target.AddBuff(BuffID.OnFire, 444);
         target.AddBuff(BuffID.TentacleSpike, 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 444);
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
-        target.AddBuff(ModContent.BuffType<Ligma>(), 444);
+        target.AddBuff(BuffType<RadPoisoning>(), 444);
+        target.AddBuff(BuffType<RadPoisoning2>(), 444);
+        target.AddBuff(BuffType<RadPoisoning3>(), 444);
+        target.AddBuff(BuffType<RadPoisoning4>(), 444);
+        target.AddBuff(BuffType<MoonBurn>(), 444);
+        target.AddBuff(BuffType<Ligma>(), 444);
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
@@ -218,12 +218,12 @@ public class BullshitSwing : ModProjectile
         target.AddBuff(BuffID.OnFire3, 444);
         target.AddBuff(BuffID.OnFire, 444);
         target.AddBuff(BuffID.TentacleSpike, 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 444);
-        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 444);
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 444);
-        target.AddBuff(ModContent.BuffType<Ligma>(), 444);
+        target.AddBuff(BuffType<RadPoisoning>(), 444);
+        target.AddBuff(BuffType<RadPoisoning2>(), 444);
+        target.AddBuff(BuffType<RadPoisoning3>(), 444);
+        target.AddBuff(BuffType<RadPoisoning4>(), 444);
+        target.AddBuff(BuffType<MoonBurn>(), 444);
+        target.AddBuff(BuffType<Ligma>(), 444);
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.BlackLightningHit,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);

@@ -15,7 +15,7 @@ public class FaradayMoonShot : ModProjectile
         Projectile.scale = 1.33f;
         Projectile.friendly = true;
         Projectile.penetrate = 1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 210;
@@ -30,7 +30,7 @@ public class FaradayMoonShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 300);
+        target.AddBuff(BuffType<MoonBurn>(), 300);
     }
 
     public override void AI()
@@ -50,7 +50,7 @@ public class FaradayMoonShot : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100);
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustType<MoonburnDust>(), 0f, 0f, 100);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                 fireDust.noGravity = true;
                 fireDust.velocity *= 1.05f;

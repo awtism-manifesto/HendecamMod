@@ -25,7 +25,7 @@ public class MintalRepeater : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item5;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.mana = 6;
        
         Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -47,7 +47,7 @@ public class MintalRepeater : ModItem
     {
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<MintalArrowProjectile>();
+            type = ProjectileType<MintalArrowProjectile>();
         }
     }
 

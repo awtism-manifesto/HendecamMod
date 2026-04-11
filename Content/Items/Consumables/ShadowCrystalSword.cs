@@ -14,13 +14,13 @@ public class ShadowCrystalSword : ModItem
         Item.width = 32;
         Item.height = 32;
         Item.value = Item.sellPrice(silver: 999);
-        Item.rare = ModContent.RarityType<Seizure>();
+        Item.rare = RarityType<Seizure>();
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 12;
         Item.useAnimation = 12;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 2510;
         Item.knockBack = 17.5f;

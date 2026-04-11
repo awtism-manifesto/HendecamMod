@@ -80,7 +80,7 @@ public class PlasticPants : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<PlasticHeadgear>() && body.type == ModContent.ItemType<PlasticChestplate>();
+        return head.type == ItemType<PlasticHeadgear>() && body.type == ItemType<PlasticChestplate>();
     }
 
     public override void UpdateArmorSet(Player player)

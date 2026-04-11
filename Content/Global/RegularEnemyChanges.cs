@@ -48,19 +48,19 @@ public class ProjKill : GlobalProjectile
     {
     public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) && projectile.type == ProjectileID.CursedFlameHostile)
+        if (NPC.AnyNPCs(NPCType<EyesOfGabriel>()) && projectile.type == ProjectileID.CursedFlameHostile)
             {
             projectile.Kill();
             }
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) && projectile.type == ProjectileID.EyeFire)
+        if (NPC.AnyNPCs(NPCType<EyesOfGabriel>()) && projectile.type == ProjectileID.EyeFire)
             {
             projectile.Kill();
             }
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) && projectile.type == ProjectileID.EyeLaser)
+        if (NPC.AnyNPCs(NPCType<EyesOfRaphael>()) && projectile.type == ProjectileID.EyeLaser)
             {
             projectile.Kill();
             }
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) && projectile.type == ProjectileID.DeathLaser)
+        if (NPC.AnyNPCs(NPCType<EyesOfRaphael>()) && projectile.type == ProjectileID.DeathLaser)
             {
             projectile.Kill();
             }
@@ -73,19 +73,19 @@ public class DustKill : ModSystem
         for (int i = 0; i < Main.maxDust; i++)
             {
             Dust d = Main.dust[i];
-            if (d.active && d.type == 75 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+            if (d.active && d.type == 75 && NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                 {
                 d.active = false;
                 }
-            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+            if (d.active && d.type == 5 && NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                 {
                 d.active = false;
                 }
-            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+            if (d.active && d.type == 5 && NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                 {
                 d.active = false;
                 }
-            if (d.active && d.type == 5 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+            if (d.active && d.type == 5 && NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                 {
                 d.active = false;
                 }
@@ -101,39 +101,39 @@ public class GoreKill : ModSystem
             Gore g = Main.gore[i];
             if (g.active)
                 {
-                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                if (g.type == 2 && NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                     {
                     g.active = false;
                     }
-                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (g.type == 2 && NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
                     g.active = false;
                     }
-                if (g.type == 2 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type == 2 && NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type >= 7 && g.type <= 10 && NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
                     g.active = false;
                     }
-                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (g.type >= 143 && g.type <= 146 && NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                     {
                     g.active = false;
                     }
@@ -164,11 +164,11 @@ public class HarpyBuff : GlobalProjectile
             Vector2 velocity = projectile.velocity.RotatedBy(MathHelper.ToRadians(20));
             Vector2 Peanits = projectile.Center;
             Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<HarpyFeatherClone>(), (int)(projectile.damage * 0.75f), projectile.knockBack, projectile.owner);
+                ProjectileType<HarpyFeatherClone>(), (int)(projectile.damage * 0.75f), projectile.knockBack, projectile.owner);
             Vector2 velocity2 = projectile.velocity.RotatedBy(MathHelper.ToRadians(-20));
             Vector2 Peanits2 = projectile.Center;
             Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<HarpyFeatherClone>(), (int)(projectile.damage * 0.75f), projectile.knockBack, projectile.owner);
+            ProjectileType<HarpyFeatherClone>(), (int)(projectile.damage * 0.75f), projectile.knockBack, projectile.owner);
 
             tickCounter = 0;
             nextSpawnTick = 99999;
@@ -210,7 +210,7 @@ public class FrostCoreTack : GlobalProjectile
                     projectile.GetSource_FromThis(),
                     position,
                     velocity,
-                    ModContent.ProjectileType<FrostBeamClone>(),
+                    ProjectileType<FrostBeamClone>(),
                     projectile.damage,
                     projectile.knockBack,
                     projectile.owner

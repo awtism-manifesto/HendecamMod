@@ -32,7 +32,7 @@ public class SawedOffSparkplug : ModItem
         Item.ArmorPenetration = 5;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<OilBallRanged>();
+        Item.shoot = ProjectileType<OilBallRanged>();
 
         Item.shootSpeed = 17.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
@@ -40,7 +40,7 @@ public class SawedOffSparkplug : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<DragonSpawn>();
+        type = ProjectileType<DragonSpawn>();
         SoundEngine.PlaySound(SoundID.Item38, player.position);
     }
 
@@ -61,15 +61,15 @@ public class SawedOffSparkplug : ModItem
             new3Velocity *= 1f - Main.rand.NextFloat(0.45f);
             new4Velocity *= 1f - Main.rand.NextFloat(0.25f);
 
-            type = ModContent.ProjectileType<DragonSpawn>();
+            type = ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawn>();
+            type = ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawn>();
+            type = ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<OilBallRanged>();
+            type = ProjectileType<OilBallRanged>();
             Projectile.NewProjectileDirect(source, position, new4Velocity, type, (int)(damage * 1.5f), knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawn>();
+            type = ProjectileType<DragonSpawn>();
             Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
         }
 

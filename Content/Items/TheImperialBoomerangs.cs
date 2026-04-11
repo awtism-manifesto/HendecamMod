@@ -28,7 +28,7 @@ public class TheImperialBoomerangs : ModItem
         Item.rare = ItemRarityID.Green; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 6); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<KingBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<KingBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
     }
 

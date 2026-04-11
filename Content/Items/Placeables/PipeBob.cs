@@ -17,7 +17,7 @@ public class PipeBob : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PipeBobPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.PipeBobPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

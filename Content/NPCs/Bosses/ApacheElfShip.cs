@@ -83,7 +83,7 @@ public class ApacheElfShip : ModNPC
         LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
         // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
-        int itemType = ModContent.ItemType<fivenato>();
+        int itemType = ItemType<fivenato>();
         var parameters = new DropOneByOne.Parameters
         {
             ChanceNumerator = 1,
@@ -98,7 +98,7 @@ public class ApacheElfShip : ModNPC
 
         npcLoot.Add(notExpertRule);
 
-        npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AlpineTreasureBag>()));
+        npcLoot.Add(ItemDropRule.BossBag(ItemType<AlpineTreasureBag>()));
 
         // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
 
@@ -112,14 +112,14 @@ public class ApacheElfShip : ModNPC
 
 
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
-        NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
+        NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, NPCType<Alpine>(), NPC.whoAmI);
         if (!BossDownedSystem.downedApacheElfShip)
         {
             BossDownedSystem.downedApacheElfShip = true;
 
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
-                ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
+                GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
             }
         }
 
@@ -141,7 +141,7 @@ public class ApacheElfShip : ModNPC
             {
                 var source2 = NPC.GetSource_FromAI();
                 AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
-                NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
+                NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, NPCType<Alpine>(), NPC.whoAmI);
             }
         }
 
@@ -233,7 +233,7 @@ public class ApacheElfShip : ModNPC
                                     SoundEngine.PlaySound(SoundID.Item42, position1);
                                     SoundEngine.PlaySound(SoundID.Item99, position1);
                                     SoundEngine.PlaySound(SoundID.Item114, position1);
-                                    Projectile.NewProjectile(source, position1, direction1 * 0.01f, ModContent.ProjectileType<ApexPlasmaBulletHostile>(), 75, 0f, Main.myPlayer);
+                                    Projectile.NewProjectile(source, position1, direction1 * 0.01f, ProjectileType<ApexPlasmaBulletHostile>(), 75, 0f, Main.myPlayer);
                                     await Task.Delay(50 / Difficulty);
                                 }
 

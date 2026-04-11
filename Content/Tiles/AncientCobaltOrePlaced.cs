@@ -80,7 +80,7 @@ public class AncientCobaltOrePlaced : ModTile
                     int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                     // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<AncientCobaltOrePlaced>());
+                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)TileType<AncientCobaltOrePlaced>());
                 }
             });
         }
@@ -131,7 +131,7 @@ public class AncientCobaltOrePlaced : ModTile
                 Tile tile = Framing.GetTileSafely(x, y);
                 if (tile.HasTile && tile.TileType == TileID.Mud)
                 {
-                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(6, 8), ModContent.TileType<AncientCobaltOrePlaced>());
+                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(6, 8), TileType<AncientCobaltOrePlaced>());
                 }
                 // Alternately, we could check the tile already present in the coordinate we are interested.
                 // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.

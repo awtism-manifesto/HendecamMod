@@ -42,7 +42,7 @@ public class PlatinumChestPlaced : ModTile
 
         // Style 1 is ExampleChest when locked. We want that tile style to drop the ExampleChest item as well. Use the Chest Lock item to lock this chest.
         // No item places ExampleChest in the locked style, so the automatically determined item drop is unknown, this is why RegisterItemDrop is necessary in this situation. 
-        RegisterItemDrop(ModContent.ItemType<PlatinumChest>(), 1);
+        RegisterItemDrop(ItemType<PlatinumChest>(), 1);
         // Sometimes mods remove content, such as tile styles, or tiles accidentally get corrupted. We can, if desired, register a fallback item for any tile style that doesn't have an automatically determined item drop. This is done by omitting the tileStyles parameter.
         RegisterItemDrop(ItemID.Chest);
 
@@ -218,7 +218,7 @@ public class PlatinumChestPlaced : ModTile
             if (isLocked)
             {
                 // Make sure to change the code in UnlockChest if you don't want the chest to only unlock at night.
-                int key = ModContent.ItemType<PlatinumKey>();
+                int key = ItemType<PlatinumKey>();
                 if (player.HasItemInInventoryOrOpenVoidBag(key) && Chest.Unlock(left, top) && player.ConsumeItem(key, includeVoidBag: true))
                 {
                     if (Main.netMode == NetmodeID.MultiplayerClient)
@@ -281,10 +281,10 @@ public class PlatinumChestPlaced : ModTile
             player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : defaultName;
             if (player.cursorItemIconText == defaultName)
             {
-                player.cursorItemIconID = ModContent.ItemType<PlatinumChest>();
+                player.cursorItemIconID = ItemType<PlatinumChest>();
                 if (Main.tile[left, top].TileFrameX / 36 == 1)
                 {
-                    player.cursorItemIconID = ModContent.ItemType<PlatinumKey>();
+                    player.cursorItemIconID = ItemType<PlatinumKey>();
                 }
 
                 player.cursorItemIconText = "";

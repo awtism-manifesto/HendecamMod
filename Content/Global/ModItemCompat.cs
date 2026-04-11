@@ -24,7 +24,7 @@ public class BowMage1 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 
@@ -47,7 +47,7 @@ public class BowMage12 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 
@@ -72,7 +72,7 @@ public class BowMage123 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 public class DoorStupid1 : GlobalItem
@@ -189,7 +189,7 @@ public class ConsolariaForSomeReason : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
         item.useTime = 10;
         item.useAnimation = 20;
         item.reuseDelay = 15;
@@ -216,7 +216,7 @@ public class Arse : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
        
     }
 }
@@ -242,7 +242,7 @@ public class Arse2 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
 
     }
 }
@@ -267,7 +267,7 @@ public class StupidSand : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<StupidDamage>();
+        item.DamageType = GetInstance<StupidDamage>();
 
     }
 }

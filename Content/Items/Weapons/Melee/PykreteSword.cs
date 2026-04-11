@@ -23,7 +23,7 @@ public class PykreteSword : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        Item.shoot = ModContent.ProjectileType<FrostySpark>();
+        Item.shoot = ProjectileType<FrostySpark>();
         Item.shootSpeed = 4.25f;
         Item.useTurn = true;
     }

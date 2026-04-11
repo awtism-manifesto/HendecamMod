@@ -12,7 +12,7 @@ public class MagUrLazy : GlobalNPC
         {
         if (npc.type == NPCID.ServantofCthulhu)
             {
-            if (NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+            if (NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                 {
                 npc.SetDefaults(0);
                 npc.active = false;
@@ -23,12 +23,12 @@ public class MagUrLazy : GlobalNPC
         {
         if (npc.type == NPCID.Spazmatism)
             {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ElementalFlameCore>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ElementalFlameCore>(), chanceDenominator: 2));
             }
 
         if (npc.type == NPCID.MoonLordCore)
             {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LeechRepellant>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LeechRepellant>(), chanceDenominator: 2));
             }
 
         if (npc.type == NPCID.WallofFlesh)
@@ -38,13 +38,13 @@ public class MagUrLazy : GlobalNPC
 
         if (npc.type == NPCID.ElfCopter)
             {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CandyHeart>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 10));
             }
 
         if (npc.type == NPCID.ElfArcher)
             {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CandyHeart>(), chanceDenominator: 10));
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CandyCaneCompoundBow>(), chanceDenominator: 20));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyCaneCompoundBow>(), chanceDenominator: 20));
             }
         }
     }

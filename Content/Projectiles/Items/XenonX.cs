@@ -15,7 +15,7 @@ public class XenonX : ModProjectile
         Projectile.width = 108;
         Projectile.height = 108;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = -1;
         Projectile.timeLeft = 60;
         Projectile.tileCollide = false;
@@ -33,7 +33,7 @@ public class XenonX : ModProjectile
     }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Stamped>(), 360);
+        target.AddBuff(BuffType<Stamped>(), 360);
     }
 
     public override void AI()

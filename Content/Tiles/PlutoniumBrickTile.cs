@@ -7,9 +7,9 @@ public class PlutoniumBrickTile : ModTile
         Main.tileSolid[Type] = true;
         Main.tileMergeDirt[Type] = true;
         Main.tileBlockLight[Type] = true;
-        Main.tileMerge[ModContent.TileType<AstatineBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<LycopiteBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<UraniumBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<AstatineBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<LycopiteBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<UraniumBrickTile>()][Type] = true;
         Main.tileShine[Type] = 500;
         DustType = DustID.PurpleTorch;
         HitSound = SoundID.Tink;

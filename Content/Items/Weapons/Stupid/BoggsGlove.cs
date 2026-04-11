@@ -19,7 +19,7 @@ public class BoggsGlove : ModItem
         Item.autoReuse = true;
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 105; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.

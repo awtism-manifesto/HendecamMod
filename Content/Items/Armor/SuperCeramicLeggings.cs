@@ -43,7 +43,7 @@ public class SuperCeramicLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<SuperCeramicChestplate>() && head.type == ModContent.ItemType<SuperCeramicFedora>();
+        return body.type == ItemType<SuperCeramicChestplate>() && head.type == ItemType<SuperCeramicFedora>();
     }
 
     public override void UpdateEquip(Player player)

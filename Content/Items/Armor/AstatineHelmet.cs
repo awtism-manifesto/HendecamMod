@@ -56,7 +56,7 @@ public class AstatineHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<AstatineBreastplate>() && legs.type == ModContent.ItemType<AstatineGreaves>();
+        return body.type == ItemType<AstatineBreastplate>() && legs.type == ItemType<AstatineGreaves>();
     }
 
     public override void UpdateEquip(Player player)

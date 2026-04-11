@@ -7,7 +7,7 @@ public class MintSlimeBanner : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<EnemyBanner>());
+        Item.DefaultToPlaceableTile(TileType<EnemyBanner>());
         Item.width = 10;
         Item.height = 24;
         Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 10));

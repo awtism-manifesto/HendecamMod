@@ -52,7 +52,7 @@ public class RednecksRevenge : ModItem
         if (player.altFunctionUse == 2)
         {
             Item.noUseGraphic = true;
-            int proj = Projectile.NewProjectile(source, position, velocity * 1.1f, ModContent.ProjectileType<RedneckShovelHallow>(), (int)(damage * 1.5f), knockback, player.whoAmI);
+            int proj = Projectile.NewProjectile(source, position, velocity * 1.1f, ProjectileType<RedneckShovelHallow>(), (int)(damage * 1.5f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
             SoundEngine.PlaySound(SoundID.Item1, player.position);
 

@@ -23,7 +23,7 @@ public class MeleeStupidDamage : DamageClass
             return StatInheritanceData.Full;
         if (damageClass == Throwing)
             return StatInheritanceData.None;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.Full;
         return new StatInheritanceData(
             damageInheritance: 0f,
@@ -39,7 +39,7 @@ public class MeleeStupidDamage : DamageClass
         // This method allows you to make your damage class benefit from and be able to activate other classes' effects (e.g. Spectre bolts, Magma Stone) based on what returns true.
         // Note that unlike our stat inheritance methods up above, you do not need to account for universal bonuses in this method.
         // For this example, we'll make our class able to activate melee- and magic-specifically effects.
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
         if (damageClass == Melee)
             return true;
@@ -53,7 +53,7 @@ public class MeleeStupidDamage : DamageClass
             return true;
         if (damageClass == Melee)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;

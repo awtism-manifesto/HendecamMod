@@ -45,7 +45,7 @@ public class UraniumLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<UraniumHelmet>() && body.type == ModContent.ItemType<UraniumChestplate>();
+        return head.type == ItemType<UraniumHelmet>() && body.type == ItemType<UraniumChestplate>();
     }
 
     public override void UpdateEquip(Player player)

@@ -11,7 +11,7 @@ public class MorbiumOre : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<MorbiumOrePlaced>());
+        Item.DefaultToPlaceableTile(TileType<MorbiumOrePlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Yellow;

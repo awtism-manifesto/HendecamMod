@@ -22,7 +22,7 @@ public class FrozenBullet : ModItem
         Item.knockBack = 0.5f;
         Item.value = 14;
 
-        Item.shoot = ModContent.ProjectileType<FrozenBulletProj>();
+        Item.shoot = ProjectileType<FrozenBulletProj>();
         Item.shootSpeed = 3.5f;
         Item.ammo = AmmoID.Bullet;
     }

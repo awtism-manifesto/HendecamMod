@@ -23,7 +23,7 @@ public class CopperVapeSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 25;
        
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 39;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
     }

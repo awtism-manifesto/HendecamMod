@@ -34,12 +34,12 @@ public class Sunrise : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
-        Item.shoot = ModContent.ProjectileType<SunDart>();
+        Item.shoot = ProjectileType<SunDart>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SunDart>();
+        type = ProjectileType<SunDart>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

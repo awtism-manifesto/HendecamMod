@@ -22,7 +22,7 @@ public class DvdLogo : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 155;
         Item.knockBack = 6;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -32,7 +32,7 @@ public class DvdLogo : ModItem
         Item.rare = ItemRarityID.Cyan;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<DvdBlue>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<DvdBlue>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

@@ -22,7 +22,7 @@ public class TitaniumVape : ModItem
         Item.useAnimation = 24;
         Item.autoReuse = true;
         Item.reuseDelay = 5;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 49;
         Item.knockBack = 0.33f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class TitaniumVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TitaniumVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TitaniumVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.95f; // Speed of the projectiles the sword will shoot
 
        

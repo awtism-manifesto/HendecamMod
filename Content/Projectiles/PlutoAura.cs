@@ -23,7 +23,7 @@ public class PlutoAura : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 90);
+        target.AddBuff(BuffType<RadPoisoning2>(), 90);
     }
 
     public override void AI()

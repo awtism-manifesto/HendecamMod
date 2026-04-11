@@ -53,7 +53,7 @@ public class MorbiumMask : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<MorbiumPlatemail>() && legs.type == ModContent.ItemType<MorbiumGreaves>();
+        return body.type == ItemType<MorbiumPlatemail>() && legs.type == ItemType<MorbiumGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -44,7 +44,7 @@ public class FerroWhipSmooth : ModProjectile
     {
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
-        target.AddBuff(ModContent.BuffType<SmoothTag>(), 300);
+        target.AddBuff(BuffType<SmoothTag>(), 300);
         target.AddBuff(BuffID.Oiled, 300);
 
         Projectile.damage = (int)(Projectile.damage * 0.5f); // Multihit penalty. Decrease the damage the more enemies the whip hits.

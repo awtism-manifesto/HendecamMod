@@ -22,7 +22,7 @@ public class ToxicBullet : ModItem
         Item.knockBack = 0.5f;
         Item.value = 36;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ModContent.ProjectileType<PoisonBullet>();
+        Item.shoot = ProjectileType<PoisonBullet>();
         Item.shootSpeed = 5f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

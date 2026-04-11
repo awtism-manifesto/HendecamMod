@@ -43,7 +43,7 @@ public class FissilePurple : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 255);
+        target.AddBuff(BuffType<RadPoisoning2>(), 255);
         Projectile.PrepareBombToBlow();
     }
 
@@ -67,7 +67,7 @@ public class FissilePurple : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.22f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.22f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 1.15f;
@@ -120,20 +120,20 @@ public class FissilePurple : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100);
             fireDust.velocity *= 3f;
         }
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 8; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2f);
             fireDust.noGravity = true;
             fireDust.velocity *= 3f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100);
             fireDust.velocity *= 1f;
         }
         // Rocket II explosion that damages tiles.

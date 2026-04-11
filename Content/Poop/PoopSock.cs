@@ -11,7 +11,7 @@ public class PoopSock : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<SockPoop>(), 20, 2, 7);
+        Item.DefaultToWhip(ProjectileType<SockPoop>(), 20, 2, 7);
         Item.rare = ItemRarityID.White;
         Item.damage = 11;
         Item.useTime = 20;
@@ -20,7 +20,7 @@ public class PoopSock : ModItem
         Item.width = 14;
         Item.height = 14;
         Item.value = 1;
-        Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Item.DamageType = GetInstance<SummonStupidDamage>();
     }
     public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)

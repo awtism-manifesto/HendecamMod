@@ -29,14 +29,14 @@ public class SmallSausageSpammer : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item61;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 40; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Sausage>();
+        Item.shoot = ProjectileType<Sausage>();
 
         Item.shootSpeed = 18.15f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -52,7 +52,7 @@ public class SmallSausageSpammer : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Sausage>();
+        type = ProjectileType<Sausage>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

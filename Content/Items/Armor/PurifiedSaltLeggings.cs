@@ -45,7 +45,7 @@ public class PurifiedSaltLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PurifiedSaltChestplate>() && head.type == ModContent.ItemType<PurifiedSaltFedora>();
+        return body.type == ItemType<PurifiedSaltChestplate>() && head.type == ItemType<PurifiedSaltFedora>();
     }
 
     public override void UpdateEquip(Player player)

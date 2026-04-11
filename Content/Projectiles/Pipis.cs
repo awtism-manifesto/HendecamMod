@@ -9,7 +9,7 @@ public class Pipis : ModProjectile
         Projectile.width = 30;
         Projectile.height = 30;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 1;
         Projectile.timeLeft = 330;
         Projectile.tileCollide = true;
@@ -22,39 +22,39 @@ public class Pipis : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(40));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(80));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(120));
         Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(160));
         Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(200));
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity7 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(240));
         Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity8 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(280));
         Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity9 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(320));
         Vector2 Peanits9 = Projectile.Center - new Vector2(Main.rand.NextFloat(-4, 4));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits9, velocity9,
-            ModContent.ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<SpamtonHead>(), (int)(Projectile.damage * 0.25f), Projectile.knockBack, Projectile.owner);
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)

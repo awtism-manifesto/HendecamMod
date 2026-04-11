@@ -38,7 +38,7 @@ public class TrippyYoyo : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(-5, 5);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<BoomShroom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
 
             tickCounter = 0;
             nextSpawnTick = Main.rand.Next(27, 28);
@@ -58,7 +58,7 @@ public class TrippyYoyo : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.2f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.2f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(2) * 0.1f;
                 chudDust.velocity *= 0.25f;
             }

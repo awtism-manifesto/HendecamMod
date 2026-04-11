@@ -14,7 +14,7 @@ public class ZazaDart : ModItem
     public override void SetDefaults()
     {
         Item.damage = 8; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
 
         Item.width = 13;
         Item.height = 13;
@@ -23,7 +23,7 @@ public class ZazaDart : ModItem
         Item.knockBack = 1.5f;
         Item.value = 19;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ModContent.ProjectileType<WeedDart>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<WeedDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 4.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

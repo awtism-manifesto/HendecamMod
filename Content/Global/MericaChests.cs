@@ -13,7 +13,7 @@ public class MeAndMagAreFuckingLazy : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<ImprovisedPistol>(), ModContent.ItemType<FlippingBottle>(), ItemID.Bass];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<ImprovisedPistol>(), ItemType<FlippingBottle>(), ItemID.Bass];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -69,7 +69,7 @@ public class SigmaChests : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<TorchSong>(), ModContent.ItemType<BallisticKnife>(), ModContent.ItemType<HarryPotter>()];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<TorchSong>(), ItemType<BallisticKnife>(), ItemType<HarryPotter>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -125,7 +125,7 @@ public class WattaChests : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<TheFishStick>(), ItemID.Bass, ModContent.ItemType<StarfishOnAString>()];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<TheFishStick>(), ItemID.Bass, ItemType<StarfishOnAString>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -181,7 +181,7 @@ public class TreeChests : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<ThePeoplesPitchfork>()];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<ThePeoplesPitchfork>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -237,7 +237,7 @@ public class FuckDesertChests : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<SaltPendant>(), ModContent.ItemType<MandibleStaff>(), ModContent.ItemType<Macuahuitl>()];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<SaltPendant>(), ItemType<MandibleStaff>(), ItemType<Macuahuitl>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
@@ -293,7 +293,7 @@ public class UrDeadLolXD : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ModContent.ItemType<PocketMortar>(), ModContent.ItemType<TheMonkeysPaw>(), ModContent.ItemType<LuckyCigarette>()];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<PocketMortar>(), ItemType<TheMonkeysPaw>(), ItemType<LuckyCigarette>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 

@@ -54,7 +54,7 @@ public class ArchangelHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<ArchangelChestguard>() && legs.type == ModContent.ItemType<ArchangelGreaves>();
+        return body.type == ItemType<ArchangelChestguard>() && legs.type == ItemType<ArchangelGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

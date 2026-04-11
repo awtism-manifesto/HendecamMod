@@ -53,7 +53,7 @@ public class CaptainsCannon : ModItem
             Item.shootSpeed = 17f;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.None;
-            Item.shoot = ModContent.ProjectileType<CaptainBall>();
+            Item.shoot = ProjectileType<CaptainBall>();
           
         }
         else
@@ -80,9 +80,9 @@ public class CaptainsCannon : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            type = ModContent.ProjectileType<CaptainBall>();
+            type = ProjectileType<CaptainBall>();
         }
-        if (type == ModContent.ProjectileType<CaptainBall>())
+        if (type == ProjectileType<CaptainBall>())
         {
             damage = damage * 5;
         }

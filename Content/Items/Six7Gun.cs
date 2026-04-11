@@ -34,14 +34,14 @@ public class Six7Gun : ModItem
 
         Item.ArmorPenetration = 5;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Six>();
+        Item.shoot = ProjectileType<Six>();
 
         Item.shootSpeed = 11.67f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -68,7 +68,7 @@ public class Six7Gun : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.25f));
 
-            type = ModContent.ProjectileType<Six>();
+            type = ProjectileType<Six>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1f), knockback, player.whoAmI);
@@ -78,7 +78,7 @@ public class Six7Gun : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-0.25f));
 
-            type = ModContent.ProjectileType<Seven>();
+            type = ProjectileType<Seven>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1f), knockback, player.whoAmI);

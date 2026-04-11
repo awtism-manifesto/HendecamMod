@@ -26,7 +26,7 @@ public class PromethiumSword : ModItem
         Item.rare = ItemRarityID.Purple;
         Item.value = 13200000;
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<PromethiumSwing>();
+        Item.shoot = ProjectileType<PromethiumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -42,9 +42,9 @@ public class PromethiumSword : ModItem
         Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(11.33f));
         Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
         Vector2 new3Velocity = velocity.RotatedBy(MathHelper.ToRadians(-11.33f));
-        Projectile.NewProjectileDirect(source, position, newVelocity, ModContent.ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, position, new2Velocity, ModContent.ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
-        Projectile.NewProjectileDirect(source, position, new3Velocity, ModContent.ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, newVelocity, ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, new2Velocity, ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
+        Projectile.NewProjectileDirect(source, position, new3Velocity, ProjectileType<PrometheumStar>(), (int)(damage * 0.67f), knockback, player.whoAmI);
         SoundEngine.PlaySound(SoundID.Item90, player.position);
 
         return base.Shoot(player, source, position, velocity, type, damage, knockback);

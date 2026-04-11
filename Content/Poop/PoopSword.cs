@@ -14,7 +14,7 @@ public class PoopSword : ModItem
     public override void SetDefaults()
     {
         Item.damage = 11;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.width = 40;
         Item.height = 40;
         Item.useTime = 17;
@@ -26,7 +26,7 @@ public class PoopSword : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        Item.shoot = ModContent.ProjectileType<PooShit>();
+        Item.shoot = ProjectileType<PooShit>();
         Item.shootSpeed = 5.75f;
     }
     public float LobotometerCost = 3f;

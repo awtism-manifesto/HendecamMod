@@ -26,7 +26,7 @@ public class ThrowablePoop : ModItem
         Item.knockBack = 1.75f;
         Item.value = 3;
         Item.rare = ItemRarityID.White;
-        Item.shoot = ModContent.ProjectileType<ThrownPoop>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<ThrownPoop>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 16.65f; // The speed of the projectile.
     }
 

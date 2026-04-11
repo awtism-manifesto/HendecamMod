@@ -34,7 +34,7 @@ public class AzuriteDualStaff : ModItem
 
         Item.value = 215000;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<AzuriteBeam>();
+        Item.shoot = ProjectileType<AzuriteBeam>();
         Item.shootSpeed = 12.5f;
     }
 
@@ -50,7 +50,7 @@ public class AzuriteDualStaff : ModItem
         }
         else if (shotCounter == 2)
         {
-            type = ModContent.ProjectileType<AzuriteBeamBackwards>();
+            type = ProjectileType<AzuriteBeamBackwards>();
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(180f));
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 

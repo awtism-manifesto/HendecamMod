@@ -20,7 +20,7 @@ public class TheStickedBrick : ModItem
         Item.useAnimation = 31;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 1;
         Item.knockBack = 25.75f;
         Item.ChangePlayerDirectionOnShoot = true;

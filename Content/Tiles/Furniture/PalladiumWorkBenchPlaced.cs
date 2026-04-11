@@ -16,7 +16,7 @@ public class PalladiumWorkBenchPlaced : ModTile
         TileID.Sets.IgnoredByNpcStepUp[Type] = true;
 
         DustType = DustID.Palladium;
-        AdjTiles = [TileID.WorkBenches, ModContent.TileType<CobaltWorkBenchPlaced>()] ;
+        AdjTiles = [TileID.WorkBenches, TileType<CobaltWorkBenchPlaced>()] ;
         ;
 
         TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);

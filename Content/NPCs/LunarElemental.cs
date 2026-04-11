@@ -36,7 +36,7 @@ public class LunarElemental : ModNPC
         AIType = NPCID.GraniteFlyer;
         AnimationType = NPCID.GraniteFlyer;
         Banner = Type;
-        BannerItem = ModContent.ItemType<LunarElementalBanner>();
+        BannerItem = ItemType<LunarElementalBanner>();
     }
 
     public override void AI()
@@ -46,7 +46,7 @@ public class LunarElemental : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), 1, 2, 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<LunarGem>(), 1, 2, 5));
         npcLoot.Add(ItemDropRule.Common(ItemID.CelestialMagnet, 20));
     }
 

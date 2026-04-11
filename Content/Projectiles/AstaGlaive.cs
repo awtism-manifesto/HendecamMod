@@ -17,7 +17,7 @@ public class AstaGlaive : ModProjectile
         Projectile.tileCollide = false;
         Projectile.arrow = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.timeLeft = 60;
         Projectile.penetrate = 7;
         Projectile.usesLocalNPCImmunity = true;
@@ -29,13 +29,13 @@ public class AstaGlaive : ModProjectile
     {
         for (int i = 0; i < 5; i++)
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<AstatineDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<AstatineDust>());
             dust.noGravity = true;
             dust.velocity *= 5.5f;
             dust.scale *= 1f;
         }
 
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 180);
+        target.AddBuff(BuffType<RadPoisoning3>(), 180);
     }
 
     public override void AI()
@@ -53,7 +53,7 @@ public class AstaGlaive : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.95f);
+            Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustType<AstatineDust>(), 0f, 0f, 100, default, 0.95f);
             fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
             fireDust.noGravity = true;
             fireDust.velocity *= 1.35f;

@@ -23,7 +23,7 @@ public class MintalOre : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<MintalOrePlaced>());
+        Item.DefaultToPlaceableTile(TileType<MintalOrePlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Orange;

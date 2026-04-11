@@ -35,7 +35,7 @@ public class IForgor : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.BushPlane>();
+        type = ProjectileType<Projectiles.BushPlane>();
         SoundEngine.PlaySound(SoundID.Item163, player.position);
     }
 

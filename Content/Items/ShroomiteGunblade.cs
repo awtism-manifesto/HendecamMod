@@ -32,7 +32,7 @@ public class ShroomiteGunblade : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.damage = 108; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -76,7 +76,7 @@ public class ShroomiteGunblade : ModItem
         if (player.altFunctionUse == 2)
         {
             float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
-            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<GunbladeSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ProjectileType<GunbladeSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
             NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
             SoundEngine.PlaySound(SoundID.Item71, player.position);
@@ -89,7 +89,7 @@ public class ShroomiteGunblade : ModItem
 
         if (Main.rand.NextBool(3))
         {
-            type = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<GunbladeSpore>(), damage, knockback, player.whoAmI);
+            type = Projectile.NewProjectile(source, position, velocity, ProjectileType<GunbladeSpore>(), damage, knockback, player.whoAmI);
             return false;
         }
 

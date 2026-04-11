@@ -84,11 +84,11 @@ public class AstatineAnnihilator : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 300);
+        target.AddBuff(BuffType<RadPoisoning3>(), 300);
 
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<AstatineDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<AstatineDust>());
             dust.noGravity = true;
             dust.velocity *= 5.5f;
             dust.scale *= 0.9f;

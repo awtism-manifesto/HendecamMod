@@ -14,7 +14,7 @@ public class FlyingDutchmanIcon : ModItem
     {
         Item.width = 32;
         Item.height = 32;
-        Item.rare = ModContent.RarityType<DarkGreen>();
+        Item.rare = RarityType<DarkGreen>();
         Item.value = 750000;
         Item.maxStack = 9999;
     }

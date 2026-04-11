@@ -61,11 +61,11 @@ public class HeavenCloud : ModNPC
                 Vector2 targetPosition = Main.player[NPC.target].Center;
                 Vector2 direction = targetPosition - position;
                 direction.Normalize();
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
                     {
 
                     }
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
 
                     }

@@ -24,17 +24,17 @@ public class BlackHole : ModItem
         Item.useAnimation = 111;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 6666666;
         Item.knockBack = 999;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.ArmorPenetration = 69420;
         Item.value = Item.buyPrice(gold: 19999999);
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<BlackHoleProj>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<BlackHoleProj>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

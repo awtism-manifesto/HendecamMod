@@ -168,7 +168,7 @@ public class BoomShroomMage : ModProjectile
         // Spawn a bunch of smoke dusts.
         for (int i = 0; i < 15; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 1.1f);
+            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<LycopiteDust>(), 0f, 0f, 100, default, 1.1f);
             smokeDust.velocity *= 5f;
         }
 

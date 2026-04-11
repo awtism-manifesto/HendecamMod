@@ -25,7 +25,7 @@ public class DeliriantDagger : ModItem
         Item.rare = ItemRarityID.Cyan;
         Item.value = Item.sellPrice(0, 20, 0, 10);
 
-        Item.shoot = ModContent.ProjectileType<DaggerProj>(); // The projectile is what makes a shortsword work
+        Item.shoot = ProjectileType<DaggerProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 6.66f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 
@@ -42,7 +42,7 @@ public class DeliriantDagger : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            int proj = Projectile.NewProjectile(source, position, velocity * 3.1f, ModContent.ProjectileType<DaggerProjThrown>(), (int)(damage * 0.85f), knockback, player.whoAmI);
+            int proj = Projectile.NewProjectile(source, position, velocity * 3.1f, ProjectileType<DaggerProjThrown>(), (int)(damage * 0.85f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<DeliriantComboSetup>().fromtheDeliriantDagger = true;
             return false;
         }
@@ -52,7 +52,7 @@ public class DeliriantDagger : ModItem
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360f));
 
-            int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, ModContent.ProjectileType<DaggerProj>(), (int)(damage * 0.85f), knockback, player.whoAmI);
+            int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, ProjectileType<DaggerProj>(), (int)(damage * 0.85f), knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<DeliriantComboSetup>().fromtheDeliriantDagger = false;
         }
 

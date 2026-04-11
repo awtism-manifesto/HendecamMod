@@ -18,7 +18,7 @@ public class Bullshit3 : ModItem
         Item.useAnimation = 15;
         Item.autoReuse = true;
         Item.scale = 1.2f;
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 125;
         Item.knockBack = 10.5f;
         Item.mana = 7;
@@ -26,7 +26,7 @@ public class Bullshit3 : ModItem
         Item.value = Item.buyPrice(gold: 205);
         Item.rare = ItemRarityID.Cyan;
         Item.UseSound = SoundID.Item8;
-        Item.shoot = ModContent.ProjectileType<EmblemProj>();
+        Item.shoot = ProjectileType<EmblemProj>();
         Item.shootSpeed = 14.25f;
     }
     public float LobotometerCost = 6f;

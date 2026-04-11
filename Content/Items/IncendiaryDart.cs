@@ -22,7 +22,7 @@ public class IncendiaryDart : ModItem
         Item.knockBack = 2f;
         Item.value = 60;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<NapalmDart>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<NapalmDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 4.9f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

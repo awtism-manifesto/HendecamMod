@@ -23,7 +23,7 @@ public class TungstenVapeSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 23;
        
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 48;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
     }

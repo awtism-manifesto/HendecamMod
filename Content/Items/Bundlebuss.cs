@@ -37,10 +37,10 @@ public class Bundlebuss : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<MusketBallSpinny>();
+            type = ProjectileType<MusketBallSpinny>();
         }
 
-        if (type == ModContent.ProjectileType<MusketBallSpinny>())
+        if (type == ProjectileType<MusketBallSpinny>())
         {
             damage = (int)(damage * 1.2f);
         }

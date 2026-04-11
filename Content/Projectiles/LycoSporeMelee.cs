@@ -83,7 +83,7 @@ public class LycoSporeMelee : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.25f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.25f);
             chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             chudDust.velocity *= 0.1f;
         }
@@ -155,12 +155,12 @@ public class LycoSporeMelee : ModProjectile
     {
         if (Main.rand.NextBool(8))
         {
-            target.AddBuff(ModContent.BuffType<LycopiteSpores>(), 210);
+            target.AddBuff(BuffType<LycopiteSpores>(), 210);
         }
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, (ModContent.DustType<LycopiteDust>()));
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, (DustType<LycopiteDust>()));
             dust.noGravity = true;
             dust.velocity *= 3f;
             dust.scale *= 0.75f;

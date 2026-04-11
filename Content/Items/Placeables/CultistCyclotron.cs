@@ -15,7 +15,7 @@ public class CultistCyclotron : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.CultistCyclotronPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.CultistCyclotronPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

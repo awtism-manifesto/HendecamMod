@@ -23,7 +23,7 @@ public class TerraVapeSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 15;
 
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 100;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
 
@@ -96,7 +96,7 @@ public class TerraVapeSmoke : ModProjectile
 
             // Pass "upwards = true" using ai[0] = 1f
             int spawnedProjectile = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos, velocity,
-                ModContent.ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
             // Set the ai value for the spawned projectile
             Main.projectile[spawnedProjectile].ai[0] = 1f; // 1 = upwards
@@ -106,7 +106,7 @@ public class TerraVapeSmoke : ModProjectile
 
             // Pass "upwards = false" using ai[0] = 0f
             int spawnedProjectile2 = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos2, velocity2,
-                ModContent.ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
             // Set the ai value for the spawned projectile
             Main.projectile[spawnedProjectile2].ai[0] = 0f; // 0 = downwards
@@ -117,7 +117,7 @@ public class TerraVapeSmoke : ModProjectile
 
         // Pass "upwards = true" using ai[0] = 1f
         int spawnedProjectile3 = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos3, velocity3,
-            ModContent.ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
         // Set the ai value for the spawned projectile
         Main.projectile[spawnedProjectile3].ai[0] = 2f; 
@@ -127,7 +127,7 @@ public class TerraVapeSmoke : ModProjectile
 
         // Pass "upwards = false" using ai[0] = 0f
         int spawnedProjectile4 = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos4, velocity4,
-            ModContent.ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<TerraVapeSmoke2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
 
         // Set the ai value for the spawned projectile
         Main.projectile[spawnedProjectile4].ai[0] = 3f; 

@@ -21,7 +21,7 @@ public class BlackshardThrown : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<BlackshardDebuff>(), 296);
+        target.AddBuff(BuffType<BlackshardDebuff>(), 296);
     }
 
     public override void AI()

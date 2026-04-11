@@ -52,7 +52,7 @@ public class PlutoArrow : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.7f);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
     }
 
     public override void AI()
@@ -90,7 +90,7 @@ public class PlutoArrow : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.8f);
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.8f);
                 fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.05f;
             }
@@ -102,23 +102,23 @@ public class PlutoArrow : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(9, 9).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 0.875f), Projectile.knockBack, Projectile.owner);
         Vector2 JorkinMy = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), JorkinMy,
             new Vector2(-9, 9).RotatedBy((JorkinMy).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 InDaClerb = Projectile.Center - new Vector2(Main.rand.Next(-2, 2), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), InDaClerb,
             new Vector2(9, -9).RotatedBy((InDaClerb).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         Vector2 UwU = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), UwU,
             new Vector2(-9, -9).RotatedBy((UwU).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoArrowMini>(), Projectile.damage = (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 13; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>());
             dust.noGravity = true;
             dust.velocity *= 5.75f;
             dust.scale *= 1.8f;

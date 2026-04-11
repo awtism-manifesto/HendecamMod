@@ -20,7 +20,7 @@ public class ApexPlasmaBullet : ModProjectile
         Projectile.aiStyle = -1;
         Projectile.friendly = true;
         Projectile.hostile = false;
-        Projectile.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Projectile.DamageType = GetInstance<RangedMagicDamage>();
         Projectile.penetrate = 11;
         Projectile.timeLeft = 195;
         Projectile.alpha = 100;
@@ -35,12 +35,12 @@ public class ApexPlasmaBullet : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.95f);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo hit)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
     }
 
     public override void AI()

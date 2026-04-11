@@ -27,7 +27,7 @@ public class VerdantClaymore : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = Item.sellPrice(0, 5, 0, 10);
 
-        Item.shoot = ModContent.ProjectileType<VerdantProj>(); // The projectile is what makes a shortsword work
+        Item.shoot = ProjectileType<VerdantProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 5.4f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 
@@ -43,7 +43,7 @@ public class VerdantClaymore : ModItem
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(9f));
         if (player.altFunctionUse == 2)
         {
-            int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ModContent.ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
+            int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
             player.AddBuff(BuffID.Poisoned, 24);
 

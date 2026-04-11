@@ -32,7 +32,7 @@ public class BullshitEnergyAxe : ModProjectile
         Projectile.height = 128;
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.extraUpdates = 1;
         Projectile.scale = 1f;
         Projectile.timeLeft = 480;
@@ -49,8 +49,8 @@ public class BullshitEnergyAxe : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<MoonProjFunnier>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-        target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
+            ProjectileType<MoonProjFunnier>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+        target.AddBuff(BuffType<JevilTag>(), 180);
         Projectile.Kill();
     }
     

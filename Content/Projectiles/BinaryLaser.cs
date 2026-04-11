@@ -60,7 +60,7 @@ public class BinaryLaser : ModProjectile
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>());
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<LycopiteDust>());
             dust.noGravity = true;
             dust.velocity *= 5.25f;
             dust.scale *= 1.1f;

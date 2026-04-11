@@ -6,7 +6,7 @@ public class VoidPearl : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<TheDarkKnight>());
+        Item.DefaultToPlaceableTile(TileType<TheDarkKnight>());
 
         Item.width = 32;
         Item.height = 32;

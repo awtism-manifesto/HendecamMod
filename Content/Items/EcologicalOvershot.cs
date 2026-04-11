@@ -31,14 +31,14 @@ public class EcologicalOvershot : ModItem
         Item.mana = 9;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Bloodfish>();
+        Item.shoot = ProjectileType<Bloodfish>();
 
         Item.shootSpeed = 13.75f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Bloodfish>();
+        type = ProjectileType<Bloodfish>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

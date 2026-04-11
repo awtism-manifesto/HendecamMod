@@ -62,7 +62,7 @@ public class PoopyHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PoopyShirt>() && legs.type == ModContent.ItemType<PoopyPants>();
+        return body.type == ItemType<PoopyShirt>() && legs.type == ItemType<PoopyPants>();
     }
 
     public override void UpdateEquip(Player player)

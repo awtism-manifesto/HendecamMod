@@ -30,7 +30,7 @@ public class FlinxsFurblade : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<FurBall>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FurBall>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16.66f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

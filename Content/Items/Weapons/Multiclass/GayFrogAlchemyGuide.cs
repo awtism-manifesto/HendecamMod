@@ -26,14 +26,14 @@ public class GayFrogAlchemyGuide : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item13;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<AutismDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<AutismDamage>(); // Sets the damage type to ranged.
         Item.damage = 36; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 3;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<GayFrogChemicals>();
+        Item.shoot = ProjectileType<GayFrogChemicals>();
 
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -49,7 +49,7 @@ public class GayFrogAlchemyGuide : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<GayFrogChemicals>();
+        type = ProjectileType<GayFrogChemicals>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

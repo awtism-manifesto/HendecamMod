@@ -60,7 +60,7 @@ public class FaradayPants : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<FaradayBodyArmor>() && head.type == ModContent.ItemType<FaradayFedora>();
+        return body.type == ItemType<FaradayBodyArmor>() && head.type == ItemType<FaradayFedora>();
     }
 
     public override void UpdateEquip(Player player)

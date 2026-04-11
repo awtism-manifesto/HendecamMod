@@ -35,7 +35,7 @@ public class AstatinePolearm : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 3.7f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<AstatineSpear>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<AstatineSpear>(); // The projectile that is fired from this weapon
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

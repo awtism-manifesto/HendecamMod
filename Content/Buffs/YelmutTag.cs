@@ -38,7 +38,7 @@ public class YelmutDebuff : GlobalNPC //shoutout to Antibody of Awful Garbage Mo
         {
             if (Main.rand.NextBool(7))
             {
-                int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, ModContent.DustType<LycopiteDust>(), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, Color.Orange);
+                int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, DustType<LycopiteDust>(), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, Color.Orange);
                 Main.dust[dust].velocity *= 1.2f;
                 Main.dust[dust].velocity.Y -= 0.5f;
                 Main.dust[dust].noGravity = true;
@@ -48,7 +48,7 @@ public class YelmutDebuff : GlobalNPC //shoutout to Antibody of Awful Garbage Mo
             }
             if (Main.rand.NextBool(8))
             {
-                int dust2 = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, ModContent.DustType<PlutoniumDust>(), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, Color.LightPink);
+                int dust2 = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, DustType<PlutoniumDust>(), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, Color.LightPink);
                 Main.dust[dust2].velocity *= 1.2f;
                 Main.dust[dust2].velocity.Y -= 0.5f;
                 Main.dust[dust2].noGravity = true;

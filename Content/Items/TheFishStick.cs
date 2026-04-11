@@ -25,12 +25,12 @@ public class TheFishStick : ModItem
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
         Item.damage = 18; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+        Item.DamageType = GetInstance<MeleeStupidDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 1.5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.Blue; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 1); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<FishStick>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<FishStick>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 10f; // The velocity of the shot projectile.			
     }
     public float LobotometerCost = 2f;

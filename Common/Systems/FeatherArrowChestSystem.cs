@@ -12,7 +12,7 @@ public class ChestItemWorldGen : ModSystem
     {
         // Place some additional items in Frozen Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSkywareChests = [ModContent.ItemType<FeatherArrow>()];
+        int[] itemsToPlaceInSkywareChests = [ItemType<FeatherArrow>()];
         // This variable will help cycle through the items so that different Frozen Chests get different items
         int itemsToPlaceInSkywareChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 

@@ -30,7 +30,7 @@ public class TheWither : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item45;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 48; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -47,7 +47,7 @@ public class TheWither : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<WitherSkullBlack>();
+        Item.shoot = ProjectileType<WitherSkullBlack>();
 
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -73,18 +73,18 @@ public class TheWither : ModItem
                 if (Main.rand.NextBool(4))
                 {
                     Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
-                    type = ModContent.ProjectileType<WitherSkullBlack>();
+                    type = ProjectileType<WitherSkullBlack>();
                     Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 }
 
                 if (Main.rand.NextBool(5))
                 {
                     Vector2 new3Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
-                    type = ModContent.ProjectileType<WitherSkullBlack>();
+                    type = ProjectileType<WitherSkullBlack>();
                     Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
                 }
 
-                type = ModContent.ProjectileType<WitherSkullBlack>();
+                type = ProjectileType<WitherSkullBlack>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 
                 tickCounter = 5;
@@ -95,18 +95,18 @@ public class TheWither : ModItem
                 if (Main.rand.NextBool(3))
                 {
                     Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
-                    type = ModContent.ProjectileType<WitherSkullBlack>();
+                    type = ProjectileType<WitherSkullBlack>();
                     Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 }
 
                 if (Main.rand.NextBool(3))
                 {
                     Vector2 new3Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5.5f));
-                    type = ModContent.ProjectileType<WitherSkullBlack>();
+                    type = ProjectileType<WitherSkullBlack>();
                     Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
                 }
 
-                type = ModContent.ProjectileType<WitherSkullBlack>();
+                type = ProjectileType<WitherSkullBlack>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 
                 tickCounter = 0;
@@ -114,7 +114,7 @@ public class TheWither : ModItem
             }
             else
             {
-                type = ModContent.ProjectileType<WitherSkullBlue>();
+                type = ProjectileType<WitherSkullBlue>();
                 Projectile.NewProjectileDirect(source, position, velocity * 0.81f, type, damage, knockback, player.whoAmI);
             }
         }

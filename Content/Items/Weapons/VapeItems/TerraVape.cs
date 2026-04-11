@@ -22,7 +22,7 @@ public class TerraVape : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
         Item.reuseDelay = 12;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 64;
         Item.knockBack = 1.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class TerraVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TerraVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TerraVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 19.1f; // Speed of the projectiles the sword will shoot
 
        

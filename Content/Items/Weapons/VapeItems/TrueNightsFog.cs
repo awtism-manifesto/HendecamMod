@@ -22,7 +22,7 @@ public class TrueNightsFog : ModItem
         Item.useAnimation = 33;
         Item.autoReuse = true;
         Item.reuseDelay = 13;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 58;
         Item.knockBack = 0.8f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class TrueNightsFog : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TrueFogSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TrueFogSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16.33f; // Speed of the projectiles the sword will shoot
 
        

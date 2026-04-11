@@ -30,7 +30,7 @@ public class SandyShocks : ModItem
         Item.ArmorPenetration = 30;
         Item.value = 100000;
         Item.rare = ItemRarityID.Pink;
-        Item.shoot = ModContent.ProjectileType<ElectrifiedSand>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<ElectrifiedSand>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -42,7 +42,7 @@ public class SandyShocks : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<ElectrifiedSand>();
+        type = ProjectileType<ElectrifiedSand>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

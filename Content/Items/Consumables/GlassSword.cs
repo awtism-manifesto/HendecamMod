@@ -17,7 +17,7 @@ public class GlassSword : ModItem
         Item.useAnimation = 16;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 20;
         Item.knockBack = 4.0f;

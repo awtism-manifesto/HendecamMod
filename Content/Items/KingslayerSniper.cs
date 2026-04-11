@@ -42,10 +42,10 @@ public class KingslayerSniper : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<KingShot>();
+            type = ProjectileType<KingShot>();
         }
 
-        if (type == ModContent.ProjectileType<KingShot>())
+        if (type == ProjectileType<KingShot>())
         {
             damage = (int)(damage * 1.25f);
         }

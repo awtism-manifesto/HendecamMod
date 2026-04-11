@@ -12,7 +12,7 @@ public class AirBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<AirBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<AirBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Orange;

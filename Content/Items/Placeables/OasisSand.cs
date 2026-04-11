@@ -11,7 +11,7 @@ public class OasisSand : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<OasisSandPlaced>());
+        Item.DefaultToPlaceableTile(TileType<OasisSandPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

@@ -23,7 +23,7 @@ public class DirtBullet : ModItem
         Item.knockBack = 0.5f;
         Item.value = 0;
 
-        Item.shoot = ModContent.ProjectileType<DirtBulletProj>();
+        Item.shoot = ProjectileType<DirtBulletProj>();
         Item.shootSpeed = 3.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

@@ -21,7 +21,7 @@ public class PoopToilet : ModItem
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
         Item.value = 12;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<PoopToiletPlaced>());
+        Item.DefaultToPlaceableTile(TileType<PoopToiletPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

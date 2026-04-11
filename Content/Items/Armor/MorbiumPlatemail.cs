@@ -54,7 +54,7 @@ public class MorbiumPlatemail : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<MorbiumMask>() && legs.type == ModContent.ItemType<MorbiumGreaves>();
+        return head.type == ItemType<MorbiumMask>() && legs.type == ItemType<MorbiumGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -71,7 +71,7 @@ public class MorbiumPlatemail : ModItem
         player.setBonus = "Causes the player to be on morbin time whenever a boss or invasion appears";
         if (NPC.AnyDanger())
         {
-            player.AddBuff(ModContent.BuffType<MorbinTime>(), 666);
+            player.AddBuff(BuffType<MorbinTime>(), 666);
         }
     }
 }

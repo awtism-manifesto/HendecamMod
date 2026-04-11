@@ -17,7 +17,7 @@ public class TheMoon : ModItem
         Item.useTime = 42;
         Item.useAnimation = 42;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 1230;
         Item.knockBack = 35;
         Item.noMelee = true;
@@ -26,7 +26,7 @@ public class TheMoon : ModItem
         Item.value = 4250000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<TheFuckingMoon>();
+        Item.shoot = ProjectileType<TheFuckingMoon>();
         Item.shootSpeed = 16f;
     }
     public float LobotometerCost = 18f;

@@ -46,7 +46,7 @@ public class FlaskOfAnnihilation: ModItem
         Item.consumable = true;
         Item.width = 14;
         Item.height = 24;
-        Item.buffType = ModContent.BuffType<WeaponImbueAnnihilation>();
+        Item.buffType = BuffType<WeaponImbueAnnihilation>();
         Item.buffTime = Item.flaskTime;
         Item.value = Item.sellPrice(0, 0, 11, 33);
         Item.rare = ItemRarityID.Purple;

@@ -37,7 +37,7 @@ public class ShockingSurrender : ModItem
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.sellPrice(gold: 3, silver: 25);
 
-        Item.shoot = ModContent.ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
 

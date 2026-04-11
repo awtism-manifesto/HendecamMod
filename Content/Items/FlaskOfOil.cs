@@ -58,7 +58,7 @@ public class FlaskOfOil : ModItem
         Item.consumable = true;
         Item.width = 14;
         Item.height = 24;
-        Item.buffType = ModContent.BuffType<WeaponImbueOil>();
+        Item.buffType = BuffType<WeaponImbueOil>();
         Item.buffTime = Item.flaskTime;
         Item.value = Item.sellPrice(0, 0, 2, 22);
         Item.rare = ItemRarityID.LightRed;

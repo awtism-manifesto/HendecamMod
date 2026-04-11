@@ -22,7 +22,7 @@ public class PlatinumVape : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 6;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 17;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class PlatinumVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<PlatinumVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<PlatinumVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 8.08f; // Speed of the projectiles the sword will shoot
 
        

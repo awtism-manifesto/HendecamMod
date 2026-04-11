@@ -28,7 +28,7 @@ public class PyrrhicClaymore : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.sellPrice(0, 19, 50, 0);
 
-        Item.shoot = ModContent.ProjectileType<PyrrhicProj>(); // The projectile is what makes a shortsword work
+        Item.shoot = ProjectileType<PyrrhicProj>(); // The projectile is what makes a shortsword work
         Item.shootSpeed = 7.65f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
     }
 
@@ -44,7 +44,7 @@ public class PyrrhicClaymore : ModItem
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.11f));
         if (player.altFunctionUse == 2)
         {
-            int proj = Projectile.NewProjectile(source, position, velocity * 2.33f, ModContent.ProjectileType<PyrrhicProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
+            int proj = Projectile.NewProjectile(source, position, velocity * 2.33f, ProjectileType<PyrrhicProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<PyrrhicComboSetup>().fromthePyrrhicClaymore = true;
             player.AddBuff(BuffID.Ichor, 36);
 

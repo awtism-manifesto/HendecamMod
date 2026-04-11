@@ -10,7 +10,7 @@ public class SmoothLimestonePlaced : ModTile
         Main.tileMergeDirt[Type] = false;
         Main.tileBlockLight[Type] = true;
 
-        DustType = ModContent.DustType<LimestoneDust>();
+        DustType = DustType<LimestoneDust>();
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(204, 190, 163));

@@ -26,7 +26,7 @@ public class BarbecueBlade : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<SteakProj>();
+        Item.shoot = ProjectileType<SteakProj>();
 
         Item.shootSpeed = 18.8f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -41,21 +41,21 @@ public class BarbecueBlade : ModItem
         Vector2 new5Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(25f));
 
         Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<GreaseSplatter2>();
+        type = ProjectileType<GreaseSplatter2>();
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<HamProj>();
+        type = ProjectileType<HamProj>();
         Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<Sausage2>();
+        type = ProjectileType<Sausage2>();
         Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<Sausage2>();
+        type = ProjectileType<Sausage2>();
         Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<GreaseBomb2>();
+        type = ProjectileType<GreaseBomb2>();
         Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<GreaseSplatter2>();
+        type = ProjectileType<GreaseSplatter2>();
         Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<GreaseSplatter2>();
+        type = ProjectileType<GreaseSplatter2>();
         Projectile.NewProjectileDirect(source, position, new5Velocity, type, damage, knockback, player.whoAmI);
-        type = ModContent.ProjectileType<GreaseSplatter2>();
+        type = ProjectileType<GreaseSplatter2>();
         return false; 
     }
 

@@ -22,7 +22,7 @@ public class KnightSwordDown : ModProjectile
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 6; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 200; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 2; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
@@ -41,7 +41,7 @@ public class KnightSwordDown : ModProjectile
     }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
+        if (target.HasBuff(BuffType<BlackshardDebuff>()))
         {
             modifiers.SourceDamage *= 2f;
         }
@@ -49,7 +49,7 @@ public class KnightSwordDown : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
+        if (target.HasBuff(BuffType<BlackshardDebuff>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -60,7 +60,7 @@ public class KnightSwordDown : ModProjectile
                 Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.5f), Projectile.knockBack, Projectile.owner);
+                    ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 2.5f), Projectile.knockBack, Projectile.owner);
             }
         }
     }

@@ -26,7 +26,7 @@ public class EchoStickyBomb : ModProjectile
         Projectile.height = 14;
         Projectile.friendly = true;
         Projectile.penetrate = -1;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.light = 0.6f;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -108,7 +108,7 @@ public class EchoStickyBomb : ModProjectile
                     Projectile.GetSource_FromThis(),
                     Projectile.Center,
                     Vector2.Zero,
-                    ModContent.ProjectileType<EchoStickyBombExplosion>(),
+                    ProjectileType<EchoStickyBombExplosion>(),
                     Projectile.damage,
                     Projectile.knockBack,
                     Projectile.owner
@@ -183,7 +183,7 @@ public class EchoStickyBomb : ModProjectile
                     Projectile.GetSource_FromThis(),
                     Projectile.Center,
                     Vector2.Zero,
-                    ModContent.ProjectileType<EchoStickyBombExplosion>(),
+                    ProjectileType<EchoStickyBombExplosion>(),
                     Projectile.damage,
                     Projectile.knockBack,
                     Projectile.owner
@@ -275,7 +275,7 @@ public class EchoStickyBombExplosion : ModProjectile
         Projectile.height = 100;
         Projectile.friendly = true;
         Projectile.penetrate = -1;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.tileCollide = false;
         Projectile.ignoreWater = true;
         Projectile.alpha = 255;

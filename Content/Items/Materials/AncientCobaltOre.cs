@@ -18,7 +18,7 @@ public class AncientCobaltOre : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = 2950;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltOrePlaced>());
+        Item.DefaultToPlaceableTile(TileType<AncientCobaltOrePlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

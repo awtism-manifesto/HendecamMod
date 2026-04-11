@@ -12,7 +12,7 @@ public class MorbinTime : ModBuff
     {
         if (Main.rand.NextBool(2))
         {
-            int dust = Dust.NewDust(player.position, player.width, player.height, ModContent.DustType<MorbiumDust>(),
+            int dust = Dust.NewDust(player.position, player.width, player.height, DustType<MorbiumDust>(),
                 player.velocity.X * Main.rand.NextFloat(-1.99f, 1.99f), player.velocity.Y * Main.rand.NextFloat(-1.99f, 1.99f), 70, default, 3f);
             Main.dust[dust].noGravity = true;
         }

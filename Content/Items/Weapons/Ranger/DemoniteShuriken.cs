@@ -30,7 +30,7 @@ public class DemoniteShuriken : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 17.85f;
-        Item.shoot = ModContent.ProjectileType<DemoniteShurikenProjectile>(); // The projectile that will be thrown
+        Item.shoot = ProjectileType<DemoniteShurikenProjectile>(); // The projectile that will be thrown
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

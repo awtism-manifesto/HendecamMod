@@ -29,7 +29,7 @@ public class BrainrotPotion : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(silver: 3);
-        Item.buffType = ModContent.BuffType<BrainRotted>();
+        Item.buffType = BuffType<BrainRotted>();
         Item.buffTime = 14480; // Ticks
     }
 

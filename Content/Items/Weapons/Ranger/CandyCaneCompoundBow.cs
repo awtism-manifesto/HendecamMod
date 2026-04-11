@@ -41,7 +41,7 @@ public class CandyCaneCompoundBow : ModItem
     {
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<CandyCaneArrow>();
+            type = ProjectileType<CandyCaneArrow>();
         }
        
     }

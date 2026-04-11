@@ -28,7 +28,7 @@ public class AstaPool : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
     }
 
     public override void AI()

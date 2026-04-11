@@ -44,7 +44,7 @@ public class PlasticHeadgear : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PlasticChestplate>() && legs.type == ModContent.ItemType<PlasticPants>();
+        return body.type == ItemType<PlasticChestplate>() && legs.type == ItemType<PlasticPants>();
     }
 
     public override void UpdateEquip(Player player)

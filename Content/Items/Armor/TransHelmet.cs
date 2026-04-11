@@ -59,7 +59,7 @@ public class TransHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<TransBodyplate>() && legs.type == ModContent.ItemType<TransGreaves>();
+        return body.type == ItemType<TransBodyplate>() && legs.type == ItemType<TransGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

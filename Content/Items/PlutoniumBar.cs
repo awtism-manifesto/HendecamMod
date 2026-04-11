@@ -22,7 +22,7 @@ public class PlutoniumBar : ModItem
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 51250;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PlutoniumBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PlutoniumBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

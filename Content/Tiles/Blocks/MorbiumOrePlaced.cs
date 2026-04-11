@@ -25,7 +25,7 @@ public class MorbiumOrePlaced : ModTile
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(89, 255, 167), Language.GetText("Morbium Ore"));
 
-        DustType = (ModContent.DustType<MorbiumDust>());
+        DustType = (DustType<MorbiumDust>());
         HitSound = SoundID.Tink;
         MineResist = 2.75f;
         MinPick = 63;

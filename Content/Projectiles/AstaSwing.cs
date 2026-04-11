@@ -171,17 +171,17 @@ public class AstaSwing : ModProjectile
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(1, 119)));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(120, 239)));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(240, 360)));
         Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaParticle>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
 
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
     }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)

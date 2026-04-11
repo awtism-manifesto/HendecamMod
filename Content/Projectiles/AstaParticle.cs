@@ -54,10 +54,10 @@ public class AstaParticle : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
-            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<AstatineDust>(), 0f, 0f, 100);
+            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustType<AstatineDust>(), 0f, 0f, 100);
             chud2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
             chud2Dust.velocity *= 0.05f;
         }
@@ -127,7 +127,7 @@ public class AstaParticle : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
     }
 
     public override void OnKill(int timeLeft)
@@ -135,7 +135,7 @@ public class AstaParticle : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<AstaBoom2>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaBoom2>(), (int)(Projectile.damage * 0.666f), Projectile.knockBack, Projectile.owner);
 
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);

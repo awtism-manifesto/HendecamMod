@@ -15,7 +15,7 @@ public class AmericaFlag : ModItem
         Item.useTime = 15;
         Item.useAnimation = 15;
         Item.autoReuse = true;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AmericaFlagPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.AmericaFlagPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

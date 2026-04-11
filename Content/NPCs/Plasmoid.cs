@@ -23,9 +23,9 @@ public class Plasmoid : ModNPC
             Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning>()] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning2>()] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<RadPoisoning3>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning2>()] = true;
+        NPCID.Sets.SpecificDebuffImmunity[Type][BuffType<RadPoisoning3>()] = true;
     }
 
     public override void SetDefaults()
@@ -44,7 +44,7 @@ public class Plasmoid : ModNPC
         AIType = NPCID.CaveBat; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.Pixie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<PlasmoidBanner>();
+        BannerItem = ItemType<PlasmoidBanner>();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
             NPC.lifeMax = 325;
@@ -61,13 +61,13 @@ public class Plasmoid : ModNPC
     {
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<UraniumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<UraniumDust>());
             dust.noGravity = true;
             dust.velocity *= 7.5f;
             dust.scale *= 1.25f;
         }
 
-        int buffType = ModContent.BuffType<RadPoisoning>();
+        int buffType = BuffType<RadPoisoning>();
         // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
         int timeToAdd = (int)(Main.rand.NextFloat(6, 7) * 30); // This makes it 5 seconds, one second is 60 ticks
@@ -91,9 +91,9 @@ public class Plasmoid : ModNPC
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 2, 5));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumOre>(), 1, 34, 69));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlasmoidWand>(), 15));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<RadBullet>(), 4, 40, 120));
+        npcLoot.Add(ItemDropRule.Common(ItemType<UraniumOre>(), 1, 34, 69));
+        npcLoot.Add(ItemDropRule.Common(ItemType<PlasmoidWand>(), 15));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<RadBullet>(), 4, 40, 120));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

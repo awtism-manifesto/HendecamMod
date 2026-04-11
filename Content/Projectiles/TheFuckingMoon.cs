@@ -22,7 +22,7 @@ public class TheFuckingMoon : ModProjectile
         Projectile.penetrate = 24;
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 640;
         Projectile.light = 1f;
         Projectile.extraUpdates = 2;
@@ -32,7 +32,7 @@ public class TheFuckingMoon : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 1200);
+        target.AddBuff(BuffType<MoonBurn>(), 1200);
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)

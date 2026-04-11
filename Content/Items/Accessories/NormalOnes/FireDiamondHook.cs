@@ -15,7 +15,7 @@ internal class FireDiamondHook : ModItem
         // Copy values from the Amethyst Hook
         Item.CloneDefaults(ItemID.AmethystHook);
         Item.shootSpeed = 18f; // This defines how quickly the hook is shot.
-        Item.shoot = ModContent.ProjectileType<FireDiamondHookProj>(); // Makes the item shoot the hook's projectile when used.
+        Item.shoot = ProjectileType<FireDiamondHookProj>(); // Makes the item shoot the hook's projectile when used.
         Item.rare = ItemRarityID.Green;
         // If you do not use Item.CloneDefaults(), you must set the following values for the hook to work properly:
         // Item.useStyle = ItemUseStyleID.None;
@@ -40,7 +40,7 @@ internal class FireDiamondHookProj : ModProjectile
     public override void Load()
     { // This is called once on mod (re)load when this piece of content is being loaded.
       // This is the path to the texture that we'll use for the hook's chain. Make sure to update it.
-        chainTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Items/Accessories/NormalOnes/FireDiamondHookChain");
+        chainTexture = Request<Texture2D>("HendecamMod/Content/Items/Accessories/NormalOnes/FireDiamondHookChain");
     }
 
     /*

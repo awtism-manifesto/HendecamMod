@@ -44,14 +44,14 @@ public class PlutoWhip : ModProjectile
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<PlutoWhipBuff>(), 300);
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<PlutoWhipBuff>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-125, 126));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
         Projectile.damage = (int)(Projectile.damage * 0.55f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
@@ -94,9 +94,9 @@ public class PlutoWhip : ModProjectile
             Projectile.FillWhipControlPoints(Projectile, points);
             int pointIndex = Main.rand.Next(points.Count - 10, points.Count);
             Rectangle spawnArea = Utils.CenteredRectangle(points[pointIndex], new Vector2(30f, 30f));
-            int dustType = ModContent.DustType<PlutoniumDust>();
+            int dustType = DustType<PlutoniumDust>();
             if (Main.rand.NextBool(3))
-                dustType = ModContent.DustType<PlutoniumDust>();
+                dustType = DustType<PlutoniumDust>();
 
             // After choosing a randomized dust and a whip segment to spawn from, dust is spawned.
             Dust dust = Dust.NewDustDirect(spawnArea.TopLeft(), spawnArea.Width, spawnArea.Height, dustType, 0f, 0f, 100, Color.White);

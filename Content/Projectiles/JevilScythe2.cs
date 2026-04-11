@@ -30,7 +30,7 @@ public class JevilScythe2 : ModProjectile
         Projectile.height = 25;
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.extraUpdates = 1;
         Projectile.scale = 1.25f;
         Projectile.timeLeft = 480;
@@ -43,7 +43,7 @@ public class JevilScythe2 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
+        target.AddBuff(BuffType<JevilTag>(), 180);
         Projectile.Kill();
     }
 

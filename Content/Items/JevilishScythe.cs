@@ -20,12 +20,12 @@ public class JevilishScythe : ModItem
         Item.UseSound = SoundID.Item71; // The sound that will play when the item is used.
         Item.mana = 3;
         Item.damage = 30; // The amount of damage the item does to an enemy or player.
-        Item.DamageType = ModContent.GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+        Item.DamageType = GetInstance<OmniDamage>(); // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 4.25f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = 450000;
 
-        Item.shoot = ModContent.ProjectileType<JevilScythe>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<JevilScythe>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 17.33f; // The velocity of the shot projectile.			
     }
     public float LobotometerCost = 3f;

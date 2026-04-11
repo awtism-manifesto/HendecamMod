@@ -25,7 +25,7 @@ public class PromethiumOreTile : ModTile
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(85, 145, 166), Language.GetText("Promethium Ore"));
 
-        DustType = (ModContent.DustType<MorbiumDust>());
+        DustType = (DustType<MorbiumDust>());
         HitSound = SoundID.Tink;
         MineResist = 2f;
         MinPick = 255;

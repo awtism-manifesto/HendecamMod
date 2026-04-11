@@ -18,16 +18,16 @@ public class TheFuckingSun : ModItem
         Item.useTime = 66;
         Item.useAnimation = 66;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 11111;
         Item.knockBack = 333;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.ArmorPenetration = 999;
         Item.value = Item.buyPrice(gold: 99999);
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<TheSun>();
+        Item.shoot = ProjectileType<TheSun>();
         Item.shootSpeed = 12.5f;
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {

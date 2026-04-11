@@ -23,7 +23,7 @@ public class FissileDart : ModItem
         Item.knockBack = 4.5f;
         Item.value = 933;
         Item.rare = ItemRarityID.Red;
-        Item.shoot = ModContent.ProjectileType<FissileSpawn>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<FissileSpawn>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 1.1f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

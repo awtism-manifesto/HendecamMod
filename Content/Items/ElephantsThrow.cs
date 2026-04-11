@@ -38,7 +38,7 @@ public class ElephantsThrow : ModItem
         Item.rare = ItemRarityID.LightPurple; // The item's rarity. This changes the color of the item's name.
        Item.value = 1050000;
 
-        Item.shoot = ModContent.ProjectileType<ElephantYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<ElephantYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
 

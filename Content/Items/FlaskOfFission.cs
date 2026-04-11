@@ -54,7 +54,7 @@ public class FlaskOfFission : ModItem
         Item.consumable = true;
         Item.width = 14;
         Item.height = 24;
-        Item.buffType = ModContent.BuffType<WeaponImbueFission>();
+        Item.buffType = BuffType<WeaponImbueFission>();
         Item.buffTime = Item.flaskTime;
         Item.value = Item.sellPrice(0, 0, 3, 33);
         Item.rare = ItemRarityID.LightRed;

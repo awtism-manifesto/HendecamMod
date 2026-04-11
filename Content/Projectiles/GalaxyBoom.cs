@@ -26,7 +26,7 @@ public class GalaxyBoom : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 1;

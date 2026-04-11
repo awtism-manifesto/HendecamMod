@@ -41,10 +41,10 @@ public class PromethiumPickaxe : ModItem
     }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 400);
+        target.AddBuff(BuffType<RadPoisoning4>(), 400);
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PromethiumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PromethiumDust>());
             dust.noGravity = true;
             dust.velocity *= 6.25f;
             dust.scale *= 0.9f;

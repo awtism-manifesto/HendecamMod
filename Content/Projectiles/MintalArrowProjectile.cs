@@ -24,7 +24,7 @@ public class MintalArrowProjectile : ModProjectile
         Projectile.height = 6;
         Projectile.friendly = true;
         Projectile.penetrate = 2; 
-        Projectile.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Projectile.DamageType = GetInstance<RangedMagicDamage>();
         Projectile.light = 0.25f;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 1;

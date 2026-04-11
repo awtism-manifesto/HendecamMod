@@ -22,7 +22,7 @@ public class BOOMerang : ModItem
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
         Item.value = 296000;
-        Item.shoot = ModContent.ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 25f; // The velocity of the shot projectile.			
     }
 

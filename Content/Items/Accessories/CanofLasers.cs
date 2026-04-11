@@ -78,7 +78,7 @@ public class CanofLasers : ModItem
                         Player.GetSource_ItemUse(item),
                         position,
                         velocity,
-                        ModContent.ProjectileType<ChargeLaser>(),
+                        ProjectileType<ChargeLaser>(),
                         (int)(damage * 0.85f),
                         knockback,
                         Player.whoAmI

@@ -23,7 +23,7 @@ public class AzuriteOre : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<AzuriteOrePlaced>());
+        Item.DefaultToPlaceableTile(TileType<AzuriteOrePlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.value = 3350;

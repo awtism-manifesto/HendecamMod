@@ -31,7 +31,7 @@ public class TackSprayer : ModItem
         Item.value = Item.buyPrice(gold: 50);
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<TackSprayerProj>();
+        Item.shoot = ProjectileType<TackSprayerProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

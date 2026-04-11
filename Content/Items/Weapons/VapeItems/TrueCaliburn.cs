@@ -22,7 +22,7 @@ public class TrueCaliburn : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 11;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 53;
         Item.knockBack = 0.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class TrueCaliburn : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TrueCaliburnSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TrueCaliburnSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 17.1f; // Speed of the projectiles the sword will shoot
 
        

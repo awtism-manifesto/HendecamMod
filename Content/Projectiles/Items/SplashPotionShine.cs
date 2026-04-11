@@ -105,7 +105,7 @@ public class SplashPotionShine : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<ShinyTag>(), 300);
+        target.AddBuff(BuffType<ShinyTag>(), 300);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
     }

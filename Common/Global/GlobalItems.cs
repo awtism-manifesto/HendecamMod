@@ -757,7 +757,7 @@ public class FlurryBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FlurryBoots;
         }
@@ -784,7 +784,7 @@ public class SailfishBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.SailfishBoots;
         }
@@ -811,7 +811,7 @@ public class AmphBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.AmphibianBoots;
         }
@@ -840,7 +840,7 @@ public class FrogBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FrogLeg;
         }
@@ -869,7 +869,7 @@ public class WaterWalkingBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.WaterWalkingBoots;
         }
@@ -892,7 +892,7 @@ public class ObsidianWaterWalkingBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.ObsidianWaterWalkingBoots;
         }
@@ -921,7 +921,7 @@ public class LavaWaderBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.LavaWaders;
         }
@@ -955,7 +955,7 @@ public class FlameBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FlameWakerBoots;
         }
@@ -979,7 +979,7 @@ public class FlowerBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FlowerBoots;
         }
@@ -1013,7 +1013,7 @@ public class HellfireBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.HellfireTreads;
         }
@@ -1038,7 +1038,7 @@ public class HermesBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.HermesBoots;
         }
@@ -1066,7 +1066,7 @@ public class SpectreBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.SpectreBoots;
         }
@@ -1094,7 +1094,7 @@ public class IceBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.IceSkates;
         }
@@ -1121,7 +1121,7 @@ public class DuneBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.SandBoots;
         }
@@ -1143,7 +1143,7 @@ public class LightningBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.LightningBoots;
         }
@@ -1171,7 +1171,7 @@ public class FrostBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FrostsparkBoots;
         }
@@ -1200,7 +1200,7 @@ public class TerraBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.TerrasparkBoots;
         }
@@ -1244,7 +1244,7 @@ public class RocketBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.RocketBoots;
         }
@@ -1280,7 +1280,7 @@ public class FairyBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (ModContent.GetInstance<HendecamConfig>().BootsTreeRework == true)
+        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
         {
             return item.type == ItemID.FairyBoots;
         }

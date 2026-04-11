@@ -26,7 +26,7 @@ public class ShitAndPissWand : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item8;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<AutismDamage>();
+        Item.DamageType = GetInstance<AutismDamage>();
         Item.damage = 39; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -49,7 +49,7 @@ public class ShitAndPissWand : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PooShot2>();
+        type = ProjectileType<PooShot2>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

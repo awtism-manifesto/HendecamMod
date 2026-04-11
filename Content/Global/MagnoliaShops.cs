@@ -11,21 +11,21 @@ public class MagnoliaShops : GlobalNPC
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
-            shop.Add<MoltenShuriken>(condition: Terraria.Condition.Hardmode);
+            shop.Add<MoltenShuriken>(condition: Condition.Hardmode);
         }
 
         if (shop.NpcType == NPCID.GoblinTinkerer)
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
-            shop.Add<SteelBar>(condition: Terraria.Condition.Hardmode);
+            shop.Add<SteelBar>(condition: Condition.Hardmode);
         }
 
         if (shop.NpcType == NPCID.Cyborg)
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
-            shop.Add<MorbiumBar>(condition: Terraria.Condition.DownedCultist);
+            shop.Add<MorbiumBar>(condition: Condition.DownedCultist);
         }
     }
 }

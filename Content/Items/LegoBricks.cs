@@ -15,7 +15,7 @@ public class LegoBricks : ModItem
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = 70;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.LegosPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.LegosPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

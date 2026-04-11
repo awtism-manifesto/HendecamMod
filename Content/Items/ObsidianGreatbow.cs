@@ -32,17 +32,17 @@ public class ObsidianGreatbow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 19.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ModContent.ProjectileType<ObsidianArrow>();
+        Item.shoot = ProjectileType<ObsidianArrow>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<ObsidianArrow>();
+            type = ProjectileType<ObsidianArrow>();
         }
 
-        if (type == ModContent.ProjectileType<ObsidianArrow>())
+        if (type == ProjectileType<ObsidianArrow>())
         {
             damage = (int)(damage * 1.15f);
         }

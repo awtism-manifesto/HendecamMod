@@ -11,7 +11,7 @@ public class GreenOne : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.GreenOne>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.GreenOne>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

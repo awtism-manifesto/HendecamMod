@@ -26,21 +26,21 @@ public class TheIcebreaker : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
+        Item.DamageType = GetInstance<MeleeMagicDamage>();
         Item.damage = 77; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 7f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.mana = 6;
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Icicle>();
+        Item.shoot = ProjectileType<Icicle>();
 
         Item.shootSpeed = 9.75f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Icicle>();
+        type = ProjectileType<Icicle>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

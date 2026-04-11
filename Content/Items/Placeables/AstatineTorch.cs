@@ -23,7 +23,7 @@ public class AstatineTorch : ModItem
        
         Item.maxStack = 9999;
 
-        Item.DefaultToTorch(ModContent.TileType<Tiles.AstatineTorchPlaced>(), 0);
+        Item.DefaultToTorch(TileType<Tiles.AstatineTorchPlaced>(), 0);
         Item.value = 395;
     }
 

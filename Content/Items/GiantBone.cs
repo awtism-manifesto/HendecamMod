@@ -17,7 +17,7 @@ public class GiantBone : ModItem
         Item.useAnimation = 32;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 60;
         Item.knockBack = 7;
         Item.value = Item.buyPrice(gold: 1);

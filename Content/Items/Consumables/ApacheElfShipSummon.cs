@@ -45,7 +45,7 @@ public class ApacheElfShipSummon : ModItem
 
     public override bool CanUseItem(Player player)
     {
-        return !NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>());
+        return !NPC.AnyNPCs(NPCType<ApacheElfShip>());
     }
 
     public override bool? UseItem(Player player)
@@ -53,7 +53,7 @@ public class ApacheElfShipSummon : ModItem
         if (player.whoAmI == Main.myPlayer)
         {
             SoundEngine.PlaySound(SoundID.AbigailUpgrade, player.position);
-            int type = ModContent.NPCType<ApacheElfShip>();
+            int type = NPCType<ApacheElfShip>();
             if (BossDownedSystem.downedApacheElfShip)
             {
                 ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Well, I'm not one to turn down a rematch."), new Color(185, 105, 105));

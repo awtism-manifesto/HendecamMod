@@ -22,7 +22,7 @@ public class PlutoniumGlass : ModItem
         Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
         Item.value = 2500;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PlutoniumGlassTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PlutoniumGlassTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

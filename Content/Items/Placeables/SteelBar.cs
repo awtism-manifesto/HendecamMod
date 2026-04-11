@@ -22,7 +22,7 @@ public class SteelBar : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.SteelBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.SteelBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

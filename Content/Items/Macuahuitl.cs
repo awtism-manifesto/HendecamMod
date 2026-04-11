@@ -27,7 +27,7 @@ public class Macuahuitl : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = Item.buyPrice(gold: 10); // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<MacuaSwing>();
+        Item.shoot = ProjectileType<MacuaSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

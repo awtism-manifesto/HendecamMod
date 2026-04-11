@@ -28,7 +28,7 @@ public class BugBuzz : ModItem
         Item.noMelee = true; 
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ModContent.ProjectileType<BugWave>();
+        Item.shoot = ProjectileType<BugWave>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -39,8 +39,8 @@ public class BugBuzz : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<BugWave>();
-        if (type == ModContent.ProjectileType<BugWave>())
+        type = ProjectileType<BugWave>();
+        if (type == ProjectileType<BugWave>())
         {
             damage = (int)(damage * 0.8f);
         }

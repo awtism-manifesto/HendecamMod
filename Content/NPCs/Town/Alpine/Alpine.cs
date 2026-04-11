@@ -304,7 +304,7 @@ public class Alpine : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ApexPlasmaCannon>()));
+        npcLoot.Add(ItemDropRule.Common(ItemType<ApexPlasmaCannon>()));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -326,7 +326,7 @@ public class Alpine : ModNPC
     // }
     public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
     {
-        projType = ModContent.ProjectileType<ElfMagicMissile>();
+        projType = ProjectileType<ElfMagicMissile>();
         attackDelay = 15;
     }
 
@@ -349,7 +349,7 @@ public class Alpine : ModNPC
 
     public override void AI()
     {
-        if (NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>()))
+        if (NPC.AnyNPCs(NPCType<ApacheElfShip>()))
         {
             NPC.SetDefaults(0);
             NPC.active = false;

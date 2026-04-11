@@ -24,13 +24,13 @@ public class TinQuadsword : ModItem
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
         Item.damage = 14;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.knockBack = 5f;
         Item.crit = 4;
         Item.rare = ItemRarityID.White;
         Item.value = Item.buyPrice(copper: 480);
 
-        Item.shoot = ModContent.ProjectileType<TinQuadswordProj>();
+        Item.shoot = ProjectileType<TinQuadswordProj>();
         Item.shootSpeed = 16.5f;
     }
     public float LobotometerCost = 4f;

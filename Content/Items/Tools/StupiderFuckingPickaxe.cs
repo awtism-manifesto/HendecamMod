@@ -13,7 +13,7 @@ public class StupiderFuckingPickaxe : ModItem
     public override void SetDefaults()
     {
         Item.damage = 999999;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.width = 100;
         Item.height = 100;
         Item.useTime = 1;
@@ -26,7 +26,7 @@ public class StupiderFuckingPickaxe : ModItem
         Item.crit = 69416;
         Item.ArmorPenetration = 999;
         Item.value = Item.buyPrice(gold: 135000);
-        Item.rare = ModContent.RarityType<HotPink>();
+        Item.rare = RarityType<HotPink>();
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 696969;

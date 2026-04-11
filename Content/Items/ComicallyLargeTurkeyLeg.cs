@@ -22,14 +22,14 @@ public class ComicallyLargeTurkeyLeg : ModItem
         Item.useAnimation = 42;
         Item.autoReuse = true;
         Item.scale = 2f;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 67;
         Item.knockBack = 7;
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<GreaseBomb>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<GreaseBomb>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 23.25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

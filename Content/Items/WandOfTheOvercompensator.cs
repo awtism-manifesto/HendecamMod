@@ -26,7 +26,7 @@ public class WandOfTheOvercompensator : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item20;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<AutismDamage>();
+        Item.DamageType = GetInstance<AutismDamage>();
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.

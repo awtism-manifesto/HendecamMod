@@ -21,7 +21,7 @@ public class VaxNeedle : ModProjectile
         Projectile.arrow = true;
         Projectile.extraUpdates = 2;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 200;
     }
 
@@ -73,7 +73,7 @@ public class VaxNeedle : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(-50, 50);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-50, 50);
 
@@ -89,25 +89,25 @@ public class VaxNeedle : ModProjectile
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<VaxNanobot>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         }
     }
 

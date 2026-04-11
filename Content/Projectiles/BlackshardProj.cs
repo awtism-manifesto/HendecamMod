@@ -152,7 +152,7 @@ public class BlackshardProj : ModProjectile
 
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
+        if (target.HasBuff(BuffType<BlackshardDebuff>()))
         {
             modifiers.SourceDamage *= 1.5f;
         }
@@ -174,7 +174,7 @@ public class BlackshardProj : ModProjectile
         // Set the target's hit direction to away from the player so the knockback is in the correct direction.
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);
 
-        if (target.HasBuff(ModContent.BuffType<BlackshardDebuff>()))
+        if (target.HasBuff(BuffType<BlackshardDebuff>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -183,7 +183,7 @@ public class BlackshardProj : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-660, 660), Main.rand.NextFloat(-500, 500));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 1.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<KnightSwordCombo>(), (int)(Projectile.damage * 1.67f), Projectile.knockBack, Projectile.owner);
         }
     }
 

@@ -28,7 +28,7 @@ public class LunarStaff : ModItem
         Item.noMelee = true;
         Item.value = 75000;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<LunarBolt>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<LunarBolt>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

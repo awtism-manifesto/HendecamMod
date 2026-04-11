@@ -38,12 +38,12 @@ public class LycoSpawn : ModProjectile
         if (Main.rand.NextBool(5))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<LycoSporeRanged>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoSporeRanged>(), (int)(Projectile.damage * 1.25f), Projectile.knockBack, Projectile.owner);
         }
         else
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<LycoShot>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoShot>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
         }
     }
 
@@ -62,7 +62,7 @@ public class LycoSpawn : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.55f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.55f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.1f;
             }

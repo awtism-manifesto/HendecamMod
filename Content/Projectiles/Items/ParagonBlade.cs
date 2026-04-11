@@ -59,7 +59,7 @@ public class ParagonBlade : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<ParagonTack>(),
+                ProjectileType<ParagonTack>(),
                 (int)(Projectile.damage * 0.67f),
                 Projectile.knockBack,
                 Projectile.owner

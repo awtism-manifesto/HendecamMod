@@ -23,7 +23,7 @@ public class CaliburnSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 17;
 
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 91;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
 
@@ -88,7 +88,7 @@ public class CaliburnSmoke : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = target.Center - new Vector2(0, -215);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<CaliburnSmoke2>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<CaliburnSmoke2>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
 
         Projectile.damage = (int)(Projectile.damage * 0.925f);
     }

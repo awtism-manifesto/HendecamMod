@@ -27,14 +27,14 @@ public class Tomatonator : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item61;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Tomato>();
+        Item.shoot = ProjectileType<Tomato>();
 
         Item.shootSpeed = 16.5f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -50,7 +50,7 @@ public class Tomatonator : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Tomato>();
+        type = ProjectileType<Tomato>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -59,12 +59,12 @@ public class Tomatonator : ModItem
         newVelocity *= 1f - Main.rand.NextFloat(0.2f);
         if (Main.rand.NextBool(5))
         {
-            type = ModContent.ProjectileType<Baconator>();
+            type = ProjectileType<Baconator>();
             Projectile.NewProjectileDirect(source, position, newVelocity * 1.25f, type, (int)(damage * 2.15f), knockback, player.whoAmI);
         }
         else
         {
-            type = ModContent.ProjectileType<Tomato>();
+            type = ProjectileType<Tomato>();
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 

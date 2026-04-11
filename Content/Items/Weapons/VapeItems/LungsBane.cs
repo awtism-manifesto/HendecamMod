@@ -22,7 +22,7 @@ public class LungsBane : ModItem
         Item.useAnimation = 33;
         Item.autoReuse = true;
         Item.reuseDelay = 19;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 20;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -36,7 +36,7 @@ public class LungsBane : ModItem
             PitchVariance = 0.2f,
             MaxInstances = 3,
         };
-        Item.shoot = ModContent.ProjectileType<EvilVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<EvilVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.85f; // Speed of the projectiles the sword will shoot
 
        

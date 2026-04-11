@@ -68,10 +68,10 @@ public class PhotonShotgun : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<PhotonSpawn>();
+            type = ProjectileType<PhotonSpawn>();
         }
 
-        if (type == ModContent.ProjectileType<PhotonSpawn>())
+        if (type == ProjectileType<PhotonSpawn>())
         {
             damage = (int)(damage * 1.03f);
             knockback = (int)(knockback * 0.5f);

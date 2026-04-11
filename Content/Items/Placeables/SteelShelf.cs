@@ -11,7 +11,7 @@ public class SteelShelf : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<SteelShelfPlaced>());
+        Item.DefaultToPlaceableTile(TileType<SteelShelfPlaced>());
         Item.width = 8;
         Item.height = 10;
     }

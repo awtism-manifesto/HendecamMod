@@ -26,7 +26,7 @@ public class SplashPotionOfShine : ModItem // MAG THE COMMENTS ON THIS FILE ARE 
         Item.knockBack = 3.5f;
         Item.value = 125;
         Item.rare = ItemRarityID.White;
-        Item.shoot = ModContent.ProjectileType<SplashPotionShine>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<SplashPotionShine>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 8.25f; // The speed of the projectile.
 
         // if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))

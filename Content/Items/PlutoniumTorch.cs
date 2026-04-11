@@ -22,7 +22,7 @@ public class PlutoniumTorch : ModItem
         
         Item.maxStack = 9999;
 
-        Item.DefaultToTorch(ModContent.TileType<Tiles.PlutoniumTorchPlaced>(), 0);
+        Item.DefaultToTorch(TileType<Tiles.PlutoniumTorchPlaced>(), 0);
         Item.value = 265;
     }
 

@@ -49,15 +49,15 @@ public class SpookyArrow : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.75f));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(1));
             Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-4.75f));
             Vector2 Peanits3 = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<SpookySpark>(), (int)(Projectile.damage * 0.38f), Projectile.knockBack, Projectile.owner);
 
             tickCounter = 0;
             nextSpawnTick = 24; 

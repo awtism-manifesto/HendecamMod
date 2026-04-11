@@ -28,7 +28,7 @@ public class AstaBoomOmni : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 2;
@@ -42,7 +42,7 @@ public class AstaBoomOmni : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 600);
+        target.AddBuff(BuffType<RadPoisoning3>(), 600);
     }
 
     public override void AI()
@@ -98,10 +98,10 @@ public class AstaBoomOmni : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 85; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
             fireDust.noGravity = true;
             fireDust.velocity *= 9f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.9f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.9f);
             fireDust.velocity *= 6f;
             fireDust.noGravity = true;
         }

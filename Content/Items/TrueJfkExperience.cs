@@ -30,7 +30,7 @@ public class TrueJfkExperience : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         Item.ArmorPenetration = 50;
-        Item.shoot = ModContent.ProjectileType<Projectiles.JfkBullet>();
+        Item.shoot = ProjectileType<Projectiles.JfkBullet>();
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 26f; // The speed of the projectile (measured in pixels per frame.)
@@ -46,7 +46,7 @@ public class TrueJfkExperience : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.JfkBullet>();
+        type = ProjectileType<Projectiles.JfkBullet>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

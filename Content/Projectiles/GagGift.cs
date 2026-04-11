@@ -38,7 +38,7 @@ public class GagGift : ModProjectile
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.SpikyBall;
 
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 240;
 
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.

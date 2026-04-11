@@ -23,7 +23,7 @@ public class SteelBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<SteelBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<SteelBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

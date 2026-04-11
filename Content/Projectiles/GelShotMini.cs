@@ -102,6 +102,6 @@ public class GelShotMini : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.Slimed, 300);
-        target.AddBuff(ModContent.BuffType<KingTag>(), 300);
+        target.AddBuff(BuffType<KingTag>(), 300);
     }
 }

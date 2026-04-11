@@ -145,7 +145,7 @@ public class TackParagon : ModProjectile
                         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                         Vector2 Peanits = Projectile.Center;
                         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                            ModContent.ProjectileType<ParagonMeteor>(), (int)(Projectile.damage * 30f), Projectile.knockBack, Projectile.owner);
+                            ProjectileType<ParagonMeteor>(), (int)(Projectile.damage * 30f), Projectile.knockBack, Projectile.owner);
 
                         tickCounter = 0;
                         nextSpawnTick = 240;
@@ -171,7 +171,7 @@ public class TackParagon : ModProjectile
                     Vector2 shoot3Velocity = base2Direction * FireVelocity;
                     Vector2 shoot4Velocity = opposite2Direction * FireVelocity;
 
-                    int type = ModContent.ProjectileType<ParagonBlade>();
+                    int type = ProjectileType<ParagonBlade>();
 
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(),
                         new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),

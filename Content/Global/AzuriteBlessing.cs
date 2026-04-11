@@ -16,7 +16,7 @@ public class AzuriteBlessing : GlobalNPC
     {
         if (!NPC.downedBoss3)
         {
-            ModContent.GetInstance<AzuriteSystem>().BlessWorldWithAzurite();
+            GetInstance<AzuriteSystem>().BlessWorldWithAzurite();
         }
     }
 }
@@ -65,7 +65,7 @@ public class AzuriteSystem : ModSystem
                 int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                 // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(6, 9), WorldGen.genRand.Next(7, 11), (ushort)ModContent.TileType<AzuriteOrePlaced>());
+                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(6, 9), WorldGen.genRand.Next(7, 11), (ushort)TileType<AzuriteOrePlaced>());
             }
         });
     }

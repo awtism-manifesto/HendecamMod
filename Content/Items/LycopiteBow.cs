@@ -43,10 +43,10 @@ public class LycopiteBow : ModItem
     {
         if (type == ProjectileID.WoodenArrowFriendly)
         {
-            type = ModContent.ProjectileType<CarrotProj>();
+            type = ProjectileType<CarrotProj>();
         }
 
-        if (type == ModContent.ProjectileType<CarrotProj>())
+        if (type == ProjectileType<CarrotProj>())
         {
             damage = (int)(damage * 1.15f);
             velocity = velocity * 1.66f;

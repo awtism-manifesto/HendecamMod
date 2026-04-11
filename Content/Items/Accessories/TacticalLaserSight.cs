@@ -122,8 +122,8 @@ public class TacticalLaserSight : ModItem
         private void DrawLaserBeam(PlayerDrawSet drawInfo, Vector2 start, Vector2 end, float distance)
         {
             // You'll need these textures - create them in your Assets folder
-            Texture2D laserTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserBeamPurple").Value;
-            Texture2D circleTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserEndPurple").Value;
+            Texture2D laserTexture = Request<Texture2D>("HendecamMod/Content/Effects/LaserBeamPurple").Value;
+            Texture2D circleTexture = Request<Texture2D>("HendecamMod/Content/Effects/LaserEndPurple").Value;
 
             // Fallback if textures don't exist - creates simple textures
             if (laserTexture == null || laserTexture.IsDisposed)

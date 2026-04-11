@@ -119,15 +119,15 @@ public class ShroomiteMissileProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-136, 136), Main.rand.NextFloat(-136, 136));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(-136, 136), Main.rand.NextFloat(-136, 136));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(-136, 136), Main.rand.NextFloat(-136, 136));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<ShroomBoom>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         // Play an exploding sound.
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
 
@@ -140,7 +140,7 @@ public class ShroomiteMissileProj : ModProjectile
         {
             Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 1.4f;
-            Dust smoke2Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 1.1f);
+            Dust smoke2Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 1.1f);
             smoke2Dust.velocity *= 5f;
         }
 

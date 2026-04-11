@@ -11,7 +11,7 @@ public class PromethiumOre : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<PromethiumOreTile>());
+        Item.DefaultToPlaceableTile(TileType<PromethiumOreTile>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Purple;

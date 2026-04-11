@@ -63,7 +63,7 @@ public class CandyCaneArrow : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<CandyCaneShard>(),
+                ProjectileType<CandyCaneShard>(),
                 Projectile.damage,
                 Projectile.knockBack,
                 Projectile.owner
@@ -76,7 +76,7 @@ public class CandyCaneArrow : ModProjectile
             Projectile.GetSource_FromThis(),
             position2,
             velocity2,
-            ModContent.ProjectileType<CandyCaneShard>(),
+            ProjectileType<CandyCaneShard>(),
             Projectile.damage,
             Projectile.knockBack,
             Projectile.owner
@@ -89,7 +89,7 @@ public class CandyCaneArrow : ModProjectile
             Projectile.GetSource_FromThis(),
             position3,
             velocity3,
-            ModContent.ProjectileType<CandyCaneShard>(),
+            ProjectileType<CandyCaneShard>(),
             Projectile.damage,
             Projectile.knockBack,
             Projectile.owner

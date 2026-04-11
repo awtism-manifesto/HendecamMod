@@ -21,7 +21,7 @@ public class RadPoisoning2 : ModBuff
     {
         if (Main.rand.NextBool(3))
         {
-            int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<PlutoniumDust>(),
+            int dust = Dust.NewDust(npc.position, npc.width, npc.height, DustType<PlutoniumDust>(),
                 npc.velocity.X * 0.89f, npc.velocity.Y * 0.89f, 70, default, 1.95f);
             Main.dust[dust].noGravity = true;
         }

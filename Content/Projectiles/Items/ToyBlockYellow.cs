@@ -10,7 +10,7 @@ public class ToyBlockYellow : ModProjectile
         Projectile.width = 30;
         Projectile.height = 30;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.penetrate = 1;
         Projectile.timeLeft = 600;
         Projectile.tileCollide = true;
@@ -22,7 +22,7 @@ public class ToyBlockYellow : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Splinters>(), 180);
+        target.AddBuff(BuffType<Splinters>(), 180);
     }
 
     public override void AI()

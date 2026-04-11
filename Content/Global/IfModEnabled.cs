@@ -13,7 +13,7 @@ public class SaltCalBuff : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<SaltPendant>();
+        return item.type == ItemType<SaltPendant>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -38,7 +38,7 @@ public class PureSaltCalBuff : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<SpiritProtectionCharm>();
+        return item.type == ItemType<SpiritProtectionCharm>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -63,7 +63,7 @@ public class PlanetoidThorium : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<PlanetoidPunisher>();
+        return item.type == ItemType<PlanetoidPunisher>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -86,7 +86,7 @@ public class ThoriumModOiledUp : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<BottledOil>();
+        return item.type == ItemType<BottledOil>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -111,7 +111,7 @@ public class ThoriumMonke : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<TheMonkeysPaw>();
+        return item.type == ItemType<TheMonkeysPaw>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -129,7 +129,7 @@ public class ThoriumMonke : GlobalItem
             item.DamageType = DamageClass.Throwing;
             item.damage = 15;
             item.useAmmo = AmmoID.None;
-            item.shoot = ModContent.ProjectileType<CeramDart>();
+            item.shoot = ProjectileType<CeramDart>();
         }
     }
 }
@@ -139,7 +139,7 @@ public class ThoriumMonkeSuper : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<SuperMonkeysPaw>();
+        return item.type == ItemType<SuperMonkeysPaw>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -157,7 +157,7 @@ public class ThoriumMonkeSuper : GlobalItem
             item.DamageType = DamageClass.Throwing;
             item.damage = 22;
             item.useAmmo = AmmoID.None;
-            item.shoot = ModContent.ProjectileType<CeramDart>();
+            item.shoot = ProjectileType<CeramDart>();
         }
     }
 }
@@ -167,7 +167,7 @@ public class ThoriumMonkeSuperLaser : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<LaserMonkeysPaw>();
+        return item.type == ItemType<LaserMonkeysPaw>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -185,7 +185,7 @@ public class ThoriumMonkeSuperLaser : GlobalItem
             item.DamageType = DamageClass.Throwing;
             item.damage = 41;
             item.useAmmo = AmmoID.None;
-            item.shoot = ModContent.ProjectileType<LaserBlast>();
+            item.shoot = ProjectileType<LaserBlast>();
         }
     }
 }
@@ -195,7 +195,7 @@ public class ThoriumMonkeSuperLaserPlasma : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<PlasmaMonkeysPaw>();
+        return item.type == ItemType<PlasmaMonkeysPaw>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -213,7 +213,7 @@ public class ThoriumMonkeSuperLaserPlasma : GlobalItem
             item.DamageType = DamageClass.Throwing;
             item.damage = 82;
             item.useAmmo = AmmoID.None;
-            item.shoot = ModContent.ProjectileType<PlasmaBlast>();
+            item.shoot = ProjectileType<PlasmaBlast>();
         }
     }
 }
@@ -223,7 +223,7 @@ public class PeopleThorium : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<ThePeoplesPitchfork>();
+        return item.type == ItemType<ThePeoplesPitchfork>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -248,7 +248,7 @@ public class ThoriumsBullshit : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<Bullshit4>();
+        return item.type == ItemType<Bullshit4>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -272,7 +272,7 @@ public class ParaSepta : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<Septicemia>();
+        return item.type == ItemType<Septicemia>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -300,7 +300,7 @@ public class FabsolKillingTheClimate : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<ClimateChanger>();
+        return item.type == ItemType<ClimateChanger>();
     }
 
     public override void SetDefaults(Item item)
@@ -318,7 +318,7 @@ public class FabsolKillingTheClimat2e : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<SolarRayRifle>();
+        return item.type == ItemType<SolarRayRifle>();
     }
 
     public override void SetDefaults(Item item)
@@ -335,7 +335,7 @@ public class CeramCalBuff : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<CarbonDioxideCeram>();
+        return item.type == ItemType<CarbonDioxideCeram>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -360,7 +360,7 @@ public class RadCalBuff : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<IrradiatedFisticuffs>();
+        return item.type == ItemType<IrradiatedFisticuffs>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -385,7 +385,7 @@ public class CeramHorseCalBuff : GlobalItem
     // Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ModContent.ItemType<CeramicHorseshoeBalloon>();
+        return item.type == ItemType<CeramicHorseshoeBalloon>();
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

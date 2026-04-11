@@ -10,7 +10,7 @@ public class AirBar : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AirBar>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.AirBar>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

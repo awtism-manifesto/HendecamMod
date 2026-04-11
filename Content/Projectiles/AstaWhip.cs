@@ -50,9 +50,9 @@ public class AstaWhip : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(3));
         Vector2 Peanits = target.Center;
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaBoomBig>(), (int)(Projectile.damage * 1.33f), Projectile.knockBack, Projectile.owner);
 
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
         Projectile.damage = (int)(Projectile.damage * 0.45f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
@@ -95,7 +95,7 @@ public class AstaWhip : ModProjectile
             Projectile.FillWhipControlPoints(Projectile, points);
             int pointIndex = Main.rand.Next(points.Count - 10, points.Count);
             Rectangle spawnArea = Utils.CenteredRectangle(points[pointIndex], new Vector2(30f, 30f));
-            int dustType = ModContent.DustType<AstatineDust>();
+            int dustType = DustType<AstatineDust>();
             // After choosing a randomized dust and a whip segment to spawn from, dust is spawned.
             Dust dust = Dust.NewDustDirect(spawnArea.TopLeft(), spawnArea.Width, spawnArea.Height, dustType, 0f, 0f, 100, Color.Red);
             dust.position = points[pointIndex];

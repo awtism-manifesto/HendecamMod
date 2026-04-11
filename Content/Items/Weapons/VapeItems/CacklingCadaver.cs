@@ -24,7 +24,7 @@ public class CacklingCadaver : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 9;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 31;
         Item.knockBack = 1.15f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -39,7 +39,7 @@ public class CacklingCadaver : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<BoneSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<BoneSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.93f; // Speed of the projectiles the sword will shoot
 
        
@@ -56,7 +56,7 @@ public class CacklingCadaver : ModItem
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        player.AddBuff(ModContent.BuffType<SkeletalDefense>(), 61);
+        player.AddBuff(BuffType<SkeletalDefense>(), 61);
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
         if (player.GetModPlayer<IronLungPlayer>().IronLungs == false)
         {

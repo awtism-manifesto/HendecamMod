@@ -30,7 +30,7 @@ public class GunbladeSpore : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         Projectile.aiStyle = -1;
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.timeLeft = 250;
         Projectile.extraUpdates = 1;
         Projectile.tileCollide = true;
@@ -59,7 +59,7 @@ public class GunbladeSpore : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 0.85f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 0.85f);
             chudDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
             chudDust.velocity *= 0.1f;
         }

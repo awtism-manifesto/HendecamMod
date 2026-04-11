@@ -16,7 +16,7 @@ public class LoadedDieProj : ModProjectile
         Projectile.width = 30;
         Projectile.height = 30;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Projectile.DamageType = GetInstance<RangedStupidDamage>();
         Projectile.penetrate = 1;
         Projectile.timeLeft = 600;
         Projectile.tileCollide = true;

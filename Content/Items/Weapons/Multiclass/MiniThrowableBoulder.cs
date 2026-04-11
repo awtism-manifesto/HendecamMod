@@ -29,11 +29,11 @@ public class MiniThrowableBoulder : ModItem
         Item.knockBack = 5f;
         Item.noUseGraphic = true; // The item should not be visible when used
         Item.noMelee = true; // The projectile will do the damage and not the item
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
 
         // Projectile Properties
         Item.shootSpeed = 8.77f;
-        Item.shoot = ModContent.ProjectileType<MiniBoulderThrowableProjectile>(); // The projectile that will be thrown
+        Item.shoot = ProjectileType<MiniBoulderThrowableProjectile>(); // The projectile that will be thrown
     }
     public float LobotometerCost = 1f;
     public override bool? UseItem(Player player)

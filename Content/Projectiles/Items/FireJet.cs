@@ -70,7 +70,7 @@ public class FireJet : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<FireJetRecurse>(),
+                ProjectileType<FireJetRecurse>(),
                 Projectile.damage,
                 Projectile.knockBack,
                 Projectile.owner

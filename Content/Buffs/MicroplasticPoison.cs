@@ -70,7 +70,7 @@ public class MicroplasticTick : GlobalNPC
     public override void ResetEffects(NPC npc)
     {
         // Don't reset if the buff is still active
-        if (!npc.HasBuff(ModContent.BuffType<MicroplasticPoison>()))
+        if (!npc.HasBuff(BuffType<MicroplasticPoison>()))
         {
             Microplastic = false;
             MicroplasticStacks = 0;
@@ -129,7 +129,7 @@ public static class MicroplasticPoisonExtensions
         if (Main.netMode == NetmodeID.MultiplayerClient)
             return;
 
-        int buffType = ModContent.BuffType<MicroplasticPoison>();
+        int buffType = BuffType<MicroplasticPoison>();
 
         if (npc.HasBuff(buffType))
         {

@@ -30,7 +30,7 @@ public class CrimtaneShuriken : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 18.95f;
-        Item.shoot = ModContent.ProjectileType<CrimtaneShurikenProjectile>(); // The projectile that will be thrown
+        Item.shoot = ProjectileType<CrimtaneShurikenProjectile>(); // The projectile that will be thrown
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

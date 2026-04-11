@@ -39,7 +39,7 @@ public class LaserMonkeysPaw : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<LaserBlast>();
+        type = ProjectileType<LaserBlast>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

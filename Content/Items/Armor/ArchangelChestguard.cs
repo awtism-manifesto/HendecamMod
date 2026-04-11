@@ -52,8 +52,8 @@ public class ArchangelChestguard : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<ArchangelHelmet>() &&
-               legs.type == ModContent.ItemType<ArchangelGreaves>();
+        return head.type == ItemType<ArchangelHelmet>() &&
+               legs.type == ItemType<ArchangelGreaves>();
     }
 
     public override void AddRecipes()

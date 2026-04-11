@@ -27,14 +27,14 @@ public class MoonLandingFakingDevice : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item163;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 32; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<FakeRocket>();
+        Item.shoot = ProjectileType<FakeRocket>();
 
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -50,7 +50,7 @@ public class MoonLandingFakingDevice : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<FakeRocket>();
+        type = ProjectileType<FakeRocket>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

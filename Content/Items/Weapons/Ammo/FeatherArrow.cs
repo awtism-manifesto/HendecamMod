@@ -22,7 +22,7 @@ public class FeatherArrow : ModItem
         Item.consumable = true;
         Item.knockBack = 1.5f;
         Item.value = Item.sellPrice(copper: 30);
-        Item.shoot = ModContent.ProjectileType<FeatherArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<FeatherArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 1.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.White;

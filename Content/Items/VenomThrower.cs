@@ -34,7 +34,7 @@ public class VenomThrower : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<VenomFlame2>();
+        Item.shoot = ProjectileType<VenomFlame2>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -46,7 +46,7 @@ public class VenomThrower : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<VenomFlame2>();
+        type = ProjectileType<VenomFlame2>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -37,12 +37,12 @@ public class BlackMamba : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 23.25f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Dart;
-        Item.shoot = ModContent.ProjectileType<MambaShot>();
+        Item.shoot = ProjectileType<MambaShot>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<MambaShot>();
+        type = ProjectileType<MambaShot>();
     }
 
     public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -53,7 +53,7 @@ public class BlackMamba : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-        player.AddBuff(ModContent.BuffType<MambaBuff>(), 30);
+        player.AddBuff(BuffType<MambaBuff>(), 30);
         SoundEngine.PlaySound(SoundID.Item74, player.position);
         SoundEngine.PlaySound(SoundID.Item143, player.position);
         for (int i = 0; i < NumProjectiles; i++)

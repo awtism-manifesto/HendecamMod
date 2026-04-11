@@ -36,7 +36,7 @@ public class WhippetProj : ModProjectile
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<LilTMan>(), 240);
+        target.AddBuff(BuffType<LilTMan>(), 240);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.

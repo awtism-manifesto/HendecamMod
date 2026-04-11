@@ -33,7 +33,7 @@ public class KnightSwordCombo : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.tileCollide = false;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.timeLeft = 205;
 
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.

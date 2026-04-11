@@ -37,7 +37,7 @@ public class SteelHelmet : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<SteelBreastplate>() && legs.type == ModContent.ItemType<SteelLeggings>();
+        return body.type == ItemType<SteelBreastplate>() && legs.type == ItemType<SteelLeggings>();
     }
 
     public override void AddRecipes()

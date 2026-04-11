@@ -31,7 +31,7 @@ public class OrichalcumRose : ModItem
         Item.ArmorPenetration = 3;
         Item.value = 191000;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<OrichalcumRosePetal>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<OrichalcumRosePetal>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.67f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -54,7 +54,7 @@ public class OrichalcumRose : ModItem
     
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<OrichalcumRosePetal>();
+        type = ProjectileType<OrichalcumRosePetal>();
     }
     private int shotCounter = 0;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

@@ -4,7 +4,7 @@ public class CobaltWorkBench : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.CobaltWorkBenchPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.CobaltWorkBenchPlaced>());
         Item.width = 28;
         Item.height = 14;
         Item.value = 49000;

@@ -29,7 +29,7 @@ public class TrippyTransmutationStaff : ModItem
 
         Item.value = 142000;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.05f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -41,7 +41,7 @@ public class TrippyTransmutationStaff : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<LycoRay>();
+        type = ProjectileType<LycoRay>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

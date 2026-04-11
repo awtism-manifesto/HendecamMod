@@ -25,7 +25,7 @@ public class RedneckShovelHallow : ModProjectile
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);
-        target.AddBuff(ModContent.BuffType<RedneckTag>(), 136);
+        target.AddBuff(BuffType<RedneckTag>(), 136);
     }
 
     public override void AI()

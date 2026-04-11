@@ -17,7 +17,7 @@ public class Zablade : ModItem
         Item.useTime = 24;
         Item.useAnimation = 24;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 16;
         Item.knockBack = 5.5f;
         Item.scale = 1.15f;
@@ -26,7 +26,7 @@ public class Zablade : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<RazorLeaf>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<RazorLeaf>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 2.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -64,7 +64,7 @@ public class Zablade : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ModContent.ProjectileType<RazorLeaf>())
+        if (type == ProjectileType<RazorLeaf>())
         {
             damage = (int)(damage * 0.67f);
             knockback = knockback * 0.5f;

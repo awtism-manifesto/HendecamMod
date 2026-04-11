@@ -21,12 +21,12 @@ public class CookingPot : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 15;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 21;
         Item.knockBack = 1;
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<GreaseSplatter>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<GreaseSplatter>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.2f; // Speed of the projectiles the sword will shoot
 
        

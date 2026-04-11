@@ -22,7 +22,7 @@ public class PulmonaryHemorrhage : ModItem
         Item.useAnimation = 36;
         Item.autoReuse = true;
         Item.reuseDelay = 21;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 23;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +37,7 @@ public class PulmonaryHemorrhage : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<BloodyVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<BloodyVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10.33f; // Speed of the projectiles the sword will shoot
 
        

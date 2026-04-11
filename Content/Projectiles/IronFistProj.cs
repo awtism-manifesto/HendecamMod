@@ -90,7 +90,7 @@ public class IronFistProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Bottom - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<IronWave>(), (int)(Projectile.damage * 1.033f), (Projectile.knockBack * 1.33f), Projectile.owner);
+            ProjectileType<IronWave>(), (int)(Projectile.damage * 1.033f), (Projectile.knockBack * 1.33f), Projectile.owner);
     }
 
     private void SetVisualOffsets()

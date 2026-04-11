@@ -21,7 +21,7 @@ public class VaxNanobot : ModProjectile
         Projectile.extraUpdates = 0;
         Projectile.friendly = true;
         Projectile.penetrate = 2;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 330;
         Projectile.usesIDStaticNPCImmunity = true;
         AIType = ProjectileID.Bullet;

@@ -28,14 +28,14 @@ public class SlimeMineStaff : ModItem
         Item.value = Item.sellPrice(gold: 7);
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.DD2_PhantomPhoenixShot; // What sound should play when using the item
-        Item.buffType = ModContent.BuffType<SlimeMinesBuff>();
+        Item.buffType = BuffType<SlimeMinesBuff>();
 
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
 
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
-        Item.shoot = ModContent.ProjectileType<SlimeMine>(); // This item creates the minion projectile
+        Item.shoot = ProjectileType<SlimeMine>(); // This item creates the minion projectile
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

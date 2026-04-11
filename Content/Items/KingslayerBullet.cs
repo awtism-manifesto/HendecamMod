@@ -22,7 +22,7 @@ public class KingslayerBullet : ModItem
         Item.knockBack = 1.5f;
         Item.value = 69;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ModContent.ProjectileType<KingShot>();
+        Item.shoot = ProjectileType<KingShot>();
         Item.shootSpeed = 6.6f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

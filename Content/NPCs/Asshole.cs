@@ -73,8 +73,8 @@ public class Asshole : ModNPC
             .SetBiomeAffection<JungleBiome>(AffectionLevel.Dislike) // Example Person prefers the forest.
             .SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike) // Loves living near the dryad.
             .SetNPCAffection(NPCID.GoblinTinkerer, AffectionLevel.Dislike) // Loves living near the dryad.
-            .SetNPCAffection(ModContent.NPCType<River>(), AffectionLevel.Love) // Likes living near the guide.
-            .SetNPCAffection(ModContent.NPCType<Politician>(), AffectionLevel.Hate) // Likes living near the guide.
+            .SetNPCAffection(NPCType<River>(), AffectionLevel.Love) // Likes living near the guide.
+            .SetNPCAffection(NPCType<Politician>(), AffectionLevel.Hate) // Likes living near the guide.
             .SetNPCAffection(NPCID.Truffle, AffectionLevel.Like) // Dislikes living near the merchant.
             ; // < Mind the semicolon!
 
@@ -253,7 +253,7 @@ public class Asshole : ModNPC
         foreach (var player in Main.ActivePlayers)
         {
             // Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-            if (player.inventory.Any(item => item.type == ModContent.ItemType<YelmutsHelmet>()))
+            if (player.inventory.Any(item => item.type == ItemType<YelmutsHelmet>()))
             {
                 return true;
             }
@@ -326,7 +326,7 @@ public class Asshole : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<YelmutsHelmet>(), 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<YelmutsHelmet>(), 5));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -343,7 +343,7 @@ public class Asshole : ModNPC
 
     public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
     {
-        projType = ModContent.ProjectileType<PlasmaLaser>();
+        projType = ProjectileType<PlasmaLaser>();
         attackDelay = 1;
     }
 
