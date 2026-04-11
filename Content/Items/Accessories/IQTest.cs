@@ -1,10 +1,6 @@
 ﻿
 using HendecamMod.Content.Global;
-using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Accessories;
 

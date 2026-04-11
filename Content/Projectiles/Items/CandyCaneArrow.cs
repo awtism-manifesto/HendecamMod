@@ -1,8 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using Terraria.GameContent;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Stupid;

@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Materials;

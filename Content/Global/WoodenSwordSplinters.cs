@@ -1,15 +1,5 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items;
-using HendecamMod.Content.Poop;
-using HendecamMod.Content.Projectiles;
-using Mono.Cecil;
+﻿using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HendecamMod.Content.Global;
 

@@ -1,14 +1,10 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Weapons.Multiclass;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
-using Terraria;
 using Terraria.Enums;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

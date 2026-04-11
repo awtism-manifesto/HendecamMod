@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Accessories;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global
 {

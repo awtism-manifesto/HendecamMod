@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Terraria;
 
 namespace HendecamMod.Content.Buffs;
 

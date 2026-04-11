@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Global;
-using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
 using Terraria.GameContent.ItemDropRules;
 

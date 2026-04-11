@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Tiles.Furniture;
-using HendecamMod.Content.Items.Icons;
+﻿using HendecamMod.Content.Items.Icons;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.Rampart;

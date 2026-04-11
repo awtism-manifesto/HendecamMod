@@ -1,15 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.Localization;
-using Terraria.ModLoader.IO;
 
 
 namespace HendecamMod.Content.Items.Armor;

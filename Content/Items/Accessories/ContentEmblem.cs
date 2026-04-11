@@ -1,14 +1,11 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
 

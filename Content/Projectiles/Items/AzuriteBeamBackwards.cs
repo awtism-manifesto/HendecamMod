@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-
-namespace HendecamMod.Content.Projectiles.Items;
+﻿namespace HendecamMod.Content.Projectiles.Items;
 
 
 public class AzuriteBeamBackwards : ModProjectile

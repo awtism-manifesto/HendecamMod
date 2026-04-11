@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Global;
-using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Projectiles;
 

@@ -1,13 +1,7 @@
 ﻿using HendecamMod.Content.Items.Accessories;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.Chat;
 using Terraria.GameContent;
 using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Common.Systems
 {

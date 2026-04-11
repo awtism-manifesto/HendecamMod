@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

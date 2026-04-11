@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Enemies;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;

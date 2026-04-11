@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global
 {

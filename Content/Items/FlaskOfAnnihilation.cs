@@ -2,7 +2,6 @@
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria;
 
 namespace HendecamMod.Content.Items;
 

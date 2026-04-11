@@ -1,10 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-
-using Terraria;
+﻿using System.Collections.Generic;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
 

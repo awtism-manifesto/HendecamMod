@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using System.Collections.Generic;
-using Terraria.Localization;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Prefixes
 {

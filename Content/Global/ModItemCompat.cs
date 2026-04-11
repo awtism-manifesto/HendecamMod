@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
 namespace HendecamMod.Content.GlobalItems;

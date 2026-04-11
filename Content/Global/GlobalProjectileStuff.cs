@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Enemies;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
 using Terraria.DataStructures;

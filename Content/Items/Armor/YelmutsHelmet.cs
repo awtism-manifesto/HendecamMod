@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.Localization;
 

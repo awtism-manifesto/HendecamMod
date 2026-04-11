@@ -1,21 +1,9 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Items.Armor;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
-using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.Items.Weapons.Multiclass;
 

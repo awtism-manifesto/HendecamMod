@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class SheildOffense : ModBuff
 {

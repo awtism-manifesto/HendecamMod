@@ -1,6 +1,5 @@
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items;
 

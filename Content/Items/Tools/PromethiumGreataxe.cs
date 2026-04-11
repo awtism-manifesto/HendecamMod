@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Tools;

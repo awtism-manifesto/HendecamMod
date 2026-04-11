@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.VapeItems;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.DataStructures;

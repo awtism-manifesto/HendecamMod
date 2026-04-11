@@ -1,6 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Buffs;
 

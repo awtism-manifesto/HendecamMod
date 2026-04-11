@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using Terraria.GameContent;
-
-namespace HendecamMod.Content.Projectiles.Items;
+﻿namespace HendecamMod.Content.Projectiles.Items;
 
 public class MythrilRosePetal : ModProjectile
 {

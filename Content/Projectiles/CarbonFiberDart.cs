@@ -1,6 +1,4 @@
-﻿using Terraria.Audio;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class CarbonFiberDart : ModProjectile
 {

@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Global;
-using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;

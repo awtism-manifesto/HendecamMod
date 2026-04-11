@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Poop;
+﻿using HendecamMod.Content.DamageClasses;
 using Terraria.Audio;
 using Terraria.DataStructures;
 

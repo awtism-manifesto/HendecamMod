@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
 using Terraria.DataStructures;
 

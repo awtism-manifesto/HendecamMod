@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
 using Terraria.GameContent;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

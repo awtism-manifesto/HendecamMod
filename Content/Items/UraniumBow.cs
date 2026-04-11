@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
-using Terraria;
 
 namespace HendecamMod.Content.Items;
 

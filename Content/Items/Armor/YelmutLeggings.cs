@@ -1,10 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 

@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Tiles.Blocks;
+﻿using HendecamMod.Content.Tiles.Blocks;
 
 namespace HendecamMod.Content.Items.Placeables;
 

@@ -1,7 +1,4 @@
-﻿using System.Threading;
-using HendecamMod.Common.Systems;
-using HendecamMod.Content.NPCs.Bosses;
-using HendecamMod.Content.Tiles;
+﻿using HendecamMod.Content.Tiles;
 using Terraria.Chat;
 using Terraria.Localization;
 

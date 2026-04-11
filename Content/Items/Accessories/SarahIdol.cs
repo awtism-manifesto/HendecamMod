@@ -1,7 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 

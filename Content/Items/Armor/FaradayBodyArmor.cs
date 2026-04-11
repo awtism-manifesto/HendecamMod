@@ -4,7 +4,6 @@ using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 

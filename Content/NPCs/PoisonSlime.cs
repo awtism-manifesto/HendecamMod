@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 

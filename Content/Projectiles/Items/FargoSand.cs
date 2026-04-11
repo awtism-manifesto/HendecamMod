@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

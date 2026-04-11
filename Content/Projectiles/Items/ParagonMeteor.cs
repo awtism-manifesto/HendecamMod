@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-using Terraria.Audio;
+﻿using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

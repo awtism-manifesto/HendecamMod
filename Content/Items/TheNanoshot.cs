@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.VapeItems;
-using Terraria.DataStructures;
+﻿using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 

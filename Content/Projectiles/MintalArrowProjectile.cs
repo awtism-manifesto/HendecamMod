@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles;

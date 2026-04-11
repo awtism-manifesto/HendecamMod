@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;

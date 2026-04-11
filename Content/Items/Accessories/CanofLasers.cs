@@ -1,9 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
 

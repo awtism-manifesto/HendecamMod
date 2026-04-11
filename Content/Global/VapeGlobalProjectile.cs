@@ -1,9 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories.VapeDyes;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Global;

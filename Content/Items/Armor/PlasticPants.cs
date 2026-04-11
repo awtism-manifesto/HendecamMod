@@ -2,9 +2,7 @@
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 

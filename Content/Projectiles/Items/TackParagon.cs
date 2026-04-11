@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Items.Weapons.Summon;
 using Terraria.Audio;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Projectiles.Items;
 

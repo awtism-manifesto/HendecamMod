@@ -1,9 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using Terraria.GameContent;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class CaptainBall : ModProjectile
