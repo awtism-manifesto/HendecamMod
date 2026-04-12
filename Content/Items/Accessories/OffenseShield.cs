@@ -44,7 +44,11 @@ public class OffenseShield : ModItem
         recipe.AddIngredient<PanicShield>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-       
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CrawCarapace", out ModItem CrawCarapace))
+        {
+            recipe.AddIngredient(CrawCarapace.Type);
+        }
+
     }
     public class OffenseProc : ModPlayer
     {

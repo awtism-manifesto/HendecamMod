@@ -70,11 +70,13 @@ public class BugBuzz : ModItem
         recipe.AddIngredient(ItemID.BeetleHusk, 8);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("LivingShard", out ModItem LivingShard))
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PerennialBar", out ModItem PerennialBar)
+            && CalMerica.TryFind("LivingShard", out ModItem LivingShard))
         {
+            recipe.AddIngredient(PerennialBar.Type, 10);
             recipe.AddIngredient(LivingShard.Type, 4);
         }
+        
     }
 
     public override Vector2? HoldoutOffset()

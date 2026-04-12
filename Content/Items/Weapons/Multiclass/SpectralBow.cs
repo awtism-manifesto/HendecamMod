@@ -57,22 +57,36 @@ public class SpectralBow : ModItem
 
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe();
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("JinxBow", out ModItem JinxBow))
+        {
+            Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<SplashPotionOfShine>(100);
-        recipe.AddIngredient(ItemID.PixieDust, 50);
-        recipe.AddIngredient(ItemID.SoulofLight, 5);
-        recipe.AddIngredient(ItemID.GoldBow);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
-        recipe = CreateRecipe();
+            recipe.AddIngredient<SplashPotionOfShine>(100);
+            recipe.AddIngredient(ItemID.PixieDust, 50);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
+            recipe.AddIngredient(JinxBow.Type);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+           
+        }
+        Recipe recipee = CreateRecipe();
 
-        recipe.AddIngredient<SplashPotionOfShine>(100);
-        recipe.AddIngredient(ItemID.PixieDust, 50);
-        recipe.AddIngredient(ItemID.SoulofLight, 5);
-        recipe.AddIngredient(ItemID.PlatinumBow);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
+        recipee.AddIngredient<SplashPotionOfShine>(100);
+        recipee.AddIngredient(ItemID.PixieDust, 50);
+        recipee.AddIngredient(ItemID.SoulofLight, 5);
+        recipee.AddIngredient(ItemID.GoldBow);
+        recipee.AddTile(TileID.MythrilAnvil);
+        recipee.Register();
+
+        recipee = CreateRecipe();
+
+        recipee.AddIngredient<SplashPotionOfShine>(100);
+        recipee.AddIngredient(ItemID.PixieDust, 50);
+        recipee.AddIngredient(ItemID.SoulofLight, 5);
+        recipee.AddIngredient(ItemID.PlatinumBow);
+        recipee.AddTile(TileID.MythrilAnvil);
+        recipee.Register();
+
     }
 
     public override Vector2? HoldoutOffset()

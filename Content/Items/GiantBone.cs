@@ -16,7 +16,7 @@ public class GiantBone : ModItem
         Item.useTime = 32;
         Item.useAnimation = 32;
         Item.autoReuse = true;
-
+       
         Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 60;
         Item.knockBack = 7;

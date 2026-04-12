@@ -121,6 +121,30 @@ public class DoorStupid2 : GlobalItem
 
 
 }
+public class BoomShroomLycopiteCompat : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod SpiritMerica) && SpiritMerica.TryFind("BoomShroom", out ModItem BoomShroom))
+        {
+            return item.type == BoomShroom.Type;
+        }
+
+        return false;
+    }
+    public static readonly int DMG = 8;
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+      
+        player.GetDamage(DamageClass.Ranged) += DMG / 100f;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Spirit Reforged) - Increases Ranged damage by 8%") { OverrideColor = Color.Goldenrod});
+    }
+
+
+}
 public class MagmaGarbage : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

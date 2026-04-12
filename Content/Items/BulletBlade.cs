@@ -39,18 +39,18 @@ public class BulletBlade : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 27; 
+        const int NumProjectiles = 30; 
         damage = (int)(damage * 0.48f);
         SoundEngine.PlaySound(SoundID.Item38, player.position);
         for (int i = 0; i < NumProjectiles; i++)
         {
-            float rotation = MathHelper.ToRadians(i * 13.34f);
+            float rotation = MathHelper.ToRadians(i * 12f);
             Vector2 newVelocity = velocity.RotatedBy(rotation);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
 
-        return true; 
+        return false; 
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -79,16 +79,19 @@ public class BulletBlade : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.AdamantiteBar, 12);
+        recipe.AddRecipeGroup("IronBar", 20);
         recipe.AddIngredient(ItemID.SoulofMight, 10);
-        recipe.AddIngredient(ItemID.MusketBall, 100);
+       
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-        recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.TitaniumBar, 12);
-        recipe.AddIngredient(ItemID.SoulofMight, 10);
-        recipe.AddIngredient(ItemID.MusketBall, 100);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("BulletFilledShotgun", out ModItem BulletFilledShotgun))
+        {
+            recipe.AddIngredient(BulletFilledShotgun.Type);
+        }
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica) )
+        {
+            recipe.AddIngredient(ItemID.MusketBall, 100);
+        }
+
     }
 }

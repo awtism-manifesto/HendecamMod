@@ -92,11 +92,15 @@ public class BunnyBomber : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.RocketLauncher);
         recipe.AddIngredient(ItemID.ExplosiveBunny, 5);
+        recipe.AddIngredient(ItemID.RocketLauncher);
+       
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("BombCannon", out ModItem BombCannon))
+        {
+            recipe.AddIngredient(BombCannon.Type);
+        }
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SuspiciousLookingEgg", out ModItem SuspiciousLookingEgg))
         {
             recipe.AddIngredient(SuspiciousLookingEgg.Type);

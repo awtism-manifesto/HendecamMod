@@ -40,18 +40,7 @@ public class FissionDrive : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -63,6 +52,10 @@ public class FissionDrive : ModItem
         recipe.AddIngredient(ItemID.LunarBar, 10);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("ExodiumCluster", out ModItem ExodiumCluster))
+        {
+            recipe.AddIngredient(ExodiumCluster.Type, 10);
+        }
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariumCore", out ModItem TerrariumCore))
         {
             recipe.AddIngredient(TerrariumCore.Type, 5);

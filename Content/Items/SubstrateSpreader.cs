@@ -96,11 +96,19 @@ public class SubstrateSpreader : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<AshSpewer>();
-            recipe.AddIngredient<LycopiteBar>(13);
+        recipe.AddIngredient<LycopiteBar>(13);
+       
+           
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-        
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("Fungicide", out ModItem Fungicide))
+        {
+            recipe.AddIngredient(Fungicide.Type);
+        }
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
+        {
+            recipe.AddIngredient<AshSpewer>();
+        }
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("RottenChunk", out ModItem RottenChunk))
         {
             recipe.AddIngredient(RottenChunk.Type, 10);

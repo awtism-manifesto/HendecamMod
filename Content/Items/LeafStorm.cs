@@ -73,18 +73,7 @@ public class LeafStorm : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -96,6 +85,10 @@ public class LeafStorm : ModItem
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PerennialBar", out ModItem PerennialBar))
+        {
+            recipe.AddIngredient(PerennialBar.Type, 10);
+        }
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
