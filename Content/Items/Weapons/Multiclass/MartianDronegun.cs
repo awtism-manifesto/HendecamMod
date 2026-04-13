@@ -17,15 +17,15 @@ public class MartianDronegun : ModItem
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 990000;
         // Use Properties
-        Item.useTime = 33; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 33; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 40; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item102;
         // Weapon Properties
         Item.DamageType = GetInstance<RangedSummonDamage>(); // Sets the damage type to ranged.
-        Item.damage = 90; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 80; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 

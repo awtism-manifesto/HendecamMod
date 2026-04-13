@@ -94,8 +94,7 @@ public class UnstablePlasmoid : ModNPC
     {
         npcLoot.Add(ItemDropRule.Common(ItemType<AstatineOre>(), 1, 191, 251));
        
-        npcLoot.Add(ItemDropRule.Common(ItemType<PlutoniumOre>(), 4, 101, 179));
-        npcLoot.Add(ItemDropRule.Common(ItemType<UraniumOre>(), 4, 41, 79));
+       
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 4, 19, 39));
         npcLoot.Add(ItemDropRule.Common(ItemID.FallenStar, 4, 15, 25));
 

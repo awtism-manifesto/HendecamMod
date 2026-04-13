@@ -94,6 +94,7 @@ public class River : ModNPC
     {
         NPC.townNPC = true; // Sets NPC to be a Town NPC
         NPC.friendly = true; // NPC Will not attack player
+ 
         NPC.width = 18;
         NPC.height = 37;
         NPC.aiStyle = NPCAIStyleID.Passive;

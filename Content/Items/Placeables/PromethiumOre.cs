@@ -15,6 +15,6 @@ public class PromethiumOre : ModItem
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Purple;
-        Item.value = 3500;
+        Item.value = 17150;
     }
 }

@@ -18,9 +18,9 @@ public class PromethiumBar : ModItem
         Item.height = 32;
         Item.scale = 1f;
         Item.rare = ItemRarityID.Red; 
-        Item.value = 98500;
+        Item.value = 87500;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(TileType<Tiles.AstatineBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PrideFlagPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -46,7 +46,7 @@ public class PromethiumBar : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(3);
-        recipe.AddIngredient<PromethiumOre>(27);
+        recipe.AddIngredient<PromethiumOre>(15);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
