@@ -80,7 +80,7 @@ public class MagicBong : ModItem
         var line = new TooltipLine(Mod, "Face", "Creates magic, tile-ignoring smoke that rises up at enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

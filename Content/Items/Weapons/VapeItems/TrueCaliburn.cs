@@ -80,7 +80,7 @@ public class TrueCaliburn : ModItem
         var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to float upwards or downwards at them at random");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

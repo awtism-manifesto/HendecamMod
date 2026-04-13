@@ -41,7 +41,7 @@ public class RockSaltFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and critical strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+25 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

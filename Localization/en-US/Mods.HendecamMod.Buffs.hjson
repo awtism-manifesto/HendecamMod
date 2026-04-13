@@ -322,3 +322,8 @@ SkeletalDefense: {
 	Description: Increased defense and damage reduction due to calcified lungs
 	DisplayName: Extra-Skeletal Defense
 }
+
+Purpled: {
+	DisplayName: Purpled
+	Description: Mods.HendecamMod.Buffs.Purpled.Description
+}

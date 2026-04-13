@@ -62,7 +62,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 50f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 50f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };
@@ -265,7 +265,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 25f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };
@@ -331,7 +331,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 25f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };

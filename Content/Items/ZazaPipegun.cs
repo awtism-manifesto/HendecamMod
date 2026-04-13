@@ -62,7 +62,7 @@ public class ZazaPipegun : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots a cloud of weed smoke along with your dart");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

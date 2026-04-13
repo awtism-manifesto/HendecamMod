@@ -80,7 +80,7 @@ public class TerraVape : ModItem
         var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to surround them from all four sides");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -74,7 +74,7 @@ public class WandOfTheOvercompensator : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 10 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 10 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "The perfect wand for wizards who are insecure about their.. y'know.")

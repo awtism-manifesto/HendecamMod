@@ -77,7 +77,7 @@ public class BunnyBomber : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "converts rockets into explosive bunnies");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

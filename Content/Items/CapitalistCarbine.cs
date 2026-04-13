@@ -76,7 +76,7 @@ public class CapitalistCarbine : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 5 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'If you throw money at the problem it might go away...'")

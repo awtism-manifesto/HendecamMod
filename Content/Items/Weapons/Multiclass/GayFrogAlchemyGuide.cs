@@ -55,7 +55,7 @@ public class GayFrogAlchemyGuide : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Sprays chemicals so toxic that they turn the friggin frogs gay!")

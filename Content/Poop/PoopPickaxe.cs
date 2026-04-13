@@ -44,7 +44,7 @@ public class PoopPickaxe : ModItem
         var line = new TooltipLine(Mod, "Face", "Makes the user stinky");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

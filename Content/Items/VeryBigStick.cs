@@ -41,7 +41,7 @@ public class VeryBigStick : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Very confusing, it's not a stick'")

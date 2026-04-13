@@ -10,7 +10,7 @@ public class RadTick : GlobalNPC
         Radded = false;
     }
 
-    // Helper method for DOT debuffs
+   
     void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
     {
         if (npc.lifeRegen > 0) npc.lifeRegen = 0;
@@ -41,7 +41,7 @@ public class Rad2Tick : GlobalNPC
         Radded2 = false;
     }
 
-    // Helper method for DOT debuffs
+   
     void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
     {
         if (npc.lifeRegen > 0) npc.lifeRegen = 0;
@@ -71,7 +71,7 @@ public class Rad3Tick : GlobalNPC
         Radded3 = false;
     }
 
-    // Helper method for DOT debuffs
+ 
     void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
     {
         if (npc.lifeRegen > 0) npc.lifeRegen = 0;
@@ -100,7 +100,7 @@ public class Rad4Tick : GlobalNPC
         Radded4 = false;
     }
 
-    // Helper method for DOT debuffs
+    
     void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
     {
         if (npc.lifeRegen > 0) npc.lifeRegen = 0;

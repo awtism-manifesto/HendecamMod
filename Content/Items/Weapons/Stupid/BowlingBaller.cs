@@ -68,7 +68,7 @@ public class BowlingBaller : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 8 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

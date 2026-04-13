@@ -25,7 +25,7 @@ public class OffenseShield : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Massively increases damage output for a short time after being hit");
+        var line = new TooltipLine(Mod, "Face", "Increases damage output for a short time after being hit");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Also still grants Panic upon being hit")

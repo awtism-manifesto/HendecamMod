@@ -57,7 +57,7 @@ public class ScreamingSoyjak : ModItem
         var line = new TooltipLine(Mod, "Face", "Emits horrible soundwaves of screeching soyjaks");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -163,7 +163,7 @@ public class TheSpamCannon : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses a random amount of Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses a random amount of Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

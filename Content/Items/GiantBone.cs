@@ -43,7 +43,7 @@ public class GiantBone : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 9 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Get your mind out of the gutter")

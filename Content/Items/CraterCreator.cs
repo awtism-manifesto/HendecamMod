@@ -51,7 +51,7 @@ public class CraterCreator : ModItem
         var line = new TooltipLine(Mod, "Face", "Creates a massive explosion with every swing");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

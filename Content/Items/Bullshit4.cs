@@ -43,7 +43,7 @@ public class Bullshit4 : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots moons that cause a chain reaction of bullshit upon hitting an enemy");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

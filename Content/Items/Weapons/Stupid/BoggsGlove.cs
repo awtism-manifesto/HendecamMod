@@ -44,7 +44,7 @@ public class BoggsGlove : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Rapidly throws ale at your target");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

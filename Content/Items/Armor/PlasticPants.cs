@@ -42,7 +42,7 @@ public class PlasticPants : ModItem
         var line = new TooltipLine(Mod, "Face", "3% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 max Lobotometer and +10% Lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "+10 Max Braincells and +10% Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };

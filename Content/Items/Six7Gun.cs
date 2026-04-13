@@ -104,7 +104,7 @@ public class Six7Gun : ModItem
         var line = new TooltipLine(Mod, "Face", "Always deals exactly 67 damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 6 or 7 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 6 or 7 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

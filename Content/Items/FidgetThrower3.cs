@@ -51,7 +51,7 @@ public class FidgetThrower3 : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots piercing fidget spinners that inflict even more random debuffs");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

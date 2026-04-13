@@ -372,6 +372,7 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Nurse)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 25));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FreeHealthcare>(), chanceDenominator: 5));
         }
 
         if (npc.type == NPCID.Cyborg)

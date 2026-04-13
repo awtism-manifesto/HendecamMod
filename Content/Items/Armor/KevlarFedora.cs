@@ -39,7 +39,7 @@ public class KevlarFedora : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and +75 max Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and +75 Max Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "3% reduced movement speed")

@@ -5329,3 +5329,13 @@ MartianDrugs: {
 	Tooltip: ""
 	DisplayName: Martian Drugs
 }
+
+FreeHealthcare: {
+	DisplayName: Free Healthcare
+	Tooltip: ""
+}
+
+UnstableConcoction: {
+	DisplayName: Unstable Concoction
+	Tooltip: ""
+}

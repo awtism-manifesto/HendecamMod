@@ -39,7 +39,7 @@ public class RockSaltLeggings : ModItem
         var line = new TooltipLine(Mod, "Face", "7% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+25 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

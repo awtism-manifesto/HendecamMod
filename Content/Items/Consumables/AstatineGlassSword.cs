@@ -52,7 +52,7 @@ public class AstatineGlassSword : ModItem
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Lobotometer"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
     }
 
     public override void AddRecipes()

@@ -65,7 +65,7 @@ public class LigmaLazer : ModItem
         var line = new TooltipLine(Mod, "Face", "Gives your enemies Ligma");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

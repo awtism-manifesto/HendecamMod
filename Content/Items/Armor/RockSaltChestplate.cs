@@ -41,7 +41,7 @@ public class RockSaltChestplate : ModItem
         var line = new TooltipLine(Mod, "Face", "4% increased stupid attack speed and crit strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+40 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+40 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -80,7 +80,7 @@ public class RockSaltChestplate : ModItem
     {
         player.GetModPlayer<LobotoSalt>().Salting = true;
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at max lobotometer";
+        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at Max Braincells";
 
        
     }

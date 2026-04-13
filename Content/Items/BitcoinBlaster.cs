@@ -91,7 +91,7 @@ public class BitcoinBlaster : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

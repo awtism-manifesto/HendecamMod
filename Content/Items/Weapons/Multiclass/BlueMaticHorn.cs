@@ -76,7 +76,7 @@ public class BlueMaticHorn : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into Blue Moons");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

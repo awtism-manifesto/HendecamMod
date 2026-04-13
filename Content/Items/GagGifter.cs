@@ -78,7 +78,7 @@ public class GagGifter : ModItem
         var line = new TooltipLine(Mod, "Face", "Gifts your opponents the wonderful present of pure high explosives!");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses rockets as ammo, and uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses rockets as ammo, and Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

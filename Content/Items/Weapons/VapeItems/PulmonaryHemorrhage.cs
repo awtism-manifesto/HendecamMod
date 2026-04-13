@@ -94,7 +94,7 @@ public class PulmonaryHemorrhage : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 4 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Exhales twice as many vape clouds as usual")

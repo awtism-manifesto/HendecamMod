@@ -81,7 +81,7 @@ public class PocketBeetles : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "The beetles hit tagged enemies harder");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

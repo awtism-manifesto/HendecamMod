@@ -45,7 +45,7 @@ public class CrackedNuts : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Throws two nuts attached to a string");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 10 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 10 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

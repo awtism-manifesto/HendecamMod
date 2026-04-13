@@ -89,7 +89,7 @@ public class ShitAndPissWand : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

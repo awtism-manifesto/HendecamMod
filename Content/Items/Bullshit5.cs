@@ -150,7 +150,7 @@ public class Bullshit5 : ModItem
             OverrideColor = new Color(255, 255, 255)
             };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 25 Lobotometer on left click, 10 on right click")
+        line = new TooltipLine(Mod, "Face", "Uses 25 Braincells on left click, 10 on right click")
             {
             OverrideColor = new Color(255, 255, 255)
             };

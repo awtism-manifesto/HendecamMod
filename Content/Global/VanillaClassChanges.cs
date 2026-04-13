@@ -60,7 +60,7 @@ public class Banana : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -88,7 +88,7 @@ public class RulerStupid : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, uses 1 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 1 Braincell") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -112,7 +112,7 @@ public class PewStupid : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, uses 2 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 2 Braincells") { OverrideColor = Color.DarkViolet });
     }
     public float LobotometerCost = 2f;
     public override bool? UseItem(Item item, Player player)
@@ -157,7 +157,7 @@ public class SandStupid : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -219,7 +219,7 @@ public class HamBattt : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage, uses 3 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
     }
     public float LobotometerCost = 3f;
     public override bool? UseItem(Item item, Player player)
@@ -552,7 +552,7 @@ public class WaffleTime : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, uses 2 Lobotometer, and has buffed stats") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 2 Braincells, and has buffed stats") { OverrideColor = Color.DarkViolet });
     }
     public float LobotometerCost = 2f;
     public override bool? UseItem(Item item, Player player)

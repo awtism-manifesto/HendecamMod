@@ -30,7 +30,7 @@ public class PitVipers : ModItem
         var line = new TooltipLine(Mod, "Face", "12% incrased damage, crit chance, and attack speed as well as 12 armor penetration for the Stupid class");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+175 Max Lobotometer and 105% increased lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "+175 Max Braincells and 105% increased lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };

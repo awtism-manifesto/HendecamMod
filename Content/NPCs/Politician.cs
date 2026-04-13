@@ -348,6 +348,7 @@ public class Politician : ModNPC
     {
         npcLoot.Add(ItemDropRule.Common(ItemType<Glock>(), 3));
         npcLoot.Add(ItemDropRule.Common(ItemType<AR15>(), 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<FreeHealthcare>(), 10));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)

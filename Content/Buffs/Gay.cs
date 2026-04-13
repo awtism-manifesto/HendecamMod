@@ -22,3 +22,33 @@ public class Gay : ModBuff
         player.statDefense *= DefenseMultiplier;
     }
 }
+public class GayDebuff : GlobalNPC
+{
+    public bool gay;
+    public override bool InstancePerEntity => true;
+
+    public override void ResetEffects(NPC npc)
+    {
+        gay = false;
+    }
+
+    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
+    {
+        if (gay)
+        {
+            // For best results, defense debuffs should be multiplicative
+            modifiers.Defense *= Gay.DefenseMultiplier;
+        }
+    }
+
+    public override void DrawEffects(NPC npc, ref Color drawColor)
+    {
+        // This simple color effect indicates that the buff is active
+        if (gay)
+        {
+            drawColor.R = (byte)Main.rand.Next(89, 233);
+            drawColor.G = (byte)Main.rand.Next(89, 233);
+            drawColor.B = (byte)Main.rand.Next(89, 233);
+        }
+    }
+}

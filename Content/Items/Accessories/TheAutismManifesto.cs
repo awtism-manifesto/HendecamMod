@@ -45,7 +45,7 @@ public class TheAutismManifesto : ModItem
         var line = new TooltipLine(Mod, "Face", "+100 mana and Lobotometer, +10% damage reduction");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your max Lobotometer ")
+        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your Max Braincells ")
         {
             OverrideColor = new Color(255, 255, 255)
         };

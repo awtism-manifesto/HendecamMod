@@ -47,7 +47,7 @@ public class HallowedFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+100 max Lobotometer and +33% Lobotometer Decay Rate")
+        line = new TooltipLine(Mod, "Face", "+100 Max Braincells and +33% Lobotometer Decay Rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };

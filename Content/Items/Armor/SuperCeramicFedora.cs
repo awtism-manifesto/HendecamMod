@@ -36,7 +36,7 @@ public class SuperCeramicFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "9% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+45 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+45 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

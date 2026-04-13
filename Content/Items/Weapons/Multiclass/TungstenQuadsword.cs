@@ -47,7 +47,7 @@ public class TungstenQuadsword : ModItem
         var line = new TooltipLine(Mod, "Face", "4 swords are better than 1");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

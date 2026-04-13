@@ -44,7 +44,7 @@ public class Bullshit3 : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots dangerously explosive radiation emblems with 21 summon tag damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 6 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -430,7 +430,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica))
         {
-            line = new TooltipLine(Mod, "Face", "Awful Garbage Mod- +50 max Lobotometer")
+            line = new TooltipLine(Mod, "Face", "Awful Garbage Mod- +50 Max Braincells")
             {
                 OverrideColor = new Color(255, 255, 255)
             };

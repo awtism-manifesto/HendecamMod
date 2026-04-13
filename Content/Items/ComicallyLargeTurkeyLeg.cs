@@ -54,7 +54,7 @@ public class ComicallyLargeTurkeyLeg : ModItem
         var line = new TooltipLine(Mod, "Face", "Flings grease bombs at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

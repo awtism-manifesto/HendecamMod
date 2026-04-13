@@ -56,7 +56,7 @@ public class Pooperang : ModItem
         var line = new TooltipLine(Mod, "Face", "Causes enemies hit to become stinky, as well as you");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

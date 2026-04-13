@@ -63,7 +63,7 @@ public class LoadedDice : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into throwable dice which explode into the same type of bullet used to throw them");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Costs between 1 and 6 lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses between 1 and 6 braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

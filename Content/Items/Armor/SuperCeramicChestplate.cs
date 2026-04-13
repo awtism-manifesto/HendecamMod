@@ -28,7 +28,7 @@ public class SuperCeramicChestplate : ModItem
         var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and +5 stupid armor penetration");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+65 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+65 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

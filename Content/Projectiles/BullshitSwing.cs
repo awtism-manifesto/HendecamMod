@@ -201,6 +201,7 @@ public class BullshitSwing : ModProjectile
         target.AddBuff(BuffType<RadPoisoning3>(), 444);
         target.AddBuff(BuffType<RadPoisoning4>(), 444);
         target.AddBuff(BuffType<MoonBurn>(), 444);
+        target.AddBuff(BuffType<Purpled>(), 444);
         target.AddBuff(BuffType<Ligma>(), 444);
     }
 

@@ -79,7 +79,7 @@ public class RiverMachinegun : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Rapidly shoots homing river heads");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

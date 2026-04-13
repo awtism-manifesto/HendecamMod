@@ -30,7 +30,7 @@ public class SuperCeramicLeggings : ModItem
         var line = new TooltipLine(Mod, "Face", "7% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+55 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+55 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

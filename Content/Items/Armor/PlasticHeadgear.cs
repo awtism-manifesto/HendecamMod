@@ -31,7 +31,7 @@ public class PlasticHeadgear : ModItem
         var line = new TooltipLine(Mod, "Face", "6% increased stupid crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+30 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+30 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

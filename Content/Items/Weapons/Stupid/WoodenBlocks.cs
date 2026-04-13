@@ -74,7 +74,7 @@ public class WoodenBlocks : ModItem
        
         var line = new TooltipLine(Mod, "Face", "Throws wooden toy blocks at your opponents");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

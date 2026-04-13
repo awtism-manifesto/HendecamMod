@@ -56,7 +56,7 @@ public class ThrowablePoop : ModItem
         var line = new TooltipLine(Mod, "Face", "Makes both you and enemies stinky");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

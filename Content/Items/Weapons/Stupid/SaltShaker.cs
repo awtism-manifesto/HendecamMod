@@ -79,7 +79,7 @@ public class SaltShaker : ModItem
         var line = new TooltipLine(Mod, "Face", "Shakes salt on your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 12 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 12 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

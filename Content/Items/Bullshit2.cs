@@ -42,7 +42,7 @@ public class Bullshit2 : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots weakly explosive, shattering galaxy pearls with 16 summon tag damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

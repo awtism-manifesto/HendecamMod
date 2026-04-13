@@ -74,7 +74,7 @@ public class Edward40Hands : ModItem
         var line = new TooltipLine(Mod, "Face", "Inaccurately throws beer at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

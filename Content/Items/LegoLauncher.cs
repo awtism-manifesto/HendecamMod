@@ -84,7 +84,7 @@ public class LegoLauncher : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 10 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 10 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

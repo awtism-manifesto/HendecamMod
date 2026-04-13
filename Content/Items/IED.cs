@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items;
 

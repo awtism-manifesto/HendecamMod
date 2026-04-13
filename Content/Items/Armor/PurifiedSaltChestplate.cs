@@ -85,7 +85,7 @@ public class PurifiedSaltChestplate : ModItem
     {
 
         player.GetModPlayer<LobotoBoulder>().Bouldering = true;
-        player.setBonus = "Friendly boulders of purified salt cascade down upon the player's position at max Lobotometer";
+        player.setBonus = "Friendly boulders of purified salt cascade down upon the player's position at Max Braincells";
     }
     public class LobotoBoulder : ModPlayer
     {

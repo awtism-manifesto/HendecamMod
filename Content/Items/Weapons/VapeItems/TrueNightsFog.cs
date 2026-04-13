@@ -80,7 +80,7 @@ public class TrueNightsFog : ModItem
         var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to surround them from two sides");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -59,7 +59,7 @@ public class YelmutFaeChestplate : ModItem
       
         tooltips.Add(new TooltipLine(Mod, "Face", "12% increased melee speed and 15% increased ranged damage"));
 
-        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and max Lobotometer")
+        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         });
