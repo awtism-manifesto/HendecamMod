@@ -15,7 +15,7 @@ public class UnstablePotion : ModProjectile
         // Explosives also bounce off the top of Shimmer, detonate with no blast damage when touching the bottom or sides of Shimmer, and damage other players in For the Worthy worlds.
         ProjectileID.Sets.Explosive[Type] = true;
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
-       
+        ProjectileID.Sets.IsARocketThatDealsDoubleDamageToPrimaryEnemy[Type] = true;
         // This set makes it so the rocket doesn't deal damage to players. Only used for vanilla rockets.
         // Simply remove the Projectile.HurtPlayer() part to stop the projectile from damaging its user.
         // ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
@@ -235,7 +235,7 @@ public class PurpleDeathBlam : GlobalNPC
     {
         Player player = Main.player[npc.lastInteraction];
 
-        int baseDamage = 594;
+        int baseDamage = 444;
        
         float totalMultiplier = 1f;
 

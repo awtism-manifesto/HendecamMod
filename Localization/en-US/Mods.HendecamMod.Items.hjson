@@ -5339,3 +5339,43 @@ UnstableConcoction: {
 	DisplayName: Unstable Concoction
 	Tooltip: ""
 }
+
+CorruptionCamo: {
+	Tooltip: ""
+	DisplayName: Corruption Camo
+}
+
+UrbanCamo: {
+	Tooltip: ""
+	DisplayName: Urban Camo
+}
+
+SnowCamo: {
+	Tooltip: ""
+	DisplayName: Snow Camo
+}
+
+OceanCamo: {
+	Tooltip: ""
+	DisplayName: Ocean Camo
+}
+
+JungleCamo: {
+	Tooltip: ""
+	DisplayName: Jungle Camo
+}
+
+GlobalCamo: {
+	Tooltip: ""
+	DisplayName: Global Camo
+}
+
+DesertCamo: {
+	Tooltip: ""
+	DisplayName: Desert Camo
+}
+
+CrimsonCamo: {
+	Tooltip: ""
+	DisplayName: Crimson Camo
+}

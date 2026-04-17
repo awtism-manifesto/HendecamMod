@@ -154,7 +154,7 @@ public class GeigerRocket : ModProjectile
                 position,
                 velocity,
                 ProjectileType<GeigerBoom>(),
-                (int)(Projectile.damage * 0.67f),
+                (int)(Projectile.damage * 0.75f),
                 Projectile.knockBack,
                 Projectile.owner
             );

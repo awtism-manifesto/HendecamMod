@@ -58,7 +58,25 @@ public class CrucibleOfFlameAndSteel : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool hasActiveSentry = false;
+
+        foreach (Projectile proj in Main.ActiveProjectiles)
+        {
+            if (proj.owner == player.whoAmI && proj.type == ModContent.ProjectileType<TackParagon>())
+            {
+                hasActiveSentry = true;
+                break;
+            }
+        }
+
+        if (!hasActiveSentry)
+        {
+           
+            CombatText.NewText(player.Hitbox, Color.Red, "No paragon summoned!");
+          
+        }
+
+        return hasActiveSentry;
     }
     public override void AddRecipes()
     {

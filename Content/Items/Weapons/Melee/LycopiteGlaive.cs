@@ -15,12 +15,12 @@ public class LycopiteGlaive : ModItem
         Item.width = 24;
         Item.height = 24;
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 24;
-        Item.useAnimation = 24;
+        Item.useTime = 25;
+        Item.useAnimation = 25;
         Item.noMelee = true;
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
-        Item.damage = 29;
+        Item.damage = 26;
         Item.DamageType = DamageClass.Melee;
         Item.knockBack = 7.5f;
       

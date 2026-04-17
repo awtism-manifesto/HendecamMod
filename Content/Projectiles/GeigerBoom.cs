@@ -152,7 +152,7 @@ public class GeigerBoom : ModProjectile
                 position,
                 velocity,
                 ProjectileType<GeigerBoomRecurse>(),
-                (int)(Projectile.damage * 0.5f),
+                (int)(Projectile.damage * 0.35f),
                 Projectile.knockBack,
                 Projectile.owner
             );
