@@ -119,14 +119,13 @@ public class CrucibleOfFlameAndSteel : ModItem
             position = Main.MouseWorld;
             player.LimitPointToPlayerReachableArea(ref position);
             int halfProjectileHeight = (int)Math.Ceiling(ContentSamples.ProjectilesByType[type].height / 2f);
-            position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
-                                                // Spawn the sentry projectile at the calculated location.
+            position.Y -= halfProjectileHeight; 
             if (player.maxTurrets >= 10)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, type, damage, knockback, Main.myPlayer);
             }
 
-            // Kills older sentry projectiles according to player.maxTurrets
+            
             player.UpdateMaxTurrets();
 
             return false;

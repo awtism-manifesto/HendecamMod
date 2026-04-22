@@ -327,3 +327,13 @@ Purpled: {
 	DisplayName: Purpled
 	Description: Mods.HendecamMod.Buffs.Purpled.Description
 }
+
+TurboCharged: {
+	Description: Mods.HendecamMod.Buffs.TurboCharged.Description
+	DisplayName: Turbo Charged
+}
+
+TurboChargeCooldown: {
+	Description: Mods.HendecamMod.Buffs.TurboChargeCooldown.Description
+	DisplayName: Turbo Charge Cooldown
+}

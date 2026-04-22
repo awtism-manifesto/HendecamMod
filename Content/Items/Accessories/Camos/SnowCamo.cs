@@ -17,7 +17,7 @@ public class SnowCamo : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Increases damage and attack speed by 10% and 7% and decreased aggro while in the Snow biome");
+        var line = new TooltipLine(Mod, "Face", "Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Snow biome");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

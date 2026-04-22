@@ -5379,3 +5379,13 @@ CrimsonCamo: {
 	Tooltip: ""
 	DisplayName: Crimson Camo
 }
+
+VeteransBadge: {
+	Tooltip: ""
+	DisplayName: Veteran's Badge
+}
+
+AuspiciousLobotomySpike: {
+	Tooltip: ""
+	DisplayName: Auspicious Lobotomy Spike
+}

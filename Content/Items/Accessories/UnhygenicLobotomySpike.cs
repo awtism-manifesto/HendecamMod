@@ -20,7 +20,7 @@ public class UnhygenicLobotomySpike : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed");
+        var line = new TooltipLine(Mod, "Face", "Once you hit max Lobotometer, it can no longer decay until accessory is removed");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into damage")
@@ -28,7 +28,7 @@ public class UnhygenicLobotomySpike : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not stack with Haemophilic Lobotomy Spike")
+        line = new TooltipLine(Mod, "Face", "Does not stack with Haemophilic or Auspicious Lobotomy Spike")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -79,7 +79,7 @@ public class GrossSpike : ModPlayer
 
     public override void UpdateEquips()
     {
-        if (GrossSpiked && !Player.GetModPlayer<BloodSpike>().BloodySpiked)
+        if (GrossSpiked && !Player.GetModPlayer<BloodSpike>().BloodySpiked && !Player.GetModPlayer<HallowSpike>().HallowSpiked)
         {
 
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();

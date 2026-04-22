@@ -17,7 +17,7 @@ public class CorruptionCamo : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Increases damage and attack speed by 10% and 7% and decreased aggro while in the Corruption");
+        var line = new TooltipLine(Mod, "Face", "Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Corruption");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -54,8 +54,8 @@ public class CorruptionCamo : ModItem
 
 public class CamoBoost : ModPlayer
 {
-    public static readonly int CamoBonus = 10;
-    public static readonly int CamoBonus2 = 7;
+  
+    public static readonly int CamoBonus = 5;
 
     public bool isCamo;
 
@@ -81,8 +81,8 @@ public class CamoBoost : ModPlayer
         }
 
        
-        Player.GetAttackSpeed(DamageClass.Generic) += CamoBonus2 / 100f;
-        Player.GetDamage(DamageClass.Generic) += CamoBonus / 100f;
+        Player.GetAttackSpeed(DamageClass.Generic) += CamoBonus / 100f;
+        Player.GetCritChance(DamageClass.Generic) += 10;
         Player.aggro -= 500;
 
     }

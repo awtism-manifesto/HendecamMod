@@ -1070,7 +1070,7 @@ public class EbonflyLigma : ModPlayer
         }
         else
         {
-            if (Main.rand.NextBool(500))
+            if (Main.rand.NextBool(1000))
             {
                 target.AddBuff(BuffType<Ligma>(), 60);
             }
@@ -1084,7 +1084,7 @@ public class EbonflyLigma : ModPlayer
         }
         else
         {
-            if (Main.rand.NextBool(100))
+            if (Main.rand.NextBool(1000))
             {
                 target.AddBuff(BuffType<Ligma>(), 60);
             }
