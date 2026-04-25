@@ -93,7 +93,12 @@ public class RudeBuster : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        SoundEngine.PlaySound(SoundID.NPCHit42, Projectile.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterHit")
+        {
+            Volume = 4.25f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        });
     }
 
     // Finding the closest NPC to attack within maxDetectDistance range

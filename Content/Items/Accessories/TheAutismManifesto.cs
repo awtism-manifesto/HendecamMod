@@ -71,7 +71,7 @@ public class TheAutismManifesto : ModItem
         player.endurance = 1f - 0.9f * (1f - player.endurance);
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 100f;
+        loboPlayer.TemporaryBonus += 100f;
 
         float damageBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 2000;
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;

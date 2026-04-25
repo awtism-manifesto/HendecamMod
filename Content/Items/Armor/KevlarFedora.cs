@@ -62,7 +62,7 @@ public class KevlarFedora : ModItem
       
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 75f;
+        loboPlayer.TemporaryBonus += 75f;
         player.moveSpeed += MoveSpeedBonus / 100f;
         player.runAcceleration *= 0.97f;
     }

@@ -69,6 +69,6 @@ public class TransFedora : ModItem
     {
         player.setBonus = "+50 Max Braincells";
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 50f; 
+        loboPlayer.TemporaryBonus += 50f; 
     }
 }

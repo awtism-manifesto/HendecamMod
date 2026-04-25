@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Magic;
 using Terraria.GameContent.ItemDropRules;
@@ -16,6 +17,7 @@ public class MagnoliaDrops : GlobalNPC
         if (npc.type == NPCID.Demon)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 2, 7));
         }
 
         if (npc.type == NPCID.FireImp)

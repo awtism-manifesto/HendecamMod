@@ -107,7 +107,7 @@ public class YelmutsHelmet : ModItem
         //player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 30f;
+        loboPlayer.TemporaryBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

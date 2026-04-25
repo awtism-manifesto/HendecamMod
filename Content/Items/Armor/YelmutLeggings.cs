@@ -89,7 +89,7 @@ public class YelmutLeggings : ModItem
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 100f;
         player.statManaMax2 += 60;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 60f;
+        loboPlayer.TemporaryBonus += 60f;
         player.maxMinions += 1;
         player.maxTurrets += 1;
     }

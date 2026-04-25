@@ -33,7 +33,7 @@ public class YelmutFaeChestplate : ModItem
     public override void UpdateEquip(Player player)
     {
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 80f;
+        loboPlayer.TemporaryBonus += 80f;
 
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;

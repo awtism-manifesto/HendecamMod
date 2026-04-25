@@ -59,7 +59,7 @@ public class RockSaltLeggings : ModItem
        
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 25f;
+        loboPlayer.TemporaryBonus += 25f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

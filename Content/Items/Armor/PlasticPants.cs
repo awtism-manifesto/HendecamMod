@@ -60,7 +60,7 @@ public class PlasticPants : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 10f;
+        loboPlayer.TemporaryBonus += 10f;
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();
         loboDecay.DecayRateMultiplier *= 1.1f;

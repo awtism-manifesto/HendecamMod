@@ -53,7 +53,7 @@ public class SuperCeramicLeggings : ModItem
       
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 55f;
+        loboPlayer.TemporaryBonus += 55f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -68,7 +68,7 @@ public class AstatineHelmet : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 110f;
+        loboPlayer.TemporaryBonus += 110f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -61,7 +61,7 @@ public class TrenboloneAcetate : ModItem
         player.aggro += 400;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 90f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.TemporaryBonus += 90f; // This is safe - it resets every frame in ResetEffects
 
 
        

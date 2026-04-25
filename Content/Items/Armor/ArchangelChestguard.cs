@@ -194,7 +194,7 @@ public class ArchangelWings : ModPlayer
             Player.manaRegen += (int)(Player.manaRegen * 1.67f);
 
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
-            loboPlayer.MaxBonus += 150f;
+            loboPlayer.TemporaryBonus += 150f;
             loboPlayer.DecayRateMultiplier += 1.5f;
         }
     }

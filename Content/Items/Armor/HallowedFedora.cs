@@ -69,7 +69,7 @@ public class HallowedFedora : ModItem
        
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 100f;
+        loboPlayer.TemporaryBonus += 100f;
 
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();

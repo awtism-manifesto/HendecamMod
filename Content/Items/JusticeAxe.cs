@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class JusticeAxe : ModItem
 {
     private int justiceaxecooldown;
@@ -82,8 +78,12 @@ public class JusticeAxe : ModItem
             }
 
             player.AddBuff(BuffType<RudeBusterCooldown>(), 60);
-            SoundEngine.PlaySound(SoundID.Item82, player.position);
-            SoundEngine.PlaySound(SoundID.Item132, player.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterSwing")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0.2f,
+                MaxInstances = 3,
+            });
 
             Projectile.NewProjectile(source, position, velocity * 2.85f, ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
             return false;

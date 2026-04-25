@@ -5389,3 +5389,8 @@ AuspiciousLobotomySpike: {
 	Tooltip: ""
 	DisplayName: Auspicious Lobotomy Spike
 }
+
+MonsterStemCells: {
+	DisplayName: Monster Stem Cells
+	Tooltip: ""
+}

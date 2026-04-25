@@ -74,15 +74,21 @@ public class BionicBoomer : ModItem
             player.AddBuff(BuffType<TurboChargeCooldown>(), 2700);
             player.AddBuff(BuffType<TurboCharged>(), 600);
 
-            SoundEngine.PlaySound(SoundID.Item62, player.position);
-           
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/ActivatedTurboCharge")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0.2f,
+                MaxInstances = 3,
+            });
+
+
 
             return false;
         }
         else
         {
 
-           
+
 
             return true;
         }

@@ -63,7 +63,7 @@ public class RockSaltChestplate : ModItem
        
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 40f;
+        loboPlayer.TemporaryBonus += 40f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

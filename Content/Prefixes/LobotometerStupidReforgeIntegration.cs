@@ -486,7 +486,7 @@ namespace HendecamMod.Content.Prefixes
                 if (PrefixLoader.GetPrefix(item.prefix) is Lobotomized loboPrefix)
                 {
                    
-                    loboPlayer.MaxBonus += 50f;
+                    loboPlayer.TemporaryBonus += 50f;
 
                    
                     loboPlayer.DecayRateMultiplier *= 1.33f;
@@ -546,7 +546,7 @@ namespace HendecamMod.Content.Prefixes
 
                 if (PrefixLoader.GetPrefix(item.prefix) is Sigma loboPrefix)
                 {
-                    loboPlayer.MaxBonus += 25f;
+                    loboPlayer.TemporaryBonus += 25f;
 
                    
                 }
@@ -558,7 +558,7 @@ namespace HendecamMod.Content.Prefixes
 
                 if (PrefixLoader.GetPrefix(item.prefix) is Brainy loboPrefix)
                 {
-                    loboPlayer.MaxBonus += 100f;
+                    loboPlayer.TemporaryBonus += 100f;
 
 
                 }

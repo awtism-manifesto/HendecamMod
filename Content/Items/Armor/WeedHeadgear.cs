@@ -61,7 +61,7 @@ public class WeedHeadgear : ModItem
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeed / 100f;
         player.GetAttackSpeed(DamageClass.Magic) += StupidAttackSpeed / 100f;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 40f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.TemporaryBonus += 40f; // This is safe - it resets every frame in ResetEffects
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

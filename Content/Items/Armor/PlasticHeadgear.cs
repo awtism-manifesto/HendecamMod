@@ -54,7 +54,7 @@ public class PlasticHeadgear : ModItem
         player.GetCritChance<StupidDamage>() += 6;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 30f;
+        loboPlayer.TemporaryBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -50,7 +50,7 @@ public class SuperCeramicChestplate : ModItem
         player.GetArmorPenetration<StupidDamage>() += StupidArmorPenetration;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 65f;
+        loboPlayer.TemporaryBonus += 65f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

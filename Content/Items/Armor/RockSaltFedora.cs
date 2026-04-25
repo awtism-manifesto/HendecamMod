@@ -61,7 +61,7 @@ public class RockSaltFedora : ModItem
 
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 25f;
+        loboPlayer.TemporaryBonus += 25f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }

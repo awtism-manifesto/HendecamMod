@@ -55,7 +55,7 @@ public class SuperCeramicFedora : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 45f;
+        loboPlayer.TemporaryBonus += 45f;
     }
 
     public override void AddRecipes()

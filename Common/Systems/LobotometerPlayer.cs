@@ -1,38 +1,48 @@
 ﻿using HendecamMod.Content.Items.Accessories;
 using Microsoft.Xna.Framework.Graphics;
+using System.IO;
 using Terraria.GameContent;
 using Terraria.Graphics.Effects;
+using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Common.Systems
 {
     public class LobotometerPlayer : ModPlayer
     {
         public float Current;
-        public float BaseMax = 200f; // Store the base max
-        public float Max; // This will be calculated
-        public float MaxBonus = 0f; // Track bonus from equipment
+        public float BaseMax = 50f;
+        public float Max;
 
-        // Base decay per second (before modifiers)
+        // This is the PERMANENT bonus from consumed items (character-specific)
+        public float PermanentBonus = 0f;
+
+        // This is the TEMPORARY bonus from equipment/buffs
+        public float TemporaryBonus = 0f;
+
+        // Total MaxBonus = PermanentBonus + TemporaryBonus
+        public float MaxBonus => PermanentBonus + TemporaryBonus;
+
         public float BaseDecayRate = 40f;
-
-        // Multipliers for armor / buffs / accessories
         public float DecayRateMultiplier = 1f;
-
-        // Time since last stupid weapon use
         public int ticksSinceLastUse;
-
-        // Public decay per tick - now properly calculated
         public float decayPerTick = 0.66f;
-
         public int decayPerSecond = 40;
-
-       
         public float MaxScalingFactor = 0.1f;
 
         public override void ResetEffects()
         {
-           
+            // Reset temporary bonuses each frame
+            TemporaryBonus = 0f;
             DecayRateMultiplier = 1f;
+
+            // Calculate max after all bonuses are applied
+            Max = BaseMax + MaxBonus;
+
+            // Clamp current to max
+            if (Current > Max)
+                Current = Max;
+
+            // Calculate decay rate
             if (Max == 200 && DecayRateMultiplier == 1f)
             {
                 decayPerTick = 0.66f;
@@ -41,48 +51,53 @@ namespace HendecamMod.Common.Systems
             {
                 float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
                 float maxScaling = (Max * MaxScalingFactor) / 60f;
-
-
-
                 decayPerTick = basePerTick + maxScaling;
-
                 decayPerSecond = (int)(decayPerTick * 60);
             }
-
-                MaxBonus = 0f;
 
             if (Player.dead)
             {
                 Current = 0f;
             }
         }
-        
-        public override void PreUpdate()
-        {
 
-            // Calculate the actual Max after all bonuses have been applied
-            float previousMax = Max;
+        public override void PostUpdate()
+        {
+            // Recalculate Max after all temporary bonuses have been applied
             Max = BaseMax + MaxBonus;
 
-            // Clamp current to the new max (in case max decreased)
+            // Clamp current to max
+            if (Current > Max)
+                Current = Max;
+
+            // Calculate decay rate based on current Max
+            if (Max == 200 && DecayRateMultiplier == 1f)
+            {
+                decayPerTick = 0.66f;
+            }
+            else
+            {
+                float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
+                float maxScaling = (Max * MaxScalingFactor) / 60f;
+                decayPerTick = basePerTick + maxScaling;
+                decayPerSecond = (int)(decayPerTick * 60);
+            }
+        }
+
+        public override void PreUpdate()
+        {
+            // Ensure Max is up to date
+            Max = BaseMax + MaxBonus;
+
             if (Current > Max)
                 Current = Max;
 
             ticksSinceLastUse++;
 
-
-            
-
-            // Start decaying after ~2 seconds (120 ticks)
             if (ticksSinceLastUse > 120 && Current > 0f && !Player.GetModPlayer<BaseSpike>().Spiked)
             {
-                // Calculate decay per tick based on max value
-                // Base decay (converted to per tick) * multiplier + scaling based on total max
                 float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
-                float maxScaling = (Max * MaxScalingFactor) / 60f; 
-
-
-
+                float maxScaling = (Max * MaxScalingFactor) / 60f;
                 decayPerTick = basePerTick + maxScaling;
 
                 Current -= decayPerTick;
@@ -90,7 +105,44 @@ namespace HendecamMod.Common.Systems
                     Current = 0f;
             }
         }
-       
+
+        // CHARACTER-SPECIFIC SAVE DATA
+        public override void SaveData(TagCompound tag)
+        {
+            // Only save the permanent bonus (temporary bonuses don't need saving)
+            if (PermanentBonus > 0f)
+                tag["LoboPermanentBonus"] = PermanentBonus;
+        }
+
+        public override void LoadData(TagCompound tag)
+        {
+            if (tag.ContainsKey("LoboPermanentBonus"))
+                PermanentBonus = tag.GetFloat("LoboPermanentBonus");
+            else
+                PermanentBonus = 0f;
+        }
+
+        // Optional: Add a helper method to check if character has reached max
+        public bool CanIncreasePermanent(int amount)
+        {
+            float maxTotalBonus = 200f; // Maximum permanent bonus allowed
+            return PermanentBonus + amount <= maxTotalBonus;
+        }
+
+        // Optional: Add method to permanently increase the stat
+        public void IncreasePermanent(int amount)
+        {
+            if (CanIncreasePermanent(amount))
+            {
+                PermanentBonus += amount;
+
+                // Heal current by the same amount (like Life Crystals)
+                Current += amount;
+                if (Current > Max)
+                    Current = Max;
+            }
+        }
+
         public override void PostUpdateMiscEffects()
         {
             /*if (Main.myPlayer == 0)
@@ -238,4 +290,9 @@ namespace HendecamMod.Common.Systems
             }
         }
     }
+
+
+   
+
+
 }
