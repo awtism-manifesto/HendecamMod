@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
 
@@ -15,9 +16,9 @@ public class NastyPattyAccessory : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 20% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Double Movement Speed, 50 Defense, Doubled Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Double Movement Speed, 50 Defense, 40 Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from any vanilla buff"));
     }
 
@@ -326,8 +327,7 @@ public class NastyPattyAccessory : ModItem
         recipe = CreateRecipe();
         recipe.AddIngredient<ExpiredPetFood>();
         recipe.AddIngredient<JunkFood>();
-        recipe.AddTile(TileID.TinkerersWorkbench);
-        recipe.AddTile(TileID.AdamantiteForge);
+        recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
 
@@ -431,7 +431,7 @@ public class NastyPattyAccessory : ModItem
             }
             else
             {
-                Player.GetArmorPenetration(DamageClass.Generic) += 200f;
+                Player.GetArmorPenetration(DamageClass.Generic) += 40f;
             }
         }
     }
@@ -557,7 +557,7 @@ public class NastyPattyAccessory : ModItem
             }
             else
             {
-                Player.statLifeMax2 += 200;
+                Player.statLifeMax2 += 150;
             }
         }
     }

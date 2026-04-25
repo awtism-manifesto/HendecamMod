@@ -16,7 +16,7 @@ public class JunkFood : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 20% Damage Reduction, 25 Safe Fall Distance, and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, Enviornmental,"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Building, Fishing, Food, or Exploration Buffs"));

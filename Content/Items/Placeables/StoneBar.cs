@@ -13,7 +13,7 @@ public class StoneBar : ModItem
         Item.DefaultToPlaceableTile(TileType<Tiles.StoneBar>());
         Item.width = 20;
         Item.height = 20;
-        Item.value = 1;
+        Item.value = 0;
     }
 
     public override void AddRecipes()

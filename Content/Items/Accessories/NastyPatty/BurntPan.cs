@@ -29,7 +29,7 @@ public class BurntPan : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Used:"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Inflicts Hellfire and grants 4hp/s life regen"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Equipped:"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 200 Health and Hellfire for all attacks"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health and Hellfire for all attacks"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks or Combat Buffs"));
     }
 

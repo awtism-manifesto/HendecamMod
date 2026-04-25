@@ -721,17 +721,17 @@ NostalgicDiamond: {
 }
 
 OldOnesGlasses: {
-	DisplayName: Old Ones Glasses
+	DisplayName: Old One's Glasses
 	Tooltip: ""
 }
 
 PacifistsMark: {
-	DisplayName: Pacifists Mark
+	DisplayName: Pacifist's Mark
 	Tooltip: ""
 }
 
 PetaAutograph: {
-	DisplayName: Peta Autograph
+	DisplayName: PETA Autograph
 	Tooltip: ""
 }
 
@@ -1041,22 +1041,22 @@ LitBong: {
 }
 
 LostFragment1: {
-	DisplayName: Lost Fragment1
+	DisplayName: Lost Fragment 1
 	Tooltip: ""
 }
 
 LostFragment2: {
-	DisplayName: Lost Fragment2
+	DisplayName: Lost Fragment 2
 	Tooltip: ""
 }
 
 LostFragment3: {
-	DisplayName: Lost Fragment3
+	DisplayName: Lost Fragment 3
 	Tooltip: ""
 }
 
 LostFragment4: {
-	DisplayName: Lost Fragment4
+	DisplayName: Lost Fragment 4
 	Tooltip: ""
 }
 
