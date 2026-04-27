@@ -52,7 +52,26 @@ public class ManeAx : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool TurboOrCD = true;
+
+        for (int i = 0; i < Player.MaxBuffs; i++)
+        {
+            int buffType = player.buffType[i];
+
+            if (buffType == BuffType<RudeBusterCooldown>())
+            {
+                TurboOrCD = false;
+            }
+        }
+
+        if (!TurboOrCD)
+        {
+
+            CombatText.NewText(player.Hitbox, Color.Red, "On Cooldown!");
+
+        }
+
+        return TurboOrCD;
     }
 
     public override void UpdateInventory(Player player)

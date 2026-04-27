@@ -52,9 +52,50 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<AmalgamatedFragment>(), chanceDenominator: 1));
         }
 
+        if (npc.type == NPCID.GreenSlime)
+        {
+           
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.BlueSlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.RedSlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.PurpleSlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.JungleSlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.SlimeSpiked)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.MotherSlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+        if (npc.type == NPCID.BabySlime)
+        {
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
         if (npc.type == NPCID.Hellhound)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<SmallSausageSpammer>(), chanceDenominator: 20));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.DD2Betsy)
@@ -72,6 +113,7 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Nymph)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 75, 1, 1));
         }
 
         if (npc.type == NPCID.Moth)
@@ -352,6 +394,7 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Liquidation>(), chanceDenominator: 25));
             npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 175));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.RedDevil)
@@ -403,6 +446,7 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Gastropod)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 90));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.SkeletonArcher)
@@ -439,6 +483,7 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Scutlix)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.RayGunner)
@@ -596,7 +641,7 @@ public class ExampleNPCLoot : GlobalNPC
 
         if (npc.type == NPCID.AncientCultistSquidhead)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<StupidFuckingPickaxe>(), chanceDenominator: 2502));
+            npcLoot.Add(ItemDropRule.Common(ItemType<StupidFuckingPickaxe>(), chanceDenominator: 2555));
         }
 
         if (npc.type == NPCID.BigMimicHallow)
@@ -625,6 +670,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemID.Trimarang, 9));
             npcLoot.Add(ItemDropRule.Common(ItemID.Katana, 2));
             npcLoot.Add(ItemDropRule.Common(ItemType<Bergentrucking>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
         }
 
         if (npc.type == NPCID.SkeletronHead)
@@ -645,26 +691,31 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.GoblinPeon)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinThief)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinWarrior)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinSorcerer)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinArcher)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.DD2OgreT2)
@@ -701,11 +752,13 @@ public class ExampleNPCLoot : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<MaximGelgun>(), chanceDenominator: 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<QueensShank>(), chanceDenominator: 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
         }
 
         if (npc.type == NPCID.BrainofCthulhu)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<GoodGrades>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
         }
 
         if (npc.type == NPCID.Plantera)
@@ -735,6 +788,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<CaribousCatastrophe>(), chanceDenominator: 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<FlinxsFurblade>(), chanceDenominator: 3));
             npcLoot.Add(ItemDropRule.Common(ItemID.FlinxFur, 1, 6, 15));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 10, 1, 1));
         }
 
         if (npc.type == NPCID.SnowFlinx)
@@ -745,11 +799,13 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.ManEater)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 2, 2, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.Snatcher)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.LittleHornetLeafy)
@@ -899,11 +955,13 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Corruptor)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Toxikarp, 33));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.Herpling)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Bladetongue, 33));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.FlyingFish)
@@ -935,10 +993,12 @@ public class ExampleNPCLoot : GlobalNPC
         if (npc.type == NPCID.Drippler)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Terragrim, 200));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 125, 1, 1));
         }
         if (npc.type == NPCID.DrManFly)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BrokenHeroVape>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 25, 1, 1));
         }
 
         if (npc.type == NPCID.WallofFlesh)
@@ -947,6 +1007,7 @@ public class ExampleNPCLoot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<StupidEmblem>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 2, 12));
             npcLoot.Add(ItemDropRule.Common(ItemID.ShadowScale, 1, 2, 12));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
     }
 }

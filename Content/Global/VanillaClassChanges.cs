@@ -459,12 +459,12 @@ public class IAmSOFuckingLesbian : GlobalItem
     {
         item.DamageType = GetInstance<MagicSummonDamage>();
 
-        item.damage = 59;
+        item.damage = 54;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
     }
 }
 

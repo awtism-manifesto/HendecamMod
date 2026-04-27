@@ -35,38 +35,17 @@ namespace HendecamMod.Common.Systems
             TemporaryBonus = 0f;
             DecayRateMultiplier = 1f;
 
-            // Calculate max after all bonuses are applied
-            Max = BaseMax + MaxBonus;
-
-            // Clamp current to max
-            if (Current > Max)
-                Current = Max;
-
-            // Calculate decay rate
-            if (Max == 200 && DecayRateMultiplier == 1f)
-            {
-                decayPerTick = 0.66f;
-            }
-            else
-            {
-                float basePerTick = (BaseDecayRate * DecayRateMultiplier) / 60f;
-                float maxScaling = (Max * MaxScalingFactor) / 60f;
-                decayPerTick = basePerTick + maxScaling;
-                decayPerSecond = (int)(decayPerTick * 60);
-            }
-
-            if (Player.dead)
-            {
-                Current = 0f;
-            }
+            // DON'T calculate Max or clamp Current here anymore!
+            // This happens BEFORE accessories add their bonuses
         }
 
         public override void PostUpdate()
         {
-            // Recalculate Max after all temporary bonuses have been applied
+            // Recalculate Max AFTER all temporary bonuses have been applied
+            // This runs after all equipment updates
             Max = BaseMax + MaxBonus;
 
-            // Clamp current to max
+            // Clamp current to the new max (in case max decreased)
             if (Current > Max)
                 Current = Max;
 
@@ -86,7 +65,7 @@ namespace HendecamMod.Common.Systems
 
         public override void PreUpdate()
         {
-            // Ensure Max is up to date
+            // Recalculate Max again to be safe (temporary bonuses are already set by now)
             Max = BaseMax + MaxBonus;
 
             if (Current > Max)
@@ -122,14 +101,14 @@ namespace HendecamMod.Common.Systems
                 PermanentBonus = 0f;
         }
 
-        // Optional: Add a helper method to check if character has reached max
+        // Helper method to check if character has reached max permanent bonus
         public bool CanIncreasePermanent(int amount)
         {
             float maxTotalBonus = 200f; // Maximum permanent bonus allowed
             return PermanentBonus + amount <= maxTotalBonus;
         }
 
-        // Optional: Add method to permanently increase the stat
+        // Helper method to permanently increase the stat
         public void IncreasePermanent(int amount)
         {
             if (CanIncreasePermanent(amount))
@@ -141,6 +120,12 @@ namespace HendecamMod.Common.Systems
                 if (Current > Max)
                     Current = Max;
             }
+        }
+
+        // Helper method for accessories to add temporary bonuses
+        public void AddTemporaryBonus(float bonus)
+        {
+            TemporaryBonus += bonus;
         }
 
         public override void PostUpdateMiscEffects()

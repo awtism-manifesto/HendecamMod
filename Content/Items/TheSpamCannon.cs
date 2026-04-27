@@ -55,12 +55,13 @@ public class TheSpamCannon : ModItem
         if (player.altFunctionUse == 2)
         {
             Item.mana = 20;
-           
+            LobotometerCost *= 5;
         }
         else
         {
             Item.mana = 2;
-           
+          
+
         }
 
         return base.CanUseItem(player);
@@ -68,7 +69,26 @@ public class TheSpamCannon : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool TurboOrCD = true;
+
+        for (int i = 0; i < Player.MaxBuffs; i++)
+        {
+            int buffType = player.buffType[i];
+
+            if (buffType == BuffType<BigShotCooldown>())
+            {
+                TurboOrCD = false;
+            }
+        }
+
+        if (!TurboOrCD)
+        {
+
+            CombatText.NewText(player.Hitbox, Color.Red, "Now's NOT your chance to be a [BIG SHOT]");
+
+        }
+
+        return TurboOrCD;
     }
 
     public override void UpdateInventory(Player player)

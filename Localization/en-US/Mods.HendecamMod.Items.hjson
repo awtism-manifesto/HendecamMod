@@ -5394,3 +5394,8 @@ MonsterStemCells: {
 	DisplayName: Monster Stem Cells
 	Tooltip: ""
 }
+
+KusariOfFlamingFundo: {
+	Tooltip: ""
+	DisplayName: Kusari Of Flaming Fun-do
+}

@@ -27,7 +27,7 @@ public class LoadedDice : ModItem
         Item.UseSound = SoundID.Item1;
         // Weapon Properties
         Item.DamageType = GetInstance<RangedStupidDamage>();
-        Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 60; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 2;

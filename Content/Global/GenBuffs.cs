@@ -1083,12 +1083,12 @@ public class HelFireCompNerf : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 33;
+        item.damage = 31;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Sightly lower base damage, now explodes upon hitting enemies") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Lower base damage, now explodes upon hitting enemies") { OverrideColor = Color.DarkViolet });
     }
 }
 public class HelFireBoom : GlobalProjectile

@@ -290,7 +290,7 @@ ParagonCooldown: {
 
 MicroplasticPoison: {
 	DisplayName: Microplastic Poison
-	Description: Mods.HendecamMod.Buffs.MicroplasticPoison.Description
+	Description: The microplastics got 'em
 }
 
 Splinters: {
@@ -315,7 +315,7 @@ RadPoisoning4: {
 
 WeaponImbueAnnihilation: {
 	DisplayName: Weapon Imbue Annihilation
-	Description: Mods.HendecamMod.Buffs.WeaponImbueAnnihilation.Description
+	Description: Melee and Whip attacks inflict level 4 Rad Poisoning on the target
 }
 
 SkeletalDefense: {
@@ -325,15 +325,20 @@ SkeletalDefense: {
 
 Purpled: {
 	DisplayName: Purpled
-	Description: Mods.HendecamMod.Buffs.Purpled.Description
+	Description: HOLY SHIT HES GONNA EXPLODE!!!
 }
 
 TurboCharged: {
-	Description: Mods.HendecamMod.Buffs.TurboCharged.Description
+	Description: Massively increased attack speed
 	DisplayName: Turbo Charged
 }
 
 TurboChargeCooldown: {
-	Description: Mods.HendecamMod.Buffs.TurboChargeCooldown.Description
+	Description: Cannot activate Turbo Charge
 	DisplayName: Turbo Charge Cooldown
+}
+
+FunTimeCooldown: {
+	Description: Cannot activate Fun Time
+	DisplayName: Fun Time Cooldown
 }
