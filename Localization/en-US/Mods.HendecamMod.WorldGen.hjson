@@ -16,3 +16,4 @@ MagnoliaOrePassMessage: Mods.HendecamMod.WorldGen.MagnoliaOrePassMessage
 BlessedWithThroarbiumOreMessage: Mods.HendecamMod.WorldGen.BlessedWithThroarbiumOreMessage
 ManifestoOrePassMessage: Mods.HendecamMod.WorldGen.ManifestoOrePassMessage
 BlessedWithOilOreMessage: Mods.HendecamMod.WorldGen.BlessedWithOilOreMessage
+WorldGenTutorialOresPassMessage: Mods.HendecamMod.WorldGen.WorldGenTutorialOresPassMessage

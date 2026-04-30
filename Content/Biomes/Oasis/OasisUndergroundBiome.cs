@@ -19,7 +19,7 @@ public class OasisUndergroundBiome : ModBiome
 
     public override bool IsBiomeActive(Player player)
     {
-        bool b1 = GetInstance<OasisTileCount>().oasisBlockCount >= 40;
+        bool b1 = GetInstance<OasisTileCount>().oasisBlockCount >= 250;
         bool b2 = !player.ZoneSkyHeight && !player.ZoneOverworldHeight;
         return b1 && b2;
     }
