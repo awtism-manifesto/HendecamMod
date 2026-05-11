@@ -1,0 +1,50 @@
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+
+namespace HendecamMod.Content.Items.Weapons.MiscRiverBS;
+
+public class TheBostonTeaParty : ModItem
+    {
+    public override void SetDefaults()
+        {
+        Item.width = 130;
+        Item.height = 46;
+        Item.scale = 0.75f;
+        Item.rare = ModContent.RarityType<HotPink>();
+        Item.value = 330000000;
+        Item.useTime = 60;
+        Item.useAnimation = 60;
+        Item.useStyle = ItemUseStyleID.Shoot;
+        Item.autoReuse = true;
+        Item.UseSound = SoundID.Item40;
+
+        Item.DamageType = DamageClass.Ranged;
+        Item.damage = 100000;
+        Item.knockBack = 5.5f;
+        Item.noMelee = true;
+        Item.crit = 4;
+        Item.shoot = ProjectileID.PurificationPowder;
+        Item.shootSpeed = 18.3f;
+        Item.useAmmo = AmmoID.Bullet;
+        }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+        var line = new TooltipLine(Mod, "Face", "Instead of projectile vomit, this weapon shoots very high-damage bullets.");
+        tooltips.Add(line);
+        var line1 = new TooltipLine(Mod, "Face", "Made for those with less than great computers.");
+        tooltips.Add(line1);
+        }
+    public override Vector2? HoldoutOffset()
+        {
+        return new Vector2(-27f, 2f);
+        }
+    public override void AddRecipes()
+        {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<TheSecondAmendment>();
+        recipe.AddIngredient<PondsSniper>();
+        recipe.AddTile<CultistCyclotronPlaced>();
+        recipe.Register();
+        }
+    }

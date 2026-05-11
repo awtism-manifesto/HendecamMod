@@ -3,22 +3,22 @@
 namespace HendecamMod.Content.Items.Placeables;
 
 public class AirBrickWall : ModItem
-{
-    public override void SetStaticDefaults()
     {
+    public override void SetStaticDefaults()
+        {
         Item.ResearchUnlockCount = 400;
-    }
+        }
 
     public override void SetDefaults()
-    {
-        Item.DefaultToPlaceableWall(ModContent.WallType<LimestoneBrickWallPlaced>());
-    }
+        {
+        Item.DefaultToPlaceableWall(ModContent.WallType<AirBrickWallTile>());
+        }
 
     public override void AddRecipes()
-    {
+        {
         Recipe recipe = CreateRecipe(4);
         recipe.AddIngredient<AirBrick>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
+        }
     }
-}

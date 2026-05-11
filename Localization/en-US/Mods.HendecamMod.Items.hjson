@@ -5324,3 +5324,28 @@ BrokenHeroVape: {
 	Tooltip: ""
 	DisplayName: Broken Hero Vape
 }
+
+RingTechnique: {
+	Tooltip: ""
+	DisplayName: Ring Technique
+}
+
+KnuckleTechnique: {
+	Tooltip: ""
+	DisplayName: Knuckle Technique
+}
+
+GauntletTechnique: {
+	Tooltip: ""
+	DisplayName: Gauntlet Technique
+}
+
+BandTechnique: {
+	Tooltip: ""
+	DisplayName: Band Technique
+}
+
+TheBostonTeaParty: {
+	Tooltip: ""
+	DisplayName: The Boston Tea Party
+}
