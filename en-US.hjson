@@ -24,6 +24,11 @@ Mods: {
 					Label: Vanilla Weapon Class Changes
 					Tooltip: Changes certain vanilla weapons to be stupid and/or multiclass
 				}
+
+				VanillaWeaponStatBuffs: {
+					Tooltip: Increases damage, attack speed, and various other stats of certain underpowered/powercrept vanilla weapons
+					Label: Vanilla Weapon Stat Buffs
+				}
 			}
 		}
 	}

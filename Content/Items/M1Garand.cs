@@ -1,4 +1,6 @@
-﻿using Terraria.DataStructures;
+﻿using HendecamMod.Content.Projectiles;
+using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -11,7 +13,7 @@ public class M1Garand : ModItem
         // Common Properties
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.scale = 0.6f;
+        Item.scale = 0.7f;
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 4250);
         // Use Properties
@@ -20,10 +22,10 @@ public class M1Garand : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item89;
+       
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 57; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 76; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 9;
@@ -33,25 +35,64 @@ public class M1Garand : ModItem
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
-
+    private int shotCounter;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-
-        for (int i = 0; i < NumProjectiles; i++)
+        if (shotCounter <= 7)
         {
-            // Rotate the velocity randomly by 30 degrees at max.
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.4f));
 
-            // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.24f);
 
-            // Create a projectile.
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/GarandShot")
+            {
+                Volume = 2f,
+                PitchVariance = 0f,
+                MaxInstances = 10,
+            });
+            Item.useTime = 19; 
+            Item.useAnimation = 19; 
+
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1f), knockback, player.whoAmI);
+            shotCounter ++;
+        }
+        else if (shotCounter == 8)
+        {
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.4f));
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/GarandShot")
+            {
+                Volume = 2f,
+                PitchVariance = 0f,
+                MaxInstances = 10,
+            });
+
+            Item.useTime = 38;
+            Item.useAnimation = 38;
+
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1f), knockback, player.whoAmI);
+            shotCounter = 9;
+        }
+        else if (shotCounter == 9)
+        {
+            Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(180f));
+
+            type = ProjectileType<GarandMag>();
+           
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/GarandPing")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0f,
+                MaxInstances = 2,
+            });
+            Item.useTime = 19;
+            Item.useAnimation = 19;
+
+            Projectile.NewProjectileDirect(source, position, new2Velocity * 0.5f, type, (int)(damage * 0.25f), knockback, player.whoAmI);
+            shotCounter = 0;
         }
 
-        return false; // Return false because we don't want tModLoader to shoot projectile
+        return false;
     }
+
 
     public override void AddRecipes()
     {
@@ -88,6 +129,6 @@ public class M1Garand : ModItem
 
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-25f, -1f);
+        return new Vector2(-32.25f, -1f);
     }
 }

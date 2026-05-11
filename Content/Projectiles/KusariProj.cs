@@ -16,11 +16,11 @@ public class KusariProj : ModProjectile
 
         // YoyosMaximumRange is the maximum distance the yoyo sleep away from the player. 
         // Vanilla values range from 130f (Wood) to 400f (Terrarian), and defaults to 200f.
-        ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 325f;
+        ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 365f;
 
         // YoyosTopSpeed is top speed of the yoyo Projectile.
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
-        ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 21.5f;
+        ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 23.75f;
         Main.projFrames[Projectile.type] = 6;
     }
 
@@ -84,10 +84,10 @@ public class KusariProj : ModProjectile
                 normalizedDirection.Normalize();
 
                 // Max speed of 21.5 (matches yoyo's top speed)
-                float maxSpeed = 21.5f;
+                float maxSpeed = 23.75f;
 
                 // Different pull strengths for horizontal and vertical movement
-                float horizontalPullStrength = 0.5f;  // Base horizontal pull
+                float horizontalPullStrength = 0.85f;  // Base horizontal pull
                 float verticalPullStrength = 1.2f;    // Stronger vertical pull to overcome gravity
                 float upwardPullStrength = 1.5f;   // Pulling up
                 float downwardPullStrength = 6.7f; // Pulling down

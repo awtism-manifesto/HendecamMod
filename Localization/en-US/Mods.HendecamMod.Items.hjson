@@ -5399,3 +5399,28 @@ KusariOfFlamingFundo: {
 	Tooltip: ""
 	DisplayName: Kusari Of Flaming Fun-do
 }
+
+GauntletTechnique: {
+	Tooltip: ""
+	DisplayName: Gauntlet Technique
+}
+
+BandTechnique: {
+	Tooltip: ""
+	DisplayName: Band Technique
+}
+
+TheBostonTeaParty: {
+	Tooltip: ""
+	DisplayName: The Boston Tea Party
+}
+
+KnuckleTechnique: {
+	DisplayName: Knuckle Technique
+	Tooltip: ""
+}
+
+RingTechnique: {
+	DisplayName: Ring Technique
+	Tooltip: ""
+}
