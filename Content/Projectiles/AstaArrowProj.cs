@@ -41,7 +41,7 @@ public class AstaArrowProj : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
     }
 
     public override void AI()
@@ -72,7 +72,7 @@ public class AstaArrowProj : ModProjectile
                     // }
 
                     // Spawn smoke dusts at the back of the rocket.
-                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 0.66f);
+                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustType<AstatineDust>(), 0f, 0f, 100, default, 0.66f);
                     smokeDust.fadeIn = 0.4f + Main.rand.Next(3) * 0.1f;
                     smokeDust.velocity *= 0.1f;
                     smokeDust.noGravity = true;
@@ -125,20 +125,20 @@ public class AstaArrowProj : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 15; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3f;
         }
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 7; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 3f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 1f;
         }
         // Rocket II explosion that damages tiles.

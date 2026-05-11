@@ -39,7 +39,7 @@ public class RockSaltLeggings : ModItem
         var line = new TooltipLine(Mod, "Face", "7% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+25 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -51,7 +51,7 @@ public class RockSaltLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<RockSaltChestplate>() && head.type == ModContent.ItemType<RockSaltFedora>();
+        return body.type == ItemType<RockSaltChestplate>() && head.type == ItemType<RockSaltFedora>();
     }
 
     public override void UpdateEquip(Player player)
@@ -59,7 +59,7 @@ public class RockSaltLeggings : ModItem
        
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 25f;
+        loboPlayer.TemporaryBonus += 25f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

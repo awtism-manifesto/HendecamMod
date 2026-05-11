@@ -24,7 +24,7 @@ public class PyriteProjectorBlade : ModItem
         Item.useTime = 9;
         Item.useAnimation = 27;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
+        Item.DamageType = GetInstance<MeleeMagicDamage>();
         Item.damage = 22;
         Item.knockBack = 3f;
         Item.scale = 1.33f;
@@ -33,7 +33,7 @@ public class PyriteProjectorBlade : ModItem
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<PyriteMagicSword>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<PyriteMagicSword>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

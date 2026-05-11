@@ -26,7 +26,7 @@ public class MarbleGreatsword : ModItem
         Item.rare = ItemRarityID.White;
         Item.value = 82500;
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<MarbleSwing>();
+        Item.shoot = ProjectileType<MarbleSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

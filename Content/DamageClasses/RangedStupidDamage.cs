@@ -23,7 +23,7 @@ public class RangedStupidDamage : DamageClass
             return StatInheritanceData.None;
         if (damageClass == Throwing)
             return StatInheritanceData.None;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.Full;
         return new StatInheritanceData(
             damageInheritance: 0f,
@@ -40,7 +40,7 @@ public class RangedStupidDamage : DamageClass
             return true;
         if (damageClass == Ranged)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;
@@ -53,7 +53,7 @@ public class RangedStupidDamage : DamageClass
         // For this example, we'll make our class able to activate melee- and magic-specifically effects.
         if (damageClass == Ranged)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;

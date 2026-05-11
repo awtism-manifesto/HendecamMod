@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -35,7 +34,7 @@ public class CrucibleOfFlameAndSteel : ModItem
         Item.value = 47500000;
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<TackParagon>();
+        Item.shoot = ProjectileType<TackParagon>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -59,7 +58,25 @@ public class CrucibleOfFlameAndSteel : ModItem
     }
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool hasActiveSentry = false;
+
+        foreach (Projectile proj in Main.ActiveProjectiles)
+        {
+            if (proj.owner == player.whoAmI && proj.type == ModContent.ProjectileType<TackParagon>())
+            {
+                hasActiveSentry = true;
+                break;
+            }
+        }
+
+        if (!hasActiveSentry)
+        {
+           
+            CombatText.NewText(player.Hitbox, Color.Red, "No paragon summoned!");
+          
+        }
+
+        return hasActiveSentry;
     }
     public override void AddRecipes()
     {
@@ -87,7 +104,7 @@ public class CrucibleOfFlameAndSteel : ModItem
 
 
 
-            player.AddBuff(ModContent.BuffType<ParagonCooldown>(), 1200);
+            player.AddBuff(BuffType<ParagonCooldown>(), 1200);
             CDPlayer.TackStormCooldown = 1200;
 
             SoundEngine.PlaySound(SoundID.Item62, player.position);
@@ -102,14 +119,13 @@ public class CrucibleOfFlameAndSteel : ModItem
             position = Main.MouseWorld;
             player.LimitPointToPlayerReachableArea(ref position);
             int halfProjectileHeight = (int)Math.Ceiling(ContentSamples.ProjectilesByType[type].height / 2f);
-            position.Y -= halfProjectileHeight; // Adjust in-air option to spawn with bottom at cursor.
-                                                // Spawn the sentry projectile at the calculated location.
+            position.Y -= halfProjectileHeight; 
             if (player.maxTurrets >= 10)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, type, damage, knockback, Main.myPlayer);
             }
 
-            // Kills older sentry projectiles according to player.maxTurrets
+            
             player.UpdateMaxTurrets();
 
             return false;

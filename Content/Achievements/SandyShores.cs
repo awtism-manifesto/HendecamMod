@@ -11,6 +11,6 @@ public class SandyShores : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Collector);
-        Condition = AddItemCraftCondition(ModContent.ItemType<HurricaneGun>());
+        Condition = AddItemCraftCondition(ItemType<HurricaneGun>());
     }
 }

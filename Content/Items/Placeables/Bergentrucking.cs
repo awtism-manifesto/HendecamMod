@@ -24,7 +24,7 @@ public class Bergentrucking : ModItem
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 69000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.BergentruckingTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.BergentruckingTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -12,7 +12,7 @@ public class BadGrades : ModItem
 
     public override void SetStaticDefaults()
     {
-        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<IQTest>();
+        ItemID.Sets.ShimmerTransformToItem[Type] = ItemType<IQTest>();
     }
 
     public static readonly int AdditiveStupidDamageBonus = 6;
@@ -61,6 +61,6 @@ public class BadGrades : ModItem
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
         float damageBonus = lobotometerPercent * 0.10f;
      
-        player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
+        player.GetDamage(GetInstance<StupidDamage>()) += damageBonus;
     }
 }

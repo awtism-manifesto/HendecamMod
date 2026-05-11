@@ -14,7 +14,7 @@ public class LimestoneWall : ModItem
         // ModContent.WallType<Walls.ExampleWall>() retrieves the id of the wall that this item should place when used.
         // DefaultToPlaceableWall handles setting various Item values that placeable wall items use.
         // Hover over DefaultToPlaceableWall in Visual Studio to read the documentation!
-        Item.DefaultToPlaceableWall(ModContent.WallType<LimestoneWallPlaced>());
+        Item.DefaultToPlaceableWall(WallType<LimestoneWallPlaced>());
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

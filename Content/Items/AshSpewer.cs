@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -36,7 +35,7 @@ public class AshSpewer : ModItem
         Item.ArmorPenetration = 3;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<AshenWeed>();
+        Item.shoot = ProjectileType<AshenWeed>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.25f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -48,7 +47,7 @@ public class AshSpewer : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<AshenWeed>();
+        type = ProjectileType<AshenWeed>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

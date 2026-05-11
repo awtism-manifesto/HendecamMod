@@ -36,7 +36,7 @@ public class MidnightAfterburner : ModItem
         Item.ArmorPenetration = 5;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<OilBallRanged>();
+        Item.shoot = ProjectileType<OilBallRanged>();
 
         Item.shootSpeed = 14.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.MusketBall;
@@ -44,7 +44,7 @@ public class MidnightAfterburner : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<DragonSpawnShadow>();
+        type = ProjectileType<DragonSpawnShadow>();
         SoundEngine.PlaySound(SoundID.Item38, player.position);
 
         SoundEngine.PlaySound(SoundID.Item45, player.position);
@@ -76,21 +76,21 @@ public class MidnightAfterburner : ModItem
             new6Velocity *= 1f - Main.rand.NextFloat(0.55f);
             new7Velocity *= 1f - Main.rand.NextFloat(0.22f);
 
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<OilBallRanged>();
+            type = ProjectileType<OilBallRanged>();
             Projectile.NewProjectileDirect(source, position, new4Velocity * 1.25f, type, (int)(damage * 1.45f), knockback, player.whoAmI);
             type = ProjectileID.BlackBolt;
             Projectile.NewProjectileDirect(source, position, new5Velocity * 1.5f, type, (int)(damage * 1.45f), knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new6Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new7Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<DragonSpawnShadow>();
+            type = ProjectileType<DragonSpawnShadow>();
             Projectile.NewProjectileDirect(source, position, new8Velocity, type, damage, knockback, player.whoAmI);
         }
 

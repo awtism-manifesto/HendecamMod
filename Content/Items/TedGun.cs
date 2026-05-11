@@ -39,7 +39,7 @@ public class TedGun : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.TedPackage>();
+        type = ProjectileType<Projectiles.TedPackage>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

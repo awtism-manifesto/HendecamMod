@@ -11,7 +11,7 @@ public class Crimclay : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<CrimclayPlaced>());
+        Item.DefaultToPlaceableTile(TileType<CrimclayPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.VapeItems;
-using Terraria.DataStructures;
+﻿using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,7 +21,7 @@ public class TheNanoshot : ModItem
         Item.knockBack = 4f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true;
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-        Item.shootSpeed = 6.7f; 
+        Item.shootSpeed = 11.33f; 
         Item.useAmmo = AmmoID.Bullet; 
     }
 

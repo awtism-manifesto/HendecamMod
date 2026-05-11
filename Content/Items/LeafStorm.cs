@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -33,14 +32,14 @@ public class LeafStorm : ModItem
         Item.mana = 5;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<RazorLeafMage>();
+        Item.shoot = ProjectileType<RazorLeafMage>();
 
         Item.shootSpeed = 3.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<RazorLeafMage>();
+        type = ProjectileType<RazorLeafMage>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -74,18 +73,7 @@ public class LeafStorm : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -97,6 +85,10 @@ public class LeafStorm : ModItem
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PerennialBar", out ModItem PerennialBar))
+        {
+            recipe.AddIngredient(PerennialBar.Type, 10);
+        }
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

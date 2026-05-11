@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class CookingPot : ModItem
 {
     public override void SetDefaults()
@@ -25,21 +21,17 @@ public class CookingPot : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 15;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 21;
         Item.knockBack = 1;
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<GreaseSplatter>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<GreaseSplatter>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.2f; // Speed of the projectiles the sword will shoot
 
-        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
-        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-
-        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
-        // Item.ChangePlayerDirectionOnShoot = false;
+       
     }
-    public float LobotometerCost = 8f;
+    public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -74,7 +66,7 @@ public class CookingPot : ModItem
         var line = new TooltipLine(Mod, "Face", "Splatters grease everywhere");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 8 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

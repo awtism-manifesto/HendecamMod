@@ -32,7 +32,7 @@ public class TrenboloneAcetate : ModItem
         var line = new TooltipLine(Mod, "Face", "9% incrased damage and attack speed for both the Stupid and Melee classes");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+90 Max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+90 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -61,7 +61,7 @@ public class TrenboloneAcetate : ModItem
         player.aggro += 400;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 90f; // This is safe - it resets every frame in ResetEffects
+        loboPlayer.TemporaryBonus += 90f; // This is safe - it resets every frame in ResetEffects
 
 
        

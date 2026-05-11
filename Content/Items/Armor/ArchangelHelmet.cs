@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -54,7 +52,7 @@ public class ArchangelHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<ArchangelChestguard>() && legs.type == ModContent.ItemType<ArchangelGreaves>();
+        return body.type == ItemType<ArchangelChestguard>() && legs.type == ItemType<ArchangelGreaves>();
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

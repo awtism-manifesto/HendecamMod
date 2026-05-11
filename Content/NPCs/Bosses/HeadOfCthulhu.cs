@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Global;
 
 namespace HendecamMod.Content.NPCs.Bosses;
 

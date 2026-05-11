@@ -29,7 +29,7 @@ public class BalkanRagePotion : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(silver: 20);
-        Item.buffType = ModContent.BuffType<Buffs.BalkanRage>(); 
+        Item.buffType = BuffType<Buffs.BalkanRage>(); 
         Item.buffTime = 21600;
     }
 

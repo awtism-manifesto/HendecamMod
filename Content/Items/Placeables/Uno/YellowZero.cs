@@ -11,7 +11,7 @@ public class YellowZero : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.YellowZero>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.YellowZero>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

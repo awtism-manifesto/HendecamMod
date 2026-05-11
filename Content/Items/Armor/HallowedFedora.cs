@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -48,7 +47,7 @@ public class HallowedFedora : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+100 max Lobotometer and +33% Lobotometer Decay Rate")
+        line = new TooltipLine(Mod, "Face", "+100 Max Braincells and +33% Lobotometer Decay Rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -70,7 +69,7 @@ public class HallowedFedora : ModItem
        
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 100f;
+        loboPlayer.TemporaryBonus += 100f;
 
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();

@@ -396,6 +396,15 @@ public class MericaRecipes : ModSystem
             glocknbawlz.AddTile(TileID.Solidifier);
             glocknbawlz.Register();
         }
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod SpiritMerica) && SpiritMerica.TryFind("BoomShroom", out ModItem BoomShroom))
+        {
+            Recipe glocknbawlz = Recipe.Create(BoomShroom.Type);
+
+            glocknbawlz.AddIngredient<Items.LycopiteBar>(10);
+            glocknbawlz.AddIngredient(ItemID.Mushroom, 5);
+            glocknbawlz.AddTile(TileID.TinkerersWorkbench);
+            glocknbawlz.Register();
+        }
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod Awful2Merica) && Awful2Merica.TryFind("HotGlock", out ModItem HotGlock) && Awful2Merica.TryFind("Candescite", out ModItem Candescite))
         {
             Recipe glocknbawlz = Recipe.Create(HotGlock.Type);

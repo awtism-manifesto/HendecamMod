@@ -1,7 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using System.Collections.Generic;
-using Terraria.Localization;
-using Microsoft.Xna.Framework;
 
 namespace HendecamMod.Content.Prefixes
 {
@@ -10,7 +8,7 @@ namespace HendecamMod.Content.Prefixes
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             // Check if item has the Lobotomized prefix
-            if (item.prefix == ModContent.PrefixType<Lobotomized>())
+            if (item.prefix == PrefixType<Lobotomized>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Lobotomized loboPrefix)
@@ -64,7 +62,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 50f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 50f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };
@@ -80,7 +78,7 @@ namespace HendecamMod.Content.Prefixes
                     tooltips.Insert(insertIndex, maxBonusLine);
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Serious>())
+            if (item.prefix == PrefixType<Serious>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Serious loboPrefix)
@@ -146,7 +144,7 @@ namespace HendecamMod.Content.Prefixes
                    
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Clunky>())
+            if (item.prefix == PrefixType<Clunky>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Clunky loboPrefix)
@@ -213,7 +211,7 @@ namespace HendecamMod.Content.Prefixes
                 }
             }
             // Check if item has the Lobotomized prefix
-            if (item.prefix == ModContent.PrefixType<Sigma>())
+            if (item.prefix == PrefixType<Sigma>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Sigma loboPrefix)
@@ -267,7 +265,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 25f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };
@@ -279,7 +277,7 @@ namespace HendecamMod.Content.Prefixes
                     tooltips.Insert(insertIndex, maxBonusLine);
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Brainy>())
+            if (item.prefix == PrefixType<Brainy>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Brainy loboPrefix)
@@ -333,7 +331,7 @@ namespace HendecamMod.Content.Prefixes
                     // Bad modifiers: new Color(190, 120, 120) - light red
 
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
-                        $"+{loboPrefix.Power * 25f:F0} max Lobotometer")
+                        $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
                         OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
                     };
@@ -345,7 +343,7 @@ namespace HendecamMod.Content.Prefixes
                     tooltips.Insert(insertIndex, maxBonusLine);
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Tiktokified>())
+            if (item.prefix == PrefixType<Tiktokified>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Tiktokified loboPrefix)
@@ -411,7 +409,7 @@ namespace HendecamMod.Content.Prefixes
                     
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Brainrotted>())
+            if (item.prefix == PrefixType<Brainrotted>())
             {
                 // Get the actual prefix instance to access Power property
                 if (PrefixLoader.GetPrefix(item.prefix) is Brainrotted loboPrefix)
@@ -481,20 +479,20 @@ namespace HendecamMod.Content.Prefixes
 
         public override void HoldItem(Item item, Player player)
         {
-            if (item.prefix == ModContent.PrefixType<Lobotomized>())
+            if (item.prefix == PrefixType<Lobotomized>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
                 if (PrefixLoader.GetPrefix(item.prefix) is Lobotomized loboPrefix)
                 {
                    
-                    loboPlayer.MaxBonus += 50f;
+                    loboPlayer.TemporaryBonus += 50f;
 
                    
                     loboPlayer.DecayRateMultiplier *= 1.33f;
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Tiktokified>())
+            if (item.prefix == PrefixType<Tiktokified>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
@@ -506,7 +504,7 @@ namespace HendecamMod.Content.Prefixes
                     loboPlayer.DecayRateMultiplier *= 1.67f;
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Brainrotted>())
+            if (item.prefix == PrefixType<Brainrotted>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
@@ -518,7 +516,7 @@ namespace HendecamMod.Content.Prefixes
                     loboPlayer.DecayRateMultiplier *= 1.5f;
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Serious>())
+            if (item.prefix == PrefixType<Serious>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
@@ -530,7 +528,7 @@ namespace HendecamMod.Content.Prefixes
                     loboPlayer.DecayRateMultiplier *= 0.75f;
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Clunky>())
+            if (item.prefix == PrefixType<Clunky>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
@@ -542,25 +540,25 @@ namespace HendecamMod.Content.Prefixes
                     loboPlayer.DecayRateMultiplier *= 0.5f;
                 }
             }
-            if (item.prefix == ModContent.PrefixType<Sigma>())
+            if (item.prefix == PrefixType<Sigma>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
                 if (PrefixLoader.GetPrefix(item.prefix) is Sigma loboPrefix)
                 {
-                    loboPlayer.MaxBonus += 25f;
+                    loboPlayer.TemporaryBonus += 25f;
 
                    
                 }
             }
 
-            if (item.prefix == ModContent.PrefixType<Brainy>())
+            if (item.prefix == PrefixType<Brainy>())
             {
                 var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
                 if (PrefixLoader.GetPrefix(item.prefix) is Brainy loboPrefix)
                 {
-                    loboPlayer.MaxBonus += 100f;
+                    loboPlayer.TemporaryBonus += 100f;
 
 
                 }

@@ -38,7 +38,7 @@ public class Sublimination : ModItem
         Item.ArmorPenetration = 50;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<SublimRay>();
+        Item.shoot = ProjectileType<SublimRay>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 15f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -72,31 +72,31 @@ public class Sublimination : ModItem
             {
                 if (Main.rand.NextBool(2))
                 {
-                    type = ModContent.ProjectileType<SublimRay2>();
+                    type = ProjectileType<SublimRay2>();
                     Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 }
                 else
                 {
-                    type = ModContent.ProjectileType<SublimRay>();
+                    type = ProjectileType<SublimRay>();
                     Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
                 }
 
                 if (Main.rand.NextBool(2))
                 {
-                    type = ModContent.ProjectileType<SublimRay>();
+                    type = ProjectileType<SublimRay>();
                     Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
                 }
                 else
                 {
-                    type = ModContent.ProjectileType<SublimRay2>();
+                    type = ProjectileType<SublimRay2>();
                     Projectile.NewProjectileDirect(source, position, new4Velocity, type, damage, knockback, player.whoAmI);
                 }
 
-                type = ModContent.ProjectileType<SublimRay2>();
+                type = ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay>();
+                type = ProjectileType<SublimRay>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay2>();
+                type = ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
 
                 tickCounter = 5;
@@ -104,22 +104,22 @@ public class Sublimination : ModItem
             }
             else if (tickCounter >= 5)
             {
-                type = ModContent.ProjectileType<SublimRay>();
+                type = ProjectileType<SublimRay>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay2>();
+                type = ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay>();
+                type = ProjectileType<SublimRay>();
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
                 tickCounter = 0;
                 nextSpawnTick = 2;
             }
             else
             {
-                type = ModContent.ProjectileType<SublimRay2>();
+                type = ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay>();
+                type = ProjectileType<SublimRay>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<SublimRay2>();
+                type = ProjectileType<SublimRay2>();
                 Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
             }
         }
@@ -129,13 +129,13 @@ public class Sublimination : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SublimRay>();
-        if (type == ModContent.ProjectileType<SublimRay>())
+        type = ProjectileType<SublimRay>();
+        if (type == ProjectileType<SublimRay>())
         {
             damage = (int)(damage * 0.48f);
         }
 
-        if (type == ModContent.ProjectileType<SublimRay2>())
+        if (type == ProjectileType<SublimRay2>())
         {
             damage = (int)(damage * 0.5f);
         }

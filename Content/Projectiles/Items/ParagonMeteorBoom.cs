@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
 using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles.Items;
@@ -30,7 +27,7 @@ public class ParagonMeteorBoom : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 960);
+        target.AddBuff(BuffType<MoonBurn>(), 960);
         target.AddBuff(BuffID.Oiled, 960);
         target.AddBuff(BuffID.OnFire, 960);
         target.AddBuff(BuffID.OnFire3, 960);

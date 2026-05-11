@@ -61,7 +61,7 @@ public class KingslayerHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<KingslayerBreastplate>() && legs.type == ModContent.ItemType<KingslayerGreaves>();
+        return body.type == ItemType<KingslayerBreastplate>() && legs.type == ItemType<KingslayerGreaves>();
     }
 
     public override void UpdateEquip(Player player)

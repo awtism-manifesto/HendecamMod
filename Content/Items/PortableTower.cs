@@ -27,14 +27,14 @@ public class PortableTower : ModItem
         Item.reuseDelay = 3;
         Item.scale = 1.25f;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 95;
         Item.knockBack = 0;
         Item.noMelee = true;
 
         Item.value = 2050000; // The number and type of coins item can be sold for to an NPC
         Item.rare = ItemRarityID.Red;
-        Item.shoot = ModContent.ProjectileType<A5G>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<A5G>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -77,7 +77,7 @@ public class PortableTower : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Irradiates the area in front of you with harmful 5G that you cannot see or hear");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

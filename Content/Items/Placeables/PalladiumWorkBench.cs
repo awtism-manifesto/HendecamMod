@@ -4,7 +4,7 @@ public class PalladiumWorkBench : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PalladiumWorkBenchPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.PalladiumWorkBenchPlaced>());
         Item.width = 28;
         Item.height = 14;
         Item.value = 52500;

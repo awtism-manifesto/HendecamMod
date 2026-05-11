@@ -28,21 +28,21 @@ public class EyeRifle : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item42;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 6;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<EyeShot>();
+        Item.shoot = ProjectileType<EyeShot>();
         Item.useAmmo = AmmoID.Bullet;
         Item.shootSpeed = 10.25f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<EyeShot>();
+        type = ProjectileType<EyeShot>();
     }
 
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

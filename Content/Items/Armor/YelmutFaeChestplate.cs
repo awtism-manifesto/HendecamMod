@@ -1,14 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.Localization;
-using Terraria.ModLoader.IO;
-using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -40,7 +33,7 @@ public class YelmutFaeChestplate : ModItem
     public override void UpdateEquip(Player player)
     {
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 80f;
+        loboPlayer.TemporaryBonus += 80f;
 
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
         player.GetDamage(DamageClass.Ranged) += AdditiveDamageBonus / 100f;
@@ -66,7 +59,7 @@ public class YelmutFaeChestplate : ModItem
       
         tooltips.Add(new TooltipLine(Mod, "Face", "12% increased melee speed and 15% increased ranged damage"));
 
-        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and max Lobotometer")
+        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         });
@@ -89,8 +82,8 @@ public class YelmutFaeChestplate : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<YelmutsHelmet>() &&
-               legs.type == ModContent.ItemType<YelmutLeggings>();
+        return head.type == ItemType<YelmutsHelmet>() &&
+               legs.type == ItemType<YelmutLeggings>();
     }
 
     public override void AddRecipes()
@@ -156,11 +149,11 @@ public class YelmutStupidPixieWings: ModPlayer
             {
                 if (Main.rand.NextBool(4))
                 {
-                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<LycopiteDust>(), 0, 0, 100, default);
+                    Dust.NewDust(Player.position, Player.width, Player.height, DustType<LycopiteDust>(), 0, 0, 100, default);
                 }
                 if (Main.rand.NextBool(4))
                 {
-                    Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(), 0, 0, 100, Color.LightPink);
+                    Dust.NewDust(Player.position, Player.width, Player.height, DustType<PlutoniumDust>(), 0, 0, 100, Color.LightPink);
                 }
 
 

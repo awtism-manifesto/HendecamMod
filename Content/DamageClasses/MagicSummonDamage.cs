@@ -15,7 +15,7 @@ public class MagicSummonDamage : DamageClass
             return StatInheritanceData.Full;
         if (damageClass == Magic)
             return StatInheritanceData.Full;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.None;
         if (damageClass == Melee)
             return StatInheritanceData.None;

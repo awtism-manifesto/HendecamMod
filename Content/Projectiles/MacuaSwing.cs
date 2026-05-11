@@ -157,7 +157,7 @@ public class MacuaSwing : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(70));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<ObsidianScrap>(), (int)(Projectile.damage * 0.6f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                ProjectileType<ObsidianScrap>(), (int)(Projectile.damage * 0.6f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
         }
     }
 }

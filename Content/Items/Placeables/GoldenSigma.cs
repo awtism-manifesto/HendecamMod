@@ -7,7 +7,7 @@ public class GoldenSigma : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<GoldenSigmaPlaced>());
+        Item.DefaultToPlaceableTile(TileType<GoldenSigmaPlaced>());
 
         Item.width = 32;
         Item.height = 32;

@@ -19,7 +19,7 @@ public class FlippingBottle : ModItem
         Item.useAnimation = 24;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 12;
         Item.knockBack = 2.5f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -28,7 +28,7 @@ public class FlippingBottle : ModItem
         Item.rare = ItemRarityID.White;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<FlippingBottleProj>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FlippingBottleProj>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 8.67f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -74,7 +74,7 @@ public class FlippingBottle : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 4 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Do it for the Vine'")

@@ -21,7 +21,7 @@ public class GrindingGears : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        type = ModContent.ProjectileType<GrindGear1>();
+        type = ProjectileType<GrindGear1>();
 
         // Rotate the velocity randomly by 30 degrees at max.
         Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(5));
@@ -78,7 +78,7 @@ public class GrindingGears : ModItem
         Item.rare = ItemRarityID.LightPurple; // The item's rarity. This changes the color of the item's name.
         Item.value = Item.buyPrice(gold: 22); // The amount of money that the item is can be bought for.
 
-        Item.shoot = ModContent.ProjectileType<GrindGear2>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<GrindGear2>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 15f; // The velocity of the shot projectile.			
     }
 

@@ -73,7 +73,7 @@ public class MambaShot : ModProjectile
     {
         target.AddBuff(BuffID.Venom, 360);
         target.AddBuff(BuffID.Poisoned, 480);
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 240);
+        target.AddBuff(BuffType<RadPoisoning3>(), 240);
         
     }
 

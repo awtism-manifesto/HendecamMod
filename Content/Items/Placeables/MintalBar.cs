@@ -22,7 +22,7 @@ public class MintalBar : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.MintalBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.MintalBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

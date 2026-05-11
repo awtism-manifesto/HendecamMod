@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Projectiles;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 

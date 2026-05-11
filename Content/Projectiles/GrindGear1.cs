@@ -26,7 +26,7 @@ public class GrindGear1 : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<DragonBreath2>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<DragonBreath2>(), (int)(Projectile.damage * 0.35f), Projectile.knockBack, Projectile.owner);
         }
 
         for (int i = 0; i < 2; i++)

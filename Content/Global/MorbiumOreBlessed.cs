@@ -16,7 +16,7 @@ public class MorbiumOreBlessed : GlobalNPC
     {
         if (!NPC.downedPlantBoss)
         {
-            ModContent.GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
+            GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
         }
     }
 }
@@ -65,7 +65,7 @@ public class MorbiumSystem : ModSystem
                 int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                 // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(7, 8), (ushort)ModContent.TileType<MorbiumOrePlaced>());
+                WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(7, 8), (ushort)TileType<MorbiumOrePlaced>());
             }
         });
     }

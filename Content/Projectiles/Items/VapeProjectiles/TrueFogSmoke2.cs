@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
-using Terraria;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
-using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -23,7 +21,7 @@ public class TrueFogSmoke2 : ModProjectile
         Projectile.localNPCHitCooldown = 17;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 83;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
 

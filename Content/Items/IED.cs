@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items;
 
@@ -26,7 +27,7 @@ public class IED : ModItem
         Item.knockBack = 7f;
         Item.value = 22000;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<IedThrown>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<IedThrown>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 13.25f; // The speed of the projectile.
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))

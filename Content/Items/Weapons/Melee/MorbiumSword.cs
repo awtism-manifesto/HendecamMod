@@ -25,7 +25,7 @@ public class MorbiumSword : ModItem
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<MorbiumBolt>();
+        Item.shoot = ProjectileType<MorbiumBolt>();
         Item.shootSpeed = 9.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

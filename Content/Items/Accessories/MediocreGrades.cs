@@ -69,8 +69,8 @@ public class MediocreGrades : ModItem
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;
          float damageBonus = lobotometerPercent * 0.12f;
         float speedBonus = (1f - lobotometerPercent) * 0.12f;
-        player.GetDamage(ModContent.GetInstance<StupidDamage>()) += damageBonus;
-        player.GetAttackSpeed(ModContent.GetInstance<StupidDamage>()) += speedBonus;
+        player.GetDamage(GetInstance<StupidDamage>()) += damageBonus;
+        player.GetAttackSpeed(GetInstance<StupidDamage>()) += speedBonus;
 
     }
 }

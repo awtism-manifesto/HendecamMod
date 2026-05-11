@@ -22,7 +22,7 @@ public class CeramicBloonBuff : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         // If the minions exist reset the buff time, otherwise remove the buff from the player
-        if (player.ownedProjectileCounts[ModContent.ProjectileType<CeramicBloon>()] > 0)
+        if (player.ownedProjectileCounts[ProjectileType<CeramicBloon>()] > 0)
         {
             player.buffTime[buffIndex] = 18000;
         }

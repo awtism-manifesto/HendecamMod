@@ -42,7 +42,7 @@ public class KingslayerSword : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<SpinningRuby>();
+        Item.shoot = ProjectileType<SpinningRuby>();
 
         Item.shootSpeed = 0.05f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -55,9 +55,9 @@ public class KingslayerSword : ModItem
 
         // Decrease velocity randomly for nicer visuals.
         // Create a projectile.
-        type = ModContent.ProjectileType<SpinningDiamond>();
+        type = ProjectileType<SpinningDiamond>();
         Projectile.NewProjectileDirect(source, position, new1Velocity, type, (int)(damage * 0.66f), knockback, player.whoAmI);
-        type = ModContent.ProjectileType<SpinningRuby>();
+        type = ProjectileType<SpinningRuby>();
         Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 0.6f), knockback, player.whoAmI);
 
         return false; // Return false because we don't want tModLoader to shoot projectile

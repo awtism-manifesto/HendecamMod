@@ -45,7 +45,7 @@ public class FaradaySunSentry : ModProjectile
         Projectile.light = 0.67f;
         Projectile.tileCollide = false;
         Projectile.friendly = false;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.penetrate = -1;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -189,7 +189,7 @@ public class FaradaySunSentry : ModProjectile
                         laserDirection = (Projectile.Center - player.Center).SafeNormalize(Vector2.UnitY);
                     }
 
-                    int type = ModContent.ProjectileType<EclipseLaser>();
+                    int type = ProjectileType<EclipseLaser>();
                     Vector2 laserVelocity = laserDirection * 25f;
 
                     Projectile.NewProjectile(
@@ -209,7 +209,7 @@ public class FaradaySunSentry : ModProjectile
                     for (int i = 0; i < 50; i++)
                     {
                         Vector2 dustSpeed = Main.rand.NextVector2Circular(5f, 5f);
-                        Dust eclipseDust = Dust.NewDustPerfect(Projectile.Center, ModContent.DustType<AstatineDust>(), dustSpeed, Scale: 1.5f);
+                        Dust eclipseDust = Dust.NewDustPerfect(Projectile.Center, DustType<AstatineDust>(), dustSpeed, Scale: 1.5f);
                         eclipseDust.noGravity = true;
                     }
 
@@ -221,7 +221,7 @@ public class FaradaySunSentry : ModProjectile
 
         // ----- SENTRY FIRING LOGIC -----
         // Calculate attack speed based on player's equipment
-        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(ModContent.GetInstance<StupidDamage>()));
+        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(GetInstance<StupidDamage>()));
 
         // Base delay in frames between shots (adjust as needed)
         int baseDelay = 42;
@@ -272,7 +272,7 @@ public class FaradaySunSentry : ModProjectile
                     Vector2 shootVelocity = shootDirection * FireVelocity;
 
                     // Determine projectile type to shoot
-                    int type = ModContent.ProjectileType<FaradaySunShot>();
+                    int type = ProjectileType<FaradaySunShot>();
 
                     // Spawn the projectile
                     Projectile.NewProjectile(
@@ -329,7 +329,7 @@ public class FaradaySunSentry : ModProjectile
             Projectile proj = Main.projectile[i];
             if (proj.active &&
                 proj.owner == Projectile.owner &&
-                proj.type == ModContent.ProjectileType<FaradayMoonSentry>())
+                proj.type == ProjectileType<FaradayMoonSentry>())
             {
                 return proj;
             }

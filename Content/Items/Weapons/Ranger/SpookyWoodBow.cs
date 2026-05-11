@@ -1,5 +1,3 @@
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -71,6 +69,6 @@ public class SpookyWoodBow : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<SpookyArrow>();
+        type = ProjectileType<SpookyArrow>();
     }
 }

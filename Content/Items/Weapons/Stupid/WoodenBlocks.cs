@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Stupid;
@@ -26,8 +24,8 @@ public class WoodenBlocks : ModItem
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.White;
         Item.value = 500;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
-        Item.shoot = ModContent.ProjectileType<ToyBlockRed>();
+        Item.DamageType = GetInstance<StupidDamage>();
+        Item.shoot = ProjectileType<ToyBlockRed>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -44,15 +42,15 @@ public class WoodenBlocks : ModItem
         switch (choice)
         {
             case 0:
-                type = ModContent.ProjectileType<ToyBlockRed>();
+                type = ProjectileType<ToyBlockRed>();
                 Projectile.NewProjectileDirect(source, position, newVelocity * 1f, type, (int)(damage * 1f), knockback, player.whoAmI);
                 break;
             case 1:
-                type = ModContent.ProjectileType<ToyBlockGreen>();
+                type = ProjectileType<ToyBlockGreen>();
                 Projectile.NewProjectileDirect(source, position, newVelocity * 1f, type, (int)(damage * 1f), knockback, player.whoAmI);
                 break;
             case 2:
-                type = ModContent.ProjectileType<ToyBlockYellow>();
+                type = ProjectileType<ToyBlockYellow>();
                 Projectile.NewProjectileDirect(source, position, newVelocity * 1f, type, (int)(damage * 1f), knockback, player.whoAmI);
                 break;
           
@@ -76,7 +74,7 @@ public class WoodenBlocks : ModItem
        
         var line = new TooltipLine(Mod, "Face", "Throws wooden toy blocks at your opponents");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

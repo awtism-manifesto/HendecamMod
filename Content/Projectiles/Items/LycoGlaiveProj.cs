@@ -76,7 +76,7 @@ public class LycoGlaiveProj : ModProjectile
         }
         for (int i = 0; i < 5; i++)
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<LycopiteDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<LycopiteDust>());
             dust.noGravity = true;
             dust.velocity *= 4.3f;
             dust.scale *= 1f;

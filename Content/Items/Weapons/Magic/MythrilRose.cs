@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -31,7 +30,7 @@ public class MythrilRose : ModItem
         Item.ArmorPenetration = 3;
         Item.value = 175000;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<MythrilRosePetal>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<MythrilRosePetal>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 13.25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -54,7 +53,7 @@ public class MythrilRose : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<MythrilRosePetal>();
+        type = ProjectileType<MythrilRosePetal>();
     }
     private int shotCounter;
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

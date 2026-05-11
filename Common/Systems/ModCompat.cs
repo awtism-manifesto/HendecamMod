@@ -27,8 +27,8 @@ public class ApacheElfShipEntry : ModSystem
         string publicName = "ApacheElfShip";
         float weight = 13.54f;
         Func<bool> downed = () => BossDownedSystem.downedApacheElfShip;
-        int bossType = ModContent.NPCType<ApacheElfShip>();
-        int spawnItem = ModContent.ItemType<ApacheElfShipSummon>();
+        int bossType = NPCType<ApacheElfShip>();
+        int spawnItem = ItemType<ApacheElfShipSummon>();
         List<int> collectibles = new List<int>
         {
             //ModContent.ItemType<Content.Items.Placeable.Furniture.MinionBossRelic>(),
@@ -38,7 +38,7 @@ public class ApacheElfShipEntry : ModSystem
         };
         var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
         {
-            Texture2D texture = ModContent.Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/ApacheElfShipEntry").Value;
+            Texture2D texture = Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/ApacheElfShipEntry").Value;
             Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
             sb.Draw(texture, centered, color);
         };
@@ -81,8 +81,8 @@ public class HeadOfCthulhuEntry : ModSystem
         string publicName = "HeadOfCthulhu";
         float weight = 6.5f;
         Func<bool> downed = () => BossDownedSystem.downedHeadOfCthulhu;
-        int bossType = ModContent.NPCType<HeadOfCthulhu>();
-        int spawnItem = ModContent.ItemType<HeadOfCthulhuSummon>();
+        int bossType = NPCType<HeadOfCthulhu>();
+        int spawnItem = ItemType<HeadOfCthulhuSummon>();
         List<int> collectibles = new List<int>
         {
             //ModContent.ItemType<Content.Items.Placeable.Furniture.MinionBossRelic>(),
@@ -92,7 +92,7 @@ public class HeadOfCthulhuEntry : ModSystem
         };
         var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
         {
-            Texture2D texture = ModContent.Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/HeadOfCthulhuEntry").Value;
+            Texture2D texture = Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/HeadOfCthulhuEntry").Value;
             Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
             sb.Draw(texture, centered, color);
         };
@@ -135,8 +135,8 @@ public class PromethiumPlasmoidEntry : ModSystem
         string publicName = "PromethiumPlasmoid";
         float weight = 19f;
         Func<bool> downed = () => BossDownedSystem.downedPromethiumPlasmoid;
-        int bossType = ModContent.NPCType<PromethiumPlasmoid>();
-        int spawnItem = ModContent.ItemType<AstatineGlassSword>();
+        int bossType = NPCType<PromethiumPlasmoid>();
+        int spawnItem = ItemType<AstatineGlassSword>();
         List<int> collectibles = new List<int>
         {
             //ModContent.ItemType<Content.Items.Placeable.Furniture.MinionBossRelic>(),
@@ -146,7 +146,7 @@ public class PromethiumPlasmoidEntry : ModSystem
         };
         var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
         {
-            Texture2D texture = ModContent.Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/PromethiumPlasmoidEntry").Value;
+            Texture2D texture = Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/PromethiumPlasmoidEntry").Value;
             Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
             sb.Draw(texture, centered, color);
         };

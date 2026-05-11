@@ -41,7 +41,7 @@ public class RockSaltFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "5% increased stupid damage and critical strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+25 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+25 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -53,7 +53,7 @@ public class RockSaltFedora : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<RockSaltChestplate>() && legs.type == ModContent.ItemType<RockSaltLeggings>();
+        return body.type == ItemType<RockSaltChestplate>() && legs.type == ItemType<RockSaltLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -61,7 +61,7 @@ public class RockSaltFedora : ModItem
 
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 25f;
+        loboPlayer.TemporaryBonus += 25f;
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetDamage<StupidDamage>() += AdditiveStupidDamageBonus / 100f;
     }

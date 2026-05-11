@@ -21,7 +21,7 @@ public class BrokenHeroGun : ModItem
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<ScrapMetal>();
+        Item.shoot = ProjectileType<ScrapMetal>();
         Item.shootSpeed = 6.7f;
     }
 

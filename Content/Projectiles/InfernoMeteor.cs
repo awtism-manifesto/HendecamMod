@@ -71,7 +71,7 @@ public class InfernoMeteor : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.25f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.25f);
             chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             chudDust.velocity *= 0.1f;
         }

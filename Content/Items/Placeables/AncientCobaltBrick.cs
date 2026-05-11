@@ -12,7 +12,7 @@ public class AncientCobaltBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<AncientCobaltBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<AncientCobaltBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
         Item.rare = ItemRarityID.Orange;

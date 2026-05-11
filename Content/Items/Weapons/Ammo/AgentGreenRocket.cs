@@ -16,7 +16,7 @@ public class AgentGreenRocket : ModItem
         Item.knockBack = 3.5f;
         Item.value = 101;
         Item.rare = ItemRarityID.LightRed;
-        Item.shoot = ModContent.ProjectileType<AgentGreenProj>();
+        Item.shoot = ProjectileType<AgentGreenProj>();
         Item.shootSpeed = 12.85f;
         Item.ammo = AmmoID.Rocket;
     }
@@ -24,10 +24,10 @@ public class AgentGreenRocket : ModItem
     public override void SetStaticDefaults()
     {
         AmmoID.Sets.IsSpecialist[Type] = true;
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ModContent.ProjectileType<AgentGreenProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ModContent.ProjectileType<AgentGreenProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ModContent.ProjectileType<AgentGreenProj>());
-        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ModContent.ProjectileType<AgentGreenProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.RocketLauncher].Add(Type, ProjectileType<AgentGreenProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.GrenadeLauncher].Add(Type, ProjectileType<AgentGreenProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.ProximityMineLauncher].Add(Type, ProjectileType<AgentGreenProj>());
+        AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.SnowmanCannon].Add(Type, ProjectileType<AgentGreenProj>());
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
     }
 

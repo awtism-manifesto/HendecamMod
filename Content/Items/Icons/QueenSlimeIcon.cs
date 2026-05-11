@@ -17,7 +17,7 @@ public class QueenSlimeIcon : ModItem
         // Common Properties
         Item.width = 32; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.rare = ModContent.RarityType<DarkGreen>();
+        Item.rare = RarityType<DarkGreen>();
         Item.value = 750000;
         Item.maxStack = 9999;
     }

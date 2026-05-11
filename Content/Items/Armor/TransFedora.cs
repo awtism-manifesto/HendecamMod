@@ -1,8 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -48,7 +46,7 @@ public class TransFedora : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<TransBodyplate>() && legs.type == ModContent.ItemType<TransGreaves>();
+        return body.type == ItemType<TransBodyplate>() && legs.type == ItemType<TransGreaves>();
     }
 
     public override void UpdateEquip(Player player)
@@ -69,8 +67,8 @@ public class TransFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+50 Max Lobotometer";
+        player.setBonus = "+50 Max Braincells";
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 50f; 
+        loboPlayer.TemporaryBonus += 50f; 
     }
 }

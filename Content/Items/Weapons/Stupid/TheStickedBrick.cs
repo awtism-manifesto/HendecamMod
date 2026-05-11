@@ -1,9 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Stupid;
@@ -20,7 +17,7 @@ public class TheStickedBrick : ModItem
         Item.useAnimation = 31;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 1;
         Item.knockBack = 25.75f;
         Item.ChangePlayerDirectionOnShoot = true;

@@ -18,7 +18,7 @@ public class SovietFlag : ModItem
         Item.useTime = 15;
         Item.useAnimation = 15;
         Item.autoReuse = true;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.SovietFlagPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.SovietFlagPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -30,7 +30,7 @@ public class SteelKnife : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 12f;
-        Item.shoot = ModContent.ProjectileType<SteelKnifeProjectile>(); // The projectile that will be thrown
+        Item.shoot = ProjectileType<SteelKnifeProjectile>(); // The projectile that will be thrown
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

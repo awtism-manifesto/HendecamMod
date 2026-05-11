@@ -11,7 +11,7 @@ public class WhippetWhip : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<WhippetProj>(), 20, 2, 3.75f);
+        Item.DefaultToWhip(ProjectileType<WhippetProj>(), 20, 2, 3.75f);
         Item.rare = ItemRarityID.Green;
         Item.damage = 21;
         Item.useTime = 15;
@@ -20,7 +20,7 @@ public class WhippetWhip : ModItem
         Item.width = 14;
         Item.height = 14;
         Item.value = Item.buyPrice(silver: 600);
-        Item.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Item.DamageType = GetInstance<SummonStupidDamage>();
     }
     public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)
@@ -37,7 +37,7 @@ public class WhippetWhip : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Swings really, really fast");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

@@ -1,8 +1,4 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
-using HendecamMod.Content.Projectiles.Items.QuadswordProjectiles;
+﻿using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Melee;
@@ -19,19 +15,19 @@ public class LycopiteGlaive : ModItem
         Item.width = 24;
         Item.height = 24;
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 24;
-        Item.useAnimation = 24;
+        Item.useTime = 25;
+        Item.useAnimation = 25;
         Item.noMelee = true;
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
-        Item.damage = 29;
+        Item.damage = 26;
         Item.DamageType = DamageClass.Melee;
         Item.knockBack = 7.5f;
       
         Item.rare = ItemRarityID.Orange;
         Item.value = 210000;
 
-        Item.shoot = ModContent.ProjectileType<LycoGlaiveProj>();
+        Item.shoot = ProjectileType<LycoGlaiveProj>();
         Item.shootSpeed = 16.33f;
     }
    

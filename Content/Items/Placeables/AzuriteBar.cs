@@ -22,7 +22,7 @@ public class AzuriteBar : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.AzuriteBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.AzuriteBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

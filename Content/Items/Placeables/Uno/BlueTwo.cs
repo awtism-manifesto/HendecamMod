@@ -11,7 +11,7 @@ public class BlueTwo : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.BlueTwo>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.BlueTwo>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

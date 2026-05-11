@@ -124,7 +124,7 @@ public class SuperMaelstromProj : ModProjectile
 
                    
                     float[] Angles = { 0f, 90f, 180f, 270f };
-                    int type = ModContent.ProjectileType<Blade>();
+                    int type = ProjectileType<Blade>();
 
                     foreach (float Angle in Angles)
                     {

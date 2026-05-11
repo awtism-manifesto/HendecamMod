@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -22,7 +21,7 @@ public class TorchGodsFervor : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
         Item.reuseDelay = 10;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 18;
         Item.knockBack = 0.5f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +36,7 @@ public class TorchGodsFervor : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TorchGodVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TorchGodVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.25f; // Speed of the projectiles the sword will shoot
 
        
@@ -76,7 +75,7 @@ public class TorchGodsFervor : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Smoldering vapor drifts towards the mouse position")

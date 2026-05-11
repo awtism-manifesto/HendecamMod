@@ -27,7 +27,7 @@ public class FrozenMace : ModItem
         Item.crit = 7; // Critical damage chance %
         Item.scale = 1.1f;
         Item.noUseGraphic = true; // This makes sure the item does not get shown when the player swings his hand
-        Item.shoot = ModContent.ProjectileType<FrozenMaceProjectile>(); // The flail projectile
+        Item.shoot = ProjectileType<FrozenMaceProjectile>(); // The flail projectile
         Item.shootSpeed = 11f; // The speed of the projectile measured in pixels per frame.
         Item.UseSound = SoundID.Item1; // The sound that this item makes when used
         Item.rare = ItemRarityID.Blue; // The color of the name of your item

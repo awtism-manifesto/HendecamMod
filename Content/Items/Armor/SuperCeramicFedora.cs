@@ -36,7 +36,7 @@ public class SuperCeramicFedora : ModItem
         var line = new TooltipLine(Mod, "Face", "9% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+45 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+45 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -44,7 +44,7 @@ public class SuperCeramicFedora : ModItem
     }
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<SuperCeramicChestplate>() && legs.type == ModContent.ItemType<SuperCeramicLeggings>();
+        return body.type == ItemType<SuperCeramicChestplate>() && legs.type == ItemType<SuperCeramicLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -55,7 +55,7 @@ public class SuperCeramicFedora : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 45f;
+        loboPlayer.TemporaryBonus += 45f;
     }
 
     public override void AddRecipes()
@@ -117,7 +117,7 @@ public class CeramMultiscale : ModPlayer
             Player.GetSource_FromThis(),
             Player.Center,
             new Vector2(0f, -5f),
-            ModContent.ProjectileType<CeramOmniSpawn>(),
+            ProjectileType<CeramOmniSpawn>(),
             finalDamage,
             3f,
             Player.whoAmI

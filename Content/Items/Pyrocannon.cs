@@ -52,7 +52,7 @@ public class Pyrocannon : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PyroFlame>();
+        type = ProjectileType<PyroFlame>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -70,9 +70,9 @@ public class Pyrocannon : ModItem
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<PyroFlame>();
+            type = ProjectileType<PyroFlame>();
             Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-            type = ModContent.ProjectileType<PyroBall>();
+            type = ProjectileType<PyroBall>();
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile

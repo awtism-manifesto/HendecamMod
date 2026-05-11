@@ -25,7 +25,7 @@ public class CopperShortgun : ModItem
         Item.UseSound = SoundID.Item99;
         Item.scale = 1.25f;
 
-        Item.shoot = ModContent.ProjectileType<CopperShort>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<CopperShort>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

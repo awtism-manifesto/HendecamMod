@@ -46,7 +46,7 @@ public class OverSpawn : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<Tack>(),
+                ProjectileType<Tack>(),
                 Projectile.damage,
                 Projectile.knockBack,
                 Projectile.owner

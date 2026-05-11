@@ -32,7 +32,7 @@ public class MorbeamStaff : ModItem
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item72;
 
-        Item.shoot = ModContent.ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 12.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -44,7 +44,7 @@ public class MorbeamStaff : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Morbeam>();
+        type = ProjectileType<Morbeam>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

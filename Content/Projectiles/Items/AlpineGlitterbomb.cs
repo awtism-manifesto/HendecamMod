@@ -27,9 +27,10 @@ public class AlpineGlitterbomb : ModProjectile
         Projectile.height = 35;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = GetInstance<SummonStupidDamage>();
         Projectile.light = 0.2f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 1;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
@@ -113,7 +114,7 @@ public class AlpineGlitterbomb : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<SpecialGlitter>(),
+                ProjectileType<SpecialGlitter>(),
                 Projectile.damage,
                 Projectile.knockBack,
                 Projectile.owner
@@ -133,7 +134,7 @@ public class AlpineGlitterbomb : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<AlpineTagBuff>(), 300);
+        target.AddBuff(BuffType<AlpineTagBuff>(), 300);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
     }

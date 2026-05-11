@@ -20,7 +20,7 @@ public class WaterflameSword : ModItem
         Item.useTime = 32;
         Item.useAnimation = 32;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
+        Item.DamageType = GetInstance<MeleeMagicDamage>();
         Item.damage = 36;
         Item.knockBack = 3f;
         Item.scale = 1.15f;
@@ -29,7 +29,7 @@ public class WaterflameSword : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
         Item.useTurn = true;
-        Item.shoot = ModContent.ProjectileType<Waterflame>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Waterflame>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)

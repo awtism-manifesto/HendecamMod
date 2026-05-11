@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -9,7 +8,7 @@ public class CrimceramicSheet : ModItem
 
     public override void SetStaticDefaults()
     {
-        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<EbonceramicSheet>();
+        ItemID.Sets.ShimmerTransformToItem[Type] = ItemType<EbonceramicSheet>();
         Item.ResearchUnlockCount = 25;
     }
     public override void SetDefaults()

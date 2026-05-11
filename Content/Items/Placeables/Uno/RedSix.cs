@@ -11,7 +11,7 @@ public class RedSix : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedSix>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedSix>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

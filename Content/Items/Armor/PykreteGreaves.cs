@@ -29,6 +29,6 @@ public class PykreteGreaves : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PykreteChestplate>() && head.type == ModContent.ItemType<PykreteHelmet>();
+        return body.type == ItemType<PykreteChestplate>() && head.type == ItemType<PykreteHelmet>();
     }
 }

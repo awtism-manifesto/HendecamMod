@@ -33,14 +33,14 @@ public class SaltGun : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Salt>();
+        Item.shoot = ProjectileType<Salt>();
 
         Item.shootSpeed = 6.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Salt>();
+        type = ProjectileType<Salt>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

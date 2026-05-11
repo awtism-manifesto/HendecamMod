@@ -22,7 +22,7 @@ public class ThePeoplesPitchfork : ModItem
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
-        Item.shoot = ModContent.ProjectileType<PitchforkProj>(); 
+        Item.shoot = ProjectileType<PitchforkProj>(); 
         Item.shootSpeed = 10.33f;
         }
 

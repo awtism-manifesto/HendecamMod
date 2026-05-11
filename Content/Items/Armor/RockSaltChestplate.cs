@@ -1,10 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -43,7 +41,7 @@ public class RockSaltChestplate : ModItem
         var line = new TooltipLine(Mod, "Face", "4% increased stupid attack speed and crit strike");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+40 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+40 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -55,7 +53,7 @@ public class RockSaltChestplate : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<RockSaltFedora>() && legs.type == ModContent.ItemType<RockSaltLeggings>();
+        return head.type == ItemType<RockSaltFedora>() && legs.type == ItemType<RockSaltLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -65,7 +63,7 @@ public class RockSaltChestplate : ModItem
        
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 40f;
+        loboPlayer.TemporaryBonus += 40f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
@@ -82,7 +80,7 @@ public class RockSaltChestplate : ModItem
     {
         player.GetModPlayer<LobotoSalt>().Salting = true;
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at max lobotometer";
+        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at Max Braincells";
 
        
     }
@@ -122,7 +120,7 @@ public class RockSaltChestplate : ModItem
                     Player.GetSource_FromThis(),
                    Player.Center - new Vector2(Main.rand.Next(-110, 110), 790),
                     new Vector2(Main.rand.Next(-3, 3), 15f),
-                    ModContent.ProjectileType<SaltOmni>(),
+                    ProjectileType<SaltOmni>(),
                     baseDamage,
                     1.5f,
                     Player.whoAmI

@@ -28,7 +28,7 @@ public class FlamingKnife : ModItem
         Item.noMelee = true;
         Item.DamageType = DamageClass.Throwing;
         Item.shootSpeed = 12f;
-        Item.shoot = ModContent.ProjectileType<FlamingKnifeProjectile>();
+        Item.shoot = ProjectileType<FlamingKnifeProjectile>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -16,7 +16,7 @@ public class MichaelDrop : IItemDropRuleCondition
 
     public bool CanDrop(DropAttemptInfo info)
         {
-        return !NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) && !NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>());
+        return !NPC.AnyNPCs(NPCType<EyesOfGabriel>()) && !NPC.AnyNPCs(NPCType<EyesOfRaphael>());
         }
 
     public bool CanShowItemDropInUI()
@@ -40,7 +40,7 @@ public class GabrielDrop : IItemDropRuleCondition
 
     public bool CanDrop(DropAttemptInfo info)
         {
-        return !NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()) && !NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>());
+        return !NPC.AnyNPCs(NPCType<EyesOfMichael>()) && !NPC.AnyNPCs(NPCType<EyesOfRaphael>());
         }
 
     public bool CanShowItemDropInUI()
@@ -64,7 +64,7 @@ public class RaphaelDrop : IItemDropRuleCondition
 
     public bool CanDrop(DropAttemptInfo info)
         {
-        return !NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()) && !NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>());
+        return !NPC.AnyNPCs(NPCType<EyesOfGabriel>()) && !NPC.AnyNPCs(NPCType<EyesOfMichael>());
         }
 
     public bool CanShowItemDropInUI()

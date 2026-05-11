@@ -51,7 +51,7 @@ public class LunarBolt : ModProjectile
                 chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 chudDust.velocity *= 0.1f;
                 chudDust.noGravity = true;
-                Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.55f);
+                Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.55f);
                 chud2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
                 chud2Dust.velocity *= 0.1f;
                 chud2Dust.noGravity = true;
@@ -72,7 +72,7 @@ public class LunarBolt : ModProjectile
                 Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
                 Vector2 Peanits = Projectile.Center;
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<LunarContrail>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                    ProjectileType<LunarContrail>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
 
                 tickCounter = 0;
                 nextSpawnTick = 6767;

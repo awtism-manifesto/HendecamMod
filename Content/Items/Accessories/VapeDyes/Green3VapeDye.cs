@@ -1,10 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Items.Accessories.VapeDyes;

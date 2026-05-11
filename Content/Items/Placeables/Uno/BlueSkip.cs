@@ -11,7 +11,7 @@ public class BlueSkip : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.BlueSkip>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.BlueSkip>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

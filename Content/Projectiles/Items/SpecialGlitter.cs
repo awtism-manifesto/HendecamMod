@@ -22,7 +22,7 @@ public class SpecialGlitter : ModProjectile
         Projectile.extraUpdates = 4;
         Projectile.friendly = true;
         Projectile.penetrate = 9999;
-        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = GetInstance<SummonStupidDamage>();
         Projectile.timeLeft = 90;
         Projectile.aiStyle = ProjAIStyleID.Arrow;
         AIType = ProjectileID.Bullet;
@@ -32,7 +32,7 @@ public class SpecialGlitter : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<AlpineTagBuff>(), 300);
+        target.AddBuff(BuffType<AlpineTagBuff>(), 300);
 
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
     }

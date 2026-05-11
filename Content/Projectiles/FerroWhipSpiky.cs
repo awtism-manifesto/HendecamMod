@@ -44,7 +44,7 @@ public class FerroWhipSpiky : ModProjectile
     {
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
 
-        target.AddBuff(ModContent.BuffType<SpikyTag>(), 310);
+        target.AddBuff(BuffType<SpikyTag>(), 310);
         target.AddBuff(BuffID.Oiled, 310);
 
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.

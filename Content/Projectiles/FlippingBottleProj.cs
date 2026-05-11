@@ -19,7 +19,7 @@ public class FlippingBottleProj : ModProjectile
         AIType = ProjectileID.Shuriken;
         Projectile.penetrate += -3;
         Projectile.timeLeft = 150;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate

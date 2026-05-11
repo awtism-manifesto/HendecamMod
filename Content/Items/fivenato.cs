@@ -22,7 +22,7 @@ public class fivenato : ModItem
         Item.knockBack = 0f;
         Item.value = 30;
         Item.rare = ItemRarityID.LightPurple;
-        Item.shoot = ModContent.ProjectileType<fiveproj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<fiveproj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 9.9f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

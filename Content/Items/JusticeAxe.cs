@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class JusticeAxe : ModItem
 {
     private int justiceaxecooldown;
@@ -32,8 +28,8 @@ public class JusticeAxe : ModItem
         Item.UseSound = SoundID.Item1;
         Item.rare = ItemRarityID.LightPurple;
         Item.value = Item.buyPrice(gold: 95); // Sell price is 5 times less than the buy price.
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
-        Item.shoot = ModContent.ProjectileType<JusticeSwing>();
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.shoot = ProjectileType<JusticeSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -42,7 +38,26 @@ public class JusticeAxe : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool TurboOrCD = true;
+
+        for (int i = 0; i < Player.MaxBuffs; i++)
+        {
+            int buffType = player.buffType[i];
+
+            if (buffType == BuffType<RudeBusterCooldown>())
+            {
+                TurboOrCD = false;
+            }
+        }
+
+        if (!TurboOrCD)
+        {
+
+            CombatText.NewText(player.Hitbox, Color.Red, "On Cooldown!");
+
+        }
+
+        return TurboOrCD;
     }
 
     public override bool CanUseItem(Player player)
@@ -81,11 +96,15 @@ public class JusticeAxe : ModItem
                 justiceaxecooldown = 60;
             }
 
-            player.AddBuff(ModContent.BuffType<RudeBusterCooldown>(), 60);
-            SoundEngine.PlaySound(SoundID.Item82, player.position);
-            SoundEngine.PlaySound(SoundID.Item132, player.position);
+            player.AddBuff(BuffType<RudeBusterCooldown>(), 60);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterSwing")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0.2f,
+                MaxInstances = 3,
+            });
 
-            Projectile.NewProjectile(source, position, velocity * 2.85f, ModContent.ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.85f, ProjectileType<RuderBuster>(), (int)(damage * 4.5f), (int)(knockback * 2.75f), player.whoAmI);
             return false;
         }
 

@@ -26,10 +26,10 @@ public class LoreAccurateBlackshard : ModItem
         Item.ArmorPenetration = 600;
         Item.shootSpeed = 6.66f;
         Item.UseSound = SoundID.Item39;
-        Item.rare = ModContent.RarityType<Seizure>();
+        Item.rare = RarityType<Seizure>();
         Item.value = 666666666; // Sell price is 5 times less than the buy price.
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
-        Item.shoot = ModContent.ProjectileType<BlackshardProj>();
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.shoot = ProjectileType<BlackshardProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -52,7 +52,7 @@ public class LoreAccurateBlackshard : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            Projectile.NewProjectile(source, position, velocity * 2.15f, ModContent.ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 2.15f, ProjectileType<BlackshardThrown>(), (int)(damage * 0.367f), knockback, player.whoAmI);
             return false;
         }
 

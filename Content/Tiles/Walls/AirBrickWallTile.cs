@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-
-namespace HendecamMod.Content.Tiles.Walls;
+﻿namespace HendecamMod.Content.Tiles.Walls;
 
 public class AirBrickWallTile : ModWall
 {

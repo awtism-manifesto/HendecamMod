@@ -36,7 +36,7 @@ public class PlutoParticle : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 120);
+        target.AddBuff(BuffType<RadPoisoning2>(), 120);
     }
 
     public override void AI()
@@ -53,7 +53,7 @@ public class PlutoParticle : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.05f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.05f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
         }

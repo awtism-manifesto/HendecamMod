@@ -84,7 +84,7 @@ public class PlutoBlob : ModProjectile
                     // }
 
                     // Spawn smoke dusts at the back of the rocket.
-                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
+                    Dust smokeDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 3f + posOffsetX, Projectile.position.Y + 3f + posOffsetY) - Projectile.velocity * 0.5f, Projectile.width - 8, Projectile.height - 8, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.7f);
                     smokeDust.fadeIn = 1f + Main.rand.Next(5) * 0.1f;
                     smokeDust.velocity *= 0.05f;
                 }
@@ -144,30 +144,30 @@ public class PlutoBlob : ModProjectile
         // Spawn a bunch of smoke dusts.
         for (int i = 0; i < 20; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 1.5f;
         }
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 30; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7.5f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireDust.velocity *= 3.5f;
         }
 
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<PlutoPool>(), (int)(Projectile.damage * 0.7f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<PlutoPool>(), (int)(Projectile.damage * 0.7f), Projectile.knockBack, Projectile.owner);
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 4;
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 170);
+        target.AddBuff(BuffType<RadPoisoning2>(), 170);
     }
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {

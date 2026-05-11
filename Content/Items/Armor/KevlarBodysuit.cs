@@ -61,7 +61,7 @@ public class KevlarBodysuit : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<KevlarMask>() && legs.type == ModContent.ItemType<KevlarPants>();
+        return head.type == ItemType<KevlarMask>() && legs.type == ItemType<KevlarPants>();
     }
 
     public override void UpdateEquip(Player player)

@@ -13,7 +13,7 @@ public class ChainReaction : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<PlutoWhip>(), 33, 4, 3.75f);
+        Item.DefaultToWhip(ProjectileType<PlutoWhip>(), 33, 4, 3.75f);
         Item.rare = ItemRarityID.LightPurple;
         Item.damage = 132;
         Item.useTime = 42;

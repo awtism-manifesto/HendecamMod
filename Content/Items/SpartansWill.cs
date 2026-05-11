@@ -31,17 +31,17 @@ public class SpartansWill : ModItem
         Item.damage = 22;
         Item.knockBack = 9.25f;
         Item.noUseGraphic = true; // When true, the item's sprite will not be visible while the item is in use. This is true because the spear projectile is what's shown so we do not want to show the spear sprite as well.
-        Item.DamageType = ModContent.GetInstance<MeleeMagicDamage>();
+        Item.DamageType = GetInstance<MeleeMagicDamage>();
         Item.noMelee = true; // Allows the item's animation to do damage. This is important because the spear is actually a projectile instead of an item. This prevents the melee hitbox of this item.
         Item.mana = 4;
         // Projectile Properties
         Item.shootSpeed = 3f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<SpartanSpear>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<SpartanSpear>(); // The projectile that is fired from this weapon
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        type = ModContent.ProjectileType<SpartanRageSpear>();
+        type = ProjectileType<SpartanRageSpear>();
         Projectile.NewProjectileDirect(source, position, velocity * 2.25f, type, (int)(damage * 0.9f), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
     }

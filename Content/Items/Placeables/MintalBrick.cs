@@ -23,7 +23,7 @@ public class MintalBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<MintalBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<MintalBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

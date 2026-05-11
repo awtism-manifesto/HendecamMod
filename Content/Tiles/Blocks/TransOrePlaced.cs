@@ -33,7 +33,7 @@ public class TransOrePlaced : ModTile
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(255, 255, 255), Language.GetText("Trans Ore"));
 
-        DustType = ModContent.DustType<TransDust>();
+        DustType = DustType<TransDust>();
         HitSound = SoundID.Tink;
         MineResist = 2f;
         MinPick = 48;
@@ -84,7 +84,7 @@ public class TransOrePlaced : ModTile
                     int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                     // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<TransOrePlaced>());
+                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)TileType<TransOrePlaced>());
                 }
             });
         }
@@ -132,7 +132,7 @@ public class TransOrePlaced : ModTile
 
                 // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place.
                 // Feel free to experiment with strength and step to see the shape they generate.
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), ModContent.TileType<TransOrePlaced>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), TileType<TransOrePlaced>());
 
                 // Alternately, we could check the tile already present in the coordinate we are interested.
                 // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.

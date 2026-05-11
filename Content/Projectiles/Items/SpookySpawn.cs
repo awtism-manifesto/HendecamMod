@@ -43,7 +43,7 @@ public class SpookySpawn : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<SpookySparkMelee>(),
+                ProjectileType<SpookySparkMelee>(),
                 (int)(Projectile.damage*0.67f),
                 Projectile.knockBack,
                 Projectile.owner

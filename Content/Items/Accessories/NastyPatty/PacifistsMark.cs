@@ -16,7 +16,7 @@ public class PacifistsMark : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants 200 more Health, at the cost of Combat Buffs");
+        var line = new TooltipLine(Mod, "Face", "Grants 150 more Health, at the cost of Combat Buffs");
         tooltips.Add(line);
     }
 

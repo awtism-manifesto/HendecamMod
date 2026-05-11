@@ -22,7 +22,7 @@ public class KingslayerBullet : ModItem
         Item.knockBack = 1.5f;
         Item.value = 69;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ModContent.ProjectileType<KingShot>();
+        Item.shoot = ProjectileType<KingShot>();
         Item.shootSpeed = 6.6f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }
@@ -40,7 +40,7 @@ public class KingslayerBullet : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Pierces multiple enemies and flies very fast");
+        var line = new TooltipLine(Mod, "Face", "Deals extra crit damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -49,17 +49,6 @@ public class KingslayerBullet : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 }

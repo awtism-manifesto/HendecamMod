@@ -15,7 +15,7 @@ public class PurifiedSaltBlock : ModItem
         Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
         Item.value = 9900;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PureSaltTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PureSaltTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

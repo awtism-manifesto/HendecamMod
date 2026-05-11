@@ -1,6 +1,4 @@
 ﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -27,7 +25,7 @@ public class OffenseShield : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Massively increases damage output for a short time after being hit");
+        var line = new TooltipLine(Mod, "Face", "Increases damage output for a short time after being hit");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Also still grants Panic upon being hit")
@@ -46,7 +44,11 @@ public class OffenseShield : ModItem
         recipe.AddIngredient<PanicShield>();
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-       
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("CrawCarapace", out ModItem CrawCarapace))
+        {
+            recipe.AddIngredient(CrawCarapace.Type);
+        }
+
     }
     public class OffenseProc : ModPlayer
     {
@@ -69,7 +71,7 @@ public class OffenseShield : ModItem
             Player.AddBuff(BuffID.Panic, 480);
 
           
-            Player.AddBuff(ModContent.BuffType<SheildOffense>(), 480);
+            Player.AddBuff(BuffType<SheildOffense>(), 480);
            
            
         }

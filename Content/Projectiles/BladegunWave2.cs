@@ -25,7 +25,7 @@ public class BladegunWave2 : ModProjectile
         AIType = ProjectileID.Bullet;
         Projectile.tileCollide = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.penetrate = 5;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;

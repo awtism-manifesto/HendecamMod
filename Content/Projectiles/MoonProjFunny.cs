@@ -22,7 +22,7 @@ public class MoonProjFunny : ModProjectile
         Projectile.penetrate = 1;
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.timeLeft = 640;
         Projectile.light = 1f;
         Projectile.extraUpdates = 2;
@@ -33,16 +33,16 @@ public class MoonProjFunny : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<MoonBoom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<MoonBoom>(), (int)(Projectile.damage * 1.05f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(11, -10).RotatedBy((Peanits2).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 0.5f), Projectile.knockBack, Projectile.owner);
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(11, 11).RotatedBy((Peanits3).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 500);
+            ProjectileType<EmblemProj2>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+        target.AddBuff(BuffType<MoonBurn>(), 500);
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)

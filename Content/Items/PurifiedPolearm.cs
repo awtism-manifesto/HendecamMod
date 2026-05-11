@@ -34,7 +34,7 @@ public class PurifiedPolearm : ModItem
 
         // Projectile Properties
         Item.shootSpeed = 3.05f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<PurifiedSpear>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<PurifiedSpear>(); // The projectile that is fired from this weapon
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

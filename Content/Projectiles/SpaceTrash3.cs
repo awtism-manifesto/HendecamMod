@@ -31,7 +31,7 @@ public class SpaceTrash3 : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 300);
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 130);
+        target.AddBuff(BuffType<RadPoisoning>(), 130);
     }
 
     public override bool PreDraw(ref Color lightColor)

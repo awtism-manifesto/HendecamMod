@@ -23,7 +23,7 @@ public class AstatineBrick : ModItem
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 8000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.AstatineBrickTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.AstatineBrickTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.VapeItems;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -39,7 +38,7 @@ public class BinaryRifle : ModItem
         Item.mana = 22;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<BinaryLaser>();
+        Item.shoot = ProjectileType<BinaryLaser>();
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -58,7 +57,7 @@ public class BinaryRifle : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<BinaryLaser>();
+        type = ProjectileType<BinaryLaser>();
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         SoundEngine.PlaySound(SoundID.Item114, player.position);
     }

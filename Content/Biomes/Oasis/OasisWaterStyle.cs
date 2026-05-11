@@ -15,17 +15,17 @@ public class OasisWaterStyle : ModWaterStyle
 
     public override int ChooseWaterfallStyle()
     {
-        return ModContent.GetInstance<OasisWaterfallStyle>().Slot;
+        return GetInstance<OasisWaterfallStyle>().Slot;
     }
 
     public override int GetSplashDust()
     {
-        return ModContent.DustType<LycopiteDust>();
+        return DustType<LycopiteDust>();
     }
 
     public override int GetDropletGore()
     {
-        return ModContent.GoreType<OasisDroplet>();
+        return GoreType<OasisDroplet>();
     }
 
     public override void LightColorMultiplier(ref float r, ref float g, ref float b)

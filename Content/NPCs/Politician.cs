@@ -7,7 +7,6 @@ using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -142,7 +141,7 @@ public class Politician : ModNPC
 
         for (int k = 0; k < num; k++)
         {
-            Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<LycopiteDust>());
+            Dust.NewDust(NPC.position, NPC.width, NPC.height, DustType<LycopiteDust>());
         }
 
         // Create gore when the NPC is killed.
@@ -347,8 +346,9 @@ public class Politician : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Glock>(), 3));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AR15>(), 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<Glock>(), 3));
+        npcLoot.Add(ItemDropRule.Common(ItemType<AR15>(), 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<FreeHealthcare>(), 10));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -365,7 +365,7 @@ public class Politician : ModNPC
 
     public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
     {
-        projType = ModContent.ProjectileType<TrueBullet>();
+        projType = ProjectileType<TrueBullet>();
         attackDelay = 1;
     }
 

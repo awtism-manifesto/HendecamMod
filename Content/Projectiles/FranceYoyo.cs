@@ -24,7 +24,7 @@ public class FranceYoyo : ModProjectile
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<FrenchFlag>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<FrenchFlag>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
     }
 
     public override void AI()

@@ -22,7 +22,7 @@ public class UraniumBrick : ModItem
         Item.value = 4000;
         Item.maxStack = 9999;
 
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.UraniumBrickTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.UraniumBrickTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

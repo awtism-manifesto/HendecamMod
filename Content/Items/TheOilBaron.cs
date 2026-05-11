@@ -22,7 +22,7 @@ public class TheOilBaron : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(gold: 50); 
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<OilSwing>();
+        Item.shoot = ProjectileType<OilSwing>();
         Item.noMelee = true; 
         Item.shootsEveryUse = true; 
         Item.autoReuse = true;
@@ -33,7 +33,7 @@ public class TheOilBaron : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-        type = ModContent.ProjectileType<OilBall>(); // Create a projectile.
+        type = ProjectileType<OilBall>(); // Create a projectile.
         Projectile.NewProjectileDirect(source, position, velocity * 1.667f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
 
         return true;

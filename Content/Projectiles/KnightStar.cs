@@ -24,7 +24,7 @@ public class KnightStar : ModProjectile
         Projectile.alpha = 0;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 6969;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
@@ -60,26 +60,26 @@ public class KnightStar : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(60));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(120));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(180));
         Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(240));
         Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ModContent.ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawn>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(300));
         Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-            ModContent.ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<KnightStarSpawnSlow>(), (int)(Projectile.damage * 0.45f), Projectile.knockBack, Projectile.owner);
     }
 }

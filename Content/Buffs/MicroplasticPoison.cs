@@ -1,9 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Global;
-using System.IO;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using System.IO;
 using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.Buffs;
@@ -70,7 +65,7 @@ public class MicroplasticTick : GlobalNPC
     public override void ResetEffects(NPC npc)
     {
         // Don't reset if the buff is still active
-        if (!npc.HasBuff(ModContent.BuffType<MicroplasticPoison>()))
+        if (!npc.HasBuff(BuffType<MicroplasticPoison>()))
         {
             Microplastic = false;
             MicroplasticStacks = 0;
@@ -129,7 +124,7 @@ public static class MicroplasticPoisonExtensions
         if (Main.netMode == NetmodeID.MultiplayerClient)
             return;
 
-        int buffType = ModContent.BuffType<MicroplasticPoison>();
+        int buffType = BuffType<MicroplasticPoison>();
 
         if (npc.HasBuff(buffType))
         {

@@ -24,7 +24,7 @@ public class FireDiamondStoneBlock : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<FireDiamondStoneBlockPlaced>());
+        Item.DefaultToPlaceableTile(TileType<FireDiamondStoneBlockPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

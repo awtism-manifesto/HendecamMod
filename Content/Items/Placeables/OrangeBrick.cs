@@ -11,7 +11,7 @@ public class OrangeBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<OrangeBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<OrangeBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

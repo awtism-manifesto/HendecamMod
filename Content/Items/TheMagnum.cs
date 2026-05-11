@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
@@ -41,10 +40,10 @@ public class TheMagnum : ModItem
     {
         if (type == ProjectileID.Bullet)
         {
-            type = ModContent.ProjectileType<MagnumShot>();
+            type = ProjectileType<MagnumShot>();
         }
 
-        if (type == ModContent.ProjectileType<MagnumShot>())
+        if (type == ProjectileType<MagnumShot>())
         {
             damage = (int)(damage * 2.05f);
         }

@@ -22,7 +22,7 @@ public class Edward40Hands : ModItem
         Item.reuseDelay = 12;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 15;
         Item.knockBack = 1;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -30,7 +30,7 @@ public class Edward40Hands : ModItem
 
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
-        Item.shoot = ModContent.ProjectileType<BeerYeet>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<BeerYeet>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -74,7 +74,7 @@ public class Edward40Hands : ModItem
         var line = new TooltipLine(Mod, "Face", "Inaccurately throws beer at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

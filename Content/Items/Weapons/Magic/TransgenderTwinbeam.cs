@@ -30,7 +30,7 @@ public class TransgenderTwinbeam : ModItem
         Item.noMelee = true;
         Item.value = 70000;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ModContent.ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 10f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -46,7 +46,7 @@ public class TransgenderTwinbeam : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(1.25f));
 
-            type = ModContent.ProjectileType<TransBeamBlue>();
+            type = ProjectileType<TransBeamBlue>();
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
@@ -56,7 +56,7 @@ public class TransgenderTwinbeam : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-1.25f));
 
-            type = ModContent.ProjectileType<TransBeamPink>();
+            type = ProjectileType<TransBeamPink>();
             SoundEngine.PlaySound(SoundID.Item91, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);

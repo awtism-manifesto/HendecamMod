@@ -11,7 +11,7 @@ public class GreenEight : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.GreenEight>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.GreenEight>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

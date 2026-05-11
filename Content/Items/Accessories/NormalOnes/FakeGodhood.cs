@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items.Armor;
-using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Items.Armor;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Armor.ArchangelGreaves;

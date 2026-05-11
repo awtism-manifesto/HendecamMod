@@ -21,11 +21,11 @@ public class AstatineSpear : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
 
@@ -79,12 +79,12 @@ public class AstatineSpear : ModProjectile
             // These dusts are added later, for the 'ExampleMod' effect
             if (Main.rand.NextBool(3))
             {
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 1, Scale: 1.4f);
+                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 1, Scale: 1.4f);
             }
 
             if (Main.rand.NextBool(5))
             {
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), Alpha: 1, Scale: 1.2f);
+                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), Alpha: 1, Scale: 1.2f);
             }
         }
 

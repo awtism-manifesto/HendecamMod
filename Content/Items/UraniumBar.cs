@@ -22,7 +22,7 @@ public class UraniumBar : ModItem
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 13250;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.UraniumBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.UraniumBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

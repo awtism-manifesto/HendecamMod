@@ -38,7 +38,7 @@ public class KnightSpawn : ModProjectile
             Projectile.GetSource_FromThis(),
             above,
             velocity,
-            ModContent.ProjectileType<KnightSwordUp>(),
+            ProjectileType<KnightSwordUp>(),
             (int)(Projectile.damage * 0.66f),
             Projectile.knockBack,
             Projectile.owner
@@ -48,7 +48,7 @@ public class KnightSpawn : ModProjectile
             Projectile.GetSource_FromThis(),
             below,
             velocity,
-            ModContent.ProjectileType<KnightSwordDown>(),
+            ProjectileType<KnightSwordDown>(),
             (int)(Projectile.damage * 0.66f),
             Projectile.knockBack,
             Projectile.owner

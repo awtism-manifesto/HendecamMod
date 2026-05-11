@@ -11,7 +11,7 @@ public class RedEight : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedEight>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedEight>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

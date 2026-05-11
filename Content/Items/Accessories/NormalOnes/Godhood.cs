@@ -36,12 +36,12 @@ public class Godhood : ModItem
     {
         player.AddBuff(BuffID.ShadowDodge, 300);
         player.AddBuff(BuffID.ParryDamageBuff, 300);
-        player.AddBuff(ModContent.BuffType<DarkPower>(), 300);
-        player.AddBuff(ModContent.BuffType<MorbinTime>(), 300);
-        player.AddBuff(ModContent.BuffType<CasaBuff>(), 300);
-        player.AddBuff(ModContent.BuffType<MambaBuff>(), 300);
-        player.AddBuff(ModContent.BuffType<HeartBuff>(), 300);
-        player.AddBuff(ModContent.BuffType<JungleHealing>(), 300);
+        player.AddBuff(BuffType<DarkPower>(), 300);
+        player.AddBuff(BuffType<MorbinTime>(), 300);
+        player.AddBuff(BuffType<CasaBuff>(), 300);
+        player.AddBuff(BuffType<MambaBuff>(), 300);
+        player.AddBuff(BuffType<HeartBuff>(), 300);
+        player.AddBuff(BuffType<JungleHealing>(), 300);
         player.GetModPlayer<ArchangelWings>().ArchWings = true;
         player.GetModPlayer<AngelSpeed>().Angel = true;
         player.wingTimeMax += 225;

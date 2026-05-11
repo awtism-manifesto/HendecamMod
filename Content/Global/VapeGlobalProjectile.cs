@@ -1,9 +1,6 @@
 ﻿using HendecamMod.Content.Items.Accessories.VapeDyes;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.ModLoader;
 using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Global;
@@ -111,7 +108,7 @@ public class VapeMark : GlobalProjectile
     private void SpawnVapeDust(Projectile projectile)
     {
 
-        if (projectile.type == ModContent.ProjectileType<TorchGodVapeSmoke>())
+        if (projectile.type == ProjectileType<TorchGodVapeSmoke>())
         {
             for (int i = 0; i < 2; i++) // Spawn multiple dust for better effect
             {

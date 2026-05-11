@@ -28,7 +28,7 @@ public class BladegunBomb : ModProjectile
         Projectile.height = 30;
         Projectile.friendly = true;
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.light = 0.2f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 1;
@@ -103,10 +103,10 @@ public class BladegunBomb : ModProjectile
         // Spawn a bunch of smoke dusts.
         for (int i = 0; i < 10; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 1.5f);
+            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 1.5f);
             smokeDust.velocity *= 10.5f;
             smokeDust.noGravity = true;
-            Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 2f);
+            Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<BlueLycopiteDust>(), 0f, 0f, 100, default, 2f);
             smoke3Dust.velocity *= 9.25f;
         }
 

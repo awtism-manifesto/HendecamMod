@@ -18,7 +18,7 @@ public class FlatEarthHamaxe : ModItem
         Item.knockBack = 7;
 
         Item.value = Item.buyPrice(gold: 69);
-        Item.rare = ModContent.RarityType<HotPink>();
+        Item.rare = RarityType<HotPink>();
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
         Item.tileBoost = 4;

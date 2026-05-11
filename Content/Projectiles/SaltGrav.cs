@@ -16,7 +16,7 @@ public class SaltGrav : ModProjectile
 
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 66;
         Projectile.extraUpdates = 1;
     }

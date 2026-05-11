@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -126,8 +125,8 @@ public class ImprovisedLaserSight : ModItem
         private void DrawLaserBeam(PlayerDrawSet drawInfo, Vector2 start, Vector2 end, float distance)
         {
             // You'll need these textures - create them in your Assets folder
-            Texture2D laserTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserBeam").Value;
-            Texture2D circleTexture = ModContent.Request<Texture2D>("HendecamMod/Content/Effects/LaserEnd").Value;
+            Texture2D laserTexture = Request<Texture2D>("HendecamMod/Content/Effects/LaserBeam").Value;
+            Texture2D circleTexture = Request<Texture2D>("HendecamMod/Content/Effects/LaserEnd").Value;
 
             // Fallback if textures don't exist - creates simple textures
             if (laserTexture == null || laserTexture.IsDisposed)

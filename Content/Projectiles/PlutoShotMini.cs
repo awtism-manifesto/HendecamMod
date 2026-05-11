@@ -30,7 +30,7 @@ public class PlutoShotMini : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 110);
+        target.AddBuff(BuffType<RadPoisoning2>(), 110);
     }
 
     public override void AI()
@@ -47,7 +47,7 @@ public class PlutoShotMini : ModProjectile
                 posOffsetY = Projectile.velocity.Y * 2.5f;
             }
 
-            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, ModContent.DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.2f);
+            Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 3, Projectile.height - 3, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 0.2f);
             chudDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
             chudDust.velocity *= 0.05f;
         }
@@ -131,7 +131,7 @@ public class PlutoShotMini : ModProjectile
     {
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<PlutoniumDust>());
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>());
             dust.noGravity = true;
             dust.velocity *= 1.5f;
             dust.scale *= 0.9f;

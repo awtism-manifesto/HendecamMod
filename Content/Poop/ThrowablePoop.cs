@@ -26,7 +26,7 @@ public class ThrowablePoop : ModItem
         Item.knockBack = 1.75f;
         Item.value = 3;
         Item.rare = ItemRarityID.White;
-        Item.shoot = ModContent.ProjectileType<ThrownPoop>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<ThrownPoop>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 16.65f; // The speed of the projectile.
     }
 
@@ -56,7 +56,7 @@ public class ThrowablePoop : ModItem
         var line = new TooltipLine(Mod, "Face", "Makes both you and enemies stinky");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

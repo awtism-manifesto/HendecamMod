@@ -17,7 +17,7 @@ public class BeerYeet : ModProjectile
 
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
+        Projectile.DamageType = GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 83;
 

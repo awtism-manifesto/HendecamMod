@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -32,7 +31,7 @@ public class Overdrive : ModItem
         Item.value = Item.buyPrice(gold: 120);
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<OverdriveProj>();
+        Item.shoot = ProjectileType<OverdriveProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

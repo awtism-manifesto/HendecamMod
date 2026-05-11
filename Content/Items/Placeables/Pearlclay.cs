@@ -11,7 +11,7 @@ public class Pearlclay : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<PearlclayPlaced>());
+        Item.DefaultToPlaceableTile(TileType<PearlclayPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

@@ -152,19 +152,19 @@ public class LycoSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (target.HasBuff(ModContent.BuffType<LycopiteSpores>()))
+        if (target.HasBuff(BuffType<LycopiteSpores>()))
         {
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
 
             if (Main.rand.NextBool(3))
             {
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                    ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
 
             if (Main.rand.NextBool(3))
@@ -172,7 +172,7 @@ public class LycoSwing : ModProjectile
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                    ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
 
             if (Main.rand.NextBool(3))
@@ -180,15 +180,15 @@ public class LycoSwing : ModProjectile
                 Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
                 Vector2 Peanits2 = Projectile.Center - new Vector2(0, 0);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                    ModContent.ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
+                    ProjectileType<LycoSporeMelee>(), (int)(Projectile.damage * 0.5f), (int)(Projectile.knockBack * 0.3f), Projectile.owner);
             }
         }
 
-        target.AddBuff(ModContent.BuffType<LycopiteSpores>(), 210);
+        target.AddBuff(BuffType<LycopiteSpores>(), 210);
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, (ModContent.DustType<LycopiteDust>()));
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, (DustType<LycopiteDust>()));
             dust.noGravity = true;
             dust.velocity *= 5.15f;
             dust.scale *= 1.05f;

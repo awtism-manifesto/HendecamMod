@@ -11,7 +11,7 @@ public class TheMeltdown : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<AstaWhip>(), 33, 9, 4.25f);
+        Item.DefaultToWhip(ProjectileType<AstaWhip>(), 33, 9, 4.25f);
         Item.rare = ItemRarityID.Red;
         Item.damage = 499;
         Item.useTime = 42;
@@ -21,7 +21,7 @@ public class TheMeltdown : ModItem
         Item.width = 14;
         Item.height = 14;
         Item.value = 19500000;
-        Item.DamageType = ModContent.GetInstance<MeleeSummonDamage>();
+        Item.DamageType = GetInstance<MeleeSummonDamage>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
@@ -34,7 +35,7 @@ public class MartianDrone : ModProjectile
         Projectile.light = 0.67f;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<RangedSummonDamage>();
+        Projectile.DamageType = GetInstance<RangedSummonDamage>();
         Projectile.penetrate = -1;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -50,6 +51,14 @@ public class MartianDrone : ModProjectile
         // Always draw fully bright. This is important because sentries can usually be placed inside tiles where it would be dark.
         return Color.White;
     }
+    public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+    {
+        if (Projectile.timeLeft > 3)
+        {
+            modifiers.SourceDamage *= 1.5f;
+        }
+    }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffID.OnFire, 250);
@@ -64,7 +73,7 @@ public class MartianDrone : ModProjectile
         Player player = Main.player[Projectile.owner];
 
         
-        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(ModContent.GetInstance<RangedSummonDamage>()));
+        float attackSpeed = Math.Max(0.01f, player.GetAttackSpeed(GetInstance<RangedSummonDamage>()));
 
         
         int baseDelay = 12; // Base frames between shots
@@ -155,9 +164,9 @@ public class MartianDrone : ModProjectile
                     Vector2 shootVelocity = shootDirection * FireVelocity;
 
                     // The type of projectile the sentry will shoot. It is important that sentry shots are included in ProjectileID.Sets.SentryShot, so reusing unrelated vanilla projectiles as-is won't work 100%.
-                    int type = ModContent.ProjectileType<MartianDroneBolt>();
+                    int type = ProjectileType<MartianDroneBolt>();
 
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y), shootVelocity, type, (int)(Projectile.damage * 0.67f), 3, Projectile.owner);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y), shootVelocity, type, (int)(Projectile.damage * 0.5f), 3, Projectile.owner);
                     // Note that Projectile.damage will take into account current equipment damage bonuses automatically for sentries and minions, so there is no need to calculate that here to take advantage of current equipment bonuses.
                     // See Projectile.ContinuouslyUpdateDamageStats docs for more information.
                 }

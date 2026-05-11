@@ -58,7 +58,7 @@ public class FlaskOfShadowflame : ModItem
         Item.consumable = true;
         Item.width = 14;
         Item.height = 24;
-        Item.buffType = ModContent.BuffType<WeaponImbueShadowflame>();
+        Item.buffType = BuffType<WeaponImbueShadowflame>();
         Item.buffTime = Item.flaskTime;
         Item.value = Item.sellPrice(0, 0, 5);
         Item.rare = ItemRarityID.LightRed;

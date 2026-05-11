@@ -1,7 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Global;
-
-namespace HendecamMod.Content.Buffs;
+﻿namespace HendecamMod.Content.Buffs;
 
 public class Splinters : ModBuff
 {

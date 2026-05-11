@@ -23,7 +23,7 @@ public class TransBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<TransBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<TransBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

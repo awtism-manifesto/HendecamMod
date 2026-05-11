@@ -94,42 +94,42 @@ public class LycoRay : ModProjectile
         if (Main.rand.NextBool(2))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(3))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(4))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoSpore>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
             
         }
 
         if (Main.rand.NextBool(5))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-                ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
         if (Main.rand.NextBool(4))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
         }
         if (Main.rand.NextBool(7))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<LycoShivMage>(), (int)(Projectile.damage * 0.9f), Projectile.knockBack, Projectile.owner);
         }
 
         if (Main.rand.NextBool(6))
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-                ModContent.ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<BoomShroomMage>(), (int)(Projectile.damage * 1.15f), Projectile.knockBack, Projectile.owner);
         }
     }
 
@@ -148,7 +148,7 @@ public class LycoRay : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.55f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 12, Projectile.height - 12, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.55f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 chudDust.velocity *= 0.1f;
             }

@@ -13,7 +13,7 @@ public class KevlarWhip : ModItem
     {
         // This method quickly sets the whip's properties.
         // Mouse over to see its parameters.
-        Item.DefaultToWhip(ModContent.ProjectileType<KevlarWhipProj>(), 33, 4, 7f);
+        Item.DefaultToWhip(ProjectileType<KevlarWhipProj>(), 33, 4, 7f);
         Item.rare = ItemRarityID.Orange;
         Item.damage = 33;
         Item.useTime = 29;

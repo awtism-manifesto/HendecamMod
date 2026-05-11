@@ -21,7 +21,7 @@ public class FlatEarthBlock : ModItem
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 10000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.FlatEarthTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.FlatEarthTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -23,7 +23,7 @@ public class MoltenSpear : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<NapalmBad>(), (int)(Projectile.damage * 0.375f), (int)Projectile.knockBack * 0.2f, Projectile.owner);
+            ProjectileType<NapalmBad>(), (int)(Projectile.damage * 0.375f), (int)Projectile.knockBack * 0.2f, Projectile.owner);
     }
 
     public override bool PreAI()

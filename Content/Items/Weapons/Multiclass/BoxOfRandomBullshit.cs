@@ -28,7 +28,7 @@ public class BoxOfRandomBullshit : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<OmniDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<OmniDamage>(); // Sets the damage type to ranged.
         Item.damage = 12; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -94,7 +94,7 @@ public class BoxOfRandomBullshit : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Throws random sharps at your enemies");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

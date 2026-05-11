@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using static HendecamMod.Content.Items.Accessories.IronLung;
-using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -26,7 +25,7 @@ public class DragonVapeSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 20;
        
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 67;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
     }

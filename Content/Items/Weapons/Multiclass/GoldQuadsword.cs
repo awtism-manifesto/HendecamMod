@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.QuadswordProjectiles;
 using System.Collections.Generic;
 
@@ -24,13 +23,13 @@ public class GoldQuadsword : ModItem
         Item.noUseGraphic = true;
         Item.UseSound = SoundID.Item1;
         Item.damage = 20;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.knockBack = 5f;
         Item.crit = 4;
         Item.rare = ItemRarityID.White;
         Item.value = Item.buyPrice(copper: 480);
 
-        Item.shoot = ModContent.ProjectileType<GoldQuadswordProj>();
+        Item.shoot = ProjectileType<GoldQuadswordProj>();
         Item.shootSpeed = 16.5f;
     }
     public float LobotometerCost = 4f;
@@ -48,7 +47,7 @@ public class GoldQuadsword : ModItem
         var line = new TooltipLine(Mod, "Face", "4 swords are better than 1");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

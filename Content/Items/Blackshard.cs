@@ -29,14 +29,14 @@ public class Blackshard : ModItem
         Item.autoReuse = true;
 
         Item.mana = 6;
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 160;
         Item.knockBack = 6.66f;
         Item.noMelee = true;
         Item.ArmorPenetration = 50;
         Item.value = 6666666;
-        Item.rare = ModContent.RarityType<Seizure>();
-        Item.shoot = ModContent.ProjectileType<KnightSpawn>(); // ID of the projectiles the sword will shoot
+        Item.rare = RarityType<Seizure>();
+        Item.shoot = ProjectileType<KnightSpawn>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.25f; // Speed of the projectiles the sword will shoot
         if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind("Eridanium", out ModItem Eridanium) && (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))))
 
@@ -55,7 +55,7 @@ public class Blackshard : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<KnightSpawn>();
+        type = ProjectileType<KnightSpawn>();
     }
 
     public override bool AltFunctionUse(Player player)
@@ -73,8 +73,8 @@ public class Blackshard : ModItem
         newVelocity *= 1f - Main.rand.NextFloat(0.375f);
         if (player.altFunctionUse == 2)
         {
-            int proj = Projectile.NewProjectile(source, position, newVelocity * 2.1f, ModContent.ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
-            player.AddBuff(ModContent.BuffType<DarkPower>(), 363);
+            int proj = Projectile.NewProjectile(source, position, newVelocity * 2.1f, ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
+            player.AddBuff(BuffType<DarkPower>(), 363);
             Main.projectile[proj].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
             SoundEngine.PlaySound(SoundID.NPCDeath51, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath44, player.position);
@@ -83,7 +83,7 @@ public class Blackshard : ModItem
             SoundEngine.PlaySound(SoundID.Item103, player.position);
             if (Main.rand.NextBool(3))
             {
-                int proj2 = Projectile.NewProjectile(source, position, new2Velocity * 2.1f, ModContent.ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
+                int proj2 = Projectile.NewProjectile(source, position, new2Velocity * 2.1f, ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
 
                 Main.projectile[proj2].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
             }
@@ -94,7 +94,7 @@ public class Blackshard : ModItem
         else
         {
             int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-            player.AddBuff(ModContent.BuffType<DarkPower>(), 363);
+            player.AddBuff(BuffType<DarkPower>(), 363);
             Main.projectile[proj].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = false;
 
             return false; // Prevent vanilla projectile spawn

@@ -42,7 +42,7 @@ public class TriAttack : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<TriFlame2>();
+        Item.shoot = ProjectileType<TriFlame2>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 25f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -54,7 +54,7 @@ public class TriAttack : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<NuhUh>();
+        type = ProjectileType<NuhUh>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -77,11 +77,11 @@ public class TriAttack : ModItem
             if (tickCounter >= nextSpawnTick && tickCounter < 3)
             {
                 // Create a projectile.
-                type = ModContent.ProjectileType<TriFlame2>();
+                type = ProjectileType<TriFlame2>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<TriFlame2>();
+                type = ProjectileType<TriFlame2>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<TriFlame2>();
+                type = ProjectileType<TriFlame2>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
 
                 tickCounter = 5;
@@ -89,22 +89,22 @@ public class TriAttack : ModItem
             }
             else if (tickCounter >= 5)
             {
-                type = ModContent.ProjectileType<VenomFlame>();
+                type = ProjectileType<VenomFlame>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<VenomFlame>();
+                type = ProjectileType<VenomFlame>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<VenomFlame>();
+                type = ProjectileType<VenomFlame>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
                 tickCounter = 0;
                 nextSpawnTick = 2;
             }
             else
             {
-                type = ModContent.ProjectileType<TriFlame1>();
+                type = ProjectileType<TriFlame1>();
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<TriFlame1>();
+                type = ProjectileType<TriFlame1>();
                 Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
-                type = ModContent.ProjectileType<TriFlame1>();
+                type = ProjectileType<TriFlame1>();
                 Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
             }
         }

@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -35,8 +34,8 @@ public class TheSpamCannon : ModItem
         Item.UseSound = SoundID.Item61;
         Item.rare = ItemRarityID.Yellow;
         Item.value = Item.buyPrice(gold: 115);
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
-        Item.shoot = ModContent.ProjectileType<Pipis>();
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.shoot = ProjectileType<Pipis>();
         Item.noMelee = true;
 
         Item.autoReuse = true;
@@ -56,12 +55,13 @@ public class TheSpamCannon : ModItem
         if (player.altFunctionUse == 2)
         {
             Item.mana = 20;
-           
+            LobotometerCost *= 5;
         }
         else
         {
             Item.mana = 2;
-           
+          
+
         }
 
         return base.CanUseItem(player);
@@ -69,7 +69,26 @@ public class TheSpamCannon : ModItem
 
     public override bool AltFunctionUse(Player player)
     {
-        return true;
+        bool TurboOrCD = true;
+
+        for (int i = 0; i < Player.MaxBuffs; i++)
+        {
+            int buffType = player.buffType[i];
+
+            if (buffType == BuffType<BigShotCooldown>())
+            {
+                TurboOrCD = false;
+            }
+        }
+
+        if (!TurboOrCD)
+        {
+
+            CombatText.NewText(player.Hitbox, Color.Red, "Now's NOT your chance to be a [BIG SHOT]");
+
+        }
+
+        return TurboOrCD;
     }
 
     public override void UpdateInventory(Player player)
@@ -132,12 +151,12 @@ public class TheSpamCannon : ModItem
                 spamcannoncooldown = 90;
             }
 
-            player.AddBuff(ModContent.BuffType<BigShotCooldown>(), 90);
+            player.AddBuff(BuffType<BigShotCooldown>(), 90);
             SoundEngine.PlaySound(SoundID.Item14, player.position);
             SoundEngine.PlaySound(SoundID.Item62, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath56, player.position);
 
-            Projectile.NewProjectile(source, position, velocity * 1.5f, ModContent.ProjectileType<BigShot>(), (int)(damage * 17.5f), (int)(knockback * 25f), player.whoAmI);
+            Projectile.NewProjectile(source, position, velocity * 1.5f, ProjectileType<BigShot>(), (int)(damage * 17.5f), (int)(knockback * 25f), player.whoAmI);
             return false;
         }
 
@@ -164,7 +183,7 @@ public class TheSpamCannon : ModItem
         };
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses a random amount of Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses a random amount of Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

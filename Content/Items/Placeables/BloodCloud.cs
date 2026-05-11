@@ -23,7 +23,7 @@ public class BloodCloud : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<BloodCloudPlaced>());
+        Item.DefaultToPlaceableTile(TileType<BloodCloudPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

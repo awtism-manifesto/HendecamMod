@@ -14,7 +14,7 @@ public class RedDrawFour : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedDrawFour>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedDrawFour>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;
@@ -36,6 +36,6 @@ public class RedDrawFour : ModItem
 
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<YellowDrawFour>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<YellowDrawFour>()));
     }
 }

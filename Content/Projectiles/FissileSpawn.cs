@@ -82,15 +82,15 @@ public class FissileSpawn : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(5));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<FissileGreen>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<FissileGreen>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(5));
         Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<FissilePurple>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<FissilePurple>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(5));
         Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<FissileRed>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<FissileRed>(), (int)(Projectile.damage * 0.55f), Projectile.knockBack, Projectile.owner);
         // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
         Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);

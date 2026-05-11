@@ -54,7 +54,7 @@ public class OilSlime : ModNPC
         AIType = NPCID.YellowSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BlueSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<OilSlimeBanner>();
+        BannerItem = ItemType<OilSlimeBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -75,10 +75,10 @@ public class OilSlime : ModNPC
         // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CrudeOil>(), 1, 10, 21));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CarbonDioxideBottle>(), 20));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PolymerSlimeStaff>(), 150));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<OilMonsterStaff>(), chanceDenominator: 250, chanceNumerator: 1));
+        npcLoot.Add(ItemDropRule.Common(ItemType<CrudeOil>(), 1, 10, 21));
+        npcLoot.Add(ItemDropRule.Common(ItemType<CarbonDioxideBottle>(), 20));
+        npcLoot.Add(ItemDropRule.Common(ItemType<PolymerSlimeStaff>(), 150));
+        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<OilMonsterStaff>(), chanceDenominator: 250, chanceNumerator: 1));
         npcLoot.Add(ItemDropRule.Common(ItemID.Rally, 33));
     }
 

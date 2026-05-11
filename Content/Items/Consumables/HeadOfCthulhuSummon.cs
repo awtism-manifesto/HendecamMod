@@ -42,12 +42,12 @@ public class HeadOfCthulhuSummon : ModItem
 
     public override bool CanUseItem(Player player)
     {
-        if (NPC.AnyNPCs(ModContent.NPCType<HeadOfCthulhu>()))
+        if (NPC.AnyNPCs(NPCType<HeadOfCthulhu>()))
             return false;
 
         return true;
 
-        return !NPC.AnyNPCs(ModContent.NPCType<HeadOfCthulhu>());
+        return !NPC.AnyNPCs(NPCType<HeadOfCthulhu>());
     }
 
     public override bool? UseItem(Player player)
@@ -55,7 +55,7 @@ public class HeadOfCthulhuSummon : ModItem
         if (player.whoAmI == Main.myPlayer)
         {
             SoundEngine.PlaySound(SoundID.Zombie92, player.position);
-            int type = ModContent.NPCType<HeadOfCthulhu>();
+            int type = NPCType<HeadOfCthulhu>();
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
                 NPC.SpawnOnPlayer(player.whoAmI, type);

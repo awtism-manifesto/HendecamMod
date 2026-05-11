@@ -8,7 +8,7 @@ public class LimestoneBrickWallPlaced : ModWall
     {
         Main.wallHouse[Type] = true;
 
-        DustType = ModContent.DustType<LimestoneDust>();
+        DustType = DustType<LimestoneDust>();
 
         AddMapEntry(new Color(204, 190, 163));
     }

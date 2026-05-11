@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
 namespace HendecamMod.Content.GlobalItems;
@@ -24,7 +23,7 @@ public class BowMage1 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 
@@ -47,7 +46,7 @@ public class BowMage12 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 
@@ -72,7 +71,7 @@ public class BowMage123 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        item.DamageType = GetInstance<RangedMagicDamage>();
     }
 }
 public class DoorStupid1 : GlobalItem
@@ -118,6 +117,30 @@ public class DoorStupid2 : GlobalItem
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid damage and attack speed by 5%") { OverrideColor = Color.OrangeRed });
+    }
+
+
+}
+public class BoomShroomLycopiteCompat : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod SpiritMerica) && SpiritMerica.TryFind("BoomShroom", out ModItem BoomShroom))
+        {
+            return item.type == BoomShroom.Type;
+        }
+
+        return false;
+    }
+    public static readonly int DMG = 8;
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+      
+        player.GetDamage(DamageClass.Ranged) += DMG / 100f;
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Spirit Reforged) - Increases Ranged damage by 8%") { OverrideColor = Color.Goldenrod});
     }
 
 
@@ -189,7 +212,7 @@ public class ConsolariaForSomeReason : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
         item.useTime = 10;
         item.useAnimation = 20;
         item.reuseDelay = 15;
@@ -216,7 +239,7 @@ public class Arse : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
        
     }
 }
@@ -242,7 +265,7 @@ public class Arse2 : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        item.DamageType = GetInstance<RangedStupidDamage>();
 
     }
 }
@@ -267,7 +290,7 @@ public class StupidSand : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.DamageType = ModContent.GetInstance<StupidDamage>();
+        item.DamageType = GetInstance<StupidDamage>();
 
     }
 }

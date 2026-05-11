@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Common.Systems;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -279,6 +280,7 @@ public class Alpine : ModNPC
     {
         var npcShop = new NPCShop(Type)
                 .Add<OverclockedWrench>()
+                  .Add<VeteransBadge>(Condition.HappyEnoughToSellPylons)
             ;
         npcShop.Register(); // Name of this shop tab
     }
@@ -304,7 +306,7 @@ public class Alpine : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ApexPlasmaCannon>()));
+        npcLoot.Add(ItemDropRule.Common(ItemType<ApexPlasmaCannon>()));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -326,7 +328,7 @@ public class Alpine : ModNPC
     // }
     public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
     {
-        projType = ModContent.ProjectileType<ElfMagicMissile>();
+        projType = ProjectileType<ElfMagicMissile>();
         attackDelay = 15;
     }
 
@@ -349,7 +351,7 @@ public class Alpine : ModNPC
 
     public override void AI()
     {
-        if (NPC.AnyNPCs(ModContent.NPCType<ApacheElfShip>()))
+        if (NPC.AnyNPCs(NPCType<ApacheElfShip>()))
         {
             NPC.SetDefaults(0);
             NPC.active = false;

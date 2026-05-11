@@ -42,11 +42,11 @@ public class UraniumHamaxe : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 200);
+        target.AddBuff(BuffType<RadPoisoning>(), 200);
 
         for (int i = 0; i < 4; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<UraniumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<UraniumDust>());
             dust.noGravity = true;
             dust.velocity *= 3.5f;
             dust.scale *= 0.65f;

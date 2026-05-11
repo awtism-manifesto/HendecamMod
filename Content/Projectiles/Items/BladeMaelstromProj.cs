@@ -130,7 +130,7 @@ public class BladeMaelstromProj : ModProjectile
                     Vector2 shootVelocity = baseDirection * FireVelocity;
                     Vector2 shoot2Velocity = oppositeDirection * FireVelocity;
 
-                    int type = ModContent.ProjectileType<Blade>();
+                    int type = ProjectileType<Blade>();
 
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(),
                         new Vector2(Projectile.Center.X - 4f, Projectile.Center.Y),

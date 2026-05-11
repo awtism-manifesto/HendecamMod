@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -8,7 +7,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -379,6 +377,14 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+        if (ModLoader.TryGetMod("Ultraconyx", out Mod Ultra))
+        {
+            line = new TooltipLine(Mod, "Face", "Ultraconyx- Trades 15% of your total defense for damage at an inflated exchange rate")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
         if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
         {
             line = new TooltipLine(Mod, "Face", "BeatriceMod- causes beams of trans energy to be radially fired out of the player periodically")
@@ -433,7 +439,7 @@ public class ContentEmblem : ModItem
         }
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica))
         {
-            line = new TooltipLine(Mod, "Face", "Awful Garbage Mod- +50 max Lobotometer")
+            line = new TooltipLine(Mod, "Face", "Awful Garbage Mod- +50 Max Braincells")
             {
                 OverrideColor = new Color(255, 255, 255)
             };
@@ -585,6 +591,10 @@ public class ContentEmblem : ModItem
         {
             recipe.AddIngredient(InfraRedCrystalShard.Type, 25);
         }
+        if (ModLoader.TryGetMod("Ultraconyx", out Mod Ultra) && Ultra.TryFind("Ultraconium", out ModItem Ultraconium))
+        {
+            recipe.AddIngredient(Ultraconium.Type, 25);
+        }
 
         if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod) && EnigmaMod.TryFind("ObsidiumOre", out ModItem ObsidiumOre))
         {
@@ -672,6 +682,11 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("VitalityMod", out Mod Vital))
         {
             player.statLifeMax2 = (int)(player.statLifeMax2 * 1.15f);
+        }
+        if (ModLoader.TryGetMod("Ultraconyx", out Mod Ultra))
+        {
+            player.GetModPlayer<UltraStats>().Ultrac = true;
+
         }
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica2))
         {
@@ -784,13 +799,38 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica))
         {
             var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-            loboPlayer.MaxBonus += 50f;
+            loboPlayer.TemporaryBonus += 50f;
         }
         if (ModLoader.TryGetMod("Xenon", out Mod X))
         {
             player.GetModPlayer<XenonXSpawn>().X = true;
         }
       
+    }
+}
+public class UltraStats : ModPlayer
+{
+    public bool Ultrac;
+
+    public override void ResetEffects()
+    {
+        Ultrac = false;
+    }
+
+    public override void UpdateEquips()
+    {
+        if (Ultrac) 
+        {
+            
+            int defenseValue = (int)Player.statDefense;
+
+           
+            float damageBonus = defenseValue * 0.3f / 100f;
+            Player.GetDamage(DamageClass.Generic) += damageBonus;
+
+            
+            Player.statDefense *= 0.85f;
+        }
     }
 }
 public class JoystickMovement : ModPlayer
@@ -804,14 +844,14 @@ public class JoystickMovement : ModPlayer
 
     public override void PostUpdateRunSpeeds()
     {
-        
+
         if (!JoySticky)
         {
             return;
         }
 
-       
-        Player.runAcceleration *= 3.33f; 
+
+        Player.runAcceleration *= 3.33f;
         Player.maxRunSpeed *= 1.15f;
         Player.accRunSpeed *= 1.15f;
         Player.runSlowdown *= 3.33f;
@@ -861,7 +901,7 @@ public class FargoSandDrop : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center - new Vector2(Main.rand.Next(-90, 90), 910),
                 new Vector2(Main.rand.Next(-2, 2), 20f),
-                ModContent.ProjectileType<FargoSand>(),
+                ProjectileType<FargoSand>(),
                 baseDamage,
                 1.5f,
                 Player.whoAmI
@@ -911,7 +951,7 @@ public class StormLightning : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center - new Vector2(Main.rand.Next(-90, 90), 910),
                 new Vector2(Main.rand.Next(-2, 2), 20f),
-                ModContent.ProjectileType<ChainThunder2>(),
+                ProjectileType<ChainThunder2>(),
                 baseDamage,
                 3f,
                 Player.whoAmI
@@ -961,7 +1001,7 @@ public class BeatriceEnergy : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center,
                 new Vector2(10f, 10f),
-                ModContent.ProjectileType<BeatSpawn>(),
+                ProjectileType<BeatSpawn>(),
                 baseDamage,
                 7.5f,
                 Player.whoAmI
@@ -1012,7 +1052,7 @@ public class FableShroom : ModPlayer
             Player.GetSource_FromThis(),
             Player.Center,
             new Vector2(0f, -1f),
-            ModContent.ProjectileType<ShroomBoom>(),
+            ProjectileType<ShroomBoom>(),
             baseDamage,
             7f,
             Player.whoAmI
@@ -1073,9 +1113,9 @@ public class EbonflyLigma : ModPlayer
         }
         else
         {
-            if (Main.rand.NextBool(500))
+            if (Main.rand.NextBool(1000))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
+                target.AddBuff(BuffType<Ligma>(), 60);
             }
             
         }
@@ -1087,9 +1127,9 @@ public class EbonflyLigma : ModPlayer
         }
         else
         {
-            if (Main.rand.NextBool(100))
+            if (Main.rand.NextBool(1000))
             {
-                target.AddBuff(ModContent.BuffType<Ligma>(), 60);
+                target.AddBuff(BuffType<Ligma>(), 60);
             }
 
         }

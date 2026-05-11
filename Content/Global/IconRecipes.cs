@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Tiles.Furniture;
-using HendecamMod.Content.Items.Icons;
+﻿using HendecamMod.Content.Items.Icons;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.Rampart;
@@ -45,11 +43,11 @@ public class IconRecipes : ModSystem
         AE46.AddIngredient<Items.Icons.KingSlimeIcon>();
         AE46.Register();
 
-        Recipe LickingMyBalls67 = Recipe.Create(ModContent.ItemType<SuperSamuraiSlicer>());
+        Recipe LickingMyBalls67 = Recipe.Create(ItemType<SuperSamuraiSlicer>());
         LickingMyBalls67.AddIngredient<KingSlimeIcon>();
         LickingMyBalls67.Register();
 
-        Recipe LickingMyBalls131 = Recipe.Create(ModContent.ItemType<Bergentrucking>());
+        Recipe LickingMyBalls131 = Recipe.Create(ItemType<Bergentrucking>());
         LickingMyBalls131.AddIngredient<KingSlimeIcon>();
         LickingMyBalls131.Register();
 
@@ -69,11 +67,11 @@ public class IconRecipes : ModSystem
         A49.AddIngredient<Items.Icons.EyeOfCthulhuIcon>();
         A49.Register();
 
-        Recipe LickingMyBalls1231 = Recipe.Create(ModContent.ItemType<EyeRifle>());
+        Recipe LickingMyBalls1231 = Recipe.Create(ItemType<EyeRifle>());
         LickingMyBalls1231.AddIngredient<EyeOfCthulhuIcon>();
         LickingMyBalls1231.Register();
 
-        Recipe LickingMyBalls12341 = Recipe.Create(ModContent.ItemType<EyePoker>());
+        Recipe LickingMyBalls12341 = Recipe.Create(ItemType<EyePoker>());
         LickingMyBalls12341.AddIngredient<EyeOfCthulhuIcon>();
         LickingMyBalls12341.Register();
 
@@ -105,7 +103,7 @@ public class IconRecipes : ModSystem
         A54.AddIngredient<Items.Icons.BrainOfCthulhuIcon>();
         A54.Register();
 
-        Recipe LickingMyBalls123415 = Recipe.Create(ModContent.ItemType<GoodGrades>());
+        Recipe LickingMyBalls123415 = Recipe.Create(ItemType<GoodGrades>());
         LickingMyBalls123415.AddIngredient<BrainOfCthulhuIcon>();
         LickingMyBalls123415.Register();
 
@@ -161,7 +159,7 @@ public class IconRecipes : ModSystem
         A67.AddIngredient<Items.Icons.QueenBeeIcon>();
         A67.Register();
 
-        Recipe LickingMyBalls313 = Recipe.Create(ModContent.ItemType<PocketBees>());
+        Recipe LickingMyBalls313 = Recipe.Create(ItemType<PocketBees>());
         LickingMyBalls313.AddIngredient<QueenBeeIcon>();
         LickingMyBalls313.Register();
 
@@ -189,7 +187,7 @@ public class IconRecipes : ModSystem
         A73.AddIngredient<Items.Icons.SkeletronIcon>();
         A73.Register();
 
-        Recipe LickingMyBalls31 = Recipe.Create(ModContent.ItemType<SkeletonKey>());
+        Recipe LickingMyBalls31 = Recipe.Create(ItemType<SkeletonKey>());
         LickingMyBalls31.AddIngredient<Items.Icons.SkeletronIcon>();
         LickingMyBalls31.Register();
 
@@ -225,11 +223,11 @@ public class IconRecipes : ModSystem
         A81.AddIngredient<Items.Icons.DeerclopsIcon>();
         A81.Register();
 
-        Recipe LickingMyBalls21 = Recipe.Create(ModContent.ItemType<FlinxsFurblade>());
+        Recipe LickingMyBalls21 = Recipe.Create(ItemType<FlinxsFurblade>());
         LickingMyBalls21.AddIngredient<Items.Icons.DeerclopsIcon>();
         LickingMyBalls21.Register();
 
-        Recipe LickingMyBalls1 = Recipe.Create(ModContent.ItemType<CaribousCatastrophe>());
+        Recipe LickingMyBalls1 = Recipe.Create(ItemType<CaribousCatastrophe>());
         LickingMyBalls1.AddIngredient<Items.Icons.DeerclopsIcon>();
         LickingMyBalls1.Register();
 
@@ -269,11 +267,11 @@ public class IconRecipes : ModSystem
         A90.AddIngredient<Items.Icons.WallOfFleshIcon>();
         A90.Register();
 
-        Recipe LickingMyBalls231 = Recipe.Create(ModContent.ItemType<StupidEmblem>());
+        Recipe LickingMyBalls231 = Recipe.Create(ItemType<StupidEmblem>());
         LickingMyBalls231.AddIngredient<WallOfFleshIcon>();
         LickingMyBalls231.Register();
 
-        Recipe LickingMyBalls2431 = Recipe.Create(ModContent.ItemType<StalingradSpewer>());
+        Recipe LickingMyBalls2431 = Recipe.Create(ItemType<StalingradSpewer>());
         LickingMyBalls2431.AddIngredient<WallOfFleshIcon>();
         LickingMyBalls2431.Register();
 
@@ -298,7 +296,7 @@ public class IconRecipes : ModSystem
         A95.AddIngredient<Items.Icons.QueenSlimeIcon>();
         A95.Register();
 
-        Recipe LickingMyBalls26431 = Recipe.Create(ModContent.ItemType<MaximGelgun>());
+        Recipe LickingMyBalls26431 = Recipe.Create(ItemType<MaximGelgun>());
         LickingMyBalls26431.AddIngredient<QueenSlimeIcon>();
         LickingMyBalls26431.Register();
 
@@ -326,7 +324,7 @@ public class IconRecipes : ModSystem
         A101.AddIngredient<Items.Icons.TheTwinsIcon>();
         A101.Register();
 
-        Recipe LickingMyBalls263431 = Recipe.Create(ModContent.ItemType<ElementalFlameCore>());
+        Recipe LickingMyBalls263431 = Recipe.Create(ItemType<ElementalFlameCore>());
         LickingMyBalls263431.AddIngredient<TheTwinsIcon>();
         LickingMyBalls263431.Register();
 
@@ -382,11 +380,11 @@ public class IconRecipes : ModSystem
         A114.AddIngredient<Items.Icons.PlanteraIcon>();
         A114.Register();
 
-        Recipe LickingMyBalls1263431 = Recipe.Create(ModContent.ItemType<SeedBomber>());
+        Recipe LickingMyBalls1263431 = Recipe.Create(ItemType<SeedBomber>());
         LickingMyBalls1263431.AddIngredient<PlanteraIcon>();
         LickingMyBalls1263431.Register();
 
-        Recipe LickingMyBalls12634311 = Recipe.Create(ModContent.ItemType<OtherworldlySixPack>());
+        Recipe LickingMyBalls12634311 = Recipe.Create(ItemType<OtherworldlySixPack>());
         LickingMyBalls12634311.AddIngredient<PlanteraIcon>();
         LickingMyBalls12634311.Register();
 
@@ -571,13 +569,13 @@ public class IconRecipes : ModSystem
         A159.Register();
 
 
-        Recipe aaaaaaaaaaaaa2 = Recipe.Create(ModContent.ItemType<TheMoon>());
+        Recipe aaaaaaaaaaaaa2 = Recipe.Create(ItemType<TheMoon>());
         aaaaaaaaaaaaa2.AddIngredient<MoonLordIcon>();
         aaaaaaaaaaaaa2.Register();
-        Recipe aaaaaaaaaaaaa22 = Recipe.Create(ModContent.ItemType<AmalgamatedFragment>());
+        Recipe aaaaaaaaaaaaa22 = Recipe.Create(ItemType<AmalgamatedFragment>());
         aaaaaaaaaaaaa22.AddIngredient<MoonLordIcon>();
         aaaaaaaaaaaaa22.Register();
-        Recipe aaaaaaaaaaaaa222 = Recipe.Create(ModContent.ItemType<LeechRepellant>());
+        Recipe aaaaaaaaaaaaa222 = Recipe.Create(ItemType<LeechRepellant>());
         aaaaaaaaaaaaa222.AddIngredient<MoonLordIcon>();
         aaaaaaaaaaaaa222.Register();
 
@@ -605,7 +603,7 @@ public class IconRecipes : ModSystem
         Balls3.AddIngredient<Items.Icons.DarkMageIcon>();
         Balls3.Register();
 
-        Recipe aaaaaaaaaaaaa = Recipe.Create(ModContent.ItemType<ArcaneDartgun>());
+        Recipe aaaaaaaaaaaaa = Recipe.Create(ItemType<ArcaneDartgun>());
         aaaaaaaaaaaaa.AddIngredient<DarkMageIcon>();
         aaaaaaaaaaaaa.Register();
 
@@ -653,7 +651,7 @@ public class IconRecipes : ModSystem
         BallsT.AddIngredient<Items.Icons.OgreIcon>();
         BallsT.Register();
 
-        Recipe eaaaaaaaaaaaaab = Recipe.Create(ModContent.ItemType<TrenboloneAcetate>());
+        Recipe eaaaaaaaaaaaaab = Recipe.Create(ItemType<TrenboloneAcetate>());
         eaaaaaaaaaaaaab.AddIngredient<OgreIcon>();
         eaaaaaaaaaaaaab.Register();
 
@@ -673,7 +671,7 @@ public class IconRecipes : ModSystem
         BallsP.AddIngredient<Items.Icons.BetsyIcon>();
         BallsP.Register();
 
-        Recipe eaaaaaaaaaaaaa = Recipe.Create(ModContent.ItemType<PhotonShotgun>());
+        Recipe eaaaaaaaaaaaaa = Recipe.Create(ItemType<PhotonShotgun>());
         eaaaaaaaaaaaaa.AddIngredient<BetsyIcon>();
         eaaaaaaaaaaaaa.Register();
 
@@ -705,11 +703,11 @@ public class IconRecipes : ModSystem
         BallsJ.AddIngredient<Items.Icons.FlyingDutchmanIcon>();
         BallsJ.Register();
 
-        Recipe beaaaaaaaaaaaaab = Recipe.Create(ModContent.ItemType<BigBuddy>());
+        Recipe beaaaaaaaaaaaaab = Recipe.Create(ItemType<BigBuddy>());
         beaaaaaaaaaaaaab.AddIngredient<FlyingDutchmanIcon>();
         beaaaaaaaaaaaaab.Register();
 
-        Recipe tbeaaaaaaaaaaaaab = Recipe.Create(ModContent.ItemType<Bundlebuss>());
+        Recipe tbeaaaaaaaaaaaaab = Recipe.Create(ItemType<Bundlebuss>());
         tbeaaaaaaaaaaaaab.AddIngredient<FlyingDutchmanIcon>();
         tbeaaaaaaaaaaaaab.Register();
 
@@ -837,7 +835,7 @@ public class IconRecipes : ModSystem
         saygex.AddIngredient<Items.Icons.IceQueenIcon>();
         saygex.Register();
 
-        Recipe saygex2 = Recipe.Create(ModContent.ItemType<PulsePistols>());
+        Recipe saygex2 = Recipe.Create(ItemType<PulsePistols>());
         saygex2.AddIngredient<MartainSaucerIcon>();
         saygex2.Register();
 

@@ -112,10 +112,10 @@ public class FakeRocket2 : ModProjectile
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(36, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Vector2 Peanits2 = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2,
             new Vector2(42, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            ProjectileType<UsaFlag2>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
     }
 }

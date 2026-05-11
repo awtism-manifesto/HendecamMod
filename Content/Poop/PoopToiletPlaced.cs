@@ -118,7 +118,7 @@ public class PoopToiletPlaced : ModTile
 
         player.noThrow = 2;
         player.cursorItemIconEnabled = true;
-        player.cursorItemIconID = ModContent.ItemType<PoopToilet>();
+        player.cursorItemIconID = ItemType<PoopToilet>();
 
         if (Main.tile[i, j].TileFrameX / 18 < 1)
         {

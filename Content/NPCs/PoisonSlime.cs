@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Placeables;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -38,7 +37,7 @@ public class PoisonSlime : ModNPC
         AIType = NPCID.BlueSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<PoisonSlimeBanner>();
+        BannerItem = ItemType<PoisonSlimeBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)

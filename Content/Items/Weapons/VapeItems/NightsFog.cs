@@ -1,8 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -24,7 +21,7 @@ public class NightsFog : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
         Item.reuseDelay = 13;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 32;
         Item.knockBack = 0.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -39,7 +36,7 @@ public class NightsFog : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<FogSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FogSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 11.99f; // Speed of the projectiles the sword will shoot
 
        
@@ -97,7 +94,7 @@ public class NightsFog : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 4 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Vape smoke spawns extra vape smoke that blindsides enemies")

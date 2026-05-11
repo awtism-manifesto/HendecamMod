@@ -17,7 +17,7 @@ public class AlphaMaleChecklist : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants 50% more damage, at the cost of Accessory Buffs");
+        var line = new TooltipLine(Mod, "Face", "Grants 33% more damage, at the cost of Accessory Buffs");
         tooltips.Add(line);
     }
 

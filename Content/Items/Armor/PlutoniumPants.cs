@@ -58,7 +58,7 @@ public class PlutoniumPants : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<PlutoniumFacemask>() && body.type == ModContent.ItemType<PlutoniumChestplate>();
+        return head.type == ItemType<PlutoniumFacemask>() && body.type == ItemType<PlutoniumChestplate>();
     }
 
     public override void UpdateEquip(Player player)

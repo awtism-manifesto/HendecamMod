@@ -1,9 +1,7 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
-using Terraria;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
-using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
 namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
@@ -23,7 +21,7 @@ public class TrueCaliburnSmoke : ModProjectile
         Projectile.localNPCHitCooldown = 17;
         
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 97;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
 
@@ -101,7 +99,7 @@ public class TrueCaliburnSmoke : ModProjectile
 
             // Pass "upwards = true" using ai[0] = 1f
             int spawnedProjectile = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos, velocity,
-                ModContent.ProjectileType<TrueCaliburnSmoke2>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<TrueCaliburnSmoke2>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
             // Set the ai value for the spawned projectile
             Main.projectile[spawnedProjectile].ai[0] = 1f; // 1 = upwards
@@ -113,7 +111,7 @@ public class TrueCaliburnSmoke : ModProjectile
 
             // Pass "upwards = false" using ai[0] = 0f
             int spawnedProjectile = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Pos, velocity,
-                ModContent.ProjectileType<TrueCaliburnSmoke2>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<TrueCaliburnSmoke2>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
 
             // Set the ai value for the spawned projectile
             Main.projectile[spawnedProjectile].ai[0] = 0f; // 0 = downwards

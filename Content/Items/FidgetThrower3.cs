@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
@@ -17,7 +16,7 @@ public class FidgetThrower3 : ModItem
         Item.useTime = 13;
         Item.useAnimation = 13;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 121;
         Item.knockBack = 7.5f;
 
@@ -27,7 +26,7 @@ public class FidgetThrower3 : ModItem
         Item.UseSound = SoundID.Item99;
         Item.scale = 1.175f;
 
-        Item.shoot = ModContent.ProjectileType<FidgetSpinner3>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FidgetSpinner3>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 24.25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -52,7 +51,7 @@ public class FidgetThrower3 : ModItem
         var line = new TooltipLine(Mod, "Face", "Shoots piercing fidget spinners that inflict even more random debuffs");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

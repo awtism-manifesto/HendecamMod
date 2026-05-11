@@ -28,7 +28,7 @@ public class BeetleFriend : ModProjectile
         Projectile.friendly = true;
         Projectile.penetrate = 3;
         Projectile.minion = true;
-        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = GetInstance<SummonStupidDamage>();
         Projectile.timeLeft = 330;
         Projectile.usesIDStaticNPCImmunity = true;
         AIType = ProjectileID.Bullet;

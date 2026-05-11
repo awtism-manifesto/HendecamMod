@@ -26,6 +26,6 @@ public class ZazaSpawn : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(0.01f));
         Vector2 Peanits = Projectile.Center - new Vector2(0, -325);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<ZazaMagic>(), (int)(Projectile.damage * 0.99f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<ZazaMagic>(), (int)(Projectile.damage * 0.99f), Projectile.knockBack, Projectile.owner);
     }
 }

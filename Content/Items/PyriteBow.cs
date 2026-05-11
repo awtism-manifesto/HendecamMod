@@ -32,12 +32,12 @@ public class PyriteBow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 8.9f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ModContent.ProjectileType<PyriteArrowProj>();
+        Item.shoot = ProjectileType<PyriteArrowProj>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PyriteArrowProj>();
+        type = ProjectileType<PyriteArrowProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

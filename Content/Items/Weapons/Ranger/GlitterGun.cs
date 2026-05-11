@@ -27,7 +27,7 @@ public class GlitterGun : ModItem
         Item.noMelee = true;
         Item.ArmorPenetration = 999;
         Item.mana = 1;
-        Item.shoot = ModContent.ProjectileType<GlitterBullet>();
+        Item.shoot = ProjectileType<GlitterBullet>();
         Item.shootSpeed = 15.95f;
     }
 
@@ -49,7 +49,7 @@ public class GlitterGun : ModItem
         if (shotCounter <= 0)
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0f));
-            type = ModContent.ProjectileType<GlitterBullet>();
+            type = ProjectileType<GlitterBullet>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);
@@ -60,7 +60,7 @@ public class GlitterGun : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.33f));
 
-            type = ModContent.ProjectileType<GlitterBullet>();
+            type = ProjectileType<GlitterBullet>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);
@@ -72,7 +72,7 @@ public class GlitterGun : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedByRandom(MathHelper.ToRadians(3.25f));
 
-            type = ModContent.ProjectileType<GlitterBullet>();
+            type = ProjectileType<GlitterBullet>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
             SoundEngine.PlaySound(SoundID.Item99, player.position);
             SoundEngine.PlaySound(SoundID.Item114, player.position);

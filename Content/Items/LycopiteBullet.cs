@@ -22,7 +22,7 @@ public class LycopiteBullet : ModItem
         Item.knockBack = 0.75f;
         Item.value = 20;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<LycoSpawn>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<LycoSpawn>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 6.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

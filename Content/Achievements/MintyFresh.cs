@@ -11,6 +11,6 @@ public class MintyFresh : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Explorer);
-        Condition = AddTileDestroyedCondition([ModContent.TileType<MintalOrePlaced>()]);
+        Condition = AddTileDestroyedCondition([TileType<MintalOrePlaced>()]);
     }
 }

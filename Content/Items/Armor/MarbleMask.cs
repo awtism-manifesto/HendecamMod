@@ -63,7 +63,7 @@ public class MarbleMask : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<MarbleChestplate>() && legs.type == ModContent.ItemType<MarbleGreaves>();
+        return body.type == ItemType<MarbleChestplate>() && legs.type == ItemType<MarbleGreaves>();
     }
 
     public override void UpdateEquip(Player player)

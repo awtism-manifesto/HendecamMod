@@ -33,24 +33,24 @@ public class JevilScythe : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<JevilTag>(), 300);
+        target.AddBuff(BuffType<JevilTag>(), 300);
 
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
         Vector2 Peanits = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(135));
         Vector2 Peanits2 = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(225));
         Vector2 Peanits3 = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(315));
         Vector2 Peanits4 = Projectile.Center - new Vector2(-30, 30);
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ModContent.ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<JevilScythe2>(), (int)(Projectile.damage * 0.66f), Projectile.knockBack, Projectile.owner);
         Projectile.Kill();
     }
 

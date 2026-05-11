@@ -11,7 +11,7 @@ public class Ebonclay : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<EbonclayPlaced>());
+        Item.DefaultToPlaceableTile(TileType<EbonclayPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

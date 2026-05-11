@@ -2,6 +2,7 @@
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Items;
 
@@ -29,16 +30,20 @@ public class MagicBong : ModItem
         Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item45;
-        Item.DamageType = ModContent.GetInstance<AutismDamage>();
-        Item.damage = 13; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/BongSound")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 1,
+        };
+        Item.DamageType = GetInstance<AutismDamage>();
+        Item.damage = 14; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 11;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<ZazaMagic>();
+        Item.shoot = ProjectileType<ZazaMagic>();
 
         Item.shootSpeed = 4.5f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -54,7 +59,7 @@ public class MagicBong : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<ZazaSpawn>();
+        type = ProjectileType<ZazaSpawn>();
         position = Main.MouseWorld;
     }
 
@@ -80,7 +85,7 @@ public class MagicBong : ModItem
         var line = new TooltipLine(Mod, "Face", "Creates magic, tile-ignoring smoke that rises up at enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 11 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 11 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

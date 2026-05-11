@@ -1,6 +1,5 @@
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,7 +12,7 @@ public class Pykrete : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<PykreteTile>());
+        Item.DefaultToPlaceableTile(TileType<PykreteTile>());
         Item.width = 12;
         Item.height = 12;
         Item.value = 5;

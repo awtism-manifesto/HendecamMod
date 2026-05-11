@@ -2,9 +2,7 @@
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -44,7 +42,7 @@ public class PlasticPants : ModItem
         var line = new TooltipLine(Mod, "Face", "3% increased stupid damage and crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+10 max Lobotometer and +10% Lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "+10 Max Braincells and +10% Lobotometer decay rate")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -62,7 +60,7 @@ public class PlasticPants : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 10f;
+        loboPlayer.TemporaryBonus += 10f;
 
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();
         loboDecay.DecayRateMultiplier *= 1.1f;
@@ -80,7 +78,7 @@ public class PlasticPants : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<PlasticHeadgear>() && body.type == ModContent.ItemType<PlasticChestplate>();
+        return head.type == ItemType<PlasticHeadgear>() && body.type == ItemType<PlasticChestplate>();
     }
 
     public override void UpdateArmorSet(Player player)

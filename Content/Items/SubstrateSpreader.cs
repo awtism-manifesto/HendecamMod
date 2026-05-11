@@ -37,7 +37,7 @@ public class SubstrateSpreader : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<LycoShot>();
+        Item.shoot = ProjectileType<LycoShot>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 11.75f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -53,7 +53,7 @@ public class SubstrateSpreader : ModItem
         {
             Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(0.25f));
 
-            type = ModContent.ProjectileType<LycoShot>();
+            type = ProjectileType<LycoShot>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.05f), knockback, player.whoAmI);
@@ -63,7 +63,7 @@ public class SubstrateSpreader : ModItem
         {
             Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-0.25f));
 
-            type = ModContent.ProjectileType<LycoSporeRanged>();
+            type = ProjectileType<LycoSporeRanged>();
             SoundEngine.PlaySound(SoundID.Item42, player.position);
 
             Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.67f), knockback, player.whoAmI);
@@ -96,11 +96,19 @@ public class SubstrateSpreader : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<AshSpewer>();
-            recipe.AddIngredient<LycopiteBar>(13);
+        recipe.AddIngredient<LycopiteBar>(13);
+       
+           
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-        
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("Fungicide", out ModItem Fungicide))
+        {
+            recipe.AddIngredient(Fungicide.Type);
+        }
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
+        {
+            recipe.AddIngredient<AshSpewer>();
+        }
         if (ModLoader.TryGetMod("Spooky", out Mod SpookMerica) && SpookMerica.TryFind("RottenChunk", out ModItem RottenChunk))
         {
             recipe.AddIngredient(RottenChunk.Type, 10);

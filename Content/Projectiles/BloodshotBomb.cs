@@ -112,7 +112,7 @@ public class BloodshotBomb : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<Stamped>(), 180);
+        target.AddBuff(BuffType<Stamped>(), 180);
     }
 
     // Rocket II explosion that damages tiles.

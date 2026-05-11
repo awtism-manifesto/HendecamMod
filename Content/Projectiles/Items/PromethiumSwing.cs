@@ -146,7 +146,7 @@ public class PromethiumSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning4>(), 360);
+        target.AddBuff(BuffType<RadPoisoning4>(), 360);
         // Vanilla has several particles that can easily be used anywhere.
         // The particles from the Particle Orchestra are predefined by vanilla and most can not be customized that much.
         // Use auto complete to see the other ParticleOrchestraType types there are.
@@ -163,7 +163,7 @@ public class PromethiumSwing : ModProjectile
 
         for (int i = 0; i < 6; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PromethiumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PromethiumDust>());
             dust.noGravity = true;
             dust.velocity *= 9f;
             dust.scale *= 1.35f;
@@ -242,7 +242,7 @@ public class PromethiumSwing : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.367f), (Projectile.knockBack * 0.01f), Projectile.owner);
+            ProjectileType<RadAura2>(), (int)(Projectile.damage * 0.367f), (Projectile.knockBack * 0.01f), Projectile.owner);
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

@@ -25,24 +25,24 @@ public class AstatineMarksmanRifle : ModItem
         Item.UseSound = SoundID.Item68;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 159; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 167; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         Item.ArmorPenetration = 30;
         Item.shoot = ProjectileID.Bullet;
-        Item.useAmmo = ModContent.ProjectileType<Projectiles.TrueBullet>(); // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
+        Item.useAmmo = ProjectileType<Projectiles.TrueBullet>(); // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
 
         // Gun Properties
-        Item.shoot = ModContent.ProjectileType<Projectiles.AstatineBullet>(); // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileType<Projectiles.AstatineBullet>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 13f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.AstatineBullet>();
-        damage = (int)(damage * 0.8f);
+        type = ProjectileType<Projectiles.AstatineBullet>();
+        damage = (int)(damage * 0.85f);
     }
 
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

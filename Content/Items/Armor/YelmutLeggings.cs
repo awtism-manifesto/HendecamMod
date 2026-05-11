@@ -1,10 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -68,8 +64,8 @@ public class YelmutLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        if (head.type == ModContent.ItemType<LycopiteFedora>()|| head.type == ModContent.ItemType<LycopiteHelmet>() || head.type == ModContent.ItemType<LycopiteMask>() || head.type == ModContent.ItemType<YelmutsHelmet>()
-            && body.type == ModContent.ItemType<YelmutFaeChestplate>() || body.type == ModContent.ItemType<LycopiteChestplate>())
+        if (head.type == ItemType<LycopiteFedora>()|| head.type == ItemType<LycopiteHelmet>() || head.type == ItemType<LycopiteMask>() || head.type == ItemType<YelmutsHelmet>()
+            && body.type == ItemType<YelmutFaeChestplate>() || body.type == ItemType<LycopiteChestplate>())
         { 
             return true; 
         }
@@ -93,7 +89,7 @@ public class YelmutLeggings : ModItem
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 100f;
         player.statManaMax2 += 60;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 60f;
+        loboPlayer.TemporaryBonus += 60f;
         player.maxMinions += 1;
         player.maxTurrets += 1;
     }
@@ -141,7 +137,7 @@ public class YelmutLeggings : ModItem
         {
             if (YelBuff && item.DamageType.CountsAsClass<MagicDamageClass>() || YelBuff && item.DamageType.CountsAsClass<RangedDamageClass>())
             {
-                target.AddBuff(ModContent.BuffType<YelmutTag>(), 480);
+                target.AddBuff(BuffType<YelmutTag>(), 480);
             }
         }
 
@@ -149,7 +145,7 @@ public class YelmutLeggings : ModItem
         {
             if (YelBuff && proj.DamageType.CountsAsClass<MagicDamageClass>() || YelBuff && proj.DamageType.CountsAsClass<RangedDamageClass>())
             {
-                target.AddBuff(ModContent.BuffType<YelmutTag>(), 480);
+                target.AddBuff(BuffType<YelmutTag>(), 480);
             }
         }
 

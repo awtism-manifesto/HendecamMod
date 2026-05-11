@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Items.Tools;
 

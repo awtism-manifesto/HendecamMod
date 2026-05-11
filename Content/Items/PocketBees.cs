@@ -22,7 +22,7 @@ public class PocketBees : ModItem
         Item.useAnimation = 35;
         Item.autoReuse = true;
 
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 11;
         Item.knockBack = 1;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -78,7 +78,7 @@ public class PocketBees : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 8 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 8 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

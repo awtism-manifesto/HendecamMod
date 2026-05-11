@@ -48,8 +48,8 @@ public class CrimtaneAmr : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.AMRRound>();
-        if (type == ModContent.ProjectileType<Projectiles.AMRRound>())
+        type = ProjectileType<Projectiles.AMRRound>();
+        if (type == ProjectileType<Projectiles.AMRRound>())
         {
             damage = (int)(damage * 0.85f);
         }

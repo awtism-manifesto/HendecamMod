@@ -11,7 +11,7 @@ public class RedThree : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedThree>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedThree>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

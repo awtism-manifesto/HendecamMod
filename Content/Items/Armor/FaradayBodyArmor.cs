@@ -4,7 +4,6 @@ using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -60,7 +59,7 @@ public class FaradayBodyArmor : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<FaradayFedora>() && legs.type == ModContent.ItemType<FaradayPants>();
+        return head.type == ItemType<FaradayFedora>() && legs.type == ItemType<FaradayPants>();
     }
 
     public override void UpdateEquip(Player player)
@@ -137,7 +136,7 @@ public class FlatEarthSunMoon : ModPlayer
                     Player.GetSource_FromThis(),
                     Player.Center,
                     Vector2.Zero,
-                    ModContent.ProjectileType<FaradayMoonSentry>(),
+                    ProjectileType<FaradayMoonSentry>(),
                     baseDamage,
                     6.7f,
                     Player.whoAmI
@@ -149,7 +148,7 @@ public class FlatEarthSunMoon : ModPlayer
                     Player.GetSource_FromThis(),
                     Player.Center,
                     Vector2.Zero,
-                    ModContent.ProjectileType<FaradaySunSentry>(),
+                    ProjectileType<FaradaySunSentry>(),
                     baseDamage,
                     6.7f,
                     Player.whoAmI
@@ -180,7 +179,7 @@ public class FlatEarthSunMoon : ModPlayer
             index < 0 ||
             index >= Main.maxProjectiles ||
             !Main.projectile[index].active ||
-            Main.projectile[index].type != ModContent.ProjectileType<FaradayMoonSentry>()
+            Main.projectile[index].type != ProjectileType<FaradayMoonSentry>()
         );
 
         // Remove dead sun sentries from tracking list
@@ -188,7 +187,7 @@ public class FlatEarthSunMoon : ModPlayer
             index < 0 ||
             index >= Main.maxProjectiles ||
             !Main.projectile[index].active ||
-            Main.projectile[index].type != ModContent.ProjectileType<FaradaySunSentry>()
+            Main.projectile[index].type != ProjectileType<FaradaySunSentry>()
         );
     }
 

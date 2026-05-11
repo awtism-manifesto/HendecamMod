@@ -49,7 +49,7 @@ public class GraniteHeadgear : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<GraniteChestguard>() && legs.type == ModContent.ItemType<GraniteLeggings>();
+        return body.type == ItemType<GraniteChestguard>() && legs.type == ItemType<GraniteLeggings>();
     }
 
     public override void UpdateEquip(Player player)

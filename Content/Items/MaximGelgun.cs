@@ -33,7 +33,7 @@ public class MaximGelgun : ModItem
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<GelShot>();
+        Item.shoot = ProjectileType<GelShot>();
         Item.useAmmo = AmmoID.Gel;
         Item.shootSpeed = 22.75f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -45,7 +45,7 @@ public class MaximGelgun : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<GelShot>();
+        type = ProjectileType<GelShot>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

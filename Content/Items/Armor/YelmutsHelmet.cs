@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -87,8 +86,8 @@ public class YelmutsHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        if ( body.type == ModContent.ItemType<PoorMahoganyChestplate>() || body.type == ModContent.ItemType<YelmutFaeChestplate>() 
-            && legs.type == ModContent.ItemType<PoorMahoganyLeggings>() || legs.type == ModContent.ItemType<YelmutLeggings>())
+        if ( body.type == ItemType<PoorMahoganyChestplate>() || body.type == ItemType<YelmutFaeChestplate>() 
+            && legs.type == ItemType<PoorMahoganyLeggings>() || legs.type == ItemType<YelmutLeggings>())
         {
             return true;
         }
@@ -108,7 +107,7 @@ public class YelmutsHelmet : ModItem
         //player.GetCritChance<StupidDamage>() += StupidCritBonus;
         player.GetCritChance(DamageClass.Ranged) += RangedCritBonus;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 30f;
+        loboPlayer.TemporaryBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

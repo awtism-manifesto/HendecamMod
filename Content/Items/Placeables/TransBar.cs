@@ -22,7 +22,7 @@ public class TransBar : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.TransBarPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.TransBarPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

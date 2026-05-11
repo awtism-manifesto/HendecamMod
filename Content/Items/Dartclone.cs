@@ -41,12 +41,12 @@ public class Dartclone : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        if (type == ModContent.ProjectileType<FrostDart>())
+        if (type == ProjectileType<FrostDart>())
         {
             damage = (int)(damage * 0.85f);
         }
 
-        if (type == ModContent.ProjectileType<FissileSpawn>())
+        if (type == ProjectileType<FissileSpawn>())
         {
             damage = (int)(damage * 0.67f);
         }

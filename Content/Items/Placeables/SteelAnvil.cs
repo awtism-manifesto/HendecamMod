@@ -15,7 +15,7 @@ public class SteelAnvil : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useAnimation = 15;
         Item.useTime = 15;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.SteelAnvilPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.SteelAnvilPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -17,14 +17,14 @@ public class EldritchArrow : ModItem
         Item.height = 36;
 
         Item.damage = 19; // Keep in mind that the arrow's final damage is combined with the bow weapon damage.
-        Item.DamageType = ModContent.GetInstance<RangedSummonDamage>();
+        Item.DamageType = GetInstance<RangedSummonDamage>();
         Item.rare = ItemRarityID.Cyan;
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 5f;
         Item.ArmorPenetration = 5;
         Item.value = Item.sellPrice(silver: 1);
-        Item.shoot = ModContent.ProjectileType<Projectiles.EldritchProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<Projectiles.EldritchProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 2.5f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }

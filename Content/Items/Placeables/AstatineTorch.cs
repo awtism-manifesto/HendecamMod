@@ -13,7 +13,6 @@ public class AstatineTorch : ModItem
 
     public override void SetDefaults()
     {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
 
         // Common Properties
         Item.width = 32; // Hitbox width of the item.
@@ -23,7 +22,7 @@ public class AstatineTorch : ModItem
        
         Item.maxStack = 9999;
 
-        Item.DefaultToTorch(ModContent.TileType<Tiles.AstatineTorchPlaced>(), 0);
+        Item.DefaultToTorch(TileType<Tiles.AstatineTorchPlaced>(), 0);
         Item.value = 395;
     }
 

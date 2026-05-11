@@ -18,7 +18,7 @@ public class MorbiumBarPlaced : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
         HitSound = SoundID.Dig;
-        DustType = ModContent.DustType<MorbiumDust>();
+        DustType = DustType<MorbiumDust>();
 
         AddMapEntry(new Color(85, 229, 197), Language.GetText("Morbium Bar"));
     }

@@ -22,7 +22,7 @@ public class PlasmoidFriend : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         // If the minions exist reset the buff time, otherwise remove the buff from the player
-        if (player.ownedProjectileCounts[ModContent.ProjectileType<PlasmoidFriendly>()] > 0)
+        if (player.ownedProjectileCounts[ProjectileType<PlasmoidFriendly>()] > 0)
         {
             player.buffTime[buffIndex] = 18000;
         }

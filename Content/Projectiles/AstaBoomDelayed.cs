@@ -44,7 +44,7 @@ public class AstaBoomDelayed : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 2;
-        target.AddBuff(ModContent.BuffType<RadPoisoning3>(), 255);
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
     }
 
     public override void AI()
@@ -140,7 +140,7 @@ public class AstaBoomDelayed : ModProjectile
                 Projectile.GetSource_FromThis(),
                 position,
                 velocity,
-                ModContent.ProjectileType<AstaBoomRecurse>(),
+                ProjectileType<AstaBoomRecurse>(),
                 (int)(Projectile.damage *0.33f),
                 Projectile.knockBack,
                 Projectile.owner
@@ -156,10 +156,10 @@ public class AstaBoomDelayed : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 30; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 2.75f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 2.75f);
             fireDust.noGravity = true;
             fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
             fireDust.velocity *= 6f;
             fireDust.noGravity = true;
         }

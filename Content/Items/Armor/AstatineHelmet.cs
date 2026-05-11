@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -56,7 +55,7 @@ public class AstatineHelmet : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<AstatineBreastplate>() && legs.type == ModContent.ItemType<AstatineGreaves>();
+        return body.type == ItemType<AstatineBreastplate>() && legs.type == ItemType<AstatineGreaves>();
     }
 
     public override void UpdateEquip(Player player)
@@ -69,7 +68,7 @@ public class AstatineHelmet : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 110f;
+        loboPlayer.TemporaryBonus += 110f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Common.Systems;
 
 namespace HendecamMod.Content.Items.Materials;
 
@@ -29,13 +30,7 @@ public class CubicMold : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

@@ -17,7 +17,7 @@ public class CrystalShardSword : ModItem
         Item.useAnimation = 14;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 80;
         Item.knockBack = 6.0f;
@@ -40,7 +40,7 @@ public class CrystalShardSword : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Lobotometer"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
     }
 
     public override void AddRecipes()

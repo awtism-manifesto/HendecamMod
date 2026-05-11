@@ -11,6 +11,6 @@ public class FlintAndSteel : ModAchievement
     public override void SetStaticDefaults()
     {
         Achievement.SetCategory(AchievementCategory.Collector);
-        Condition = AddItemCraftCondition(ModContent.ItemType<SteelBar>());
+        Condition = AddItemCraftCondition(ItemType<SteelBar>());
     }
 }

@@ -90,7 +90,7 @@ public class PyroDartTrapTile : ModTile
                 SoundEngine.PlaySound(SoundID.Item99, spawnPosition);
                 // In a real mod you should be spawning projectiles that are both hostile and friendly to do damage to both players and NPC, as Terraria traps do.
                 // Make sure to change velocity, projectile, damage, and knockback.
-                Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ModContent.ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
+                Projectile.NewProjectile(Wiring.GetProjectileSource(i, j), spawnPosition, new Vector2(horizontalDirection, verticalDirection) * 6.66f, ProjectileType<PyroDart>(), 30, 5f, Main.myPlayer);
             }
         }
     }

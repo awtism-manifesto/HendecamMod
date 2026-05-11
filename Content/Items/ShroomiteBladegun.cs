@@ -32,13 +32,13 @@ public class ShroomiteBladegun : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Item.DamageType = GetInstance<MeleeRangedDamage>();
         Item.damage = 125; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 9.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
-        Item.shoot = ModContent.ProjectileType<BladegunWave>(); // For some reason, all the guns in the vanilla source have this.
+        Item.shoot = ProjectileType<BladegunWave>(); // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 16.67f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.None; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
@@ -65,7 +65,7 @@ public class ShroomiteBladegun : ModItem
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useTime = 30;
             Item.useAnimation = 30;
-            Item.shoot = ModContent.ProjectileType<BladegunWave>();
+            Item.shoot = ProjectileType<BladegunWave>();
             Item.useAmmo = AmmoID.None;
         }
 
@@ -89,7 +89,7 @@ public class ShroomiteBladegun : ModItem
                 Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             }
 
-            type = ModContent.ProjectileType<BladegunBomb>();
+            type = ProjectileType<BladegunBomb>();
             Projectile.NewProjectileDirect(source, position, (velocity * 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
 
             SoundEngine.PlaySound(SoundID.Item62, player.position);
@@ -101,7 +101,7 @@ public class ShroomiteBladegun : ModItem
         damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
-        Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ModContent.ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+        Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), ProjectileType<BladegunSwing>(), (int)(damage * 1.35f), knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
         return true; // Return false because we don't want tModLoader to shoot projectile}

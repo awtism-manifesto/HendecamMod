@@ -26,7 +26,7 @@ public class BottledOil : ModItem
         Item.value = 375;
         Item.noMelee = true;
         Item.rare = ItemRarityID.White;
-        Item.shoot = ModContent.ProjectileType<OilBottleProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<OilBottleProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.25f; // The speed of the projectile.
     }
 

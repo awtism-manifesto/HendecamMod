@@ -80,7 +80,7 @@ public class OilDeposit : ModTile
                     int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
                     // OreRunner will spawn ExampleOre in splotches. OnKill only runs on the server or single player, so it is safe to run world generation code.
-                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<OilDeposit>());
+                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)TileType<OilDeposit>());
                 }
             });
         }
@@ -128,7 +128,7 @@ public class OilDeposit : ModTile
 
                 // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place.
                 // Feel free to experiment with strength and step to see the shape they generate.
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(4, 7), WorldGen.genRand.Next(8, 12), ModContent.TileType<OilDeposit>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(4, 7), WorldGen.genRand.Next(8, 12), TileType<OilDeposit>());
 
                 // Alternately, we could check the tile already present in the coordinate we are interested.
                 // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.

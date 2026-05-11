@@ -66,12 +66,12 @@ public class SuperCeramicBloon : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<SuperCeramBuff>());
+            owner.ClearBuff(BuffType<SuperCeramBuff>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<SuperCeramBuff>()))
+        if (owner.HasBuff(BuffType<SuperCeramBuff>()))
         {
             Projectile.timeLeft = 2;
         }

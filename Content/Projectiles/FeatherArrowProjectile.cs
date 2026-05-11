@@ -1,6 +1,4 @@
-﻿using Terraria.Audio;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class FeatherArrowProjectile : ModProjectile

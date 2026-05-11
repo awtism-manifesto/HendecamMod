@@ -22,7 +22,7 @@ public class CIAJournalismAward : ModItem
         Item.knockBack = 2.75f;
         Item.value = 3250000;
         Item.rare = ItemRarityID.Red;
-        Item.shoot = ModContent.ProjectileType<CiaSpawn>();
+        Item.shoot = ProjectileType<CiaSpawn>();
         Item.shootSpeed = 5.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

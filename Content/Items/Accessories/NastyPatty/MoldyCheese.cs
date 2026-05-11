@@ -16,7 +16,7 @@ public class MoldyCheese : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 Defense, Doubled Armor Penetraton, 50% more Generic Damage, and much higher jump speed"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 Defense, Doubled Armor Penetraton, 33% more Generic Damage, and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Minecarts, Weapon, Armor, or Accessory Buffs"));
     }
 

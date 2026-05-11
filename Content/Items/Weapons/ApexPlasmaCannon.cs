@@ -29,13 +29,13 @@ public class ApexPlasmaCannon : ModItem
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.autoReuse = true;
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.damage = 69;
         Item.knockBack = 2.5f;
         Item.noMelee = true;
         Item.ArmorPenetration = 15;
         Item.mana = 8;
-        Item.shoot = ModContent.ProjectileType<ApexPlasmaBullet>();
+        Item.shoot = ProjectileType<ApexPlasmaBullet>();
         Item.shootSpeed = 15.95f;
     }
 
@@ -54,7 +54,7 @@ public class ApexPlasmaCannon : ModItem
             Item.reuseDelay = 44;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Rocket;
-            Item.shoot = ModContent.ProjectileType<ElfMagicMissile>();
+            Item.shoot = ProjectileType<ElfMagicMissile>();
             Item.mana = 20;
         }
         else
@@ -63,7 +63,7 @@ public class ApexPlasmaCannon : ModItem
             Item.useTime = 5;
             Item.useAnimation = 15;
             Item.reuseDelay = 0;
-            Item.shoot = ModContent.ProjectileType<ApexPlasmaBullet>();
+            Item.shoot = ProjectileType<ApexPlasmaBullet>();
             Item.useAmmo = AmmoID.Bullet;
             Item.mana = 8;
         }
@@ -84,11 +84,11 @@ public class ApexPlasmaCannon : ModItem
     {
         if (player.altFunctionUse == 2)
         {
-            type = ModContent.ProjectileType<ElfMagicMissile>();
+            type = ProjectileType<ElfMagicMissile>();
         }
         else
         {
-            type = ModContent.ProjectileType<ApexPlasmaBullet>();
+            type = ProjectileType<ApexPlasmaBullet>();
         }
     }
 

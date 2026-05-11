@@ -1,15 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.Buffs;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.Localization;
-using Terraria.ModLoader.IO;
 
 
 namespace HendecamMod.Content.Items.Armor;
@@ -52,8 +45,8 @@ public class ArchangelChestguard : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return head.type == ModContent.ItemType<ArchangelHelmet>() &&
-               legs.type == ModContent.ItemType<ArchangelGreaves>();
+        return head.type == ItemType<ArchangelHelmet>() &&
+               legs.type == ItemType<ArchangelGreaves>();
     }
 
     public override void AddRecipes()
@@ -201,7 +194,7 @@ public class ArchangelWings : ModPlayer
             Player.manaRegen += (int)(Player.manaRegen * 1.67f);
 
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
-            loboPlayer.MaxBonus += 150f;
+            loboPlayer.TemporaryBonus += 150f;
             loboPlayer.DecayRateMultiplier += 1.5f;
         }
     }

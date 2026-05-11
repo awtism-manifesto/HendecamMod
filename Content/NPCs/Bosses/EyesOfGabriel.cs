@@ -55,7 +55,7 @@ public class EyesOfGabriel : ModNPC
         }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-        if (NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()) || NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+        if (NPC.AnyNPCs(NPCType<EyesOfMichael>()) || NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
             {
 
             }
@@ -63,7 +63,7 @@ public class EyesOfGabriel : ModNPC
             {
             LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
             // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
-            npcLoot.Add(ItemDropRule.ByCondition(new GabrielDrop(), ModContent.ItemType<AngelShard>(), chanceDenominator: 1, chanceNumerator: 1, minimumDropped: 67/10, maximumDropped: 69));
+            npcLoot.Add(ItemDropRule.ByCondition(new GabrielDrop(), ItemType<AngelShard>(), chanceDenominator: 1, chanceNumerator: 1, minimumDropped: 67/10, maximumDropped: 69));
             npcLoot.Add(notExpertRule);
             // npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AlpineTreasureBag>()));
             // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
@@ -103,11 +103,11 @@ public class EyesOfGabriel : ModNPC
                 Vector2 targetPosition = Main.player[NPC.target].Center;
                 Vector2 direction = targetPosition - position;
                 direction.Normalize();
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                     {
 
                     }
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
 
                     }

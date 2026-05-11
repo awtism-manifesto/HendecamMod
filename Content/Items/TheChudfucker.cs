@@ -17,7 +17,7 @@ public class TheChudfucker : ModItem
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.6f;
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.value = 67000000;
         // Use Properties
         // Use Properties
@@ -29,7 +29,7 @@ public class TheChudfucker : ModItem
         // The sound that this item plays when used.
 
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 670; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.

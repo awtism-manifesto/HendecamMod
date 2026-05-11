@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Global
 {
@@ -81,7 +78,7 @@ namespace HendecamMod.Content.Global
             int currentInt = (int)current;
             int maxInt = (int)max;
 
-            return $"Lobotometer: {currentInt} / {maxInt}";
+            return $"Braincells Used: {currentInt} / {maxInt}";
         }
     }
 }

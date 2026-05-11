@@ -14,7 +14,7 @@ public class GreenWild : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.GreenWild>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.GreenWild>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;
@@ -36,6 +36,6 @@ public class GreenWild : ModItem
 
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<BlueWild>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<BlueWild>()));
     }
 }

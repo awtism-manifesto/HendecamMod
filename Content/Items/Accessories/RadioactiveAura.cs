@@ -77,7 +77,7 @@ public class Rad2Apply : ModPlayer
 
         if (Main.rand.NextBool(4))
         {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, ModContent.DustType<PlutoniumDust>(),
+            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustType<PlutoniumDust>(),
                 Player.velocity.X * Main.rand.NextFloat(-1.2f, 2.33f), Player.velocity.Y * Main.rand.NextFloat(-1.2f, 2.33f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
@@ -90,7 +90,7 @@ public class Rad2Apply : ModPlayer
         }
         else
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
+            target.AddBuff(BuffType<RadPoisoning2>(), 240);
         }
     }
 
@@ -101,7 +101,7 @@ public class Rad2Apply : ModPlayer
         }
         else
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 240);
+            target.AddBuff(BuffType<RadPoisoning2>(), 240);
         }
     }
 }

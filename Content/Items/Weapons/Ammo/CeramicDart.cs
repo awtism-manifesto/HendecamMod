@@ -22,7 +22,7 @@ public class CeramicDart : ModItem
         Item.knockBack = 3.5f;
         Item.value = 52;
         Item.rare = ItemRarityID.Orange;
-        Item.shoot = ModContent.ProjectileType<CeramDart>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<CeramDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 8.8f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

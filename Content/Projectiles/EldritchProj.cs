@@ -78,7 +78,7 @@ public class EldritchProj : ModProjectile
         target.AddBuff(BuffID.CursedInferno, 240);
         target.AddBuff(BuffID.Ichor, 240);
         target.AddBuff(BuffID.ShadowFlame, 240);
-        target.AddBuff(ModContent.BuffType<JevilTag>(), 180);
+        target.AddBuff(BuffType<JevilTag>(), 180);
     }
 
     public override void OnKill(int timeLeft)

@@ -19,7 +19,7 @@ public class TheSun : ModProjectile
         Projectile.light = 100f;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.penetrate = 500;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;

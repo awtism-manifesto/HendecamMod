@@ -17,7 +17,7 @@ public class AuricSkibidiToilet : ModItem
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.15f;
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
         Item.value = 125000000;
         // Use Properties
         // Use Properties
@@ -28,21 +28,21 @@ public class AuricSkibidiToilet : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item45;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 333; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 255.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<AuricSkibidiHead>();
+        Item.shoot = ProjectileType<AuricSkibidiHead>();
 
         Item.shootSpeed = 15.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<AuricSkibidiHead>();
+        type = ProjectileType<AuricSkibidiHead>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

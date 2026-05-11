@@ -14,7 +14,7 @@ public class VeryBigStick : ModItem
     public override void SetDefaults()
     {
         Item.damage = 25;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.scale = 1.5f;
         Item.width = 34;
         Item.height = 34;
@@ -41,7 +41,7 @@ public class VeryBigStick : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Very confusing, it's not a stick'")
@@ -79,7 +79,7 @@ public class VeryBigStick : ModItem
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         
-            target.AddBuff(ModContent.BuffType<Splinters>(), 360);
+            target.AddBuff(BuffType<Splinters>(), 360);
         
     }
 }

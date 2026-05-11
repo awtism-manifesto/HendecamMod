@@ -33,7 +33,7 @@ public class SockPoop : ModProjectile
         Projectile.WhipSettings.RangeMultiplier = 0.5f;
         Projectile.width = 50;
         Projectile.height = 50;
-        Projectile.DamageType = ModContent.GetInstance<SummonStupidDamage>();
+        Projectile.DamageType = GetInstance<SummonStupidDamage>();
         // use these to change from the vanilla defaults
         // Projectile.WhipSettings.Segments = 20;
         // Projectile.WhipSettings.RangeMultiplier = 1f;
@@ -43,7 +43,7 @@ public class SockPoop : ModProjectile
     // If you remove this, also remove Item.channel = true from the item's SetDefaults.
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<PoopSocked>(), 240);
+        target.AddBuff(BuffType<PoopSocked>(), 240);
         target.AddBuff(BuffID.Poisoned, 90);
         target.AddBuff(BuffID.Stinky, 900);
         Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;

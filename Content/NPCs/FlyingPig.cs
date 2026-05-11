@@ -40,7 +40,7 @@ public class FlyingPig : ModNPC
         AIType = NPCID.PigronHallow; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.PigronHallow; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<FlyingPigBanner>();
+        BannerItem = ItemType<FlyingPigBanner>();
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -56,7 +56,7 @@ public class FlyingPig : ModNPC
     {
         npcLoot.Add(ItemDropRule.Common(ItemID.Ruby, 3, 5, 10));
         npcLoot.Add(ItemDropRule.Common(ItemID.Diamond, 3, 4, 8));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<KulakWings>(), 20));
+        npcLoot.Add(ItemDropRule.Common(ItemType<KulakWings>(), 20));
         npcLoot.Add(ItemDropRule.Common(ItemID.GoldBar, 2, 13, 21));
         npcLoot.Add(ItemDropRule.Common(ItemID.PlatinumBar, 2, 12, 19));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemID.CoinGun, chanceDenominator: 4999, chanceNumerator: 2));

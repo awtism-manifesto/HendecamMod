@@ -14,8 +14,8 @@ public class UraniumTile : ModTile
         Main.tileMerge[TileID.Pearlstone][Type] = true;
         Main.tileMerge[TileID.LivingFire][Type] = true;
 
-        Main.tileMerge[ModContent.TileType<PlutoniumOrePlaced>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<AstatineOrePlaced>()][Type] = true;
+        Main.tileMerge[TileType<PlutoniumOrePlaced>()][Type] = true;
+        Main.tileMerge[TileType<AstatineOrePlaced>()][Type] = true;
 
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 400;

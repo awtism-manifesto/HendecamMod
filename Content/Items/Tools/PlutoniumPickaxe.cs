@@ -42,11 +42,11 @@ public class PlutoniumPickaxe : ModItem
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 245);
+        target.AddBuff(BuffType<RadPoisoning2>(), 245);
 
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, ModContent.DustType<PlutoniumDust>());
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PlutoniumDust>());
             dust.noGravity = true;
             dust.velocity *= 4.5f;
             dust.scale *= 0.76f;

@@ -1,11 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -25,7 +20,7 @@ public class HaemophilicLobotomySpike : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed");
+        var line = new TooltipLine(Mod, "Face", "Once you hit max Lobotometer, it can no longer decay until accessory is removed");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into max life")
@@ -33,7 +28,7 @@ public class HaemophilicLobotomySpike : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not stack with Unhygenic Lobotomy Spike")
+        line = new TooltipLine(Mod, "Face", "Does not stack with Unhygenic or Auspicious Lobotomy Spike")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -80,7 +75,7 @@ public class BloodSpike : ModPlayer
 
     public override void UpdateEquips()
     {
-        if (BloodySpiked && !Player.GetModPlayer<GrossSpike>().GrossSpiked)
+        if (BloodySpiked && !Player.GetModPlayer<GrossSpike>().GrossSpiked && !Player.GetModPlayer<HallowSpike>().HallowSpiked)
         {
             var loboPlayer = Player.GetModPlayer<LobotometerPlayer>();
 

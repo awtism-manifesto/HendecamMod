@@ -62,12 +62,12 @@ public class MintalGreatspearProjectile : ModProjectile
             // These dusts are added later, for the 'ExampleMod' effect
             if (Main.rand.NextBool(3))
             {
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MintalDust>(), Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 128, Scale: 1.2f);
+                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<MintalDust>(), Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, Alpha: 128, Scale: 1.2f);
             }
 
             if (Main.rand.NextBool(4))
             {
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MintalDust>(), Alpha: 128, Scale: 0.3f);
+                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<MintalDust>(), Alpha: 128, Scale: 0.3f);
             }
         }
 

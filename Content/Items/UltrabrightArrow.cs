@@ -22,7 +22,7 @@ public class UltrabrightArrow : ModItem
         Item.consumable = true;
         Item.knockBack = 2.5f;
         Item.value = Item.sellPrice(copper: 95);
-        Item.shoot = ModContent.ProjectileType<UltraArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<UltraArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 2.3f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
     }

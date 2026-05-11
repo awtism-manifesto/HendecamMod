@@ -28,7 +28,7 @@ public class TheXRay : ModItem
         Item.ArmorPenetration = 30;
         Item.value = 1050000;
         Item.rare = ItemRarityID.LightPurple;
-        Item.shoot = ModContent.ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -40,7 +40,7 @@ public class TheXRay : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Xray>();
+        type = ProjectileType<Xray>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

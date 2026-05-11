@@ -155,7 +155,7 @@ public class OilSwing : ModProjectile
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-                ModContent.ProjectileType<OilBoom>(), (int)(Projectile.damage * 1.5f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<OilBoom>(), (int)(Projectile.damage * 1.5f), Projectile.knockBack, Projectile.owner);
         }
 
         hit.HitDirection = (Main.player[Projectile.owner].Center.X < target.Center.X) ? 1 : (-1);

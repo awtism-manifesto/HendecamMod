@@ -2,7 +2,6 @@
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -31,7 +30,7 @@ public class SuperCeramicLeggings : ModItem
         var line = new TooltipLine(Mod, "Face", "7% increased stupid damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+55 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+55 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -43,7 +42,7 @@ public class SuperCeramicLeggings : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<SuperCeramicChestplate>() && head.type == ModContent.ItemType<SuperCeramicFedora>();
+        return body.type == ItemType<SuperCeramicChestplate>() && head.type == ItemType<SuperCeramicFedora>();
     }
 
     public override void UpdateEquip(Player player)
@@ -54,7 +53,7 @@ public class SuperCeramicLeggings : ModItem
       
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 55f;
+        loboPlayer.TemporaryBonus += 55f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

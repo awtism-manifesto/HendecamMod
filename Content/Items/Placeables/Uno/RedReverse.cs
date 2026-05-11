@@ -11,7 +11,7 @@ public class RedReverse : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedReverse>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedReverse>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

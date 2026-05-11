@@ -61,7 +61,7 @@ public class TerraRound : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360f));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-216, 216), Main.rand.NextFloat(-216, 216));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<TerraRoundCopy>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<TerraRoundCopy>(), (int)(Projectile.damage * 1f), Projectile.knockBack, Projectile.owner);
 
         if (Main.rand.NextBool(100))
         {

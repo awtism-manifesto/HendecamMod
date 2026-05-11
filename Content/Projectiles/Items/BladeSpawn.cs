@@ -1,6 +1,4 @@
-﻿using HendecamMod.Content.Projectiles.Items;
-
-namespace HendecamMod.Content.Projectiles.Items;
+﻿namespace HendecamMod.Content.Projectiles.Items;
 
 public class BladeSpawn : ModProjectile
 {
@@ -50,7 +48,7 @@ public class BladeSpawn : ModProjectile
                     Projectile.GetSource_FromThis(),
                     position,
                     velocity,
-                    ModContent.ProjectileType<Blade>(),
+                    ProjectileType<Blade>(),
                     Projectile.damage,
                     Projectile.knockBack,
                     Projectile.owner

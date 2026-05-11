@@ -30,7 +30,7 @@ public class TrueJfkExperience : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
         Item.ArmorPenetration = 50;
-        Item.shoot = ModContent.ProjectileType<Projectiles.JfkBullet>();
+        Item.shoot = ProjectileType<Projectiles.JfkBullet>();
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 26f; // The speed of the projectile (measured in pixels per frame.)
@@ -46,7 +46,7 @@ public class TrueJfkExperience : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Projectiles.JfkBullet>();
+        type = ProjectileType<Projectiles.JfkBullet>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -65,18 +65,7 @@ public class TrueJfkExperience : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -97,6 +86,11 @@ public class TrueJfkExperience : ModItem
         recipe.AddTile<CultistCyclotronPlaced>();
 
         recipe.Register();
+
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("HuntingRifle", out ModItem HuntingRifle))
+        {
+            recipe.AddIngredient(HuntingRifle.Type);
+        }
 
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("BloodstoneCore", out ModItem BloodstoneCore))
         {

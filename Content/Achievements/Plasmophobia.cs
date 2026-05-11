@@ -14,7 +14,7 @@ public class Plasmophobia : ModAchievement
     {
         Achievement.SetCategory(AchievementCategory.Slayer);
 
-        AddNPCKilledCondition(ModContent.NPCType<UnstablePlasmoid>());
+        AddNPCKilledCondition(NPCType<UnstablePlasmoid>());
     }
 
     public override Position GetDefaultPosition() => new After("DEFEAT_EMPRESS_OF_LIGHT");

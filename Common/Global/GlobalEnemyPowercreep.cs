@@ -1,19 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-
-
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.Chat;
-using Terraria.GameContent.Events;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using HendecamMod.Content.NPCs.Bosses;
+﻿using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Common.Systems;
 
 
@@ -52,15 +37,15 @@ namespace HendecamMod.Common.Global
             NPCID.SantaNK1,
             NPCID.HeadlessHorseman,
             NPCID.PirateShip,
-            ModContent.NPCType<ApacheElfShip>(),
-            ModContent.NPCType<HeadOfCthulhu>(),
-            ModContent.NPCType<PromethiumPlasmoid>(),
+            NPCType<ApacheElfShip>(),
+            NPCType<HeadOfCthulhu>(),
+            NPCType<PromethiumPlasmoid>(),
         ];
         public bool FirstFrame = true;
         public override bool InstancePerEntity => true;
         public override bool PreAI(NPC npc)
         {
-            if (ModContent.GetInstance<HendecamConfig>().ProgressionBasedEnemyPowercreep == true && FirstFrame)
+            if (GetInstance<HendecamConfig>().ProgressionBasedEnemyPowercreep == true && FirstFrame)
             {
                 FirstFrame = false;
                 float lifeFraction = npc.GetLifePercent();

@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -15,7 +14,7 @@ public class FaradaySunShot : ModProjectile
         Projectile.scale = 1.67f;
         Projectile.friendly = true;
         Projectile.penetrate = 1; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.light = 0.4f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.timeLeft = 210;
@@ -30,7 +29,7 @@ public class FaradaySunShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<MoonBurn>(), 300);
+        target.AddBuff(BuffType<MoonBurn>(), 300);
         target.AddBuff(BuffID.OnFire, 600);
         target.AddBuff(BuffID.OnFire3, 600);
     }

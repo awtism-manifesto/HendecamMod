@@ -1,7 +1,4 @@
 ﻿using HendecamMod.Content.DamageClasses;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
@@ -15,7 +12,7 @@ public class FargoSand : ModProjectile
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
       
         Projectile.penetrate = 2; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 280; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)

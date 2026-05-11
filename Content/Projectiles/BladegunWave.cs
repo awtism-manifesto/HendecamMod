@@ -29,7 +29,7 @@ public class BladegunWave : ModProjectile
 
         Projectile.tileCollide = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.penetrate = 5;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
@@ -93,7 +93,7 @@ public class BladegunWave : ModProjectile
                 Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(0));
                 Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-35, 35));
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                    ModContent.ProjectileType<BladegunWave2>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                    ProjectileType<BladegunWave2>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
 
                 tickCounter = 0;
                 nextSpawnTick = Main.rand.Next(15, 24);

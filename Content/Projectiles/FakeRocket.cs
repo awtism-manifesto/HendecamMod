@@ -20,7 +20,7 @@ public class FakeRocket : ModProjectile
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
+        Projectile.DamageType = GetInstance<StupidDamage>(); // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 150; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
 
@@ -109,6 +109,6 @@ public class FakeRocket : ModProjectile
         Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-188, 188), 1050));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
             new Vector2(76, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
-            ModContent.ProjectileType<UsaFlag>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<UsaFlag>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
     }
 }

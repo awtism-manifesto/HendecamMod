@@ -6,9 +6,9 @@ public class AstatineBrickTile : ModTile
     {
         Main.tileSolid[Type] = true;
         Main.tileMergeDirt[Type] = true;
-        Main.tileMerge[ModContent.TileType<LycopiteBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<PlutoniumBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<UraniumBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<LycopiteBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<PlutoniumBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<UraniumBrickTile>()][Type] = true;
 
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 500;

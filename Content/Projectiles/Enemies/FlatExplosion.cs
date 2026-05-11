@@ -58,7 +58,7 @@ public class FlatExplosion : ModProjectile
                         posOffsetY = Projectile.velocity.Y * 2.5f;
                     }
 
-                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 1.1f);
+                    Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 15, Projectile.height - 15, DustType<MoonburnDust>(), 0f, 0f, 100, default, 1.1f);
                     fireDust.fadeIn = 0.1f + Main.rand.Next(1) * 0.1f;
                     fireDust.noGravity = true;
                     fireDust.velocity *= 1.55f;
@@ -110,10 +110,10 @@ public class FlatExplosion : ModProjectile
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 67; j++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 5f);
+            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<MoonburnDust>(), 0f, 0f, 100, default, 5f);
             fireDust.noGravity = true;
             fireDust.velocity *= 3f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 2.25f);
+            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<MoonburnDust>(), 0f, 0f, 100, default, 2.25f);
             fireDust.velocity *= 1f;
         }
         // Rocket II explosion that damages tiles.

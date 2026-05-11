@@ -31,7 +31,7 @@ public class FissionImbueGlobal : ModPlayer
     {
         if (FissionWeaponImbue && item.DamageType.CountsAsClass<MeleeDamageClass>())
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -39,7 +39,7 @@ public class FissionImbueGlobal : ModPlayer
     {
         if (FissionWeaponImbue && (proj.DamageType.CountsAsClass<MeleeDamageClass>() || ProjectileID.Sets.IsAWhip[proj.type]) && !proj.noEnchantments)
         {
-            target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
+            target.AddBuff(BuffType<RadPoisoning2>(), 60 * Main.rand.Next(3, 7));
         }
     }
 
@@ -50,7 +50,7 @@ public class FissionImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<PlutoniumDust>());
+                Dust dust = Dust.NewDustDirect(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustType<PlutoniumDust>());
                 dust.velocity *= 0.5f;
             }
         }
@@ -62,7 +62,7 @@ public class FissionImbueGlobal : ModPlayer
         {
             if (Main.rand.NextBool(5))
             {
-                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, ModContent.DustType<PlutoniumDust>());
+                Dust dust = Dust.NewDustDirect(boxPosition, boxWidth, boxHeight, DustType<PlutoniumDust>());
                 dust.velocity *= 0.5f;
             }
         }

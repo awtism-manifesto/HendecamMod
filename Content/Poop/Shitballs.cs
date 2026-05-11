@@ -13,7 +13,7 @@ public class Shitballs : ModItem
     public override void SetDefaults()
     {
         Item.damage = 9; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
 
         Item.width = 13;
         Item.height = 13;
@@ -22,7 +22,7 @@ public class Shitballs : ModItem
         Item.knockBack = 1.5f;
         Item.value = 10;
         Item.rare = ItemRarityID.White;
-        Item.shoot = ModContent.ProjectileType<ShitBallProjectile>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<ShitBallProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 5.1f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

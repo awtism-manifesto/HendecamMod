@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -22,7 +21,7 @@ public class TerraVape : ModItem
         Item.useAnimation = 30;
         Item.autoReuse = true;
         Item.reuseDelay = 12;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 64;
         Item.knockBack = 1.67f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +36,7 @@ public class TerraVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<TerraVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TerraVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 19.1f; // Speed of the projectiles the sword will shoot
 
        
@@ -81,7 +80,7 @@ public class TerraVape : ModItem
         var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to surround them from all four sides");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 1 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
             OverrideColor = new Color(255, 255, 255)
         };

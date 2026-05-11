@@ -8,7 +8,7 @@ public class EbonceramicSheet : ModItem
 
     public override void SetStaticDefaults()
     {
-        ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<CrimceramicSheet>();
+        ItemID.Sets.ShimmerTransformToItem[Type] = ItemType<CrimceramicSheet>();
         Item.ResearchUnlockCount = 25;
     }
     public override void SetDefaults()

@@ -23,7 +23,7 @@ public class LimestoneBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<LimestoneBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<LimestoneBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

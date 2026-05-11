@@ -15,7 +15,7 @@ public class BeetleBomb : ModItem
     public override void SetDefaults()
     {
         Item.damage = 40; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.useTime = 30;
         Item.useAnimation = 30;
         Item.useStyle = ItemUseStyleID.Swing;
@@ -28,7 +28,7 @@ public class BeetleBomb : ModItem
         Item.knockBack = 7f;
         Item.value = 3400;
         Item.rare = ItemRarityID.Lime;
-        Item.shoot = ModContent.ProjectileType<BeetleBombProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<BeetleBombProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 14.25f; // The speed of the projectile.
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
@@ -61,7 +61,7 @@ public class BeetleBomb : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 9 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

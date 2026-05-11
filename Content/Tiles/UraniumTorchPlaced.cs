@@ -27,7 +27,7 @@ public class UraniumTorchPlaced : ModTile
         TileID.Sets.DisableSmartInteract[Type] = true;
         TileID.Sets.Torch[Type] = true;
 
-        DustType = ModContent.DustType<UraniumDust>();
+        DustType = DustType<UraniumDust>();
         AdjTiles = [TileID.Torches];
         VanillaFallbackOnModDeletion = TileID.Torches;
 
@@ -66,7 +66,7 @@ public class UraniumTorchPlaced : ModTile
         AddMapEntry(new Color(200, 200, 200), Language.GetText("ItemName.Torch"));
 
         // Assets
-        flameTexture = ModContent.Request<Texture2D>(Texture + "_Flame");
+        flameTexture = Request<Texture2D>(Texture + "_Flame");
     }
 
     public override void MouseOver(int i, int j)
@@ -184,7 +184,7 @@ public class UraniumTorchPlaced : ModTile
 
         if (Main.rand.NextBool(40) && tileFrameX < 66)
         {
-            int dustChoice = ModContent.DustType<UraniumDust>();
+            int dustChoice = DustType<UraniumDust>();
             Dust dust;
             Vector2 spawnPosition = tileFrameX switch
             {

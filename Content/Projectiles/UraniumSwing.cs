@@ -145,7 +145,7 @@ public class UraniumSwing : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 270);
+        target.AddBuff(BuffType<RadPoisoning>(), 270);
         // Vanilla has several particles that can easily be used anywhere.
         // The particles from the Particle Orchestra are predefined by vanilla and most can not be customized that much.
         // Use auto complete to see the other ParticleOrchestraType types there are.
@@ -233,7 +233,7 @@ public class UraniumSwing : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<RadAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
+            ProjectileType<RadAura>(), (int)(Projectile.damage * 0.25f), (Projectile.knockBack * 0.01f), Projectile.owner);
     }
 
     // Copied from Main.DrawPrettyStarSparkle() which is private

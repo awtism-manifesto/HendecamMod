@@ -18,7 +18,7 @@ public class PrideFlag : ModItem
         Item.useTime = 15;
         Item.useAnimation = 15;
         Item.autoReuse = true;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.PrideFlagPlaced>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PrideFlagPlaced>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

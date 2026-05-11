@@ -15,7 +15,7 @@ public class RockSaltBlock : ModItem
         Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
         Item.value = 10250;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.RockSaltTile>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.RockSaltTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -26,7 +26,7 @@ public class RadiologicalRavager : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 6250000; // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<AstaSwing>();
+        Item.shoot = ProjectileType<AstaSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

@@ -55,6 +55,6 @@ public class FlinxFurEarmuffs : ModItem
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ItemID.FlinxFurCoat && legs.type == ModContent.ItemType<FlinxFurSlippers>();
+        return body.type == ItemID.FlinxFurCoat && legs.type == ItemType<FlinxFurSlippers>();
     }
 }

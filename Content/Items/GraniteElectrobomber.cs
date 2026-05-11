@@ -36,14 +36,14 @@ public class GraniteElectrobomber : ModItem
         Item.mana = 7;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<Electrobomb>();
+        Item.shoot = ProjectileType<Electrobomb>();
 
         Item.shootSpeed = 8.5f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<Electrobomb>();
+        type = ProjectileType<Electrobomb>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

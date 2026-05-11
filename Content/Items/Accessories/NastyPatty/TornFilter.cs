@@ -16,7 +16,7 @@ public class TornFilter : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 30% more Attack Speed and double your breath timer"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 15% more Attack Speed and double your breath timer"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Activated or Enviornmental Buffs"));
     }
 

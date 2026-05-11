@@ -15,7 +15,7 @@ public class CultistCyclotronPlaced : ModTile
         TileID.Sets.DisableSmartCursor[Type] = true;
         TileID.Sets.IgnoredByNpcStepUp[Type] = true; // This line makes NPCs not try to step up this tile during their movement. Only use this for furniture with solid tops.
         TileObjectData.newTile.CopyFrom(TileObjectData.Style5x4);
-        DustType = ModContent.DustType<AstatineDust>();
+        DustType = DustType<AstatineDust>();
         AdjTiles = new int[] { TileID.LunarCraftingStation };
         TileObjectData.newTile.Width = 4;
         TileObjectData.newTile.Height = 4;

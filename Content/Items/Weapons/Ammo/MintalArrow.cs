@@ -18,12 +18,12 @@ public class MintalArrow : ModItem
         Item.width = 14;
         Item.height = 36;
         Item.damage = 7; // Keep in mind that the arrow's final damage is combined with the bow weapon damage.
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.consumable = true;
         Item.knockBack = 0.5f;
         Item.value = 91;
-        Item.shoot = ModContent.ProjectileType<MintalArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<MintalArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 2.66f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.Orange;

@@ -66,12 +66,12 @@ public class CeramicBloon : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<CeramicBloonBuff>());
+            owner.ClearBuff(BuffType<CeramicBloonBuff>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<CeramicBloonBuff>()))
+        if (owner.HasBuff(BuffType<CeramicBloonBuff>()))
         {
             Projectile.timeLeft = 2;
         }

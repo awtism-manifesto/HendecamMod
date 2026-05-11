@@ -1,12 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Rarities;
-using Microsoft.Xna.Framework;
+﻿using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace HendecamMod.Content.Items.Tools;
 

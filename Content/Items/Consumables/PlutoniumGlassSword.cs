@@ -18,14 +18,14 @@ public class PlutoniumGlassSword : ModItem
         Item.useAnimation = 11;
         Item.autoReuse = true;
         Item.UseSound = SoundID.Shatter;
-        Item.DamageType = ModContent.GetInstance<MeleeStupidDamage>();
+        Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.maxStack = Item.CommonMaxStack;
         Item.damage = 160;
         Item.knockBack = 9.0f;
         Item.consumable = true;
         Item.ChangePlayerDirectionOnShoot = true;
         Item.buffType = BuffID.Bleeding;
-        Item.buffType = ModContent.BuffType<RadPoisoning2>();
+        Item.buffType = BuffType<RadPoisoning2>();
         Item.buffTime = 300;
         Item.useTurn = true;
     }
@@ -41,14 +41,14 @@ public class PlutoniumGlassSword : ModItem
     }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 300);
+        target.AddBuff(BuffType<RadPoisoning2>(), 300);
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Lobotometer"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
     }
 
     public override void AddRecipes()

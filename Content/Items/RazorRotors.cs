@@ -32,7 +32,7 @@ public class RazorRotors : ModItem
         Item.ArmorPenetration = 25;
         // Projectile Properties
         Item.shootSpeed = 0f; // The speed of the projectile measured in pixels per frame.
-        Item.shoot = ModContent.ProjectileType<RazorRotorsProj>(); // The projectile that is fired from this weapon
+        Item.shoot = ProjectileType<RazorRotorsProj>(); // The projectile that is fired from this weapon
     }
 
     public override bool AltFunctionUse(Player player)
@@ -45,14 +45,14 @@ public class RazorRotors : ModItem
         if (player.altFunctionUse == 2)
         {
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.shoot = ModContent.ProjectileType<RazorRotorThrown>();
+            Item.shoot = ProjectileType<RazorRotorThrown>();
             Item.shootSpeed = 28.5f;
         }
         else
         {
             Item.useStyle = ItemUseStyleID.Swing;
 
-            Item.shoot = ModContent.ProjectileType<RazorRotorsProj>();
+            Item.shoot = ProjectileType<RazorRotorsProj>();
             Item.shootSpeed = 0f;
         }
 

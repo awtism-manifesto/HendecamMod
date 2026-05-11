@@ -45,7 +45,7 @@ public class InfernoProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center;
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<InfernoMeteor>(), (int)(Projectile.damage * 22.5f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<InfernoMeteor>(), (int)(Projectile.damage * 22.5f), Projectile.knockBack, Projectile.owner);
     }
 
     public override void AI()

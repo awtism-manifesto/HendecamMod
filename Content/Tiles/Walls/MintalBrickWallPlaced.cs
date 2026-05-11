@@ -8,7 +8,7 @@ public class MintalBrickWallPlaced : ModWall
     {
         Main.wallHouse[Type] = true;
 
-        DustType = ModContent.DustType<MintalDust>();
+        DustType = DustType<MintalDust>();
 
         AddMapEntry(new Color(52, 156, 156));
     }

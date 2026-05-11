@@ -28,11 +28,11 @@ public class CarrotProj : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<LycopiteSpores>(), 150);
+        target.AddBuff(BuffType<LycopiteSpores>(), 150);
         Projectile.damage = (int)(Projectile.damage * 0.67f);
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (ModContent.DustType<LycopiteDust>()));
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (DustType<LycopiteDust>()));
             dust.noGravity = true;
             dust.velocity *= 7.5f;
             dust.scale *= 1.25f;
@@ -67,7 +67,7 @@ public class CarrotProj : ModProjectile
     {
         for (int i = 0; i < 3; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (ModContent.DustType<LycopiteDust>()));
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (DustType<LycopiteDust>()));
             dust.noGravity = true;
             dust.velocity *= 4.15f;
             dust.scale *= 1f;

@@ -1,14 +1,4 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items;
-using HendecamMod.Content.Poop;
-using HendecamMod.Content.Projectiles;
-using Mono.Cecil;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Collections.Generic;
 
 namespace HendecamMod.Content.Global;
 
@@ -201,9 +191,9 @@ public class ChlorophyteShitbow : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 51;
-        item.useTime = 18;
-        item.useAnimation = 18;
+        item.damage = 47;
+        item.useTime = 19;
+        item.useAnimation = 19;
        
     }
    
@@ -219,8 +209,8 @@ public class PhantomPeenix : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.damage = 43;
-        item.useTime = 16;
-        item.useAnimation = 16;
+        item.useTime = 17;
+        item.useAnimation = 17;
 
     }
 
@@ -271,7 +261,7 @@ public class BasicBitchRottedForkBuff : GlobalItem
         item.damage = 19;
         item.useTime = 25;
         item.useAnimation = 25;
-        item.shootSpeed = 5.33f;
+        item.shootSpeed = 5.15f;
 
     }
 

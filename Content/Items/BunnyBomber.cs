@@ -26,7 +26,7 @@ public class BunnyBomber : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 192; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -77,7 +77,7 @@ public class BunnyBomber : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "converts rockets into explosive bunnies");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 7 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -92,11 +92,15 @@ public class BunnyBomber : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.RocketLauncher);
         recipe.AddIngredient(ItemID.ExplosiveBunny, 5);
+        recipe.AddIngredient(ItemID.RocketLauncher);
+       
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
-
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("BombCannon", out ModItem BombCannon))
+        {
+            recipe.AddIngredient(BombCannon.Type);
+        }
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica) && ConsMerica.TryFind("SuspiciousLookingEgg", out ModItem SuspiciousLookingEgg))
         {
             recipe.AddIngredient(SuspiciousLookingEgg.Type);

@@ -27,7 +27,7 @@ public class UraniumSword : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = 132000;
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<UraniumSwing>();
+        Item.shoot = ProjectileType<UraniumSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

@@ -32,12 +32,12 @@ public class PlutoniumBow : ModItem
         // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 14.8f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
-        Item.shoot = ModContent.ProjectileType<PlutoArrow>();
+        Item.shoot = ProjectileType<PlutoArrow>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<PlutoArrow>();
+        type = ProjectileType<PlutoArrow>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

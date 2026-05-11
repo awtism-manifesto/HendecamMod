@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -22,7 +21,7 @@ public class MythrilVape : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 6;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 41;
         Item.knockBack = 0.33f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -32,7 +31,7 @@ public class MythrilVape : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/VapeSound") { Volume = 2.67f, PitchVariance = 0.2f, MaxInstances = 3 };
 
-        Item.shoot = ModContent.ProjectileType<MythrilVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<MythrilVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.33f; // Speed of the projectiles the sword will shoot
 
        
@@ -72,7 +71,7 @@ public class MythrilVape : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

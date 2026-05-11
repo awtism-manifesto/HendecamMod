@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -46,7 +45,7 @@ public class TheAutismManifesto : ModItem
         var line = new TooltipLine(Mod, "Face", "+100 mana and Lobotometer, +10% damage reduction");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your max Lobotometer ")
+        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your Max Braincells ")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -72,7 +71,7 @@ public class TheAutismManifesto : ModItem
         player.endurance = 1f - 0.9f * (1f - player.endurance);
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 100f;
+        loboPlayer.TemporaryBonus += 100f;
 
         float damageBonus = loboPlayer.BaseDecayRate * loboPlayer.DecayRateMultiplier / 2000;
         float lobotometerPercent = loboPlayer.Current / loboPlayer.Max;

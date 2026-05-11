@@ -27,7 +27,7 @@ public class BigBertha : ModItem
         Item.rare = ItemRarityID.Red;
         Item.value = 5000000; // Sell price is 5 times less than the buy price.
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<BigBerthaProj>();
+        Item.shoot = ProjectileType<BigBerthaProj>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;

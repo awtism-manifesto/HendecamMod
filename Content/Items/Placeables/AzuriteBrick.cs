@@ -11,7 +11,7 @@ public class AzuriteBrick : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<AzuriteBrickPlaced>());
+        Item.DefaultToPlaceableTile(TileType<AzuriteBrickPlaced>());
         Item.width = 12;
         Item.height = 12;
     }

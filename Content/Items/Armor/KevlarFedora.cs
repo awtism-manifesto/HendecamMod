@@ -39,7 +39,7 @@ public class KevlarFedora : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and +75 max Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "7% increased stupid attack speed and +75 Max Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "3% reduced movement speed")
@@ -54,7 +54,7 @@ public class KevlarFedora : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<KevlarBodysuit>() && legs.type == ModContent.ItemType<KevlarPants>();
+        return body.type == ItemType<KevlarBodysuit>() && legs.type == ItemType<KevlarPants>();
     }
 
     public override void UpdateEquip(Player player)
@@ -62,7 +62,7 @@ public class KevlarFedora : ModItem
       
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 75f;
+        loboPlayer.TemporaryBonus += 75f;
         player.moveSpeed += MoveSpeedBonus / 100f;
         player.runAcceleration *= 0.97f;
     }

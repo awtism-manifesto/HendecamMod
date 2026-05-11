@@ -11,7 +11,7 @@ public class GreenSkip : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.GreenSkip>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.GreenSkip>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

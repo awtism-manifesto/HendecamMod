@@ -15,7 +15,7 @@ public class AutismDamage : DamageClass
             return StatInheritanceData.Full;
         if (damageClass == Magic)
             return StatInheritanceData.Full;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return StatInheritanceData.Full;
         if (damageClass == Melee)
             return StatInheritanceData.None;
@@ -40,7 +40,7 @@ public class AutismDamage : DamageClass
         // This method allows you to make your damage class benefit from and be able to activate other classes' effects (e.g. Spectre bolts, Magma Stone) based on what returns true.
         // Note that unlike our stat inheritance methods up above, you do not need to account for universal bonuses in this method.
         // For this example, we'll make our class able to activate melee- and magic-specifically effects.
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
         if (damageClass == Magic)
             return true;
@@ -54,7 +54,7 @@ public class AutismDamage : DamageClass
             return true;
         if (damageClass == Magic)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;

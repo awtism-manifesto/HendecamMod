@@ -46,7 +46,7 @@ public class RadShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning>(), 160);
+        target.AddBuff(BuffType<RadPoisoning>(), 160);
         Projectile.damage = (int)(Projectile.damage * 0.6f);
     }
 
@@ -64,7 +64,7 @@ public class RadShot : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, ModContent.DustType<UraniumDust>(), 0f, 0f, 100, default, 0.2f);
+                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 8, Projectile.height - 8, DustType<UraniumDust>(), 0f, 0f, 100, default, 0.2f);
                 fireDust.fadeIn = 0.1f + Main.rand.Next(5) * 0.1f;
                 fireDust.velocity *= 0.08f;
             }
@@ -78,13 +78,13 @@ public class RadShot : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<RadShotMini>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<RadShotMini>(), (int)(Projectile.damage * 0.455f), Projectile.knockBack, Projectile.owner);
         }
 
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position); // Plays the basic sound most projectiles make when hitting blocks.
         for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, ModContent.DustType<UraniumDust>());
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>());
             dust.noGravity = true;
             dust.velocity *= 4.5f;
             dust.scale *= 1.33f;

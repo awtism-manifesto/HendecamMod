@@ -1,8 +1,4 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
-using HendecamMod.Content.Projectiles.Items.QuadswordProjectiles;
+﻿using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Melee;
@@ -31,7 +27,7 @@ public class SpoarGlaive : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.value = 460000;
 
-        Item.shoot = ModContent.ProjectileType<SpoarGlaiveProj>();
+        Item.shoot = ProjectileType<SpoarGlaiveProj>();
         Item.shootSpeed = 14.33f;
     }
    

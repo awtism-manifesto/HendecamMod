@@ -17,7 +17,7 @@ public class Bullshit1 : ModItem
         Item.useAnimation = 15;
         Item.autoReuse = true;
         Item.scale = 1.1f;
-        Item.DamageType = ModContent.GetInstance<OmniDamage>();
+        Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 35;
         Item.knockBack = 4.5f;
         Item.mana = 3;
@@ -26,7 +26,7 @@ public class Bullshit1 : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item8;
 
-        Item.shoot = ModContent.ProjectileType<PearlProj>();
+        Item.shoot = ProjectileType<PearlProj>();
         Item.shootSpeed = 9.25f;
     }
     public float LobotometerCost = 2f;
@@ -43,7 +43,7 @@ public class Bullshit1 : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Shoots homing pink pearls with 9 summon tag damage");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

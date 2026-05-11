@@ -27,7 +27,7 @@ public class LimestonePlaced : ModTile
         Main.tileMerge[TileID.SnowBlock][Type] = true;
         Main.tileBlockLight[Type] = true;
 
-        DustType = ModContent.DustType<LimestoneDust>();
+        DustType = DustType<LimestoneDust>();
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(204, 190, 163));
@@ -69,7 +69,7 @@ public class LimestonePlaced : ModTile
                     int i = WorldGen.genRand.Next(100, Main.maxTilesX - 100);
                     int j = WorldGen.genRand.Next(highestY, Main.UnderworldLayer);
 
-                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)ModContent.TileType<TransOrePlaced>());
+                    WorldGen.OreRunner(i, j, WorldGen.genRand.Next(5, 9), WorldGen.genRand.Next(5, 9), (ushort)TileType<TransOrePlaced>());
                 }
             });
         }
@@ -103,7 +103,7 @@ public class LimestonePlaced : ModTile
                 Tile tile = Framing.GetTileSafely(x, y);
                 if (tile.HasTile && tile.TileType == TileID.Stone)
                 {
-                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(9, 18), WorldGen.genRand.Next(6, 18), ModContent.TileType<LimestonePlaced>());
+                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(9, 18), WorldGen.genRand.Next(6, 18), TileType<LimestonePlaced>());
                 }
             }
         }

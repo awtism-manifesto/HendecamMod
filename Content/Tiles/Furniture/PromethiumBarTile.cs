@@ -18,7 +18,7 @@ public class PromethiumBarTile : ModTile
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
         HitSound = SoundID.Dig;
-        DustType = ModContent.DustType<MorbiumDust>();
+        DustType = DustType<MorbiumDust>();
 
         AddMapEntry(new Color(85, 145, 166), Language.GetText("Promethium Bar"));
     }

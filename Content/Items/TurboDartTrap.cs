@@ -23,7 +23,7 @@ public class TurboDartTrap : ModItem
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 41000;
         Item.maxStack = 9999;
-        Item.DefaultToPlaceableTile(ModContent.TileType<TurboDartTrapTile>());
+        Item.DefaultToPlaceableTile(TileType<TurboDartTrapTile>());
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -47,12 +47,12 @@ public class MorbiumWarrior : ModNPC
         AIType = NPCID.WalkingAntlion;
         AnimationType = NPCID.PossessedArmor; 
         Banner = Type;
-        BannerItem = ModContent.ItemType<MorbiumWarriorBanner>();
+        BannerItem = ItemType<MorbiumWarriorBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MorbiumOre>(), 1, 11, 33));
+        npcLoot.Add(ItemDropRule.Common(ItemType<MorbiumOre>(), 1, 11, 33));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

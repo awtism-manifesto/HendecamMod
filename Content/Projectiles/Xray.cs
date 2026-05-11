@@ -55,7 +55,7 @@ public class Xray : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        target.AddBuff(ModContent.BuffType<RadPoisoning2>(), 150);
+        target.AddBuff(BuffType<RadPoisoning2>(), 150);
         target.immune[Projectile.owner] = 5;
     }
 }

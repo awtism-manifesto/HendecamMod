@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items.Weapons.VapeItems;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,7 +7,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Stupid;
 
 public class Autovaxxer : ModItem
 {
@@ -23,7 +22,7 @@ public class Autovaxxer : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.8f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
-        Item.value = 6050000;
+        Item.value = 6330000;
         // Use Properties
         // Use Properties
         Item.useTime = 7; // The item's use time in ticks (60 ticks == 1 second.)
@@ -33,14 +32,14 @@ public class Autovaxxer : ModItem
         // The sound that this item plays when used.
 
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<StupidDamage>(); // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<StupidDamage>(); // Sets the damage type to ranged.
         Item.damage = 93; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
        
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ModContent.ProjectileType<VaxNeedle>();
+        Item.shoot = ProjectileType<VaxNeedle>();
 
         Item.shootSpeed = 17.25f; // The speed of the projectile (measured in pixels per frame.)
     }
@@ -69,7 +68,7 @@ public class Autovaxxer : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<VaxNeedle>();
+        type = ProjectileType<VaxNeedle>();
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -103,7 +102,7 @@ public class Autovaxxer : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 5 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -114,11 +113,11 @@ public class Autovaxxer : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<MartianDrugs>();
         recipe.AddIngredient<FissionDrive>();
         recipe.AddIngredient<CyberneticGunParts>();
         recipe.AddIngredient<FragmentFlatEarth>(12);
-        recipe.AddIngredient(ItemID.VialofVenom, 20);
-        recipe.AddIngredient(ItemID.Nanites, 20);
+        recipe.AddIngredient(ItemID.Nanites, 100);
 
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();

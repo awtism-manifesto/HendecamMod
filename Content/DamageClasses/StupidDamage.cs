@@ -36,7 +36,7 @@ public class StupidDamage : DamageClass
     {
         if (damageClass == Generic)
             return true;
-        if (damageClass == ModContent.GetInstance<StupidDamage>())
+        if (damageClass == GetInstance<StupidDamage>())
             return true;
 
         return false;

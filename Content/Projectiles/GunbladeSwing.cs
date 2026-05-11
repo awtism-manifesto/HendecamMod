@@ -25,7 +25,7 @@ public class GunbladeSwing : ModProjectile
         Projectile.width = 16;
         Projectile.height = 16;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<MeleeRangedDamage>();
+        Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.penetrate = 5; // The projectile can hit 3 enemies.
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -215,54 +215,54 @@ public class GunbladeSwing : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(15));
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(75));
             Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(135));
             Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(195));
             Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(255));
             Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(315));
             Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         }
         else
         {
             Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(45));
             Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(105));
             Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(165));
             Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(225));
             Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity5 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(285));
             Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
             Vector2 velocity6 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(335));
             Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-                ModContent.ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<GunbladeCloud>(), (int)(Projectile.damage * 0.67f), Projectile.knockBack, Projectile.owner);
         }
     }
 

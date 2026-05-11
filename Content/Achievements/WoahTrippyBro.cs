@@ -18,7 +18,7 @@ public class WoahTrippyBro : ModAchievement
         // If you want to change the achievement's category, you can do this:
 
         // Unlike MinionBossKilled, which uses AddNPCKilledCondition, this ModAchievement uses AddIntCondition to track the 5 kills. This is necessary because AddNPCKilledCondition only supports tracking a single kill.
-        Condition = AddTileDestroyedCondition([ModContent.TileType<LycopiteOreTile>()]);
+        Condition = AddTileDestroyedCondition([TileType<LycopiteOreTile>()]);
     }
 
     public override Position GetDefaultPosition() => new Before("STILL_HUNGRY");

@@ -1,11 +1,7 @@
-﻿using HendecamMod.Common.Systems;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
-using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Localization;
-using static HendecamMod.Content.Items.Armor.PurifiedSaltChestplate;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -68,7 +64,7 @@ public class LycopiteFedora : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<LycopiteChestplate>() && legs.type == ModContent.ItemType<LycopiteLeggings>();
+        return body.type == ItemType<LycopiteChestplate>() && legs.type == ItemType<LycopiteLeggings>();
     }
 
     public override void UpdateEquip(Player player)
@@ -147,7 +143,7 @@ public class SporeGrow : ModPlayer
         DamageClass.Ranged,
         DamageClass.Summon,
         DamageClass.Throwing,
-        ModContent.GetInstance<StupidDamage>()
+        GetInstance<StupidDamage>()
         };
         foreach (var damageClass in specializedClasses)
         {
@@ -171,7 +167,7 @@ public class SporeGrow : ModPlayer
                 Player.GetSource_FromThis(),
                Player.Center - new Vector2(Main.rand.Next(-120, 120), Main.rand.Next(-95, 95)),
                 Vector2.Zero,
-                ModContent.ProjectileType<BoomShroom>(),
+                ProjectileType<BoomShroom>(),
                 calculatedDamage,
                 8f,
                 Player.whoAmI

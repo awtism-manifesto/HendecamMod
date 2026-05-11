@@ -23,7 +23,7 @@ public class AzuriteSaber : ModItem
         Item.rare = ItemRarityID.Orange;
         Item.value = 215000;
         Item.DamageType = DamageClass.Melee;
-        Item.shoot = ModContent.ProjectileType<AzuriteSwing>();
+        Item.shoot = ProjectileType<AzuriteSwing>();
         Item.noMelee = true; // This is set the sword itself doesn't deal damage (only the projectile does).
         Item.shootsEveryUse = true; // This makes sure Player.ItemAnimationJustStarted is set when swinging.
         Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class AzuriteSaber : ModItem
         float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
         Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
-        type = ModContent.ProjectileType<AzuriteWave>(); // Create a projectile.
+        type = ProjectileType<AzuriteWave>(); // Create a projectile.
         Projectile.NewProjectileDirect(source, position, velocity * 1.5f, type, (int)(damage * 0.8f), knockback, player.whoAmI);
 
         return true;

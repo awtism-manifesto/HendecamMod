@@ -32,10 +32,10 @@ public class AlpineTreasureBag : ModItem
     public override void ModifyItemLoot(ItemLoot itemLoot)
     {
         itemLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 7, 15));
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ApexPlasmaCannon>(), 3));
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RazorRotors>(), 3));
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AlpinePlushieGlitterbomb>(), 3));
-        itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<fivenato>(), 1, 100, 1000));
-        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<CandyHeart>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<ApexPlasmaCannon>(), 3));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<RazorRotors>(), 3));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<AlpinePlushieGlitterbomb>(), 3));
+        itemLoot.Add(ItemDropRule.Common(ItemType<fivenato>(), 1, 100, 1000));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<CandyHeart>()));
     }
 }

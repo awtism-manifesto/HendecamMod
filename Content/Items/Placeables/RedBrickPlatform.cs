@@ -11,7 +11,7 @@ public class RedBrickPlatform : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<RedBrickPlatformPlaced>());
+        Item.DefaultToPlaceableTile(TileType<RedBrickPlatformPlaced>());
         Item.width = 8;
         Item.height = 10;
     }

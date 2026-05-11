@@ -26,7 +26,7 @@ public class DvdRed : ModProjectile
         Projectile.height = 28;
         Projectile.friendly = true;
         Projectile.penetrate = 6969; // Infinite penetration so that the blast can hit all enemies within its radius.
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.light = 0.25f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.extraUpdates = 0;
@@ -108,7 +108,7 @@ public class DvdRed : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ModContent.ProjectileType<DvdGreen>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<DvdGreen>(), (int)(Projectile.damage * 1.033f), Projectile.knockBack, Projectile.owner);
 
         // Spawn a bunch of fire dusts.
         for (int j = 0; j < 10; j++)

@@ -33,7 +33,7 @@ public class Tomato : ModProjectile
         Projectile.tileCollide = true;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         // After CloneDefaults has been called, we can now modify the stats to our wishes, or keep them as they are.
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.

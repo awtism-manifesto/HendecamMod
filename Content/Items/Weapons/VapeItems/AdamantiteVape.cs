@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -23,7 +22,7 @@ public class AdamantiteVape : ModItem
         Item.useAnimation = 24;
         Item.autoReuse = true;
         Item.reuseDelay = 8;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 46;
         Item.knockBack = 0.33f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -38,7 +37,7 @@ public class AdamantiteVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<AdamantiteVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<AdamantiteVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 15.55f; // Speed of the projectiles the sword will shoot
 
        
@@ -78,7 +77,7 @@ public class AdamantiteVape : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

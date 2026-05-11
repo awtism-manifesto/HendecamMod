@@ -22,7 +22,7 @@ public class ThumbtackDart : ModItem
         Item.knockBack = 1.5f;
         Item.value = 9;
         Item.rare = ItemRarityID.Blue;
-        Item.shoot = ModContent.ProjectileType<ThumbtackProj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<ThumbtackProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 3.7f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

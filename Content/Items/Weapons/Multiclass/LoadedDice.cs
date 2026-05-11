@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
@@ -27,13 +26,13 @@ public class LoadedDice : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item1;
         // Weapon Properties
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
-        Item.damage = 64; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.DamageType = GetInstance<RangedStupidDamage>();
+        Item.damage = 60; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 2;
        
-        Item.shoot = ModContent.ProjectileType<LoadedDieProj>();
+        Item.shoot = ProjectileType<LoadedDieProj>();
 
 
         // Gun Properties
@@ -55,7 +54,7 @@ public class LoadedDice : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-       type = ModContent.ProjectileType<LoadedDieProj>();
+       type = ProjectileType<LoadedDieProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -64,7 +63,7 @@ public class LoadedDice : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts bullets into throwable dice which explode into the same type of bullet used to throw them");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Costs between 1 and 6 lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses between 1 and 6 braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

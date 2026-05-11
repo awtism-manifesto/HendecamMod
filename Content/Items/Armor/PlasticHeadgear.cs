@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -32,7 +31,7 @@ public class PlasticHeadgear : ModItem
         var line = new TooltipLine(Mod, "Face", "6% increased stupid crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+30 max Lobotometer")
+        line = new TooltipLine(Mod, "Face", "+30 Max Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -44,7 +43,7 @@ public class PlasticHeadgear : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ModContent.ItemType<PlasticChestplate>() && legs.type == ModContent.ItemType<PlasticPants>();
+        return body.type == ItemType<PlasticChestplate>() && legs.type == ItemType<PlasticPants>();
     }
 
     public override void UpdateEquip(Player player)
@@ -55,7 +54,7 @@ public class PlasticHeadgear : ModItem
         player.GetCritChance<StupidDamage>() += 6;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
-        loboPlayer.MaxBonus += 30f;
+        loboPlayer.TemporaryBonus += 30f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

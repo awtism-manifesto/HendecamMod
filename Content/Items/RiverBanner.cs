@@ -10,11 +10,11 @@ public class RiverBanner : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<BannerTile>(), (int)BannerTile.StyleID.River);
+        Item.DefaultToPlaceableTile(TileType<BannerTile>(), (int)BannerTile.StyleID.River);
         Item.width = 10;
         Item.height = 24;
         Item.SetShopValues(ItemRarityColor.Blue1, Item.buyPrice(silver: 999999));
-        Item.rare = ModContent.RarityType<Seizure2>();
+        Item.rare = RarityType<Seizure2>();
     }
 
     public override void AddRecipes()

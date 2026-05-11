@@ -35,7 +35,7 @@ public class MintSlime : ModNPC
         AIType = NPCID.BlueSlime; 
         AnimationType = NPCID.GreenSlime; 
         Banner = Type;
-        BannerItem = ModContent.ItemType<MintSlimeBanner>();
+        BannerItem = ItemType<MintSlimeBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -45,7 +45,7 @@ public class MintSlime : ModNPC
         {
             npcLoot.Add(zombieDropRule);
         }
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MintalOre>(), 1, 9, 23));
+        npcLoot.Add(ItemDropRule.Common(ItemType<MintalOre>(), 1, 9, 23));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

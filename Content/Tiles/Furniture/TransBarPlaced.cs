@@ -17,7 +17,7 @@ public class TransBarPlaced : ModTile
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
-        DustType = ModContent.DustType<TransDust>();
+        DustType = DustType<TransDust>();
 
         AddMapEntry(new Color(120, 178, 224), Language.GetText("Trans Bar")); // localized text for "Metal Bar"
     }

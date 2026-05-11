@@ -39,12 +39,12 @@ public class LycoSporeRanged : ModProjectile
 
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
+        if (target.HasBuff(BuffType<RedneckTag>()))
         {
             modifiers.SourceDamage *= 1.5f;
         }
 
-        if (target.HasBuff(ModContent.BuffType<VpTag>()))
+        if (target.HasBuff(BuffType<VpTag>()))
         {
             modifiers.SourceDamage *= 1.66f;
         }
@@ -52,7 +52,7 @@ public class LycoSporeRanged : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (target.HasBuff(ModContent.BuffType<RedneckTag>()))
+        if (target.HasBuff(BuffType<RedneckTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -61,7 +61,7 @@ public class LycoSporeRanged : ModProjectile
             SoundEngine.PlaySound(SoundID.Item37, target.position);
         }
 
-        if (target.HasBuff(ModContent.BuffType<VpTag>()))
+        if (target.HasBuff(BuffType<VpTag>()))
         {
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
@@ -86,7 +86,7 @@ public class LycoSporeRanged : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.7f);
+                Dust chudDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<LycopiteDust>(), 0f, 0f, 100, default, 0.7f);
                 chudDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
                 chudDust.velocity *= 0.1f;
             }

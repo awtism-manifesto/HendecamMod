@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-
-namespace HendecamMod.Content.Projectiles;
+﻿namespace HendecamMod.Content.Projectiles;
 
 // This example is similar to the Wooden Arrow projectile
 public class AvalancheBoulder : ModProjectile

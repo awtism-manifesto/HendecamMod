@@ -24,7 +24,7 @@ public class Sausage : ModProjectile
         Projectile.penetrate += -3;
 
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 450;
     }
 

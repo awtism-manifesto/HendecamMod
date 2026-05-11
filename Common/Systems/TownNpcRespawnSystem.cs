@@ -21,7 +21,7 @@ public class AlpineNPCRespawnSystem : ModSystem
     public override void LoadWorldData(TagCompound tag)
     {
         unlockedAlpineSpawn = tag.GetBool(nameof(unlockedAlpineSpawn));
-        unlockedAlpineSpawn |= NPC.AnyNPCs(ModContent.NPCType<Alpine>());
+        unlockedAlpineSpawn |= NPC.AnyNPCs(NPCType<Alpine>());
     }
 
     public override void NetSend(BinaryWriter writer)

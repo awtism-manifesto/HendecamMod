@@ -37,7 +37,7 @@ public class BeetleBombProj : ModProjectile
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.SpikyBall;
 
-        Projectile.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Projectile.DamageType = GetInstance<RangedStupidDamage>();
         Projectile.timeLeft = 180;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
@@ -123,7 +123,7 @@ public class BeetleBombProj : ModProjectile
             Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(360));
             Vector2 Peanits = Projectile.Center - new Vector2(0, 0);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-                ModContent.ProjectileType<BeetleFriend>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
+                ProjectileType<BeetleFriend>(), (int)(Projectile.damage * 0.85f), Projectile.knockBack, Projectile.owner);
         }
     }
 }

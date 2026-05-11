@@ -8,12 +8,12 @@ public class LycopiteBrickTile : ModTile
     {
         Main.tileSolid[Type] = true;
         Main.tileMergeDirt[Type] = true;
-        Main.tileMerge[ModContent.TileType<AstatineBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<PlutoniumBrickTile>()][Type] = true;
-        Main.tileMerge[ModContent.TileType<UraniumBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<AstatineBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<PlutoniumBrickTile>()][Type] = true;
+        Main.tileMerge[TileType<UraniumBrickTile>()][Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileShine[Type] = 500;
-        DustType = (ModContent.DustType<LycopiteDust>());
+        DustType = (DustType<LycopiteDust>());
         HitSound = SoundID.Tink;
         AddMapEntry(new Color(255, 77, 5));
     }

@@ -24,7 +24,7 @@ public class AzuriteArrow : ModItem
         Item.consumable = true;
         Item.knockBack = 0.5f;
         Item.value = 77;
-        Item.shoot = ModContent.ProjectileType<AzuriteArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<AzuriteArrowProjectile>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 0.67f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
         Item.rare = ItemRarityID.Orange;

@@ -11,7 +11,7 @@ public class RedTwo : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedTwo>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedTwo>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

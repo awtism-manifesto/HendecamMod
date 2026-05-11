@@ -19,18 +19,18 @@ public class ArcaneDartgun : ModItem
         Item.autoReuse = true;
         Item.mana = 7;
         Item.UseSound = SoundID.Item99;
-        Item.DamageType = ModContent.GetInstance<RangedMagicDamage>();
+        Item.DamageType = GetInstance<RangedMagicDamage>();
         Item.damage = 24;
         Item.knockBack = 3.5f;
         Item.noMelee = true;
         Item.shootSpeed = 14.25f;
         Item.useAmmo = AmmoID.Dart;
-        Item.shoot = ModContent.ProjectileType<ArcaneDart>();
+        Item.shoot = ProjectileType<ArcaneDart>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ModContent.ProjectileType<ArcaneDart>();
+        type = ProjectileType<ArcaneDart>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

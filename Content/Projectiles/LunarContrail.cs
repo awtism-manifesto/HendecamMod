@@ -60,7 +60,7 @@ public class LunarContrail : ModProjectile
             chudDust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             chudDust.velocity *= 0.1f;
             chudDust.noGravity = true;
-            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, ModContent.DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.85f);
+            Dust chud2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 7, Projectile.height - 7, DustType<MoonburnDust>(), 0f, 0f, 100, default, 0.85f);
             chud2Dust.fadeIn = 0.1f + Main.rand.Next(3) * 0.1f;
             chud2Dust.velocity *= 0.1f;
             chud2Dust.noGravity = true;

@@ -19,14 +19,14 @@ public class PlasticSpork : ModItem
         Item.useAnimation = 18;
         Item.autoReuse = true;
         Item.scale = 1.1f;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 9;
         Item.knockBack = 0.5f;
         Item.value = Item.buyPrice(silver: 3);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<MushyPeas>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<MushyPeas>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 7.5f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -70,7 +70,7 @@ public class PlasticSpork : ModItem
         var line = new TooltipLine(Mod, "Face", "Flings vile, poisonous mushy peas at your enemies");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 3 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

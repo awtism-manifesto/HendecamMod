@@ -25,7 +25,7 @@ public class NapalmBlade : ModItem
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item1;
 
-        Item.shoot = ModContent.ProjectileType<Napalm>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<Napalm>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 21.25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
@@ -38,7 +38,7 @@ public class NapalmBlade : ModItem
     {
        
 
-        if (type == ModContent.ProjectileType<Napalm>())
+        if (type == ProjectileType<Napalm>())
         {
             damage = (int)(damage * 0.8);
         }

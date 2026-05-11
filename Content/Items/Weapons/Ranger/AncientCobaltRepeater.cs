@@ -18,14 +18,14 @@ public class AncientCobaltRepeater : ModItem
         // Use Properties
         Item.useTime = 9; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 18; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-        Item.reuseDelay = 15;
+        Item.reuseDelay = 16;
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item5;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 19; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 17; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 

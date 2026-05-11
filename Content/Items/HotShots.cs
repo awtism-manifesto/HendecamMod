@@ -31,7 +31,7 @@ public class HotShots : ModItem
         Item.value = Item.buyPrice(gold: 55);
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
-        Item.shoot = ModContent.ProjectileType<HotShotsProj>();
+        Item.shoot = ProjectileType<HotShotsProj>();
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

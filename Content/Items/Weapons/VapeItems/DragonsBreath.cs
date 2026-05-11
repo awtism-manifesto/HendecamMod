@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -22,7 +21,7 @@ public class DragonsBreath : ModItem
         Item.useAnimation = 24;
         Item.autoReuse = true;
        
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 19;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +36,7 @@ public class DragonsBreath : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<DragonVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<DragonVapeSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 14.75f; // Speed of the projectiles the sword will shoot
 
        
@@ -94,7 +93,7 @@ public class DragonsBreath : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Lobotometer");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Braincells");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Exhales a constant stream of fiery vape smoke")

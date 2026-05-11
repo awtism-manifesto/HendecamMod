@@ -40,7 +40,7 @@ public class SaltMonster : ModNPC
         AIType = NPCID.BloodZombie; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
         AnimationType = NPCID.BloodZombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ModContent.ItemType<SaltMonsterBanner>();
+        BannerItem = ItemType<SaltMonsterBanner>();
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -59,12 +59,12 @@ public class SaltMonster : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RockSalt>(), 1, 11, 24));
+        npcLoot.Add(ItemDropRule.Common(ItemType<RockSalt>(), 1, 11, 24));
 
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Naclslash>(), 11));
+        npcLoot.Add(ItemDropRule.Common(ItemType<Naclslash>(), 11));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemID.LightShard, chanceDenominator: 149, chanceNumerator: 3));
 
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SaltPendant>(), 7));
+        npcLoot.Add(ItemDropRule.Common(ItemType<SaltPendant>(), 7));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

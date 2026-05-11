@@ -8,6 +8,6 @@ public class OasisTileCount : ModSystem
 
     public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
     {
-        oasisBlockCount = tileCounts[ModContent.TileType<OasisSandPlaced>()];
+        oasisBlockCount = tileCounts[TileType<OasisSandPlaced>()];
     }
 }

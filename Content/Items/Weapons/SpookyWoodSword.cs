@@ -1,4 +1,3 @@
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -26,7 +25,7 @@ public class SpookyWoodSword : ModItem
         Item.rare = ItemRarityID.Yellow;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
-        Item.shoot = ModContent.ProjectileType<SpookySpawn>();
+        Item.shoot = ProjectileType<SpookySpawn>();
         Item.shootSpeed = 8.25f;
        
     }

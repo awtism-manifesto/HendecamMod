@@ -11,7 +11,7 @@ public class RedZero : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Uno.RedZero>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.RedZero>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

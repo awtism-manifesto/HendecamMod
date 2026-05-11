@@ -64,12 +64,12 @@ public class FriendlyGranite : ModProjectile
     {
         if (owner.dead || !owner.active)
         {
-            owner.ClearBuff(ModContent.BuffType<GraniteFriend>());
+            owner.ClearBuff(BuffType<GraniteFriend>());
 
             return false;
         }
 
-        if (owner.HasBuff(ModContent.BuffType<GraniteFriend>()))
+        if (owner.HasBuff(BuffType<GraniteFriend>()))
         {
             Projectile.timeLeft = 3;
         }

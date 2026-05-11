@@ -1,10 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -27,7 +24,7 @@ public class LobotomySpike : ModItem
         var line = new TooltipLine(Mod, "Face", "");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Lobotometer can no longer decay until accessory is removed")
+        line = new TooltipLine(Mod, "Face", "Once you hit max Lobotometer, it can no longer decay until accessory is removed")
         {
             OverrideColor = new Color(255, 255, 255)
         };

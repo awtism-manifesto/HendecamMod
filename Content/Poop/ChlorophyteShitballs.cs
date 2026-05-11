@@ -13,7 +13,7 @@ public class ChlorophyteShitballs : ModItem
     public override void SetDefaults()
     {
         Item.damage = 11; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = ModContent.GetInstance<RangedStupidDamage>();
+        Item.DamageType = GetInstance<RangedStupidDamage>();
 
         Item.width = 13;
         Item.height = 13;
@@ -22,7 +22,7 @@ public class ChlorophyteShitballs : ModItem
         Item.knockBack = 1f;
         Item.value = 10;
         Item.rare = ItemRarityID.Lime;
-        Item.shoot = ModContent.ProjectileType<ChloroShit>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<ChloroShit>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 15.95f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

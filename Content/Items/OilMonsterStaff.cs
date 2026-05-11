@@ -32,9 +32,9 @@ public class OilMonsterStaff : ModItem
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
-        Item.buffType = ModContent.BuffType<OilMonsterBuff>();
+        Item.buffType = BuffType<OilMonsterBuff>();
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
-        Item.shoot = ModContent.ProjectileType<BabyOilMonster>(); // This item creates the minion projectile
+        Item.shoot = ProjectileType<BabyOilMonster>(); // This item creates the minion projectile
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)

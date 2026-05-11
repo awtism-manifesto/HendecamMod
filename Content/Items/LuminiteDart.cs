@@ -22,7 +22,7 @@ public class LuminiteDart : ModItem
         Item.knockBack = 3.5f;
         Item.value = 1100;
         Item.rare = ItemRarityID.Cyan;
-        Item.shoot = ModContent.ProjectileType<LunarDart>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<LunarDart>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 8.25f; // The speed of the projectile.
         Item.ammo = AmmoID.Dart; // The ammo class this ammo belongs to.
     }

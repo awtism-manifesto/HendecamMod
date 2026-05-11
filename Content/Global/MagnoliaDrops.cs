@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Magic;
 using Terraria.GameContent.ItemDropRules;
@@ -15,152 +16,168 @@ public class MagnoliaDrops : GlobalNPC
     {
         if (npc.type == NPCID.Demon)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.FireImp)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.Hellbat)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.LavaSlime)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.Lavabat)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.BoneSerpentHead)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.RedDevil)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
+
         }
 
         if (npc.type == NPCID.VoodooDemon)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FireDiamond>(), chanceDenominator: 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), chanceDenominator: 4, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.Harpy)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 3, 1, 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LunarGem>(), chanceDenominator: 3, 1, 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.WyvernBody)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 2, 5, 12));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LunarGem>(), chanceDenominator: 2, 5, 12));
         }
 
         if (npc.type == NPCID.Zombie)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
         }
 
         if (npc.type == NPCID.DemonEye)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LunarGem>(), chanceDenominator: 10, 3, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.PossessedArmor)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteelBar>(), chanceDenominator: 5, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SteelBar>(), chanceDenominator: 5, 1, 3));
+
         }
 
         if (npc.type == NPCID.Corruptor)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.FloatyGross)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.GiantBat)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.GiantFlyingFox)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.Gastropod)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.IlluminantBat)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.IceElemental)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.Lavabat)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.MossHornet)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.Pixie)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.RedDevil)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.Wraith)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.WanderingEye)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfHeight>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.DarkCaster)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.WaterBolt, 50));
+            npcLoot.Add(ItemDropRule.Common(ItemID.WaterBolt, 30));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.BlackSlime)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CoalLump>(), 1, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CoalLump>(), 1, 2, 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CrudeOil>(), 5, 5, 15));
         }
 
         if (npc.type == NPCID.EyeofCthulhu)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 1, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 4, 1, 1));
         }
 
         if (npc.type == NPCID.SandSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.SandBlock, 1, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.AngryNimbus)
@@ -176,6 +193,7 @@ public class MagnoliaDrops : GlobalNPC
         if (npc.type == NPCID.IceSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.SnowBlock, 1, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.MeteorHead)
@@ -186,6 +204,7 @@ public class MagnoliaDrops : GlobalNPC
         if (npc.type == NPCID.SpikedIceSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.IceBlock, 1, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.CrimsonAxe)
@@ -225,27 +244,28 @@ public class MagnoliaDrops : GlobalNPC
 
         if (npc.type == NPCID.TwiggyZombie)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WoodenStick>(), 4, 2, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
         }
 
         if (npc.type == NPCID.ArmedZombieTwiggy)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WoodenStick>(), 4, 2, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
         }
 
         if (npc.type == NPCID.BigTwiggyZombie)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WoodenStick>(), 4, 2, 6));
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 6));
         }
 
         if (npc.type == NPCID.SmallTwiggyZombie)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WoodenStick>(), 4, 2, 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 4));
         }
 
         if (npc.type == NPCID.FlyingFish)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.SharkFin, 66));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
         if (npc.type == NPCID.Angler)
@@ -290,7 +310,7 @@ public class MagnoliaDrops : GlobalNPC
 
         if (npc.type == NPCID.RuneWizard)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RunicCodex>()));
+            npcLoot.Add(ItemDropRule.Common(ItemType<RunicCodex>()));
         }
     }
 }

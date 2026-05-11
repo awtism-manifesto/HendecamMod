@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -22,7 +21,7 @@ public class Caliburn : ModItem
         Item.useAnimation = 27;
         Item.autoReuse = true;
         Item.reuseDelay = 15;
-        Item.DamageType = ModContent.GetInstance<StupidDamage>();
+        Item.DamageType = GetInstance<StupidDamage>();
         Item.damage = 50;
         Item.knockBack = 0.5f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
@@ -37,7 +36,7 @@ public class Caliburn : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ModContent.ProjectileType<CaliburnSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<CaliburnSmoke>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 16.67f; // Speed of the projectiles the sword will shoot
 
        
@@ -81,7 +80,7 @@ public class Caliburn : ModItem
         var line = new TooltipLine(Mod, "Face", "Hitting enemies causes extra vape smoke to float upwards at them");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 4 Lobotometer")
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

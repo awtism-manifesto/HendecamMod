@@ -87,7 +87,7 @@ public class SporeSawProj : ModProjectile
         // Spawning dust
         if (Main.rand.NextBool(10))
         {
-            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, ModContent.DustType<LycopiteDust>(), 0f, 0f, 80, Color.OrangeRed);
+            Dust dust = Dust.NewDustDirect(Projectile.position + Projectile.velocity * Main.rand.Next(6, 10) * 0.15f, Projectile.width, Projectile.height, DustType<LycopiteDust>(), 0f, 0f, 80, Color.OrangeRed);
             dust.position.X -= 4f;
             dust.noGravity = true;
             dust.velocity.X *= 0.5f;

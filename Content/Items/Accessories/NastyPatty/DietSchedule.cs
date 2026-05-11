@@ -16,7 +16,7 @@ public class DietSchedule : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants 10% damage reduction, at the cost of Food Buffs");
+        var line = new TooltipLine(Mod, "Face", "Grants 20% damage reduction, at the cost of Food Buffs");
         tooltips.Add(line);
     }
 

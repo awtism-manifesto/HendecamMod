@@ -14,7 +14,7 @@ public class BlackHoleProj : ModProjectile
         Projectile.light = -100f;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<OmniDamage>();
+        Projectile.DamageType = GetInstance<OmniDamage>();
         Projectile.penetrate = 500;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 1;

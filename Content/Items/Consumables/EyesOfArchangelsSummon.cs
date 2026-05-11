@@ -43,7 +43,7 @@ public class EyesOfArchangelsSummon : ModItem
 
     public override bool CanUseItem(Player player)
         {
-        return !NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()) || !NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()) || !NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>());
+        return !NPC.AnyNPCs(NPCType<EyesOfRaphael>()) || !NPC.AnyNPCs(NPCType<EyesOfMichael>()) || !NPC.AnyNPCs(NPCType<EyesOfGabriel>());
         }
 
     public override bool? UseItem(Player player)
@@ -51,20 +51,20 @@ public class EyesOfArchangelsSummon : ModItem
         if (player.whoAmI == Main.myPlayer)
             {
             SoundEngine.PlaySound(SoundID.AbigailUpgrade, player.position);
-            int type = ModContent.NPCType<EyesOfGabriel>();
+            int type = NPCType<EyesOfGabriel>();
             if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfMichael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfMichael>()))
                     {
-                    NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<EyesOfMichael>());
+                    NPC.SpawnOnPlayer(player.whoAmI, NPCType<EyesOfMichael>());
                     }
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfGabriel>()))
-                    NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<EyesOfGabriel>());
+                if (!NPC.AnyNPCs(NPCType<EyesOfGabriel>()))
+                    NPC.SpawnOnPlayer(player.whoAmI, NPCType<EyesOfGabriel>());
                     {
                     }
-                if (!NPC.AnyNPCs(ModContent.NPCType<EyesOfRaphael>()))
+                if (!NPC.AnyNPCs(NPCType<EyesOfRaphael>()))
                     {
-                    NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<EyesOfRaphael>());
+                    NPC.SpawnOnPlayer(player.whoAmI, NPCType<EyesOfRaphael>());
                     }
                 }
             else

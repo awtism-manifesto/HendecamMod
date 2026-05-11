@@ -21,7 +21,7 @@ public class BowlingBall : ModProjectile
         Projectile.penetrate = 1;
         Projectile.arrow = true;
         Projectile.friendly = true;
-        Projectile.DamageType = ModContent.GetInstance<StupidDamage>();
+        Projectile.DamageType = GetInstance<StupidDamage>();
         Projectile.timeLeft = 240;
     }
 

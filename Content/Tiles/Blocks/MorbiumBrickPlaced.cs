@@ -10,7 +10,7 @@ public class MorbiumBrickPlaced : ModTile
         Main.tileMergeDirt[Type] = true;
         Main.tileBlockLight[Type] = true;
 
-        DustType = ModContent.DustType<MorbiumDust>();
+        DustType = DustType<MorbiumDust>();
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(41, 72, 92));

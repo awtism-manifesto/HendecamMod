@@ -18,7 +18,7 @@ public class TransBrickPlaced : ModTile
         Main.tileMerge[TileID.Pearlstone][Type] = true;
         Main.tileBlockLight[Type] = true;
 
-        DustType = ModContent.DustType<TransDust>();
+        DustType = DustType<TransDust>();
         HitSound = SoundID.Tink;
 
         AddMapEntry(new Color(255, 255, 255));

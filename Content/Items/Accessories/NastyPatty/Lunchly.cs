@@ -16,7 +16,7 @@ public class Lunchly : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50% generic damage and much higher jump speed"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 33% generic damage and much higher jump speed"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Minecarts or Accessory Buffs"));
     }
 
