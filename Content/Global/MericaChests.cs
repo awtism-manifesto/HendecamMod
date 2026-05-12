@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons.VapeItems;
 
 namespace HendecamMod.Content.Global;
 
@@ -13,12 +14,12 @@ public class MeAndMagAreFuckingLazy : ModSystem
     {
         // Place some additional items in Surface Chests:
         // These are the 3 new items we will place.
-        int[] itemsToPlaceInSurfaceChests = [ItemType<ImprovisedPistol>(), ItemType<FlippingBottle>(), ItemID.Bass];
+        int[] itemsToPlaceInSurfaceChests = [ItemType<ImprovisedPistol>(), ItemType<FlippingBottle>(), ItemType<VapeKit>()];
         // This variable will help cycle through the items so that different Surface Chests get different items
         int itemsToPlaceInSurfaceChestsChoice = 0;
         // Rather than place items in each chest, we'll place up to 6 items (2 of each). 
         int itemsPlaced = 0;
-        int maxItems = 12;
+        int maxItems = 13;
         // Loop over all the chests
         for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
         {

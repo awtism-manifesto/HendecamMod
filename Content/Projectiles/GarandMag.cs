@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Buffs;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class GarandMag : ModProjectile
 {
@@ -18,7 +20,13 @@ public class GarandMag : ModProjectile
         Projectile.localNPCHitCooldown = 15;
     }
 
-
+    public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+    {
+        if (Main.zenithWorld)
+        {
+            modifiers.SourceDamage *= 25f;
+        }
+    }
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate <= 0)
