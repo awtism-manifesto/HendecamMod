@@ -42,9 +42,7 @@ public class TheBostonTeaParty : ModItem
             int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<Hitscan>().fromHitscan = true;
             return false; // Prevent vanilla projectile spawn
-        
 
-       
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

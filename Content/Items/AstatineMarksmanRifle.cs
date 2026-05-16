@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -56,7 +58,20 @@ public class AstatineMarksmanRifle : ModItem
 
         return false;
     }
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
 
+
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SVDShoot")
+        {
+            Volume = 2.67f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
+
+
+        return true;
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
