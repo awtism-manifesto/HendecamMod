@@ -36,18 +36,20 @@ public class VapeKit : ModItem
         Recipe recipe = CreateRecipe();
       
         recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<Rubber>(10);
         recipe.AddIngredient(ItemID.Glass, 5);
         recipe.AddIngredient(ItemID.CopperBar, 4);
-        recipe.AddIngredient(ItemID.Cobweb, 25);
+        recipe.AddIngredient(ItemID.Cobweb, 15);
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
         recipe = CreateRecipe();
 
         recipe.AddIngredient<Polymer>(5);
+        recipe.AddIngredient<Rubber>(10);
         recipe.AddIngredient(ItemID.Glass, 5);
         recipe.AddIngredient(ItemID.TinBar, 4);
-        recipe.AddIngredient(ItemID.Cobweb, 25);
+        recipe.AddIngredient(ItemID.Cobweb, 15);
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();

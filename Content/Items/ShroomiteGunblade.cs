@@ -84,7 +84,12 @@ public class ShroomiteGunblade : ModItem
             return false;
         }
 
-        SoundEngine.PlaySound(SoundID.Item40, player.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RifleShot")
+        {
+            Volume = 2.67f,
+            Pitch = 0f,
+            MaxInstances = 100,
+        });
         damage = (int)(damage * Main.rand.NextFloat(0.99f, 0.995f));
 
         if (Main.rand.NextBool(3))

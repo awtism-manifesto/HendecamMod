@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Global;
+﻿using HendecamMod.Content.Global;
+using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -15,14 +16,18 @@ public class BeeSnipe : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 132000;
         // Use Properties
         Item.useTime = 59; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 59; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item88;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RifleShot")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+        };
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.

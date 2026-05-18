@@ -53,6 +53,31 @@ public class FastBees : GlobalProjectile
     }
 }
 
+public class Hitscan : GlobalProjectile
+{
+    public bool fromHitscan;
+    public bool firstFrame = true;
+    public bool secondFrame = false;
+    public override bool InstancePerEntity => true;
+
+    public override void AI(Projectile projectile)
+    {
+        if (fromHitscan && firstFrame)
+        {
+            projectile.extraUpdates += 3;
+            firstFrame = false;
+            secondFrame = true;
+        }
+        if (fromHitscan && secondFrame)
+        {
+            projectile.extraUpdates *= 5;
+         
+            secondFrame = false;
+        }
+    }
+}
+
+
 public class FastLaserSwords : GlobalProjectile
 {
     public bool fromMechGun;

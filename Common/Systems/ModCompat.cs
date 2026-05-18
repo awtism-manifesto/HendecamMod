@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Bosses;
+using HendecamMod.Content.NPCs.Bosses.PromethiumPlasmoid;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace HendecamMod.Common.Systems;
@@ -146,7 +147,7 @@ public class PromethiumPlasmoidEntry : ModSystem
         };
         var customPortrait = (SpriteBatch sb, Rectangle rect, Color color) =>
         {
-            Texture2D texture = Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/PromethiumPlasmoidEntry").Value;
+            Texture2D texture = Request<Texture2D>("HendecamMod/Content/NPCs/Bosses/PromethiumPlasmoid/PromethiumPlasmoidEntry").Value;
             Vector2 centered = new Vector2(rect.X + rect.Width / 2 - texture.Width / 2, rect.Y + rect.Height / 2 - texture.Height / 2);
             sb.Draw(texture, centered, color);
         };

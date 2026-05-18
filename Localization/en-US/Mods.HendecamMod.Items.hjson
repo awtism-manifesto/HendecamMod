@@ -5400,19 +5400,19 @@ KusariOfFlamingFundo: {
 	DisplayName: Kusari Of Flaming Fun-do
 }
 
-TheBostonTeaParty: {
-	DisplayName: The Boston Tea Party
+GauntletTechnique: {
 	Tooltip: ""
+	DisplayName: Gauntlet Technique
 }
 
 BandTechnique: {
-	DisplayName: Band Technique
 	Tooltip: ""
+	DisplayName: Band Technique
 }
 
-GauntletTechnique: {
-	DisplayName: Gauntlet Technique
+TheBostonTeaParty: {
 	Tooltip: ""
+	DisplayName: The Boston Tea Party
 }
 
 KnuckleTechnique: {
@@ -5422,5 +5422,55 @@ KnuckleTechnique: {
 
 RingTechnique: {
 	DisplayName: Ring Technique
+	Tooltip: ""
+}
+
+MantleRipper: {
+	Tooltip: ""
+	DisplayName: Mantle Ripper
+}
+
+MantiusBar: {
+	Tooltip: ""
+	DisplayName: Mantius Bar
+}
+
+MantleDestroyer: {
+	DisplayName: Mantle Destroyer
+	Tooltip: ""
+}
+
+EpilepsyWarning: {
+	DisplayName: Epilepsy Warning
+	Tooltip: ""
+}
+
+SignedEpilepsyWarning: {
+	DisplayName: Signed Epilepsy Warning
+	Tooltip: ""
+}
+
+MantleSlicer: {
+	DisplayName: Mantle Slicer
+	Tooltip: ""
+}
+
+EarthPiercer: {
+	DisplayName: Earth Piercer
+	Tooltip: ""
+}
+
+MantiusShortbow: {
+	DisplayName: Mantius Shortbow
+	Tooltip: ""
+}
+
+CoreEnforcer: {
+	DisplayName: Core Enforcer
+	Tooltip: ""
+}
+
+BasaltBerserker: {
+	DisplayName: Basalt Berserker
 	Tooltip: ""
 }

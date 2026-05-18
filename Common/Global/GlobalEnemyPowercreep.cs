@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Common.Systems;
+using HendecamMod.Content.NPCs.Bosses.PromethiumPlasmoid;
 
 
 namespace HendecamMod.Common.Global

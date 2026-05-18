@@ -92,7 +92,12 @@ public class ShroomiteBladegun : ModItem
             type = ProjectileType<BladegunBomb>();
             Projectile.NewProjectileDirect(source, position, (velocity * 0.9f), type, (int)(damage * 1.15f), knockback, player.whoAmI);
 
-            SoundEngine.PlaySound(SoundID.Item62, player.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
+            {
+                Volume = 2.67f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
 
             return false;
         }

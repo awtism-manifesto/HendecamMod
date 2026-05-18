@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
+using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -16,15 +18,16 @@ public class TruthSeekersDMR : ModItem
         Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
         Item.value = 630000;
         // Use Properties
-        Item.useTime = 12; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 12; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.reuseDelay = 21;
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item68;
+       
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 96; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 79; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 10;
@@ -34,7 +37,7 @@ public class TruthSeekersDMR : ModItem
 
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-        Item.shootSpeed = 269f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 26f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 
@@ -50,7 +53,20 @@ public class TruthSeekersDMR : ModItem
             damage = (int)(damage * 1.1f);
         }
     }
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
 
+
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SVDShoot")
+        {
+            Volume = 2.67f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
+
+
+        return true;
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item

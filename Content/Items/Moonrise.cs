@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Items;
 
@@ -22,8 +23,12 @@ public class Moonrise : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.crit = 15;
 
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item72;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RifleShot")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+        };
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 360; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.

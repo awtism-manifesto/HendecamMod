@@ -28,15 +28,15 @@ public class HeadOfCthulhu : ModNPC
     {
         if (Main.hardMode)
         {
-            NPC.damage = 94;
-            NPC.defense = 82;
-            NPC.lifeMax = 80000;
+            NPC.damage = 155;
+            NPC.defense = 45;
+            NPC.lifeMax = 96000;
         }
         else
         {
-            NPC.damage = 32;
-            NPC.defense = 67;
-            NPC.lifeMax = 10050;
+            NPC.damage = 60;
+            NPC.defense = 20;
+            NPC.lifeMax = 13750;
         }
 
         NPC.width = 300;
@@ -95,7 +95,7 @@ public class HeadOfCthulhu : ModNPC
 
         if (nextSpawnTick == 0)
         {
-            nextSpawnTick = Main.rand.Next(24, 26);
+            nextSpawnTick = 33;
         }
 
         tickCounter++;
@@ -111,7 +111,7 @@ public class HeadOfCthulhu : ModNPC
                 Vector2 direction = targetPosition - position;
                 direction.Normalize();
                 float speed = 10f;
-                int damage = NPC.damage; //If the projectile is hostile, the damage passed into NewProjectile will be applied doubled, and quadrupled if expert mode, so keep that in mind when balancing projectiles if you scale it off NPC.damage (which also increases for expert/master)
+                int damage = (int)(NPC.damage * 0.25f); //If the projectile is hostile, the damage passed into NewProjectile will be applied doubled, and quadrupled if expert mode, so keep that in mind when balancing projectiles if you scale it off NPC.damage (which also increases for expert/master)
                 if (Main.hardMode)
                 {
                     Projectile.NewProjectile(source, position, direction * speed, ProjectileID.Skull, damage, 0f, Main.myPlayer);
@@ -127,7 +127,7 @@ public class HeadOfCthulhu : ModNPC
             }
 
             tickCounter = 0;
-            nextSpawnTick = Main.rand.Next(24, 26);
+            nextSpawnTick = 33;
         }
     }
 }

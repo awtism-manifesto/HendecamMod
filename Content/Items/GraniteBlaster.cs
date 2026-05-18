@@ -34,7 +34,7 @@ public class GraniteBlaster : ModItem
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.mana = 6;
         Item.consumeAmmoOnLastShotOnly = true;
-
+       
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileType<GraniteLaser>();
@@ -64,8 +64,14 @@ public class GraniteBlaster : ModItem
             Item.mana = 6;
         }
 
-        SoundEngine.PlaySound(SoundID.Item99, player.position);
-        SoundEngine.PlaySound(SoundID.Item114, player.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/LaserShot")
+        {
+            Volume = 2.67f,
+            Pitch = 0.19f,
+            MaxInstances = 100,
+        });
+        
+       
         return true; // Return false because we don't want tModLoader to shoot projectile
     }
 
