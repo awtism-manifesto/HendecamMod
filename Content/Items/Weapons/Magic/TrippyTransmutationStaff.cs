@@ -1,0 +1,99 @@
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+
+namespace HendecamMod.Content.Items.Weapons.Magic;
+
+public class TrippyTransmutationStaff : ModItem
+{
+    public override void SetStaticDefaults()
+    {
+        Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
+    }
+
+    public override void SetDefaults()
+    {
+        Item.width = 33;
+        Item.height = 33;
+
+        Item.useStyle = ItemUseStyleID.Shoot;
+        Item.useTime = 29;
+        Item.useAnimation = 29;
+        Item.autoReuse = true;
+
+        Item.mana = 13;
+        Item.DamageType = DamageClass.Magic;
+        Item.damage = 37;
+        Item.knockBack = 3.5f;
+        Item.noMelee = true;
+
+        Item.value = 142000;
+        Item.rare = ItemRarityID.Orange;
+        Item.shoot = ProjectileType<LycoRay>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 10.05f; // Speed of the projectiles the sword will shoot
+
+        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
+        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
+
+        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
+        // Item.ChangePlayerDirectionOnShoot = false;
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        type = ProjectileType<LycoRay>();
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Shoots a beam of Lycopite energy that randomly splits into other projectiles upon hitting an enemy");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "The beam can split into homing lycopite spores, a magic lycopite dagger, or an explosive mushroom")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
+    }
+
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(6f, -15f);
+    }
+
+    public override void AddRecipes()
+    {
+
+        if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("GlowingMushroomFlask", out ModItem GlowingMushroomFlask))
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<LycopiteBar>(13);
+            recipe.AddIngredient(ItemID.Mushroom, 5);
+            recipe.AddIngredient(GlowingMushroomFlask.Type);
+          
+            recipe.AddTile(TileID.Anvils);
+           
+          
+            recipe.Register();
+
+        }
+
+
+        else
+        {
+            Recipe recipe = CreateRecipe();
+
+            recipe.AddIngredient<LycopiteBar>(13);
+            recipe.AddIngredient(ItemID.GlowingMushroom, 10);
+            recipe.AddIngredient(ItemID.Mushroom, 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+
+           
+
+
+    }
+}

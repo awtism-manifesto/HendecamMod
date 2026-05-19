@@ -1,0 +1,75 @@
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
+
+namespace HendecamMod.Content.Items.Weapons.Magic;
+
+public class FissionRod : ModItem
+{
+    public override void SetStaticDefaults()
+    {
+        Item.staff[Type] = true; // This makes the useStyle animate as a staff instead of as a gun.
+    }
+
+    public override void SetDefaults()
+    {
+        Item.width = 33;
+        Item.height = 33;
+        Item.scale = 0.5f;
+        Item.useStyle = ItemUseStyleID.Shoot;
+        Item.useTime = 54;
+        Item.useAnimation = 54;
+        Item.autoReuse = true;
+        Item.UseSound = SoundID.Item72;
+        Item.mana = 30;
+        Item.DamageType = DamageClass.Magic;
+        Item.damage = 540;
+        Item.knockBack = 20;
+        Item.noMelee = true;
+        Item.ArmorPenetration = 30;
+        Item.value = 5400000;
+        Item.rare = ItemRarityID.Red;
+        Item.shoot = ProjectileType<AstaFission>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 8.25f; // Speed of the projectiles the sword will shoot
+
+        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
+        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
+
+        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
+        // Item.ChangePlayerDirectionOnShoot = false;
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        type = ProjectileType<AstaFission>();
+        position = Main.MouseWorld;
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Causes a large, recursive explosion on the mouse position");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+    }
+
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-1f, 15f);
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<BombScepter>();
+        recipe.AddIngredient<FissionDrive>();
+        recipe.AddTile<CultistCyclotronPlaced>();
+        recipe.Register();
+    }
+}

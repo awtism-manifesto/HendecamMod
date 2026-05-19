@@ -1,0 +1,25 @@
+namespace HendecamMod.Content.Items.Weapons.Other;
+
+public class PyriteBar : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.useTime = 10;
+        Item.useAnimation = 10;
+        Item.autoReuse = true;
+        Item.rare = ItemRarityID.Blue;
+        Item.value = Item.buyPrice(copper: 2555);
+        Item.consumable = true;
+        Item.maxStack = 9999;
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.DefaultToPlaceableTile(TileType<Tiles.PyriteBarTile>());
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<PyriteOre>(4);
+        recipe.AddTile(TileID.Furnaces);
+        recipe.Register();
+    }
+}

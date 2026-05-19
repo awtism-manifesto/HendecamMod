@@ -1,0 +1,85 @@
+using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+
+namespace HendecamMod.Content.Items.Weapons.Ranged;
+
+public class KingslayerSniper : ModItem
+{
+    public override void SetDefaults()
+    {
+        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
+
+        // Common Properties
+        Item.width = 62; // Hitbox width of the item.
+        Item.height = 32; // Hitbox height of the item.
+        Item.scale = 1f;
+        Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+        Item.value = 190000;
+        // Use Properties
+        Item.useTime = 39; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 39; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+        Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+        Item.crit = 9;
+
+        // The sound that this item plays when used.
+        Item.UseSound = SoundID.NPCDeath56;
+        // Weapon Properties
+        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+        Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 7.75f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.noMelee = true; // So the item's animation doesn't do damage.
+        Item.shoot = ProjectileID.Bullet;
+        Item.useAmmo = AmmoID.Bullet; // Restrict the type of ammo the weapon can use, so that the weapon cannot use other ammos
+
+        // Gun Properties
+        Item.shoot = ProjectileID.Bullet; // For some reason, all the guns in the vanilla source have this.
+        Item.shootSpeed = 19.25f; // The speed of the projectile (measured in pixels per frame.)
+        Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        if (type == ProjectileID.Bullet)
+        {
+            type = ProjectileType<KingShot>();
+        }
+
+        if (type == ProjectileType<KingShot>())
+        {
+            damage = (int)(damage * 1.25f);
+        }
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Converts musket balls into powerful, piercing Kingslayer Bullets that deal extra crit damage");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+       
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+
+        recipe.AddIngredient<DeadSoldiersRifle>();
+        recipe.AddIngredient<PondsSniper>();
+        recipe.AddIngredient<KingslayerBar>(10);
+        recipe.AddIngredient(ItemID.Diamond, 2);
+        recipe.AddIngredient(ItemID.Ruby, 2);
+        recipe.AddTile(TileID.Solidifier);
+        recipe.Register();
+    }
+
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-9f, -1f);
+    }
+}
