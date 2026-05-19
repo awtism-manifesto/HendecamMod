@@ -2045,7 +2045,7 @@ FissionRod: {
 	Tooltip: ""
 }
 
-fivenato: {
+Fivenato: {
 	DisplayName: .556 Nato Round
 	Tooltip: ""
 }
@@ -5472,10 +5472,5 @@ CoreEnforcer: {
 
 BasaltBerserker: {
 	DisplayName: Basalt Berserker
-	Tooltip: ""
-}
-
-Fivenato: {
-	DisplayName: Fivenato
 	Tooltip: ""
 }

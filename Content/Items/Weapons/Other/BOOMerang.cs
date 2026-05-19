@@ -1,0 +1,92 @@
+using System.Collections.Generic;
+using HendecamMod.Content.Projectiles;
+
+namespace HendecamMod.Content.Items.Weapons.Other;
+
+public class BOOMerang : ModItem
+{
+    private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+
+    public override void SetDefaults()
+    {
+        Item.width = 24; // The width of the item's hitbox.
+        Item.height = 24;
+        Item.useStyle = ItemUseStyleID.Shoot; // The way the item is used (e.g. swinging, throwing, etc.)
+        Item.useTime = 19; // All vanilla yoyos have a useTime of 25.
+        Item.useAnimation = 19; // All vanilla yoyos have a useAnimation of 25.
+        Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
+        Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
+        Item.UseSound = SoundID.Item1;
+        Item.damage = 63; // The amount of damage the item does to an enemy or player.
+        Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
+        Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
+        Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
+        Item.value = 296000;
+        Item.shoot = ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shootSpeed = 25f; // The velocity of the shot projectile.			
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        var line = new TooltipLine(Mod, "Face", "it goes boom, duh");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Somehow you manage to not blow yourself up with it..")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+    }
+
+    public override bool AllowPrefix(int pre)
+    {
+        // return false to make the game reroll the prefix.
+
+        // DON'T DO THIS BY ITSELF:
+        // return false;
+        // This will get the game stuck because it will try to reroll every time. Instead, make it have a chance to return true.
+
+        if (Array.IndexOf(unwantedPrefixes, pre) > -1)
+        {
+            // IndexOf returns a positive index of the element you search for. If not found, it's less than 0.
+            // Here we check if the selected prefix is positive (it was found).
+            // If so, we found a prefix that we don't want. Reroll.
+            return false;
+        }
+
+        // Don't reroll
+        return true;
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("EssenceofHavoc", out ModItem EssenceofHavoc))
+        {
+            recipe = CreateRecipe();
+
+            recipe.AddIngredient(ItemID.Flamarang);
+            recipe.AddIngredient<RefinedOil>(35);
+            recipe.AddIngredient(EssenceofHavoc.Type, 6);
+            recipe.AddIngredient(ItemID.Dynamite, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+        else
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Flamarang);
+            recipe.AddIngredient<RefinedOil>(35);
+            recipe.AddIngredient(ItemID.SoulofNight, 6);
+            recipe.AddIngredient(ItemID.Dynamite, 15);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+    }
+}
