@@ -1,4 +1,6 @@
 ﻿using HendecamMod.Common.Systems.Assets;
+using HendecamMod.Common.UI;
+using HendecamMod.Content.Projectiles.Effect;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;
 using Terraria.Graphics.CameraModifiers;
@@ -50,11 +52,11 @@ public static partial class LemonUtils
         if (color == default) color = Color.White;
         Vector2 dir = pos1.DirectionTo(pos2);
         float distance = pos1.Distance(pos2);
-        int dustCount = (int)(distance / 16);
+        int dustCount = (int)(distance / distanceBetween);
         Vector2 currentPos = pos1;
         while (dustCount > 0)
         {
-            Dust.NewDustPerfect(currentPos, type, Scale: scale, newColor: color).noGravity = true;
+            Dust.NewDustPerfect(currentPos, type, Vector2.Zero, Scale: scale, newColor: color).noGravity = true;
             currentPos += dir * distanceBetween;
             dustCount--;
         }
@@ -113,15 +115,7 @@ public static partial class LemonUtils
     /// <param name="scale"></param>
     public static void DrawGlow(Vector2 position, Color color, float opacity, float scale)
     {
-        Main.EntitySpriteDraw(
-            HendecamTextures.GlowBallTexture.Value,
-            position - Main.screenPosition,
-            null,
-            color * opacity,
-            0f,
-            HendecamTextures.GlowBallTexture.Size() * 0.5f,
-            scale,
-            SpriteEffects.None);
+        Main.EntitySpriteDraw(HendecamTextures.GlowBallTexture.Value, position - Main.screenPosition, null, color * opacity, 0f, HendecamTextures.GlowBallTexture.Size() * 0.5f, scale, SpriteEffects.None);
     }
 
     public static void QuickScreenShake(Vector2 pos, float strength, float vibrationCyclesPerSecond, int frames, float distanceFalloff)
@@ -134,6 +128,28 @@ public static partial class LemonUtils
             frames,
             distanceFalloff);
         Main.instance.CameraModifiers.Add(mod);
+    }
+
+    public static Projectile QuickPulse(Entity sourceEntity, Vector2 pos, float speed, float scale, float colorMult, Color? color = null, Entity entityToFollow = null)
+    {
+        if (color == null)
+        {
+            color = Color.White;
+        }
+        Projectile proj = Projectile.NewProjectileDirect(
+            sourceEntity.GetSource_FromThis(),
+            pos,
+            Vector2.Zero,
+            ProjectileType<PulseEffect>(),
+            0,
+            0,
+            -1,
+            speed, scale, colorMult
+            );
+        PulseEffect pulse = proj.ModProjectile as PulseEffect;
+        pulse.PulseColor = color.Value;
+        pulse.EntityToFollow = entityToFollow;
+        return proj;
     }
 
     public static void BeginSpriteBatchProjectile(SpriteSortMode spriteSortMode = SpriteSortMode.Deferred, BlendState blendstate = default, Effect effect = null)
@@ -153,5 +169,29 @@ public static partial class LemonUtils
             new Vector2(0, HendecamTextures.TrueMagicPixel.Height() * 0.5f),
             new Vector2((position1 - Main.screenPosition).Distance(position2 - Main.screenPosition) / 4, 1 * laserWidth),
             SpriteEffects.None);
+    }
+
+    public static Projectile QuickLaser(Entity sourceEntity, Vector2 position, Vector2 endPositionOffset, int duration, float laserWidth, Color color, Entity entityToFollow = null)
+    {
+        Projectile proj = QuickProj(
+            sourceEntity,
+            position,
+            endPositionOffset,
+            ProjectileType<LaserEffect>(),
+            0,
+            ai0: duration,
+            ai1: laserWidth
+            );
+
+        LaserEffect laser = proj.ModProjectile as LaserEffect;
+        laser.LaserColor = color;
+        laser.EntityToFollow = entityToFollow;
+        return proj;
+    }
+
+    public static void QuickCameraFocus(Vector2 position, Func<bool> endConditionFunc)
+    {
+        MoveCameraModifier cameraModifier = new MoveCameraModifier(position, endConditionFunc);
+        Main.instance.CameraModifiers.Add(cameraModifier);
     }
 }

@@ -139,7 +139,7 @@ namespace HendecamMod.Common.Systems
                 Main.NewText("1: " + Current / Max);
             }*/
 
-           
+
 
             if (!Main.dedServ)
             {
@@ -154,7 +154,7 @@ namespace HendecamMod.Common.Systems
                         {
                             Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
                         }
-                        
+
                     }
                     float effectIntensityMultiplier = 0.5f;
                     if (Main.zenithWorld)
@@ -218,7 +218,7 @@ namespace HendecamMod.Common.Systems
             var lobo = player.GetModPlayer<LobotometerPlayer>();
             if (lobo == null) return;
 
-           
+
             float lastDisplayedValue = -1f;
             if (Math.Abs(lobo.Current - lastDisplayedValue) > 1f)
             {
@@ -269,15 +269,15 @@ namespace HendecamMod.Common.Systems
                     );
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                Mod.Logger.Error(e);
             }
         }
     }
 
 
-   
+
 
 
 }

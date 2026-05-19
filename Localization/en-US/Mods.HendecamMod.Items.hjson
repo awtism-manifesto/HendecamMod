@@ -5474,3 +5474,8 @@ BasaltBerserker: {
 	DisplayName: Basalt Berserker
 	Tooltip: ""
 }
+
+Fivenato: {
+	DisplayName: Fivenato
+	Tooltip: ""
+}

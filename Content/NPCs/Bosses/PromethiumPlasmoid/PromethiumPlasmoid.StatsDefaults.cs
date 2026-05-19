@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Common.Utils;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -117,5 +118,11 @@ public partial class PromethiumPlasmoid : ModNPC
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         // loot
+    }
+
+    public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+    {
+        LemonUtils.DrawAfterimages(NPC, drawColor, 1);
+        return true;
     }
 }

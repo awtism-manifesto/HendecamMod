@@ -49,7 +49,7 @@ public partial class PromethiumPlasmoid : ModNPC
     /// Attack durations for the first phase in ticks, indexed by the Attack field.
     /// When switching attacks, attackDuration is set to attackDurations[Attack], and counts down to zero from there.
     /// </summary>
-    readonly int[] attackDurations = [600, 1080, 1080, 1080, 1320];
+    readonly int[] attackDurations = [600];
 
     /// <summary>
     /// Attacks that can be performed (order matters).
@@ -120,7 +120,7 @@ public partial class PromethiumPlasmoid : ModNPC
         switch (Attack)
         {
             case (int)Attacks.Dashing:
-                //Attack_Dashing();
+                Attack_Dashing();
                 break;
         }
 
@@ -136,6 +136,7 @@ public partial class PromethiumPlasmoid : ModNPC
     {
         // Next attack, loop to start if all attacks are performed
         Attack++;
+        Attack = 0; // Forcing attack 0
         if (Attack >= attackDurations.Length)
         {
             Attack = 0;
@@ -150,5 +151,18 @@ public partial class PromethiumPlasmoid : ModNPC
         NPC.Opacity = 1f;
 
         NPC.netUpdate = true;
+    }
+
+    void Attack_Dashing()
+    {
+        switch (AttackTimer)
+        {
+
+            case 0:
+                AttackTimer = 600;
+                return;
+        }
+
+        AttackTimer--;
     }
 }

@@ -46,8 +46,6 @@ public class HeadOfCthulhuSummon : ModItem
             return false;
 
         return true;
-
-        return !NPC.AnyNPCs(NPCType<HeadOfCthulhu>());
     }
 
     public override bool? UseItem(Player player)
