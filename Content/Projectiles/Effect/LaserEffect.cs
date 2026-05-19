@@ -1,4 +1,5 @@
-﻿using HendecamMod.Common.Utils;
+﻿using HendecamMod.Common.Systems.Assets;
+using HendecamMod.Common.Utils;
 using System.IO;
 using System.Linq;
 
@@ -6,7 +7,7 @@ namespace HendecamMod.Content.Projectiles.Effect;
 
 public class LaserEffect : ModProjectile
 {
-    public override string Texture => "NeoParacosm/Common/Assets/Textures/Misc/Empty100Tex";
+    public override string Texture => HendecamTextures.Empty100TexPath;
 
     int AITimer = 0;
     ref float Duration => ref Projectile.ai[0];

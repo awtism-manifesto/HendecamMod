@@ -158,7 +158,7 @@ public static partial class LemonUtils
 
     public static string GetLocKey(string category, string subcategory)
     {
-        return $"Mods.NeoParacosm.{category}.{subcategory}";
+        return $"Mods.HendecamMod.{category}.{subcategory}";
     }
 
     public static void NewText(this object o)
