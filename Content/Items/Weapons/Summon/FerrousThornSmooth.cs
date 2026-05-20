@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.GameContent.ItemDropRules;
 
-namespace HendecamMod.Content.Items.Weapons.Summon;
+namespace HendecamMod.Content.Items.Weapons.Other;
 
 public class FerrousThornSmooth : ModItem
 {

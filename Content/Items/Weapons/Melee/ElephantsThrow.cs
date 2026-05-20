@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items.Weapons.Other;
+namespace HendecamMod.Content.Items.Weapons.Melee;
 
-public class ShockingSurrender : ModItem
+public class ElephantsThrow : ModItem
 {
     // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
     // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
@@ -29,15 +30,15 @@ public class ShockingSurrender : ModItem
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-        Item.damage = 35; // The amount of damage the item does to an enemy or player.
+        Item.damage = 94; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
 
         Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
-        Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.sellPrice(gold: 3, silver: 25);
+        Item.rare = ItemRarityID.LightPurple; // The item's rarity. This changes the color of the item's name.
+       Item.value = 1050000;
 
-        Item.shoot = ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shoot = ProjectileType<ElephantYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
     }
 
@@ -61,20 +62,37 @@ public class ShockingSurrender : ModItem
         return true;
     }
 
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Emits homing beams of radiation with every hit")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        // Here we will hide all tooltips whose title end with ':RemoveMe'
+        // One like that is added at the start of this method
+        foreach (var l in tooltips)
+        {
+            if (l.Name.EndsWith(":RemoveMe"))
+            {
+                l.Hide();
+            }
+        }
+
+        // Another method of hiding can be done if you want to hide just one line.
+        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+    }
+
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Code1);
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
-        recipe.Register();
-
-        recipe = CreateRecipe();
-        recipe.AddIngredient<TheBlueBall>();
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
+        recipe.AddIngredient<PlutoniumBar>(18);
+        recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
 }

@@ -1,0 +1,64 @@
+using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Tiles.Furniture;
+using System.Collections.Generic;
+
+namespace HendecamMod.Content.Items.Materials;
+
+public class FissionDrive : ModItem
+{
+    public override void SetStaticDefaults()
+    {
+        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
+        ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
+        ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
+
+        Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
+    }
+
+    public override void SetDefaults()
+    {
+        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
+
+        // Common Properties
+        Item.width = 32; // Hitbox width of the item.
+        Item.height = 32; // Hitbox height of the item.
+        Item.scale = 1.22f;
+        Item.rare = RarityType<Seizure2>();
+        Item.value = 5050505;
+        Item.maxStack = 9999;
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Used to make some of the most dangerously powerful weapons in existence");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "'Radioactive to the touch'")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<AstatineBar>(20);
+        recipe.AddIngredient<PlutoniumBar>(18);
+        recipe.AddIngredient<UraniumBar>(15);
+        recipe.AddIngredient(ItemID.LunarBar, 10);
+        recipe.AddTile<CultistCyclotronPlaced>();
+        recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("ExodiumCluster", out ModItem ExodiumCluster))
+        {
+            recipe.AddIngredient(ExodiumCluster.Type, 10);
+        }
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("TerrariumCore", out ModItem TerrariumCore))
+        {
+            recipe.AddIngredient(TerrariumCore.Type, 5);
+        }
+    }
+}

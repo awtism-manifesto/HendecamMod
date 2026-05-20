@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Items;
 
-namespace HendecamMod.Content.Items.Weapons.Melee;
+namespace HendecamMod.Content.Items.Weapons.Other;
 
 public class TheBlueBall : ModItem
 {

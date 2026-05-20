@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Projectiles;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items.Weapons.Melee;
+namespace HendecamMod.Content.Items.Weapons.Other;
 
 public class KusariOfFlamingFundo : ModItem
 {

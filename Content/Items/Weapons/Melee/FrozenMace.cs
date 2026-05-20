@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items.Weapons.Melee;
+namespace HendecamMod.Content.Items.Weapons.Other;
 
 // ExampleFlail and ExampleFlailProjectile show the minimum amount of code needed for a flail using the existing vanilla code and behavior. ExampleAdvancedFlail and ExampleAdvancedFlailProjectile need to be consulted if more advanced customization is desired, or if you want to learn more advanced modding techniques.
 // ExampleFlail is a copy of the Sunfury flail weapon.

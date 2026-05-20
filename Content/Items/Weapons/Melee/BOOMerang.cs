@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items.Weapons.Melee;
+namespace HendecamMod.Content.Items.Weapons.Other;
 
 public class BOOMerang : ModItem
 {

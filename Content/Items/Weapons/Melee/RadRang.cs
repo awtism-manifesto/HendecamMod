@@ -1,21 +1,14 @@
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items.Weapons.Other;
+namespace HendecamMod.Content.Items.Weapons.Melee;
 
-public class ShockingSurrender : ModItem
+public class RadRang : ModItem
 {
     // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
     // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
     // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
     private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
-    public override void SetStaticDefaults()
-    {
-        // These are all related to gamepad controls and don't seem to affect anything else
-        ItemID.Sets.Yoyo[Item.type] = true; // Used to increase the gamepad range when using Strings.
-        ItemID.Sets.GamepadExtraRange[Item.type] = 11; // Increases the gamepad range. Some vanilla values: 4 (Wood), 10 (Valor), 13 (Yelets), 18 (The Eye of Cthulhu), 21 (Terrarian).
-        ItemID.Sets.GamepadSmartQuickReach[Item.type] = true; // Unused, but weapons that require aiming on the screen are in this set.
-    }
 
     public override void SetDefaults()
     {
@@ -23,22 +16,37 @@ public class ShockingSurrender : ModItem
         Item.height = 24; // The height of the item's hitbox.
 
         Item.useStyle = ItemUseStyleID.Shoot; // The way the item is used (e.g. swinging, throwing, etc.)
-        Item.useTime = 25; // All vanilla yoyos have a useTime of 25.
-        Item.useAnimation = 25; // All vanilla yoyos have a useAnimation of 25.
+        Item.useTime = 18; // All vanilla yoyos have a useTime of 25.
+        Item.useAnimation = 18; // All vanilla yoyos have a useAnimation of 25.
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-        Item.damage = 35; // The amount of damage the item does to an enemy or player.
+        Item.damage = 32; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
+        Item.ArmorPenetration = 10;
 
-        Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
-        Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.sellPrice(gold: 3, silver: 25);
+        Item.rare = ItemRarityID.Green; // The item's rarity. This changes the color of the item's name.
+        Item.value = 108000;
 
-        Item.shoot = ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
-        Item.shootSpeed = 16f; // The velocity of the shot projectile.			
+        Item.shoot = ProjectileType<RadBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Releases a weakly homing uranium particle on hit");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "ignores 10 enemy armor")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+        
     }
 
     public override bool AllowPrefix(int pre)
@@ -64,17 +72,10 @@ public class ShockingSurrender : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Code1);
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
-        recipe.Register();
 
-        recipe = CreateRecipe();
-        recipe.AddIngredient<TheBlueBall>();
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
+        recipe.AddIngredient<UraniumBar>(15);
+        recipe.AddTile(TileID.Anvils);
+
         recipe.Register();
     }
 }

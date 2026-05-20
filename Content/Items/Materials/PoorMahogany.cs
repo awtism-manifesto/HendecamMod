@@ -1,0 +1,25 @@
+namespace HendecamMod.Content.Items.Materials;
+
+public class PoorMahogany : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.useTime = 10;
+        Item.useAnimation = 10;
+        Item.autoReuse = true;
+        Item.rare = ItemRarityID.White;
+        Item.value = Item.buyPrice(copper: 0);
+        Item.consumable = true;
+        Item.maxStack = 9999;
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.DefaultToPlaceableTile(TileType<Tiles.PoorMahoganyTile>());
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.RichMahogany);
+        recipe.AddTile(TileID.CookingPots);
+        recipe.Register();
+    }
+}

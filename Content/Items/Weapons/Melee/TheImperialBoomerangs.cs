@@ -1,21 +1,14 @@
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
-namespace HendecamMod.Content.Items.Weapons.Other;
+namespace HendecamMod.Content.Items.Weapons.Melee;
 
-public class ShockingSurrender : ModItem
+public class TheImperialBoomerangs : ModItem
 {
     // Here is an example of blacklisting certain modifiers. Remove this section for standard vanilla behavior.
     // In this example, we are blacklisting the ones that reduce damage of a melee weapon.
     // Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes).
     private static readonly int[] unwantedPrefixes = new[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
-
-    public override void SetStaticDefaults()
-    {
-        // These are all related to gamepad controls and don't seem to affect anything else
-        ItemID.Sets.Yoyo[Item.type] = true; // Used to increase the gamepad range when using Strings.
-        ItemID.Sets.GamepadExtraRange[Item.type] = 11; // Increases the gamepad range. Some vanilla values: 4 (Wood), 10 (Valor), 13 (Yelets), 18 (The Eye of Cthulhu), 21 (Terrarian).
-        ItemID.Sets.GamepadSmartQuickReach[Item.type] = true; // Unused, but weapons that require aiming on the screen are in this set.
-    }
 
     public override void SetDefaults()
     {
@@ -29,18 +22,35 @@ public class ShockingSurrender : ModItem
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-        Item.damage = 35; // The amount of damage the item does to an enemy or player.
+        Item.damage = 40; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
-        Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
+        Item.knockBack = 4.75f; // The amount of knockback the item inflicts.
+        Item.rare = ItemRarityID.Green; // The item's rarity. This changes the color of the item's name.
+        Item.value = Item.buyPrice(gold: 6); // The amount of money that the item is can be bought for.
 
-        Item.channel = true; // Set to true for items that require the attack button to be held out (e.g. yoyos and magic missile weapons)
-        Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
-        Item.value = Item.sellPrice(gold: 3, silver: 25);
-
-        Item.shoot = ProjectileType<FranceYoyo>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
-        Item.shootSpeed = 16f; // The velocity of the shot projectile.			
+        Item.shoot = ProjectileType<KingBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
+        Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
     }
 
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Causes enemies hit to drop more money");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
+    }
+    public override bool CanUseItem(Player player)
+    {
+        // Ensures no more than one spear can be thrown out, use this when using autoReuse
+        return player.ownedProjectileCounts[Item.shoot] < 2;
+    }
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.
@@ -64,17 +74,14 @@ public class ShockingSurrender : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.Code1);
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
-        recipe.Register();
 
-        recipe = CreateRecipe();
-        recipe.AddIngredient<TheBlueBall>();
-        recipe.AddIngredient(ItemID.Rally);
-        recipe.AddIngredient(ItemID.Cascade);
-        recipe.AddTile(TileID.WorkBenches);
+        recipe.AddIngredient(ItemID.WoodenBoomerang, 2);
+        recipe.AddIngredient<KingslayerBar>(8);
+
+        recipe.AddIngredient(ItemID.Diamond, 2);
+        recipe.AddIngredient(ItemID.Ruby, 2);
+        recipe.AddTile(TileID.Solidifier);
+
         recipe.Register();
     }
 }
