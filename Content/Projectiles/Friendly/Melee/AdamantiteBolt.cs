@@ -1,4 +1,4 @@
-namespace HendecamMod.Content.Projectiles.Friendly.Melee;
+﻿namespace HendecamMod.Content.Projectiles;
 
 public class AdamantiteBolt : ModProjectile
 {

@@ -1,9 +1,9 @@
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.IronLung;
 
-namespace HendecamMod.Content.Projectiles.Friendly.Stupid;
+namespace HendecamMod.Content.Projectiles.Items.VapeProjectiles;
 
 public class FogSmoke2 : ModProjectile
 {
