@@ -19,8 +19,8 @@ public class MantiusShortbow : ModItem
         Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
         Item.value = 175000;
         // Use Properties
-        Item.useTime = 17; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 17; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         
@@ -29,7 +29,7 @@ public class MantiusShortbow : ModItem
 
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 37; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 3.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 10;

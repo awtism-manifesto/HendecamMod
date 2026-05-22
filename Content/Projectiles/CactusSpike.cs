@@ -15,7 +15,7 @@ public class CactusSpike : ModProjectile
         Projectile.arrow = true;
         Projectile.friendly = true;
         Projectile.DamageType = DamageClass.Melee;
-        Projectile.timeLeft = 10;
+        Projectile.timeLeft = 12;
     }
 
     public override void AI()

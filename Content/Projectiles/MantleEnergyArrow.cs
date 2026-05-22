@@ -21,9 +21,9 @@ public class MantleEnergyArrow : ModProjectile
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+        Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 500;
-
+        Projectile.localNPCHitCooldown = -1;
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
@@ -52,7 +52,7 @@ public class MantleEnergyArrow : ModProjectile
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
 
-        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.025f);
+        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.033f);
     }
     public override void AI()
     {

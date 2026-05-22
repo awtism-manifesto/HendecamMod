@@ -17,7 +17,7 @@ public class CactusSpawn : ModProjectile
         Projectile.width = 1; // The width of projectile hitbox
         Projectile.height = 1; // The height of projectile hitbox
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
-        Projectile.friendly = true; // Can the projectile deal damage to enemies?
+        Projectile.friendly = false; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)

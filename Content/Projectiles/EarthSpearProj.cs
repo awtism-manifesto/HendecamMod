@@ -18,7 +18,7 @@ public class EarthSpearProj : ModProjectile
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
 
-        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense *0.025f);
+        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense *0.033f);
     }
 
 

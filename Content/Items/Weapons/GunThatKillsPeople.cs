@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons;
@@ -15,7 +16,12 @@ public class GunThatKillsPeople : ModItem
         Item.useAnimation = 6;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.autoReuse = true;
-        Item.UseSound = SoundID.Item11;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
+        {
+            Volume = 1.1f,
+            PitchVariance = 0.2f,
+            MaxInstances = 100,
+        };
         Item.DamageType = DamageClass.Ranged;
         Item.damage = 59;
         Item.knockBack = 1.5f;

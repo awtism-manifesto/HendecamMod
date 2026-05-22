@@ -9,7 +9,7 @@ Mods: {
 			HendecamConfig: {
 				ProgressionBasedEnemyPowercreep: {
 					Tooltip: Scales all enemy HP higher and higher based on world difficulty and progression stage
-					Label: Progression Based Enemy Powercreep
+					Label: Progression Based Enemy Powerscaling
 				}
 
 				Headers.Reworks: Reworks
@@ -28,6 +28,11 @@ Mods: {
 				VanillaWeaponStatBuffs: {
 					Tooltip: Increases damage, attack speed, and various other stats of certain underpowered/powercrept vanilla weapons
 					Label: Vanilla Weapon Stat Buffs
+				}
+
+				MiscVanillaWeaponChanges: {
+					Tooltip: Non-class change major reworks to various vanilla weapons
+					Label: Misc Vanilla Weapon Changes
 				}
 			}
 		}

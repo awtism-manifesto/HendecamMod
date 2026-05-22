@@ -163,7 +163,7 @@ public class MantleSwing : ModProjectile
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
 
-        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.025f);
+        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.033f);
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {

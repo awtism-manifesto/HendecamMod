@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -22,8 +23,12 @@ public class CandyCaneCompoundBow : ModItem
         Item.useAnimation = 23; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item102;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/BowShot")
+        {
+            Volume = 3f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+        };
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 85; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.

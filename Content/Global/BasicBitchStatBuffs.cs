@@ -725,28 +725,878 @@ public class CandyCane696969 : GlobalItem
         item.useAnimation = 14;
     }
 }
-public class FuckAntlions : GlobalItem
+
+public class DarkCock : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
         if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
         {
-            return item.type == ItemID.AntlionClaw;
+            return item.type == ItemID.DarkLance;
         }
         else return false;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased range, speed and damage") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
     {
-        item.scale = 0.95f;
-        item.useTime = 7;
-        item.damage = 11;
-        item.useAnimation = 7;
-        item.knockBack = 0.75f;
+        item.damage = 41;
+        item.useTime = 17;
+        item.useAnimation = 17;
+
+        item.shootSpeed = 8.75f;
     }
 }
+
+public class AssGlaive : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.MonkStaffT2;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased range") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 63;
+
+        item.useTime = 25;
+        item.useAnimation = 25;
+
+        item.shootSpeed = 87.5f;
+    }
+}
+
+public class SkullEmoji : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.BookofSkulls;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hugely increased projectile velocity, lowered mana cost") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 27;
+        item.useAnimation = 27;
+        item.mana = 13;
+        item.shootSpeed = 11.25f;
+    }
+}
+public class FrostEEEEEE : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.BookofSkulls;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now shoots icy bolts every swing at a much higher velocity") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 49;
+
+        item.useTime = 19;
+        item.useAnimation = 19;
+
+        item.shootSpeed = 19.5f;
+    }
+}
+public class OnyxCock : GlobalItem
+{
+
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.OnyxBlaster;
+        }
+        else return false;
+    }
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 25;
+        item.useTime = 46;
+        item.useAnimation = 46;
+
+        item.shootSpeed = 9.15f;
+    }
+}
+public class HorsemansBladeBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.TheHorsemansBlade;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 19;
+        item.useAnimation = 19;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Significantly increased swing speed") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class FlyingKnifeBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.FlyingKnife;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 119 / 2;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage increased by 35%") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class JackingOffRN : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.JackOLanternLauncher;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.shootSpeed = 15.95f;
+        item.useTime = 18;
+        item.useAnimation = 18;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased velocity and fire rate") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class FrostyCock : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.WandofFrosting;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 18;
+        item.useTime = 21;
+        item.useAnimation = 21;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and damage") { OverrideColor = Color.DarkViolet });
+    }
+}
+
+public class WoodUwU : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.PearlwoodSword;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 45;
+        item.useTime = 10;
+        item.useAnimation = 10;
+        item.scale = 2f;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: 1.5x damage, 2x size, and 3x speed ") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Peanix : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.PhoenixBlaster;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 31;
+        item.useTime = 13;
+        item.useAnimation = 13;
+    }
+}
+
+
+public class NettleAss : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.NettleBurst;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 70;
+        item.ArmorPenetration = 20;
+        item.shootSpeed = 36f;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage and armor penetration doubled") { OverrideColor = Color.DarkViolet });
+    }
+}
+
+public class CutBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.NettleBurst;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and speed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+
+        item.scale = 1.25f;
+        item.useTime = 11;
+        item.useAnimation = 11;
+    }
+}
+public class Flameeeer : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Flamethrower;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 38;
+
+        item.shootSpeed = 15.1f;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.DarkViolet });
+    }
+}
+
+public class ElfFlameeeer : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.ElfMelter;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 58;
+
+        item.shootSpeed = 18.05f;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Drastically increased range") { OverrideColor = Color.DarkViolet });
+    }
+}
+public class Bubbly : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.BubbleGun;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.shootSpeed = 26.5f;
+    }
+}
+public class Gemz1 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.SapphireStaff;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 29;
+        item.useAnimation = 29;
+    }
+}
+
+public class Gemz2 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.EmeraldStaff;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 27;
+        item.useAnimation = 27;
+    }
+}
+
+public class Gemz3 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.RubyStaff;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 23;
+        item.useAnimation = 23;
+    }
+}
+
+public class Gemz4 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.DiamondStaff;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 21;
+        item.useAnimation = 21;
+    }
+}
+public class Bonerhahafunnyimlosingmymind : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.BoneArrow;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 10;
+
+        item.shootSpeed = 6.33f;
+    }
+}
+public class Moone : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.BlueMoon;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.StatsModifiedBy.Add(Mod); // Notify the game that we've made a functional change to this item.
+        item.ArmorPenetration = 25;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now ignores 25 enemy defense") { OverrideColor = Color.DarkViolet });
+    }
+}
+
+public class NightsEdgeBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.NightsEdge;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 54;
+        item.scale = 1.1f;
+        item.ArmorPenetration = 15;
+        item.useTime = 19;
+        item.useAnimation = 19;
+    }
+}
+
+public class ExcaliburBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Excalibur;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 100;
+        item.scale = 1.1f;
+
+        item.useTime = 17;
+        item.useAnimation = 17;
+    }
+}
+
+public class TrueExcaliburBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.TrueExcalibur;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 102;
+        item.scale = 1.15f;
+
+        item.useTime = 15;
+        item.useAnimation = 15;
+    }
+}
+public class TrueNightsBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.TrueExcalibur;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 95;
+        item.scale = 1.25f;
+
+        item.useTime = 27;
+        item.useAnimation = 27;
+    }
+}
+
+public class TerraBladeBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.TerraBlade;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 111;
+        item.scale = 1.11f;
+    }
+}
+public class FalconPUNCH : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.FalconBlade;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Much faster swing speed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.useTime = 9;
+        item.useAnimation = 9;
+    }
+}
+
+public class StripperPole : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.NorthPole;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 125;
+        item.useTime = 24;
+        item.useAnimation = 24;
+        item.shootSpeed = 8.67f;
+    }
+}
+
+public class Cummies : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Umbrella;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now guaranteed to crit") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.crit = 96;
+    }
+}
+
+public class CummiesYummiesUWU : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.TragicUmbrella;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Guaranteed to crit, massively increased damage") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.StatsModifiedBy.Add(Mod);
+
+        item.damage = 48;
+        item.crit = 96;
+    }
+}
+
+public class Icee : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.IceBow;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 51;
+    }
+}
+public class ShadowTheEdgehog : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.ShadowFlameBow;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 69;
+    }
+}
+
+public class Pee : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Revolver;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 25;
+    }
+}
+
+
+public class MeowMeowUwU : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.PiercingStarlight;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.shootSpeed = 30.25f;
+    }
+}
+
+public class Darty : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.DartRifle;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 57;
+        item.useTime = 35;
+        item.useAnimation = 35;
+    }
+}
+
+public class Peenitz : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.PossessedHatchet;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 111;
+        item.useTime = 11;
+        item.useAnimation = 11;
+    }
+}
+
+public class Darty2 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.DartPistol;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 31;
+        item.useTime = 17;
+        item.useAnimation = 17;
+    }
+}
+public class MegasharkBuff69 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Megashark;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage and velocity") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 33;
+        item.knockBack = 3f;
+        item.shootSpeed = 12.25f;
+    }
+}
+
+public class CalamityOverhaulSucksFuckingAss : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.Muramasa;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats significantly buffed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.damage = 29;
+        item.useTime = 14;
+        item.useAnimation = 14;
+        item.scale = 1.15f;
+        item.ArmorPenetration = 5;
+    }
+}
+

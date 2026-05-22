@@ -32,5 +32,10 @@ public class HendecamConfig : ModConfig
     [ReloadRequired]
     public bool VanillaWeaponStatBuffs;
 
+    [DefaultValue(true)]
+
+    [ReloadRequired]
+    public bool MiscVanillaWeaponChanges;
+
 
 }
