@@ -91,7 +91,16 @@ public class RuderBuster : ModProjectile
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.66f)).ToRotationVector2() * length;
     }
-
+    public override bool OnTileCollide(Vector2 oldVelocity)
+    {
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterHit")
+        {
+            Volume = 4.25f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        });
+        return true;
+    }
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterHit")

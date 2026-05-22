@@ -699,4 +699,54 @@ public class DrillBuff6782 : GlobalItem
     {
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased speed and hugely increased damage") { OverrideColor = Color.DarkViolet });
     }
+   
+}
+public class CandyCane696969 : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.CandyCaneSword;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Stats buffed all around") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.scale = 1.15f;
+        item.useTime = 14;
+        item.damage = 21;
+        item.useAnimation = 14;
+    }
+}
+public class FuckAntlions : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponStatBuffs == true)
+        {
+            return item.type == ItemID.AntlionClaw;
+        }
+        else return false;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.DarkViolet });
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.scale = 0.95f;
+        item.useTime = 7;
+        item.damage = 11;
+        item.useAnimation = 7;
+        item.knockBack = 0.75f;
+    }
 }

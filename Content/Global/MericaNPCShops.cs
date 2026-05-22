@@ -17,7 +17,7 @@ public class MericaNPCShops : GlobalNPC
         {
             // Adding an item to a vanilla NPC is easy:
             // This item sells for the normal price.
-            shop.Add<Fivenato>(condition: Condition.DownedPlantera);
+            shop.Add<fivenato>(condition: Condition.DownedPlantera);
             shop.Add<Shitballs>(condition: Condition.DrunkWorld);
             shop.Add<KingslayerBullet>(condition: Condition.ForTheWorthyWorld);
             shop.Add<CeramicDart>(condition: Condition.Hardmode);

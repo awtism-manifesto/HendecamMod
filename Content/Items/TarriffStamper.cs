@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -10,14 +12,14 @@ public class TarriffStamper : ModItem
     {
         Item.width = 35;
         Item.height = 35;
-        Item.scale = 1.05f;
+        Item.scale = 1f;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 20;
-        Item.useAnimation = 20;
+        Item.useTime = 22;
+        Item.useAnimation = 22;
         Item.autoReuse = true;
-
+        Item.shoot = ProjectileType<NuhUh>();
         Item.DamageType = GetInstance<MeleeStupidDamage>();
-        Item.damage = 25;
+        Item.damage = 23;
         Item.knockBack = 9f;
         Item.ChangePlayerDirectionOnShoot = true;
 
@@ -31,7 +33,17 @@ public class TarriffStamper : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
+    public float LobotometerCost = 8f;
 
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Inflict the OnFire debuff for 1 second onto any NPC/Monster that this hits.
@@ -45,23 +57,18 @@ public class TarriffStamper : ModItem
         var line = new TooltipLine(Mod, "Face", "Stamps your enemies with red ink that reduces their defense");
         tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
         line = new TooltipLine(Mod, "Face", "'May also have adverse effects on the U.S economy...'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 }

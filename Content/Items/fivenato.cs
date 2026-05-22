@@ -3,7 +3,7 @@ using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items;
 
-public class Fivenato : ModItem
+public class fivenato : ModItem
 {
     public override void SetStaticDefaults()
     {
@@ -22,7 +22,7 @@ public class Fivenato : ModItem
         Item.knockBack = 0f;
         Item.value = 30;
         Item.rare = ItemRarityID.LightPurple;
-        Item.shoot = ProjectileType<Fiveproj>(); // The projectile that weapons fire when using this item as ammunition.
+        Item.shoot = ProjectileType<fiveproj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 9.9f; // The speed of the projectile.
         Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
     }

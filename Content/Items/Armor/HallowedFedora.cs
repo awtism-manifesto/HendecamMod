@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -89,7 +91,46 @@ public class HallowedFedora : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = SetBonusText.Value;
-        player.shadowDodge = true;
-        player.shadowDodgeTimer = 1800;
+        player.GetModPlayer<NoMoreInvincible>().Invince = true;
+
+    }
+}
+
+public class NoMoreInvincible : ModPlayer
+{
+   
+    private const int InvinceCooldownMax = 60 * 30;
+
+    public bool Invince;
+    private int InvinceCooldown;
+
+    public override void ResetEffects()
+    {
+        Invince = false;
+    }
+
+    public override void PostUpdate()
+    {
+      
+        if (InvinceCooldown > 0)
+            InvinceCooldown--;
+
+       
+    }
+
+    public override void OnHurt(Player.HurtInfo info)
+    {
+      
+        if (!Invince)
+            return;
+
+       
+        if (InvinceCooldown > 0)
+            return;
+
+        Player.AddBuff(BuffID.ShadowDodge, 1800);
+
+        // Start cooldown
+        InvinceCooldown = InvinceCooldownMax;
     }
 }

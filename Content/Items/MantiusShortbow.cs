@@ -33,9 +33,9 @@ public class MantiusShortbow : ModItem
         Item.knockBack = 3.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.ArmorPenetration = 10;
-        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RifleShot")
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/BowShot")
         {
-            Volume = 2.67f,
+            Volume = 3f,
             PitchVariance = 0.2f,
             MaxInstances = 10,
         };

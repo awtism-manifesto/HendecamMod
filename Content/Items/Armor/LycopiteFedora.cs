@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -10,9 +11,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class LycopiteFedora : ModItem
 {
-    public static readonly int StupidCritBonus = 9;
+    public static readonly int StupidCritBonus = 7;
 
-    public static readonly int StupidAttackSpeedBonus = 9;
+    public static readonly int StupidAttackSpeedBonus = 7;
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -40,12 +41,17 @@ public class LycopiteFedora : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "9% increased stupid crit chance and attack speed");
+        var line = new TooltipLine(Mod, "Face", "7% increased stupid crit chance and attack speed");
         tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "+75 Max Braincells")
+        {
+            OverrideColor = new Color(34, 221, 240)
+        };
+        tooltips.Add(line);
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 9% increased throwing crit chance and attack speed")
+            line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 7% increased throwing crit chance and attack speed")
             {
                 OverrideColor = new Color(34, 221, 240)
             };
@@ -80,6 +86,9 @@ public class LycopiteFedora : ModItem
         player.GetCritChance<StupidDamage>() += StupidCritBonus;
 
         player.GetAttackSpeed<StupidDamage>() += StupidAttackSpeedBonus / 100f;
+
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.TemporaryBonus += 75f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

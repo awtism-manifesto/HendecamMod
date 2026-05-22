@@ -49,7 +49,12 @@ public class CompoundBow3 : ModItem
     {
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
-        SoundEngine.PlaySound(SoundID.Item102, player.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/BowShot")
+        {
+            Volume = 2.67f,
+            PitchVariance = 0.2f,
+            MaxInstances = 100,
+        });
         return false; // Prevent vanilla projectile spawn
     }
 

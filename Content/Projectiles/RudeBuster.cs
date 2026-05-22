@@ -56,7 +56,16 @@ public class RudeBuster : ModProjectile
 
         return true;
     }
-
+    public override bool OnTileCollide(Vector2 oldVelocity)
+    {
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RudeBusterHit")
+        {
+            Volume = 4.25f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        });
+        return true;
+    }
     public override void AI()
     {
         float maxDetectRadius = 195f; // The maximum radius at which a projectile can detect a target

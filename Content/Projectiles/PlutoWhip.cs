@@ -52,7 +52,7 @@ public class PlutoWhip : ModProjectile
         Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(-125, 126));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
             ProjectileType<PlutoParticle>(), (int)(Projectile.damage * 0.75f), Projectile.knockBack, Projectile.owner);
-        Projectile.damage = (int)(Projectile.damage * 0.55f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
+        Projectile.damage = (int)(Projectile.damage * 0.67f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
     public override void AI()

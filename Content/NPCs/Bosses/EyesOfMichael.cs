@@ -23,8 +23,8 @@ public class EyesOfMichael : ModNPC
         NPC.damage = 225;
         NPC.defense = 75;
         NPC.lifeMax = 300000;
-        NPC.width = 60;
-        NPC.height = 60;
+        NPC.width = 130;
+        NPC.height = 130;
         NPC.scale = 1f;
 
         NPC.oldVelocity = NPC.oldVelocity * 1.25f;

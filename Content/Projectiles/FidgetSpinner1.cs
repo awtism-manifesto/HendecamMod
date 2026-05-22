@@ -100,19 +100,20 @@ public class FidgetSpinner1 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(9))
         {
             target.AddBuff(BuffID.Poisoned, 240);
         }
 
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(9))
         {
             target.AddBuff(BuffID.OnFire, 240);
         }
 
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(9))
         {
             target.AddBuff(BuffID.Confused, 240);
         }
+        Projectile.damage = (int)(Projectile.damage * 0.725f);
     }
 }

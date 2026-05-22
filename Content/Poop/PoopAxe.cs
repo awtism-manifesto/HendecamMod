@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -18,7 +19,7 @@ public class PoopAxe : ModItem
         Item.scale = 1f;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 3.33f;
-
+        Item.shoot = ProjectileType<NuhUh>();
         Item.value = Item.buyPrice(copper: 70); // Buy this item for one gold - change gold to any coin and change the value to any number <= 100
 
         Item.UseSound = SoundID.Item1;

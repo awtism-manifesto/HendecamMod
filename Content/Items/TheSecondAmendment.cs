@@ -90,13 +90,13 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileType<BeetleRoundProjectile>();
                     break;
                 case 9:
-                    projType = ProjectileType<Fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 10:
                     projType = ProjectileType<DragonSpawn>();
                     break;
                 case 11:
-                    projType = ProjectileType<Fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 12:
                     projType = ProjectileType<ZazaSmoke>();
@@ -224,7 +224,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.Bullet;
                     break;
                 case 53:
-                    projType = ProjectileType<Fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
                 case 54:
                     projType = ProjectileType<BouncingBulletProj>();
@@ -272,7 +272,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileType<PlutoShot>();
                     break;
                 case 69:
-                    projType = ProjectileType<Fiveproj>();
+                    projType = ProjectileType<fiveproj>();
                     break;
             }
 

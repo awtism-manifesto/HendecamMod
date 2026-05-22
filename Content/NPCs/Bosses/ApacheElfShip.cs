@@ -83,7 +83,7 @@ public class ApacheElfShip : ModNPC
         LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
         // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
-        int itemType = ItemType<Fivenato>();
+        int itemType = ItemType<fivenato>();
         var parameters = new DropOneByOne.Parameters
         {
             ChanceNumerator = 1,

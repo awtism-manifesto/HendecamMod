@@ -31,48 +31,8 @@ public class ShroomBuff : GlobalItem
     }
 }
 
-public class CandyCane696969 : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.CandyCaneSword;
-    }
 
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Stats buffed all around") { OverrideColor = Color.DarkViolet });
-    }
 
-    public override void SetDefaults(Item item)
-    {
-        item.scale = 1.15f;
-        item.useTime = 14;
-        item.damage = 21;
-        item.useAnimation = 14;
-    }
-}
-
-public class FuckAntlions : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.AntlionClaw;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.DarkViolet });
-    }
-
-    public override void SetDefaults(Item item)
-    {
-        item.scale = 0.95f;
-        item.useTime = 7;
-        item.damage = 11;
-        item.useAnimation = 7;
-        item.knockBack = 0.75f;
-    }
-}
 
 public class MetalAmogus : GlobalItem
 {
@@ -131,19 +91,30 @@ public class CockworkAssGun : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage, Knockback, and Velocity significantly increased") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage, Knockback, Velocity, and Sound Effects significantly buffed") { OverrideColor = Color.DarkViolet });
 
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { OverrideColor = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 48;
+        item.damage = 45;
         item.shootSpeed = 15.95f;
         item.useTime = 3;
         item.knockBack = 3.33f;
         item.useAnimation = 9;
         item.reuseDelay = 27;
+        item.UseSound = null;
+    }
+    public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
+        {
+            Volume = 2.67f,
+            Pitch = 0.1f,
+            MaxInstances = 100,
+        });
+        return true;
     }
 }
 

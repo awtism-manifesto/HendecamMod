@@ -3,11 +3,7 @@ using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
+
 public class FidgetSpinner2 : ModProjectile
 {
     public override void SetStaticDefaults()
@@ -100,34 +96,35 @@ public class FidgetSpinner2 : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (Main.rand.NextBool(9))
+        if (Main.rand.NextBool(10))
         {
             target.AddBuff(BuffID.Poisoned, 240);
         }
 
-        if (Main.rand.NextBool(9))
+        if (Main.rand.NextBool(10))
         {
             target.AddBuff(BuffID.OnFire, 240);
         }
 
-        if (Main.rand.NextBool(9))
+        if (Main.rand.NextBool(10))
         {
             target.AddBuff(BuffID.Confused, 240);
         }
 
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(8))
         {
             target.AddBuff(BuffID.Oiled, 240);
         }
 
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(8))
         {
             target.AddBuff(BuffID.Frostburn2, 240);
         }
 
-        if (Main.rand.NextBool(6))
+        if (Main.rand.NextBool(8))
         {
             target.AddBuff(BuffID.ShadowFlame, 240);
         }
+        Projectile.damage = (int)(Projectile.damage * 0.75f);
     }
 }

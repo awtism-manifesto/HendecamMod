@@ -29,8 +29,7 @@ public class VP70 : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item38;
+       
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 41; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -71,14 +70,18 @@ public class VP70 : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         // Rotate the velocity randomly by 30 degrees at max.
-        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.05f));
+        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.1f));
 
         // Decrease velocity randomly for nicer visuals.
-        newVelocity *= 1f - Main.rand.NextFloat(0.39f);
+        newVelocity *= 1f - Main.rand.NextFloat(0.29f);
         if (player.altFunctionUse == 2)
         {
-            SoundEngine.PlaySound(SoundID.Item38, player.position);
-            SoundEngine.PlaySound(SoundID.Item40, player.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0.2f,
+                MaxInstances = 100,
+            });
 
             int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, type, (int)(damage * 0.87f), (int)(knockback * 0.78f), player.whoAmI);
 
@@ -90,7 +93,12 @@ public class VP70 : ModItem
 
         else
         {
-            SoundEngine.PlaySound(SoundID.Item40, player.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
+            {
+                Volume = 2.67f,
+                PitchVariance = 0.2f,
+                MaxInstances = 100,
+            });
             int proj = Projectile.NewProjectile(source, position, velocity * 1f, type, damage, knockback, player.whoAmI);
             Main.projectile[proj].GetGlobalProjectile<VPComboSetup>().fromtheVP70 = true;
             Main.projectile[proj].GetGlobalProjectile<VPCombo>().fromVP70 = false;

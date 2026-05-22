@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Stupid;
@@ -21,7 +22,7 @@ public class TheStickedBrick : ModItem
         Item.damage = 1;
         Item.knockBack = 25.75f;
         Item.ChangePlayerDirectionOnShoot = true;
-
+        Item.shoot = ProjectileType<NuhUh>();
         Item.value = 200;
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
@@ -33,6 +34,7 @@ public class TheStickedBrick : ModItem
         // Item.ChangePlayerDirectionOnShoot = false;
     }
     public float LobotometerCost = 3f;
+  
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

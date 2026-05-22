@@ -35,7 +35,7 @@ public class AlpineTreasureBag : ModItem
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<ApexPlasmaCannon>(), 3));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<RazorRotors>(), 3));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<AlpinePlushieGlitterbomb>(), 3));
-        itemLoot.Add(ItemDropRule.Common(ItemType<Fivenato>(), 1, 100, 1000));
+        itemLoot.Add(ItemDropRule.Common(ItemType<fivenato>(), 1, 100, 1000));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemType<CandyHeart>()));
     }
 }
