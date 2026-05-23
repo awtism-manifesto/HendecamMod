@@ -3,9 +3,9 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
-public class FidgetThrower3 : ModItem
+public class FidgetThrower2 : ModItem
 {
     public override void SetDefaults()
     {
@@ -13,21 +13,21 @@ public class FidgetThrower3 : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 16;
-        Item.useAnimation = 16;
+        Item.useTime = 21;
+        Item.useAnimation = 21;
         Item.autoReuse = true;
         Item.DamageType = GetInstance<RangedStupidDamage>();
-        Item.damage = 116;
-        Item.knockBack = 7.5f;
+        Item.damage = 66;
+        Item.knockBack = 6.25f;
 
         Item.noMelee = true;
-        Item.value = 1075000;
-        Item.rare = ItemRarityID.Yellow;
+        Item.value = 525000;
+        Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
-        Item.scale = 1.175f;
+        Item.scale = 1.1f;
 
-        Item.shoot = ProjectileType<FidgetSpinner3>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 24.25f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<FidgetSpinner2>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 21.95f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -35,7 +35,7 @@ public class FidgetThrower3 : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    public float LobotometerCost = 7f;
+    public float LobotometerCost = 6f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -48,16 +48,16 @@ public class FidgetThrower3 : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots piercing fidget spinners that inflict even more random debuffs");
+        var line = new TooltipLine(Mod, "Face", "Shoots piercing fidget spinners that inflict more random debuffs");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-       
+        
     }
 
     public override Vector2? HoldoutOffset()
@@ -69,13 +69,10 @@ public class FidgetThrower3 : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<FidgetThrower2>();
-        recipe.AddIngredient<CyberneticGunParts>();
-
-        recipe.AddIngredient(ItemID.VialofVenom, 33);
-        recipe.AddIngredient(ItemID.CursedFlame, 33);
-        recipe.AddIngredient(ItemID.Ichor, 33);
-
+        recipe.AddIngredient<FidgetThrower>();
+        recipe.AddIngredient(ItemID.FrostCore);
+        recipe.AddIngredient<RefinedOil>(33);
+        recipe.AddIngredient<Shadowflame>(33);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

@@ -8,6 +8,7 @@ public class MantiusBar : ModItem
     {
         Item.ResearchUnlockCount = 25;
         ItemID.Sets.SortingPriorityMaterials[Type] = 1;
+        
     }
 
     public override void SetDefaults()
@@ -16,6 +17,7 @@ public class MantiusBar : ModItem
         Item.width = 20;
         Item.height = 20;
         Item.value = 14150;
+        Item.rare = ItemRarityID.LightRed;
     }
 
     public override void AddRecipes()

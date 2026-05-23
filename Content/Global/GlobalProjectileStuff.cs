@@ -75,6 +75,18 @@ public class Hitscan : GlobalProjectile
             secondFrame = false;
         }
     }
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (fromHitscan)
+        {
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
+        }
+    }
 }
 
 
@@ -134,7 +146,12 @@ public class RedneckCombo : GlobalProjectile
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 projectile.owner);
-            SoundEngine.PlaySound(SoundID.Item37, projectile.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
         }
     }
 
@@ -172,7 +189,12 @@ public class VPCombo : GlobalProjectile
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 projectile.owner);
 
-            SoundEngine.PlaySound(SoundID.Item37, projectile.position);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
         }
     }
 
@@ -252,7 +274,12 @@ public class XenonModX : GlobalProjectile
         Vector2 Peanits = target.Center;
         Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
             ProjectileType<XenonX>(), (int)(projectile.damage * 2f), projectile.knockBack, projectile.owner);
-
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+        {
+            Volume = 2.5f,
+            Pitch = 0f,
+            MaxInstances = 100,
+        });
     }
 
    
@@ -282,7 +309,7 @@ public class VerdantCombo : GlobalProjectile
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (!fromVerdantClaymore)
-            return; // Don't run if this isn't a right-click combo shot
+            return; 
 
         if (target.HasBuff(BuffType<VerdantTag>()))
         {
@@ -290,9 +317,15 @@ public class VerdantCombo : GlobalProjectile
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 projectile.owner);
 
-            // Apply a buff to the player
+           
             Player player = Main.player[projectile.owner];
-            player.AddBuff(BuffType<JungleHealing>(), 100); // 300 = 5 seconds (60 ticks per second)
+            player.AddBuff(BuffType<JungleHealing>(), 100); 
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
         }
     }
 
@@ -327,7 +360,7 @@ public class PyrrhicCombo : GlobalProjectile
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
         if (!fromPyrrhicClaymore)
-            return; // Don't run if this isn't a right-click combo shot
+            return; 
 
         if (target.HasBuff(BuffType<PyrrhicTag>()))
         {
@@ -335,9 +368,15 @@ public class PyrrhicCombo : GlobalProjectile
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 projectile.owner);
 
-            // Apply a buff to the player
+           
             Player player = Main.player[projectile.owner];
             player.AddBuff(BuffType<PyrrhicDefense>(), 120);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
         }
     }
 

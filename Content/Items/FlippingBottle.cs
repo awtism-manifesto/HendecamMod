@@ -37,7 +37,7 @@ public class FlippingBottle : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    public float LobotometerCost = 4f;
+    public float LobotometerCost = 2f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -54,10 +54,10 @@ public class FlippingBottle : ModItem
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.07f));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.01f);
+            newVelocity *= 1f - Main.rand.NextFloat(0.04f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
@@ -74,8 +74,15 @@ public class FlippingBottle : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 4 Braincells");
+        var line = new TooltipLine(Mod, "Face", "Uses 2 Braincells");
         tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
 
         line = new TooltipLine(Mod, "Face", "'Do it for the Vine'")
         {

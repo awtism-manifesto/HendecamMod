@@ -1,4 +1,5 @@
-﻿using Terraria.GameContent.Drawing;
+﻿using Terraria.Audio;
+using Terraria.GameContent.Drawing;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -74,5 +75,12 @@ public class TerraRound : ModProjectile
         ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.TrueNightsEdge,
             new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
             Projectile.owner);
+
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+        {
+            Volume = 2.5f,
+            Pitch = 0f,
+            MaxInstances = 100,
+        });
     }
 }

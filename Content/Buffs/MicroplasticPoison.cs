@@ -3,7 +3,7 @@ using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.Buffs;
 
-public class MicroplasticPoison : ModBuff // manifesto i remember you're vibe coding (comment written by manifesto) (bro how the FUCK was i supposed to do ts on my own)
+public class MicroplasticPoison : ModBuff // kids, do not vibe code.
 {
     public override void SetStaticDefaults()
     {
@@ -14,9 +14,7 @@ public class MicroplasticPoison : ModBuff // manifesto i remember you're vibe co
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-        // Only the server should handle stack calculations
-        if (Main.netMode == NetmodeID.MultiplayerClient && !Main.dedServ)
-            return;
+        
 
         int stackCount = 1;
 
@@ -120,9 +118,7 @@ public static class MicroplasticPoisonExtensions
 {
     public static void ApplyMicroplasticPoison(this NPC npc, int durationInSeconds, int stacks = 1)
     {
-        // Only the server should handle applying buffs
-        if (Main.netMode == NetmodeID.MultiplayerClient)
-            return;
+       
 
         int buffType = BuffType<MicroplasticPoison>();
 

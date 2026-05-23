@@ -54,6 +54,12 @@ public class KnightSwordDown : ModProjectile
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 Projectile.owner);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
             if (Main.rand.NextBool(3))
             {
                 SoundEngine.PlaySound(SoundID.Item82, Projectile.position);

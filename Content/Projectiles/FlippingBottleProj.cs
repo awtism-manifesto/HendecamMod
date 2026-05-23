@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.DamageClasses;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -24,7 +25,7 @@ public class FlippingBottleProj : ModProjectile
         // For the sake of example, lets make our projectile penetrate enemies a few more times than the vanilla projectile.
         // This can be done by modifying projectile.penetrate
     }
-
+   
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         if (Projectile.penetrate == 0)
@@ -52,6 +53,7 @@ public class FlippingBottleProj : ModProjectile
 
     public override void AI()
     {
+       
         for (int i = 0; i < 2; i++)
         {
             float posOffsetX = 0f;

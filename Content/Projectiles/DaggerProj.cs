@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Buffs;
+using Terraria.Audio;
 using Terraria.Enums;
 using Terraria.GameContent.Drawing;
 
@@ -103,6 +104,12 @@ public class DaggerProj : ModProjectile
             ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.NightsEdge,
                 new ParticleOrchestraSettings { PositionInWorld = Main.rand.NextVector2FromRectangle(target.Hitbox) },
                 Projectile.owner);
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
 
             if (Main.rand.NextBool(7))
             {

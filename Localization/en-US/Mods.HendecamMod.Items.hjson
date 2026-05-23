@@ -5479,3 +5479,13 @@ Fivenato: {
 	DisplayName: Fivenato
 	Tooltip: ""
 }
+
+RustyDustySawThrower: {
+	Tooltip: ""
+	DisplayName: Rusty,Dusty Saw-Thrower
+}
+
+PlatinumChip: {
+	Tooltip: ""
+	DisplayName: Platinum Chip
+}
