@@ -1,16 +1,16 @@
-AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore Placed
-AzuriteOrePlaced.MapEntry: Azurite Ore Placed
-MintalOrePlaced.MapEntry: Mintal Ore Placed
-MorbiumOrePlaced.MapEntry: Morbium Ore Placed
-TransOrePlaced.MapEntry: Trans Ore Placed
-CobaltWorkBenchPlaced.MapEntry: Cobalt Work Bench Placed
+AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore
+AzuriteOrePlaced.MapEntry: Azurite Ore
+MintalOrePlaced.MapEntry: Mintal Ore
+MorbiumOrePlaced.MapEntry: Morbium Ore
+TransOrePlaced.MapEntry: Trans Ore
+CobaltWorkBenchPlaced.MapEntry: Cobalt Work Bench
 
 PlatinumChestPlaced: {
-	MapEntry0: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry0
-	MapEntry1: Mods.HendecamMod.Tiles.PlatinumChestPlaced.MapEntry1
-	Locked: Mods.HendecamMod.Tiles.PlatinumChestPlaced.Locked
+	MapEntry0: Platinum Chest
+	MapEntry1: Platinum Chest
+	Locked: Locked Platinum Chest
 }
 
-LycopiteOreTile.MapEntry: Lycopite Ore Tile
+LycopiteOreTile.MapEntry: Lycopite Ore
 OilDeposit.MapEntry: Oil Deposit
-PromethiumOreTile.MapEntry: Promethium Ore Tile
+PromethiumOreTile.MapEntry: Promethium Ore
