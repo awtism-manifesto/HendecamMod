@@ -60,6 +60,7 @@ public class BinaryRifle : ModItem
         type = ProjectileType<BinaryLaser>();
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         SoundEngine.PlaySound(SoundID.Item114, player.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeatLaser") { Volume = 1.1f, PitchVariance = 0.2f, MaxInstances = 33 });
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

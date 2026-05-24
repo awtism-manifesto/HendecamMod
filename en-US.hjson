@@ -12,7 +12,11 @@ Mods: {
 					Label: Progression Based Enemy Powerscaling
 				}
 
-				Headers.Reworks: Reworks
+				Headers: {
+					Reworks: Reworks
+					ExperimentalFeatures: Experimental Features
+				}
+
 				DisplayName: Hendecam Mod Config
 
 				BootsTreeRework: {
@@ -33,6 +37,11 @@ Mods: {
 				MiscVanillaWeaponChanges: {
 					Tooltip: Non-class change major reworks to various vanilla weapons
 					Label: Misc Vanilla Weapon Changes
+				}
+
+				EverythingMakesCritNoise: {
+					Label: Everything Makes Crit Noise
+					Tooltip: Every hit on an NPC makes the Overwatch headshot noise play
 				}
 			}
 		}

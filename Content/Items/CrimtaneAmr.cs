@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
@@ -23,7 +25,7 @@ public class CrimtaneAmr : ModItem
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item88;
+        
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 34; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -69,7 +71,26 @@ public class CrimtaneAmr : ModItem
 
        
     }
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
 
+
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SVDShoot")
+        {
+            Volume = 1.33f,
+            Pitch = 0.2f,
+            MaxInstances = 100,
+        });
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
+        {
+            Volume = 1.25f,
+            Pitch = 0.25f,
+            MaxInstances = 100,
+        });
+
+
+        return true;
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

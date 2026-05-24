@@ -97,7 +97,7 @@ public class CockworkAssGun : GlobalItem
     {
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
         {
-            Volume = 2.67f,
+            Volume = 1f,
             Pitch = 0.1f,
             MaxInstances = 100,
         });

@@ -78,7 +78,7 @@ public class VP70 : ModItem
         {
             SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
             {
-                Volume = 2.67f,
+                Volume = 0.8f,
                 PitchVariance = 0.2f,
                 MaxInstances = 100,
             });
@@ -95,7 +95,7 @@ public class VP70 : ModItem
         {
             SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
             {
-                Volume = 2.67f,
+                Volume = 0.85f,
                 PitchVariance = 0.2f,
                 MaxInstances = 100,
             });

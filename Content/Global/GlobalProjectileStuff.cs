@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
@@ -506,4 +507,25 @@ public class MagnetSphereActuallyGoodNow : GlobalProjectile //shoutout to my cla
 
         return base.PreKill(projectile, timeLeft);
     }
+
 }
+public class CritNoiseGoBrrrrr: GlobalProjectile
+{
+  
+    public override bool InstancePerEntity => true;
+
+  
+    public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (GetInstance<HendecamConfig>().EverythingMakesCritNoise == true)
+        {
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
+            {
+                Volume = 2.5f,
+                Pitch = 0f,
+                MaxInstances = 100,
+            });
+        }
+    }
+}
+

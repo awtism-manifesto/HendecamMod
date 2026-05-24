@@ -18,7 +18,7 @@ public class GunThatKillsPeople : ModItem
         Item.autoReuse = true;
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyRifle")
         {
-            Volume = 1.1f,
+            Volume = 0.67f,
             PitchVariance = 0.2f,
             MaxInstances = 100,
         };

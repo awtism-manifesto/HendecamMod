@@ -1,6 +1,7 @@
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
@@ -26,6 +27,7 @@ public class VeryBigStick : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;
         Item.autoReuse = true;
+        Item.shoot = ProjectileType<NuhUh>();
         Item.useTurn = true;
     }
     public float LobotometerCost = 2f;

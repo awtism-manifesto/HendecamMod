@@ -33,7 +33,7 @@ public class DustySawblade : ModProjectile
     {
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SawbladeHit")
         {
-            Volume = 2f,
+            Volume = 0.44f,
             PitchVariance = 0.2f,
             MaxInstances = 33,
         });

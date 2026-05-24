@@ -81,8 +81,8 @@ public class CoreEnforcer: ModItem
             Projectile.NewProjectileDirect(source, position, (velocity * 0.75f), type, (int)(damage * 2f), knockback, player.whoAmI);
             SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/CoreEnforcerUse")
             {
-                Volume = 2.67f,
-                Pitch = 0.15f,
+                Volume = 4f,
+                Pitch = 0.22f,
                 MaxInstances = 100,
             });
 
@@ -105,8 +105,8 @@ public class CoreEnforcer: ModItem
             }
             SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/CoreEnforcerUse")
             {
-                Volume = 2.67f,
-                Pitch = 0.15f,
+                Volume = 4f,
+                Pitch = 0.8f,
                 MaxInstances = 100,
             });
         }

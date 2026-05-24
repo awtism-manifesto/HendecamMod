@@ -119,7 +119,7 @@ public class TackParagon : ModProjectile
             {
                 ShootTimer = ShootFrequency;
 
-                SoundEngine.PlaySound(SoundID.Item99 with { Volume = 0.4f }, Projectile.Center);
+                SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeatLaser") { Volume = 0.345f, PitchVariance = 0f, MaxInstances = 333 });
 
                 if (Main.myPlayer == Projectile.owner)
                 {

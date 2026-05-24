@@ -5,16 +5,16 @@ namespace HendecamMod.Common.Systems;
 
 public class HendecamConfig : ModConfig
 {
-   
+
     public override ConfigScope Mode => ConfigScope.ServerSide;
 
-   
 
-    [Header("Reworks")] 
-                   
-    [DefaultValue(true)] 
 
-    
+    [Header("Reworks")]
+
+    [DefaultValue(true)]
+
+
     public bool ProgressionBasedEnemyPowercreep;
 
     [DefaultValue(true)]
@@ -37,5 +37,8 @@ public class HendecamConfig : ModConfig
     [ReloadRequired]
     public bool MiscVanillaWeaponChanges;
 
+    [Header("ExperimentalFeatures")]
+    [DefaultValue(false)]
+    public bool EverythingMakesCritNoise;
 
 }
