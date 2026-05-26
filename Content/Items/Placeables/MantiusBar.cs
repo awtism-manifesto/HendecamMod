@@ -22,6 +22,9 @@ public class MantiusBar : ModItem
 
     public override void AddRecipes()
     {
-       
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<MantiusOre>(4);
+        recipe.AddTile(TileID.Hellforge);
+        recipe.Register();
     }
 }

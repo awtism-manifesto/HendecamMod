@@ -5489,3 +5489,8 @@ PlatinumChip: {
 	Tooltip: ""
 	DisplayName: Platinum Chip
 }
+
+MantiusOre: {
+	Tooltip: ""
+	DisplayName: Mantius Ore
+}

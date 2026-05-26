@@ -17,3 +17,5 @@ BlessedWithThroarbiumOreMessage: Mods.HendecamMod.WorldGen.BlessedWithThroarbium
 ManifestoOrePassMessage: Mods.HendecamMod.WorldGen.ManifestoOrePassMessage
 BlessedWithOilOreMessage: Mods.HendecamMod.WorldGen.BlessedWithOilOreMessage
 WorldGenTutorialOresPassMessage: Mods.HendecamMod.WorldGen.WorldGenTutorialOresPassMessage
+MantiusBlessMessage: Mods.HendecamMod.WorldGen.MantiusBlessMessage
+MantiusMessage: Mods.HendecamMod.WorldGen.MantiusMessage
