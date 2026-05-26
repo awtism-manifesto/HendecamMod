@@ -34,7 +34,7 @@ public class EpilepsyWarningGive : ModPlayer
             obj2.SetDefaults(ModContent.ItemType<YelmutsHelmet>());
             yield return obj2;
         }
-        if (Player.name == "Rivvie" || Player.name == "HateMate101")
+        if (Player.name == "Rivvie" || Player.name == "HateMate101" || Player.name == "rivvie" || Player.name == "River" || Player.name == "river")
 
         {
             var obj2 = new Item();
