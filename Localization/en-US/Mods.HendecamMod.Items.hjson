@@ -5494,3 +5494,13 @@ MantiusOre: {
 	Tooltip: ""
 	DisplayName: Mantius Ore
 }
+
+PneumaticRifle: {
+	Tooltip: ""
+	DisplayName: Pneumatic Rifle
+}
+
+ScaldingScepter: {
+	Tooltip: ""
+	DisplayName: Scalding Scepter
+}

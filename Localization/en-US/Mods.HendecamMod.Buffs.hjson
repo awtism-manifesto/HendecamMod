@@ -342,3 +342,8 @@ FunTimeCooldown: {
 	Description: Cannot activate Fun Time
 	DisplayName: Fun Time Cooldown
 }
+
+ScaldBurn: {
+	Description: Mods.HendecamMod.Buffs.ScaldBurn.Description
+	DisplayName: Scald Burn
+}

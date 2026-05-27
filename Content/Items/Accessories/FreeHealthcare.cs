@@ -80,7 +80,7 @@ public class HeartBooster : GlobalNPC
         if (player != null && player.active && player.GetModPlayer<Healthcare>().HasFreeHC)
         {
            
-            if (Main.rand.NextBool(4))
+            if (Main.rand.NextBool(3))
             {
                 Item.NewItem(npc.GetSource_Loot(), npc.getRect(), ItemID.Heart);
             }

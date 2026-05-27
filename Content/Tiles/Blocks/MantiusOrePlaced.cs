@@ -19,6 +19,7 @@ public class MantiusOrePlaced : ModTile
         Main.tileMerge[TileID.Ebonstone][Type] = true;
         Main.tileMerge[TileID.Crimstone][Type] = true;
         Main.tileMerge[TileID.Pearlstone][Type] = true;
+        Main.tileMerge[TileType<MantiusOrePlaced>()][Type] = true;
         Main.tileSolid[Type] = true;
         Main.tileBlockLight[Type] = true;
         Main.tileLighted[Type] = true;
@@ -50,17 +51,21 @@ public class MantiusOrePlaced : ModTile
         else if (!NPC.downedMechBoss1 || !NPC.downedMechBoss2 || !NPC.downedMechBoss3)
         {
 
-            spreadChance = 4;
+            spreadChance = 3;
         }
         else
         {
 
-            spreadChance = 12;
+            spreadChance = 8;
         }
 
         if (WorldGen.genRand.NextBool(spreadChance))
         {
             TrySpread(i, j);
+            if (!NPC.downedMechBossAny)
+            {
+                TrySpread(i, j);
+            }
         }
     }
 
@@ -68,7 +73,7 @@ public class MantiusOrePlaced : ModTile
     {
         // Check density cap (50 per 300 radius)
         int mantiusCount = 0;
-        int radius = 333;
+        int radius = 310;
 
         int minX = Math.Max(0, i - radius);
         int maxX = Math.Min(Main.maxTilesX - 1, i + radius);
@@ -95,7 +100,7 @@ public class MantiusOrePlaced : ModTile
             return;
 
         // Scan for stone blocks with random priority
-        int maxDistance = 8;
+        int maxDistance = 1;
 
         // Create a list of all possible offsets
         List<Point> offsets = new List<Point>();
@@ -159,6 +164,7 @@ public class MantiusOrePlaced : ModTile
 
             if (isStone && tile.HasTile && tile.TileType != Type)
             {
+                WorldGen.PlaceTile(checkX, checkY, Type, true, true);
                 if (WorldGen.PlaceTile(checkX, checkY, Type, true, true))
                 {
                     NetMessage.SendTileSquare(-1, checkX, checkY, 1);

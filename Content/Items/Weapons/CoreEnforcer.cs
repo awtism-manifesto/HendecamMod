@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework.Graphics;
@@ -72,7 +73,7 @@ public class CoreEnforcer: ModItem
     {
         if (Main.hardMode)
         {
-            damage = (int)(damage * 1.25f);
+            damage = (int)(damage * 1.33f);
         }
         if (player.altFunctionUse == 2)
         {
@@ -121,8 +122,7 @@ public class CoreEnforcer: ModItem
         recipe.AddIngredient(ItemID.BeeGun);
         recipe.AddIngredient<PlanetoidPunisher>();
         recipe.AddIngredient(ItemID.Flamelash);
-        recipe.AddIngredient(ItemID.AquaScepter);
-        recipe.AddIngredient<MantiusBar>(10);
+        recipe.AddIngredient<ScaldingScepter>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
 

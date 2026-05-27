@@ -15,7 +15,7 @@ public class MantiusOreBlessed : GlobalNPC
 
     public override void OnSpawn(NPC npc, IEntitySource source)
     {
-        if (!Main.hardMode && !MantiusSystem.WallOfFleshIsAlive)
+        if (!MantiusSystem.WallOfFleshIsAlive)
         {
             MantiusSystem.StartMantiusSpawning();
         }
@@ -23,8 +23,8 @@ public class MantiusOreBlessed : GlobalNPC
 
     public override void OnKill(NPC npc)
     {
-        // Jump-start spreading before stopping the system
-        if (!NPC.downedMechBossAny) // Only if mech bosses aren't defeated yet
+       
+        if (!NPC.downedPlantBoss)
         {
             MantiusSystem.JumpStartMantiusSpreading();
         }
@@ -63,7 +63,7 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
         if (Main.netMode == NetmodeID.SinglePlayer)
         {
             Main.NewText("The Wall of Flesh shakes the earth's mantle...", 185, 15, 90);
-            Main.NewText("Mantius ore spawning system activated!", 185, 15, 90);
+           
         }
         else if (Main.netMode == NetmodeID.Server)
         {
@@ -74,8 +74,6 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
     {
         if (Main.netMode == NetmodeID.MultiplayerClient)
             return;
-
-       
 
         // Find all Mantius ore tiles
         List<Point> mantiusTiles = new List<Point>();
@@ -92,13 +90,22 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
             }
         }
 
-        
+        int tileCount = mantiusTiles.Count;
+
+       
+
+        // Formula: More attempts when fewer tiles exist
+        // Base 50 attempts at 1 tile, diminishing returns down to 3 attempts at 500+ tiles
+        // spreadAttempts = max(3, min(50, 3000 / (tileCount + 50)))
+        int spreadAttemptsPerTile = Math.Max(5, Math.Min(75, 5000 / (tileCount + 50)));
+
+      
+      
+
+       
 
         // Create an instance of the tile
         MantiusOrePlaced oreTile = new MantiusOrePlaced();
-
-        // Each Mantius tile will attempt to spread multiple times
-        int spreadAttemptsPerTile = 11;
 
         for (int attempt = 0; attempt < spreadAttemptsPerTile; attempt++)
         {
@@ -109,7 +116,7 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
             }
         }
 
-      
+       
     }
     public static void StopMantiusSpawning()
     {

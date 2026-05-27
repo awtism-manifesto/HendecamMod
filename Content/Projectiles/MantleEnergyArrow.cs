@@ -17,7 +17,7 @@ public class MantleEnergyArrow : ModProjectile
     {
         Projectile.width = 22; // The width of projectile hitbox
         Projectile.height = 22; // The height of projectile hitbox
-
+        Projectile.scale = 1.25f;
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -52,7 +52,7 @@ public class MantleEnergyArrow : ModProjectile
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
 
-        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.033f);
+        modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.036f);
     }
     public override void AI()
     {

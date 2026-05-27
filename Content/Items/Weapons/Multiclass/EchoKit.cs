@@ -236,7 +236,7 @@ public class EchoKit : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
+        recipe.AddIngredient(ItemID.Diamond, 10);
         recipe.AddIngredient<MintalBar>(15);
         recipe.AddIngredient<UraniumBar>(15);
        
@@ -313,7 +313,7 @@ public class EchoWings : ModPlayer
             Player.wings = _wingSlot;
             Player.handon = _handsOnSlot;
             Player.handoff = _handsOffSlot;
-            Player.accRunSpeed = 8f;
+            Player.accRunSpeed += 2f;
             Player.wingRunAccelerationMult = 1.66f;
 
             // Reset flight time when on ground
