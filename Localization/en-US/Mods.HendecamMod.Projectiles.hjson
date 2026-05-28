@@ -619,3 +619,5 @@ PlatSpawn.DisplayName: Plat Spawn
 PlatinumChipProj.DisplayName: Platinum Chip Proj
 MantleStoneChunk.DisplayName: Mantle Stone Chunk
 ScaldStream.DisplayName: Scald Stream
+MantleBurstLaser.DisplayName: Mantle Burst Laser
+MantleAirBlast.DisplayName: Mantle Air Blast

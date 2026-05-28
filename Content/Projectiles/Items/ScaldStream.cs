@@ -19,7 +19,7 @@ public class ScaldStream : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
         AIType = ProjectileID.WaterStream;
-        Projectile.timeLeft = 110;
+        Projectile.timeLeft = 135;
        Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
     }

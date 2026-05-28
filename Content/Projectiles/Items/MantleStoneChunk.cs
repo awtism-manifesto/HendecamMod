@@ -6,12 +6,17 @@ namespace HendecamMod.Content.Projectiles.Items;
 
 public class MantleStoneChunk : ModProjectile
 {
-   
+    public override void SetStaticDefaults()
+    {
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 80; // The length of old position to be recorded
+        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
+    }
 
     public override void SetDefaults()
     {
-        Projectile.width = 16; // The width of projectile hitbox
-        Projectile.height = 16; // The height of projectile hitbox
+        Projectile.width = 13; // The width of projectile hitbox
+        Projectile.height = 13; // The height of projectile hitbox
+        Projectile.scale = 1.5f;
         Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -22,12 +27,26 @@ public class MantleStoneChunk : ModProjectile
         Projectile.light = 0.5f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 115; // Set to above 0 if you want the projectile to update multiple time in a frame
+        Projectile.extraUpdates = 30; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
+    public override bool PreDraw(ref Color lightColor)
+    {
+        Texture2D texture = TextureAssets.Projectile[Type].Value;
 
+        // Redraw the projectile with the color not influenced by light
+        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+        for (int k = 0; k < Projectile.oldPos.Length; k++)
+        {
+            Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+            Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+            Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None);
+        }
+
+        return true;
+    }
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
 
@@ -49,10 +68,10 @@ public class MantleStoneChunk : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.RedTorch, 0f, 0f, 100, default, 1.25f);
-                fire2Dust.fadeIn = 0.1f + Main.rand.Next(2) * 0.05f;
-                fire2Dust.velocity *= 0.1f;
-                fire2Dust.noGravity = true;
+               // Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 6, Projectile.height - 6, DustID.RedTorch, 0f, 0f, 100, default, 1.25f);
+               // fire2Dust.fadeIn = 0.1f + Main.rand.Next(2) * 0.05f;
+               // fire2Dust.velocity *= 0.1f;
+               // fire2Dust.noGravity = true;
             }
         }
     }

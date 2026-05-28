@@ -5504,3 +5504,8 @@ ScaldingScepter: {
 	Tooltip: ""
 	DisplayName: Scalding Scepter
 }
+
+AirburstTome: {
+	Tooltip: ""
+	DisplayName: Airburst Tome
+}
