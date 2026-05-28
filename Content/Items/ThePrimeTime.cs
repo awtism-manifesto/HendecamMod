@@ -19,7 +19,7 @@ public class ThePrimeTime : ModItem
         Item.autoReuse = true; 
         Item.UseSound = SoundID.Item94;
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 56; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 54; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 6.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; 
         Item.ArmorPenetration = 8;
@@ -37,7 +37,7 @@ public class ThePrimeTime : ModItem
 
         if (type == ProjectileType<ChargeLaser>())
         {
-            damage = (int)(damage * 1.25f);
+            damage = (int)(damage * 1.15f);
         }
     }
 

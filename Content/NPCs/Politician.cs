@@ -219,28 +219,8 @@ public class Politician : ModNPC
         {
         }
 
-        chat.Add(Language.GetTextValue("I should probably clarify real quick that my dumbass dialogue reflects what actual politicians think, not what Autism Manifesto thinks."), 2.5);
+        chat.Add(Language.GetTextValue("The mod developers have decided to remove all of my dialogue because having dialogue that accurately reflects what real politicians believe was too dark and depressing for a terraria mod."), 2.5);
 
-        chat.Add(Language.GetTextValue("Poor people dont deserve rights"), 0.4);
-        chat.Add(Language.GetTextValue("Yeah we did 9/11 lmao"));
-        chat.Add(Language.GetTextValue("Yeah guys lets just leave AI completely unregulated. Surely nothing bad will happen because of this..."));
-        chat.Add(Language.GetTextValue("Weed Leaves! an item so useful it oughta be illegal!"));
-        chat.Add(Language.GetTextValue("Yeah bro trickle down economics will definitely work this time, just trust me bro. It'll trickle down, trust me. You should definitely trust me."));
-        chat.Add(Language.GetTextValue("Me and my buddies in the Congress book club have been reading this really great book recently, it's called Mein Kampf"), 0.05);
-        chat.Add(Language.GetTextValue("I sold my soul to the state of Israel for this???"), 0.8);
-        chat.Add(Language.GetTextValue("Who needs education? Just use AI for everything!"));
-        chat.Add(Language.GetTextValue("Kanye is right."));
-        chat.Add(Language.GetTextValue("Y'know, it's supposed to be all sad and stuff when the dog in Old Yeller dies, but i actually think it's fucking hilarious"), 0.5);
-        chat.Add(Language.GetTextValue("ugh men... i love men... big hairy men... OH NO NO NO NO WAIT"));
-
-        chat.Add(Language.GetTextValue("Empathy is for dirty communists"));
-        chat.Add(Language.GetTextValue("I fucking LOOOOOVE insider trading"), 1.5);
-        chat.Add(Language.GetTextValue("Yeah bro Iran definitely has nukes trust me bro, just trust me please. It won't be anything like Iraq or Vietnam i swear, trust me."));
-        chat.Add(Language.GetTextValue("What's wrong with Orwell? 1984 was a guide"), 1.33);
-        chat.Add(Language.GetTextValue("No, i am not going to stop blowing up children with your tax money. Why? Because you're a bitch, that's why!"), 0.3);
-        chat.Add(Language.GetTextValue("Please don't ask me why 10 million dollars went missing from my bank account the night epstein died..."));
-        chat.Add(Language.GetTextValue("I, for one, think that our government doesnt bomb children enough."), 0.4);
-        chat.Add(Language.GetTextValue("Yeah i have one night stands with men half my age i met on grindr. Yeah i'm also gonna take your gay rights. Why? Because fuck you, thats why!"));
         NumberOfTimesTalkedTo++;
         string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 

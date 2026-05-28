@@ -106,7 +106,7 @@ public class MarksmanLaserSight : ModItem
             direction.Normalize();
 
             // Set max range
-            if (distance > 1454f) return;
+            if (distance > 1500f) return;
 
             
             Vector2 screenStart = startPos - Main.screenPosition;

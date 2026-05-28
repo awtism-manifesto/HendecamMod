@@ -3791,7 +3791,7 @@ Stg44: {
 }
 
 Sublimination: {
-	DisplayName: Sublimination
+	DisplayName: Sublimation
 	Tooltip: ""
 }
 
@@ -5508,4 +5508,9 @@ ScaldingScepter: {
 AirburstTome: {
 	Tooltip: ""
 	DisplayName: Airburst Tome
+}
+
+MantleBooster: {
+	DisplayName: Mantle Booster
+	Tooltip: ""
 }

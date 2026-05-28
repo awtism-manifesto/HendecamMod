@@ -66,7 +66,7 @@ public class MantleAirBlast : ModProjectile
                 position,
                 velocity,
                 ProjectileType<MantleBurstLaser>(),
-                 (int)(Projectile.damage * 0.63f),
+                 (int)(Projectile.damage * 0.67f),
                 Projectile.knockBack,
                 Projectile.owner
             );
@@ -79,7 +79,7 @@ public class MantleAirBlast : ModProjectile
             position2,
             velocity2,
             ProjectileType<MantleBurstLaser>(),
-            (int)(Projectile.damage * 0.63f),
+            (int)(Projectile.damage * 0.67f),
             Projectile.knockBack,
             Projectile.owner
         );
@@ -92,7 +92,7 @@ public class MantleAirBlast : ModProjectile
             position3,
             velocity3,
             ProjectileType<MantleBurstLaser>(),
-             (int)(Projectile.damage * 0.63f),
+             (int)(Projectile.damage * 0.67f),
             Projectile.knockBack,
             Projectile.owner
         );

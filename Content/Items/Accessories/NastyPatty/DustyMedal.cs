@@ -16,7 +16,7 @@ public class DustyMedal : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 50 mana and 4 Luck"));
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 100 mana and 4 Luck"));
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building or Fishing Buffs"));
     }
 

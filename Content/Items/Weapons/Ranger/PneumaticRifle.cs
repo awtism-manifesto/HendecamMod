@@ -52,7 +52,7 @@ public class PneumaticRifle : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts all bullets into Mantle Stone Chunks that can pierce through almost anything, including blocks");
+        var line = new TooltipLine(Mod, "Face", "Converts all bullets into Mantle Rays that can pierce through almost anything, including blocks");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Deals more damage to high defense targets")
         {

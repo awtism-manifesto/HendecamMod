@@ -1,8 +1,11 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
+using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 
@@ -94,14 +97,38 @@ public class Hitscan : GlobalProjectile
 public class FastLaserSwords : GlobalProjectile
 {
     public bool fromMechGun;
+    public bool firstFrame = true;
 
     public override bool InstancePerEntity => true;
 
-    public override void AI(Projectile projectile)
+    public override Color? GetAlpha(Projectile projectile, Color lightColor)
     {
         if (fromMechGun)
         {
-            projectile.extraUpdates = 2;
+            return Color.Red;
+        }
+        else return null;
+    }
+    public override void AI(Projectile projectile)
+    {
+        Player player = Main.player[projectile.owner];
+        var laserPlayer = player.GetModPlayer<LaserCD>();
+        if (fromMechGun)
+        {
+            projectile.extraUpdates = 3;
+            
+        }
+        if (fromMechGun && firstFrame == true && laserPlayer.LaserTimer > 0)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Vector2 velocity = projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11.33f));
+                Vector2 Peanits = projectile.Center - new Vector2(Main.rand.NextFloat(-36, 36), Main.rand.NextFloat(-36, 36));
+                Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
+                    ProjectileType<ChargeLaser>(), (int)(projectile.damage * 0.33f), projectile.knockBack, projectile.owner);
+            }
+
+            firstFrame = false;
         }
     }
 }

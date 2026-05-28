@@ -12,7 +12,7 @@ public class PyrrhicDefense : ModBuff
         player.lifeRegen = (int)(player.lifeRegen + 6.67f);
         player.ClearBuff(BuffID.Ichor);
         player.buffImmune[BuffID.Ichor] = true;
-        player.statDefense += 33;
+        player.statDefense += 20;
         
     }
 }

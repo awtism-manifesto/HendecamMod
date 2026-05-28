@@ -13,11 +13,11 @@ public class FidgetThrower2 : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 21;
-        Item.useAnimation = 21;
+        Item.useTime = 19;
+        Item.useAnimation = 19;
         Item.autoReuse = true;
         Item.DamageType = GetInstance<RangedStupidDamage>();
-        Item.damage = 66;
+        Item.damage = 68;
         Item.knockBack = 6.25f;
 
         Item.noMelee = true;

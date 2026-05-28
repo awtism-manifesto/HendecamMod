@@ -26,7 +26,7 @@ public class fiveproj : ModProjectile
         Projectile.light = 0.35f; // How much light emit around the projectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 6; // Set to above 0 if you want the projectile to update multiple time in a frame
+        Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }

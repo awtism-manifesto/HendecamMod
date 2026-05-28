@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
 
@@ -21,7 +22,7 @@ public class MantleStoneChunk : ModProjectile
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 8; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+        Projectile.penetrate = 999; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 200; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 255; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
         Projectile.light = 0.5f; // How much light emit around the projectile
@@ -51,6 +52,11 @@ public class MantleStoneChunk : ModProjectile
     {
 
         modifiers.SourceDamage = modifiers.SourceDamage + (target.defense * 0.036f);
+    }
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+     
+        Projectile.damage = (int)(Projectile.damage * 0.95f); 
     }
 
     public override void AI()

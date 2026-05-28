@@ -16,7 +16,7 @@ public class WandOfTheOvercompensator : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1.25f;
         Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
-        Item.value = 44000;
+        Item.value = 215000;
         // Use Properties
         // Use Properties
         Item.useTime = 52; // The item's use time in ticks (60 ticks == 1 second.)

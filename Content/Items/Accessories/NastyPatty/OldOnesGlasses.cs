@@ -16,7 +16,7 @@ public class OldOnesGlasses : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants 50 more Mana, at the cost of Building Buffs");
+        var line = new TooltipLine(Mod, "Face", "Grants 100 more Mana, at the cost of Building Buffs");
         tooltips.Add(line);
     }
 

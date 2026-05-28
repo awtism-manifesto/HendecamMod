@@ -122,7 +122,7 @@ namespace HendecamMod.Content.Items
 
             // Optional: Show current TOTAL max (including equipment)
             float totalMax = loboPlayer.Max;
-            line = new TooltipLine(Mod, "CurrentTotal", $"Current total capacity: {totalMax} (including equipment)")
+            line = new TooltipLine(Mod, "CurrentTotal", $"Current Braincell count: {totalMax} (including equipment)")
             {
                 OverrideColor = new Color(200, 200, 200)
             };

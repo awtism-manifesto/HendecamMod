@@ -347,3 +347,8 @@ ScaldBurn: {
 	Description: Mods.HendecamMod.Buffs.ScaldBurn.Description
 	DisplayName: Scald Burn
 }
+
+DroneSwarmCooldown: {
+	Description: Mods.HendecamMod.Buffs.DroneSwarmCooldown.Description
+	DisplayName: Drone Swarm Cooldown
+}

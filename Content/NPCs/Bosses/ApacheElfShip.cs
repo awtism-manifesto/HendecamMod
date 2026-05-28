@@ -15,8 +15,7 @@ namespace HendecamMod.Content.NPCs.Bosses;
 [AutoloadBossHead]
 public class ApacheElfShip : ModNPC
 {
-    private int nextSpawnTick;
-    private int tickCounter;
+
 
     public override void SetStaticDefaults()
     {
@@ -131,157 +130,287 @@ public class ApacheElfShip : ModNPC
         return true;
     }
 
-    public async override void AI()
+    // No more 'private int nextSpawnTick, tickCounter;'
+
+    public override void AI()
     {
-        if (!NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
+        // Constants for state machine
+        const int STATE_IDLE = 0;
+        const int STATE_ATTACK = 1;
+
+        // 1. Run the Elf Copter movement (base AI style)
+        base.AI();
+
+        // 2. Despawn if no target AND not in attack (server only)
+        if (!NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient && NPC.ai[0] == STATE_IDLE)
         {
             NPC.SetDefaults(0);
             NPC.active = false;
             if (BossDownedSystem.downedApacheElfShip)
             {
-                var source2 = NPC.GetSource_FromAI();
+                var source = NPC.GetSource_FromAI();
                 AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
-                NPC.NewNPCDirect(source2, (int)NPC.Center.X, (int)NPC.Center.Y, NPCType<Alpine>(), NPC.whoAmI);
+                NPC.NewNPCDirect(source, (int)NPC.Center.X, (int)NPC.Center.Y,
+                    NPCType<Alpine>(), NPC.whoAmI);
             }
+            return;
         }
 
+        // 3. Unlock alpine spawn only once (server only)
+        if (AlpineNPCRespawnSystem.unlockedAlpineSpawn && Main.netMode != NetmodeID.MultiplayerClient)
+            AlpineNPCRespawnSystem.unlockedAlpineSpawn = false;
+
+        // Helper function to reset to idle state
+        void FinishAttack()
         {
-            if (nextSpawnTick == 0)
+            NPC.ai[0] = STATE_IDLE;
+            NPC.ai[1] = 0;          // tick counter
+            NPC.ai[2] = Main.rand.Next(300, 500); // next spawn tick
+            NPC.ai[3] = 0;          // loop counter
+        }
+
+        // Helper to convert milliseconds to frames (60 fps)
+        int DelayFrames(float milliseconds)
+        {
+            return (int)Math.Max(1, milliseconds / 1000f * 60f);
+        }
+
+        // ------------------------------------------------------------------
+        // IDLE STATE
+        // ------------------------------------------------------------------
+        if (NPC.ai[0] == STATE_IDLE)
+        {
+            // Initialize idle state on first entry
+            if (NPC.ai[2] == 0)
             {
-                AlpineNPCRespawnSystem.unlockedAlpineSpawn = false;
-                nextSpawnTick = Main.rand.Next(300, 500);
+                NPC.ai[2] = Main.rand.Next(300, 500);   // nextSpawnTick
+                NPC.ai[1] = 0;                          // tickCounter
             }
 
-            tickCounter++;
+            NPC.ai[1]++;   // increment frame counter
 
-            if (tickCounter == nextSpawnTick)
+            if (NPC.ai[1] >= NPC.ai[2])
             {
+                // Time to choose an attack
                 NPC.TargetClosest();
                 if (NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    var source = NPC.GetSource_FromAI();
-                    Vector2 position = NPC.Center;
-                    Vector2 targetPosition = Main.player[NPC.target].Center;
-                    Vector2 direction = targetPosition - position;
-                    AlpineNPCRespawnSystem.unlockedAlpineSpawn = false;
-                    direction.Normalize();
-                    float speed = 20f;
-                    int damage = NPC.damage;
-                    int choice = Main.rand.Next(2);
-                    int SummonX = 0;
-                    int p = 0;
-                    int b = 0;
-                    int Difficulty = 1;
-                    Difficulty = 1;
-                    if (Main.expertMode)
-                    {
-                        Difficulty += 1;
-                    }
-
-                    if (Main.masterMode)
-                    {
-                        Difficulty += 1;
-                    }
-
-                    if (Main.getGoodWorld)
-                    {
-                        Difficulty += 1;
-                    }
-
-                    if (Main.getGoodWorld & Main.drunkWorld)
-                    {
-                        Difficulty += 1;
-                    }
-
-                    switch (choice)
-                    {
-                        case 0:
-                            SummonX = 3000;
-                            p = 0;
-                            break;
-                        case 1:
-                            SummonX = -3000;
-                            p = 0;
-                            break;
-                    }
-
-                    switch (Main.rand.Next(5))
-                    {
-                        case 0:
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("I'm preparing a few ''gifts'' for you."), new Color(185, 105, 105));
-                            await Task.Delay(500 / Difficulty);
-                            for (p = 0; p < 10 * Difficulty; p++)
-                            {
-                                Vector2 position0 = NPC.Center;
-                                Vector2 targetPosition0 = Main.player[NPC.target].Center;
-                                Vector2 direction0 = targetPosition0 - position;
-                                Projectile.NewProjectile(source, position0, direction0 * 0.01f, ProjectileID.Present, 75, 0f, Main.myPlayer);
-                                await Task.Delay(400 / Difficulty);
-                            }
-
-                            break;
-                        case 1:
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Get ready to eat plasma, asswipe."), new Color(185, 105, 105));
-                            await Task.Delay(500 / Difficulty);
-                            for (b = 0; b < 5 * Difficulty; b++)
-                            {
-                                for (p = 0; p < 5 * Difficulty; p++)
-                                {
-                                    Vector2 position1 = NPC.Center;
-                                    Vector2 targetPosition1 = Main.player[NPC.target].Center;
-                                    Vector2 direction1 = targetPosition1 - position1;
-                                    SoundEngine.PlaySound(SoundID.Item42, position1);
-                                    SoundEngine.PlaySound(SoundID.Item99, position1);
-                                    SoundEngine.PlaySound(SoundID.Item114, position1);
-                                    Projectile.NewProjectile(source, position1, direction1 * 0.01f, ProjectileType<ApexPlasmaBulletHostile>(), 75, 0f, Main.myPlayer);
-                                    await Task.Delay(50 / Difficulty);
-                                }
-
-                                await Task.Delay(500 / Difficulty);
-                            }
-
-                            break;
-                        case 2:
-
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Needing ground support, send an NK1."), new Color(185, 105, 105));
-                            await Task.Delay(500 / Difficulty);
-                            SoundEngine.PlaySound(SoundID.Item94, position);
-                            for (p = 0; p < 1 * Difficulty; p++)
-                            {
-                                NPC.NewNPCDirect(source, (int)NPC.Center.X + SummonX + Main.rand.Next(-100, 100), (int)NPC.Center.Y + Main.rand.Next(-500, 500), NPCID.SantaNK1, NPC.whoAmI);
-                            }
-
-                            await Task.Delay(10000 / Difficulty);
-                            break;
-                        case 3:
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Requesting backup, send a squad to my location."), new Color(185, 105, 105));
-                            await Task.Delay(500 / Difficulty);
-                            SoundEngine.PlaySound(SoundID.Item94, position);
-                            for (p = 0; p < 5 * Difficulty; p++)
-                            {
-                                NPC.NewNPCDirect(source, (int)NPC.Center.X + SummonX + Main.rand.Next(-100, 100), (int)NPC.Center.Y + Main.rand.Next(-500, 500), NPCID.ElfCopter, NPC.whoAmI);
-                            }
-
-                            break;
-                        case 4:
-                            SoundEngine.PlaySound(SoundID.Item94, position);
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Missiles primed, target locked."), new Color(185, 105, 105));
-                            await Task.Delay(500 / Difficulty);
-                            for (p = 0; p < 5 * Difficulty; p++)
-                            {
-                                Vector2 position4 = NPC.Center;
-                                Vector2 targetPosition4 = Main.player[NPC.target].Center;
-                                Vector2 direction4 = targetPosition4 - position4;
-                                Projectile.NewProjectile(source, position4, direction4 * speed, ProjectileID.Missile, 80, 0f, Main.myPlayer);
-                                await Task.Delay(200 / Difficulty);
-                            }
-
-                            break;
-                    }
+                    // Choose attack (0-4)
+                    int attackType = Main.rand.Next(5);
+                    NPC.ai[2] = attackType;          // store attack type
+                    NPC.ai[3] = 0;                   // initialize loop counter
+                    NPC.ai[0] = STATE_ATTACK;        // switch to attack state
+                    NPC.ai[1] = 0;                   // reset timer
                 }
+                else
+                {
+                    // No target – reset idle timer
+                    NPC.ai[2] = Main.rand.Next(300, 500);
+                    NPC.ai[1] = 0;
+                }
+            }
+            return;
+        }
 
-                tickCounter = 0;
-                nextSpawnTick = Main.rand.Next(300, 500);
+        // ------------------------------------------------------------------
+        // ATTACK STATE
+        // ------------------------------------------------------------------
+        if (NPC.ai[0] == STATE_ATTACK)
+        {
+            // Ensure we still have a valid target
+            NPC.TargetClosest();
+            if (!NPC.HasValidTarget)
+            {
+                FinishAttack();
+                return;
+            }
+
+            // If timer > 0, count it down and wait
+            if (NPC.ai[1] > 0)
+            {
+                NPC.ai[1]--;
+                return;
+            }
+
+            // Timer reached 0 – perform next step of the current attack
+            int attackType = (int)NPC.ai[2];
+            int spawnsRemaining = (int)NPC.ai[3];
+            var source = NPC.GetSource_FromAI();
+            Vector2 center = NPC.Center;
+            Vector2 targetPos = Main.player[NPC.target].Center;
+
+            // Difficulty scaling
+            int difficulty = 1;
+            if (Main.expertMode) difficulty++;
+            if (Main.masterMode) difficulty++;
+            if (Main.getGoodWorld) difficulty++;
+            if (Main.getGoodWorld && Main.drunkWorld) difficulty++;
+
+            switch (attackType)
+            {
+                case 0: // Presents
+                    if (spawnsRemaining == 0)
+                    {
+                        // Initialize attack
+                        ChatHelper.BroadcastChatMessage(
+                            NetworkText.FromLiteral("I'm preparing a few ''gifts'' for you."),
+                            new Color(185, 105, 105));
+                        spawnsRemaining = 10 * difficulty;
+                        NPC.ai[3] = spawnsRemaining;
+                        NPC.ai[1] = DelayFrames(500);
+                        break;
+                    }
+
+                    // Spawn one present projectile
+                    Vector2 dirToPlayer = targetPos - center;
+                    Projectile.NewProjectile(source, center, dirToPlayer * 0.01f,
+                        ProjectileID.Present, 75, 0f, Main.myPlayer);
+                    SoundEngine.PlaySound(SoundID.Item42, center);
+
+                    spawnsRemaining--;
+                    NPC.ai[3] = spawnsRemaining;
+
+                    if (spawnsRemaining > 0)
+                        NPC.ai[1] = DelayFrames(400);
+                    else
+                        FinishAttack();
+                    break;
+
+                case 1: // Plasma bullets
+                    int bulletsPerOuterLoop = 5 * difficulty; // Declared once here
+
+                    if (spawnsRemaining == 0)
+                    {
+                        ChatHelper.BroadcastChatMessage(
+                            NetworkText.FromLiteral("Get ready to eat plasma, asswipe."),
+                            new Color(185, 105, 105));
+                        // Total bullets = (5*difficulty)^2
+                        int totalBullets = bulletsPerOuterLoop * bulletsPerOuterLoop;
+                        spawnsRemaining = totalBullets;
+                        NPC.ai[3] = spawnsRemaining;
+                        NPC.ai[1] = DelayFrames(500);
+                        break;
+                    }
+
+                    // Spawn one plasma bullet
+                    Vector2 dir = targetPos - center;
+                    Projectile.NewProjectile(source, center, dir * 0.01f,
+                        ProjectileType<ApexPlasmaBulletHostile>(), 67, 0f, Main.myPlayer);
+                    SoundEngine.PlaySound(SoundID.Item42, center);
+                    SoundEngine.PlaySound(SoundID.Item99, center);
+                    SoundEngine.PlaySound(SoundID.Item114, center);
+
+                    spawnsRemaining--;
+                    NPC.ai[3] = spawnsRemaining;
+
+                    bool isEndOfOuter = (spawnsRemaining % bulletsPerOuterLoop) == 0;
+                    if (spawnsRemaining > 0)
+                    {
+                        NPC.ai[1] = DelayFrames(50);
+                        if (isEndOfOuter)
+                            NPC.ai[1] += DelayFrames(500);
+                    }
+                    else
+                    {
+                        FinishAttack();
+                    }
+                    break;
+
+                case 2: // Summon Santa NK1
+                    if (spawnsRemaining == 0)
+                    {
+                        ChatHelper.BroadcastChatMessage(
+                            NetworkText.FromLiteral("Needing ground support, send an NK1."),
+                            new Color(185, 105, 105));
+                        SoundEngine.PlaySound(SoundID.Item94, center);
+                        // Choose left/right once for this entire attack
+                        int summonXOffset = Main.rand.NextBool() ? 3000 : -3000;
+                        NPC.ai[1] = summonXOffset; // temporarily store offset in timer slot (safe because timer is 0 here)
+                        NPC.ai[1] = DelayFrames(500);
+                        spawnsRemaining = 1 * difficulty;
+                        NPC.ai[3] = spawnsRemaining;
+                        break;
+                    }
+
+                    // Spawn one NK1
+                    int summonOffset = (int)NPC.ai[1]; // retrieve stored offset
+                    int xPos = (int)center.X + summonOffset + Main.rand.Next(-100, 100);
+                    int yPos = (int)center.Y + Main.rand.Next(-500, 500);
+                    // Clamp to world bounds
+                    xPos = (int)Math.Clamp(xPos, 50, Main.maxTilesX * 16 - 50);
+                    yPos = (int)Math.Clamp(yPos, 50, Main.maxTilesY * 16 - 50);
+                    NPC.NewNPCDirect(source, xPos, yPos, NPCID.SantaNK1, NPC.whoAmI);
+
+                    spawnsRemaining--;
+                    NPC.ai[3] = spawnsRemaining;
+
+                    if (spawnsRemaining > 0)
+                        NPC.ai[1] = DelayFrames(10000);
+                    else
+                        FinishAttack();
+                    break;
+
+                case 3: // Summon Elf Copter squad
+                    if (spawnsRemaining == 0)
+                    {
+                        ChatHelper.BroadcastChatMessage(
+                            NetworkText.FromLiteral("Requesting backup, send a squad to my location."),
+                            new Color(185, 105, 105));
+                        SoundEngine.PlaySound(SoundID.Item94, center);
+                        // Store summon offset for this attack
+                        int summonXOffset = Main.rand.NextBool() ? 3000 : -3000;
+                        NPC.ai[1] = summonXOffset;
+                        NPC.ai[1] = DelayFrames(500);
+                        spawnsRemaining = 5 * difficulty;
+                        NPC.ai[3] = spawnsRemaining;
+                        break;
+                    }
+
+                    // Spawn one Elf Copter
+                    int summonOffset2 = (int)NPC.ai[1];
+                    int xPos2 = (int)center.X + summonOffset2 + Main.rand.Next(-100, 100);
+                    int yPos2 = (int)center.Y + Main.rand.Next(-500, 500);
+                    // Clamp to world bounds
+                    xPos2 = (int)Math.Clamp(xPos2, 50, Main.maxTilesX * 16 - 50);
+                    yPos2 = (int)Math.Clamp(yPos2, 50, Main.maxTilesY * 16 - 50);
+                    NPC.NewNPCDirect(source, xPos2, yPos2, NPCID.ElfCopter, NPC.whoAmI);
+
+                    spawnsRemaining--;
+                    NPC.ai[3] = spawnsRemaining;
+
+                    if (spawnsRemaining > 0)
+                        NPC.ai[1] = 0; // No delay between spawns
+                    else
+                        FinishAttack();
+                    break;
+
+                case 4: // Missiles
+                    if (spawnsRemaining == 0)
+                    {
+                        ChatHelper.BroadcastChatMessage(
+                            NetworkText.FromLiteral("Missiles primed, target locked."),
+                            new Color(185, 105, 105));
+                        SoundEngine.PlaySound(SoundID.Item94, center);
+                        spawnsRemaining = 5 * difficulty;
+                        NPC.ai[3] = spawnsRemaining;
+                        NPC.ai[1] = DelayFrames(500);
+                        break;
+                    }
+
+                    // Spawn one missile
+                    Vector2 dirMissile = targetPos - center;
+                    Projectile.NewProjectile(source, center, dirMissile * 20f,
+                        ProjectileID.Missile, 80, 0f, Main.myPlayer);
+                    SoundEngine.PlaySound(SoundID.Item42, center);
+
+                    spawnsRemaining--;
+                    NPC.ai[3] = spawnsRemaining;
+
+                    if (spawnsRemaining > 0)
+                        NPC.ai[1] = DelayFrames(200);
+                    else
+                        FinishAttack();
+                    break;
             }
         }
     }

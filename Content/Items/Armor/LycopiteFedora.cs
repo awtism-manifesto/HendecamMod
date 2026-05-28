@@ -46,7 +46,7 @@ public class LycopiteFedora : ModItem
 
         line = new TooltipLine(Mod, "Face", "+75 Max Braincells")
         {
-            OverrideColor = new Color(34, 221, 240)
+            OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))

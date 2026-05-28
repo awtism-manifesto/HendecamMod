@@ -5,11 +5,7 @@ namespace HendecamMod.Content.Projectiles;
 
 public class SublimRay2 : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
-        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-    }
+    
 
     public override void SetDefaults()
     {
@@ -24,7 +20,7 @@ public class SublimRay2 : ModProjectile
         Projectile.alpha = 255; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
         Projectile.aiStyle = 1;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
-        Projectile.tileCollide = true; // Can the projectile collide with tiles?
+        Projectile.tileCollide = false; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 5; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
