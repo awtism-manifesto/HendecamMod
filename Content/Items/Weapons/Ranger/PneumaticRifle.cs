@@ -70,14 +70,14 @@ public class PneumaticRifle : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-       
-        recipe.AddIngredient<MantiusBar>(10);
-
         recipe.AddIngredient<Polymer>(25);
-       
-
+        recipe.AddIngredient<MantiusBar>(10);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod Spirit2Merica) && Spirit2Merica.TryFind("HuntingRifle", out ModItem HuntingRifle))
+        {
+            recipe.AddIngredient(HuntingRifle.Type);
+        }
     }
     public override Vector2? HoldoutOffset()
     {

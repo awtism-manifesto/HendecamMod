@@ -72,6 +72,10 @@ public class TheTackZone : ModItem
         {
             recipe.AddIngredient(ItemID.LunarBar, 9);
         }
+        if (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("ElementOfPain", out ModItem ElementOfPain))
+        {
+            recipe.AddIngredient(ElementOfPain.Type);
+        }
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

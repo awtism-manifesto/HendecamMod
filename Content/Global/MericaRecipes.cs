@@ -3,6 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Global;
@@ -391,7 +392,7 @@ public class MericaRecipes : ModSystem
         {
             Recipe glocknbawlz = Recipe.Create(GelatinousGlock.Type);
 
-            glocknbawlz.AddIngredient<Items.Glock>();
+            glocknbawlz.AddIngredient<Glock>();
             glocknbawlz.AddIngredient(ItemID.Gel, 30);
             glocknbawlz.AddTile(TileID.Solidifier);
             glocknbawlz.Register();
@@ -400,7 +401,7 @@ public class MericaRecipes : ModSystem
         {
             Recipe glocknbawlz = Recipe.Create(BoomShroom.Type);
 
-            glocknbawlz.AddIngredient<Items.LycopiteBar>(10);
+            glocknbawlz.AddIngredient<LycopiteBar>(10);
             glocknbawlz.AddIngredient(ItemID.Mushroom, 5);
             glocknbawlz.AddTile(TileID.TinkerersWorkbench);
             glocknbawlz.Register();
@@ -414,7 +415,21 @@ public class MericaRecipes : ModSystem
             glocknbawlz.AddTile(TileID.Anvils);
             glocknbawlz.Register();
         }
-       
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor3Merica) && Thor3Merica.TryFind("SteelBow", out ModItem SteelBow))
+        {
+            Recipe recipeens = Recipe.Create(SteelBow.Type);
+            recipeens.AddIngredient(ItemType<SteelBow>());
+            recipeens.AddTile(TileID.Anvils);
+            recipeens.Register();
+        }
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod Thor4Merica) && Thor4Merica.TryFind("LodeStoneChunk", out ModItem LodeStoneChunk) && Thor4Merica.TryFind("LodeStoneChunk", out ModItem LodeStoneIngot))
+        {
+            Recipe recipeen = Recipe.Create(LodeStoneIngot.Type, 2);
+            recipeen.AddIngredient(LodeStoneChunk.Type, 7);
+            recipeen.AddIngredient<DirtBar>(3);
+            recipeen.AddTile(TileID.Hellforge);
+            recipeen.Register();
+        }
 
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("aDarksteelAlloy", out ModItem aDarksteelAlloy))
         {
@@ -451,6 +466,15 @@ public class MericaRecipes : ModSystem
             glocksnbawlz.AddIngredient<Paper>();
 
            
+            glocksnbawlz.Register();
+        }
+        if (ModLoader.TryGetMod("Split", out Mod sp) && sp.TryFind("LazuriteBar", out ModItem LazuriteBar))
+        {
+            Recipe glocksnbawlz = Recipe.Create(LazuriteBar.Type);
+
+            glocksnbawlz.AddIngredient<AzuriteBar>();
+
+            glocksnbawlz.AddTile(TileID.AlchemyTable);
             glocksnbawlz.Register();
         }
 

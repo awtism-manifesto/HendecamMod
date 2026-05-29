@@ -155,6 +155,10 @@ public class ContentEmblem : ModItem
 
             Item.value += 500000;
         }
+        if (ModLoader.TryGetMod("Split", out Mod Sp))
+        {
+            Item.value += 125000;
+        }
         if (ModLoader.TryGetMod("BeatriceMod", out Mod Beat))
         {
             Item.value += 1000000;
@@ -302,6 +306,22 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
+        if (ModLoader.TryGetMod("VitalityMod", out Mod Vital))
+        {
+            line = new TooltipLine(Mod, "Face", "Vitality Mod- Increases max health by 15%")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
+        if (ModLoader.TryGetMod("Split", out Mod Sp))
+        {
+            line = new TooltipLine(Mod, "Face", "Split- Massively increased damage at the cost of almost all crit chance when facing left, guaranteed crits at the cost of some damage when facing right")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
         if (ModLoader.TryGetMod("Macrocosm", out Mod MacroMerica))
         {
 
@@ -311,14 +331,7 @@ public class ContentEmblem : ModItem
             };
             tooltips.Add(line);
         }
-        if (ModLoader.TryGetMod("VitalityMod", out Mod Vital))
-        {
-            line = new TooltipLine(Mod, "Face", "Vitality Mod- Increases max health by 15%")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        }
+       
         if (ModLoader.TryGetMod("Laugicality", out Mod EnigmaMod))
         {
             line = new TooltipLine(Mod, "Face", "Enigma Mod- All attacks inflict on fire and frostburn")
@@ -419,6 +432,7 @@ public class ContentEmblem : ModItem
             tooltips.Add(line);
 
         }
+       
 
         if (ModLoader.TryGetMod("RangerFlame", out Mod FireMerica))
         {
@@ -548,6 +562,10 @@ public class ContentEmblem : ModItem
         if (ModLoader.TryGetMod("gunsandguns2", out Mod gun) && gun.TryFind("invalidator", out ModItem invalidator))
         {
             recipe.AddIngredient(invalidator.Type);
+        }
+        if (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("ElementOfFire", out ModItem ElementOfFire))
+        {
+            recipe.AddIngredient(ElementOfFire.Type);
         }
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AshesofCalamity", out ModItem AshesofCalamity))
         {
@@ -780,6 +798,10 @@ public class ContentEmblem : ModItem
                 player.endurance = 1f - 0.8f * (1f - player.endurance);
             }
         }
+        if (ModLoader.TryGetMod("Split", out Mod Sp))
+        {
+            player.GetModPlayer<SplitBuffs>().Split = true;
+        }
         if (ModLoader.TryGetMod("Consolaria", out Mod ConsMerica))
         {
             player.GetModPlayer<JoystickMovement>().JoySticky = true;
@@ -806,6 +828,43 @@ public class ContentEmblem : ModItem
             player.GetModPlayer<XenonXSpawn>().X = true;
         }
       
+    }
+}
+public class SplitBuffs : ModPlayer
+{
+    public bool Split;
+
+    public override void ResetEffects()
+    {
+        Split = false;
+    }
+
+    public override void UpdateEquips()
+    {
+        if (Split && Player.direction == -1)
+        {
+
+            
+
+
+            float damageBonus = 1.05f;
+            Player.GetDamage(DamageClass.Generic) += damageBonus;
+            Player.GetCritChance(DamageClass.Generic) += -95;
+
+
+        }
+        if (Split && Player.direction == 1)
+        {
+
+
+
+
+            float damageBonus = -0.25f;
+            Player.GetDamage(DamageClass.Generic) += damageBonus;
+
+            Player.GetCritChance(DamageClass.Generic) += 85;
+
+        }
     }
 }
 public class UltraStats : ModPlayer

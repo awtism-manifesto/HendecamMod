@@ -4,6 +4,7 @@ using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -33,11 +34,12 @@ public class RustyDustySawThrower : ModItem
         Item.shoot = ProjectileType<DustySawblade>(); // ID of the projectiles the sword will shoot
         Item.shootSpeed = 9.75f; // Speed of the projectiles the sword will shoot
 
-        // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
-        // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-
-        // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
-        // Item.ChangePlayerDirectionOnShoot = false;
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("Sawblade", out ModItem Sawblade))
+        {
+            Item.useTime = 24;
+            Item.useAnimation = 24;
+            Item.damage = 34;
+        }
     }
     public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
@@ -75,10 +77,18 @@ public class RustyDustySawThrower : ModItem
         Recipe recipe = CreateRecipe();
 
         recipe.AddIngredient<Sawdust>(250);
-        recipe.AddIngredient(ItemID.Sawmill);
+       
        
         recipe.AddIngredient(ItemID.IllegalGunParts);
         recipe.AddTile(TileID.Sawmill);
         recipe.Register();
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("Sawblade", out ModItem Sawblade))
+        {
+            recipe.AddIngredient(Sawblade.Type, 100);
+        }
+        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && ThorMerica.TryFind("Sawblade", out ModItem Saw2blade))
+        {
+            recipe.AddIngredient(ItemID.Sawmill);
+        }
     }
 }

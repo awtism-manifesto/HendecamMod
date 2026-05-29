@@ -368,6 +368,30 @@ public class IGobbleAssUwU : GlobalItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.DarkViolet });
     }
 }
+public class TwistedClasses : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().VanillaWeaponClassChanges == true && (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("Twister", out ModItem Twister)))
+        {
+            return item.type == Twister.Type;
+        }
+        else return false;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.DamageType = GetInstance<MeleeMagicDamage>();
+        item.damage = 22;
+        item.mana = 6;
+      
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Split) : Now deals melee+magic damage, increased base damage to compensate for mana use") { OverrideColor = Color.Pink});
+    }
+}
 
 public class Terraprimsma : GlobalItem
 {

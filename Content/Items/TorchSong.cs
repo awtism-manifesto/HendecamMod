@@ -105,6 +105,10 @@ public class TorchSong : ModItem
         {
             recipe.AddIngredient(SpiritDroplet.Type, 5);
         }
+        if (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("ElementOfDeath", out ModItem ElementOfDeath))
+        {
+            recipe.AddIngredient(ElementOfDeath.Type);
+        }
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

@@ -54,9 +54,24 @@ public class SuperMaelstrom : ModItem
         recipe.AddIngredient<BladeMaelstrom>();
         recipe.AddIngredient<FissionDrive>(3);
         recipe.AddIngredient(ItemID.Spike, 72);
-        recipe.AddIngredient(ItemID.LunarBar, 9);
+       
         recipe.AddTile(TileType<CultistCyclotronPlaced>());
         recipe.Register();
+
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("NightmareFuel", out ModItem NightmareFuel) && CalMerica.TryFind("CosmiliteBar", out ModItem CosmiliteBar))
+        {
+            recipe.AddIngredient(CosmiliteBar.Type, 6);
+            recipe.AddIngredient(NightmareFuel.Type, 15);
+        }
+       
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod Cal2Merica))
+        {
+            recipe.AddIngredient(ItemID.LunarBar, 9);
+        }
+        if (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("ElementOfDeath", out ModItem ElementOfDeath))
+        {
+            recipe.AddIngredient(ElementOfDeath.Type);
+        }
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

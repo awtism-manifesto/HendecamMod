@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -60,18 +61,7 @@ public class CompoundBow : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -80,16 +70,21 @@ public class CompoundBow : ModItem
 
         recipe.AddIngredient<Polymer>(12);
 
-        recipe.AddIngredient(ItemID.IronBow);
+      
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        recipe = CreateRecipe();
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SteelBow", out ModItem SteelBow))
+        {
+           
+            recipe.AddIngredient(SteelBow.Type);
+           
+        }
+        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("SteelBow", out ModItem Steel2Bow))
+        {
 
-        recipe.AddIngredient<Polymer>(12);
+            recipe.AddIngredient<SteelBow>();
 
-        recipe.AddIngredient(ItemID.LeadBow);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
+        }
     }
 
     public override Vector2? HoldoutOffset()

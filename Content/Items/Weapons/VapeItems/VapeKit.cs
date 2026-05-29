@@ -53,5 +53,20 @@ public class VapeKit : ModItem
         recipe.AddTile(TileID.Anvils);
 
         recipe.Register();
+
+        if (ModLoader.TryGetMod("VitalityMod", out Mod Vital) && Vital.TryFind("BronzeAlloy", out ModItem BronzeAlloy))
+        {
+            recipe = CreateRecipe();
+
+            recipe.AddIngredient<Polymer>(5);
+            recipe.AddIngredient<Rubber>(10);
+            recipe.AddIngredient(ItemID.Glass, 5);
+            recipe.AddIngredient(BronzeAlloy.Type, 3);
+            recipe.AddIngredient(ItemID.Cobweb, 15);
+            recipe.AddTile(TileID.Anvils);
+
+            recipe.Register();
+           
+        }
     }
 }

@@ -24,35 +24,46 @@ public class EpilepsyWarningGive : ModPlayer
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<EchoKit>());
+            obj2.SetDefaults(ItemType<EchoKit>());
             yield return obj2;
         }
         if (Player.name == "Yelmut" || Player.name == "yelmut" )
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<YelmutsHelmet>());
+            obj2.SetDefaults(ItemType<YelmutsHelmet>());
             yield return obj2;
         }
         if (Player.name == "Rivvie" || Player.name == "HateMate101" || Player.name == "rivvie" || Player.name == "River" || Player.name == "river")
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<Bullshit1>());
+            obj2.SetDefaults(ItemType<Bullshit1>());
             yield return obj2;
         }
         if (Player.name == "Mag" || Player.name == "mag")
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<SteelLongsword>());
+            obj2.SetDefaults(ItemType<SteelLongsword>());
             yield return obj2;
         }
-        if (Player.name == "Zygarde" || Player.name == "zygarde")
+        if (Player.name == "lemonearth" || Player.name == "LemonEarth" || Player.name == "Lemon Earth" || Player.name == "Lemonearth" || Player.name == "lemon earth" || Player.name == "lemn test 3" || Player.name == "lemn test 4" || Player.name == "lemn test 5")
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<CoreEnforcer>());
+            obj2.SetDefaults(ItemID.Lemon);
+            var obj3 = new Item();
+            obj3.SetDefaults(ItemType<FragmentFlatEarth>());
+           
+            yield return obj2;
+            yield return obj3;
+        }
+        if (Player.name == "Zygarde" || Player.name == "zygarde" || Player.name == "Zygarde-Complete")
+
+        {
+            var obj2 = new Item();
+            obj2.SetDefaults(ItemType<CoreEnforcer>());
             yield return obj2;
         }
 
@@ -60,7 +71,7 @@ public class EpilepsyWarningGive : ModPlayer
 
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ModContent.ItemType<AncientCobaltBar>());
+            obj2.SetDefaults(ItemType<AncientCobaltBar>());
             obj2.stack = 100;
             yield return obj2;
         }
@@ -70,7 +81,7 @@ public class EpilepsyWarningGive : ModPlayer
             for (int i = 0; i < Player.inventory.Length; i++)
             {
                 var obj2 = new Item();
-                obj2.SetDefaults(ModContent.ItemType<SpiritRum>());
+                obj2.SetDefaults(ItemType<SpiritRum>());
                 obj2.stack = 99999;
                 yield return obj2;
             }

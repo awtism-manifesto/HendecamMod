@@ -84,10 +84,21 @@ public class CrucibleOfFlameAndSteel : ModItem
         recipe.AddIngredient<InfernoRing>();
         recipe.AddIngredient<SuperMaelstrom>();
         recipe.AddIngredient<TheTackZone>();
-        recipe.AddIngredient<AngelShard>(5);
+      
         recipe.AddIngredient<FissionDrive>(9);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
+        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("InfernoEssence", out ModItem InfernoEssence))
+        {
+
+            recipe.AddIngredient(InfernoEssence.Type, 3);
+
+        }
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("ExoPrism", out ModItem ExoPrism)  && CalMerica.TryFind("YharonSoulFragment", out ModItem YharonSoulFragment))
+        {
+            recipe.AddIngredient(ExoPrism.Type, 5);
+            recipe.AddIngredient(YharonSoulFragment.Type, 10);
+        }
     }
   
   
