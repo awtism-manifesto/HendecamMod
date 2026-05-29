@@ -1,4 +1,7 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Accessories;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
@@ -145,6 +148,26 @@ public class BoomShroomLycopiteCompat : GlobalItem
 
 
 }
+public class PlasShimmer : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if ((ModLoader.TryGetMod("CalamityMod", out Mod Cal) && Cal.TryFind("PlasmaRifle", out ModItem PlasmaRifle)))
+        {
+            return item.type == PlasmaRifle.Type;
+        }
+        else return false;
+    }
+    public override void SetStaticDefaults()
+    {
+        if ((ModLoader.TryGetMod("CalamityMod", out Mod Cal) && Cal.TryFind("PlasmaRifle", out ModItem PlasmaRifle)))
+        {
+            ItemID.Sets.ShimmerTransformToItem[PlasmaRifle.Type] = ItemType<PlasmaRifle3>();
+        }
+    }
+   
+}
+
 public class MagmaGarbage : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Dusts;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class ChainThunder : ModProjectile
 {
@@ -10,12 +12,8 @@ public class ChainThunder : ModProjectile
 
     public ref float DelayTimer => ref Projectile.ai[1];
 
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
-        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-    }
-
+    // Store the last hit NPC's index to avoid re-targeting it immediately
+    private int LastHitNPCIndex = -1;
     public override void SetDefaults()
     {
         Projectile.width = 9; // The width of projectile hitbox
@@ -25,21 +23,73 @@ public class ChainThunder : ModProjectile
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 2500;
+        Projectile.timeLeft = 1500;
 
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = false; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 500; // Set to above 0 if you want the projectile to update multiple time in a frame
+        Projectile.extraUpdates = 200; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = 20;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
         Projectile.alpha = 255;
     }
+    public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+    {
+        if (target.whoAmI == LastHitNPCIndex)
+        {
+            modifiers.SourceDamage *= 0.85f;
+        }
+    }
+    public override bool OnTileCollide(Vector2 oldVelocity)
+    {
+        if (Projectile.penetrate <= 0)
+        {
+            Projectile.Kill();
+        }
+        else
+        {
+            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+            // If the projectile hits the left or right side of the tile, reverse the X velocity
+            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+            {
+                Projectile.velocity.X = -oldVelocity.X;
+            }
+
+            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+            {
+                Projectile.velocity.Y = -oldVelocity.Y;
+            }
+        }
+        Projectile.penetrate--;
+        return false;
+    }
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        // Store the last hit NPC to avoid re-targeting it
+        LastHitNPCIndex = target.whoAmI;
+
+        // Reset homing target to force finding a new one
+        HomingTarget = null;
+
+        for (int i = 0; i < 5; i++)
+        {
+            Dust dust = Dust.NewDustDirect(target.position, target.width, target.height, DustID.Electric);
+            dust.noGravity = true;
+            dust.velocity *= 3.75f;
+            dust.scale *= 0.4f;
+        }
+       
+        Projectile.damage = (int)(Projectile.damage * 0.75f);
+        Projectile.velocity = Projectile.velocity * 1.1f;
+    }
 
     public override void AI()
     {
+        Player player = Main.player[Projectile.owner];
+        Projectile.rotation -= 0.345f;
         if (Projectile.alpha < 220)
         {
             for (int i = 0; i < 1; i++)
@@ -59,55 +109,91 @@ public class ChainThunder : ModProjectile
             }
         }
 
-        float maxDetectRadius = 1300f; // The maximum radius at which a projectile can detect a target
+        
+
+        // HOMING PHASE - only active when not returning
 
         // A short delay to homing behavior after being fired
-        if (DelayTimer < 15)
+        if (DelayTimer < 10)
         {
             DelayTimer += 1;
             return;
         }
 
-        // First, we find a homing target if we don't have one
-        if (HomingTarget == null)
+        float maxDetectRadius = 895f;
+
+        // Find a new homing target if we don't have one or current target is invalid
+        if (HomingTarget == null || !IsValidTarget(HomingTarget))
         {
-            HomingTarget = FindClosestNPC(maxDetectRadius);
+            HomingTarget = FindClosestNPCWithPriority(maxDetectRadius);
         }
 
-        // If we have a homing target, make sure it is still valid. If the NPC dies or moves away, we'll want to find a new target
-        if (HomingTarget != null && !IsValidTarget(HomingTarget))
+        // If we have a homing target, adjust trajectory
+        if (HomingTarget != null && IsValidTarget(HomingTarget))
         {
-            HomingTarget = null;
+          
+                float length = Projectile.velocity.Length();
+                float targetAngle = Projectile.AngleTo(HomingTarget.Center);
+                Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.05f)).ToRotationVector2() * length;
+
+            
+        }
+    }
+
+    public NPC FindClosestNPCWithPriority(float maxDetectDistance)
+    {
+        NPC closestNPC = null;
+        float sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
+
+        // First pass: try to find any valid NPC that ISN'T the last hit one
+        foreach (var target in Main.ActiveNPCs)
+        {
+            if (IsValidTarget(target) && target.whoAmI != LastHitNPCIndex)
+            {
+                float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
+
+                if (sqrDistanceToTarget < sqrMaxDetectDistance)
+                {
+                    sqrMaxDetectDistance = sqrDistanceToTarget;
+                    closestNPC = target;
+                }
+            }
         }
 
-        // If we don't have a target, don't adjust trajectory
-        if (HomingTarget == null)
-            return;
+        // Second pass: if no other NPCs found, allow targeting the last hit one again
+        if (closestNPC == null)
+        {
+            sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
 
-        // If found, we rotate the projectile velocity in the direction of the target.
-        // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
-        float length = Projectile.velocity.Length();
-        float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(0.55f)).ToRotationVector2() * length;
+            foreach (var target in Main.ActiveNPCs)
+            {
+                if (IsValidTarget(target))
+                {
+                    float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
+
+                    if (sqrDistanceToTarget < sqrMaxDetectDistance)
+                    {
+                        sqrMaxDetectDistance = sqrDistanceToTarget;
+                        closestNPC = target;
+                    }
+                }
+            }
+        }
+
+        return closestNPC;
     }
 
     public NPC FindClosestNPC(float maxDetectDistance)
     {
         NPC closestNPC = null;
-
-        // Using squared values in distance checks will let us skip square root calculations, drastically improving this method's speed.
         float sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
 
-        // Loop through all NPCs
         foreach (var target in Main.ActiveNPCs)
         {
-            // Check if NPC able to be targeted. 
             if (IsValidTarget(target))
             {
-                // The DistanceSquared function returns a squared distance between 2 points, skipping relatively expensive square root calculations
                 float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
 
-                // Check if it is within the radius
                 if (sqrDistanceToTarget < sqrMaxDetectDistance)
                 {
                     sqrMaxDetectDistance = sqrDistanceToTarget;
@@ -121,19 +207,7 @@ public class ChainThunder : ModProjectile
 
     public bool IsValidTarget(NPC target)
     {
-        // This method checks that the NPC is:
-        // 1. active (alive)
-        // 2. chaseable (e.g. not a cultist archer)
-        // 3. max life bigger than 5 (e.g. not a critter)
-        // 4. can take damage (e.g. moonlord core after all it's parts are downed)
-        // 5. hostile (!friendly)
-        // 6. not immortal (e.g. not a target dummy)
-        // 7. doesn't have solid tiles blocking a line of sight between the projectile and NPC
         return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
     }
-
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 10;
-    }
 }
+   

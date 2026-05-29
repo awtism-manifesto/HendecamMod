@@ -847,7 +847,7 @@ public class SplitBuffs : ModPlayer
             
 
 
-            float damageBonus = 1.05f;
+            float damageBonus = 0.85f;
             Player.GetDamage(DamageClass.Generic) += damageBonus;
             Player.GetCritChance(DamageClass.Generic) += -95;
 
@@ -859,7 +859,7 @@ public class SplitBuffs : ModPlayer
 
 
 
-            float damageBonus = -0.25f;
+            float damageBonus = -0.15f;
             Player.GetDamage(DamageClass.Generic) += damageBonus;
 
             Player.GetCritChance(DamageClass.Generic) += 85;

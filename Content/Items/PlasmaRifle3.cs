@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -7,6 +8,13 @@ namespace HendecamMod.Content.Items;
 
 public class PlasmaRifle3 : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        if ((ModLoader.TryGetMod("CalamityMod", out Mod Cal) && Cal.TryFind("PlasmaRifle", out ModItem PlasmaRifle)))
+        {
+            ItemID.Sets.ShimmerTransformToItem[Type] = PlasmaRifle.Type;
+        }
+    }
     public override void SetDefaults()
     {
         // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.

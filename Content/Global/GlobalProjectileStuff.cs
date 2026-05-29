@@ -115,17 +115,17 @@ public class FastLaserSwords : GlobalProjectile
         var laserPlayer = player.GetModPlayer<LaserCD>();
         if (fromMechGun)
         {
-            projectile.extraUpdates = 3;
+            projectile.extraUpdates = 5;
             
         }
         if (fromMechGun && firstFrame == true && laserPlayer.LaserTimer > 0)
         {
             for (int i = 0; i < 5; i++)
             {
-                Vector2 velocity = projectile.velocity.RotatedByRandom(MathHelper.ToRadians(11.33f));
+                Vector2 velocity = projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12f));
                 Vector2 Peanits = projectile.Center - new Vector2(Main.rand.NextFloat(-36, 36), Main.rand.NextFloat(-36, 36));
                 Projectile.NewProjectile(projectile.GetSource_FromThis(), Peanits, velocity,
-                    ProjectileType<ChargeLaser>(), (int)(projectile.damage * 0.33f), projectile.knockBack, projectile.owner);
+                    ProjectileType<ChargeLaser>(), (int)(projectile.damage * 0.3f), projectile.knockBack, projectile.owner);
             }
 
             firstFrame = false;
