@@ -4,7 +4,7 @@ using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles;
 
-public class fiveproj : ModProjectile
+public class Fiveproj : ModProjectile
 {
     public override void SetStaticDefaults()
     {

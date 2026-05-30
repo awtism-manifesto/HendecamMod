@@ -16,7 +16,7 @@ public class HendecamShops : GlobalNPC
     {
         if (shop.NpcType == NPCID.ArmsDealer)
         {
-            shop.Add<fivenato>(condition: Condition.DownedPlantera);
+            shop.Add<Fivenato>(condition: Condition.DownedPlantera);
             shop.Add<Shitballs>(condition: Condition.DrunkWorld);
             shop.Add<KingslayerBullet>(condition: Condition.ForTheWorthyWorld);
             shop.Add<CeramicDart>(condition: Condition.Hardmode);
