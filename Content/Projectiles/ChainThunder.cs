@@ -207,7 +207,7 @@ public class ChainThunder : ModProjectile
 
     public bool IsValidTarget(NPC target)
     {
-        return target.CanBeChasedBy() && Collision.CanHit(Projectile.Center, 1, 1, target.position, target.width, target.height);
+        return target.CanBeChasedBy();
     }
 }
    

@@ -29,8 +29,46 @@ public class DragonBreathShadow : ModProjectile
         Projectile.alpha = 255;
     }
 
+    public bool FirstFrame = true;
     public override void AI()
     {
+        Player player = Main.player[Projectile.owner];
+        if (FirstFrame)
+        {
+            Projectile.extraUpdates = Main.rand.Next(0, 4);
+            FirstFrame = false;
+        }
+        float length = Projectile.velocity.Length();
+        float targetAngle = Projectile.AngleTo(Projectile.Center);
+        if (player.direction == -1)
+        {
+            if (Main.rand.NextBool(5))
+            {
+                if (Main.rand.NextBool(2))
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
+                }
+                else
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(-1.5f)).ToRotationVector2() * length;
+                }
+            }
+        }
+        else
+        {
+            if (Main.rand.NextBool(5))
+            {
+                if (Main.rand.NextBool(2))
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(-1.5f)).ToRotationVector2() * length;
+                }
+                else
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
+                }
+            }
+        }
+
         if (Projectile.alpha < 205)
         {
             for (int i = 0; i < 2; i++)
@@ -43,7 +81,7 @@ public class DragonBreathShadow : ModProjectile
                     posOffsetY = Projectile.velocity.Y * 2.5f;
                 }
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Shadowflame, 0f, 0f, 100, default, 0.66f);
+                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 5, Projectile.height - 5, DustID.Shadowflame, 0f, 0f, 100, default, 0.875f);
                 fire2Dust.fadeIn = 0.2f + Main.rand.Next(3) * 0.1f;
                 fire2Dust.noGravity = true;
                 fire2Dust.velocity *= 0.5f;

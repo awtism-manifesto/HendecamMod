@@ -79,73 +79,14 @@ public class DragonSpawnShadow : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
-            ProjectileType<DragonBreathShadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity2 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits2, velocity2,
-            ProjectileType<DragonBreathShadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+        for (int i = 0; i < 15; i++)
+        {
+            Vector2 velocity = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
+            Vector2 Peanits = Projectile.Center;
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits, velocity,
+                ProjectileType<DragonBreathShadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+        }
 
-        Vector2 velocity3 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits3, velocity3,
-            ProjectileType<DragonBreathShadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity4 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits4, velocity4,
-            ProjectileType<DragonBreathShadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity5 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits5 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits5, velocity5,
-            ProjectileType<DragonBreath2Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity6 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits6 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits6, velocity6,
-            ProjectileType<DragonBreath2Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity7 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits7 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits7, velocity7,
-            ProjectileType<DragonBreath2Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity8 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits8 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits8, velocity8,
-            ProjectileType<DragonBreath2Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity9 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits9 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits9, velocity9,
-            ProjectileType<DragonBreath3Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity10 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits10 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits10, velocity10,
-            ProjectileType<DragonBreath3Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity11 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits11 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits11, velocity11,
-            ProjectileType<DragonBreath3Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity12 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits12 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits12, velocity12,
-            ProjectileType<DragonBreath4Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity13 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits13 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits13, velocity13,
-            ProjectileType<DragonBreath4Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity14 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits14 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits14, velocity14,
-            ProjectileType<DragonBreath4Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity15 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits15 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits15, velocity15,
-            ProjectileType<DragonBreath4Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        Vector2 velocity16 = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(12));
-        Vector2 Peanits16 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits16, velocity16,
-            ProjectileType<DragonBreath3Shadow>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
-        // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-        Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
     }
 }

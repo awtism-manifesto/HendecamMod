@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -19,25 +20,25 @@ public class WandOfTheOvercompensator : ModItem
         Item.value = 215000;
         // Use Properties
         // Use Properties
-        Item.useTime = 52; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 52; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 48; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 48; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item20;
         // Weapon Properties
         Item.DamageType = GetInstance<AutismDamage>();
-        Item.damage = 25; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-        Item.knockBack = 3.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.damage = 42; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 7.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 10;
+        Item.mana = 12;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
-        Item.shoot = ProjectileID.PurificationPowder;
+        Item.shoot = ProjectileType<FireBlast>();
 
-        Item.shootSpeed = 18f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 11.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-    public float LobotometerCost = 10f;
+    public float LobotometerCost = 12f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -49,32 +50,21 @@ public class WandOfTheOvercompensator : ModItem
     }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
-        type = ProjectileID.BallofFire;
+        type = ProjectileType<FireBlast>();
     }
 
-    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-    {
-        const int NumProjectiles = 6; // The number of projectiles that this gun will shoot.
-
-        for (int i = 0; i < NumProjectiles; i++)
-        {
-            // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(6));
-
-            // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.3f);
-
-            // Create a projectile.
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-        }
-
-        return false; // Return false because we don't want tModLoader to shoot projectile
-    }
+    
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 10 Braincells");
+        var line = new TooltipLine(Mod, "Face", "Uses 12 Braincells");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Lets loose a huge blast of fire that splits into many flame jets")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "The perfect wand for wizards who are insecure about their.. y'know.")

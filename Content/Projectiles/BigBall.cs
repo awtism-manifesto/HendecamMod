@@ -34,7 +34,7 @@ public class BigBall : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.immune[Projectile.owner] = 5;
-        Projectile.damage = (int)(Projectile.damage * 0.95f);
+        Projectile.damage = (int)(Projectile.damage * 0.98f);
     }
 
     public override void AI()

@@ -11,7 +11,7 @@ public class FireJet : ModProjectile
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 30;
+        Projectile.timeLeft = 25;
 
         Projectile.light = 0f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
@@ -33,9 +33,9 @@ public class FireJet : ModProjectile
         float targetAngle = Projectile.AngleTo(Projectile.Center);
         Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
         Projectile.rotation = Projectile.velocity.ToRotation();
-        if (Math.Abs(Projectile.velocity.X) <= 12f && Math.Abs(Projectile.velocity.Y) <= 12f)
+        if (Projectile.timeLeft >= 18)
         {
-            Projectile.velocity *= 1.11f;
+            Projectile.velocity *= 0.98f;
         }
        
         Projectile.rotation += 0.175f;

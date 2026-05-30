@@ -22,15 +22,53 @@ public class DragonBreath : ModProjectile
         Projectile.light = 0.3f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
-        Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
+        Projectile.extraUpdates = 2; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
     }
-
+    public bool FirstFrame = true;
     public override void AI()
     {
+        Player player = Main.player[Projectile.owner];
+        if (FirstFrame)
+        {
+            Projectile.extraUpdates = Main.rand.Next(0, 4);
+            FirstFrame = false;
+        }
+        float length = Projectile.velocity.Length();
+        float targetAngle = Projectile.AngleTo(Projectile.Center);
+        if (player.direction == -1)
+        {
+            if (Main.rand.NextBool(5))
+            {
+                if (Main.rand.NextBool(2))
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
+                }
+                else
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(-1.5f)).ToRotationVector2() * length;
+                }
+            }
+        }
+        else
+        {
+            if (Main.rand.NextBool(5))
+            {
+                if (Main.rand.NextBool(2))
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(-1.5f)).ToRotationVector2() * length;
+                }
+                else
+                {
+                    Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.5f)).ToRotationVector2() * length;
+                }
+            }
+        }
+
+
         if (Projectile.alpha < 205)
         {
             for (int i = 0; i < 2; i++)

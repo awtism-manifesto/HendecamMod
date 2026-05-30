@@ -45,7 +45,7 @@ public class CrackedNuts : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Throws two nuts attached to a string");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 10 Braincells")
+        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -58,7 +58,7 @@ public class CrackedNuts : ModItem
 
         
     }
-    public float LobotometerCost = 10f;
+    public float LobotometerCost = 6f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class CrackedNut : ModProjectile
 {
@@ -19,12 +21,33 @@ public class CrackedNut : ModProjectile
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 22.5f;
     }
 
+    public float LobotometerCost = 3f;
+    private int nextSpawnTick;
+    private int tickCounter;
     public override void AI()
     {
-        // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
-        // like some examples do, this example has custom AI code that is better suited for modifying directly.
-        // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-        // dust
+        Player player = Main.player[Projectile.owner];
+
+        if (nextSpawnTick == 0)
+        {
+            nextSpawnTick = 25;
+        }
+
+        tickCounter++;
+
+        if (tickCounter >= nextSpawnTick)
+        {
+            if (player.whoAmI == Main.myPlayer)
+            {
+                player.GetModPlayer<LobotometerPlayer>()
+                      .AddLobotometer(LobotometerCost);
+            }
+
+            tickCounter = 0;
+            nextSpawnTick = 25;
+            Projectile.netUpdate = true;
+        }
+
         if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
             for (int i = 0; i < 2; i++)

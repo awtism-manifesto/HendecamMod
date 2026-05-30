@@ -32,7 +32,7 @@ public class FireBlast : ModProjectile
         for (int i = 0; i < 5; i++)
         {
             float rotation = MathHelper.ToRadians(i * 72f) + Projectile.rotation;
-            Vector2 velocity = (Projectile.velocity *14).RotatedBy(rotation);
+            Vector2 velocity = (Projectile.velocity * 0.67f).RotatedBy(rotation);
             Vector2 position = Projectile.Center;
 
             Projectile.NewProjectile(
@@ -50,14 +50,14 @@ public class FireBlast : ModProjectile
     public override void AI()
     {
 
-        Projectile.velocity = new Vector2(0.03f, 0.03f);
+       
        
         Projectile.rotation += 0.175f;
 
-        if (Projectile.timeLeft <= 2)
+        if (Projectile.timeLeft <= 4)
         {
 
-            Projectile.rotation = Main.rand.NextFloat(-36f, 36f);
+            Projectile.rotation += Main.rand.NextFloat(-10f, 10f);
         }
 
         for (int i = 0; i < 2; i++)

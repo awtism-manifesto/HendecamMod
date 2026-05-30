@@ -86,7 +86,7 @@ public class RustyDustySawThrower : ModItem
         {
             recipe.AddIngredient(Sawblade.Type, 100);
         }
-        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && ThorMerica.TryFind("Sawblade", out ModItem Saw2blade))
+        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica))
         {
             recipe.AddIngredient(ItemID.Sawmill);
         }

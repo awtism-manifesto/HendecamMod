@@ -79,7 +79,7 @@ public class CompoundBow : ModItem
             recipe.AddIngredient(SteelBow.Type);
            
         }
-        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica) && Thor2Merica.TryFind("SteelBow", out ModItem Steel2Bow))
+        if (!ModLoader.TryGetMod("ThoriumMod", out Mod Thor2Merica))
         {
 
             recipe.AddIngredient<SteelBow>();

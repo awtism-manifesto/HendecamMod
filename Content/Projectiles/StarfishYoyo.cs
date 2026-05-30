@@ -1,4 +1,8 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles.Items;
+using Terraria;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -20,13 +24,32 @@ public class StarfishYoyo : ModProjectile
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
         ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 12.33f;
     }
-
+    public float LobotometerCost = 5f;
+    private int nextSpawnTick;
+    private int tickCounter;
     public override void AI()
     {
-        // The code below was adapted from the ProjAIStyleID.Arrow behavior. Rather than copy an existing aiStyle using Projectile.aiStyle and AIType,
-        // like some examples do, this example has custom AI code that is better suited for modifying directly.
-        // See https://github.com/tModLoader/tModLoader/wiki/Basic-Projectile#what-is-ai for more information on custom projectile AI.
-        // dust
+        Player player = Main.player[Projectile.owner];
+       
+        if (nextSpawnTick == 0)
+        {
+            nextSpawnTick = 25;
+        }
+
+        tickCounter++;
+
+        if (tickCounter >= nextSpawnTick)
+        {
+            if (player.whoAmI == Main.myPlayer)
+            {
+                player.GetModPlayer<LobotometerPlayer>()
+                      .AddLobotometer(LobotometerCost);
+            }
+
+            tickCounter = 0;
+            nextSpawnTick = 25;
+            Projectile.netUpdate = true;
+        }
         if (Math.Abs(Projectile.velocity.X) >= 0f || Math.Abs(Projectile.velocity.Y) >= 0f)
         {
             for (int i = 0; i < 2; i++)

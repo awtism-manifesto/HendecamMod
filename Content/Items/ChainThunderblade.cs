@@ -10,9 +10,9 @@ public class ChainThunderblade : ModItem
     public override void SetDefaults()
     {
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useAnimation = 15;
-        Item.useTime = 15;
-        Item.damage = 23;
+        Item.useAnimation = 16;
+        Item.useTime = 16;
+        Item.damage = 19;
         Item.knockBack = 4.5f;
         Item.width = 40;
         Item.height = 40;
