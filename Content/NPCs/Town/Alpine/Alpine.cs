@@ -1,7 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;

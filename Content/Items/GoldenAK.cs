@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;

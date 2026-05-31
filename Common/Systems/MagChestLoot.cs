@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories.Cubes;
 using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 

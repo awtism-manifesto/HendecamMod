@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Localization;
 

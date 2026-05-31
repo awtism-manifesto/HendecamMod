@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.GlobalItems;

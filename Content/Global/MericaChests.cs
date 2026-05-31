@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.VapeItems;
 
 namespace HendecamMod.Content.Global;

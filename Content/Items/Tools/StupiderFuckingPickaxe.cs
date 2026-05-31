@@ -3,8 +3,9 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Rarities;
 
 namespace HendecamMod.Content.Items.Tools;
