@@ -40,12 +40,19 @@ public class MantleBooster : ModItem
         };
         tooltips.Add(line);
 
+        if (Main.netMode == NetmodeID.MultiplayerClient)
+        {
+            line = new TooltipLine(Mod, "Face", "If you're gonna use this item in multiplayer, warn the other people you're playing with. Don't be an asshole.")
+            {
+                OverrideColor = new Color(255, 255, 255)
+            };
+            tooltips.Add(line);
+        }
 
     }
     public static void TurboStartMantiusSpreading()
     {
-        if (Main.netMode == NetmodeID.MultiplayerClient)
-            return;
+       
 
         // Find all Mantius ore tiles
         List<Point> mantiusTiles = new List<Point>();
@@ -90,8 +97,23 @@ public class MantleBooster : ModItem
     }
     public override bool? UseItem(Player player)
     {
-        TurboStartMantiusSpreading();
+        // Only run the effect on the server in multiplayer
+        if (Main.netMode == NetmodeID.MultiplayerClient)
+        {
+            // Tell the server to run the boost
+            var netMessage = Mod.GetPacket();
+            netMessage.Write((byte)1); // Message type
+            netMessage.Write(player.whoAmI);
+            netMessage.Send();
 
+            // Consume the item locally
+            player.ConsumeItem(Item.type);
+            return true;
+        }
+
+        // Single player or server - run directly
+        TurboStartMantiusSpreading();
+        player.ConsumeItem(Item.type);
         return true;
     }
 }

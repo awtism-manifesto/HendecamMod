@@ -272,7 +272,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileType<PlutoShot>();
                     break;
                 case 69:
-                    projType = ProjectileType<Fiveproj>();
+                    projType = ProjectileType<MantleStoneChunk>();
                     break;
             }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -17,7 +18,7 @@ public class RampartAccessory : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Grants immunity to every vanilla debuff, aswell as Knockback and fire blocks");
+        var line = new TooltipLine(Mod, "Face", "Grants immunity to every vanilla debuff, all forms of radiation poisoning, knockback and fire blocks");
         tooltips.Add(line);
     }
 
@@ -86,6 +87,10 @@ public class RampartAccessory : ModItem
         player.buffImmune[BuffID.TheTongue] = true;
         player.buffImmune[BuffID.Shimmer] = true;
         player.buffImmune[BuffID.ShadowCandle] = true;
+        player.buffImmune[BuffType<RadPoisoning>()] = true;
+        player.buffImmune[BuffType<RadPoisoning2>()] = true;
+        player.buffImmune[BuffType<RadPoisoning3>()] = true;
+        player.buffImmune[BuffType<RadPoisoning4>()] = true;
     }
 
     public override void AddRecipes()
@@ -94,6 +99,8 @@ public class RampartAccessory : ModItem
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.AnkhShield);
         recipe.AddIngredient<GodsPaintThinner>();
+        recipe.AddIngredient<PlutoniumBar>(18);
+        recipe.AddIngredient<AstatineBar>(18);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();

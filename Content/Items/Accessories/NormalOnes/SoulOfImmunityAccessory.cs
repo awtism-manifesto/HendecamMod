@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Accessories.NastyPatty;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Accessories.NastyPatty;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Tiles.Furniture;
@@ -1023,17 +1024,28 @@ public class SoulOfImmunityAccessory : ModItem
         player.npcTypeNoAggro[NPCID.Crimslime] = true;
         player.npcTypeNoAggro[NPCID.IlluminantSlime] = true;
         player.npcTypeNoAggro[NPCID.RainbowSlime] = true;
+        player.buffImmune[BuffType<RadPoisoning>()] = true;
+        player.buffImmune[BuffType<RadPoisoning2>()] = true;
+        player.buffImmune[BuffType<RadPoisoning3>()] = true;
+        player.buffImmune[BuffType<RadPoisoning4>()] = true;
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient<RampartAccessory>();
         recipe.AddIngredient<NastyPattyAccessory>();
-        recipe.AddIngredient(ItemID.TerrasparkBoots);
+      
         recipe.AddIngredient<PeaceAmongNationsAccessory>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SeraphTracers", out ModItem SeraphTracers))
+        {
+            recipe.AddIngredient(SeraphTracers.Type);
+        }
+        if (!ModLoader.TryGetMod("CalamityMod", out Mod Ca))
+        {
+            recipe.AddIngredient(ItemID.TerrasparkBoots);
+        }
     }
 }

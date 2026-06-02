@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -42,6 +43,9 @@ public class PacifistsMark : ModItem
         player.buffImmune[BuffID.Wrath] = true;
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
+        player.buffImmune[BuffType<BalkanRage>()] = true;
+        player.buffImmune[BuffType<BrainRotted>()] = true;
+      
     }
 
     public override void AddRecipes()

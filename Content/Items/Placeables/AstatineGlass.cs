@@ -21,7 +21,7 @@ public class AstatineGlass : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 1f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
-        Item.value = 8000;
+        Item.value = 5125;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(TileType<Tiles.AstatineGlassTile>());
     }
@@ -38,18 +38,7 @@ public class AstatineGlass : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()
@@ -57,7 +46,7 @@ public class AstatineGlass : ModItem
         Recipe recipe = CreateRecipe(15);
 
         recipe.AddIngredient<AstatineOre>();
-        recipe.AddIngredient(ItemID.Glass);
+        recipe.AddIngredient(ItemID.Glass, 15);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -29,6 +30,7 @@ public class BrokenMouse : ModItem
         player.buffImmune[BuffID.Sharpened] = true;
         player.buffImmune[BuffID.WarTable] = true;
         player.buffImmune[BuffID.SugarRush] = true;
+        player.buffImmune[BuffType<TurboCharged>()] = true;
     }
 
     public override void AddRecipes()

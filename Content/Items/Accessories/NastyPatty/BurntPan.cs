@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -70,6 +71,14 @@ public class BurntPan : ModItem
         player.buffImmune[BuffID.Wrath] = true;
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
+        player.buffImmune[BuffType<WeaponImbueAnnihilation>()] = true;
+        player.buffImmune[BuffType<WeaponImbueFission>()] = true;
+        player.buffImmune[BuffType<WeaponImbueOil>()] = true;
+        player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;
+        player.buffImmune[BuffType<WeaponImbueFusion>()] = true;
+        player.buffImmune[BuffType<WeaponImbueShadowflame>()] = true;
+        player.buffImmune[BuffType<BalkanRage>()] = true;
+        player.buffImmune[BuffType<BrainRotted>()] = true;
     }
 
     public override void AddRecipes()

@@ -338,7 +338,7 @@ public class BEEEEEEZ : GlobalItem
     {
         if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
         {
-            return item.type == ItemID.AntlionClaw;
+            return item.type == ItemID.BeeKeeper;
         }
         else return false;
     }

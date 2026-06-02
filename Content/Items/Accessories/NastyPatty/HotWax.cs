@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Placeables;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -32,6 +33,12 @@ public class HotWax : ModItem
         player.buffImmune[BuffID.WeaponImbueNanites] = true;
         player.buffImmune[BuffID.WeaponImbuePoison] = true;
         player.buffImmune[BuffID.WeaponImbueVenom] = true;
+        player.buffImmune[BuffType<WeaponImbueAnnihilation>()] = true;
+        player.buffImmune[BuffType<WeaponImbueFission>()] = true;
+        player.buffImmune[BuffType<WeaponImbueOil>()] = true;
+        player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;
+        player.buffImmune[BuffType<WeaponImbueFusion>()] = true;
+        player.buffImmune[BuffType<WeaponImbueShadowflame>()] = true;
     }
 
     public override void AddRecipes()

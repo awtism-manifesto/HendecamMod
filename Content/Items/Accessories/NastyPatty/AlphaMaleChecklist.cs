@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -29,6 +30,8 @@ public class AlphaMaleChecklist : ModItem
         player.buffImmune[BuffID.IceBarrier] = true;
         player.buffImmune[BuffID.PaladinsShield] = true;
         player.buffImmune[BuffID.Panic] = true;
+        player.buffImmune[BuffType<SheildOffense>()] = true;
+      
     }
 
     public override void AddRecipes()

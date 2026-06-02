@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Buffs;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -72,6 +73,15 @@ public class CeaseAndDesist : ModItem
         player.ClearBuff(BuffID.UnicornMount);
         player.ClearBuff(BuffID.WallOfFleshGoatMount);
         player.ClearBuff(BuffID.WolfMount);
+        player.buffImmune[BuffType<SlimeMinesBuff>()] = true;
+        player.buffImmune[BuffType<CeramicBloonBuff>()] = true;
+        player.buffImmune[BuffType<GraniteFriend>()] = true;
+        player.buffImmune[BuffType<OilMonsterBuff>()] = true;
+        player.buffImmune[BuffType<PolymerSlimeBuff>()] = true;
+        player.buffImmune[BuffType<RedBloonBuff>()] = true;
+        player.buffImmune[BuffType<RainbowBloonBuff>()] = true;
+        player.buffImmune[BuffType<SuperCeramBuff>()] = true;
+        player.buffImmune[BuffType<PlasmoidFriend>()] = true;
     }
 
     public override void AddRecipes()
