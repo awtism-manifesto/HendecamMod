@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;

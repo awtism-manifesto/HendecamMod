@@ -3,7 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Weapons;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using System.Collections.Generic;

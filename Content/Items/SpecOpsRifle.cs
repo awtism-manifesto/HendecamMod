@@ -1,4 +1,5 @@
-﻿using Terraria.Audio;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;

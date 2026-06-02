@@ -3,6 +3,7 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Tiles.Furniture;
 
@@ -114,7 +115,7 @@ public class MericaRecipes : ModSystem
 
         Recipe aata31 = Recipe.Create(ItemID.LeadOre, 15);
 
-        aata31.AddIngredient<Items.AstatineOre>();
+        aata31.AddIngredient<AstatineOre>();
         aata31.AddTile(TileID.LesionStation);
         aata31.Register();
 
@@ -141,14 +142,14 @@ public class MericaRecipes : ModSystem
         ass9.AddIngredient(ItemID.RocketIII, 999);
         ass9.AddIngredient<Items.PlutoniumBar>();
         ass9.AddIngredient<Items.UraniumBar>();
-        ass9.AddIngredient<Items.AstatineBar>();
+        ass9.AddIngredient<AstatineBar>();
         ass9.AddTile(TileID.MythrilAnvil);
         ass9.Register();
 
         Recipe ass99 = Recipe.Create(ItemID.MiniNukeII, 999);
         ass99.AddIngredient(ItemID.RocketIV, 999);
         ass99.AddIngredient<Items.PlutoniumBar>();
-        ass99.AddIngredient<Items.AstatineBar>();
+        ass99.AddIngredient<AstatineBar>();
         ass99.AddIngredient<Items.UraniumBar>();
         ass99.AddTile(TileID.MythrilAnvil);
         ass99.Register();
@@ -181,10 +182,10 @@ public class MericaRecipes : ModSystem
         wass1111.AddTile(TileID.MythrilAnvil);
         wass1111.Register();
         Recipe waess = Recipe.Create(ItemID.RodofDiscord);
-        waess.AddIngredient<Items.AstatineBar>(11);
-        waess.AddIngredient<Items.PlutoniumBar>(22);
-        waess.AddIngredient<Items.UraniumBar>(33);
-        waess.AddIngredient<Items.PurifiedSalt>(444);
+        waess.AddIngredient<AstatineBar>(11);
+        waess.AddIngredient<PlutoniumBar>(22);
+        waess.AddIngredient<UraniumBar>(33);
+        waess.AddIngredient<PurifiedSalt>(444);
         waess.AddTile(TileID.MythrilAnvil);
         waess.Register();
 
@@ -241,7 +242,7 @@ public class MericaRecipes : ModSystem
         bitche.Register();
 
         Recipe bitcheee = Recipe.Create(ItemID.BrokenHeroSword);
-        bitcheee.AddIngredient<Items.BrokenHeroGun>();
+        bitcheee.AddIngredient<BrokenHeroGun>();
 
         bitcheee.AddTile(TileID.MythrilAnvil);
         bitcheee.Register();

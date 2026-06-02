@@ -1,0 +1,72 @@
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+
+namespace HendecamMod.Content.Items.Weapons.Multiclass;
+
+public class Bullshit1 : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.width = 32;
+        Item.height = 32;
+
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTime = 15;
+        Item.useAnimation = 15;
+        Item.autoReuse = true;
+        Item.scale = 1.1f;
+        Item.DamageType = GetInstance<OmniDamage>();
+        Item.damage = 35;
+        Item.knockBack = 4.5f;
+        Item.mana = 3;
+        Item.ArmorPenetration = 5;
+        Item.value = Item.buyPrice(gold: 67);
+        Item.rare = ItemRarityID.LightRed;
+        Item.UseSound = SoundID.Item8;
+
+        Item.shoot = ProjectileType<PearlProj>();
+        Item.shootSpeed = 9.25f;
+    }
+    public float LobotometerCost = 2f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        var line = new TooltipLine(Mod, "Face", "Shoots homing pink pearls with 9 summon tag damage");
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "-Developer Item-")
+        {
+            OverrideColor = new Color(252, 141, 204)
+        };
+        tooltips.Add(line);
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.MetalDetector);
+        recipe.AddIngredient(ItemID.GoldLadyBug);
+        recipe.AddIngredient(ItemID.NypmhBanner);
+        recipe.AddIngredient(ItemID.PinkPearl);
+        recipe.AddTile(TileID.Hellforge);
+        recipe.Register();
+        if (ModLoader.TryGetMod("SpiritReforged", out Mod SpiritMerica) && SpiritMerica.TryFind("GoldGarItem", out ModItem GoldGarItem))
+        {
+            recipe.AddIngredient(GoldGarItem.Type);
+        }
+    }
+}

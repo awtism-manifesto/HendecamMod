@@ -4,6 +4,8 @@ using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.Melee;
 
 namespace HendecamMod.Content.Global;
 
