@@ -37,8 +37,35 @@ public class HendecamConfig : ModConfig
     [ReloadRequired]
     public bool MiscVanillaWeaponChanges;
 
-    [Header("ExperimentalFeatures")]
+    [Header("ExperimentalFeatures(serverside)")]
+
+
+    [Label("All Projectiles Fire Radially")]
+    [Tooltip("Causes all projectiles to duplicate themselves and fire in a full circle")]
     [DefaultValue(false)]
+    
+    public bool Enabled { get; set; }
+
+    [Label("Radial Projectile Count")]
+    [Tooltip("Number of projectiles fired in a full circle (including the original). WARNING: THIS CAN GET VERY LAGGY VERY FAST")]
+    [Range(2, 20)]
+    
+    [DefaultValue(6)]
+    public int ProjectileCount { get; set; }
+
+
+}
+public class HendecamClientConfig : ModConfig
+
+{
+    public override ConfigScope Mode => ConfigScope.ClientSide;
+    [Header("ExperimentalFeatures(clientside)")]
+
+
+
+    [DefaultValue(false)]
+
     public bool EverythingMakesCritNoise;
+
 
 }

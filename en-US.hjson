@@ -15,6 +15,7 @@ Mods: {
 				Headers: {
 					Reworks: Reworks
 					ExperimentalFeatures: Experimental Features
+					ExperimentalFeatures(serverside): Experimental Features(serverside) Header
 				}
 
 				DisplayName: Hendecam Mod Config
@@ -43,6 +44,26 @@ Mods: {
 					Label: Everything Makes Crit Noise
 					Tooltip: Every hit on an NPC makes the Overwatch headshot noise play
 				}
+
+				Enabled: {
+					Label: All Projectiles Fire Radially
+					Tooltip: Causes all projectiles to duplicate themselves and fire in a full circle
+				}
+
+				ProjectileCount: {
+					Label: Radial Projectile Count
+					Tooltip: Number of projectiles fired in a full circle (including the original). WARNING: THIS CAN GET VERY LAGGY VERY FAST
+				}
+			}
+
+			HendecamClientConfig: {
+				EverythingMakesCritNoise: {
+					Tooltip: ""
+					Label: Everything Makes Crit Noise
+				}
+
+				Headers.ExperimentalFeatures(clientside): Experimental Features(clientside) Header
+				DisplayName: Hendecam Client Config
 			}
 		}
 	}

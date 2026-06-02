@@ -62,7 +62,7 @@ public class MantiusOrePlaced : ModTile
         if (WorldGen.genRand.NextBool(spreadChance))
         {
             TrySpread(i, j);
-            if (!NPC.downedMechBossAny)
+            if (Main.hardMode && !NPC.downedMechBossAny)
             {
                 TrySpread(i, j);
             }
@@ -73,7 +73,7 @@ public class MantiusOrePlaced : ModTile
     {
         // Check density cap (50 per 300 radius)
         int mantiusCount = 0;
-        int radius = 310;
+        int radius = 365;
 
         int minX = Math.Max(0, i - radius);
         int maxX = Math.Min(Main.maxTilesX - 1, i + radius);
@@ -88,15 +88,15 @@ public class MantiusOrePlaced : ModTile
                 if (tile.HasTile && tile.TileType == Type)
                 {
                     mantiusCount++;
-                    if (mantiusCount >= 50)
+                    if (mantiusCount >= 85)
                         break;
                 }
             }
-            if (mantiusCount >= 50)
+            if (mantiusCount >= 85)
                 break;
         }
 
-        if (mantiusCount >= 50)
+        if (mantiusCount >= 85)
             return;
 
         // Scan for stone blocks with random priority

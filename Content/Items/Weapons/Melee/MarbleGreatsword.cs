@@ -2,7 +2,7 @@
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Melee;
 
 /// <summary>
 ///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.

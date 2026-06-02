@@ -230,8 +230,8 @@ namespace HendecamMod.Common.Systems
 
             try
             {
-                // Position above player's head
-                Vector2 worldPos = player.Center + new Vector2(-86f, 25f);
+               
+                Vector2 worldPos = player.Center + new Vector2(-67f, 25f);
                 Vector2 screenPos = worldPos - Main.screenPosition;
 
                 // Only draw if on screen

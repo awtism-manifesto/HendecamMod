@@ -352,3 +352,8 @@ DroneSwarmCooldown: {
 	Description: Mods.HendecamMod.Buffs.DroneSwarmCooldown.Description
 	DisplayName: Drone Swarm Cooldown
 }
+
+PhlinxBuff: {
+	Description: Mods.HendecamMod.Buffs.PhlinxBuff.Description
+	DisplayName: Phlinx Buff
+}

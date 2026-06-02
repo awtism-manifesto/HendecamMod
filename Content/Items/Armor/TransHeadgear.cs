@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
-using Terraria.Localization;
+
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -9,12 +9,10 @@ public class TransHeadgear : ModItem
 {
     public static readonly int AdditiveDamageBonus = 11;
 
-    public static LocalizedText SetBonusText { get; private set; }
+  
 
-    public override void SetStaticDefaults()
-    {
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
+   
+    
 
     public override void UpdateEquip(Player player)
     {
@@ -32,7 +30,7 @@ public class TransHeadgear : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "+11% magic damage");
+        var line = new TooltipLine(Mod, "Face", "+11% summon damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")

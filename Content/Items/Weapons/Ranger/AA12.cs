@@ -1,4 +1,5 @@
-﻿using Terraria.DataStructures;
+﻿using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
 
@@ -15,7 +16,12 @@ public class AA12 : ModItem
         Item.useAnimation = 9; 
         Item.useStyle = ItemUseStyleID.Shoot; 
         Item.autoReuse = true; 
-        Item.UseSound = SoundID.Item62;
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
+        {
+            Volume = 2.1f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+        };
         Item.DamageType = DamageClass.Ranged; 
         Item.damage = 27; 
         Item.knockBack = 6f;

@@ -24,7 +24,7 @@ public class UraniumShotgun : ModItem
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
         {
-            Volume = 2.67f,
+            Volume = 2.1f,
             PitchVariance = 0.2f,
             MaxInstances = 10,
         };

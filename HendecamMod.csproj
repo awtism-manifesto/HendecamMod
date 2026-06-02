@@ -60,7 +60,6 @@
 	  <None Remove="Content\Items\DirtyRocket2.png" />
 	  <None Remove="Content\Items\DirtyRocket3.png" />
 	  <None Remove="Content\Items\DiseaseBlaster.png" />
-	  <None Remove="Content\Items\EnfieldRifle.png" />
 	  <None Remove="Content\Items\FaradayBodyArmor.png" />
 	  <None Remove="Content\Items\FaradayBodyArmor_Body.png" />
 	  <None Remove="Content\Items\FaradayFedora.png" />

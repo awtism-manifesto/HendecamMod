@@ -150,6 +150,7 @@ public class ShittyShitgun : GlobalItem
         item.useTime = 18;
         item.damage = 27;
         item.useAnimation = 18;
+        item.UseSound = null;
     }
 
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -158,6 +159,13 @@ public class ShittyShitgun : GlobalItem
         {
             damage = (int)(damage * 0.75f);
         }
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
+        {
+            Volume = 2.1f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+
+        });
     }
 }
 

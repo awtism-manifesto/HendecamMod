@@ -59,7 +59,13 @@ public class RednecksRevenge : ModItem
             return false;
         }
 
-        SoundEngine.PlaySound(SoundID.Item62, player.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
+        {
+            Volume = 0.85f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
+
+        });
         Item.noUseGraphic = false;
         int NumProjectiles = Main.rand.Next(4, 7); // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.42f, 0.45f));

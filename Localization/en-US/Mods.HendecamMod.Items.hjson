@@ -5514,3 +5514,23 @@ MantleBooster: {
 	DisplayName: Mantle Booster
 	Tooltip: ""
 }
+
+SteelBroadsword: {
+	DisplayName: Steel Broadsword
+	Tooltip: ""
+}
+
+SteelShortsword: {
+	DisplayName: Steel Shortsword
+	Tooltip: ""
+}
+
+PhlinxStaff: {
+	Tooltip: ""
+	DisplayName: Phlinx Staff
+}
+
+AntiqueRifle: {
+	Tooltip: ""
+	DisplayName: Antique Rifle
+}

@@ -34,7 +34,7 @@ public class HendecamShops : GlobalNPC
 
         if (shop.NpcType == NPCID.Merchant)
         {
-            shop.Add<EnfieldRifle>(condition: Condition.NpcIsPresent(NPCID.ArmsDealer));
+            shop.Add<AntiqueRifle>(condition: Condition.NpcIsPresent(NPCID.ArmsDealer));
             shop.Add<M1Garand>(condition: Condition.Hardmode);
             shop.Add<MoltenShuriken>(condition: Condition.Hardmode);
             shop.Add(ItemID.Blowpipe);

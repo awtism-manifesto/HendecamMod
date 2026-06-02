@@ -544,13 +544,13 @@ public class CritNoiseGoBrrrrr: GlobalProjectile
   
     public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (GetInstance<HendecamConfig>().EverythingMakesCritNoise == true)
+        if (GetInstance<HendecamClientConfig>().EverythingMakesCritNoise == true)
         {
             SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/Crit")
             {
-                Volume = 2.5f,
+                Volume = 1.8f,
                 Pitch = 0f,
-                MaxInstances = 100,
+                MaxInstances = 133,
             });
         }
     }

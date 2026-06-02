@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -115,13 +116,13 @@ public class M1Garand : ModItem
         {
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CobaltBar, 5);
-            recipe.AddIngredient<EnfieldRifle>();
+            recipe.AddIngredient<AntiqueRifle>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.PalladiumBar, 5);
-            recipe.AddIngredient<EnfieldRifle>();
+            recipe.AddIngredient<AntiqueRifle>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

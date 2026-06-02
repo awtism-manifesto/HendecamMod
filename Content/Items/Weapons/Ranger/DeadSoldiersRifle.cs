@@ -78,25 +78,7 @@ public class DeadSoldiersRifle : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-            recipe = CreateRecipe();
-
-            recipe.AddIngredient(LivingFleshItem.Type, 45);
-            recipe.AddIngredient(ItemID.JungleSpores, 12);
-            recipe.AddIngredient(ItemID.Vine, 2);
-            recipe.AddIngredient(ItemID.DemoniteBar, 10);
-            recipe.AddIngredient<EnfieldRifle>();
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-
-            recipe = CreateRecipe();
-
-            recipe.AddIngredient(LivingFleshItem.Type, 45);
-            recipe.AddIngredient(ItemID.JungleSpores, 12);
-            recipe.AddIngredient(ItemID.Vine, 2);
-            recipe.AddIngredient(ItemID.CrimtaneBar, 10);
-            recipe.AddIngredient<EnfieldRifle>();
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+           
         }
         else
         {
@@ -107,21 +89,7 @@ public class DeadSoldiersRifle : ModItem
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-            recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.JungleSpores, 12);
-            recipe.AddIngredient(ItemID.Vine, 2);
-            recipe.AddIngredient(ItemID.DemoniteBar, 10);
-            recipe.AddIngredient<EnfieldRifle>();
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-
-            recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.JungleSpores, 12);
-            recipe.AddIngredient(ItemID.Vine, 2);
-            recipe.AddIngredient(ItemID.CrimtaneBar, 10);
-            recipe.AddIngredient<EnfieldRifle>();
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+           
         }
     }
 

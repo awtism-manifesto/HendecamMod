@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
-namespace HendecamMod.Content.Items;
+namespace HendecamMod.Content.Items.Weapons.Ranger;
 
-public class EnfieldRifle : ModItem
+public class AntiqueRifle : ModItem
 {
     public override void SetDefaults()
     {
@@ -12,36 +13,47 @@ public class EnfieldRifle : ModItem
         // Common Properties
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.scale = 0.36f;
+        Item.scale = 1f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         Item.value = Item.buyPrice(silver: 125);
         // Use Properties
-        Item.useTime = 50; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 50; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 72; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 72; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item88;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 35; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-        Item.knockBack = 4.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.damage = 51; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 7.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.crit = 3;
         // Gun Properties
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-        Item.shootSpeed = 5.66f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 5.16f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/GarandShot")
+        {
+            Volume = 1.25f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SniperBolt")
+        {
+            Volume = 2.67f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(11.5f));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(4.95f));
 
             // Decrease velocity randomly for nicer visuals.
             newVelocity *= 1f - Main.rand.NextFloat(0.35f);
@@ -56,19 +68,10 @@ public class EnfieldRifle : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "horribly fucking inaccurate");
+        var line = new TooltipLine(Mod, "Face", "The dusty barrel limits it's velocity and accuracy");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Fun Fact: Did you know that Terraria has existed for over three times as long as the confederacy?'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "seethe and cope, traitors")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
+       
 
        
     }

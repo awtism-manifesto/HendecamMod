@@ -64,7 +64,7 @@ public class GunbladeSpore : ModProjectile
             chudDust.velocity *= 0.1f;
         }
 
-        float maxDetectRadius = 550f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 670f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
         if (DelayTimer < 15)
@@ -93,7 +93,7 @@ public class GunbladeSpore : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(3.99f)).ToRotationVector2() * length;
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(5.95f)).ToRotationVector2() * length;
         Projectile.rotation = Projectile.velocity.ToRotation();
     }
 

@@ -1,40 +1,42 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
 
-public class PlasmoidWand : ModItem
+public class PhlinxStaff : ModItem
 {
     public override void SetStaticDefaults()
     {
-        ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true;
+        ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller
         ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
-        ItemID.Sets.StaffMinionSlotsRequired[Type] = 1f;
+        ItemID.Sets.StaffMinionSlotsRequired[Type] = 1f; // The default value is 1, but other values are supported. See the docs for more guidance. 
     }
 
     public override void SetDefaults()
     {
-        Item.damage = 13;
+        Item.damage = 14;
         Item.knockBack = 3f;
-      
+       
         Item.width = 32;
         Item.height = 32;
         Item.useTime = 36;
         Item.useAnimation = 36;
         Item.useStyle = ItemUseStyleID.Swing; // how the player's arm moves when using the item
-        Item.value = Item.sellPrice(gold: 2);
-        Item.rare = ItemRarityID.Green;
+        Item.value = 198000;
+        Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item44; // What sound should play when using the item
-
+        Item.ArmorPenetration = 5;
         // These below are needed for a minion weapon
         Item.noMelee = true; // this item doesn't do any melee damage
         Item.DamageType = DamageClass.Summon; // Makes the damage register as summon. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type
-        Item.buffType = BuffType<PlasmoidFriend>();
+        Item.buffType = BuffType<PhlinxBuff>();
         // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
-        Item.shoot = ProjectileType<PlasmoidFriendly>(); // This item creates the minion projectile
+        Item.shoot = ProjectileType<Phlinx>(); // This item creates the minion projectile
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -46,7 +48,13 @@ public class PlasmoidWand : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons a highly agile, light-emitting Plasmoid to fight for you");
+        var line = new TooltipLine(Mod, "Face", "Summons a Phlinx to fight for you");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Phlinxes deal more damage to high defense targets")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -55,14 +63,14 @@ public class PlasmoidWand : ModItem
         };
         tooltips.Add(line);
 
-      
+        
     }
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-        recipe.AddIngredient<UraniumBar>(15);
+        recipe.AddIngredient(ItemID.FlinxStaff);
+        recipe.AddIngredient<MantiusBar>(11);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

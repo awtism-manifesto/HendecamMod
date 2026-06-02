@@ -37,7 +37,7 @@ public class PlasmoidFriendly : ModProjectile
         Projectile.DamageType = DamageClass.Summon;
 
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.localNPCHitCooldown = 14;
+        Projectile.localNPCHitCooldown = 17;
     }
 
     public override bool? CanCutTiles()

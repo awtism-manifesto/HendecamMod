@@ -63,9 +63,15 @@ public class RednecksRustBucket : ModItem
             return false;
         }
 
-        SoundEngine.PlaySound(SoundID.Item62, player.position);
+       
         Item.noUseGraphic = false;
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
+        {
+            Volume = 1.1f,
+            PitchVariance = 0.2f,
+            MaxInstances = 10,
 
+        });
         int NumProjectiles = Main.rand.Next(3, 6); // The number of projectiles that this gun will shoot.
         damage = (int)(damage * Main.rand.NextFloat(0.43f, 0.445f));
         for (int i = 0; i < NumProjectiles; i++)
@@ -105,18 +111,7 @@ public class RednecksRustBucket : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override Vector2? HoldoutOffset()

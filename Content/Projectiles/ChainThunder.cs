@@ -39,7 +39,7 @@ public class ChainThunder : ModProjectile
     {
         if (target.whoAmI == LastHitNPCIndex)
         {
-            modifiers.SourceDamage *= 0.85f;
+            modifiers.SourceDamage *= 0.775f;
         }
     }
     public override bool OnTileCollide(Vector2 oldVelocity)
