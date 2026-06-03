@@ -132,11 +132,7 @@ public class MericaRecipes : ModSystem
         aaaa2.AddTile(TileID.WorkBenches);
         aaaa2.Register();
 
-        Recipe colon3 = Recipe.Create(ItemID.LightningBoots);
-        colon3.AddIngredient(ItemID.RocketBoots);
-        colon3.AddIngredient<ClimbingBoots>();
-        colon3.AddTile(TileID.TinkerersWorkbench);
-        colon3.Register();
+       
 
         Recipe ass9 = Recipe.Create(ItemID.MiniNukeI, 999);
         ass9.AddIngredient(ItemID.RocketIII, 999);

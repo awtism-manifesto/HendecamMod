@@ -21,11 +21,11 @@ public class TheDeposer : ModItem
         Item.useAnimation = 26; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/RifleShot")
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/PistolShot")
         {
-            Volume = 2.67f,
+            Volume = 0.35f,
             PitchVariance = 0.2f,
-            MaxInstances = 10,
+            MaxInstances = 35,
         };
 
         // Weapon Properties

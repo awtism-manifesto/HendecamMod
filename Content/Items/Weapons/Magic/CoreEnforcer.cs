@@ -124,6 +124,10 @@ public class CoreEnforcer: ModItem
         recipe.AddIngredient<ScaldingScepter>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PurifiedGel", out ModItem PurifiedGel))
+        {
+            recipe.AddIngredient(PurifiedGel.Type, 10);
+        }
 
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

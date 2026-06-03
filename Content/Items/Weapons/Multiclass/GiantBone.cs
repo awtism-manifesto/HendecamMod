@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Multiclass;
@@ -16,7 +17,7 @@ public class GiantBone : ModItem
         Item.useTime = 32;
         Item.useAnimation = 32;
         Item.autoReuse = true;
-       
+        Item.shoot = ProjectileType<NuhUh>();
         Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.damage = 60;
         Item.knockBack = 7;

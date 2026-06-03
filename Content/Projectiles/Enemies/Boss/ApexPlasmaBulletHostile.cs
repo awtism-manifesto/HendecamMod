@@ -34,9 +34,9 @@ public class ApexPlasmaBulletHostile : ModProjectile
 
     public override void AI()
     {
-        if (Math.Abs(Projectile.velocity.X) <= 17.25f || Math.Abs(Projectile.velocity.Y) <= 17.25f)
+        if (Math.Abs(Projectile.velocity.X) <= 21.25f || Math.Abs(Projectile.velocity.Y) <= 21.25f)
         {
-            Projectile.velocity *= 1.12f;
+            Projectile.velocity *= 1.24f;
         }
         Lighting.AddLight(Projectile.Center, 0.55f, 0f, 0.55f);
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;

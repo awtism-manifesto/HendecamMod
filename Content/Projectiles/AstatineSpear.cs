@@ -11,12 +11,13 @@ public class AstatineSpear : ModProjectile
 
     public override void SetDefaults()
     {
-        Projectile.usesOwnerMeleeHitCD = true;
-        Projectile.usesLocalNPCImmunity = true;
-        Projectile.localNPCHitCooldown = 9;
+      
+       
         Projectile.CloneDefaults(ProjectileID.Spear);
         Projectile.width = 32;
         Projectile.height = 32;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -28,7 +29,15 @@ public class AstatineSpear : ModProjectile
             ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
         Projectile.damage = (int)(Projectile.damage * 0.95f);
     }
-
+    public override void OnHitPlayer(Player target, Player.HurtInfo info)
+    {
+        target.AddBuff(BuffType<RadPoisoning3>(), 255);
+        Vector2 Peanits = Projectile.Center - new Vector2(Main.rand.Next(-1, 1), 2);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
+            new Vector2(1, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
+            ProjectileType<AstaBoom>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+        Projectile.damage = (int)(Projectile.damage * 0.95f);
+    }
     public override bool PreAI()
     {
         Player player = Main.player[Projectile.owner]; // Since we access the owner player instance so much, it's useful to create a helper local variable for this

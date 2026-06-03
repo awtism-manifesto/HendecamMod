@@ -1,1 +1,48 @@
-ts is NOT TerMerica
+Hey! You there, yeah, you reading this!
+
+Are you scrolling through random terraria mods on Steam Workshop or the ingame Mod Browser looking for stuff to add to your modded playthrough?
+
+If that sounds like you, Hendecam Mod is the PERFECT choice for you!
+
+Hendecam is a huge content mod with over 1000 items, two new damage classes, four town NPC’s, a small army of new enemies, and even a new boss. 
+
+Hendecam Mod is designed around being integrated into large kitchen sink modpacks, because let’s all be honest with ourselves here as tmod players, this is how most of us play. Hendecam has lots of recipe compatibility with other mods and some other assorted compatibility features here and there. 
+
+No matter what modpack you add Hendecam to, chances are it probably has some unique compatibility interaction with something in your pack. 
+
+As a means to this end, Hendecam Mod will also scale up the HP of every enemy in the game more and more as you progress, specifically increasing the scaling after major bosses. 
+
+This is a measure to help enemies stand up to the modded power creep that will surely be present in most packs with Hendecam. If this feature does not suit your modpack, or you simply don’t want it, you can disable it in the Hendecam Mod Configs.
+
+Hendecam Mod is a merger of TerMerica, Mag’s Assorted Features, Patchwork, Poop Plus, and the never-before-released River Bullshit Mod. 
+
+The origin story behind the mod is that TerMerica was created with zero prior coding experience, inspiring members of the TerMerica community to make their own mods.
+
+We decided to merge our mods together because it has just generally made the development process easier on everyone.
+
+The new damage classes added by Hendecam are Stupid and Omni. Stupid is a meme class, with it’s central mechanic being the Lobotometer.
+
+As more of your Braincells fill the Lobotometer, an increasingly annoying rainbow shader covers your screen. This shader is more intense on GetFixedBoi. 
+
+This is also the reason Retro Lighting Fix is a dependency. As for Omni damage, as you could probably guess, it inherits bonuses and effects from every damage class.
+
+Some Omni weapons use mana, others use braincells, others use both, and others use neither. On top of this, Hendecam also has an expansive multiclassing system, with certain weapons dealing two damage types at once.
+
+Don’t feel pressured to stick to just one class if you’re having trouble deciding!
+
+A lot of vanilla items, especially vanilla weapons, have been given reworks, stat buffs, and class changes. If any of these changes are not to your liking or interact poorly with changes to the same items made by other mods, these changes can be disabled in the configs. 
+
+Hendecam is a community-driven mod that is still in beta and hasn’t been extensively tested, so if there’s any glitches, balance issues, or jank you encounter, please report it in the Discord. 
+
+If you are a mod developer who wishes to merge your mod into Hendecam or make compatibility, join the discord and ping Autism Manifesto and we will discuss further.
+
+Please join our discord (https://discord.gg/EEMpBkJ3cR) if you have feedback, ideas, suggestions, or just want to be part of the community.
+
+Shoutout to our devs:
+Autism Manifesto
+River Moment
+Magnolia
+LemonEarth
+Yelmut
+
+And a special thanks to Zoe for making Retro Lighting Fix

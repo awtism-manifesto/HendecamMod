@@ -22,7 +22,7 @@ public class AR15 : ModItem
         Item.knockBack = 2f;
         Item.noMelee = true;
         Item.shoot = ProjectileID.PurificationPowder;
-        Item.shootSpeed = 9.1f;
+        Item.shootSpeed = 10.25f;
         Item.useAmmo = AmmoID.Bullet;
     }
 
@@ -32,7 +32,7 @@ public class AR15 : ModItem
 
         for (int i = 0; i < NumProjectiles; i++)
         {
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(1));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.25f));
 
             newVelocity *= 1f - Main.rand.NextFloat(0.18f);
 

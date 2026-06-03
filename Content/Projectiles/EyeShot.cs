@@ -58,10 +58,10 @@ public class EyeShot : ModProjectile
             }
         }
 
-        float maxDetectRadius = 520f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 545f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
-        if (DelayTimer < 14)
+        if (DelayTimer < 12)
         {
             DelayTimer += 1;
             return;
@@ -87,7 +87,7 @@ public class EyeShot : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(1.85f)).ToRotationVector2() * length;
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.4f)).ToRotationVector2() * length;
     }
 
     public NPC FindClosestNPC(float maxDetectDistance)

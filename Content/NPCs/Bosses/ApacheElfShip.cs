@@ -244,9 +244,21 @@ public class ApacheElfShip : ModNPC
             if (Main.expertMode) difficulty++;
             if (Main.masterMode) difficulty++;
             if (Main.getGoodWorld) difficulty++;
-            if (Main.getGoodWorld && Main.drunkWorld) difficulty++;
+            if (Main.zenithWorld) difficulty++;
+            if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
+            {
+                difficulty++;
+            }
+            if (ModLoader.TryGetMod("InfernalEclipseAPI", out Mod HiAkira))
+            {
+                difficulty++;
+            }
+            if (ModLoader.TryGetMod("TerrorMod", out Mod Terror))
+            {
+                difficulty += 3;
+            }
 
-            switch (attackType)
+                switch (attackType)
             {
                 case 0: // Presents
                     if (spawnsRemaining == 0)
@@ -271,7 +283,7 @@ public class ApacheElfShip : ModNPC
                     NPC.ai[3] = spawnsRemaining;
 
                     if (spawnsRemaining > 0)
-                        NPC.ai[1] = DelayFrames(400);
+                        NPC.ai[1] = DelayFrames(335 / difficulty * 2);
                     else
                         FinishAttack();
                     break;
@@ -306,9 +318,9 @@ public class ApacheElfShip : ModNPC
                     bool isEndOfOuter = (spawnsRemaining % bulletsPerOuterLoop) == 0;
                     if (spawnsRemaining > 0)
                     {
-                        NPC.ai[1] = DelayFrames(50);
+                        NPC.ai[1] = DelayFrames( 80 / difficulty * 2);
                         if (isEndOfOuter)
-                            NPC.ai[1] += DelayFrames(500);
+                            NPC.ai[1] += DelayFrames(550);
                     }
                     else
                     {
@@ -327,7 +339,7 @@ public class ApacheElfShip : ModNPC
                         int summonXOffset = Main.rand.NextBool() ? 3000 : -3000;
                         NPC.ai[1] = summonXOffset; // temporarily store offset in timer slot (safe because timer is 0 here)
                         NPC.ai[1] = DelayFrames(500);
-                        spawnsRemaining = 1 * difficulty;
+                        spawnsRemaining = Math.Max(1,  1 * difficulty - 2);
                         NPC.ai[3] = spawnsRemaining;
                         break;
                     }
@@ -345,7 +357,7 @@ public class ApacheElfShip : ModNPC
                     NPC.ai[3] = spawnsRemaining;
 
                     if (spawnsRemaining > 0)
-                        NPC.ai[1] = DelayFrames(10000);
+                        NPC.ai[1] = DelayFrames(8100 / difficulty * 2);
                     else
                         FinishAttack();
                     break;
@@ -361,15 +373,15 @@ public class ApacheElfShip : ModNPC
                         int summonXOffset = Main.rand.NextBool() ? 3000 : -3000;
                         NPC.ai[1] = summonXOffset;
                         NPC.ai[1] = DelayFrames(500);
-                        spawnsRemaining = 5 * difficulty;
+                        spawnsRemaining = 4 * difficulty;
                         NPC.ai[3] = spawnsRemaining;
                         break;
                     }
 
                     // Spawn one Elf Copter
                     int summonOffset2 = (int)NPC.ai[1];
-                    int xPos2 = (int)center.X + summonOffset2 + Main.rand.Next(-100, 100);
-                    int yPos2 = (int)center.Y + Main.rand.Next(-500, 500);
+                    int xPos2 = (int)center.X + summonOffset2 + Main.rand.Next(-300, 300);
+                    int yPos2 = (int)center.Y + Main.rand.Next(-700, 700);
                     // Clamp to world bounds
                     xPos2 = (int)Math.Clamp(xPos2, 50, Main.maxTilesX * 16 - 50);
                     yPos2 = (int)Math.Clamp(yPos2, 50, Main.maxTilesY * 16 - 50);
@@ -379,7 +391,7 @@ public class ApacheElfShip : ModNPC
                     NPC.ai[3] = spawnsRemaining;
 
                     if (spawnsRemaining > 0)
-                        NPC.ai[1] = 0; // No delay between spawns
+                        NPC.ai[1] = DelayFrames(450 / difficulty * 2);
                     else
                         FinishAttack();
                     break;
@@ -400,14 +412,14 @@ public class ApacheElfShip : ModNPC
                     // Spawn one missile
                     Vector2 dirMissile = targetPos - center;
                     Projectile.NewProjectile(source, center, dirMissile * 20f,
-                        ProjectileID.Missile, 80, 0f, Main.myPlayer);
+                        ProjectileID.Missile, 96, 0f, Main.myPlayer);
                     SoundEngine.PlaySound(SoundID.Item42, center);
 
                     spawnsRemaining--;
                     NPC.ai[3] = spawnsRemaining;
 
                     if (spawnsRemaining > 0)
-                        NPC.ai[1] = DelayFrames(200);
+                        NPC.ai[1] = DelayFrames(220 / difficulty * 2);
                     else
                         FinishAttack();
                     break;

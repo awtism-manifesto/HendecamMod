@@ -18,7 +18,7 @@ public class MorbiumArrowProj : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
 
-        AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
+        AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
     public override void AI()
@@ -29,21 +29,21 @@ public class MorbiumArrowProj : ModProjectile
     public override void OnKill(int timeLeft)
     {
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.5f));
-        Vector2 spawn = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
+        Vector2 spawn = Projectile.Center;
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity,
             ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1.5f));
-        Vector2 spawn2 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn2, velocity2,
+       
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity2,
             ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
-        Vector2 spawn3 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn3, velocity3,
+        
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity3,
             ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-4.5f));
-        Vector2 spawn4 = Projectile.Center - new Vector2(Main.rand.NextFloat(0, 0));
-        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn4, velocity4,
+      
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity4,
             ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
     }
 }

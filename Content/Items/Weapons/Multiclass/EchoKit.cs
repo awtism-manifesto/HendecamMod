@@ -196,6 +196,7 @@ public class EchoKit : ModItem
         player.wingRunAccelerationMult += 1.25f;
         player.wingAccRunSpeed += 1.25f;
         player.lifeRegen += 1;
+        player.wingTimeMax += 150;
 
         // In HoldItem method, when Focus Beam is activated:
         if (leftMouseHeld && rightMouseHeld && player.whoAmI == Main.myPlayer)

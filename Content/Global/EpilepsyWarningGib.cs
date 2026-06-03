@@ -46,7 +46,7 @@ public class EpilepsyWarningGive : ModPlayer
         if (NameContains("Jones"))
         {
             var obj2 = new Item();
-            obj2.SetDefaults(ItemID.Hook);
+            obj2.SetDefaults(ItemID.GrapplingHook);
             yield return obj2;
         }
 

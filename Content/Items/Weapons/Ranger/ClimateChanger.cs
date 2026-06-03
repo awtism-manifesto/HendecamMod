@@ -80,18 +80,7 @@ public class ClimateChanger : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()
@@ -104,7 +93,7 @@ public class ClimateChanger : ModItem
 
             recipe.AddIngredient(ScoriaBar.Type, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
-            recipe.AddIngredient<RefinedOil>(50);
+            recipe.AddIngredient<CrudeOil>(50);
             recipe.AddIngredient<RefinedOil>(25);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
@@ -114,7 +103,7 @@ public class ClimateChanger : ModItem
             recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
-            recipe.AddIngredient<RefinedOil>(60);
+            recipe.AddIngredient<CrudeOil>(60);
             recipe.AddIngredient<RefinedOil>(35);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();

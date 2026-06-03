@@ -78,7 +78,7 @@ public class TrueJfkExperience : ModItem
         recipe.AddIngredient<BeeSnipe>();
 
         recipe.AddIngredient<AstatineMarksmanRifle>();
-        recipe.AddIngredient<CorruptLawman>();
+        recipe.AddIngredient<PneumaticRifle>();
 
         recipe.AddIngredient<M1Garand>();
         recipe.AddIngredient<TheDeposer>();

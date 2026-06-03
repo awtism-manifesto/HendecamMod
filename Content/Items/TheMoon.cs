@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace HendecamMod.Content.Items;
 
 public class TheMoon : ModItem
 {
+   
     public override void SetDefaults()
     {
         Item.width = 33;

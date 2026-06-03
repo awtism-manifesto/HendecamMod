@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Items;
 
@@ -20,9 +21,13 @@ public class Libeerator : ModItem
         Item.useAnimation = 14; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item65;
-        // Weapon Properties
+        Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/PistolShot")
+        {
+            Volume = 0.35f,
+            PitchVariance = 0.2f,
+            MaxInstances = 35,
+        };
+
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
         Item.damage = 14; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
