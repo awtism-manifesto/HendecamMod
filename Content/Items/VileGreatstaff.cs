@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -10,7 +11,7 @@ namespace HendecamMod.Content.Items;
 
 public class VileGreatstaff : ModItem
 {
-    private int altClickCooldown;
+    
 
     public override void SetStaticDefaults()
     {
@@ -50,22 +51,31 @@ public class VileGreatstaff : ModItem
         return true;
     }
 
-    public override void UpdateInventory(Player player)
+    public override bool CanUseItem(Player player)
     {
-        if (altClickCooldown > 0)
-            altClickCooldown--;
-    }
+        if (player.altFunctionUse == 2)
+        {
+          
+            Item.useTime = 25;
+            Item.useAnimation = 25;
+           
+           
+        }
+        else
+        {
+           
+            Item.useTime = 9;
+            Item.useAnimation = 9;
+          
+        }
 
+        return base.CanUseItem(player);
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (player.altFunctionUse == 2)
         {
-            // Check if cooldown is still active
-            if (altClickCooldown > 0)
-                return false;
-
-            // Set cooldown (e.g., 60 ticks = 1 second)
-            altClickCooldown = 25;
+           
 
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);

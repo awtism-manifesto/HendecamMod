@@ -18,8 +18,8 @@ public class PhotonShotgun : ModItem
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 510000;
         // Use Properties
-        Item.useTime = 40; // The item's use time in ticks (60 ticks == 1 second.)
-        Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useTime = 44; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 44; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         // The sound that this item plays when used.

@@ -13,25 +13,25 @@ public class CeramicMachete : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 12;
-        Item.useAnimation = 12;
+        Item.useTime = 14;
+        Item.useAnimation = 14;
         Item.autoReuse = true;
 
         Item.DamageType = DamageClass.Melee;
         Item.damage = 31;
         Item.knockBack = 1.5f;
-
+        Item.scale = 1.15f;
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Orange;
         Item.UseSound = SoundID.Item1;
-
+        Item.shootSpeed = 5.67f;
         Item.shoot = ProjectileType<CeramicScrap>(); 
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 3; 
-        damage = (int)(damage * Main.rand.NextFloat(0.48f, 0.51f));
+       int NumProjectiles = Main.rand.Next(2, 4); 
+        damage = (int)(damage * 0.35f);
         for (int i = 0; i < NumProjectiles; i++)
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(25));
@@ -55,13 +55,7 @@ public class CeramicMachete : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

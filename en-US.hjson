@@ -1,7 +1,7 @@
 Mods: {
 	HendecamMod: {
 		InfoDisplays: {
-			IQDisplay.DisplayName: I Q Display
+			IQDisplay.DisplayName: IQ Display
 			ScanDisplay.DisplayName: Scan Display
 		}
 
@@ -15,7 +15,7 @@ Mods: {
 				Headers: {
 					Reworks: Reworks
 					ExperimentalFeatures: Experimental Features
-					ExperimentalFeatures(serverside): Experimental Features(serverside) Header
+					ExperimentalFeatures(serverside): Experimental Features (Server-side) 
 				}
 
 				DisplayName: Hendecam Mod Config
@@ -62,7 +62,7 @@ Mods: {
 					Label: Everything Makes Crit Noise
 				}
 
-				Headers.ExperimentalFeatures(clientside): Experimental Features(clientside) Header
+				Headers.ExperimentalFeatures(clientside): Experimental Features (Client-side) 
 				DisplayName: Hendecam Client Config
 			}
 		}

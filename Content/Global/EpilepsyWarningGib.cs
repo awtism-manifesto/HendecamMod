@@ -13,86 +13,99 @@ using Terraria.ModLoader.Default;
 
 namespace HendecamMod.Content.Global;
 
-// If you post this code file anywhere other than the Hendecam Github, you are a bitch ass motherfucker and you probably support israel
-// (ew, israel)
-
-public class EpilepsyWarningGive : ModPlayer 
+public class EpilepsyWarningGive : ModPlayer
 {
+   
+    private bool NameContains(string target)
+    {
+        return Player.name.Contains(target, System.StringComparison.OrdinalIgnoreCase);
+    }
+
     public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
     {
-        if (Player.name == "Echo Overwatch" || Player.name == "Mina Liao" || Player.name == "echo overwatch" || Player.name == "mina liao")
-
+        
+        if (NameContains("Echo Overwatch") || NameContains("Mina Liao"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<EchoKit>());
             yield return obj2;
         }
-        if (Player.name == "Yelmut" || Player.name == "yelmut" )
+        if (NameContains("Susie Gaster"))
+        {
+            var obj2 = new Item();
+            obj2.SetDefaults(ItemType<ManeAx>());
+            yield return obj2;
+        }
 
+        if (NameContains("Yelmut"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<YelmutsHelmet>());
             yield return obj2;
         }
-        if (Player.name == "Rivvie" || Player.name == "HateMate101" || Player.name == "rivvie" || Player.name == "River" || Player.name == "river")
+        if (NameContains("Jones"))
+        {
+            var obj2 = new Item();
+            obj2.SetDefaults(ItemID.Hook);
+            yield return obj2;
+        }
 
+        if (NameContains("Autism Manifesto") || NameContains("Manifesto"))
+        {
+            var obj2 = new Item();
+            obj2.SetDefaults(ItemType<PhatBlunt>());
+            yield return obj2;
+        }
+
+
+        if (NameContains("Rivvie") || NameContains("HateMate101") || NameContains("River"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<Bullshit1>());
             yield return obj2;
         }
-        if (Player.name == "Mag" || Player.name == "mag")
 
+        
+        if (NameContains("Mag"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<SteelLongsword>());
             yield return obj2;
         }
-        if (Player.name == "lemonearth" || Player.name == "LemonEarth" || Player.name == "Lemon Earth" || Player.name == "Lemonearth" || Player.name == "lemon earth" || Player.name == "lemn test 3" || Player.name == "lemn test 4" || Player.name == "lemn test 5")
 
+       
+        if (NameContains("lemonearth") || NameContains("LemonEarth") || NameContains("Lemon Earth") ||
+            NameContains("lemn test"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemID.Lemon);
             var obj3 = new Item();
             obj3.SetDefaults(ItemType<FragmentFlatEarth>());
-           
+
             yield return obj2;
             yield return obj3;
         }
-        if (Player.name == "Zygarde" || Player.name == "zygarde" || Player.name == "Zygarde-Complete")
 
+        
+        if (NameContains("Zygarde"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<CoreEnforcer>());
             yield return obj2;
         }
 
-        if (Player.name == "Akira" || Player.name == "akira")
-
+        
+        if (NameContains("Akira"))
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<AncientCobaltBar>());
             obj2.stack = 100;
             yield return obj2;
         }
-        if (Player.name == "Phantasmic" || Player.name == "Sentinel" || Player.name == "Anonymous" || Player.name == "phantasmic" || Player.name == "sentinel" || Player.name == "anonymous")
 
-        {
-            for (int i = 0; i < Player.inventory.Length; i++)
-            {
-                var obj2 = new Item();
-                obj2.SetDefaults(ItemType<SpiritRum>());
-                obj2.stack = 99999;
-                yield return obj2;
-            }
-          
-            
-        }
-       
-
+        // Always give EpilepsyWarning
         var obj = new Item();
-            obj.SetDefaults(ModContent.ItemType<EpilepsyWarning>());
-            yield return obj;
-        
+        obj.SetDefaults(ModContent.ItemType<EpilepsyWarning>());
+        yield return obj;
     }
 }
