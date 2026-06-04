@@ -91,7 +91,14 @@ public class ImprovisedLaserSight : ModItem
         // Control when this layer is visible
         public override bool GetDefaultVisibility(PlayerDrawSet drawInfo)
         {
-            return drawInfo.drawPlayer.GetModPlayer<LaserDrawGreen>().Laser && !drawInfo.drawPlayer.dead;
+            Player player = drawInfo.drawPlayer;
+
+            // ONLY draw for the local player (the one you're controlling)
+            if (player.whoAmI != Main.myPlayer)
+                return false;
+
+            var modPlayer = player.GetModPlayer<LaserDrawGreen>();
+            return modPlayer.Laser && !player.dead;
         }
 
         protected override void Draw(ref PlayerDrawSet drawInfo)

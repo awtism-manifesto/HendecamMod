@@ -3,6 +3,7 @@ using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Terraria.DataStructures;
+using static HendecamMod.Content.Items.Accessories.ImprovisedLaserSight;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -86,7 +87,14 @@ public class MarksmanLaserSight : ModItem
         // Control when this layer is visible
         public override bool GetDefaultVisibility(PlayerDrawSet drawInfo)
         {
-            return drawInfo.drawPlayer.GetModPlayer<LaserDrawRed>().Laser && !drawInfo.drawPlayer.dead;
+            Player player = drawInfo.drawPlayer;
+
+            // ONLY draw for the local player (the one you're controlling)
+            if (player.whoAmI != Main.myPlayer)
+                return false;
+
+            var modPlayer = player.GetModPlayer<LaserDrawRed>();
+            return modPlayer.Laser && !player.dead;
         }
 
         protected override void Draw(ref PlayerDrawSet drawInfo)

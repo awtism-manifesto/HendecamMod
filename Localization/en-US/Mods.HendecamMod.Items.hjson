@@ -5534,3 +5534,8 @@ AntiqueRifle: {
 	Tooltip: ""
 	DisplayName: Antique Rifle
 }
+
+AmmoRecycler: {
+	Tooltip: ""
+	DisplayName: Ammo Recycler
+}

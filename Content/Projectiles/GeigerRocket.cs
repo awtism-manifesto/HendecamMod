@@ -29,7 +29,9 @@ public class GeigerRocket : ModProjectile
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 1f; // How much light emit around the projectile
+       
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 0;
 
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.

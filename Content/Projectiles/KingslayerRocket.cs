@@ -28,6 +28,7 @@ public class KingslayerRocket : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 1f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -35,10 +36,7 @@ public class KingslayerRocket : ModProjectile
         Projectile.extraUpdates = 1;
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 4;
-    }
+   
 
     public override void AI()
     {

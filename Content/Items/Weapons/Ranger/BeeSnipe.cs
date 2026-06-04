@@ -39,7 +39,10 @@ public class BeeSnipe : ModItem
         Item.useAmmo = ItemID.MusketBall;
         Item.shoot = ProjectileID.BeeArrow;
     }
-
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<KingScope>().Scoped = true;
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.BeeArrow;
@@ -60,10 +63,10 @@ public class BeeSnipe : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
+        var line = new TooltipLine(Mod, "Face", "Converts bullets into high velocity bees");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Converts bullets into high velocity bees")
+        line = new TooltipLine(Mod, "Face", "Right click to zoom")
         {
             OverrideColor = new Color(255, 255, 255)
         };

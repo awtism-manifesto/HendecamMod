@@ -26,9 +26,11 @@ public class UraniumRocket : ModProjectile
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.25f; // How much light emit around the projectile
-        Projectile.usesLocalNPCImmunity = true;
+       
         Projectile.extraUpdates = 0;
         Projectile.timeLeft = 400;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -143,7 +145,7 @@ public class UraniumRocket : ModProjectile
     {
         target.AddBuff(BuffType<RadPoisoning>(), 250);
 
-        target.immune[Projectile.owner] = 4;
+       
     }
 
     // Rocket II explosion that damages tiles.

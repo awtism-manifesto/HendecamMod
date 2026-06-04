@@ -56,12 +56,12 @@ public class TrueJfkExperience : ModItem
         var line = new TooltipLine(Mod, "Face", "Shots split into homing bloodstreams on impact with a target");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "It wont damage yourself this time, i promise")
+        line = new TooltipLine(Mod, "Face", "Right click to zoom")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "'It wont damage yourself this time, i promise'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -121,4 +121,31 @@ public class TrueJfkExperience : ModItem
     {
         return new Vector2(-25f, -1f);
     }
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<JFKScope>().Scoped = true;
+    }
+
+}
+public class JFKScope : ModPlayer
+{
+    public override void ModifyZoom(ref float zoom)
+    {
+        Player player = Main.LocalPlayer;
+        if (Main.mouseRight == true && Scoped)
+        {
+            zoom = player.scope ? 0.75f : 0.5f;
+        }
+        base.ModifyZoom(ref zoom);
+    }
+
+
+    public bool Scoped;
+
+
+    public override void ResetEffects()
+    {
+        Scoped = false;
+    }
+
 }

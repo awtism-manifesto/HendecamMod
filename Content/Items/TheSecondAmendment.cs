@@ -297,7 +297,7 @@ public class TheSecondAmendment : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions and has a built-in laser sight");
+        var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions and has a built-in scope and laser sight");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "We once fought for the false promise of freedom. Now we must fight for true freedom. 161.")
@@ -310,6 +310,7 @@ public class TheSecondAmendment : ModItem
     public override void HoldItem(Player player)
     {
         player.GetModPlayer<LaserDrawRed>().Laser = true;
+        player.GetModPlayer<JFKScope>().Scoped = true;
     }
 
     public override void AddRecipes()

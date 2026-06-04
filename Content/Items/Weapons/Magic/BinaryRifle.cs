@@ -42,7 +42,10 @@ public class BinaryRifle : ModItem
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<KingScope>().Scoped = true;
+    }
     public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
@@ -69,7 +72,7 @@ public class BinaryRifle : ModItem
         var line = new TooltipLine(Mod, "Face", "Creates a pair of massive lasers that pierce through anything and everything");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Right click to zoom")
         {
             OverrideColor = new Color(255, 255, 255)
         };

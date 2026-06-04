@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -58,14 +59,14 @@ public class KingslayerSniper : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts musket balls into powerful, piercing Kingslayer Bullets that deal extra crit damage");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Right click to zoom")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        
     }
-
+    
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -83,4 +84,31 @@ public class KingslayerSniper : ModItem
     {
         return new Vector2(-9f, -1f);
     }
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<KingScope>().Scoped = true;
+    }
+
+}
+public class KingScope : ModPlayer
+{
+    public override void ModifyZoom(ref float zoom)
+    {
+        Player player = Main.LocalPlayer;
+        if (Main.mouseRight == true && Scoped)
+        {
+            zoom = player.scope ? 0.8f : 0.6666667f;
+        }
+        base.ModifyZoom(ref zoom);
+    }
+
+
+    public bool Scoped;
+   
+
+    public override void ResetEffects()
+    {
+        Scoped = false;
+    }
+    
 }

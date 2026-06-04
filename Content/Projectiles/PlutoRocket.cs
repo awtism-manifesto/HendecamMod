@@ -32,6 +32,7 @@ public class PlutoRocket : ModProjectile
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.5f; // How much light emit around the projectile
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 1;
         Projectile.timeLeft = 400;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
@@ -162,7 +163,7 @@ public class PlutoRocket : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffType<RadPoisoning2>(), 300);
-        target.immune[Projectile.owner] = 4;
+   
     }
 
     // Rocket II explosion that damages tiles.

@@ -41,7 +41,10 @@ public class Sunrise : ModItem
         Item.useAmmo = AmmoID.Dart;
         Item.shoot = ProjectileType<SunDart>();
     }
-
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<KingScope>().Scoped = true;
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<SunDart>();
@@ -53,24 +56,13 @@ public class Sunrise : ModItem
         var line = new TooltipLine(Mod, "Face", "Converts all darts into high velocity, burning sun darts");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Right click to zoom")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+        
     }
 
     public override void AddRecipes()

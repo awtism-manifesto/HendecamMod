@@ -48,8 +48,10 @@ public class TheBostonTeaParty : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Instead of projectile vomit, this weapon shoots very high-damage bullets.");
         tooltips.Add(line);
-        var line1 = new TooltipLine(Mod, "Face", "Made for those with less than great computers.");
+        var line1 = new TooltipLine(Mod, "Face", "Right click to zoom");
         tooltips.Add(line1);
+        var line2 = new TooltipLine(Mod, "Face", "Made for those with less than great computers.");
+        tooltips.Add(line2);
     }
     public override Vector2? HoldoutOffset()
     {
@@ -63,4 +65,31 @@ public class TheBostonTeaParty : ModItem
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
+    public override void HoldItem(Player player)
+    {
+        player.GetModPlayer<BostonScope>().Scoped = true;
+    }
+
+}
+public class BostonScope : ModPlayer
+{
+    public override void ModifyZoom(ref float zoom)
+    {
+        Player player = Main.LocalPlayer;
+        if (Main.mouseRight == true && Scoped)
+        {
+            zoom = player.scope ? 0.75f : 0.5f;
+        }
+        base.ModifyZoom(ref zoom);
+    }
+
+
+    public bool Scoped;
+
+
+    public override void ResetEffects()
+    {
+        Scoped = false;
+    }
+
 }

@@ -18,7 +18,7 @@ public class AA12 : ModItem
         Item.autoReuse = true; 
         Item.UseSound = new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeavyShotgun")
         {
-            Volume = 2.1f,
+            Volume = 0.67f,
             PitchVariance = 0.2f,
             MaxInstances = 10,
         };

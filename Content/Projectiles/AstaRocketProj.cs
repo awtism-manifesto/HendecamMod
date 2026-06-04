@@ -31,7 +31,9 @@ public class AstaRocketProj : ModProjectile
         Projectile.penetrate = -1; // Infinite penetration so that the blast can hit all enemies within its radius.
         Projectile.DamageType = DamageClass.Ranged;
         Projectile.light = 0.7f; // How much light emit around the projectile
+  
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 2;
 
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
@@ -134,7 +136,7 @@ public class AstaRocketProj : ModProjectile
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffType<RadPoisoning3>(), 255);
-        target.immune[Projectile.owner] = 4;
+      
     }
     // Rocket II explosion that damages tiles.
     //if (Projectile.owner == Main.myPlayer) {
