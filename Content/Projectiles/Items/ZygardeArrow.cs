@@ -33,7 +33,7 @@ public class ZygardeArrow : ModProjectile
     {
         Projectile.width = 15; // The width of projectile hitbox
         Projectile.height = 15; // The height of projectile hitbox
-       
+        Projectile.ArmorPenetration = 5;
         Projectile.penetrate = 3;
         Projectile.extraUpdates = 1;
         Projectile.arrow = true;

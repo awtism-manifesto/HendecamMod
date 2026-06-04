@@ -5,14 +5,14 @@ namespace HendecamMod.Content.Items.Accessories.Cubes;
 
 public class MorbiumCube : ModItem
 {
-    public static readonly int AdditiveDamageBonus = 8;
+  
 
     public override void SetDefaults()
     {
         Item.width = 26;
         Item.height = 26;
         Item.rare = ItemRarityID.Yellow; 
-        Item.value = 303000;
+        Item.value = 266000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 25;
@@ -20,8 +20,8 @@ public class MorbiumCube : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 108f;
-        player.maxFallSpeed = player.maxFallSpeed * -1.25f;
+       
+        player.maxFallSpeed = player.maxFallSpeed * -1.1f;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -35,13 +35,7 @@ public class MorbiumCube : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+       
     }
 
     public override void AddRecipes()

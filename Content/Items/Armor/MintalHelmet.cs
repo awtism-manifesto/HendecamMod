@@ -9,18 +9,8 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class MintalHelmet : ModItem
 {
-    public static readonly int RangedCritBonus = 16;
-    public static LocalizedText SetBonusText { get; private set; }
-
-    public override void SetStaticDefaults()
-    {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
+   
+  
 
     public override void SetDefaults()
     {
@@ -28,16 +18,16 @@ public class MintalHelmet : ModItem
         Item.height = 28; // Height of the item
         Item.value = 255000;
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
-        Item.defense = 15; // The amount of defense the item will give when equipped
+        Item.defense = 17; // The amount of defense the item will give when equipped
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+16% Ranged Crit Chance");
+        var line = new TooltipLine(Mod, "Face", "+13% Melee and Magic crit chance");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "+65 max Mana")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -66,7 +56,9 @@ public class MintalHelmet : ModItem
         // - Adding 5 flat damage.
         // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
 
-        player.GetCritChance(damageClass: DamageClass.Ranged) += RangedCritBonus;
+        player.GetCritChance(damageClass: DamageClass.Magic) += 13;
+        player.GetCritChance(damageClass: DamageClass.Melee) += 13;
+        player.statManaMax2 += 65; 
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

@@ -9,18 +9,9 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class MintalBreastplate : ModItem
 {
-    public static readonly int RangedDamageBonus = 11;
-    public static LocalizedText SetBonusText { get; private set; }
+   
 
-    public override void SetStaticDefaults()
-    {
-        // If your head equipment should draw hair while drawn, use one of the following:
-        // ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false; // Don't draw the head at all. Used by Space Creature Mask
-        // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
-        // ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
-        // ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
+   
 
     public override void SetDefaults()
     {
@@ -28,30 +19,19 @@ public class MintalBreastplate : ModItem
         Item.height = 28; // Height of the item
         Item.value = 290000;
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
-        Item.defense = 11; // The amount of defense the item will give when equipped
+        Item.defense = 19; // The amount of defense the item will give when equipped
     }
 
     public override void UpdateEquip(Player player)
     {
-        // GetDamage returns a reference to the specified damage class' damage StatModifier.
-        // Since it doesn't return a value, but a reference to it, you can freely modify it with mathematics operators (+, -, *, /, etc.).
-        // StatModifier is a structure that separately holds float additive and multiplicative modifiers, as well as base damage and flat damage.
-        // When StatModifier is applied to a value, its additive modifiers are applied before multiplicative ones.
-        // Base damage is added directly to the weapon's base damage and is affected by damage bonuses, while flat damage is applied after all other calculations.
-        // In this case, we're doing a number of things:
-        // - Adding 25% damage, additively. This is the typical "X% damage increase" that accessories use, use this one.
-        // - Adding 12% damage, multiplicatively. This effect is almost never used in Terraria, typically you want to use the additive multiplier above. It is extremely hard to correctly balance the game with multiplicative bonuses.
-        // - Adding 4 base damage.
-        // - Adding 5 flat damage.
-        // Since we're using DamageClass.Generic, these bonuses apply to ALL damage the player deals.
-
-        player.GetCritChance(damageClass: DamageClass.Ranged) += RangedDamageBonus;
+        player.GetDamage(DamageClass.Melee) += 11 / 100f;
+        player.GetDamage(DamageClass.Magic) += 11 / 100f;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+11% ranged crit chance");
+        var line = new TooltipLine(Mod, "Face", "11% increased Melee and Magic damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -80,7 +60,8 @@ public class MintalBreastplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.statLifeMax2 = (int)(player.statLifeMax2 * 1.25f);
-        player.setBonus = "+25% max life";
+        player.statManaMax2 += player.statDefense;
+        player.setBonus = "Increases max mana by your defense stat, increases melee damage based on your max mana";
+        player.GetDamage(DamageClass.Melee) += player.statManaMax2 / 1500f;
     }
 }

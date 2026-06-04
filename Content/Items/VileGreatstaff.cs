@@ -80,7 +80,7 @@ public class VileGreatstaff : ModItem
             SoundEngine.PlaySound(SoundID.Item82, player.position);
             SoundEngine.PlaySound(SoundID.Item132, player.position);
 
-            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ProjectileType<VileSpawn>(), (int)(damage * 1.33f), (int)(knockback * 1f), player.whoAmI);
+            Projectile.NewProjectile(source, position = Main.MouseWorld, velocity * 1.66f, ProjectileType<VileSpawn>(), (int)(damage * 1.15f), (int)(knockback * 1f), player.whoAmI);
             return false;
         }
 

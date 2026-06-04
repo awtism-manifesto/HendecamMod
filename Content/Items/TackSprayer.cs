@@ -15,7 +15,7 @@ public class TackSprayer : ModItem
 
     public override void SetDefaults()
     {
-        Item.damage = 19;
+        Item.damage = 20;
         Item.DamageType = DamageClass.Summon;
         Item.sentry = true;
        

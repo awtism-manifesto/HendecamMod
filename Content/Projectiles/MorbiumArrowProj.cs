@@ -23,7 +23,7 @@ public class MorbiumArrowProj : ModProjectile
 
     public override void AI()
     {
-        Projectile.velocity = Projectile.velocity * 0.225f;
+        Projectile.velocity = Projectile.velocity * 0.85f;
     }
 
     public override void OnKill(int timeLeft)
@@ -31,19 +31,19 @@ public class MorbiumArrowProj : ModProjectile
         Vector2 velocity = Projectile.velocity.RotatedBy(MathHelper.ToRadians(4.5f));
         Vector2 spawn = Projectile.Center;
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity,
-            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity2 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(1.5f));
        
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity2,
-            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
 
         Vector2 velocity3 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-1.5f));
         
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity3,
-            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
         Vector2 velocity4 = Projectile.velocity.RotatedBy(MathHelper.ToRadians(-4.5f));
       
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), spawn, velocity4,
-            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.375f), Projectile.knockBack, Projectile.owner);
+            ProjectileType<MorbeamRanged>(), (int)(Projectile.damage * 0.425f), Projectile.knockBack, Projectile.owner);
     }
 }

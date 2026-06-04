@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
 
@@ -28,7 +29,7 @@ public class WeedCube : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "'Permanently' makes the player weed colored");
+        var line = new TooltipLine(Mod, "Face", "Makes the player weed colored");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -57,21 +58,17 @@ public class Weedified : ModPlayer
         Weeded = false;
     }
 
-    public override void PostUpdateEquips()
+   
+    public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
     {
-        if (!Player.GetModPlayer<Weedified>().Weeded) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (!Player.GetModPlayer<Weedified>().Weeded) 
         {
         }
         else
         {
-            Player.eyeColor = Color.DarkOliveGreen;
-            Player.hairColor = Color.DarkOliveGreen;
-            Player.pantsColor = Color.DarkOliveGreen;
-            Player.shirtColor = Color.DarkOliveGreen;
-            Player.shoeColor = Color.DarkOliveGreen;
-            Player.underShirtColor = Color.DarkOliveGreen;
-            Player.skinColor = Color.DarkOliveGreen;
-            Player.hairDyeColor = Color.DarkOliveGreen;
+            r = 0.2f;
+            g = 0.72f;
+            b = 0.1f;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Legs)]
 public class MintalLeggings : ModItem
 {
-    public static readonly int RangedDamageBonus = 10;
+   
     public static LocalizedText SetBonusText { get; private set; }
 
     public override void SetStaticDefaults()
@@ -28,16 +28,16 @@ public class MintalLeggings : ModItem
         Item.height = 28; // Height of the item
         Item.value = 270000;
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
-        Item.defense = 9; // The amount of defense the item will give when equipped
+        Item.defense = 14; // The amount of defense the item will give when equipped
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+10% Ranged Crit Chance");
+        var line = new TooltipLine(Mod, "Face", "8% increased melee and magic attack speed");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "9% increased movement speed")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -48,9 +48,11 @@ public class MintalLeggings : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        
+        player.GetAttackSpeed(DamageClass.Melee) += 8/ 100f;
 
-        player.GetCritChance(damageClass: DamageClass.Ranged) += RangedDamageBonus;
+        player.GetAttackSpeed(DamageClass.Magic) += 8 / 100f;
+        player.moveSpeed += 9 / 100f;
+        player.runAcceleration *= 1.09f;
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
