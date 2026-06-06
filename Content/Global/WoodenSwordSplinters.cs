@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Global;
@@ -8,7 +9,12 @@ public class WoodSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.WoodenSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.WoodenSword;
+        }
+        else return false;
+       
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -25,7 +31,11 @@ public class EbonwoodSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.EbonwoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.EbonwoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -42,7 +52,11 @@ public class ShadewoodSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.ShadewoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.ShadewoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -59,7 +73,11 @@ public class PalmSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.PalmWoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.PalmWoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -77,7 +95,11 @@ public class BorSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.BorealWoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.BorealWoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -94,7 +116,11 @@ public class AshSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.AshWoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.AshWoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -111,7 +137,11 @@ public class PearlSplinters : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        return item.type == ItemID.PearlwoodSword;
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.PearlwoodSword;
+        }
+        else return false;
     }
 
     public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)

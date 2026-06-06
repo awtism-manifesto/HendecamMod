@@ -123,7 +123,7 @@ public class RednecksRustBucket : ModItem
     {
         Recipe
             recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.QuadBarrelShotgun);
+        recipe.AddIngredient<Boomshark>();
         recipe.AddIngredient<ImprovisedMachineGun>();
         recipe.AddIngredient<ToothlessWyrm>();
         recipe.AddIngredient<Brainderbuss>();

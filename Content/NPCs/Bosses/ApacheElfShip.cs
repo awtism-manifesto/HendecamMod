@@ -36,8 +36,8 @@ public class ApacheElfShip : ModNPC
     public override void SetDefaults()
     {
         NPC.damage = 80;
-        NPC.defense = 45;
-        NPC.lifeMax = 69500;
+        NPC.defense = 40;
+        NPC.lifeMax = 62500;
 
         NPC.width = 100;
         NPC.height = 100;
@@ -276,20 +276,20 @@ public class ApacheElfShip : ModNPC
                     // Spawn one present projectile
                     Vector2 dirToPlayer = targetPos - center;
                     Projectile.NewProjectile(source, center, dirToPlayer * 0.01f,
-                        ProjectileID.Present, 75, 0f, Main.myPlayer);
+                        ProjectileID.Present, 81, 0f, Main.myPlayer);
                     SoundEngine.PlaySound(SoundID.Item42, center);
 
                     spawnsRemaining--;
                     NPC.ai[3] = spawnsRemaining;
 
                     if (spawnsRemaining > 0)
-                        NPC.ai[1] = DelayFrames(335 / difficulty * 2);
+                        NPC.ai[1] = DelayFrames(300 / difficulty * 2);
                     else
                         FinishAttack();
                     break;
 
                 case 1: // Plasma bullets
-                    int bulletsPerOuterLoop = 5 * difficulty; // Declared once here
+                    int bulletsPerOuterLoop = 3 * difficulty; // Declared once here
 
                     if (spawnsRemaining == 0)
                     {
@@ -307,7 +307,7 @@ public class ApacheElfShip : ModNPC
                     // Spawn one plasma bullet
                     Vector2 dir = targetPos - center;
                     Projectile.NewProjectile(source, center, dir * 0.01f,
-                        ProjectileType<ApexPlasmaBulletHostile>(), 67, 0f, Main.myPlayer);
+                        ProjectileType<ApexPlasmaBulletHostile>(), 49, 0f, Main.myPlayer);
                     SoundEngine.PlaySound(SoundID.Item42, center);
                     SoundEngine.PlaySound(SoundID.Item99, center);
                     SoundEngine.PlaySound(SoundID.Item114, center);

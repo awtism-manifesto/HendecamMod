@@ -3,6 +3,8 @@ Mods: {
 		InfoDisplays: {
 			IQDisplay.DisplayName: IQ Display
 			ScanDisplay.DisplayName: Scan Display
+			JokeDisplay.DisplayName: Joke Display
+			ZeJokeDisplay.DisplayName: Ze Joke Display
 		}
 
 		Configs: {

@@ -25,11 +25,11 @@ public class AmmoRecycler : ModItem
         Item.rare = ItemRarityID.Green;
         Item.scale = 0.9f;
         Item.value = 100000;
-        Item.useTime = 23;
-        Item.useAnimation = 23;
+        Item.useTime = 29;
+        Item.useAnimation = 29;
         Item.useStyle = ItemUseStyleID.Shoot;
         Item.autoReuse = true;
-        Item.DamageType = GetInstance<RangedMagicDamage>();
+        Item.DamageType = DamageClass.Ranged;
         Item.damage = 1;
         Item.knockBack = 5.75f;
         Item.noMelee = true;
@@ -185,6 +185,8 @@ public class AmmoRecycler : ModItem
             case ItemID.RocketII:
             case ItemID.RocketIII:
             case ItemID.RocketIV:
+            case ItemID.ClusterRocketI:
+            case ItemID.ClusterRocketII:
                 return ProjectileID.RocketI;
             case ItemID.PoisonDart:
                 return ProjectileID.PoisonDart;
@@ -233,10 +235,18 @@ public class AmmoRecycler : ModItem
         // Calculate final damage
         int calculatedDamage = (int)(damage * totalMultiplier);
 
-        int boostedDamage = (int)(calculatedDamage * 1.5f);
-        
+        int boostedDamage;
 
-     
+
+        if (Main.hardMode)
+        {
+             boostedDamage = (int)(calculatedDamage * 2.25f);
+        }
+        else
+        {
+            boostedDamage = (int)(calculatedDamage * 1.75f);
+        }
+
         if (boostedDamage < 1) boostedDamage = 1;
 
         return boostedDamage;
@@ -256,7 +266,7 @@ public class AmmoRecycler : ModItem
         var line1 = new TooltipLine(Mod, "Face", "Right click to zoom");
         tooltips.Add(line1);
 
-        line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo, increases all ammo base damage by 1.5x");
+        line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo, increases all ammo base damage by 1.75x");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does not work unless you have all four types of ammo");
         tooltips.Add(line);
@@ -281,7 +291,7 @@ public class LaserDrawFire : ModPlayer
         Player player = Main.LocalPlayer;
         if (Main.mouseRight == true && Laser)
         {
-                zoom = player.scope ? 0.9f : 0.75f;
+                zoom = player.scope ? 0.6666667f : 0.5f;
         }
         base.ModifyZoom(ref zoom);
     }

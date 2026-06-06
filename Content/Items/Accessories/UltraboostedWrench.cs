@@ -11,11 +11,6 @@ public class UltraboostedWrench : ModItem
         // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
         Main.RegisterItemAnimation(Type, new DrawAnimationVertical(2, 31));
         ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
-
-
-
-
-
     }
     public override void SetDefaults()
     {

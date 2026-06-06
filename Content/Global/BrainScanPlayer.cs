@@ -52,6 +52,9 @@ namespace HendecamMod.Content.Global
 
             displayColor = InactiveInfoTextColor;
 
+            float calced = current * 60;
+
+            int final = ((int)Math.Round(calced));
 
             if (player.GetModPlayer<BaseSpike>().Spiked)
             {
@@ -61,7 +64,7 @@ namespace HendecamMod.Content.Global
 
           
 
-            return $"Lobotometer decay rate: {current * 60}/sec";
+            return $"Lobotometer decay rate: {final}/sec";
         }
     }
 }

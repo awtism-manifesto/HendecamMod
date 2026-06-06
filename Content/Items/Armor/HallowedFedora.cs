@@ -61,7 +61,10 @@ public class HallowedFedora : ModItem
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
-        return body.type == ItemID.HallowedPlateMail && legs.type == ItemID.HallowedGreaves;
+        if (body.type == ItemID.HallowedPlateMail || body.type == ItemID.AncientHallowedPlateMail &&
+            legs.type == ItemID.HallowedGreaves || legs.type == ItemID.AncientHallowedGreaves)
+            return true;
+        else return false;
     }
   
     public override void UpdateEquip(Player player)
@@ -117,14 +120,12 @@ public class NoMoreInvincible : ModPlayer
 
        
     }
-
-    public override void OnHurt(Player.HurtInfo info)
+    public override void OnHitAnything(float x, float y, Entity victim)
     {
-      
         if (!Invince)
             return;
 
-       
+
         if (InvinceCooldown > 0)
             return;
 
@@ -133,4 +134,5 @@ public class NoMoreInvincible : ModPlayer
         // Start cooldown
         InvinceCooldown = InvinceCooldownMax;
     }
+    
 }

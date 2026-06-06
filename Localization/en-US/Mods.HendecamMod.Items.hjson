@@ -5539,3 +5539,13 @@ AmmoRecycler: {
 	Tooltip: ""
 	DisplayName: Ammo Recycler
 }
+
+Boomshark: {
+	Tooltip: ""
+	DisplayName: Boomshark
+}
+
+JokeJumbotron: {
+	Tooltip: ""
+	DisplayName: Joke Jumbotron
+}

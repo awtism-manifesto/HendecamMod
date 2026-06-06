@@ -134,7 +134,7 @@ public class JFKScope : ModPlayer
         Player player = Main.LocalPlayer;
         if (Main.mouseRight == true && Scoped)
         {
-            zoom = player.scope ? 0.75f : 0.5f;
+            zoom = player.scope ? 0.9f : 0.75f;
         }
         base.ModifyZoom(ref zoom);
     }
