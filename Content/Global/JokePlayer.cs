@@ -66,7 +66,7 @@ namespace HendecamMod.Content.Global
             if (JokeCycler >= 240)
             {
                
-                choice = Main.rand.Next(25);
+                choice = Main.rand.Next(26);
                 if (choice == 17)
                 {
                     displayColor = GreenInfoTextColor;
@@ -147,13 +147,16 @@ namespace HendecamMod.Content.Global
                         JokeDisplayed = "How do you steal a coat? You just jacket.";
                         break;
                     case 22:
-                        JokeDisplayed = "How long does it take a Terrarian to graduate? Forever, they keep getting more finals.";
+                        JokeDisplayed = "Mechanical Murdergun! Now with 125% more murder!";
                         break;
                     case 23:
                         JokeDisplayed = "How do you get an art major off of your porch? You pay for the pizza.";
                         break;
                     case 24:
                         JokeDisplayed = "Why did the Moon Lord lose to dryads? because they were outstanding.";
+                        break;
+                    case 25:
+                        JokeDisplayed = "Look for the gummy bear album in stores on November 13th!";
                         break;
                 }
                 

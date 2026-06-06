@@ -56,6 +56,11 @@ Mods: {
 					Label: Radial Projectile Count
 					Tooltip: Number of projectiles fired in a full circle (including the original). WARNING: THIS CAN GET VERY LAGGY VERY FAST
 				}
+
+				Bouncy: {
+					Label: All Projectiles are bouncy
+					Tooltip: Causes all applicable projectiles to bounce off walls (does not work with projectiles that ignore tiles)
+				}
 			}
 
 			HendecamClientConfig: {

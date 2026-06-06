@@ -1,0 +1,86 @@
+﻿using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria.DataStructures;
+
+namespace HendecamMod.Content.Items;
+
+public class ZazaNerfGun : ModItem
+{
+    public override void SetDefaults()
+    {
+        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
+
+        // Common Properties
+        Item.width = 62; // Hitbox width of the item.
+        Item.height = 32; // Hitbox height of the item.
+        Item.scale = 0.85f;
+        Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
+        Item.value = 165000;
+        // Use Properties
+        Item.useTime = 18; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 18; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+        Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+        // The sound that this item plays when used.
+        Item.UseSound = SoundID.Item99;
+        // Weapon Properties
+        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+        Item.damage = 22; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.knockBack = 1.9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+        Item.noMelee = true; // So the item's animation doesn't do damage.
+
+        // Gun Properties
+        // For some reason, all the guns in the vanilla source have this.
+        Item.shootSpeed = 13.95f; // The speed of the projectile (measured in pixels per frame.)
+        Item.useAmmo = AmmoID.Dart;
+        Item.shoot = ProjectileID.PoisonDart;
+    }
+
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+        type = ProjectileType<WeedDart>();
+        for (int i = 0; i < NumProjectiles; i++)
+        {
+            // Rotate the velocity randomly by 30 degrees at max.
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2.67f));
+
+            // Decrease velocity randomly for nicer visuals.
+            newVelocity *= 1f - Main.rand.NextFloat(0.36f);
+
+            // Create a projectile.
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+        }
+
+        return false; // Return false because we don't want tModLoader to shoot projectile
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Converts all darts into weed darts");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "'This is one STUPID nerf mod'")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+       
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<ZazaPipegun>();
+        recipe.AddIngredient<NerfGun>();
+        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
+    }
+
+    public override Vector2? HoldoutOffset()
+    {
+        return new Vector2(-6f, -1f);
+    }
+}

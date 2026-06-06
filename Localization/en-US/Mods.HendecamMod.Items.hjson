@@ -5549,3 +5549,18 @@ JokeJumbotron: {
 	Tooltip: ""
 	DisplayName: Joke Jumbotron
 }
+
+ImprovisedMortarLauncher: {
+	Tooltip: ""
+	DisplayName: Improvised Mortar Launcher
+}
+
+ObsidianCompoundBow: {
+	DisplayName: Obsidian Compound Bow
+	Tooltip: ""
+}
+
+ZazaNerfGun: {
+	DisplayName: Zaza Nerf Gun
+	Tooltip: ""
+}

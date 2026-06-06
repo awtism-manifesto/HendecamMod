@@ -53,6 +53,12 @@ public class HendecamConfig : ModConfig
     [DefaultValue(6)]
     public int ProjectileCount { get; set; }
 
+    [Label("(Almost) All Projectiles are bouncy")]
+    [Tooltip("Causes almost all projectiles to bounce off walls (does not work with certain projectiles that have ignored/special collision logic)")]
+    [DefaultValue(false)]
+
+    public bool Bouncy { get; set; }
+
 
 }
 public class HendecamClientConfig : ModConfig

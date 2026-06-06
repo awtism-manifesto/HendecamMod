@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Ammo;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ public class AmmoRecycler : ModItem
     {
         Item.width = 104;
         Item.height = 70;
-        Item.rare = ItemRarityID.Green;
+        Item.rare = ItemRarityID.LightRed;
         Item.scale = 0.9f;
         Item.value = 100000;
         Item.useTime = 29;
@@ -278,7 +279,16 @@ public class AmmoRecycler : ModItem
             tooltips.Add(line);
         }
     }
-
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<ZazaNerfGun>();
+        recipe.AddIngredient<Boomshark>();
+        recipe.AddIngredient<ImprovisedMortarLauncher>();
+        recipe.AddIngredient<ObsidianCompoundBow>();
+        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
+    }
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-28f, -3f);

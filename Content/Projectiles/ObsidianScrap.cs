@@ -24,15 +24,13 @@ public class ObsidianScrap : ModProjectile
         Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
-        Projectile.usesIDStaticNPCImmunity = true;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
 
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 8;
-    }
+   
 
     public override void AI()
     {

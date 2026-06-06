@@ -75,7 +75,7 @@ public class PlatShat : ModPlayer
             return;
         
 
-        int baseDamage = 15;
+        int baseDamage = 12;
 
         float totalMultiplier = 1f; // Base 100%
 

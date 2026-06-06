@@ -555,4 +555,44 @@ public class CritNoiseGoBrrrrr: GlobalProjectile
         }
     }
 }
+public class BouncyProjectiles : GlobalProjectile
+{
+
+    public override bool InstancePerEntity => true;
+
+
+    public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
+    {
+        if (GetInstance<HendecamConfig>().Bouncy == true)
+        {
+            if (projectile.penetrate >=2)
+            {
+                projectile.penetrate--;
+            }
+           
+            if (projectile.penetrate <= 0)
+            {
+                projectile.Kill();
+            }
+            else
+            {
+                Collision.HitTiles(projectile.position, projectile.velocity, projectile.width, projectile.height);
+                // If the projectile hits the left or right side of the tile, reverse the X velocity
+                if (Math.Abs(projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+                {
+                    projectile.velocity.X = -oldVelocity.X;
+                }
+
+                // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+                if (Math.Abs(projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+                {
+                    projectile.velocity.Y = -oldVelocity.Y;
+                }
+            }
+            return false;
+        }
+        else return true;
+       
+    }
+}
 

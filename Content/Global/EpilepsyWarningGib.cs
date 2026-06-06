@@ -62,7 +62,12 @@ public class EpilepsyWarningGive : ModPlayer
         {
             var obj2 = new Item();
             obj2.SetDefaults(ItemType<Bullshit1>());
+           
+            var obj3 = new Item();
+            obj3.SetDefaults(ItemID.PoopBlock);
+            obj3.stack = 6767;
             yield return obj2;
+            yield return obj3;
         }
 
         
@@ -93,8 +98,13 @@ public class EpilepsyWarningGive : ModPlayer
             obj2.SetDefaults(ItemType<CoreEnforcer>());
             yield return obj2;
         }
+        if (NameContains("Brandon Herrera"))
+        {
+            var obj2 = new Item();
+            obj2.SetDefaults(ItemType<AmmoRecycler>());
+            yield return obj2;
+        }
 
-        
         if (NameContains("Akira"))
         {
             var obj2 = new Item();
@@ -103,7 +113,7 @@ public class EpilepsyWarningGive : ModPlayer
             yield return obj2;
         }
 
-        // Always give EpilepsyWarning
+        // Always give Epilepsy Warning
         var obj = new Item();
         obj.SetDefaults(ModContent.ItemType<EpilepsyWarning>());
         yield return obj;
