@@ -66,7 +66,7 @@ namespace HendecamMod.Content.Global
             if (JokeCycler >= 240)
             {
                
-                choice = Main.rand.Next(26);
+                choice = Main.rand.Next(28);
                 if (choice == 17)
                 {
                     displayColor = GreenInfoTextColor;
@@ -157,6 +157,12 @@ namespace HendecamMod.Content.Global
                         break;
                     case 25:
                         JokeDisplayed = "Look for the gummy bear album in stores on November 13th!";
+                        break;
+                    case 26:
+                        JokeDisplayed = "I guess hellevators have their “ups and downs”...";
+                        break;
+                    case 27:
+                        JokeDisplayed = "What did the Lihzahrds use for entertainment? Solar tablets.";
                         break;
                 }
                 

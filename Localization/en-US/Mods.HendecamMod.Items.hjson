@@ -5564,3 +5564,13 @@ ZazaNerfGun: {
 	DisplayName: Zaza Nerf Gun
 	Tooltip: ""
 }
+
+LimestoneThrowingRock: {
+	Tooltip: ""
+	DisplayName: Limestone Throwing Rock
+}
+
+SteelVape: {
+	DisplayName: Steel Vape
+	Tooltip: ""
+}

@@ -22,7 +22,7 @@ public class HendecamDrops : GlobalNPC
         if (npc.type == NPCID.PirateShip)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BigBuddy>(), chanceDenominator: 8));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), chanceDenominator: 30));
+          
         }
 
         if (npc.type == NPCID.PirateCaptain)
@@ -30,18 +30,10 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 15));
             npcLoot.Add(ItemDropRule.Common(ItemType<CaptainsCannon>(), chanceDenominator: 5));
             npcLoot.Add(ItemDropRule.Common(ItemType<Bundlebuss>(), chanceDenominator: 10));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), chanceDenominator: 20));
+          
         }
 
-        if (npc.type == NPCID.PirateDeckhand)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), chanceDenominator: 66));
-        }
-
-        if (npc.type == NPCID.PirateCorsair)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), chanceDenominator: 45));
-        }
+      
 
         if (npc.type == NPCID.MoonLordCore)
         {
@@ -659,30 +651,35 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 180, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinThief)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 144, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinWarrior)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 96, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinSorcerer)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 111, 1, 1));
         }
 
         if (npc.type == NPCID.GoblinArcher)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 90, 1, 1));
         }
 
         if (npc.type == NPCID.DD2OgreT2)

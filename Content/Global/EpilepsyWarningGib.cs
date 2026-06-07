@@ -6,6 +6,7 @@ using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.VapeItems;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader.Config;
@@ -112,8 +113,24 @@ public class EpilepsyWarningGive : ModPlayer
             obj2.stack = 100;
             yield return obj2;
         }
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
+        {
+            if (Main.rand.NextBool(2))
+            {
+                var obj2 = new Item();
+                obj2.SetDefaults(ModContent.ItemType<CopperVape>());
+                yield return obj2;
+            }
+            else
+            {
+                var obj2 = new Item();
+                obj2.SetDefaults(ModContent.ItemType<TinVape>());
+                yield return obj2;
 
-        // Always give Epilepsy Warning
+            }
+           
+        }
+
         var obj = new Item();
         obj.SetDefaults(ModContent.ItemType<EpilepsyWarning>());
         yield return obj;

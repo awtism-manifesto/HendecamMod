@@ -1,4 +1,5 @@
-﻿using Terraria.Audio;
+﻿using HendecamMod.Content.DamageClasses;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -18,15 +19,16 @@ public class Soundwave : ModProjectile
 
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
-        Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 4; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 750; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+        Projectile.DamageType = GetInstance<StupidDamage>();
+        Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+        Projectile.timeLeft = 550; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
         Projectile.alpha = 85; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
         Projectile.light = 0.05f; // How much light emit around the projectile
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         Projectile.aiStyle = 1;
         AIType = ProjectileID.Bullet;
     }
@@ -49,10 +51,7 @@ public class Soundwave : ModProjectile
         }
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 8;
-    }
+   
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
@@ -82,10 +81,5 @@ public class Soundwave : ModProjectile
         return false;
     }
 
-    public override void OnKill(int timeLeft)
-    {
-        // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-        Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-        SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-    }
+    
 }

@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -24,7 +26,7 @@ public class ZazaNerfGun : ModItem
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item99;
         // Weapon Properties
-        Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+        Item.DamageType = GetInstance<RangedStupidDamage>();
         Item.damage = 22; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 1.9f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -54,20 +56,33 @@ public class ZazaNerfGun : ModItem
 
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
+    public float LobotometerCost = 4f;
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer)
+        {
+            player.GetModPlayer<LobotometerPlayer>()
+                  .AddLobotometer(LobotometerCost);
+        }
+        return base.UseItem(player);
+    }
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "Converts all darts into weed darts");
         tooltips.Add(line);
 
+        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'This is one STUPID nerf mod'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
-       
     }
 
     public override void AddRecipes()
