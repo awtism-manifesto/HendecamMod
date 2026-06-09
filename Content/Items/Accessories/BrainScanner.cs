@@ -30,6 +30,10 @@ public class BrainScanner : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Displays Lobotometer decay rate") { OverrideColor = Color.White });
     }
     // This is the main hook that allows for our info display to actually work with this accessory. 
+    public override void UpdateVanity(Player player)
+    {
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
+    }
     public override void UpdateInfoAccessory(Player player)
     {
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;

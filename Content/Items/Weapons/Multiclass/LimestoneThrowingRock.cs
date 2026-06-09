@@ -64,7 +64,7 @@ public class LimestoneThrowingRock : ModItem
     }
     public override void AddRecipes()
     {
-        Recipe recipe = CreateRecipe(75);
+        Recipe recipe = CreateRecipe(25);
 
         recipe.AddIngredient<Limestone>(10);
         recipe.AddTile(TileID.WorkBenches);

@@ -28,7 +28,7 @@ public class PlasticHeadgear : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased stupid crit chance");
+        var line = new TooltipLine(Mod, "Face", "4% increased stupid crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+30 Max Braincells")
@@ -51,7 +51,7 @@ public class PlasticHeadgear : ModItem
         
        
 
-        player.GetCritChance<StupidDamage>() += 6;
+        player.GetCritChance<StupidDamage>() += 4;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         loboPlayer.TemporaryBonus += 30f;

@@ -17,7 +17,7 @@ public class ProjectileRadifier : GlobalProjectile
     public override void AI(Projectile projectile)
     {
         
-        var config = ModContent.GetInstance<HendecamConfig>();
+        var config = ModContent.GetInstance<HendecamExperimentalConfig>();
         if (!config.Enabled) return;
 
       

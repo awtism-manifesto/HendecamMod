@@ -19,6 +19,10 @@ public class JokeJumbotron : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Displays random jokes") { OverrideColor = Color.White });
     }
     // This is the main hook that allows for our info display to actually work with this accessory. 
+    public override void UpdateVanity(Player player)
+    {
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+    }
     public override void UpdateInfoAccessory(Player player)
     {
         player.GetModPlayer<JokePlayer>().showJokes = true;

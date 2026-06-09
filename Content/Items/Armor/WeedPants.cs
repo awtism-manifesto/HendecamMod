@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Items.Armor;
 public class WeedPants : ModItem
 {
     public static readonly int MoveSpeedBonus = 10;
-    public static readonly int StupidCritBonus = 7;
+    public static readonly int StupidCritBonus = 6;
 
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,7 +36,7 @@ public class WeedPants : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased magic and stupid crit chance");
+        var line = new TooltipLine(Mod, "Face", "6% increased magic and stupid crit chance");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "10% increased movement speed")

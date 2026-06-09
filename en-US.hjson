@@ -18,9 +18,10 @@ Mods: {
 					Reworks: Reworks
 					ExperimentalFeatures: Experimental Features
 					ExperimentalFeatures(serverside): Experimental Features (Server-side)
+					PrimaryConfig: Primary Config Header
 				}
 
-				DisplayName: Hendecam Mod Config
+				DisplayName: Hendecam Mod Primary Config
 
 				BootsTreeRework: {
 					Label: Boots Tree Rework
@@ -61,6 +62,11 @@ Mods: {
 					Label: All Projectiles are bouncy
 					Tooltip: Causes all applicable projectiles to bounce off walls (does not work with projectiles that ignore tiles)
 				}
+
+				EnableExperimentalFeatures: {
+					Tooltip: Allows things in the Experimental section of configs to be set to true. WARNING!!! Experimental Features can be really unbalanced!
+					Label: Enable Experimental Features
+				}
 			}
 
 			HendecamClientConfig: {
@@ -71,6 +77,36 @@ Mods: {
 
 				Headers.ExperimentalFeatures(clientside): Experimental Features (Client-side)
 				DisplayName: Hendecam Client Config
+			}
+
+			HendecamExperimentalConfig: {
+				Bouncy: {
+					Label: (Almost) All Projectiles are bouncy
+					Tooltip: Causes almost all projectiles to bounce off walls (does not work with certain projectiles that have ignored/special collision logic)
+				}
+
+				ProjectileCount: {
+					Tooltip: Number of projectiles fired in a full circle (including the original). WARNING: THIS CAN GET VERY LAGGY VERY FAST
+					Label: Radial Projectile Count
+				}
+
+				Enabled: {
+					Tooltip: Causes all projectiles to duplicate themselves and fire in a full circle
+					Label: All Projectiles Fire Radially
+				}
+
+				Headers.ExperimentalFeatures(serverside): Experimental Features(serverside) Header
+				DisplayName: Hendecam Experimental Config
+
+				DeathEnabled: {
+					Label: 1/X chance to instantly die
+					Tooltip: Whether or not all players have a chance to instantly die
+				}
+
+				DeathChance: {
+					Label: Instant Death Chance
+					Tooltip: Chances of instantly dying
+				}
 			}
 		}
 	}

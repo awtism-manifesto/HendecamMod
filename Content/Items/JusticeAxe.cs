@@ -59,7 +59,14 @@ public class JusticeAxe : ModItem
 
         return TurboOrCD;
     }
-
+    public override bool? UseItem(Player player)
+    {
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+        {
+            Calamity.Call("ConsumeStealth", player);
+        }
+        return null;
+    }
     public override bool CanUseItem(Player player)
     {
         if (player.altFunctionUse == 2)

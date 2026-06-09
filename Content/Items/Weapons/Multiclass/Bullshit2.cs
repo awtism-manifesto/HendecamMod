@@ -35,6 +35,10 @@ public class Bullshit2 : ModItem
             player.GetModPlayer<LobotometerPlayer>()
                   .AddLobotometer(LobotometerCost);
         }
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+        {
+            Calamity.Call("ConsumeStealth", player);
+        }
         return base.UseItem(player);
     }
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -20,6 +20,10 @@ public class IQTest : ModItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Obtainable by shimmering subpar schoolwork...") { OverrideColor = Color.White });
     }
     // This is the main hook that allows for our info display to actually work with this accessory. 
+    public override void UpdateVanity(Player player)
+    {
+        player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+    }
     public override void UpdateInfoAccessory(Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;

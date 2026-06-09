@@ -47,8 +47,14 @@ public class BoxOfRandomBullshit : ModItem
             player.GetModPlayer<LobotometerPlayer>()
                   .AddLobotometer(LobotometerCost);
         }
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+        {
+            Calamity.Call("ConsumeStealth", player);
+        }
         return base.UseItem(player);
     }
+
+
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileID.ThrowingKnife;

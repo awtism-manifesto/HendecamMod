@@ -14,6 +14,8 @@ As a means to this end, Hendecam Mod will also scale up the HP of every enemy in
 
 This is a measure to help enemies stand up to the modded power creep that will surely be present in most packs with Hendecam. If this feature does not suit your modpack, or you simply don’t want it, you can disable it in the Hendecam Mod Configs.
 
+The best difficulty to experience Hendecam Mod in is Master Mode. Don't be scared of the high difficulty, trust us, we'll give you the equipment to deal with it.
+
 Hendecam Mod is a merger of TerMerica, Mag’s Assorted Features, Patchwork, Poop Plus, and the never-before-released River Bullshit Mod. 
 
 The origin story behind the mod is that TerMerica was created with zero prior coding experience, inspiring members of the TerMerica community to make their own mods.
@@ -34,7 +36,7 @@ A lot of vanilla items, especially vanilla weapons, have been given reworks, sta
 
 Hendecam is a community-driven mod that is still in beta and hasn’t been extensively tested, so if there’s any glitches, balance issues, or jank you encounter, please report it in the Discord. 
 
-If you are a mod developer who wishes to merge your mod into Hendecam or make compatibility, join the discord and ping Autism Manifesto and we will discuss further.
+If you are a mod developer who wishes to make compatibility, translations, or merge your mod into Hendecam, join the discord and ping Autism Manifesto and we will discuss further.
 
 Please join our discord (https://discord.gg/EEMpBkJ3cR) if you have feedback, ideas, suggestions, or just want to be part of the community.
 

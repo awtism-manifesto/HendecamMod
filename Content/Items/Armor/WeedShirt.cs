@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Body)]
 public class WeedShirt : ModItem
 {
-    public static readonly int AdditiveDamageBonus = 6;
+    public static readonly int AdditiveDamageBonus = 4;
 
     public static readonly int StupidArmorPenetration = 3;
     public static LocalizedText SetBonusText { get; private set; }
@@ -37,7 +37,7 @@ public class WeedShirt : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased magic and stupid damage");
+        var line = new TooltipLine(Mod, "Face", "4% increased magic and stupid damage");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+3 magic and stupid armor penetration")

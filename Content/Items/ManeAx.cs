@@ -49,7 +49,14 @@ public class ManeAx : ModItem
 
         return base.CanUseItem(player);
     }
-
+    public override bool? UseItem(Player player)
+    {
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+        {
+            Calamity.Call("ConsumeStealth", player);
+        }
+        return null;
+    }
     public override bool AltFunctionUse(Player player)
     {
         bool TurboOrCD = true;

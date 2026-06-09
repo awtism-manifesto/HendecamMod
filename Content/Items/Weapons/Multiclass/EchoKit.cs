@@ -98,6 +98,15 @@ public class EchoKit : ModItem
 
         return base.CanUseItem(player);
     }
+    public override bool? UseItem(Player player)
+    {
+        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+        {
+            Calamity.Call("ConsumeStealth", player);
+        }
+        return null;
+    }
+    
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
 

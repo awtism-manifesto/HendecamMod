@@ -10,7 +10,7 @@ namespace HendecamMod.Content.Items.Armor;
 [AutoloadEquip(EquipType.Head)]
 public class WeedHeadgear : ModItem
 {
-    public static readonly int StupidAttackSpeed = 6;
+    public static readonly int StupidAttackSpeed = 5;
     public static readonly int MaxManaIncrease = 40;
     public static LocalizedText SetBonusText { get; private set; }
 
@@ -36,7 +36,7 @@ public class WeedHeadgear : ModItem
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% increased magic and stupid attack speed");
+        var line = new TooltipLine(Mod, "Face", "5% increased magic and stupid attack speed");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+40 max mana and lobotometer")

@@ -563,7 +563,7 @@ public class BouncyProjectiles : GlobalProjectile
 
     public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
     {
-        if (GetInstance<HendecamConfig>().Bouncy == true)
+        if (GetInstance<HendecamExperimentalConfig>().Bouncy == true)
         {
             if (projectile.penetrate >=2)
             {
@@ -596,3 +596,34 @@ public class BouncyProjectiles : GlobalProjectile
     }
 }
 
+public class DeathPlayer : ModPlayer
+{
+
+
+
+
+    public override void PreUpdate()
+    {
+        var config = ModContent.GetInstance<HendecamExperimentalConfig>();
+
+        int chance = config.DeathChance;
+
+        if (!config.DeathEnabled)
+        {
+            return;
+        }
+
+        if (Main.rand.NextBool(chance * 60))
+        {
+            Player.AddBuff(ModContent.BuffType<OtherworldPoisoning>(), 120);
+
+
+        }
+
+
+
+    }
+
+
+
+}

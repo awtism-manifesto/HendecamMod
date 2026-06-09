@@ -8,7 +8,7 @@ namespace HendecamMod.Content.Items
     public class MonsterStemCells : ModItem
     {
         public const int BonusPerUse = 25; 
-        public const int MaxTotalBonus = 200;
+        public const int MaxTotalBonus = 250;
 
         public override void SetStaticDefaults()
         {
@@ -70,9 +70,9 @@ namespace HendecamMod.Content.Items
                 loboPlayer.Current = loboPlayer.Max;
 
             // Show message
-            string message = $"Your Lobotometer capacity has permanently increased by {BonusPerUse}!";
+            string message = $"+25 max Braincells!";
             if (loboPlayer.PermanentBonus >= MaxTotalBonus)
-                message = $"Your Lobotometer has reached maximum capacity!";
+                message = $"Maxed Out!";
 
             CombatText.NewText(player.getRect(), Color.LimeGreen, message, true);
 
@@ -86,7 +86,7 @@ namespace HendecamMod.Content.Items
             var loboPlayer = currentPlayer.GetModPlayer<LobotometerPlayer>();
 
             // Main tooltip
-            var line = new TooltipLine(Mod, "LobotometerBonus", $"Permanently increases max Lobotometer by {BonusPerUse} when consumed")
+            var line = new TooltipLine(Mod, "LobotometerBonus", $"Permanently increases max Braincells by {BonusPerUse} when consumed")
             {
                 OverrideColor = new Color(100, 255, 100)
             };

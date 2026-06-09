@@ -56,7 +56,7 @@ public class PoisonSlime : ModNPC
         }
 
         npcLoot.Add(ItemDropRule.Common(ItemID.PoisonStaff, 25));
-        npcLoot.Add(ItemDropRule.Common(ItemID.FlaskofPoison, 5, 2, 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<AcidCloud>(), 1, 5, 35));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)

@@ -104,7 +104,7 @@ namespace HendecamMod.Common.Systems
         // Helper method to check if character has reached max permanent bonus
         public bool CanIncreasePermanent(int amount)
         {
-            float maxTotalBonus = 200f; // Maximum permanent bonus allowed
+            float maxTotalBonus = 250f; // Maximum permanent bonus allowed
             return PermanentBonus + amount <= maxTotalBonus;
         }
 
