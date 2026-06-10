@@ -107,6 +107,45 @@ Mods: {
 					Label: Instant Death Chance
 					Tooltip: Chances of instantly dying
 				}
+
+				EnableGogEnablers: {
+					Tooltip: Allows you to toggle all 5 gog enablers to true. WARNING: THE GOG CAN AND WILL DESTROY YOUR WORLD
+					Label: Enable Gog Enablers
+				}
+			}
+
+			ZeGogEnablers: {
+				GogEnabler2: {
+					Tooltip: WARNING: THE SPREAD OF GOG BLOCKS IS SPED UP FURTHER AND FURTHER THE MORE YOU PROGRESS
+					Label: Gog Enabler 2
+				}
+
+				GogEnabler1: {
+					Tooltip: WARNING: GOG BLOCKS CAN SPREAD TO ANY TILE AND TAKE A STUPIDLY LONG TIME TO MINE
+					Label: Gog Enabler 1
+				}
+
+				DisplayName: Gog Enablers
+
+				GogEnabler3: {
+					Label: Gog Enabler 3
+					Tooltip: WARNING: BY ENABLING ALL FIVE OF THESE CONFIGS, YOU AGREE THAT THE HENDECAM TEAM IS NOT RESPONSIBLE FOR DAMAGE TO YOUR WORLD
+				}
+
+				GogEnabler4: {
+					Label: Gog Enabler 4
+					Tooltip: WARNING: IF YOU ENABLE THESE ENABLERS IN MULTIPLAYER WITHOUT LETTING THE HOST KNOW, YOU ARE A MASSIVE PIECE OF SHIT.
+				}
+
+				GogEnabler5: {
+					Label: Gog Enabler 5
+					Tooltip: Have fun watching your world get taken over by the Gog!!!
+				}
+
+				GogRandomSpawns: {
+					Label: One Random Gog Block Spawns on boss kill
+					Tooltip: This is a WONDERFUL idea!!!
+				}
 			}
 		}
 	}

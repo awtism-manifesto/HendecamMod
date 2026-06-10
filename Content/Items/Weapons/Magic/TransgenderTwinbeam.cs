@@ -20,18 +20,18 @@ public class TransgenderTwinbeam : ModItem
         Item.width = 33;
         Item.height = 33;
         Item.useStyle = ItemUseStyleID.Shoot;
-        Item.useTime = 14;
-        Item.useAnimation = 28;
+        Item.useTime = 15;
+        Item.useAnimation = 15;
         Item.autoReuse = true;
-        Item.mana = 9;
+        Item.mana = 6;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 19;
         Item.knockBack = 2f;
         Item.noMelee = true;
         Item.value = 70000;
         Item.rare = ItemRarityID.Green;
-        Item.shoot = ProjectileType<Morbeam>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 10f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ProjectileType<TransBeamBlue>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 9.75f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;

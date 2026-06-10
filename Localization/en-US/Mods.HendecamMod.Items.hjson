@@ -5574,3 +5574,8 @@ SteelVape: {
 	DisplayName: Steel Vape
 	Tooltip: ""
 }
+
+GogBlock: {
+	Tooltip: ""
+	DisplayName: Gog Block
+}

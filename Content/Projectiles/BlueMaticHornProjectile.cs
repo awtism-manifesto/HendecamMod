@@ -16,7 +16,7 @@ public class BlueMaticHornProjectile : ModProjectile
     {
         Projectile.width = 36; // The width of projectile hitbox
         Projectile.height = 36; // The height of projectile hitbox
-        Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
+        Projectile.aiStyle = -1; // The ai style of the projectile, please reference the source code of Terraria
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
@@ -27,7 +27,7 @@ public class BlueMaticHornProjectile : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
 
-        AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+      
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)
@@ -85,19 +85,19 @@ public class BlueMaticHornProjectile : ModProjectile
 
         // Apply gravity after a quarter of a second
         Projectile.ai[0] += 1f;
-        if (Projectile.ai[0] >= 13f)
+        if (Projectile.ai[0] >= 11f)
         {
-            Projectile.ai[0] = 8f;
-            Projectile.velocity.Y += 0.15f;
+            Projectile.ai[0] = 11f;
+            Projectile.velocity.Y += 0.197f;
         }
-
+        Projectile.rotation += 0.33f;
         // The projectile is rotated to face the direction of travel
-        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+       
 
         // Cap downward velocity
-        if (Projectile.velocity.Y > 13f)
+        if (Projectile.velocity.Y > 19f)
         {
-            Projectile.velocity.Y = 19f;
+            Projectile.velocity.Y = 21f;
         }
 
         if (Math.Abs(Projectile.velocity.X) >= 4f || Math.Abs(Projectile.velocity.Y) >= 4f)
