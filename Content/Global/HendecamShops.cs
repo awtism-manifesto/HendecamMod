@@ -49,7 +49,7 @@ public class HendecamShops : GlobalNPC
 
         if (shop.NpcType == NPCID.PartyGirl)
         {
-            shop.Add<RectumsRequiem>(condition: Condition.Hardmode);
+           
             shop.Add<WhippetWhip>(condition: Condition.DownedEarlygameBoss);
         }
 

@@ -5,7 +5,7 @@ using HendecamMod.Content.Items.Accessories;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 
-namespace HendecamMod.Content.GlobalItems;
+namespace HendecamMod.Content.Global;
 
 public class BowMage1 : GlobalItem
 {

@@ -44,6 +44,12 @@ public class GogBlock : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "Bluer than blue...")
+        {
+            OverrideColor = new Color(15, 15, 105)
+        };
+        tooltips.Add(line);
     }
 
     public override void AddRecipes()

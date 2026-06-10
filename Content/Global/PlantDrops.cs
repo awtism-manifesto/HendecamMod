@@ -2,7 +2,7 @@
 
 namespace HendecamMod.Content.Global;
 
-public class PlantDrops : GlobalTile
+public class PlantDrops : GlobalTile // TODO: Delete and make weed its own plant
 {
     public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
     {

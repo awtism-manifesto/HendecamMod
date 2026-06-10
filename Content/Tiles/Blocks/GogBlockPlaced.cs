@@ -25,7 +25,7 @@ public class GogBlockPlaced : ModTile
         Main.tileLighted[Type] = true;
 
         LocalizedText name = CreateMapEntryName();
-        AddMapEntry(new Color(20, 20, 180), Language.GetText("The Gog"));
+        AddMapEntry(new Color(2, 2, 85), Language.GetText("The Gog"));
 
         DustType = DustID.BlueMoss;
         HitSound = SoundID.Tink;

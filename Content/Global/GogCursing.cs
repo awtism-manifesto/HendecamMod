@@ -1,12 +1,12 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.NPCs.Bosses;
-using HendecamMod.Content.NPCs.Bosses.PromethiumPlasmoid;
+
 using HendecamMod.Content.Tiles.Blocks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ObjectData; // For TileObjectData
+using Terraria.ObjectData; 
 
 namespace HendecamMod.Content.Global;
 
@@ -37,9 +37,8 @@ public class GogCursing : GlobalNPC
             npc.type == NPCID.MourningWood ||
             npc.type == NPCID.SantaNK1 ||
             npc.type == NPCID.PirateShip ||
-            npc.type == ModContent.NPCType<ApacheElfShip>() ||  // Fixed: ModContent.NPCType
-            npc.type == ModContent.NPCType<HeadOfCthulhu>() ||
-            npc.type == ModContent.NPCType<PromethiumPlasmoid>())
+            npc.type == NPCType<ApacheElfShip>() 
+           )
         {
             return true;
         }
@@ -48,9 +47,9 @@ public class GogCursing : GlobalNPC
 
     public override void OnKill(NPC npc)
     {
-        var config = ModContent.GetInstance<ZeGogEnablers>();
-        var config2 = ModContent.GetInstance<HendecamExperimentalConfig>();
-        var config3 = ModContent.GetInstance<HendecamConfig>();
+        var config = GetInstance<ZeGogEnablers>();
+        var config2 = GetInstance<HendecamExperimentalConfig>();
+        var config3 = GetInstance<HendecamConfig>();
 
         if (config.GogEnabler1 && config.GogEnabler2 && config.GogEnabler3 && config.GogEnabler4 &&
            config.GogEnabler5 && config.GogRandomSpawns && config2.EnableGogEnablers && config3.EnableExperimentalFeatures)
@@ -62,7 +61,7 @@ public class GogCursing : GlobalNPC
     private void TrySpawnGogBlock()
     {
         // Get the tile type once
-        int tileType = ModContent.TileType<GogBlockPlaced>();
+        int tileType = TileType<GogBlockPlaced>();
         if (tileType == 0) return;
 
         // Try multiple times to find a valid spawn location
@@ -131,6 +130,7 @@ public class GogCursing : GlobalNPC
             TileID.Signs,            // Signs
             TileID.Teleporter,       // Teleporters
             TileID.LunarMonolith,    // Monoliths
+            
         };
 
         // Check if tile is in the unreplaceable list

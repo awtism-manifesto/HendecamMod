@@ -7,7 +7,7 @@ namespace HendecamMod.Content.Items;
 
 public class KevlarWhip : ModItem
 {
-    public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(DildoWhipBuff.TagDamage);
+   
 
     public override void SetDefaults()
     {

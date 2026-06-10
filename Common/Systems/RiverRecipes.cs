@@ -213,7 +213,7 @@ public class RiverRecipes : ModSystem
             {
 
 
-                recipe.AddIngredient(ItemType<IQTest>());
+                recipe.AddIngredient(ItemType<NeuralMappingSoftware>()); 
             }
             if (ModLoader.TryGetMod("AwfulGarbageMod", out Mod AwfulMerica) && AwfulMerica.TryFind("AncientGadgets", out ModItem AncientGadgets))
             {

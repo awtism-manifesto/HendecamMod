@@ -3,11 +3,7 @@ using HendecamMod.Content.DamageClasses;
 
 namespace HendecamMod.Content.Projectiles;
 
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
+
 public class BullshitEnergyAxe : ModProjectile
 {
     private NPC HomingTarget

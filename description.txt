@@ -36,6 +36,8 @@ A lot of vanilla items, especially vanilla weapons, have been given reworks, sta
 
 Hendecam is a community-driven mod that is still in beta and hasn’t been extensively tested, so if there’s any glitches, balance issues, or jank you encounter, please report it in the Discord. 
 
+Hendecam should be almost completely multiplayer compatible. There may be some minor bugs, but nothing gamebreaking has come up in our testing. 
+
 If you are a mod developer who wishes to make compatibility, translations, or merge your mod into Hendecam, join the discord and ping Autism Manifesto and we will discuss further.
 
 Please join our discord (https://discord.gg/EEMpBkJ3cR) if you have feedback, ideas, suggestions, or just want to be part of the community.

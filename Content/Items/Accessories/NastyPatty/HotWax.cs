@@ -33,7 +33,7 @@ public class HotWax : ModItem
         player.buffImmune[BuffID.WeaponImbueNanites] = true;
         player.buffImmune[BuffID.WeaponImbuePoison] = true;
         player.buffImmune[BuffID.WeaponImbueVenom] = true;
-        player.buffImmune[BuffType<WeaponImbueAnnihilation>()] = true;
+       
         player.buffImmune[BuffType<WeaponImbueFission>()] = true;
         player.buffImmune[BuffType<WeaponImbueOil>()] = true;
         player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;

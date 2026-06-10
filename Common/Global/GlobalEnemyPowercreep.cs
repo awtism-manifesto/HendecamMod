@@ -1,6 +1,6 @@
 ﻿using HendecamMod.Content.NPCs.Bosses;
 using HendecamMod.Common.Systems;
-using HendecamMod.Content.NPCs.Bosses.PromethiumPlasmoid;
+
 
 
 namespace HendecamMod.Common.Global
@@ -39,8 +39,7 @@ namespace HendecamMod.Common.Global
             NPCID.HeadlessHorseman,
             NPCID.PirateShip,
             NPCType<ApacheElfShip>(),
-            NPCType<HeadOfCthulhu>(),
-            NPCType<PromethiumPlasmoid>(),
+           
         ];
         public bool FirstFrame = true;
         public override bool InstancePerEntity => true;

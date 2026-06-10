@@ -375,7 +375,7 @@ TransGreaves: {
 
 TransHat: {
 	SetBonus: Mods.HendecamMod.Items.TransHat.SetBonus
-	DisplayName: Trans Hat
+	DisplayName: Agender Hat
 	Tooltip: ""
 }
 
@@ -4862,13 +4862,13 @@ SpookyWoodSword: {
 
 TransMask: {
 	Tooltip: ""
-	DisplayName: Trans Mask
+	DisplayName: Demifem Mask
 	SetBonus: Mods.HendecamMod.Items.TransMask.SetBonus
 }
 
 TransHelmet: {
 	Tooltip: ""
-	DisplayName: Trans Helmet
+	DisplayName: Genderfluid Helmet
 	SetBonus: Mods.HendecamMod.Items.TransHelmet.SetBonus
 }
 
@@ -4880,7 +4880,7 @@ TransHeadgear: {
 
 TransFedora: {
 	Tooltip: ""
-	DisplayName: Trans Fedora
+	DisplayName: Dreamgender Fedora
 	SetBonus: Mods.HendecamMod.Items.TransFedora.SetBonus
 }
 
@@ -5578,4 +5578,9 @@ SteelVape: {
 GogBlock: {
 	Tooltip: ""
 	DisplayName: Gog Block
+}
+
+NeuralMappingSoftware: {
+	DisplayName: Neural Mapping Software
+	Tooltip: ""
 }

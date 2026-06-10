@@ -24,7 +24,6 @@ public class HendecamMod : Mod
         // Loading shader
         LoadFilterShader("LobotomyScreen", "Assets/Shaders/Screen/LobotomyScreen", EffectPriority.Medium);
 
-        LoadMiscShader("ShieldPulseShader", "Assets/Shaders/Projectiles/ShieldPulseShader");
     }
 
     void LoadFilterShader(string name, string path, EffectPriority priority)
@@ -34,9 +33,5 @@ public class HendecamMod : Mod
         Filters.Scene[$"HendecamMod:{name}"] = new Filter(new ScreenShaderData(filter, name), priority);
     }
 
-    void LoadMiscShader(string name, string path)
-    {
-        Asset<Effect> shader = Assets.Request<Effect>(path);
-        GameShaders.Misc[$"HendecamMod:{name}"] = new MiscShaderData(shader, name);
-    }
+   
 }

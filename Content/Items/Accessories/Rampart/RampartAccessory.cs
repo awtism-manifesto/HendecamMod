@@ -91,7 +91,7 @@ public class RampartAccessory : ModItem
         player.buffImmune[BuffType<RadPoisoning>()] = true;
         player.buffImmune[BuffType<RadPoisoning2>()] = true;
         player.buffImmune[BuffType<RadPoisoning3>()] = true;
-        player.buffImmune[BuffType<RadPoisoning4>()] = true;
+       
     }
 
     public override void AddRecipes()

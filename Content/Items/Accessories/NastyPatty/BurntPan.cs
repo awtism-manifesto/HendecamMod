@@ -71,7 +71,7 @@ public class BurntPan : ModItem
         player.buffImmune[BuffID.Wrath] = true;
         player.buffImmune[BuffID.Regeneration] = true;
         player.buffImmune[BuffID.Hunter] = true;
-        player.buffImmune[BuffType<WeaponImbueAnnihilation>()] = true;
+       
         player.buffImmune[BuffType<WeaponImbueFission>()] = true;
         player.buffImmune[BuffType<WeaponImbueOil>()] = true;
         player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;

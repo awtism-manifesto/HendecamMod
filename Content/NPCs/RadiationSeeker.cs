@@ -30,9 +30,9 @@ public class RadiationSeeker : ModNPC
     {
         NPC.width = 25;
         NPC.height = 25;
-        NPC.damage = 102;
+        NPC.damage = 107;
         NPC.defense = 15;
-        NPC.lifeMax = 5100;
+        NPC.lifeMax = 3115;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath39;
         NPC.value = 62500f;
@@ -71,10 +71,7 @@ public class RadiationSeeker : ModNPC
             dust3.noGravity = true;
             dust3.velocity *= 9.5f;
             dust3.scale *= 1.25f;
-            Dust dust4 = Dust.NewDustDirect(target.position, target.width, target.height, DustType<PromethiumDust>());
-            dust4.noGravity = true;
-            dust4.velocity *= 11.5f;
-            dust4.scale *= 1.25f;
+           
         }
 
         int buffType = BuffType<RadPoisoning>();
@@ -92,26 +89,22 @@ public class RadiationSeeker : ModNPC
 
         int timeToAdd3 = (int)(Main.rand.NextFloat(6, 7) * 30);
         target.AddBuff(buffType3, timeToAdd3);
-        int buffType4 = BuffType<RadPoisoning4>();
-
-
-        int timeToAdd4 = (int)(Main.rand.NextFloat(6, 7) * 30);
-        target.AddBuff(buffType4, timeToAdd4);
+      
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ItemType<UraniumOre>(), 1, 35, 75));
         npcLoot.Add(ItemDropRule.Common(ItemType<PlutoniumOre>(), 1, 25, 60));
         npcLoot.Add(ItemDropRule.Common(ItemType<AstatineOre>(), 1, 20, 50));
-        npcLoot.Add(ItemDropRule.Common(ItemType<PromethiumOre>(), 1, 10, 25));
+       
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        if (BossDownedSystem.downedPromethiumPlasmoid)
+        if (NPC.downedMoonlord)
 
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.045f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.025f;
         }
         else return SpawnCondition.OverworldNightMonster.Chance * 0f; ;
        

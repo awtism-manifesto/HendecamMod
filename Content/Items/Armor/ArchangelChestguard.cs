@@ -41,6 +41,11 @@ public class ArchangelChestguard : ModItem
         {
             OverrideColor = new Color(255, 255, 255)
         });
+        tooltips.Add( new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
+        {
+            OverrideColor = new Color(255, 15, 85)
+        });
+       
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -49,13 +54,7 @@ public class ArchangelChestguard : ModItem
                legs.type == ItemType<ArchangelGreaves>();
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<AngelShard>(14);
-        recipe.AddTile<CultistCyclotronPlaced>();
-        recipe.Register();
-    }
+    
 
     public override void UpdateArmorSet(Player player)
     {

@@ -20,7 +20,6 @@
 	  <None Remove="Content\Buffs\BalkanRage.png" />
 	  <None Remove="Content\Buffs\BrainRotted.png" />
 	  <None Remove="Content\Buffs\CeramicBloonBuff.png" />
-	  <None Remove="Content\Buffs\DildoWhipBuff.png" />
 	  <None Remove="Content\Buffs\KevlarTag.png" />
 	  <None Remove="Content\Buffs\PlasmoidFriend.png" />
 	  <None Remove="Content\Buffs\PlutoWhipBuff.png" />
@@ -229,7 +228,6 @@
 	  <None Remove="Content\Projectiles\AstatineBullet.png" />
 	  <None Remove="Content\Projectiles\Bad5g.png" />
 	  <None Remove="Content\Projectiles\BarbBullet.png" />
-	  <None Remove="Content\Projectiles\BeadsNDick.png" />
 	  <None Remove="Content\Projectiles\BeetleRoundProjectile.png" />
 	  <None Remove="Content\Projectiles\BirdBullet.png" />
 	  <None Remove="Content\Projectiles\Bitcoin.png" />
@@ -342,6 +340,7 @@
 	
 	
 	<ItemGroup>
+	  <Folder Include="Assets\Shaders\Projectiles\" />
 	  <Folder Include="Content\Sounds\" />
 	</ItemGroup>
 

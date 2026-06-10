@@ -1314,12 +1314,14 @@ public class Peebotomy : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
 
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays info of Neural Mapping Software") { OverrideColor = Color.DarkViolet });
     }
 }
 public class Cellbotomy : GlobalItem
@@ -1337,12 +1339,14 @@ public class Cellbotomy : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
 
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
 public class Shellbotomy : GlobalItem
@@ -1360,12 +1364,14 @@ public class Shellbotomy : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
     
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
 public class Shellbotomy2 : GlobalItem
@@ -1384,11 +1390,13 @@ public class Shellbotomy2 : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
 public class Shellbotomy3 : GlobalItem
@@ -1407,11 +1415,13 @@ public class Shellbotomy3 : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
 public class Shellbotomy4 : GlobalItem
@@ -1430,11 +1440,13 @@ public class Shellbotomy4 : GlobalItem
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
+        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays exact Lobotometer number, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
 public class AngelBuff : GlobalItem

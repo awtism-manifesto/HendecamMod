@@ -35,7 +35,11 @@ public class ArchangelGreaves : ModItem
         };
         tooltips.Add(line);
 
-       
+        line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
+        {
+            OverrideColor = new Color(255, 15, 85)
+        };
+        tooltips.Add(line);
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -57,13 +61,7 @@ public class ArchangelGreaves : ModItem
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<AngelShard>(10);
-        recipe.AddTile<CultistCyclotronPlaced>();
-        recipe.Register();
-    }
+  
 
     public override void UpdateArmorSet(Player player)
     {
