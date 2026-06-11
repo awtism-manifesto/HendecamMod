@@ -721,10 +721,28 @@ public class HendecamDrops : GlobalNPC
 
         if (npc.type == NPCID.BrainofCthulhu)
         {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 10));
             npcLoot.Add(ItemDropRule.Common(ItemType<GoodGrades>(), chanceDenominator: 2));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
         }
+        if (npc.type == NPCID.EaterofWorldsHead)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
+          
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+        if (npc.type == NPCID.EaterofWorldsBody)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
 
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+        if (npc.type == NPCID.EaterofWorldsTail)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
+
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
         if (npc.type == NPCID.Plantera)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<SeedBomber>(), chanceDenominator: 7));

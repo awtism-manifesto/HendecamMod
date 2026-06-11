@@ -324,6 +324,7 @@ public class River : ModNPC
                 .Add<CollarOfTheDamned>()
                 .Add(ItemID.FishingBobberGlowingStar)
                 .Add(ItemID.Extractinator, Condition.DownedEarlygameBoss)
+                 .Add<BrainScanner>(Condition.BloodMoon)
                 .Add<OtherworldlySixPack>(Condition.DownedPlantera)
                 .Add<StupidestFuckingPickaxe>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<StupiderFuckingPickaxe>()))
                 .Add<Bullshit1>(condition: Condition.PlayerCarriesItem(ModContent.ItemType<Bullshit1>()))

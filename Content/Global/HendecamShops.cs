@@ -49,7 +49,7 @@ public class HendecamShops : GlobalNPC
 
         if (shop.NpcType == NPCID.PartyGirl)
         {
-           
+            shop.Add<JokeJumbotron>(condition: Condition.TimeNight);
             shop.Add<WhippetWhip>(condition: Condition.DownedEarlygameBoss);
         }
 
