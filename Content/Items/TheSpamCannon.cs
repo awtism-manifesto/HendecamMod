@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -10,7 +11,14 @@ namespace HendecamMod.Content.Items;
 
 public class TheSpamCannon : ModItem
 {
+
+
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.ShimmerTransformToItem[Type] = ItemType<NeoWings>();
+    }
     private int spamcannoncooldown;
+
 
     public override void SetDefaults()
     {

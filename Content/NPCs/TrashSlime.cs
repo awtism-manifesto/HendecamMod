@@ -10,7 +10,7 @@ public class TrashSlime : ModNPC
 {
     public override void SetStaticDefaults()
     {
-        Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime];
+        Main.npcFrameCount[Type] = 2;
 
         NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.MotherSlime;
 

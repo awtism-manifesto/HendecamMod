@@ -21,7 +21,7 @@ public class CrystalBeef : GlobalProjectile
     {
         if (fromGoldenAK)
         {
-            projectile.scale = 1.66f;
+            projectile.scale = 2.66f;
         }
     }
 }

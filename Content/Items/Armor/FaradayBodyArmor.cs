@@ -93,7 +93,7 @@ public class FaradayBodyArmor : ModItem
 }
 public class FlatEarthSunMoon : ModPlayer
 {
-    private const int BodyUseTimeMax = 1000000;
+    private const int BodyUseTimeMax = 2100000000;
 
     public bool Bodying;
     private int BodyUseTime;
@@ -129,7 +129,7 @@ public class FlatEarthSunMoon : ModPlayer
             // Cooldown check - spawn new sentries if needed
             if (BodyUseTime <= 0 && !HasActiveSentries())
             {
-                int baseDamage = 67;
+                int baseDamage = 46;
 
                 // Spawn moon sentry
                 int moonSentry = Projectile.NewProjectile(

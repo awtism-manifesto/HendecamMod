@@ -3,7 +3,7 @@ using HendecamMod.Content.Buffs;
 
 namespace HendecamMod.Content.Items.Consumables;
 
-public class BrainrotPotion : ModItem
+public class TerminalLucidityPotion : ModItem
 {
     public override void SetStaticDefaults()
     {
@@ -29,8 +29,8 @@ public class BrainrotPotion : ModItem
         Item.consumable = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = Item.buyPrice(silver: 3);
-        Item.buffType = BuffType<BrainRotted>();
-        Item.buffTime = 14480; // Ticks
+        Item.buffType = BuffType<TerminalLucidity>();
+        Item.buffTime = 64800; // Ticks
     }
 
     public override Color? GetAlpha(Color lightColor)
@@ -40,7 +40,7 @@ public class BrainrotPotion : ModItem
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Increases Lobotometer decay rate by 67%");
+        var line = new TooltipLine(Mod, "Face", "Drastically reduces the Lobotometer's impact on your vision when on low HP");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "")
@@ -53,24 +53,19 @@ public class BrainrotPotion : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.BottledWater);
-        recipe.AddIngredient(ItemID.Deathweed);
-        recipe.AddIngredient<WeedLeaves>();
-        recipe.AddIngredient<PlasticScrap>();
+        recipe.AddIngredient<LucidityPotion>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient(ItemID.Bone);
         recipe.AddTile(TileID.Bottles);
         recipe.Register();
 
         recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.BottledWater);
-        recipe.AddIngredient(ItemID.Deathweed);
-        recipe.AddIngredient<WeedLeaves>();
-        recipe.AddIngredient<PlasticScrap>();
+        recipe.AddIngredient<LucidityPotion>();
+        recipe.AddIngredient<PurifiedSalt>();
+        recipe.AddIngredient(ItemID.Bone);
         recipe.AddTile(TileID.AlchemyTable);
         recipe.Register();
 
-        recipe = CreateRecipe(100);
-        recipe.AddIngredient(ItemID.BrainOfConfusion);
-        recipe.AddTile(TileID.Kegs);
-        recipe.Register();
+       
     }
 }

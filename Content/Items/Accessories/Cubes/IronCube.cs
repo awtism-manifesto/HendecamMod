@@ -10,7 +10,7 @@ public class IronCube : ModItem
         Item.width = 26;
         Item.height = 26;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 36000;
+        Item.value = 28000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 10;
@@ -34,13 +34,7 @@ public class IronCube : ModItem
         };
         tooltips.Add(line);
 
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
+        
     }
 
     public override void AddRecipes()

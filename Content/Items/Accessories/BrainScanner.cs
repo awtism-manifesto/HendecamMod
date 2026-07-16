@@ -15,9 +15,6 @@ public class BrainScanner : ModItem
         ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
 
 
-
-
-
     }
 
     public override void SetDefaults()

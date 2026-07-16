@@ -215,7 +215,6 @@
 	  <None Remove="Content\NPCs\Politician_Shimmer.png" />
 	  <None Remove="Content\NPCs\Politician_Shimmer_Head.png" />
 	  <None Remove="Content\NPCs\Politician_Shimmer_Party.png" />
-	  <None Remove="Content\NPCs\TrashSlime.png" />
 	  <None Remove="Content\Projectiles\A5G.png" />
 	  <None Remove="Content\Projectiles\AdamantiteBolt.png" />
 	  <None Remove="Content\Projectiles\AgentGreenProj.png" />

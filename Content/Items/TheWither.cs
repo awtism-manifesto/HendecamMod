@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items;
@@ -27,8 +28,7 @@ public class TheWither : ModItem
         Item.useAnimation = 36; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        // The sound that this item plays when used.
-        Item.UseSound = SoundID.Item45;
+        
         // Weapon Properties
         Item.DamageType = GetInstance<OmniDamage>();
         Item.damage = 48; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
@@ -51,10 +51,48 @@ public class TheWither : ModItem
 
         Item.shootSpeed = 14.25f; // The speed of the projectile (measured in pixels per frame.)
     }
+    public int WitherTimer;
+    public int WitherTimerMax = 180;
+    public int WitherTimer2;
+    public int WitherTimerMax2 = 360;
+    public override void HoldItem(Player player)
+    {
+        WitherTimer++;
+        WitherTimer2++;
 
+        if (WitherTimer == WitherTimerMax)
+        {
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/WitherIdle1")
+            {
+                Volume = 1.5f,
+                Pitch = 0.5f,
+                MaxInstances = 100,
+            });
+            WitherTimer = 0;
+            WitherTimerMax = Main.rand.Next(120, 360);
+        }
+        if (WitherTimer2 == WitherTimerMax2)
+        {
+            SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/WitherIdle2")
+            {
+                Volume = 1.5f,
+                Pitch = 0.5f,
+                MaxInstances = 100,
+            });
+            WitherTimer2 = 0;
+            WitherTimerMax2 = Main.rand.Next(120, 360);
+        }
+    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/WitherShot")
+        {
+            Volume = 1.5f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
 
         for (int i = 0; i < NumProjectiles; i++)
         {
@@ -134,18 +172,7 @@ public class TheWither : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override void AddRecipes()

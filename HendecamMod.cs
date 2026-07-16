@@ -4,6 +4,7 @@ global using Terraria;
 global using Terraria.ID;
 global using Terraria.ModLoader;
 global using static Terraria.ModLoader.ModContent;
+using HendecamMod.Content.Items.Accessories;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria.Graphics.Effects;
@@ -23,7 +24,7 @@ public class HendecamMod : Mod
     {
         // Loading shader
         LoadFilterShader("LobotomyScreen", "Assets/Shaders/Screen/LobotomyScreen", EffectPriority.Medium);
-
+    
     }
 
     void LoadFilterShader(string name, string path, EffectPriority priority)

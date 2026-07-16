@@ -13,6 +13,6 @@ public class BrainRotted : ModBuff
     public override void Update(Player player, ref int buffIndex)
     {
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 1.2f;
+        loboDecay.DecayRateMultiplier *= 1.67f;
     }
 }

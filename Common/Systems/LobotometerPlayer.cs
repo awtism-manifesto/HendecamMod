@@ -1,6 +1,8 @@
-﻿using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Accessories;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
+using Terraria;
 using Terraria.GameContent;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader.IO;
@@ -60,6 +62,11 @@ namespace HendecamMod.Common.Systems
                 float maxScaling = (Max * MaxScalingFactor) / 60f;
                 decayPerTick = basePerTick + maxScaling;
                 decayPerSecond = (int)(decayPerTick * 60);
+            }
+
+            if (Player.dead)
+            {
+                Current = 0;
             }
         }
 
@@ -127,43 +134,57 @@ namespace HendecamMod.Common.Systems
         {
             TemporaryBonus += bonus;
         }
+        public float LobotometerShaderStrength = 0.5f; // default value
+        public float BaseLobotometerShaderStrength = 0.5f; // default value
 
         public override void PostUpdateMiscEffects()
         {
-            /*if (Main.myPlayer == 0)
-            {
-                Main.NewText("0: " + Current / Max);
-            }
-            else if (Main.myPlayer == 1)
-            {
-                Main.NewText("1: " + Current / Max);
-            }*/
-
-
+            var player = Main.LocalPlayer;
 
             if (!Main.dedServ)
             {
-                // Redigit is the greatest Israeli soldier
-                // The world has ever known
-                if (Current > 0 && !Player.dead)  // does player.dead even do anything? this code does not fucking work
+                // Handle shader deactivation when dead or no current
+                if (Current <= 0 || Player.dead)
                 {
-                    if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
+                    if (Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
                     {
-                        Filters.Scene.Activate("HendecamMod:LobotomyScreen");
-                        if (Player.dead)
-                        {
-                            Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
-                        }
-
+                        Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
                     }
-                    float effectIntensityMultiplier = 0.5f;
-                    if (Main.zenithWorld)
-                    {
-                        effectIntensityMultiplier = 0.9f;
-                    }
-
-                    Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * effectIntensityMultiplier);
+                    return; // Exit early to avoid unnecessary calculations
                 }
+
+                // Activate shader if not already active
+                if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
+                {
+                    Filters.Scene.Activate("HendecamMod:LobotomyScreen");
+                }
+
+                // Calculate intensity modifiers (chain them properly)
+                float intensityMultiplier = 1f; // Start with base multiplier
+
+                // Check Lucid state
+                if (player.GetModPlayer<LucidPlayer>().Lucid)
+                {
+                    intensityMultiplier *= 0.425f;
+                }
+
+                // Check TermLucid state (can stack with Lucid)
+                if (player.GetModPlayer<TermLucidPlayer>().TermLucid)
+                {
+                    intensityMultiplier *= 0.175f;
+                }
+
+              
+                LobotometerShaderStrength = BaseLobotometerShaderStrength * intensityMultiplier;
+
+                // Apply zenith world modifier
+                if (Main.zenithWorld)
+                {
+                    LobotometerShaderStrength *= 1.8f;
+                }
+
+                // Apply shader intensity
+                Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * LobotometerShaderStrength);
             }
         }
 

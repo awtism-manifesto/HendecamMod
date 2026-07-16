@@ -357,3 +357,13 @@ PhlinxBuff: {
 	Description: Mods.HendecamMod.Buffs.PhlinxBuff.Description
 	DisplayName: Phlinx Buff
 }
+
+Lucidity: {
+	DisplayName: Lucidity
+	Description: Mods.HendecamMod.Buffs.Lucidity.Description
+}
+
+TerminalLucidity: {
+	DisplayName: Terminal Lucidity
+	Description: Mods.HendecamMod.Buffs.TerminalLucidity.Description
+}

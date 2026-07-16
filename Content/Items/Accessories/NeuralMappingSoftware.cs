@@ -1,14 +1,23 @@
 ﻿
 using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Accessories.NastyPatty;
 using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
 
 
 public class NeuralMappingSoftware : ModItem
 {
-   
 
+    public override void SetStaticDefaults()
+    {
+        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
+        Main.RegisterItemAnimation(Type, new DrawAnimationVertical(9, 33));
+        ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
+
+
+    }
     public override void SetDefaults()
     {
         // We don't need to add anything particularly unique for the stats of this item; so let's just clone the Radar.
@@ -32,7 +41,15 @@ public class NeuralMappingSoftware : ModItem
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
     }
-
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<BrainScanner>();
+        recipe.AddIngredient<IQTest>();
+        recipe.AddIngredient<JokeJumbotron>();
+        recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
+    }
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 
 }

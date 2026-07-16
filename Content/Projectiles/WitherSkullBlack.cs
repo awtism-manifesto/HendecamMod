@@ -31,6 +31,7 @@ public class WitherSkullBlack : ModProjectile
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.extraUpdates = 1;
+        Projectile.timeLeft = 500;
         // Rockets use explosive AI, ProjAIStyleID.Explosive (16). You could use that instead here with the correct AIType.
         // But, using our own AI allows us to customize things like the dusts that the rocket creates.
         // Projectile.aiStyle = ProjAIStyleID.Explosive;
@@ -72,15 +73,14 @@ public class WitherSkullBlack : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
-        // this projectile is ProjectileID.Sets.Explosive[Type] = true;. It also takes care of hurting the owner. The Projectile.PrepareBombToBlow
-        // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
 
-        // Play an exploding sound.
-        SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/MinecraftSplode")
+        {
+            Volume = 1.5f,
+            Pitch = 0.5f,
+            MaxInstances = 100,
+        });
 
-        // Resize the projectile again so the explosion dust and gore spawn from the middle.
-        // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(155, 155);
 
         // Spawn a bunch of smoke dusts.

@@ -5581,6 +5581,31 @@ GogBlock: {
 }
 
 NeuralMappingSoftware: {
-	DisplayName: Neural Mapping Software
+	DisplayName: Hotwired Neural Mapper
+	Tooltip: ""
+}
+
+NeoWings: {
+	Tooltip: ""
+	DisplayName: Neo Wings
+}
+
+IronCube: {
+	DisplayName: Iron Cube
+	Tooltip: ""
+}
+
+LeadCube: {
+	DisplayName: Lead Cube
+	Tooltip: ""
+}
+
+LucidityPotion: {
+	DisplayName: Lucidity Potion
+	Tooltip: ""
+}
+
+TerminalLucidityPotion: {
+	DisplayName: Terminal Lucidity Potion
 	Tooltip: ""
 }

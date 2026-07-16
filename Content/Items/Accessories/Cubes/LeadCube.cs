@@ -10,7 +10,7 @@ public class LeadCube : ModItem
         Item.width = 26;
         Item.height = 26;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 36000;
+        Item.value = 29000;
         Item.maxStack = 1;
         Item.accessory = true;
         Item.defense = 10;

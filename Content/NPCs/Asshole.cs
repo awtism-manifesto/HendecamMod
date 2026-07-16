@@ -287,6 +287,7 @@ public class Asshole : ModNPC
             .Add<WeedLeaves>(Condition.DownedEarlygameBoss)
             .Add<KingslayerBar>(Condition.DownedKingSlime, Condition.DownedEyeOfCthulhu)
             .Add<CeramicSheet>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
+             .Add(ItemID.MilkCarton)
             .Add(ItemID.LivingFireBlock, Condition.Hardmode)
             .Add(ItemID.FrostCore, Condition.DownedMechBossAny)
             .Add(ItemID.AncientBattleArmorMaterial, Condition.DownedMechBossAny)

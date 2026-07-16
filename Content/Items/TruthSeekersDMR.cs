@@ -59,7 +59,7 @@ public class TruthSeekersDMR : ModItem
 
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/SVDShoot")
         {
-            Volume = 2.67f,
+            Volume = 1.5f,
             Pitch = 0.5f,
             MaxInstances = 100,
         });
