@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Armor;
 
-// The AutoloadEquip attribute automatically attaches an equip texture to this item.
-// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
 [AutoloadEquip(EquipType.Legs)]
 public class YelmutLeggings : ModItem
 {
@@ -17,16 +15,15 @@ public class YelmutLeggings : ModItem
 
     public override void SetDefaults()
     {
-        Item.width = 22; // Width of the item
-        Item.height = 18; // Height of the item
-        Item.value = Item.sellPrice(gold : 15); // How many coins the item is worth
-        Item.rare = ItemRarityID.LightRed; // The rarity of the item
-        Item.defense = 12; // The amount of defense the item will give when equipped
+        Item.width = 22;
+        Item.height = 18;
+        Item.value = Item.sellPrice(gold : 15);
+        Item.rare = ItemRarityID.LightRed;
+        Item.defense = 12;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "10% increased melee crit chance and 8% increased ranged attack speed");
         tooltips.Add(line);
 
@@ -62,7 +59,6 @@ public class YelmutLeggings : ModItem
 
     }
 
-    // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {
         if (head.type == ItemType<LycopiteFedora>()|| head.type == ItemType<LycopiteHelmet>() || head.type == ItemType<LycopiteMask>() || head.type == ItemType<YelmutsHelmet>()
@@ -95,7 +91,6 @@ public class YelmutLeggings : ModItem
         player.maxTurrets += 1;
     }
 
-    // UpdateArmorSet allows you to give set bonuses to the armor.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -104,6 +99,7 @@ public class YelmutLeggings : ModItem
         recipe.AddIngredient<LycopiteBar>(10);
         recipe.AddIngredient(ItemID.ShadowScale, 8);
         recipe.AddIngredient(ItemID.FairyBoots);
+        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
         recipe = CreateRecipe();
@@ -112,6 +108,7 @@ public class YelmutLeggings : ModItem
         recipe.AddIngredient<LycopiteBar>(10);
         recipe.AddIngredient(ItemID.TissueSample, 8);
         recipe.AddIngredient(ItemID.FairyBoots);
+        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
 

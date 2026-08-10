@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -115,12 +116,9 @@ public class YelmutsHelmet : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<PoorMahogany>(20);
-        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
         recipe.AddIngredient(ItemID.Feather, 4);
         recipe.AddIngredient(ItemID.YellowMarigold, 2);
-       
-       
-
+        recipe.AddIngredient<AutismOrb>(12);
         recipe.AddTile(TileID.Loom);
         recipe.Register();
     }

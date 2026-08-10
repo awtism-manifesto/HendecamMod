@@ -103,6 +103,7 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 75, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.Moth)
@@ -179,30 +180,35 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.BaldZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.BigBaldZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.SmallBaldZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ZombieDoctor)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ZombieEskimo)
@@ -210,6 +216,7 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.RedRyder, 20));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ArmedZombieEskimo)
@@ -217,48 +224,56 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.RedRyder, 20));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ZombieRaincoat)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.PincushionZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.BigPincushionZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.TorchZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ArmedTorchZombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ArmedZombieSlimed)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.ArmedZombiePincussion)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
             npcLoot.Add(ItemDropRule.Common(ItemID.BloodyMachete, 125));
+            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
         if (npc.type == NPCID.Skeleton)
@@ -511,7 +526,6 @@ public class HendecamDrops : GlobalNPC
         if (npc.type == NPCID.Spazmatism)
         {
             npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 5));
         }
 
         if (npc.type == NPCID.ScutlixRider)

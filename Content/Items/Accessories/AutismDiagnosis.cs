@@ -24,7 +24,7 @@ public class AutismDiagnosis : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Paper>();
-        recipe.AddIngredient<AutismOrb>(2);
+        recipe.AddIngredient<AutismOrb>(6);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
     }
@@ -39,7 +39,7 @@ public class AutismDiagnosis : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Woah, this is worthless!'")
+        line = new TooltipLine(Mod, "Face", "'Woah, this is expensive!'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
