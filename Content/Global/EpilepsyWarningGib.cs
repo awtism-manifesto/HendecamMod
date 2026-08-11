@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;

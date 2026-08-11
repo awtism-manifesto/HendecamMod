@@ -5,6 +5,7 @@ using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
+using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons.Multiclass;

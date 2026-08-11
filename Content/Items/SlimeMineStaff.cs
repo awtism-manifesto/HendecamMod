@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 

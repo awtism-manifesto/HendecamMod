@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Rarities;
 
 namespace HendecamMod.Content.Items.Tools;

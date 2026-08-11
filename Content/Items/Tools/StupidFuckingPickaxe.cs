@@ -3,6 +3,7 @@ using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Rarities;
 

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Enemies;
 using Terraria.GameContent.Bestiary;

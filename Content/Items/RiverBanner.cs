@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles;
 using HendecamMod.Content.Tiles.Furniture;

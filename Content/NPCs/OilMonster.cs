@@ -1,4 +1,6 @@
 ﻿using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Summon;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;

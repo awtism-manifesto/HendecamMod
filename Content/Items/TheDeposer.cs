@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using System.Collections.Generic;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Items;

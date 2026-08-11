@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -8,6 +7,7 @@ using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
+using HendecamMod.Content.Items.Weapons.Magic;
 
 namespace HendecamMod.Content.Global;
 

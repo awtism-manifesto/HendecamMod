@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 

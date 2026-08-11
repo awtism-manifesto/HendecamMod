@@ -4,6 +4,7 @@ using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;

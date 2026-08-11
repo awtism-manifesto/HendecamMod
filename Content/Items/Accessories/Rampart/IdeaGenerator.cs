@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Weapons.Stupid;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 

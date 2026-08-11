@@ -6,6 +6,7 @@ using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Melee;
+using HendecamMod.Content.Items.Consumables;
 
 namespace HendecamMod.Content.Global;
 

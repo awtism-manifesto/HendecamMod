@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Tiles.Furniture;
+﻿using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables;
 

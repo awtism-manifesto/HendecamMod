@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items.Tools;
 

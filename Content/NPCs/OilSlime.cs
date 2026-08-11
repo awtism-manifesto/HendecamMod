@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.Global;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;

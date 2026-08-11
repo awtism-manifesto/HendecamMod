@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Rarities;
 using System.Collections.Generic;
 using Terraria.DataStructures;

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
