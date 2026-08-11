@@ -98,7 +98,6 @@
 	  <None Remove="Content\Items\KevlarWhip.png" />
 	  <None Remove="Content\Items\LegoBricks.png" />
 	  <None Remove="Content\Items\LegoLauncher.png" />
-	  <None Remove="Content\Items\Libeerator.png" />
 	  <None Remove="Content\Items\Liquidation.png" />
 	  <None Remove="Content\Items\LuckyCigarette.png" />
 	  <None Remove="Content\Items\LuckyCigarette_Beard.png" />
@@ -192,7 +191,6 @@
 	  <None Remove="Content\Items\TheMoon.png" />
 	  <None Remove="Content\Items\ThePrimeTime.png" />
 	  <None Remove="Content\Items\ThePurifier.png" />
-	  <None Remove="Content\Items\TheXRay.png" />
 	  <None Remove="Content\Items\ThumbtackDart.png" />
 	  <None Remove="Content\Items\TintedLenses.png" />
 	  <None Remove="Content\Items\ToothlessWyrm.png" />
