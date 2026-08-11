@@ -110,9 +110,9 @@ public class SawedOffSparkplug : ModItem
         recipe.AddIngredient(ItemID.Boomstick);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("SparkSpreader", out ModItem SparkSpreader))
+        if (ModLoader.TryGetMod("Origins", out Mod OriginComp) && OriginComp.TryFind("Firespit", out ModItem Firespit))
         {
-            recipe.AddIngredient(SparkSpreader.Type);
+            recipe.AddIngredient(Firespit.Type);
         }
     }
 
