@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 

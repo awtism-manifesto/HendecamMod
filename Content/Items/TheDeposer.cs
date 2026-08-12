@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Weapons.Ranger;
+﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using System.Collections.Generic;
 using Terraria.Audio;
 

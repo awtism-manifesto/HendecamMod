@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Items.Materials;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;

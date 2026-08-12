@@ -2,6 +2,7 @@
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;

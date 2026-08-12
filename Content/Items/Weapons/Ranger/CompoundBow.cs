@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;

@@ -1,6 +1,7 @@
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 

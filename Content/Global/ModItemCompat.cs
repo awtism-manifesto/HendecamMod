@@ -1,7 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Weapons.Magic;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.MarksmanLaserSight;
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Weapons.Melee;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 

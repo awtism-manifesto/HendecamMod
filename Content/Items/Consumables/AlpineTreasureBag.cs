@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Weapons.Ammo;
+using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using Terraria.GameContent.ItemDropRules;
 

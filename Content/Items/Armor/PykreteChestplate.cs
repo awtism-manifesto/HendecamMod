@@ -1,3 +1,5 @@
+using HendecamMod.Content.Items.Placeables;
+
 namespace HendecamMod.Content.Items.Armor;
 
 [AutoloadEquip(EquipType.Body)]

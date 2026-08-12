@@ -1,3 +1,5 @@
+using HendecamMod.Content.Items.Materials;
+
 namespace HendecamMod.Content.Items.Armor;
 
 [AutoloadEquip(EquipType.Head)]

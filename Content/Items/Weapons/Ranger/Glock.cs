@@ -1,4 +1,5 @@
-﻿using Terraria.DataStructures;
+﻿using HendecamMod.Content.Items.Materials;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
 
