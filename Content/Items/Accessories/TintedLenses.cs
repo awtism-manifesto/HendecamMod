@@ -42,7 +42,7 @@ public class TintedLenses : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+50% increased Lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "Reduces the Lobotometer's impact on your")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -57,8 +57,7 @@ public class TintedLenses : ModItem
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
 
-        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 1.5f;
+        loboPlayer.LobotometerShaderStrength *= 0.8f;
 
     }
 }

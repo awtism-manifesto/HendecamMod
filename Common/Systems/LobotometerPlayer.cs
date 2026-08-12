@@ -134,15 +134,20 @@ namespace HendecamMod.Common.Systems
         {
             TemporaryBonus += bonus;
         }
-        public float LobotometerShaderStrength = 0.5f; // default value
-        public float BaseLobotometerShaderStrength = 0.5f; // default value
+        public float LobotometerShaderStrength = 0.5f;
+        public float BaseLobotometerShaderStrength = 0.5f;
+        public float LocalCurrent = 0f; // Store local player's current value
+        public float LocalMax = 1f;    // Store local player's max value
 
         public override void PostUpdateMiscEffects()
         {
-            var player = Main.LocalPlayer;
-
             if (!Main.dedServ)
             {
+                // CRITICAL FIX: Check if THIS ModPlayer instance belongs to the local player
+                // NOT if Main.LocalPlayer is the local player (which is always true)
+                if (Player != Main.LocalPlayer)
+                    return;
+
                 // Handle shader deactivation when dead or no current
                 if (Current <= 0 || Player.dead)
                 {
@@ -150,7 +155,7 @@ namespace HendecamMod.Common.Systems
                     {
                         Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
                     }
-                    return; // Exit early to avoid unnecessary calculations
+                    return;
                 }
 
                 // Activate shader if not already active
@@ -159,35 +164,29 @@ namespace HendecamMod.Common.Systems
                     Filters.Scene.Activate("HendecamMod:LobotomyScreen");
                 }
 
-                // Calculate intensity modifiers (chain them properly)
-                float intensityMultiplier = 1f; // Start with base multiplier
+                // Calculate intensity modifiers
+                float intensityMultiplier = 1f;
 
-                // Check Lucid state
-                if (player.GetModPlayer<LucidPlayer>().Lucid)
+                if (Player.GetModPlayer<LucidPlayer>().Lucid)
                 {
                     intensityMultiplier *= 0.425f;
                 }
 
-                // Check TermLucid state (can stack with Lucid)
-                if (player.GetModPlayer<TermLucidPlayer>().TermLucid)
+                if (Player.GetModPlayer<TermLucidPlayer>().TermLucid)
                 {
                     intensityMultiplier *= 0.175f;
                 }
 
-              
                 LobotometerShaderStrength = BaseLobotometerShaderStrength * intensityMultiplier;
 
-                // Apply zenith world modifier
                 if (Main.zenithWorld)
                 {
                     LobotometerShaderStrength *= 1.8f;
                 }
 
-                // Apply shader intensity
                 Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * LobotometerShaderStrength);
             }
         }
-
         public void AddLobotometer(float amount = 5f)
         {
             Current += amount;

@@ -10,14 +10,7 @@ namespace HendecamMod.Content.Items.Accessories;
 public class NeuralMappingSoftware : ModItem
 {
 
-    public override void SetStaticDefaults()
-    {
-        // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
-        Main.RegisterItemAnimation(Type, new DrawAnimationVertical(9, 33));
-        ItemID.Sets.AnimatesAsSoul[Type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
-
-
-    }
+    
     public override void SetDefaults()
     {
         // We don't need to add anything particularly unique for the stats of this item; so let's just clone the Radar.

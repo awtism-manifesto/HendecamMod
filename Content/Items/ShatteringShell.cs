@@ -8,7 +8,7 @@ public class ShatteringShell : ModItem
 {
     public override void SetDefaults()
     {
-        Item.damage = 22; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+        Item.damage = 19; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
         Item.width = 16;
         Item.height = 16;

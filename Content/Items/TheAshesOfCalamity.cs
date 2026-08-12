@@ -84,7 +84,7 @@ public class TheAshesOfCalamity : ModItem
         var line = new TooltipLine(Mod, "Face", "Erupts a mortifying combination of demonic fire, demonic fireballs and homing pentagrams");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Oh, What a calamity...'")
+        line = new TooltipLine(Mod, "Face", "'The real Calamity was the friends we made along the way'")
         {
             OverrideColor = new Color(255, 255, 255)
         };

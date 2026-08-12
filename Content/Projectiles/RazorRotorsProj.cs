@@ -34,6 +34,11 @@ public class RazorRotorsProj : ModProjectile
     {
         Player player = Main.player[Projectile.owner];
         Projectile.Center = player.Center;
+        player.jumpSpeedBoost += 1.15f;
+        player.maxFallSpeed = player.maxFallSpeed * 1.05f;
+        player.wingRunAccelerationMult += 1.2f;
+        player.wingAccRunSpeed += 1.2f;
+
 
         if (player.direction == 1)
         {

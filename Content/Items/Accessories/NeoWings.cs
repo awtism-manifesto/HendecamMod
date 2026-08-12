@@ -11,6 +11,7 @@ public class NeoWings : ModItem
     public override void SetStaticDefaults()
     {
         ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(155, 8.33f, 1.55f);
+        ItemID.Sets.ShimmerTransformToItem[Type] = ItemType<TheSpamCannon>();
     }
 
     public override void SetDefaults()
@@ -32,13 +33,13 @@ public class NeoWings : ModItem
 
         line = new TooltipLine(Mod, "Face", "WITNESS ME THIS TIME")
         {
-            OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
+            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "CUT THESE [SILLY STRINGS]")
         {
-            OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
+            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
         };
         tooltips.Add(line);
     }
@@ -53,7 +54,7 @@ public class NeoWings : ModItem
         constantAscend = 0.145f;
     }
 }
-// 1. The ModPlayer to toggle drawing (like your LaserDrawGreen)
+
 public class NeoWingsPlayer : ModPlayer
 {
     public bool HasNeoWings;
@@ -65,7 +66,7 @@ public class NeoWingsPlayer : ModPlayer
 
     public override void UpdateEquips()
     {
-        // Loop through ALL accessory slots (Social + Visible + Hidden)
+       
         for (int i = 3; i < 8 + Player.extraAccessorySlots; i++)
         {
             Item item = Player.armor[i];
@@ -78,7 +79,7 @@ public class NeoWingsPlayer : ModPlayer
     }
 }
 
-// 2. The Draw Layer (Reworked to match your LaserSight structure)
+
 public class NeoWingsStringLayer : PlayerDrawLayer
 {
     private Asset<Texture2D> _neoPixel;

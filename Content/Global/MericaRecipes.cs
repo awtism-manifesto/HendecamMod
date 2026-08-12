@@ -4,6 +4,7 @@ using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Melee;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Tiles.Furniture;
 
@@ -24,28 +25,28 @@ public class MericaRecipes : ModSystem
         Recipe recipeenar = Recipe.Create(ItemID.Torch, 10);
 
         recipeenar.AddRecipeGroup("Wood");
-        recipeenar.AddIngredient<HendecamMod.Content.Items.Materials.CrudeOil>();
+        recipeenar.AddIngredient<CrudeOil>();
 
         recipeenar.Register();
 
         Recipe brecipe = Recipe.Create(ItemID.Celeb2);
         brecipe.AddIngredient(ItemID.FireworksLauncher);
 
-        brecipe.AddIngredient<HendecamMod.Content.Items.Materials.FissionDrive>();
+        brecipe.AddIngredient<FissionDrive>();
         brecipe.AddTile<CultistCyclotronPlaced>();
         brecipe.Register();
 
         Recipe bbrecipe = Recipe.Create(ItemID.StarWrath);
         bbrecipe.AddIngredient(ItemID.Starfury);
 
-        bbrecipe.AddIngredient<HendecamMod.Content.Items.Materials.FissionDrive>();
+        bbrecipe.AddIngredient<FissionDrive>();
         bbrecipe.AddTile<CultistCyclotronPlaced>();
         bbrecipe.Register();
 
         Recipe bebrecipe = Recipe.Create(ItemID.RainbowCrystalStaff);
         bebrecipe.AddIngredient(ItemID.RainbowGun);
 
-        bebrecipe.AddIngredient<HendecamMod.Content.Items.Materials.FissionDrive>();
+        bebrecipe.AddIngredient<FissionDrive>();
        bebrecipe.AddTile<CultistCyclotronPlaced>();
         bebrecipe.Register();
 
@@ -54,7 +55,7 @@ public class MericaRecipes : ModSystem
         sbebrecipe.AddIngredient<PlutoniumGlass>(33);
         sbebrecipe.AddIngredient<AstatineGlass>(33);
 
-        sbebrecipe.AddIngredient<HendecamMod.Content.Items.Materials.FissionDrive>(2);
+        sbebrecipe.AddIngredient<FissionDrive>(2);
         sbebrecipe.AddTile<CultistCyclotronPlaced>();
         sbebrecipe.Register();
 
@@ -72,17 +73,17 @@ public class MericaRecipes : ModSystem
 
         Recipe penis = Recipe.Create(ItemID.Sandgun);
         penis.AddIngredient<Items.PocketSand>();
-        penis.AddIngredient<HendecamMod.Content.Items.Weapons.Ranger.Glock>();
+        penis.AddIngredient<Glock>();
         penis.AddTile(TileID.Anvils);
         penis.Register();
 
         Recipe penile = Recipe.Create(ItemID.BloodRainBow);
-        penile.AddIngredient<HendecamMod.Content.Items.Weapons.Multiclass.KingslayerWarBow>();
+        penile.AddIngredient<KingslayerWarBow>();
         penile.AddIngredient(ItemID.DemoniteBar, 8);
         penile.AddTile(TileID.Anvils);
         penile.Register();
         Recipe penile2 = Recipe.Create(ItemID.BloodRainBow);
-        penile2.AddIngredient<HendecamMod.Content.Items.Weapons.Multiclass.KingslayerWarBow>();
+        penile2.AddIngredient<KingslayerWarBow>();
         penile2.AddIngredient(ItemID.CrimtaneBar, 8);
         penile2.AddTile(TileID.Anvils);
         penile2.Register();
@@ -91,7 +92,7 @@ public class MericaRecipes : ModSystem
 
         Recipe aaa = Recipe.Create(ItemID.LunarHook);
 
-        aaa.AddIngredient<HendecamMod.Content.Items.Materials.FragmentFlatEarth>(20);
+        aaa.AddIngredient<FragmentFlatEarth>(20);
         aaa.AddTile(TileID.LunarCraftingStation);
         aaa.Register();
 
@@ -121,7 +122,7 @@ public class MericaRecipes : ModSystem
 
         Recipe aaaa = Recipe.Create(ItemID.CelestialSigil);
 
-        aaaa.AddIngredient<HendecamMod.Content.Items.Materials.FragmentFlatEarth>(45);
+        aaaa.AddIngredient<FragmentFlatEarth>(45);
         aaaa.AddTile(TileID.LunarCraftingStation);
         aaaa.Register();
 
@@ -192,7 +193,7 @@ public class MericaRecipes : ModSystem
         wawess.Register();
         Recipe wackwess = Recipe.Create(ItemID.ShroomiteBar, 2);
         wackwess.AddIngredient(ItemID.ChlorophyteBar);
-        wackwess.AddIngredient<HendecamMod.Content.Items.Materials.LycopiteBar>();
+        wackwess.AddIngredient<LycopiteBar>();
         wackwess.AddIngredient(ItemID.GlowingMushroom, 10);
         wackwess.AddTile(TileID.Autohammer);
         wackwess.Register();
@@ -407,7 +408,7 @@ public class MericaRecipes : ModSystem
         {
             Recipe glocknbawlz = Recipe.Create(HotGlock.Type);
             glocknbawlz.AddIngredient(Candescite, 40);
-            glocknbawlz.AddIngredient<HendecamMod.Content.Items.Weapons.Ranger.Glock>();
+            glocknbawlz.AddIngredient<Glock>();
             
             glocknbawlz.AddTile(TileID.Anvils);
             glocknbawlz.Register();
