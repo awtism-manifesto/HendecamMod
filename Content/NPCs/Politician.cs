@@ -1,6 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
 using HendecamMod.Content.GlobalNPCs;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
@@ -8,6 +7,7 @@ using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Stupid;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;

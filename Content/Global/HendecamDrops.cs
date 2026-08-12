@@ -1,7 +1,7 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Other;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons.Ammo;

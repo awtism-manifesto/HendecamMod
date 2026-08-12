@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using HendecamMod.Content.GlobalNPCs;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Magic;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;

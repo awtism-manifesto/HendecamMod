@@ -1,5 +1,4 @@
 ﻿using HendecamMod.Content.Items.Icons;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.Rampart;
 using HendecamMod.Content.Items.Placeables;
@@ -8,6 +7,7 @@ using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Weapons.Stupid;
+using HendecamMod.Content.Items.Other;
 
 namespace HendecamMod.Content.Global;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;

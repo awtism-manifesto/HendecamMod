@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Other;
+using System.Collections.Generic;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Items.Consumables;

@@ -2,7 +2,6 @@
 using System.Linq;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.GlobalNPCs;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Armor;
@@ -11,6 +10,7 @@ using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
+using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Items.Weapons.Stupid;

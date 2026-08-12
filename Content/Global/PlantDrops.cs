@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Global;
 

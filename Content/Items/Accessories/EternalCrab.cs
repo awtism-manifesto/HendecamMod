@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Rarities;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 

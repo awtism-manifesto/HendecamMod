@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Accessories.NormalOnes;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Accessories.Rampart;

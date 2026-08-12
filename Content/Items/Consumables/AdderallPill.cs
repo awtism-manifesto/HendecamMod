@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Items.Consumables;
+﻿using HendecamMod.Content.Items.Materials;
+
+namespace HendecamMod.Content.Items.Consumables;
 
 public class AdderallPill : ModItem
 {

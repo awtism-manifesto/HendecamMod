@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
@@ -104,7 +103,7 @@ public class MericaRecipes : ModSystem
 
         Recipe aata = Recipe.Create(ItemID.LeadOre, 2);
 
-        aata.AddIngredient<Items.UraniumOre>();
+        aata.AddIngredient<HendecamMod.Content.Items.Placeables.UraniumOre>();
         aata.AddTile(TileID.LesionStation);
         aata.Register();
 
@@ -138,7 +137,7 @@ public class MericaRecipes : ModSystem
         Recipe ass9 = Recipe.Create(ItemID.MiniNukeI, 999);
         ass9.AddIngredient(ItemID.RocketIII, 999);
         ass9.AddIngredient<HendecamMod.Content.Items.Materials.PlutoniumBar>();
-        ass9.AddIngredient<Items.UraniumBar>();
+        ass9.AddIngredient<HendecamMod.Content.Items.Materials.UraniumBar>();
         ass9.AddIngredient<AstatineBar>();
         ass9.AddTile(TileID.MythrilAnvil);
         ass9.Register();
@@ -147,7 +146,7 @@ public class MericaRecipes : ModSystem
         ass99.AddIngredient(ItemID.RocketIV, 999);
         ass99.AddIngredient<HendecamMod.Content.Items.Materials.PlutoniumBar>();
         ass99.AddIngredient<AstatineBar>();
-        ass99.AddIngredient<Items.UraniumBar>();
+        ass99.AddIngredient<HendecamMod.Content.Items.Materials.UraniumBar>();
         ass99.AddTile(TileID.MythrilAnvil);
         ass99.Register();
 
@@ -199,22 +198,22 @@ public class MericaRecipes : ModSystem
         wackwess.Register();
         Recipe qwawess = Recipe.Create(ItemID.ShadowFlameHexDoll);
 
-        qwawess.AddIngredient<Items.Shadowflame>(50);
+        qwawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
         qwawess.AddTile(TileID.MythrilAnvil);
         qwawess.Register();
         Recipe qvwawess = Recipe.Create(ItemID.ShadowFlameKnife);
 
-        qvwawess.AddIngredient<Items.Shadowflame>(50);
+        qvwawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
         qvwawess.AddTile(TileID.MythrilAnvil);
         qvwawess.Register();
         Recipe qv3wawess = Recipe.Create(ItemID.ShadowFlameBow);
 
-        qv3wawess.AddIngredient<Items.Shadowflame>(50);
+        qv3wawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
         qv3wawess.AddTile(TileID.MythrilAnvil);
         qv3wawess.Register();
         Recipe qv3wawesss = Recipe.Create(ItemID.ShadowflameHadesDye);
 
-        qv3wawesss.AddIngredient<Items.Shadowflame>(15);
+        qv3wawesss.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(15);
         qv3wawesss.AddTile(TileID.DyeVat);
         qv3wawesss.Register();
         Recipe qv333wawesss = Recipe.Create(ItemID.SlimeCrown);
@@ -231,7 +230,7 @@ public class MericaRecipes : ModSystem
         qv33wawesss.AddTile(TileID.Solidifier);
         qv33wawesss.Register();
         Recipe bitche = Recipe.Create(ItemID.HeatRay);
-        bitche.AddIngredient<Items.SolarRayRifle>();
+        bitche.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.SolarRayRifle>();
         bitche.AddIngredient(ItemID.ChlorophyteBar, 10);
         bitche.AddIngredient(ItemID.BeetleHusk, 5);
         bitche.AddIngredient(ItemID.LihzahrdPowerCell);
@@ -489,7 +488,7 @@ public class MericaRecipes : ModSystem
         gay69.Register();
 
         Recipe gay69420 = Recipe.Create(ItemID.ZapinatorGray);
-        gay69420.AddIngredient<Items.ZapperGun>();
+        gay69420.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.ZapperGun>();
         gay69420.AddIngredient(ItemID.CrimtaneBar, 8);
         gay69420.AddIngredient(ItemID.IllegalGunParts);
         gay69420.AddTile(TileID.Anvils);
@@ -511,7 +510,7 @@ public class MericaRecipes : ModSystem
         ACMHC.Register();
 
         Recipe gay69421 = Recipe.Create(ItemID.ZapinatorGray);
-        gay69421.AddIngredient<Items.ZapperGun>();
+        gay69421.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.ZapperGun>();
         gay69421.AddIngredient(ItemID.DemoniteBar, 8);
         gay69421.AddIngredient(ItemID.IllegalGunParts);
         gay69421.AddTile(TileID.Anvils);

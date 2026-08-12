@@ -1,8 +1,8 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Magic;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;

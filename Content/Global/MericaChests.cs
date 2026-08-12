@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Accessories;
+﻿using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;

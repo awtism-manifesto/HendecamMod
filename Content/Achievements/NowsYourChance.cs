@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items.Weapons.Multiclass;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
 

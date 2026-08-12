@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items;
+﻿using HendecamMod.Content.Items.Weapons.Ranger;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
 

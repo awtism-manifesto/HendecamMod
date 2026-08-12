@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Other;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Consumables;
 

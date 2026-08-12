@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.Items;
-using HendecamMod.Content.Items.Weapons.Multiclass;
+﻿using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;

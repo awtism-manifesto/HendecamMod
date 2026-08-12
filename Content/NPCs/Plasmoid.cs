@@ -1,7 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
-using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Summon;
