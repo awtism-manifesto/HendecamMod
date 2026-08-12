@@ -60,12 +60,12 @@ namespace HendecamMod.Content.Global
             JokeCycler++;
 
 
-            
 
-           
+
+
             if (JokeCycler >= 240)
             {
-               
+
                 choice = Main.rand.Next(28);
                 if (choice == 17)
                 {
@@ -75,71 +75,71 @@ namespace HendecamMod.Content.Global
                 {
                     displayColor = InfoTextColor;
                 }
-                    switch (choice)
-                    {
-                        case 0:
-                            JokeDisplayed = "River? I hardly know her";
-                            break;
-                        case 1:
-                            JokeDisplayed = "How does Alpine make nachos? using the Elf Melter!";
-                            break;
-                        case 2:
-                            JokeDisplayed = "Deltarune Tomorrow";
-                            break;
-                        case 3:
-                            JokeDisplayed = "Well at least you don't have to fight... Freddy Fazbear....";
-                            break;
+                switch (choice)
+                {
+                    case 0:
+                        JokeDisplayed = "River? I hardly know her";
+                        break;
+                    case 1:
+                        JokeDisplayed = "How does Alpine make nachos? using the Elf Melter!";
+                        break;
+                    case 2:
+                        JokeDisplayed = "Deltarune Tomorrow";
+                        break;
+                    case 3:
+                        JokeDisplayed = "Well at least you don't have to fight... Freddy Fazbear....";
+                        break;
 
-                        case 4:
-                            JokeDisplayed = "How much revenue has Azafure LLC made? 67 dollars!";
-                            break;
+                    case 4:
+                        JokeDisplayed = "How much revenue has Azafure LLC made? 67 dollars!";
+                        break;
 
-                        case 5:
-                            JokeDisplayed = "Hendecam Mod: At least we aren't Calamity!";
-                            break;
-                        case 6:
-                            JokeDisplayed = "IS THAT THE ROARING KNIGHT???";
-                            break;
-                        case 7:
-                            JokeDisplayed = "I wonder what the Brain of Cthulhu's lobotometer decay rate is...";
-                            break;
-                        case 8:
-                            JokeDisplayed = "Chlorophyte Shitballs! Now 50% shittier!!!";
-                            break;
-                        case 9:
-                            JokeDisplayed = "Hendecam Balance Changes: Nerfed Omni again";
-                            break;
-                        case 10:
-                            JokeDisplayed = "HALF LIFE 3 CONFIRMED???";
-                            break;
-                        case 11:
-                            JokeDisplayed = "Terraria 1.5: The Final Update (fr this time trust us)";
-                            break;
-                        case 12:
-                            JokeDisplayed = "I use Arch Linux btw";
-                            break;
-                        case 13:
-                            JokeDisplayed = "Hendecam Mod: More optimized than Pokemon Scarlet & Violet!";
-                            break;
-                        case 14:
-                            JokeDisplayed = "Why did the chicken cross the road? To find the TerMerica 1.4.5 Port!";
-                            break;
-                        case 15:
-                            JokeDisplayed = "Number 15. Burger king foot lettuce.";
-                            break;
-                        case 16:
-                            JokeDisplayed = "The JFK Experience: Ending hardcore runs since 2024!";
-                            break;
-                        case 17:
-                            JokeDisplayed = "Say you'll be green!";
+                    case 5:
+                        JokeDisplayed = "Hendecam Mod: At least we aren't Calamity!";
+                        break;
+                    case 6:
+                        JokeDisplayed = "IS THAT THE ROARING KNIGHT???";
+                        break;
+                    case 7:
+                        JokeDisplayed = "I wonder what the Brain of Cthulhu's lobotometer decay rate is...";
+                        break;
+                    case 8:
+                        JokeDisplayed = "Chlorophyte Shitballs! Now 50% shittier!!!";
+                        break;
+                    case 9:
+                        JokeDisplayed = "Hendecam Balance Changes: Nerfed Omni again";
+                        break;
+                    case 10:
+                        JokeDisplayed = "HALF LIFE 3 CONFIRMED???";
+                        break;
+                    case 11:
+                        JokeDisplayed = "Terraria 1.5: The Final Update (fr this time trust us)";
+                        break;
+                    case 12:
+                        JokeDisplayed = "I use Arch Linux btw";
+                        break;
+                    case 13:
+                        JokeDisplayed = "Hendecam Mod: More optimized than Pokemon Scarlet & Violet!";
+                        break;
+                    case 14:
+                        JokeDisplayed = "Why did the chicken cross the road? To find the TerMerica 1.4.5 Port!";
+                        break;
+                    case 15:
+                        JokeDisplayed = "Number 15. Burger king foot lettuce.";
+                        break;
+                    case 16:
+                        JokeDisplayed = "The JFK Experience: Ending hardcore runs since 2024!";
+                        break;
+                    case 17:
+                        JokeDisplayed = "Say you'll be green!";
 
-                            break;
-                        case 18:
-                            JokeDisplayed = "Why did spazmatism cross the road? To get to the brother side!";
-                            break;
-                        case 19:
-                            JokeDisplayed = "According to all known laws of aviation, there is no way a bee should be able to fly";
-                            break;
+                        break;
+                    case 18:
+                        JokeDisplayed = "Why did spazmatism cross the road? To get to the brother side!";
+                        break;
+                    case 19:
+                        JokeDisplayed = "According to all known laws of aviation, there is no way a bee should be able to fly";
+                        break;
                     case 20:
                         JokeDisplayed = "There is no joke. this is the EVIL joke jumbotron!!!!";
                         break;
@@ -165,8 +165,8 @@ namespace HendecamMod.Content.Global
                         JokeDisplayed = "What did the Lihzahrds use for entertainment? Solar tablets.";
                         break;
                 }
-                
-                    JokeCycler = 0;
+
+                JokeCycler = 0;
             }
             else
             {

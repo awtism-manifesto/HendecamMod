@@ -3431,7 +3431,7 @@ PrismaticBullet: {
 }
 
 PulsePistols: {
-	DisplayName: Pulse Pistols
+	DisplayName: Pulse Pistol
 	Tooltip: ""
 }
 

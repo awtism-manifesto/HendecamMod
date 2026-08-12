@@ -14,7 +14,7 @@ public class PulsePistols : ModItem
         // Common Properties
         Item.width = 44; // Hitbox width of the item.
         Item.height = 18; // Hitbox height of the item.
-        Item.scale = 0.8f;
+        Item.scale = 0.69f;
         Item.rare = ItemRarityID.Cyan; // The color that the item's name will be in-game.
         Item.value = 250000;
 
@@ -79,24 +79,13 @@ public class PulsePistols : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-4f, -1f);
+        return new Vector2(-6f, -1f);
     }
 }
