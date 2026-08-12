@@ -2,9 +2,12 @@
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Weapons.Magic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Stupid;
+using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Global;
@@ -71,7 +74,7 @@ public class MericaRecipes : ModSystem
         recipenist.Register();
 
         Recipe penis = Recipe.Create(ItemID.Sandgun);
-        penis.AddIngredient<HendecamMod.Content.Items.Weapons.Stupid.PocketSand>();
+        penis.AddIngredient<PocketSand>();
         penis.AddIngredient<Glock>();
         penis.AddTile(TileID.Anvils);
         penis.Register();
@@ -103,13 +106,13 @@ public class MericaRecipes : ModSystem
 
         Recipe aata = Recipe.Create(ItemID.LeadOre, 2);
 
-        aata.AddIngredient<HendecamMod.Content.Items.Placeables.UraniumOre>();
+        aata.AddIngredient<UraniumOre>();
         aata.AddTile(TileID.LesionStation);
         aata.Register();
 
         Recipe aata1 = Recipe.Create(ItemID.LeadOre, 5);
 
-        aata1.AddIngredient<HendecamMod.Content.Items.Placeables.PlutoniumOre>();
+        aata1.AddIngredient<PlutoniumOre>();
         aata1.AddTile(TileID.LesionStation);
         aata1.Register();
 
@@ -127,7 +130,7 @@ public class MericaRecipes : ModSystem
 
         Recipe aaaa2 = Recipe.Create(ItemID.WandofFrosting);
 
-        aaaa2.AddIngredient<HendecamMod.Content.Items.Placeables.Pykrete>(5);
+        aaaa2.AddIngredient<Pykrete>(5);
         aaaa2.AddIngredient(ItemID.IceTorch, 25);
         aaaa2.AddTile(TileID.WorkBenches);
         aaaa2.Register();
@@ -136,24 +139,24 @@ public class MericaRecipes : ModSystem
 
         Recipe ass9 = Recipe.Create(ItemID.MiniNukeI, 999);
         ass9.AddIngredient(ItemID.RocketIII, 999);
-        ass9.AddIngredient<HendecamMod.Content.Items.Materials.PlutoniumBar>();
-        ass9.AddIngredient<HendecamMod.Content.Items.Materials.UraniumBar>();
+        ass9.AddIngredient<PlutoniumBar>();
+        ass9.AddIngredient<UraniumBar>();
         ass9.AddIngredient<AstatineBar>();
         ass9.AddTile(TileID.MythrilAnvil);
         ass9.Register();
 
         Recipe ass99 = Recipe.Create(ItemID.MiniNukeII, 999);
         ass99.AddIngredient(ItemID.RocketIV, 999);
-        ass99.AddIngredient<HendecamMod.Content.Items.Materials.PlutoniumBar>();
+        ass99.AddIngredient<PlutoniumBar>();
         ass99.AddIngredient<AstatineBar>();
-        ass99.AddIngredient<HendecamMod.Content.Items.Materials.UraniumBar>();
+        ass99.AddIngredient<UraniumBar>();
         ass99.AddTile(TileID.MythrilAnvil);
         ass99.Register();
 
         Recipe wass = Recipe.Create(ItemID.ShinyRedBalloon);
         wass.AddIngredient(ItemID.Cloud, 5);
-        wass.AddIngredient<HendecamMod.Content.Items.Materials.PlasticScrap>(5);
-        wass.AddIngredient<HendecamMod.Content.Items.Materials.Rubber>(10);
+        wass.AddIngredient<PlasticScrap>(5);
+        wass.AddIngredient<Rubber>(10);
         wass.AddTile(TileID.TinkerersWorkbench);
         wass.Register();
 
@@ -187,7 +190,7 @@ public class MericaRecipes : ModSystem
 
         Recipe wawess = Recipe.Create(ItemID.HolyArrow, 77);
         wawess.AddIngredient(ItemID.WoodenArrow, 77);
-        wawess.AddIngredient<HendecamMod.Content.Items.Materials.PurifiedSalt>();
+        wawess.AddIngredient<PurifiedSalt>();
         wawess.AddTile(TileID.MythrilAnvil);
         wawess.Register();
         Recipe wackwess = Recipe.Create(ItemID.ShroomiteBar, 2);
@@ -198,22 +201,22 @@ public class MericaRecipes : ModSystem
         wackwess.Register();
         Recipe qwawess = Recipe.Create(ItemID.ShadowFlameHexDoll);
 
-        qwawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
+        qwawess.AddIngredient<Shadowflame>(50);
         qwawess.AddTile(TileID.MythrilAnvil);
         qwawess.Register();
         Recipe qvwawess = Recipe.Create(ItemID.ShadowFlameKnife);
 
-        qvwawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
+        qvwawess.AddIngredient<Shadowflame>(50);
         qvwawess.AddTile(TileID.MythrilAnvil);
         qvwawess.Register();
         Recipe qv3wawess = Recipe.Create(ItemID.ShadowFlameBow);
 
-        qv3wawess.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(50);
+        qv3wawess.AddIngredient<Shadowflame>(50);
         qv3wawess.AddTile(TileID.MythrilAnvil);
         qv3wawess.Register();
         Recipe qv3wawesss = Recipe.Create(ItemID.ShadowflameHadesDye);
 
-        qv3wawesss.AddIngredient<HendecamMod.Content.Items.Materials.Shadowflame>(15);
+        qv3wawesss.AddIngredient<Shadowflame>(15);
         qv3wawesss.AddTile(TileID.DyeVat);
         qv3wawesss.Register();
         Recipe qv333wawesss = Recipe.Create(ItemID.SlimeCrown);
@@ -230,7 +233,7 @@ public class MericaRecipes : ModSystem
         qv33wawesss.AddTile(TileID.Solidifier);
         qv33wawesss.Register();
         Recipe bitche = Recipe.Create(ItemID.HeatRay);
-        bitche.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.SolarRayRifle>();
+        bitche.AddIngredient<SolarRayRifle>();
         bitche.AddIngredient(ItemID.ChlorophyteBar, 10);
         bitche.AddIngredient(ItemID.BeetleHusk, 5);
         bitche.AddIngredient(ItemID.LihzahrdPowerCell);
@@ -252,13 +255,13 @@ public class MericaRecipes : ModSystem
         wadwess.Register();
         Recipe wcass = Recipe.Create(ItemID.FishingBobber);
 
-        wcass.AddIngredient<HendecamMod.Content.Items.Materials.PlasticScrap>(15);
+        wcass.AddIngredient<PlasticScrap>(15);
         wcass.AddTile(TileID.TinkerersWorkbench);
         wcass.Register();
 
         Recipe wcaess = Recipe.Create(ItemID.FloatingTube);
 
-        wcaess.AddIngredient<HendecamMod.Content.Items.Materials.PlasticScrap>(10);
+        wcaess.AddIngredient<PlasticScrap>(10);
         wcaess.AddTile(TileID.WorkBenches);
         wcaess.Register();
 
@@ -488,7 +491,7 @@ public class MericaRecipes : ModSystem
         gay69.Register();
 
         Recipe gay69420 = Recipe.Create(ItemID.ZapinatorGray);
-        gay69420.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.ZapperGun>();
+        gay69420.AddIngredient<ZapperGun>();
         gay69420.AddIngredient(ItemID.CrimtaneBar, 8);
         gay69420.AddIngredient(ItemID.IllegalGunParts);
         gay69420.AddTile(TileID.Anvils);
@@ -510,7 +513,7 @@ public class MericaRecipes : ModSystem
         ACMHC.Register();
 
         Recipe gay69421 = Recipe.Create(ItemID.ZapinatorGray);
-        gay69421.AddIngredient<HendecamMod.Content.Items.Weapons.Magic.ZapperGun>();
+        gay69421.AddIngredient<ZapperGun>();
         gay69421.AddIngredient(ItemID.DemoniteBar, 8);
         gay69421.AddIngredient(ItemID.IllegalGunParts);
         gay69421.AddTile(TileID.Anvils);
@@ -541,8 +544,8 @@ public class MericaRecipes : ModSystem
 
         Recipe ckc = Recipe.Create(ItemID.WhoopieCushion);
         ckc.AddIngredient(ItemID.PoopBlock);
-        ckc.AddIngredient<HendecamMod.Content.Items.Materials.PlasticScrap>(5);
-        ckc.AddIngredient<HendecamMod.Content.Items.Materials.Rubber>(15);
+        ckc.AddIngredient<PlasticScrap>(5);
+        ckc.AddIngredient<Rubber>(15);
         ckc.AddTile(TileID.TinkerersWorkbench);
         ckc.Register();
 

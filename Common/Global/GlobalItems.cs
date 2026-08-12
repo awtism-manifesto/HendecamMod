@@ -1449,5 +1449,3 @@ public class Shellbotomy4 : GlobalItem
         tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }
-
-}
