@@ -47,7 +47,7 @@ public class SandyScorpion : ModItem
             type = ProjectileType<SandBall>();
             SoundEngine.PlaySound(SoundID.Item97, player.position);
 
-            Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.11f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, (int)(damage * 1.2f), knockback, player.whoAmI);
             shotCounter = 2;
         }
         else if (shotCounter == 2)
@@ -57,7 +57,7 @@ public class SandyScorpion : ModItem
             type = ProjectileType<VenomBall>();
             SoundEngine.PlaySound(SoundID.Item97, player.position);
 
-            Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.9f), knockback, player.whoAmI);
+            Projectile.NewProjectileDirect(source, position, new2Velocity, type, (int)(damage * 0.95f), knockback, player.whoAmI);
             shotCounter = 0;
         }
 

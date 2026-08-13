@@ -41,7 +41,7 @@ public class TerraVape : ModItem
 
        
     }
-    public float LobotometerCost = 1f;
+    public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

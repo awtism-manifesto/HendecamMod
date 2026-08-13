@@ -74,6 +74,6 @@ public class UraniumHelmet : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = SetBonusText.Value;
+        player.setBonus = "Has a chance to give a stacking attack speed buff upon hitting an enemy";
     }
 }

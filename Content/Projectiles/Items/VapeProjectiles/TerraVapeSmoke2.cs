@@ -22,7 +22,7 @@ public class TerraVapeSmoke2 : ModProjectile
 
         Projectile.friendly = true;
         Projectile.DamageType = GetInstance<StupidDamage>();
-        Projectile.timeLeft = 67;
+        Projectile.timeLeft = 44;
         Projectile.GetGlobalProjectile<VapeMark>().VapeProj = true;
         Projectile.extraUpdates = 1;
         Projectile.tileCollide = false;

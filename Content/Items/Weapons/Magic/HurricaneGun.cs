@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Magic;
@@ -18,11 +19,11 @@ public class HurricaneGun : ModItem
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        Item.reuseDelay = 18;
+        Item.reuseDelay = 21;
 
         Item.UseSound = SoundID.Item122;
         Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-        Item.damage = 51; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 5.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -31,7 +32,7 @@ public class HurricaneGun : ModItem
 
         Item.shoot = ProjectileID.PurificationPowder;
 
-        Item.shootSpeed = 11.95f;
+        Item.shootSpeed = 11.33f;
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -72,9 +73,10 @@ public class HurricaneGun : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.SoulofFlight, 15);
+      
         recipe.AddIngredient(ItemID.WeatherPain);
         recipe.AddIngredient(ItemID.NimbusRod);
+        recipe.AddIngredient<WindTome>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

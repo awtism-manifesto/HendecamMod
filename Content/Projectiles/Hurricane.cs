@@ -8,7 +8,7 @@ public class Hurricane : ModProjectile
     {
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-        Main.projFrames[Projectile.type] = 4;
+       
     }
 
     public override void SetDefaults()
@@ -31,20 +31,9 @@ public class Hurricane : ModProjectile
 
     public override void AI()
     {
-        int frameSpeed = 5;
-
-        Projectile.frameCounter++;
-
-        if (Projectile.frameCounter >= frameSpeed)
-        {
-            Projectile.frameCounter = 0;
-            Projectile.frame++;
-
-            if (Projectile.frame >= Main.projFrames[Projectile.type])
-            {
-                Projectile.frame = 0;
-            }
-        }
+      
+        Projectile.rotation -= 0.2f;
+       
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

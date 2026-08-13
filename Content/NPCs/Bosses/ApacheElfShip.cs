@@ -257,8 +257,12 @@ public class ApacheElfShip : ModNPC
             {
                 difficulty += 3;
             }
+            if (NPC.life <= NPC.lifeMax/2)
+            {
+                difficulty += 2;
+            }
 
-                switch (attackType)
+            switch (attackType)
             {
                 case 0: // Presents
                     if (spawnsRemaining == 0)

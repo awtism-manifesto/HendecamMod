@@ -26,7 +26,7 @@ public class Boomshark : ModItem
         };
         Item.ArmorPenetration = 2;
         Item.DamageType = DamageClass.Ranged; 
-        Item.damage = 4; 
+        Item.damage = 9; 
         Item.knockBack = 0.25f;
         Item.noMelee = true;
         Item.shoot = ProjectileID.PurificationPowder;
@@ -40,7 +40,7 @@ public class Boomshark : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         int NumProjectiles = Main.rand.Next(3,5);
-        damage = (int)(damage * 0.8f);
+        damage = (int)(damage * 0.5f);
         for (int i = 0; i < NumProjectiles; i++)
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(14.25f));

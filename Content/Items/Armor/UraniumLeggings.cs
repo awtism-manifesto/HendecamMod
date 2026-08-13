@@ -13,11 +13,7 @@ public class UraniumLeggings : ModItem
     public static readonly int AdditiveDamageBonus = 8;
     public static LocalizedText SetBonusText { get; private set; }
 
-    public override void SetStaticDefaults()
-    {
-       
-        SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs();
-    }
+   
 
     public override void SetDefaults()
     {
@@ -71,6 +67,6 @@ public class UraniumLeggings : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = SetBonusText.Value;
+        player.setBonus = "Has a chance to give a stacking attack speed buff upon hitting an enemy";
     }
 }

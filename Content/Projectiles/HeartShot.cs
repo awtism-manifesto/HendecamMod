@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
 
@@ -8,7 +9,7 @@ public class HeartShot : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 2; // The length of old position to be recorded
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
     }
 
@@ -31,35 +32,7 @@ public class HeartShot : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        // If collide with tile, reduce the penetrate.
-        // So the projectile can reflect at most 5 times
-        Projectile.penetrate--;
-        if (Projectile.penetrate <= 0)
-        {
-            Projectile.Kill();
-        }
-        else
-        {
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-
-            // If the projectile hits the left or right side of the tile, reverse the X velocity
-            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-            {
-                Projectile.velocity.X = -oldVelocity.X;
-            }
-
-            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-            {
-                Projectile.velocity.Y = -oldVelocity.Y;
-            }
-        }
-
-        return false;
-    }
+   
 
     public override bool PreDraw(ref Color lightColor)
     {
@@ -79,7 +52,7 @@ public class HeartShot : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        //player.Heal((int)(Projectile.damage * 0.1f));
-        base.OnHitNPC(target, hit, damageDone);
+        Player player = Main.player[Projectile.owner];
+        player.AddBuff(BuffType<HeartBuff>(), 120);
     }
 }

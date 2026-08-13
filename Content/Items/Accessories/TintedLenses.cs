@@ -42,7 +42,7 @@ public class TintedLenses : ModItem
             OverrideColor = new Color(255, 255, 255)
         };
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Reduces the Lobotometer's impact on your")
+        line = new TooltipLine(Mod, "Face", "Reduces the Lobotometer's impact on your vision")
         {
             OverrideColor = new Color(255, 255, 255)
         };

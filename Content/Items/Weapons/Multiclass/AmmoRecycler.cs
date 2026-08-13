@@ -238,8 +238,11 @@ public class AmmoRecycler : ModItem
 
         int boostedDamage;
 
-
-        if (Main.hardMode)
+        if (Main.hardMode && NPC.downedAncientCultist)
+        {
+            boostedDamage = (int)(calculatedDamage * 2.75f);
+        }
+        else if (Main.hardMode)
         {
              boostedDamage = (int)(calculatedDamage * 2.25f);
         }
@@ -264,10 +267,12 @@ public class AmmoRecycler : ModItem
         var line = new TooltipLine(Mod, "Face", "Cycles between using Bullets, Arrows, Rockets and Darts with every shot");
         tooltips.Add(line);
 
-        var line1 = new TooltipLine(Mod, "Face", "Right click to zoom");
+        var line1 = new TooltipLine(Mod, "Face", "Has a built-in laser sight, can also Right click to zoom");
         tooltips.Add(line1);
 
         line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo, increases all ammo base damage by 1.75x");
+        tooltips.Add(line);
+        line = new TooltipLine(Mod, "Face", "This ammo damage multiplier gets stronger in hardmode and again after beating Lunatic Cultist");
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does not work unless you have all four types of ammo");
         tooltips.Add(line);

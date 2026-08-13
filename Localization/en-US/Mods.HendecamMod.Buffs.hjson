@@ -367,3 +367,28 @@ TerminalLucidity: {
 	DisplayName: Terminal Lucidity
 	Description: Mods.HendecamMod.Buffs.TerminalLucidity.Description
 }
+
+RadSpeed: {
+	DisplayName: Rad Speed I
+	Description: Slightly increased attack speed
+}
+
+RadSpeed2: {
+	DisplayName: Rad Speed II
+	Description: Moderately increased attack speed
+}
+
+RadSpeed3: {
+	DisplayName: Rad Speed III
+	Description: Significantly increased attack speed
+}
+
+RadSpeed4: {
+	DisplayName: Rad Speed IV
+	Description: Heavily increased attack speed
+}
+
+RadSpeed5: {
+	DisplayName: Rad Speed V
+	Description: Ludicrously increased attack speed
+}

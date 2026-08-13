@@ -1,6 +1,9 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
+using Terraria.DataStructures;
 using Terraria.Localization;
+using static HendecamMod.Content.Items.Armor.YelmutLeggings;
 
 namespace HendecamMod.Content.Items.Armor;
 
@@ -74,8 +77,168 @@ public class UraniumChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.lifeRegen += -2;
-        player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
-        player.setBonus = "Increases attack speed at the cost of life regen";
+        player.GetModPlayer<RadSpeedSys>().RadArmor = true;
+        player.setBonus = "Has a chance to give a stacking attack speed buff upon hitting an enemy";
     }
+}
+public class RadSpeedSys : ModPlayer
+{
+    public bool RadArmor;
+
+    // Track time since last hit
+    private int _framesSinceLastHit;
+    private const int MaxFramesForMaxChance = 180; // 3 seconds at 60 FPS
+
+    // Track current buff stage
+    private int _currentStage;
+    private const int MaxStage = 5;
+
+    // Base chance per stage (will be modified by time since last hit)
+    private float[] _baseChances = { 0.20f, 0.15f, 0.12f, 0.10f, 0.08f };
+
+    // Buff durations in frames (60 frames = 1 second)
+    private int[] _buffDurations = { 240, 300, 360, 420, 480 }; // 4, 5, 6, 7, 8 seconds
+
+    public override void ResetEffects()
+    {
+        RadArmor = false;
+
+        // Only reset the timer if we're not in combat
+        // This prevents the timer from resetting mid-combat
+        if (!RadArmor)
+        {
+            _framesSinceLastHit = 0;
+            _currentStage = 0;
+        }
+    }
+
+    public override void PostUpdate()
+    {
+        // Increment the timer if we haven't hit anything
+        if (RadArmor)
+        {
+            _framesSinceLastHit++;
+
+            // Cap the timer to prevent overflow
+            if (_framesSinceLastHit > MaxFramesForMaxChance * 2)
+                _framesSinceLastHit = MaxFramesForMaxChance * 2;
+        }
+    }
+
+    public override void OnHitAnything(float x, float y, Entity victim)
+    {
+        if (!RadArmor)
+            return;
+
+        // Reset the timer on hit
+        _framesSinceLastHit = 0;
+
+        // Check if we can apply a buff
+        TryApplyBuff();
+    }
+
+    private void TryApplyBuff()
+    {
+        // Determine which stage to try applying
+        int targetStage = GetCurrentStage();
+
+        // If we're already at max stage, try to refresh it
+        if (targetStage >= MaxStage)
+        {
+            if (ShouldApplyBuff(MaxStage))
+            {
+                ApplyBuff(MaxStage);
+            }
+            return;
+        }
+
+        // Try to apply the next stage
+        int nextStage = targetStage + 1;
+        if (ShouldApplyBuff(nextStage))
+        {
+            ApplyBuff(nextStage);
+        }
+    }
+
+    private int GetCurrentStage()
+    {
+        // Check which buff is currently active
+        if (Player.HasBuff(BuffType<RadSpeed5>())) return 5;
+        if (Player.HasBuff(BuffType<RadSpeed4>())) return 4;
+        if (Player.HasBuff(BuffType<RadSpeed3>())) return 3;
+        if (Player.HasBuff(BuffType<RadSpeed2>())) return 2;
+        if (Player.HasBuff(BuffType<RadSpeed>())) return 1;
+        return 0;
+    }
+
+    private bool ShouldApplyBuff(int stage)
+    {
+        // Calculate chance multiplier based on time since last hit
+        float timeMultiplier = CalculateTimeMultiplier();
+
+        // Get base chance for this stage (0-indexed)
+        float baseChance = _baseChances[stage - 1];
+
+        // Calculate final chance
+        float finalChance = Math.Min(baseChance * timeMultiplier, 0.95f);
+
+        // Roll for the buff
+        return Main.rand.NextFloat() < finalChance;
+    }
+
+    private float CalculateTimeMultiplier()
+    {
+        // Calculate how long it's been since last hit as a percentage of max
+        float timeRatio = (float)_framesSinceLastHit / MaxFramesForMaxChance;
+
+        // Clamp between 0 and 1
+        timeRatio = Math.Min(timeRatio, 1f);
+
+        
+        return 1f + (timeRatio * 2f);
+    }
+
+    private void ApplyBuff(int stage)
+    {
+        // Clear lower stage buffs when applying a higher stage
+        if (stage > 1)
+        {
+            Player.ClearBuff(BuffType<RadSpeed>());
+        }
+        if (stage > 2)
+        {
+            Player.ClearBuff(BuffType<RadSpeed2>());
+        }
+        if (stage > 3)
+        {
+            Player.ClearBuff(BuffType<RadSpeed3>());
+        }
+        if (stage > 4)
+        {
+            Player.ClearBuff(BuffType<RadSpeed4>());
+        }
+
+        // Apply the appropriate buff with its duration
+        int duration = _buffDurations[stage - 1];
+        switch (stage)
+        {
+            case 1:
+                Player.AddBuff(BuffType<RadSpeed>(), duration);
+                break;
+            case 2:
+                Player.AddBuff(BuffType<RadSpeed2>(), duration);
+                break;
+            case 3:
+                Player.AddBuff(BuffType<RadSpeed3>(), duration);
+                break;
+            case 4:
+                Player.AddBuff(BuffType<RadSpeed4>(), duration);
+                break;
+            case 5:
+                Player.AddBuff(BuffType<RadSpeed5>(), duration);
+                break;
+        }
+    }
+
+   
 }

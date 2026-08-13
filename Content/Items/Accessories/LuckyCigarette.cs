@@ -18,7 +18,8 @@ public class LuckyCigarette : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.breathMax = 167;
+        player.luck += 0.067f;
+        player.breathMax = 150;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
     }
 
@@ -26,7 +27,7 @@ public class LuckyCigarette : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "10% increased crit chance");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time")
+        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time and increases luck")
         {
             OverrideColor = new Color(255, 255, 255)
         };

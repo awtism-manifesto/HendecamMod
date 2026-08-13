@@ -31,7 +31,13 @@ public class PitVipers : ModItem
         var line = new TooltipLine(Mod, "Face", "12% incrased damage, crit chance, and attack speed as well as 12 armor penetration for the Stupid class");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "+175 Max Braincells and 105% increased lobotometer decay rate")
+        line = new TooltipLine(Mod, "Face", "+175 Max Braincells and 150% increased lobotometer decay rate")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+       
+        line = new TooltipLine(Mod, "Face", "Significantly reduces the Lobotometer's impact on your vision")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -66,8 +72,8 @@ public class PitVipers : ModItem
         loboPlayer.TemporaryBonus += 175f;
 
 
-        var loboDecay = player.GetModPlayer<LobotometerPlayer>();
-        loboDecay.DecayRateMultiplier *= 2.05f;
+        loboPlayer.LobotometerShaderStrength *= 0.67f;
+        loboPlayer.DecayRateMultiplier *= 1.5f;
 
     }
 }
