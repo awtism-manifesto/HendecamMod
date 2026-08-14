@@ -1051,7 +1051,6 @@ public class HendecamDrops : GlobalNPC
         if (npc.type == NPCID.RedDevil)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<FireDiamond>(), 4, 2, 7));
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
 
         }
 
@@ -1087,66 +1086,6 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<SteelBar>(), chanceDenominator: 5, 1, 3));
 
-        }
-
-        if (npc.type == NPCID.Corruptor)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.FloatyGross)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.GiantBat)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.GiantFlyingFox)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.Gastropod)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.IlluminantBat)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.IceElemental)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.Lavabat)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.MossHornet)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.Pixie)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.Wraith)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
-        }
-
-        if (npc.type == NPCID.WanderingEye)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SoulOfHeight>(), chanceDenominator: 3));
         }
 
         if (npc.type == NPCID.DarkCaster)

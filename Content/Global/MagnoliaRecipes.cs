@@ -9,8 +9,7 @@ public class MagnoliaRecipes : ModSystem
     {
         Recipe recipe = Recipe.Create(ItemID.SkyFracture);
         recipe.AddIngredient(ItemID.MagicMissile);
-        recipe.AddIngredient<LunarGem>(4);
-        recipe.AddIngredient<SoulOfHeight>(16);
+        recipe.AddIngredient<LunarGem>(20);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
@@ -175,15 +174,6 @@ public class MagnoliaRecipes : ModSystem
         A26.AddIngredient(ItemID.Handgun);
         A26.AddTile(TileID.Anvils);
         A26.Register();
-
-        Recipe A27 = Recipe.Create(ItemID.RainbowRod);
-        A27.AddIngredient(ItemID.CrystalShard, 15);
-        A27.AddIngredient(ItemID.UnicornHorn, 2);
-        A27.AddIngredient(ItemID.PixieDust, 10);
-        A27.AddIngredient<SoulOfHeight>(8);
-        A27.AddIngredient(ItemID.RainbowBrick, 25);
-        A27.AddTile(TileID.Anvils);
-        A27.Register();
 
         Recipe A28 = Recipe.Create(ItemID.Mushroom);
         A28.AddIngredient(ItemID.GlowingMushroom);
@@ -389,18 +379,6 @@ public class MagnoliaRecipes : ModSystem
         Recipe A186 = Recipe.Create(ItemID.PaperAirplaneB, 2);
         A186.AddIngredient<Paper>();
         A186.Register();
-
-        Recipe A187 = Recipe.Create(ItemID.LuckyHorseshoe);
-        A187.AddIngredient<SoulOfHeight>(3);
-        A187.AddIngredient(ItemID.GoldBar, 4);
-        A187.AddTile(TileID.Anvils);
-        A187.Register();
-
-        Recipe A188 = Recipe.Create(ItemID.LuckyHorseshoe);
-        A188.AddIngredient<SoulOfHeight>(3);
-        A188.AddIngredient(ItemID.PlatinumBar, 4);
-        A188.AddTile(TileID.Anvils);
-        A188.Register();
 
         Recipe A189 = Recipe.Create(ItemID.PirateMap, 2);
         A189.AddIngredient<Paper>(30);
