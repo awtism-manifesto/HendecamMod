@@ -42,7 +42,7 @@ public class MantleAirBlast : ModProjectile
         }
 
 
-        if (Projectile.timeLeft <= 6)
+        if (Projectile.timeLeft <= 9)
         {
             mantiusColor = new Color(185, 15, 90);
         }

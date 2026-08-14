@@ -21,7 +21,7 @@ public class SolarRay : ModProjectile
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.alpha = 255;
         Projectile.timeLeft = 110; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-        Projectile.penetrate = 2;
+        Projectile.penetrate = 4;
         Projectile.usesLocalNPCImmunity = true;
         Projectile.localNPCHitCooldown = -1;
         Projectile.light = 0.4f; // How much light emit around the projectile
@@ -50,7 +50,7 @@ public class SolarRay : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        Projectile.damage = (int)(Projectile.damage * 0.75f);
+        Projectile.damage = (int)(Projectile.damage * 0.8f);
         for (int i = 0; i < 7; i++) // Creates a splash of dust around the position the projectile dies.
         {
             Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.HallowedWeapons);

@@ -139,7 +139,7 @@ public class SuperMaelstromProj : ModProjectile
                     }
 
                     // Increase rotation angle by 6 degrees for next shot
-                    RotationAngle += 15f;
+                    RotationAngle += 10f;
                 }
             }
         }

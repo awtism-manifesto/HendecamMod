@@ -19,7 +19,7 @@ public class PurifiedSpear : ModProjectile
     {
         if (Main.rand.NextBool(3))
         {
-            Vector2 Peanits = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-150, 150), 840));
+            Vector2 Peanits = (target.Center - new Vector2(Main.rand.Next(-150, 150), 840));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Peanits,
                 new Vector2(24, 0).RotatedBy((Peanits).DirectionTo(Projectile.Center).ToRotation()),
                 ProjectileType<PurifiedSaltProj>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
@@ -27,13 +27,13 @@ public class PurifiedSpear : ModProjectile
 
         if (Main.rand.NextBool(2))
         {
-            Vector2 Jorkin = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-70, 70), 925));
+            Vector2 Jorkin = (target.Center - new Vector2(Main.rand.Next(-70, 70), 925));
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Jorkin,
                 new Vector2(28, 0).RotatedBy((Jorkin).DirectionTo(Projectile.Center).ToRotation()),
                 ProjectileType<PurifiedSaltProj>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);
         }
 
-        Vector2 Stripped = (Main.player[Projectile.owner].Center - new Vector2(Main.rand.Next(-30, 30), 770));
+        Vector2 Stripped = (target.Center - new Vector2(Main.rand.Next(-30, 30), 770));
         Projectile.NewProjectile(Projectile.GetSource_FromThis(), Stripped,
             new Vector2(32, 0).RotatedBy((Stripped).DirectionTo(Projectile.Center).ToRotation()),
             ProjectileType<PurifiedSaltProj>(), (int)(Projectile.damage * 0.4f), Projectile.knockBack, Projectile.owner);

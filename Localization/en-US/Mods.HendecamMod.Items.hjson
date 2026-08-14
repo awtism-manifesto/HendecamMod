@@ -1406,7 +1406,7 @@ AuspiciousArtillery: {
 }
 
 Autocannon: {
-	DisplayName: Autocannon
+	DisplayName: AC-8 Autocannon
 	Tooltip: ""
 }
 

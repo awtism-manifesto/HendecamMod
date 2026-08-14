@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using HendecamMod.Content.Dusts;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;
 
@@ -84,6 +85,13 @@ public class ChargeLaser : ModProjectile
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
+        for (int i = 0; i < 5; i++) // Creates a splash of dust around the position the projectile dies.
+        {
+            Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>());
+            dust.noGravity = true;
+            dust.velocity *= 8.5f;
+            dust.scale *= 0.8f;
+        }
         target.AddBuff(BuffID.Electrified, 240);
     }
 

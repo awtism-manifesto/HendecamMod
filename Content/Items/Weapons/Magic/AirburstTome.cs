@@ -21,7 +21,7 @@ public class AirburstTome : ModItem
         Item.useAnimation = 24; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-        Item.mana = 10;
+        Item.mana = 8;
         // The sound that this item plays when used.
         Item.UseSound = SoundID.Item32;
         // Weapon Properties

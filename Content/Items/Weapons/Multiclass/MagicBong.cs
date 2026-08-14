@@ -41,14 +41,14 @@ public class MagicBong : ModItem
         Item.damage = 14; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 11;
+        Item.mana = 12;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileType<ZazaMagic>();
 
         Item.shootSpeed = 4.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-    public float LobotometerCost = 11f;
+    public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

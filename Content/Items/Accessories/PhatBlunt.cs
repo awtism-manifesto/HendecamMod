@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -20,7 +21,7 @@ public class PhatBlunt : ModItem
         var line = new TooltipLine(Mod, "Face", "+1.5 hp/s life regen and +10% max life");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time")
+        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time and Lobotometer visual impact")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -38,6 +39,8 @@ public class PhatBlunt : ModItem
         player.statLifeMax2 = (int)(player.statLifeMax2 * 1.1f);
         player.lifeRegen += 3;
         player.breathMax = 167;
+        var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
+        loboPlayer.LobotometerShaderStrength *= 0.9f;
     }
 
     public override void AddRecipes()

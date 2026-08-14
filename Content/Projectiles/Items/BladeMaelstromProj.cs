@@ -141,7 +141,7 @@ public class BladeMaelstromProj : ModProjectile
                         shoot2Velocity, type, Projectile.damage, 3, Projectile.owner);
 
                     
-                    RotationAngle += 15f;
+                    RotationAngle += 10f;
 
                     
                     RotationAngle %= 360f;
