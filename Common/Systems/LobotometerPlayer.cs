@@ -177,6 +177,11 @@ namespace HendecamMod.Common.Systems
                     intensityMultiplier *= 0.175f;
                 }
 
+                if (Main.masterMode && Player.HasBuff(BuffID.Rabies))
+                {
+                    intensityMultiplier *= 1.225f;
+                }
+
                 LobotometerShaderStrength = BaseLobotometerShaderStrength * intensityMultiplier;
 
                 if (Main.zenithWorld)

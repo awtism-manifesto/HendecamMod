@@ -10,6 +10,7 @@ public class MagnoliaRecipes : ModSystem
         Recipe recipe = Recipe.Create(ItemID.SkyFracture);
         recipe.AddIngredient(ItemID.MagicMissile);
         recipe.AddIngredient<LunarGem>(20);
+        recipe.AddIngredient(ItemID.SoulofFlight, 10);
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 

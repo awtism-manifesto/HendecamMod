@@ -30,7 +30,7 @@ public class TheXRay : ModItem
         Item.value = 1050000;
         Item.rare = ItemRarityID.LightPurple;
         Item.shoot = ProjectileType<Xray>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 14.95f; // Speed of the projectiles the sword will shoot
+        Item.shootSpeed = 25f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -56,18 +56,7 @@ public class TheXRay : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+       
     }
 
     public override Vector2? HoldoutOffset()

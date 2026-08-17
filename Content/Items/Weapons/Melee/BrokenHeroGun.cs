@@ -11,12 +11,12 @@ public class BrokenHeroGun : ModItem
         Item.width = 33;
         Item.height = 48;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 10;
-        Item.useAnimation = 10;
+        Item.useTime = 13;
+        Item.useAnimation = 13;
         Item.autoReuse = true;
         Item.scale = 1.33f;
         Item.DamageType = DamageClass.Melee;
-        Item.damage = 102;
+        Item.damage = 137;
         Item.knockBack = 3;
         Item.value = Item.buyPrice(gold: 5);
         Item.rare = ItemRarityID.Yellow;
@@ -27,7 +27,7 @@ public class BrokenHeroGun : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 12; 
+        const int NumProjectiles = 4; 
         damage = (int)(damage * Main.rand.NextFloat(0.666f, 0.667f));
         for (int i = 0; i < NumProjectiles; i++)
         {
