@@ -18,7 +18,7 @@ public class StreakParticle : ParticleType
 
     public override void Update(ref Particle particle)
     { // Calls every frame the dust is active
-        particle.position += particle.velocity;
+        particle.position += particle.velocity; // not necessary
         particle.rotation = particle.velocity.ToRotation() - MathHelper.PiOver2;
         particle.scale *= 0.97f;
         particle.velocity *= 0.94f;
