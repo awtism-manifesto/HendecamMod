@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Terraria.Audio;
 
@@ -157,8 +158,28 @@ public class GeigerBoom : ModProjectile
                 Projectile.owner
             );
         }
+
+        for (int i = 0; i < 12; i++)
+        {
+            Color randColor = Main.rand.NextFromList(Color.Red, Color.Blue, Color.Green);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak, 
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(7, 10),
+                randColor, 
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
+
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(1, 4),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
+        }
         // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 17; j++)
+        /*for (int j = 0; j < 17; j++)
         {
             Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
             fireDust.noGravity = true;
@@ -233,7 +254,7 @@ public class GeigerBoom : ModProjectile
             fireeeDust.velocity *= 8f;
             fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
             fireeeDust.velocity *= 4f;
-        }
+        }*/
 
         // Rocket II explosion that damages tiles.
         //if (Projectile.owner == Main.myPlayer) {
