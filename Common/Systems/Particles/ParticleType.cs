@@ -67,6 +67,6 @@ public abstract class ParticleType : ILoadable
 
     public void Unload()
     {
-        Texture.Dispose();
+        //Texture.Dispose();
     }
 }
