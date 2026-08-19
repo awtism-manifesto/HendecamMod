@@ -161,7 +161,7 @@ public class GeigerBoom : ModProjectile
 
         for (int i = 0; i < 12; i++)
         {
-            Color randColor = Main.rand.NextFromList(Color.Red, Color.Blue, Color.Green);
+            Color randColor = Main.rand.NextFromList(Color.Red, Color.BlueViolet, Color.Green, Color.Gray);
             ParticleSystem.SpawnParticle(
                 ParticleID.Streak, 
                 Projectile.Center,

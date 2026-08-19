@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.DamageClasses;
+﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Content.DamageClasses;
 using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
@@ -144,21 +145,24 @@ public class MoonBoom : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(530, 530);
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 33; j++)
+        for (int i = 0; i < 43; i++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.75f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 4f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.MoonBoulder, 0f, 0f, 100, default, 2.25f);
-            fireeDust.noGravity = true;
-            fireeDust.velocity *= 4f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.MoonBoulder, 0f, 0f, 100, default, 2.25f);
-            fireeDust.noGravity = true;
-            fireeDust.velocity *= 4f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Meteorite, 0f, 0f, 100);
-            fireDust.velocity *= 2f;
-            fireDust.noGravity = true;
+            Color randColor = Main.rand.NextFromList(Color.LightGray, Color.SlateGray, Color.Cyan, Color.Gray, Color.DarkCyan);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(8, 14),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
+
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(2, 5),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
 
         // Rocket II explosion that damages tiles.

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using Terraria.Audio;
@@ -139,82 +140,24 @@ public class EmblemBoom : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(275, 275);
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
+        for (int i = 0; i < 32; i++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.2f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 11f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
-            fireDust.velocity *= 6.5f;
-            Dust fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.3f);
-            fire1Dust.noGravity = true;
-            fire1Dust.velocity *= 11f;
-            fire1Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.1f);
-            fire1Dust.velocity *= 6.5f;
-            Dust fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 3.6f);
-            fire11Dust.noGravity = true;
-            fire11Dust.velocity *= 11f;
-            fire11Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.4f);
-            fire11Dust.velocity *= 6.5f;
-        }
+            Color randColor = Main.rand.NextFromList(Color.Red, Color.BlueViolet, Color.Green, Color.Gray);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(8, 14),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
 
-        for (int j = 0; j < 8; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 3.1f);
-            fireDust.velocity *= 3f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 2.2f);
-            fireeDust.noGravity = true;
-            fireeDust.velocity *= 7f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 3f);
-            fireeDust.velocity *= 3f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.9f);
-            fireeeDust.noGravity = true;
-            fireeeDust.velocity *= 7f;
-            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.4f);
-            fireeeDust.velocity *= 3f;
-        }
-
-        for (int j = 0; j < 17; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 12f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.3f);
-            fireDust.velocity *= 10f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3f);
-            fireeDust.noGravity = true;
-            fireeDust.velocity *= 12f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.8f);
-            fireeDust.velocity *= 10f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 2.7f);
-            fireeeDust.noGravity = true;
-            fireeeDust.velocity *= 12f;
-            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<PlutoniumDust>(), 0f, 0f, 100, default, 3.2f);
-            fireeeDust.velocity *= 10f;
-        }
-
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 14; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 8f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 4f;
-            Dust fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
-            fireeDust.noGravity = true;
-            fireeDust.velocity *= 8f;
-            fireeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
-            fireeDust.velocity *= 4f;
-            Dust fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 3.5f);
-            fireeeDust.noGravity = true;
-            fireeeDust.velocity *= 8f;
-            fireeeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<UraniumDust>(), 0f, 0f, 100, default, 1.5f);
-            fireeeDust.velocity *= 4f;
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(2, 5),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
 
         // Rocket II explosion that damages tiles.

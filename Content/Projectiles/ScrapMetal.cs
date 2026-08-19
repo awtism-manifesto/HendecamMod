@@ -27,14 +27,12 @@ public class ScrapMetal : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 3; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
 
         AIType = ProjectileID.PoisonDart; // Act exactly like default Bullet
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 4;
-    }
+   
 
     public override bool OnTileCollide(Vector2 oldVelocity)
     {

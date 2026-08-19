@@ -1,12 +1,10 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems.Particles;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class DemonFlame : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
-        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-    }
+   
 
     public override void SetDefaults()
     {
@@ -35,35 +33,21 @@ public class DemonFlame : ModProjectile
         {
             for (int i = 0; i < 2; i++)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                Color randColor = Main.rand.NextFromList(Color.Red, Color.DarkRed, Color.Purple, Color.Orange, Color.Black);
+                
+                
+                
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 29, Projectile.height - 29, DustID.CrimsonTorch, 0f, 0f, 100, default, 2.8f);
-                fire2Dust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
-                fire2Dust.noGravity = true;
-                fire2Dust.velocity *= 2.2f;
-                Dust fire3Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 29, Projectile.height - 29, DustID.DemonTorch, 0f, 0f, 100, default, 2f);
-                fire3Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
-                fire3Dust.noGravity = true;
-                fire3Dust.velocity *= 2.2f;
-                Dust fire4Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Wraith, 0f, 0f, 100, default, 1.5f);
-                fire4Dust.fadeIn = 0.2f + Main.rand.Next(2) * 0.1f;
-                fire4Dust.noGravity = true;
-                fire4Dust.velocity *= 1.25f;
-
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 29, Projectile.height - 29, DustID.RedTorch, 0f, 0f, 100, default, 2.8f);
-                fireDust.fadeIn = 0.1f + Main.rand.Next(4) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 2.2f;
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Fire,
+                    Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
+                    Vector2.Zero,
+                    randColor,
+                    Main.rand.NextFloat(0.4f, 0.8f),
+                    Main.rand.NextFloat(0.7f, 1f));
             }
         }
     }
-
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         Projectile.damage = (int)(Projectile.damage * 0.975f);

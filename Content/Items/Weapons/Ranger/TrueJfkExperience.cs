@@ -14,7 +14,7 @@ public class TrueJfkExperience : ModItem
         // Common Properties
         Item.width = 62; // Hitbox width of the item.
         Item.height = 32; // Hitbox height of the item.
-        Item.scale = 1.5f;
+        Item.scale = 1f;
         Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
         Item.value = 22500000;
         // Use Properties
@@ -120,7 +120,7 @@ public class TrueJfkExperience : ModItem
 
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-25f, -1f);
+        return new Vector2(-55f, -1f);
     }
     public override void HoldItem(Player player)
     {

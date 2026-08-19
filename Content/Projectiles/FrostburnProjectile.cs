@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems.Particles;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class FrostburnProjectile : ModProjectile
 {
@@ -35,18 +37,18 @@ public class FrostburnProjectile : ModProjectile
         {
             for (int i = 0; i < 2; i++)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                Color randColor = Main.rand.NextFromList(Color.Cyan, Color.AliceBlue, Color.DeepSkyBlue);
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.IceTorch, 0f, 0f, 100, default, 2.05f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 1.45f;
+
+
+
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Fire,
+                    Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
+                    Vector2.Zero,
+                    randColor,
+                     Main.rand.NextFloat(0.4f, 0.8f),
+                    Main.rand.NextFloat(0.7f, 1f));
             }
         }
     }

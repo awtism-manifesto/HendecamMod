@@ -93,50 +93,10 @@ public class AMRRound : ModProjectile
 
     public override void OnKill(int timeLeft)
     {
-        // Vanilla code takes care ensuring that in For the Worthy or Get Fixed Boi worlds the blast can damage other players because
-        // this projectile is ProjectileID.Sets.Explosive[Type] = true;. It also takes care of hurting the owner. The Projectile.PrepareBombToBlow
-        // and Projectile.HurtPlayer methods can be used directly if needed for a projectile not using ProjectileID.Sets.Explosive
-
-        // Play an exploding sound.
+      
         SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
 
        
 
-        // Spawn a bunch of smoke dusts.
-        for (int i = 0; i < 30; i++)
-        {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, default, 1.5f);
-            smokeDust.velocity *= 1.4f;
-        }
-
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3f;
-        }
-
-        
-
-        // Rocket II explosion that damages tiles.
-        //if (Projectile.owner == Main.myPlayer) {
-        //	int blastRadius = 3; // Rocket IV: 5, Mini Nuke Rocket II: 7
-
-        //	int minTileX = (int)(Projectile.Center.X / 16f - blastRadius);
-        //	int maxTileX = (int)(Projectile.Center.X / 16f + blastRadius);
-        //	int minTileY = (int)(Projectile.Center.Y / 16f - blastRadius);
-        //	int maxTileY = (int)(Projectile.Center.Y / 16f + blastRadius);
-
-        // Make sure the tiles are inside the world.
-        // Utils.ClampWithinWorld(ref minTileX, ref maxTileX, ref minTileY, ref maxTileY);
-
-        // Check to see if the walls should be destroyed, too.
-        //	bool wallSplode = Projectile.ShouldWallExplode(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY);
-        // Do the damage.
-        //	Projectile.ExplodeTiles(Projectile.position, blastRadius, minTileX, maxTileX, minTileY, maxTileY, wallSplode);
-        //}
     }
 }

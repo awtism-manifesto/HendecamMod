@@ -1,4 +1,5 @@
-﻿using Terraria.Audio;
+﻿using HendecamMod.Common.Systems.Particles;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -146,14 +147,24 @@ public class BoomSmall : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(130, 130);
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 15; j++)
+        for (int i = 0; i < 12; i++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 2.75f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3f;
+            Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(2, 5),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
+
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(1, 3),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
 
         // Rocket II explosion that damages tiles.

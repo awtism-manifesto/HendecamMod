@@ -21,7 +21,7 @@ public class PocketBeetles : ModItem
 
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 6;
-        Item.useAnimation = 30;
+        Item.useAnimation = 24;
         Item.autoReuse = true;
 
         Item.DamageType = GetInstance<SummonStupidDamage>();
@@ -43,7 +43,7 @@ public class PocketBeetles : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    public float LobotometerCost = 9f;
+    public float LobotometerCost = 3f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -82,7 +82,7 @@ public class PocketBeetles : ModItem
         // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
         var line = new TooltipLine(Mod, "Face", "The beetles hit tagged enemies harder");
         tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
+        line = new TooltipLine(Mod, "Face", "Uses 12 Braincells")
         {
             OverrideColor = new Color(255, 255, 255)
         };

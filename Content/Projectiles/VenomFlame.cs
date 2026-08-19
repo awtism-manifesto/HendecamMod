@@ -1,13 +1,10 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems.Particles;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class VenomFlame : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1; // The length of old position to be recorded
-        ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
-    }
-
+   
     public override void SetDefaults()
     {
         Projectile.width = 30; // The width of projectile hitbox
@@ -16,7 +13,7 @@ public class VenomFlame : ModProjectile
         Projectile.friendly = true; // Can the projectile deal damage to enemies?
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-        Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+        Projectile.penetrate = 7; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
         Projectile.timeLeft = 57;
 
         Projectile.light = 0.5f;
@@ -36,25 +33,25 @@ public class VenomFlame : ModProjectile
         {
             for (int i = 0; i < 2; i++)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                Color randColor = Main.rand.NextFromList(Color.Violet, Color.Purple, Color.DarkViolet, Color.MediumPurple);
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 30, Projectile.height - 30, DustID.Venom, 0f, 0f, 100, default, 2.25f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(6) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 2.05f;
+
+
+
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Fire,
+                    Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
+                    Vector2.Zero,
+                    randColor,
+                    Main.rand.NextFloat(0.4f, 0.8f),
+                    Main.rand.NextFloat(0.7f, 1f));
             }
         }
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        Projectile.damage = (int)(Projectile.damage * 0.95f);
+        Projectile.damage = (int)(Projectile.damage * 0.875f);
         target.AddBuff(BuffID.Venom, 240);
     }
 }

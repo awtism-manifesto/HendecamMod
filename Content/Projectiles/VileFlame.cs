@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems.Particles;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class VileFlame : ModProjectile
 {
@@ -11,7 +13,7 @@ public class VileFlame : ModProjectile
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 80;
+        Projectile.timeLeft = 59;
 
         Projectile.light = 0.5f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
@@ -26,7 +28,7 @@ public class VileFlame : ModProjectile
 
     public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        modifiers.SourceDamage *= 1.125f;
+        modifiers.SourceDamage *= 1.1f;
     }
 
     public override void AI()
@@ -35,18 +37,18 @@ public class VileFlame : ModProjectile
         {
             for (int i = 0; i < 2; i++)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                Color randColor = Main.rand.NextFromList(Color.Lime, Color.LimeGreen, Color.Green, Color.GreenYellow);
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 1, Projectile.height - 1, DustID.CursedTorch, 0f, 0f, 100, default, 2.05f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(5) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 1.45f;
+
+
+
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Fire,
+                    Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
+                    Vector2.Zero,
+                    randColor,
+                     Main.rand.NextFloat(0.4f, 0.8f),
+                    Main.rand.NextFloat(0.7f, 1f));
             }
         }
     }

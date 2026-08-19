@@ -20,7 +20,7 @@ public class KusariProj : ModProjectile
 
         // YoyosTopSpeed is top speed of the yoyo Projectile.
         // Vanilla values range from 9f (Wood) to 17.5f (Terrarian), and defaults to 10f.
-        ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 23.75f;
+        ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 30f;
         Main.projFrames[Projectile.type] = 6;
     }
 
@@ -83,8 +83,8 @@ public class KusariProj : ModProjectile
                 Vector2 normalizedDirection = directionToMouse;
                 normalizedDirection.Normalize();
 
-                // Max speed of 21.5 (matches yoyo's top speed)
-                float maxSpeed = 23.75f;
+               
+                float maxSpeed = 26.5f;
 
                 // Different pull strengths for horizontal and vertical movement
                 float horizontalPullStrength = 0.85f;  // Base horizontal pull

@@ -1,4 +1,5 @@
-﻿using Terraria.Audio;
+﻿using HendecamMod.Common.Systems.Particles;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -35,7 +36,10 @@ public class IedThrown : ModProjectile
 
     public override void AI()
     {
-        // If timeLeft is <= 3, then explode the rocket.
+        if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 5)
+        {
+            Projectile.velocity.Y = 0f;
+        }
         if (Projectile.owner == Main.myPlayer && Projectile.timeLeft <= 3)
         {
             Projectile.PrepareBombToBlow();
@@ -94,25 +98,24 @@ public class IedThrown : ModProjectile
         // Resize the projectile again so the explosion dust and gore spawn from the middle.
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(155, 155);
-
-        // Spawn a bunch of smoke dusts.
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 19; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Iron, 0f, 0f, 100, default, 1.5f);
-            smokeDust.velocity *= 13.5f;
-            smokeDust.noGravity = true;
-            Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Lead, 0f, 0f, 100, default, 1.5f);
-            smoke3Dust.velocity *= 11.25f;
-        }
+            Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray, Color.Black);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(5, 9),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 9f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3.5f;
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(1, 3),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
     }
 

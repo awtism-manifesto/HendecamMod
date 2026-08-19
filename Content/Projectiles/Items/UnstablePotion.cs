@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles.Enemies;
@@ -94,24 +95,24 @@ public class UnstablePotion : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(336, 336);
 
-        // Spawn a bunch of smoke dusts.
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 15; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CorruptSpray, 0f, 0f, 100, default, 1.5f);
-            smokeDust.velocity *= 13.5f;
-            smokeDust.noGravity = true;
-            Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Clentaminator_Purple, 0f, 0f, 100, default, 1.5f);
-            smoke3Dust.velocity *= 11.25f;
-        }
+            Color randColor = Main.rand.NextFromList(Color.DeepPink, Color.Pink, Color.MediumPurple);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(7, 10),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 20; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BubbleBurst_Purple, 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 9f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3.5f;
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(1, 4),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
     }
 
@@ -197,24 +198,24 @@ public class UnstablePotionBoom : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(880, 880);
 
-        // Spawn a bunch of smoke dusts.
-        for (int i = 0; i < 28; i++)
+        for (int i = 0; i < 15; i++)
         {
-            Dust smokeDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CorruptSpray, 0f, 0f, 100, default, 1.5f);
-            smokeDust.velocity *= 13.5f;
-            smokeDust.noGravity = true;
-            Dust smoke3Dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Clentaminator_Purple, 0f, 0f, 100, default, 1.5f);
-            smoke3Dust.velocity *= 11.25f;
-        }
+            Color randColor = Main.rand.NextFromList(Color.DeepPink, Color.Pink, Color.MediumPurple);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(8, 14),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 36; j++)
-        {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BubbleBurst_Purple, 0f, 0f, 100, default, 3.5f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 9f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 100, default, 1.5f);
-            fireDust.velocity *= 3.5f;
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(8f) * Main.rand.NextFloat(2, 5),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
     }
 

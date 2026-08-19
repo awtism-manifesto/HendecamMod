@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Terraria.Audio;
 
@@ -153,17 +154,26 @@ public class AstaBoomDelayed : ModProjectile
         // Rocket I: 22, Rocket III: 80, Mini Nuke Rocket: 50
         Projectile.Resize(310, 310);
 
-        // Spawn a bunch of fire dusts.
-        for (int j = 0; j < 30; j++)
+        for (int i = 0; i < 25; i++)
         {
-            Dust fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 2.75f);
-            fireDust.noGravity = true;
-            fireDust.velocity *= 7f;
-            fireDust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustType<AstatineDust>(), 0f, 0f, 100, default, 1.2f);
-            fireDust.velocity *= 6f;
-            fireDust.noGravity = true;
+            Color randColor = Main.rand.NextFromList(Color.Red, Color.DarkRed, Color.PaleVioletRed);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(9f) * Main.rand.NextFloat(5, 9),
+                randColor,
+                1f,
+                Main.rand.NextFloat(1f, 1.5f));
+
+            ParticleSystem.SpawnParticle(
+                ParticleID.Fire,
+                Projectile.Center,
+                Vector2.UnitY.RotatedByRandom(5f) * Main.rand.NextFloat(1, 4),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.7f, 1f));
         }
 
-       
+
     }
 }
