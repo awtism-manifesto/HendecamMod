@@ -387,13 +387,13 @@ public class MagnoliaRecipes : ModSystem
         A189.Register();
 
         Recipe A190 = Recipe.Create(ItemID.PixieDust, 10);
-        A190.AddIngredient(ItemID.GoldDust, 10);
+        A189.AddIngredient<Sawdust>(10);
         A190.AddIngredient(ItemID.SoulofLight);
         A190.AddTile<PalladiumWorkBenchPlaced>();
         A190.Register();
 
         Recipe A195 = Recipe.Create(ItemID.PixieDust, 10);
-        A195.AddIngredient(ItemID.GoldDust, 10);
+        A189.AddIngredient<Sawdust>(10);
         A195.AddIngredient(ItemID.SoulofLight);
         A195.AddTile<CobaltWorkBenchPlaced>();
         A195.Register();
