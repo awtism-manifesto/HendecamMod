@@ -51,7 +51,9 @@ public abstract class ParticleType : ILoadable
     }
 
     /// <summary>
-    /// Called after dusts have been updated.
+    /// Calls the appropriate ParticleType's Update method.
+    /// By default, this just increases the particles timer and adds the particle's velocity to its position.
+    /// Particles are updated after dusts.
     /// </summary>
     /// <param name="particle"></param>
     public virtual void Update(ref Particle particle)

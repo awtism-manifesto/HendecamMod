@@ -2,6 +2,7 @@
 
 public struct Particle
 {
+    public const byte DATA_LENGTH = 4;
     /// <summary>
     /// The ParticleID of the particle.
     /// </summary>
@@ -59,6 +60,11 @@ public struct Particle
     /// </summary>
     public Rectangle? frame;
 
+    /// <summary>
+    /// Contains 4 floats that can be used for various purposes depending on particle type.
+    /// </summary>
+    public float[] data;
+
     // You probably don't need to touch this.
     public Particle()
     {
@@ -72,5 +78,6 @@ public struct Particle
         scale = 1f;
         color = Color.White;
         opacity = 1f;
+        data = new float[DATA_LENGTH];
     }
 }

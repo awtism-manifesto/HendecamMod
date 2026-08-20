@@ -133,6 +133,7 @@ public class ParticleSystem : ModSystem
     }
     /// <summary>
     /// Spawns a new particle into the world. Returns a reference to the newly spawned particle.
+    /// The data# params are custom data in the particle.data[] array. Their purpose depends on the particle type.
     /// </summary>
     /// <param name="type">The ParticleID of the particle.</param>
     /// <param name="position">World position of the particle.</param>
@@ -142,7 +143,7 @@ public class ParticleSystem : ModSystem
     /// <param name="opacity">Opacity of the particle.</param>
     /// <param name="scale"></param>
     /// <returns>A reference to the newly spawned particle.</returns>
-    public static ref Particle SpawnParticle(int type, Vector2 position, Vector2 velocity, Color color = default, float opacity = 1f, float scale = 1f)
+    public static ref Particle SpawnParticle(int type, Vector2 position, Vector2 velocity, Color color = default, float opacity = 1f, float scale = 1f, float data0 = 0f, float data1 = 0f, float data2 = 0f, float data3 = 0f)
     {
         if (color == default)
         {
@@ -162,6 +163,10 @@ public class ParticleSystem : ModSystem
             particle1.scale = scale;
             particle1.shouldDie = false;
             particle1.timer = 0;
+            particle1.data[0] = data0;
+            particle1.data[1] = data1;
+            particle1.data[2] = data2;
+            particle1.data[3] = data3;
             TypesByID[particle1.type].OnSpawn(ref particle1);
             ReplacementIndex++;
             if (ReplacementIndex >= MAX_PARTICLES)
@@ -182,6 +187,10 @@ public class ParticleSystem : ModSystem
         particle.scale = scale;
         particle.shouldDie = false;
         particle.timer = 0;
+        particle.data[0] = data0;
+        particle.data[1] = data1;
+        particle.data[2] = data2;
+        particle.data[3] = data3;
         TypesByID[particle.type].OnSpawn(ref particle);
         ActiveParticleCount++;
         return ref particle;

@@ -168,7 +168,8 @@ public class GeigerBoom : ModProjectile
                 Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(7, 10),
                 randColor, 
                 1f,
-                Main.rand.NextFloat(1f, 1.5f));
+                Main.rand.NextFloat(1f, 1.5f),
+                data0: 1);
 
             ParticleSystem.SpawnParticle(
                 ParticleID.Fire,
@@ -176,7 +177,8 @@ public class GeigerBoom : ModProjectile
                 Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(1, 4),
                 randColor,
                 1f,
-                Main.rand.NextFloat(0.7f, 1f));
+                Main.rand.NextFloat(0.7f, 1f),
+                data0: 1);
         }
         // Spawn a bunch of fire dusts.
         /*for (int j = 0; j < 17; j++)

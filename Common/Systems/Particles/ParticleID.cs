@@ -20,5 +20,9 @@ public abstract class ParticleID
     public static int Count => ParticleSystem.TypesByID.Count;
     public static int TestParticle;
     public static int Streak;
+
+    /// <summary>
+    /// data[0] - Rising speed (how fast the dust moves upward per tick, <b>subtracted</b> from the Y velocity)
+    /// </summary>
     public static int Fire;
 }
