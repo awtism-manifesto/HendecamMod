@@ -36,6 +36,6 @@ public class SaltPendant : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        player.endurance = 1f - 0.9555f * (1f - player.endurance);
+        player.endurance += 0.0555f;
     }
 }

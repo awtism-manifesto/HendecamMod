@@ -180,7 +180,7 @@ public class ArchangelWings : ModPlayer
             Player.GetArmorPenetration(DamageClass.Generic) += 5;
             Player.lifeRegen += 6;
             Player.statDefense += 7;
-            Player.endurance = 1f - 0.95f * (1f - Player.endurance);
+            Player.endurance += 0.05f;
             Player.fishingSkill += 77;
             Player.runAcceleration *= 1.67f;
             Player.maxRunSpeed *= 1.15f;

@@ -23,7 +23,7 @@ public class PromethiumOreTile : ModTile
         Main.tileBlockLight[Type] = true;
         Main.tileLighted[Type] = true;
         LocalizedText name = CreateMapEntryName();
-        AddMapEntry(new Color(85, 145, 166), Language.GetText("Promethium Ore"));
+        AddMapEntry(new Color(85, 145, 166), Language.GetText("Promethium"));
 
         DustType = (DustType<MorbiumDust>());
         HitSound = SoundID.Tink;

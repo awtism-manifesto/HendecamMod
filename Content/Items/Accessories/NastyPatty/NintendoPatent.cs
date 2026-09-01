@@ -60,7 +60,6 @@ public class NintendoPatent : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.GemBunnyDiamond, 5);
         recipe.AddIngredient(ItemID.PlumbersHat);
         recipe.AddIngredient(ItemID.PlumbersShirt);
@@ -68,5 +67,20 @@ public class NintendoPatent : ModItem
         recipe.AddIngredient<Paper>();
         recipe.AddTile(TileID.Hellforge);
         recipe.Register();
+
+        if (ModLoader.TryGetMod("TheDepths", out Mod TheDepths)
+            && TheDepths.TryFind("PurplePlumbersHat", out ModItem PurplePlumbersHat)
+            && TheDepths.TryFind("PurplePlumbersShirt", out ModItem PurplePlumbersShirt)
+            && TheDepths.TryFind("PurplePlumbersPants", out ModItem PurplePlumbersPants))
+        {
+            recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.GemBunnyDiamond, 5);
+            recipe.AddIngredient(PurplePlumbersHat.Type);
+            recipe.AddIngredient(PurplePlumbersShirt.Type);
+            recipe.AddIngredient(PurplePlumbersPants.Type);
+            recipe.AddIngredient<Paper>();
+            recipe.AddTile(TileID.Hellforge);
+            recipe.Register();
+        }
     }
 }

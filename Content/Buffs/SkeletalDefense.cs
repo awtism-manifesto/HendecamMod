@@ -9,7 +9,7 @@ public class SkeletalDefense : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.endurance = 1f - 0.95f * (1f - player.endurance);
+        player.endurance += 0.05f;
         player.statDefense += 10;
         
     }

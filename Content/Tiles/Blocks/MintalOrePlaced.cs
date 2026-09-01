@@ -21,7 +21,7 @@ public class MintalOrePlaced : ModTile
         Main.tileBlockLight[Type] = true;
 
         LocalizedText name = CreateMapEntryName();
-        AddMapEntry(new Color(86, 226, 192), Language.GetText("Mintal Ore"));
+        AddMapEntry(new Color(86, 226, 192), Language.GetText("Mintal"));
 
         DustType = DustType<MintalDust>();
         HitSound = SoundID.Tink;

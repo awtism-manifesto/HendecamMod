@@ -9,7 +9,7 @@ public class MintalOreBlessed : GlobalNPC
 {
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
-        return npc.type == NPCID.WallofFlesh;
+        return MantiusOreBlessed.IsWOF(npc);
     }
 
     public override void OnKill(NPC npc)

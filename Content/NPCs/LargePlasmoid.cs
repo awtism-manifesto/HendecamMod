@@ -96,9 +96,9 @@ public class LargePlasmoid : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        if (!Main.dayTime & BossDownedSystem.downedApacheElfShip & NPC.downedEmpressOfLight)
+        if (spawnInfo.PlayerSafe)
         {
-            return SpawnCondition.Sky.Chance * 0.02f;
+            return 0;
         }
 
         if (!Main.dayTime & BossDownedSystem.downedApacheElfShip)

@@ -58,5 +58,47 @@ public class PlantDrops : GlobalTile
                 }
             }
         }
+
+        if (ModLoader.TryGetMod("Avalon", out Mod Avalon))
+        {
+            if (Avalon.TryFind("ContagionThornyBushes", out ModItem ContagionThornyBushes) && type == ContagionThornyBushes.Type)
+            {
+                if (!fail && !effectOnly)
+                {
+                    // Roll a 1 in 25 chance
+                    if (Main.rand.Next(15) == 0)
+                    {
+                        // Spawn your custom item at the tile position
+                        Item.NewItem(null, i * 16, j * 16, 16, 16, ItemType<WeedLeaves>(), Main.rand.Next(2, 4));
+                    }
+                }
+            }
+
+            if (Avalon.TryFind("ContagionVines", out ModItem ContagionVines) && type == ContagionVines.Type)
+            {
+                if (!fail && !effectOnly)
+                {
+                    // Roll a 1 in 25 chance
+                    if (Main.rand.Next(20) == 0)
+                    {
+                        // Spawn your custom item at the tile position
+                        Item.NewItem(null, i * 16, j * 16, 16, 16, ItemType<WeedLeaves>(), Main.rand.Next(1, 3));
+                    }
+                }
+            }
+
+            if (Avalon.TryFind("SavannaVines", out ModItem SavannaVines) && type == SavannaVines.Type)
+            {
+                if (!fail && !effectOnly)
+                {
+                    // Roll a 1 in 25 chance
+                    if (Main.rand.Next(33) == 0)
+                    {
+                        // Spawn your custom item at the tile position
+                        Item.NewItem(null, i * 16, j * 16, 16, 16, ItemType<WeedLeaves>(), Main.rand.Next(1, 2));
+                    }
+                }
+            }
+        }
     }
 }

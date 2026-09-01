@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.EmoteBubbles;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons.Multiclass;
@@ -82,6 +83,8 @@ public class Alpine : ModNPC
             new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party"),
             new Profiles.DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Party")
         );
+
+        NPCID.Sets.FaceEmote[NPC.type] = EmoteBubbleType<AlpineEmote>();
     }
 
     public override void SetDefaults()

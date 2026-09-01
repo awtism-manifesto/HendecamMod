@@ -1,8 +1,8 @@
-AncientCobaltOrePlaced.MapEntry: Ancient Cobalt Ore
-AzuriteOrePlaced.MapEntry: Azurite Ore
-MintalOrePlaced.MapEntry: Mintal Ore
-MorbiumOrePlaced.MapEntry: Morbium Ore
-TransOrePlaced.MapEntry: Trans Ore
+AncientCobaltOrePlaced.MapEntry: Ancient Cobalt
+AzuriteOrePlaced.MapEntry: Azurite
+MintalOrePlaced.MapEntry: Mintal
+MorbiumOrePlaced.MapEntry: Morbium
+TransOrePlaced.MapEntry: Trans
 CobaltWorkBenchPlaced.MapEntry: Cobalt Work Bench
 
 PlatinumChestPlaced: {
@@ -11,8 +11,11 @@ PlatinumChestPlaced: {
 	Locked: Locked Platinum Chest
 }
 
-LycopiteOreTile.MapEntry: Lycopite Ore
+LycopiteOreTile.MapEntry: Lycopite
 OilDeposit.MapEntry: Oil Deposit
-PromethiumOreTile.MapEntry: Promethium Ore Tile
-MantiusOrePlaced.MapEntry: Mantius Ore Placed
-GogBlockPlaced.MapEntry: Gog Block Placed
+UraniumTile.MapEntry: Uranium
+PlutoniumOrePlaced.MapEntry: Plutonium
+AstatineOrePlaced.MapEntry: Astatine
+PromethiumOreTile.MapEntry: Promethium
+MantiusOrePlaced.MapEntry: Mantius
+GogBlockPlaced.MapEntry: Gog Block

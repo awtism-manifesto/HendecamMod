@@ -148,5 +148,12 @@ Mods: {
 				}
 			}
 		}
+
+		Emotes: {
+			AlpineEmote.Command: alpine
+			PoliticianEmote.Command: politician
+			RiverEmote.Command: river
+			YelmutEmote.Command: yelmut
+		}
 	}
 }

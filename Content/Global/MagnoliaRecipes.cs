@@ -14,8 +14,8 @@ public class MagnoliaRecipes : ModSystem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        Recipe A162 = Recipe.Create(ItemID.Gel, 50);
-        A162.AddIngredient(ItemID.SlimeHook);
+        Recipe A162 = Recipe.Create(ItemID.SlimeHook);
+        A162.AddIngredient(ItemID.Gel, 50);
         A162.AddTile(TileID.Solidifier);
         A162.Register();
 
@@ -284,8 +284,8 @@ public class MagnoliaRecipes : ModSystem
         A168.AddTile<CobaltWorkBenchPlaced>();
         A168.Register();
 
-        Recipe A169 = Recipe.Create(ItemID.GlowingMushroom, 500);
-        A169.AddIngredient(ItemID.Hammush);
+        Recipe A169 = Recipe.Create(ItemID.Hammush);
+        A169.AddIngredient(ItemID.GlowingMushroom, 500);
         A169.AddTile<CobaltWorkBenchPlaced>();
         A169.Register();
 
@@ -299,8 +299,8 @@ public class MagnoliaRecipes : ModSystem
         A193.AddTile<PalladiumWorkBenchPlaced>();
         A193.Register();
 
-        Recipe A194 = Recipe.Create(ItemID.GlowingMushroom, 500);
-        A194.AddIngredient(ItemID.Hammush);
+        Recipe A194 = Recipe.Create(ItemID.Hammush);
+        A194.AddIngredient(ItemID.GlowingMushroom, 500);
         A194.AddTile<PalladiumWorkBenchPlaced>();
         A194.Register();
 

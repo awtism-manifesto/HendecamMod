@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HendecamMod.Content.EmoteBubbles;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
@@ -88,7 +89,9 @@ public class River : ModNPC
             new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party"),
             new Profiles.DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Party")
         );
-        }
+
+        NPCID.Sets.FaceEmote[NPC.type] = EmoteBubbleType<RiverEmote>();
+    }
 
     public override void SetDefaults()
         {

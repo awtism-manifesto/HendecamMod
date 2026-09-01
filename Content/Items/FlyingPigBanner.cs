@@ -1,10 +1,16 @@
-﻿using HendecamMod.Content.Tiles;
+﻿using HendecamMod.Content.NPCs;
+using HendecamMod.Content.Tiles;
 using Terraria.Enums;
 
 namespace HendecamMod.Content.Items;
 
 public class FlyingPigBanner : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.KillsToBanner[NPCType<FlyingPig>()] = 10;
+    }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(TileType<BannerTile>(), (int)BannerTile.StyleID.FlyingPig);

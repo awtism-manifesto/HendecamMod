@@ -1439,7 +1439,14 @@ public class Icee : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.damage = 51;
+        if (Condition.NotRemixWorld.IsMet())
+        {
+            item.damage = 51;
+        }
+        else
+        {
+            item.damage = 11;
+        }
     }
 }
 public class ShadowTheEdgehog : GlobalItem

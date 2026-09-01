@@ -99,7 +99,7 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<PlasticScrap>(), 20, 4, 9));
         }
 
-        if (npc.type == NPCID.Nymph)
+        if (npc.type == NPCID.LostGirl || npc.type == NPCID.Nymph)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 3));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 75, 1, 1));
@@ -972,11 +972,14 @@ public class HendecamDrops : GlobalNPC
         if (npc.type == NPCID.WallofFlesh)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<StalingradSpewer>(), chanceDenominator: 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<StupidEmblem>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 2, 12));
             npcLoot.Add(ItemDropRule.Common(ItemID.ShadowScale, 2, 10, 25));
             npcLoot.Add(ItemDropRule.Common(ItemID.TissueSample, 2, 10, 25));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 1));
+        }
+        if (MantiusOreBlessed.IsWOF(npc))
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<StupidEmblem>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ItemType<MantleBooster>(), chanceDenominator: 1));
         }
         if (npc.type == NPCID.Demon)

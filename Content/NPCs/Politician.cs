@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Dusts;
+using HendecamMod.Content.EmoteBubbles;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
@@ -84,6 +85,8 @@ public class Politician : ModNPC
             new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party"),
             new Profiles.DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Party")
         );
+
+        NPCID.Sets.FaceEmote[NPC.type] = EmoteBubbleType<PoliticianEmote>();
     }
 
     public override void SetDefaults()
@@ -253,12 +256,13 @@ public class Politician : ModNPC
         {
             if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("BacciliteOre", out ModItem BacciliteOre))
             {
-                if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre || item.type == BacciliteOre.Type))
+                if (player.inventory.Any(item => item.type == BacciliteOre.Type))
                 {
                     return true;
                 }
             }
-            else if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre ))
+            
+            if (player.inventory.Any(item => item.type == ItemID.DemoniteOre || item.type == ItemID.CrimtaneOre ))
             {
                 return true;
             }
@@ -290,12 +294,21 @@ public class Politician : ModNPC
             .Add(ItemID.DemoniteBar, Condition.DownedEowOrBoc)
             .Add(ItemID.CrimtaneBar, Condition.DownedEowOrBoc)
             .Add(ItemID.TissueSample, Condition.DownedEowOrBoc)
-            .Add(ItemID.ShadowScale, Condition.DownedEowOrBoc)
+            .Add(ItemID.ShadowScale, Condition.DownedEowOrBoc);
+
+        if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("BacciliteBar", out ModItem BacciliteBar) && Avalon.TryFind("Booger", out ModItem Booger))
+        {
+            npcShop
+                .Add(BacciliteBar.Type, Condition.DownedEowOrBoc)
+                .Add(Booger.Type, Condition.DownedEowOrBoc);
+        }
+
+        npcShop
             .Add<KetamineInjection>(condition: Condition.NpcIsPresent(NPCID.TaxCollector))
             .Add<TarriffStamper>()
             .Add<CarbonDioxideBottle>(Condition.DownedEarlygameBoss)
             .Add<UnicornPoacher>(Condition.InHallow)
-            .Add<BrokenHeroGun>(Condition.Eclipse, Condition.DownedPlantera)
+            .Add<BrokenHeroGun>(Condition.DownedPlantera)
             .Add<LuckyCigarette>(Condition.DownedSkeletron)
             .Add<CorruptLawman>(Condition.Hardmode)
             .Add<CapitalistCarbine>(Condition.Hardmode)

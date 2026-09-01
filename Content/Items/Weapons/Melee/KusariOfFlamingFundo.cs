@@ -65,7 +65,7 @@ public class KusariOfFlamingFundo : ModItem
         {
             if (proj.owner == player.whoAmI && proj.type == ModContent.ProjectileType<KusariProj>() && CDPlayer.FunTimeActive == true)
             {
-                player.endurance = 1f - 0.75f * (1f - player.endurance);
+                player.endurance += 0.25f;
 
             }
         }

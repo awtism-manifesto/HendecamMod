@@ -98,14 +98,9 @@ public class Plasmoid : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3 & NPC.downedEmpressOfLight)
+        if (spawnInfo.PlayerSafe)
         {
-            return SpawnCondition.Sky.Chance * 0.13f;
-        }
-
-        if (NPC.downedMechBoss1 & NPC.downedMechBoss2 & NPC.downedMechBoss3)
-        {
-            return SpawnCondition.Sky.Chance * 0.15f;
+            return 0;
         }
 
         if (NPC.downedDeerclops & NPC.downedBoss2)

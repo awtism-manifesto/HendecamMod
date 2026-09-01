@@ -41,7 +41,8 @@ public class TheSecondAmendment : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) || (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))))
+        // TODO: Fargo's Souls Eternity mode scaling
+        if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) || ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica))
         {
             damage = (int)(damage * 0.67f);
         }
@@ -410,14 +411,14 @@ public class TheSecondAmendment : ModItem
             recipe.AddIngredient(InheritedCaseM4A1.Type);
         }
 
-        if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind("TheBiggestSting", out ModItem TheBiggestSting)
+        if (ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoMerica) && FargoMerica.TryFind("Mahoguny", out ModItem Mahoguny)
                                                                          && FargoMerica.TryFind("NavalRustrifle", out ModItem NavalRustrifle)
                                                                          && FargoMerica.TryFind("Lightslinger", out ModItem Lightslinger))
 
         {
             recipe.AddIngredient(NavalRustrifle.Type);
             recipe.AddIngredient(Lightslinger.Type);
-            recipe.AddIngredient(TheBiggestSting.Type);
+            recipe.AddIngredient(Mahoguny.Type);
         }
 
         if (ModLoader.TryGetMod("ContinentOfJourney", out Mod HomeMerica) && HomeMerica.TryFind("Blackout", out ModItem Blackout)
