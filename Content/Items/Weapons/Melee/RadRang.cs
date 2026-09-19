@@ -23,7 +23,7 @@ public class RadRang : ModItem
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1; // The sound that will play when the item is used.
 
-        Item.damage = 32; // The amount of damage the item does to an enemy or player.
+        Item.damage = 39; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
         Item.ArmorPenetration = 10;
@@ -69,7 +69,11 @@ public class RadRang : ModItem
         // Don't reroll
         return true;
     }
-
+    public override bool CanUseItem(Player player)
+    {
+      
+        return player.ownedProjectileCounts[Item.shoot] < 1;
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

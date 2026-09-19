@@ -202,20 +202,7 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
                 continue;
             }
 
-            // Check if within 10 blocks of lava (keep this condition)
-            if (IsWithinTenBlocksOfLava(x, y))
-            {
-                if (WorldGen.PlaceTile(x, y, TileType<MantiusOrePlaced>(), true, true))
-                {
-                    success = true;
-                    NetMessage.SendTileSquare(-1, x, y, 1);
-                    failedAttempts = 0; // Reset failure counter on success
-                    dynamicDelay = 75; // Reset to normal speed
-
-                    
-                    break;
-                }
-            }
+            
 
             attempts++;
         }
@@ -258,24 +245,5 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
         return mantiusCount >= cap;
     }
 
-    private bool IsWithinTenBlocksOfLava(int x, int y)
-    {
-        int minX = Math.Max(0, x - 10);
-        int maxX = Math.Min(Main.maxTilesX - 1, x + 10);
-        int minY = Math.Max(0, y - 10);
-        int maxY = Math.Min(Main.maxTilesY - 1, y + 10);
-
-        for (int checkX = minX; checkX <= maxX; checkX++)
-        {
-            for (int checkY = minY; checkY <= maxY; checkY++)
-            {
-                Tile tile = Main.tile[checkX, checkY];
-                if (tile.LiquidType == LiquidID.Lava && tile.LiquidAmount > 0)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+   
 }

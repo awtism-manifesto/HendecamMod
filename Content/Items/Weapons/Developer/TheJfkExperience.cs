@@ -3,8 +3,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Developer;
 
-// Rocket launchers are special because they typically have ammo-specific variant projectiles.
-// ExampleRocketLauncher will inherit the variants specified by the Rocket Launcher weapon
+
 public class TheJfkExperience : ModItem
 {
     public override void SetDefaults()
@@ -25,6 +24,11 @@ public class TheJfkExperience : ModItem
         Item.rare = ItemRarityID.Cyan;
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = -1f; // The speed of the projectile (measured in pixels per frame.)
+
+        if (ModLoader.TryGetMod("Avalon", out Mod Avalon))
+        {
+            Item.damage = 67;
+        }
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -47,8 +51,11 @@ public class TheJfkExperience : ModItem
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         }
-
-        return false; // Return false because we don't want tModLoader to shoot projectile
+        if (ModLoader.TryGetMod("Avalon", out Mod Avalon))
+        {
+            damage *= 666;
+        }
+            return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -63,18 +70,7 @@ public class TheJfkExperience : ModItem
         };
         tooltips.Add(line);
 
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
+      
     }
 
     public override void AddRecipes()

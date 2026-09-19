@@ -215,7 +215,6 @@
 	  <None Remove="Content\NPCs\Politician_Shimmer_Party.png" />
 	  <None Remove="Content\Projectiles\A5G.png" />
 	  <None Remove="Content\Projectiles\AdamantiteBolt.png" />
-	  <None Remove="Content\Projectiles\AgentGreenProj.png" />
 	  <None Remove="Content\Projectiles\AMRRound.png" />
 	  <None Remove="Content\Projectiles\AstaBoom.png" />
 	  <None Remove="Content\Projectiles\AstaBoomBig.png" />
@@ -287,7 +286,6 @@
 	  <None Remove="Content\Projectiles\OrbitTracer.png" />
 	  <None Remove="Content\Projectiles\OrichalcumBolt.png" />
 	  <None Remove="Content\Projectiles\PalladiumBolt.png" />
-	  <None Remove="Content\Projectiles\PissMissileProj.png" />
 	  <None Remove="Content\Projectiles\PlutoParticle.png" />
 	  <None Remove="Content\Projectiles\PlutoRocket.png" />
 	  <None Remove="Content\Projectiles\PurifiedBoltProj.png" />
@@ -299,7 +297,6 @@
 	  <None Remove="Content\Projectiles\RainbowBeam.png" />
 	  <None Remove="Content\Projectiles\RainbowBloon.png" />
 	  <None Remove="Content\Projectiles\RedBloon.png" />
-	  <None Remove="Content\Projectiles\Rocketneg1proj.png" />
 	  <None Remove="Content\Projectiles\Salt.png" />
 	  <None Remove="Content\Projectiles\SaltGrav.png" />
 	  <None Remove="Content\Projectiles\SaltMage.png" />

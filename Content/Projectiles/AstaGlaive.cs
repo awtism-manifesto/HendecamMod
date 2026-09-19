@@ -14,7 +14,7 @@ public class AstaGlaive : ModProjectile
     {
         Projectile.width = 44;
         Projectile.height = 44;
-        Projectile.tileCollide = false;
+        Projectile.tileCollide = true;
         Projectile.arrow = false;
         Projectile.friendly = true;
         Projectile.DamageType = GetInstance<MeleeRangedDamage>();
@@ -37,7 +37,30 @@ public class AstaGlaive : ModProjectile
 
         target.AddBuff(BuffType<RadPoisoning3>(), 180);
     }
+    public override bool OnTileCollide(Vector2 oldVelocity)
+    {
+        if (Projectile.penetrate <= 0)
+        {
+            Projectile.Kill();
+        }
+        else
+        {
+            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+            // If the projectile hits the left or right side of the tile, reverse the X velocity
+            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+            {
+                Projectile.velocity.X = -oldVelocity.X;
+            }
 
+            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+            {
+                Projectile.velocity.Y = -oldVelocity.Y;
+            }
+        }
+        Projectile.penetrate--;
+        return false;
+    }
     public override void AI()
     {
         Player player = Main.player[Projectile.owner];

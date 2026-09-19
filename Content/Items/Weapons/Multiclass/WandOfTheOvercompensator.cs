@@ -37,6 +37,9 @@ public class WandOfTheOvercompensator : ModItem
         Item.shoot = ProjectileType<FireBlast>();
 
         Item.shootSpeed = 11.5f; // The speed of the projectile (measured in pixels per frame.)
+
+
+        
     }
     public float LobotometerCost = 12f;
     public override bool? UseItem(Player player)
@@ -48,8 +51,18 @@ public class WandOfTheOvercompensator : ModItem
         }
         return base.UseItem(player);
     }
+    public override void UpdateInventory(Player player)
+    {
+        if (Main.zenithWorld || Main.remixWorld)
+        {
+            Item.damage = 111;
+            Item.useTime = 45;
+            Item.useAnimation = 45;
+        }
+    }
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
+       
         type = ProjectileType<FireBlast>();
     }
 

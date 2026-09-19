@@ -3,11 +3,7 @@ using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles;
 
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
+
 public class RadParticle : ModProjectile
 {
     private NPC HomingTarget
@@ -63,7 +59,7 @@ public class RadParticle : ModProjectile
             chudDust.velocity *= 0.05f;
         }
 
-        float maxDetectRadius = 600f; // The maximum radius at which a projectile can detect a target
+        float maxDetectRadius = 450f; // The maximum radius at which a projectile can detect a target
 
         // A short delay to homing behavior after being fired
         if (DelayTimer < 10)
@@ -92,7 +88,7 @@ public class RadParticle : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(2.1f)).ToRotationVector2() * length;
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(4.67f)).ToRotationVector2() * length;
         Projectile.rotation = Projectile.velocity.ToRotation();
     }
 

@@ -3,11 +3,7 @@ using HendecamMod.Content.Dusts;
 
 namespace HendecamMod.Content.Projectiles;
 
-/// <summary>
-///     This the class that clones the vanilla Meowmere projectile using CloneDefaults().
-///     Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned
-///     version of the Meowmere.
-/// </summary>
+
 public class RadBoomerang : ModProjectile
 {
     public override void SetDefaults()

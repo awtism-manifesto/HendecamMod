@@ -30,7 +30,7 @@ public class PlutoniumGlassSword : ModItem
         Item.buffTime = 300;
         Item.useTurn = true;
     }
-    public float LobotometerCost = 7f;
+    public float LobotometerCost = 3.5f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

@@ -47,24 +47,19 @@ public class TheImperialBoomerangs : ModItem
 
        
     }
+
     public override bool CanUseItem(Player player)
     {
-        // Ensures no more than one spear can be thrown out, use this when using autoReuse
+        
         return player.ownedProjectileCounts[Item.shoot] < 2;
     }
     public override bool AllowPrefix(int pre)
     {
-        // return false to make the game reroll the prefix.
-
-        // DON'T DO THIS BY ITSELF:
-        // return false;
-        // This will get the game stuck because it will try to reroll every time. Instead, make it have a chance to return true.
+       
 
         if (Array.IndexOf(unwantedPrefixes, pre) > -1)
         {
-            // IndexOf returns a positive index of the element you search for. If not found, it's less than 0.
-            // Here we check if the selected prefix is positive (it was found).
-            // If so, we found a prefix that we don't want. Reroll.
+            
             return false;
         }
 

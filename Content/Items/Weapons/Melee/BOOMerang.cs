@@ -18,7 +18,7 @@ public class BOOMerang : ModItem
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
         Item.UseSound = SoundID.Item1;
-        Item.damage = 63; // The amount of damage the item does to an enemy or player.
+        Item.damage = 67; // The amount of damage the item does to an enemy or player.
         Item.DamageType = DamageClass.MeleeNoSpeed; // The type of damage the weapon does. MeleeNoSpeed means the item will not scale with attack speed.
         Item.knockBack = 3.5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.LightRed; // The item's rarity. This changes the color of the item's name.
@@ -43,7 +43,11 @@ public class BOOMerang : ModItem
         };
         tooltips.Add(line);
     }
+    public override bool CanUseItem(Player player)
+    {
 
+        return player.ownedProjectileCounts[Item.shoot] < 1;
+    }
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.

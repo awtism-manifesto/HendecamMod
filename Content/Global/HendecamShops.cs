@@ -69,6 +69,7 @@ public class HendecamShops : GlobalNPC
         if (shop.NpcType == NPCID.SkeletonMerchant)
         {
             shop.Add<DeadSoldiersRifle>(condition: Condition.InJungle);
+            shop.Add(ItemID.Gatligator, condition: Condition.Hardmode);
             shop.Add<PocketMortar>();
             shop.Add<RocketNeg1>();
         }

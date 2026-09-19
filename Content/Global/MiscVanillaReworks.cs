@@ -640,45 +640,7 @@ public class CIAAwardInJournalism : GlobalItem
 
 
 }
-public class MagnetSphereGoodNow : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
 
-        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
-        {
-            return item.type == ItemID.MagnetSphere;
-        }
-        else return false;
-
-    }
-
-    public override void SetDefaults(Item item)
-    {
-
-
-        item.shoot = ProjectileType<MagnetSpawn>();
-        item.damage = 40;
-        item.shootSpeed = 6.67f;
-
-    }
-    public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
-    {
-
-        type = ProjectileType<MagnetSpawn>();
-
-
-    }
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now shoots eight Magnet Spheres in all directions") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Auxillary magnets take a moment to power up") { OverrideColor = Color.DarkViolet });
-
-    }
-
-
-}
 public class BoneSwordBuffChudfucker6969 : GlobalItem // review in 1.4.5
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)

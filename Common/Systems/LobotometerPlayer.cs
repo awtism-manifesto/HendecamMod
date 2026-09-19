@@ -241,48 +241,42 @@ namespace HendecamMod.Common.Systems
             if (player == null || !player.active) return;
 
             var lobo = player.GetModPlayer<LobotometerPlayer>();
-            if (lobo == null) return;
-
-
-            float lastDisplayedValue = -1f;
-            if (Math.Abs(lobo.Current - lastDisplayedValue) > 1f)
-            {
-
-                lastDisplayedValue = lobo.Current;
-            }
-
-            if (lobo.Current <= 0f) return;
+            if (lobo == null || lobo.Current <= 0f) return;
 
             try
             {
-               
-                Vector2 worldPos = player.Center + new Vector2(-67f, 25f);
-                Vector2 screenPos = worldPos - Main.screenPosition;
+                // Convert player's world position into UI-space coordinates.
+                // In PostDrawInterface the spritebatch transform is Main.UIScale,
+                // so we must divide by it after subtracting screenPosition.
+                Vector2 uiPos = (player.Center - Main.screenPosition) / Main.UIScale;
 
-                // Only draw if on screen
+                // Offset in UI pixels (this scales with UI, so pick a value that
+                // looks right at scale 1 and it will scale proportionally).
+                uiPos += new Vector2(0f, 61f);
+
+                // Only draw if roughly on screen (using UI dimensions)
                 Rectangle screenRect = new Rectangle(0, 0, Main.screenWidth, Main.screenHeight);
-                if (!screenRect.Contains((int)screenPos.X, (int)screenPos.Y))
+                if (!screenRect.Contains((int)uiPos.X, (int)uiPos.Y))
                     return;
 
-                // Center the frame
-                Vector2 origin = new Vector2(frame.Width / 2, frame.Height / 2);
+                Vector2 origin = new Vector2(frame.Width / 2f, frame.Height / 2f);
 
-                // Draw frame
-                spriteBatch.Draw(frame, screenPos, null, Color.White, 0f, origin, 1f, SpriteEffects.None, 0f);
+                // Draw the frame centered horizontally under the player
+                spriteBatch.Draw(frame, uiPos, null, Color.White, 0f, origin, 1f, SpriteEffects.None, 0f);
 
-                // Fill bar - adjust these values based on your actual texture
-                int border = 4; // Adjust this based on your texture's border
+                // Fill bar
+                int border = 4;
                 int fillWidth = frame.Width - (border * 6);
                 int fillHeight = frame.Height - (border * 2);
 
                 float fillPercent = MathHelper.Clamp(lobo.Current / lobo.Max, 0f, 1f);
-                int currentWidth = (int)((int)(fillWidth * fillPercent) * 0.9f);
+                int currentWidth = (int)(fillWidth * fillPercent * 0.9f);
 
                 if (currentWidth > 0)
                 {
                     Rectangle fillRect = new Rectangle(
-                        (int)(screenPos.X - origin.X + border + 16),
-                        (int)(screenPos.Y - origin.Y + border + 0.1f),
+                        (int)(uiPos.X - origin.X + border + 16),
+                        (int)(uiPos.Y - origin.Y + border),
                         currentWidth,
                         fillHeight
                     );
@@ -290,7 +284,7 @@ namespace HendecamMod.Common.Systems
                     spriteBatch.Draw(
                         TextureAssets.MagicPixel.Value,
                         fillRect,
-                        new Color(250, 140, 80) * 0.5f // Slightly transparent
+                        new Color(250, 140, 80) * 0.5f
                     );
                 }
             }
@@ -300,6 +294,7 @@ namespace HendecamMod.Common.Systems
             }
         }
     }
+    
 
 
 

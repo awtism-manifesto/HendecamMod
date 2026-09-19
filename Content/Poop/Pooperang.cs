@@ -19,11 +19,11 @@ public class Pooperang : ModItem
         Item.height = 24; // The height of the item's hitbox.
 
         Item.useStyle = ItemUseStyleID.Shoot; // The way the item is used (e.g. swinging, throwing, etc.)
-        Item.useTime = 50; // All vanilla yoyos have a useTime of 25.
+        Item.useTime = 25; // All vanilla yoyos have a useTime of 25.
         Item.useAnimation = 25; // All vanilla yoyos have a useAnimation of 25.
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
         Item.noUseGraphic = true; // Makes the item invisible while using it (the projectile is the visible part).
-        Item.damage = 20; // The amount of damage the item does to an enemy or player.
+        Item.damage = 21; // The amount of damage the item does to an enemy or player.
         Item.DamageType = GetInstance<MeleeStupidDamage>();
         Item.knockBack = 5f; // The amount of knockback the item inflicts.
         Item.rare = ItemRarityID.White; // The item's rarity. This changes the color of the item's name.
@@ -84,7 +84,11 @@ public class Pooperang : ModItem
         // Don't reroll
         return true;
     }
+    public override bool CanUseItem(Player player)
+    {
 
+        return player.ownedProjectileCounts[Item.shoot] < 1;
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
