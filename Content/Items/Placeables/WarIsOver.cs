@@ -21,7 +21,7 @@ public class WarIsOver : ModItem
         var line = new TooltipLine(Mod, "Face", "Now we MIGHT get Yharim before 2035");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "")
+        line = new TooltipLine(Mod, "Face", "Nevermind LMAO")
         {
             OverrideColor = new Color(255, 255, 255)
         };
