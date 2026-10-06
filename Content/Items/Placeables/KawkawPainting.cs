@@ -12,7 +12,7 @@ public class KawkawPainting : ModItem
         Item.width = 32;
         Item.height = 32;
         Item.rare = ItemRarityID.Blue;
-        Item.value = 350;
+        Item.value = 555;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -32,7 +32,7 @@ public class KawkawPainting : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient<Materials.BlankCanvas>();
-        recipe.AddRecipeGroup("Bird");
+        recipe.AddRecipeGroup("Birds");
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
