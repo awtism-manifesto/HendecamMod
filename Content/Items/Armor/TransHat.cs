@@ -72,7 +72,6 @@ public class TransHat : ModItem
     // Set bonus code
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "10% reduced mana costs";
         player.manaCost = 0.9f;
     }
 }

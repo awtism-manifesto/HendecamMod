@@ -127,6 +127,5 @@ public class YelmutsHelmet : ModItem
     {
         player.statDefense += 5;
         player.maxMinions += MaxMinionIncrease;
-        player.setBonus = "+5 Defense, +1 max Minions";
     }
 }

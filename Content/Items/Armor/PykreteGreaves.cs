@@ -21,7 +21,6 @@ public class PykreteGreaves : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+5% damage reduction, immune to cold debuffs";
         player.endurance = 1f - 0.95f * (1f - player.endurance);
         player.buffImmune[BuffID.Chilled] = true;
         player.buffImmune[BuffID.Frozen] = true;

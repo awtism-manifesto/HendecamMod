@@ -21,7 +21,6 @@ public class PoorMahoganyHelmet : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Immune to the Poisoned debuff";
         player.buffImmune[BuffID.Poisoned] = true;
     }
 

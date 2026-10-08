@@ -103,6 +103,5 @@ public class MarbleChestplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.meleeScaleGlove = true;
-        player.setBonus = "Increased melee weapon size";
     }
 }

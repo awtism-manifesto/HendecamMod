@@ -76,7 +76,6 @@ public class SuperCeramicFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "35% increased damage reduction at max HP, getting hit causes ceramic shards to shatter off the player but removes the boost";
         player.GetModPlayer<CeramMultiscale>().Multiscale = true;
     }
 }

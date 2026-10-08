@@ -93,7 +93,6 @@ public class HallowedFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = SetBonusText.Value;
         player.GetModPlayer<NoMoreInvincible>().Invince = true;
 
     }

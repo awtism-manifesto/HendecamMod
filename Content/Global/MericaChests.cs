@@ -43,7 +43,7 @@ public class MeAndMagAreFuckingLazy : ModSystem
                 if (WorldGen.genRand.NextBool(5))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {
@@ -99,7 +99,7 @@ public class SigmaChests : ModSystem
                 if (WorldGen.genRand.NextBool(4))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {
@@ -155,7 +155,7 @@ public class WattaChests : ModSystem
                 if (WorldGen.genRand.NextBool(4))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {
@@ -211,7 +211,7 @@ public class TreeChests : ModSystem
                 if (WorldGen.genRand.NextBool(4))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {
@@ -267,7 +267,7 @@ public class FuckDesertChests : ModSystem
                 if (WorldGen.genRand.NextBool(4))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {
@@ -323,7 +323,7 @@ public class UrDeadLolXD : ModSystem
                 if (WorldGen.genRand.NextBool(4))
                     continue;
                 // Next we need to find the first empty slot for our item
-                for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                for (int inventoryIndex = 0; inventoryIndex < chest.maxItems; inventoryIndex++)
                 {
                     if (chest.item[inventoryIndex].type == ItemID.None)
                     {

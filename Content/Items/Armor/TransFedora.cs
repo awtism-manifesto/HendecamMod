@@ -67,7 +67,6 @@ public class TransFedora : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+50 Max Braincells";
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         loboPlayer.TemporaryBonus += 50f; 
     }

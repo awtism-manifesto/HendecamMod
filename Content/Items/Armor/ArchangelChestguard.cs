@@ -58,7 +58,6 @@ public class ArchangelChestguard : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Gives the player Archangel Wings, which increase ALL of the player's stats while airborne";
         player.GetModPlayer<ArchangelWings>().ArchWings = true;
 
 

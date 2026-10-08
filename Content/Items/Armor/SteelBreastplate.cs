@@ -56,6 +56,5 @@ public class SteelBreastplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.statDefense += 5;
-        player.setBonus = "+5 defense";
     }
 }

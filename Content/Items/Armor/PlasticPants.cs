@@ -85,8 +85,6 @@ public class PlasticPants : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.GetModPlayer<PlasticApply>().Plasticy = true;
-
-        player.setBonus = "Stupid-class weapons apply one stack of Microplastic Poisoning with every hit";
     }
 }
 public class PlasticApply : ModPlayer

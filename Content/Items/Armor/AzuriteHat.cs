@@ -67,7 +67,6 @@ public class AzuriteHat : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+2 max minion slots, +1 max sentry slot";
         player.maxMinions += MaxMinionIncrease;
         player.maxTurrets += 1;
     }

@@ -19,10 +19,6 @@ public class EmpoweredManaCrystal : ModItem
 
        
     }
-    public override void PostUpdate(WorldItem item)
-    {
-        Lighting.AddLight(Item.Center, Color.BlueViolet.ToVector3() * 0.55f * Main.essScale); // Makes this item glow when thrown out of inventory.
-    }
 
     public override Color? GetAlpha(Color lightColor)
     {

@@ -86,7 +86,6 @@ public class WeedShirt : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increased mana regen and Lobotometer decay rate";
         
         player.manaRegenBonus += 25;
         var loboDecay = player.GetModPlayer<LobotometerPlayer>();

@@ -49,7 +49,6 @@ public class FlinxFurEarmuffs : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "8% increased summon damage";
         player.GetDamage(DamageClass.Summon) += AdditiveSummonDamageBonus / 100f;
     }
 

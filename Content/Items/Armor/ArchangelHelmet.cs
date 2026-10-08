@@ -58,11 +58,4 @@ public class ArchangelHelmet : ModItem
     {
         return body.type == ItemType<ArchangelChestguard>() && legs.type == ItemType<ArchangelGreaves>();
     }
-
-    // UpdateArmorSet allows you to give set bonuses to the armor.
-   
-    public override void UpdateArmorSet(Player player)
-    {
-        player.setBonus = "";
-    }
 }

@@ -84,6 +84,5 @@ public class GraniteChestguard : ModItem
     {
         player.statManaMax2 += MaxManaIncrease;
 
-        player.setBonus = "+50 max mana";
     }
 }

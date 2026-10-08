@@ -82,6 +82,5 @@ public class FossilFuelChestplate : ModItem
         player.maxFallSpeed = player.maxFallSpeed * 1.05f;
         player.wingRunAccelerationMult += 1.2f;
         player.wingAccRunSpeed += 1.2f;
-        player.setBonus = "Increased flight time and aerial mobility";
     }
 }

@@ -97,8 +97,4 @@ public class KingslayerHelmet : ModItem
 
         recipe.Register();
     }
-
-    public override void UpdateArmorSet(Player player)
-    {
-    }
 }

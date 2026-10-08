@@ -93,7 +93,5 @@ public class KingslayerBreastplate : ModItem
             player.statDefense += 5;
             player.statManaMax2 += 40;
         }
-
-        player.setBonus = "Slightly increases all stats during a boss fight or invasion";
     }
 }

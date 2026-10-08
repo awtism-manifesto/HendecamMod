@@ -106,7 +106,6 @@ public class LycopiteFedora : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.GetModPlayer<SporeGrow>().Sporeing = true;
-        player.setBonus = "Rapidly grows explosive mushrooms around the player while at critically low HP";
     }
 }
 public class SporeGrow : ModPlayer

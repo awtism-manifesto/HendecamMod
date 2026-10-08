@@ -62,7 +62,6 @@ public class TransMask : ModItem
     // Set bonus code
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "+8% crit chance";
         player.GetCritChance(DamageClass.Melee) += MeleeCritBonusB;
     }
 }

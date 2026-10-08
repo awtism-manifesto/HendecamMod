@@ -64,17 +64,17 @@ public class CryonicCarbine : ModItem
         return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
-    public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
-    {
-        scale = 0.5f;
+    //public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+    //{
+    //    scale = 0.5f;
 
-        Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
-        Vector2 position = Item.position - Main.screenPosition + new Vector2(Item.width / 2, Item.height - texture.Height * 0.5f);
+    //    Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
+    //    Vector2 position = Item.position - Main.screenPosition + new Vector2(Item.width / 2, Item.height - texture.Height * 0.5f);
 
-        spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+    //    spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
 
-        return false;
-    }
+    //    return false;
+    //}
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {

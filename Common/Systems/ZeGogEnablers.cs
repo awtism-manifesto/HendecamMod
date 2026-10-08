@@ -70,7 +70,7 @@ public class ZeGogEnablers : ModConfig
 
         if (!expConfig.EnableGogEnablers)
         {
-            message = "Cannot modify gog enablers now!";
+            message = NetworkText.FromLiteral("Cannot modify gog enablers now!");
             return false;
         }
 

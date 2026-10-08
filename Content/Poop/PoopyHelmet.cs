@@ -96,6 +96,5 @@ public class PoopyHelmet : ModItem
     {
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeed / 110f;
         player.AddBuff(BuffID.Stinky, 1984);
-        player.setBonus = "Increases attack speed by 10% and makes the wearer INCREDIBLY stinky";
     }
 }

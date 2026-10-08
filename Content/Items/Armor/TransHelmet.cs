@@ -74,7 +74,6 @@ public class TransHelmet : ModItem
     // Set bonus code
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "7% increased ranged attack speed";
         player.GetAttackSpeed(DamageClass.Ranged) += AttackSpeedBonus / 100f;
     }
 }

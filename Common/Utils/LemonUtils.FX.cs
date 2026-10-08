@@ -207,6 +207,5 @@ public static partial class LemonUtils
     public static void QuickCameraFocus(Vector2 position, Func<bool> endConditionFunc)
     {
         MoveCameraModifier cameraModifier = new MoveCameraModifier(position, endConditionFunc);
-        Main.instance.CameraModifiers.Add(cameraModifier);
     }
 }

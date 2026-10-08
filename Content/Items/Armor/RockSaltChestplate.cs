@@ -81,7 +81,6 @@ public class RockSaltChestplate : ModItem
     {
         player.GetModPlayer<LobotoSalt>().Salting = true;
         player.noFallDmg = true;
-        player.setBonus = "Negates fall damage and causes salt to rapidly fall from the sky at Max Braincells";
 
        
     }

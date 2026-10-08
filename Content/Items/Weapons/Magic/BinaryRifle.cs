@@ -46,21 +46,21 @@ public class BinaryRifle : ModItem
 
         Item.shootSpeed = 12.5f; // The speed of the projectile (measured in pixels per frame.)
     }
-    public override void HoldItem(Player player)
-    {
-        player.GetModPlayer<KingScope>().Scoped = true;
-    }
-    public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
-    {
-        scale = 0.725f;
+    //public override void HoldItem(Player player)
+    //{
+    //    player.GetModPlayer<KingScope>().Scoped = true;
+    //}
+    //public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+    //{
+    //    scale = 0.725f;
 
-        Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
-        Vector2 position = Item.position - Main.screenPosition + new Vector2(Item.width / 2, Item.height - texture.Height * 0.5f);
+    //    Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
+    //    Vector2 position = Item.position - Main.screenPosition + new Vector2(Item.width / 2, Item.height - texture.Height * 0.5f);
 
-        spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+    //    spriteBatch.Draw(texture, position, null, lightColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
 
-        return false;
-    }
+    //    return false;
+    //}
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {

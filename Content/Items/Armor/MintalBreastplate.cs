@@ -61,7 +61,6 @@ public class MintalBreastplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.statManaMax2 += player.statDefense;
-        player.setBonus = "Increases max mana by your defense stat, increases melee damage based on your max mana";
         player.GetDamage(DamageClass.Melee) += player.statManaMax2 / 1500f;
     }
 }

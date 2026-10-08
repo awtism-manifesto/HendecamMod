@@ -43,6 +43,7 @@ public static partial class LemonUtils
         if (Main.getGoodWorld) difficulty *= 2;
         return difficulty;
     }
+}
 
     /// <summary>
     /// Used for naturally generating an item in a vanilla chest. Use the wiki to find the appropriate chest's chestTileFrameX.
@@ -52,43 +53,45 @@ public static partial class LemonUtils
     /// <param name="chestTileFrameX"></param>
     /// <param name="chanceDenominator"></param>
     /// <param name="decreaseChanceDenominatorOnFail"></param>
-    public static void GenerateItemInChest(int itemType, int chestTileFrameX, int chanceDenominator, bool decreaseChanceDenominatorOnFail = false)
-    {
-        int origChanceDenominator = chanceDenominator;
-        for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
-        {
-            Chest chest = Main.chest[chestIndex];
-            if (chest == null)
-            {
-                continue;
-            }
-            Tile chestTile = Main.tile[chest.x, chest.y];
-            if (chestTile.TileType == TileID.Containers && chestTile.TileFrameX == chestTileFrameX * 36) // ivy chest
-            {
-                if (WorldGen.genRand.NextBool(chanceDenominator))
-                {
-                    for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
-                    {
-                        if (chest.item[inventoryIndex].type == ItemID.None)
-                        {
-                            chest.item[inventoryIndex].SetDefaults(itemType);
-                            break;
-                        }
-                    }
-                }
-                if (decreaseChanceDenominatorOnFail)
-                {
-                    if (chanceDenominator > 0)
-                    {
-                        chanceDenominator--;
-                    }
 
-                    if (chanceDenominator <= 0)
-                    {
-                        chanceDenominator = origChanceDenominator;
-                    }
-                }
-            }
-        }
-    }
-}
+    // COMMENTED OUT BECAUSE IT IS RETURNING AN ERROR AND I'M TOO SCARED TO MESS WITH THINGS.
+//    public static void GenerateItemInChest(int itemType, int chestTileFrameX, int chanceDenominator, bool decreaseChanceDenominatorOnFail = false)
+//    {
+//        int origChanceDenominator = chanceDenominator;
+//        for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
+//        {
+//            Chest chest = Main.chest[chestIndex];
+//            if (chest == null)
+//            {
+//                continue;
+//            }
+//            Tile chestTile = Main.tile[chest.x, chest.y];
+//            if (chestTile.TileType == TileID.Containers && chestTile.TileFrameX == chestTileFrameX * 36) // ivy chest
+//            {
+//                if (WorldGen.genRand.NextBool(chanceDenominator))
+//                {
+//                    for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+//                    {
+//                        if (chest.item[inventoryIndex].type == ItemID.None)
+//                        {
+//                            chest.item[inventoryIndex].SetDefaults(itemType);
+//                            break;
+//                        }
+//                    }
+//                }
+//                if (decreaseChanceDenominatorOnFail)
+//                {
+//                    if (chanceDenominator > 0)
+//                    {
+//                        chanceDenominator--;
+//                    }
+
+//                    if (chanceDenominator <= 0)
+//                    {
+//                        chanceDenominator = origChanceDenominator;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

@@ -87,7 +87,6 @@ public class FaradayBodyArmor : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Summons an orbiting sun and moon around the player that shoot deadly lasers at foes, and extra deadly Eclipse Lasers when aligned";
         player.GetModPlayer<FlatEarthSunMoon>().Bodying = true;
 
     }

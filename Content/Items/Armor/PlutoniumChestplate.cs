@@ -86,7 +86,6 @@ public class PlutoniumChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "All projectile weapons spawn a homing beam of plutonium energy every 5th attack";
         player.GetModPlayer<PlutoBeams>().ImBeamin = true;
 
     }

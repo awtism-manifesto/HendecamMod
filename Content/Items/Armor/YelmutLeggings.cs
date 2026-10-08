@@ -118,7 +118,6 @@ public class YelmutLeggings : ModItem
     {
 
         player.GetModPlayer<YelmutBoost>().YelBuff = true;
-        player.setBonus = "Tag enemies with Ranged or Magic weapons to deal improved damage with Melee or Stupid weapons";
 
     }
 

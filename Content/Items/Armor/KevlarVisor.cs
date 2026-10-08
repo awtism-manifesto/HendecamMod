@@ -79,6 +79,5 @@ public class KevlarVisor : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.endurance = 1f - 0.89f * (1f - player.endurance);
-        player.setBonus = "+11% damage reduction";
     }
 }

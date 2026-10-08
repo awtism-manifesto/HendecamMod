@@ -55,7 +55,6 @@ public class TransHeadgear : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increases max minions and max sentries by 1";
         player.maxMinions += 1;
         player.maxTurrets += 1;
     }

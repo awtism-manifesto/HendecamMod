@@ -64,9 +64,4 @@ public class MorbiumMask : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
-    public override void UpdateArmorSet(Player player)
-    {
-        player.setBonus = "Causes the player to be on morbin time whenever a boss or invasion appears";
-    }
 }

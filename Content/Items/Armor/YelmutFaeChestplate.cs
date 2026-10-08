@@ -119,7 +119,6 @@ public class YelmutFaeChestplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Increases damage further the higher your max Mana and Lobotometer";
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 
 

@@ -65,13 +65,4 @@ public class MorbiumPlatemail : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
-
-    public override void UpdateArmorSet(Player player)
-    {
-        player.setBonus = "Causes the player to be on morbin time whenever a boss or invasion appears";
-        if (NPC.AnyDanger())
-        {
-            player.AddBuff(BuffType<MorbinTime>(), 666);
-        }
-    }
 }

@@ -66,7 +66,6 @@ public class AstatineBreastplate : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "Gives +30% crit chance at max life, Taking damage releases a large nuclear explosion but removes this boost";
         player.GetModPlayer<AstaSetBoom>().AstaBlam = true;
     }
 }

@@ -75,7 +75,7 @@ public class HendecamExperimentalConfig : ModConfig
 
         if (!enabledConfig.EnableExperimentalFeatures)
         {
-            message = "Cannot modify experimental features - enable them in the primary config!";
+            //message = "Cannot modify experimental features - enable them in the primary config!";
             return false;
         }
 

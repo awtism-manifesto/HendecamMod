@@ -138,7 +138,7 @@ public class ManaDrainSystem : ModSystem
                 // Try to consume mana
                 if (player.CheckMana(MANA_DRAIN_AMOUNT, true))
                 {
-                    player.manaRegenDelay = (int)player.maxRegenDelay;
+                    player.manaRegenDelay = (int)player.manaRegenDelay;
                 }
 
                 // Reset timer after attempting consumption

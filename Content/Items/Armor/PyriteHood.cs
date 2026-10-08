@@ -47,7 +47,6 @@ public class PyriteHood : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "15% increased magic damage";
         player.GetDamage(DamageClass.Magic) += AdditiveMagicDamageBonus / 100f;
     }
 

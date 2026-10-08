@@ -78,7 +78,6 @@ public class UraniumChestplate : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.GetModPlayer<RadSpeedSys>().RadArmor = true;
-        player.setBonus = "Has a chance to give a stacking attack speed buff upon hitting an enemy";
     }
 }
 public class RadSpeedSys : ModPlayer

@@ -54,7 +54,6 @@ public class PyriteCrown : ModItem
 
     public override void UpdateArmorSet(Player player)
     {
-        player.setBonus = "1 extra minion & sentry slot";
         player.maxMinions += 1;
         player.maxTurrets += 1;
     }
