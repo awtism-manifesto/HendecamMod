@@ -392,3 +392,8 @@ RadSpeed5: {
 	DisplayName: Rad Speed V
 	Description: Ludicrously increased attack speed
 }
+
+AlpinePetBuff: {
+	Description: Mods.HendecamMod.Buffs.AlpinePetBuff.Description
+	DisplayName: Alpine Pet Buff
+}

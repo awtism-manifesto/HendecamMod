@@ -3,7 +3,9 @@ using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.NPCs.Town.Alpine;
+using HendecamMod.Content.Pets;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
+using HendecamMod.Content.Items.Placeables;
 using System.Threading.Tasks;
 using Terraria.Audio;
 using Terraria.Chat;
@@ -79,6 +81,8 @@ public class ApacheElfShip : ModNPC
         // 3. Expert Mode (usually just the treasure bag)
         // 4. Master Mode (relic first, pet last, everything else in between)
 
+        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AlpineTrophy>(), 10));
+
         LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
         // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
@@ -99,9 +103,11 @@ public class ApacheElfShip : ModNPC
 
         npcLoot.Add(ItemDropRule.BossBag(ItemType<AlpineTreasureBag>()));
 
-        // npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
+        // ItemDropRule.MasterModeCommonDrop for the relic
+        npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<AlpineRelicItem>()));
 
-        // npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
+        // ItemDropRule.MasterModeDropOnAllPlayers for the pet
+        npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<AlpinePetItem>(), 4));
     }
 
     public override void OnKill()
@@ -174,10 +180,6 @@ public class ApacheElfShip : ModNPC
         {
             return (int)Math.Max(1, milliseconds / 1000f * 60f);
         }
-
-        // ------------------------------------------------------------------
-        // IDLE STATE
-        // ------------------------------------------------------------------
         if (NPC.ai[0] == STATE_IDLE)
         {
             // Initialize idle state on first entry
@@ -211,10 +213,6 @@ public class ApacheElfShip : ModNPC
             }
             return;
         }
-
-        // ------------------------------------------------------------------
-        // ATTACK STATE
-        // ------------------------------------------------------------------
         if (NPC.ai[0] == STATE_ATTACK)
         {
             // Ensure we still have a valid target

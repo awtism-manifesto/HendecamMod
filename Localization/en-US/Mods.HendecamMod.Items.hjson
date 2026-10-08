@@ -5609,3 +5609,23 @@ TerminalLucidityPotion: {
 	DisplayName: Terminal Lucidity Potion
 	Tooltip: ""
 }
+
+KawkawPainting: {
+	Tooltip: ""
+	DisplayName: Kawkaw Painting
+}
+
+AlpineRelicItem: {
+	DisplayName: Alpine Relic Item
+	Tooltip: ""
+}
+
+AlpinePetItem: {
+	DisplayName: Alpine Pet Item
+	Tooltip: ""
+}
+
+AlpineTrophy: {
+	DisplayName: Alpine Trophy
+	Tooltip: ""
+}
