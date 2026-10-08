@@ -57,12 +57,12 @@ public class BombScepter : ModItem
 
         line = new TooltipLine(Mod, "Face", "Creates a small explosion at the mouse position")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Ok, which drunk ass wizard drew up the blueprints for this one'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

@@ -82,13 +82,13 @@ public class SaltShaker : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 12 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'u salty bro?'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

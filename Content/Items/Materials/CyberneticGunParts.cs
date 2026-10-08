@@ -25,7 +25,7 @@ public class CyberneticGunParts : ModItem
 
         line = new TooltipLine(Mod, "Face", "Used in advanced gun recipes")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

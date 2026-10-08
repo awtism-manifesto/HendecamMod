@@ -44,7 +44,7 @@ public class PlutoniumFacemask : ModItem
 
         line = new TooltipLine(Mod, "Face", "+95 max mana and +10% ranged crit chance")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -46,7 +46,7 @@ public class KingslayerBreastplate : ModItem
 
         line = new TooltipLine(Mod, "Face", "+1 minion slot")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

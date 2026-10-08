@@ -37,7 +37,7 @@ public class AstatineArrow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Flies incredibly fast")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

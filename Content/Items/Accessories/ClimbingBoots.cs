@@ -31,7 +31,7 @@ public class ClimbingBoots : ModItem
 
         line = new TooltipLine(Mod, "Face", "Allows the wearer to run super fast")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

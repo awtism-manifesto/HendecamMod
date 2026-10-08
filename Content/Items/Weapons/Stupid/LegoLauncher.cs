@@ -81,13 +81,13 @@ public class LegoLauncher : ModItem
 
         line = new TooltipLine(Mod, "Face", "Legos get less painful after being worn down by enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Uses 10 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

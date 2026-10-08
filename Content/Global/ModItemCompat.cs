@@ -21,7 +21,7 @@ public class BowMage1 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { Color = Color.MediumPurple });
     }
 
     public override void SetDefaults(Item item)
@@ -44,7 +44,7 @@ public class BowMage12 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { Color = Color.MediumPurple });
     }
 
     public override void SetDefaults(Item item)
@@ -69,7 +69,7 @@ public class BowMage123 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { OverrideColor = Color.MediumPurple });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Merge Bows) - Now deals Ranged AND Magic damage") { Color = Color.MediumPurple });
     }
 
     public override void SetDefaults(Item item)
@@ -95,7 +95,7 @@ public class DoorStupid1 : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid attack speed by 5%") { OverrideColor = Color.OrangeRed});
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid attack speed by 5%") { Color = Color.OrangeRed});
     }
 
     
@@ -119,7 +119,7 @@ public class DoorStupid2 : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid damage and attack speed by 5%") { OverrideColor = Color.OrangeRed });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (SOTS) - Increases stupid damage and attack speed by 5%") { Color = Color.OrangeRed });
     }
 
 
@@ -143,7 +143,7 @@ public class BoomShroomLycopiteCompat : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Spirit Reforged) - Increases Ranged damage by 8%") { OverrideColor = Color.Goldenrod});
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Spirit Reforged) - Increases Ranged damage by 8%") { Color = Color.Goldenrod});
     }
 
 
@@ -186,7 +186,7 @@ public class MagmaGarbage : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now gives 20 extra mana") { OverrideColor = Color.DarkOrange });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now gives 20 extra mana") { Color = Color.DarkOrange });
     }
 
 
@@ -209,7 +209,7 @@ public class MechLaserGarbage : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now also provides the player with a laser sight") { OverrideColor = Color.DarkOrange });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Awful Garbage Mod) - Now also provides the player with a laser sight") { Color = Color.DarkOrange });
     }
 
 
@@ -230,7 +230,7 @@ public class ConsolariaForSomeReason : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Consolaria) - Now deals Ranged AND Stupid damage, fires in a two round burst") { OverrideColor = Color.LimeGreen });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Consolaria) - Now deals Ranged AND Stupid damage, fires in a two round burst") { Color = Color.LimeGreen });
     }
 
     public override void SetDefaults(Item item)
@@ -257,7 +257,7 @@ public class Arse : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { Color = Color.MediumVioletRed });
     }
 
     public override void SetDefaults(Item item)
@@ -283,7 +283,7 @@ public class Arse2 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { OverrideColor = Color.MediumVioletRed });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Arsenal) - Now deals Ranged AND Stupid damage") { Color = Color.MediumVioletRed });
     }
 
     public override void SetDefaults(Item item)
@@ -308,7 +308,7 @@ public class StupidSand : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Vitality) - Now deals stupid damage") { OverrideColor = Color.MediumVioletRed });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Vitality) - Now deals stupid damage") { Color = Color.MediumVioletRed });
     }
 
     public override void SetDefaults(Item item)

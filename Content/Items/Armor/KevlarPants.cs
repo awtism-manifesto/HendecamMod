@@ -40,7 +40,7 @@ public class KevlarPants : ModItem
 
         line = new TooltipLine(Mod, "Face", "9% reduced movement speed")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

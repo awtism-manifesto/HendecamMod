@@ -43,7 +43,7 @@ public class AgentGreenRocket : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Didn't we use these back in 'nam?'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

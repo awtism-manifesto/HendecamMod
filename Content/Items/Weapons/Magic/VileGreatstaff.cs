@@ -95,7 +95,7 @@ public class VileGreatstaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to cause vile thorns to strike at the mouse position")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

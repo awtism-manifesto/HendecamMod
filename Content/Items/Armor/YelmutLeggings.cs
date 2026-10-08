@@ -29,31 +29,31 @@ public class YelmutLeggings : ModItem
 
         line = new TooltipLine(Mod, "Face", "+60 max Mana and Lobotometer")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slot")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Effects of Fairy Boots")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Set Bonus compatible with Lycopite Armor")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(220, 40, 245)
+            Color = new Color(220, 40, 245)
         };
         tooltips.Add(line);
 

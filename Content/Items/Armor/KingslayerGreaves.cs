@@ -41,13 +41,13 @@ public class KingslayerGreaves : ModItem
 
         line = new TooltipLine(Mod, "Face", "5% increased whip speed")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Significantly increased move speed, even more on sand")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

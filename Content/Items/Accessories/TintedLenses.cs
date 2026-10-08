@@ -39,12 +39,12 @@ public class TintedLenses : ModItem
 
         line = new TooltipLine(Mod, "Face", "+5% crit chance")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Reduces the Lobotometer's impact on your vision")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

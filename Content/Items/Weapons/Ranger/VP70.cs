@@ -116,19 +116,19 @@ public class VP70 : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to fire a three round burst")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Tag enemies with single shots to deal increased damage with bursts")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "The OG. The one that started it all")
         {
-            OverrideColor = new Color(28, 31, 83)
+            Color = new Color(28, 31, 83)
         };
         tooltips.Add(line);
 

@@ -64,13 +64,13 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
                         $"+{loboPrefix.Power * 50f:F0} Max Braincells")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
+                        Color = new Color(120, 190, 120) // Light green like good prefixes
                     };
 
                     TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
                         $"+{loboPrefix.Power * 0.33f:P0} Lobotometer decay rate")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
+                        Color = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
                     };
 
                     // Insert the tooltips
@@ -136,7 +136,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
                         $"{loboPrefix.Power * -0.25f:P0} Lobotometer decay rate")
                     {
-                        OverrideColor = new Color(190, 120, 120) // Orange, or use (190, 120, 120) for red
+                        Color = new Color(190, 120, 120) // Orange, or use (190, 120, 120) for red
                     };
 
                     // Insert the tooltips
@@ -202,7 +202,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
                         $"{loboPrefix.Power * -0.45f:P0} Lobotometer decay rate")
                     {
-                        OverrideColor = new Color(190, 120, 120) // Orange, or use (190, 120, 120) for red
+                        Color = new Color(190, 120, 120) // Orange, or use (190, 120, 120) for red
                     };
 
                     // Insert the tooltips
@@ -267,7 +267,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
                         $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
+                        Color = new Color(120, 190, 120) // Light green like good prefixes
                     };
 
                    
@@ -333,7 +333,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine maxBonusLine = new TooltipLine(Mod, "PrefixLobotomyMax",
                         $"+{loboPrefix.Power * 25f:F0} Max Braincells")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Light green like good prefixes
+                        Color = new Color(120, 190, 120) // Light green like good prefixes
                     };
 
 
@@ -401,7 +401,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
                         $"+{loboPrefix.Power * 0.67f:P0} Lobotometer decay rate")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
+                        Color = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
                     };
 
                     // Insert the tooltips
@@ -467,7 +467,7 @@ namespace HendecamMod.Content.Prefixes
                     TooltipLine decayBonusLine = new TooltipLine(Mod, "PrefixLobotomyDecay",
                         $"+{loboPrefix.Power * 0.5f:P0} Lobotometer decay rate")
                     {
-                        OverrideColor = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
+                        Color = new Color(120, 190, 120) // Orange, or use (190, 120, 120) for red
                     };
 
                     // Insert the tooltips

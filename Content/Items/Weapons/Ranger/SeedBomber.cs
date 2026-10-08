@@ -70,7 +70,7 @@ public class SeedBomber : ModItem
 
         line = new TooltipLine(Mod, "Face", "'It's AnPrim Gang Approved!'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

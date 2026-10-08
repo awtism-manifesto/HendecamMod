@@ -102,12 +102,12 @@ public class BionicBoomer : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to activate Turbo Charge, massively increasing attack speed for a short time")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "IS able to benefit from attack speed bonuses")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

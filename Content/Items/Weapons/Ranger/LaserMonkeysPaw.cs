@@ -51,7 +51,7 @@ public class LaserMonkeysPaw : ModItem
 
         line = new TooltipLine(Mod, "Face", "The lasers can pierce or hit the same enemy twice")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

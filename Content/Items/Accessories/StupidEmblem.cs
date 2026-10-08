@@ -30,7 +30,7 @@ public class StupidEmblem : ModItem
 
         line = new TooltipLine(Mod, "Face", "Yall rockin with the stupid class so far!?!?!?!?!?")
         {
-            OverrideColor = new Color(201, 133, 0)
+            Color = new Color(201, 133, 0)
         };
         tooltips.Add(line);
 

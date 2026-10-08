@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Enemies;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -63,7 +64,7 @@ public class FlatEarther : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemType<FragmentFlatEarth>(), 1, 1, 4));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         if (NPC.TowerActiveNebula || NPC.TowerActiveVortex || NPC.TowerActiveStardust || NPC.TowerActiveSolar)
         {

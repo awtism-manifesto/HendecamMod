@@ -67,23 +67,23 @@ public class DeliriantDagger : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to throw five daggers in quick succession")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Set up a combo by throwing the daggers, complete it by stabbing")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Completed combos deal increased damage and sometimes cause an explosion of shadowflame sparks")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'For when the hat man won't quit talking shit'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

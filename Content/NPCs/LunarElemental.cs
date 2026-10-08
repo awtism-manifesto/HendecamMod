@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -50,7 +51,7 @@ public class LunarElemental : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.CelestialMagnet, 20));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.Sky.Chance * 0.46f;
     }

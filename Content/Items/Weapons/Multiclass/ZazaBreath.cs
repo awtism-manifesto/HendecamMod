@@ -67,12 +67,12 @@ public class ZazaBreath : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Spews out weed smoke that confuses and asphyxiates your enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

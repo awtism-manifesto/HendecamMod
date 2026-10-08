@@ -47,19 +47,19 @@ public class TheAutismManifesto : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your Max Braincells ")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Increases all attack speed as Lobotometer increases, up to 25% at max")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         };
         tooltips.Add(line);
     }

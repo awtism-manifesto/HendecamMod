@@ -55,7 +55,7 @@ public class ShroomiteMissile : ModItem
 
         line = new TooltipLine(Mod, "Face", "Plants shroomite mines in the blast radius")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

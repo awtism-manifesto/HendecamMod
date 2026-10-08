@@ -41,7 +41,7 @@ public class CeramicDart : ModItem
 
         line = new TooltipLine(Mod, "Face", "Penetrates a significant amount of enemy armor")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

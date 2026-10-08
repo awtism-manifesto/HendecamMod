@@ -57,7 +57,7 @@ public class UraniumBow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts all arrows into Rad Arrows that split after a short time")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

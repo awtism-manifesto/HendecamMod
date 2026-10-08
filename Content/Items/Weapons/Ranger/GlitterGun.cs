@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -31,7 +33,7 @@ public class GlitterGun : ModItem
         Item.shootSpeed = 15.95f;
     }
 
-    public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+    public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.725f;
         Texture2D texture = Terraria.GameContent.TextureAssets.Item[Item.type].Value;
@@ -91,7 +93,7 @@ public class GlitterGun : ModItem
 
         line = new TooltipLine(Mod, "Face", "")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         foreach (var l in tooltips)

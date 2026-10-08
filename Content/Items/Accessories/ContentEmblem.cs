@@ -175,7 +175,7 @@ public class ContentEmblem : ModItem
 
             line = new TooltipLine(Mod, "Face", "Calamity Mod- +15% damage")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
@@ -184,7 +184,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Calamity Fables- Drops a shroom mine when hurt")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
@@ -193,7 +193,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Clamity Addon- Permanent Crate, Fishing, and Sonar buffs while equipped")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -202,7 +202,7 @@ public class ContentEmblem : ModItem
 
             line = new TooltipLine(Mod, "Face", "Calamity Infernum- +10% attack speed during any bossfight or invasion")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
@@ -211,7 +211,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Catalyst- +15% crit chance")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -220,7 +220,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Fargo's Souls- Causes friendly sand to rain down upon enemies near you at low health")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -228,7 +228,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Thorium Mod- +5 Armor Penetration")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -237,7 +237,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Thorium Hellheim- +10% max life during any bossfight or invasion")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -246,7 +246,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Homeward Journey- doubled mining speed")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -254,7 +254,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Exxo Avalon Origins- 20% increased damage reduction at full HP")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -262,7 +262,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "The Stars Above- Increases max life by max mana")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -270,7 +270,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Secrets of the Shadows- Increased offensive stats while Invisibility buff is active")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -278,7 +278,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Spirit Classic- +1.5 hp/s life regen")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -286,7 +286,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Spirit Reforged- Increases luck by 1% of your current defense")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -294,7 +294,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Consolaria- Grants 'human joystick' movement")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -302,7 +302,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Spooky Mod- The player emits light above 80% life, grants 5 defense below 80% life")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -310,7 +310,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Vitality Mod- Increases max health by 15%")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -318,7 +318,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Split- Massively increased damage at the cost of almost all crit chance when facing left, guaranteed crits at the cost of some damage when facing right")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -327,7 +327,7 @@ public class ContentEmblem : ModItem
 
             line = new TooltipLine(Mod, "Face", "Macrocosm- Increased flight time and aerial movement")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -336,7 +336,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Enigma Mod- All attacks inflict on fire and frostburn")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -344,7 +344,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Paracosm- Increases life regen by the number of debuffs you have")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -353,7 +353,7 @@ public class ContentEmblem : ModItem
 
             line = new TooltipLine(Mod, "Face", "Ebonian Mod- All attacks have a 1/100 chance to give your enemies ligma")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -361,7 +361,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Xenon Mod- Every 10th projectile attack spawns a large red X on the target")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -369,7 +369,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Arsenal- 5% increased attack speed")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -377,7 +377,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Terror Mode- +33% damage when under 33% health")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -386,7 +386,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Storm's Additions- Occasionally causes lightning to strike enemies")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -394,7 +394,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Ultraconyx- Trades 15% of your total defense for damage at an inflated exchange rate")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -402,7 +402,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "BeatriceMod- causes beams of trans energy to be radially fired out of the player periodically")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -410,7 +410,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Gerd's Lab- Increases max Mana by 100")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -418,7 +418,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Fish Guns Plus- +25 fishing power")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -427,7 +427,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "PG3D Weapons Pack- Every 3rd projectile attack fires an extra bullet projectile")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
@@ -438,7 +438,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Flamethrowers Plus- 5% increased ranged crit chance")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -447,7 +447,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Guns and Guns 2- 25% reduced ammo usage")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }
@@ -455,7 +455,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Awful Garbage Mod- +50 Max Braincells")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 
@@ -464,7 +464,7 @@ public class ContentEmblem : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Rhymes With Grug Mod- Rhymes with Grug")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
 

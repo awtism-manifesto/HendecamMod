@@ -1,7 +1,9 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -47,7 +49,7 @@ public class EyeRifle : ModItem
         type = ProjectileType<EyeShot>();
     }
 
-    public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+    public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
     {
         scale = 0.66f;
 
@@ -80,7 +82,7 @@ public class EyeRifle : ModItem
 
         line = new TooltipLine(Mod, "Face", "'An eye for an eye leaves a whole lot of sinners blind'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

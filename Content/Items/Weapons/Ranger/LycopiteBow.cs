@@ -81,7 +81,7 @@ public class LycopiteBow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts Wooden Arrows into defense-decimating Caustic Carrots")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

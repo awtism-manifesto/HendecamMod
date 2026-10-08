@@ -27,7 +27,7 @@ public class PearlclayPlaced : ModTile
         TileLoader.RegisterConversion(Type, BiomeConversionID.Purity, TileID.ClayBlock); // Yellow (desert) solution also converts evil/hallowed tiles back into purity, so don't forget that check!
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         // We use this helper method to mimic vanilla behavior for spreading tiles, letting our hallowed fossil infect convert nearby tiles into hallowed versions of themselves
         WorldGen.SpreadInfectionToNearbyTile(i, j, BiomeConversionID.Hallow);
@@ -66,7 +66,7 @@ public class EbonclayPlaced : ModTile
         TileLoader.RegisterConversion(Type, BiomeConversionID.Purity, TileID.ClayBlock);
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         WorldGen.SpreadInfectionToNearbyTile(i, j, BiomeConversionID.Corruption);
     }
@@ -112,7 +112,7 @@ public class CrimclayPlaced : ModTile
         }
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         WorldGen.SpreadInfectionToNearbyTile(i, j, BiomeConversionID.Crimson);
     }

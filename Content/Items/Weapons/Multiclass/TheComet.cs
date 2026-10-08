@@ -53,7 +53,7 @@ public class TheComet : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts arrows into large, powerfully explosive meteors using magic")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

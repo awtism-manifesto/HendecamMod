@@ -80,7 +80,7 @@ public class GagGifter : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses rockets as ammo, and Uses 6 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

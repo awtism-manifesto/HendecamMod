@@ -103,7 +103,7 @@ public class OrichalcumRose : ModItem
 
         line = new TooltipLine(Mod, "Face", "Emits light while held")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

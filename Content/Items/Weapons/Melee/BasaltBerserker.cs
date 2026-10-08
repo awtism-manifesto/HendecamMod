@@ -49,7 +49,7 @@ public class BasaltBerserker : ModItem
 
         line = new TooltipLine(Mod, "Face", "Deals more damage to high defense targets")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

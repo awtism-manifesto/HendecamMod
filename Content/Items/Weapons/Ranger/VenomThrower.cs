@@ -58,7 +58,7 @@ public class VenomThrower : ModItem
 
         line = new TooltipLine(Mod, "Face", "Shoots extremely toxic venom at your enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

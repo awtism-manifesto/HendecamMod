@@ -23,7 +23,7 @@ public class SarahIdol : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Dedicated to my girlfriend, who i love very much despite the fact that she's upside down'- Autism Manifesto")
         {
-            OverrideColor = new Color(255,255,255)
+            Color = new Color(255,255,255)
         };
         tooltips.Add(line);
 

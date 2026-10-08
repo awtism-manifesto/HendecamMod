@@ -37,7 +37,7 @@ public class StupidestFuckingPickaxe : ModItem
 
         line = new TooltipLine(Mod, "Face", "I be placing blocks and shit 'cuz I'm in fucking Minecraft")
         {
-            OverrideColor = new Color(70, 255, 70)
+            Color = new Color(70, 255, 70)
         };
         tooltips.Add(line);
     }

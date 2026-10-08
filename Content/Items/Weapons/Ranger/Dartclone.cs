@@ -79,7 +79,7 @@ public class Dartclone : ModItem
 
         line = new TooltipLine(Mod, "Face", "Gives you two darts for the price of one!")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

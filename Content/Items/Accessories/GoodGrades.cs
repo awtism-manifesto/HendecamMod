@@ -29,13 +29,13 @@ public class GoodGrades : ModItem
 
         line = new TooltipLine(Mod, "Face", "")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Now your parents might finally be proud of you'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

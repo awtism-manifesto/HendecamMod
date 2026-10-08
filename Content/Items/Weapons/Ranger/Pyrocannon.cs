@@ -87,7 +87,7 @@ public class Pyrocannon : ModItem
 
         line = new TooltipLine(Mod, "Face", "Shoots an overwhelming stream of flames and fireballs")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -60,7 +60,7 @@ public class Boomshark : ModItem
 
         line = new TooltipLine(Mod, "Face", "'trust me, this is a WONDERFUL idea'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

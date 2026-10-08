@@ -32,7 +32,7 @@ public class ShroomBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, swing speed, and pick speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, swing speed, and pick speed") { Color = Color.DarkViolet });
     }
 }
 
@@ -49,7 +49,7 @@ public class PeeminScythe : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now fires in a four round burst") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now fires in a four round burst") { Color = Color.DarkViolet });
 
 
     }
@@ -78,9 +78,9 @@ public class CockworkAssGun : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage, Knockback, Velocity, and Sound Effects significantly buffed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Damage, Knockback, Velocity, and Sound Effects significantly buffed") { Color = Color.DarkViolet });
 
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Time between shots decreased, time between bursts increased") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -117,7 +117,7 @@ public class PenisMagnum : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Fires slower, but deals significantly more damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Fires slower, but deals significantly more damage") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -142,7 +142,7 @@ public class ShittyShitgun : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Reduced damage, Doubled fire rate, incurs a damage penalty when using Chlorophyte Bullets") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Reduced damage, Doubled fire rate, incurs a damage penalty when using Chlorophyte Bullets") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -187,7 +187,7 @@ public class RipRalphiesEye : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Slightly decreased damage, but shoots out an additional bloodshot with your bullet") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Slightly decreased damage, but shoots out an additional bloodshot with your bullet") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -211,7 +211,7 @@ public class BakerBlade : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased damage and size, but slightly slower use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased damage and size, but slightly slower use speed") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -242,7 +242,7 @@ public class BloodyHell : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into high velocity blood shots") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into high velocity blood shots") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -273,7 +273,7 @@ public class DemonTime : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into Unholy Arrows") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts all arrows into Unholy Arrows") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -305,7 +305,7 @@ public class CactusDildo : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings cactus spines with every swing") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings cactus spines with every swing") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -328,7 +328,7 @@ public class FuckAntlions : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decreased damage and size, but massively increased swing speed") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -353,7 +353,7 @@ public class BEEEEEEZ : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and damage, reduced swing speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased size and damage, reduced swing speed") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -386,7 +386,7 @@ public class Coballs : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Cobalt energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Cobalt energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -426,7 +426,7 @@ public class Mlady : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Palladium energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Palladium energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -466,7 +466,7 @@ public class Milady : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Mythril energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Mythril energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -506,7 +506,7 @@ public class PinkPussy : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Orichalcum energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Orichalcum energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -546,7 +546,7 @@ public class Adamantitties : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Adamantite energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Adamantite energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -586,7 +586,7 @@ public class Tittyanium : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Titanium energy") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a bolt of Titanium energy") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -633,7 +633,7 @@ public class CIAAwardInJournalism : GlobalItem
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
 
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots an enhanced triplex round") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots an enhanced triplex round") { Color = Color.DarkViolet });
 
 
     }
@@ -664,7 +664,7 @@ public class BoneSwordBuffChudfucker6969 : GlobalItem // review in 1.4.5
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings bones with every swing") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Flings bones with every swing") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -697,7 +697,7 @@ public class TxkrpBff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster attack speed and velocity") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster attack speed and velocity") { Color = Color.DarkViolet });
     }
 
 
@@ -742,7 +742,7 @@ public class DrugsNir : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a piercing light beam, has higher stats") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots a piercing light beam, has higher stats") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -773,7 +773,7 @@ public class ChloroshitFartisan : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -810,7 +810,7 @@ public class ChloroshitSaber : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, shoots a lot more spore clouds") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -852,7 +852,7 @@ public class ChloroshitGaymore : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, size and orb speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased damage, size and orb speed") { Color = Color.DarkViolet });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -912,8 +912,8 @@ public class ThunderZappies : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased attack and projectile speed at the cost of damage") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also ignores 5 enemy defense") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Massively increased attack and projectile speed at the cost of damage") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also ignores 5 enemy defense") { Color = Color.DarkViolet });
     }
 
 
@@ -946,7 +946,7 @@ public class HeatRayBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, decreased mana cost, also deals increased damage during daytime") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased fire rate, decreased mana cost, also deals increased damage during daytime") { Color = Color.DarkViolet });
     }
 }
 
@@ -968,7 +968,7 @@ public class HelFireCompNerf : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Lower base damage, now explodes upon hitting enemies") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Lower base damage, now explodes upon hitting enemies") { Color = Color.DarkViolet });
     }
 }
 public class HelFireBoom : GlobalProjectile
@@ -1015,7 +1015,7 @@ public class Blowie : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots out a flurry of darts or seeds") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Shoots out a flurry of darts or seeds") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1049,9 +1049,9 @@ public class EEEEEEEE : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts wooden arrows into a CONSTANT barrage of twilight lances") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts wooden arrows into a CONSTANT barrage of twilight lances") { Color = Color.DarkViolet });
 
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals less damage with other arrow types") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals less damage with other arrow types") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1077,7 +1077,7 @@ public class Laserz420 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hits much harder, but fires slower") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Hits much harder, but fires slower") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1109,7 +1109,7 @@ public class KandyKorn : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use candy corn OR bullets as ammo, deals boosted damage with candy corn") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use candy corn OR bullets as ammo, deals boosted damage with candy corn") { Color = Color.DarkViolet });
     }
 
     public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -1143,7 +1143,7 @@ public class KandyKorn2 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bullets, Deals extra damage when fired out of the Candy Corn Rifle ") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bullets, Deals extra damage when fired out of the Candy Corn Rifle ") { Color = Color.DarkViolet });
     }
 }
 public class Steak2 : GlobalItem
@@ -1167,7 +1167,7 @@ public class Steak2 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all bows as well as the Stake Launcher") { Color = Color.DarkViolet });
     }
 }
 
@@ -1191,9 +1191,9 @@ public class Nailz : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Sticks into enemies and explodes after a short time") { OverrideColor = Color.White });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Sticks into enemies and explodes after a short time") { Color = Color.White });
 
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all dartguns as well as the Nail Gun") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in all dartguns as well as the Nail Gun") { Color = Color.DarkViolet });
     }
 }
 
@@ -1220,8 +1220,8 @@ public class Pinkeeeee : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in flamethrowers") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Shoots bouncy gel shots instead of fire") { OverrideColor = Color.White });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as ammo in flamethrowers") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Shoots bouncy gel shots instead of fire") { Color = Color.White });
     }
 }
 public class Steak : GlobalItem
@@ -1247,7 +1247,7 @@ public class Steak : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use stakes or arrows as ammo") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use stakes or arrows as ammo") { Color = Color.DarkViolet });
     }
 }
 
@@ -1273,7 +1273,7 @@ public class Nailzzz : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use nails or darts as ammo") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can use nails or darts as ammo") { Color = Color.DarkViolet });
     }
 }
 public class Harpussy : GlobalItem
@@ -1307,7 +1307,7 @@ public class Harpussy : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts darts into powerful harpoons that pierce multiple enemies") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Converts darts into powerful harpoons that pierce multiple enemies") { Color = Color.DarkViolet });
     }
 }
 public class ChainCunt : GlobalItem
@@ -1323,7 +1323,7 @@ public class ChainCunt : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -1348,7 +1348,7 @@ public class Stiingeer : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Decrased damage, but massively increased fire rate") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)

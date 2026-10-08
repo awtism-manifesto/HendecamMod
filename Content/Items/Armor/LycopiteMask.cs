@@ -44,12 +44,12 @@ public class LycopiteMask : ModItem
 
         line = new TooltipLine(Mod, "Face", "+5% melee critical strike chance and summon damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "+0.5 hp/s life regen")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         // Here we will hide all tooltips whose title end with ':RemoveMe'

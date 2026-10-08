@@ -40,7 +40,7 @@ public class ChlorophyteDart : ModItem
 
         line = new TooltipLine(Mod, "Face", "Splits into mini chlorophyte darts that home in on enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

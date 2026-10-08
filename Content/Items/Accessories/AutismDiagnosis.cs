@@ -36,12 +36,12 @@ public class AutismDiagnosis : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases damage by 12% at either low or maximum Lobotometer")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Woah, this is expensive!'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

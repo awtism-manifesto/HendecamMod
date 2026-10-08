@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Summon;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -91,7 +92,7 @@ public class TrashSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.FlintlockPistol, 33));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.Ocean.Chance * 0.89f;
     }

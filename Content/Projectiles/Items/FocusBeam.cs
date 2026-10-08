@@ -1,8 +1,10 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Weapons.Multiclass;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
+using Terraria;
 using Terraria.Enums;
 using Terraria.GameContent;
 
@@ -255,7 +257,7 @@ public class FocusBeam : ModProjectile
             Projectile.Center, beamEndPos, BeamHitboxCollisionWidth * Projectile.scale, ref _);
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         if (Projectile.velocity == Vector2.Zero)
         {

@@ -91,17 +91,17 @@ public class RednecksRevenge : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to throw a hallowed shovel")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Tag enemies with the shovel to power up your bullets")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Er guns'll be safe now, that's for damn sure'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

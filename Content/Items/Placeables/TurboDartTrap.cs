@@ -35,7 +35,7 @@ public class TurboDartTrap : ModItem
 
         line = new TooltipLine(Mod, "Face", "Can fire as fast as a 1/4 second timer")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

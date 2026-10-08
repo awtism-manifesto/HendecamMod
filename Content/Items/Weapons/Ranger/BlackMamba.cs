@@ -76,13 +76,13 @@ public class BlackMamba : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases life regen and movement speed while fired")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "50% chance to not consume darts")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

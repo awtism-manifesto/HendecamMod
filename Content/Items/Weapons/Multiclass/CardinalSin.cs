@@ -83,7 +83,7 @@ public class CardinalSin : ModItem
 
         line = new TooltipLine(Mod, "Face", "Spits a stream of devilish fire and homing pentagrams")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

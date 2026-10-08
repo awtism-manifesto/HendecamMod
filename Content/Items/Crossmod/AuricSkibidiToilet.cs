@@ -79,14 +79,14 @@ public class AuricSkibidiToilet : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 20 Lobotometer")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         if (!ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
             line = new TooltipLine(Mod, "Face", "CALAMITY NOT ENABLED! THIS DLC WEAPON IS ONLY OBTAINABLE THROUGH CHEATS")
             {
-                OverrideColor = new Color(255, 125, 125)
+                Color = new Color(255, 125, 125)
             };
             tooltips.Add(line);
         }

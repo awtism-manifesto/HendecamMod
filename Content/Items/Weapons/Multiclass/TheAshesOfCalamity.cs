@@ -85,7 +85,7 @@ public class TheAshesOfCalamity : ModItem
 
         line = new TooltipLine(Mod, "Face", "'The real Calamity was the friends we made along the way'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

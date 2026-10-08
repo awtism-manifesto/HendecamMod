@@ -44,7 +44,7 @@ public class PoliceBaton : ModItem
 
         line = new TooltipLine(Mod, "Face", "'1312'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

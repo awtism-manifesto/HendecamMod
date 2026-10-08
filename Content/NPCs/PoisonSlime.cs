@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -59,7 +60,7 @@ public class PoisonSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemType<AcidCloud>(), 1, 5, 35));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.HardmodeJungle.Chance * 0.67f;
     }

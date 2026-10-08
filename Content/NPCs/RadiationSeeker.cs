@@ -4,6 +4,7 @@ using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -98,7 +99,7 @@ public class RadiationSeeker : ModNPC
        
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         if (NPC.downedMoonlord)
 

@@ -65,7 +65,7 @@ public class ThePrimeTime : ModItem
 
         line = new TooltipLine(Mod, "Face", "Electrifies musket balls, turning them into four tightly packed hypersonic lasers")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -67,18 +67,18 @@ public class LigmaLazer : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         };
         tooltips.Add(line);
 

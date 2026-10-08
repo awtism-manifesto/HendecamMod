@@ -76,13 +76,13 @@ public class WandOfTheOvercompensator : ModItem
 
         line = new TooltipLine(Mod, "Face", "Lets loose a huge blast of fire that splits into many flame jets")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "The perfect wand for wizards who are insecure about their.. y'know.")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

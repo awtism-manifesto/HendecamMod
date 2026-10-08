@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -18,7 +19,7 @@ public class EmpoweredManaCrystal : ModItem
 
        
     }
-    public override void PostUpdate()
+    public override void PostUpdate(WorldItem item)
     {
         Lighting.AddLight(Item.Center, Color.BlueViolet.ToVector3() * 0.55f * Main.essScale); // Makes this item glow when thrown out of inventory.
     }
@@ -54,7 +55,7 @@ public class EmpoweredManaCrystal : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases Mana by 50 and Magic crit chance by 5% when equipped")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

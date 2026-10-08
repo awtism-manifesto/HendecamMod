@@ -31,12 +31,12 @@ public class FerrousThornSpiky : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click in the inventory to swap variants")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Spiky variant: Higher direct damage and +15 armor penetration, but lower speed and tag damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

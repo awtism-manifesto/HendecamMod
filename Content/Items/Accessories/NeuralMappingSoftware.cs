@@ -18,7 +18,7 @@ public class NeuralMappingSoftware : ModItem
     }
     public override void ModifyTooltips( List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Displays Current/Max Braincells, Lobotometer decay, and random jokes") { OverrideColor = Color.White });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Displays Current/Max Braincells, Lobotometer decay, and random jokes") { Color = Color.White });
     }
     // This is the main hook that allows for our info display to actually work with this accessory. 
     public override void UpdateVanity(Player player)

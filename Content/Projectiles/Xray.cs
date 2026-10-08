@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.GameContent;
 
 namespace HendecamMod.Content.Projectiles;
@@ -37,7 +39,7 @@ public class Xray : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.77f, 0.35f, 1f);
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

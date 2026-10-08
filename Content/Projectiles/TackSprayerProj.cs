@@ -21,7 +21,7 @@ public class TackSprayerProj : ModProjectile
     public override void SetStaticDefaults()
     {
         Main.projFrames[Type] = 1;
-        ProjectileID.Sets.MinionTargettingFeature[Type] = true;
+        ProjectileID.Sets.MinionTargetingFeature[Type] = true;
     }
 
     public override void SetDefaults()

@@ -52,7 +52,7 @@ public class PlasmaRifle : ModItem
 
         line = new TooltipLine(Mod, "Face", "Ignores 10 enemy defense")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

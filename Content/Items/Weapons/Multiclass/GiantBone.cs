@@ -49,7 +49,7 @@ public class GiantBone : ModItem
 
         line = new TooltipLine(Mod, "Face", "Get your mind out of the gutter")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

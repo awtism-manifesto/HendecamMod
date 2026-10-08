@@ -41,7 +41,7 @@ public class LycopiteBullet : ModItem
 
         line = new TooltipLine(Mod, "Face", "Occasionally shoots a homing shot that deals extra damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

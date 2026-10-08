@@ -70,7 +70,7 @@ public class Barbarossa : ModItem
 
         line = new TooltipLine(Mod, "Face", "I mean this is powerful and all, but it aint beating Russia in the winter")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -26,12 +26,12 @@ public class AuspiciousLobotomySpike : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into defense")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does not stack with Haemophilic or Unhygenic Lobotomy Spike")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

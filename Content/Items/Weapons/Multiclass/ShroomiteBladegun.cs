@@ -119,17 +119,17 @@ public class ShroomiteBladegun : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to fire a shotgun blast enhanced with a shroomite x-bomb")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Not to be confused with the Shroomite Gunblade'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

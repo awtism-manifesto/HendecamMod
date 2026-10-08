@@ -81,12 +81,12 @@ public class PortableTower : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Bill Gates aint gonna like this one")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

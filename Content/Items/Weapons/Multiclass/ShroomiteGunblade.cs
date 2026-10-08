@@ -108,17 +108,17 @@ public class ShroomiteGunblade : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Has a chance to convert bullets into homing shroomite spores")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to swing a blade that releases shroomite spore clouds everywhere")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Not to be confused with the Shroomite Bladegun'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

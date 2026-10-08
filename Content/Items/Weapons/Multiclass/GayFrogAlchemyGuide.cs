@@ -60,7 +60,7 @@ public class GayFrogAlchemyGuide : ModItem
 
         line = new TooltipLine(Mod, "Face", "Sprays chemicals so toxic that they turn the friggin frogs gay!")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

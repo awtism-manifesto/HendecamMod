@@ -41,7 +41,7 @@ public class DragonBreathShell : ModItem
 
         line = new TooltipLine(Mod, "Face", "Shoots a ton of flaming sparks out of your gun")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

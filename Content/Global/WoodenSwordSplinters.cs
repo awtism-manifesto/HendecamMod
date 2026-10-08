@@ -24,7 +24,7 @@ public class WoodSplinters : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 }
 public class EbonwoodSplinters : GlobalItem
@@ -44,7 +44,7 @@ public class EbonwoodSplinters : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 
 }
@@ -65,7 +65,7 @@ public class ShadewoodSplinters : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 
 }
@@ -87,7 +87,7 @@ public class PalmSplinters : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 }
 
@@ -108,7 +108,7 @@ public class BorSplinters : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 
 }
@@ -129,7 +129,7 @@ public class AshSplinters : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 
 }
@@ -150,7 +150,7 @@ public class PearlSplinters : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { Color = Color.DarkViolet });
     }
 
 }

@@ -39,12 +39,12 @@ public class WhippetWhip : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'My name lil t man'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -12,7 +12,7 @@ public class ApacheElfShipSummon : ModItem
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 1;
-        ItemID.Sets.SortingPriorityBossSpawns[Type] = 13;
+        ItemID.Sets.SortingPriorityMiscImportants[Type] = 13;
     }
 
     public override void SetDefaults()
@@ -33,7 +33,7 @@ public class ApacheElfShipSummon : ModItem
 
         line = new TooltipLine(Mod, "Face", "Summons Alpine, pilot of the Apache Elf Ship")
         {
-            OverrideColor = new Color(155, 0, 0)
+            Color = new Color(155, 0, 0)
         };
         tooltips.Add(line);
     }

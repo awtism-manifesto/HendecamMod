@@ -33,7 +33,7 @@ public class GogBlockPlaced : ModTile
         MinPick = 2;
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         var config = ModContent.GetInstance<ZeGogEnablers>();
         var config2 = ModContent.GetInstance<HendecamExperimentalConfig>();
@@ -161,7 +161,7 @@ public class GogBlockPlaced : ModTile
             TileID.Sets.BasicDresser[tile.TileType] ||
             TileID.Sets.BasicDresser[tile.TileType] ||
          
-            TileID.Sets.Torch[tile.TileType])
+            TileID.Sets.Torches[tile.TileType])
             return false;
 
         // Don't replace anything that isn't a full block

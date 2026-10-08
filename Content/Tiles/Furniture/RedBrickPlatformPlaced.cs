@@ -17,7 +17,7 @@ public class RedBrickPlatformPlaced : ModTile
         TileID.Sets.Platforms[Type] = true;
         TileID.Sets.DisableSmartCursor[Type] = true;
 
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+        TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
         AddMapEntry(new Color(195, 112, 87));
 
         DustType = DustID.Clay;

@@ -46,7 +46,7 @@ public class PlutoniumChestplate : ModItem
 
         line = new TooltipLine(Mod, "Face", "+11% melee speed and +55% lobotometer decay rate")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

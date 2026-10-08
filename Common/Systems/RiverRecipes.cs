@@ -159,7 +159,7 @@ public class RiverRecipes : ModSystem
     {
 
 
-        RecipeGroup.recipeGroups[RecipeGroupID.Wood].ValidItems.Add(ItemType<Pykrete>());
+        RecipeGroup.recipeGroups[RecipeGroups.Wood].ValidItems.Add(ItemType<Pykrete>());
 
     }
 

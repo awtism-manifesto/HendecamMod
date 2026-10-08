@@ -52,13 +52,13 @@ public class OilMonsterStaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "Mini Oil Monsters have a chance to inflict enemies with Oiled")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Subsequent hits on oiled enemies cause them to explode")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

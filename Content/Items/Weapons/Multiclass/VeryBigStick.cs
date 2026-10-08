@@ -49,7 +49,7 @@ public class VeryBigStick : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Very confusing, it's not a stick'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

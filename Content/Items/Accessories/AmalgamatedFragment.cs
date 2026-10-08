@@ -33,7 +33,7 @@ public class AmalgamatedFragment : ModItem
 
         line = new TooltipLine(Mod, "Face", "Slightly less effective with Omni-class weapons")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
@@ -41,7 +41,7 @@ public class AmalgamatedFragment : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage")
             {
-                OverrideColor = new Color(34, 221, 240)
+                Color = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }

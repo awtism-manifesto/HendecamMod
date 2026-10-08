@@ -74,7 +74,7 @@ public class LimestonePlaced : ModTile
             });
         }
 
-        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+        public override void ModifyWorldGenTasks(List<GenPass> tasks)
         {
             int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Clay"));
 

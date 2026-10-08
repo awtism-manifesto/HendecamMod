@@ -110,18 +110,18 @@ public class Blackshard : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to shoot a wave of splitting stars")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Tag enemies with the stars to enhance the swords")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         //
         line = new TooltipLine(Mod, "Face", "Increases the player's max mana while in use")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        

@@ -53,7 +53,7 @@ public class VerminImpaler : ModItem
 
         line = new TooltipLine(Mod, "Face", "The spear itself is also drenched in venom")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

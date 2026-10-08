@@ -59,7 +59,7 @@ public class MintalRepeater : ModItem
 
         line = new TooltipLine(Mod, "Face", "Fires in a two round burst")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

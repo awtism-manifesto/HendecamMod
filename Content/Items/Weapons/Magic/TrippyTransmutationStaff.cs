@@ -52,7 +52,7 @@ public class TrippyTransmutationStaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "The beam can split into homing lycopite spores, a magic lycopite dagger, or an explosive mushroom")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

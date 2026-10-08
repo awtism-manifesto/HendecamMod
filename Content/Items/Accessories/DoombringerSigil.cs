@@ -43,19 +43,19 @@ public class DoombringerSigil : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases melee, ranged, magic, summon, and stupid crit chance and attack speed by 7%")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Increases melee, ranged, magic, summon, and stupid armor penetration by 5")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Slightly less effective with Omni-class weapons")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
@@ -63,14 +63,14 @@ public class DoombringerSigil : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - Also grants the same stat increases to Throwing class")
             {
-                OverrideColor = new Color(34, 221, 240)
+                Color = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
 
         line = new TooltipLine(Mod, "Face", "'Epicenter of entropy'")
         {
-            OverrideColor = new Color(Main.rand.Next(166), Main.rand.Next(166), Main.rand.Next(166))
+            Color = new Color(Main.rand.Next(166), Main.rand.Next(166), Main.rand.Next(166))
         };
         tooltips.Add(line);
         // Here we will hide all tooltips whose title end with ':RemoveMe'

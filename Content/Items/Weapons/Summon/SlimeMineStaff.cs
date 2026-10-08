@@ -66,7 +66,7 @@ public class SlimeMineStaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "The mines take a second to fully arm")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

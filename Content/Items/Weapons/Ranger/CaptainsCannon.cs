@@ -105,12 +105,12 @@ public class CaptainsCannon : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to shoot a powerful, piercing cannonball")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "33% chance to not consume ammo")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

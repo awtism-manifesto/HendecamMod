@@ -43,7 +43,7 @@ public class KevlarMask : ModItem
 
         line = new TooltipLine(Mod, "Face", "3% reduced movement speed")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

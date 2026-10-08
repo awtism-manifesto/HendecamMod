@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -64,7 +65,7 @@ public class AquaticSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.WaterBolt, 100));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.Ocean.Chance * 0.25f;
     }

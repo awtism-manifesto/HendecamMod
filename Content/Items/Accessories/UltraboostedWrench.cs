@@ -42,13 +42,13 @@ public class UltraboostedWrench : ModItem
 
         line = new TooltipLine(Mod, "Face", "+4 max sentries")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Does not stack with Overclocked Wrench")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

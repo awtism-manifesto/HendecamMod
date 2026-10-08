@@ -38,13 +38,13 @@ public class SpoarGlaive : ModItem
 
         line = new TooltipLine(Mod, "Face", "Prioritizes homing in on new enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'It stands for Spore Perception Optimized Advanced Ricochet'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

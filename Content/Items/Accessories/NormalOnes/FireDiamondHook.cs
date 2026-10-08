@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using Terraria;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes;
 
@@ -137,7 +138,7 @@ internal class FireDiamondHookProj : ModProjectile
     }
 
     // Draws the grappling hook's chain.
-    public override bool PreDrawExtras()
+    public override bool PreDrawExtras(Player player)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Vector2 playerCenter = Main.player[Projectile.owner].MountedCenter;
         Vector2 center = Projectile.Center;

@@ -50,7 +50,7 @@ public class ZapperGun : ModItem
 
         line = new TooltipLine(Mod, "Face", "The creator of this weapon was fucking assassinated by Nintendo")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

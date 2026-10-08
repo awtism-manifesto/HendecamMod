@@ -42,7 +42,7 @@ public class HotShots : ModItem
 
         line = new TooltipLine(Mod, "Face", "Summons a hot tack shooter sentry that shoots flaming, piercing tacks")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

@@ -44,7 +44,7 @@ public class AstatineGreaves : ModItem
 
         line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slots and 8% increased damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
@@ -52,7 +52,7 @@ public class AstatineGreaves : ModItem
         {
             line = new TooltipLine(Mod, "Face", "13% increased throwing damage")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }

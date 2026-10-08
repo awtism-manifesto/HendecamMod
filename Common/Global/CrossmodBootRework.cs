@@ -44,7 +44,7 @@ public class AngelBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
     }
 }
 public class MoonBuff : GlobalItem
@@ -87,7 +87,7 @@ public class MoonBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
     }
 }
 public class VoiddBuff : GlobalItem
@@ -130,7 +130,7 @@ public class VoiddBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
     }
 }
 public class SeraphBuff : GlobalItem
@@ -173,7 +173,7 @@ public class SeraphBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
     }
     public class ZephyrBuff : GlobalItem
     {
@@ -215,7 +215,7 @@ public class SeraphBuff : GlobalItem
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
         }
     }
     public class ParticleSprinterBuff : GlobalItem
@@ -258,7 +258,7 @@ public class SeraphBuff : GlobalItem
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
         }
     }
     public class HorizonBuff : GlobalItem
@@ -301,7 +301,7 @@ public class SeraphBuff : GlobalItem
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { OverrideColor = Color.DarkViolet });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also has enhanced effects of Terraspark Boots") { Color = Color.DarkViolet });
         }
     }
 }

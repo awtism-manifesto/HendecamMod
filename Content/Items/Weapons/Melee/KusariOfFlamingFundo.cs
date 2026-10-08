@@ -52,7 +52,7 @@ public class KusariOfFlamingFundo : ModItem
 
         line = new TooltipLine(Mod, "Face", "'COWABUNGA!!!'")
         {
-            OverrideColor = new Color(255, 115, 25)
+            Color = new Color(255, 115, 25)
         };
         tooltips.Add(line);
     }

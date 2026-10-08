@@ -30,7 +30,7 @@ public class MarksmanLaserSight : ModItem
 
         line = new TooltipLine(Mod, "Face", "10% increased ranged crit chance")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -40,7 +40,7 @@ public class LaserCharge : ModItem
 
         line = new TooltipLine(Mod, "Face", "Emits high velocity lasers instead of bullets")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

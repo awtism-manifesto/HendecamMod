@@ -1,7 +1,9 @@
 ﻿using HendecamMod.Common.Systems.Assets;
 using HendecamMod.Common.Utils;
+using Microsoft.Xna.Framework;
 using System.IO;
 using System.Linq;
+using Terraria;
 
 namespace HendecamMod.Content.Projectiles.Effect;
 
@@ -40,7 +42,7 @@ public class LaserEffect : ModProjectile
                 EntityToFollow = Main.player[entityID];
                 break;
             case 2:
-                EntityToFollow = Main.projectile.FirstOrDefault(p => p.identity == entityID, null);
+                EntityToFollow = Main.projectile.FirstOrDefault(p => p.identity/* tModPorter Note: Removed. Use Projectile.key instead. */ == entityID, null);
                 break;
             case 3:
                 EntityToFollow = Main.npc[entityID];
@@ -83,7 +85,7 @@ public class LaserEffect : ModProjectile
                 else if (EntityToFollow is Projectile proj)
                 {
                     entityType = 2;
-                    entityID = proj.identity;
+                    entityID = proj.identity/* tModPorter Note: Removed. Use Projectile.key instead. */;
                 }
                 else if (EntityToFollow is NPC)
                 {
@@ -104,7 +106,7 @@ public class LaserEffect : ModProjectile
         AITimer++;
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         if (savedVelocity == Vector2.Zero)
         {

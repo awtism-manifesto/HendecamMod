@@ -1,4 +1,5 @@
-﻿using Terraria.Graphics.CameraModifiers;
+﻿using Terraria;
+using Terraria.Graphics.CameraModifiers;
 
 namespace HendecamMod.Common.UI;
 
@@ -28,7 +29,7 @@ public class MoveCameraModifier : ICameraModifier
         }
         if (endCondition.Invoke() || timer > 3600) // if not talking or veryyyy long time has passed
         {
-            if (Main.gamePaused || Main.gameInactive)
+            if (Main.gamePaused || !FocusHelper.GameplayActive)
             {
                 return;
             }
@@ -41,7 +42,7 @@ public class MoveCameraModifier : ICameraModifier
             }
             return;
         }
-        if (Main.gamePaused || Main.gameInactive)
+        if (Main.gamePaused || !FocusHelper.GameplayActive)
         {
             return;
         }

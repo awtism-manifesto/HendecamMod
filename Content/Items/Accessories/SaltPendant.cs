@@ -27,7 +27,7 @@ public class SaltPendant : ModItem
 
         line = new TooltipLine(Mod, "Face", "'For your spiritual protection'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

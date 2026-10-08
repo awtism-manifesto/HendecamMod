@@ -70,13 +70,13 @@ public class LoreAccurateBlackshard : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to throw the shard")
         {
-            OverrideColor = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
+            Color = new Color(Main.rand.Next(165), Main.rand.Next(45), Main.rand.Next(45))
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Because River wouldn't stop asking'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -39,17 +39,17 @@ public class PoopSock : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Makes the user stinky")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Represents the average Summoner player (until whipstacking gets removed in 1.4.5)")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

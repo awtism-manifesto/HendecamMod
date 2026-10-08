@@ -75,7 +75,7 @@ public class Needler : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Which idiot from the Covenant left this one here?'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -67,13 +67,13 @@ public class TheChudfucker : ModItem
 
         line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         };
         tooltips.Add(line);
 

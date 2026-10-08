@@ -47,7 +47,7 @@ public class IForgor : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Dude, this one is just plane awful'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

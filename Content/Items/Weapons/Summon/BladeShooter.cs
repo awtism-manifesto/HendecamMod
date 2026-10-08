@@ -42,7 +42,7 @@ public class BladeShooter : ModItem
 
         line = new TooltipLine(Mod, "Face", "Summons a blade shooter sentry that flings large, deadly blades in all directions")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

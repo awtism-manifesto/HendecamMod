@@ -47,12 +47,12 @@ public class FaradayBodyArmor : ModItem
 
         line = new TooltipLine(Mod, "Face", "+9% stupid damage and crit chance")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "+3 HP/Sec life regen")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

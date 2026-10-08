@@ -35,7 +35,7 @@ public class CrossbowBolt : ModItem
 
         line = new TooltipLine(Mod, "Face", "Flies fast and pierces once")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

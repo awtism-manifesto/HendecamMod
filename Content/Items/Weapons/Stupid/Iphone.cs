@@ -77,12 +77,12 @@ public class Iphone : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'you do NOT wanna look at the search history on that thing'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

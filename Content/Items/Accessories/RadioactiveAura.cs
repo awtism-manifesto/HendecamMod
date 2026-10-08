@@ -30,13 +30,13 @@ public class RadioactiveAura : ModItem
 
         line = new TooltipLine(Mod, "Face", "8% increased damage and critical strike chance, and 5% increased attack speed")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Your attacks now inflict Radiation Poisoning")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

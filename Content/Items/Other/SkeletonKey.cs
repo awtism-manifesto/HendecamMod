@@ -27,7 +27,7 @@ public class SkeletonKey : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Chaotic energy pulsates from the key'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

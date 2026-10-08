@@ -39,11 +39,11 @@ public class ArchangelChestguard : ModItem
         tooltips.Add(new TooltipLine(Mod, "Face", "35% increased damage"));
         tooltips.Add(new TooltipLine(Mod, "Face", "Significantly boosts max life")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
         tooltips.Add( new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
         {
-            OverrideColor = new Color(255, 15, 85)
+            Color = new Color(255, 15, 85)
         });
        
     }

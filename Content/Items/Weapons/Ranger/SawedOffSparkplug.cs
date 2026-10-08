@@ -76,7 +76,7 @@ public class SawedOffSparkplug : ModItem
 
         line = new TooltipLine(Mod, "Face", "Also shoots a large ball of oil that makes enemies more vulnerable to the flame")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

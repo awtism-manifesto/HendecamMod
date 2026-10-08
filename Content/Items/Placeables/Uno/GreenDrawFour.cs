@@ -24,7 +24,7 @@ public class GreenDrawFour : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Right Click to make it Blue")
         {
-            OverrideColor = new Color(0, 0, 255)
+            Color = new Color(0, 0, 255)
         };
         tooltips.Add(line);
     }

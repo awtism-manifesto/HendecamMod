@@ -64,7 +64,7 @@ public class CandyCaneCompoundBow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts wooden arrows into candy cane arrows that split into candy cane shards")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

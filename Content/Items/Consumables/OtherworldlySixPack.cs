@@ -47,7 +47,7 @@ public class OtherworldlySixPack : ModItem
 
         line = new TooltipLine(Mod, "Face", "'WARNING: effects have NOT been tested in this universe'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

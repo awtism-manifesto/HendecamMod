@@ -47,21 +47,21 @@ public class LycopiteFedora : ModItem
 
         line = new TooltipLine(Mod, "Face", "+75 Max Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 7% increased throwing crit chance and attack speed")
             {
-                OverrideColor = new Color(34, 221, 240)
+                Color = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
 
         line = new TooltipLine(Mod, "Face", "+0.5 hp/s life regen")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

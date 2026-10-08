@@ -81,7 +81,7 @@ public class StarfishOnAString : ModItem
 
         line = new TooltipLine(Mod, "Face", "Has a chance to release water jets upon hitting an enemy")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

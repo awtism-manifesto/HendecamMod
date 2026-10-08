@@ -80,13 +80,13 @@ public class KingslayerScepter : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 7 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Not even the gel could hold it together'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

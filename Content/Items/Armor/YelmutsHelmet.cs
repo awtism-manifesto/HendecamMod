@@ -48,12 +48,12 @@ public class YelmutsHelmet : ModItem
 
         line = new TooltipLine(Mod, "Face", "+30 max mana and Lobotometer")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "+5% summon damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
@@ -61,25 +61,25 @@ public class YelmutsHelmet : ModItem
         {
             line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 5% increased throwing damage")
             {
-                OverrideColor = new Color(34, 221, 240)
+                Color = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }
         line = new TooltipLine(Mod, "Face", "Set Bonus compatible with Poor Mahogany armor")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "May attract a visitor to your town")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(220, 40, 245)
+            Color = new Color(220, 40, 245)
         };
         tooltips.Add(line);
     }

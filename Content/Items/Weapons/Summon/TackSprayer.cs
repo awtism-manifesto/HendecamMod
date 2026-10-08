@@ -42,7 +42,7 @@ public class TackSprayer : ModItem
 
         line = new TooltipLine(Mod, "Face", "Summons a tack sprayer sentry that sprays a lot more tacks than before")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

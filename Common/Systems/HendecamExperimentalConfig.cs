@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Content.Buffs;
 using System.ComponentModel;
+using Terraria.Localization;
 using Terraria.ModLoader.Config;
 
 namespace HendecamMod.Common.Systems;
@@ -68,7 +69,7 @@ public class HendecamExperimentalConfig : ModConfig
     }
 
   
-    public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
+    public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref NetworkText message)
     {
         var enabledConfig = GetInstance<HendecamConfig>();
 

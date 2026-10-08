@@ -19,6 +19,6 @@ public class BandBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Grants immunity to Chaos State when equipped") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Grants immunity to Chaos State when equipped") { Color = Color.DarkViolet });
     }
 }

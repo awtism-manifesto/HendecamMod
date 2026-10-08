@@ -26,12 +26,12 @@ public class Red40VapeDye : ModItem
 
         line = new TooltipLine(Mod, "Face", "Can be combined with other vape dyes")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Works in inventory and vanity slots")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

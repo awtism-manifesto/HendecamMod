@@ -69,7 +69,7 @@ public class GeigersGambit : ModItem
 
         line = new TooltipLine(Mod, "Face", "'I don't want to set the world on fire...'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

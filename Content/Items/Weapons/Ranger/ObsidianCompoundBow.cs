@@ -61,7 +61,7 @@ public class ObsidianCompoundBow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Getting hit with the weapon in hand causes shattering obsidian shards to fly everywhere")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -38,7 +38,7 @@ public class MantiusOrePlaced : ModTile
         g = 0.05f;
         b = 0.12f;
     }
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
 
         int spreadChance;

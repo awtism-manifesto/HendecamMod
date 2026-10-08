@@ -193,19 +193,19 @@ public class TheSpamCannon : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to fire a [BIG SHOT] that destroys any living thing in your path")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Uses a random amount of Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'Now's your chance to be a [BIG SHOT]'")
         {
-            OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
+            Color = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
         };
         tooltips.Add(line);
     }

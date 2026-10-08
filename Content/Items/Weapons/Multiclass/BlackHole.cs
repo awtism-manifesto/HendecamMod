@@ -71,7 +71,7 @@ public class BlackHole : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Does everything it can to escape this world")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -3,6 +3,7 @@ using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Magic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -95,7 +96,7 @@ public class LargePlasmoid : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.SoulofFlight, 3, 15, 30));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         if (!Main.dayTime & BossDownedSystem.downedApacheElfShip & NPC.downedEmpressOfLight)
         {

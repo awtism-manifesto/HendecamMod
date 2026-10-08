@@ -37,12 +37,12 @@ public class SpookyWoodSword : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Flings tons of hellfire sparks everywhere")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

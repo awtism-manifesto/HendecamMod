@@ -22,7 +22,7 @@ public class SaltCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { Color = Color.PaleVioletRed });
         }
     }
 
@@ -47,7 +47,7 @@ public class PureSaltCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { Color = Color.PaleVioletRed });
         }
     }
 
@@ -95,7 +95,7 @@ public class ThoriumModOiledUp : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -120,7 +120,7 @@ public class ThoriumMonke : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -148,7 +148,7 @@ public class ThoriumMonkeSuper : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -176,7 +176,7 @@ public class ThoriumMonkeSuperLaser : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -204,7 +204,7 @@ public class ThoriumMonkeSuperLaserPlasma : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage and no longer requires ammo") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -232,7 +232,7 @@ public class PeopleThorium : GlobalItem
     {
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { Color = Color.LightSeaGreen });
         }
     }
 
@@ -281,7 +281,7 @@ public class ParaSepta : GlobalItem
     {
         if (ModLoader.TryGetMod("Paracosm", out Mod ParaMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Paracosm): Supercharged by the remains of an eldritch being") { OverrideColor = Color.MediumVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Paracosm): Supercharged by the remains of an eldritch being") { Color = Color.MediumVioletRed });
         }
     }
 
@@ -344,7 +344,7 @@ public class CeramCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { Color = Color.PaleVioletRed });
         }
     }
 
@@ -369,7 +369,7 @@ public class RadCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { Color = Color.PaleVioletRed });
         }
     }
 
@@ -394,7 +394,7 @@ public class CeramHorseCalBuff : GlobalItem
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
         {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { OverrideColor = Color.PaleVioletRed });
+            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Calamity): Now gives more defense ") { Color = Color.PaleVioletRed });
         }
     }
 

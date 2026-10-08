@@ -50,7 +50,7 @@ public class ShatteringShell : ModItem
 
         line = new TooltipLine(Mod, "Face", "Deals extreme damage on direct hits")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

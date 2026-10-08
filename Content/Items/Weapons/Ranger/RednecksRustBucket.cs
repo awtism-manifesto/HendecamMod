@@ -97,17 +97,17 @@ public class RednecksRustBucket : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to throw a shovel")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Tag enemies with the shovel to power up your bullets")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'They took er jerbs! They aint taking er guns next.'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        

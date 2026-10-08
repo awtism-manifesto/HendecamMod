@@ -40,7 +40,7 @@ public class Shitballs : ModItem
 
         line = new TooltipLine(Mod, "Face", "Poisons your enemies, and even worse, makes them stinky.")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

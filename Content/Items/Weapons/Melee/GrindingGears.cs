@@ -40,7 +40,7 @@ public class GrindingGears : ModItem
 
         line = new TooltipLine(Mod, "Face", "'This one's really gonna grind their gears'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

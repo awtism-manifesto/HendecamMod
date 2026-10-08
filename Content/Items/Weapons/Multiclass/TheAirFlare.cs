@@ -52,7 +52,7 @@ public class TheAirFlare : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses flares as ammo")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

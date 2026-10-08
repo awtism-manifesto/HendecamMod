@@ -36,7 +36,7 @@ public class AstatineBreastplate : ModItem
 
         line = new TooltipLine(Mod, "Face", "13% increased ranged crit chance and +12 melee armor penetration")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

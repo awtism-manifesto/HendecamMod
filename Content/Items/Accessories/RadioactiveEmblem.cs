@@ -32,18 +32,18 @@ public class RadioactiveEmblem : ModItem
 
         line = new TooltipLine(Mod, "Face", "7% increased crit chance and attack speed")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Causes your attacks to irradiate any enemy you hit")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "These buffs come at the cost of 15% of your max life")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

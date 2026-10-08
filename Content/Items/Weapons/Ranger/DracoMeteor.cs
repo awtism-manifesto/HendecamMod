@@ -70,7 +70,7 @@ public class DracoMeteor : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts bullets into Draconic Rounds that drop meteors from the sky upon impact")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

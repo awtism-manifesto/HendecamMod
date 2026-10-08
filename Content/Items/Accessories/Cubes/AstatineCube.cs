@@ -32,12 +32,12 @@ public class AstatineCube : ModItem
 
         line = new TooltipLine(Mod, "Face", "Run speed can go from 1% to 500%")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Fall speed can go from -50% to 250%")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

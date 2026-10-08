@@ -60,12 +60,12 @@ public class MoonLandingFakingDevice : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "The elites aint gonna like this one")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

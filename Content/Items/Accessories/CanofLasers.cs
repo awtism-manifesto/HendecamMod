@@ -27,7 +27,7 @@ public class CanofLasers : ModItem
         recipe.AddOnCraftCallback(GiveWorms);
         void GiveWorms(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
         {
-            Main.LocalPlayer.GetItem(Main.myPlayer, new Item(ItemID.Worm, Main.rand.Next(5, 12)), default(GetItemSettings));
+            Main.LocalPlayer.GetItem(new Item(ItemID.Worm, Main.rand.Next(5, 12)), default(GetItemSettings));
         }
         recipe.Register();
     }
@@ -40,7 +40,7 @@ public class CanofLasers : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Why'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

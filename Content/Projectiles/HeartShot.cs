@@ -1,5 +1,7 @@
 ﻿using HendecamMod.Content.Buffs;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 
@@ -34,7 +36,7 @@ public class HeartShot : ModProjectile
 
    
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

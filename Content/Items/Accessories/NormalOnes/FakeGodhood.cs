@@ -30,7 +30,7 @@ public class FakeGodhood : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "-Testing Item-")
         {
-            OverrideColor = new Color(255, 25, 99)
+            Color = new Color(255, 25, 99)
         };
         tooltips.Add(line);
       

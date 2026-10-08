@@ -26,7 +26,7 @@ public class VapeKit : ModItem
 
         line = new TooltipLine(Mod, "Face", "'You should give yourself lung cancer, NOW!'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

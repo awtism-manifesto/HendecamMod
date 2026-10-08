@@ -23,7 +23,7 @@ public class MetalAmogus : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as a melee weapon") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as a melee weapon") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -101,7 +101,7 @@ public class BigBoner : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Shoots out an additional bone with your rocket") { OverrideColor = Color.White });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Shoots out an additional bone with your rocket") { Color = Color.White });
     }
 
     public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -171,7 +171,7 @@ public class Evil : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals 777x damage to Red Devils") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Deals 777x damage to Red Devils") { Color = Color.DarkViolet });
     }
 }
 
@@ -266,7 +266,7 @@ public class YouAreAwful : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as bait, if you're a terrible enough person.") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to be used as bait, if you're a terrible enough person.") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -286,7 +286,7 @@ public class MagicFagic : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -305,7 +305,7 @@ public class Cock : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -324,7 +324,7 @@ public class DemonCock : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -345,7 +345,7 @@ public class SnowgraveMirror : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Faster use animation") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)

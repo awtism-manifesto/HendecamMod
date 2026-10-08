@@ -34,13 +34,13 @@ public class NeoWings : ModItem
 
         line = new TooltipLine(Mod, "Face", "WITNESS ME THIS TIME")
         {
-            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
+            Color = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "CUT THESE [SILLY STRINGS]")
         {
-            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
+            Color = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
         };
         tooltips.Add(line);
     }

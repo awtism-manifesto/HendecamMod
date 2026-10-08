@@ -29,7 +29,7 @@ public class MintalHelmet : ModItem
 
         line = new TooltipLine(Mod, "Face", "+65 max Mana")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

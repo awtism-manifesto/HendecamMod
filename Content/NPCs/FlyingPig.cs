@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
@@ -62,7 +63,7 @@ public class FlyingPig : ModNPC
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemID.CoinGun, chanceDenominator: 4999, chanceNumerator: 2));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.Overworld.Chance * 0.0095f;
     }

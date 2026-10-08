@@ -81,7 +81,7 @@ public class CapitalistCarbine : ModItem
 
         line = new TooltipLine(Mod, "Face", "'If you throw money at the problem it might go away...'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

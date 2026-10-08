@@ -41,7 +41,7 @@ public class SpiritProtectionCharm : ModItem
 
         line = new TooltipLine(Mod, "Face", "+7% magic crit chance and +70 mana")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

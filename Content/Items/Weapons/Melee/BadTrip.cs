@@ -51,7 +51,7 @@ public class BadTrip : ModItem
 
         line = new TooltipLine(Mod, "Face", "The shroom mines explode on contact with an enemy or after a few seconds")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

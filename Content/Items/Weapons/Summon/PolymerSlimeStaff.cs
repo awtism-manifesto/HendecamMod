@@ -52,7 +52,7 @@ public class PolymerSlimeStaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "polymer slimes have a chance to inflict enemies with Oiled")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

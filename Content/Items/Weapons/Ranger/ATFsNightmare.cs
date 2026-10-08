@@ -81,18 +81,18 @@ public class ATFsNightmare : ModItem
 
         line = new TooltipLine(Mod, "Face", "Ignores a large portion of enemy defense")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "85% chance to not consume ammo")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'The Right To Bear Arms.'")
         {
-            OverrideColor = new Color(95, 90, 255)
+            Color = new Color(95, 90, 255)
         };
         tooltips.Add(line);
         // Here we will hide all tooltips whose title end with ':RemoveMe'

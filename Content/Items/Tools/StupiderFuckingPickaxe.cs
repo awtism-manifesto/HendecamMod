@@ -44,7 +44,7 @@ public class StupiderFuckingPickaxe : ModItem
 
         line = new TooltipLine(Mod, "Face", "I'm gonna disassemble your molecules!")
         {
-            OverrideColor = new Color(55, 70, 254)
+            Color = new Color(55, 70, 254)
         };
         tooltips.Add(line);
     }

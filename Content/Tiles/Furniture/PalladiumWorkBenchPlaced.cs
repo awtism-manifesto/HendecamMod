@@ -23,7 +23,7 @@ public class PalladiumWorkBenchPlaced : ModTile
         TileObjectData.newTile.CoordinateHeights = [18];
         TileObjectData.addTile(Type);
 
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+        TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
         AddMapEntry(new Color(153, 97, 61), Language.GetText("Hardmode Workbench"));
     }
 

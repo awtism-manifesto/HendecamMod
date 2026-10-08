@@ -77,7 +77,7 @@ public class ClimateChanger : ModItem
 
         line = new TooltipLine(Mod, "Face", "Spews climate changing carbon dioxide everywhere")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

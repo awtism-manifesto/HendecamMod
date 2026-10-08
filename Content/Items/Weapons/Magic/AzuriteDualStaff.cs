@@ -68,7 +68,7 @@ public class AzuriteDualStaff : ModItem
 
         line = new TooltipLine(Mod, "Face", "The forwards bolt pierces, the backwards bolt homes")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

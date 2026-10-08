@@ -59,13 +59,13 @@ public class TarriffStamper : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'May also have adverse effects on the U.S economy...'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

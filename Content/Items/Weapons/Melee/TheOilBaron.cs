@@ -48,7 +48,7 @@ public class TheOilBaron : ModItem
 
         line = new TooltipLine(Mod, "Face", "Melee hits on Oiled enemies cause fiery explosions that deal massive damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

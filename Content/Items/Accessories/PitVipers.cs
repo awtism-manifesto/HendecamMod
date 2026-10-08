@@ -33,18 +33,18 @@ public class PitVipers : ModItem
 
         line = new TooltipLine(Mod, "Face", "+175 Max Braincells and 150% increased lobotometer decay rate")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        
         line = new TooltipLine(Mod, "Face", "Significantly reduces the Lobotometer's impact on your vision")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'The unofficial logo of frat boys, the stupidest demographic in existence'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

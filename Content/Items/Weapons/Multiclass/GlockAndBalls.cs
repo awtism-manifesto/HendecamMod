@@ -90,13 +90,13 @@ public class GlockAndBalls : ModItem
 
         line = new TooltipLine(Mod, "Face", "Shoots exactly what you'd expect it to shoot")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "So does firing this weapon count as failing no nut november?")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

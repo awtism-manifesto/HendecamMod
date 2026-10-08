@@ -66,12 +66,12 @@ public class BowlingBaller : ModItem
 
         line = new TooltipLine(Mod, "Face", "Base damage is randomized every time the weapon is fired")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

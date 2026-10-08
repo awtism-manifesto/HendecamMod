@@ -137,12 +137,12 @@ public class CoreEnforcer: ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click to fire Thousand Waves")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Deals more damage when the ancient spirits of light and dark are present in your world")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

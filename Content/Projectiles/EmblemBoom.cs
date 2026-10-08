@@ -10,7 +10,7 @@ public class EmblemBoom : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
+        ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling/* tModPorter Note: Removed. Damage dealt to a player by their own projectile, or by another player, is never scaled by difficulty. For hostile projectiles, assign Projectile.hostileDamageScaling in SetDefaults instead */[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
 
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).

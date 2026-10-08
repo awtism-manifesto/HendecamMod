@@ -52,13 +52,13 @@ public class PlutoniumSword : ModItem
 
         line = new TooltipLine(Mod, "Face", "Creates a large radioactive aura around the player")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Ignores 25 enemy defense")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

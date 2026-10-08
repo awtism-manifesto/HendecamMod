@@ -99,7 +99,7 @@ public class NightsFog : ModItem
 
         line = new TooltipLine(Mod, "Face", "Vape smoke spawns extra vape smoke that blindsides enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -1,6 +1,8 @@
 ﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using static HendecamMod.Content.Items.Accessories.IronLung;
@@ -37,7 +39,7 @@ public class DragonVapeSmoke : ModProjectile
 
 
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

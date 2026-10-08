@@ -37,7 +37,7 @@ public class TransFedora : ModItem
 
         line = new TooltipLine(Mod, "Face", "9% increased stupid critical strike")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

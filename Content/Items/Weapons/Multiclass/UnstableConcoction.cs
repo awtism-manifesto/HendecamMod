@@ -73,24 +73,24 @@ public class UnstableConcoction : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Throws highly unstable acid potions that occasionally explode midair")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Hitting enemies splashes acid so potent it ignores enemy debuff immunities")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Killing an acidified enemy releases a massive explosion that does more damage the stronger the enemy killed was")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "These explosions also acidify enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

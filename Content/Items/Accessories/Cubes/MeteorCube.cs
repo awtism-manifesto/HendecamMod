@@ -28,7 +28,7 @@ public class MeteorCube : ModItem
 
         line = new TooltipLine(Mod, "Face", "Good thing this can't become a black hole")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

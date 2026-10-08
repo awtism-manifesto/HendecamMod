@@ -73,7 +73,7 @@ public class TorchSong : ModItem
 
         line = new TooltipLine(Mod, "Face", "Spews slow-moving ghostly fire that ignores walls and grows stronger as it burns through enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -47,12 +47,12 @@ public class CrackedNuts : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Dont think about it too much...'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

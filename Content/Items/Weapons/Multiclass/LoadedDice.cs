@@ -66,7 +66,7 @@ public class LoadedDice : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses between 1 and 6 braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        

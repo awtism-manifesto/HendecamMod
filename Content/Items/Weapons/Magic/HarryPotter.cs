@@ -74,7 +74,7 @@ public class HarryPotter : ModItem
 
         line = new TooltipLine(Mod, "Face", "fuck jk rowling")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

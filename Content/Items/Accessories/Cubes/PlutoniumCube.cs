@@ -30,7 +30,7 @@ public class PlutoniumCube : ModItem
 
         line = new TooltipLine(Mod, "Face", "It can go from 1% to 500%")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

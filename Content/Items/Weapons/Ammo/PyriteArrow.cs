@@ -37,7 +37,7 @@ public class PyriteArrow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Leaves a trail of sparks as it flies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

@@ -65,7 +65,7 @@ public class StalingradSpewer : ModItem
 
         line = new TooltipLine(Mod, "Face", "Nobody makes a Wall of Flesh like the Soviets did...")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

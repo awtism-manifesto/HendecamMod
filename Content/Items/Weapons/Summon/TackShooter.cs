@@ -42,7 +42,7 @@ public class TackShooter : ModItem
 
         line = new TooltipLine(Mod, "Face", "Summons a tack shooter sentry that shoots in eight directions")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

@@ -62,22 +62,22 @@ public class YelmutFaeChestplate : ModItem
 
         tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and Max Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "+1 max minions and +2 max sentries")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "Counts as wings, enhances other wings when combined")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(220, 40, 245)
+            Color = new Color(220, 40, 245)
         });
     }
 

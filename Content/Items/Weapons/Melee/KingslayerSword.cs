@@ -72,7 +72,7 @@ public class KingslayerSword : ModItem
 
         line = new TooltipLine(Mod, "Face", "'What's a king to a mob?'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

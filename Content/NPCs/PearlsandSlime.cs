@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -63,7 +64,7 @@ public class PearlsandSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.LightShard, 5));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.RainbowSlime.Chance * 0.75f;
     }

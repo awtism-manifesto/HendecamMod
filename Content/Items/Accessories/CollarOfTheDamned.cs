@@ -34,7 +34,7 @@ public class CollarOfTheDamned : ModItem
 
         line = new TooltipLine(Mod, "Face", "-Dedicated Item-")
         {
-            OverrideColor = new Color(252, 141, 204)
+            Color = new Color(252, 141, 204)
         };
         tooltips.Add(line);
 

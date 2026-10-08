@@ -20,7 +20,7 @@ public class KetamineInjection : ModItem
 
         line = new TooltipLine(Mod, "Face", "-12.5% max life and -1 hp/s life regen")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

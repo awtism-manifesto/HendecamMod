@@ -72,7 +72,7 @@ public class DemoniteAreaDenialSystem : ModItem
 
         line = new TooltipLine(Mod, "Face", "'The enemy is approaching from our east!' Roger, removing our east")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

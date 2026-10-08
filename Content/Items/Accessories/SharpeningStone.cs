@@ -25,13 +25,13 @@ public class SharpeningStone : ModItem
 
         line = new TooltipLine(Mod, "Face", "All applicable projectiles have +2 pierce")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "May interact weirdly with certain weapons")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

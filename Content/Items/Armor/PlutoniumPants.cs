@@ -42,14 +42,14 @@ public class PlutoniumPants : ModItem
 
         line = new TooltipLine(Mod, "Face", "+2 max sentry slots")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
         {
             line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 7% increased throwing attack speed")
             {
-                OverrideColor = new Color(34, 221, 240)
+                Color = new Color(34, 221, 240)
             };
             tooltips.Add(line);
         }

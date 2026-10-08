@@ -115,22 +115,22 @@ public class EchoKit : ModItem
 
         tooltips.Add(new TooltipLine(Mod, "Face", "Right click to fire a volley of sticky bombs")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "Hold both left and right click to fire a focus beam that deals more damage to weakened enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "Enables flight and slow fall while held")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         });
 
         tooltips.Add(new TooltipLine(Mod, "Face", "'I am always ready to learn'")
         {
-            OverrideColor = new Color(151, 212, 255)
+            Color = new Color(151, 212, 255)
         });
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

@@ -54,7 +54,7 @@ public class OrbitalLaserGun : ModItem
 
         line = new TooltipLine(Mod, "Face", "Will fail to deploy if too close to space")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -69,7 +69,7 @@ public class FreeBird : ModItem
 
         line = new TooltipLine(Mod, "Face", "Peak American freedom named after peak American music.")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

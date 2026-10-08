@@ -17,7 +17,7 @@ public class SteelShelfPlaced : ModTile
         TileID.Sets.Platforms[Type] = true;
         TileID.Sets.DisableSmartCursor[Type] = true;
 
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+        TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
         AddMapEntry(new Color(28, 28, 28));
 
         DustType = DustID.Clay;

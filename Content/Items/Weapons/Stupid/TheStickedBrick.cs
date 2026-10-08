@@ -67,7 +67,7 @@ public class TheStickedBrick : ModItem
 
         line = new TooltipLine(Mod, "Face", "'Brochacho it's a brick on a stick'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

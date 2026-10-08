@@ -69,7 +69,7 @@ public class PearlwoodWand : ModItem
 
         line = new TooltipLine(Mod, "Face", "Shoots a spark of hallowed energy that persistently chases foes")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

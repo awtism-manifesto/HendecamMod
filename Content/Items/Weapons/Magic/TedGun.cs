@@ -52,7 +52,7 @@ public class TedGun : ModItem
 
         line = new TooltipLine(Mod, "Face", "For when the consequences of the industrial revolution start hitting a little too close to home")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

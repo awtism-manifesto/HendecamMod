@@ -31,7 +31,7 @@ public class IrradiatedFisticuffs : ModItem
 
         line = new TooltipLine(Mod, "Face", "Enemies are much more likely to target you")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

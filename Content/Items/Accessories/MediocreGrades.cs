@@ -29,13 +29,13 @@ public class MediocreGrades : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases Stupid attack speed by 12%, bonus decays as Lobotometer rises")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'C's get degrees bro'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

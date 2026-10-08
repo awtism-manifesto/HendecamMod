@@ -46,12 +46,12 @@ public class BoggsGlove : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Dedicated to the drinking legend Wade Boggs'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

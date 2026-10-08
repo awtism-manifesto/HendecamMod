@@ -82,7 +82,7 @@ public class SmallSausageSpammer : ModItem
 
         line = new TooltipLine(Mod, "Face", "Originally designed by Trump Corporation for use by its leader")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

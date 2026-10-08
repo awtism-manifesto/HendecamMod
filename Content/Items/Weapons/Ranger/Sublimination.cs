@@ -151,7 +151,7 @@ public class Sublimination : ModItem
 
         line = new TooltipLine(Mod, "Face", "'It straight up smokes enemies. as in, it turns them into smoke.'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

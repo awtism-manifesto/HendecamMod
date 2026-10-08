@@ -90,13 +90,13 @@ public class RiverGun : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'WHO THE FUCK TURNED ME INTO A GUN????'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

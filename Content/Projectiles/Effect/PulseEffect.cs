@@ -1,8 +1,10 @@
 ﻿
 using HendecamMod.Common.Systems.Assets;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Linq;
+using Terraria;
 using Terraria.GameContent;
 using Terraria.Graphics.Shaders;
 
@@ -44,7 +46,7 @@ public class PulseEffect : ModProjectile
                 EntityToFollow = Main.player[entityID];
                 break;
             case 2:
-                EntityToFollow = Main.projectile.FirstOrDefault(p => p.identity == entityID, null);
+                EntityToFollow = Main.projectile.FirstOrDefault(p => p.identity/* tModPorter Note: Removed. Use Projectile.key instead. */ == entityID, null);
                 break;
             case 3:
                 EntityToFollow = Main.npc[entityID];
@@ -85,7 +87,7 @@ public class PulseEffect : ModProjectile
                 else if (EntityToFollow is Projectile proj)
                 {
                     entityType = 2;
-                    entityID = proj.identity;
+                    entityID = proj.identity/* tModPorter Note: Removed. Use Projectile.key instead. */;
                 }
                 else if (EntityToFollow is NPC)
                 {
@@ -106,7 +108,7 @@ public class PulseEffect : ModProjectile
         AITimer++;
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
         Vector2 drawPos = Projectile.Center - Main.screenPosition;
@@ -126,7 +128,7 @@ public class PulseEffect : ModProjectile
         return false;
     }
 
-    public override void PostDraw(Color lightColor)
+    public override void PostDraw(Player player, Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
     {
         Main.spriteBatch.End();
         Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, default, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);

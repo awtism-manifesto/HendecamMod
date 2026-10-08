@@ -35,37 +35,37 @@ public class Bergentrucking : ModItem
 
         line = new TooltipLine(Mod, "Face", "HEY THAT BUMP IS SHAPED LIKE A DEER?")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "DUI??? HOW ABOUT YOU DIE? I’LL GO A HUNDRED MILES AN HOUR")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "LITTLE DO YOU KNOW I’M FILLED UP ON GAS")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "IMA GET YOUR FOUNTAIN MAKING ASS")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "PULVERIZE THIS FUCK WITH MY BERGEN TRUCK")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "IT SEEMS YOU’RE OUT OF LUCK")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "TRUCK!!!!!!!")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

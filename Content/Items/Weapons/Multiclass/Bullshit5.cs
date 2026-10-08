@@ -147,22 +147,22 @@ public class Bullshit5 : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click to cast these axes quicker, without the added melee damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Melee hits inflict every applicable debuff in the game")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 25 Braincells on left click, 10 on right click")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(252, 141, 204)
+            Color = new Color(252, 141, 204)
         };
         tooltips.Add(line);
     }

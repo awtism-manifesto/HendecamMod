@@ -54,7 +54,7 @@ public class PyriteBow : ModItem
 
         line = new TooltipLine(Mod, "Face", "Converts all arrows into Pyrite Arrows that leave a trail of sparks")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

@@ -71,13 +71,13 @@ public class KingslayerMultiaxe : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Can mine Lycopite")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

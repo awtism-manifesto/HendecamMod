@@ -106,12 +106,12 @@ public class Six7Gun : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 6 or 7 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'Six Seven'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

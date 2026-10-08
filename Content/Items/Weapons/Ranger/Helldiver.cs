@@ -46,7 +46,7 @@ public class Helldiver : ModItem
 
         line = new TooltipLine(Mod, "Face", "'The most effective way to spread democracy this side of the galaxy!'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

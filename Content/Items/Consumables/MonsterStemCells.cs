@@ -88,7 +88,7 @@ namespace HendecamMod.Content.Items.Consumables
             // Main tooltip
             var line = new TooltipLine(Mod, "LobotometerBonus", $"Permanently increases max Braincells by {BonusPerUse} when consumed")
             {
-                OverrideColor = new Color(100, 255, 100)
+                Color = new Color(100, 255, 100)
             };
             tooltips.Add(line);
 
@@ -98,7 +98,7 @@ namespace HendecamMod.Content.Items.Consumables
 
             line = new TooltipLine(Mod, "Progress", $"Permanent bonus: {currentPermanent} / {MaxTotalBonus}")
             {
-                OverrideColor = new Color(150, 150, 255)
+                Color = new Color(150, 150, 255)
             };
             tooltips.Add(line);
 
@@ -107,7 +107,7 @@ namespace HendecamMod.Content.Items.Consumables
                 int usesLeft = remainingBonus / BonusPerUse;
                 line = new TooltipLine(Mod, "Remaining", $"Can be used {usesLeft} more time{(usesLeft != 1 ? "s" : "")}")
                 {
-                    OverrideColor = new Color(255, 200, 100)
+                    Color = new Color(255, 200, 100)
                 };
                 tooltips.Add(line);
             }
@@ -115,7 +115,7 @@ namespace HendecamMod.Content.Items.Consumables
             {
                 line = new TooltipLine(Mod, "MaxReached", $"Maximum Lobotometer capacity reached!")
                 {
-                    OverrideColor = new Color(255, 100, 100)
+                    Color = new Color(255, 100, 100)
                 };
                 tooltips.Add(line);
             }
@@ -124,7 +124,7 @@ namespace HendecamMod.Content.Items.Consumables
             float totalMax = loboPlayer.Max;
             line = new TooltipLine(Mod, "CurrentTotal", $"Current Braincell count: {totalMax} (including equipment)")
             {
-                OverrideColor = new Color(200, 200, 200)
+                Color = new Color(200, 200, 200)
             };
             tooltips.Add(line);
         }

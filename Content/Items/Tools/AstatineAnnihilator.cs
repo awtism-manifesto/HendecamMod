@@ -73,12 +73,12 @@ public class AstatineAnnihilator : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Matter? more like doesn't matter!")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

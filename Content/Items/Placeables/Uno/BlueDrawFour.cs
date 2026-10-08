@@ -24,7 +24,7 @@ public class BlueDrawFour : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Right Click to make it Red")
         {
-            OverrideColor = new Color(255, 0, 0)
+            Color = new Color(255, 0, 0)
         };
         tooltips.Add(line);
     }

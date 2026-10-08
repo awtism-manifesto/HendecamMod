@@ -70,7 +70,7 @@ public class LeafStorm : ModItem
 
         line = new TooltipLine(Mod, "Face", "Thankfully it doesnt lower your Special Attack... unless you count Mana Sickness")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

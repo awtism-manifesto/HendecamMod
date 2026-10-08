@@ -74,13 +74,13 @@ public class Casanova : ModItem
 
         line = new TooltipLine(Mod, "Face", "Increases life regen and decreases player aggro while fired")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "33% chance to not consume darts")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

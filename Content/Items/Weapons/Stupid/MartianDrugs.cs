@@ -90,19 +90,19 @@ public class MartianDrugs : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Throws martian syringes that inflict random debuffs")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Deals extra damage with critical hits")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'♫ I couldn't kill the player, because i got hiiiigh ♫'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

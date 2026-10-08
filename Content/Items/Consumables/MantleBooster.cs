@@ -36,7 +36,7 @@ public class MantleBooster : ModItem
 
         line = new TooltipLine(Mod, "Face", "WARNING: May cause some lag upon use")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
@@ -44,7 +44,7 @@ public class MantleBooster : ModItem
         {
             line = new TooltipLine(Mod, "Face", "If you're gonna use this item in multiplayer, warn the other people you're playing with. Don't be an asshole.")
             {
-                OverrideColor = new Color(255, 255, 255)
+                Color = new Color(255, 255, 255)
             };
             tooltips.Add(line);
         }

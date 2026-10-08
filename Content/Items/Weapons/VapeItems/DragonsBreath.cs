@@ -98,7 +98,7 @@ public class DragonsBreath : ModItem
 
         line = new TooltipLine(Mod, "Face", "Exhales a constant stream of fiery vape smoke")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

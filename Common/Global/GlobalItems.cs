@@ -25,7 +25,7 @@ public class RodOfHarmonyBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Grants immunity to Chaos State when equipped") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Grants immunity to Chaos State when equipped") { Color = Color.DarkViolet });
     }
 }
 
@@ -50,7 +50,7 @@ public class ObsidanSkullBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to On Fire!") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to On Fire!") { Color = Color.DarkViolet });
     }
 }
 
@@ -75,7 +75,7 @@ public class CobaltShieldBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned") { Color = Color.DarkViolet });
     }
 }
 
@@ -101,7 +101,7 @@ public class ObsidianShieldBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned and On Fire!") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned and On Fire!") { Color = Color.DarkViolet });
     }
 }
 
@@ -126,7 +126,7 @@ public class BlindfoldBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout") { Color = Color.DarkViolet });
     }
 }
 
@@ -151,7 +151,7 @@ public class PocketMirrorBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Horrified") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Horrified") { Color = Color.DarkViolet });
     }
 }
 
@@ -177,7 +177,7 @@ public class ReflectiveShadesBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout and Horrified") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout and Horrified") { Color = Color.DarkViolet });
     }
 }
 
@@ -202,7 +202,7 @@ public class VitaminsBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon") { Color = Color.DarkViolet });
     }
 }
 
@@ -227,7 +227,7 @@ public class ArmorPolishBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Armor") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Armor") { Color = Color.DarkViolet });
     }
 }
 
@@ -253,7 +253,7 @@ public class ArmorBracingBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon and Withered Armor") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon and Withered Armor") { Color = Color.DarkViolet });
     }
 }
 
@@ -278,7 +278,7 @@ public class AdhesiveBandageBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite") { Color = Color.DarkViolet });
     }
 }
 
@@ -303,7 +303,7 @@ public class BezoarBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Acid Venom") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Acid Venom") { Color = Color.DarkViolet });
     }
 }
 
@@ -329,7 +329,7 @@ public class MedicatedBandageBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite and Acid Venom") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite and Acid Venom") { Color = Color.DarkViolet });
     }
 }
 
@@ -354,7 +354,7 @@ public class NazarBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness") { Color = Color.DarkViolet });
     }
 }
 
@@ -379,7 +379,7 @@ public class MegaphoneBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Suffocation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Suffocation") { Color = Color.DarkViolet });
     }
 }
 
@@ -405,7 +405,7 @@ public class CounterCurseMantraBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness and Suffocation") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness and Suffocation") { Color = Color.DarkViolet });
     }
 }
 
@@ -430,7 +430,7 @@ public class TrifoldMapBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted") { Color = Color.DarkViolet });
     }
 }
 
@@ -455,7 +455,7 @@ public class FastClockBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Oozed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Oozed") { Color = Color.DarkViolet });
     }
 }
 
@@ -481,7 +481,7 @@ public class ThePlanBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted and Oozed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted and Oozed") { Color = Color.DarkViolet });
     }
 }
 
@@ -506,7 +506,7 @@ public class HandWarmerBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Frostbite") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Frostbite") { Color = Color.DarkViolet });
     }
 }
 
@@ -532,7 +532,7 @@ public class EngineeringHelmetBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants immunity to Obstructed and Electrified") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants immunity to Obstructed and Electrified") { Color = Color.DarkViolet });
     }
 }
 
@@ -557,7 +557,7 @@ public class ChromaticCloakBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants complete immunity to Shimmered") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants complete immunity to Shimmered") { Color = Color.DarkViolet });
     }
 }
 
@@ -606,11 +606,11 @@ public class AnkhShieldBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to: On Fire!, VANILLA Stunned,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to: On Fire!, VANILLA Stunned,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { Color = Color.DarkViolet });
     }
 }
 
@@ -655,11 +655,11 @@ public class AnkhCharmBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to:") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to:") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { Color = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { Color = Color.DarkViolet });
     }
 }
 
@@ -677,7 +677,7 @@ public class FaelingBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait, required for fishing in the Shimmer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait, required for fishing in the Shimmer") { Color = Color.DarkViolet });
     }
 }
 
@@ -690,7 +690,7 @@ public class EmpressRoseToyMessage : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can also be used to fish in the Shimmer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can also be used to fish in the Shimmer") { Color = Color.DarkViolet });
     }
 }
 
@@ -708,7 +708,7 @@ public class CrabBannerBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { Color = Color.DarkViolet });
     }
 }
 
@@ -726,7 +726,7 @@ public class DirtBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { Color = Color.DarkViolet });
     }
 }
 
@@ -744,7 +744,7 @@ public class WormNerf : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Sell price set to 0 because fuck you") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Sell price set to 0 because fuck you") { Color = Color.DarkViolet });
     }
 }
 
@@ -771,7 +771,7 @@ public class FlurryBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now naturally has the effects of Ice Skates") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now naturally has the effects of Ice Skates") { Color = Color.DarkViolet });
     }
 }
 
@@ -798,7 +798,7 @@ public class SailfishBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power") { Color = Color.DarkViolet });
     }
 }
 
@@ -827,7 +827,7 @@ public class AmphBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power and rocket flight") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power and rocket flight") { Color = Color.DarkViolet });
     }
 }
 
@@ -855,7 +855,7 @@ public class FrogBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants rocket flight") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants rocket flight") { Color = Color.DarkViolet });
     }
 }
 
@@ -884,7 +884,7 @@ public class WaterWalkingBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { Color = Color.DarkViolet });
     }
 }
 
@@ -912,7 +912,7 @@ public class ObsidianWaterWalkingBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { Color = Color.DarkViolet });
     }
 }
 
@@ -942,7 +942,7 @@ public class LavaWaderBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { Color = Color.DarkViolet });
     }
 }
 
@@ -971,7 +971,7 @@ public class FlameBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast, and has the effects of Obsidian Skull") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast, and has the effects of Obsidian Skull") { Color = Color.DarkViolet });
     }
 }
 
@@ -1000,7 +1000,7 @@ public class FlowerBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast") { Color = Color.DarkViolet });
     }
 }
 
@@ -1030,7 +1030,7 @@ public class HellfireBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to walk on all liquids, grants 7 seconds of lava immunity, immunity to fire blocks, and reduced damage from touching lava") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to walk on all liquids, grants 7 seconds of lava immunity, immunity to fire blocks, and reduced damage from touching lava") { Color = Color.DarkViolet });
     }
 }
 
@@ -1058,7 +1058,7 @@ public class HermesBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows rocket boot flight") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows rocket boot flight") { Color = Color.DarkViolet });
     }
 }
 
@@ -1086,7 +1086,7 @@ public class SpectreBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { Color = Color.DarkViolet });
     }
 }
 
@@ -1113,7 +1113,7 @@ public class IceBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects Dune Riders") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects Dune Riders") { Color = Color.DarkViolet });
     }
 }
 
@@ -1135,7 +1135,7 @@ public class DuneBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now has green rarity lol") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now has green rarity lol") { Color = Color.DarkViolet });
     }
 }
 
@@ -1163,7 +1163,7 @@ public class LightningBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { Color = Color.DarkViolet });
     }
 }
 
@@ -1192,7 +1192,7 @@ public class FrostBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Dune Riders, grants 30 more fishing power, and has much faster movement speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Dune Riders, grants 30 more fishing power, and has much faster movement speed") { Color = Color.DarkViolet });
     }
 }
 
@@ -1236,7 +1236,7 @@ public class TerraBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Run faster on sand, negate fall damage, higher jump speed, increased fall distance, auto jump, +30 fishing power, run MUCH faster") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Run faster on sand, negate fall damage, higher jump speed, increased fall distance, auto jump, +30 fishing power, run MUCH faster") { Color = Color.DarkViolet });
     }
 }
 
@@ -1273,7 +1273,7 @@ public class RocketBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { Color = Color.DarkViolet });
     }
 }
 public class FairyBuff : GlobalItem
@@ -1300,7 +1300,7 @@ public class FairyBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { Color = Color.DarkViolet });
     }
 }
 public class Peebotomy : GlobalItem
@@ -1321,7 +1321,7 @@ public class Peebotomy : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays info of Neural Mapping Software") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays info of Neural Mapping Software") { Color = Color.DarkViolet });
     }
 }
 public class Cellbotomy : GlobalItem
@@ -1346,7 +1346,7 @@ public class Cellbotomy : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { Color = Color.DarkViolet });
     }
 }
 public class Shellbotomy : GlobalItem
@@ -1371,7 +1371,7 @@ public class Shellbotomy : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { Color = Color.DarkViolet });
     }
 }
 public class Shellbotomy2 : GlobalItem
@@ -1396,7 +1396,7 @@ public class Shellbotomy2 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { Color = Color.DarkViolet });
     }
 }
 public class Shellbotomy3 : GlobalItem
@@ -1421,7 +1421,7 @@ public class Shellbotomy3 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { Color = Color.DarkViolet });
     }
 }
 public class Shellbotomy4 : GlobalItem
@@ -1446,6 +1446,6 @@ public class Shellbotomy4 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { Color = Color.DarkViolet });
     }
 }

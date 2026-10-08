@@ -34,12 +34,12 @@ public class BOOMerang : ModItem
 
         line = new TooltipLine(Mod, "Face", "Somehow you manage to not blow yourself up with it..")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

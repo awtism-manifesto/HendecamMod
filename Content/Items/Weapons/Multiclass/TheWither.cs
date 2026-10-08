@@ -169,7 +169,7 @@ public class TheWither : ModItem
 
         line = new TooltipLine(Mod, "Face", "This should not exist in this realm.")
         {
-            OverrideColor = new Color(25, 25, 25)
+            Color = new Color(25, 25, 25)
         };
         tooltips.Add(line);
 

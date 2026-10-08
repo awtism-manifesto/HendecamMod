@@ -60,7 +60,7 @@ public class TheSaltLick : ModItem
 
         line = new TooltipLine(Mod, "Face", "Salt flakes off with every hit")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

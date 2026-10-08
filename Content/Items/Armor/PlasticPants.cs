@@ -45,7 +45,7 @@ public class PlasticPants : ModItem
 
         line = new TooltipLine(Mod, "Face", "+10 Max Braincells and +10% Lobotometer decay rate")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -47,18 +47,18 @@ public class JevilishScythe : ModItem
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "5 summon tag damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Splits into smaller, homing clones of itself upon contact with an enemy")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "'I CAN DO ANYTHING'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         

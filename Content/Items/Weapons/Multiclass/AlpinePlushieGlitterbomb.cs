@@ -47,23 +47,23 @@ public class AlpinePlushieGlitterbomb : ModItem
 
         line = new TooltipLine(Mod, "Face", "The shiny glitter causes your summons to focus hit enemies, and homes in, dealing up to 150 un-negateable damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "11 summon tag damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
        
         line = new TooltipLine(Mod, "Face", "'Huh, so that's why they won't tell us where glitter comes from'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

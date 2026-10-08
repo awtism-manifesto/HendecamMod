@@ -24,7 +24,7 @@ public class YellowWild : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Right Click to make it Green")
         {
-            OverrideColor = new Color(0, 255, 0)
+            Color = new Color(0, 255, 0)
         };
         tooltips.Add(line);
     }

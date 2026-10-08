@@ -81,7 +81,7 @@ public class TorchGodsFervor : ModItem
 
         line = new TooltipLine(Mod, "Face", "Smoldering vapor drifts towards the mouse position")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

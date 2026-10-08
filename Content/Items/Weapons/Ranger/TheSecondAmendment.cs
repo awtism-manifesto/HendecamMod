@@ -301,7 +301,7 @@ public class TheSecondAmendment : ModItem
 
         line = new TooltipLine(Mod, "Face", "We once fought for the false promise of freedom. Now we must fight for true freedom. 161.")
         {
-            OverrideColor = new Color(255, 45, 95)
+            Color = new Color(255, 45, 95)
         };
         tooltips.Add(line);
     }

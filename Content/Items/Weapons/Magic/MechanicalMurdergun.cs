@@ -113,7 +113,7 @@ public class MechanicalMurdergun : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right Click to activate Drone Swarm, which causes all five probes to shoot along with the main gun for 15 seconds")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

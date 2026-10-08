@@ -25,7 +25,7 @@ public class SpiritFlameBuff : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased fire rate") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased fire rate") { Color = Color.DarkViolet });
     }
 }
 
@@ -60,7 +60,7 @@ public class Banana : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Stupid damage, Uses 3 Braincells") { Color = Color.DarkViolet });
     }
 }
 
@@ -88,7 +88,7 @@ public class RulerStupid : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 1 Braincell") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 1 Braincell") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -112,7 +112,7 @@ public class PewStupid : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 2 Braincells") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 2 Braincells") { Color = Color.DarkViolet });
     }
     public float LobotometerCost = 2f;
     public override bool? UseItem(Item item, Player player)
@@ -157,7 +157,7 @@ public class SandStupid : GlobalItem
     }
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Stupid damage, Uses 3 Braincells") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -180,7 +180,7 @@ public class YouShouldDriveDrunk : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage, costs 6 Lobotometer") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats massively buffed, no longer requires ammo, and now deals Stupid damage, costs 6 Lobotometer") { Color = Color.DarkViolet });
     }
     public float LobotometerCost = 6f;
     public override bool? UseItem(Item item, Player player)
@@ -219,7 +219,7 @@ public class HamBattt : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage, Uses 3 Braincells") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: All stats buffed, now deals Melee AND Stupid damage, Uses 3 Braincells") { Color = Color.DarkViolet });
     }
     public float LobotometerCost = 3f;
     public override bool? UseItem(Item item, Player player)
@@ -263,7 +263,7 @@ public class Pirahna : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND summon damage + ignores 10 enemy defense") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND summon damage + ignores 10 enemy defense") { Color = Color.DarkViolet });
     }
 }
 
@@ -285,7 +285,7 @@ public class Scourge : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND ranged damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND ranged damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -312,7 +312,7 @@ public class Vamp : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals melee AND magic damage, stats adjusted") { Color = Color.DarkViolet });
     }
 }
 
@@ -338,7 +338,7 @@ public class IGobbleAss : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { Color = Color.DarkViolet });
     }
 }
 
@@ -365,7 +365,7 @@ public class IGobbleAssUwU : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND melee damage, stats adjusted") { Color = Color.DarkViolet });
     }
 }
 public class TwistedClasses : GlobalItem
@@ -389,7 +389,7 @@ public class TwistedClasses : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Split) : Now deals melee+magic damage, increased base damage to compensate for mana use") { OverrideColor = Color.Pink});
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Split) : Now deals melee+magic damage, increased base damage to compensate for mana use") { Color = Color.Pink});
     }
 }
 
@@ -416,7 +416,7 @@ public class Terraprimsma : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -440,7 +440,7 @@ public class Frosty : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND magic damage, massively increased damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND magic damage, massively increased damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -464,7 +464,7 @@ public class IAmSOFuckingGay : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -488,7 +488,7 @@ public class IAmSOFuckingLesbian : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -512,7 +512,7 @@ public class IAmSOFuckingGenderfluid : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -536,7 +536,7 @@ public class IAmSOFuckingGenderfluider : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage, increased damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -558,7 +558,7 @@ public class DesertTiger : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals summon AND melee damage") { Color = Color.DarkViolet });
     }
 }
 
@@ -576,7 +576,7 @@ public class WaffleTime : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 2 Braincells, and has buffed stats") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Melee AND Stupid damage, Uses 2 Braincells, and has buffed stats") { Color = Color.DarkViolet });
     }
     public float LobotometerCost = 2f;
     public override bool? UseItem(Item item, Player player)
@@ -616,7 +616,7 @@ public class Peenitzes : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -641,7 +641,7 @@ public class UwUorOwOorSomethingidk : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does melee AND magic damage, stats adjusted") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -668,7 +668,7 @@ public class BloodyFuckingHellMate : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does ranged AND magic damage, stats adjusted") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now does ranged AND magic damage, stats adjusted") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -696,7 +696,7 @@ public class NimbusBuff69 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -718,7 +718,7 @@ public class ClingerBuff69 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -740,7 +740,7 @@ public class ZenithIsntStrongEnoughLmao : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Omni Damage, a combination of ALL damage classes") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Omni Damage, a combination of ALL damage classes") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -762,7 +762,7 @@ public class PulseMage : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Magic damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals Ranged AND Magic damage") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)
@@ -786,7 +786,7 @@ public class CrimsonBuff69 : GlobalItem
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { OverrideColor = Color.DarkViolet });
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now deals magic AND summon damage") { Color = Color.DarkViolet });
     }
 
     public override void SetDefaults(Item item)

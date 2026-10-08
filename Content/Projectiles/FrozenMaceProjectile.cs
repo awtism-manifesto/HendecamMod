@@ -6,7 +6,7 @@ public class FrozenMaceProjectile : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY[Type] = true;
+        ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY/* tModPorter Note: Removed. AI() should use master.RotatedRelativePoint(master.MountedCenter + ...) to position held projectiles */[Type] = true;
     }
 
     public override void SetDefaults()
@@ -51,7 +51,7 @@ public class FrozenMaceProjectile : ModProjectile
     {
         if (Main.rand.NextBool(4))
         {
-            target.AddBuff(BuffID.Frostburn, 180, quiet: false);
+            target.AddBuff(BuffID.Frostburn, 180);
         }
     }
 }

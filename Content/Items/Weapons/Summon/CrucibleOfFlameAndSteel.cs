@@ -46,13 +46,13 @@ public class CrucibleOfFlameAndSteel : ModItem
 
         line = new TooltipLine(Mod, "Face", "Right-click with this item in hand to activate Paragon Maelstrom")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Takes up 10 sentry slots")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
     }

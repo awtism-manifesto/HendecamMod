@@ -43,7 +43,7 @@ public class LycopiteLeggings : ModItem
 
         line = new TooltipLine(Mod, "Face", "+0.5 hp/s life regen")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

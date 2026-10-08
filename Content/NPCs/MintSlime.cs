@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.Items.Placeables;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
@@ -48,7 +49,7 @@ public class MintSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemType<MintalOre>(), 1, 9, 23));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return SpawnCondition.OverworldHallow.Chance * 0.8f;
     }

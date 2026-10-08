@@ -36,7 +36,7 @@ public class BeetleRounds : ModItem
 
         line = new TooltipLine(Mod, "Face", "Benefits from both Ranged and Melee equipment")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -26,7 +26,7 @@ public class PlatinumChestPlaced : ModTile
         TileID.Sets.BasicChest[Type] = true;
         TileID.Sets.DisableSmartCursor[Type] = true;
         TileID.Sets.AvoidedByNPCs[Type] = true;
-        TileID.Sets.InteractibleByNPCs[Type] = true;
+        TileID.Sets.InteractableByNPCs[Type] = true;
         TileID.Sets.IsAContainer[Type] = true;
         TileID.Sets.FriendlyFairyCanLureTo[Type] = true;
         TileID.Sets.GeneralPlacementTiles[Type] = false;
@@ -204,7 +204,7 @@ public class PlatinumChestPlaced : ModTile
             if (left == player.chestX && top == player.chestY && player.chest != -1)
             {
                 player.chest = -1;
-                Recipe.FindRecipes();
+                Recipe.FindRecipes()/* tModPorter Note: Removed. No longer used. */;
                 SoundEngine.PlaySound(SoundID.MenuClose);
             }
             else
@@ -245,7 +245,7 @@ public class PlatinumChestPlaced : ModTile
                         player.OpenChest(left, top, chest);
                     }
 
-                    Recipe.FindRecipes();
+                    Recipe.FindRecipes()/* tModPorter Note: Removed. No longer used. */;
                 }
             }
         }

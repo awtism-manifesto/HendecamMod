@@ -24,7 +24,7 @@ public class RedDrawFour : ModItem
     {
         var line = new TooltipLine(Mod, "Face", "Right Click to make it Yellow")
         {
-            OverrideColor = new Color(255, 255, 0)
+            Color = new Color(255, 255, 0)
         };
         tooltips.Add(line);
     }

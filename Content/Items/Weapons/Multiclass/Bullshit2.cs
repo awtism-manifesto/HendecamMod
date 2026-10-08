@@ -48,12 +48,12 @@ public class Bullshit2 : ModItem
 
         line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "-Developer Item-")
         {
-            OverrideColor = new Color(252, 141, 204)
+            Color = new Color(252, 141, 204)
         };
         tooltips.Add(line);
     }

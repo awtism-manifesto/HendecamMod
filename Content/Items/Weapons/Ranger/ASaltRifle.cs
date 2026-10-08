@@ -72,7 +72,7 @@ public class ASaltRifle : ModItem
 
         line = new TooltipLine(Mod, "Face", "Gains damage as it pierces enemies")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

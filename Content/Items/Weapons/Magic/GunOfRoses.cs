@@ -108,12 +108,12 @@ public class GunOfRoses : ModItem
 
         line = new TooltipLine(Mod, "Face", "Occasionally shoots a larger, homing rose petal")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "'You know where you are? you're in the jungle baby! YOU'RE GONNA DIE!'")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         // Here we will hide all tooltips whose title end with ':RemoveMe'

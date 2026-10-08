@@ -43,7 +43,7 @@ public class StupidFuckingPickaxe : ModItem
 
         line = new TooltipLine(Mod, "Face", "There won't be bloodshed")
         {
-            OverrideColor = new Color(255, 70, 70)
+            Color = new Color(255, 70, 70)
         };
         tooltips.Add(line);
     }

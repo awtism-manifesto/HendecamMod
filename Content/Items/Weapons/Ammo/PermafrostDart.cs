@@ -40,7 +40,7 @@ public class PermafrostDart : ModItem
 
         line = new TooltipLine(Mod, "Face", "Causes a small explosion and shatters into frost chunks on impact")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -12,7 +12,7 @@ public class PolymerSlime : ModProjectile
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
-        ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
+        ProjectileID.Sets.MinionTargetingFeature[Projectile.type] = true;
     }
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

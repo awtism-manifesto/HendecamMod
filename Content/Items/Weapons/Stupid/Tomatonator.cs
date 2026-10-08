@@ -80,12 +80,12 @@ public class Tomatonator : ModItem
 
         line = new TooltipLine(Mod, "Face", "Has a small chance to fire a Wendy's Baconator that deals double damage")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
         line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 

@@ -74,7 +74,7 @@ public class FoundersDrumroll : ModItem
 
         line = new TooltipLine(Mod, "Face", "50% chance to save ammo")
         {
-            OverrideColor = new Color(255, 255, 255)
+            Color = new Color(255, 255, 255)
         };
         tooltips.Add(line);
 
