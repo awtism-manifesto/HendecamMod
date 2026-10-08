@@ -3,7 +3,7 @@ using Terraria.Graphics.CameraModifiers;
 
 namespace HendecamMod.Common.UI;
 
-public class MoveCameraModifier : ICameraModifier
+public class MoveCameraModifier
 {
     public string UniqueIdentity { get; set; }
     public bool Finished { get; set; }

@@ -40,7 +40,7 @@ public class TinShort : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.725f);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

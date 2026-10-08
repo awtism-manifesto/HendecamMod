@@ -203,7 +203,7 @@ public class EchoStickyBomb : ModProjectile
         return base.CanHitNPC(target);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
         Vector2 textureCenter = new Vector2(texture.Width / 2f, texture.Height / 2f);

@@ -10,7 +10,6 @@ public class ParticleBeam : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling/* tModPorter Note: Removed. Damage dealt to a player by their own projectile, or by another player, is never scaled by difficulty. For hostile projectiles, assign Projectile.hostileDamageScaling in SetDefaults instead */[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.RocketsSkipDamageForPlayers[Type] = true;
         // This set handles some things for us already:
         // Sets the timeLeft to 3 and the projectile direction when colliding with an NPC or player in PVP (so the explosive can detonate).
@@ -39,7 +38,7 @@ public class ParticleBeam : ModProjectile
         // AIType = ProjectileID.RocketI;
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

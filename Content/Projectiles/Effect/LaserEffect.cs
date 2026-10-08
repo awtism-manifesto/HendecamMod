@@ -42,7 +42,7 @@ public class LaserEffect : ModProjectile
                 EntityToFollow = Main.player[entityID];
                 break;
             case 2:
-                EntityToFollow = Main.projectile.FirstOrDefault(p => p.identity/* tModPorter Note: Removed. Use Projectile.key instead. */ == entityID, null);
+                EntityToFollow = Main.projectile.FirstOrDefault(p => p.key == entityID, null);
                 break;
             case 3:
                 EntityToFollow = Main.npc[entityID];
@@ -85,7 +85,7 @@ public class LaserEffect : ModProjectile
                 else if (EntityToFollow is Projectile proj)
                 {
                     entityType = 2;
-                    entityID = proj.identity/* tModPorter Note: Removed. Use Projectile.key instead. */;
+                    entityID = proj.key;
                 }
                 else if (EntityToFollow is NPC)
                 {
@@ -106,7 +106,7 @@ public class LaserEffect : ModProjectile
         AITimer++;
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         if (savedVelocity == Vector2.Zero)
         {

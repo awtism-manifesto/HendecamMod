@@ -69,7 +69,7 @@ public class ChargeLaser : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.66f, 0.2f, 0.2f);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

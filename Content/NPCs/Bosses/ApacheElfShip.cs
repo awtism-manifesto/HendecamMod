@@ -52,8 +52,6 @@ public class ApacheElfShip : ModNPC
 
         NPC.noGravity = true;
         NPC.noTileCollide = true;
-
-        NPC.SpawnWithHigherTime(30)/* tModPorter Note: Removed. No longer used. */;
         NPC.boss = true;
         NPC.npcSlots = 10f;
 

@@ -138,9 +138,9 @@ internal class FireDiamondHookProj : ModProjectile
     }
 
     // Draws the grappling hook's chain.
-    public override bool PreDrawExtras(Player player)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDrawExtras(Player player)
     {
-        Vector2 playerCenter = Main.player[Projectile.owner].MountedCenter;
+        Vector2 playerCenter = player.MountedCenter;
         Vector2 center = Projectile.Center;
         Vector2 directionToPlayer = playerCenter - Projectile.Center;
         float chainRotation = directionToPlayer.ToRotation() - MathHelper.PiOver2;

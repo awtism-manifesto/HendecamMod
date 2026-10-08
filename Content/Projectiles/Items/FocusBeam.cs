@@ -257,7 +257,7 @@ public class FocusBeam : ModProjectile
             Projectile.Center, beamEndPos, BeamHitboxCollisionWidth * Projectile.scale, ref _);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         if (Projectile.velocity == Vector2.Zero)
         {

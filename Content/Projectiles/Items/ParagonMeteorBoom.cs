@@ -74,7 +74,7 @@ public class ParagonMeteorBoom : ModProjectile
         Projectile.alpha = (int)MathHelper.Max(0, Projectile.alpha - 1);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

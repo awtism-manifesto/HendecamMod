@@ -60,7 +60,7 @@ public class SockPoop : ModProjectile
         }
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);

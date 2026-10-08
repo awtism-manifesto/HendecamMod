@@ -45,7 +45,7 @@ public class SpartanRageSpear : ModProjectile
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

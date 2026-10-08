@@ -181,12 +181,6 @@ public class Alpine : ModNPC
             }*/
     }
 
-    public override void SetChatButtons(ref string button, ref string button2)/* tModPorter Note: Removed. Chat buttons are now set in RegisterChatButtons */
-    {
-        // What the chat buttons are when you open up the chat UI
-        button = Language.GetTextValue("LegacyInterface.28");
-    }
-
     public override string GetChat()
     {
         WeightedRandom<string> chat = new WeightedRandom<string>();
@@ -266,21 +260,13 @@ public class Alpine : ModNPC
         return false;
     }
 
-    public override void OnChatButtonClicked(NPCInteraction interaction)/* tModPorter Suggestion: Previously this was used to assign a shop to a button, but that is now handled by RegisterChatButtons. If that is all this was used for, remove this hook */
-    {
-        if (firstButton)
-        {
-            shop = ShopName; // Name of the shop tab we want to open.
-        }
-    }
-
     // Not completely finished, but below is what the NPC will sell
 
     public override void AddShops()
     {
         var npcShop = new NPCShop(Type)
                 .Add<OverclockedWrench>()
-                  .Add<VeteransBadge>(Condition.HappyEnoughToSellPylons)
+                  .Add<VeteransBadge>(Condition.InSnow)
             ;
         npcShop.Register(); // Name of this shop tab
     }

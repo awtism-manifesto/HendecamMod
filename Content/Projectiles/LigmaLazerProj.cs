@@ -34,7 +34,7 @@ public class LigmaLazerProj : ModProjectile
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

@@ -8,7 +8,6 @@ public class PlasmaLaser : ModProjectile
 {
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.PlayerHurtDamageIgnoresDifficultyScaling/* tModPorter Note: Removed. Damage dealt to a player by their own projectile, or by another player, is never scaled by difficulty. For hostile projectiles, assign Projectile.hostileDamageScaling in SetDefaults instead */[Type] = true; // Damage dealt to players does not scale with difficulty in vanilla.
         ProjectileID.Sets.TrailCacheLength[Projectile.type] = 25; // The length of old position to be recorded
         ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
         // This set handles some things for us already:

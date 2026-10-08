@@ -4,10 +4,6 @@
 // ExampleFlailProjectile is a copy of the Sunfury flail projectile.
 public class FrozenMaceProjectile : ModProjectile
 {
-    public override void SetStaticDefaults()
-    {
-        ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY/* tModPorter Note: Removed. AI() should use master.RotatedRelativePoint(master.MountedCenter + ...) to position held projectiles */[Type] = true;
-    }
 
     public override void SetDefaults()
     {

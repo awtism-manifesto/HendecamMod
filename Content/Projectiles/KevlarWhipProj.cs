@@ -49,7 +49,7 @@ public class KevlarWhipProj : ModProjectile
         Projectile.damage = (int)(Projectile.damage * 0.66f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         List<Vector2> list = new List<Vector2>();
         Projectile.FillWhipControlPoints(Projectile, list);

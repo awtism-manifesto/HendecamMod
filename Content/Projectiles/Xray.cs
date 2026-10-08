@@ -39,7 +39,7 @@ public class Xray : ModProjectile
         Lighting.AddLight(Projectile.Center, 0.77f, 0.35f, 1f);
     }
 
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 

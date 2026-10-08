@@ -201,7 +201,7 @@ public class BigBerthaProj : ModProjectile
 
     // Taken from Main.DrawProj_Excalibur()
     // Look at the source code for the other sword types.
-    public override bool PreDraw(Player player, ref Color lightColor)/* tModPorter Replace 'Main.player[Projectile.owner]' with 'player'. */
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Vector2 position = Projectile.Center - Main.screenPosition;
         Texture2D texture = TextureAssets.Projectile[Type].Value;
