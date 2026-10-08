@@ -941,7 +941,7 @@ PlutoniumCube: {
 }
 
 PondsWings: {
-	DisplayName: Ponds Wings
+	DisplayName: Pond's Wings
 	Tooltip: ""
 }
 
@@ -3401,7 +3401,7 @@ PolymerSlimeStaff: {
 }
 
 PondsSniper: {
-	DisplayName: Ponds Sniper
+	DisplayName: Pond's Sniper
 	Tooltip: ""
 }
 
@@ -5616,16 +5616,16 @@ KawkawPainting: {
 }
 
 AlpineRelicItem: {
-	DisplayName: Alpine Relic Item
+	DisplayName: Apache Elf Ship Relic
 	Tooltip: ""
 }
 
 AlpinePetItem: {
-	DisplayName: Alpine Pet Item
+	DisplayName: Heli Disk
 	Tooltip: ""
 }
 
 AlpineTrophy: {
-	DisplayName: Alpine Trophy
+	DisplayName: Apache Elf Ship Trophy
 	Tooltip: ""
 }

@@ -18,9 +18,9 @@ public class Edward40Hands : ModItem
         Item.height = 33;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 9;
-        Item.useAnimation = 18;
-        Item.reuseDelay = 12;
+        Item.useTime = 8;
+        Item.useAnimation = 16;
+        Item.reuseDelay = 16;
         Item.autoReuse = true;
 
         Item.DamageType = GetInstance<StupidDamage>();
@@ -32,7 +32,7 @@ public class Edward40Hands : ModItem
         Item.value = Item.buyPrice(silver: 10);
         Item.rare = ItemRarityID.Blue;
         Item.shoot = ProjectileType<BeerYeet>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 11.5f; // Speed of the projectiles the sword will shoot
+        Item.shootSpeed = 11.65f; // Speed of the projectiles the sword will shoot
 
         // If you want melee speed to only affect the swing speed of the weapon and not the shoot speed (not recommended)
         // Item.attackSpeedOnlyAffectsWeaponAnimation = true;
@@ -40,7 +40,7 @@ public class Edward40Hands : ModItem
         // Normally shooting a projectile makes the player face the projectile, but if you don't want that (like the beam sword) use this line of code
         // Item.ChangePlayerDirectionOnShoot = false;
     }
-    public float LobotometerCost = 5f;
+    public float LobotometerCost = 4f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)

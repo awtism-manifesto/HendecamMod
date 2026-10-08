@@ -29,6 +29,7 @@ public class ApacheElfShip : ModNPC
         NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.TentacleSpike] = true;
         NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.BloodButcherer] = true;
         NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Shimmer] = true;
+        NPCID.Sets.DontDoHardmodeScaling[Type] = true;
         if (Main.hardMode)
         {
             NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
@@ -39,7 +40,7 @@ public class ApacheElfShip : ModNPC
     {
         NPC.damage = 80;
         NPC.defense = 40;
-        NPC.lifeMax = 62500;
+        NPC.lifeMax = 75000;
 
         NPC.width = 100;
         NPC.height = 100;

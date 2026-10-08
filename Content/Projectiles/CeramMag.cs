@@ -28,15 +28,11 @@ public class CeramMag : ModProjectile
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
-
+        Projectile.localNPCHitCooldown = 33;
         AIType = ProjectileID.WoodenArrowFriendly; // Act exactly like default Bullet
     }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-    {
-        target.immune[Projectile.owner] = 3;
-    }
-
+    
     public override bool OnTileCollide(Vector2 oldVelocity)
     {
         // If collide with tile, reduce the penetrate.
