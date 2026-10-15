@@ -1,6 +1,7 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
@@ -21,16 +22,8 @@ public class ApacheElfShip : ModNPC
     {
         Main.npcFrameCount[Type] = 4;
         NPCID.Sets.MPAllowedEnemies[Type] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Poisoned] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Confused] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.BoneJavelin] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.TentacleSpike] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.BloodButcherer] = true;
-        NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Shimmer] = true;
-        if (Main.hardMode)
-        {
-            NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
-        }
+        NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
+        NPCID.Sets.BossBestiaryPriority.Add(Type);
     }
 
     public override void SetDefaults()
@@ -82,6 +75,17 @@ public class ApacheElfShip : ModNPC
         LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
         // notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MinionBossMask>(), 7));
+        notExpertRule.OnSuccess(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 7, 15));
+        /*notExpertRule.OnSuccess(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+            1,
+            ItemType<ApexPlasmaCannon>(),
+            ItemType<RazorRotors>(),
+            ItemType<AlpinePlushieGlitterbomb>()
+        ));*/
+        notExpertRule.OnSuccess(ItemDropRule.NotScalingWithLuck(ItemType<ApexPlasmaCannon>()));
+        notExpertRule.OnSuccess(ItemDropRule.NotScalingWithLuck(ItemType<RazorRotors>()));
+        notExpertRule.OnSuccess(ItemDropRule.NotScalingWithLuck(ItemType<AlpinePlushieGlitterbomb>()));
+        notExpertRule.OnSuccess(ItemDropRule.NotScalingWithLuck(ItemType<CandyHeart>()));
         int itemType = ItemType<Fivenato>();
         var parameters = new DropOneByOne.Parameters
         {
@@ -122,12 +126,6 @@ public class ApacheElfShip : ModNPC
             }
         }
 
-    }
-
-    public override bool CanHitPlayer(Player target, ref int cooldownSlot)
-    {
-        cooldownSlot = ImmunityCooldownID.Bosses;
-        return true;
     }
 
     // No more 'private int nextSpawnTick, tickCounter;'

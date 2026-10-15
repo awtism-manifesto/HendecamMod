@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HendecamMod.Content.EmoteBubbles;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Armor;
@@ -84,6 +85,8 @@ public class Asshole : ModNPC
             new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party"),
             new Profiles.DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Party")
         );
+
+        NPCID.Sets.FaceEmote[NPC.type] = EmoteBubbleType<YelmutEmote>();
     }
 
     public override void SetDefaults()

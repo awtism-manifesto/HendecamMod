@@ -85,7 +85,8 @@ public class TrashSlime : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemType<PolymerSlimeStaff>(), 101));
 
         npcLoot.Add(ItemDropRule.Common(ItemID.JojaCola, 20));
-        npcLoot.Add(ItemDropRule.Common(ItemID.ChainKnife, 33));
+        npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotRemixSeed(), ItemID.ChainKnife, 33));
+        npcLoot.Add(ItemDropRule.ByCondition(new Conditions.RemixSeed(), ItemID.KOCannon, 33));
         npcLoot.Add(ItemDropRule.Common(ItemID.FlintlockPistol, 33));
     }
 

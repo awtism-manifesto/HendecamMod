@@ -104,6 +104,11 @@ public class UnstablePlasmoid : ModNPC
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
+        if (spawnInfo.PlayerSafe)
+        {
+            return 0;
+        }
+
         if (!Main.dayTime & NPC.downedEmpressOfLight)
         {
             return SpawnCondition.Sky.Chance * 0.072f;

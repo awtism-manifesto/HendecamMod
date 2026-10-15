@@ -5,6 +5,11 @@ namespace HendecamMod.Content.Items;
 
 public class LargePlasmoidBanner : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.KillsToBanner[Type] = 25;
+    }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(TileType<BannerTile>(), (int)BannerTile.StyleID.LargePlasmoid);

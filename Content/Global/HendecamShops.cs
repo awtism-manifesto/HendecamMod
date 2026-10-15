@@ -123,5 +123,16 @@ public class HendecamShops : GlobalNPC
             shop.Add<ShadowflameArrow>(condition: Condition.DownedMechBossAny);
             shop.Add<SteelBar>(condition: Condition.Hardmode);
         }
+
+        if (ModLoader.TryGetMod("LostGirlNPCMod", out Mod NymphMerica) && NymphMerica.TryFind("LostGirlNPC", out ModNPC LostGirlNPC))
+        {
+            if (shop.NpcType == LostGirlNPC.Type)
+            {
+                shop.Add<Heartache>();
+                shop.Add<Bullshit1>(condition: Condition.DownedSkeletron);
+                shop.Add<Bullshit2>(condition: Condition.DownedPlantera);
+                shop.Add<Bullshit3>(condition: Condition.DownedMoonLord);
+            }
+        }
     }
 }

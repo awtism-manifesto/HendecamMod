@@ -48,9 +48,9 @@ public class AutismDiagnosis : ModItem
     public static readonly int AdditiveStupidDamageBonus = 12;
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
-       
-        player.endurance = 1f - 0.92f * (1f - player.endurance); 
+
+
+        player.endurance += 0.08f;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
 

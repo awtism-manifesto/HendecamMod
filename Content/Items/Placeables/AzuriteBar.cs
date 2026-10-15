@@ -49,7 +49,7 @@ public class AzuriteBar : ModItem
         if (ModLoader.TryGetMod("Split", out Mod Sp) && Sp.TryFind("LazuriteBar", out ModItem LazuriteBar))
         {
             Recipe recipe2 = CreateRecipe();
-            recipe.AddIngredient(LazuriteBar.Type);
+            recipe2.AddIngredient(LazuriteBar.Type);
             recipe2.AddTile(TileID.AlchemyTable);
             recipe2.Register();
 

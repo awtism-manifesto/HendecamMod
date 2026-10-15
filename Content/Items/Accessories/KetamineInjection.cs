@@ -36,7 +36,7 @@ public class KetamineInjection : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.statLifeMax2 = (int)(player.statLifeMax2 * 0.875f);
-        player.endurance = 1f - 0.75f * (1f - player.endurance); 
+        player.endurance += 0.25f;
         player.lifeRegen += -2;
     }
 }

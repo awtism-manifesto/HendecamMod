@@ -795,7 +795,7 @@ public class ContentEmblem : ModItem
         {
             if (player.statLife == player.statLifeMax2)
             {
-                player.endurance = 1f - 0.8f * (1f - player.endurance);
+                player.endurance += 0.2f;
             }
         }
         if (ModLoader.TryGetMod("Split", out Mod Sp))

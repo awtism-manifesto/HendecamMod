@@ -19,7 +19,7 @@ public class PyriteChestguard : ModItem
        
 
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
-        player.endurance = 1f - 0.96f * (1f - player.endurance);
+        player.endurance += 0.04f;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -5,6 +5,11 @@ namespace HendecamMod.Content.Items;
 
 public class FlyingPigBanner : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.KillsToBanner[Type] = 10;
+    }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(TileType<BannerTile>(), (int)BannerTile.StyleID.FlyingPig);

@@ -63,7 +63,7 @@ public class SteelBow : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SteelBow", out ModItem SteelBow))
         {
             Recipe recipe2 = CreateRecipe();
-            recipe.AddIngredient(SteelBow.Type);
+            recipe2.AddIngredient(SteelBow.Type);
             recipe2.AddTile(TileID.Anvils);
             recipe2.Register();
         }

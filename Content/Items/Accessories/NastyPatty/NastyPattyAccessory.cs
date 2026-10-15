@@ -652,7 +652,7 @@ public class NastyPattyAccessory : ModItem
             }
             else
             {
-                Player.endurance = 1f - 0.8f * (1f - Player.endurance);
+                Player.endurance += 0.2f;
             }
         }
     }
