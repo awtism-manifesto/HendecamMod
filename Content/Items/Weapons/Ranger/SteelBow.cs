@@ -14,7 +14,7 @@ public class SteelBow : ModItem
         Item.height = 32; // Hitbox height of the item.
         Item.scale = 0.9f;
         Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
-        Item.value = 140000;
+        Item.value = 70000;
         // Use Properties
         Item.useTime = 25; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 25; // The length of the item's use animation in ticks (60 ticks == 1 second.)
@@ -63,7 +63,7 @@ public class SteelBow : ModItem
         if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica) && ThorMerica.TryFind("SteelBow", out ModItem SteelBow))
         {
             Recipe recipe2 = CreateRecipe();
-            recipe.AddIngredient(SteelBow.Type);
+            recipe2.AddIngredient(SteelBow.Type);
             recipe2.AddTile(TileID.Anvils);
             recipe2.Register();
         }

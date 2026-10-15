@@ -28,7 +28,10 @@ public class AzuriteOrePlaced : ModTile
         MineResist = 2f;
         MinPick = 70;
     }
-
+    public override bool CanExplode(int i, int j)
+    {
+        return false;
+    }
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
         r = 0.1f;

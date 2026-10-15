@@ -28,9 +28,12 @@ public class MorbiumOrePlaced : ModTile
         DustType = (DustType<MorbiumDust>());
         HitSound = SoundID.Tink;
         MineResist = 2.75f;
-        MinPick = 63;
+        MinPick = 200;
     }
-
+    public override bool CanExplode(int i, int j)
+    {
+        return false;
+    }
     // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {

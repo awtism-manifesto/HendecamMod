@@ -1,7 +1,11 @@
 ﻿using HendecamMod.Content.Global;
 using System.Collections.Generic;
+using System.Threading;
 using Terraria;
+using Terraria.Chat;
+using Terraria.IO;
 using Terraria.Localization;
+using Terraria.WorldBuilding;
 
 namespace HendecamMod.Content.Tiles.Blocks;
 
@@ -26,18 +30,28 @@ public class MantiusOrePlaced : ModTile
 
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(185, 15, 90), Language.GetText("Mantius Ore"));
+        
+        
 
         DustType = DustID.RedTorch;
         HitSound = SoundID.Tink;
         MineResist = 2.33f;
         MinPick = 95;
     }
+
+    public override bool CanExplode(int i, int j)
+    {
+        return false;
+    }
+    
+    
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
         r = 0.33f;
         g = 0.05f;
         b = 0.12f;
     }
+    
     public override void RandomUpdate(int i, int j)
     {
 
@@ -170,6 +184,50 @@ public class MantiusOrePlaced : ModTile
                     NetMessage.SendTileSquare(-1, checkX, checkY, 1);
                     return;
                 }
+            }
+        }
+    }
+   
+}
+public class MantiusOreSystem : ModSystem
+{
+    public static LocalizedText MagnoliaOrePassMessage { get; private set; }
+    public static LocalizedText BlessedWithThroarbiumOreMessage { get; private set; }
+
+    public override void SetStaticDefaults() { /* ... */ }
+    public void BlessWorldWithMantiusOre() { /* ... */ }
+
+    public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+    {
+        int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
+        if (ShiniesIndex != -1)
+        {
+            tasks.Insert(ShiniesIndex + 1, new MantiusOrePass("Magnolia Mod Ores", 237.4298f));
+        }
+    }
+}
+
+// <-- ALSO OUTSIDE, sibling to ModSystem
+public class MantiusOrePass : GenPass
+{
+    public MantiusOrePass(string name, float loadWeight) : base(name, loadWeight) { }
+
+    protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
+    {
+        progress.Message = Language.GetTextValue("Generating Mantius Ore!");
+
+        for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 11E-05); k++)
+        {
+            int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+            int y = WorldGen.genRand.Next((int)GenVars.rockLayerLow, Main.maxTilesY);
+
+            Tile tile = Framing.GetTileSafely(x, y);
+            if (tile.HasTile && (tile.TileType == TileID.Stone))
+            {
+                WorldGen.TileRunner(x, y,
+                    WorldGen.genRand.Next(1, 3),
+                    WorldGen.genRand.Next(2, 5),
+                    TileType<MantiusOrePlaced>());
             }
         }
     }

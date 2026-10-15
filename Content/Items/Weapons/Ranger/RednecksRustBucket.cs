@@ -121,17 +121,27 @@ public class RednecksRustBucket : ModItem
     public override void AddRecipes()
     {
         Recipe
-            recipe = CreateRecipe();
+        recipe = CreateRecipe();
         recipe.AddIngredient<Boomshark>();
         recipe.AddIngredient<ImprovisedMachineGun>();
         recipe.AddIngredient<ToothlessWyrm>();
-        recipe.AddIngredient<Brainderbuss>();
+        recipe.AddIngredient<AK47>();
         recipe.AddIngredient<UraniumShotgun>();
         recipe.AddTile(TileID.DemonAltar);
         recipe.Register();
+        Recipe
+        recipe2 = CreateRecipe();
+        recipe2.AddIngredient<Boomshark>();
+        recipe2.AddIngredient<ImprovisedMachineGun>();
+        recipe2.AddIngredient<Brainderbuss>();
+        recipe2.AddIngredient<AK47>();
+        recipe2.AddIngredient<UraniumShotgun>();
+        recipe2.AddTile(TileID.DemonAltar);
+        recipe2.Register();
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("PurifiedGel", out ModItem PurifiedGel))
         {
             recipe.AddIngredient(PurifiedGel.Type, 10);
+            recipe2.AddIngredient(PurifiedGel.Type, 10);
         }
     }
 }

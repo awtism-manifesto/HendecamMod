@@ -33,7 +33,10 @@ public class PlutoniumOrePlaced : ModTile
         g = 0.35f;
         b = 1f;
     }
-
+    public override bool CanExplode(int i, int j)
+    {
+        return false;
+    }
     public override void NumDust(int i, int j, bool fail, ref int num)
     {
         num = fail ? 1 : 3;

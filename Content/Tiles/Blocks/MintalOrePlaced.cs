@@ -28,4 +28,8 @@ public class MintalOrePlaced : ModTile
         MineResist = 2f;
         MinPick = 115;
     }
+    public override bool CanExplode(int i, int j)
+    {
+        return false;
+    }
 }

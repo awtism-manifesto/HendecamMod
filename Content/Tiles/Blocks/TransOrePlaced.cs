@@ -36,7 +36,7 @@ public class TransOrePlaced : ModTile
         DustType = DustType<TransDust>();
         HitSound = SoundID.Tink;
         MineResist = 2f;
-        MinPick = 48;
+        MinPick = 45;
     }
 
     // ExampleOreSystem contains code related to spawning ExampleOre. It contains both spawning ore during world generation, seen in ModifyWorldGenTasks, and spawning ore after defeating a boss, seen in BlessWorldWithExampleOre and MinionBossBody.OnKill.
@@ -132,7 +132,7 @@ public class TransOrePlaced : ModTile
 
                 // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place.
                 // Feel free to experiment with strength and step to see the shape they generate.
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), TileType<TransOrePlaced>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(4, 7), TileType<TransOrePlaced>());
 
                 // Alternately, we could check the tile already present in the coordinate we are interested.
                 // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.
