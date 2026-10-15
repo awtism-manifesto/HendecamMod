@@ -91,28 +91,7 @@ public class YelmutLeggings : ModItem
         player.maxTurrets += 1;
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<PoorMahogany>(30);
-        recipe.AddIngredient<CeramicSheet>(15);
-        recipe.AddIngredient<LycopiteBar>(10);
-        recipe.AddIngredient(ItemID.ShadowScale, 8);
-        recipe.AddIngredient(ItemID.FairyBoots);
-        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
-        recipe.AddTile(TileID.TinkerersWorkbench);
-        recipe.Register();
-        recipe = CreateRecipe();
-        recipe.AddIngredient<PoorMahogany>(30);
-        recipe.AddIngredient<CeramicSheet>(15);
-        recipe.AddIngredient<LycopiteBar>(10);
-        recipe.AddIngredient(ItemID.TissueSample, 8);
-        recipe.AddIngredient(ItemID.FairyBoots);
-        recipe.AddIngredient(ItemID.ShimmerBlock, 10);
-        recipe.AddTile(TileID.TinkerersWorkbench);
-        recipe.Register();
-
-    }
+  
 
     public override void UpdateArmorSet(Player player)
     {

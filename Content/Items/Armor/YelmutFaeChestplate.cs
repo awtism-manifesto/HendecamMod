@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -87,35 +88,7 @@ public class YelmutFaeChestplate : ModItem
                legs.type == ItemType<YelmutLeggings>();
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-
-        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("NeapoliniteBar", out ModItem NeapoliniteBar))
-        {
-            recipe.AddIngredient<PoorMahogany>(40);
-            recipe.AddIngredient(NeapoliniteBar.Type, 10);
-            recipe.AddIngredient(ItemID.PalladiumBar, 10);
-            recipe.AddIngredient(ItemID.SoulofMight, 5);
-            recipe.AddIngredient(ItemID.SoulofFright, 5);
-            recipe.AddIngredient(ItemID.SoulofSight, 5);
-            recipe.AddIngredient(ItemID.SoulofFlight, 15);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
-        }
-        else
-        {
-            recipe.AddIngredient<PoorMahogany>(40);
-            recipe.AddIngredient(ItemID.HallowedBar, 10);
-            recipe.AddIngredient(ItemID.PalladiumBar, 10);
-            recipe.AddIngredient(ItemID.SoulofMight, 5);
-            recipe.AddIngredient(ItemID.SoulofFright, 5);
-            recipe.AddIngredient(ItemID.SoulofSight, 5);
-            recipe.AddIngredient(ItemID.SoulofFlight, 15);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
-        }
-    }
+   
 
     public override void UpdateArmorSet(Player player)
     {
@@ -145,6 +118,7 @@ public class YelmutStupidPixieWings: ModPlayer
 
         if (YelWings)
         {
+            Player.AddBuff(BuffType<OtherworldPoisoning>(), 67);
             Player.wings = EquipLoader.GetEquipSlot(Mod, "YelmutFaeChestplate", EquipType.Wings);
             if (Player.velocity.Y != 0)
             {

@@ -5629,3 +5629,288 @@ AlpineTrophy: {
 	DisplayName: Apache Elf Ship Trophy
 	Tooltip: ""
 }
+
+TwoSpades: {
+	Tooltip: ""
+	DisplayName: Two of Spades
+}
+
+TwoHearts: {
+	Tooltip: ""
+	DisplayName: Two of Hearts
+}
+
+TwoDiamonds: {
+	Tooltip: ""
+	DisplayName: Two of Diamonds
+}
+
+TwoClubs: {
+	Tooltip: ""
+	DisplayName: Two of Clubs
+}
+
+ThreeSpades: {
+	Tooltip: ""
+	DisplayName: Three of Spades
+}
+
+ThreeHearts: {
+	Tooltip: ""
+	DisplayName: Three of Hearts
+}
+
+ThreeDiamonds: {
+	Tooltip: ""
+	DisplayName: Three of Diamonds
+}
+
+ThreeClubs: {
+	Tooltip: ""
+	DisplayName: Three of Clubs
+}
+
+TenSpades: {
+	Tooltip: ""
+	DisplayName: Ten of Spades
+}
+
+TenHearts: {
+	Tooltip: ""
+	DisplayName: Ten of Hearts
+}
+
+TenDiamonds: {
+	Tooltip: ""
+	DisplayName: Ten of Diamonds
+}
+
+TenClubs: {
+	Tooltip: ""
+	DisplayName: Ten of Clubs
+}
+
+SixSpades: {
+	Tooltip: ""
+	DisplayName: Six of Spades
+}
+
+SixHearts: {
+	Tooltip: ""
+	DisplayName: Six of Hearts
+}
+
+SixDiamonds: {
+	Tooltip: ""
+	DisplayName: Six of Diamonds
+}
+
+SixClubs: {
+	Tooltip: ""
+	DisplayName: Six of Clubs
+}
+
+SevenSpades: {
+	Tooltip: ""
+	DisplayName: Seven of Spades
+}
+
+SevenHearts: {
+	Tooltip: ""
+	DisplayName: Seven of Hearts
+}
+
+SevenDiamonds: {
+	Tooltip: ""
+	DisplayName: Seven of Diamonds
+}
+
+SevenClubs: {
+	Tooltip: ""
+	DisplayName: Seven of Clubs
+}
+
+QueenSpades: {
+	Tooltip: ""
+	DisplayName: Queen of Spades
+}
+
+QueenHearts: {
+	Tooltip: ""
+	DisplayName: Queen of Hearts
+}
+
+QueenDiamonds: {
+	Tooltip: ""
+	DisplayName: Queen of Diamonds
+}
+
+QueenClubs: {
+	Tooltip: ""
+	DisplayName: Queen of Clubs
+}
+
+NineSpades: {
+	Tooltip: ""
+	DisplayName: Nine of Spades
+}
+
+NineHearts: {
+	Tooltip: ""
+	DisplayName: Nine of Hearts
+}
+
+NineDiamonds: {
+	Tooltip: ""
+	DisplayName: Nine of Diamonds
+}
+
+NineClubs: {
+	Tooltip: ""
+	DisplayName: Nine of Clubs
+}
+
+KingSpades: {
+	Tooltip: ""
+	DisplayName: King of Spades
+}
+
+KingHearts: {
+	Tooltip: ""
+	DisplayName: King of Hearts
+}
+
+KingDiamonds: {
+	Tooltip: ""
+	DisplayName: King of Diamonds
+}
+
+KingClubs: {
+	Tooltip: ""
+	DisplayName: King of Clubs
+}
+
+JackSpades: {
+	Tooltip: ""
+	DisplayName: Jack of Spades
+}
+
+JackHearts: {
+	Tooltip: ""
+	DisplayName: Jack of Hearts
+}
+
+JackDiamonds: {
+	Tooltip: ""
+	DisplayName: Jack of Diamonds
+}
+
+JackClubs: {
+	Tooltip: ""
+	DisplayName: Jack of Clubs
+}
+
+FourSpades: {
+	Tooltip: ""
+	DisplayName: Four of Spades
+}
+
+FourHearts: {
+	Tooltip: ""
+	DisplayName: Four of Hearts
+}
+
+FourDiamonds: {
+	Tooltip: ""
+	DisplayName: Four of Diamonds
+}
+
+FourClubs: {
+	Tooltip: ""
+	DisplayName: Four of Clubs
+}
+
+FiveSpades: {
+	Tooltip: ""
+	DisplayName: Five of Spades
+}
+
+FiveHearts: {
+	Tooltip: ""
+	DisplayName: Five of Hearts
+}
+
+FiveDiamonds: {
+	Tooltip: ""
+	DisplayName: Five of Diamonds
+}
+
+FiveClubs: {
+	Tooltip: ""
+	DisplayName: Five of Clubs
+}
+
+EightSpades: {
+	Tooltip: ""
+	DisplayName: Eight of Spades
+}
+
+EightHearts: {
+	Tooltip: ""
+	DisplayName: Eight of Hearts
+}
+
+EightDiamonds: {
+	Tooltip: ""
+	DisplayName: Eight of Diamonds
+}
+
+EightClubs: {
+	Tooltip: ""
+	DisplayName: Eight of Clubs
+}
+
+DeckOfPlayingCards: {
+	Tooltip: ""
+	DisplayName: Deck Of Playing Cards
+}
+
+DarkJoker: {
+	Tooltip: ""
+	DisplayName: Dark Joker
+}
+
+AceClubs: {
+	DisplayName: Ace of Clubs
+	Tooltip: ""
+}
+
+AceDiamonds: {
+	DisplayName: Ace of Diamonds
+	Tooltip: ""
+}
+
+AceHearts: {
+	DisplayName: Ace of Hearts
+	Tooltip: ""
+}
+
+AceSpades: {
+	DisplayName: Ace of Spades
+	Tooltip: ""
+}
+
+ColoredJoker: {
+	DisplayName: Colored Joker
+	Tooltip: ""
+}
+
+CatScarf: {
+	Tooltip: ""
+	DisplayName: Cat Scarf
+}
+
+HeavyDutyVapeKit: {
+	Tooltip: ""
+	DisplayName: Heavy Duty Vape Kit
+}

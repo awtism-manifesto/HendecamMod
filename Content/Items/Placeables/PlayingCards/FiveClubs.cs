@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Content.Items.Placeables.Uno;
+﻿namespace HendecamMod.Content.Items.Placeables.PlayingCards;
 
 public class FiveClubs : ModItem
 {
@@ -11,7 +11,7 @@ public class FiveClubs : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.FiveClubs>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PlayingCards.FiveClubs>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

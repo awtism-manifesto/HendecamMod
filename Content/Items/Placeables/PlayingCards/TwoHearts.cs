@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Content.Items.Placeables.Uno;
+﻿namespace HendecamMod.Content.Items.Placeables.PlayingCards;
 
 public class TwoHearts : ModItem
 {
@@ -11,7 +11,7 @@ public class TwoHearts : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.TwoHearts>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PlayingCards.TwoHearts>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

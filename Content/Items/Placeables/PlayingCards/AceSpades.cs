@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Content.Items.Placeables.Uno;
+﻿namespace HendecamMod.Content.Items.Placeables.PlayingCards;
 
 public class AceSpades : ModItem
 {
@@ -11,7 +11,7 @@ public class AceSpades : ModItem
 
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(TileType<Tiles.Uno.AceSpades>());
+        Item.DefaultToPlaceableTile(TileType<Tiles.PlayingCards.AceSpades>());
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;

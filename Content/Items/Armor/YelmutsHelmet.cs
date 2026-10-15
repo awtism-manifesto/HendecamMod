@@ -112,16 +112,7 @@ public class YelmutsHelmet : ModItem
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<PoorMahogany>(20);
-        recipe.AddIngredient(ItemID.Feather, 4);
-        recipe.AddIngredient(ItemID.YellowMarigold, 2);
-        recipe.AddIngredient<AutismOrb>(12);
-        recipe.AddTile(TileID.Loom);
-        recipe.Register();
-    }
+    
 
     public override void UpdateArmorSet(Player player)
     {

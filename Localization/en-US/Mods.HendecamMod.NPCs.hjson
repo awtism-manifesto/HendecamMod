@@ -5,7 +5,7 @@ PromethiumPlasmoid.DisplayName: Promethium Plasmoid
 AquaticSlime.DisplayName: Aquatic Slime
 
 Asshole: {
-	DisplayName: Asshole
+	DisplayName: Street Cat
 
 	TownNPCMood: {
 		Content: I am content.
@@ -24,7 +24,7 @@ Asshole: {
 		Princess_LovesNPC: I like {NPCName}.
 	}
 
-	Census.SpawnCondition: Obtain Yelmut's Helmut
+	Census.SpawnCondition: Obtain the Cat Scarf
 }
 
 FlyingPig.DisplayName: Flying Pig

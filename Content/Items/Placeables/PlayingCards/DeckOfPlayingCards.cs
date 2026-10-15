@@ -2,7 +2,7 @@
 using HendecamMod.Content.Items.Materials;
 using Terraria.GameContent.ItemDropRules;
 
-namespace HendecamMod.Content.Items.Placeables.Uno;
+namespace HendecamMod.Content.Items.Placeables.PlayingCards;
 
 public class DeckOfPlayingCards : ModItem
 {

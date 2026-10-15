@@ -98,7 +98,7 @@ public class CobaltVape : ModItem
 
        
         recipe.AddIngredient(ItemID.CobaltBar, 12);
-        recipe.AddIngredient<VapeKit>();
+        recipe.AddIngredient<HeavyDutyVapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

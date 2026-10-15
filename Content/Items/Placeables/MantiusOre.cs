@@ -17,7 +17,7 @@ public class MantiusOre : ModItem
         var line = new TooltipLine(Mod, "Face", "A remarkable ore that grows from stone.");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "The immense forces the Wall of Flesh exert on the world appear to aid it's spread")
+        line = new TooltipLine(Mod, "Face", "")
         {
             OverrideColor = new Color(255, 255, 255)
         };

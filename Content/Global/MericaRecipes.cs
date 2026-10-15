@@ -518,6 +518,11 @@ public class MericaRecipes : ModSystem
         gay69421.AddTile(TileID.Anvils);
         gay69421.Register();
 
+        Recipe river = Recipe.Create(ItemID.AlchemyTable);
+        river.AddIngredient(ItemID.BanquetTable);
+        river.AddTile(TileID.AlchemyTable);
+        river.Register();
+
         Recipe trans = Recipe.Create(ItemID.GenderChangePotion);
         trans.AddIngredient<TransOre>();
         trans.AddIngredient<FireDiamond>();

@@ -92,7 +92,7 @@ public class MythrilVape : ModItem
 
        
         recipe.AddIngredient(ItemID.MythrilBar, 14);
-        recipe.AddIngredient<VapeKit>();
+        recipe.AddIngredient<HeavyDutyVapeKit>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

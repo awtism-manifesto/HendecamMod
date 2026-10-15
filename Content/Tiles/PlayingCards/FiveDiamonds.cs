@@ -1,7 +1,7 @@
 ﻿using Terraria.Localization;
 using Terraria.ObjectData;
 
-namespace HendecamMod.Content.Tiles.Uno;
+namespace HendecamMod.Content.Tiles.PlayingCards;
 
 public class FiveDiamonds : ModTile
 {

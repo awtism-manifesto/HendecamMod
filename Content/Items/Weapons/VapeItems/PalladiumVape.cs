@@ -97,7 +97,7 @@ public class PalladiumVape : ModItem
 
        
         recipe.AddIngredient(ItemID.PalladiumBar, 13);
-        recipe.AddIngredient<VapeKit>();
+        recipe.AddIngredient<HeavyDutyVapeKit>();
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }

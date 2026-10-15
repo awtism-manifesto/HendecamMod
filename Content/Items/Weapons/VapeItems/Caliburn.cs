@@ -98,7 +98,7 @@ public class Caliburn : ModItem
 
        
         recipe.AddIngredient(ItemID.HallowedBar, 12);
-        recipe.AddIngredient<VapeKit>();
+        recipe.AddIngredient<HeavyDutyVapeKit>();
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }

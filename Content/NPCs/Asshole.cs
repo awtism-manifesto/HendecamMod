@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using HendecamMod.Content.GlobalNPCs;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Magic;
@@ -115,7 +116,7 @@ public class Asshole : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Yelmut.\" "),
+            new FlavorTextBestiaryInfoElement("\"Hendecam deez nuts.\" "),
 
 // You can add multiple elements if you really wanted to
 // You can also use localization keys (see Localization/en-US.lang)
@@ -175,7 +176,7 @@ public class Asshole : ModNPC
     {
         return new List<string>
         {
-            "Yelmut",
+            "Asshole",
         };
     }
 
@@ -256,7 +257,7 @@ public class Asshole : ModNPC
         foreach (var player in Main.ActivePlayers)
         {
             // Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-            if (player.inventory.Any(item => item.type == ItemType<YelmutsHelmet>()))
+            if (player.inventory.Any(item => item.type == ItemType<CatScarf>()))
             {
                 return true;
             }
@@ -278,7 +279,7 @@ public class Asshole : ModNPC
     public override void AddShops()
     {
         var npcShop = new NPCShop(Type)
-            .Add<YelmutsHelmet>()
+            .Add<CatScarf>()
             .Add<MarbleMask>(Condition.DownedEarlygameBoss)
             .Add<MarbleChestplate>(Condition.DownedEarlygameBoss)
             .Add<MarbleGreaves>(Condition.DownedEarlygameBoss)
@@ -290,6 +291,7 @@ public class Asshole : ModNPC
             .Add<KingslayerBar>(Condition.DownedKingSlime, Condition.DownedEyeOfCthulhu)
             .Add<CeramicSheet>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
              .Add(ItemID.MilkCarton)
+              .Add(ItemID.Salmon)
             .Add(ItemID.LivingFireBlock, Condition.Hardmode)
             .Add(ItemID.FrostCore, Condition.DownedMechBossAny)
             .Add(ItemID.AncientBattleArmorMaterial, Condition.DownedMechBossAny)
@@ -302,11 +304,7 @@ public class Asshole : ModNPC
             .Add<MintalMachinePistol>(Condition.Hardmode);
         npcShop.Register(); // Name of this shop tab
 
-        if (ModLoader.TryGetMod("bitsnbobs", out Mod YelMerica) && YelMerica.TryFind("PoorMahogany", out ModItem PoorMahogany)
-                                                                && YelMerica.TryFind("Rubber", out ModItem Rubber) && YelMerica.TryFind("PyriteBar", out ModItem PyriteBar))
-        {
-            npcShop.Add(PyriteBar.Type, Condition.DownedEarlygameBoss);
-        }
+       
     }
 
     public override void ModifyActiveShop(string shopName, Item[] items)
