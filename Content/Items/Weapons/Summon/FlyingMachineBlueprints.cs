@@ -1,0 +1,78 @@
+﻿using System.Collections.Generic;
+using HendecamMod.Content.Buffs;
+using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles.Items;
+using Terraria.DataStructures;
+
+namespace HendecamMod.Content.Items.Weapons.Summon;
+
+public class FlyingMachineBlueprints : ModItem
+{
+    public override void SetStaticDefaults()
+    {
+        ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true;
+        ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
+
+        ItemID.Sets.StaffMinionSlotsRequired[Type] = 1f;
+    }
+
+    public override void SetDefaults()
+    {
+        Item.damage = 30;
+        Item.knockBack = 3f;
+      
+        Item.width = 32;
+        Item.height = 32;
+        Item.useTime = 36;
+        Item.useAnimation = 36;
+        Item.useStyle = ItemUseStyleID.Shoot; // how the player's arm moves when using the item
+        Item.value = Item.sellPrice(gold: 8);
+        Item.rare = ItemRarityID.Pink;
+        Item.UseSound = SoundID.Item44; // What sound should play when using the item
+
+        // These below are needed for a minion weapon
+        Item.noMelee = true; // this item doesn't do any melee damage
+        Item.DamageType = GetInstance<RangedSummonDamage>();
+        Item.buffType = BuffType<FlyingMachineBuff>();
+        // No buffTime because otherwise the item tooltip would say something like "1 minute duration"
+        Item.shoot = ProjectileType<FlyingMachineSentry>(); // This item creates the minion projectile
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
+        position = Main.MouseWorld;
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips)
+    {
+        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
+        var line = new TooltipLine(Mod, "Face", "Summons a fast, deadly, ranged Flying Machine to shoot at targets");
+        tooltips.Add(line);
+
+        line = new TooltipLine(Mod, "Face", "")
+        {
+            OverrideColor = new Color(255, 255, 255)
+        };
+        tooltips.Add(line);
+
+      
+    }
+
+    
+
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        // This is needed so the buff that keeps your minion alive and allows you to despawn it properly applies
+        player.AddBuff(Item.buffType, 2);
+
+        // Minions have to be spawned manually, then have originalDamage assigned to the damage of the summon item
+        var projectile = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, Main.myPlayer);
+        projectile.originalDamage = Item.damage;
+
+        // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
+        return false;
+    }
+}

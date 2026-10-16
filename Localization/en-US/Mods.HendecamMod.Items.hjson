@@ -5914,3 +5914,8 @@ HeavyDutyVapeKit: {
 	Tooltip: ""
 	DisplayName: Heavy Duty Vape Kit
 }
+
+FlyingMachineBlueprints: {
+	Tooltip: ""
+	DisplayName: Flying Machine Blueprints
+}

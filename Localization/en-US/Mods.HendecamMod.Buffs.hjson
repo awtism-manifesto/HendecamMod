@@ -394,6 +394,11 @@ RadSpeed5: {
 }
 
 AlpinePetBuff: {
-	Description: Mods.HendecamMod.Buffs.AlpinePetBuff.Description
+	Description: Yippe! Helikopter follw u!
 	DisplayName: Alpine Pet Buff
+}
+
+FlyingMachineBuff: {
+	Description: A Flying Machine is helping you fight!
+	DisplayName: Flying Machine Buff
 }

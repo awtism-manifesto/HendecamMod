@@ -8,6 +8,7 @@ using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Items.Weapons.Stupid;
+using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.NPCs.Town.Alpine;
 using HendecamMod.Content.Poop;
 
@@ -63,7 +64,8 @@ public class HendecamShops : GlobalNPC
 
         if (shop.NpcType == NPCID.Steampunker)
         {
-            shop.Add<GrindingGears>(condition: Condition.DownedMechBossAll);
+            shop.Add<GrindingGears>(condition: Condition.DownedMechBossAny);
+            shop.Add<FlyingMachineBlueprints>(condition: Condition.DownedMechBossAny);
         }
 
         if (shop.NpcType == NPCID.SkeletonMerchant)
