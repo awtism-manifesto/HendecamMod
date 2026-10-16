@@ -21,7 +21,8 @@ public class DarkPlasticBlock : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(5);
-        recipe.AddIngredient<PlasticScrap>(5);
+        recipe.AddIngredient<PlasticScrap>(4);
+        recipe.AddIngredient<Polymer>();
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }

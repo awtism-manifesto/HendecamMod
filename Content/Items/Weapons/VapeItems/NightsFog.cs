@@ -109,7 +109,7 @@ public class NightsFog : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<ThePenjamin>();
+        recipe.AddIngredient<HoneyHitter>();
         recipe.AddIngredient<DragonsBreath>();
         recipe.AddIngredient<CacklingCadaver>();
         recipe.AddIngredient<LungsBane>();
@@ -121,7 +121,7 @@ public class NightsFog : ModItem
             recipe.AddIngredient(PurifiedGel.Type, 10);
         }
         recipe = CreateRecipe();
-        recipe.AddIngredient<ThePenjamin>();
+        recipe.AddIngredient<HoneyHitter>();
         recipe.AddIngredient<DragonsBreath>();
         recipe.AddIngredient<CacklingCadaver>();
         recipe.AddIngredient<PulmonaryHemorrhage>();

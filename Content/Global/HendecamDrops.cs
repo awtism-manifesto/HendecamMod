@@ -439,6 +439,7 @@ public class HendecamDrops : GlobalNPC
         if (npc.type == NPCID.QueenBee)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<PocketBees>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<HoneyHitter>(), chanceDenominator: 5));
         }
 
         if (npc.type == NPCID.SantaNK1)

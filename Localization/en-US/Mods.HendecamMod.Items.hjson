@@ -5924,3 +5924,23 @@ ThoriumVape: {
 	DisplayName: Thorium Vape
 	Tooltip: ""
 }
+
+HoneyHitter: {
+	Tooltip: ""
+	DisplayName: Honey Hitter
+}
+
+GalaxyGasser: {
+	Tooltip: ""
+	DisplayName: Galaxy Gasser
+}
+
+DarkPlasticBlock: {
+	DisplayName: Dark Plastic Block
+	Tooltip: ""
+}
+
+LightPlasticBlock: {
+	DisplayName: Light Plastic Block
+	Tooltip: ""
+}
