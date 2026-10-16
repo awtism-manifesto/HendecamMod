@@ -37,8 +37,8 @@ public class SteelVape : ModItem
             MaxInstances = 3,
         };
 
-        Item.shoot = ProjectileType<GoldVapeSmoke>(); // ID of the projectiles the sword will shoot
-        Item.shootSpeed = 8.15f; // Speed of the projectiles the sword will shoot
+        Item.shoot = ProjectileType <SteelVapeSmoke>(); // ID of the projectiles the sword will shoot
+        Item.shootSpeed = 8.18f; // Speed of the projectiles the sword will shoot
 
        
     }

@@ -22,7 +22,7 @@ public class PlatinumVape : ModItem
         Item.autoReuse = true;
         Item.reuseDelay = 6;
         Item.DamageType = GetInstance<StupidDamage>();
-        Item.damage = 17;
+        Item.damage = 16;
         Item.knockBack = 0.2f;
         Item.noMelee = true; // This makes it so the item doesn't do damage to enemies (the projectile does that).
        

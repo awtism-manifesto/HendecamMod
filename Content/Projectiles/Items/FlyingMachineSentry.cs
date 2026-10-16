@@ -1,13 +1,14 @@
 ﻿using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
+using Terraria.Audio;
 
 namespace HendecamMod.Content.Projectiles.Items;
 
 public class FlyingMachineSentry : ModProjectile
 {
-    // Preferred distance to hover from the target
+    
     private const float PreferredRange = 325f;
-    // How far outside the preferred range before it repositions
+    
     private const float RangeTolerance = 75f;
 
     public override void SetStaticDefaults()
@@ -41,7 +42,7 @@ public class FlyingMachineSentry : ModProjectile
 
     public override bool? CanCutTiles() => false;
 
-    // Ranged minion should NOT deal contact damage
+    
     public override bool MinionContactDamage() => false;
 
     public override void AI()
@@ -160,7 +161,7 @@ public class FlyingMachineSentry : ModProjectile
 
     private void Movement(bool foundTarget, float distanceFromTarget, Vector2 targetCenter, float distanceToIdlePosition, Vector2 vectorToIdlePosition)
     {
-        float speed = 20f;
+        float speed = 9f;
         float inertia = 13f;
 
         if (foundTarget)
@@ -195,12 +196,12 @@ public class FlyingMachineSentry : ModProjectile
         {
             if (distanceToIdlePosition > 600f)
             {
-                speed = 25f;
+                speed = 13f;
                 inertia = 60f;
             }
             else
             {
-                speed = 10f;
+                speed = 6f;
                 inertia = 80f;
             }
 
@@ -230,7 +231,7 @@ public class FlyingMachineSentry : ModProjectile
         Projectile.ai[0]++; // shoot cooldown timer
 
         // Adjust this value to change fire rate (lower = faster)
-        const float FireRate = 22f;
+        const float FireRate = 19f;
 
         if (Projectile.ai[0] < FireRate)
             return;
@@ -244,7 +245,7 @@ public class FlyingMachineSentry : ModProjectile
         Player owner = Main.player[Projectile.owner];
         float damageMultiplier = owner.GetTotalDamage(Projectile.DamageType).ApplyTo(1f);
 
-        int shotDamage = (int)(Projectile.damage / damageMultiplier);
+        int shotDamage = (int)(Projectile.damage * 1.066f / damageMultiplier);
 
         Projectile.NewProjectile(
             Projectile.GetSource_FromAI(),
@@ -255,6 +256,12 @@ public class FlyingMachineSentry : ModProjectile
             Projectile.knockBack,
             Projectile.owner
         );
+        SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/FlyingCannon")
+        {
+            Volume = 0.125f,
+            PitchVariance = 0f,
+            MaxInstances = 50,
+        });
 
         Projectile.netUpdate = true;
     }

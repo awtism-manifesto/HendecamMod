@@ -5919,3 +5919,8 @@ FlyingMachineBlueprints: {
 	Tooltip: ""
 	DisplayName: Flying Machine Blueprints
 }
+
+ThoriumVape: {
+	DisplayName: Thorium Vape
+	Tooltip: ""
+}
