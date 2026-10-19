@@ -5944,3 +5944,13 @@ LightPlasticBlock: {
 	DisplayName: Light Plastic Block
 	Tooltip: ""
 }
+
+PlasticBand: {
+	DisplayName: Plastic Band
+	Tooltip: ""
+}
+
+MintalShuriken: {
+	Tooltip: ""
+	DisplayName: Mintal Shuriken
+}

@@ -219,12 +219,23 @@ public class Asshole : ModNPC
         if (!Main.dayTime)
         {
             chat.Add(Language.GetTextValue("Ugh, I'm tired. Time to sleep under five hundred blankets."));
+            chat.Add(Language.GetTextValue("Y'know, cats aren't nocturnal, we're most active at dawn and dusk..."));
         }
 
         if (Main.bloodMoon)
         {
             chat.Add(Language.GetTextValue("It's kind of funny how all the girls are really mad during Blood Moons. It's quite strange, to be frank."));
         }
+        if (Main.eclipse)
+        {
+            chat.Add(Language.GetTextValue("which douche ate the sun and left the fucking crust."));
+        }
+        chat.Add(Language.GetTextValue("I'm not River, I made Manifesto turn me into an NPC."));
+        chat.Add(Language.GetTextValue("t is a misconception that I grow weed."));
+        chat.Add(Language.GetTextValue("Yelmut who? Who's that?"));
+       
+        chat.Add(Language.GetTextValue("They say there is a person who will tell you to fuck off. Oh wait. That's me."));
+       
 
         chat.Add(Language.GetTextValue("Don't tell nintendo about the meteor sprite."));
         chat.Add(Language.GetTextValue("I don't know why they say I'm a good artist. I thought I was pretty bad at it."));
@@ -241,7 +252,7 @@ public class Asshole : ModNPC
         if (source is EntitySource_SpawnNPC)
         {
             // A TownNPC is "unlocked" once it successfully spawns into the world.
-            TownNpeeRespawnSystem.unlockedriver = true;
+            YelmutRespawnSystem.unlockedyelmut = true;
         }
     }
 
@@ -328,7 +339,7 @@ public class Asshole : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ItemType<YelmutsHelmet>(), 5));
+        npcLoot.Add(ItemDropRule.Common(ItemType<CatScarf>(), 5));
     }
 
     public override void TownNPCAttackStrength(ref int damage, ref float knockback)

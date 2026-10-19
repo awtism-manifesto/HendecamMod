@@ -748,6 +748,24 @@ public class WormNerf : GlobalItem
     }
 }
 
+public class EtherianBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.DD2EnergyCrystal;
+    }
+
+    public override void SetDefaults(Item item)
+    {
+        item.value = 250;
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased sell price") { OverrideColor = Color.DarkViolet });
+    }
+}
+
 public class FlurryBuff : GlobalItem
 {
     public override void SetDefaults(Item item)

@@ -19,7 +19,7 @@ public class GalaxyVapeSmoke : ModProjectile
         Projectile.width = 42; // The width of projectile hitbox
         Projectile.height = 42; // The height of projectile hitbox
         Projectile.usesLocalNPCImmunity = true;
-        Projectile.penetrate = 12;
+        Projectile.penetrate = 20;
         Projectile.localNPCHitCooldown = 11;
         Projectile.tileCollide = false;
         Projectile.friendly = true;
@@ -121,7 +121,7 @@ public class GalaxyVapeSmoke : ModProjectile
     {
        
 
-        Projectile.damage = (int)(Projectile.damage * 0.95f);
+        Projectile.damage = (int)(Projectile.damage * 0.975f);
     }
 
    
