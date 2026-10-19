@@ -40,8 +40,8 @@ public class PlutoniumSystem : ModSystem
                 );
             }
 
-            int splotches = (int)(298 * (Main.maxTilesX / 4200f));
-            int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.525);
+            int splotches = (int)(336 * (Main.maxTilesX / 4200f));
+            int highestY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.335);
 
             for (int k = 0; k < splotches; k++)
             {
@@ -51,8 +51,8 @@ public class PlutoniumSystem : ModSystem
                 WorldGen.OreRunner(
                     i,
                     j,
-                    WorldGen.genRand.Next(6, 7),
-                    WorldGen.genRand.Next(7, 8),
+                    WorldGen.genRand.Next(9, 12),
+                    WorldGen.genRand.Next(11, 13),
                     (ushort)TileType<PlutoniumOrePlaced>()
                 );
             }

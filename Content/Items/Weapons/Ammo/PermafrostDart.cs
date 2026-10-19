@@ -12,7 +12,7 @@ public class PermafrostDart : ModItem
 
     public override void SetDefaults()
     {
-        Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+        Item.damage = 10; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
         Item.DamageType = DamageClass.Ranged;
 
         Item.width = 11;

@@ -757,7 +757,7 @@ public class EtherianBuff : GlobalItem
 
     public override void SetDefaults(Item item)
     {
-        item.value = 250;
+        item.value = 1250;
     }
 
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

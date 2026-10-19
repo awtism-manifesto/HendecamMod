@@ -56,6 +56,11 @@ public class HendecamShops : GlobalNPC
             shop.Add<JokeJumbotron>(condition: Condition.TimeNight);
             shop.Add<WhippetWhip>(condition: Condition.DownedEarlygameBoss);
         }
+        if (shop.NpcType == NPCID.Clothier)
+        {
+            shop.Add(ItemID.PlumbersHat, condition: Condition.MoonPhaseFull);
+
+        }
 
         if (shop.NpcType == NPCID.Wizard)
         {

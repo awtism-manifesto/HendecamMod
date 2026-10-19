@@ -86,7 +86,7 @@ public class PlutoParticleOmni : ModProjectile
         // We only rotate by 3 degrees an update to give it a smooth trajectory. Increase the rotation speed here to make tighter turns
         float length = Projectile.velocity.Length();
         float targetAngle = Projectile.AngleTo(HomingTarget.Center);
-        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(5.5f)).ToRotationVector2() * length;
+        Projectile.velocity = Projectile.velocity.ToRotation().AngleTowards(targetAngle, MathHelper.ToRadians(6.7f)).ToRotationVector2() * length;
         Projectile.rotation = Projectile.velocity.ToRotation();
     }
 

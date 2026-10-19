@@ -40,7 +40,7 @@ public class ApacheElfShip : ModNPC
     {
         NPC.damage = 80;
         NPC.defense = 40;
-        NPC.lifeMax = 75000;
+        NPC.lifeMax = 92500;
 
         NPC.width = 100;
         NPC.height = 100;
@@ -245,6 +245,10 @@ public class ApacheElfShip : ModNPC
             if (Main.getGoodWorld) difficulty++;
             if (Main.zenithWorld) difficulty++;
             if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
+            {
+                difficulty++;
+            }
+            if (ModLoader.TryGetMod("FargowiltasSouls", out Mod fargover))
             {
                 difficulty++;
             }

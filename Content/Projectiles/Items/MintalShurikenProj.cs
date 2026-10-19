@@ -36,30 +36,7 @@ public class MintalShurikenProj : ModProjectile
             modifiers.SourceDamage *= 0.75f;
         }
     }
-    public override bool OnTileCollide(Vector2 oldVelocity)
-    {
-        if (Projectile.penetrate <= 0)
-        {
-            Projectile.Kill();
-        }
-        else
-        {
-            Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-            // If the projectile hits the left or right side of the tile, reverse the X velocity
-            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
-            {
-                Projectile.velocity.X = -oldVelocity.X;
-            }
-
-            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
-            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
-            {
-                Projectile.velocity.Y = -oldVelocity.Y;
-            }
-        }
-        Projectile.penetrate--;
-        return false;
-    }
+    
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         // Store the last hit NPC to avoid re-targeting it

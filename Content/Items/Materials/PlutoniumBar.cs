@@ -56,7 +56,7 @@ public class PlutoniumBar : ModItem
     {
         Recipe recipe = CreateRecipe();
 
-        recipe.AddIngredient<PlutoniumOre>(8);
+        recipe.AddIngredient<PlutoniumOre>(7);
 
         recipe.AddTile(TileID.AdamantiteForge);
         recipe.Register();

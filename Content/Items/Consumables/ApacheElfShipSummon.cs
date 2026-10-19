@@ -20,15 +20,15 @@ public class ApacheElfShipSummon : ModItem
         Item.width = 38;
         Item.height = 30;
         Item.maxStack = 1;
-        Item.rare = ItemRarityID.Blue;
-        Item.useAnimation = 30;
-        Item.useTime = 30;
+        Item.rare = ItemRarityID.Cyan;
+        Item.useAnimation = 15;
+        Item.useTime = 15;
         Item.useStyle = ItemUseStyleID.HoldUp;
     }
 
     public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        var line = new TooltipLine(Mod, "Face", "Show the commander of the elves that their commrades perished in vein");
+        var line = new TooltipLine(Mod, "Face", "Show the commander of the elves that their comrades perished in vein");
         tooltips.Add(line);
 
         line = new TooltipLine(Mod, "Face", "Summons Alpine, pilot of the Apache Elf Ship")
