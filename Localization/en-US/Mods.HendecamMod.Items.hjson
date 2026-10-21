@@ -5954,3 +5954,8 @@ MintalShuriken: {
 	Tooltip: ""
 	DisplayName: Mintal Shuriken
 }
+
+Frankengun: {
+	Tooltip: ""
+	DisplayName: Frankengun
+}

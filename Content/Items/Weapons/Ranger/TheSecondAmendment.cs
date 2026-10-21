@@ -233,7 +233,7 @@ public class TheSecondAmendment : ModItem
                     projType = ProjectileID.MoonlordBullet;
                     break;
                 case 56:
-                    projType = ProjectileID.MoonlordBullet;
+                    projType = ProjectileType<LightningShot>();
                     break;
                 case 57:
                     projType = ProjectileType<MerFlare>();
@@ -330,18 +330,18 @@ public class TheSecondAmendment : ModItem
         recipe.AddIngredient<ATFsNightmare>();
         recipe.AddIngredient<GunThatKillsPeople>();
         recipe.AddIngredient<TheNanoshot>();
-        recipe.AddIngredient<PoopyAutoPistol>();
+
+     
         recipe.AddIngredient(ItemID.CandyCornRifle);
         recipe.AddIngredient(ItemID.VenusMagnum);
-        recipe.AddIngredient<ThePrimeTime>();
+        recipe.AddIngredient<Frankengun>();
+        recipe.AddIngredient<PoopyAutoPistol>();
         recipe.AddIngredient(ItemID.Megashark);
         recipe.AddIngredient<CryonicCarbine>();
         recipe.AddIngredient<Bundlebuss>();
-        recipe.AddIngredient<MintalMachinePistol>();
-        recipe.AddIngredient<VP70>();
-        recipe.AddIngredient<GenderDefender>();
+       
         recipe.AddIngredient(ItemID.SnowballCannon);
-        recipe.AddIngredient<CopperShortmachinegun>();
+       
         recipe.AddIngredient<MarksmanLaserSight>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
