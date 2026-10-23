@@ -102,7 +102,7 @@ namespace HendecamMod.Content.Global
                 npc.netUpdate = true;
             }
         }
-
+       
         public override bool CheckDead(NPC npc)
         {
             if (isFlattening && flattenTimer < TotalDuration)

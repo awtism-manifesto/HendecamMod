@@ -30,12 +30,12 @@ public class PulsePistols : ModItem
         Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 40; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-        Item.reuseDelay = 30;
+        Item.reuseDelay = 40;
         Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
         Item.ArmorPenetration = 10;
         // Weapon Properties
         Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-        Item.damage = 100; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+        Item.damage = 47; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 0.25f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
         Item.noUseGraphic = true;
@@ -90,8 +90,8 @@ public class PulsePistols : ModItem
         {
             modPlayer.recoilBack = 0.2f;
         }
-        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
-        damage = (int)(damage * Main.rand.NextFloat(0.54f, 0.55f));
+        const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
+        
         Vector2 muzzleOffset = Vector2.Normalize(velocity) * 40f;
         position += new Vector2(10f * player.direction - (6 * attackCycle % 2 == 0 ? 0 : 1), -16f);
         position += muzzleOffset;

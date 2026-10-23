@@ -766,6 +766,21 @@ public class EtherianBuff : GlobalItem
     }
 }
 
+public class LawnmowerBuff : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        return item.type == ItemID.LawnMower;
+    }
+
+   
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to run over zombies, instantly killing them") { OverrideColor = Color.DarkViolet });
+    }
+}
+
 public class FlurryBuff : GlobalItem
 {
     public override void SetDefaults(Item item)
