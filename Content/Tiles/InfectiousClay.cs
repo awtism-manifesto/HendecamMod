@@ -19,6 +19,7 @@ public class PearlclayPlaced : ModTile
         Main.tileMerge[TileID.Ebonstone][Type] = true;
         Main.tileMerge[TileID.Crimstone][Type] = true;
         Main.tileMerge[TileID.Pearlstone][Type] = true;
+        Main.tileBlockLight[Type] = true;
 
         // We need to register a conversion from the vanilla clay into our modded variants, so our custom code can be called when the game attempts to convert the vanilla tile
         TileLoader.RegisterSimpleConversion(TileID.ClayBlock, BiomeConversionID.Hallow, Type);
@@ -58,6 +59,7 @@ public class EbonclayPlaced : ModTile
         Main.tileMerge[TileID.Ebonstone][Type] = true;
         Main.tileMerge[TileID.Crimstone][Type] = true;
         Main.tileMerge[TileID.Pearlstone][Type] = true;
+        Main.tileBlockLight[Type] = true;
 
         TileLoader.RegisterSimpleConversion(TileID.ClayBlock, BiomeConversionID.Corruption, Type);
         //TileID.Sets.Infectable[TileID.DesertFossil] = true; Since desert fossil was already added to infectable tiles in HallowedFossilTile, we don't need to add it again.
@@ -94,6 +96,7 @@ public class CrimclayPlaced : ModTile
         Main.tileMerge[TileID.Ebonstone][Type] = true;
         Main.tileMerge[TileID.Crimstone][Type] = true;
         Main.tileMerge[TileID.Pearlstone][Type] = true;
+        Main.tileBlockLight[Type] = true;
 
         TileLoader.RegisterSimpleConversion(TileID.ClayBlock, BiomeConversionID.Crimson, Type);
         //TileID.Sets.Infectable[TileID.DesertFossil] = true; Since desert fossil was already added to infectable tiles in HallowedFossilTile, we don't need to add it again.

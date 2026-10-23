@@ -24,7 +24,8 @@ public class BannerTile : ModBannerTile
         OilMonster,
         River,
         MorbiumWarrior,
-        FlatEarther
+        FlatEarther,
+        LycosporeSlime
     }
 }
 

@@ -50,12 +50,12 @@ public class Frankengun : ModItem
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 3; // The number of projectiles that this gun will shoot.
+        const int NumProjectiles = 5; // The number of projectiles that this gun will shoot.
 
         for (int i = 0; i < NumProjectiles; i++)
         {
             // Rotate the velocity randomly by 30 degrees at max.
-            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(12f));
+            Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(14.25f));
 
 
             // Create a projectile.

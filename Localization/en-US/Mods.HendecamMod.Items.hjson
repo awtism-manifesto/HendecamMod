@@ -1901,7 +1901,7 @@ DartShotgun: {
 }
 
 DeadSoldiersRifle: {
-	DisplayName: Dead Soldiers Rifle
+	DisplayName: Dead Soldier's Rifle
 	Tooltip: ""
 }
 
@@ -5962,4 +5962,9 @@ MintalShuriken: {
 Frankengun: {
 	Tooltip: ""
 	DisplayName: Frankengun
+}
+
+LycosporeSlimeBanner: {
+	Tooltip: ""
+	DisplayName: Lycospore Slime Banner
 }

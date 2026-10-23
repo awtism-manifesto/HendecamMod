@@ -19,9 +19,9 @@ public class LightningShot : ModProjectile
         Projectile.friendly = true;
         Projectile.DamageType = GetInstance<MeleeRangedDamage>();
         Projectile.timeLeft = 54;
-        Projectile.penetrate = 7;
+        Projectile.penetrate = 5;
         Projectile.usesIDStaticNPCImmunity = true;
-        Projectile.idStaticNPCHitCooldown = 5;
+        Projectile.idStaticNPCHitCooldown = 3;
         Projectile.extraUpdates = 10;
     }
 
