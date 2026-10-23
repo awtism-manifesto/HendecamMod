@@ -24,7 +24,7 @@ public class PlasticBand : ModItem
         var line = new TooltipLine(Mod, "Face", "+50 max Braincells");
         tooltips.Add(line);
 
-        line = new TooltipLine(Mod, "Face", "'Are you headed to the water park or the psych ward?'")
+        line = new TooltipLine(Mod, "Face", "'Are you headed to the water park or the hospital?'")
         {
             OverrideColor = new Color(255, 255, 255)
         };
@@ -36,7 +36,7 @@ public class PlasticBand : ModItem
     {
         Recipe recipe = CreateRecipe();
        
-        recipe.AddIngredient<PlasticScrap>(14);
+        recipe.AddIngredient<PlasticScrap>(6);
         recipe.AddTile(TileID.WorkBenches);
         recipe.Register();
     }
