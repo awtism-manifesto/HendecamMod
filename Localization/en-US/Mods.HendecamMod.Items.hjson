@@ -3432,7 +3432,11 @@ PrismaticBullet: {
 
 PulsePistols: {
 	DisplayName: Pulse Pistol
-	Tooltip: ""
+	Tooltip:
+	'''
+	Rapidly magdumps pulse shots before a short recharge
+	'Cheers love, The cavalry's here!'
+	'''
 }
 
 PurifiedBolt: {

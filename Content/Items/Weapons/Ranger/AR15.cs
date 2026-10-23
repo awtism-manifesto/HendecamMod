@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Items.Materials;
+﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Utils;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -6,6 +8,12 @@ namespace HendecamMod.Content.Items.Weapons.Ranger;
 
 public class AR15 : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        Item.ResearchUnlockCount = 1;
+        FrontGunLayer.RegisterData(Item.type);
+     
+    }
     public override void SetDefaults()
     {
         Item.width = 62; 
@@ -25,12 +33,19 @@ public class AR15 : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
         Item.shootSpeed = 10.25f;
         Item.useAmmo = AmmoID.Bullet;
+        Item.noUseGraphic = true;
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
-        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+        HendecamPlayer modPlayer = player.GetModPlayer<HendecamPlayer>();
 
+        modPlayer.recoilFront = 0.125f;
+        modPlayer.recoilBack = 0.125f;
+        
+        const int NumProjectiles = 1; // The number of projectiles that this gun will shoot.
+        Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
+        position += muzzleOffset;
         for (int i = 0; i < NumProjectiles; i++)
         {
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.25f));
@@ -54,7 +69,29 @@ public class AR15 : ModItem
         };
         tooltips.Add(line);
     }
+    public static void Hold(Player player)
+    {
+        HendecamPlayer modPlayer = player.GetModPlayer<HendecamPlayer>();
+        Vector2 mouse = modPlayer.MousePosition;
 
+        if (mouse.X < player.Center.X)
+            player.direction = -1;
+        else
+            player.direction = 1;
+
+        float rotation = (Vector2.Normalize(mouse - player.MountedCenter) * player.direction).ToRotation();
+        player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, rotation * player.gravDir - modPlayer.recoilFront * player.direction - MathHelper.PiOver2 * player.direction);
+        player.SetCompositeArmBack(true, Player.CompositeArmStretchAmount.Full, rotation * player.gravDir - modPlayer.recoilBack * player.direction - MathHelper.PiOver2 * player.direction);
+    }
+
+    public override void UseStyle(Player player, Rectangle heldItemFrame)
+    {
+        Hold(player);
+    }
+    public override void HoldStyle(Player player, Rectangle heldItemFrame)
+    {
+        Hold(player);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
@@ -72,6 +109,6 @@ public class AR15 : ModItem
 
     public override Vector2? HoldoutOffset()
     {
-        return new Vector2(-13f, 1f);
+        return new Vector2(12f, -14f);
     }
 }
