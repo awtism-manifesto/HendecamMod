@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
@@ -22,20 +22,6 @@ public class MorbiumCube : ModItem
     {
        
         player.maxFallSpeed = player.maxFallSpeed * -1.1f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Makes you fall in reverse");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Who the fuck turned off gravity?")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

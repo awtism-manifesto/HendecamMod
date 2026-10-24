@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -56,21 +56,6 @@ public class DvdLogo : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws dvd logos that intermittently explode and randomly change direction");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 12 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

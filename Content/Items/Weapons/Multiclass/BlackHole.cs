@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons.Stupid;
@@ -62,30 +62,5 @@ public class BlackHole : ModItem
         recipe.AddIngredient<StupiderFuckingPickaxe>();
         recipe.AddTile(TileID.LunarCraftingStation);
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 666 Lobotometer");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does everything it can to escape this world")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 }

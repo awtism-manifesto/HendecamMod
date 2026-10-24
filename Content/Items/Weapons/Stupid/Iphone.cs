@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -68,25 +68,6 @@ public class Iphone : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Weakly emits harmful 5g radiation that is both invisible and silent");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'you do NOT wanna look at the search history on that thing'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

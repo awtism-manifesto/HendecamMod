@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -37,31 +37,6 @@ public class TheAutismManifesto : ModItem
         recipe.AddIngredient<FissionDrive>();
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+100 mana and Lobotometer, +10% damage reduction");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Increases all damage by 5% of your Max Braincells ")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Increases all attack speed as Lobotometer increases, up to 25% at max")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(255, 15, 85)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

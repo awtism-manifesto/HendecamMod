@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons.Ammo;
@@ -30,31 +30,5 @@ public class CIAJournalismAward : ModItem
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots infinite high-tech triplex bullets engineered by everyone's favorite three letter agency");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'For only the most dedicated of truth seekers'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 }

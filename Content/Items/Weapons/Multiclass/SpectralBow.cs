@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Projectiles.Items;
@@ -40,19 +40,6 @@ public class SpectralBow : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<SpectralArrowProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots Spectral Arrows that light enemies up and cause summons to focus them");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "10 summon tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

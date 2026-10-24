@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -29,18 +29,6 @@ public class FlamingKnife : ModItem
         Item.DamageType = DamageClass.Throwing;
         Item.shootSpeed = 12f;
         Item.shoot = ProjectileType<FlamingKnifeProjectile>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Explodes every time it hits an enemy");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

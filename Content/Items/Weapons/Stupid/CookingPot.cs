@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -59,26 +59,6 @@ public class CookingPot : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Splatters grease everywhere");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Let him cook now!!!!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override Vector2? HoldoutOffset()

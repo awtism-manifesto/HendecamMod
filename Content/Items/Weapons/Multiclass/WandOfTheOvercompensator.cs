@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -67,27 +67,6 @@ public class WandOfTheOvercompensator : ModItem
     }
 
     
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 12 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Lets loose a huge blast of fire that splits into many flame jets")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The perfect wand for wizards who are insecure about their.. y'know.")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
 
     public override void AddRecipes()
     {

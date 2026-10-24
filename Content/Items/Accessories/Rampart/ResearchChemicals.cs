@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -12,12 +12,6 @@ public class ResearchChemicals : ModItem
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Chaos State, Potion Sickness, Creative Shock,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Might Wind, Moon Bite, The Tongue, Shimmer, and the Shadow Candle"));
     }
 
     public override void UpdateEquip(Player player)

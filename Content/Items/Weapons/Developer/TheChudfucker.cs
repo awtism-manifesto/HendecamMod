@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Rarities;
 using System.Collections.Generic;
@@ -57,27 +57,6 @@ public class TheChudfucker : ModItem
     {
         SoundEngine.PlaySound(SoundID.Item38, player.position);
         return true; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 67 Lobotometer");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
-        {
-            OverrideColor = new Color(255, 15, 85)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(255, 15, 85)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

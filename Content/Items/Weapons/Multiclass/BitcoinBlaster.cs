@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -74,30 +74,6 @@ public class BitcoinBlaster : ModItem
     {
         return Main.rand.NextFloat() >= 0.5f;
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Weapon damage varies wildly");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Still needs coins to fire")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

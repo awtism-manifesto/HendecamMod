@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
@@ -21,25 +21,6 @@ public class ArchangelGreaves : ModItem
         Item.value = Item.sellPrice(gold: 777); // How many coins the item is worth
         Item.rare = ItemRarityID.Purple; // The rarity of the item
         Item.defense = 36; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+40% increased movement speed and acceleration and +15% attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Significantly boosts max life")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
-        {
-            OverrideColor = new Color(255, 15, 85)
-        };
-        tooltips.Add(line);
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
@@ -21,18 +21,6 @@ public class BrickPick : ModItem
         Item.autoReuse = true;
         Item.pick = 45; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -59,21 +59,6 @@ public class GeigersGambit : ModItem
 
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts all rockets into huge, potent nuclear warheads, which split into more warheads");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'I don't want to set the world on fire...'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

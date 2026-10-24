@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -17,20 +17,6 @@ public class PlasticBand : ModItem
         Item.value = 2250;
         Item.rare = ItemRarityID.Blue;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "+50 max Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Are you headed to the water park or the hospital?'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override void AddRecipes()
     {

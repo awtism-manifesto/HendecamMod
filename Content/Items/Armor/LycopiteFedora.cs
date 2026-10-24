@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -37,35 +37,6 @@ public class LycopiteFedora : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "7% increased stupid crit chance and attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+75 Max Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 7% increased throwing crit chance and attack speed")
-            {
-                OverrideColor = new Color(34, 221, 240)
-            };
-            tooltips.Add(line);
-        }
-
-        line = new TooltipLine(Mod, "Face", "+0.5 hp/s life regen")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

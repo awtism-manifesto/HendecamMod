@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
@@ -21,24 +21,6 @@ public class RadioactiveAura : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 530000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Enemies are much less likely to target you");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "8% increased damage and critical strike chance, and 5% increased attack speed")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Your attacks now inflict Radiation Poisoning")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

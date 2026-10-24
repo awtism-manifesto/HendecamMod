@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Ranger;
@@ -65,36 +65,6 @@ public class UnstableConcoction : ModItem
         return base.UseItem(player);
     }
    
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 6 Braincells");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Throws highly unstable acid potions that occasionally explode midair")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Hitting enemies splashes acid so potent it ignores enemy debuff immunities")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Killing an acidified enemy releases a massive explosion that does more damage the stronger the enemy killed was")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "These explosions also acidify enemies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-    }
 
     public override void AddRecipes()
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Ranger;
@@ -72,25 +72,6 @@ public class BBC : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Randomly shoots between 1-20 cannonballs");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Base damage is randomized every time the weapon is fired")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 16 Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

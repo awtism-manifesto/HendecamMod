@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -46,21 +46,6 @@ public class CraterCreator : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Creates a massive explosion with every swing");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

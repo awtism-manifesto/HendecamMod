@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -44,18 +44,6 @@ public class Bundlebuss : ModItem
         {
             damage = (int)(damage * 1.2f);
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Unleashes a large burst of bullets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Converts musket balls into bigger, faster, more powerful musket balls")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

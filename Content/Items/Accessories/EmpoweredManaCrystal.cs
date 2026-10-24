@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -44,21 +44,6 @@ public class EmpoweredManaCrystal : ModItem
     {
         player.statManaMax2 += MaxManaIncrease;
         player.GetCritChance(damageClass: DamageClass.Magic) += MagicCritBonus;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "A mana crystal infused with extra fallen stars");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Increases Mana by 50 and Magic crit chance by 5% when equipped")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

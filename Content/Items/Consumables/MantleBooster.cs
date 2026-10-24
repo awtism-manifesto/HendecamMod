@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Tiles.Blocks;
 using System.Collections.Generic;
 
@@ -27,30 +27,7 @@ public class MantleBooster : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(gold: 50);
        
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Gives a powerful but extremely short-lived boost to the spread rate of Mantius Ore");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "WARNING: May cause some lag upon use")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        if (Main.netMode == NetmodeID.MultiplayerClient)
-        {
-            line = new TooltipLine(Mod, "Face", "If you're gonna use this item in multiplayer, warn the other people you're playing with. Don't be an asshole.")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        }
-
-    }
-    public static void TurboStartMantiusSpreading()
+    }    public static void TurboStartMantiusSpreading()
     {
        
 

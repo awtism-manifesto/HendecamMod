@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Rarities;
@@ -80,27 +80,6 @@ public class GlockAndBalls : ModItem
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.33f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Shoots exactly what you'd expect it to shoot")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "So does firing this weapon count as failing no nut november?")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

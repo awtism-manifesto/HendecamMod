@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -73,21 +73,6 @@ public class GraniteBlaster : ModItem
         
        
         return true; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Requires both gel/oil and mana to fuel the laser");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo or mana")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

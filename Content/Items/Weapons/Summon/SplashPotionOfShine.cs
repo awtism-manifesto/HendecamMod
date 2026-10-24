@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items.Weapons.Summon;
@@ -33,24 +33,6 @@ public class SplashPotionOfShine : ModItem // MAG THE COMMENTS ON THIS FILE ARE 
         // {
         //   Item.DamageType = DamageClass.Throwing; // make throwing summon hybrid when thorium thrower multiclasses are implemented 
         // }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws a splash potion that lights up hit enemies and causes your summons to focus them");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "5 summon tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        // if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        // {
-
-        //   tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "TerMerica Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
-        //  }
     }
 
     public override void AddRecipes()

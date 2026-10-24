@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Placeables;
 
@@ -23,21 +23,6 @@ public class TransBar : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(TileType<Tiles.Furniture.TransBarPlaced>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", ":3, now with more :3");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Items.Weapons.Summon;
@@ -29,11 +29,7 @@ public class OilMonster : ModNPC
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Super Spoopy, Extremely Oopy, and INCREDIBLY goopy, these speedy little bastards will ruin your day if you're not careful\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.OilMonster.Bestiary")
         });
     }
 

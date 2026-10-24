@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles;
 
@@ -25,21 +25,6 @@ public class TurboDartTrap : ModItem
         Item.value = 41000;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(TileType<TurboDartTrapTile>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots fast carbon fiber darts");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Can fire as fast as a 1/4 second timer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

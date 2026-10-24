@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
@@ -130,22 +130,5 @@ public class CoreEnforcer: ModItem
         }
 
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Left click to fire Thousand Arrows");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to fire Thousand Waves")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Deals more damage when the ancient spirits of light and dark are present in your world")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
    
 }

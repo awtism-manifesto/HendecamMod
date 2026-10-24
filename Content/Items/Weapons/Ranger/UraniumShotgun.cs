@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -65,21 +65,6 @@ public class UraniumShotgun : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts ammo into highly unstable yet potent uranium rounds");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Ignores 15 enemy defense")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

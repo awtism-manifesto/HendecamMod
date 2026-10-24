@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -54,21 +54,6 @@ public class CandyCaneCompoundBow : ModItem
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
         return false; // Prevent vanilla projectile spawn
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots arrows at an extremely high velocity");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Converts wooden arrows into candy cane arrows that split into candy cane shards")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     

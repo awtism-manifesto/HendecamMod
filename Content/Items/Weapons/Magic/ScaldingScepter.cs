@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -43,27 +43,6 @@ public class ScaldingScepter : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<ScaldStream>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots streams of scalding water that inflict Scald Burn");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Deals more damage to high defense targets")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Scald Burned enemies deal less damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
     }
 
     public override Vector2? HoldoutOffset()

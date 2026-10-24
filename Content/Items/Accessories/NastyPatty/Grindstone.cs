@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,12 +12,6 @@ public class Grindstone : ModItem
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-        }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-        var line = new TooltipLine(Mod, "Face", "Grants double your generic armor penetration, at the cost of Weapon Buffs");
-        tooltips.Add(line);
         }
 
     public override void UpdateEquip(Player player)

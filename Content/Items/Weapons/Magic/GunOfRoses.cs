@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -98,36 +98,6 @@ public class GunOfRoses : ModItem
         {
             recipe.AddIngredient(Petal.Type, 4);
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Quickly shoots poisonous rose petals");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Occasionally shoots a larger, homing rose petal")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'You know where you are? you're in the jungle baby! YOU'RE GONNA DIE!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

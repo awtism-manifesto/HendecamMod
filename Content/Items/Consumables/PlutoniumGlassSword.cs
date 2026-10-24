@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
@@ -43,13 +43,6 @@ public class PlutoniumGlassSword : ModItem
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
     {
         target.AddBuff(BuffType<RadPoisoning2>(), 300);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Also irradiates both you and enemies"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
     }
 
     public override void AddRecipes()

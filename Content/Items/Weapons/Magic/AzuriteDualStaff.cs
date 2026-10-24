@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -59,20 +59,6 @@ public class AzuriteDualStaff : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Shoots bolts of azurite energy forwards and backwards");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The forwards bolt pierces, the backwards bolt homes")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

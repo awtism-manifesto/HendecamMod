@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -87,30 +87,6 @@ public class RednecksRustBucket : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots an indeterminate amount of bullets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to throw a shovel")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Tag enemies with the shovel to power up your bullets")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'They took er jerbs! They aint taking er guns next.'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
     }
 
     public override Vector2? HoldoutOffset()

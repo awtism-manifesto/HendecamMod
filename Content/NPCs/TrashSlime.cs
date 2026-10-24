@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Summon;
 using Terraria.GameContent.Bestiary;
@@ -50,11 +50,7 @@ public class TrashSlime : ModNPC
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"A natural result of the horrific ecological overshoot that has been brought upon this world by humanity...\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.TrashSlime.Bestiary")
         });
     }
 

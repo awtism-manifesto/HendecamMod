@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
@@ -23,29 +23,6 @@ public class RadioactiveEmblem : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 2500000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "21% increased damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "7% increased crit chance and attack speed")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Causes your attacks to irradiate any enemy you hit")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "These buffs come at the cost of 15% of your max life")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

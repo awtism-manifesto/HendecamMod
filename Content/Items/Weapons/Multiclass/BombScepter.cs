@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -47,24 +47,6 @@ public class BombScepter : ModItem
     {
         type = ProjectileType<BombBoom>();
         position = Main.MouseWorld;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 9 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Creates a small explosion at the mouse position")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Ok, which drunk ass wizard drew up the blueprints for this one'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Terraria.GameContent.ItemDropRules;
@@ -21,24 +21,6 @@ public class FerrousThornSpiky : ModItem
         Item.width = 18;
         Item.height = 18;
         Item.value = 390000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "9 summon tag damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click in the inventory to swap variants")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Spiky variant: Higher direct damage and +15 armor penetration, but lower speed and tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool CanRightClick()

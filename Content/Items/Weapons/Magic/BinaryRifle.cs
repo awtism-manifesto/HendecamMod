@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
@@ -66,21 +66,6 @@ public class BinaryRifle : ModItem
         SoundEngine.PlaySound(SoundID.Item99, player.position);
         SoundEngine.PlaySound(SoundID.Item114, player.position);
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/HeatLaser") { Volume = 1.1f, PitchVariance = 0.2f, MaxInstances = 33 });
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Creates a pair of massive lasers that pierce through anything and everything");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to zoom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     public override void AddRecipes()

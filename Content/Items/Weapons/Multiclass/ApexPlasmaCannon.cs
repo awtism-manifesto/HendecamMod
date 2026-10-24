@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -127,23 +127,6 @@ public class ApexPlasmaCannon : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Left click to rapidly cast Apex Plasma Bullets that pierce many enemies");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to shoot a swarm of homing Elf Magic Missiles")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Requires either bullets or rockets based on firing mode")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override Vector2? HoldoutOffset()

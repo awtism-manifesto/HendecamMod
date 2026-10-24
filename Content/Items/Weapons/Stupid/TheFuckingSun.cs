@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -48,18 +48,6 @@ public class TheFuckingSun : ModItem
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Literally throws the fucking sun at your enemy");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 36 Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -67,26 +67,6 @@ public class SawedOffSparkplug : ModItem
         }
 
         return true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Converts bullets into sparks that go flying everywhere");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Also shoots a large ball of oil that makes enemies more vulnerable to the flame")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override void AddRecipes()

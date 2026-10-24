@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Stupid;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -159,21 +159,6 @@ public class TheWither : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "This should not exist in this realm.")
-        {
-            OverrideColor = new Color(25, 25, 25)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -12,13 +12,6 @@ public class ArmoredSling : ModItem
         Item.value = Item.sellPrice(silver: 2000);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Weakness, Withered Weapon,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Broken Armor, Withered Armor, Bleeding,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Feral Bite, Poison, and Acid Venom"));
     }
 
     public override void UpdateEquip(Player player)

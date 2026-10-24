@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
@@ -19,26 +19,6 @@ public class MeteorCube : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.maxFallSpeed = player.maxFallSpeed * 4f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Quadrouples your max fall speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Good thing this can't become a black hole")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -34,21 +34,6 @@ public class UraniumChestplate : ModItem
         Item.value = 545000;
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 9; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "11% increased damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-25 max life")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

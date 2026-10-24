@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
@@ -32,11 +32,7 @@ public class OilSlime : ModNPC
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Spoopy, Oopy, and goopy, these hard-to see, deceptively tanky slimes can ruin your day if you're not careful!\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.OilSlime.Bestiary")
         });
     }
 

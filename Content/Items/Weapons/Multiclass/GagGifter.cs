@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -70,21 +70,6 @@ public class GagGifter : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Gifts your opponents the wonderful present of pure high explosives!");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses rockets as ammo, and Uses 6 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Developer;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -49,25 +49,6 @@ public class TrueJfkExperience : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<Projectiles.JfkBullet>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shots split into homing bloodstreams on impact with a target");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to zoom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'It wont damage yourself this time, i promise'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-
-       
     }
 
     public override void AddRecipes()

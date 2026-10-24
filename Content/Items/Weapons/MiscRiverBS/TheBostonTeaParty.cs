@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
@@ -44,17 +44,7 @@ public class TheBostonTeaParty : ModItem
             Main.projectile[proj].GetGlobalProjectile<Hitscan>().fromHitscan = true;
             return false; // Prevent vanilla projectile spawn
 
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Instead of projectile vomit, this weapon shoots very high-damage bullets.");
-        tooltips.Add(line);
-        var line1 = new TooltipLine(Mod, "Face", "Right click to zoom");
-        tooltips.Add(line1);
-        var line2 = new TooltipLine(Mod, "Face", "Made for those with less than great computers.");
-        tooltips.Add(line2);
-    }
-    public override Vector2? HoldoutOffset()
+    }    public override Vector2? HoldoutOffset()
     {
         return new Vector2(-27f, 2f);
     }

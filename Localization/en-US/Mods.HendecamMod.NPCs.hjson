@@ -1,9 +1,3 @@
-ApacheElfShip.DisplayName: Apache Elf Ship
-ApacheElf.DisplayName: Apache Elf
-HeadOfCthulhu.DisplayName: Head Of Cthulhu
-PromethiumPlasmoid.DisplayName: Promethium Plasmoid
-AquaticSlime.DisplayName: Aquatic Slime
-
 Asshole: {
 	DisplayName: Street Cat
 
@@ -26,16 +20,6 @@ Asshole: {
 
 	Census.SpawnCondition: Obtain the Cat Scarf
 }
-
-FlyingPig.DisplayName: Flying Pig
-LargePlasmoid.DisplayName: Large Plasmoid
-LunarElemental.DisplayName: Lunar Elemental
-MintSlime.DisplayName: Mint Slime
-OilMonster.DisplayName: Oil Monster
-OilSlime.DisplayName: Oil Slime
-PearlsandSlime.DisplayName: Pearlsand Slime
-Plasmoid.DisplayName: Plasmoid
-PoisonSlime.DisplayName: Poison Slime
 
 Politician: {
 	DisplayName: Politician
@@ -112,13 +96,67 @@ Alpine: {
 	Census.SpawnCondition: Crash her apache
 }
 
-TrashSlime.DisplayName: Trash Slime
-UnstablePlasmoid.DisplayName: Unstable Plasmoid
-MorbiumWarrior.DisplayName: Morbium Warrior
-FlatEarther.DisplayName: Flat Earther
-EyesOfGabriel.DisplayName: Eyes Of Gabriel
-EyesOfMichael.DisplayName: Eyes Of Michael
-EyesOfRaphael.DisplayName: Eyes Of Raphael
-HeavenCloud.DisplayName: Heaven Cloud
-RadiationSeeker.DisplayName: Radiation Seeker
-LycosporeSlime.DisplayName: Lycospore Slime
+ApacheElfShip.DisplayName: Apache Elf Ship
+ApacheElf.DisplayName: Apache Elf
+HeadOfCthulhu.DisplayName: Head Of Cthulhu
+PromethiumPlasmoid.DisplayName: Promethium Plasmoid
+AquaticSlime.DisplayName: Aquatic Slime
+FlyingPig.DisplayName: Flying Pig
+LargePlasmoid.DisplayName: Large Plasmoid
+LunarElemental.DisplayName: Lunar Elemental
+MintSlime.DisplayName: Mint Slime
+OilMonster.DisplayName: Oil Monster
+OilSlime.DisplayName: Oil Slime
+PearlsandSlime.DisplayName: Pearlsand Slime
+Plasmoid.DisplayName: Plasmoid
+PoisonSlime.DisplayName: Poison Slime
+
+TrashSlime: {
+	DisplayName: Trash Slime
+	Bestiary: A natural result of the horrific ecological overshoot that has been brought upon this world by humanity...
+}
+
+UnstablePlasmoid: {
+	DisplayName: Unstable Plasmoid
+	Bestiary: Terrarian folklore says that even the Moon Lord trembles in fear at the destructive potential of Unstable Plasmoids. Studying them may be the key to major technological advancements...
+}
+
+MorbiumWarrior: {
+	DisplayName: Morbium Warrior
+	Bestiary: They're here to usher in Morbin Time. Fast and erratic. Do not trust them, they were locked away in the dungeon for a reason
+}
+
+EyesOfGabriel: {
+	DisplayName: Eyes Of Gabriel
+	Bestiary: ""
+}
+
+EyesOfMichael: {
+	DisplayName: Eyes Of Michael
+	Bestiary: ""
+}
+
+EyesOfRaphael: {
+	DisplayName: Eyes Of Raphael
+	Bestiary: ""
+}
+
+HeavenCloud: {
+	DisplayName: Heaven Cloud
+	Bestiary: ""
+}
+
+RadiationSeeker: {
+	DisplayName: Radiation Seeker
+	Bestiary: ""
+}
+
+FlatEarther: {
+	DisplayName: Flat Earther
+	Bestiary: They're stupid idiots who dig in their butt constantly and think helping the adderall sniffing cultist will prove their lobotomized ass flat earth theories correct or something idk, these guys are just REALLY dumb and show up during the pillars so that's what i think and i'm the developer of the mod so i guess that is true and oh my god this description is way too long
+}
+
+LycosporeSlime: {
+	DisplayName: Lycospore Slime
+	Bestiary: Be careful, these Lycospore Slimes can give you an explosive surprise when hurt
+}

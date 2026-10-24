@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
@@ -34,19 +34,6 @@ public class SuperMaelstrom : ModItem
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<SuperMaelstromProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons a super maelstrom sentry that flings blades EVERYWHERE in a spiral pattern");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Takes up 5 sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

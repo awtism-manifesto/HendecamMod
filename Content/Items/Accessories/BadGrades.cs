@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
@@ -25,24 +25,6 @@ public class BadGrades : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.White;
         Item.value = 67;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage as Lobotometer increases, up to 10% at max");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'The F students are inventors'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

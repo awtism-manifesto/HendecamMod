@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Armor;
@@ -29,21 +29,6 @@ public class GraniteHeadgear : ModItem
         Item.value = Item.sellPrice(silver: 95); // How many coins the item is worth
         Item.rare = ItemRarityID.White; // The rarity of the item
         Item.defense = 3; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "5% increased magic damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "10% reduced mana costs")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Projectiles;
@@ -39,18 +39,6 @@ public class TheOilBaron : ModItem
         Projectile.NewProjectileDirect(source, position, velocity * 1.667f, type, (int)(damage * 0.67f), knockback, player.whoAmI);
 
         return true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Flings a small oil ball that inflicts Oiled");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Melee hits on Oiled enemies cause fiery explosions that deal massive damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -93,21 +93,6 @@ public class OrichalcumRose : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Casts multiple venomous Orichalcum petals");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Emits light while held")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     

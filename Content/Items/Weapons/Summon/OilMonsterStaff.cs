@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -42,27 +42,6 @@ public class OilMonsterStaff : ModItem
     {
         // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
         position = Main.MouseWorld;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons a Mini Oil Monster to fight for you");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Mini Oil Monsters have a chance to inflict enemies with Oiled")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Subsequent hits on oiled enemies cause them to explode")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

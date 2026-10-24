@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -38,19 +38,6 @@ public class TheTackZone : ModItem
         {
             Item.damage = 72;
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons The Tack Zone, which spews a ludicrous amount of tacks");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Takes up 5 sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

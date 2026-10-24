@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles.Items;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
@@ -82,25 +82,6 @@ public class GlitterGun : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Rapidly casts Apex Plasma Bullets that pierce enemies and enemy armor");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override Vector2? HoldoutOffset()

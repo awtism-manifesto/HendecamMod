@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
@@ -14,24 +14,6 @@ public class PhatBlunt : ModItem
         Item.value = Item.sellPrice(gold: 7);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "+1.5 hp/s life regen and +10% max life");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time and Lobotometer visual impact")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Also looks really fucking dope")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Melee;
@@ -31,20 +31,6 @@ public class SteelBroadsword : ModItem
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "It does 6 armor penetration");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

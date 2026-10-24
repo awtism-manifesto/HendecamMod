@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Common.Utils;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -56,18 +56,6 @@ public class AR15 : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public static void Hold(Player player)
     {

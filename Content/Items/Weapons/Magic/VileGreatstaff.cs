@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -85,21 +85,6 @@ public class VileGreatstaff : ModItem
 
         SoundEngine.PlaySound(SoundID.Item100, player.position);
         return true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to fire jets of cursed flame");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to cause vile thorns to strike at the mouse position")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

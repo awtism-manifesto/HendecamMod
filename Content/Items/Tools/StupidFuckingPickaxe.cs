@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
@@ -33,19 +33,6 @@ public class StupidFuckingPickaxe : ModItem
         Item.tileBoost = 696969;
         Item.pick = 2; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "WARNING: DISABLE SMART CURSOR BEFORE HOLDING THIS ITEM");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "There won't be bloodshed")
-        {
-            OverrideColor = new Color(255, 70, 70)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

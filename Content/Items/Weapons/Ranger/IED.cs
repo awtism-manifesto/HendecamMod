@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
@@ -35,28 +35,6 @@ public class IED : ModItem
         {
             Item.DamageType = DamageClass.Throwing;
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws a dangerous IED that has a chance to randomly go off at any point while in midair");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not damage tiles or the player, deals extra damage on direct hits")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'IMPROVISED?? I'll have you know I spent several hours meticulously crafting this with high quality materials'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
-        }
-
     }
 
     public override void AddRecipes()

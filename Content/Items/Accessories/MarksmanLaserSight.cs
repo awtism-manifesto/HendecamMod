@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -21,20 +21,6 @@ public class MarksmanLaserSight : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 1010000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "13% increased ranged damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "10% increased ranged crit chance")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Audio;
 
@@ -39,24 +39,6 @@ public class TheDeposer : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 15.75f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Deny, Defend, Depose.");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Luigi Mangione my beloved")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

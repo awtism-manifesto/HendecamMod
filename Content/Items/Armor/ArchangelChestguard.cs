@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -32,20 +32,6 @@ public class ArchangelChestguard : ModItem
     {
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.statLifeMax2 = (int)(player.statLifeMax2 * 1.05) + 35;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Face", "35% increased damage"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Significantly boosts max life")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-        tooltips.Add( new TooltipLine(Mod, "Face", "Unobtainable. If someone is using this, they are cheating")
-        {
-            OverrideColor = new Color(255, 15, 85)
-        });
-       
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

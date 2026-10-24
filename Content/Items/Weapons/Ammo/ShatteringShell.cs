@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -40,19 +40,6 @@ public class ShatteringShell : ModItem
         // Rocket IV like  == ProjectileID.Celeb2RocketExplosiveLarge
         AmmoID.Sets.SpecificLauncherAmmoProjectileMatches[ItemID.Celeb2].Add(Type, ProjectileID.Celeb2Rocket);
         // The Celebration and Electrosphere Launcher will always use their own projectiles no matter which rocket you use as ammo.
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Tiny blast radius");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Deals extreme damage on direct hits")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

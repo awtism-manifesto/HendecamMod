@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -37,18 +37,5 @@ public class SteelShortsword : ModItem
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Right click to throw the saber");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     
 }

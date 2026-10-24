@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
@@ -51,21 +51,6 @@ public class ObsidianCompoundBow : ModItem
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
         Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
         return false; // Prevent vanilla projectile spawn
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots obsidian arrows at an extremely high velocity");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Getting hit with the weapon in hand causes shattering obsidian shards to fly everywhere")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override void HoldItem(Player player)
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Weapons.Summon;
 using System.Collections.Generic;
@@ -103,19 +103,6 @@ public class MechanicalMurdergun : ModItem
             }
         }
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots laser swords that pierce enemy armor and are, quite frankly, pretty badass");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right Click to activate Drone Swarm, which causes all five probes to shoot along with the main gun for 15 seconds")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

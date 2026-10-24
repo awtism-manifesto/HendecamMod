@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Projectiles;
@@ -24,21 +24,6 @@ public class TheMeltdown : ModItem
         Item.height = 14;
         Item.value = 19500000;
         Item.DamageType = GetInstance<MeleeSummonDamage>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Causes an instant explosion upon hitting an enemy");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'I'm a strong independent summoner player, i don't need my minions to commit war crimes for me!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,12 +12,6 @@ public class DustyMedal : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 100 mana and 4 Luck"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Building or Fishing Buffs"));
     }
 
     public override void UpdateEquip(Player player)

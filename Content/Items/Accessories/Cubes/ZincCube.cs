@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Rarities;
 
@@ -27,22 +27,6 @@ public class ZincCube : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.maxFallSpeed = player.maxFallSpeed * 2f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Doubles your fall speed");
-        tooltips.Add(line);
-        if (!ModLoader.TryGetMod("Avalon", out Mod Avalon))
-        {
-            line = new TooltipLine(Mod, "Face", "Avalon Compatibility Item")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        }
-       
     }
 
     public override void AddRecipes()

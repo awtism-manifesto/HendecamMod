@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using Terraria.Localization;
 
@@ -20,21 +20,6 @@ public class StupidEmblem : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = 100000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "15% increased stupid damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Yall rockin with the stupid class so far!?!?!?!?!?")
-        {
-            OverrideColor = new Color(201, 133, 0)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

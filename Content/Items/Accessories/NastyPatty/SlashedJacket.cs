@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,12 +12,6 @@ public class SlashedJacket : ModItem
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health, 15% increased attack speed, double the breath timer, and Hellfire for all attacks"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks, Combat, Activated, or Enviornmental Buffs"));
     }
 
     public override void UpdateEquip(Player player)

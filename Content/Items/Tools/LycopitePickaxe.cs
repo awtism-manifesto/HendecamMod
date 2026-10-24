@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
 
@@ -25,18 +25,6 @@ public class LycopitePickaxe : ModItem
         Item.tileBoost = 1;
         Item.pick = 105;
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

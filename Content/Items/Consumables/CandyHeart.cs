@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Consumables;
 
@@ -36,20 +36,5 @@ public class CandyHeart : ModItem
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "A small candy given by santa to his most loyal and skilled elf soldiers");
-        tooltips.Add(line);
-        var line2 = new TooltipLine(Mod, "Face", "Also just so happens to be DELICIOUS");
-        tooltips.Add(line2);
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 }

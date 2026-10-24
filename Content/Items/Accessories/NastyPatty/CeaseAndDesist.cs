@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -13,12 +13,6 @@ public class CeaseAndDesist : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25% Crit Chance and double movement speed"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Summons or Mounts"));
     }
 
     public override void UpdateEquip(Player player)

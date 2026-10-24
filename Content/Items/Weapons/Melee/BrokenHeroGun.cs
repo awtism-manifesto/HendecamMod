@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -39,18 +39,6 @@ public class BrokenHeroGun : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "It doesn't shoot anymore, but i guess you can hit things with it?");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Pieces of scrap metal flake off every time you swing it...")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,323 +1,498 @@
 GraniteHeadgear: {
 	SetBonus: Mods.HendecamMod.Items.GraniteHeadgear.SetBonus
 	DisplayName: Granite Headgear
-	Tooltip: ""
+	Tooltip:
+		'''
+		5% increased magic damage
+		10% reduced mana costs
+		'''
 }
 
 GraniteChestguard: {
 	SetBonus: Mods.HendecamMod.Items.GraniteChestguard.SetBonus
 	DisplayName: Granite Chestguard
-	Tooltip: ""
+	Tooltip: 6% increased magic damage & crit chance
 }
 
 FossilFuelPants: {
 	SetBonus: Mods.HendecamMod.Items.FossilFuelPants.SetBonus
 	DisplayName: Fossil Fuel Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		22% increased movement speed and 11% increased ranged/whip speed
+		+1 max minion and sentry slot
+		'''
 }
 
 FossilFuelHelmet: {
 	SetBonus: Mods.HendecamMod.Items.FossilFuelHelmet.SetBonus
 	DisplayName: Fossil Fuel Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		+15% ranged and summon damage, +8% whip size and ranged crit chance
+		+1 max minion
+		'''
 }
 
 FossilFuelChestplate: {
 	SetBonus: Mods.HendecamMod.Items.FossilFuelChestplate.SetBonus
 	DisplayName: Fossil Fuel Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		16% increased summon damage and ranged crit chance
+		25% chance not to consume ammo
+		'''
 }
 
 FaradayPants: {
 	SetBonus: Mods.HendecamMod.Items.FaradayPants.SetBonus
 	DisplayName: Faraday Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		19% increased movement speed and stupid attack speed
+		9% increased stupid damage and 30% increased Lobotometer decay rate
+		+2 HP/Sec life regen
+		'''
 }
 
 FaradayFedora: {
 	SetBonus: Mods.HendecamMod.Items.FaradayFedora.SetBonus
 	DisplayName: Faraday Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		21% increased stupid damage and 15% increased stupid crit chance
+		+30% increased Lobotometer decay rate
+		+2 HP/Sec life regen
+		'''
 }
 
 FaradayBodyArmor: {
 	SetBonus: Mods.HendecamMod.Items.FaradayBodyArmor.SetBonus
 	DisplayName: Faraday Body Armor
-	Tooltip: ""
+	Tooltip:
+		'''
+		+15 stupid armor penetration and +40% Lobotometer decay rate
+		+9% stupid damage and crit chance
+		+3 HP/Sec life regen
+		'''
 }
 
 AzuritePlatemail: {
 	SetBonus: Mods.HendecamMod.Items.AzuritePlatemail.SetBonus
 	DisplayName: Azurite Platemail
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased ranged damage
+		9% increased ranged crit chance
+		'''
 }
 
 AzuriteHat: {
 	SetBonus: Mods.HendecamMod.Items.AzuriteHat.SetBonus
 	DisplayName: Azurite Hat
-	Tooltip: ""
+	Tooltip: 15% increased melee damage and 10% increased melee speed
 }
 
 AzuriteGreaves: {
 	SetBonus: Mods.HendecamMod.Items.AzuriteGreaves.SetBonus
 	DisplayName: Azurite Greaves
-	Tooltip: ""
+	Tooltip: Increases magic damage by 10% and max mana by 50
 }
 
 AstatineHelmet: {
 	SetBonus: Mods.HendecamMod.Items.AstatineHelmet.SetBonus
 	DisplayName: Astatine Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		19% increased damage and 10% increased crit chance
+		+110 max mana and lobotometer
+		'''
 }
 
 AstatineGreaves: {
 	SetBonus: Mods.HendecamMod.Items.AstatineGreaves.SetBonus
 	DisplayName: Astatine Greaves
-	Tooltip: ""
+	Tooltip:
+		'''
+		27% increased movement speed and 9% increased attack speed 
+		+1 max minion and sentry slots and 8% increased damage
+		13% increased throwing damage
+		'''
 }
 
 AstatineBreastplate: {
 	SetBonus: Mods.HendecamMod.Items.AstatineBreastplate.SetBonus
 	DisplayName: Astatine Breastplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		14% increased damage and 7% increased attack speed
+		13% increased ranged crit chance and +12 melee armor penetration
+		'''
 }
 
 GraniteLeggings: {
 	SetBonus: Mods.HendecamMod.Items.GraniteLeggings.SetBonus
 	DisplayName: Granite Leggings
-	Tooltip: ""
+	Tooltip: 7% increased magic crit chance & movement speed
 }
 
 HallowedFedora: {
 	SetBonus: Mods.HendecamMod.Items.HallowedFedora.SetBonus
 	DisplayName: Hallowed Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		15% increased stupid damage
+		+100 Max Braincells and +33% Lobotometer Decay Rate
+		'''
 }
 
 KevlarBeret: {
 	SetBonus: Mods.HendecamMod.Items.KevlarBeret.SetBonus
 	DisplayName: Kevlar Beret
-	Tooltip: ""
+	Tooltip:
+		'''
+		+14% Summon damage, +1 minion slot and +5% whip speed
+		3% reduced movement speed
+		'''
 }
 
 KevlarBodysuit: {
 	SetBonus: Mods.HendecamMod.Items.KevlarBodysuit.SetBonus
 	DisplayName: Kevlar Bodysuit
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased damage
+		6% reduced movement speed
+		'''
 }
 
 KevlarFedora: {
 	SetBonus: Mods.HendecamMod.Items.KevlarFedora.SetBonus
 	DisplayName: Kevlar Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		7% increased stupid attack speed and +75 Max Braincells
+		3% reduced movement speed
+		'''
 }
 
 KevlarHelmet: {
 	SetBonus: Mods.HendecamMod.Items.KevlarHelmet.SetBonus
 	DisplayName: Kevlar Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		+50 max mana and 7% increased magic damage+crit
+		3% reduced movement speed
+		'''
 }
 
 KevlarMask: {
 	SetBonus: Mods.HendecamMod.Items.KevlarMask.SetBonus
 	DisplayName: Kevlar Mask
-	Tooltip: ""
+	Tooltip:
+		'''
+		14% increased melee damage and 5% increased melee speed
+		3% reduced movement speed
+		'''
 }
 
 KevlarPants: {
 	SetBonus: Mods.HendecamMod.Items.KevlarPants.SetBonus
 	DisplayName: Kevlar Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		9% increased critical strike chance
+		9% reduced movement speed
+		'''
 }
 
 KevlarVisor: {
 	SetBonus: Mods.HendecamMod.Items.KevlarVisor.SetBonus
 	DisplayName: Kevlar Visor
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased ranged crit chance and 6% increased ranged damage
+		3% reduced movement speed
+		'''
 }
 
 Kevlar: {
 	DisplayName: Kevlar
-	Tooltip: ""
+	Tooltip: So tough it can even stop bullets!
 }
 
 KingslayerBreastplate: {
 	SetBonus: Mods.HendecamMod.Items.KingslayerBreastplate.SetBonus
 	DisplayName: Kingslayer Breastplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% increased crit chance and summon damage
+		+1 minion slot
+		'''
 }
 
 KingslayerGreaves: {
 	SetBonus: Mods.HendecamMod.Items.KingslayerGreaves.SetBonus
 	DisplayName: Kingslayer Greaves
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% increased damage
+		5% increased whip speed
+		Significantly increased move speed, even more on sand
+		'''
 }
 
 KingslayerHelmet: {
 	SetBonus: Mods.HendecamMod.Items.KingslayerHelmet.SetBonus
 	DisplayName: Kingslayer Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		5% increased damage and critical strike chance
+		+5% extra increased summon damage
+		+5 armor penetration
+		'''
 }
 
 LycopiteChestplate: {
 	SetBonus: Mods.HendecamMod.Items.LycopiteChestplate.SetBonus
 	DisplayName: Lycopite Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		4% increased damage and critical strike chance
+		+0.5 hp/s life regen
+		'''
 }
 
 LycopiteFedora: {
 	SetBonus: Mods.HendecamMod.Items.LycopiteFedora.SetBonus
 	DisplayName: Lycopite Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		7% increased stupid crit chance and attack speed
+		+75 Max Braincells
+		[c/22DDF0:Hendecam Cross-Mod (Thorium) - 7% increased throwing crit chance and attack speed]
+		+0.5 hp/s life regen
+		'''
 }
 
 LycopiteHelmet: {
 	SetBonus: Mods.HendecamMod.Items.LycopiteHelmet.SetBonus
 	DisplayName: Lycopite Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		+70 max mana and 9% increased ranged and magic damage
+		+5% increased ranged and magic critical strike chance
+		+0.5 hp/s life regen
+		'''
 }
 
 LycopiteLeggings: {
 	SetBonus: Mods.HendecamMod.Items.LycopiteLeggings.SetBonus
 	DisplayName: Lycopite Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		12% increased movement speed and 5% increased attack speed
+		+0.5 hp/s life regen
+		'''
 }
 
 LycopiteMask: {
 	SetBonus: Mods.HendecamMod.Items.LycopiteMask.SetBonus
 	DisplayName: Lycopite Mask
-	Tooltip: ""
+	Tooltip:
+		'''
+		14% increased melee/whip speed and 10% increased whip range
+		+5% melee critical strike chance and summon damage
+		+0.5 hp/s life regen
+		'''
 }
 
 MarbleChestplate: {
 	SetBonus: Mods.HendecamMod.Items.MarbleChestplate.SetBonus
 	DisplayName: Marble Chestplate
-	Tooltip: ""
+	Tooltip: 6% increased melee damage and crit chance
 }
 
 MarbleGreaves: {
 	SetBonus: Mods.HendecamMod.Items.MarbleGreaves.SetBonus
 	DisplayName: Marble Greaves
-	Tooltip: ""
+	Tooltip: 7% increased melee damage chance & movement speed
 }
 
 MarbleMask: {
 	SetBonus: Mods.HendecamMod.Items.MarbleMask.SetBonus
 	DisplayName: Marble Mask
-	Tooltip: ""
+	Tooltip: 8% increased melee damage and melee speed
 }
 
 MintalBreastplate: {
 	SetBonus: Mods.HendecamMod.Items.MintalBreastplate.SetBonus
 	DisplayName: Mintal Breastplate
-	Tooltip: ""
+	Tooltip: 11% increased Melee and Magic damage
 }
 
 MintalHelmet: {
 	SetBonus: Mods.HendecamMod.Items.MintalHelmet.SetBonus
 	DisplayName: Mintal Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		+13% Melee and Magic crit chance
+		+65 max Mana
+		'''
 }
 
 MintalLeggings: {
 	SetBonus: Mods.HendecamMod.Items.MintalLeggings.SetBonus
 	DisplayName: Mintal Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		8% increased melee and magic attack speed
+		9% increased movement speed
+		'''
 }
 
 MorbiumGreaves: {
 	SetBonus: Mods.HendecamMod.Items.MorbiumGreaves.SetBonus
 	DisplayName: Morbium Greaves
-	Tooltip: ""
+	Tooltip: +1.5 hp/s life regen
 }
 
 MorbiumMask: {
 	SetBonus: Mods.HendecamMod.Items.MorbiumMask.SetBonus
 	DisplayName: Morbium Mask
-	Tooltip: ""
+	Tooltip: +1.5 hp/s life regen
 }
 
 MorbiumPlatemail: {
 	SetBonus: Mods.HendecamMod.Items.MorbiumPlatemail.SetBonus
 	DisplayName: Morbium Platemail
-	Tooltip: ""
+	Tooltip: +1.5 hp/s life regen
 }
 
 PlasticChestplate: {
 	SetBonus: Mods.HendecamMod.Items.PlasticChestplate.SetBonus
 	DisplayName: Plastic Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		2% increased stupid damage and crit chance
+		+20% Lobotometer decay rate
+		'''
 }
 
 PlasticHeadgear: {
 	SetBonus: Mods.HendecamMod.Items.PlasticHeadgear.SetBonus
 	DisplayName: Plastic Headgear
-	Tooltip: ""
+	Tooltip:
+		'''
+		4% increased stupid crit chance
+		+30 Max Braincells
+		'''
 }
 
 PlasticPants: {
 	SetBonus: Mods.HendecamMod.Items.PlasticPants.SetBonus
 	DisplayName: Plastic Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		3% increased stupid damage and crit chance
+		+10 Max Braincells and +10% Lobotometer decay rate
+		'''
 }
 
 PlutoniumChestplate: {
 	SetBonus: Mods.HendecamMod.Items.PlutoniumChestplate.SetBonus
 	DisplayName: Plutonium Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		14% increased damage and 7% increased crit chance
+		+11% melee speed and +55% lobotometer decay rate
+		'''
 }
 
 PlutoniumFacemask: {
 	SetBonus: Mods.HendecamMod.Items.PlutoniumFacemask.SetBonus
 	DisplayName: Plutonium Facemask
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased damage and crit chance
+		+95 max mana and +10% ranged crit chance
+		'''
 }
 
 PlutoniumPants: {
 	SetBonus: Mods.HendecamMod.Items.PlutoniumPants.SetBonus
 	DisplayName: Plutonium Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		20% increased movement speed and 5% increased attack speed
+		+2 max sentry slots
+		[c/22DDF0:Hendecam Cross-Mod (Thorium) - 7% increased throwing attack speed]
+		'''
 }
 
 PurifiedSaltChestplate: {
 	SetBonus: Mods.HendecamMod.Items.PurifiedSaltChestplate.SetBonus
 	DisplayName: Purified Salt Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		9% increased stupid damage and attack speed
+		+50% Lobotometer decay rate and +5% max life
+		'''
 }
 
 PurifiedSaltFedora: {
 	SetBonus: Mods.HendecamMod.Items.PurifiedSaltFedora.SetBonus
 	DisplayName: Purified Salt Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		19% increased stupid critical strike chance
+		+25% Lobotometer decay rate and +2.5% max life
+		'''
 }
 
 PurifiedSaltLeggings: {
 	SetBonus: Mods.HendecamMod.Items.PurifiedSaltLeggings.SetBonus
 	DisplayName: Purified Salt Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased movement speed and stupid damage
+		+25% Lobotometer decay rate and +2.5% max life
+		'''
 }
 
 PurifiedSalt: {
 	DisplayName: Purified Salt
-	Tooltip: ""
+	Tooltip: "'cleansed of every impurity down to the atomic level'"
 }
 
 RockSaltChestplate: {
 	SetBonus: Mods.HendecamMod.Items.RockSaltChestplate.SetBonus
 	DisplayName: Rock Salt Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		4% increased stupid attack speed and crit strike
+		+40 Max Braincells
+		'''
 }
 
 RockSaltFedora: {
 	SetBonus: Mods.HendecamMod.Items.RockSaltFedora.SetBonus
 	DisplayName: Rock Salt Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		5% increased stupid damage and critical strike
+		+25 Max Braincells
+		'''
 }
 
 RockSaltLeggings: {
 	SetBonus: Mods.HendecamMod.Items.RockSaltLeggings.SetBonus
 	DisplayName: Rock Salt Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		7% increased stupid damage
+		+25 Max Braincells
+		'''
 }
 
 RockSalt: {
@@ -346,73 +521,113 @@ SteelLeggings: {
 SuperCeramicChestplate: {
 	SetBonus: Mods.HendecamMod.Items.SuperCeramicChestplate.SetBonus
 	DisplayName: Super Ceramic Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		5% increased stupid damage and +5 stupid armor penetration
+		+65 Max Braincells
+		'''
 }
 
 SuperCeramicFedora: {
 	SetBonus: Mods.HendecamMod.Items.SuperCeramicFedora.SetBonus
 	DisplayName: Super Ceramic Fedora
-	Tooltip: ""
+	Tooltip:
+		'''
+		9% increased stupid damage and crit chance
+		+45 Max Braincells
+		'''
 }
 
 SuperCeramicLeggings: {
 	SetBonus: Mods.HendecamMod.Items.SuperCeramicLeggings.SetBonus
 	DisplayName: Super Ceramic Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		7% increased stupid damage
+		+55 Max Braincells
+		'''
 }
 
 TransBodyplate: {
 	SetBonus: Mods.HendecamMod.Items.TransBodyplate.SetBonus
 	DisplayName: Trans Bodyplate
-	Tooltip: ""
+	Tooltip: 6% increased damage and 3% increased crit chance
 }
 
 TransGreaves: {
 	SetBonus: Mods.HendecamMod.Items.TransGreaves.SetBonus
 	DisplayName: Trans Greaves
-	Tooltip: ""
+	Tooltip: 3% increased damage and 6% increased crit chance
 }
 
 TransHat: {
 	SetBonus: Mods.HendecamMod.Items.TransHat.SetBonus
 	DisplayName: Agender Hat
-	Tooltip: ""
+	Tooltip:
+		'''
+		+9% magic damage
+		+55 max mana
+		'''
 }
 
 UraniumChestplate: {
 	SetBonus: Mods.HendecamMod.Items.UraniumChestplate.SetBonus
 	DisplayName: Uranium Chestplate
-	Tooltip: ""
+	Tooltip:
+		'''
+		11% increased damage
+		-25 max life
+		'''
 }
 
 UraniumHelmet: {
 	SetBonus: Mods.HendecamMod.Items.UraniumHelmet.SetBonus
 	DisplayName: Uranium Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		9% increased damage
+		-15 max life
+		'''
 }
 
 UraniumLeggings: {
 	SetBonus: Mods.HendecamMod.Items.UraniumLeggings.SetBonus
 	DisplayName: Uranium Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		8% increased damage and movement speed
+		-20 max life
+		'''
 }
 
 WeedHeadgear: {
 	SetBonus: Mods.HendecamMod.Items.WeedHeadgear.SetBonus
 	DisplayName: Weed Headgear
-	Tooltip: ""
+	Tooltip:
+		'''
+		5% increased magic and stupid attack speed
+		+40 max mana and lobotometer
+		'''
 }
 
 WeedPants: {
 	SetBonus: Mods.HendecamMod.Items.WeedPants.SetBonus
 	DisplayName: Weed Pants
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% increased magic and stupid crit chance
+		10% increased movement speed
+		'''
 }
 
 WeedShirt: {
 	SetBonus: Mods.HendecamMod.Items.WeedShirt.SetBonus
 	DisplayName: Weed Shirt
-	Tooltip: ""
+	Tooltip:
+		'''
+		4% increased magic and stupid damage
+		+3 magic and stupid armor penetration
+		'''
 }
 
 OrcaMask: {
@@ -454,7 +669,16 @@ PowerPants: {
 YelmutsHelmet: {
 	SetBonus: Mods.HendecamMod.Items.YelmutsHelmet.SetBonus
 	DisplayName: Yelmut's Helmet
-	Tooltip: ""
+	Tooltip:
+		'''
+		+7% increased melee speed and ranged crit chance
+		+30 max mana and Lobotometer
+		+5% summon damage
+		[c/22DDF0:Hendecam Mod Cross-Mod (Thorium) - 5% increased throwing damage]
+		Set Bonus compatible with Poor Mahogany armor
+		May attract a visitor to your town
+		[c/DC28F5:-Developer Item-]
+		'''
 }
 
 PoopyHelmet: {
@@ -482,57 +706,92 @@ AA12: {
 
 AmalgamatedFragment: {
 	DisplayName: Amalgamated Fragment
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases melee, ranged, magic, summon, and stupid damage by 11%
+		Slightly less effective with Omni-class weapons
+		[c/22DDF0:Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage]
+		'''
 }
 
 AstatineCube: {
 	DisplayName: Astatine Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Randomizes your max run speed and fall speed
+		Run speed can go from 1% to 500%
+		Fall speed can go from -50% to 250%
+		'''
 }
 
 AutismDiagnosis: {
 	DisplayName: Autism Diagnosis
-	Tooltip: ""
+	Tooltip:
+		'''
+		8% increased damage reduction
+		Increases damage by 12% at either low or maximum Lobotometer
+		'Woah, this is expensive!'
+		'''
 }
 
 BadGrades: {
 	DisplayName: Bad Grades
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases Stupid damage as Lobotometer increases, up to 10% at max
+		'The F students are inventors'
+		'''
 }
 
 CarbonDioxideBalloon: {
 	DisplayName: Carbon Dioxide in a Balloon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Allows the player to double jump, and jump higher
+		Because screw having a stable climate am i right?
+		'''
 }
 
 CarbonDioxideBottle: {
 	DisplayName: Carbon Dioxide in a Bottle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Allows the player to double jump
+		Because screw having a stable climate am i right?
+		'''
 }
 
 CarbonDioxideCeram: {
 	DisplayName: Carbon Dioxide Ceramic Bloon
-	Tooltip: ""
+	Tooltip: Allows the player to double jump, and jump slightly higher
 }
 
 CeramicHorseshoeBalloon: {
 	DisplayName: Ceramic Horseshoe Bloon
-	Tooltip: ""
+	Tooltip: Allows the player to double jump, jump slightly higher, and negates fall damage
 }
 
 ChlorophyteCube: {
 	DisplayName: Chlorophyte Cube
-	Tooltip: ""
+	Tooltip: Increases max life by 75
 }
 
 ClimbingBoots: {
 	DisplayName: Climbing Boots
-	Tooltip: ""
+	Tooltip:
+		'''
+		8% increased movement speed
+		Allows the wearer to run super fast
+		'''
 }
 
 DarkGrayHorseshoeBalloon: {
 	DisplayName: Dark Gray Horseshoe Balloon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Allows the player to double jump, jump higher, and prevents fall damage
+		Because screw having a stable climate am i right?
+		'''
 }
 
 DefenseShield: {
@@ -542,252 +801,391 @@ DefenseShield: {
 
 DoombringerSigil: {
 	DisplayName: Doombringer Sigil
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases melee, ranged, magic, summon, and stupid damage by 15%
+		Increases melee, ranged, magic, summon, and stupid crit chance and attack speed by 7%
+		Increases melee, ranged, magic, summon, and stupid armor penetration by 5
+		Slightly less effective with Omni-class weapons
+		[c/22DDF0:Hendecam Mod Cross-Mod (Thorium) - Also grants the same stat increases to Throwing class]
+		'Epicenter of entropy'
+		'''
 }
 
 EmpoweredManaCrystal: {
 	DisplayName: Empowered Mana Crystal
-	Tooltip: ""
+	Tooltip:
+		'''
+		A mana crystal infused with extra fallen stars
+		Increases Mana by 50 and Magic crit chance by 5% when equipped
+		'''
 }
 
 EternalCrab: {
 	DisplayName: Eternal Crab
-	Tooltip: ""
+	Tooltip: Increases armor penetration by 1000
 }
 
 GelCube: {
 	DisplayName: Gel Cube
-	Tooltip: ""
+	Tooltip: Makes you sticky and slippery
 }
 
 GoodGrades: {
 	DisplayName: Good Grades
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases Stupid attack speed by 10%, bonus decays as Lobotometer rises
+		'Now your parents might finally be proud of you'
+		'''
 }
 
 ImprovisedLaserSight: {
 	DisplayName: Improvised Laser Sight
-	Tooltip: ""
+	Tooltip:
+		'''
+		4% increased ranged damage
+		6% increased ranged crit chance
+		'''
 }
 
 IrradiatedFisticuffs: {
 	DisplayName: Irradiated Fisticuffs
-	Tooltip: ""
+	Tooltip:
+		'''
+		14% increased melee speed and damage
+		Enemies are much more likely to target you
+		'''
 }
 
 KetamineInjection: {
 	DisplayName: Ketamine Injection
-	Tooltip: ""
+	Tooltip:
+		'''
+		25% increased damage reduction
+		-12.5% max life and -1 hp/s life regen
+		'''
 }
 
 KulakWings: {
 	DisplayName: Kulak Wings
-	Tooltip: ""
+	Tooltip:
+		'''
+		Allows flight and slow fall
+		'You'll be flying high after eating the rich!'
+		'''
 }
 
 LuckyCigarette: {
 	DisplayName: Lucky Cigarette
-	Tooltip: ""
+	Tooltip:
+		'''
+		10% increased crit chance
+		Slightly reduces underwater breath time and increases luck
+		Also looks really badass
+		'''
 }
 
 MarksmanLaserSight: {
 	DisplayName: Marksman's Laser Sight
-	Tooltip: ""
+	Tooltip:
+		'''
+		13% increased ranged damage
+		10% increased ranged crit chance
+		'''
 }
 
 MediocreGrades: {
 	DisplayName: Mediocre Grades
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases Stupid damage as Lobotometer increases, up to 12% at max
+		Increases Stupid attack speed by 12%, bonus decays as Lobotometer rises
+		'C's get degrees bro'
+		'''
 }
 
 MeteorCube: {
 	DisplayName: Meteor Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Quadrouples your max fall speed
+		Good thing this can't become a black hole
+		'''
 }
 
 MintalCube: {
 	DisplayName: Mintal Cube
-	Tooltip: ""
+	Tooltip: Makes you run uncomfortably fast
 }
 
 MorbiumCube: {
 	DisplayName: Morbium Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you fall in reverse
+		Who the fuck turned off gravity?
+		'''
 }
 
 AlphaMaleChecklist: {
 	DisplayName: Alpha Male Checklist
-	Tooltip: ""
+	Tooltip: Grants 33% more damage, at the cost of Accessory Buffs
 }
 
 AnkleMonitor: {
 	DisplayName: Ankle Monitor
-	Tooltip: ""
+	Tooltip: Doubles your safe fall distance, at the cost of Exploration Buffs
 }
 
 BrokenMouse: {
 	DisplayName: Broken Mouse
-	Tooltip: ""
+	Tooltip: Grants 15% more Attack Speed, at the cost of Activated Buffs
 }
 
 BurntPan: {
 	DisplayName: Burnt Pan
-	Tooltip: ""
+	Tooltip:
+		'''
+		When Used:
+		Inflicts Hellfire and grants 4hp/s life regen
+		When Equipped:
+		Grants 150 Health and Hellfire for all attacks
+		No longer gain effects from Flasks or Combat Buffs
+		'''
 }
 
 CeaseAndDesist: {
 	DisplayName: Cease And Desist
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 25% Crit Chance and double movement speed
+		No longer gain effects from Summons or Mounts
+		'''
 }
 
 DietSchedule: {
 	DisplayName: Diet Schedule
-	Tooltip: ""
+	Tooltip: Grants 20% damage reduction, at the cost of Food Buffs
 }
 
 Disenchanter: {
 	DisplayName: Disenchanter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 50 Defense and double generic armor penetration
+		No longer gain effects from Weapon or Armor Buffs
+		'''
 }
 
 DustyMedal: {
 	DisplayName: Dusty Medal
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 100 mana and 4 Luck
+		No longer gain effects from Building or Fishing Buffs
+		'''
 }
 
 EmptyFishingBucket: {
 	DisplayName: Empty Fishing Bucket
-	Tooltip: ""
+	Tooltip: Grants 4 luck, at the cost of Fishing Buffs
 }
 
 ExpiredPetFood: {
 	DisplayName: Expired Pet Food
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 3hp/s, Light, 25% Crit Chance, Double Movement Speed,
+		50 Defense, Doubled Armor Penetraton, and 33% more Generic Damage
+		No longer gain effects from Pets, Light Pets, Summons, Mounts,
+		Minecarts, Weapon, Armor, or Accessory Buffs
+		'''
 }
 
 GasMask: {
 	DisplayName: Gas Mask
-	Tooltip: ""
+	Tooltip: Grants double the breath timer, at the cost of Envoirnmental Buffs
 }
 
 Grindstone: {
 	DisplayName: Grindstone
-	Tooltip: ""
+	Tooltip: Grants double your generic armor penetration, at the cost of Weapon Buffs
 }
 
 HotWax: {
 	DisplayName: Hot Wax
-	Tooltip: ""
+	Tooltip: Makes ALL attacks inflict Hellfire, at the cost of Flasks
 }
 
 JunkFood: {
 	DisplayName: Junk Food
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,
+		100 mana, 4 Luck, 20% Damage Reduction, 25 Safe Fall Distance, and much higher jump speed
+		No longer gain effects from Flasks, Combat, Activated, Enviornmental,
+		Building, Fishing, Food, or Exploration Buffs
+		'''
 }
 
 KillShelterPermit: {
 	DisplayName: Kill Shelter Permit
-	Tooltip: ""
+	Tooltip: Grants 3hp/s Life Regen, at the cost of Pets
 }
 
 LeadPlating: {
 	DisplayName: Lead Plating
-	Tooltip: ""
+	Tooltip: Grants 50 defense, at the cost of Armor Buffs
 }
 
 Lunchly: {
 	DisplayName: Lunchly
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 33% generic damage and much higher jump speed
+		No longer gain effects from Minecarts or Accessory Buffs
+		'''
 }
 
 MoldyCheese: {
 	DisplayName: Moldy Cheese
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 50 Defense, Doubled Armor Penetraton, 33% more Generic Damage, and much higher jump speed
+		No longer gain effects from Minecarts, Weapon, Armor, or Accessory Buffs
+		'''
 }
 
 NastyPattyAccessory: {
 	DisplayName: Nasty Patty
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,
+		50 mana, 4 Luck, 20% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,
+		Double Movement Speed, 50 Defense, 40 Armor Penetraton, 33% more Generic Damage, and much higher jump speed
+		No longer gain effects from any vanilla buff
+		'''
 }
 
 NintendoPatent: {
 	DisplayName: Nintendo Patent
-	Tooltip: ""
+	Tooltip: Grants 25% Crit Chance, at the cost of Summons
 }
 
 NostalgicDiamond: {
 	DisplayName: Nostalgic Diamond
-	Tooltip: ""
+	Tooltip: Grants much higher jump speed, at the cost of Minecarts
 }
 
 OldOnesGlasses: {
 	DisplayName: Old One's Glasses
-	Tooltip: ""
+	Tooltip: Grants 100 more Mana, at the cost of Building Buffs
 }
 
 PacifistsMark: {
 	DisplayName: Pacifist's Mark
-	Tooltip: ""
+	Tooltip: Grants 150 more Health, at the cost of Combat Buffs
 }
 
 PetaAutograph: {
 	DisplayName: PETA Autograph
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 3hp/s and light
+		No longer gain effects from Pets or Light Pets
+		'''
 }
 
 PoachersContract: {
 	DisplayName: Poachers Contract
-	Tooltip: ""
+	Tooltip: Grants light, at the cost of Light Pets
 }
 
 PrisonFood: {
 	DisplayName: Prison Food
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 25 fall distance and 20% Damage Reduction
+		No longer gain effects from Food or Exploration Buffs
+		'''
 }
 
 SchoolFood: {
 	DisplayName: School Food
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 50 mana, 4 Luck, 20% Damage Reduction, and 25 Safe Fall Distance
+		No longer gain effects from Building, Fishing, Food, or Exploration Buffs
+		'''
 }
 
 SlashedJacket: {
 	DisplayName: Slashed Jacket
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 150 Health, 15% increased attack speed, double the breath timer, and Hellfire for all attacks
+		No longer gain effects from Flasks, Combat, Activated, or Enviornmental Buffs
+		'''
 }
 
 TornFilter: {
 	DisplayName: Torn Filter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 15% more Attack Speed and double your breath timer
+		No longer gain effects from Activated or Enviornmental Buffs
+		'''
 }
 
 TornSaddle: {
 	DisplayName: Torn Saddle
-	Tooltip: ""
+	Tooltip: Grants double your movement speed, at the cost of Mounts
 }
 
 ZoologistHateLetter: {
 	DisplayName: Zoologist Hate Letter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 3hp/s, Light, 25% Crit Chance, and Double Movement Speed
+		No longer gain effects from Pets, Light Pets, Summons, or Mounts
+		'''
 }
 
 Godhood: {
 	DisplayName: Godhood
-	Tooltip: ""
+	Tooltip:
+		'''
+		Nothing can touch you, everything you touch crumbles to dust
+		Works best with Hallowed Armor
+		'''
 }
 
 MoltenRose: {
 	DisplayName: Molten Rose
-	Tooltip: ""
+	Tooltip: Reduces damage from touching lava, and provides 7 seconds of lava immunity
 }
 
 SoulOfImmunityAccessory: {
 	DisplayName: Soul Of Immunity
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,
+		50 mana, 4 Luck, 20% Damage Reduction, 35 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,
+		50 extra Defense, 40 Armor Penetraton, 33% more Generic Damage, MUCH higher jump speed, Flight, Liquid walking,
+		Super fast movement, More mobility on ice, Faster running speed on sand, 30 fishing power, and Auto jump
+		Immune to every buff, debuff, knockback, fall damage, fire blocks, and liquids
+		Every enemy should be friendly
+		'''
 }
 
 OverclockedWrench: {
 	DisplayName: Overclocked Wrench
-	Tooltip: ""
+	Tooltip:
+		'''
+		12% increased movement speed and whip speed
+		+2 max sentries
+		'''
 }
 
 PanicShield: {
@@ -797,457 +1195,594 @@ PanicShield: {
 
 FlamingPeaceAgreement: {
 	DisplayName: Flaming Peace Agreement
-	Tooltip: ""
+	Tooltip: The damned should be friendly
 }
 
 FriendCore: {
 	DisplayName: Friend Core
-	Tooltip: ""
+	Tooltip: A basis for peace with enemies
 }
 
 GrassyPeaceAgreement: {
 	DisplayName: Grassy Peace Agreement
-	Tooltip: ""
+	Tooltip: The jungle's denizens should be friendly
 }
 
 InvaderPeaceAgreement: {
 	DisplayName: Invader Peace Agreement
-	Tooltip: ""
+	Tooltip: Invaders should be friendly
 }
 
 MechanicalPeaceAgreement: {
 	DisplayName: Mechanical Peace Agreement
-	Tooltip: ""
+	Tooltip: A certain trio should be friendly
 }
 
 MonarchyPeaceAgreement: {
 	DisplayName: Monarchy Peace Agreement
-	Tooltip: ""
+	Tooltip: Slimes, Bees, and Hornets should be friendly
 }
 
 MoonlordPeaceAgreement: {
 	DisplayName: Moonlord Peace Agreement
-	Tooltip: ""
+	Tooltip: The Moonlord and his cultists should be friendly
 }
 
 OceanicPeaceAgreement: {
 	DisplayName: Oceanic Peace Agreement
-	Tooltip: ""
+	Tooltip: The depths of the ocean should be friendly
 }
 
 OcularPeaceAgreement: {
 	DisplayName: Ocular Peace Agreement
-	Tooltip: ""
+	Tooltip: All eyes should be friendly
 }
 
 PeaceAmongBiomes: {
 	DisplayName: Peace Among Biomes
-	Tooltip: ""
+	Tooltip: Most biome-based entities should be friendly
 }
 
 PeaceAmongCthulhu: {
 	DisplayName: Peace Among Cthulhu
-	Tooltip: ""
+	Tooltip: Cthulhu and his parts should be friendly
 }
 
 PeaceAmongEvents: {
 	DisplayName: Peace Among Events
-	Tooltip: ""
+	Tooltip: Enemies from eventful places should be friendly
 }
 
 PeaceAmongNationsAccessory: {
 	DisplayName: Peace Among Nations
-	Tooltip: ""
+	Tooltip: All those who are hostile should be friendly
 }
 
 RoyalAmalgamation: {
 	DisplayName: Royal Amalgamation
-	Tooltip: ""
+	Tooltip: Various enemies across Terraria should be friendly
 }
 
 RoyalChest: {
 	DisplayName: Royal Chest
-	Tooltip: ""
+	Tooltip: Mimics should be friendly
 }
 
 RoyalCushion: {
 	DisplayName: Royal Cushion
-	Tooltip: ""
+	Tooltip: All that are creepy and crawly should be friendly
 }
 
 RoyalFeather: {
 	DisplayName: Royal Feather
-	Tooltip: ""
+	Tooltip: The residents of wind and sky should be friendly
 }
 
 RoyalGeode: {
 	DisplayName: Royal Geode
-	Tooltip: ""
+	Tooltip: Those in the depths of the rock should be friendly
 }
 
 RoyalGnome: {
 	DisplayName: Royal Gnome
-	Tooltip: ""
+	Tooltip: Gnomes should be friendly
 }
 
 RoyalMandibles: {
 	DisplayName: Royal Mandibles
-	Tooltip: ""
+	Tooltip: The dwellers of the desert should be friendly
 }
 
 RoyalMushroom: {
 	DisplayName: Royal Mushroom
-	Tooltip: ""
+	Tooltip: Fungal enemies should be friendly
 }
 
 RoyalWing: {
 	DisplayName: Royal Wing
-	Tooltip: ""
+	Tooltip: Bats should be friendly
 }
 
 SeasonalPeaceAgreement: {
 	DisplayName: Seasonal Peace Agreement
-	Tooltip: ""
+	Tooltip: Seasonal enemies should be friendly
 }
 
 SlushyPeaceAgreement: {
 	DisplayName: Slushy Peace Agreement
-	Tooltip: ""
+	Tooltip: Members of the Cold and Wet should be friendly
 }
 
 SpreadBiomePeaceAgreement: {
 	DisplayName: Spread Biome Peace Agreement
-	Tooltip: ""
+	Tooltip: The crimson, corruption, and hallow should be friendly
 }
 
 UndeadPeaceAgreement: {
 	DisplayName: Undead Peace Agreement
-	Tooltip: ""
+	Tooltip: All undead should be friendly
 }
 
 PhatBlunt: {
 	DisplayName: Phat Blunt
-	Tooltip: ""
+	Tooltip:
+		'''
+		+1.5 hp/s life regen and +10% max life
+		Slightly reduces underwater breath time and Lobotometer visual impact
+		Also looks really fucking dope
+		'''
 }
 
 PitVipers: {
 	DisplayName: Pit Vipers
-	Tooltip: ""
+	Tooltip:
+		'''
+		12% incrased damage, crit chance, and attack speed as well as 12 armor penetration for the Stupid class
+		+175 Max Braincells and 150% increased lobotometer decay rate
+		Significantly reduces the Lobotometer's impact on your vision
+		'The unofficial logo of frat boys, the stupidest demographic in existence'
+		'''
 }
 
 PlutoniumCube: {
 	DisplayName: Plutonium Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Randomizes your max run speed
+		It can go from 1% to 500%
+		'''
 }
 
 PondsWings: {
 	DisplayName: Pond's Wings
-	Tooltip: ""
+	Tooltip: Allows flight and slow fall
 }
 
 RadioactiveAura: {
 	DisplayName: Radioactive Aura
-	Tooltip: ""
+	Tooltip:
+		'''
+		Enemies are much less likely to target you
+		8% increased damage and critical strike chance, and 5% increased attack speed
+		Your attacks now inflict Radiation Poisoning
+		'''
 }
 
 RadioactiveEmblem: {
 	DisplayName: Radiation Emblem
-	Tooltip: ""
+	Tooltip:
+		'''
+		21% increased damage
+		7% increased crit chance and attack speed
+		Causes your attacks to irradiate any enemy you hit
+		These buffs come at the cost of 15% of your max life
+		'''
 }
 
 ArmoredSling: {
 	DisplayName: Armored Sling
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Weakness, Withered Weapon,
+		Broken Armor, Withered Armor, Bleeding,
+		Feral Bite, Poison, and Acid Venom
+		'''
 }
 
 BackupPlan: {
 	DisplayName: Backup Plan
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Cursed, Mana Sickness, Suffocation, 
+		Confused, Distorted, Slowness, and Oozed
+		'''
 }
 
 BodyWash: {
 	DisplayName: Body Wash
-	Tooltip: ""
+	Tooltip: Grants immunity to Ichor and Webbed
 }
 
 Butterbrot: {
 	DisplayName: Butterbrot
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Peckish, Hungry, Starving, Frostburn,
+		Shadowflame, Hellfire, Cursed Inferno, Chilled, Frozen,
+		Frostbite, Obstructed, and Electrified
+		'''
 }
 
 Conditioner: {
 	DisplayName: Conditioner
-	Tooltip: ""
+	Tooltip: Grants immunity to Wet, Lovestruck, and Stinky
 }
 
 ElementalFlameCore: {
 	DisplayName: Elemental Flame Core
-	Tooltip: ""
+	Tooltip: Grants immunity to Frostburn, Shadowflame, Hellfire, and Cursed Inferno
 }
 
 EmptyBong: {
 	DisplayName: Empty Bong
-	Tooltip: ""
+	Tooltip: Grants immunity to Chaos State and Potion Sickness
 }
 
 FirstHalf: {
 	DisplayName: First Half
-	Tooltip: ""
+	Tooltip: Grants immunity to Penetrated, Blood Butchered, Midas, and Dryad's Bane
 }
 
 GlowstoneCape: {
 	DisplayName: Glowstone Cape
-	Tooltip: ""
+	Tooltip: Grants immunity to Shimmered and the Shadow Candle
 }
 
 GodsPaintThinner: {
 	DisplayName: God's Paint Thinner
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Penetrated, Blood Butchered, Midas,
+		Dryad's Bane, Betsy's Curse, Oiled, Daybroken, and Celled
+		Slimed, Sparkle Slime, Wet, Lovestruck, Stinky, Ichor, Webbed,
+		Webbed, Cerebral Mindtrick, Tipsy, the Water Candle,
+		Chaos State, Potion Sickness, Creative Shock, Might Wind,
+		Moon Bite, The Tongue, Shimmer, and the Shadow Candle
+		'''
 }
 
 HeavyDutyBoots: {
 	DisplayName: Heavy Duty Boots
-	Tooltip: ""
+	Tooltip: Grants immunity to Mighty Wind
 }
 
 IdeaGenerator: {
 	DisplayName: Idea Generator
-	Tooltip: ""
+	Tooltip: Grants immunity to Creative Shock
 }
 
 LargeCactus: {
 	DisplayName: Large Cactus
-	Tooltip: ""
+	Tooltip: Grants immunity to The Tongue
 }
 
 LeadBlanket: {
 	DisplayName: Lead Blanket
-	Tooltip: ""
+	Tooltip: Grants immunity to Moon Bite, The Tongue, Shimmered, and the Shadow Candle
 }
 
 LeechRepellant: {
 	DisplayName: Leech Repellant
-	Tooltip: ""
+	Tooltip: Grants immunity to Moon Bite
 }
 
 Lightbulb: {
 	DisplayName: Lightbulb
-	Tooltip: ""
+	Tooltip: Grants immunity to Creative Shock and Mighty Wind
 }
 
 LitBong: {
 	DisplayName: Lit Bong
-	Tooltip: ""
+	Tooltip: Grants immunity to Chaos State, Potion Sickness, Creative Shock, and Mighty Wind
 }
 
 LostFragment1: {
 	DisplayName: Lost Fragment 1
-	Tooltip: ""
+	Tooltip: Grants immunity to Penetrated and Blood Butchered
 }
 
 LostFragment2: {
 	DisplayName: Lost Fragment 2
-	Tooltip: ""
+	Tooltip: Grants immunity to Midas and Dryad's Bane
 }
 
 LostFragment3: {
 	DisplayName: Lost Fragment 3
-	Tooltip: ""
+	Tooltip: Grants immunity to Betsy's Curse and Oiled
 }
 
 LostFragment4: {
 	DisplayName: Lost Fragment 4
-	Tooltip: ""
+	Tooltip: Grants immunity to Daybroken and Celled
 }
 
 MagicSoap: {
 	DisplayName: Dr.Bronner's 18-in-1 Magic Soap
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Penetrated, Blood Butchered, Midas,
+		Dryad's Bane, Betsy's Curse, Oiled, Daybroken, and Celled
+		Slimed, Sparkle Slime, Wet, Lovestruck, Stinky, Ichor, Webbed,
+		Webbed, Cerebral Mindtrick, Tipsy, and the Water Candle
+		'''
 }
 
 MukbangStarterKit: {
 	DisplayName: Mukbang Starter Kit
-	Tooltip: ""
+	Tooltip: Grants immunity to Peckish, Hungry, and Starving
 }
 
 OverthinkersChecklist: {
 	DisplayName: Overthinker's Checklist
-	Tooltip: ""
+	Tooltip: Grants immunity to Penetrated, Blood Butchered, Midas, Dryad's Bane, Betsy's Curse, Oiled, Daybroken, and Celled
 }
 
 Placebo: {
 	DisplayName: Placebo
-	Tooltip: ""
+	Tooltip: Grants immunity to Potion Sickness
 }
 
 QuestionableVial: {
 	DisplayName: Questionable Vial
-	Tooltip: ""
+	Tooltip: Grants immunity to Ichor, Webbed, Cerebral Mindtrick, Tipsy, and the Water Candle
 }
 
 RampartAccessory: {
 	DisplayName: Rampart
-	Tooltip: ""
+	Tooltip: Grants immunity to every vanilla debuff, all forms of radiation poisoning, knockback and fire blocks
 }
 
 ResearchChemicals: {
 	DisplayName: Research Chemicals
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Chaos State, Potion Sickness, Creative Shock,
+		Might Wind, Moon Bite, The Tongue, Shimmer, and the Shadow Candle
+		'''
 }
 
 RiotShield: {
 	DisplayName: Riot Shield
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Weakness, Withered Weapon,
+		Broken Armor, Withered Armor, Bleeding,
+		Feral Bite, Poison, Acid Venom. Burning,
+		Blackout, Darkness, Stoned, Horrified,
+		OnFire, Dazed, and Knockback
+		'''
 }
 
 SecondDinner: {
 	DisplayName: Second Dinner
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants immunity to Cursed, Mana Sickness, Suffocation,
+		Confused, Distorted, Slowness, Oozed, Peckish, Hungry,
+		Starving, Frostburn, Shadowflame, Hellfire, Cursed Inferno,
+		Chilled, Frozen, Frostbite, Obstructed, and Electrified
+		'''
 }
 
 SecondHalf: {
 	DisplayName: Second Half
-	Tooltip: ""
+	Tooltip: Grants immunity to Betsy's Curse, Oiled, Daybroken, and Celled
 }
 
 Shampoo: {
 	DisplayName: Shampoo
-	Tooltip: ""
+	Tooltip: Grants immunity to Slimed and Sparkle Slime
 }
 
 SmellingSalts: {
 	DisplayName: Smelling Salts
-	Tooltip: ""
+	Tooltip: Grants immunity to Cerebral Mindtrick, Tipsy, and the Water Candle
 }
 
 SpiceKingStarterKit: {
 	DisplayName: Spice King Starter Kit
-	Tooltip: ""
+	Tooltip: Grants immunity to Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire, and Cursed Inferno
 }
 
 SpotlightShield: {
 	DisplayName: Spotlight Shield
-	Tooltip: ""
+	Tooltip: Grants immunity to Burning, OnFire, Dazed, Blackout, Darkness, Stoned, Horrified, and Knockback
 }
 
 SteelSunscreen: {
 	DisplayName: Steel Sunscreen
-	Tooltip: ""
+	Tooltip: Grants immunity to Moon Bite and The Tongue
 }
 
 ThreeInOne: {
 	DisplayName: Three In One
-	Tooltip: ""
+	Tooltip: Grants immunity to Slimed, Sparkle Slime, Wet, Lovestruck, Stinky, Ichor, Webbed, Cerebral Mindtrick, Tipsy, and the Water Candle
 }
 
 TwoInOne: {
 	DisplayName: Two In One
-	Tooltip: ""
+	Tooltip: Grants immunity to Slimed, Sparkle Slime, Wet, Lovestruck, and Stinky
 }
 
 UltrabrightCandle: {
 	DisplayName: Ultrabright Candle
-	Tooltip: ""
+	Tooltip: Grants immunity to the Shadow Candle
 }
 
 Ushanka: {
 	DisplayName: Ushanka
-	Tooltip: ""
+	Tooltip: Grants immunity to Chilled, Frozen, Frostbite, Obstructed, and Electrified
 }
 
 RiverCube: {
 	DisplayName: River Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		-1 defense
+		:3's your fall speed
+		'''
 }
 
 SaltPendant: {
 	DisplayName: Salt Pendant
-	Tooltip: ""
+	Tooltip:
+		'''
+		5.55% increased damage reduction
+		'For your spiritual protection'
+		'''
 }
 
 ShatteredKeyboard: {
 	DisplayName: Shattered Keyboard
-	Tooltip: ""
+	Tooltip:
+		'''
+		13% increased damage
+		AJSFPEKASDVOHSRTPMO0IAWHBHCAUFOWJEPJLKWUIOH
+		'''
 }
 
 SilverCube: {
 	DisplayName: Silver Cube
-	Tooltip: ""
+	Tooltip: Doubles your fall speed
 }
 
 SpiritProtectionCharm: {
 	DisplayName: Spirit Protection Charm
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% reduced damage taken
+		+7% magic crit chance and +70 mana
+		'''
 }
 
 StupidEmblem: {
 	DisplayName: Stupid Emblem
-	Tooltip: ""
+	Tooltip:
+		'''
+		15% increased stupid damage
+		[c/C98500:Yall rockin with the stupid class so far!?!?!?!?!?]
+		'''
 }
 
 TacticalLaserSight: {
 	DisplayName: Tactical Laser Sight
-	Tooltip: ""
+	Tooltip:
+		'''
+		8% increased ranged damage
+		10% increased ranged crit chance
+		'''
 }
 
 TheAutismManifesto: {
 	DisplayName: The Autism Manifesto
-	Tooltip: ""
+	Tooltip:
+		'''
+		+100 mana and Lobotometer, +10% damage reduction
+		Increases all damage by 5% of your Max Braincells 
+		Increases all attack speed as Lobotometer increases, up to 25% at max
+		[c/FF0F55:-Developer Item-]
+		'''
 }
 
 TintedLenses: {
 	DisplayName: Tinted Lenses
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases armor penetration by 10
+		+5% crit chance
+		Reduces the Lobotometer's impact on your vision
+		'''
 }
 
 TrenboloneAcetate: {
 	DisplayName: Trenbolone Acetate
-	Tooltip: ""
+	Tooltip:
+		'''
+		9% incrased damage and attack speed for both the Stupid and Melee classes
+		+90 Max Braincells
+		Enemies are more likely to target the player
+		'For only the truest of meatheads'
+		'''
 }
 
 TungstenCube: {
 	DisplayName: Tungsten Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		This costs $5000 on Ebay
+		No I am not joking when I say that
+		'''
 }
 
 UltraboostedWrench: {
 	DisplayName: Ultraboosted Wrench
-	Tooltip: ""
+	Tooltip:
+		'''
+		20% increased whip speed and movement speed
+		+4 max sentries
+		Does not stack with Overclocked Wrench
+		'''
 }
 
 UraniumCube: {
 	DisplayName: Uranium Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Randomizes your max fall speed
+		It can go from -50% to 250%
+		'''
 }
 
 WeedCube: {
 	DisplayName: Weed Cube
-	Tooltip: ""
+	Tooltip: Makes the player weed colored
 }
 
 ZincCube: {
 	DisplayName: Zinc Cube
-	Tooltip: ""
+	Tooltip:
+		'''
+		Doubles your fall speed
+		Avalon Compatibility Item
+		'''
 }
 
 AgentGreenRocket: {
 	DisplayName: Agent Green Rocket
-	Tooltip: ""
+	Tooltip: "'Didn't we use these back in 'nam?'"
 }
 
 AK47: {
 	DisplayName: AK47
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a medium caliber bullet that pierces a little bit of enemy armor
+		'Ol' Reliable.'
+		'''
 }
 
 AmericaFlag: {
 	DisplayName: America Flag
-	Tooltip: ""
+	Tooltip: Independent we stand, dependent we fall...
 }
 
 AnthraxRocket: {
 	DisplayName: Anthrax Rocket
-	Tooltip: ""
+	Tooltip:
+		'''
+		Huge blast radius
+		'Courtesy of the CIA!'
+		'''
 }
 
 AR15: {
@@ -1257,17 +1792,17 @@ AR15: {
 
 ArcaneDartgun: {
 	DisplayName: Arcane Dartgun
-	Tooltip: ""
+	Tooltip: Converts darts into magic arcane darts that pierce once and have powerful homing
 }
 
 FlinxFurEarmuffs: {
 	DisplayName: Flinx Fur Earmuffs
-	Tooltip: ""
+	Tooltip: +1 sentry slot
 }
 
 FlinxFurSlippers: {
 	DisplayName: Flinx Fur Slippers
-	Tooltip: ""
+	Tooltip: 4% increased summon damage
 }
 
 KingslayerCrown: {
@@ -1317,47 +1852,63 @@ Pykrete: {
 
 PyriteChestguard: {
 	DisplayName: Pyrite Chestguard
-	Tooltip: ""
+	Tooltip: 4% increased damage and damage reduction
 }
 
 PyriteCrown: {
 	DisplayName: Pyrite Crown
-	Tooltip: ""
+	Tooltip: +9% summon damage and whip speed
 }
 
 PyriteHood: {
 	DisplayName: Pyrite Hood
-	Tooltip: ""
+	Tooltip: +70 max mana and +7% magic crit chance
 }
 
 PyriteLegPlating: {
 	DisplayName: Pyrite Leg Plating
-	Tooltip: ""
+	Tooltip: 4% increased damage and damage reduction
 }
 
 ArrowRaider: {
 	DisplayName: Arrow Raider
-	Tooltip: ""
+	Tooltip:
+		'''
+		Bombards your target with arrows from multiple angles
+		'really puts the 'cross' in crossbow'
+		'''
 }
 
 ASaltRifle: {
 	DisplayName: A Salt Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Does not require ammo
+		Gains damage as it pierces enemies
+		'''
 }
 
 AshSpewer: {
 	DisplayName: Ash Spewer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Spews smoldering ash at your enemies
+		'''
 }
 
 AstatineArrow: {
 	DisplayName: Astatine Arrow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Explodes shortly after being fired
+		Flies incredibly fast
+		'''
 }
 
 AstatineBar: {
 	DisplayName: Astatine Bar
-	Tooltip: ""
+	Tooltip: "'You have no idea how it stays stable'"
 }
 
 AstatineBrick: {
@@ -1372,17 +1923,21 @@ AstatineGlass: {
 
 AstatineMarksmanRifle: {
 	DisplayName: Astatine Marksman Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots effectively hitscan rounds that violently explode on impact, dealing huge impact damage
+		Ignores 30 enemy armor
+		'''
 }
 
 AstatineOre: {
 	DisplayName: Astatine Ore
-	Tooltip: ""
+	Tooltip: "'This stuff just doesn't want to exist'"
 }
 
 AstatinePolearm: {
 	DisplayName: Astatine Polearm
-	Tooltip: ""
+	Tooltip: Violently explodes on contact with any living thing
 }
 
 AstatineTorch: {
@@ -1392,37 +1947,56 @@ AstatineTorch: {
 
 ATFsNightmare: {
 	DisplayName: ATF's Nightmare
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into Terra Rounds that make homing clones of themselves upon hitting an enemy
+		Ignores a large portion of enemy defense
+		85% chance to not consume ammo
+		[c/5F5AFF:'The Right To Bear Arms.']
+		'''
 }
 
 AuricSkibidiToilet: {
 	DisplayName: Auric Skibidi Toilet
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 20 Lobotometer
+		[c/FF7D7D:CALAMITY NOT ENABLED! THIS DLC WEAPON IS ONLY OBTAINABLE THROUGH CHEATS]
+		'''
 }
 
 AuspiciousArtillery: {
 	DisplayName: Auspicious Artillery
-	Tooltip: ""
+	Tooltip: Seems like it was made to fire Shattering Shells...
 }
 
 Autocannon: {
 	DisplayName: AC-8 Autocannon
-	Tooltip: ""
+	Tooltip: "'Don't worry, Arrowhead cant nerf you here'"
 }
 
 Autovaxxer: {
 	DisplayName: Autovaxxer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots 'vaccines' that inject vicious nanobots into enemies on hit
+		John Pfizer aint gonna like this one
+		Uses 5 Braincells
+		'''
 }
 
 BadTrip: {
 	DisplayName: Bad Trip
-	Tooltip: ""
+	Tooltip:
+		'''
+		Occasionally drops stationary mushroom mines while in flight
+		The shroom mines explode on contact with an enemy or after a few seconds
+		'''
 }
 
 BalkanRagePotion: {
 	DisplayName: Balkan Rage Potion
-	Tooltip: ""
+	Tooltip: those who know...
 }
 
 BallisticKnife: {
@@ -1432,117 +2006,211 @@ BallisticKnife: {
 
 Barbarossa: {
 	DisplayName: Barbarossa
-	Tooltip: ""
+	Tooltip:
+		'''
+		Unleashes a whole armada's worth of rockets and heavy bullets
+		I mean this is powerful and all, but it aint beating Russia in the winter
+		'''
 }
 
 BarbecueBlade: {
 	DisplayName: Barbecue Blade
-	Tooltip: ""
+	Tooltip: Flings grease and assorted meats at your target
 }
 
 BBC: {
 	DisplayName: Bigger, Blacker Cannon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Randomly shoots between 1-20 cannonballs
+		Base damage is randomized every time the weapon is fired
+		Uses 16 Lobotometer
+		'''
 }
 
 Beer: {
 	DisplayName: Beer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases defense by 6
+		Wow, this tastes like ass!
+		'''
 }
 
 BeeSnipe: {
 	DisplayName: .50 Bee-MG
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into high velocity bees
+		Right click to zoom
+		'''
 }
 
 BeetleBomb: {
 	DisplayName: Beetle Bomb
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws heavy beetle bombs that explode into many beetles
+		The faster the bomb is moving when it explodes, the faster the beetles fly
+		Does not damage tiles
+		Uses 9 Braincells
+		Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage
+		'''
 }
 
 BeetleRounds: {
 	DisplayName: Beetle Rounds
-	Tooltip: ""
+	Tooltip:
+		'''
+		High damaging, slow moving rounds that penetrate some enemy armor
+		Benefits from both Ranged and Melee equipment
+		'''
 }
 
 Bergentrucking: {
 	DisplayName: Bergentrucking
-	Tooltip: ""
+	Tooltip:
+		'''
+		DRIVIN’ IN MY CAR RIGHT AFTER A BEER  
+		HEY THAT BUMP IS SHAPED LIKE A DEER?
+		DUI??? HOW ABOUT YOU DIE? I’LL GO A HUNDRED MILES AN HOUR
+		LITTLE DO YOU KNOW I’M FILLED UP ON GAS
+		IMA GET YOUR FOUNTAIN MAKING ASS
+		PULVERIZE THIS FUCK WITH MY BERGEN TRUCK
+		IT SEEMS YOU’RE OUT OF LUCK
+		TRUCK!!!!!!!
+		'''
 }
 
 BigBertha: {
 	DisplayName: Big Bertha
-	Tooltip: ""
+	Tooltip: "'Now THIS is a funny red sword'"
 }
 
 BigBuddy: {
 	DisplayName: Big Buddy
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses rockets as ammo
+		Shoots heavy, explosive cannonballs
+		'''
 }
 
 BillionaireBiter: {
 	DisplayName: Billionaire Biter
-	Tooltip: ""
+	Tooltip: Converts darts into rows of orca teeth that rip through enemy armor
 }
 
 BinaryRifle: {
 	DisplayName: Binary Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates a pair of massive lasers that pierce through anything and everything
+		Right click to zoom
+		'''
 }
 
 BionicBoomer: {
 	DisplayName: Bionic Boomer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws armor piercing astatine glaives at superhuman speeds
+		Right click to activate Turbo Charge, massively increasing attack speed for a short time
+		IS able to benefit from attack speed bonuses
+		'''
 }
 
 BitcoinBlaster: {
 	DisplayName: Bitcoin Blaster
-	Tooltip: ""
+	Tooltip:
+		'''
+		Weapon damage varies wildly
+		Still needs coins to fire
+		50% chance to not consume ammo
+		Uses 4 Braincells
+		'''
 }
 
 BlackHole: {
 	DisplayName: Literally A Fucking Black Hole
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 666 Lobotometer
+		Does everything it can to escape this world
+		'''
 }
 
 BlackMamba: {
 	DisplayName: Black Mamba
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into highly dangerous petals coated in radioactive venom
+		Increases life regen and movement speed while fired
+		50% chance to not consume darts
+		'''
 }
 
 Blackshard: {
 	DisplayName: Blackshard
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to shoot a barrage of swords
+		Right click to shoot a wave of splitting stars
+		Tag enemies with the stars to enhance the swords
+		Increases the player's max mana while in use
+		'''
 }
 
 BlankFlag: {
 	DisplayName: Blank Flag
-	Tooltip: ""
+	Tooltip:
+		'''
+		Used to craft various flags
+		'can also be interpreted as a French flag'
+		'''
 }
 
 BlueMaticHorn: {
 	DisplayName: Blue Matic Horn
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into Blue Moons
+		Uses 6 Braincells
+		'''
 }
 
 BoggsGlove: {
 	DisplayName: Boggs' Glove
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly throws ale at your target
+		Uses 6 Braincells
+		'Dedicated to the drinking legend Wade Boggs'
+		'''
 }
 
 BombScepter: {
 	DisplayName: Bomb Scepter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 9 Braincells
+		Creates a small explosion at the mouse position
+		'Ok, which drunk ass wizard drew up the blueprints for this one'
+		'''
 }
 
 BOOMerang: {
 	DisplayName: BOOM-erang
-	Tooltip: ""
+	Tooltip:
+		'''
+		it goes boom, duh
+		Somehow you manage to not blow yourself up with it..
+		'''
 }
 
 BottledOil: {
 	DisplayName: Bottled Oil
-	Tooltip: ""
+	Tooltip: Splashes oil on nearby enemies
 }
 
 BottledShimmer: {
@@ -1552,27 +2220,37 @@ BottledShimmer: {
 
 BouncingBullet: {
 	DisplayName: Bouncing Bullet
-	Tooltip: ""
+	Tooltip: Randomly bounces in a new direction whenever it hits an enemy
 }
 
 BowlingBaller: {
 	DisplayName: Bowling Baller
-	Tooltip: ""
+	Tooltip:
+		'''
+		Randomly shoots between 0-10 bowling balls
+		Base damage is randomized every time the weapon is fired
+		Uses 8 Braincells
+		'''
 }
 
 BoxOfRandomBullshit: {
 	DisplayName: Box Of Random Bullshit
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws random sharps at your enemies
+		Uses 3 Braincells
+		'Random bullshit go!'
+		'''
 }
 
 Brainderbuss: {
 	DisplayName: Brainderbuss
-	Tooltip: ""
+	Tooltip: Vomits out streams of blood
 }
 
 BrainrotPotion: {
 	DisplayName: Brainrot Potion
-	Tooltip: ""
+	Tooltip: Increases Lobotometer decay rate by 67%
 }
 
 BrickPick: {
@@ -1582,97 +2260,159 @@ BrickPick: {
 
 BrokenHeroGun: {
 	DisplayName: Broken Hero Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		It doesn't shoot anymore, but i guess you can hit things with it?
+		Pieces of scrap metal flake off every time you swing it...
+		'''
 }
 
 BugBuzz: {
 	DisplayName: Bug Buzz
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts arrows into a tightly-packed burst of multiple soundwaves
+		50% chance to save arrows
+		'''
 }
 
 BulletBlade: {
 	DisplayName: Bullet Blade
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a ring of bullets all around the player
+		Massively reduced damage with Chlorophyte Bullets
+		'No gun? No problem!'
+		'''
 }
 
 Bullshit1: {
 	DisplayName: Bull$#!7 Mk.I
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots homing pink pearls with 9 summon tag damage
+		Uses 2 Braincells
+		[c/FC8DCC:-Developer Item-]
+		'''
 }
 
 Bullshit2: {
 	DisplayName: Bull$#!7 Mk.II
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots weakly explosive, shattering galaxy pearls with 16 summon tag damage
+		Uses 4 Braincells
+		[c/FC8DCC:-Developer Item-]
+		'''
 }
 
 Bullshit3: {
 	DisplayName: Bull$#!7 Mk.III
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots dangerously explosive radiation emblems with 21 summon tag damage
+		Uses 6 Braincells
+		[c/FC8DCC:-Developer Item-]
+		'''
 }
 
 Bullshit4: {
 	DisplayName: Bull$#!7 Mk.IV
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots moons that cause a chain reaction of bullshit upon hitting an enemy
+		Uses 11 Braincells
+		[c/FC8DCC:-Developer Item-]
+		'''
 }
 
 Bullshit5: {
 	DisplayName: Bull$#!7 Mk.V
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to swing and release homing axes that split into all the bullshit from before
+		Right click to cast these axes quicker, without the added melee damage
+		Melee hits inflict every applicable debuff in the game
+		Uses 25 Braincells on left click, 10 on right click
+		[c/FC8DCC:-Developer Item-]
+		'''
 }
 
 Bundlebuss: {
 	DisplayName: Bundlebuss
-	Tooltip: ""
+	Tooltip:
+		'''
+		Unleashes a large burst of bullets
+		Converts musket balls into bigger, faster, more powerful musket balls
+		'''
 }
 
 BunnyBomber: {
 	DisplayName: Bunny Bomber
-	Tooltip: ""
+	Tooltip:
+		'''
+		converts rockets into explosive bunnies
+		Uses 7 Braincells
+		'you are a depraved person.'
+		'''
 }
 
 CapitalistCarbine: {
 	DisplayName: Capitalist Carbine
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 5 Braincells
+		'If you throw money at the problem it might go away...'
+		'''
 }
 
 CardinalSin: {
 	DisplayName: Cardinal Sin
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Spits a stream of devilish fire and homing pentagrams
+		'''
 }
 
 CaribousCatastrophe: {
 	DisplayName: Caribou's Catastrophe
-	Tooltip: ""
+	Tooltip: Converts all darts into weakly explosive, shattering Permafrost Darts
 }
 
 Casanova: {
 	DisplayName: Casanova
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into venomous petals
+		Increases life regen and decreases player aggro while fired
+		33% chance to not consume darts
+		'''
 }
 
 CausticCarrot: {
 	DisplayName: Caustic Carrot
-	Tooltip: ""
+	Tooltip: Infects enemies with lycopite spores that ruin their defense
 }
 
 CeramicArrow: {
 	DisplayName: Ceramic Arrow
-	Tooltip: ""
+	Tooltip: Shatters into multiple ceramic shards on impact
 }
 
 CeramicBloonFactory: {
 	DisplayName: Ceramic Bloon Factory
-	Tooltip: ""
+	Tooltip: Summons Ceramic Bloons to fight for you
 }
 
 CeramicDart: {
 	DisplayName: Ceramic Dart
-	Tooltip: ""
+	Tooltip: Penetrates a significant amount of enemy armor
 }
 
 CeramicMachete: {
 	DisplayName: Ceramic Machete
-	Tooltip: ""
+	Tooltip: Pieces of ceramic chip off every time you swing it
 }
 
 CeramicSheet: {
@@ -1682,67 +2422,91 @@ CeramicSheet: {
 
 ChainCrossbow: {
 	DisplayName: Chain Crossbow
-	Tooltip: ""
+	Tooltip: Rapidly, inaccurately shoots arrows
 }
 
 ChainReaction: {
 	DisplayName: Chain Reaction
-	Tooltip: ""
+	Tooltip:
+		'''
+		11 summon tag damage
+		Summons a homing plutonium ray upon hitting an enemy
+		'''
 }
 
 ChainThunderblade: {
 	DisplayName: Chain Thunderblade
-	Tooltip: ""
+	Tooltip: Creates a homing, piercing thunderbolt upon hitting an enemy
 }
 
 ChlorophyteDart: {
 	DisplayName: Chlorophyte Dart
-	Tooltip: ""
+	Tooltip: Splits into mini chlorophyte darts that home in on enemies
 }
 
 ChristianCrossbow: {
 	DisplayName: Christian Crossbow
-	Tooltip: ""
+	Tooltip: Converts all arrows into Holy Arrows
 }
 
 ChromaticaAtomizer: {
 	DisplayName: Chromatica Atomizer
-	Tooltip: ""
+	Tooltip: Converts rockets into highly dangerous, highly radioactive lasers
 }
 
 CIAJournalismAward: {
 	DisplayName: CIA Award in Journalism
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots infinite high-tech triplex bullets engineered by everyone's favorite three letter agency
+		'For only the most dedicated of truth seekers'
+		'''
 }
 
 ClimateChanger: {
 	DisplayName: Climate Changer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Efficently uses gel as ammo
+		Spews climate changing carbon dioxide everywhere
+		'''
 }
 
 CollarOfTheDamned: {
 	DisplayName: Collar Of The Damned
-	Tooltip: ""
+	Tooltip:
+		'''
+		'Attracts a strange shopkeeper when held in the inventory'
+		[c/FC8DCC:-Dedicated Item-]
+		'''
 }
 
 ComicallyLargeTurkeyLeg: {
 	DisplayName: Comically Large Turkey Leg
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flings grease bombs at your enemies
+		Uses 11 Braincells
+		'''
 }
 
 CompoundBow: {
 	DisplayName: Compound Bow
-	Tooltip: ""
+	Tooltip: Shoots arrows at an extremely high velocity
 }
 
 CompoundBow2: {
 	DisplayName: Compound Bow Mk.II
-	Tooltip: ""
+	Tooltip: Shoots arrows at an inconcievably high velocity
 }
 
 CompoundBow3: {
 	DisplayName: Compound Bow Mk.III
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a fusillade of perfectly accurate, supersonic arrows
+		50% chance to save ammo
+		'''
 }
 
 AdderallPill: {
@@ -1757,12 +2521,21 @@ AlpineTreasureBag: {
 
 ApacheElfShipSummon: {
 	DisplayName: Candy Heart Box
-	Tooltip: ""
+	Tooltip:
+		'''
+		Show the commander of the elves that their comrades perished in vein
+		[c/9B0000:Summons Alpine, pilot of the Apache Elf Ship]
+		'''
 }
 
 AstatineGlassSword: {
 	DisplayName: Astatine Glass Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Also irradiates both you and enemies
+		Uses 7 Braincells
+		'''
 }
 
 BottledLava: {
@@ -1772,17 +2545,29 @@ BottledLava: {
 
 CandyHeart: {
 	DisplayName: Candy Heart
-	Tooltip: ""
+	Tooltip:
+		'''
+		A small candy given by santa to his most loyal and skilled elf soldiers
+		Also just so happens to be DELICIOUS
+		'''
 }
 
 CrystalShardSword: {
 	DisplayName: Crystal Shard Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Uses 7 Braincells
+		'''
 }
 
 GlassSword: {
 	DisplayName: Glass Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Uses 7 Braincells
+		'''
 }
 
 HeadOfCthulhuSummon: {
@@ -1797,12 +2582,21 @@ LeadskinPotion: {
 
 ObsidianSword: {
 	DisplayName: Obsidian Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Uses 7 Braincells
+		'''
 }
 
 PlutoniumGlassSword: {
 	DisplayName: Plutonium Glass Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Also irradiates both you and enemies
+		Uses 7 Braincells
+		'''
 }
 
 PlutoniumGlass: {
@@ -1812,7 +2606,11 @@ PlutoniumGlass: {
 
 ShadowCrystalSword: {
 	DisplayName: Shadow Crystal Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Uses 7 Braincells
+		'''
 }
 
 SpiritRum: {
@@ -1822,7 +2620,12 @@ SpiritRum: {
 
 UraniumGlassSword: {
 	DisplayName: Uranium Glass Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Makes you bleed when swung. It's shattering in your hand, what did you expect?
+		Also irradiates both you and enemies
+		Uses 7 Braincells
+		'''
 }
 
 UraniumGlass: {
@@ -1832,92 +2635,145 @@ UraniumGlass: {
 
 CookingPot: {
 	DisplayName: Cooking Pot
-	Tooltip: ""
+	Tooltip:
+		'''
+		Splatters grease everywhere
+		Uses 8 Braincells
+		'Let him cook now!!!!'
+		'''
 }
 
 CopperShortgun: {
 	DisplayName: Copper Shortgun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots copper shortswords
+		Does not require ammo
+		'''
 }
 
 CopperShortmachinegun: {
 	DisplayName: Copper Shortmachinegun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly shoots copper shortswords
+		Does not require ammo
+		'''
 }
 
 CorruptLawman: {
 	DisplayName: Corrupt Lawman
-	Tooltip: ""
+	Tooltip: Wildly shoots six rounds in quick succession before a significant delay
 }
 
 CrackedNuts: {
 	DisplayName: Cracked Nuts
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws two nuts attached to a string
+		Uses 6 Braincells
+		'Dont think about it too much...'
+		'''
 }
 
 CraterCreator: {
 	DisplayName: Crater Creator
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates a massive explosion with every swing
+		Uses 9 Braincells
+		'''
 }
 
 CrimtaneAmr: {
 	DisplayName: Crimtane Anti-Material Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots rapid, piercing rockets that deal massive damage on impact
+		Explodes every time it pierces
+		'''
 }
 
 CrossbowBolt: {
 	DisplayName: Crossbow Bolt
-	Tooltip: ""
+	Tooltip:
+		'''
+		Works in all bows, not just crossbows
+		Flies fast and pierces once
+		'''
 }
 
 CrudeOil: {
 	DisplayName: Crude Oil
-	Tooltip: ""
+	Tooltip: Usable as ammo in flamethrowers
 }
 
 CryonicCarbine: {
 	DisplayName: Cryonic Carbine
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all ammo into cryo bullets
+		Cryo bullets are extremely brittle, randomly shattering in midair
+		'''
 }
 
 CyberneticGunParts: {
 	DisplayName: Cybernetic Gun Parts
-	Tooltip: ""
+	Tooltip: Used in advanced gun recipes
 }
 
 DaedalusStormgun: {
 	DisplayName: Daedalus Stormgun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Unleashes divine judgement upon the target
+		'Not to be confused with the Daedalus Stormbow'
+		'''
 }
 
 Dartclone: {
 	DisplayName: Dartclone
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a deadly, indiscriminate storm of darts
+		Gives you two darts for the price of one!
+		'''
 }
 
 DartShotgun: {
 	DisplayName: Dart Shotgun
-	Tooltip: ""
+	Tooltip: Shoots a large spread of darts
 }
 
 DeadSoldiersRifle: {
 	DisplayName: Dead Soldier's Rifle
-	Tooltip: ""
+	Tooltip: Converts musket balls into powerful toxic bullets
 }
 
 DeathBreathShell: {
 	DisplayName: Death's Breath Shell
-	Tooltip: ""
+	Tooltip: Shoots a ton of shadowflame sparks out of your gun
 }
 
 DeliriantDagger: {
 	DisplayName: Deliriant Dagger
-	Tooltip: ""
+	Tooltip:
+		'''
+		Multiple daggers rapidly stab all around the player
+		Right click to throw five daggers in quick succession
+		Set up a combo by throwing the daggers, complete it by stabbing
+		Completed combos deal increased damage and sometimes cause an explosion of shadowflame sparks
+		'For when the hat man won't quit talking shit'
+		'''
 }
 
 DemoniteAreaDenialSystem: {
 	DisplayName: Demonite Area Denial System
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses rockets as ammo
+		'The enemy is approaching from our east!' Roger, removing our east
+		'''
 }
 
 DirtBullet: {
@@ -1927,67 +2783,91 @@ DirtBullet: {
 
 DirtyRocket1: {
 	DisplayName: Dirty Rocket I
-	Tooltip: ""
+	Tooltip:
+		'''
+		Small radioactive explosion that inflicts Rad Poisoning
+		Does not destroy tiles
+		'''
 }
 
 DirtyRocket2: {
 	DisplayName: Dirty Rocket II
-	Tooltip: ""
+	Tooltip:
+		'''
+		Medium-sized radioactive explosion that inflicts severe Rad Poisoning
+		Does not destroy tiles
+		'''
 }
 
 DirtyRocket3: {
 	DisplayName: Dirty Rocket III
-	Tooltip: ""
+	Tooltip:
+		'''
+		Large radioactive explosion that inflicts extreme Rad Poisoning
+		Does not destroy tiles
+		'''
 }
 
 DiseaseBlaster: {
 	DisplayName: Disease Blaster
-	Tooltip: ""
+	Tooltip: Shoots a large spread of darts and homing eaters
 }
 
 DracoMeteor: {
 	DisplayName: Draco Meteor
-	Tooltip: ""
+	Tooltip: Converts bullets into Draconic Rounds that drop meteors from the sky upon impact
 }
 
 DragonBreathShell: {
 	DisplayName: Dragon's Breath Shell
-	Tooltip: ""
+	Tooltip: Shoots a ton of flaming sparks out of your gun
 }
 
 DvdLogo: {
 	DisplayName: DVD Logo
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws dvd logos that intermittently explode and randomly change direction
+		Uses 12 Braincells
+		'''
 }
 
 EbonwoodWand: {
 	DisplayName: Ebonwood Wand
-	Tooltip: ""
+	Tooltip: Shoots a spark of corrupt energy
 }
 
 EcologicalOvershot: {
 	DisplayName: Ecological Overshot
-	Tooltip: ""
+	Tooltip: Shoots deformed, mutated bloodfish
 }
 
 Edward40Hands: {
 	DisplayName: Edward 40 Hands
-	Tooltip: ""
+	Tooltip:
+		'''
+		Inaccurately throws beer at your enemies
+		Uses 5 Braincells
+		'''
 }
 
 EldritchArrow: {
 	DisplayName: Eldritch Arrow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Large, devastating arrows that inflict Cursed Flames, Shadowflame,and Ichor
+		5 summon tag damage
+		'''
 }
 
 ElementalEmfCaller: {
 	DisplayName: Elemental EMF Caller
-	Tooltip: ""
+	Tooltip: Uses electromagnetic frequences to summon a friendly Granite Elemental
 }
 
 ElephantsThrow: {
 	DisplayName: Elephant's Throw
-	Tooltip: ""
+	Tooltip: Emits homing beams of radiation with every hit
 }
 
 EnfieldRifle: {
@@ -1997,52 +2877,82 @@ EnfieldRifle: {
 
 EyePoker: {
 	DisplayName: Eye Poker
-	Tooltip: ""
+	Tooltip: Inflicts enemies with poison
 }
 
 EyeRifle: {
 	DisplayName: Eye Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into homing eyes using magic
+		'An eye for an eye leaves a whole lot of sinners blind'
+		'''
 }
 
 FerrousThornSmooth: {
 	DisplayName: Ferrous Thorn (Smooth)
-	Tooltip: ""
+	Tooltip:
+		'''
+		14 summon tag damage
+		Right click in the inventory to swap variants
+		Smooth variant: Higher speed and tag damage, but lower direct damage and no base armor penetration
+		'''
 }
 
 FerrousThornSpiky: {
 	DisplayName: Ferrous Thorn (Spiky)
-	Tooltip: ""
+	Tooltip:
+		'''
+		9 summon tag damage
+		Right click in the inventory to swap variants
+		Spiky variant: Higher direct damage and +15 armor penetration, but lower speed and tag damage
+		'''
 }
 
 FidgetThrower: {
 	DisplayName: Fidget Thrower
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots piercing fidget spinners that inflict random debuffs
+		Uses 5 Braincells
+		'''
 }
 
 FidgetThrower2: {
 	DisplayName: Fidget Thrower Mk.II
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots piercing fidget spinners that inflict more random debuffs
+		Uses 6 Braincells
+		'''
 }
 
 FidgetThrower3: {
 	DisplayName: Fidget Thrower Mk.III
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots piercing fidget spinners that inflict even more random debuffs
+		Uses 7 Braincells
+		'''
 }
 
 FissileDart: {
 	DisplayName: Fissile Dart
-	Tooltip: ""
+	Tooltip: Shoots a trio of wildly flying, explosive darts
 }
 
 FissionDrive: {
 	DisplayName: Fission Drive
-	Tooltip: ""
+	Tooltip:
+		'''
+		Used to make some of the most dangerously powerful weapons in existence
+		'Radioactive to the touch'
+		'''
 }
 
 FissionRod: {
 	DisplayName: Fission Rod
-	Tooltip: ""
+	Tooltip: Causes a large, recursive explosion on the mouse position
 }
 
 fivenato: {
@@ -2052,27 +2962,31 @@ fivenato: {
 
 FlaskOfFission: {
 	DisplayName: Flask Of Fission
-	Tooltip: ""
+	Tooltip: Melee and Whip attacks inflict enemies with level 2 Rad Poisoning
 }
 
 FlaskOfFusion: {
 	DisplayName: Flask Of Fusion
-	Tooltip: ""
+	Tooltip: Melee and Whip attacks inflict enemies with level 2 Rad Poisoning
 }
 
 FlaskOfOil: {
 	DisplayName: Flask Of Oil
-	Tooltip: ""
+	Tooltip:
+		'''
+		Melee and Whip attacks inflict enemies with Oiled
+		'Crude oil. I can't stop drinking it, i can't stop guzzling crude oil.'
+		'''
 }
 
 FlaskOfRadiation: {
 	DisplayName: Flask Of Radiation
-	Tooltip: ""
+	Tooltip: Melee and Whip attacks inflict enemies with Rad Poisoning
 }
 
 FlaskOfShadowflame: {
 	DisplayName: Flask Of Shadowflame
-	Tooltip: ""
+	Tooltip: Melee and Whip attacks inflict enemies with Shadowflame
 }
 
 FlatEarthBlock: {
@@ -2082,12 +2996,16 @@ FlatEarthBlock: {
 
 FlinxsFurblade: {
 	DisplayName: Flinx's Furblade
-	Tooltip: ""
+	Tooltip: Flings bouncy furballs with every swing
 }
 
 FlippingBottle: {
 	DisplayName: Flipping Bottle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 2 Braincells
+		'Do it for the Vine'
+		'''
 }
 
 FlyingPigBanner: {
@@ -2097,37 +3015,61 @@ FlyingPigBanner: {
 
 FoundersDrumroll: {
 	DisplayName: Founder's Drumroll
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly, accurately shoots electrified bullets
+		50% chance to save ammo
+		'''
 }
 
 FragmentFlatEarth: {
 	DisplayName: Flat Earth Fragment
-	Tooltip: ""
+	Tooltip: "'the most raw, unfiltered stupidity of humanity is held within this fragment'"
 }
 
 FreeBird: {
 	DisplayName: Free Bird
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a special high caliber round that pierces large amounts of enemy armor, and enemies
+		Peak American freedom named after peak American music.
+		'''
 }
 
 GagGifter: {
 	DisplayName: Gag Gifter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Gifts your opponents the wonderful present of pure high explosives!
+		Uses rockets as ammo, and Uses 6 Braincells
+		'''
 }
 
 GayFrogAlchemyGuide: {
 	DisplayName: Gay Frog Alchemy Guide
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Sprays chemicals so toxic that they turn the friggin frogs gay!
+		'''
 }
 
 GeigersGambit: {
 	DisplayName: Geiger's Gambit
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all rockets into huge, potent nuclear warheads, which split into more warheads
+		'I don't want to set the world on fire...'
+		'''
 }
 
 GiantBone: {
 	DisplayName: Comically Large Bone
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 9 Braincells
+		Get your mind out of the gutter
+		'''
 }
 
 Glock: {
@@ -2137,172 +3079,220 @@ Glock: {
 
 GlockAndBalls: {
 	DisplayName: Glock And Balls
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Shoots exactly what you'd expect it to shoot
+		So does firing this weapon count as failing no nut november?
+		'''
 }
 
 GoldenAK: {
 	DisplayName: Golden AK
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts musket balls into beefed up crystal bullets
+		'So mundane yet so otherworldly'
+		'''
 }
 
 GraniteBlaster: {
 	DisplayName: Granite Blaster
-	Tooltip: ""
+	Tooltip:
+		'''
+		Requires both gel/oil and mana to fuel the laser
+		50% chance to not consume ammo or mana
+		'''
 }
 
 GraniteElectrobomber: {
 	DisplayName: Granite Electrobomber
-	Tooltip: ""
+	Tooltip: Casts a homing electrobomb
 }
 
 GrindingGears: {
 	DisplayName: Grinding Gears
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws two gears that release sparks as they fly
+		'This one's really gonna grind their gears'
+		'''
 }
 
 GunOfRoses: {
 	DisplayName: Gun Of Roses
-	Tooltip: ""
+	Tooltip:
+		'''
+		Quickly shoots poisonous rose petals
+		Occasionally shoots a larger, homing rose petal
+		'You know where you are? you're in the jungle baby! YOU'RE GONNA DIE!'
+		'''
 }
 
 HarryPotter: {
 	DisplayName: Harry Potter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates a burst of sharp ceramic scraps at the mouse position that fly in random directions
+		fuck jk rowling
+		'''
 }
 
 Heartache: {
 	DisplayName: Heartache
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots hearts
+		Significantly increases life regen and reduces mana consumption upon hitting an enemy
+		'''
 }
 
 Helldiver: {
 	DisplayName: Helldiver
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses rockets as ammo
+		'The most effective way to spread democracy this side of the galaxy!'
+		'''
 }
 
 HephaestusCannon: {
 	DisplayName: Hephaestus Cannon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Shoots an overwhelming stream of holy flames and holy fireballs
+		'''
 }
 
 HotShots: {
 	DisplayName: Hot Shots
-	Tooltip: ""
+	Tooltip: Summons a hot tack shooter sentry that shoots flaming, piercing tacks
 }
 
 HurricaneGun: {
 	DisplayName: Hurricane Gun
-	Tooltip: ""
+	Tooltip: Unleashes multiple hurricanes that continuously damage enemies
 }
 
 IcicleMinigun: {
 	DisplayName: Icicle Minigun
-	Tooltip: ""
+	Tooltip: Rapidly fires freezing icicles at the target
 }
 
 BrainOfCthulhuIcon: {
 	DisplayName: Brain Of Cthulhu Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Brain of Cthulhu
 }
 
 DeerclopsIcon: {
 	DisplayName: Deerclops Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Deerclops
 }
 
 DukeFishronIcon: {
 	DisplayName: Duke Fishron Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Duke Fishron
 }
 
 EaterOfWorldsIcon: {
 	DisplayName: Eater Of Worlds Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Eater of Worlds
 }
 
 EmpressOfLightIcon: {
 	DisplayName: Empress Of Light Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Empress of Light
 }
 
 EyeOfCthulhuIcon: {
 	DisplayName: Eye Of Cthulhu Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Eye of Cthulhu
 }
 
 GolemIcon: {
 	DisplayName: Golem Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Golem
 }
 
 KingSlimeIcon: {
 	DisplayName: King Slime Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the King Slime
 }
 
 LunaticCultistIcon: {
 	DisplayName: Lunatic Cultist Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Lunatic Cultist
 }
 
 MoonLordIcon: {
 	DisplayName: Moon Lord Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Moon Lord
 }
 
 PlanteraIcon: {
 	DisplayName: Plantera Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Plantera
 }
 
 QueenBeeIcon: {
 	DisplayName: Queen Bee Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Queen Bee
 }
 
 QueenSlimeIcon: {
 	DisplayName: Queen Slime Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Queen Slime
 }
 
 SkeletronIcon: {
 	DisplayName: Skeletron Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Skeletron
 }
 
 SkeletronPrimeIcon: {
 	DisplayName: Skeletron Prime Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Skeletron Prime
 }
 
 TheDestroyerIcon: {
 	DisplayName: The Destroyer Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Destroyer
 }
 
 TheTwinsIcon: {
 	DisplayName: The Twins Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Twins
 }
 
 WallOfFleshIcon: {
 	DisplayName: Wall Of Flesh Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Wall of Flesh
 }
 
 IED: {
 	DisplayName: Improvised Explosive Device
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws a dangerous IED that has a chance to randomly go off at any point while in midair
+		Does not damage tiles or the player, deals extra damage on direct hits
+		'IMPROVISED?? I'll have you know I spent several hours meticulously crafting this with high quality materials'
+		Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage
+		'''
 }
 
 IForgor: {
 	DisplayName: I Forgor
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts rockets into pairs of exploding planes
+		'Dude, this one is just plane awful'
+		'''
 }
 
 ImprovisedMachineGun: {
 	DisplayName: Improvised Machine Gun
-	Tooltip: ""
+	Tooltip: Highly unreliable, highly inconsistent, and highly inaccurate
 }
 
 ImprovisedPistol: {
@@ -2312,72 +3302,104 @@ ImprovisedPistol: {
 
 ImpulseBow: {
 	DisplayName: Impulse Bow
-	Tooltip: ""
+	Tooltip: Shoots an astatine pulse shot along with your arrow
 }
 
 IncendiaryDart: {
 	DisplayName: Incendiary Dart
-	Tooltip: ""
+	Tooltip: Drops napalm on impact
 }
 
 InfernoRing: {
 	DisplayName: Inferno Ring
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons the Inferno Ring, which incinerates absolutely everything and shoots a powerful homing meteor
+		Takes up 5 sentry slots
+		'''
 }
 
 Iphone: {
 	DisplayName: Iphone
-	Tooltip: ""
+	Tooltip:
+		'''
+		Weakly emits harmful 5g radiation that is both invisible and silent
+		Uses 1 Braincell
+		'you do NOT wanna look at the search history on that thing'
+		'''
 }
 
 IronFist: {
 	DisplayName: Iron Fist
-	Tooltip: ""
+	Tooltip: Allows the player to punch so hard it releases a piercing shockwave
 }
 
 IronValiant: {
 	DisplayName: Iron Valiant
-	Tooltip: ""
+	Tooltip:
+		'''
+		Sometimes releases hallowed lances while in flight
+		Releases more lances at higher velocities
+		'''
 }
 
 JevilishScythe: {
 	DisplayName: Devilsknife
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		5 summon tag damage
+		Splits into smaller, homing clones of itself upon contact with an enemy
+		'I CAN DO ANYTHING'
+		'''
 }
 
 JusticeAxe: {
 	DisplayName: Justice Axe
-	Tooltip: ""
+	Tooltip: Right click to fire an extremely devastating Red Buster
 }
 
 K2Avalanche: {
 	DisplayName: K2 Avalanche
-	Tooltip: ""
+	Tooltip: Drops an avalanche of icy boulders on your enemies from the sky
 }
 
 KevlarWhip: {
 	DisplayName: Kevlar Whip
-	Tooltip: ""
+	Tooltip:
+		'''
+		6 summon tag damage
+		ignores 12 enemy armor
+		'''
 }
 
 KingslayerBar: {
 	DisplayName: Kingslayer Bar
-	Tooltip: ""
+	Tooltip: "'Surprisingly tasty'"
 }
 
 KingslayerBullet: {
 	DisplayName: Kingslayer Bullet
-	Tooltip: ""
+	Tooltip: Deals extra crit damage
 }
 
 KingslayerKunai: {
 	DisplayName: Kingslayer Kunai
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws a spread of three enchanted kunai
+		Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage
+		'''
 }
 
 KingslayerScepter: {
 	DisplayName: Kingslayer Scepter
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flings large, bouncy hammers that make enemies drop more money
+		Uses 7 Braincells
+		'Not even the gel could hold it together'
+		'''
 }
 
 KingslayerShell: {
@@ -2387,17 +3409,29 @@ KingslayerShell: {
 
 KingslayerSniper: {
 	DisplayName: Kingslayer Sniper
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts musket balls into powerful, piercing Kingslayer Bullets that deal extra crit damage
+		Right click to zoom
+		'''
 }
 
 KingslayerSword: {
 	DisplayName: Kingslayer Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws large, accelerating gems at your target
+		'What's a king to a mob?'
+		'''
 }
 
 KingslayerWarBow: {
 	DisplayName: Kingslayer War Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots bouncy slime rain from the sky
+		5 summon tag damage
+		'''
 }
 
 LargePlasmoidBanner: {
@@ -2407,17 +3441,25 @@ LargePlasmoidBanner: {
 
 LaserCharge: {
 	DisplayName: Laser Charge
-	Tooltip: ""
+	Tooltip: Emits high velocity lasers instead of bullets
 }
 
 LaserMonkeysPaw: {
 	DisplayName: Laser Monkey's Paw
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into dangerous laser blasts through ancient monkey magic
+		The lasers can pierce or hit the same enemy twice
+		'''
 }
 
 LeafStorm: {
 	DisplayName: Leaf Storm
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly shoots bouncy razor leaves everywhere
+		Thankfully it doesnt lower your Special Attack... unless you count Mana Sickness
+		'''
 }
 
 LegoBricks: {
@@ -2427,27 +3469,44 @@ LegoBricks: {
 
 LegoLauncher: {
 	DisplayName: Lego Launcher
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots painful, spiky legos
+		Legos get less painful after being worn down by enemies
+		Uses 10 Braincells
+		'''
 }
 
 Libeerator: {
 	DisplayName: Li-bee-rator
-	Tooltip: ""
+	Tooltip: Converts darts or seeds into high velocity, poisonous stingers
 }
 
 Liquidation: {
 	DisplayName: Liquidation
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into water darts that bounce around wildly
+		'LIIIIQUIDATIIIOOOOONNNN'
+		'''
 }
 
 LoreAccurateBlackshard: {
 	DisplayName: Shadow Crystal
-	Tooltip: ""
+	Tooltip:
+		'''
+		Right click to throw the shard
+		'Because River wouldn't stop asking'
+		'''
 }
 
 LuminiteDart: {
 	DisplayName: Luminite Dart
-	Tooltip: ""
+	Tooltip:
+		'''
+		Doubles the base damage of your weapon
+		Inflicts Moon Burn
+		'''
 }
 
 LycopiteBar: {
@@ -2457,7 +3516,11 @@ LycopiteBar: {
 
 LycopiteBow: {
 	DisplayName: Lycopite Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots two arrows in quick succession
+		Converts Wooden Arrows into defense-decimating Caustic Carrots
+		'''
 }
 
 LycopiteBrick: {
@@ -2467,12 +3530,16 @@ LycopiteBrick: {
 
 LycopiteBullet: {
 	DisplayName: Lycopite Bullet
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots fast-moving lycopite spores out of your gun
+		Occasionally shoots a homing shot that deals extra damage
+		'''
 }
 
 LycopiteOre: {
 	DisplayName: Lycopite Ore
-	Tooltip: ""
+	Tooltip: "'You have no idea how these spores thrive in such an extreme environment'"
 }
 
 M1Garand: {
@@ -2482,62 +3549,74 @@ M1Garand: {
 
 Macuahuitl: {
 	DisplayName: Macuahuitl
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates obsidian shards on hit
+		Ignores 5 enemy defense
+		'''
 }
 
 MagicBong: {
 	DisplayName: Magic Bong
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates magic, tile-ignoring smoke that rises up at enemies
+		Uses 11 Braincells
+		'''
 }
 
 MagicCue: {
 	DisplayName: Magic Cue
-	Tooltip: ""
+	Tooltip: Shoots a homing magic 8 ball
 }
 
 MandibleStaff: {
 	DisplayName: Mandible Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a pair of sharp mandibles enchanted with desert magic
+		Ignores 5 enemy defense
+		'''
 }
 
 ManeAx: {
 	DisplayName: Mane Ax
-	Tooltip: ""
+	Tooltip: Right click to fire a devastating Rude Buster
 }
 
 MarbleGreatsword: {
 	DisplayName: Marble Greatsword
-	Tooltip: ""
+	Tooltip: Swings in a large, powerful arc
 }
 
 MarbleSaber: {
 	DisplayName: Marble Saber
-	Tooltip: ""
+	Tooltip: Right click to throw the saber
 }
 
 AncientCobaltBar: {
 	DisplayName: Ancient Cobalt Bar
-	Tooltip: ""
+	Tooltip: I'm old!
 }
 
 AncientCobaltOre: {
 	DisplayName: Ancient Cobalt Ore
-	Tooltip: ""
+	Tooltip: "'It's true power lies behind a fleshy wall'"
 }
 
 AutismOrb: {
 	DisplayName: Autism Orb
-	Tooltip: ""
+	Tooltip: The power of autism compels you
 }
 
 BlankCanvas: {
 	DisplayName: Blank Canvas
-	Tooltip: ""
+	Tooltip: Used to craft custom paintings
 }
 
 CoalLump: {
 	DisplayName: Coal Lump
-	Tooltip: ""
+	Tooltip: The industrial revolution and its consequences
 }
 
 CrimceramicSheet: {
@@ -2547,7 +3626,7 @@ CrimceramicSheet: {
 
 CubicMold: {
 	DisplayName: Cubic Mold
-	Tooltip: ""
+	Tooltip: Used for making cubes out of various materials
 }
 
 EbonceramicSheet: {
@@ -2557,12 +3636,12 @@ EbonceramicSheet: {
 
 FireDiamond: {
 	DisplayName: Fire Diamond
-	Tooltip: ""
+	Tooltip: An old currency used by demons
 }
 
 LunarGem: {
 	DisplayName: Lunar Gem
-	Tooltip: ""
+	Tooltip: Gravel from high above in the heavens
 }
 
 Paper: {
@@ -2587,62 +3666,95 @@ SoulOfHeight: {
 
 WoodenStick: {
 	DisplayName: Wooden Stick
-	Tooltip: ""
+	Tooltip:
+		'''
+		These don't stack to 64
+		jk lmfao they do
+		'''
 }
 
 MaximGelgun: {
 	DisplayName: Maxim Gelgun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Shoots bouncy gel everywhere
+		'''
 }
 
 MechanicalMurdergun: {
 	DisplayName: Mechanical Murdergun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots laser swords that pierce enemy armor and are, quite frankly, pretty badass
+		Right Click to activate Drone Swarm, which causes all five probes to shoot along with the main gun for 15 seconds
+		'''
 }
 
 MG42: {
 	DisplayName: MG42
-	Tooltip: ""
+	Tooltip: "'I stormed the beaches of Normandy and all i got was this stupid machine gun'"
 }
 
 MidnightAfterburner: {
 	DisplayName: Midnight Afterburner
-	Tooltip: ""
+	Tooltip:
+		'''
+		Burns all enemies in front of you with a storm of shadowflame sparks
+		Also augmented with an explosive shot of dark energy and a large oil ball
+		'''
 }
 
 MoonLandingFakingDevice: {
 	DisplayName: Moon Landing Faking Device
-	Tooltip: ""
+	Tooltip:
+		'''
+		shoots FAKE rockets that summon FAKE US flags from the FAKE moon
+		Uses 9 Braincells
+		The elites aint gonna like this one
+		'''
 }
 
 Moonrise: {
 	DisplayName: Moonrise
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into hypersonic luminite darts that deal huge damage on impact and inflict Moon Burn
+		Right click to zoom
+		'''
 }
 
 Naclslash: {
 	DisplayName: Naclslash
-	Tooltip: ""
+	Tooltip: Salt goes everywhere upon hitting an enemy
 }
 
 NapalmBlade: {
 	DisplayName: Napalm Blade
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flings smoldering napalm everywhere
+		Geneva Convention? More like Geneva Suggestions!
+		'''
 }
 
 Needler: {
 	DisplayName: Needler
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into a swarm of needles that ignore 15 enemy armor
+		'Which idiot from the Covenant left this one here?'
+		'''
 }
 
 NerfGun: {
 	DisplayName: Nerf Gun
-	Tooltip: ""
+	Tooltip: Shoots darts (and seeds somehow)
 }
 
 ObsidianGreatbow: {
 	DisplayName: Obsidian Greatbow
-	Tooltip: ""
+	Tooltip: Converts wooden arrows into obsidian arrows that have slight aim assist
 }
 
 OilBlock: {
@@ -2657,7 +3769,12 @@ OilMonsterBanner: {
 
 OilMonsterStaff: {
 	DisplayName: Oil Monster Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a Mini Oil Monster to fight for you
+		Mini Oil Monsters have a chance to inflict enemies with Oiled
+		Subsequent hits on oiled enemies cause them to explode
+		'''
 }
 
 OilSlimeBanner: {
@@ -2667,42 +3784,54 @@ OilSlimeBanner: {
 
 OrbitalLaserGun: {
 	DisplayName: Orbital Laser Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a tracer round that marks targets for an orbital death laser strike
+		Will fail to deploy if too close to space
+		'''
 }
 
 OtherworldlySixPack: {
 	DisplayName: Otherworldly Six Pack
-	Tooltip: ""
+	Tooltip:
+		'''
+		Grants an otherworldly set of buffs to the player
+		'WARNING: effects have NOT been tested in this universe'
+		'''
 }
 
 Overdrive: {
 	DisplayName: Overdrive
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons an overdrive tack shooter that sprays a ton of tacks
+		Takes up 2 sentry slots
+		'''
 }
 
 ParticleGun: {
 	DisplayName: Particle Gun
-	Tooltip: ""
+	Tooltip: Converts rockets into rapid, unstable lasers
 }
 
 PearlwoodWand: {
 	DisplayName: Pearlwood Wand
-	Tooltip: ""
+	Tooltip: Shoots a spark of hallowed energy that persistently chases foes
 }
 
 PermafrostDart: {
 	DisplayName: Permafrost Dart
-	Tooltip: ""
+	Tooltip: Causes a small explosion and shatters into frost chunks on impact
 }
 
 PhotonShotgun: {
 	DisplayName: Photon Shotgun
-	Tooltip: ""
+	Tooltip: Converts musket balls into huge bursts of powerful photons that shine through almost all enemy defense
 }
 
 PissMissile: {
 	DisplayName: Piss Missile
-	Tooltip: ""
+	Tooltip: If shitballs werent enough for you...
 }
 
 AcidCloud: {
@@ -2812,7 +3941,7 @@ LunarElementalBanner: {
 
 MintalBar: {
 	DisplayName: Mintal Bar
-	Tooltip: ""
+	Tooltip: Like mythril but bad
 }
 
 MintalBrick: {
@@ -2837,7 +3966,7 @@ MintSlimeBanner: {
 
 MorbiumBar: {
 	DisplayName: Morbium Bar
-	Tooltip: ""
+	Tooltip: It's morbin time.
 }
 
 MorbiumBrick: {
@@ -2887,7 +4016,7 @@ PearlsandSlimeBanner: {
 
 PipeBob: {
 	DisplayName: Pipe Bob
-	Tooltip: ""
+	Tooltip: Pipe Bob
 }
 
 PlatinumChest: {
@@ -2942,7 +4071,7 @@ StoneBar: {
 
 TransBar: {
 	DisplayName: Trans Bar
-	Tooltip: ""
+	Tooltip: ":3, now with more :3"
 }
 
 TransBrick: {
@@ -2952,7 +4081,7 @@ TransBrick: {
 
 TransOre: {
 	DisplayName: Trans Ore
-	Tooltip: ""
+	Tooltip: ":3"
 }
 
 TwinPoster: {
@@ -2962,12 +4091,16 @@ TwinPoster: {
 
 AnUnoDeck: {
 	DisplayName: Uno Deck
-	Tooltip: ""
+	Tooltip:
+		'''
+		Right click in the inventory to draw a card
+		'Everyone has uno dipshit, it came free with your fucking xbox'
+		'''
 }
 
 BlueDrawFour: {
 	DisplayName: Blue Draw Four
-	Tooltip: ""
+	Tooltip: "[c/FF0000:Right Click to make it Red]"
 }
 
 BlueDrawTwo: {
@@ -3032,7 +4165,7 @@ BlueTwo: {
 
 BlueWild: {
 	DisplayName: Blue Wild
-	Tooltip: ""
+	Tooltip: "[c/FF0000:Right Click to make it Red]"
 }
 
 BlueZero: {
@@ -3042,7 +4175,7 @@ BlueZero: {
 
 GreenDrawFour: {
 	DisplayName: Green Draw Four
-	Tooltip: ""
+	Tooltip: "[c/0000FF:Right Click to make it Blue]"
 }
 
 GreenDrawTwo: {
@@ -3107,7 +4240,7 @@ GreenTwo: {
 
 GreenWild: {
 	DisplayName: Green Wild
-	Tooltip: ""
+	Tooltip: "[c/0000FF:Right Click to make it Blue]"
 }
 
 GreenZero: {
@@ -3117,7 +4250,7 @@ GreenZero: {
 
 RedDrawFour: {
 	DisplayName: Red Draw Four
-	Tooltip: ""
+	Tooltip: "[c/FFFF00:Right Click to make it Yellow]"
 }
 
 RedDrawTwo: {
@@ -3182,7 +4315,7 @@ RedTwo: {
 
 RedWild: {
 	DisplayName: Red Wild
-	Tooltip: ""
+	Tooltip: "[c/FFFF00:Right Click to make it Yellow]"
 }
 
 RedZero: {
@@ -3192,7 +4325,7 @@ RedZero: {
 
 YellowDrawFour: {
 	DisplayName: Yellow Draw Four
-	Tooltip: ""
+	Tooltip: "[c/00FF00:Right Click to make it Green]"
 }
 
 YellowDrawTwo: {
@@ -3257,7 +4390,7 @@ YellowTwo: {
 
 YellowWild: {
 	DisplayName: Yellow Wild
-	Tooltip: ""
+	Tooltip: "[c/00FF00:Right Click to make it Green]"
 }
 
 YellowZero: {
@@ -3267,32 +4400,52 @@ YellowZero: {
 
 WarIsOver: {
 	DisplayName: War Is Over
-	Tooltip: ""
+	Tooltip:
+		'''
+		Now we MIGHT get Yharim before 2035
+		Nevermind LMAO
+		'''
 }
 
 PlanetoidPunisher: {
 	DisplayName: Planetoid Punisher
-	Tooltip: ""
+	Tooltip: Shoots a large spread of gem bolts
 }
 
 PlasmaMonkeysPaw: {
 	DisplayName: Plasma Monkey's Paw
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into superheated plasma blasts through forbidden monkey magic
+		The blasts ignore 15 enemy defense
+		'''
 }
 
 PlasmaRifle: {
 	DisplayName: Plasma Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots explosive, unstable plasma blobs that create radioactive plasma pools upon exploding
+		Ignores 10 enemy defense
+		'''
 }
 
 PlasmaRifle2: {
 	DisplayName: Plasma Rifle Mk.II
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots explosive, critically unstable plasma blobs that create dangerous plasma pools upon exploding
+		Ignores 15 enemy defense
+		'''
 }
 
 PlasmaRifle3: {
 	DisplayName: Plasma Rifle Mk.III
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly shoots supercritical plasma blobs that create deadly plasma pools upon exploding
+		Ignores 25 enemy defense
+		'''
 }
 
 PlasmoidBanner: {
@@ -3302,22 +4455,34 @@ PlasmoidBanner: {
 
 PlasmoidWand: {
 	DisplayName: Plasmoid Wand
-	Tooltip: ""
+	Tooltip: Summons a highly agile, light-emitting Plasmoid to fight for you
 }
 
 PlasticScrap: {
 	DisplayName: Plastic Scrap
-	Tooltip: ""
+	Tooltip:
+		'''
+		probably useless lol
+		sike use recipe browser chud
+		'''
 }
 
 PlasticSpork: {
 	DisplayName: Plastic Spork
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flings vile, poisonous mushy peas at your enemies
+		Uses 3 Braincells
+		'''
 }
 
 PlutoniumAutoPistol: {
 	DisplayName: Plutonium Auto Pistol
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts ammo into Plutonium rounds that home in after splitting
+		Ignores 20 enemy defense
+		'''
 }
 
 PlutoniumBar: {
@@ -3327,7 +4492,11 @@ PlutoniumBar: {
 
 PlutoniumBow: {
 	DisplayName: Plutonium Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all arrows into Plutonium Arrows that recursively split and start homing when small enough
+		ignores 15 enemy defense
+		'''
 }
 
 PlutoniumBrick: {
@@ -3342,7 +4511,12 @@ PlutoniumOre: {
 
 PlutoniumSword: {
 	DisplayName: Plutonium Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Swings twice in quick succession before a short cooldown
+		Creates a large radioactive aura around the player
+		Ignores 25 enemy defense
+		'''
 }
 
 PlutoniumTorch: {
@@ -3352,52 +4526,73 @@ PlutoniumTorch: {
 
 PocketBees: {
 	DisplayName: Pocket Bees
-	Tooltip: ""
+	Tooltip: Uses 8 Braincells
 }
 
 PocketBeetles: {
 	DisplayName: Pocket Beetles
-	Tooltip: ""
+	Tooltip:
+		'''
+		The beetles hit tagged enemies harder
+		Uses 12 Braincells
+		'Whatever, fly my scarab'
+		'''
 }
 
 PocketCrimsand: {
 	DisplayName: Pocket Crimsand
-	Tooltip: ""
+	Tooltip:
+		'''
+		Ignores 5 enemy defense
+		Uses 3 Braincells
+		'''
 }
 
 PocketEbonsand: {
 	DisplayName: Pocket Ebonsand
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Extremely irritating and burny
+		'''
 }
 
 PocketMortar: {
 	DisplayName: Pocket Mortar
-	Tooltip: ""
+	Tooltip: Uses rockets as ammo
 }
 
 PocketPearlsand: {
 	DisplayName: Pocket Pearlsand
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases in damage and range as it pierces more targets
+		Uses 5 Braincells
+		'''
 }
 
 PocketSand: {
 	DisplayName: Pocket Sand
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 }
 
 PoliceBaton: {
 	DisplayName: Police Baton
-	Tooltip: ""
+	Tooltip: "'1312'"
 }
 
 Polymer: {
 	DisplayName: Polymer
-	Tooltip: ""
+	Tooltip: Used in many gun recipes
 }
 
 PolymerSlimeStaff: {
 	DisplayName: Polymer Slime Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a polymer slime to fight for you
+		polymer slimes have a chance to inflict enemies with Oiled
+		'''
 }
 
 PondsSniper: {
@@ -3412,22 +4607,27 @@ PoorMahoganySword: {
 
 PortableTower: {
 	DisplayName: Portable 5G Tower
-	Tooltip: ""
+	Tooltip:
+		'''
+		Irradiates the area in front of you with harmful, invisible 5G
+		Uses 2 Braincells
+		Bill Gates aint gonna like this one
+		'''
 }
 
 PrideFlag: {
 	DisplayName: Pride Flag
-	Tooltip: ""
+	Tooltip: ":3"
 }
 
 PridePartyHat: {
 	DisplayName: Pride Party Hat
-	Tooltip: ""
+	Tooltip: "':3'"
 }
 
 PrismaticBullet: {
 	DisplayName: Prismatic Bullet
-	Tooltip: ""
+	Tooltip: Makes your guns shoot twilight lances instead of bullets
 }
 
 PulsePistols: {
@@ -3441,12 +4641,16 @@ PulsePistols: {
 
 PurifiedBolt: {
 	DisplayName: Purified Bolt
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flies incredibly fast
+		Gains damage as it pierces more enemies
+		'''
 }
 
 PurifiedPolearm: {
 	DisplayName: Purified Polearm
-	Tooltip: ""
+	Tooltip: Drops purified salt on your enemies from the heavens when hitting them
 }
 
 PurifiedSaltBlock: {
@@ -3456,17 +4660,21 @@ PurifiedSaltBlock: {
 
 PykreteBow: {
 	DisplayName: Pykrete Bow
-	Tooltip: ""
+	Tooltip: Has a chance to turn your arrows into powered up frostburn arrows
 }
 
 PykreteSword: {
 	DisplayName: Pykrete Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Has a chance to inflict frostburn
+		Flings frostburn sparks all around the player
+		'''
 }
 
 PyriteArrow: {
 	DisplayName: Pyrite Arrow
-	Tooltip: ""
+	Tooltip: Leaves a trail of sparks as it flies
 }
 
 PyriteBar: {
@@ -3476,7 +4684,7 @@ PyriteBar: {
 
 PyriteBow: {
 	DisplayName: Pyrite Bow
-	Tooltip: ""
+	Tooltip: Converts all arrows into Pyrite Arrows that leave a trail of sparks
 }
 
 PyriteOre: {
@@ -3486,52 +4694,65 @@ PyriteOre: {
 
 PyriteProjectorBlade: {
 	DisplayName: Pyrite Projector Blade
-	Tooltip: ""
+	Tooltip: Projects three magical swords in an arc pattern
 }
 
 PyriteSparkler: {
 	DisplayName: Pyrite Sparkler
-	Tooltip: ""
+	Tooltip: Quickly, inaccurately shoots sparks of ichor
 }
 
 Pyrocannon: {
 	DisplayName: Pyrocannon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Shoots an overwhelming stream of flames and fireballs
+		'''
 }
 
 PyroDartTrap: {
 	DisplayName: Pyro Dart Trap
-	Tooltip: ""
+	Tooltip: Shoots explosive pyro darts
 }
 
 RadBullet: {
 	DisplayName: Rad Bullet
-	Tooltip: ""
+	Tooltip: Shoots rapidly and violently splitting uranium bullets
 }
 
 RadiologicalRavager: {
 	DisplayName: Radiological Ravager
-	Tooltip: ""
+	Tooltip: Releases dangerous, homing astatine particles on hit
 }
 
 RadRang: {
 	DisplayName: Rad Rang
-	Tooltip: ""
+	Tooltip:
+		'''
+		Releases a weakly homing uranium particle on hit
+		ignores 10 enemy armor
+		'''
 }
 
 RainbowBloonFactory: {
 	DisplayName: Rainbow Bloon Factory
-	Tooltip: ""
+	Tooltip: Summons Rainbow Bloons to fight for you
 }
 
 RainbowRifle: {
 	DisplayName: Rainbow Rifle
-	Tooltip: ""
+	Tooltip: Converts bullets into rainbow crystal bullets which split into homing rainbow crystal shards
 }
 
 RazorRotors: {
 	DisplayName: Razor Rotors
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly spins around, damaging everything around you and improving aerial movement
+		Right click to throw the smaller, stabilizer rotor
+		Ignores 25 enemy defense
+		'''
 }
 
 RectumsRequiem: {
@@ -3541,37 +4762,62 @@ RectumsRequiem: {
 
 RedBloonFactory: {
 	DisplayName: Red Bloon Factory
-	Tooltip: ""
+	Tooltip: Summons Red Bloons to fight for you
 }
 
 RednecksRevenge: {
 	DisplayName: Redneck's Revenge
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a swarm of bullets at wild angles and velocities
+		Right click to throw a hallowed shovel
+		Tag enemies with the shovel to power up your bullets
+		'Er guns'll be safe now, that's for damn sure'
+		'''
 }
 
 RednecksRustBucket: {
 	DisplayName: Redneck's Rust Bucket
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots an indeterminate amount of bullets
+		Right click to throw a shovel
+		Tag enemies with the shovel to power up your bullets
+		'They took er jerbs! They aint taking er guns next.'
+		'''
 }
 
 RefinedOil: {
 	DisplayName: Refined Oil
-	Tooltip: ""
+	Tooltip: Usable as ammo in flamethrowers
 }
 
 Repentance: {
 	DisplayName: Repentance
-	Tooltip: ""
+	Tooltip:
+		'''
+		Drops burning napalm upon hitting an enemy
+		'They'll all repent for their sins now...'
+		'''
 }
 
 Reversibow: {
 	DisplayName: Reversibow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts arrows into Shimmer Arrows
+		Shoots arrows backwards lol xd
+		Uses 4 Braincells
+		'''
 }
 
 RingOfFire: {
 	DisplayName: Ring Of Fire
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a ring of fire which incinerates everything around it
+		Takes up 2 sentry slots
+		'''
 }
 
 RiverBanner: {
@@ -3581,22 +4827,32 @@ RiverBanner: {
 
 RiverGun: {
 	DisplayName: River Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots homing river heads
+		Uses 4 Braincells
+		'WHO THE FUCK TURNED ME INTO A GUN????'
+		'''
 }
 
 RiverMachinegun: {
 	DisplayName: River Machinegun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly shoots homing river heads
+		Uses 1 Braincell
+		'WHO THE FUCK TURNED ME INTO A MACHINE GUN????'
+		'''
 }
 
 RivetGun: {
 	DisplayName: Rivet Gun
-	Tooltip: ""
+	Tooltip: Shoots either darts or nails
 }
 
 RocketNeg1: {
 	DisplayName: Rocket -I
-	Tooltip: ""
+	Tooltip: Not very well crafted, but it still flies and explodes
 }
 
 RockSaltBlock: {
@@ -3606,7 +4862,7 @@ RockSaltBlock: {
 
 RoyalGuardianSword: {
 	DisplayName: Royal Guardian Sword
-	Tooltip: ""
+	Tooltip: "'RIP orespawn you will be missed'"
 }
 
 Rubber: {
@@ -3616,22 +4872,27 @@ Rubber: {
 
 RunicRaygun: {
 	DisplayName: Runic Raygun
-	Tooltip: ""
+	Tooltip: Shoots fast-moving rune shots that randomly deal between 1-5x base damage
 }
 
 SacrificialPistol: {
 	DisplayName: Sacrificial Pistol
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses darts to sacrifice blood to be fired
+		Causes bleeding while in use
+		Ignores 10 enemy defense
+		'''
 }
 
 SaltBae: {
 	DisplayName: Salt Bae
-	Tooltip: ""
+	Tooltip: Seasons your opponent with salt that drops from the sky
 }
 
 SaltGun: {
 	DisplayName: Salt Gun
-	Tooltip: ""
+	Tooltip: Does not require ammo
 }
 
 SaltMonsterBanner: {
@@ -3641,47 +4902,68 @@ SaltMonsterBanner: {
 
 SaltShaker: {
 	DisplayName: Salt Shaker
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shakes salt on your enemies
+		Uses 12 Braincells
+		'u salty bro?'
+		'''
 }
 
 SandyScorpion: {
 	DisplayName: Sandy Scorpion
-	Tooltip: ""
+	Tooltip: Rapidly alternates between firing rough sand and deadly venom at your opponents
 }
 
 SandyShocks: {
 	DisplayName: Sandy Shocks
-	Tooltip: ""
+	Tooltip:
+		'''
+		Emits massive bursts of weak electromagnetic sand particles
+		Ignores 30 enemy defense
+		'''
 }
 
 SawedOffSparkplug: {
 	DisplayName: Sawed-Off Sparkplug
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into sparks that go flying everywhere
+		Also shoots a large ball of oil that makes enemies more vulnerable to the flame
+		'''
 }
 
 ScreamingSoyjak: {
 	DisplayName: Screaming Soyjak
-	Tooltip: ""
+	Tooltip:
+		'''
+		Emits horrible soundwaves of screeching soyjaks
+		Uses 5 Braincells
+		'''
 }
 
 SeedBomber: {
 	DisplayName: Seed Bomber
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts darts into explosive, sharpnel-producing seeds
+		'It's AnPrim Gang Approved!'
+		'''
 }
 
 Septicemia: {
 	DisplayName: Septicemia
-	Tooltip: ""
+	Tooltip: Spews a horrifying combination of mini eaters and blood shots
 }
 
 ShadewoodWand: {
 	DisplayName: Shadewood Wand
-	Tooltip: ""
+	Tooltip: Shoots a spark of crimson energy
 }
 
 Shadowflame: {
 	DisplayName: Shadowflame
-	Tooltip: ""
+	Tooltip: "'somehow hot AND cold to the touch'"
 }
 
 ShadowflameArrow: {
@@ -3696,72 +4978,112 @@ ShockingSurrender: {
 
 ShroomiteBladegun: {
 	DisplayName: Shroomite Bladegun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to swing and release a duplicating slash of shroomite energy
+		Right click to fire a shotgun blast enhanced with a shroomite x-bomb
+		'Not to be confused with the Shroomite Gunblade'
+		'''
 }
 
 ShroomiteGunblade: {
 	DisplayName: Shroomite Gunblade
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to fire a rapid two round burst
+		Has a chance to convert bullets into homing shroomite spores
+		Right click to swing a blade that releases shroomite spore clouds everywhere
+		'Not to be confused with the Shroomite Bladegun'
+		'''
 }
 
 ShroomiteMissile: {
 	DisplayName: Shroomite Missile
-	Tooltip: ""
+	Tooltip:
+		'''
+		Medium sized explosion, does not destroy tiles
+		Plants shroomite mines in the blast radius
+		'''
 }
 
 SisyphusPrime: {
 	DisplayName: Sisyphus Prime
-	Tooltip: ""
+	Tooltip: "'no, this is not an ultrakill reference.'"
 }
 
 Six7Gun: {
 	DisplayName: 67 Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Always deals exactly 67 damage
+		Uses 6 or 7 Braincells
+		'Six Seven'
+		'''
 }
 
 SkeletonKey: {
 	DisplayName: Skeleton Key
-	Tooltip: ""
+	Tooltip:
+		'''
+		Opens nothing lol
+		'Chaotic energy pulsates from the key'
+		'''
 }
 
 SkibidiToilet: {
 	DisplayName: Skibidi Toilet
-	Tooltip: ""
+	Tooltip: Uses 10 Braincells
 }
 
 SlimeMineStaff: {
 	DisplayName: Slime Mine Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		These mines explode upon contact with an enemy or after 10 seconds, and occupy half a minion slot
+		The mines take a second to fully arm
+		'''
 }
 
 SmallSausageSpammer: {
 	DisplayName: Small Sausage Spammer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Originally designed by Trump Corporation for use by its leader
+		'''
 }
 
 SodiumShotbow: {
 	DisplayName: Sodium Shotbow
-	Tooltip: ""
+	Tooltip: Converts all arrows into pairs of sodium bolts
 }
 
 SolarRayRifle: {
 	DisplayName: Solar Ray Rifle
-	Tooltip: ""
+	Tooltip:
+		'''
+		Rapidly shoots deadly solar rays at the target
+		Deals increased damage during daytime
+		'''
 }
 
 SovietFlag: {
 	DisplayName: Soviet Flag
-	Tooltip: ""
+	Tooltip: Based
 }
 
 SpaceTrasher: {
 	DisplayName: Space Trasher
-	Tooltip: ""
+	Tooltip:
+		'''
+		Drops burning space trash on your opponents
+		Damage is more random than most weapons, with a positive bias
+		'''
 }
 
 SpartansWill: {
 	DisplayName: Spartan's Will
-	Tooltip: ""
+	Tooltip: Projects a magical spear made of pure rage
 }
 
 SpecOpsRifle: {
@@ -3771,22 +5093,34 @@ SpecOpsRifle: {
 
 SporeShiv: {
 	DisplayName: Spore Shiv
-	Tooltip: ""
+	Tooltip:
+		'''
+		Spore shivs duplicate themselves upon hitting an enemy
+		Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage
+		'''
 }
 
 SporeSower: {
 	DisplayName: Spore Sower
-	Tooltip: ""
+	Tooltip:
+		'''
+		Infects the target with lycopite spores
+		Repeated hits on infected targets release additional homing spores
+		'''
 }
 
 StalingradSpewer: {
 	DisplayName: Stalingrad Spewer
-	Tooltip: ""
+	Tooltip: Nobody makes a Wall of Flesh like the Soviets did...
 }
 
 StarfishOnAString: {
 	DisplayName: Starfish On A String
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 5 Braincells
+		Has a chance to release water jets upon hitting an enemy
+		'''
 }
 
 Stg44: {
@@ -3796,137 +5130,197 @@ Stg44: {
 
 Sublimination: {
 	DisplayName: Sublimation
-	Tooltip: ""
+	Tooltip:
+		'''
+		Emits deadly rays that rapidly irradiate everything in front of you
+		'It straight up smokes enemies. as in, it turns them into smoke.'
+		'''
 }
 
 SubstrateSpreader: {
 	DisplayName: Substrate Spreader
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Shoots two alternating streams of Lycopite spores: One that fires straight and a weaker homing one
+		Ignores 5 enemy armor
+		'''
 }
 
 Sunrise: {
 	DisplayName: Sunrise
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all darts into high velocity, burning sun darts
+		Right click to zoom
+		'''
 }
 
 SuperCeramicBloonFactory: {
 	DisplayName: Super Ceramic Bloon Factory
-	Tooltip: ""
+	Tooltip: Summons Super Ceramic Bloons to fight for you
 }
 
 SuperMonkeysPaw: {
 	DisplayName: Super Monkey's Paw
-	Tooltip: ""
+	Tooltip: Throws darts at high speed, high velocity, and with perfect accuracy
 }
 
 SuperSamuraiSlicer: {
 	DisplayName: Super Samurai Slicer
-	Tooltip: ""
+	Tooltip: Converts bullets into Shurikens
 }
 
 TackShooter: {
 	DisplayName: Tack Shooter
-	Tooltip: ""
+	Tooltip: Summons a tack shooter sentry that shoots in eight directions
 }
 
 TackSprayer: {
 	DisplayName: Tack Sprayer
-	Tooltip: ""
+	Tooltip: Summons a tack sprayer sentry that sprays a lot more tacks than before
 }
 
 TarriffStamper: {
 	DisplayName: Tarriff Stamper
-	Tooltip: ""
+	Tooltip:
+		'''
+		Stamps your enemies with red ink that reduces their defense
+		Uses 8 Braincells
+		'May also have adverse effects on the U.S economy...'
+		'''
 }
 
 TedGun: {
 	DisplayName: Freedom Club's Freedom Dispenser
-	Tooltip: ""
+	Tooltip:
+		'''
+		Delivers chemical bombs to your enemies that inflict various debuffs
+		For when the consequences of the industrial revolution start hitting a little too close to home
+		'''
 }
 
 TerraSkibidiToilet: {
 	DisplayName: Terra Skibidi Toilet
-	Tooltip: ""
+	Tooltip: Uses 15 Braincells
 }
 
 TheAirFlare: {
 	DisplayName: The Air Flare
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots special American flares that call down a minigun blast upon hitting a target
+		Uses flares as ammo
+		'''
 }
 
 TheAshesOfCalamity: {
 	DisplayName: The Ashes Of Calamity
-	Tooltip: ""
+	Tooltip:
+		'''
+		Erupts a mortifying combination of demonic fire, demonic fireballs and homing pentagrams
+		'The real Calamity was the friends we made along the way'
+		'''
 }
 
 TheBoner: {
 	DisplayName: The Boner
-	Tooltip: ""
+	Tooltip: Uses rockets as ammo
 }
 
 TheChudfucker: {
 	DisplayName: The Chudfucker
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 67 Lobotometer
+		[c/FF0F55:Unobtainable. If someone is using this, they are cheating]
+		[c/FF0F55:-Developer Item-]
+		'''
 }
 
 TheComet: {
 	DisplayName: The Comet
-	Tooltip: ""
+	Tooltip: Converts arrows into large, powerfully explosive meteors using magic
 }
 
 TheCommunistManifesto: {
 	DisplayName: The Communist Manifesto
-	Tooltip: ""
+	Tooltip: Radicalizes your enemies so hard they die of sheer outrage towards the bourgeoisie
 }
 
 TheDeposer: {
 	DisplayName: The Deposer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Deny, Defend, Depose.
+		Luigi Mangione my beloved
+		'''
 }
 
 TheFishStick: {
 	DisplayName: The Fish Stick
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 2 Braincells
+		'kanye's favorite'
+		'''
 }
 
 TheFuckingSun: {
 	DisplayName: Literally The Fucking Sun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Literally throws the fucking sun at your enemy
+		Uses 36 Lobotometer
+		'''
 }
 
 TheIcebreaker: {
 	DisplayName: The Icebreaker
-	Tooltip: ""
+	Tooltip: Calls down icicles from the sky while swinging
 }
 
 TheImperialBoomerangs: {
 	DisplayName: The Imperial Boomerangs
-	Tooltip: ""
+	Tooltip: Causes enemies hit to drop more money
 }
 
 TheJfkExperience: {
 	DisplayName: The JFK Experience
-	Tooltip: ""
+	Tooltip: Well, what did you expect?
 }
 
 TheMagnum: {
 	DisplayName: The Magnum
-	Tooltip: ""
+	Tooltip: Converts musket balls into hitscan shots that deal incredible damage
 }
 
 TheMeltdown: {
 	DisplayName: The Meltdown
-	Tooltip: ""
+	Tooltip:
+		'''
+		Causes an instant explosion upon hitting an enemy
+		'I'm a strong independent summoner player, i don't need my minions to commit war crimes for me!'
+		'''
 }
 
 TheMonkeysPaw: {
 	DisplayName: The Monkey's Paw
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws between 0-3 darts that vary wildly in damage and velocity
+		'some wishes are better left ungranted...'
+		'''
 }
 
 TheMoon: {
 	DisplayName: Literally The Fucking Moon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Literally throws the fucking moon at your enemies
+		Inflicts hit enemies with Moon Burn for a long time
+		Uses 18 Lobotometer
+		'''
 }
 
 TheNanoshot: {
@@ -3936,62 +5330,93 @@ TheNanoshot: {
 
 TheOilBaron: {
 	DisplayName: The Oil Baron
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flings a small oil ball that inflicts Oiled
+		Melee hits on Oiled enemies cause fiery explosions that deal massive damage
+		'''
 }
 
 ThePeoplesPitchfork: {
 	DisplayName: The Peoples Pitchfork
-	Tooltip: ""
+	Tooltip: "'Perfect for impaling the rich before eating them!'"
 }
 
 ThePrimeTime: {
 	DisplayName: The Prime Time
-	Tooltip: ""
+	Tooltip: Electrifies musket balls, turning them into four tightly packed hypersonic lasers
 }
 
 TheSaltLick: {
 	DisplayName: The Salt Lick
-	Tooltip: ""
+	Tooltip: Salt flakes off with every hit
 }
 
 TheSecondAmendment: {
 	DisplayName: The Second Amendment
-	Tooltip: ""
+	Tooltip:
+		'''
+		Spews out a truly insane amount of munitions and has a built-in scope and laser sight
+		[c/FF2D5F:We once fought for the false promise of freedom. Now we must fight for true freedom. 161.]
+		'''
 }
 
 TheSpamCannon: {
 	DisplayName: The Spam Cannon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Quickly fires splitting, bouncing [pipis]
+		Right click to fire a [BIG SHOT] that destroys any living thing in your path
+		Uses a random amount of Braincells
+		'Now's your chance to be a [BIG SHOT]'
+		'''
 }
 
 TheTackZone: {
 	DisplayName: The Tack Zone
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons The Tack Zone, which spews a ludicrous amount of tacks
+		Takes up 5 sentry slots
+		'''
 }
 
 TheWither: {
 	DisplayName: The Wither
-	Tooltip: ""
+	Tooltip: "[c/191919:This should not exist in this realm.]"
 }
 
 TheXRay: {
 	DisplayName: The X-Ray
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a potent X-ray that pierces through multiple enemies and blocks
+		Ignores 30 enemy defense
+		'''
 }
 
 ThumbtackDart: {
 	DisplayName: Thumbtack Dart
-	Tooltip: ""
+	Tooltip: "'A creation convergently concocted by crowds of crazy children'"
 }
 
 Tomatonator: {
 	DisplayName: Tomatonator
-	Tooltip: ""
+	Tooltip:
+		'''
+		Quickly shoots tomatoes at your enemies
+		Has a small chance to fire a Wendy's Baconator that deals double damage
+		Uses 5 Braincells
+		'''
 }
 
 TommyGun: {
 	DisplayName: Tommy Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Also seen in about 6 or 7 other mods
+		+5% crit chance
+		'''
 }
 
 AncientCobaltChainsaw: {
@@ -4016,7 +5441,12 @@ AncientCobaltWaraxe: {
 
 AstatineAnnihilator: {
 	DisplayName: Astatine Annihilator
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click for pickaxe and axe functionality
+		Right click for hammer functionality
+		Matter? more like doesn't matter!
+		'''
 }
 
 AzuritePickaxe: {
@@ -4046,12 +5476,21 @@ GenderBreaker: {
 
 GoldMultiaxe: {
 	DisplayName: Gold Multiaxe
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click for pickaxe and axe functionality
+		Right click for hammer functionality
+		'''
 }
 
 KingslayerMultiaxe: {
 	DisplayName: Kingslayer Multiaxe
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click for pickaxe and axe functionality
+		Right click for hammer functionality
+		Can mine Lycopite
+		'''
 }
 
 LegoChainsaw: {
@@ -4101,7 +5540,11 @@ MorbiumTreeripper: {
 
 PlatinumMultiaxe: {
 	DisplayName: Platinum Multiaxe
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click for pickaxe and axe functionality
+		Right click for hammer functionality
+		'''
 }
 
 PlutoniumHamaxe: {
@@ -4111,22 +5554,22 @@ PlutoniumHamaxe: {
 
 PlutoniumPickaxe: {
 	DisplayName: Plutonium Pickaxe
-	Tooltip: ""
+	Tooltip: Can mine Chlorophyte
 }
 
 PoorMahoganyAxe: {
 	DisplayName: Poor Mahogany Axe
-	Tooltip: ""
+	Tooltip: Why did you make ts
 }
 
 PoorMahoganyHammer: {
 	DisplayName: Poor Mahogany Hammer
-	Tooltip: ""
+	Tooltip: Why did you make ts
 }
 
 PoorMahoganyPickaxe: {
 	DisplayName: Poor Mahogany Pickaxe
-	Tooltip: ""
+	Tooltip: Why did you make ts
 }
 
 PykretePickaxe: {
@@ -4141,7 +5584,7 @@ SodiumHamaxe: {
 
 SodiumPickaxe: {
 	DisplayName: Sodium Pickaxe
-	Tooltip: ""
+	Tooltip: Can mine Lycopite
 }
 
 SporeSaw: {
@@ -4171,22 +5614,34 @@ SteelPickaxe: {
 
 StupiderFuckingPickaxe: {
 	DisplayName: Stupider Fucking Pickaxe
-	Tooltip: ""
+	Tooltip:
+		'''
+		WARNING: DISABLE SMART CURSOR BEFORE HOLDING THIS ITEM
+		[c/3746FE:I'm gonna disassemble your molecules!]
+		'''
 }
 
 StupidestFuckingPickaxe: {
 	DisplayName: Stupidest Fucking Pickaxe
-	Tooltip: ""
+	Tooltip: "[c/46FF46:I be placing blocks and shit 'cuz I'm in fucking Minecraft]"
 }
 
 StupidFuckingPickaxe: {
 	DisplayName: Stupid Fucking Pickaxe
-	Tooltip: ""
+	Tooltip:
+		'''
+		WARNING: DISABLE SMART CURSOR BEFORE HOLDING THIS ITEM
+		[c/FF4646:There won't be bloodshed]
+		'''
 }
 
 ThePurifier: {
 	DisplayName: The Purifier
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click for pickaxe and axe functionality
+		Right click for hammer functionality
+		'''
 }
 
 Transitioner: {
@@ -4201,22 +5656,26 @@ UraniumHamaxe: {
 
 UraniumPickaxe: {
 	DisplayName: Uranium Pickaxe
-	Tooltip: ""
+	Tooltip: "'This has GOT to be an OSHA violation'"
 }
 
 ToothlessWyrm: {
 	DisplayName: Toothless Wyrm
-	Tooltip: ""
+	Tooltip: Converts all ammo into Cursed Bullets
 }
 
 TorchSong: {
 	DisplayName: Torch Song
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Spews slow-moving ghostly fire that ignores walls and grows stronger as it burns through enemies
+		'''
 }
 
 ToxicBullet: {
 	DisplayName: Toxic Bullet
-	Tooltip: ""
+	Tooltip: Inflicts poison
 }
 
 TrashSlimeBanner: {
@@ -4226,22 +5685,35 @@ TrashSlimeBanner: {
 
 TriAttack: {
 	DisplayName: Tri Attack
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a deadly combination of normal flames, ice flames and venom
+		Ignores 20 enemy armor
+		'''
 }
 
 TrippyTransmutationStaff: {
 	DisplayName: Trippy Transmutation Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a beam of Lycopite energy that randomly splits into other projectiles upon hitting an enemy
+		The beam can split into homing lycopite spores, a magic lycopite dagger, or an explosive mushroom
+		'''
 }
 
 TrueJfkExperience: {
 	DisplayName: True JFK Experience
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shots split into homing bloodstreams on impact with a target
+		Right click to zoom
+		'It wont damage yourself this time, i promise'
+		'''
 }
 
 TruthSeekersDMR: {
 	DisplayName: Truth Seeker's DMR
-	Tooltip: ""
+	Tooltip: Converts musket balls into hitscan True Bullets
 }
 
 UltrabrightArrow: {
@@ -4251,7 +5723,7 @@ UltrabrightArrow: {
 
 UnicornPoacher: {
 	DisplayName: Unicorn Poacher
-	Tooltip: ""
+	Tooltip: Converts darts into unicorn horns that pierce and can hit larger enemies multiple times
 }
 
 UnstablePlasmoidBanner: {
@@ -4261,12 +5733,12 @@ UnstablePlasmoidBanner: {
 
 UraniumBar: {
 	DisplayName: Uranium Bar
-	Tooltip: ""
+	Tooltip: a delicious snack
 }
 
 UraniumBow: {
 	DisplayName: Uranium Bow
-	Tooltip: ""
+	Tooltip: Converts all arrows into Rad Arrows that split after a short time
 }
 
 UraniumBrick: {
@@ -4281,12 +5753,20 @@ UraniumOre: {
 
 UraniumShotgun: {
 	DisplayName: Uranium Shotgun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts ammo into highly unstable yet potent uranium rounds
+		Ignores 15 enemy defense
+		'''
 }
 
 UraniumSword: {
 	DisplayName: Uranium Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Creates a radioactive aura around the player
+		Ignores 10 enemy defense
+		'''
 }
 
 UraniumTorch: {
@@ -4296,52 +5776,96 @@ UraniumTorch: {
 
 VenomThrower: {
 	DisplayName: Venom-Thrower
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Shoots extremely toxic venom at your enemies
+		'''
 }
 
 VerdantClaymore: {
 	DisplayName: Verdant Claymore
-	Tooltip: ""
+	Tooltip:
+		'''
+		Deals great damage, but poisons the user
+		Right click to throw the claymore
+		Set up a combo by throwing the claymore, complete it by stabbing
+		Completed combos deal increased damage and grant the player a powerful but short life regen buff
+		'''
 }
 
 VerminImpaler: {
 	DisplayName: Vermin Impaler
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots venomous spider fangs
+		The spear itself is also drenched in venom
+		'''
 }
 
 VeryBigStick: {
 	DisplayName: Very Big Stick
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 2 Braincells
+		'Very confusing, it's not a stick'
+		'''
 }
 
 ViciousGreatstaff: {
 	DisplayName: Vicious Greatstaff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to fire bloodshot bombs
+		Right click to cause ichor to rain down upon your mouse position
+		'''
 }
 
 VileGreatstaff: {
 	DisplayName: Vile Greatstaff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to fire jets of cursed flame
+		Right click to cause vile thorns to strike at the mouse position
+		'''
 }
 
 VP70: {
 	DisplayName: VP70
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to quickly fire single shots
+		Right click to fire a three round burst
+		Tag enemies with single shots to deal increased damage with bursts
+		[c/1C1F53:The OG. The one that started it all]
+		'''
 }
 
 WandOfTheOvercompensator: {
 	DisplayName: Wand Of The Overcompensator
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 12 Braincells
+		Lets loose a huge blast of fire that splits into many flame jets
+		The perfect wand for wizards who are insecure about their.. y'know.
+		'''
 }
 
 WaterflameSword: {
 	DisplayName: Waterflame Sword
-	Tooltip: ""
+	Tooltip: Shoots a bouncing waterflame bolt with every swing
 }
 
 AlpinePlushieGlitterbomb: {
 	DisplayName: Alpine Plushie Glitterbomb
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws a glitter bomb disguised as an Alpine plushie
+		The shiny glitter causes your summons to focus hit enemies, and homes in, dealing up to 150 un-negateable damage
+		Uses 5 Braincells
+		11 summon tag damage
+		'Huh, so that's why they won't tell us where glitter comes from'
+		'''
 }
 
 AncientCobaltNaginata: {
@@ -4351,37 +5875,54 @@ AncientCobaltNaginata: {
 
 AncientCobaltRepeater: {
 	DisplayName: Ancient Cobalt Repeater
-	Tooltip: ""
+	Tooltip: Fires in a two round burst
 }
 
 AncientCobaltSword: {
 	DisplayName: Ancient Cobalt Sword
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a beam of ancient cobalt energy
+		It feels historic
+		'''
 }
 
 ApexPlasmaCannon: {
 	DisplayName: Apex Plasma Cannon
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to rapidly cast Apex Plasma Bullets that pierce many enemies
+		Right click to shoot a swarm of homing Elf Magic Missiles
+		Requires either bullets or rockets based on firing mode
+		'''
 }
 
 AzuriteArrow: {
 	DisplayName: Azurite Arrow
-	Tooltip: ""
+	Tooltip: Homes in on enemies
 }
 
 AzuriteBow: {
 	DisplayName: Azurite Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts arrows into Azurite arrows
+		Azurite arrows have powerful homing
+		'''
 }
 
 AzuriteDualStaff: {
 	DisplayName: Azurite Dual Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots bolts of azurite energy forwards and backwards
+		The forwards bolt pierces, the backwards bolt homes
+		'''
 }
 
 AzuriteSaber: {
 	DisplayName: Azurite Saber
-	Tooltip: ""
+	Tooltip: Releases a wave of Azurite energy
 }
 
 BloodshotArrow: {
@@ -4391,12 +5932,16 @@ BloodshotArrow: {
 
 CopperLongsword: {
 	DisplayName: Copper Longsword
-	Tooltip: ""
+	Tooltip: It does 2 armor penetration
 }
 
 CopperQuadsword: {
 	DisplayName: Copper Quadsword
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 }
 
 CrimtaneShuriken: {
@@ -4416,7 +5961,7 @@ FeatherArrow: {
 
 FireDiamondStaff: {
 	DisplayName: Fire Diamond Staff
-	Tooltip: ""
+	Tooltip: Fires a piercing, explosive fireball
 }
 
 FireyPhaseblade: {
@@ -4431,12 +5976,12 @@ FireyPhasesaber: {
 
 FlamingKnife: {
 	DisplayName: Flaming Knife
-	Tooltip: ""
+	Tooltip: Explodes every time it hits an enemy
 }
 
 FrozenBullet: {
 	DisplayName: Frozen Bullet
-	Tooltip: ""
+	Tooltip: Shots inflict Frostburn for 3 seconds
 }
 
 FrozenMace: {
@@ -4451,12 +5996,12 @@ GenderDefender: {
 
 GlitterGun: {
 	DisplayName: Glitter Gun
-	Tooltip: ""
+	Tooltip: Rapidly casts Apex Plasma Bullets that pierce enemies and enemy armor
 }
 
 GoldLongsword: {
 	DisplayName: Gold Longsword
-	Tooltip: ""
+	Tooltip: It does 5 armor penetration
 }
 
 GunThatKillsPeople: {
@@ -4466,22 +6011,28 @@ GunThatKillsPeople: {
 
 IronLongsword: {
 	DisplayName: Iron Longsword
-	Tooltip: ""
+	Tooltip: It does 3 armor penetration
 }
 
 LeadLongsword: {
 	DisplayName: Lead Longsword
-	Tooltip: ""
+	Tooltip: It does 3 armor penetration
 }
 
 LigmaLazer: {
 	DisplayName: Ligma Lazer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Gives your enemies Ligma
+		Uses 1 Braincell
+		[c/FF0F55:Unobtainable. If someone is using this, they are cheating]
+		[c/FF0F55:-Developer Item-]
+		'''
 }
 
 LunarStaff: {
 	DisplayName: Lunar Staff
-	Tooltip: ""
+	Tooltip: Shoots a bolt of lunar energy that projects a homing contrail
 }
 
 MetalBall: {
@@ -4496,12 +6047,16 @@ MiniThrowableBoulder: {
 
 MintalArrow: {
 	DisplayName: Mintal Arrow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Homes in on the mouse while not firing
+		Controlling the arrows slowly drains your mana
+		'''
 }
 
 MintalBow: {
 	DisplayName: Mintal Bow
-	Tooltip: ""
+	Tooltip: Converts wooden arrows into magical mintal arrows at the cost of mana
 }
 
 MintalGreatspear: {
@@ -4516,12 +6071,16 @@ MintalMachinePistol: {
 
 MintalRepeater: {
 	DisplayName: Mintal Repeater
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts wooden arrows into magical mintal arrows at the cost of mana
+		Fires in a two round burst
+		'''
 }
 
 MintalSword: {
 	DisplayName: Mintal Sword
-	Tooltip: ""
+	Tooltip: Swings slow and hits strong
 }
 
 MoltenShuriken: {
@@ -4531,57 +6090,78 @@ MoltenShuriken: {
 
 MorbeamStaff: {
 	DisplayName: Morbeam Staff
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots two bouncing morbium beams
+		Ignores 10 enemy defense
+		'''
 }
 
 MorbiumArrow: {
 	DisplayName: Morbium Arrow
-	Tooltip: ""
+	Tooltip: Morb
 }
 
 MorbiumBow: {
 	DisplayName: Morbium Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all arrows into Morbium Arrows
+		Morbium arrows are extremely slow, but split into four fast morbium beams after a short delay
+		'''
 }
 
 MorbiumSword: {
 	DisplayName: Morbium Sword
-	Tooltip: ""
+	Tooltip: Shoots a bouncy bolt of Morbium energy
 }
 
 PlatinumLongsword: {
 	DisplayName: Platinum Longsword
-	Tooltip: ""
+	Tooltip: It does 5 armor penetration
 }
 
 RunicCodex: {
 	DisplayName: Runic Codex
-	Tooltip: ""
+	Tooltip: Fires a rune blast
 }
 
 SexualitySlicer: {
 	DisplayName: Sexuality Slicer
-	Tooltip: ""
+	Tooltip: Be gay, do crime.
 }
 
 Shortgun: {
 	DisplayName: Shortgun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots iron shortswords
+		Does not require ammo
+		'''
 }
 
 SilverLongsword: {
 	DisplayName: Silver Longsword
-	Tooltip: ""
+	Tooltip: It does 4 armor penetration
 }
 
 SpectralBow: {
 	DisplayName: Spectral Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots Spectral Arrows that light enemies up and cause summons to focus them
+		10 summon tag damage
+		'''
 }
 
 SplashPotionOfShine: {
 	DisplayName: Splash Potion Of Shine
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws a splash potion that lights up hit enemies and causes your summons to focus them
+		5 summon tag damage
+		TerMerica Cross-Mod (Thorium): Now deals Throwing damage
+		'''
 }
 
 SteelBow: {
@@ -4596,7 +6176,7 @@ SteelKnife: {
 
 SteelLongsword: {
 	DisplayName: Steel Longsword
-	Tooltip: ""
+	Tooltip: It does 6 armor penetration
 }
 
 SteelShuriken: {
@@ -4611,62 +6191,92 @@ TheBlueBall: {
 
 TheBrainFreeze: {
 	DisplayName: The Brain Freeze
-	Tooltip: ""
+	Tooltip:
+		'''
+		There is no tooltip, you have to use it and see what it does
+		-Autism Manifesto
+		'''
 }
 
 TinLongsword: {
 	DisplayName: Tin Longsword
-	Tooltip: ""
+	Tooltip: It does 2 armor penetration
 }
 
 TransgenderTwinbeam: {
 	DisplayName: Transgender Twinbeam
-	Tooltip: ""
+	Tooltip: Shoots alternating beams of trans energy
 }
 
 TungstenLongsword: {
 	DisplayName: Tungsten Longsword
-	Tooltip: ""
+	Tooltip: It does 4 armor penetration
 }
 
 WeedLeaves: {
 	DisplayName: Weed Leaves
-	Tooltip: ""
+	Tooltip: "'I'm a marijuana plant that can get you fucked up'"
 }
 
 WhippetWhip: {
 	DisplayName: Whippet Whip
-	Tooltip: ""
+	Tooltip:
+		'''
+		Swings really, really fast
+		Uses 3 Braincells
+		'My name lil t man'
+		'''
 }
 
 WindTome: {
 	DisplayName: Wind Tome
-	Tooltip: ""
+	Tooltip: Fires a storm of deadly clouds that ramps up in intensity
 }
 
 Zablade: {
 	DisplayName: Zablade
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a bouncing razor leaf with every swing
+		Uses 5 Braincells
+		'''
 }
 
 ZapperGun: {
 	DisplayName: Zapper Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		yeah bro its definitely broken
+		The creator of this weapon was fucking assassinated by Nintendo
+		'''
 }
 
 ZazaBreath: {
 	DisplayName: Zaza Breath
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses gel as ammo
+		Uses 3 Braincells
+		Spews out weed smoke that confuses and asphyxiates your enemies
+		'''
 }
 
 ZazaDart: {
 	DisplayName: Zaza Dart
-	Tooltip: ""
+	Tooltip:
+		'''
+		Flies upwards
+		Has a chance to confuse enemies
+		'''
 }
 
 ZazaPipegun: {
 	DisplayName: Zaza Pipegun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots a cloud of weed smoke along with your dart
+		Uses 5 Braincells
+		'''
 }
 
 ChlorophyteShitballs: {
@@ -4751,7 +6361,11 @@ WandOfPooping: {
 
 ShatteringShell: {
 	DisplayName: Shattering Shell
-	Tooltip: ""
+	Tooltip:
+		'''
+		Tiny blast radius
+		Deals extreme damage on direct hits
+		'''
 }
 
 VoidPearl: {
@@ -4776,114 +6390,134 @@ MorbiumMinesweeper: {
 
 BetsyIcon: {
 	DisplayName: Betsy Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Betsy
 }
 
 DarkMageIcon: {
 	DisplayName: Dark Mage Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Dark Mage
 }
 
 EverscreamIcon: {
 	DisplayName: Everscream Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain an Everscream
 }
 
 FlyingDutchmanIcon: {
 	DisplayName: Flying Dutchman Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Flying Dutchman
 }
 
 IceQueenIcon: {
 	DisplayName: Ice Queen Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Ice Queen
 }
 
 MartainSaucerIcon: {
 	DisplayName: Martain Saucer Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain a Martain Saucer
 }
 
 MouringWoodIcon: {
 	DisplayName: Mouring Wood Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain a Mouring Wood
 }
 
 NebulaPillarIcon: {
 	DisplayName: Nebula Pillar Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Nebula Pillar
 }
 
 OgreIcon: {
 	DisplayName: Ogre Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain an Ogre
 }
 
 PumpkingIcon: {
 	DisplayName: Pumpking Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain Pumpking
 }
 
 SantankIcon: {
 	DisplayName: Santank Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain a Santa-NK1
 }
 
 SolarPillarIcon: {
 	DisplayName: Solar Pillar Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Solar Pillar
 }
 
 StardustPillarIcon: {
 	DisplayName: Stardust Pillar Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Stardust Pillar
 }
 
 VortexPillarIcon: {
 	DisplayName: Vortex Pillar Icon
-	Tooltip: ""
+	Tooltip: A token for those who have slain the Vortex Pillar
 }
 
 OffenseShield: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases damage output for a short time after being hit
+		Also still grants Panic upon being hit
+		'''
 	DisplayName: Offense Shield
 }
 
 CultistCyclotron: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Used for crafting higher-tier radioactive items
+		Also functions as an Ancient Manipulator
+		'''
 	DisplayName: Cultist's Cyclotron
 }
 
 SpookyWoodBow: {
-	Tooltip: ""
+	Tooltip: Converts all arrows into Spooky Arrows that leave a massive trail of burning embers
 	DisplayName: Spooky Wood Bow
 }
 
 SpookyWoodSword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Inflicts Hellfire on hit
+		Flings tons of hellfire sparks everywhere
+		'''
 	DisplayName: Spooky Wood Sword
 }
 
 TransMask: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		+6% melee damage
+		+2% crit chance
+		'''
 	DisplayName: Demifem Mask
 	SetBonus: Mods.HendecamMod.Items.TransMask.SetBonus
 }
 
 TransHelmet: {
-	Tooltip: ""
+	Tooltip: +8% ranged damage and crit chance
 	DisplayName: Genderfluid Helmet
 	SetBonus: Mods.HendecamMod.Items.TransHelmet.SetBonus
 }
 
 TransHeadgear: {
-	Tooltip: ""
+	Tooltip: +11% summon damage
 	DisplayName: Trans Headgear
 	SetBonus: Mods.HendecamMod.Items.TransHeadgear.SetBonus
 }
 
 TransFedora: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		15% faster Lobotometer decay rate
+		9% increased stupid critical strike
+		'''
 	DisplayName: Dreamgender Fedora
 	SetBonus: Mods.HendecamMod.Items.TransFedora.SetBonus
 }
@@ -4895,91 +6529,201 @@ FlatEartherBanner: {
 
 LobotomySpike: {
 	DisplayName: Lobotomy Spike
-	Tooltip: ""
+	Tooltip:
+		'''
+		Once you hit max Lobotometer, it can no longer decay until accessory is removed
+		Increases Stupid damage by 4% and Stupid armor penetration by 4
+		'''
 }
 
 IQTest: {
 	DisplayName: IQ Test
-	Tooltip: ""
+	Tooltip:
+		'''
+		Displays exact Lobotometer value
+		Obtainable by shimmering subpar schoolwork...
+		'''
 }
 
 TurboDartTrap: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots fast carbon fiber darts
+		Can fire as fast as a 1/4 second timer
+		'''
 	DisplayName: Turbo Dart Trap
 }
 
 UnhygenicLobotomySpike: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Once you hit max Lobotometer, it can no longer decay until accessory is removed
+		Converts Lobotometer decay rate into damage
+		Does not stack with Haemophilic or Auspicious Lobotomy Spike
+		'''
 	DisplayName: Unhygenic Lobotomy Spike
 }
 
 HaemophilicLobotomySpike: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Once you hit max Lobotometer, it can no longer decay until accessory is removed
+		Converts Lobotometer decay rate into max life
+		Does not stack with Unhygenic or Auspicious Lobotomy Spike
+		'''
 	DisplayName: Haemophilic Lobotomy Spike
 }
 
 ContentEmblem: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Gives more bonuses the more content mods you have enabled
+		Calamity Mod- +15% damage
+		Calamity Fables- Drops a shroom mine when hurt
+		Clamity Addon- Permanent Crate, Fishing, and Sonar buffs while equipped
+		Calamity Infernum- +10% attack speed during any bossfight or invasion
+		Catalyst- +15% crit chance
+		Fargo's Souls- Causes friendly sand to rain down upon enemies near you at low health
+		Thorium Mod- +5 Armor Penetration
+		Thorium Hellheim- +10% max life during any bossfight or invasion
+		Homeward Journey- doubled mining speed
+		Exxo Avalon Origins- 20% increased damage reduction at full HP
+		The Stars Above- Increases max life by max mana
+		Secrets of the Shadows- Increased offensive stats while Invisibility buff is active
+		Spirit Classic- +1.5 hp/s life regen
+		Spirit Reforged- Increases luck by 1% of your current defense
+		Consolaria- Grants 'human joystick' movement
+		Spooky Mod- The player emits light above 80% life, grants 5 defense below 80% life
+		Vitality Mod- Increases max health by 15%
+		Split- Massively increased damage at the cost of almost all crit chance when facing left, guaranteed crits at the cost of some damage when facing right
+		Macrocosm- Increased flight time and aerial movement
+		Enigma Mod- All attacks inflict on fire and frostburn
+		Paracosm- Increases life regen by the number of debuffs you have
+		Ebonian Mod- All attacks have a 1/100 chance to give your enemies ligma
+		Xenon Mod- Every 10th projectile attack spawns a large red X on the target
+		Arsenal- 5% increased attack speed
+		Terror Mode- +33% damage when under 33% health
+		Storm's Additions- Occasionally causes lightning to strike enemies
+		Ultraconyx- Trades 15% of your total defense for damage at an inflated exchange rate
+		BeatriceMod- causes beams of trans energy to be radially fired out of the player periodically
+		Gerd's Lab- Increases max Mana by 100
+		Fish Guns Plus- +25 fishing power
+		PG3D Weapons Pack- Every 3rd projectile attack fires an extra bullet projectile
+		Flamethrowers Plus- 5% increased ranged crit chance
+		Guns and Guns 2- 25% reduced ammo usage
+		Awful Garbage Mod- +50 Max Braincells
+		Rhymes With Grug Mod- Rhymes with Grug
+		'''
 	DisplayName: Content Emblem
 }
 
 YelmutFaeChestplate: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		12% increased melee speed and 15% increased ranged damage
+		+80 max Mana and Max Braincells
+		+1 max minions and +2 max sentries
+		Counts as wings, enhances other wings when combined
+		[c/DC28F5:-Developer Item-]
+		'''
 	DisplayName: Yelmut's Fae-Chestplate
 }
 
 YelmutLeggings: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		10% increased melee crit chance and 8% increased ranged attack speed
+		+60 max Mana and Lobotometer
+		+1 max minion and sentry slot
+		Effects of Fairy Boots
+		Set Bonus compatible with Lycopite Armor
+		[c/DC28F5:-Developer Item-]
+		'''
 	DisplayName: Yelmut's Leggings
 }
 
 CaptainsCannon: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to rapidly shoot bullets
+		Right click to shoot a powerful, piercing cannonball
+		33% chance to not consume ammo
+		'''
 	DisplayName: Captain's Cannon
 }
 
 CandyCaneCompoundBow: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots arrows at an extremely high velocity
+		Converts wooden arrows into candy cane arrows that split into candy cane shards
+		'''
 	DisplayName: Candy Cane Compound Bow
 }
 
 ImprovisedGrenadeLauncher: {
-	Tooltip: ""
+	Tooltip: Uses rockets as ammo
 	DisplayName: Improvised Grenade Launcher
 }
 
 BladeShooter: {
 	DisplayName: Blade Shooter
-	Tooltip: ""
+	Tooltip: Summons a blade shooter sentry that flings large, deadly blades in all directions
 }
 
 BladeMaelstrom: {
 	DisplayName: Blade Maelstrom
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a blade maelstrom sentry that flings blades everywhere in a spiral pattern
+		Takes up 2 sentry slots
+		'''
 }
 
 SuperMaelstrom: {
 	DisplayName: Super Maelstrom
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a super maelstrom sentry that flings blades EVERYWHERE in a spiral pattern
+		Takes up 5 sentry slots
+		'''
 }
 
 MartianDronegun: {
 	DisplayName: Martian Dronegun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots Martian Drones that auto-target enemies and explode on contact
+		Drones and their projectiles can benefit from tag damage
+		Does not require ammo
+		'''
 }
 
 CanofLasers: {
 	DisplayName: Can of Lasers
-	Tooltip: ""
+	Tooltip:
+		'''
+		All projectile attacks shoot an extra laser projectile every 4th shot
+		'Why'
+		'''
 }
 
 CrucibleOfFlameAndSteel: {
 	DisplayName: Crucible Of Steel And Flame
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons The Crucible of Steel and Flame
+		Right-click with this item in hand to activate Paragon Maelstrom
+		Takes up 10 sentry slots
+		'''
 }
 
 SarahIdol: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Permanently makes the player upside down
+		'Dedicated to my girlfriend, who i love very much despite the fact that she's upside down'- Autism Manifesto
+		'''
 	DisplayName: Sarah's Idol
 }
 
@@ -4994,99 +6738,123 @@ AngelShard: {
 }
 
 ArchangelHelmet: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		+20% crit chance and +20 armor penetration
+		Significantly boosts max life
+		[c/FF0F55:Unobtainable. If someone is using this, they are cheating]
+		'''
 	DisplayName: Archangel Helmet
 }
 
 ArchangelGreaves: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		+40% increased movement speed and acceleration and +15% attack speed
+		Significantly boosts max life
+		[c/FF0F55:Unobtainable. If someone is using this, they are cheating]
+		'''
 	DisplayName: Archangel Greaves
 	SetBonus: Mods.HendecamMod.Items.ArchangelGreaves.SetBonus
 }
 
 ArchangelChestguard: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		35% increased damage
+		Significantly boosts max life
+		[c/FF0F55:Unobtainable. If someone is using this, they are cheating]
+		'''
 	DisplayName: Archangel Chestguard
 }
 
 WoodenBlocks: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Throws wooden toy blocks at your opponents
+		Uses 1 Braincell
+		'Don't know your ABC's? Now you can throw them!'
+		'''
 	DisplayName: Wooden Blocks
 }
 
 FakeGodhood: {
 	DisplayName: Fake Godhood
-	Tooltip: ""
+	Tooltip:
+		'''
+		Gives effects of Archangel Wings
+		[c/FF1963:-Testing Item-]
+		'''
 }
 
 CopperVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Copper Vape
 }
 
 TinVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Tin Vape
 }
 
 SilverVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Silver Vape
 }
 
 LeadVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Lead Vape
 }
 
 IronVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Iron Vape
 }
 
 TungstenVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Tungsten Vape
 }
 
 PlatinumVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Platinum Vape
 }
 
 GoldVape: {
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 	DisplayName: Gold Vape
 }
 
 CobaltVape: {
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 	DisplayName: Cobalt Vape
 }
 
 AdamantiteVape: {
 	DisplayName: Adamantite Vape
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 MythrilVape: {
 	DisplayName: Mythril Vape
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 OrichalcumVape: {
 	DisplayName: Orichalcum Vape
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 PalladiumVape: {
 	DisplayName: Palladium Vape
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 TitaniumVape: {
 	DisplayName: Titanium Vape
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 PromethiumOre: {
@@ -5105,42 +6873,73 @@ PromethiumBar: {
 }
 
 IronLung: {
-	Tooltip: ""
+	Tooltip: Vapes are perfectly accurate and have much higher velocity
 	DisplayName: Iron Lung
 }
 
 BrainScanner: {
-	Tooltip: ""
+	Tooltip: Displays Lobotometer decay rate
 	DisplayName: Brain Scanner
 }
 
 Red40VapeDye: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Vapes now emit red vapor
+		Can be combined with other vape dyes
+		Works in inventory and vanity slots
+		'''
 	DisplayName: Red 40 Vape Dye
 }
 
 Yellow5VapeDye: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Vapes now emit yellow vapor
+		Can be combined with other vape dyes
+		Works in inventory and vanity slots
+		'''
 	DisplayName: Yellow 5 Vape Dye
 }
 
 Green3VapeDye: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Vapes now emit green vapor
+		Can be combined with other vape dyes
+		Works in inventory and vanity slots
+		'''
 	DisplayName: Green 3 Vape Dye
 }
 
 Blue1VapeDye: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Vapes now emit blue vapor
+		Can be combined with other vape dyes
+		Works in inventory and vanity slots
+		'''
 	DisplayName: Blue 1 Vape Dye
 }
 
 TorchGodsFervor: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Smoldering vapor drifts towards the mouse position
+		'''
 	DisplayName: Torch God's Fervor
 }
 
 EchoKit: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to fire high velocity tri-shots
+		Right click to fire a volley of sticky bombs
+		Hold both left and right click to fire a focus beam that deals more damage to weakened enemies
+		Enables flight and slow fall while held
+		[c/97D4FF:'I am always ready to learn']
+		'''
 	DisplayName: Echo Kit
 }
 
@@ -5150,13 +6949,17 @@ PyritePickaxe: {
 }
 
 VapeKit: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Used to craft vapes
+		'You should give yourself lung cancer, NOW!'
+		'''
 	DisplayName: DIY Vape Kit
 }
 
 ThePenjamin: {
 	DisplayName: The Penjamin
-	Tooltip: ""
+	Tooltip: Uses 3 Braincells
 }
 
 PromethiumPickaxe: {
@@ -5165,13 +6968,21 @@ PromethiumPickaxe: {
 }
 
 MythrilRose: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Casts multiple venomous Mythril petals
+		Emits light while held
+		'''
 	DisplayName: Mythril Rose
 }
 
 OrichalcumRose: {
 	DisplayName: Orichalcum Rose
-	Tooltip: ""
+	Tooltip:
+		'''
+		Casts multiple venomous Orichalcum petals
+		Emits light while held
+		'''
 }
 
 FireDiamondHook: {
@@ -5181,17 +6992,28 @@ FireDiamondHook: {
 
 TheStickedBrick: {
 	DisplayName: The Sticked Brick
-	Tooltip: ""
+	Tooltip: "'Brochacho it's a brick on a stick'"
 }
 
 SharpeningStone: {
 	DisplayName: Sharpening Stone
-	Tooltip: ""
+	Tooltip:
+		'''
+		+8% increased damage
+		All applicable projectiles have +2 pierce
+		May interact weirdly with certain weapons
+		'''
 }
 
 PyrrhicClaymore: {
 	DisplayName: Pyrrhic Claymore
-	Tooltip: ""
+	Tooltip:
+		'''
+		Deals great damage, but inflicts the user with Ichor
+		Right click to throw the claymore
+		Set up a combo by throwing the claymore, complete it by stabbing
+		Completed combos deal increased damage and grant the player a powerful but short defense buff
+		'''
 }
 
 PromethiumGreataxe: {
@@ -5210,42 +7032,74 @@ FlaskOfAnnihilation: {
 }
 
 LoadedDice: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into throwable dice which explode into the same type of bullet used to throw them
+		Uses between 1 and 6 braincells
+		'''
 	DisplayName: Loaded Dice
 }
 
 TungstenQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Tungsten Quadsword
 }
 
 TinQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Tin Quadsword
 }
 
 SilverQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Silver Quadsword
 }
 
 PlatinumQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Platinum Quadsword
 }
 
 LeadQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Lead Quadsword
 }
 
 IronQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Iron Quadsword
 }
 
 GoldQuadsword: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		4 swords are better than 1
+		Uses 4 Braincells
+		'''
 	DisplayName: Gold Quadsword
 }
 
@@ -5260,13 +7114,21 @@ AirBrick: {
 }
 
 PulmonaryHemorrhage: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 4 Braincells
+		Exhales twice as many vape clouds as usual
+		'''
 	DisplayName: Pulmonary Hemorrhage
 }
 
 LungsBane: {
 	DisplayName: Lung's Bane
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 4 Braincells
+		Exhales twice as many vape clouds as usual
+		'''
 }
 
 ClawTechnique: {
@@ -5275,52 +7137,93 @@ ClawTechnique: {
 }
 
 QueensShank: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to stab, right click to throw
+		Explodes into homing crystal gel shards on impact
+		'''
 	DisplayName: Queen's Shank
 }
 
 LycopiteGlaive: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Homes in on enemies for a bit before returning
+		Prioritizes homing in on new enemies
+		'''
 	DisplayName: Lycopite Glaive
 }
 
 SpoarGlaive: {
 	DisplayName: S.P.O.A.R. Glaive
-	Tooltip: ""
+	Tooltip:
+		'''
+		Homes in on enemies for a bit before returning
+		Prioritizes homing in on new enemies
+		'It stands for Spore Perception Optimized Advanced Ricochet'
+		'''
 }
 
 Caliburn: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Hitting enemies causes extra vape smoke to float upwards at them
+		Uses 4 Braincells
+		'''
 	DisplayName: Caliburn
 }
 
 DragonsBreath: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 2 Braincells
+		Exhales a constant stream of fiery vape smoke
+		'''
 	DisplayName: Dragon's Breath
 }
 
 TrueCaliburn: {
 	DisplayName: True Caliburn
-	Tooltip: ""
+	Tooltip:
+		'''
+		Hitting enemies causes extra vape smoke to float upwards or downwards at them at random
+		Uses 3 Braincells
+		'''
 }
 
 CacklingCadaver: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 4 Braincells
+		Bone vapor ignores enemy defense and grants Extra-Skeletal Defense when inhaled
+		'''
 	DisplayName: Cackling Cadaver
 }
 
 NightsFog: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 4 Braincells
+		Vape smoke spawns extra vape smoke that blindsides enemies
+		'''
 	DisplayName: Night's Fog
 }
 
 TrueNightsFog: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Hitting enemies causes extra vape smoke to surround them from two sides
+		Uses 2 Braincells
+		'''
 	DisplayName: True Night's Fog
 }
 
 TerraVape: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Hitting enemies causes extra vape smoke to surround them from all four sides
+		Uses 1 Braincell
+		'''
 	DisplayName: Terra Vape
 }
 
@@ -5330,67 +7233,89 @@ BrokenHeroVape: {
 }
 
 MartianDrugs: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 5 Braincells
+		Throws martian syringes that inflict random debuffs
+		Deals extra damage with critical hits
+		'♫ I couldn't kill the player, because i got hiiiigh ♫'
+		'''
 	DisplayName: Martian Drugs
 }
 
 FreeHealthcare: {
 	DisplayName: Free Healthcare
-	Tooltip: ""
+	Tooltip:
+		'''
+		Increases life regen and makes enemies much more likely to drop hearts on death
+		'They'd never let this exist in TerMerica'
+		'''
 }
 
 UnstableConcoction: {
 	DisplayName: Unstable Concoction
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 6 Braincells
+		Throws highly unstable acid potions that occasionally explode midair
+		Hitting enemies splashes acid so potent it ignores enemy debuff immunities
+		Killing an acidified enemy releases a massive explosion that does more damage the stronger the enemy killed was
+		These explosions also acidify enemies
+		'''
 }
 
 CorruptionCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Corruption
 	DisplayName: Corruption Camo
 }
 
 UrbanCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Dungeon biome
 	DisplayName: Urban Camo
 }
 
 SnowCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Snow biome
 	DisplayName: Snow Camo
 }
 
 OceanCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Ocean biome
 	DisplayName: Ocean Camo
 }
 
 JungleCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Jungle
 	DisplayName: Jungle Camo
 }
 
 GlobalCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro regardless of biome
 	DisplayName: Global Camo
 }
 
 DesertCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Desert biome
 	DisplayName: Desert Camo
 }
 
 CrimsonCamo: {
-	Tooltip: ""
+	Tooltip: Increases crit chance and attack speed by 10% and 5% and decreased aggro while in the Crimson
 	DisplayName: Crimson Camo
 }
 
 VeteransBadge: {
-	Tooltip: ""
+	Tooltip: Increases crit damage by 15% and armor penetration by 10
 	DisplayName: Veteran's Badge
 }
 
 AuspiciousLobotomySpike: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Lobotometer can no longer decay until accessory is removed
+		Converts Lobotometer decay rate into defense
+		Does not stack with Haemophilic or Unhygenic Lobotomy Spike
+		'''
 	DisplayName: Auspicious Lobotomy Spike
 }
 
@@ -5400,7 +7325,11 @@ MonsterStemCells: {
 }
 
 KusariOfFlamingFundo: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Right click before throwing out the weapon to start having a really fun time... for 15 seconds
+		[c/FF7319:'COWABUNGA!!!']
+		'''
 	DisplayName: Kusari Of Flaming Fun-do
 }
 
@@ -5415,7 +7344,12 @@ BandTechnique: {
 }
 
 TheBostonTeaParty: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Instead of projectile vomit, this weapon shoots very high-damage bullets.
+		Right click to zoom
+		Made for those with less than great computers.
+		'''
 	DisplayName: The Boston Tea Party
 }
 
@@ -5446,12 +7380,21 @@ MantleDestroyer: {
 
 EpilepsyWarning: {
 	DisplayName: Epilepsy Warning
-	Tooltip: ""
+	Tooltip:
+		'''
+		[c/FF0000:WARNING: CERTAIN EFFECTS IN HENDECAM MOD MAY CAUSE ISSUES FOR PEOPLE WITH EPILEPSY!!]
+		[c/FF0000:Specifically, Stupid-class weapons have an effect called the Lobotometer.]
+		[c/FF0000:The Lobotometer applies an increasingly annoying rainbow shader to the player's screen as Stupid weapons are used more.]
+		[c/FF0000:The shader is MUCH more intense when playing in a GetFixedBoi world.]
+		[c/FF0000:Certain Omni-class weapons also use this mechanic.]
+		[c/FF0000:We have NOT made an 'Accessible Lobotometer' config **yet** but it will be added soon. My sincerest apologies to any epileptic folks playing the mod.]
+		[c/FF0000:If you actually read all this, you can right-click this item to get the Signed Epilepsy Warning, which sells for a pretty penny or shimmers into Monster Stem Cells]
+		'''
 }
 
 SignedEpilepsyWarning: {
 	DisplayName: Signed Epilepsy Warning
-	Tooltip: ""
+	Tooltip: Thank you for reading the Hendecam Mod Epilepsy Warning!
 }
 
 MantleSlicer: {
@@ -5461,22 +7404,27 @@ MantleSlicer: {
 
 EarthPiercer: {
 	DisplayName: Earth Piercer
-	Tooltip: ""
+	Tooltip: Deals more damage to high defense targets
 }
 
 MantiusShortbow: {
 	DisplayName: Mantius Shortbow
-	Tooltip: ""
+	Tooltip: Shoots large, fast-flying energy arrows that deal increased damage to high defense targets
 }
 
 CoreEnforcer: {
 	DisplayName: Core Enforcer
-	Tooltip: ""
+	Tooltip:
+		'''
+		Left click to fire Thousand Arrows
+		Right click to fire Thousand Waves
+		Deals more damage when the ancient spirits of light and dark are present in your world
+		'''
 }
 
 BasaltBerserker: {
 	DisplayName: Basalt Berserker
-	Tooltip: ""
+	Tooltip: Deals more damage to high defense targets
 }
 
 Fivenato: {
@@ -5485,137 +7433,201 @@ Fivenato: {
 }
 
 RustyDustySawThrower: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots piercing sawblades that leave a trail of sawdust in their wake
+		Uses 4 Braincells
+		'''
 	DisplayName: Rusty,Dusty Saw-Thrower
 }
 
 PlatinumChip: {
-	Tooltip: ""
+	Tooltip: Causes platinum shards to fly out when you get hit
 	DisplayName: Platinum Chip
 }
 
 MantiusOre: {
-	Tooltip: ""
+	Tooltip: A remarkable ore that grows from stone.
 	DisplayName: Mantius Ore
 }
 
 PneumaticRifle: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all bullets into Mantle Rays that can pierce through almost anything, including blocks
+		Deals more damage to high defense targets
+		Fires at super high velocity
+		'''
 	DisplayName: Pneumatic Rifle
 }
 
 ScaldingScepter: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots streams of scalding water that inflict Scald Burn
+		Deals more damage to high defense targets
+		Scald Burned enemies deal less damage
+		'''
 	DisplayName: Scalding Scepter
 }
 
 AirburstTome: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Fires a blast of compressed air that bursts into three explosive energy beams
+		Deals more damage to high defense targets
+		'''
 	DisplayName: Airburst Tome
 }
 
 MantleBooster: {
 	DisplayName: Mantle Booster
-	Tooltip: ""
+	Tooltip:
+		'''
+		Gives a powerful but extremely short-lived boost to the spread rate of Mantius Ore
+		WARNING: May cause some lag upon use
+		If you're gonna use this item in multiplayer, warn the other people you're playing with. Don't be an asshole.
+		'''
 }
 
 SteelBroadsword: {
 	DisplayName: Steel Broadsword
-	Tooltip: ""
+	Tooltip: It does 6 armor penetration
 }
 
 SteelShortsword: {
 	DisplayName: Steel Shortsword
-	Tooltip: ""
+	Tooltip: Right click to throw the saber
 }
 
 PhlinxStaff: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Summons a Phlinx to fight for you
+		Phlinxes deal more damage to high defense targets
+		'''
 	DisplayName: Phlinx Staff
 }
 
 AntiqueRifle: {
-	Tooltip: ""
+	Tooltip: The dusty barrel limits it's velocity and accuracy
 	DisplayName: Antique Rifle
 }
 
 AmmoRecycler: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Cycles between using Bullets, Arrows, Rockets and Darts with every shot
+		Has a built-in laser sight, can also Right click to zoom
+		50% chance to not consume ammo, increases all ammo base damage by 1.75x
+		This ammo damage multiplier gets stronger in hardmode and again after beating Lunatic Cultist
+		Does not work unless you have all four types of ammo
+		WARNING: This weapon may accidentally consume modded endless ammo items.
+		It will not consume ammo if the stack size is 3996 or larger.
+		'''
 	DisplayName: Ammo Recycler
 }
 
 Boomshark: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		33% chance to not consume ammo
+		'trust me, this is a WONDERFUL idea'
+		'''
 	DisplayName: Boomshark
 }
 
 JokeJumbotron: {
-	Tooltip: ""
+	Tooltip: Displays random jokes
 	DisplayName: Joke Jumbotron
 }
 
 ImprovisedMortarLauncher: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses rockets as ammo
+		Lobs huge, powerful mortar rounds that deal extra impact damage
+		'''
 	DisplayName: Improvised Mortar Launcher
 }
 
 ObsidianCompoundBow: {
 	DisplayName: Obsidian Compound Bow
-	Tooltip: ""
+	Tooltip:
+		'''
+		Shoots obsidian arrows at an extremely high velocity
+		Getting hit with the weapon in hand causes shattering obsidian shards to fly everywhere
+		'''
 }
 
 ZazaNerfGun: {
 	DisplayName: Zaza Nerf Gun
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts all darts into weed darts
+		Uses 4 Braincells
+		'This is one STUPID nerf mod'
+		'''
 }
 
 LimestoneThrowingRock: {
-	Tooltip: ""
+	Tooltip: Bursts into a lingering cloud of toxic limestone dust
 	DisplayName: Limestone Throwing Rock
 }
 
 SteelVape: {
 	DisplayName: Steel Vape
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 }
 
 GogBlock: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Can spread to ANY tile, and spreads exponentially fast
+		Will not spread unless all five gog enablers, enable gog enablers, and experimental features are enabled in the configs
+		FINAL WARNING!!! THIS BLOCK CAN AND WILL TAKE OVER AND DESTROY YOUR WORLD IF PLACED
+		[c/0F0F69:Bluer than blue...]
+		'''
 	DisplayName: Gog Block
 }
 
 NeuralMappingSoftware: {
 	DisplayName: Hotwired Neural Mapper
-	Tooltip: ""
+	Tooltip: Displays Current/Max Braincells, Lobotometer decay, and random jokes
 }
 
 NeoWings: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Allows flight and slow fall
+		WITNESS ME THIS TIME
+		CUT THESE [SILLY STRINGS]
+		'''
 	DisplayName: Neo Wings
 }
 
 IronCube: {
 	DisplayName: Iron Cube
-	Tooltip: ""
+	Tooltip: Halves player movement speed
 }
 
 LeadCube: {
 	DisplayName: Lead Cube
-	Tooltip: ""
+	Tooltip: Halves player movement speed
 }
 
 LucidityPotion: {
 	DisplayName: Lucidity Potion
-	Tooltip: ""
+	Tooltip: Reduces the Lobotometer's impact on your vision
 }
 
 TerminalLucidityPotion: {
 	DisplayName: Terminal Lucidity Potion
-	Tooltip: ""
+	Tooltip: Drastically reduces the Lobotometer's impact on your vision when on low HP
 }
 
 KawkawPainting: {
-	Tooltip: ""
+	Tooltip: Nyon!
 	DisplayName: Kawkaw Painting
 }
 
@@ -5875,7 +7887,11 @@ EightClubs: {
 }
 
 DeckOfPlayingCards: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Right click in the inventory to draw a card
+		'Now I can finally play Strip Poker' -Autism Manifesto
+		'''
 	DisplayName: Deck Of Playing Cards
 }
 
@@ -5910,32 +7926,49 @@ ColoredJoker: {
 }
 
 CatScarf: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		10% reduced mana cost
+		+1 max minion, +1 max sentry
+		May attract a feline visitor to your base....
+		'''
 	DisplayName: Cat Scarf
 }
 
 HeavyDutyVapeKit: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Used to craft better vapes
+		'You should give yourself ultra lung cancer, NOW!'
+		'''
 	DisplayName: Heavy Duty Vape Kit
 }
 
 FlyingMachineBlueprints: {
-	Tooltip: ""
+	Tooltip: Summons a fast, deadly, ranged Flying Machine to shoot at targets
 	DisplayName: Flying Machine Blueprints
 }
 
 ThoriumVape: {
 	DisplayName: Thorium Vape
-	Tooltip: ""
+	Tooltip: Uses 2 Braincells
 }
 
 HoneyHitter: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 3 Braincells
+		Releases vape smoke along with bees
+		'''
 	DisplayName: Honey Hitter
 }
 
 GalaxyGasser: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Uses 5 Braincells
+		Vape Smoke rapidly spirals around the player
+		'''
 	DisplayName: Galaxy Gasser
 }
 
@@ -5951,16 +7984,24 @@ LightPlasticBlock: {
 
 PlasticBand: {
 	DisplayName: Plastic Band
-	Tooltip: ""
+	Tooltip:
+		'''
+		+50 max Braincells
+		'Are you headed to the water park or the hospital?'
+		'''
 }
 
 MintalShuriken: {
-	Tooltip: ""
+	Tooltip: Homes in on enemies and bounces between them
 	DisplayName: Mintal Shuriken
 }
 
 Frankengun: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		Converts bullets into a burst of arcing lightning shots that pass through tiles
+		'I don't even have a joke for this one'
+		'''
 	DisplayName: Frankengun
 }
 
@@ -5968,3 +8009,74 @@ LycosporeSlimeBanner: {
 	Tooltip: ""
 	DisplayName: Lycospore Slime Banner
 }
+
+LawnMower: Now able to run over zombies, [c/FF0000:instantly killing them]
+RodOfHarmony: Hendecam Mod: Grants immunity to Chaos State when equipped
+ObsidianSkull: Hendecam Mod: Also grants immunity to On Fire!
+CobaltShield: Hendecam Mod: Also grants immunity to Stunned
+ObsidianShield: Hendecam Mod: Also grants immunity to Stunned and On Fire!
+Blindfold: Hendecam Mod: Also grants immunity to Blackout
+PocketMirror: Hendecam Mod: Also grants immunity to Horrified
+ReflectiveShades: Hendecam Mod: Also grants immunity to Blackout and Horrified
+Vitamins: Hendecam Mod: Also grants immunity to Withered Weapon
+ArmorPolish: Hendecam Mod: Also grants immunity to Withered Armor
+ArmorBracing: Hendecam Mod: Also grants immunity to Withered Weapon and Withered Armor
+AdhesiveBandage: Hendecam Mod: Also grants immunity to Feral Bite
+Bezoar: Hendecam Mod: Also grants immunity to Acid Venom
+MedicatedBandage: Hendecam Mod: Also grants immunity to Feral Bite and Acid Venom
+Nazar: Hendecam Mod: Also grants immunity to Mana Sickness
+Megaphone: Hendecam Mod: Also grants immunity to Suffocation
+CountercurseMantra: Hendecam Mod: Also grants immunity to Mana Sickness and Suffocation
+TrifoldMap: Hendecam Mod: Also grants immunity to Distorted
+FastClock: Hendecam Mod: Also grants immunity to Oozed
+ThePlan: Hendecam Mod: Also grants immunity to Distorted and Oozed
+HandWarmer: Hendecam Mod: Also grants immunity to Frostbite
+EngineeringHelmet: Hendecam Mod: Now grants immunity to Obstructed and Electrified
+ShimmerCloak: Hendecam Mod: Now grants complete immunity to Shimmered
+AnkhShield:
+	'''
+	Hendecam Mod: Also grants immunity to: On Fire!, VANILLA Stunned,
+	Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,
+	Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,
+	Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,
+	Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified
+	'''
+AnkhCharm:
+	'''
+	Hendecam Mod: Also grants immunity to:
+	Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,
+	Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,
+	Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,
+	Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified
+	'''
+Shimmerfly: Hendecam Mod: Can be used as bait, required for fishing in the Shimmer
+EmpressButterfly: Hendecam Mod: Can also be used to fish in the Shimmer
+CrabBanner: Hendecam Mod: Can be used as bait
+DirtBlock: Hendecam Mod: Can be used as bait
+Worm: Hendecam Mod: Sell price set to 0 because fuck you
+DD2EnergyCrystal: Hendecam Mod: Increased sell price
+FlurryBoots: Hendecam Mod: Now naturally has the effects of Ice Skates
+SailfishBoots: Hendecam Mod: Now grants 30 fishing power
+AmphibianBoots: Hendecam Mod: Now grants 30 fishing power and rocket flight
+FrogLeg: Hendecam Mod: Now grants rocket flight
+WaterWalkingBoots: Hendecam Mod: Now lets you run fast
+ObsidianWaterWalkingBoots: Hendecam Mod: Now lets you run fast
+LavaWaders: Hendecam Mod: Now lets you run fast
+FlameWakerBoots: Hendecam Mod: Now allows you to run fast, and has the effects of Obsidian Skull
+FlowerBoots: Hendecam Mod: Now allows you to run fast
+HellfireTreads: Hendecam Mod: Now allows you to walk on all liquids, grants 7 seconds of lava immunity, immunity to fire blocks, and reduced damage from touching lava
+HermesBoots: Hendecam Mod: Allows rocket boot flight
+SpectreBoots: Hendecam Mod: Has the effects of Ice Skates and Dune Riders
+IceSkates: Hendecam Mod: Has the effects Dune Riders
+SandBoots: Hendecam Mod: Now has green rarity lol
+LightningBoots: Hendecam Mod: Has the effects of Ice Skates and Dune Riders
+FrostsparkBoots: Hendecam Mod: Has the effects of Dune Riders, grants 30 more fishing power, and has much faster movement speed
+TerrasparkBoots: Hendecam Mod: Run faster on sand, negate fall damage, higher jump speed, increased fall distance, auto jump, +30 fishing power, run MUCH faster
+RocketBoots: Hendecam Mod: Allows you to run REALLY fast
+FairyBoots: Hendecam Mod: Allows you to run REALLY fast
+PDA: Hendecam Mod: Displays info of Neural Mapping Software
+CellPhone: Hendecam Mod: Displays more info, faster use speed
+Shellphone: Hendecam Mod: Displays more info, faster use speed
+ShellphoneSpawn: Hendecam Mod: Displays more info, faster use speed
+ShellphoneHell: Hendecam Mod: Displays more info, faster use speed
+ShellphoneOcean: Hendecam Mod: Displays more info, faster use speed

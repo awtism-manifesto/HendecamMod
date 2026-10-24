@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.Multiclass;
+using HendecamMod.Content.Items.Weapons.Multiclass;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using System.Collections.Generic;
@@ -25,26 +25,6 @@ public class NeoWings : ModItem
         Item.defense = 5;
     }
    
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-       
-
-        var line = new TooltipLine(Mod, "Face", "Allows flight and slow fall");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "WITNESS ME THIS TIME")
-        {
-            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "CUT THESE [SILLY STRINGS]")
-        {
-            OverrideColor = new Color(Main.rand.Next(155, 255), Main.rand.Next(155, 255), Main.rand.Next(155, 255))
-        };
-        tooltips.Add(line);
-    }
-
     public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
         ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
     {

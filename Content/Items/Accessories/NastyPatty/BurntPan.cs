@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -23,15 +23,6 @@ public class BurntPan : ModItem
         Item.damage = 100;
         Item.knockBack = 40.0f;
         Item.ChangePlayerDirectionOnShoot = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Used:"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Inflicts Hellfire and grants 4hp/s life regen"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "When Equipped:"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health and Hellfire for all attacks"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Flasks or Combat Buffs"));
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

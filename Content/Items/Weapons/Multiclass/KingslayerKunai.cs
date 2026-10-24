@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -49,24 +49,6 @@ public class KingslayerKunai : ModItem
         Projectile.NewProjectileDirect(source, position, new3Velocity, type, damage, knockback, player.whoAmI);
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws a spread of three enchanted kunai");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
-        }
     }
 
     public override void AddRecipes()

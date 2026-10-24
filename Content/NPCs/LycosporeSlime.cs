@@ -11,8 +11,6 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
 namespace HendecamMod.Content.NPCs;
-
-// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
 public class LycosporeSlime : ModNPC
 {
     public override void SetStaticDefaults()
@@ -23,24 +21,9 @@ public class LycosporeSlime : ModNPC
 
         NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
-            // Influences how the NPC looks in the Bestiary
-            Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+            Velocity = 1f
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
-    }
-
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-    {
-        // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-        {
-            // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Be careful, these Lycospore Slimes can give you an explosive surprise when hurt\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
-        });
     }
 
     public override void SetDefaults()

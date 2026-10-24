@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Tiles.Furniture;
 
 namespace HendecamMod.Content.Items.Placeables;
@@ -19,19 +19,6 @@ public class MorbiumBar : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(TileType<MorbiumBarPlaced>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-       
-        var line = new TooltipLine(Mod, "Face", "It's morbin time.");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

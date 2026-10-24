@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -19,21 +19,6 @@ public class MintalHelmet : ModItem
         Item.value = 255000;
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 17; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+13% Melee and Magic crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+65 max Mana")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

@@ -33,21 +33,6 @@ public class PyriteLegPlating : ModItem
         player.endurance = 1f - 0.96f * (1f - player.endurance);
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "4% increased damage and damage reduction");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

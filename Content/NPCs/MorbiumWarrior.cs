@@ -21,16 +21,6 @@ public class MorbiumWarrior : ModNPC
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
 
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-    {
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-        {
-            new FlavorTextBestiaryInfoElement("\"They're here to usher in Morbin Time. Fast and erratic. Do not trust them, they were locked away in the dungeon for a reason\" "),
-
-            new FlavorTextBestiaryInfoElement("")
-        });
-    }
-
     public override void SetDefaults()
     {
         NPC.width = 24;

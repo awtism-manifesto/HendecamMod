@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -36,21 +36,6 @@ public class AstatineHelmet : ModItem
         Item.value = Item.sellPrice(gold: 90); // How many coins the item is worth
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 18; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "19% increased damage and 10% increased crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+110 max mana and lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

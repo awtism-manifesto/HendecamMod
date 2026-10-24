@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.VapeDyes.Red40VapeDye;
 
@@ -15,27 +15,7 @@ public class Yellow5VapeDye : ModItem
         Item.value = 60000;
       
     }
-   
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-       
-        var line = new TooltipLine(Mod, "Face", "Vapes now emit yellow vapor");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Can be combined with other vape dyes")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Works in inventory and vanity slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-    public override void AddRecipes()
+       public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.YellowDye);

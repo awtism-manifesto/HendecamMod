@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -46,21 +46,6 @@ public class FidgetThrower : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots piercing fidget spinners that inflict random debuffs");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-2f, -3f);

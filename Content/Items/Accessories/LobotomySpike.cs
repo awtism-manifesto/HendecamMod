@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
@@ -17,25 +17,6 @@ public class LobotomySpike : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Blue;
         Item.value = 22500;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Once you hit max Lobotometer, it can no longer decay until accessory is removed")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Increases Stupid damage by 4% and Stupid armor penetration by 4")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

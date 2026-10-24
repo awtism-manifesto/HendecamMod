@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -31,21 +31,6 @@ public class TheImperialBoomerangs : ModItem
 
         Item.shoot = ProjectileType<KingBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Causes enemies hit to drop more money");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override bool CanUseItem(Player player)

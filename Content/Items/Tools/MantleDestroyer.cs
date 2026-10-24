@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Placeables;
 
@@ -28,18 +28,6 @@ public class MantleDestroyer : ModItem
         Item.hammer = 85;
        
         Item.attackSpeedOnlyAffectsWeaponAnimation = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
    

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Tiles.Furniture;
@@ -25,12 +25,6 @@ public class Godhood : ModItem
         Item.value = Item.sellPrice(gold: 77777777);
         Item.rare = ItemRarityID.Master;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Nothing can touch you, everything you touch crumbles to dust"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Works best with Hallowed Armor"));
     }
 
     public override void UpdateEquip(Player player)

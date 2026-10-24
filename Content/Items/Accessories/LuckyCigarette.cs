@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -21,23 +21,5 @@ public class LuckyCigarette : ModItem
         player.luck += 0.067f;
         player.breathMax = 150;
         player.GetCritChance(DamageClass.Generic) += CritBonus;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "10% increased crit chance");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Slightly reduces underwater breath time and increases luck")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Also looks really badass")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
     }
 }

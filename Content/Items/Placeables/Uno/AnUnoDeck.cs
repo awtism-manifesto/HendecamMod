@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using Terraria.GameContent.ItemDropRules;
 
@@ -21,19 +21,6 @@ public class AnUnoDeck : ModItem
         Item.height = 24;
         Item.rare = ItemRarityID.Expert;
         Item.value = 300000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Right click in the inventory to draw a card");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Everyone has uno dipshit, it came free with your fucking xbox'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool CanRightClick()

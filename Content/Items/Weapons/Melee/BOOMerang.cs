@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -25,23 +25,6 @@ public class BOOMerang : ModItem
         Item.value = 296000;
         Item.shoot = ProjectileType<Dynarang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 25f; // The velocity of the shot projectile.			
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "it goes boom, duh");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Somehow you manage to not blow yourself up with it..")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public override bool CanUseItem(Player player)
     {

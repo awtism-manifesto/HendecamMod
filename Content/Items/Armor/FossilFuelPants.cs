@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -32,21 +32,6 @@ public class FossilFuelPants : ModItem
         Item.value = Item.sellPrice(gold: 17, silver: 50); // How many coins the item is worth
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 9; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "22% increased movement speed and 11% increased ranged/whip speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slot")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

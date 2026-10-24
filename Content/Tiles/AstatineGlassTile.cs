@@ -1,17 +1,21 @@
-﻿namespace HendecamMod.Content.Tiles;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace HendecamMod.Content.Tiles;
 
 public class AstatineGlassTile : ModTile
 {
     public override void SetStaticDefaults()
     {
         Main.tileSolid[Type] = true;
-
+        Main.tileBlockLight[Type] = false;
+        Main.tileShine2[Type] = false;
+        TileID.Sets.DrawsWalls[Type] = true;
         DustType = DustID.CrimsonTorch;
         HitSound = SoundID.Shatter;
         AddMapEntry(new Color(196, 62, 90));
-        Main.tileBlockLight[Type] = false;
-        Main.tileNoSunLight[Type] = true;
-        
     }
 
     public override void NumDust(int i, int j, bool fail, ref int num)

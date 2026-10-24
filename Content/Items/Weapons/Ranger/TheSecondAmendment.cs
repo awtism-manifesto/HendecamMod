@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Poop;
 using HendecamMod.Content.Projectiles;
@@ -292,18 +292,6 @@ public class TheSecondAmendment : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Spews out a truly insane amount of munitions and has a built-in scope and laser sight");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "We once fought for the false promise of freedom. Now we must fight for true freedom. 161.")
-        {
-            OverrideColor = new Color(255, 45, 95)
-        };
-        tooltips.Add(line);
     }
 
     public override void HoldItem(Player player)

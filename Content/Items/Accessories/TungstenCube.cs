@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -19,25 +19,6 @@ public class TungstenCube : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.maxFallSpeed = player.maxFallSpeed * 2f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "This costs $5000 on Ebay");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "No I am not joking when I say that")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override void AddRecipes()

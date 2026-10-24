@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
@@ -37,19 +37,6 @@ public class InfernoRing : ModItem
         {
             Item.damage = 126;
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons the Inferno Ring, which incinerates absolutely everything and shoots a powerful homing meteor");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Takes up 5 sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

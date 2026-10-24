@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
@@ -183,31 +183,6 @@ public class TheSpamCannon : ModItem
         // Create a projectile.
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Quickly fires splitting, bouncing [pipis]");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to fire a [BIG SHOT] that destroys any living thing in your path")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses a random amount of Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Now's your chance to be a [BIG SHOT]'")
-        {
-            OverrideColor = new Color(Main.rand.Next(255), Main.rand.Next(255), Main.rand.Next(255))
-        };
-        tooltips.Add(line);
     }
 
     public override Vector2? HoldoutOffset()

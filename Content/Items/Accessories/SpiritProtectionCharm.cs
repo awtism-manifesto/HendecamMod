@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -31,21 +31,6 @@ public class SpiritProtectionCharm : ModItem
         recipe.AddIngredient<PurifiedSalt>(99);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "6% reduced damage taken");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+7% magic crit chance and +70 mana")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

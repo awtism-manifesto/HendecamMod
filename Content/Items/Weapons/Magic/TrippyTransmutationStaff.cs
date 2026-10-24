@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
@@ -42,21 +42,6 @@ public class TrippyTransmutationStaff : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<LycoRay>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots a beam of Lycopite energy that randomly splits into other projectiles upon hitting an enemy");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The beam can split into homing lycopite spores, a magic lycopite dagger, or an explosive mushroom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override Vector2? HoldoutOffset()

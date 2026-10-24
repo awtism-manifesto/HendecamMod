@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
@@ -21,18 +21,6 @@ public class PlutoniumCube : ModItem
         player.accRunSpeed *= Main.rand.NextFloat(0.01f, 5f);
         player.moveSpeed *= Main.rand.NextFloat(0.01f, 5f);
         player.runAcceleration *= Main.rand.NextFloat(0.01f, 5f);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Randomizes your max run speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "It can go from 1% to 500%")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
@@ -44,21 +44,6 @@ public class OrbitalLaserGun : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<OrbitTracer>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots a tracer round that marks targets for an orbital death laser strike");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Will fail to deploy if too close to space")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

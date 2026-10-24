@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -93,24 +93,6 @@ public class BoxOfRandomBullshit : ModItem
         }
 
         return false; // return true only if you want the default projectile to be fired as well
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws random sharps at your enemies");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 3 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Random bullshit go!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

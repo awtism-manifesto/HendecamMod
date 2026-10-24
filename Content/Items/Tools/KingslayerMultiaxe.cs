@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
@@ -62,24 +62,6 @@ public class KingslayerMultiaxe : ModItem
         }
 
         return base.CanUseItem(player);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Left click for pickaxe and axe functionality");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Can mine Lycopite")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.GlobalNPCs;
@@ -125,11 +125,7 @@ public class River : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"They have no rules, no boundaries. They don't flinch at torture, human trafficking or genocide. They're not loyal to a flag or a country or any set of ideals. They trade blood for money.\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.River.Bestiary")
         });
     }
 

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -43,21 +43,6 @@ public class TheFishStick : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 2 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'kanye's favorite'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.

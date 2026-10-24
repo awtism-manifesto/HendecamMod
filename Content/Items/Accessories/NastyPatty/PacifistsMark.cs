@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -13,12 +13,6 @@ public class PacifistsMark : ModItem
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Grants 150 more Health, at the cost of Combat Buffs");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

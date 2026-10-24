@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.Bestiary;
@@ -47,8 +47,7 @@ public class FlyingPig : ModNPC
     {
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
-            new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that these strange, pig-like creatures with mouths sewn shut are reincarnations of evil and greedy people who've died. This form is a punishment for those souls.\" "),
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.FlyingPig.Bestiary")
         });
     }
 

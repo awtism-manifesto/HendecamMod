@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -32,18 +32,6 @@ public class TransMask : ModItem
         Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 8; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "+6% melee damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+2% crit chance")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

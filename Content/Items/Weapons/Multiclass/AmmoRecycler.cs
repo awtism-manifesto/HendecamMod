@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using Microsoft.Xna.Framework;
@@ -261,29 +261,6 @@ public class AmmoRecycler : ModItem
         player.GetModPlayer<LaserDrawFire>().Laser = true;
     }
 
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Cycles between using Bullets, Arrows, Rockets and Darts with every shot");
-        tooltips.Add(line);
-
-        var line1 = new TooltipLine(Mod, "Face", "Has a built-in laser sight, can also Right click to zoom");
-        tooltips.Add(line1);
-
-        line = new TooltipLine(Mod, "Face", "50% chance to not consume ammo, increases all ammo base damage by 1.75x");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "This ammo damage multiplier gets stronger in hardmode and again after beating Lunatic Cultist");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not work unless you have all four types of ammo");
-        tooltips.Add(line);
-        if (ModLoader.TryGetMod("Fargowiltas", out Mod Fargo))
-        {
-        line = new TooltipLine(Mod, "Face", "WARNING: This weapon may accidentally consume modded endless ammo items.");
-        tooltips.Add(line);
-            line = new TooltipLine(Mod, "Face", "It will not consume ammo if the stack size is 3996 or larger.");
-            tooltips.Add(line);
-        }
-    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

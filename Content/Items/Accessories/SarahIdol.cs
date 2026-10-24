@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -13,21 +13,6 @@ public class SarahIdol : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 900000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        
-        var line = new TooltipLine(Mod, "Face", "Permanently makes the player upside down");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Dedicated to my girlfriend, who i love very much despite the fact that she's upside down'- Autism Manifesto")
-        {
-            OverrideColor = new Color(255,255,255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override void AddRecipes()
     {

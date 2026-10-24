@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Materials;
@@ -54,32 +54,6 @@ public class YelmutFaeChestplate : ModItem
         player.wingAccRunSpeed += 1.5f;
     
 
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-      
-        tooltips.Add(new TooltipLine(Mod, "Face", "12% increased melee speed and 15% increased ranged damage"));
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "+80 max Mana and Max Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "+1 max minions and +2 max sentries")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "Counts as wings, enhances other wings when combined")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(220, 40, 245)
-        });
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

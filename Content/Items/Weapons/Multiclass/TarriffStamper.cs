@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
@@ -49,26 +49,5 @@ public class TarriffStamper : ModItem
         // Inflict the OnFire debuff for 1 second onto any NPC/Monster that this hits.
         // 60 frames = 1 second
         target.AddBuff(BuffType<Stamped>(), 450);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Stamps your enemies with red ink that reduces their defense");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 8 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'May also have adverse effects on the U.S economy...'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 }

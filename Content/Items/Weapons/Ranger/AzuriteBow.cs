@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -24,18 +24,6 @@ public class AzuriteBow : ModItem
         Item.shoot = ProjectileID.WoodenArrowFriendly; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 11f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Converts arrows into Azurite arrows");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Azurite arrows have powerful homing")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

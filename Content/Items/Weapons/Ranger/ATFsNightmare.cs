@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Weapons.Melee;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -71,42 +71,6 @@ public class ATFsNightmare : ModItem
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.85f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts bullets into Terra Rounds that make homing clones of themselves upon hitting an enemy");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Ignores a large portion of enemy defense")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "85% chance to not consume ammo")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'The Right To Bear Arms.'")
-        {
-            OverrideColor = new Color(95, 90, 255)
-        };
-        tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     public override void AddRecipes()

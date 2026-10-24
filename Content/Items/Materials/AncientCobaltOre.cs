@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Tiles;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -19,17 +19,5 @@ public class AncientCobaltOre : ModItem
         Item.value = 2950;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(TileType<AncientCobaltOrePlaced>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "'It's true power lies behind a fleshy wall'");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 }

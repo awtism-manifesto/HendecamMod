@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -38,21 +38,6 @@ public class TransBodyplate : ModItem
     {
         player.GetDamage(DamageClass.Generic) += AdditiveDamageBonus / 100f;
         player.GetCritChance(damageClass: DamageClass.Generic) += GenericCritBonus;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Tooltip code
-        var line = new TooltipLine(Mod, "Face", "6% increased damage and 3% increased crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

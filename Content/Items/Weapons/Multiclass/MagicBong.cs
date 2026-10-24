@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -79,21 +79,6 @@ public class MagicBong : ModItem
 
     // return false; // Return false because we don't want tModLoader to shoot projectile
     // }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Creates magic, tile-ignoring smoke that rises up at enemies");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 11 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
 
     public override void AddRecipes()
     {

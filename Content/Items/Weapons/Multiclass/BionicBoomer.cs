@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Melee;
@@ -94,24 +94,6 @@ public class BionicBoomer : ModItem
             return true;
         }
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws armor piercing astatine glaives at superhuman speeds");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to activate Turbo Charge, massively increasing attack speed for a short time")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "IS able to benefit from attack speed bonuses")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-20f, 4f);

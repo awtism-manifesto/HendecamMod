@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -13,12 +13,6 @@ public class PoachersContract : ModItem
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Grants light, at the cost of Light Pets");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

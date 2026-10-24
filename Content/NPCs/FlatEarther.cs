@@ -23,16 +23,6 @@ public class FlatEarther : ModNPC
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
 
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-    {
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-        {
-            new FlavorTextBestiaryInfoElement("\"They're stupid idiots who dig in their butt constantly and think helping the adderall sniffing cultist will prove their lobotomized ass flat earth theories correct or something idk, these guys are just REALLY dumb and show up during the pillars so that's what i think and i'm the developer of the mod so i guess that is true and oh my god this description is way too long\" "),
-
-            new FlavorTextBestiaryInfoElement("")
-        });
-    }
-
     public override void SetDefaults()
     {
         NPC.width = 24;

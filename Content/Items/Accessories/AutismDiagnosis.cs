@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
@@ -27,23 +27,6 @@ public class AutismDiagnosis : ModItem
         recipe.AddIngredient<AutismOrb>(6);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "8% increased damage reduction");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Increases damage by 12% at either low or maximum Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Woah, this is expensive!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public static readonly int AdditiveStupidDamageBonus = 12;
     public override void UpdateAccessory(Player player, bool hideVisual)

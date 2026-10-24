@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -46,35 +46,6 @@ public class BeetleBomb : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws heavy beetle bombs that explode into many beetles");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "The faster the bomb is moving when it explodes, the faster the beetles fly")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not damage tiles")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 9 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod Cross-Mod (Thorium): Now deals Throwing damage") { OverrideColor = Color.LightSeaGreen });
-        }
-
-       
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(20);

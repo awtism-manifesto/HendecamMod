@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -34,22 +34,7 @@ public class MintalShuriken : ModItem
         // Projectile Properties
         Item.shootSpeed = 15.95f;
         Item.shoot = ProjectileType<MintalShurikenProj>(); // The projectile that will be thrown
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Homes in on enemies and bounces between them");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
-    }
-    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+    }    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(250);

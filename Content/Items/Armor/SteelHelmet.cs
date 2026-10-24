@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -21,18 +21,6 @@ public class SteelHelmet : ModItem
         Item.value = Item.sellPrice(gold: 2); 
         Item.rare = ItemRarityID.Blue; 
         Item.defense = 6; 
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -63,21 +63,6 @@ public class TheBrainFreeze : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "There is no tooltip, you have to use it and see what it does");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-Autism Manifesto")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

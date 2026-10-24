@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Armor;
+using HendecamMod.Content.Items.Armor;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 using static HendecamMod.Content.Items.Armor.ArchangelGreaves;
@@ -22,18 +22,6 @@ public class FakeGodhood : ModItem
         Item.value = Item.sellPrice(gold: 67);
         Item.rare = ItemRarityID.Master;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Gives effects of Archangel Wings");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "-Testing Item-")
-        {
-            OverrideColor = new Color(255, 25, 99)
-        };
-        tooltips.Add(line);
-      
     }
 
     public override void UpdateEquip(Player player)

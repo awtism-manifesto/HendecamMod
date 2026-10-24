@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Common.Systems;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -17,20 +17,6 @@ public class CubicMold : ModItem
         Item.rare = ItemRarityID.White;
         Item.value = 30;
         Item.maxStack = 9999;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Used for making cubes out of various materials");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

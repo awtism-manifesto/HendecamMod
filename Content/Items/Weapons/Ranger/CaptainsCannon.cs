@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -96,23 +96,6 @@ public class CaptainsCannon : ModItem
           
        
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Left click to rapidly shoot bullets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to shoot a powerful, piercing cannonball")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "33% chance to not consume ammo")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override Vector2? HoldoutOffset()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -29,21 +29,6 @@ public class MintalLeggings : ModItem
         Item.value = 270000;
         Item.rare = ItemRarityID.LightRed; // The rarity of the item
         Item.defense = 14; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "8% increased melee and magic attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "9% increased movement speed")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void UpdateEquip(Player player)

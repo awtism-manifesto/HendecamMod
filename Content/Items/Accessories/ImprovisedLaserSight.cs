@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -19,27 +19,6 @@ public class ImprovisedLaserSight : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
         Item.value = 85000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "4% increased ranged damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "6% increased ranged crit chance")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
-
     }
 
     public override void AddRecipes()

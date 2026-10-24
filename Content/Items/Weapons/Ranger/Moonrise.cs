@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 
@@ -48,21 +48,6 @@ public class Moonrise : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<LunarDart>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts darts into hypersonic luminite darts that deal huge damage on impact and inflict Moon Burn");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to zoom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

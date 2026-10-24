@@ -29,23 +29,6 @@ public class SpookyWoodSword : ModItem
         Item.shootSpeed = 8.25f;
        
     }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        
-        var line = new TooltipLine(Mod, "Face", "Inflicts Hellfire on hit");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Flings tons of hellfire sparks everywhere")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         SoundEngine.PlaySound(SoundID.Item13, player.position); // Adding second use sound to item 

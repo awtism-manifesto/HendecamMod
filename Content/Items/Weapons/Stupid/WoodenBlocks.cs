@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -67,25 +67,6 @@ public class WoodenBlocks : ModItem
                   .AddLobotometer(LobotometerCost);
         }
         return base.UseItem(player);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-       
-        var line = new TooltipLine(Mod, "Face", "Throws wooden toy blocks at your opponents");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 1 Braincell")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Don't know your ABC's? Now you can throw them!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using Terraria.Localization;
 
@@ -36,20 +36,6 @@ public class AzuriteHat : ModItem
         Item.value = 354000;
         Item.rare = ItemRarityID.Orange;
         Item.defense = 5;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "15% increased melee damage and 10% increased melee speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

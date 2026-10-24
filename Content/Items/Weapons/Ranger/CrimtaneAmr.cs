@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -55,21 +55,6 @@ public class CrimtaneAmr : ModItem
         {
             damage = (int)(damage * 0.85f);
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots rapid, piercing rockets that deal massive damage on impact");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Explodes every time it pierces")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Items;
@@ -107,33 +107,7 @@ public class EchoKit : ModItem
         }
         return null;
     }
-    
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "Left click to fire high velocity tri-shots"));
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "Right click to fire a volley of sticky bombs")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "Hold both left and right click to fire a focus beam that deals more damage to weakened enemies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "Enables flight and slow fall while held")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        });
-
-        tooltips.Add(new TooltipLine(Mod, "Face", "'I am always ready to learn'")
-        {
-            OverrideColor = new Color(151, 212, 255)
-        });
-    }
-    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         if (leftMouseHeld && rightMouseHeld)
             return false;

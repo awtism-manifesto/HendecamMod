@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
@@ -24,27 +24,6 @@ public class FreeHealthcare : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = 0;
         Item.lifeRegen = (int)2.5f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases life regen and makes enemies much more likely to drop hearts on death");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'They'd never let this exist in TerMerica'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

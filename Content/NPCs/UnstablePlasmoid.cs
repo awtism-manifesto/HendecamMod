@@ -76,20 +76,6 @@ public class UnstablePlasmoid : ModNPC
         target.AddBuff(buff3Type, time3Add);
     }
 
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-    {
-        // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-        {
-            // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Terrarian folklore says that even the Moon Lord trembles in fear at the destructive potential of Unstable Plasmoids. Studying them may be the key to major technological advancements...\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
-        });
-    }
-
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         npcLoot.Add(ItemDropRule.Common(ItemType<AstatineOre>(), 1, 191, 251));

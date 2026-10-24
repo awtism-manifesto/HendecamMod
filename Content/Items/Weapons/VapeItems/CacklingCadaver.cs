@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
@@ -93,21 +93,6 @@ public class CacklingCadaver : ModItem
     {
         return new Vector2(-1.83f, 6f);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 4 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Bone vapor ignores enemy defense and grants Extra-Skeletal Defense when inhaled")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

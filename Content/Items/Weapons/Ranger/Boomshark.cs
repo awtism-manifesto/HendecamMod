@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -51,20 +51,7 @@ public class Boomshark : ModItem
         }
 
         return false; 
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "33% chance to not consume ammo");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'trust me, this is a WONDERFUL idea'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-    public override void AddRecipes()
+    }    public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Boomstick);

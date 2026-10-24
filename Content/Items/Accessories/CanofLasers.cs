@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.Ammo;
+using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 
@@ -30,21 +30,6 @@ public class CanofLasers : ModItem
             Main.LocalPlayer.GetItem(Main.myPlayer, new Item(ItemID.Worm, Main.rand.Next(5, 12)), default(GetItemSettings));
         }
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "All projectile attacks shoot an extra laser projectile every 4th shot");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Why'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

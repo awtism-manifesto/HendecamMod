@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -17,21 +17,6 @@ public class SaltPendant : ModItem
         Item.rare = ItemRarityID.Green;
         Item.value = 75000;
         Item.defense = 1;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "5.55% increased damage reduction");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'For your spiritual protection'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

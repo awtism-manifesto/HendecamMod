@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -36,21 +36,6 @@ public class PlutoniumChestplate : ModItem
         Item.value = Item.sellPrice(gold: 27); // How many coins the item is worth
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 21; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "14% increased damage and 7% increased crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+11% melee speed and +55% lobotometer decay rate")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

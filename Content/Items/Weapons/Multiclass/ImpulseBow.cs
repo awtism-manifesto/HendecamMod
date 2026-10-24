@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -37,21 +37,6 @@ public class ImpulseBow : ModItem
         Item.shootSpeed = 28.5f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots an astatine pulse shot along with your arrow");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     public override void AddRecipes()

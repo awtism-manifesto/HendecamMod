@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
@@ -45,20 +45,6 @@ public class FissionRod : ModItem
     {
         type = ProjectileType<AstaFission>();
         position = Main.MouseWorld;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Causes a large, recursive explosion on the mouse position");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
     }
 
     public override Vector2? HoldoutOffset()

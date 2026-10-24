@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,12 +12,6 @@ public class TornFilter : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 15% more Attack Speed and double your breath timer"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Activated or Enviornmental Buffs"));
     }
 
     public override void UpdateEquip(Player player)

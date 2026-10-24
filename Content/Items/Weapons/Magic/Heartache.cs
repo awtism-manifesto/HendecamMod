@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using Terraria.DataStructures;
 
@@ -43,21 +43,6 @@ public class Heartache : ModItem
     }
 
    
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots hearts");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Significantly increases life regen and reduces mana consumption upon hitting an enemy")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
     public override Vector2? HoldoutOffset()

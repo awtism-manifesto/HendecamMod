@@ -32,19 +32,6 @@ public class PyriteHood : ModItem
         player.statManaMax2 += MaxManaIncrease;
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+70 max mana and +7% magic crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "15% increased magic damage";

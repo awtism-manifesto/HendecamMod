@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles.Items;
+using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Melee;
@@ -31,24 +31,6 @@ public class SpoarGlaive : ModItem
         Item.shootSpeed = 14.33f;
     }
    
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Homes in on enemies for a bit before returning");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Prioritizes homing in on new enemies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'It stands for Spore Perception Optimized Advanced Ricochet'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.

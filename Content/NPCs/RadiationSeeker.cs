@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
@@ -50,8 +50,7 @@ public class RadiationSeeker : ModNPC
     {
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
-            new FlavorTextBestiaryInfoElement("\"They fucking LOOOOOOOOOOVE radiation\" "),
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.RadiationSeeker.Bestiary")
         });
     }
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

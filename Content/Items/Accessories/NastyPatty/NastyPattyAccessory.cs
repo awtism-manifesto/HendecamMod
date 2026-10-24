@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Tiles.Furniture;
+using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,14 +12,6 @@ public class NastyPattyAccessory : ModItem
         Item.value = Item.sellPrice(silver: 16000);
         Item.rare = ItemRarityID.Quest;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 150 Health, 15% increased attack speed, double the breath timer, Hellfire for all attacks,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 mana, 4 Luck, 20% Damage Reduction, 25 Safe Fall Distance, 3hp/s, Light, 25% Crit Chance,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Double Movement Speed, 50 Defense, 40 Armor Penetraton, 33% more Generic Damage, and much higher jump speed"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from any vanilla buff"));
     }
 
     public override void UpdateEquip(Player player)

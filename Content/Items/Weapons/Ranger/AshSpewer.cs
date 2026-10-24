@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -67,21 +67,6 @@ public class AshSpewer : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses gel as ammo");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Spews smoldering ash at your enemies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

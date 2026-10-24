@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -44,21 +44,6 @@ public class SpartansWill : ModItem
         type = ProjectileType<SpartanRageSpear>();
         Projectile.NewProjectileDirect(source, position, velocity * 2.25f, type, (int)(damage * 0.9f), knockback, player.whoAmI);
         return true; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Projects a magical spear made of pure rage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override bool CanUseItem(Player player)

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -33,21 +33,6 @@ public class RadRang : ModItem
 
         Item.shoot = ProjectileType<RadBoomerang>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 12.25f; // The velocity of the shot projectile.			
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Releases a weakly homing uranium particle on hit");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "ignores 10 enemy armor")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override bool AllowPrefix(int pre)

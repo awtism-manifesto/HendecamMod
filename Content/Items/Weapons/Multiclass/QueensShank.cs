@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
@@ -30,24 +30,7 @@ public class QueensShank : ModItem
         Item.shoot = ProjectileType<QueensShankStab>();
         Item.shootSpeed = 5.25f;
     }
-   
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to stab, right click to throw");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Explodes into homing crystal gel shards on impact")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
-
-        
-    }
-    public override bool AltFunctionUse(Player player)
+       public override bool AltFunctionUse(Player player)
     {
         return true;
     }

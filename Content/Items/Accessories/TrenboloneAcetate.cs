@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -24,31 +24,6 @@ public class TrenboloneAcetate : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Orange;
         Item.value = 198000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "9% incrased damage and attack speed for both the Stupid and Melee classes");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+90 Max Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Enemies are more likely to target the player")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'For only the truest of meatheads'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

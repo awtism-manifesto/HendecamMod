@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -13,15 +13,6 @@ public class RiotShield : ModItem
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Weakness, Withered Weapon,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Broken Armor, Withered Armor, Bleeding,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Feral Bite, Poison, Acid Venom. Burning,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Blackout, Darkness, Stoned, Horrified,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "OnFire, Dazed, and Knockback"));
     }
 
     public override void UpdateEquip(Player player)

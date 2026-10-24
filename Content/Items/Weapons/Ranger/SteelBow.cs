@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -37,21 +37,6 @@ public class SteelBow : ModItem
     public override Color? GetAlpha(Color lightColor)
     {
         return Color.White;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

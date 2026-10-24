@@ -1,6 +1,5 @@
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.Global;
-using System.Collections.Generic;
 
 namespace HendecamMod.Common.Global;
 
@@ -10,7 +9,7 @@ public class RodOfHarmonyBuff : GlobalItem
     {
         return item.type == ItemID.RodOfHarmony;
     }
-    
+
     public override void SetDefaults(Item item)
     {
         item.value = Item.sellPrice(silver: 500);
@@ -21,11 +20,6 @@ public class RodOfHarmonyBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.ChaosState] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Grants immunity to Chaos State when equipped") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -47,11 +41,6 @@ public class ObsidanSkullBuff : GlobalItem
     {
         player.buffImmune[BuffID.OnFire] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to On Fire!") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class CobaltShieldBuff : GlobalItem
@@ -71,11 +60,6 @@ public class CobaltShieldBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.ClearBuff(BuffID.Dazed);
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -98,11 +82,6 @@ public class ObsidianShieldBuff : GlobalItem
         player.buffImmune[BuffID.OnFire] = true;
         player.ClearBuff(BuffID.Dazed);
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Stunned and On Fire!") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class BlindfoldBuff : GlobalItem
@@ -123,11 +102,6 @@ public class BlindfoldBuff : GlobalItem
     {
         player.buffImmune[BuffID.Blackout] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class PocketMirrorBuff : GlobalItem
@@ -147,11 +121,6 @@ public class PocketMirrorBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.Horrified] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Horrified") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -174,11 +143,6 @@ public class ReflectiveShadesBuff : GlobalItem
         player.buffImmune[BuffID.Blackout] = true;
         player.buffImmune[BuffID.Horrified] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Blackout and Horrified") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class VitaminsBuff : GlobalItem
@@ -199,11 +163,6 @@ public class VitaminsBuff : GlobalItem
     {
         player.buffImmune[BuffID.WitheredWeapon] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class ArmorPolishBuff : GlobalItem
@@ -223,11 +182,6 @@ public class ArmorPolishBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.WitheredArmor] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Armor") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -250,11 +204,6 @@ public class ArmorBracingBuff : GlobalItem
         player.buffImmune[BuffID.WitheredWeapon] = true;
         player.buffImmune[BuffID.WitheredArmor] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Withered Weapon and Withered Armor") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class AdhesiveBandageBuff : GlobalItem
@@ -275,11 +224,6 @@ public class AdhesiveBandageBuff : GlobalItem
     {
         player.buffImmune[BuffID.Rabies] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class BezoarBuff : GlobalItem
@@ -299,11 +243,6 @@ public class BezoarBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.Venom] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Acid Venom") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -326,11 +265,6 @@ public class MedicatedBandageBuff : GlobalItem
         player.buffImmune[BuffID.Rabies] = true;
         player.buffImmune[BuffID.Venom] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Feral Bite and Acid Venom") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class NazarBuff : GlobalItem
@@ -351,11 +285,6 @@ public class NazarBuff : GlobalItem
     {
         player.buffImmune[BuffID.ManaSickness] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class MegaphoneBuff : GlobalItem
@@ -375,11 +304,6 @@ public class MegaphoneBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.Suffocation] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Suffocation") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -402,11 +326,6 @@ public class CounterCurseMantraBuff : GlobalItem
         player.buffImmune[BuffID.ManaSickness] = true;
         player.buffImmune[BuffID.Suffocation] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Mana Sickness and Suffocation") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class TrifoldMapBuff : GlobalItem
@@ -427,11 +346,6 @@ public class TrifoldMapBuff : GlobalItem
     {
         player.buffImmune[BuffID.VortexDebuff] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class FastClockBuff : GlobalItem
@@ -451,11 +365,6 @@ public class FastClockBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.OgreSpit] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Oozed") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -478,11 +387,6 @@ public class ThePlanBuff : GlobalItem
         player.buffImmune[BuffID.VortexDebuff] = true;
         player.buffImmune[BuffID.OgreSpit] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Distorted and Oozed") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class HandWarmerBuff : GlobalItem
@@ -502,11 +406,6 @@ public class HandWarmerBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.Frostburn2] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to Frostbite") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -529,11 +428,6 @@ public class EngineeringHelmetBuff : GlobalItem
         player.buffImmune[BuffID.Obstructed] = true;
         player.buffImmune[BuffID.Electrified] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants immunity to Obstructed and Electrified") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class ChromaticCloakBuff : GlobalItem
@@ -553,11 +447,6 @@ public class ChromaticCloakBuff : GlobalItem
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.buffImmune[BuffID.Shimmer] = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants complete immunity to Shimmered") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -603,15 +492,6 @@ public class AnkhShieldBuff : GlobalItem
         player.buffImmune[BuffID.Obstructed] = true;
         player.buffImmune[BuffID.Electrified] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to: On Fire!, VANILLA Stunned,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class AnkhCharmBuff : GlobalItem
@@ -652,15 +532,6 @@ public class AnkhCharmBuff : GlobalItem
         player.buffImmune[BuffID.Obstructed] = true;
         player.buffImmune[BuffID.Electrified] = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Also grants immunity to:") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Blackout, Horrified, Withered Armor, Withered Weapon, Feral Bite,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Acid Venom, Mana Sickness, Suffocation, Distorted, Oozed,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Peckish, Hungry, Starving, Frostburn, Shadowflame, Hellfire,") { OverrideColor = Color.DarkViolet });
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class FaelingBuff : GlobalItem
@@ -673,24 +544,6 @@ public class FaelingBuff : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.bait = 50;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait, required for fishing in the Shimmer") { OverrideColor = Color.DarkViolet });
-    }
-}
-
-public class EmpressRoseToyMessage : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.EmpressButterfly;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can also be used to fish in the Shimmer") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -705,11 +558,6 @@ public class CrabBannerBuff : GlobalItem
     {
         item.bait = 1200000;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class DirtBuff : GlobalItem
@@ -722,11 +570,6 @@ public class DirtBuff : GlobalItem
     public override void SetDefaults(Item item)
     {
         item.bait = 1;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Can be used as bait") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -741,11 +584,6 @@ public class WormNerf : GlobalItem
     {
         item.value = Item.sellPrice(silver: 0);
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Sell price set to 0 because fuck you") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class EtherianBuff : GlobalItem
@@ -759,26 +597,6 @@ public class EtherianBuff : GlobalItem
     {
         item.value = 1250;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Increased sell price") { OverrideColor = Color.DarkViolet });
-    }
-}
-
-public class LawnmowerBuff : GlobalItem
-{
-    public override bool AppliesToEntity(Item item, bool lateInstantiation)
-    {
-        return item.type == ItemID.LawnMower;
-    }
-
-   
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now able to run over zombies, instantly killing them") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class FlurryBuff : GlobalItem
@@ -790,21 +608,12 @@ public class FlurryBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FlurryBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FlurryBoots;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.iceSkate = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now naturally has the effects of Ice Skates") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -817,21 +626,12 @@ public class SailfishBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.SailfishBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.SailfishBoots;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.fishingSkill += 30;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -844,11 +644,7 @@ public class AmphBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.AmphibianBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.AmphibianBoots;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -856,11 +652,6 @@ public class AmphBuff : GlobalItem
         player.fishingSkill += 30;
         player.rocketBoots = 1;
         player.vanityRocketBoots = 4;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants 30 fishing power and rocket flight") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -873,11 +664,7 @@ public class FrogBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FrogLeg;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FrogLeg;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -885,15 +672,9 @@ public class FrogBuff : GlobalItem
         player.rocketBoots = 1;
         player.vanityRocketBoots = 4;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now grants rocket flight") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class WaterWalkingBuff : GlobalItem
-
 {
     public override void SetDefaults(Item item)
     {
@@ -902,22 +683,13 @@ public class WaterWalkingBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.WaterWalkingBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.WaterWalkingBoots;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         player.moveSpeed += 1f;
         player.accRunSpeed = 6.75f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -925,11 +697,7 @@ public class ObsidianWaterWalkingBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.ObsidianWaterWalkingBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.ObsidianWaterWalkingBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -941,26 +709,15 @@ public class ObsidianWaterWalkingBuff : GlobalItem
     {
         player.moveSpeed += 1f;
         player.accRunSpeed = 6.75f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
     }
 }
 
 public class LavaWaderBuff : GlobalItem
 {
-
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.LavaWaders;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.LavaWaders;
     }
-    
 
     public override void SetDefaults(Item item)
     {
@@ -971,11 +728,6 @@ public class LavaWaderBuff : GlobalItem
     {
         player.moveSpeed += 1f;
         player.accRunSpeed = 6.75f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now lets you run fast") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -988,11 +740,7 @@ public class FlameBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FlameWakerBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FlameWakerBoots;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -1001,23 +749,13 @@ public class FlameBuff : GlobalItem
         player.accRunSpeed = 6.75f;
         player.fireWalk = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast, and has the effects of Obsidian Skull") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class FlowerBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FlowerBoots;
-        }
-        else return false;
-      
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FlowerBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1029,11 +767,6 @@ public class FlowerBuff : GlobalItem
     {
         player.moveSpeed += 1f;
         player.accRunSpeed = 6.75f;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to run fast") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -1046,11 +779,7 @@ public class HellfireBuff : GlobalItem
 
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.HellfireTreads;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.HellfireTreads;
     }
 
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -1060,22 +789,13 @@ public class HellfireBuff : GlobalItem
         player.waterWalk2 = true;
         player.lavaMax += 210;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now allows you to walk on all liquids, grants 7 seconds of lava immunity, immunity to fire blocks, and reduced damage from touching lava") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class HermesBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.HermesBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.HermesBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1088,22 +808,13 @@ public class HermesBuff : GlobalItem
         player.rocketBoots = 1;
         player.vanityRocketBoots = 2;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows rocket boot flight") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class SpectreBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.SpectreBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.SpectreBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1115,11 +826,6 @@ public class SpectreBuff : GlobalItem
     {
         player.iceSkate = true;
         player.desertBoots = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -1127,11 +833,7 @@ public class IceBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.IceSkates;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.IceSkates;
     }
 
     public override void SetDefaults(Item item)
@@ -1143,32 +845,18 @@ public class IceBuff : GlobalItem
     {
         player.desertBoots = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects Dune Riders") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class DuneBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.SandBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.SandBoots;
     }
 
     public override void SetDefaults(Item item)
     {
         item.rare = ItemRarityID.Green;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now has green rarity lol") { OverrideColor = Color.DarkViolet });
     }
 }
 
@@ -1176,11 +864,7 @@ public class LightningBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.LightningBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.LightningBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1193,22 +877,13 @@ public class LightningBuff : GlobalItem
         player.iceSkate = true;
         player.desertBoots = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Ice Skates and Dune Riders") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class FrostBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FrostsparkBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FrostsparkBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1222,22 +897,13 @@ public class FrostBuff : GlobalItem
         player.desertBoots = true;
         player.fishingSkill += 30;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Has the effects of Dune Riders, grants 30 more fishing power, and has much faster movement speed") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class TerraBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.TerrasparkBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.TerrasparkBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1266,22 +932,13 @@ public class TerraBuff : GlobalItem
             }
         }
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Run faster on sand, negate fall damage, higher jump speed, increased fall distance, auto jump, +30 fishing power, run MUCH faster") { OverrideColor = Color.DarkViolet });
-    }
 }
 
 public class RocketBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.RocketBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.RocketBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1303,21 +960,13 @@ public class RocketBuff : GlobalItem
             }
         }
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class FairyBuff : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
     {
-        if (GetInstance<HendecamConfig>().BootsTreeRework == true)
-        {
-            return item.type == ItemID.FairyBoots;
-        }
-        else return false;
+        return GetInstance<HendecamConfig>().BootsTreeRework && item.type == ItemID.FairyBoots;
     }
 
     public override void SetDefaults(Item item)
@@ -1330,12 +979,8 @@ public class FairyBuff : GlobalItem
         player.moveSpeed += 1f;
         player.accRunSpeed = 12f;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Allows you to run REALLY fast") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Peebotomy : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1343,20 +988,14 @@ public class Peebotomy : GlobalItem
         return item.type == ItemID.PDA;
     }
 
-    
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
-
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays info of Neural Mapping Software") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Cellbotomy : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1369,19 +1008,15 @@ public class Cellbotomy : GlobalItem
         item.useTime = 15;
         item.useAnimation = 15;
     }
+
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
-
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Shellbotomy : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1394,19 +1029,15 @@ public class Shellbotomy : GlobalItem
         item.useTime = 15;
         item.useAnimation = 15;
     }
+
     public override void UpdateInfoAccessory(Item item, Player player)
     {
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
-    
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Shellbotomy2 : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1426,12 +1057,8 @@ public class Shellbotomy2 : GlobalItem
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Shellbotomy3 : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1451,12 +1078,8 @@ public class Shellbotomy3 : GlobalItem
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
     }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
-    }
 }
+
 public class Shellbotomy4 : GlobalItem
 {
     public override bool AppliesToEntity(Item item, bool lateInstantiation)
@@ -1475,10 +1098,5 @@ public class Shellbotomy4 : GlobalItem
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
         player.GetModPlayer<JokePlayer>().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
-    }
-
-    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Displays more info, faster use speed") { OverrideColor = Color.DarkViolet });
     }
 }

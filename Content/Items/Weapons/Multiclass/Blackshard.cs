@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Weapons.Melee;
@@ -100,31 +100,6 @@ public class Blackshard : ModItem
 
             return false; // Prevent vanilla projectile spawn
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to shoot a barrage of swords");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to shoot a wave of splitting stars")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Tag enemies with the stars to enhance the swords")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        //
-        line = new TooltipLine(Mod, "Face", "Increases the player's max mana while in use")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
     }
 
     public override Vector2? HoldoutOffset()

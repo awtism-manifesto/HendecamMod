@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -54,19 +54,5 @@ public class FlinxsFurblade : ModItem
             recipe.AddIngredient(ItemID.DeerclopsBossBag);
             recipe.Register();
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Flings bouncy furballs with every swing");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 }

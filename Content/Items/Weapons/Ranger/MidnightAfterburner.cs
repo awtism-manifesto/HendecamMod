@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -96,21 +96,6 @@ public class MidnightAfterburner : ModItem
         }
 
         return true; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Burns all enemies in front of you with a storm of shadowflame sparks");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Also augmented with an explosive shot of dark energy and a large oil ball")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
     }
 
     public override void AddRecipes()

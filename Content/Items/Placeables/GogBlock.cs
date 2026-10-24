@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Tiles.Blocks;
 using System.Collections.Generic;
 
@@ -25,31 +25,6 @@ public class GogBlock : ModItem
         Item.useAnimation = 15;
         Item.useTime = 15;
         Item.DefaultToPlaceableTile(TileType<GogBlockPlaced>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Can spread to ANY tile, and spreads exponentially fast");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Will not spread unless all five gog enablers, enable gog enablers, and experimental features are enabled in the configs")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "FINAL WARNING!!! THIS BLOCK CAN AND WILL TAKE OVER AND DESTROY YOUR WORLD IF PLACED")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Bluer than blue...")
-        {
-            OverrideColor = new Color(15, 15, 105)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

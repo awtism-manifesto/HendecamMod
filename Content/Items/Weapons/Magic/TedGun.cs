@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Tiles.Furniture;
@@ -42,21 +42,6 @@ public class TedGun : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<Projectiles.TedPackage>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Delivers chemical bombs to your enemies that inflict various debuffs");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "For when the consequences of the industrial revolution start hitting a little too close to home")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

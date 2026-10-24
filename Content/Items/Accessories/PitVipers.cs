@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -24,31 +24,6 @@ public class PitVipers : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 1225000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "12% incrased damage, crit chance, and attack speed as well as 12 armor penetration for the Stupid class");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+175 Max Braincells and 150% increased lobotometer decay rate")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
-        line = new TooltipLine(Mod, "Face", "Significantly reduces the Lobotometer's impact on your vision")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'The unofficial logo of frat boys, the stupidest demographic in existence'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 
@@ -37,12 +37,6 @@ public class ObsidianSword : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

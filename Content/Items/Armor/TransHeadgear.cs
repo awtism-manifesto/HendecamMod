@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 
 
@@ -26,18 +26,6 @@ public class TransHeadgear : ModItem
         Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 2; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "+11% summon damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
@@ -24,21 +24,6 @@ public class ChainReaction : ModItem
         Item.width = 14;
         Item.height = 14;
         Item.value = 775000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "11 summon tag damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Summons a homing plutonium ray upon hitting an enemy")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

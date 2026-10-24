@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.NormalOnes;
 
@@ -12,11 +12,6 @@ public class MoltenRose : ModItem
         Item.value = Item.sellPrice(silver: 825);
         Item.rare = ItemRarityID.Green;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Reduces damage from touching lava, and provides 7 seconds of lava immunity"));
     }
 
     public override void UpdateEquip(Player player)

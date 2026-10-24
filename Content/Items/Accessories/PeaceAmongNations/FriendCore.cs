@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
@@ -13,12 +13,6 @@ public class FriendCore : ModItem
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "A basis for peace with enemies");
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

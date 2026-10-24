@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 
@@ -12,12 +12,6 @@ public class RoyalAmalgamation : ModItem
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightPurple;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Various enemies across Terraria should be friendly");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

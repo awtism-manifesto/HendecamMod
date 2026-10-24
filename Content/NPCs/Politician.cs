@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Consumables;
@@ -114,11 +114,7 @@ public class Politician : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("Hailing from the most putrid depths of Washington D.C, the Politician is here to fearmonger, leech off everyone else and generally make society a worse place"),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.Politician.Bestiary")
         });
     }
 

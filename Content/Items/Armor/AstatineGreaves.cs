@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -34,29 +34,6 @@ public class AstatineGreaves : ModItem
         Item.value = Item.sellPrice(gold: 97, silver: 50); // How many coins the item is worth
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 22; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "27% increased movement speed and 9% increased attack speed ");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slots and 8% increased damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            line = new TooltipLine(Mod, "Face", "13% increased throwing damage")
-            {
-                OverrideColor = new Color(255, 255, 255)
-            };
-            tooltips.Add(line);
-        }
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

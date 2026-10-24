@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Tools;
 
@@ -56,19 +56,6 @@ public class PlatinumMultiaxe : ModItem
         }
 
         return base.CanUseItem(player);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click for pickaxe and axe functionality");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click for hammer functionality")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -41,26 +41,6 @@ public class TheMonkeysPaw : ModItem
         }
 
         return false; 
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Throws between 0-3 darts that vary wildly in damage and velocity");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'some wishes are better left ungranted...'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override Vector2? HoldoutOffset()

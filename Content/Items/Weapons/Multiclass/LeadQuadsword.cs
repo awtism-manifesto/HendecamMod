@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items.QuadswordProjectiles;
 using System.Collections.Generic;
@@ -42,18 +42,6 @@ public class LeadQuadsword : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "4 swords are better than 1");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 4 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.

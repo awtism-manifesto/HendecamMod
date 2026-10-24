@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
@@ -38,24 +38,6 @@ public class MartianDronegun : ModItem
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<MartianDrone>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        
-        var line = new TooltipLine(Mod, "Face", "Shoots Martian Drones that auto-target enemies and explode on contact");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Drones and their projectiles can benefit from tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not require ammo")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

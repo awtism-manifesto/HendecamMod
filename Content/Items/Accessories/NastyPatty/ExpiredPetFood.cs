@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,14 +12,6 @@ public class ExpiredPetFood : ModItem
         Item.value = Item.sellPrice(silver: 8000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 3hp/s, Light, 25% Crit Chance, Double Movement Speed,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "50 Defense, Doubled Armor Penetraton, and 33% more Generic Damage"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Pets, Light Pets, Summons, Mounts,"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Minecarts, Weapon, Armor, or Accessory Buffs"));
     }
 
     public override void UpdateEquip(Player player)

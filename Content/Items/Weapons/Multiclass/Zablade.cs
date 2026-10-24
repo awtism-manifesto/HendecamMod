@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Melee;
@@ -71,20 +71,5 @@ public class Zablade : ModItem
             damage = (int)(damage * 0.67f);
             knockback = knockback * 0.5f;
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots a bouncing razor leaf with every swing");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 }

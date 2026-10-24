@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Weapons.Multiclass;
@@ -111,11 +111,7 @@ public class Alpine : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Leader of the elven military and Santa's right hand, Alpine will not show any hesitation when she needs to put something, or someONE down. Currently working on rebuilding her Apache, sells scrap for more money to get parts.\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.Alpine.Bestiary")
         });
     }
 

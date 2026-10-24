@@ -1,4 +1,4 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
@@ -15,12 +15,6 @@ public class VeteransBadge : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Yellow;
         Item.value = 1025000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases crit damage by 15% and armor penetration by 10");
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

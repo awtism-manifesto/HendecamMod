@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 using Terraria.Localization;
@@ -20,27 +20,6 @@ public class GoodGrades : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Green;
         Item.value = 25000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases Stupid attack speed by 10%, bonus decays as Lobotometer rises");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Now your parents might finally be proud of you'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

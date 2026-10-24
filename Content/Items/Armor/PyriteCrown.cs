@@ -37,21 +37,6 @@ public class PyriteCrown : ModItem
         player.GetAttackSpeed(DamageClass.Melee) += MeleeAttackSpeedBonus / 100f;
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "+9% summon damage and whip speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
-
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "1 extra minion & sentry slot";

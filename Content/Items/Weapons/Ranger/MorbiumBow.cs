@@ -40,21 +40,6 @@ public class MorbiumBow : ModItem
         return Color.White;
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts all arrows into Morbium Arrows");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Morbium arrows are extremely slow, but split into four fast morbium beams after a short delay")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

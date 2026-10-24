@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
@@ -29,24 +29,6 @@ public class TintedLenses : ModItem
         recipe.AddIngredient(ItemID.SoulofSight, 5);
         recipe.AddTile<CobaltWorkBenchPlaced>();
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Increases armor penetration by 10");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+5% crit chance")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Reduces the Lobotometer's impact on your vision")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

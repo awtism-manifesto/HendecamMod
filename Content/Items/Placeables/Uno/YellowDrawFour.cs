@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.GameContent.ItemDropRules;
 
 namespace HendecamMod.Content.Items.Placeables.Uno;
@@ -18,15 +18,6 @@ public class YellowDrawFour : ModItem
         Item.width = 20;
         Item.height = 20;
         Item.value = 1;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Right Click to make it Green")
-        {
-            OverrideColor = new Color(0, 255, 0)
-        };
-        tooltips.Add(line);
     }
 
     public override bool CanRightClick()

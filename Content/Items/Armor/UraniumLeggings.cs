@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -22,21 +22,6 @@ public class UraniumLeggings : ModItem
         Item.value = 467000;
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 8; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "8% increased damage and movement speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-20 max life")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

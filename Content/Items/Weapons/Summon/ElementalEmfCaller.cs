@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
@@ -41,21 +41,6 @@ public class ElementalEmfCaller : ModItem
     {
         // Here you can change where the minion is spawned. Most vanilla minions spawn at the cursor position
         position = Main.MouseWorld;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses electromagnetic frequences to summon a friendly Granite Elemental");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

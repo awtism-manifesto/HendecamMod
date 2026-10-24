@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -52,21 +52,6 @@ public class MantiusShortbow : ModItem
     }
 
    
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Shoots large, fast-flying energy arrows that deal increased damage to high defense targets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-      
-    }
 
     public override void AddRecipes()
     {

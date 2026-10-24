@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -27,19 +27,6 @@ public class PyriteArrow : ModItem
         Item.shoot = ProjectileType<PyriteArrowProj>(); // The projectile that weapons fire when using this item as ammunition.
         Item.shootSpeed = 3.95f; // The speed of the projectile.
         Item.ammo = AmmoID.Arrow; // The ammo class this ammo belongs to.
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Leaves a trail of sparks as it flies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

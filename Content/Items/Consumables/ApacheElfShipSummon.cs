@@ -26,18 +26,6 @@ public class ApacheElfShipSummon : ModItem
         Item.useStyle = ItemUseStyleID.HoldUp;
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Show the commander of the elves that their comrades perished in vein");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Summons Alpine, pilot of the Apache Elf Ship")
-        {
-            OverrideColor = new Color(155, 0, 0)
-        };
-        tooltips.Add(line);
-    }
-
     public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
     {
         itemGroup = ContentSamples.CreativeHelper.ItemGroup.BossSpawners;

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -55,18 +55,6 @@ public class EternalCrab : ModItem
 
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases armor penetration by 1000");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

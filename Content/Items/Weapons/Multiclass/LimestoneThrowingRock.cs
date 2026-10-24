@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
@@ -47,22 +47,7 @@ public class LimestoneThrowingRock : ModItem
            
         }
         return base.UseItem(player);
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Bursts into a lingering cloud of toxic limestone dust");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
-    }
-    public override void AddRecipes()
+    }    public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe(25);
 

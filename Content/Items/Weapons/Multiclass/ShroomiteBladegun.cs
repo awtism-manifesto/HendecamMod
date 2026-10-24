@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
@@ -110,28 +110,6 @@ public class ShroomiteBladegun : ModItem
         NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
 
         return true; // Return false because we don't want tModLoader to shoot projectile}
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to swing and release a duplicating slash of shroomite energy");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Right click to fire a shotgun blast enhanced with a shroomite x-bomb")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Not to be confused with the Shroomite Gunblade'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override Vector2? HoldoutOffset()

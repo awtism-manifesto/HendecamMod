@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -32,28 +32,6 @@ public class PlutoniumPants : ModItem
         Item.value = Item.sellPrice(gold: 25); // How many coins the item is worth
         Item.rare = ItemRarityID.LightPurple; // The rarity of the item
         Item.defense = 17; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "20% increased movement speed and 5% increased attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+2 max sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            line = new TooltipLine(Mod, "Face", "Hendecam Cross-Mod (Thorium) - 7% increased throwing attack speed")
-            {
-                OverrideColor = new Color(34, 221, 240)
-            };
-            tooltips.Add(line);
-        }
-
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -20,26 +20,6 @@ public class MediocreGrades : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightPurple;
         Item.value = 15000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases Stupid damage as Lobotometer increases, up to 12% at max");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Increases Stupid attack speed by 12%, bonus decays as Lobotometer rises")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'C's get degrees bro'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

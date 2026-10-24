@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.DataStructures;
 
@@ -32,19 +32,6 @@ public class BladeShooter : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<BladeShooterProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Summons a blade shooter sentry that flings large, deadly blades in all directions")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

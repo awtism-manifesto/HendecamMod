@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.PeaceAmongNations;
@@ -13,12 +13,6 @@ public class UndeadPeaceAgreement : ModItem
         Item.value = Item.sellPrice(copper: 100000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "All undead should be friendly");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

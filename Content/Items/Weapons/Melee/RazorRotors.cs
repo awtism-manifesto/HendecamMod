@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 
 namespace HendecamMod.Content.Items.Weapons.Melee;
@@ -57,24 +57,5 @@ public class RazorRotors : ModItem
         }
 
         return base.CanUseItem(player);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Rapidly spins around, damaging everything around you and improving aerial movement");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to throw the smaller, stabilizer rotor")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Ignores 25 enemy defense")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 }

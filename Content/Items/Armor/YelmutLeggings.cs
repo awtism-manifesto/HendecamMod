@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -20,43 +20,6 @@ public class YelmutLeggings : ModItem
         Item.value = Item.sellPrice(gold : 15);
         Item.rare = ItemRarityID.LightRed;
         Item.defense = 12;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "10% increased melee crit chance and 8% increased ranged attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+60 max Mana and Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+1 max minion and sentry slot")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Effects of Fairy Boots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Set Bonus compatible with Lycopite Armor")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(220, 40, 245)
-        };
-        tooltips.Add(line);
-
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

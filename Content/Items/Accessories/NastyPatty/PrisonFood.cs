@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -12,12 +12,6 @@ public class PrisonFood : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Grants 25 fall distance and 20% Damage Reduction"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "No longer gain effects from Food or Exploration Buffs"));
     }
 
     public override void UpdateEquip(Player player)

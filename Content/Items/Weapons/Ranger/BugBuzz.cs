@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -49,18 +49,6 @@ public class BugBuzz : ModItem
     public override bool CanConsumeAmmo(Item ammo, Player player)
     {
         return Main.rand.NextFloat() >= 0.5f;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Converts arrows into a tightly-packed burst of multiple soundwaves");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "50% chance to save arrows")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

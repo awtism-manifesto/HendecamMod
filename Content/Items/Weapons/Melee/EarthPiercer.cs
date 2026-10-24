@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -37,20 +37,6 @@ public class EarthPiercer : ModItem
         // Projectile Properties
         Item.shootSpeed = 3.33f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ProjectileType<EarthSpearProj>(); // The projectile that is fired from this weapon
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Deals more damage to high defense targets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
     }
     public override void AddRecipes()
     {

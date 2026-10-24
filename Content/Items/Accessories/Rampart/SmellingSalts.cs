@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
@@ -13,12 +13,6 @@ public class SmellingSalts : ModItem
         Item.value = Item.sellPrice(silver: 500);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Grants immunity to Cerebral Mindtrick, Tipsy, and the Water Candle");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

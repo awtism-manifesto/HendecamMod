@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Global;
 using Terraria.DataStructures;
 
@@ -64,20 +64,6 @@ public class GoldenAK : ModItem
         Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts musket balls into beefed up crystal bullets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'So mundane yet so otherworldly'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        
     }
 
     public override void AddRecipes()

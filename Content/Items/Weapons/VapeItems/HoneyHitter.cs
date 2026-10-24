@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Items.VapeProjectiles;
@@ -79,21 +79,6 @@ public class HoneyHitter : ModItem
         }
         
         else return true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Uses 3 Braincells");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Releases vape smoke along with bees")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override Vector2? HoldoutOffset()
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
@@ -15,12 +15,6 @@ public class RampartAccessory : ModItem
         Item.value = Item.sellPrice(silver: 32000);
         Item.rare = ItemRarityID.Red;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Grants immunity to every vanilla debuff, all forms of radiation poisoning, knockback and fire blocks");
-        tooltips.Add(line);
     }
 
     public override void UpdateEquip(Player player)

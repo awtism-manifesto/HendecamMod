@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
@@ -43,23 +43,6 @@ public class Bullshit3 : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Shoots dangerously explosive radiation emblems with 21 summon tag damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(252, 141, 204)
-        };
-        tooltips.Add(line);
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

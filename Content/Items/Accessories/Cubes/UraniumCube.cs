@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
@@ -22,19 +22,6 @@ public class UraniumCube : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.maxFallSpeed = player.maxFallSpeed * Main.rand.NextFloat(-0.5f, 5f);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Randomizes your max fall speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "It can go from -50% to 250%")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

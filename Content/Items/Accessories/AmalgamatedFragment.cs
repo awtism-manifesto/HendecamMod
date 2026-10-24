@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using Terraria.Localization;
@@ -24,35 +24,6 @@ public class AmalgamatedFragment : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.Red;
         Item.value = 1199000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases melee, ranged, magic, summon, and stupid damage by 11%");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Slightly less effective with Omni-class weapons")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThorMerica))
-        {
-            line = new TooltipLine(Mod, "Face", "Hendecam Mod Cross-Mod (Thorium) - 11% increased throwing damage")
-            {
-                OverrideColor = new Color(34, 221, 240)
-            };
-            tooltips.Add(line);
-        }
-
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 
     public override void AddRecipes()

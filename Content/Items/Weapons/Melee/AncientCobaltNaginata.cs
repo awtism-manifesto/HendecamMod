@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.Audio;
@@ -36,19 +36,6 @@ public class AncientCobaltNaginata : ModItem
         // Projectile Properties
         Item.shootSpeed = 2.7f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ProjectileType<AncientCobaltSpear>(); // The projectile that is fired from this weapon
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool CanUseItem(Player player)

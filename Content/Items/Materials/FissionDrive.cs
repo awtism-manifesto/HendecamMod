@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Rarities;
+using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 
@@ -26,21 +26,6 @@ public class FissionDrive : ModItem
         Item.rare = RarityType<Seizure2>();
         Item.value = 5050505;
         Item.maxStack = 9999;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Used to make some of the most dangerously powerful weapons in existence");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Radioactive to the touch'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

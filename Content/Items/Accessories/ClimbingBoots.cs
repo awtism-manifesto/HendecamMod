@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -21,19 +21,6 @@ public class ClimbingBoots : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = Item.buyPrice(silver: 650); // Equivalent to Item.buyPrice(0, 1, 0, 0);
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "8% increased movement speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Allows the wearer to run super fast")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

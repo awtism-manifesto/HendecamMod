@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
@@ -28,20 +28,6 @@ public class TransFedora : ModItem
         Item.value = Item.sellPrice(gold: 3); // How many coins the item is worth
         Item.rare = ItemRarityID.Green; // The rarity of the item
         Item.defense = 4; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "15% faster Lobotometer decay rate");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "9% increased stupid critical strike")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

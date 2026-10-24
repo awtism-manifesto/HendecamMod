@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
 
@@ -32,19 +32,6 @@ public class HotShots : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<HotShotsProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Summons a hot tack shooter sentry that shoots flaming, piercing tacks")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

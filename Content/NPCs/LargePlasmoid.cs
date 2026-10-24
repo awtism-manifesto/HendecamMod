@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Items.Placeables;
@@ -80,9 +80,7 @@ public class LargePlasmoid : ModNPC
     {
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
-            new FlavorTextBestiaryInfoElement("\"Like their normal-sized counterparts, Large Plasmoids feed on radiation. Unlike normal Plasmoids, however, they seem to return to the edge of space when it's daytime\" "),
-
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.LargePlasmoid.Bestiary")
         });
     }
 

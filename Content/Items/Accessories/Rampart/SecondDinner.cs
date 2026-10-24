@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Rampart;
 
@@ -12,14 +12,6 @@ public class SecondDinner : ModItem
         Item.value = Item.sellPrice(silver: 4000);
         Item.rare = ItemRarityID.LightRed;
         Item.accessory = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Face", "Grants immunity to Cursed, Mana Sickness, Suffocation,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Confused, Distorted, Slowness, Oozed, Peckish, Hungry,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Starving, Frostburn, Shadowflame, Hellfire, Cursed Inferno,"));
-        tooltips.Add(new TooltipLine(Mod, "Face", "Chilled, Frozen, Frostbite, Obstructed, and Electrified"));
     }
 
     public override void UpdateEquip(Player player)

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -141,21 +141,6 @@ public class Sublimination : ModItem
         {
             damage = (int)(damage * 0.5f);
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Emits deadly rays that rapidly irradiate everything in front of you");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'It straight up smokes enemies. as in, it turns them into smoke.'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        
     }
 
     public override void AddRecipes()

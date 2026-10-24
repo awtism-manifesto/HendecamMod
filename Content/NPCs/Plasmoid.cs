@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Placeables;
@@ -82,11 +82,7 @@ public class Plasmoid : ModNPC
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"These odd, barely-corporeal creatures appear to feed on radiation. Their intelligence level is unknown\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.Plasmoid.Bestiary")
         });
     }
 

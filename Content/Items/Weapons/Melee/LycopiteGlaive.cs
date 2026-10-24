@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
@@ -32,18 +32,6 @@ public class LycopiteGlaive : ModItem
         Item.shootSpeed = 16.33f;
     }
    
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Homes in on enemies for a bit before returning");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Prioritizes homing in on new enemies")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override bool AllowPrefix(int pre)
     {
         // return false to make the game reroll the prefix.

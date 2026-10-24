@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.Enums;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -28,26 +28,6 @@ public class CarbonDioxideBalloon : ModItem
         recipe.AddIngredient(ItemID.ShinyRedBalloon);
         recipe.AddTile(TileID.TinkerersWorkbench);
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Allows the player to double jump, and jump higher");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Because screw having a stable climate am i right?")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
     }
 }
 

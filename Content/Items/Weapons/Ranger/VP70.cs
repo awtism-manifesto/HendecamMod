@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
 using Terraria.Audio;
@@ -106,34 +106,6 @@ public class VP70 : ModItem
 
             return false; // Prevent vanilla projectile spawn
         }
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to quickly fire single shots");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to fire a three round burst")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Tag enemies with single shots to deal increased damage with bursts")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The OG. The one that started it all")
-        {
-            OverrideColor = new Color(28, 31, 83)
-        };
-        tooltips.Add(line);
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

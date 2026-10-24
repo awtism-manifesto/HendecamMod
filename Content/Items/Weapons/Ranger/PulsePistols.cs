@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Common.Utils;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -82,14 +82,12 @@ public class PulsePistols : ModItem
     {
         HendecamPlayer modPlayer = player.GetModPlayer<HendecamPlayer>();
         attackCycle = ++attackCycle % 2;
-        if (attackCycle == 1)
-        {
-            modPlayer.recoilFront = 0.2f;
-        }
-        else
-        {
-            modPlayer.recoilBack = 0.2f;
-        }
+
+        modPlayer.recoilFront = 0.2f;
+
+        
+        modPlayer.recoilBack = 0.2f;
+        
         const int NumProjectiles = 2; // The number of projectiles that this gun will shoot.
         
         Vector2 muzzleOffset = Vector2.Normalize(velocity) * 40f;
@@ -112,20 +110,6 @@ public class PulsePistols : ModItem
         }
 
         return false;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-/*        var line = new TooltipLine(Mod, "Face", "Rapidly magdumps pulse shots before a short recharge");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'Cheers love, The cavalry's here!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);*/
-
-       
     }
     public override Vector2? HoldoutOffset()
     {

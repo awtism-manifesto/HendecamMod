@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Tiles;
 
 namespace HendecamMod.Content.Items.Materials;
@@ -19,18 +19,6 @@ public class AncientCobaltBar : ModItem
         Item.value = 9800;
         Item.maxStack = 9999;
         Item.DefaultToPlaceableTile(TileType<AncientCobaltBarPlaced>());
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "I'm old!");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

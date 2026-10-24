@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -31,18 +31,6 @@ public class TommyGun : ModItem
         Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
         Item.shootSpeed = 10.95f; // The speed of the projectile (measured in pixels per frame.)
         Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Also seen in about 6 or 7 other mods");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+5% crit chance")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

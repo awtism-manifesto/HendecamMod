@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Accessories;
@@ -140,33 +140,6 @@ public class Bullshit5 : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Left click to swing and release homing axes that split into all the bullshit from before");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Right click to cast these axes quicker, without the added melee damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Melee hits inflict every applicable debuff in the game")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 25 Braincells on left click, 10 on right click")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(252, 141, 204)
-        };
-        tooltips.Add(line);
-    }
-
     public override Vector2? HoldoutOffset()
     {
         return new Vector2(-0.5f, -0.5f);

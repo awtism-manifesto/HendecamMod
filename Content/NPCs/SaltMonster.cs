@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
@@ -51,11 +51,7 @@ public class SaltMonster : ModNPC
         bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
         {
             // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"A seemingly cobbled together monster made of pure rock salt. It is extremely hydrophobic and prefers desert environments.\" "),
-
-            // You can add multiple elements if you really wanted to
-            // You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.SaltMonster.Bestiary")
         });
     }
 

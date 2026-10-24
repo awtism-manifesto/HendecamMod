@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
@@ -21,20 +21,6 @@ public class OffenseShield : ModItem
     {
        
         player.GetModPlayer<OffenseProc>().Offended = true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Increases damage output for a short time after being hit");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Also still grants Panic upon being hit")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

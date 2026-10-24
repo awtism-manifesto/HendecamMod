@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
@@ -16,25 +16,6 @@ public class UnhygenicLobotomySpike : ModItem
         Item.accessory = true;
         Item.rare = ItemRarityID.LightRed;
         Item.value = 150000;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Once you hit max Lobotometer, it can no longer decay until accessory is removed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Converts Lobotometer decay rate into damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Does not stack with Haemophilic or Auspicious Lobotomy Spike")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

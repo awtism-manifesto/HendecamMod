@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 using Terraria.Localization;
@@ -77,56 +77,6 @@ namespace HendecamMod.Content.Items.Consumables
             CombatText.NewText(player.getRect(), Color.LimeGreen, message, true);
 
             return true;
-        }
-
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            // Get the player who is viewing the tooltip
-            Player currentPlayer = Main.LocalPlayer;
-            var loboPlayer = currentPlayer.GetModPlayer<LobotometerPlayer>();
-
-            // Main tooltip
-            var line = new TooltipLine(Mod, "LobotometerBonus", $"Permanently increases max Braincells by {BonusPerUse} when consumed")
-            {
-                OverrideColor = new Color(100, 255, 100)
-            };
-            tooltips.Add(line);
-
-            // Show PERMANENT progress (this is character-specific and not affected by equipment)
-            float currentPermanent = loboPlayer.PermanentBonus;
-            int remainingBonus = MaxTotalBonus - (int)currentPermanent;
-
-            line = new TooltipLine(Mod, "Progress", $"Permanent bonus: {currentPermanent} / {MaxTotalBonus}")
-            {
-                OverrideColor = new Color(150, 150, 255)
-            };
-            tooltips.Add(line);
-
-            if (remainingBonus > 0)
-            {
-                int usesLeft = remainingBonus / BonusPerUse;
-                line = new TooltipLine(Mod, "Remaining", $"Can be used {usesLeft} more time{(usesLeft != 1 ? "s" : "")}")
-                {
-                    OverrideColor = new Color(255, 200, 100)
-                };
-                tooltips.Add(line);
-            }
-            else
-            {
-                line = new TooltipLine(Mod, "MaxReached", $"Maximum Lobotometer capacity reached!")
-                {
-                    OverrideColor = new Color(255, 100, 100)
-                };
-                tooltips.Add(line);
-            }
-
-            // Optional: Show current TOTAL max (including equipment)
-            float totalMax = loboPlayer.Max;
-            line = new TooltipLine(Mod, "CurrentTotal", $"Current Braincell count: {totalMax} (including equipment)")
-            {
-                OverrideColor = new Color(200, 200, 200)
-            };
-            tooltips.Add(line);
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Weapons.VapeItems;
@@ -16,21 +16,6 @@ public class VapeKit : ModItem
         Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
         Item.value = 9000;
         Item.maxStack = 9999;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Used to craft vapes");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'You should give yourself lung cancer, NOW!'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
     public override void AddRecipes()
     {

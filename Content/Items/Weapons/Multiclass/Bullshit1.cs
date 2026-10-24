@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
@@ -43,22 +43,6 @@ public class Bullshit1 : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Shoots homing pink pearls with 9 summon tag damage");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 2 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "-Developer Item-")
-        {
-            OverrideColor = new Color(252, 141, 204)
-        };
-        tooltips.Add(line);
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

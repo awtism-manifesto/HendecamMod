@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories;
 
@@ -16,26 +16,6 @@ public class SharpeningStone : ModItem
        
     }
    
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-       
-        var line = new TooltipLine(Mod, "Face", "+8% increased damage");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "All applicable projectiles have +2 pierce")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "May interact weirdly with certain weapons")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-    }
     public static readonly int AdditiveDamageBonus = 8;
     public override void UpdateAccessory(Player player, bool hideVisual)
     {

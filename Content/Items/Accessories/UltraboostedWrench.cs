@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -32,25 +32,6 @@ public class UltraboostedWrench : ModItem
         recipe.AddIngredient(ItemID.FragmentStardust, 10);
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "20% increased whip speed and movement speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+4 max sentries")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Does not stack with Overclocked Wrench")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void UpdateAccessory(Player player, bool hideVisual)

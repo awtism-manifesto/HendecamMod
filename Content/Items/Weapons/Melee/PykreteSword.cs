@@ -29,23 +29,6 @@ public class PykreteSword : ModItem
         Item.useTurn = true;
     }
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Has a chance to inflict frostburn");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Flings frostburn sparks all around the player")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         damage = (int)(damage * Main.rand.NextFloat(0.3f, 0.4f));

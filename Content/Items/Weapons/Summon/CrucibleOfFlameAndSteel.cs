@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using HendecamMod.Content.Tiles.Furniture;
@@ -35,26 +35,6 @@ public class CrucibleOfFlameAndSteel : ModItem
         Item.rare = ItemRarityID.Red;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<TackParagon>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons The Crucible of Steel and Flame");
-        tooltips.Add(line);
-
-
-        line = new TooltipLine(Mod, "Face", "Right-click with this item in hand to activate Paragon Maelstrom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Takes up 10 sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public override bool AltFunctionUse(Player player)
     {

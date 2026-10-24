@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Rarities;
@@ -41,12 +41,6 @@ public class ShadowCrystalSword : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Makes you bleed when swung. It's shattering in your hand, what did you expect?"));
-        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Uses 7 Braincells"));
-    }
-
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         player.lifeRegen += (int)8f;

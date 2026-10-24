@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles;
 using Terraria.DataStructures;
@@ -32,19 +32,6 @@ public class TackShooter : ModItem
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<TackShooterProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Summons a tack shooter sentry that shoots in eight directions")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public override void AddRecipes()
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Weapons.Summon;
 using HendecamMod.Content.Projectiles;
@@ -44,19 +44,7 @@ public class KusariOfFlamingFundo : ModItem
 
         Item.shoot = ProjectileType<KusariProj>(); // Which projectile this item will shoot. We set this to our corresponding projectile.
         Item.shootSpeed = 16f; // The velocity of the shot projectile.			
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Right click before throwing out the weapon to start having a really fun time... for 15 seconds");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'COWABUNGA!!!'")
-        {
-            OverrideColor = new Color(255, 115, 25)
-        };
-        tooltips.Add(line);
-    }
-    public override void HoldItem(Player player)
+    }    public override void HoldItem(Player player)
     {
         var CDPlayer = player.GetModPlayer<FunCD>();
        

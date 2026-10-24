@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using HendecamMod.Content.GlobalNPCs;
 using HendecamMod.Content.Items.Accessories;
@@ -116,11 +116,7 @@ public class Asshole : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("\"Hendecam deez nuts.\" "),
-
-// You can add multiple elements if you really wanted to
-// You can also use localization keys (see Localization/en-US.lang)
-            new FlavorTextBestiaryInfoElement("")
+            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.Asshole.Bestiary")
         });
     }
 

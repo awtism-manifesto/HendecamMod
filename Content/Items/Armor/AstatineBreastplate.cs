@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -27,18 +27,6 @@ public class AstatineBreastplate : ModItem
         Item.value = Item.sellPrice(gold: 105); // How many coins the item is worth
         Item.rare = ItemRarityID.Red; // The rarity of the item
         Item.defense = 25; // The amount of defense the item will give when equipped
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "14% increased damage and 7% increased attack speed");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "13% increased ranged crit chance and +12 melee armor penetration")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

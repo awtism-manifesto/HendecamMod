@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -64,21 +64,6 @@ public class Frankengun : ModItem
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts bullets into a burst of arcing lightning shots that pass through tiles");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "'I don't even have a joke for this one'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override void AddRecipes()

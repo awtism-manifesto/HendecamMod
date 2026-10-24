@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Placeables;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 
@@ -37,21 +37,6 @@ public class AirburstTome : ModItem
     }
 
    
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Fires a blast of compressed air that bursts into three explosive energy beams");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Deals more damage to high defense targets")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
-    }
 
     public override void AddRecipes()
     {

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Projectiles;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -67,20 +67,6 @@ public class TruthSeekersDMR : ModItem
 
         return true;
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts musket balls into hitscan True Bullets");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

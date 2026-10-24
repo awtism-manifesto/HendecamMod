@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
@@ -38,33 +38,4 @@ public class AlpinePlushieGlitterbomb : ModItem
                   .AddLobotometer(LobotometerCost);
         }
         return base.UseItem(player);
-    }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Throws a glitter bomb disguised as an Alpine plushie");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The shiny glitter causes your summons to focus hit enemies, and homes in, dealing up to 150 un-negateable damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 5 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "11 summon tag damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-       
-        line = new TooltipLine(Mod, "Face", "'Huh, so that's why they won't tell us where glitter comes from'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-    }
-}
+    }}

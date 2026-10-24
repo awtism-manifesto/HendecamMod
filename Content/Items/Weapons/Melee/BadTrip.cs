@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 
@@ -42,18 +42,6 @@ public class BadTrip : ModItem
             return false;
         }
         return true;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Occasionally drops stationary mushroom mines while in flight");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "The shroom mines explode on contact with an enemy or after a few seconds")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

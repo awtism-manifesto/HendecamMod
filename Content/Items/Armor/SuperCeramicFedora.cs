@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
@@ -29,18 +29,6 @@ public class SuperCeramicFedora : ModItem
         Item.value = Item.sellPrice(gold: 13); 
         Item.rare = ItemRarityID.LightRed; 
         Item.defense = 7; 
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "9% increased stupid damage and crit chance");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+45 Max Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
     public override bool IsArmorSet(Item head, Item body, Item legs)
     {

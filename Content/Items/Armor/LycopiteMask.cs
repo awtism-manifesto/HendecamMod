@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Localization;
 
@@ -34,36 +34,6 @@ public class LycopiteMask : ModItem
         Item.rare = ItemRarityID.Orange; // The rarity of the item
         Item.defense = 7; // The amount of defense the item will give when equipped
         Item.lifeRegen = 1;
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "14% increased melee/whip speed and 10% increased whip range");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "+5% melee critical strike chance and summon damage")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "+0.5 hp/s life regen")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        // Here we will hide all tooltips whose title end with ':RemoveMe'
-        // One like that is added at the start of this method
-        foreach (var l in tooltips)
-        {
-            if (l.Name.EndsWith(":RemoveMe"))
-            {
-                l.Hide();
-            }
-        }
-
-        // Another method of hiding can be done if you want to hide just one line.
-        // tooltips.FirstOrDefault(x => x.Mod == "ExampleMod" && x.Name == "Verbose:RemoveMe")?.Hide();
     }
 
     // IsArmorSet determines what armor pieces are needed for the setbonus to take effect

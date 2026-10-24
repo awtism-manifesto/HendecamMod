@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Weapons.Stupid;
 using HendecamMod.Content.Projectiles;
@@ -71,27 +71,6 @@ public class AuricSkibidiToilet : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Uses 20 Lobotometer")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        if (!ModLoader.TryGetMod("CalamityMod", out Mod CalMerica))
-        {
-            line = new TooltipLine(Mod, "Face", "CALAMITY NOT ENABLED! THIS DLC WEAPON IS ONLY OBTAINABLE THROUGH CHEATS")
-            {
-                OverrideColor = new Color(255, 125, 125)
-            };
-            tooltips.Add(line);
-        }
-    }
-
     public override void AddRecipes()
     {
         if (ModLoader.TryGetMod("CalamityMod", out Mod CalMerica) && CalMerica.TryFind("AuricToilet", out ModItem AuricToilet))

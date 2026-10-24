@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles.Items;
 using Terraria.DataStructures;
@@ -33,19 +33,6 @@ public class BladeMaelstrom : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item99;
         Item.shoot = ProjectileType<BladeMaelstromProj>();
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Summons a blade maelstrom sentry that flings blades everywhere in a spiral pattern");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Takes up 2 sentry slots")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
 using System.Collections.Generic;
 
@@ -40,23 +40,6 @@ public class BoggsGlove : ModItem
         }
         return base.UseItem(player);
     }
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        var line = new TooltipLine(Mod, "Face", "Rapidly throws ale at your target");
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "Uses 6 Braincells")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-        line = new TooltipLine(Mod, "Face", "'Dedicated to the drinking legend Wade Boggs'")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-    }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

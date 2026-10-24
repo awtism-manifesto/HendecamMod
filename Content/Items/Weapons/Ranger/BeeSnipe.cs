@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Global;
+using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -59,19 +59,6 @@ public class BeeSnipe : ModItem
         }
 
         return true; // Return false because we don't want tModLoader to shoot projectile
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Converts bullets into high velocity bees");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "Right click to zoom")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
     }
 
     public override void AddRecipes()

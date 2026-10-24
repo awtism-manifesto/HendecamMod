@@ -1,4 +1,4 @@
-﻿using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -37,21 +37,6 @@ public class AstatinePolearm : ModItem
         // Projectile Properties
         Item.shootSpeed = 3.7f; // The speed of the projectile measured in pixels per frame.
         Item.shoot = ProjectileType<AstatineSpear>(); // The projectile that is fired from this weapon
-    }
-
-    public override void ModifyTooltips(List<TooltipLine> tooltips)
-    {
-        // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
-        var line = new TooltipLine(Mod, "Face", "Violently explodes on contact with any living thing");
-        tooltips.Add(line);
-
-        line = new TooltipLine(Mod, "Face", "")
-        {
-            OverrideColor = new Color(255, 255, 255)
-        };
-        tooltips.Add(line);
-
-       
     }
 
     public override bool CanUseItem(Player player)
