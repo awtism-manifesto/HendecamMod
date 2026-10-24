@@ -1,6 +1,7 @@
-using System.Collections.Generic;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -86,9 +87,9 @@ public class VP70 : ModItem
 
             int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, type, (int)(damage * 0.87f), (int)(knockback * 0.78f), player.whoAmI);
 
-            Main.projectile[proj].GetGlobalProjectile<VPCombo>().fromVP70 = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VP70;
 
-            Main.projectile[proj].GetGlobalProjectile<VPComboSetup>().fromtheVP70 = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VP70Setup;
             return false;
         }
 
@@ -101,8 +102,8 @@ public class VP70 : ModItem
                 MaxInstances = 100,
             });
             int proj = Projectile.NewProjectile(source, position, velocity * 1f, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<VPComboSetup>().fromtheVP70 = true;
-            Main.projectile[proj].GetGlobalProjectile<VPCombo>().fromVP70 = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VP70Setup;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VP70;
 
             return false; // Prevent vanilla projectile spawn
         }

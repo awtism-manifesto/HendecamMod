@@ -1,4 +1,6 @@
-﻿using HendecamMod.Content.Global;
+﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Content.Global;
+using HendecamMod.Content.NPCs;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -14,7 +16,7 @@ public class Ligma : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.GetModPlayer<LigmaPlayer>().Ligma = true;
+        player.GetModPlayer<HendecamPlayer>().Ligma = true;
     }
 
     public override void Update(NPC npc, ref int buffIndex)
@@ -33,27 +35,6 @@ public class Ligma : ModBuff
             Main.dust[dust].noGravity = true;
         }
 
-        npc.GetGlobalNPC<WhoTfIsSteveJobs>().DyingOfLigma = true;
-    }
-
-    public class LigmaPlayer : ModPlayer
-    {
-        public bool Ligma;
-
-        public override void ResetEffects()
-        {
-            Ligma = false;
-        }
-
-        public override void UpdateBadLifeRegen()
-        {
-            if (Ligma)
-            {
-                if (Player.lifeRegen > 0)
-                    Player.lifeRegen = 0;
-                Player.lifeRegenTime = 0;
-                Player.lifeRegen -= (int)(1500f);
-            }
-        }
+        npc.GetGlobalNPC<HendecamGlobalNPC>().DyingOfLigma = true;
     }
 }

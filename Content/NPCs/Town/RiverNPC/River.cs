@@ -14,6 +14,8 @@ using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Items.Weapons.Stupid;
+using HendecamMod.Content.NPCs.Town.AssholeNPC;
+using HendecamMod.Content.NPCs.Town.PoliticianNPC;
 using HendecamMod.Content.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;
@@ -26,7 +28,7 @@ using Terraria.Localization;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
-namespace HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.NPCs.Town.RiverNPC;
 
 // [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 [AutoloadHead]

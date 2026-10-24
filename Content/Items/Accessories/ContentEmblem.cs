@@ -925,7 +925,7 @@ public class PixelBullet : ModPlayer
 }
 public class XenonXSpawn : ModPlayer
 {
-    public bool X;
+    public bool X;//fuck you
     private int shotCounter = 0;
 
     public override void ResetEffects()
@@ -942,9 +942,8 @@ public class XenonXSpawn : ModPlayer
             {
                 shotCounter = 0;
 
-                // Spawn the projectile manually so we can tag it
                 int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, Player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<XenonModX>().ContentXenon = true;
+                Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ContentXenon = true;
 
                
                 return false;

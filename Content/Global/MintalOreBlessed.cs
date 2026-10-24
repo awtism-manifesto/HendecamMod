@@ -5,22 +5,6 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
 
-public class MintalOreBlessed : GlobalNPC
-{
-    public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
-    {
-        return npc.type == NPCID.WallofFlesh;
-    }
-
-    public override void OnKill(NPC npc)
-    {
-        if (!Main.hardMode)
-        {
-            GetInstance<MintalSystem>().BlessWorldWithMintal();
-        }
-    }
-}
-
 public class MintalSystem : ModSystem
 {
     public static LocalizedText MintalMessage { get; private set; }

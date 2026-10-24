@@ -13,6 +13,7 @@ namespace HendecamMod.Content.Global;
 // If this code is confusing, please learn about "for loops" and the "continue" and "break" keywords: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements
 public class MeAndMagAreFuckingLazy : ModSystem
 {
+    //bro....
     // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
     public override void PostWorldGen()
     {

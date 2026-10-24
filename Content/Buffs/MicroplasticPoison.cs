@@ -1,4 +1,5 @@
-﻿using System.IO;
+using HendecamMod.Content.NPCs;
+using System.IO;
 using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.Buffs;
@@ -41,7 +42,7 @@ public class MicroplasticPoison : ModBuff // kids, do not vibe code.
             }
         }
 
-        var globalNPC = npc.GetGlobalNPC<MicroplasticTick>();
+        var globalNPC = npc.GetGlobalNPC<HendecamGlobalNPC>();
         globalNPC.Microplastic = true;
         globalNPC.MicroplasticStacks = stackCount;
 
@@ -53,66 +54,7 @@ public class MicroplasticPoison : ModBuff // kids, do not vibe code.
     }
 }
 
-public class MicroplasticTick : GlobalNPC
-{
-    public bool Microplastic;
-    public int MicroplasticStacks = 0;
 
-    public override bool InstancePerEntity => true;
-
-    public override void ResetEffects(NPC npc)
-    {
-        // Don't reset if the buff is still active
-        if (!npc.HasBuff(BuffType<MicroplasticPoison>()))
-        {
-            Microplastic = false;
-            MicroplasticStacks = 0;
-        }
-    }
-
-    void DOTDebuff(NPC npc, float baseDamagePerSecond, int stacks, ref int damage)
-    {
-        if (npc.lifeRegen > 0) npc.lifeRegen = 0;
-
-        float totalDamage = baseDamagePerSecond * stacks;
-        npc.lifeRegen -= (int)(totalDamage * 2);
-
-        if (damage < totalDamage)
-        {
-            damage = (int)totalDamage;
-        }
-    }
-
-    public override void UpdateLifeRegen(NPC npc, ref int damage)
-    {
-        if (Microplastic)
-        {
-            DOTDebuff(npc, 1f, MicroplasticStacks, ref damage);
-        }
-    }
-
-    // Add networking support
-    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter)
-    {
-        binaryWriter.Write(Microplastic);
-        binaryWriter.Write(MicroplasticStacks);
-    }
-
-    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader)
-    {
-        Microplastic = binaryReader.ReadBoolean();
-        MicroplasticStacks = binaryReader.ReadInt32();
-    }
-
-    // Helper method to sync data
-    public void SyncData(NPC npc)
-    {
-        if (Main.netMode == NetmodeID.Server)
-        {
-            NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, npc.whoAmI);
-        }
-    }
-}
 
 public static class MicroplasticPoisonExtensions
 {

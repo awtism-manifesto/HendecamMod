@@ -1,6 +1,7 @@
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Weapons.Summon;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -99,7 +100,7 @@ public class MechanicalMurdergun : ModItem
                 newVelocity *= 1f - Main.rand.NextFloat(0.2f);
 
                 int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-                Main.projectile[proj].GetGlobalProjectile<FastLaserSwords>().fromMechGun = true;
+                Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.MechGun;
             }
         }
         return false;

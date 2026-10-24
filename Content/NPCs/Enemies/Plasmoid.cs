@@ -8,7 +8,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
-namespace HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.NPCs.Enemies;
 
 // Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
 public class Plasmoid : ModNPC

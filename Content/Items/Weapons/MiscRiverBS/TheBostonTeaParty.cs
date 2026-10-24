@@ -1,5 +1,6 @@
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Weapons.Ranger;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -41,8 +42,8 @@ public class TheBostonTeaParty : ModItem
     {
         
             int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<Hitscan>().fromHitscan = true;
-            return false; // Prevent vanilla projectile spawn
+        Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.Hitscan;
+        return false; // Prevent vanilla projectile spawn
 
     }    public override Vector2? HoldoutOffset()
     {

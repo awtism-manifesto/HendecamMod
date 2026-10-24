@@ -1,5 +1,6 @@
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -45,7 +46,7 @@ public class CompoundBow : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-        Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
+        Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.CompoundBow;
         return false; // Prevent vanilla projectile spawn
     }
 

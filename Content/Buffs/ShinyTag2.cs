@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Content.Buffs;
+namespace HendecamMod.Content.Buffs;
 
 public class ShinyTag2 : ModBuff
 {
@@ -16,22 +16,5 @@ public class ShinyTag2 : ModBuff
         Lighting.AddLight(npc.Center, 1.25f, 1.25f, 1.25f);
     }
 
-    public class ShinyTagg2 : GlobalNPC
-    {
-        public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
-        {
-            // Only player attacks should benefit from this buff, hence the NPC and trap checks.
-            if (projectile.npcProj || projectile.trap || !projectile.IsMinionOrSentryRelated)
-                return;
-            // SummonTagDamageMultiplier scales down tag damage for some specific minion and sentry projectiles for balance purposes.
-            var projTagMultiplier = ProjectileID.Sets.SummonTagDamageMultiplier[projectile.type];
-            if (npc.HasBuff<ShinyTag2>())
-            {
-                // Apply a flat bonus to every hit
-                modifiers.FlatBonusDamage += TagDamage * projTagMultiplier;
-            }
-
-            // if you have a lot of buffs in your mod, it might be faster to loop over the NPC.buffType and buffTime arrays once, and track the buffs you find, rather than calling HasBuff many times
-        }
-    }
+    
 }

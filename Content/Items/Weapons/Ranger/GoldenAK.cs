@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using HendecamMod.Content.Global;
+using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
@@ -57,7 +58,7 @@ public class GoldenAK : ModItem
         if (type == ProjectileID.CrystalBullet)
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<CrystalBeef>().fromGoldenAK = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.GoldenAK;
             return false; // Prevent vanilla projectile spawn
         }
 

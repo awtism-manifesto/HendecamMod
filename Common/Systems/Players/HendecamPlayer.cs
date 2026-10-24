@@ -1,4 +1,5 @@
-﻿using HendecamMod.Common.Utils;
+using HendecamMod.Common.Utils;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Networking;
 using HendecamMod.Networking.Packets;
 using Microsoft.Xna.Framework;
@@ -15,8 +16,24 @@ using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Common.Systems.Players;
 
-public class HendecamPlayer : ModPlayer
+public partial class HendecamPlayer : ModPlayer
 {
+    //buff/debuff
+    public bool radWeaponImbue;
+    public bool FusionWeaponImbue;
+    public bool FissionWeaponImbue;
+    public bool Scald;
+    public bool Lucid;
+    public bool lifeRegenDebuff;
+    public bool Rad;
+    public bool Rad2;
+    public bool Rad3;
+    public bool Rad4;
+    public bool Ligma;
+    public bool MoonBurnt;
+    public bool TermLucid;
+
+
     public int shakeDuration;
     public float shakeIntensityX;
     public float shakeIntensityY;
@@ -39,6 +56,17 @@ public class HendecamPlayer : ModPlayer
     }
     public override void ResetEffects()
     {
+        radWeaponImbue = false;
+        FusionWeaponImbue = false;
+        FissionWeaponImbue = false;
+        Scald = false;
+        lifeRegenDebuff = false;
+        Rad = false;
+        Rad2 = false;
+        Rad3 = false;
+        MoonBurnt = false;
+        Ligma = false;
+        TermLucid = false;
         if (shakeDuration > 0)
             shakeDuration--;
         if (recoilFront > 0f)
@@ -48,41 +76,17 @@ public class HendecamPlayer : ModPlayer
     }
     public override void UpdateDead()
     {
-        if (shakeDuration > 0)
-            shakeDuration--;
-    }
-    public override void UpdateEquips()
-    {
+        ResetEffects();
     }
     public override void ProcessTriggers(TriggersSet triggersSet)
     {
     }
 
-    public override void PostUpdateEquips()
-    {
-        base.PostUpdateEquips();
-    }
     public override void ModifyScreenPosition()
     {
         if (shakeDuration > 0)
         {
             Main.screenPosition += Main.rand.NextVector2Circular(shakeIntensityX, shakeIntensityY);
         }
-    }
-    public void UpdateMouse()
-    {
-        if (Player.IsLocalPlayer())
-        {
-            mousePosPrev = MousePosition;
-            MousePosition = Main.MouseWorld;
-            if (Main.netMode == NetmodeID.MultiplayerClient && mousePosPrev != MousePosition)
-            {
-                NetSystem.SendPacket(new MousePositionPacket(Player));
-            }
-        }
-    }
-    public override void PreUpdate()
-    {
-        UpdateMouse();
     }
 }

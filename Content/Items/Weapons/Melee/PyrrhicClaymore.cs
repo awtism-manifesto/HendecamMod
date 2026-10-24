@@ -1,5 +1,6 @@
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Projectiles.Items;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -44,7 +45,7 @@ public class PyrrhicClaymore : ModItem
         if (player.altFunctionUse == 2)
         {
             int proj = Projectile.NewProjectile(source, position, velocity * 2.33f, ProjectileType<PyrrhicProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<PyrrhicComboSetup>().fromthePyrrhicClaymore = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.PyrrhicClaymore;
             player.AddBuff(BuffID.Ichor, 36);
 
             return false;
@@ -52,8 +53,8 @@ public class PyrrhicClaymore : ModItem
         else
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<PyrrhicCombo>().fromPyrrhicClaymore = true;
-            Main.projectile[proj].GetGlobalProjectile<PyrrhicComboSetup>().fromthePyrrhicClaymore = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.PyrrhicClaymore;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.PyrrhicClaymoreSetup;
             player.AddBuff(BuffID.Ichor, 36);
             return false; // Prevent vanilla projectile spawn
         }

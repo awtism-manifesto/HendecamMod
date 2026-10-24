@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using HendecamMod.Common.Systems;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace HendecamMod.Common.Global
+namespace HendecamMod.Common.Systems
 {
     public class VanillaItemTooltips : GlobalItem
     {
@@ -20,6 +19,7 @@ namespace HendecamMod.Common.Global
 
         private const string BaseKey = "Mods.HendecamMod.Items.";
 
+        private static bool WeaponBuffsEnabled() => ModContent.GetInstance<HendecamConfig>().VanillaWeaponStatBuffs;
         private static bool BootsReworkEnabled() => ModContent.GetInstance<HendecamConfig>().BootsTreeRework;
 
         private static readonly Dictionary<int, TooltipEntry> ItemTooltips = new()
@@ -78,12 +78,71 @@ namespace HendecamMod.Common.Global
             [ItemID.RocketBoots] = new("RocketBoots", Replace: false, Color.DarkViolet, BootsReworkEnabled),
             [ItemID.FairyBoots] = new("FairyBoots", Replace: false, Color.DarkViolet, BootsReworkEnabled),
 
+            [ItemID.MetalDetector] = new("MetalDetector", Replace: false, Color.DarkViolet),
+            [ItemID.MagicMirror] = new("MagicMirror", Replace: false, Color.DarkViolet),
+            [ItemID.IceMirror] = new("IceMirror", Replace: false, Color.DarkViolet),
+            [ItemID.MagicConch] = new("MagicConch", Replace: false, Color.DarkViolet),
+            [ItemID.DemonConch] = new("DemonConch", Replace: false, Color.DarkViolet),
             [ItemID.PDA] = new("PDA", Replace: false, Color.DarkViolet),
             [ItemID.CellPhone] = new("CellPhone", Replace: false, Color.DarkViolet),
             [ItemID.Shellphone] = new("Shellphone", Replace: false, Color.DarkViolet),
             [ItemID.ShellphoneSpawn] = new("ShellphoneSpawn", Replace: false, Color.DarkViolet),
             [ItemID.ShellphoneHell] = new("ShellphoneHell", Replace: false, Color.DarkViolet),
-            [ItemID.ShellphoneOcean] = new("ShellphoneOcean", Replace: false, Color.DarkViolet)
+            [ItemID.ShellphoneOcean] = new("ShellphoneOcean", Replace: false, Color.DarkViolet),
+
+            //Proj
+            [ItemID.HolyArrow] = new("HolyArrow", Replace: false, Color.DarkViolet),
+
+            //Weaps
+            [ItemID.CobaltRepeater] = new("CobaltRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.PalladiumRepeater] = new("PalladiumRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.MythrilRepeater] = new("MythrilRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.OrichalcumRepeater] = new("OrichalcumRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.AdamantiteRepeater] = new("AdamantiteRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TitaniumRepeater] = new("TitaniumRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.HallowedRepeater] = new("HallowedRepeater", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+
+            [ItemID.CobaltDrill] = new("CobaltDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.PalladiumDrill] = new("PalladiumDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.MythrilDrill] = new("MythrilDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.OrichalcumDrill] = new("OrichalcumDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.AdamantiteDrill] = new("AdamantiteDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TitaniumDrill] = new("TitaniumDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Drax] = new("Drax", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.ChlorophyteDrill] = new("ChlorophyteDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.LaserDrill] = new("LaserDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.VortexDrill] = new("VortexDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.SolarFlareDrill] = new("SolarFlareDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.NebulaDrill] = new("NebulaDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.StardustDrill] = new("StardustDrill", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+
+            [ItemID.CandyCaneSword] = new("CandyCaneSword", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.DarkLance] = new("DarkLance", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.MonkStaffT2] = new("MonkStaffT2", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.BookofSkulls] = new("BookofSkulls", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Frostbrand] = new("Frostbrand", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TheHorsemansBlade] = new("TheHorsemansBlade", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.FlyingKnife] = new("FlyingKnife", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.JackOLanternLauncher] = new("JackOLanternLauncher", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.WandofFrosting] = new("WandofFrosting", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.PearlwoodSword] = new("PearlwoodSword", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.NettleBurst] = new("NettleBurst", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Cutlass] = new("Cutlass", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Flamethrower] = new("Flamethrower", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.ElfMelter] = new("ElfMelter", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.BoneArrow] = new("BoneArrow", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.BlueMoon] = new("BlueMoon", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.NightsEdge] = new("NightsEdge", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Excalibur] = new("Excalibur", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TrueExcalibur] = new("TrueExcalibur", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TrueNightsEdge] = new("TrueNightsEdge", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.FalconBlade] = new("FalconBlade", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.NorthPole] = new("NorthPole", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Umbrella] = new("Umbrella", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.TragicUmbrella] = new("TragicUmbrella", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Megashark] = new("Megashark", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+            [ItemID.Muramasa] = new("Muramasa", Replace: false, Color.DarkViolet, WeaponBuffsEnabled),
+
         };
 
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)

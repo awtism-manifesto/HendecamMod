@@ -5,22 +5,6 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
 
-public class PyriteBlessing : GlobalNPC
-{
-    public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
-    {
-        return npc.type == NPCID.EyeofCthulhu;
-    }
-
-    public override void OnKill(NPC npc)
-    {
-        if (!NPC.downedBoss1)
-        {
-            GetInstance<PyriteSystem>().BlessWorldWithPyrite();
-        }
-    }
-}
-
 public class PyriteSystem : ModSystem
 {
     public static LocalizedText PyriteMessage { get; private set; }

@@ -5,22 +5,6 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
 
-public class AzuriteBlessing : GlobalNPC
-{
-    public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
-    {
-        return npc.type == NPCID.SkeletronHead;
-    }
-
-    public override void OnKill(NPC npc)
-    {
-        if (!NPC.downedBoss3)
-        {
-            GetInstance<AzuriteSystem>().BlessWorldWithAzurite();
-        }
-    }
-}
-
 public class AzuriteSystem : ModSystem
 {
     public static LocalizedText AzuriteMessage { get; private set; }

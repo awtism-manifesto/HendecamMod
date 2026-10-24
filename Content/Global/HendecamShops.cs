@@ -9,7 +9,7 @@ using HendecamMod.Content.Items.Weapons.Multiclass;
 using HendecamMod.Content.Items.Weapons.Ranger;
 using HendecamMod.Content.Items.Weapons.Stupid;
 using HendecamMod.Content.Items.Weapons.Summon;
-using HendecamMod.Content.NPCs.Town.Alpine;
+using HendecamMod.Content.NPCs.Town.AlpineNPC;
 using HendecamMod.Content.Poop;
 
 namespace HendecamMod.Content.Global;

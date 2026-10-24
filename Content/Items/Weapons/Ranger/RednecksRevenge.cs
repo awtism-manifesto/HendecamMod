@@ -53,7 +53,7 @@ public class RednecksRevenge : ModItem
         {
             Item.noUseGraphic = true;
             int proj = Projectile.NewProjectile(source, position, velocity * 1.1f, ProjectileType<RedneckShovelHallow>(), (int)(damage * 1.5f), knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.RedneckGun;
             SoundEngine.PlaySound(SoundID.Item1, player.position);
 
             return false;
@@ -78,7 +78,7 @@ public class RednecksRevenge : ModItem
             newVelocity *= 1f - Main.rand.NextFloat(0.35f);
 
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.RedneckGun;
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile

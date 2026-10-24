@@ -4,47 +4,6 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Global;
 
-
-public class FuckRedDevils : GlobalProjectile
-    {
-    public bool fromRedDevil;
-
-    public override bool InstancePerEntity => true;
-
-    public override void ModifyHitPlayer(Projectile projectile, Player target, ref Player.HurtModifiers modifiers)
-        {
-        if (projectile.type == ProjectileID.UnholyTridentHostile)
-            {
-            modifiers.SourceDamage *= 0.67f;
-            }
-        }
-
-    public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info)
-        {
-        if (projectile.type == ProjectileID.UnholyTridentHostile)
-            {
-            target.AddBuff(BuffID.ShadowFlame, 360);
-            }
-        }
-
-    }
-public class FuckRedDevilsHarder : GlobalProjectile
-    {
-    public bool frommRedDevil;
-
-    public override bool InstancePerEntity => true;
-
-    public override void ModifyHitNPC(Projectile projectile, NPC target, ref NPC.HitModifiers modifiers)
-        {
-            {
-            if (projectile.type == ProjectileID.HolyArrow && target.type == NPCID.RedDevil)
-                {
-                modifiers.SourceDamage *= 777f;
-                }
-            }
-        }
-    }
-
 public class HarpyBuff : GlobalProjectile
     {
     public bool fromHarpy;
@@ -127,24 +86,4 @@ public class FrostCoreTack : GlobalProjectile
             }
 
         }
-
-
     }
-public class DeerBurn : GlobalProjectile
-    {
-    public bool DeerclopsAttack;
-
-    public override bool InstancePerEntity => true;
-
-
-
-    public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info)
-        {
-        if (projectile.type == ProjectileID.DeerclopsIceSpike)
-            {
-            target.AddBuff(BuffID.Frostburn, 150);
-            }
-        }
-
-    }
-

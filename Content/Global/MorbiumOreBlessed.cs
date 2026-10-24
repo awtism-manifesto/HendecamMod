@@ -4,23 +4,6 @@ using Terraria.Chat;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
-
-public class MorbiumOreBlessed : GlobalNPC
-{
-    public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
-    {
-        return npc.type == NPCID.Plantera;
-    }
-
-    public override void OnKill(NPC npc)
-    {
-        if (!NPC.downedPlantBoss)
-        {
-            GetInstance<MorbiumSystem>().BlessWorldWithMorbium();
-        }
-    }
-}
-
 public class MorbiumSystem : ModSystem
 {
     public static LocalizedText MorbiumMessage { get; private set; }
@@ -32,13 +15,11 @@ public class MorbiumSystem : ModSystem
         MorbiumBlessMessage = Mod.GetLocalization($"WorldGen.{nameof(MorbiumBlessMessage)}");
     }
 
-    // This method is called from MinionBossBody.OnKill the first time the boss is killed.
-    // The logic is located here for organizational purposes.
     public void BlessWorldWithMorbium()
     {
         if (Main.netMode == NetmodeID.MultiplayerClient)
         {
-            return; // This should not happen, but just in case.
+            return;
         }
 
         // Since this happens during gameplay, we need to run this code on another thread. If we do not, the game will experience lag for a brief moment. This is especially necessary for world generation tasks that would take even longer to execute.

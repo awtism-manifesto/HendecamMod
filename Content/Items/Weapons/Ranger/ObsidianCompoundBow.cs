@@ -49,7 +49,7 @@ public class ObsidianCompoundBow : ModItem
     {
         type = ProjectileType<ObsidianArrow>();
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-        Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
+        Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.CompoundBow;
         return false; // Prevent vanilla projectile spawn
     }
     public override void HoldItem(Player player)

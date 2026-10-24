@@ -1,4 +1,5 @@
-﻿namespace HendecamMod.Content.Buffs;
+using HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.Buffs;
 
 public class Splinters : ModBuff
 {
@@ -22,37 +23,9 @@ public class Splinters : ModBuff
 
        
 
-        npc.GetGlobalNPC<SplinterTick>().Splintering = true;
+        npc.GetGlobalNPC<HendecamGlobalNPC>().Splintering = true;
     }
 
    
 }
-public class SplinterTick : GlobalNPC
-{
-    public bool Splintering;
-    public override bool InstancePerEntity => true;
 
-    public override void ResetEffects(NPC npc)
-    {
-        Splintering = false;
-    }
-
-    // Helper method for DOT debuffs
-    void DOTDebuff(NPC npc, float damagePerSecond, ref int damage)
-    {
-        if (npc.lifeRegen > 0) npc.lifeRegen = 0;
-        npc.lifeRegen -= (int)(damagePerSecond * 5);
-        if (damage < damagePerSecond)
-        {
-            damage = (int)damagePerSecond;
-        }
-    }
-
-    public override void UpdateLifeRegen(NPC npc, ref int damage)
-    {
-        if (Splintering)
-        {
-            DOTDebuff(npc, 2, ref damage);
-        }
-    }
-}

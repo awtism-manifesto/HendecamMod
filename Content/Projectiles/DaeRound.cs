@@ -107,7 +107,7 @@ public class DaeRound : ModProjectile
 
         // Apply FastBees GlobalProjectile
         Main.projectile[proj]
-            .GetGlobalProjectile<FastBees>()
-            .fromBeeSniper = true;
+            .GetGlobalProjectile<HendecamGlobalProjectile>()
+            .ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.BeeSniper;
     }
 }

@@ -1,73 +1,44 @@
-﻿using HendecamMod.Content.Global;
-using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons.Summon;
-using HendecamMod.Content.Projectiles.Enemies;
-using HendecamMod.Content.Projectiles.Enemies.Boss;
-using JetBrains.Annotations;
-using Terraria.GameContent.Bestiary;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
-namespace HendecamMod.Content.NPCs;
-public class LycosporeSlime : ModNPC
+namespace HendecamMod.Content.NPCs.Enemies;
+
+// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
+public class AquaticSlime : ModNPC
 {
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime];
 
-        NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.MotherSlime;
+        NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.ShimmerSlime;
 
         NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
-            Velocity = 1f
+            Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
         };
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
 
     public override void SetDefaults()
     {
-        NPC.width = 45;
-        NPC.height = 25;
-        NPC.damage = 33;
-        NPC.defense = 8;
-        NPC.lifeMax = 102;
+        NPC.width = 34;
+        NPC.height = 24;
+        NPC.damage = 12;
+        NPC.defense = 6;
+        NPC.lifeMax = 45;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
-        NPC.value = 3330f;
+        NPC.value = 700f;
         NPC.knockBackResist = 0.7f;
         NPC.aiStyle = NPCAIStyleID.Slime;
 
-        AIType = NPCID.YellowSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
-        AnimationType = NPCID.BlueSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
+        AIType = NPCID.BlueSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
+        AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ItemType<LycosporeSlimeBanner>();
+        BannerItem = ItemType<AquaticSlimeBanner>();
     }
-  
-    public int ShroomCD = 0;
 
-    public override void AI()
-    {
-        var source = NPC.GetSource_FromAI();
-        Vector2 center = NPC.Center;
-
-        ShroomCD--;
-
-        if (NPC.life <= NPC.lifeMax * 0.5f && ShroomCD <= 0 && NPC.HasValidTarget)
-        {
-           
-            float spreadRadius = 150f; 
-            Vector2 offset = Main.rand.NextVector2Circular(spreadRadius, spreadRadius);
-            Vector2 spawnPos = center + offset;
-
-            // Stationary projectile: zero velocity
-            Projectile.NewProjectile(source, spawnPos, Vector2.Zero,
-                ProjectileType<BoomShroomHostile>(), 40, 0f, Main.myPlayer);
-
-            ShroomCD = 15;
-        }
-    }
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
         // Since Party Zombie is essentially just another variation of Zombie, we'd like to mimic the Zombie drops.
@@ -86,18 +57,15 @@ public class LycosporeSlime : ModNPC
         // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
         // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
         // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-        npcLoot.Add(ItemDropRule.Common(ItemType<LycopiteOre>(), 1, 9, 24));
-       
-       
+
+        npcLoot.Add(ItemDropRule.Common(ItemID.BottledWater, 2));
+        npcLoot.Add(ItemDropRule.Common(ItemID.WaterBucket, 5));
+        npcLoot.Add(ItemDropRule.Common(ItemID.BottomlessBucket, 75));
+        npcLoot.Add(ItemDropRule.Common(ItemID.WaterBolt, 100));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        if (NPC.downedDeerclops)
-        {
-            return SpawnCondition.Cavern.Chance * 0.36f;
-        }
-        else return SpawnCondition.Cavern.Chance * 0f;
-
+        return SpawnCondition.Ocean.Chance * 0.25f;
     }
 }

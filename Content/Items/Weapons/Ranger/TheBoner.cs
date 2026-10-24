@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Ranger;
 
@@ -47,6 +48,13 @@ public class TheBoner : ModItem
         recipe.AddRecipeGroup("IronBar", 12);
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+    }
+    //wtf are we doing here, globalitem overriding our modded item????
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        Projectile.NewProjectileDirect(source, player.Center, velocity * 17.5f, ProjectileID.BoneGloveProj, damage, knockback, player.whoAmI);
+
+        return base.Shoot(player, source, position, velocity, type, damage, knockback);
     }
 
     // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.

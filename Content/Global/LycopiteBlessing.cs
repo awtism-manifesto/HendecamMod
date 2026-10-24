@@ -4,23 +4,6 @@ using Terraria.Chat;
 using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
-
-public class LycopiteBlessing : GlobalNPC
-{
-    public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
-    {
-        return npc.type == NPCID.Deerclops;
-    }
-
-    public override void OnKill(NPC npc)
-    {
-        if (!NPC.downedDeerclops)
-        {
-            GetInstance<LycopiteSystem>().BlessWorldWithLycopite();
-        }
-    }
-}
-
 public class LycopiteSystem : ModSystem
 {
     public static LocalizedText LycopiteMessage { get; private set; }

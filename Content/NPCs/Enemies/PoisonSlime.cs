@@ -1,22 +1,17 @@
-using HendecamMod.Content.Global;
-using HendecamMod.Content.Items.Accessories;
-using HendecamMod.Content.Items.Materials;
-using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Weapons.Summon;
-using Terraria.GameContent.Bestiary;
+﻿using HendecamMod.Content.Items.Placeables;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
-namespace HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.NPCs.Enemies;
 
 // Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
-public class OilSlime : ModNPC
+public class PoisonSlime : ModNPC
 {
     public override void SetStaticDefaults()
     {
         Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime];
 
-        NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.MotherSlime;
+        NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.ShimmerSlime;
 
         NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers
         {
@@ -26,33 +21,23 @@ public class OilSlime : ModNPC
         NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
     }
 
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-    {
-        // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-        {
-            // Sets your NPC's flavor text in the bestiary.
-            new FlavorTextBestiaryInfoElement("Mods.HendecamMod.NPCs.OilSlime.Bestiary")
-        });
-    }
-
     public override void SetDefaults()
     {
-        NPC.width = 32;
-        NPC.height = 25;
-        NPC.damage = 19;
-        NPC.defense = 1;
-        NPC.lifeMax = 48;
+        NPC.width = 34;
+        NPC.height = 24;
+        NPC.damage = 55;
+        NPC.defense = 25;
+        NPC.lifeMax = 170;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
-        NPC.value = 2925f;
+        NPC.value = 1280f;
         NPC.knockBackResist = 0.7f;
         NPC.aiStyle = NPCAIStyleID.Slime; 
 
-        AIType = NPCID.YellowSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
-        AnimationType = NPCID.BlueSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
+        AIType = NPCID.BlueSlime; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
+        AnimationType = NPCID.GreenSlime; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
         Banner = Type;
-        BannerItem = ItemType<OilSlimeBanner>();
+        BannerItem = ItemType<PoisonSlimeBanner>();
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -70,18 +55,12 @@ public class OilSlime : ModNPC
             npcLoot.Add(zombieDropRule);
         }
 
-        // (2) This example shows recreating the drops. This code is commented out because we are using the previous method instead.
-        // npcLoot.Add(ItemDropRule.Common(ItemID.Shackle, 50)); // Drop shackles with a 1 out of 50 chance.
-        // npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
-        npcLoot.Add(ItemDropRule.Common(ItemType<CrudeOil>(), 1, 10, 21));
-        npcLoot.Add(ItemDropRule.Common(ItemType<CarbonDioxideBottle>(), 20));
-        npcLoot.Add(ItemDropRule.Common(ItemType<PolymerSlimeStaff>(), 150));
-        npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<OilMonsterStaff>(), chanceDenominator: 250, chanceNumerator: 1));
-        npcLoot.Add(ItemDropRule.Common(ItemID.Rally, 33));
+        npcLoot.Add(ItemDropRule.Common(ItemID.PoisonStaff, 25));
+        npcLoot.Add(ItemDropRule.Common(ItemType<AcidCloud>(), 1, 5, 35));
     }
 
     public override float SpawnChance(NPCSpawnInfo spawnInfo)
     {
-        return SpawnCondition.Underground.Chance * 0.95f;
+        return SpawnCondition.HardmodeJungle.Chance * 0.67f;
     }
 }

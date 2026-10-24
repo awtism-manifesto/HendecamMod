@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Content.NPCs;
+using HendecamMod.Content.NPCs.Enemies;
 using Terraria.Achievements;
 using Terraria.GameContent.Achievements;
 

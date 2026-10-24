@@ -76,7 +76,7 @@ public class Blackshard : ModItem
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity * 2.1f, ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
             player.AddBuff(BuffType<DarkPower>(), 363);
-            Main.projectile[proj].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.Blackshard;
             SoundEngine.PlaySound(SoundID.NPCDeath51, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath44, player.position);
             SoundEngine.PlaySound(SoundID.NPCDeath55, player.position);
@@ -86,7 +86,7 @@ public class Blackshard : ModItem
             {
                 int proj2 = Projectile.NewProjectile(source, position, new2Velocity * 2.1f, ProjectileType<KnightStar>(), (int)(damage * 1.15f), (int)(knockback * 2f), player.whoAmI);
 
-                Main.projectile[proj2].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = true;
+                Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.Blackshard;
             }
 
             return false;
@@ -96,7 +96,7 @@ public class Blackshard : ModItem
         {
             int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
             player.AddBuff(BuffType<DarkPower>(), 363);
-            Main.projectile[proj].GetGlobalProjectile<KnightComboSetup>().fromtheBlackshard = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.Blackshard;
 
             return false; // Prevent vanilla projectile spawn
         }

@@ -7,10 +7,6 @@ public class RadSpeed4 : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-       
-      
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
-     
-       
     }
 }

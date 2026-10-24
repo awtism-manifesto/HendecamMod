@@ -53,7 +53,7 @@ public class ZeGogEnablers : ModConfig
 
         if (!expConfig.EnableGogEnablers)
         {
-           GogEnabler1 = false;
+            GogEnabler1 = false;
             GogEnabler2 = false;
             GogEnabler3 = false;
             GogEnabler4 = false;

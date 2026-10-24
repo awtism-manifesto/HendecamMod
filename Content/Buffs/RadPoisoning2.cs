@@ -1,5 +1,7 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
+using HendecamMod.Content.NPCs;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -14,7 +16,7 @@ public class RadPoisoning2 : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.GetModPlayer<Rad2Player>().Rad2 = true;
+        player.GetModPlayer<HendecamPlayer>().Rad2 = true;
     }
 
     public override void Update(NPC npc, ref int buffIndex)
@@ -26,27 +28,6 @@ public class RadPoisoning2 : ModBuff
             Main.dust[dust].noGravity = true;
         }
 
-        npc.GetGlobalNPC<Rad2Tick>().Radded2 = true;
-    }
-
-    public class Rad2Player : ModPlayer
-    {
-        public bool Rad2;
-
-        public override void ResetEffects()
-        {
-            Rad2 = false;
-        }
-
-        public override void UpdateBadLifeRegen()
-        {
-            if (Rad2)
-            {
-                if (Player.lifeRegen > 0)
-                    Player.lifeRegen = 0;
-                Player.lifeRegenTime = 0;
-                Player.lifeRegen -= 30;
-            }
-        }
+        npc.GetGlobalNPC<HendecamGlobalNPC>().Radded2 = true;
     }
 }

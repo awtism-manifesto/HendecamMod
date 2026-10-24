@@ -8050,7 +8050,11 @@ AnkhCharm:
 	Cursed Inferno, Frozen, Frostbite, Obstructed, and Electrified
 	'''
 Shimmerfly: Hendecam Mod: Can be used as bait, required for fishing in the Shimmer
-EmpressButterfly: Hendecam Mod: Can also be used to fish in the Shimmer
+EmpressButterfly:
+	'''
+	Hendecam Mod: Can also be used to fish in the Shimmer
+	Hendecam Mod: Now able to be used as bait, if you're a terrible enough person.
+	'''
 CrabBanner: Hendecam Mod: Can be used as bait
 DirtBlock: Hendecam Mod: Can be used as bait
 Worm: Hendecam Mod: Sell price set to 0 because fuck you
@@ -8074,9 +8078,57 @@ FrostsparkBoots: Hendecam Mod: Has the effects of Dune Riders, grants 30 more fi
 TerrasparkBoots: Hendecam Mod: Run faster on sand, negate fall damage, higher jump speed, increased fall distance, auto jump, +30 fishing power, run MUCH faster
 RocketBoots: Hendecam Mod: Allows you to run REALLY fast
 FairyBoots: Hendecam Mod: Allows you to run REALLY fast
+DemonConch: Hendecam Mod: Faster use animation
 PDA: Hendecam Mod: Displays info of Neural Mapping Software
 CellPhone: Hendecam Mod: Displays more info, faster use speed
 Shellphone: Hendecam Mod: Displays more info, faster use speed
 ShellphoneSpawn: Hendecam Mod: Displays more info, faster use speed
 ShellphoneHell: Hendecam Mod: Displays more info, faster use speed
 ShellphoneOcean: Hendecam Mod: Displays more info, faster use speed
+HolyArrow: Hendecam Mod: Deals 777x damage to Red Devils
+CobaltRepeater: Hendecam Mod: Now fires in a two round burst
+PalladiumRepeater: Hendecam Mod: Now fires in a two round burst
+MythrilRepeater: Hendecam Mod: Now fires in a two round burst
+OrichalcumRepeater: Hendecam Mod: Now fires in a two round burst
+AdamantiteRepeater: Hendecam Mod: Now fires in a two round burst
+TitaniumRepeater: Hendecam Mod: Now fires in a two round burst
+HallowedRepeater: Hendecam Mod: Now fires in a two round burst
+CobaltDrill: Hendecam Mod: Increased speed and hugely increased damage
+PalladiumDrill: Hendecam Mod: Increased speed and hugely increased damage
+MythrilDrill: Hendecam Mod: Increased speed and hugely increased damage
+OrichalcumDrill: Hendecam Mod: Increased speed and hugely increased damage
+AdamantiteDrill: Hendecam Mod: Increased speed and hugely increased damage
+TitaniumDrill: Hendecam Mod: Increased speed and hugely increased damage
+Drax: Hendecam Mod: Increased speed and hugely increased damage
+ChlorophyteDrill: Hendecam Mod: Increased speed and hugely increased damage
+LaserDrill: Hendecam Mod: Increased speed, range and hugely increased damage
+VortexDrill: Hendecam Mod: Increased speed and hugely increased damage
+SolarFlareDrill: Hendecam Mod: Increased speed and hugely increased damage
+NebulaDrill: Hendecam Mod: Increased speed and hugely increased damage
+StardustDrill: Hendecam Mod: Increased speed and hugely increased damage
+CandyCaneSword: Hendecam Mod: Stats buffed all around
+DarkLance: Hendecam Mod: Increased range, speed and damage
+MonkStaffT2: Hendecam Mod: Significantly increased range
+BookofSkulls: Hendecam Mod: Hugely increased projectile velocity, lowered mana cost
+Frostbrand: Hendecam Mod: Now shoots icy bolts every swing at a much higher velocity
+TheHorsemansBlade: Hendecam Mod: Significantly increased swing speed
+FlyingKnife: Hendecam Mod: Damage increased by 35%
+JackOLanternLauncher: Hendecam Mod: Massively increased velocity and fire rate
+WandofFrosting: Hendecam Mod: Increased speed and damage
+PearlwoodSword: "Hendecam Mod: 1.5x damage, 2x size, and 3x speed "
+NettleBurst: Hendecam Mod: Damage and armor penetration doubled
+Cutlass: Hendecam Mod: Increased size and speed
+Flamethrower: Hendecam Mod: Drastically increased range
+ElfMelter: Hendecam Mod: Drastically increased range
+BoneArrow: Hendecam Mod: Increased damage and velocity
+BlueMoon: Hendecam Mod: Now ignores 25 enemy defense
+NightsEdge: Hendecam Mod: All stats significantly buffed
+Excalibur: Hendecam Mod: All stats significantly buffed
+TrueExcalibur: Hendecam Mod: All stats significantly buffed
+TrueNightsEdge: Hendecam Mod: All stats significantly buffed
+FalconBlade: Hendecam Mod: Much faster swing speed
+NorthPole: Hendecam Mod: Damage significantly buffed
+Umbrella: Hendecam Mod: Now guaranteed to crit
+TragicUmbrella: Hendecam Mod: Guaranteed to crit, massively increased damage
+Megashark: Hendecam Mod: Increased damage and velocity
+Muramasa: Hendecam Mod: All stats significantly buffed

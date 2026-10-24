@@ -21,7 +21,7 @@ using Terraria.Localization;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
-namespace HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.NPCs.Town.PoliticianNPC;
 
 // [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 [AutoloadHead]

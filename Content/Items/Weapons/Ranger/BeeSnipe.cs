@@ -1,5 +1,6 @@
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -54,7 +55,7 @@ public class BeeSnipe : ModItem
         if (type == ProjectileID.BeeArrow)
         {
             int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<FastBees>().fromBeeSniper = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.BeeSniper;
             return false; // Prevent vanilla projectile spawn
         }
 

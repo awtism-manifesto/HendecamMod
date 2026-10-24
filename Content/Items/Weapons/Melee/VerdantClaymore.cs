@@ -43,7 +43,7 @@ public class VerdantClaymore : ModItem
         if (player.altFunctionUse == 2)
         {
             int proj = Projectile.NewProjectile(source, position, velocity * 2.25f, ProjectileType<VerdantProjThrown>(), (int)(damage * 0.67f), (int)(knockback * 0.99f), player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VerdantClaymore;
             player.AddBuff(BuffID.Poisoned, 24);
 
             return false;
@@ -51,8 +51,8 @@ public class VerdantClaymore : ModItem
         else
         {
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<VerdantCombo>().fromVerdantClaymore = true;
-            Main.projectile[proj].GetGlobalProjectile<VerdantComboSetup>().fromtheVerdantClaymore = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VerdantClaymore;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.VerdantClaymoreSetup;
             player.AddBuff(BuffID.Poisoned, 24);
             return false; // Prevent vanilla projectile spawn
         }

@@ -1,5 +1,7 @@
 ﻿using System.IO;
-using HendecamMod.Content.NPCs;
+using HendecamMod.Content.NPCs.Town.AssholeNPC;
+using HendecamMod.Content.NPCs.Town.PoliticianNPC;
+using HendecamMod.Content.NPCs.Town.RiverNPC;
 using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Content.GlobalNPCs;

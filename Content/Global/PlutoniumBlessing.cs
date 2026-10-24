@@ -4,8 +4,6 @@ using Terraria.Localization;
 
 namespace HendecamMod.Content.Global;
 
-
-
 public class PlutoniumSystem : ModSystem
 {
     public static LocalizedText PlutoniumMessage { get; private set; }

@@ -1,4 +1,5 @@
-﻿using HendecamMod.Content.Buffs;
+using HendecamMod.Common.Systems.Players;
+using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Accessories;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
@@ -167,12 +168,12 @@ namespace HendecamMod.Common.Systems
                 // Calculate intensity modifiers
                 float intensityMultiplier = 1f;
 
-                if (Player.GetModPlayer<LucidPlayer>().Lucid)
+                if (Player.GetModPlayer<HendecamPlayer>().Lucid)
                 {
                     intensityMultiplier *= 0.425f;
                 }
 
-                if (Player.GetModPlayer<TermLucidPlayer>().TermLucid)
+                if (Player.GetModPlayer<HendecamPlayer>().TermLucid)
                 {
                     intensityMultiplier *= 0.175f;
                 }

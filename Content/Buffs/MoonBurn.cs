@@ -1,5 +1,7 @@
-﻿using HendecamMod.Content.Dusts;
+﻿using HendecamMod.Common.Systems.Players;
+using HendecamMod.Content.Dusts;
 using HendecamMod.Content.Global;
+using HendecamMod.Content.NPCs;
 
 namespace HendecamMod.Content.Buffs;
 
@@ -14,7 +16,7 @@ public class MoonBurn : ModBuff
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.GetModPlayer<MoonBurntPlayer>().MoonBurnt = true;
+        player.GetModPlayer<HendecamPlayer>().MoonBurnt = true;
     }
 
     public override void Update(NPC npc, ref int buffIndex)
@@ -33,27 +35,6 @@ public class MoonBurn : ModBuff
             Main.dust[dust].noGravity = true;
         }
 
-        npc.GetGlobalNPC<MoonBurning>().MoonCooked = true;
-    }
-
-    public class MoonBurntPlayer : ModPlayer
-    {
-        public bool MoonBurnt;
-
-        public override void ResetEffects()
-        {
-            MoonBurnt = false;
-        }
-
-        public override void UpdateBadLifeRegen()
-        {
-            if (MoonBurnt)
-            {
-                if (Player.lifeRegen > 0)
-                    Player.lifeRegen = 0;
-                Player.lifeRegenTime = 0;
-                Player.lifeRegen -= (int)(222f);
-            }
-        }
+        npc.GetGlobalNPC<HendecamGlobalNPC>().MoonCooked = true;
     }
 }

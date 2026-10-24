@@ -1,6 +1,7 @@
-using System.Collections.Generic;
 using HendecamMod.Content.Global;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 
@@ -48,7 +49,7 @@ public class CompoundBow3 : ModItem
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         int proj = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-        Main.projectile[proj].GetGlobalProjectile<FastBow>().fromCompoundBow = true;
+        Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.CompoundBow;
         SoundEngine.PlaySound(new SoundStyle($"{nameof(HendecamMod)}/Assets/Sounds/BowShot")
         {
             Volume = 2.67f,

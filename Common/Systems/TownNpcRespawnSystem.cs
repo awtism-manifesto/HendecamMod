@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using HendecamMod.Content.NPCs.Town.Alpine;
+using HendecamMod.Content.NPCs.Town.AlpineNPC;
 using Terraria.ModLoader.IO;
 
 namespace HendecamMod.Common.Systems;

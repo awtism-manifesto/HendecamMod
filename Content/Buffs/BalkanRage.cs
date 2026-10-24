@@ -10,6 +10,6 @@ public class BalkanRage : ModBuff
     {
         player.GetCritChance(DamageClass.Generic) += CritBonus;
         player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 100f;
-        player.statDefense += DefenseBonus; // Grant a +10 defense boost to the player while the buff is active.
+        player.statDefense += DefenseBonus;
     }
 }

@@ -2,7 +2,7 @@
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Weapons.Ammo;
-using HendecamMod.Content.NPCs.Town.Alpine;
+using HendecamMod.Content.NPCs.Town.AlpineNPC;
 using HendecamMod.Content.Pets;
 using HendecamMod.Content.Projectiles.Enemies.Boss;
 using HendecamMod.Content.Items.Placeables;

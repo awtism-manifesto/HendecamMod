@@ -8,7 +8,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader.Utilities;
 
-namespace HendecamMod.Content.NPCs;
+namespace HendecamMod.Content.NPCs.Enemies;
 
 public class RadiationSeeker : ModNPC
 {

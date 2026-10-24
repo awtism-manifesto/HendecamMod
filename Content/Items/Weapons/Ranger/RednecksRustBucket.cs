@@ -56,7 +56,7 @@ public class RednecksRustBucket : ModItem
             Item.noUseGraphic = true;
 
             int proj = Projectile.NewProjectile(source, position, velocity * 1.18f, ProjectileType<RedneckShovel>(), (int)(damage * 0.95f), knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = false;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.RedneckGun;
             SoundEngine.PlaySound(SoundID.Item1, player.position);
 
             return false;
@@ -83,7 +83,7 @@ public class RednecksRustBucket : ModItem
 
             // Create a projectile.
             int proj = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<RedneckCombo>().fromRedneckGun = true;
+            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.RedneckGun;
         }
 
         return false; // Return false because we don't want tModLoader to shoot projectile

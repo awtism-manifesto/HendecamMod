@@ -1,7 +1,10 @@
 using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Projectiles;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
+using Terraria.Audio;
+using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
@@ -38,7 +41,13 @@ public class ImpulseBow : ModItem
         Item.useAmmo = ItemID.WoodenArrow;
         Item.shoot = ProjectileID.WoodenArrowFriendly;
     }
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+    {
+        SoundEngine.PlaySound(SoundID.Item5, position);
+        Projectile.NewProjectileDirect(source, position, velocity * 17.5f, ProjectileType<AstatineBullet>(), (int)(damage * 0.75f), knockback, player.whoAmI);
 
+        return base.Shoot(player, source, position, velocity, type, damage, knockback);
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
