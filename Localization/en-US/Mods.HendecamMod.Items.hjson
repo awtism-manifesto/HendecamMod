@@ -8132,3 +8132,55 @@ Umbrella: Hendecam Mod: Now guaranteed to crit
 TragicUmbrella: Hendecam Mod: Guaranteed to crit, massively increased damage
 Megashark: Hendecam Mod: Increased damage and velocity
 Muramasa: Hendecam Mod: All stats significantly buffed
+
+MantiusChestplate: {
+	SetBonus: Increases all stats in Hardmode
+	DisplayName: Mantius Chestplate
+	Tooltip: 9% increased critical strike chance
+}
+
+MantiusLeggings: {
+	DisplayName: Mantius Leggings
+	Tooltip: 6% increased damage and movement speed
+}
+
+MantiusMask: {
+	DisplayName: Mantius Mask
+	Tooltip: 19% increased melee speed
+}
+
+MantiusHelmet: {
+	DisplayName: Mantius Helmet
+	Tooltip:
+		'''
+		7% increased summon damage
+		+1 max minion and sentry
+		'''
+}
+
+MantiusCap: {
+	DisplayName: Mantius Cap
+	Tooltip:
+		'''
+		11% increased stupid damage
+		+100 max Braincells
+		'''
+}
+
+MantiusHat: {
+	DisplayName: Mantius Hat
+	Tooltip:
+		'''
+		10% increased ranged damage
+		9% increased ranged crit chance
+		'''
+}
+
+MantiusHeadgear: {
+	DisplayName: Mantius Headgear
+	Tooltip:
+		'''
+		12% increased magic damage
+		+75 max Mana
+		'''
+}

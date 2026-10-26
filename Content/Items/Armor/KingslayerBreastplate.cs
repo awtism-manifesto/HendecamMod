@@ -74,7 +74,7 @@ public class KingslayerBreastplate : ModItem
             player.moveSpeed += MoveSpeedBonus / 108f;
             player.runAcceleration *= 1.1f;
             player.GetArmorPenetration(DamageClass.Generic) += ArmorPenetration;
-            player.lifeRegen = (int)(player.lifeRegen + 2.5f);
+            player.lifeRegen = (int)(player.lifeRegen + 2f);
             player.GetCritChance(DamageClass.Generic) += CritBonus2;
             player.GetAttackSpeed(DamageClass.Generic) += AttackSpeedBonus / 103f;
             player.statDefense += 5;

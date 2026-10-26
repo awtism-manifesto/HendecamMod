@@ -307,7 +307,7 @@ public class Asshole : ModNPC
             .Add<NerfGun>()
             .Add<TackShooter>()
             .Add<MandibleStaff>(Condition.DownedEarlygameBoss)
-            .Add<Pyrocannon>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
+            
             .Add<ParticleGun>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
             .Add<WandOfTheOvercompensator>(Condition.DownedEowOrBoc, Condition.DownedSkeletron)
             .Add<MintalMachinePistol>(Condition.Hardmode);

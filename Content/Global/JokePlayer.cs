@@ -66,15 +66,9 @@ namespace HendecamMod.Content.Global
             if (JokeCycler >= 240)
             {
 
-                choice = Main.rand.Next(28);
-                if (choice == 17)
-                {
-                    displayColor = GreenInfoTextColor;
-                }
-                else
-                {
-                    displayColor = InfoTextColor;
-                }
+                choice = Main.rand.Next(32);
+               
+               
                 switch (choice)
                 {
                     case 0:
@@ -87,7 +81,7 @@ namespace HendecamMod.Content.Global
                         JokeDisplayed = "Deltarune Tomorrow";
                         break;
                     case 3:
-                        JokeDisplayed = "Well at least you don't have to fight... Freddy Fazbear....";
+                        JokeDisplayed = "Well at least you don't have to fight.. Freddy Fazbear..";
                         break;
 
                     case 4:
@@ -101,7 +95,7 @@ namespace HendecamMod.Content.Global
                         JokeDisplayed = "IS THAT THE ROARING KNIGHT???";
                         break;
                     case 7:
-                        JokeDisplayed = "I wonder what the Brain of Cthulhu's lobotometer decay rate is...";
+                        JokeDisplayed = "I wonder what Brain of Cthulhu's lobotometer decay rate is";
                         break;
                     case 8:
                         JokeDisplayed = "Chlorophyte Shitballs! Now 50% shittier!!!";
@@ -131,7 +125,7 @@ namespace HendecamMod.Content.Global
                         JokeDisplayed = "The JFK Experience: Ending hardcore runs since 2024!";
                         break;
                     case 17:
-                        JokeDisplayed = "Say you'll be green!";
+                        JokeDisplayed = "Nerf Summoner";
 
                         break;
                     case 18:
@@ -164,16 +158,28 @@ namespace HendecamMod.Content.Global
                     case 27:
                         JokeDisplayed = "What did the Lihzahrds use for entertainment? Solar tablets.";
                         break;
+                    case 28:
+                        JokeDisplayed = "Terra Vape! Now with 4x more vaping!";
+                        break;
+                    case 29:
+                        JokeDisplayed = "The Dumbass is an amalgamate, made by Gaster intricate";
+                        break;
+                    case 30:
+                        JokeDisplayed = "My favorite QoL mod! DragonLens!";
+                        break;
+                    case 31:
+                        JokeDisplayed = "TerMerica died for this";
+                        break;
+                    case 32:
+                        JokeDisplayed = "Hey guys! When's the next Calamity update?";
+                        break;
                 }
 
                 JokeCycler = 0;
             }
             else
             {
-                if (choice == 17)
-                {
-                    displayColor = GreenInfoTextColor;
-                }
+                
                 if (choice == 20)
                 {
                     displayColor = RedInfoTextColor;
@@ -183,7 +189,7 @@ namespace HendecamMod.Content.Global
                     displayColor = InfoTextColor;
                 }
             }
-                return $" {JokeDisplayed}";
+                return $"{JokeDisplayed}";
         }
     }
 }

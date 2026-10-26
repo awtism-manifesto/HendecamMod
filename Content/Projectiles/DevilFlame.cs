@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Projectiles;
+﻿using HendecamMod.Common.Systems.Particles;
+
+namespace HendecamMod.Content.Projectiles;
 
 public class DevilFlame : ModProjectile
 {
@@ -35,23 +37,18 @@ public class DevilFlame : ModProjectile
         {
             for (int i = 0; i < 2; i++)
             {
-                float posOffsetX = 0f;
-                float posOffsetY = 0f;
-                if (i == 1)
-                {
-                    posOffsetX = Projectile.velocity.X * 2.5f;
-                    posOffsetY = Projectile.velocity.Y * 2.5f;
-                }
+                Color randColor = Main.rand.NextFromList(Color.Red, Color.DarkRed, Color.OrangeRed, Color.Black);
 
-                Dust fire2Dust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 20, Projectile.height - 20, DustID.CrimsonTorch, 0f, 0f, 100, default, 2.5f);
-                fire2Dust.fadeIn = 0.2f + Main.rand.Next(7) * 0.1f;
-                fire2Dust.noGravity = true;
-                fire2Dust.velocity *= 1.7f;
 
-                Dust fireDust = Dust.NewDustDirect(new Vector2(Projectile.position.X + 1f + posOffsetX, Projectile.position.Y + 1f + posOffsetY) - Projectile.velocity * 0.1f, Projectile.width - 20, Projectile.height - 20, DustID.RedTorch, 0f, 0f, 100, default, 2.5f);
-                fireDust.fadeIn = 0.2f + Main.rand.Next(7) * 0.1f;
-                fireDust.noGravity = true;
-                fireDust.velocity *= 1.7f;
+
+
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Fire,
+                    Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
+                    Vector2.Zero,
+                    randColor,
+                    Main.rand.NextFloat(0.4f, 0.8f),
+                    Main.rand.NextFloat(0.7f, 1f));
             }
         }
     }
