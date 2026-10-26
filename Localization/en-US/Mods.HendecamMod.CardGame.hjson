@@ -1,0 +1,241 @@
+Ranks: {
+	Three: "3"
+	Four: "4"
+	Five: "5"
+	Six: "6"
+	Seven: "7"
+	Eight: "8"
+	Nine: "9"
+	Ten: "10"
+	Jack: Jack
+	Queen: Queen
+	King: King
+	Ace: Ace
+	Two: "2"
+}
+
+Suits: {
+	Spade: Spade
+	Club: Club
+	Diamond: Diamond
+	Heart: Heart
+}
+
+UnoColors: {
+	Red: Red
+	Yellow: Yellow
+	Green: Green
+	Blue: Blue
+	Wild: Wild
+}
+
+UnoValues: {
+	Zero: "0"
+	One: "1"
+	Two: "2"
+	Three: "3"
+	Four: "4"
+	Five: "5"
+	Six: "6"
+	Seven: "7"
+	Eight: "8"
+	Nine: "9"
+	Skip: Skip
+	Reverse: Reverse
+	DrawTwo: +2
+	Wild: Wild
+	WildDrawFour: Wild +4
+}
+
+CardNameFormat: "{0} of {1}"
+UnoCardNameFormat: "{0} {1}"
+Betting.NoBet: No Bet
+
+Titles: {
+	Lost: "[LOST]"
+	Folded: "[FOLDED]"
+	AllIn: "[ALL-IN]"
+	House: "[THE HOUSE]"
+	President: "[PRESIDENT]"
+	VicePres: "[VICE PRES]"
+	ViceScum: "[VICE SCUM]"
+	Scum: "[SCUM]"
+	Winner: "[WINNER]"
+}
+
+Seats: {
+	Empty: Seat {0}: [Empty]
+	Bot: Bot {0}
+	House: The House
+	Player: Player {0}
+	CardsCount: Cards: {0}{1}
+	StackLine: Stack: {0} | {1}
+	BetSuffix: " (Bet: {0})"
+	PassedSuffix: " (PASS)"
+	UnoCalledSuffix: " [UNO!]"
+	ClickToChange: (Click to Change)
+}
+
+Hands: {
+	Invalid: Invalid Hand
+	Single: Single {0}
+	Pair: Pair of {0}s ({1})
+	ThreeOfAKind: Triple {0}s
+	FourOfAKind: Four of a Kind ({0}s)
+	TwoPair: Two Pair ({0})
+	ThreePair: Three Pair ({0})
+	FullHouse: Full House ({0}s full of {1}s)
+	Straight: "{0}-Card Straight ({1} to {2})"
+}
+
+HoldEmHands: {
+	HighCard: High Card ({0})
+	OnePair: Pair of {0}s
+	TwoPair: Two Pair ({0}s & {1}s)
+	ThreeOfAKind: Three of a Kind ({0}s)
+	Straight: Straight ({0} High)
+	Flush: "{0} Flush ({1} High)"
+	FullHouse: Full House ({0}s full of {1}s)
+	FourOfAKind: Four of a Kind ({0}s)
+	StraightFlush: "{0} Straight Flush ({1} High)"
+}
+
+UI: {
+	TabPresident: President
+	TabHoldEm: Texas Hold'em
+	TabUno: UNO
+	TitleDraggable: TABLE
+	TitleLocked: TABLE - GAME IN PROGRESS
+	HardModeTag: "[HARD MODE]"
+	PotHeaderSimple: Buy-In: {0} | Pool: {1}
+	PotHeaderInfo: Buy-In: {0} | Pool: {1} | Your Stack: {2}
+	Welcome: Welcome
+	ExitButton: X
+	BotModeButton: Bot Mode
+	HouseModeButton: Vs House
+	SetCardsButton: Set Cards
+	HardModeOnButton: Hard Mode: ON
+	HardModeOffButton: Hard Mode: OFF
+	BetButton: Buy-In: {0}
+	BetButtonTooltip: Left/Right Click to change Buy-In ({0}) | Pool: {1}
+	AddBuyInButton: + Buy-In
+	AddBuyInTooltip: Add {0} from inventory to your table stack
+	SellItemButton: Sell Item
+	SellItemTooltip: Sell {0} for {1} (Added to your Stack)
+	SellItemNoneTooltip: Hold or pick up a valuable item to sell for table funds
+	RetreatButton: Retreat
+	RetreatTooltip: Cash out your {0} stack and leave the table
+	StartGameButton: Start Game
+	PlayHandButton: Play Hand
+	PlayCardButton: Play Card
+	PassTurnButton: Pass Turn
+	DrawCardButton: Draw Card
+	CallUnoSelfButton: UNO!
+	CatchUnoButton: Call UNO!
+	ChooseWildColorPrompt: Choose Wild Color:
+	ForfeitButton: Forfeit
+	CheckButton: Check
+	CallButton: Call ({0})
+	RaiseButton: Raise (+{0})
+	AllInButton: All-In
+	FoldButton: Fold
+	CenterPileHeader: Center Play Pile: {0}
+	CenterPileEmpty: Center Play Pile:
+	UnoCenterHeader: Top Card: {0} | Color: {1} | Turn Order: {2}
+	UnoDirClockwise: Clockwise ->
+	UnoDirCounter: <- Counter-Clockwise
+	HoldEmCommunityHeader: Community Cards ({0}) | Current Bet: {1}
+	DisposedDeckTitle: Disposed
+	DisposedDeckCount: "{0} Cards"
+	DisposedDeckClickHint: "[Click to View]"
+	DisposedModalHeader: Disposed / Played Cards ({0} Total):
+	DisposedModalEmpty: No cards have been disposed yet.
+	YourHandHeader: Your Hand:
+	InviteHeader: "{0} invited you to join the Card Game!"
+	InviteBuyInSubheader: Required Buy-In: {0}
+	AcceptButton: Accept & Buy-In
+	DeclineButton: Decline
+	RiggedHeader: Pick Cards to Force Into Your Hand ({0}):
+	ForceFourTwosButton: Force Four 2s
+	ClearButton: Clear
+	DoneButton: Done
+	CloseViewerButton: Back to Table
+}
+
+Messages: {
+	DefaultPrompt: Throw the Card Deck to host a table!
+	HostReady: Host ready! Choose Mode, add players/bots, set Buy-In, then click 'Start Game'.
+	ModeSwitched: Game mode switched to {0}!
+	ModeSwitchedRefunded: Game mode switched to {0}! Hold'em stacks refunded to players.
+	HostedWithInvites: "{0} hosted! Invited {1} nearby player(s). Host must click 'Start Game'."
+	HostedNoInvites: "{0} hosted! Add players or bots, then click 'Start Game'."
+	PlayerDeclined: "{0} declined the invite."
+	PlayerJoined: "{0} joined Seat {1} with {2}!"
+	PlayerCannotAffordJoin: "{0} tried to join, but cannot afford the {1} buy-in!"
+	PlayerCannotAffordBuyIn: "{0} needs at least {1} in stack or coins to play!"
+	CannotAffordInviteBuyIn: You need at least {0} to accept this table's buy-in!
+	BoughtInMore: "{0} added {1} to their table stack (Total: {2})!"
+	SoldItemForFunds: "{0} sold {1} for {2}!"
+	NothingToSell: Hold a sellable item in your hotbar or cursor to sell!
+	PlayerRetreated: "{0} retreated and cashed out {1}!"
+	BotBustedLeft: "{0} ran out of funds and left the table!"
+	TableFull: "{0} tried to join, but all 4 seats are full!"
+	HostLeftEnded: Host left the table. Game ended and stacks cashed out!
+	HostLeftMidGameRefunded: Host closed the table mid-game! Guest bets were refunded.
+	PlayerLeftLobby: "{0} left Seat {1}."
+	PlayerLeftLost: "{0} left the table!"
+	PlayerForfeitedLost: "{0} forfeited the round!"
+	WinnerAnnouncement: " {0} wins as {1}!"
+	BotModeEnabled: Bot Mode enabled (Host + 3 Bots). Bots start with {0} each!
+	HouseModeEnabled: House Mode enabled (Host vs The House)!
+	HardModeEnabled: Hard Mode enabled! Same-suit Singles/Straights, same-suit Pairs, no 3-Pair.
+	HardModeDisabled: Hard Mode disabled! Standard rules active.
+	BetUpdated: Table Buy-In set to {0}!
+	PayoutSplit: Payout: {0} won {1} (3/4 Pool), {2} won {3} (1/4 Pool)!
+	PayoutSoloPresident: Payout: {0} won the {1} Pool!
+	HoldEmPotWon: "{0} won the {1} Pot with {2}!"
+	HoldEmPotWonByFold: "{0} won the {1} Pot (all others folded)!"
+	HoldEmChecked: "{0} checked."
+	HoldEmCalled: "{0} called {1}."
+	HoldEmRaised: "{0} raised to {1}!"
+	HoldEmAllIn: "{0} went ALL-IN ({1})!"
+	HoldEmFolded: "{0} folded."
+	NeedMorePlayers: Need at least 2 seated players with funds before Host can Start!
+	InstantWinFourTwos: "{0} won with a 2 Four-of-a-Kind!"
+	GameStartedLead: Game started! {0}'s turn to act.
+	PlayedHand: "{0} played {1}!"
+	FinishedAsRank: " {0} finished as {1}!"
+	LostLeftTwoLast: "{0} left a 2 as their last card and LOST!"
+	LostLeftFourOfAKindLast: "{0} left Four of a Kind as their last set and LOST!"
+	RoundOver: " Round Over!"
+	MustPlayOnLead: You have the lead! You must play a hand.
+	PlayerPassed: "{0} passed."
+	EveryonePassedCleared: Everyone else passed! Pile moved to Disposed Deck.
+	LeadsNext: "{0} {1} leads next."
+	GameNotStarted: Game hasn't started! Host must click 'Start Game'.
+	NotYourTurn: Not your turn! Waiting on {0}.
+	SelectCardsFirst: Select cards from your hand first!
+	InvalidCombination: Invalid hand!
+	InvalidCombinationHard: Invalid hand!
+	MustMatchPile: Must match pile ({0})
+	MustPlayHigherRank: Must play higher rank than {0}!
+	MustPlayHigherSuit: Same rank requires a higher suit than {0}!
+	HardModeMustMatchSingleSuit: Hard Mode: Must play a {0} card or a 2!
+	HardModeMustMatchPairSuits: Hard Mode: Must play a Pair with the exact same suits (or Pair of 2s)!
+	HardModeMustMatchComboSuits: Hard Mode: Must match the exact suits of the pile!
+	UnoStartedLead: UNO started! Top card is {0}. {1}'s turn!
+	UnoSelectSingleCard: Select a single card to play!
+	UnoMustMatch: Must match active color ({0}) or value ({1}), or play a Wild!
+	UnoWonRound: "{0} emptied their hand and won UNO as {1}!"
+	UnoPlayedSkip: "{0} played {1}! {2} was skipped!"
+	UnoPlayedReverse: "{0} played {1} and reversed the turn order!"
+	UnoPlayedDrawTwo: "{0} played {1}! {2} drew 2 cards and was skipped!"
+	UnoPlayedWild: "{0} played a Wild card and chose {1}!"
+	UnoPlayedWildFour: "{0} played Wild +4 ({1})! {2} drew 4 cards and was skipped!"
+	UnoDrewPlayable: "{0} drew a playable card! You may play it or pass."
+	UnoDrewPassed: "{0} drew a card. {1}'s turn!"
+	UnoCalledSelf: "{0} shouted UNO!"
+	UnoWrongSelfPenalty: False UNO call! {0} drew 2 penalty cards!
+	UnoCaughtOpponent: "{0} caught {1} not saying UNO! {1} drew 2 penalty cards!"
+	UnoWrongOpponentPenalty: False UNO accusation by {0} against {1}! {0} drew 2 penalty cards!
+}

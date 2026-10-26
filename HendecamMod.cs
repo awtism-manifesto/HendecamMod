@@ -5,8 +5,10 @@ global using Terraria.ID;
 global using Terraria.ModLoader;
 global using static Terraria.ModLoader.ModContent;
 using HendecamMod.Content.Items.Accessories;
+using HendecamMod.Networking.Packets;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using System.IO;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 
@@ -24,7 +26,11 @@ public class HendecamMod : Mod
         LoadFilterShader("LobotomyScreen", "Assets/Shaders/Screen/LobotomyScreen", EffectPriority.Medium);
     
     }
+    public override void HandlePacket(BinaryReader reader, int whoAmI)
+    {
 
+        CardGameManager.Instance.HandlePacket(reader, whoAmI);
+    }
     void LoadFilterShader(string name, string path, EffectPriority priority)
     {
         Asset<Effect> filter = Assets.Request<Effect>(path);
