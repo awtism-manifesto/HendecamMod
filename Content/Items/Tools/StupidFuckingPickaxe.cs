@@ -43,9 +43,7 @@ public class StupidFuckingPickaxe : ModItem
         recipe.AddIngredient(ItemID.BladeofGrass);
         recipe.AddIngredient(ItemID.PortableStool, 67);
         recipe.AddIngredient(ItemID.CrabBanner);
-
         recipe.AddIngredient(ItemID.WhitePearl, 69);
-
         recipe.AddIngredient(ItemID.TinShortsword, 167);
         recipe.AddIngredient(ItemID.SpectreBoots);
         recipe.AddIngredient<WeedLeaves>(420);
@@ -56,9 +54,10 @@ public class StupidFuckingPickaxe : ModItem
         recipe.AddIngredient<AzuriteSaber>();
         recipe.AddIngredient<GunOfRoses>();
         recipe.AddIngredient<RednecksRustBucket>();
-
         recipe.AddIngredient<DirtBar>(6767);
         recipe.AddIngredient(ItemID.RedDye, 500);
+        recipe.AddIngredient<KawkawPainting>(5);
+        recipe.AddIngredient<BrickPick>(64);
 
         recipe.Register();
     }

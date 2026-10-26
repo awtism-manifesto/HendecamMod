@@ -57,5 +57,9 @@ public class Godhood : ModItem
        
         recipe.AddTile(TileID.VoidMonolith);
         recipe.Register();
+        if (ModLoader.TryGetMod("FargowiltasSouls", out Mod EternityGod) && EternityGod.TryFind("EternitySoul", out ModItem EternitySoul))
+        {
+            recipe.AddIngredient(EternitySoul.Type, 1);
+        }
     }
 }
