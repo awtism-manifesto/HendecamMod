@@ -11,13 +11,14 @@ public class PoopSpark : ModProjectile
         Projectile.hostile = false; // Can the projectile deal damage to the player?
         Projectile.DamageType = DamageClass.Magic; // Is the projectile shoot by a ranged weapon?
         Projectile.penetrate = 1; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-        Projectile.timeLeft = 58;
+        Projectile.timeLeft = 63;
 
         Projectile.light = 0.1f;
         Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
         Projectile.tileCollide = true; // Can the projectile collide with tiles?
         Projectile.extraUpdates = 0; // Set to above 0 if you want the projectile to update multiple time in a frame
         Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = -1;
         AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         Projectile.aiStyle = 1;
         Projectile.alpha = 255;
@@ -30,7 +31,15 @@ public class PoopSpark : ModProjectile
         if (Projectile.ai[0] >= 7f)
         {
             Projectile.ai[0] = 8f;
-            Projectile.velocity.Y += 0.11f;
+            if (Main.rand.NextBool(2))
+            {
+                Projectile.velocity.Y += 0.095f;
+            }
+            else
+            {
+                Projectile.velocity.Y -= 0.095f;
+            }
+               
         }
 
         // The projectile is rotated to face the direction of travel
@@ -76,7 +85,7 @@ public class PoopSpark : ModProjectile
             dust.scale *= 1.25f;
         }
 
-        target.immune[Projectile.owner] = 6;
+        
         target.AddBuff(BuffID.Poisoned, 90);
         target.AddBuff(BuffID.Stinky, 900);
     }

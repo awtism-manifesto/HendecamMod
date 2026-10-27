@@ -30,19 +30,19 @@ public class WandOfPooping : ModItem
         Item.damage = 16; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
         Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
         Item.noMelee = true; // So the item's animation doesn't do damage.
-        Item.mana = 3;
+        Item.mana = 2;
         // Gun Properties
         // For some reason, all the guns in the vanilla source have this.
         Item.shoot = ProjectileType<PoopSpark>();
 
-        Item.shootSpeed = 6.33f; // The speed of the projectile (measured in pixels per frame.)
+        Item.shootSpeed = 8.25f; // The speed of the projectile (measured in pixels per frame.)
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
     {
         type = ProjectileType<PoopSpark>();
     }
-    public float LobotometerCost = 3f;
+    public float LobotometerCost = 2f;
     public override bool? UseItem(Player player)
     {
         if (player.whoAmI == Main.myPlayer)
@@ -63,7 +63,7 @@ public class WandOfPooping : ModItem
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(2));
 
             // Decrease velocity randomly for nicer visuals.
-            newVelocity *= 1f - Main.rand.NextFloat(0.2f);
+            newVelocity *= 1f - Main.rand.NextFloat(0.15f);
 
             // Create a projectile.
             Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);

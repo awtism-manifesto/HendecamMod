@@ -8189,3 +8189,14 @@ CardDeckItem: {
 	DisplayName: Card Deck Item
 	Tooltip: ""
 }
+
+HyperfixationVisor: {
+	Tooltip:
+		'''
+		Hitting an enemy tags them, giving a flat bonus of +3 damage to each hit
+		This applies to all weapons regardless of class
+		'''
+	DisplayName: Hyperfixation Visor
+}
+
+BrainMatter.DisplayName: Brain Matter

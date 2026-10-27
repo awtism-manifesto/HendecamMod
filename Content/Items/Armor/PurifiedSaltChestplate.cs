@@ -101,7 +101,39 @@ public class PurifiedSaltChestplate : ModItem
             if (BoulderUseTime > 0)
                 return;
 
-            int baseDamage = 105;
+            int baseDamage = 85;
+            // Manually calculate total multiplier
+            float totalMultiplier = 1f; // Base 100%
+
+            // Generic damage (100% effectiveness)
+            totalMultiplier += Player.GetDamage(DamageClass.Generic).Additive - 1f;
+
+            // Get all damage classes and check if they should contribute to OmniDamage
+            // OmniDamage gets 67% of specialized class bonuses
+            DamageClass[] specializedClasses = new DamageClass[] {
+        DamageClass.Magic,
+        DamageClass.Melee,
+        DamageClass.Ranged,
+        DamageClass.Summon,
+        DamageClass.Throwing,
+        GetInstance<StupidDamage>()
+        };
+            foreach (var damageClass in specializedClasses)
+            {
+                // Add 67% of the class's bonus
+                float classBonus = Player.GetDamage(damageClass).Additive - 1f;
+                if (classBonus > 0)
+                {
+                    totalMultiplier += classBonus * 0.67f;
+                }
+            }
+
+            // Calculate final damage
+            int calculatedDamage = (int)(baseDamage * totalMultiplier);
+
+            // Ensure minimum damage of 1
+            if (calculatedDamage < 1) calculatedDamage = 1;
+
 
             if (loboPlayer.Current == loboPlayer.Max)
             {

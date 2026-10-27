@@ -402,3 +402,8 @@ FlyingMachineBuff: {
 	Description: A Flying Machine is helping you fight!
 	DisplayName: Flying Machine Buff
 }
+
+AutismTag: {
+	Description: Mods.HendecamMod.Buffs.AutismTag.Description
+	DisplayName: Autism Tag
+}
