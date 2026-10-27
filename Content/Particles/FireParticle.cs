@@ -1,5 +1,5 @@
 ﻿using HendecamMod.Common.Systems.Particles;
-using HendecamMod.Common.Utils;
+using HendecamMod.Common.Utilities;
 namespace HendecamMod.Content.Particles;
 
 public class FireParticle : ParticleType

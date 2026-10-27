@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,36 +17,11 @@ public class TornSaddle : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyMovement>().NastyEffect = true;
-        player.ClearBuff(BuffID.BasiliskMount);
-        player.ClearBuff(BuffID.BeeMount);
-        player.ClearBuff(BuffID.BunnyMount);
-        player.ClearBuff(BuffID.CuteFishronMount);
-        player.ClearBuff(BuffID.DarkHorseMount);
-        player.ClearBuff(BuffID.DarkMageBookMount);
-        player.ClearBuff(BuffID.DrillMount);
-        player.ClearBuff(BuffID.GolfCartMount);
-        player.ClearBuff(BuffID.LavaSharkMount);
-        player.ClearBuff(BuffID.MajesticHorseMount);
-        player.ClearBuff(BuffID.PaintedHorseMount);
-        player.ClearBuff(BuffID.PigronMount);
-        player.ClearBuff(BuffID.PirateShipMount);
-        player.ClearBuff(BuffID.PogoStickMount);
-        player.ClearBuff(BuffID.QueenSlimeMount);
-        player.ClearBuff(BuffID.SantankMount);
-        player.ClearBuff(BuffID.ScutlixMount);
-        player.ClearBuff(BuffID.SlimeMount);
-        player.ClearBuff(BuffID.SpookyWoodMount);
-        player.ClearBuff(BuffID.TurtleMount);
-        player.ClearBuff(BuffID.UFOMount);
-        player.ClearBuff(BuffID.UnicornMount);
-        player.ClearBuff(BuffID.WallOfFleshGoatMount);
-        player.ClearBuff(BuffID.WolfMount);
-        player.ClearBuff(BuffID.Flamingo);
-        player.ClearBuff(BuffID.Rudolph);
-        player.ClearBuff(BuffID.WitchBroom);
+        var target = player.GetHCPlayer();
+        target.tornSaddle = true;
+        player.breathEffectiveness += 2f;
+        player.GetAttackSpeed(DamageClass.Generic) += 0.15f;
     }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

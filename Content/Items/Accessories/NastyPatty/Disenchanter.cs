@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -12,43 +13,15 @@ public class Disenchanter : ModItem
         Item.value = Item.sellPrice(silver: 1000);
         Item.rare = ItemRarityID.Orange;
         Item.accessory = true;
+        Item.defense = 50;
     }
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyPenetration>().NastyEffect = true;
-        player.GetModPlayer<NastyDefense>().NastyEffect = true;
-        player.buffImmune[BuffID.TitaniumStorm] = true;
-        player.buffImmune[BuffID.StardustGuardianMinion] = true;
-        player.buffImmune[BuffID.ShadowDodge] = true;
-        player.buffImmune[BuffID.BeetleEndurance1] = true;
-        player.buffImmune[BuffID.BeetleEndurance2] = true;
-        player.buffImmune[BuffID.BeetleEndurance3] = true;
-        player.buffImmune[BuffID.BeetleMight1] = true;
-        player.buffImmune[BuffID.BeetleMight2] = true;
-        player.buffImmune[BuffID.BeetleMight3] = true;
-        player.buffImmune[BuffID.SolarShield1] = true;
-        player.buffImmune[BuffID.SolarShield2] = true;
-        player.buffImmune[BuffID.SolarShield3] = true;
-        player.buffImmune[BuffID.LeafCrystal] = true;
-        player.buffImmune[BuffID.NebulaUpDmg1] = true;
-        player.buffImmune[BuffID.NebulaUpDmg2] = true;
-        player.buffImmune[BuffID.NebulaUpDmg3] = true;
-        player.buffImmune[BuffID.NebulaUpLife1] = true;
-        player.buffImmune[BuffID.NebulaUpLife2] = true;
-        player.buffImmune[BuffID.NebulaUpLife3] = true;
-        player.buffImmune[BuffID.NebulaUpMana1] = true;
-        player.buffImmune[BuffID.NebulaUpMana2] = true;
-        player.buffImmune[BuffID.NebulaUpMana3] = true;
-        player.buffImmune[BuffID.BallistaPanic] = true;
-        player.buffImmune[BuffID.RapidHealing] = true;
-        player.buffImmune[BuffID.ParryDamageBuff] = true;
-        player.buffImmune[BuffID.SoulDrain] = true;
-        player.buffImmune[BuffID.HeartyMeal] = true;
-        player.buffImmune[BuffID.CoolWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.ScytheWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.SwordWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.ThornWhipPlayerBuff] = true;
+        var target = player.GetHCPlayer();
+        target.disenchanter = true;
+        player.GetArmorPenetration(DamageClass.Generic) += 40f;
+
     }
 
     public override void AddRecipes()

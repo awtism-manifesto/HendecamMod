@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Utils;
+﻿using HendecamMod.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

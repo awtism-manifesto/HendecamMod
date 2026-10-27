@@ -1,4 +1,4 @@
-﻿namespace HendecamMod.Common.Utils;
+﻿namespace HendecamMod.Common.Utilities;
 
 public static partial class LemonUtils
 {

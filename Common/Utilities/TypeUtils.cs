@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace HendecamMod.Common.Utils;
+namespace HendecamMod.Common.Utilities;
 
 public static class TypeUtils
 {

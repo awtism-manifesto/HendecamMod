@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,23 +17,10 @@ public class PrisonFood : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyEndurance>().NastyEffect = true;
-        player.GetModPlayer<NastyFall>().NastyEffect = true;
-        player.buffImmune[BuffID.Featherfall] = true;
-        player.buffImmune[BuffID.Flipper] = true;
-        player.buffImmune[BuffID.Gills] = true;
-        player.buffImmune[BuffID.Mining] = true;
-        player.buffImmune[BuffID.NightOwl] = true;
-        player.buffImmune[BuffID.ObsidianSkin] = true;
-        player.buffImmune[BuffID.Shine] = true;
-        player.buffImmune[BuffID.Spelunker] = true;
-        player.buffImmune[BuffID.Swiftness] = true;
-        player.buffImmune[BuffID.Dangersense] = true;
-        player.buffImmune[BuffID.WaterWalking] = true;
-        player.buffImmune[BuffID.Gravitation] = true;
-        player.buffImmune[BuffID.WellFed] = true;
-        player.buffImmune[BuffID.WellFed2] = true;
-        player.buffImmune[BuffID.WellFed3] = true;
+        var target = player.GetHCPlayer();
+        target.prisonFood = true;
+        player.endurance += 0.2f;
+        player.extraFall += 25;
     }
 
     public override void AddRecipes()

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -17,16 +18,10 @@ public class GasMask : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyBreath>().NastyEffect = true;
-        player.buffImmune[BuffID.Campfire] = true;
-        player.buffImmune[BuffID.DryadsWard] = true;
-        player.buffImmune[BuffID.Sunflower] = true;
-        player.buffImmune[BuffID.HeartLamp] = true;
-        player.buffImmune[BuffID.Honey] = true;
-        player.buffImmune[BuffID.PeaceCandle] = true;
-        player.buffImmune[BuffID.StarInBottle] = true;
-        player.buffImmune[BuffID.CatBast] = true;
-        player.buffImmune[BuffID.MonsterBanner] = true;
+        var target = player.GetHCPlayer();
+        target.gasMask = true;
+        player.breathEffectiveness += 2f;
+
     }
 
     public override void AddRecipes()

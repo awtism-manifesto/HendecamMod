@@ -1,4 +1,4 @@
-﻿using HendecamMod.Common.Utils;
+﻿using HendecamMod.Common.Utilities;
 using HendecamMod.Networking;
 using HendecamMod.Networking.Packets;
 using Microsoft.Xna.Framework;
@@ -17,5 +17,5 @@ namespace HendecamMod.Common.Systems.Players;
 
 public partial class HendecamPlayer
 {
-
 }
+

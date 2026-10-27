@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -5,7 +6,6 @@ namespace HendecamMod.Content.Items.Accessories.Camos;
 
 public class GlobalCamo : ModItem
 {
-    
     public override void SetDefaults()
     {
         Item.width = 45;
@@ -41,10 +41,8 @@ public class GlobalCamo : ModItem
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
-       
-            player.GetModPlayer<CamoBoost>().isCamo = true;
-        
-       
+
+        player.GetHCPlayer().isCamo = true;
     }
 }
 

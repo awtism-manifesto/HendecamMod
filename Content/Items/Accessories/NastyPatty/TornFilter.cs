@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,25 +17,9 @@ public class TornFilter : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyBreath>().NastyEffect = true;
-        player.GetModPlayer<NastySpeed>().NastyEffect = true;
-        player.buffImmune[BuffID.AmmoBox] = true;
-        player.buffImmune[BuffID.Bewitched] = true;
-        player.buffImmune[BuffID.Clairvoyance] = true;
-        player.buffImmune[BuffID.Sharpened] = true;
-        player.buffImmune[BuffID.WarTable] = true;
-        player.buffImmune[BuffID.SugarRush] = true;
-        player.buffImmune[BuffID.Campfire] = true;
-        player.buffImmune[BuffID.DryadsWard] = true;
-        player.buffImmune[BuffID.Sunflower] = true;
-        player.buffImmune[BuffID.HeartLamp] = true;
-        player.buffImmune[BuffID.Honey] = true;
-        player.buffImmune[BuffID.PeaceCandle] = true;
-        player.buffImmune[BuffID.StarInBottle] = true;
-        player.buffImmune[BuffID.CatBast] = true;
-        player.buffImmune[BuffID.MonsterBanner] = true;
+        var target = player.GetHCPlayer();
+        target.tornFilter = true;
     }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

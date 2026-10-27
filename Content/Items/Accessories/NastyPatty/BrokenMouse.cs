@@ -1,3 +1,5 @@
+using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -17,14 +19,9 @@ public class BrokenMouse : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastySpeed>().NastyEffect = true;
-        player.buffImmune[BuffID.AmmoBox] = true;
-        player.buffImmune[BuffID.Bewitched] = true;
-        player.buffImmune[BuffID.Clairvoyance] = true;
-        player.buffImmune[BuffID.Sharpened] = true;
-        player.buffImmune[BuffID.WarTable] = true;
-        player.buffImmune[BuffID.SugarRush] = true;
-        player.buffImmune[BuffType<TurboCharged>()] = true;
+        var target = player.GetHCPlayer();
+        target.brokenMouse = true;
+        player.GetAttackSpeed(DamageClass.Generic) += 0.15f;
     }
 
     public override void AddRecipes()

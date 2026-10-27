@@ -9,7 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.PlayerDrawLayer;
 
-namespace HendecamMod.Common.Utils;
+namespace HendecamMod.Common.Utilities;
 
 /*public class DrawLayerData
 {

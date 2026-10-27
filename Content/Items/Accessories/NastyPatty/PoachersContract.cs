@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -17,21 +18,10 @@ public class PoachersContract : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyLight>().NastyEffect = true;
-        player.ClearBuff(BuffID.CrimsonHeart);
-        player.ClearBuff(BuffID.FairyBlue);
-        player.ClearBuff(BuffID.FairyGreen);
-        player.ClearBuff(BuffID.FairyRed);
-        player.ClearBuff(BuffID.FairyQueenPet);
-        player.ClearBuff(BuffID.PetDD2Ghost);
-        player.ClearBuff(BuffID.PumpkingPet);
-        player.ClearBuff(BuffID.MagicLantern);
-        player.ClearBuff(BuffID.ShadowOrb);
-        player.ClearBuff(BuffID.SuspiciousTentacle);
-        player.ClearBuff(BuffID.GolemPet);
-        player.ClearBuff(BuffID.Wisp);
+        var target = player.GetHCPlayer();
+        target.poachersContract = true;
+        Lighting.AddLight(player.Center, 6.7f, 6.7f, 6.7f);
     }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

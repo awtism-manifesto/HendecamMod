@@ -1,3 +1,5 @@
+using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -17,21 +19,10 @@ public class AnkleMonitor : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyFall>().NastyEffect = true;
-        player.buffImmune[BuffID.Featherfall] = true;
-        player.buffImmune[BuffID.Flipper] = true;
-        player.buffImmune[BuffID.Gills] = true;
-        player.buffImmune[BuffID.Mining] = true;
-        player.buffImmune[BuffID.NightOwl] = true;
-        player.buffImmune[BuffID.ObsidianSkin] = true;
-        player.buffImmune[BuffID.Shine] = true;
-        player.buffImmune[BuffID.Spelunker] = true;
-        player.buffImmune[BuffID.Swiftness] = true;
-        player.buffImmune[BuffID.Dangersense] = true;
-        player.buffImmune[BuffID.WaterWalking] = true;
-        player.buffImmune[BuffID.Gravitation] = true;
+        var target = player.GetHCPlayer();
+        target.ankleMonitor = true;
+        player.extraFall += 25;
     }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

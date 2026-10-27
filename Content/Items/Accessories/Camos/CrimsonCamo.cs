@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -29,11 +30,10 @@ public class CrimsonCamo : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         if (player.ZoneCrimson)
-
         {
-            player.GetModPlayer<CamoBoost>().isCamo = true;
+            player.GetHCPlayer().isCamo = true;
         }
-       
+
     }
 }
 

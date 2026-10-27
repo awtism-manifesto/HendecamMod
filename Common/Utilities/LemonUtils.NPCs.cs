@@ -2,7 +2,7 @@
 using Terraria.DataStructures;
 using Terraria.GameContent;
 
-namespace HendecamMod.Common.Utils;
+namespace HendecamMod.Common.Utilities;
 
 /// <summary>
 /// Contains a lot of utillities and global usings

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -17,65 +18,10 @@ public class CeaseAndDesist : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyCrit>().NastyEffect = true;
-        player.GetModPlayer<NastyMovement>().NastyEffect = true;
-        player.ClearBuff(BuffID.Flamingo);
-        player.ClearBuff(BuffID.Rudolph);
-        player.ClearBuff(BuffID.WitchBroom);
-        player.maxMinions = 0;
-        player.ClearBuff(BuffID.BabyBird);
-        player.ClearBuff(BuffID.BabySlime);
-        player.ClearBuff(BuffID.DeadlySphere);
-        player.ClearBuff(BuffID.StormTiger);
-        player.ClearBuff(BuffID.Smolstar);
-        player.ClearBuff(BuffID.FlinxMinion);
-        player.ClearBuff(BuffID.HornetMinion);
-        player.ClearBuff(BuffID.ImpMinion);
-        player.ClearBuff(BuffID.PirateMinion);
-        player.ClearBuff(BuffID.Pygmies);
-        player.ClearBuff(BuffID.Ravens);
-        player.ClearBuff(BuffID.BatOfLight);
-        player.ClearBuff(BuffID.SharknadoMinion);
-        player.ClearBuff(BuffID.SpiderMinion);
-        player.ClearBuff(BuffID.StardustMinion);
-        player.ClearBuff(BuffID.StardustDragonMinion);
-        player.ClearBuff(BuffID.EmpressBlade);
-        player.ClearBuff(BuffID.TwinEyesMinion);
-        player.ClearBuff(BuffID.UFOMinion);
-        player.ClearBuff(BuffID.VampireFrog);
-        player.ClearBuff(BuffID.BasiliskMount);
-        player.ClearBuff(BuffID.BeeMount);
-        player.ClearBuff(BuffID.BunnyMount);
-        player.ClearBuff(BuffID.CuteFishronMount);
-        player.ClearBuff(BuffID.DarkHorseMount);
-        player.ClearBuff(BuffID.DarkMageBookMount);
-        player.ClearBuff(BuffID.DrillMount);
-        player.ClearBuff(BuffID.GolfCartMount);
-        player.ClearBuff(BuffID.LavaSharkMount);
-        player.ClearBuff(BuffID.MajesticHorseMount);
-        player.ClearBuff(BuffID.PaintedHorseMount);
-        player.ClearBuff(BuffID.PigronMount);
-        player.ClearBuff(BuffID.PirateShipMount);
-        player.ClearBuff(BuffID.PogoStickMount);
-        player.ClearBuff(BuffID.QueenSlimeMount);
-        player.ClearBuff(BuffID.SantankMount);
-        player.ClearBuff(BuffID.ScutlixMount);
-        player.ClearBuff(BuffID.SlimeMount);
-        player.ClearBuff(BuffID.SpookyWoodMount);
-        player.ClearBuff(BuffID.TurtleMount);
-        player.ClearBuff(BuffID.UFOMount);
-        player.ClearBuff(BuffID.UnicornMount);
-        player.ClearBuff(BuffID.WallOfFleshGoatMount);
-        player.ClearBuff(BuffID.WolfMount);
-        player.buffImmune[BuffType<SlimeMinesBuff>()] = true;
-        player.buffImmune[BuffType<CeramicBloonBuff>()] = true;
-        player.buffImmune[BuffType<GraniteFriend>()] = true;
-        player.buffImmune[BuffType<OilMonsterBuff>()] = true;
-        player.buffImmune[BuffType<PolymerSlimeBuff>()] = true;
-        player.buffImmune[BuffType<RedBloonBuff>()] = true;
-        player.buffImmune[BuffType<RainbowBloonBuff>()] = true;
-        player.buffImmune[BuffType<SuperCeramBuff>()] = true;
-        player.buffImmune[BuffType<PlasmoidFriend>()] = true;
+        var target = player.GetHCPlayer();
+        target.ceaseDesist = true;
+        player.GetCritChance(DamageClass.Generic) += 25f;
+        player.moveSpeed += 1f;
     }
 
     public override void AddRecipes()

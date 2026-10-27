@@ -1052,7 +1052,7 @@ MoldyCheese: {
 	DisplayName: Moldy Cheese
 	Tooltip:
 		'''
-		Grants 50 Defense, Doubled Armor Penetraton, 33% more Generic Damage, and much higher jump speed
+		Grants 50 Defense, Doubled Armor Penetration, 33% more Generic Damage, and much higher jump speed
 		No longer gain effects from Minecarts, Weapon, Armor, or Accessory Buffs
 		'''
 }

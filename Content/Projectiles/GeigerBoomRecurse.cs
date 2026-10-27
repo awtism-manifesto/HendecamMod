@@ -1,5 +1,5 @@
 ﻿using HendecamMod.Common.Systems.Particles;
-using HendecamMod.Common.Utils;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
 using Terraria.Audio;

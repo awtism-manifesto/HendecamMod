@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -31,9 +32,9 @@ public class OceanCamo : ModItem
         if (player.ZoneBeach)
 
         {
-            player.GetModPlayer<CamoBoost>().isCamo = true;
+            player.GetHCPlayer().isCamo = true;
         }
-       
+
     }
 }
 
