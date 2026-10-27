@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories.Cubes;
 using HendecamMod.Content.Items.Weapons.Ranger;
@@ -176,7 +177,14 @@ public class HendecamGlobalItem : GlobalItem
                 break;
         }
     }
-
+    public override void UpdateArmorSet(Player player, string set)
+    {
+        if (player.GetHCPlayer().leadPlating)
+        {
+            return;
+        }
+        base.UpdateArmorSet(player, set);
+    }
     public override void UpdateAccessory(Item item, Player player, bool hideVisual)
     {
         switch (item.type)

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -31,9 +32,9 @@ public class SnowCamo : ModItem
         if (player.ZoneSnow)
 
         {
-            player.GetModPlayer<CamoBoost>().isCamo = true;
+            player.GetHCPlayer().isCamo = true;
         }
-       
+
     }
 }
 

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Placeables;
 using System.Collections.Generic;
@@ -18,21 +19,8 @@ public class HotWax : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyFire>().NastyEffect = true;
-        player.buffImmune[BuffID.WeaponImbueConfetti] = true;
-        player.buffImmune[BuffID.WeaponImbueCursedFlames] = true;
-        player.buffImmune[BuffID.WeaponImbueFire] = true;
-        player.buffImmune[BuffID.WeaponImbueGold] = true;
-        player.buffImmune[BuffID.WeaponImbueIchor] = true;
-        player.buffImmune[BuffID.WeaponImbueNanites] = true;
-        player.buffImmune[BuffID.WeaponImbuePoison] = true;
-        player.buffImmune[BuffID.WeaponImbueVenom] = true;
-       
-        player.buffImmune[BuffType<WeaponImbueFission>()] = true;
-        player.buffImmune[BuffType<WeaponImbueOil>()] = true;
-        player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;
-        player.buffImmune[BuffType<WeaponImbueFusion>()] = true;
-        player.buffImmune[BuffType<WeaponImbueShadowflame>()] = true;
+        var target = player.GetHCPlayer();
+        target.hotWax = true;
     }
 
     public override void AddRecipes()

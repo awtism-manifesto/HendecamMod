@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,12 +17,11 @@ public class DietSchedule : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyEndurance>().NastyEffect = true;
-        player.buffImmune[BuffID.WellFed] = true;
-        player.buffImmune[BuffID.WellFed2] = true;
-        player.buffImmune[BuffID.WellFed3] = true;
-    }
+        var target = player.GetHCPlayer();
+        target.dietSchedule = true;
+        player.endurance += 0.2f;
 
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

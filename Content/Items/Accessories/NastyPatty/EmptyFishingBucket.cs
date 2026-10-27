@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
@@ -17,11 +18,9 @@ public class EmptyFishingBucket : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyLuck>().NastyEffect = true;
-        player.buffImmune[BuffID.Crate] = true;
-        player.buffImmune[BuffID.Fishing] = true;
-        player.buffImmune[BuffID.Sonar] = true;
-        player.buffImmune[BuffID.Lucky] = true;
+        var target = player.GetHCPlayer();
+        target.emptyFishingBucket = true;
+        player.equipmentBasedLuckBonus += 4;
     }
 
     public override void AddRecipes()

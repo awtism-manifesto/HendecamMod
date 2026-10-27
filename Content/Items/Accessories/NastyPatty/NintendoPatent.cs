@@ -1,6 +1,7 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
 namespace HendecamMod.Content.Items.Accessories.NastyPatty;
@@ -18,39 +19,11 @@ public class NintendoPatent : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyCrit>().NastyEffect = true;
-        player.maxMinions = 0;
-        player.ClearBuff(BuffID.BabyBird);
-        player.ClearBuff(BuffID.BabySlime);
-        player.ClearBuff(BuffID.DeadlySphere);
-        player.ClearBuff(BuffID.StormTiger);
-        player.ClearBuff(BuffID.Smolstar);
-        player.ClearBuff(BuffID.FlinxMinion);
-        player.ClearBuff(BuffID.HornetMinion);
-        player.ClearBuff(BuffID.ImpMinion);
-        player.ClearBuff(BuffID.PirateMinion);
-        player.ClearBuff(BuffID.Pygmies);
-        player.ClearBuff(BuffID.Ravens);
-        player.ClearBuff(BuffID.BatOfLight);
-        player.ClearBuff(BuffID.SharknadoMinion);
-        player.ClearBuff(BuffID.SpiderMinion);
-        player.ClearBuff(BuffID.StardustMinion);
-        player.ClearBuff(BuffID.StardustDragonMinion);
-        player.ClearBuff(BuffID.EmpressBlade);
-        player.ClearBuff(BuffID.TwinEyesMinion);
-        player.ClearBuff(BuffID.UFOMinion);
-        player.ClearBuff(BuffID.VampireFrog);
-        player.buffImmune[BuffType<SlimeMinesBuff>()] = true;
-        player.buffImmune[BuffType<CeramicBloonBuff>()] = true;
-        player.buffImmune[BuffType<GraniteFriend>()] = true;
-        player.buffImmune[BuffType<OilMonsterBuff>()] = true;
-        player.buffImmune[BuffType<PolymerSlimeBuff>()] = true;
-        player.buffImmune[BuffType<RedBloonBuff>()] = true;
-        player.buffImmune[BuffType<RainbowBloonBuff>()] = true;
-        player.buffImmune[BuffType<SuperCeramBuff>()] = true;
-        player.buffImmune[BuffType<PlasmoidFriend>()] = true;
-    }
+        var target = player.GetHCPlayer();
+        target.nintendoPatent = true;
+        player.GetCritChance(DamageClass.Generic) += 25f;
 
+    }
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

@@ -1,5 +1,5 @@
 ﻿using HendecamMod.Common.Systems.Assets;
-using HendecamMod.Common.Utils;
+using HendecamMod.Common.Utilities;
 using System.IO;
 using System.Linq;
 

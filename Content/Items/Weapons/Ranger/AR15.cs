@@ -1,5 +1,5 @@
 using HendecamMod.Common.Systems.Players;
-using HendecamMod.Common.Utils;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
 using Terraria.DataStructures;

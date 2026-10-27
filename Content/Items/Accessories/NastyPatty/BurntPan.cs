@@ -1,3 +1,5 @@
+using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -33,43 +35,10 @@ public class BurntPan : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyHealth>().NastyEffect = true;
-        player.GetModPlayer<NastyFire>().NastyEffect = true;
-        player.buffImmune[BuffID.WeaponImbueConfetti] = true;
-        player.buffImmune[BuffID.WeaponImbueCursedFlames] = true;
-        player.buffImmune[BuffID.WeaponImbueFire] = true;
-        player.buffImmune[BuffID.WeaponImbueGold] = true;
-        player.buffImmune[BuffID.WeaponImbueIchor] = true;
-        player.buffImmune[BuffID.WeaponImbueNanites] = true;
-        player.buffImmune[BuffID.WeaponImbuePoison] = true;
-        player.buffImmune[BuffID.WeaponImbueVenom] = true;
-        player.buffImmune[BuffID.AmmoReservation] = true;
-        player.buffImmune[BuffID.Archery] = true;
-        player.buffImmune[BuffID.Endurance] = true;
-        player.buffImmune[BuffID.Heartreach] = true;
-        player.buffImmune[BuffID.Inferno] = true;
-        player.buffImmune[BuffID.Calm] = true;
-        player.buffImmune[BuffID.Battle] = true;
-        player.buffImmune[BuffID.Ironskin] = true;
-        player.buffImmune[BuffID.Lifeforce] = true;
-        player.buffImmune[BuffID.MagicPower] = true;
-        player.buffImmune[BuffID.ManaRegeneration] = true;
-        player.buffImmune[BuffID.Rage] = true;
-        player.buffImmune[BuffID.Summoning] = true;
-        player.buffImmune[BuffID.Thorns] = true;
-        player.buffImmune[BuffID.Titan] = true;
-        player.buffImmune[BuffID.Warmth] = true;
-        player.buffImmune[BuffID.Wrath] = true;
-        player.buffImmune[BuffID.Regeneration] = true;
-        player.buffImmune[BuffID.Hunter] = true;
-       
-        player.buffImmune[BuffType<WeaponImbueFission>()] = true;
-        player.buffImmune[BuffType<WeaponImbueOil>()] = true;
-        player.buffImmune[BuffType<WeaponImbueRadiation>()] = true;
-        player.buffImmune[BuffType<WeaponImbueFusion>()] = true;
-        player.buffImmune[BuffType<WeaponImbueShadowflame>()] = true;
-        player.buffImmune[BuffType<BalkanRage>()] = true;
-        player.buffImmune[BuffType<BrainRotted>()] = true;
+        var target = player.GetHCPlayer();
+        target.burntPan = true;
+        player.lifeRegen += 6;
+
     }
 
     public override void AddRecipes()

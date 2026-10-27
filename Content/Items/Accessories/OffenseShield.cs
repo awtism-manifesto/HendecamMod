@@ -57,7 +57,7 @@ public class OffenseShield : ModItem
             Player.AddBuff(BuffID.Panic, 480);
 
           
-            Player.AddBuff(BuffType<SheildOffense>(), 480);
+            Player.AddBuff(BuffType<ShieldOffense>(), 480);
            
            
         }

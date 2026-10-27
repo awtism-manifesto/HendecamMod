@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Accessories.PeaceAmongNations;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -31,9 +32,8 @@ public class UrbanCamo : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         if (player.ZoneDungeon)
-
         {
-            player.GetModPlayer<CamoBoost>().isCamo = true;
+            player.GetHCPlayer().isCamo = true;
         }
        
     }

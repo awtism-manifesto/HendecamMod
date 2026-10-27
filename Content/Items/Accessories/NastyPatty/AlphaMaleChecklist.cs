@@ -1,3 +1,5 @@
+using HendecamMod.Common.Systems.Players;
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Materials;
 using System.Collections.Generic;
@@ -18,14 +20,10 @@ public class AlphaMaleChecklist : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyDamage>().NastyEffect = true;
-        player.buffImmune[BuffID.Werewolf] = true;
-        player.buffImmune[BuffID.Merfolk] = true;
-        player.buffImmune[BuffID.IceBarrier] = true;
-        player.buffImmune[BuffID.PaladinsShield] = true;
-        player.buffImmune[BuffID.Panic] = true;
-        player.buffImmune[BuffType<SheildOffense>()] = true;
-      
+        var target = player.GetHCPlayer();
+        target.alphaChecklist = true;
+        player.GetDamage(DamageClass.Generic) += 0.33f;
+
     }
 
     public override void AddRecipes()

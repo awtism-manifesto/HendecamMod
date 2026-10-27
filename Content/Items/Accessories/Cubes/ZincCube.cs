@@ -1,43 +1,25 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
 using HendecamMod.Content.Rarities;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
 
-public class ZincCube : ModItem
+public class ZincCube : BaseCube
 {
-    public override void SetDefaults()
-    {
-        // Modders can use Item.DefaultToRangedWeapon to quickly set many common properties, such as: useTime, useAnimation, useStyle, autoReuse, DamageType, shoot, shootSpeed, useAmmo, and noMelee. These are all shown individually here for teaching purposes.
-        
-            // Common Properties
-            Item.width = 26; // Hitbox width of the item.
-        Item.height = 26; // Hitbox height of the item.
-        Item.rare = RarityType<BurntOrange>();
-        Item.value = 36250;
-        Item.maxStack = 1;
-        Item.accessory = true;
-        Item.defense = 3;
-        if (ModLoader.TryGetMod("Avalon", out Mod Avalon))
-        {
-            Item.rare = ItemRarityID.Blue;
-        }
-    }
+    protected override int Rarity => (ModLoader.TryGetMod("Avalon", out Mod Avalon)) ? Item.rare = ItemRarityID.Blue: RarityType<BurntOrange>();
+    protected override int Value => 36250;
+    protected override int Defense => 3;
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-        player.maxFallSpeed = player.maxFallSpeed * 2f;
-    }
+    public override void UpdateAccessory(Player player, bool hideVisual) =>
+        player.maxFallSpeed *= 2f;
 
     public override void AddRecipes()
     {
         if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("ZincBar", out ModItem ZincBar))
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<CubicMold>();
-            recipe.AddIngredient(ZincBar.Type, 12);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+            CreateCubeRecipe(ZincBar.Type);
         }
     }
 }

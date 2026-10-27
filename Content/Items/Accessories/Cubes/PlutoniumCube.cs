@@ -1,20 +1,15 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Content.Items.Materials;
+using HendecamMod.Content.Items.Placeables;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
 
-public class PlutoniumCube : ModItem
+public class PlutoniumCube : BaseCube
 {
-    public override void SetDefaults()
-    {
-        Item.width = 26;
-        Item.height = 26;
-        Item.rare = ItemRarityID.LightPurple;
-        Item.value = 645000;
-        Item.maxStack = 1;
-        Item.accessory = true;
-        Item.defense = 10;
-    }
+    protected override int Rarity => ItemRarityID.LightPurple;
+    protected override int Value => 181000;
+    protected override int Defense => 10;
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
@@ -23,12 +18,5 @@ public class PlutoniumCube : ModItem
         player.runAcceleration *= Main.rand.NextFloat(0.01f, 5f);
     }
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>();
-        recipe.AddIngredient<PlutoniumBar>(12);
-        recipe.AddTile(TileID.MythrilAnvil);
-        recipe.Register();
-    }
+    public override void AddRecipes() => CreateCubeRecipe(ModContent.ItemType<PlutoniumBar>());
 }

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,10 +17,9 @@ public class OldOnesGlasses : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyMana>().NastyEffect = true;
-        player.buffImmune[BuffID.Builder] = true;
-        player.buffImmune[BuffID.BiomeSight] = true;
-        player.buffImmune[BuffID.Invisibility] = true;
+        var target = player.GetHCPlayer();
+        target.oldOnesGlasses = true;
+        player.statManaMax2 += 100;
     }
 
     public override void AddRecipes()

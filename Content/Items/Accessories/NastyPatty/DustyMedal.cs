@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -16,15 +17,10 @@ public class DustyMedal : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetModPlayer<NastyLuck>().NastyEffect = true;
-        player.GetModPlayer<NastyMana>().NastyEffect = true;
-        player.buffImmune[BuffID.Crate] = true;
-        player.buffImmune[BuffID.Fishing] = true;
-        player.buffImmune[BuffID.Sonar] = true;
-        player.buffImmune[BuffID.Lucky] = true;
-        player.buffImmune[BuffID.Builder] = true;
-        player.buffImmune[BuffID.BiomeSight] = true;
-        player.buffImmune[BuffID.Invisibility] = true;
+        var target = player.GetHCPlayer();
+        target.dustyMedal = true;
+        player.statManaMax2 += 100;
+        player.equipmentBasedLuckBonus += 4;
     }
 
     public override void AddRecipes()

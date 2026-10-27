@@ -273,7 +273,7 @@ PoopSocked: {
 	Description: Mods.HendecamMod.Buffs.PoopSocked.Description
 }
 
-SheildOffense: {
+ShieldOffense: {
 	Description: Overall DPS massively increased
 	DisplayName: Sheild Offense
 }

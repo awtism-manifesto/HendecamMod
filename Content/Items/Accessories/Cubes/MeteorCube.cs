@@ -1,32 +1,17 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
 
-public class MeteorCube : ModItem
+public class MeteorCube : BaseCube
 {
-    public override void SetDefaults()
-    {
-        Item.width = 26; 
-        Item.height = 26; 
-        Item.rare = ItemRarityID.Green; 
-        Item.value = 87000;
-        Item.maxStack = 1;
-        Item.accessory = true;
-        Item.defense = 5;
-    }
+    protected override int Rarity => ItemRarityID.Blue;
+    protected override int Value => 87000;
+    protected override int Defense => 5;
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-        player.maxFallSpeed = player.maxFallSpeed * 4f;
-    }
+    public override void UpdateAccessory(Player player, bool hideVisual) =>
+                    player.maxFallSpeed *= 4f;
 
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>();
-        recipe.AddIngredient(ItemID.MeteoriteBar, 12);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
-    }
+    public override void AddRecipes() => CreateCubeRecipe(ItemID.MeteoriteBar);
 }

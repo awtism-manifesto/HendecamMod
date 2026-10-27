@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;
 using Terraria.Graphics.CameraModifiers;
 
-namespace HendecamMod.Common.Utils;
+namespace HendecamMod.Common.Utilities;
 
 /// <summary>
 /// Contains a lot of utillities and global usings

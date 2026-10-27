@@ -1,32 +1,18 @@
-using System.Collections.Generic;
+using HendecamMod.Common.Systems.Players;
 using HendecamMod.Content.Items.Materials;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items.Accessories.Cubes;
 
-public class GelCube : ModItem
+public class GelCube : BaseCube
 {
-    public override void SetDefaults()
-    {
-        Item.width = 26; 
-        Item.height = 26;
-        Item.rare = ItemRarityID.Blue;
-        Item.value = 5000;
-        Item.maxStack = 1;
-        Item.accessory = true;
-    }
+    protected override int Rarity => ItemRarityID.Blue;
+    protected override int Value => 5000;
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
         player.AddBuff(BuffID.Slimed, 2);
         player.slippy2 = true;
     }
-
-    public override void AddRecipes()
-    {
-        Recipe recipe = CreateRecipe();
-        recipe.AddIngredient<CubicMold>();
-        recipe.AddIngredient(ItemID.Gel, 120);
-        recipe.AddTile(TileID.Anvils);
-        recipe.Register();
-    }
+    public override void AddRecipes() => CreateCubeRecipe(ItemID.Gel, 120);
 }

@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using static HendecamMod.Content.Items.Accessories.NastyPatty.NastyPattyAccessory;
 
@@ -15,16 +16,12 @@ public class Grindstone : ModItem
         }
 
     public override void UpdateEquip(Player player)
-        {
-        player.GetModPlayer<NastyPenetration>().NastyEffect = true;
-        player.buffImmune[BuffID.ParryDamageBuff] = true;
-        player.buffImmune[BuffID.SoulDrain] = true;
-        player.buffImmune[BuffID.HeartyMeal] = true;
-        player.buffImmune[BuffID.CoolWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.ScytheWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.SwordWhipPlayerBuff] = true;
-        player.buffImmune[BuffID.ThornWhipPlayerBuff] = true;
-        }
+    {
+        var target = player.GetHCPlayer();
+        target.grindstone = true;
+        player.GetArmorPenetration(DamageClass.Generic) += 40f;
+
+    }
 
     public override void AddRecipes()
         {

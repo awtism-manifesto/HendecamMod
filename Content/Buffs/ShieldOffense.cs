@@ -1,6 +1,6 @@
 ﻿namespace HendecamMod.Content.Buffs;
 
-public class SheildOffense : ModBuff
+public class ShieldOffense : ModBuff
 {
     public static readonly int AttackSpeedBonus = 10;
     public static readonly int CritBonus = 12;
