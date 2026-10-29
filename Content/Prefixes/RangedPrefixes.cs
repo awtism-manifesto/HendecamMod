@@ -24,8 +24,7 @@ public class Disciplined : ModPrefix
     public override bool CanRoll(Item item)
     {
         // apply to all ranged classes
-        if (item.DamageType == DamageClass.Ranged || item.DamageType == GetInstance<MeleeRangedDamage>()
-                                                  || item.DamageType == GetInstance<RangedStupidDamage>() || item.DamageType == GetInstance<RangedMagicDamage>() || item.DamageType == GetInstance<RangedSummonDamage>() || item.DamageType == GetInstance<OmniDamage>())
+        if (item.DamageType == DamageClass.Ranged || item.DamageType.GetPrefixInheritance(DamageClass.Ranged))
         {
             return true;
         }
@@ -77,8 +76,7 @@ public class Switched : ModPrefix
     public override bool CanRoll(Item item)
     {
         // apply to all ranged classes
-        if (item.DamageType == DamageClass.Ranged || item.DamageType == GetInstance<MeleeRangedDamage>()
-                                                  || item.DamageType == GetInstance<RangedStupidDamage>() || item.DamageType == GetInstance<RangedMagicDamage>() || item.DamageType == GetInstance<RangedSummonDamage>() || item.DamageType == GetInstance<OmniDamage>())
+        if (item.DamageType == DamageClass.Ranged || item.DamageType.GetPrefixInheritance(DamageClass.Ranged))
         {
             return true;
         }

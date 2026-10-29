@@ -9,15 +9,29 @@ public class MintalOreBlessed : GlobalNPC
 {
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
-        return npc.type == NPCID.WallofFlesh;
+        return MantiusOreBlessed.IsWOF(npc);
     }
 
     public override void OnKill(NPC npc)
     {
-        if (!Main.hardMode)
+        int minX = 100;
+        int maxX = Main.maxTilesX - 100;
+        int minY = (int)Utils.Lerp(Main.worldSurface, Main.UnderworldLayer, 0.395);
+        int maxY = Main.UnderworldLayer;
+
+        for (int checkX = minX; checkX < maxX; checkX++)
         {
-            GetInstance<MintalSystem>().BlessWorldWithMintal();
+            for (int checkY = minY; checkY < maxY; checkY++)
+            {
+                Tile tile = Main.tile[checkX, checkY];
+                if (tile.TileType == TileType<MintalOrePlaced>())
+                {
+                    return;
+                }
+            }
         }
+
+        GetInstance<MintalSystem>().BlessWorldWithMintal();
     }
 }
 

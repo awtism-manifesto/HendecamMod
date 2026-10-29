@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Terraria.Chat;
 using Terraria.DataStructures;
 using Terraria.Localization;
+//using ModLiquidLib.ModLoader;
 
 namespace HendecamMod.Content.Global;
 
@@ -10,6 +11,14 @@ public class MantiusOreBlessed : GlobalNPC
 {
     public override bool AppliesToEntity(NPC npc, bool lateInstantiation)
     {
+        //return IsWOF(npc);
+        return npc.type == NPCID.WallofFlesh;
+    }
+
+    public static bool IsWOF(NPC npc)
+    {
+        if (ModLoader.TryGetMod("TheDepths", out Mod TheDepths) && TheDepths.TryFind("ChasmeHeart", out ModNPC ChasmeHeart) && npc.type == ChasmeHeart.Type)
+            return true;
         return npc.type == NPCID.WallofFlesh;
     }
 
@@ -17,7 +26,13 @@ public class MantiusOreBlessed : GlobalNPC
     {
         if (!MantiusSystem.WallOfFleshIsAlive)
         {
-            MantiusSystem.StartMantiusSpawning();
+            string message = "The earth's mantle is shaking...";
+            if (npc.type == NPCID.WallofFlesh)
+                message = "The Wall of Flesh shakes the earth's mantle...";
+            if (ModLoader.TryGetMod("TheDepths", out Mod TheDepths) && TheDepths.TryFind("ChasmeHeart", out ModNPC ChasmeHeart) && npc.type == ChasmeHeart.Type)
+                message = "Chasme shakes the earth's mantle...";
+
+            MantiusSystem.StartMantiusSpawning(message);
         }
     }
 
@@ -53,7 +68,7 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
         MantiusBlessMessage = Mod.GetLocalization($"WorldGen.{nameof(MantiusBlessMessage)}");
     }
 
-    public static void StartMantiusSpawning()
+    public static void StartMantiusSpawning(string message)
     {
         WallOfFleshIsAlive = true;
         spawnCounter = 0;
@@ -62,12 +77,12 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
 
         if (Main.netMode == NetmodeID.SinglePlayer)
         {
-            Main.NewText("The Wall of Flesh shakes the earth's mantle...", 185, 15, 90);
+            Main.NewText(message, 185, 15, 90);
            
         }
         else if (Main.netMode == NetmodeID.Server)
         {
-            ChatHelper.BroadcastChatMessage(NetworkText.FromKey("The Wall of Flesh shakes the earth's mantle..."), new Color(185, 15, 90));
+            ChatHelper.BroadcastChatMessage(NetworkText.FromKey(message), new Color(185, 15, 90));
         }
     }
     public static void JumpStartMantiusSpreading()
@@ -142,6 +157,7 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
             bool foundWoF = false;
             for (int i = 0; i < Main.npc.Length; i++)
             {
+                //if (Main.npc[i].active && MantiusOreBlessed.IsWOF(Main.npc[i]))
                 if (Main.npc[i].active && Main.npc[i].type == NPCID.WallofFlesh)
                 {
                     foundWoF = true;
@@ -274,6 +290,13 @@ public class MantiusSystem : ModSystem // manifesto i remember you're vibecoding
                 {
                     return true;
                 }
+                /*if (ModLoader.TryGetMod("TheDepths", out Mod TheDepths) && TheDepths.TryFind("Quicksilver", out ModLiquid Quicksilver))
+                {
+                    if (tile.LiquidType == Quicksilver.Type && tile.LiquidAmount > 0)
+                    {
+                        return true;
+                    }
+                }*/
             }
         }
         return false;

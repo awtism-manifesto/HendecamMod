@@ -1,5 +1,6 @@
 ﻿using HendecamMod.Common.Systems;
 using HendecamMod.Content.DamageClasses;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Content.Projectiles;
 using System.Collections.Generic;
 using Terraria.DataStructures;
@@ -98,4 +99,6 @@ public class RiverMachinegun : ModItem
     {
         return new Vector2(-10f, -1f);
     }
+
+    public override void AddRecipes() => CreateRecipe().AddIngredient<CollarOfTheDamned>(2).Register();
 }

@@ -14,7 +14,18 @@ public class AzuriteDungeonRecipes : ModSystem
         recipe.AddIngredient(ItemID.BottledWater, 30);
         recipe.AddIngredient(ItemID.FallenStar, 3);
         recipe.AddTile(TileID.Anvils);
+        recipe.AddCondition(Condition.NotRemixWorld);
+        recipe.AddDecraftCondition(Condition.NotRemixWorld);
         recipe.Register();
+
+        Recipe reciper = Recipe.Create(ItemID.BubbleGun);
+        reciper.AddIngredient<AzuriteBar>(10);
+        reciper.AddIngredient(ItemID.BottledWater, 30);
+        reciper.AddIngredient(ItemID.FallenStar, 3);
+        reciper.AddTile(TileID.Anvils);
+        reciper.AddCondition(Condition.RemixWorld);
+        reciper.AddDecraftCondition(Condition.RemixWorld);
+        reciper.Register();
 
         Recipe recipe1 = Recipe.Create(ItemID.BlueMoon);
         recipe1.AddIngredient<AzuriteBar>(15);

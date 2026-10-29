@@ -31,7 +31,7 @@ public class TransOrePlaced : ModTile
         Main.tileBlockLight[Type] = true;
 
         LocalizedText name = CreateMapEntryName();
-        AddMapEntry(new Color(255, 255, 255), Language.GetText("Trans Ore"));
+        AddMapEntry(new Color(255, 255, 255), Language.GetText("Trans"));
 
         DustType = DustType<TransDust>();
         HitSound = SoundID.Tink;

@@ -168,5 +168,21 @@ public class ManeAx : ModItem
 
         recipe.AddTile(TileID.Anvils);
         recipe.Register();
+
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.TinAxe);
+        recipe.AddIngredient<KingslayerBar>(10);
+        recipe.AddIngredient(ItemID.ShadowScale, 8);
+
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+
+        recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.TinAxe);
+        recipe.AddIngredient<KingslayerBar>(10);
+        recipe.AddIngredient(ItemID.TissueSample, 8);
+
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

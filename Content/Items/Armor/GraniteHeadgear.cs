@@ -56,7 +56,7 @@ public class GraniteHeadgear : ModItem
     {
        
         player.GetDamage(DamageClass.Magic) += MagicDamageBonus / 100f;
-        player.manaCost = 0.9f;
+        player.manaCost -= 0.1f;
     }
 
     // UpdateArmorSet allows you to give set bonuses to the armor.

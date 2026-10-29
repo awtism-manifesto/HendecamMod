@@ -621,8 +621,15 @@ public class IconRecipes : ModSystem
 
         Recipe A141 = Recipe.Create(ItemID.BubbleGun);
         A141.AddIngredient<Items.Icons.DukeFishronIcon>();
+        A141.AddCondition(Condition.NotRemixWorld);
         A141.DisableDecraft();
         A141.Register();
+
+        Recipe A141r = Recipe.Create(ItemID.AquaScepter);
+        A141r.AddIngredient<Items.Icons.DukeFishronIcon>();
+        A141r.AddCondition(Condition.RemixWorld);
+        A141r.DisableDecraft();
+        A141r.Register();
 
         Recipe A142 = Recipe.Create(ItemID.Flairon);
         A142.AddIngredient<Items.Icons.DukeFishronIcon>();

@@ -35,14 +35,15 @@ public class LeadskinPotion : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BottledWater);
-        recipe.AddIngredient(ItemID.LeadBar);
         recipe.AddIngredient(ItemID.Daybloom);
+        recipe.AddIngredient(ItemID.LeadOre);
+        recipe.AddTile(TileID.Bottles);
         recipe.Register();
         recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.BottledWater);
-        recipe.AddIngredient(ItemID.IronBar);
         recipe.AddIngredient(ItemID.Daybloom);
-        recipe.AddTile(TileID.Anvils);
+        recipe.AddIngredient(ItemID.IronOre);
+        recipe.AddTile(TileID.Bottles);
         recipe.Register();
     }
 }

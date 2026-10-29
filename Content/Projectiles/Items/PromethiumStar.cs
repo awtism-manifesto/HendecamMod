@@ -4,7 +4,7 @@ using HendecamMod.Content.Dusts;
 namespace HendecamMod.Content.Projectiles.Items;
 
 
-public class PrometheumStar : ModProjectile
+public class PromethiumStar : ModProjectile
 {
     private NPC HomingTarget
     {
@@ -24,7 +24,7 @@ public class PrometheumStar : ModProjectile
         // To further the Cloning process, we can also copy the ai of any given projectile using AIType, since we want
         // the projectile to essentially behave the same way as the vanilla projectile.
 
-        Projectile.DamageType = DamageClass.Magic;
+        Projectile.DamageType = DamageClass.Melee;
         Projectile.friendly = true;
         Projectile.hostile = false;
         Projectile.timeLeft = 330;

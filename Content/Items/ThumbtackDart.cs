@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HendecamMod.Content.DamageClasses;
 using HendecamMod.Content.Projectiles;
+using System.Collections.Generic;
 
 namespace HendecamMod.Content.Items;
 
@@ -13,7 +14,7 @@ public class ThumbtackDart : ModItem
     public override void SetDefaults()
     {
         Item.damage = 7; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-        Item.DamageType = DamageClass.Ranged;
+        Item.DamageType = GetInstance<RangedStupidDamage>();
 
         Item.width = 13;
         Item.height = 13;

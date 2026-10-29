@@ -13,8 +13,7 @@ public class Tough : ModPrefix
     public override bool CanRoll(Item item)
     {
         // 
-        if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType == GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == GetInstance<RangedStupidDamage>() || item.DamageType == GetInstance<AutismDamage>() || item.DamageType == GetInstance<SummonStupidDamage>() || item.DamageType == GetInstance<OmniDamage>())
+        if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
         {
             return true;
             }
@@ -56,8 +55,7 @@ public class Lobotomized : ModPrefix
     // Use this to control if a prefix can be rolled or not.
     public override bool CanRoll(Item item)
     {
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
         {
             return true;
         }
@@ -112,8 +110,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -165,8 +162,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -218,8 +214,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -271,8 +266,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -324,8 +318,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -376,8 +369,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -428,8 +420,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -481,8 +472,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -534,8 +524,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -587,8 +576,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -640,8 +628,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -692,8 +679,7 @@ public class Lobotomized : ModPrefix
         public override bool CanRoll(Item item)
         {
             // 
-            if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                          || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+            if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
             {
                 return true;
             }
@@ -744,8 +730,7 @@ public class Silly : ModPrefix
     public override bool CanRoll(Item item)
     {
         // 
-        if (item.DamageType == ModContent.GetInstance<StupidDamage>() || item.DamageType == ModContent.GetInstance<MeleeStupidDamage>()
-                                                                      || item.DamageType == ModContent.GetInstance<RangedStupidDamage>() || item.DamageType == ModContent.GetInstance<AutismDamage>() || item.DamageType == ModContent.GetInstance<SummonStupidDamage>() || item.DamageType == ModContent.GetInstance<OmniDamage>())
+        if (item.DamageType == GetInstance<StupidDamage>() || item.DamageType.GetPrefixInheritance(GetInstance<StupidDamage>()))
         {
             return true;
         }

@@ -68,7 +68,7 @@ public class TheAutismManifesto : ModItem
     {
 
         player.statManaMax2 += 100;
-        player.endurance = 1f - 0.9f * (1f - player.endurance);
+        player.endurance += 0.1f;
 
         var loboPlayer = player.GetModPlayer<LobotometerPlayer>();
         loboPlayer.TemporaryBonus += 100f;

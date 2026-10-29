@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Tiles;
+﻿using Terraria.Localization;
+
+namespace HendecamMod.Content.Tiles;
 
 public class AstatineOrePlaced : ModTile
 {
@@ -20,7 +22,7 @@ public class AstatineOrePlaced : ModTile
         Main.tileShine[Type] = 400;
         DustType = DustID.CrimsonTorch;
         HitSound = SoundID.Tink;
-        AddMapEntry(new Color(156, 42, 65));
+        AddMapEntry(new Color(156, 42, 65), Language.GetText("Astatine"));
         MineResist = 5f;
         MinPick = 210;
         Main.tileShine2[Type] = true;

@@ -5,6 +5,8 @@ using HendecamMod.Content.Projectiles.Items;
 
 namespace HendecamMod.Content.Items.Weapons.Magic;
 
+// TODO: Remix world
+
 public class ScaldingScepter : ModItem
 {
     public override void SetStaticDefaults()

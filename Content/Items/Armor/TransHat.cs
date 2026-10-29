@@ -73,6 +73,6 @@ public class TransHat : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "10% reduced mana costs";
-        player.manaCost = 0.9f;
+        player.manaCost -= 0.1f;
     }
 }

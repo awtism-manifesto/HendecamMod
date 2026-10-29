@@ -14,8 +14,8 @@ public class MagnoliaRecipes : ModSystem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
 
-        Recipe A162 = Recipe.Create(ItemID.Gel, 50);
-        A162.AddIngredient(ItemID.SlimeHook);
+        Recipe A162 = Recipe.Create(ItemID.SlimeHook);
+        A162.AddIngredient(ItemID.Gel, 50);
         A162.AddTile(TileID.Solidifier);
         A162.Register();
 
@@ -252,55 +252,55 @@ public class MagnoliaRecipes : ModSystem
         A39.AddTile(TileID.Anvils);
         A39.Register();
 
-        Recipe A163 = Recipe.Create(ItemID.Bone, 40);
-        A163.AddIngredient(ItemID.SkeletronHand);
+        Recipe A163 = Recipe.Create(ItemID.SkeletronHand);
+        A163.AddIngredient(ItemID.Bone, 40);
         A163.Register();
 
-        Recipe A164 = Recipe.Create(ItemID.CandyCaneBlock, 75);
-        A164.AddIngredient(ItemID.CandyCaneHook);
+        Recipe A164 = Recipe.Create(ItemID.CandyCaneHook);
+        A164.AddIngredient(ItemID.CandyCaneBlock, 75);
         A164.Register();
 
-        Recipe A165 = Recipe.Create(ItemID.GreenCandyCaneBlock, 75);
-        A165.AddIngredient(ItemID.CandyCaneHook);
+        Recipe A165 = Recipe.Create(ItemID.CandyCaneHook);
+        A165.AddIngredient(ItemID.GreenCandyCaneBlock, 75);
         A165.Register();
 
-        Recipe A166 = Recipe.Create(ItemID.SoulofLight, 25);
-        A166.AddIngredient(ItemID.IlluminantHook);
+        Recipe A166 = Recipe.Create(ItemID.IlluminantHook);
+        A166.AddIngredient(ItemID.SoulofLight, 25);
         A166.AddTile<CobaltWorkBenchPlaced>();
         A166.Register();
 
-        Recipe A191 = Recipe.Create(ItemID.SoulofLight, 25);
-        A191.AddIngredient(ItemID.IlluminantHook);
+        Recipe A191 = Recipe.Create(ItemID.IlluminantHook);
+        A191.AddIngredient(ItemID.SoulofLight, 25);
         A191.AddTile<PalladiumWorkBenchPlaced>();
         A191.Register();
 
-        Recipe A167 = Recipe.Create(ItemID.SoulofNight, 25);
-        A167.AddIngredient(ItemID.WormHook);
+        Recipe A167 = Recipe.Create(ItemID.WormHook);
+        A167.AddIngredient(ItemID.SoulofNight, 25);
         A167.AddTile<CobaltWorkBenchPlaced>();
         A167.Register();
 
-        Recipe A168 = Recipe.Create(ItemID.SoulofNight, 25);
-        A168.AddIngredient(ItemID.TendonHook);
+        Recipe A168 = Recipe.Create(ItemID.TendonHook);
+        A168.AddIngredient(ItemID.SoulofNight, 25);
         A168.AddTile<CobaltWorkBenchPlaced>();
         A168.Register();
 
-        Recipe A169 = Recipe.Create(ItemID.GlowingMushroom, 500);
-        A169.AddIngredient(ItemID.Hammush);
+        Recipe A169 = Recipe.Create(ItemID.Hammush);
+        A169.AddIngredient(ItemID.GlowingMushroom, 500);
         A169.AddTile<CobaltWorkBenchPlaced>();
         A169.Register();
 
-        Recipe A192 = Recipe.Create(ItemID.SoulofNight, 25);
-        A192.AddIngredient(ItemID.WormHook);
+        Recipe A192 = Recipe.Create(ItemID.WormHook);
+        A192.AddIngredient(ItemID.SoulofNight, 25);
         A192.AddTile<PalladiumWorkBenchPlaced>();
         A192.Register();
 
-        Recipe A193 = Recipe.Create(ItemID.SoulofNight, 25);
-        A193.AddIngredient(ItemID.TendonHook);
+        Recipe A193 = Recipe.Create(ItemID.TendonHook);
+        A193.AddIngredient(ItemID.SoulofNight, 25);
         A193.AddTile<PalladiumWorkBenchPlaced>();
         A193.Register();
 
-        Recipe A194 = Recipe.Create(ItemID.GlowingMushroom, 500);
-        A194.AddIngredient(ItemID.Hammush);
+        Recipe A194 = Recipe.Create(ItemID.Hammush);
+        A194.AddIngredient(ItemID.GlowingMushroom, 500);
         A194.AddTile<PalladiumWorkBenchPlaced>();
         A194.Register();
 

@@ -24,8 +24,7 @@ public class Gargantuan : ModPrefix
     public override bool CanRoll(Item item)
     {
         // apply to all ranged classes
-        if (item.DamageType == DamageClass.Melee || item.DamageType == GetInstance<MeleeRangedDamage>()
-                                                 || item.DamageType == GetInstance<MeleeStupidDamage>() || item.DamageType == GetInstance<MeleeMagicDamage>() || item.DamageType == GetInstance<MeleeSummonDamage>() || item.DamageType == GetInstance<OmniDamage>())
+        if (item.DamageType == DamageClass.Melee || item.DamageType.GetPrefixInheritance(DamageClass.Melee))
         {
             return true;
         }

@@ -25,7 +25,7 @@ public class MantiusOrePlaced : ModTile
         Main.tileLighted[Type] = true;
 
         LocalizedText name = CreateMapEntryName();
-        AddMapEntry(new Color(185, 15, 90), Language.GetText("Mantius Ore"));
+        AddMapEntry(new Color(185, 15, 90), Language.GetText("Mantius"));
 
         DustType = DustID.RedTorch;
         HitSound = SoundID.Tink;

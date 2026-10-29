@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Tiles;
+﻿using Terraria.Localization;
+
+namespace HendecamMod.Content.Tiles;
 
 public class PlutoniumOrePlaced : ModTile
 {
@@ -22,7 +24,7 @@ public class PlutoniumOrePlaced : ModTile
         HitSound = SoundID.Tink;
         MineResist = 3.5f;
         MinPick = 200;
-        AddMapEntry(new Color(205, 151, 245));
+        AddMapEntry(new Color(205, 151, 245), Language.GetText("Plutonium"));
         Main.tileShine2[Type] = true;
         Main.tileLighted[Type] = true;
     }

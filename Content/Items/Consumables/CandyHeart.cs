@@ -52,4 +52,12 @@ public class CandyHeart : ModItem
             }
         }
     }
+
+    public override void AddRecipes()
+    {
+        if (ModLoader.TryGetMod("TheConfectionRebirth", out Mod SweetMerica) && SweetMerica.TryFind("Saccharite", out ModItem Saccharite))
+        {
+            CreateRecipe().AddIngredient(Saccharite.Type).AddTile(TileID.CookingPots).Register();
+        }
+    }
 }

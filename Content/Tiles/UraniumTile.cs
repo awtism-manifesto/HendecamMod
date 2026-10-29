@@ -1,4 +1,6 @@
-﻿namespace HendecamMod.Content.Tiles;
+﻿using Terraria.Localization;
+
+namespace HendecamMod.Content.Tiles;
 
 public class UraniumTile : ModTile
 {
@@ -21,7 +23,7 @@ public class UraniumTile : ModTile
         Main.tileShine[Type] = 400;
         DustType = DustID.CursedTorch;
         HitSound = SoundID.Tink;
-        AddMapEntry(new Color(89, 255, 119));
+        AddMapEntry(new Color(89, 255, 119), Language.GetText("Uranium"));
 
         Main.tileShine2[Type] = true; 
         Main.tileLighted[Type] = true;

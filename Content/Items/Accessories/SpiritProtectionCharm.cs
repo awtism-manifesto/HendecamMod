@@ -54,6 +54,6 @@ public class SpiritProtectionCharm : ModItem
 
         player.GetCritChance(DamageClass.Magic) += MagicCritBonus;
         player.statManaMax2 += MaxManaIncrease;
-        player.endurance = 1f - (0.94f * (1f - player.endurance));
+        player.endurance += 0.06f;
     }
 }

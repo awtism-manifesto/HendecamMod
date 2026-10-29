@@ -99,7 +99,7 @@ public class CeramMultiscale : ModPlayer
             ShatterCooldown--;
         if (Multiscale && Player.statLife == Player.statLifeMax2)
         {
-            Player.endurance = 1f - 0.65f * (1f - Player.endurance);
+            Player.endurance += 0.35f;
         }
     }
 
