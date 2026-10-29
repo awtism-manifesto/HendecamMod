@@ -43,7 +43,7 @@ public class FrostburnProjectile : ModProjectile
 
 
                 ParticleSystem.SpawnParticle(
-                    ParticleID.Fire,
+                    ParticleID.Gas,
                     Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
                     Vector2.Zero,
                     randColor,

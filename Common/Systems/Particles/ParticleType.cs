@@ -12,6 +12,8 @@ public abstract class ParticleType : ILoadable
     /// </summary>
     public Asset<Texture2D> Texture { get; protected set; }
 
+    public virtual string TexturePath { get; } = null;
+
     /// <summary>
     /// Kills the particle.
     /// </summary>
@@ -63,12 +65,11 @@ public abstract class ParticleType : ILoadable
 
     public void Load(Mod mod)
     {
-        string path = $"{GetType().Namespace}/{GetType().Name}".Replace(".", "/");
+        string path = TexturePath ?? $"{GetType().Namespace}/{GetType().Name}".Replace(".", "/");
         Texture = Request<Texture2D>(path);
     }
 
     public void Unload()
     {
-        //Texture.Dispose();
     }
 }

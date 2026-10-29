@@ -14,7 +14,9 @@ public abstract class ParticleID
     {
         TestParticle = ParticleSystem.RegisterParticle(new TestParticle());
         Streak = ParticleSystem.RegisterParticle(new StreakParticle());
-        Fire = ParticleSystem.RegisterParticle(new FireParticle());
+        Circle = ParticleSystem.RegisterParticle(new CircleParticle());
+        Glowy = ParticleSystem.RegisterParticle(new GlowyParticle());
+        Gas = ParticleSystem.RegisterParticle(new GasParticle());
     }
 
     public static int Count => ParticleSystem.TypesByID.Count;
@@ -24,5 +26,19 @@ public abstract class ParticleID
     /// <summary>
     /// data[0] - Rising speed (how fast the dust moves upward per tick, <b>subtracted</b> from the Y velocity)
     /// </summary>
-    public static int Fire;
+    public static int Gas;
+
+    /// <summary>
+    /// data[0] - Minimum scale multiplier (0 => 0.5f)
+    /// data[1] - Maximum scale multiplier (0 => 1f)
+    /// </summary>
+    public static int Circle;
+
+    /// <summary>
+    /// data[0] - Duration
+    /// data[1] - Fade in duration
+    /// data[2] - Fade out duration
+    /// data[3] - Slowdown multiplier
+    /// </summary>
+    public static int Glowy;
 }

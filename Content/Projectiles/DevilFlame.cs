@@ -1,4 +1,6 @@
 ﻿using HendecamMod.Common.Systems.Particles;
+using HendecamMod.Common.Systems.Particles.Renderers;
+using HendecamMod.Common.Utilities;
 
 namespace HendecamMod.Content.Projectiles;
 
@@ -35,15 +37,31 @@ public class DevilFlame : ModProjectile
     {
         if (Projectile.alpha < 166)
         {
+            // Glowy particles
+            for (int i = 0; i < 6; i++)
+            {
+                // It is important to use a renderer with an Additive blend state, otherwise it won't look great
+                // AfterDustParticleRendererGlowy works
+                ParticleSystem.SpawnParticle<AfterDustParticleRendererGlowy>(
+                    ParticleID.Glowy,
+                    Projectile.RandomPos(-8, -8),
+                    Vector2.UnitY.RotatedBy(Main.rand.NextFloat(-6.28f, 6.28f)),
+                    Main.rand.NextFromList(Color.Red, Color.DarkRed, Color.OrangeRed, Color.Black),
+                    1f,
+                    Main.rand.NextFloat(1f, 1.5f),
+                    data0: 30, // Check docs for (hover over) ParticleID.Glowy to see what these represent
+                    data1: 5f,
+                    data2: 20f,
+                    data3: 0.98f
+                    );
+            }
+
             for (int i = 0; i < 2; i++)
             {
                 Color randColor = Main.rand.NextFromList(Color.Red, Color.DarkRed, Color.OrangeRed, Color.Black);
 
-
-
-
                 ParticleSystem.SpawnParticle(
-                    ParticleID.Fire,
+                    ParticleID.Gas,
                     Projectile.Center - new Vector2(Main.rand.NextFloat(-5f, 5f)),
                     Vector2.Zero,
                     randColor,

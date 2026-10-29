@@ -166,7 +166,7 @@ public class AstaBoomDelayed : ModProjectile
                 Main.rand.NextFloat(1f, 1.5f));
 
             ParticleSystem.SpawnParticle(
-                ParticleID.Fire,
+                ParticleID.Gas,
                 Projectile.Center,
                 Vector2.UnitY.RotatedByRandom(5f) * Main.rand.NextFloat(1, 4),
                 randColor,

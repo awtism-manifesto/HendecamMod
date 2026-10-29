@@ -143,7 +143,7 @@ public class AstaFission : ModProjectile
                 Main.rand.NextFloat(1f, 1.5f));
 
             ParticleSystem.SpawnParticle(
-                ParticleID.Fire,
+                ParticleID.Gas,
                 Projectile.Center,
                 Vector2.UnitY.RotatedByRandom(7f) * Main.rand.NextFloat(2, 5),
                 randColor,

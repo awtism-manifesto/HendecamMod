@@ -172,7 +172,7 @@ public class GeigerBoom : ModProjectile
                 data0: 1);
 
             ParticleSystem.SpawnParticle(
-                ParticleID.Fire,
+                ParticleID.Gas,
                 Projectile.Center,
                 Vector2.UnitY.RotatedByRandom(6.28f) * Main.rand.NextFloat(1, 4),
                 randColor,

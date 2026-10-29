@@ -110,7 +110,7 @@ public class IedThrown : ModProjectile
                 Main.rand.NextFloat(1f, 1.5f));
 
             ParticleSystem.SpawnParticle(
-                ParticleID.Fire,
+                ParticleID.Gas,
                 Projectile.Center,
                 Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(1, 3),
                 randColor,
