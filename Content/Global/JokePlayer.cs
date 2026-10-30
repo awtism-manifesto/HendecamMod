@@ -126,7 +126,6 @@ namespace HendecamMod.Content.Global
                         break;
                     case 17:
                         JokeDisplayed = "Nerf Summoner";
-
                         break;
                     case 18:
                         JokeDisplayed = "Why did spazmatism cross the road? To get to the brother side!";
@@ -172,6 +171,30 @@ namespace HendecamMod.Content.Global
                         break;
                     case 32:
                         JokeDisplayed = "Hey guys! When's the next Calamity update?";
+                        break;
+                    case 33:
+                        JokeDisplayed = "I'm killing you";
+                        break;
+                    case 34:
+                        JokeDisplayed = "More like stupitus";
+                        break;
+                    case 35:
+                        JokeDisplayed = "I'm too lazy, make your own";
+                        break;
+                    case 36:
+                        JokeDisplayed = "I've always hated the color blue";
+                        break;
+                    case 37:
+                        JokeDisplayed = "You actually changed!";
+                        break;
+                    case 38:
+                        JokeDisplayed = "Here I come Sanfrandickso!";
+                        break;
+                    case 39:
+                        JokeDisplayed = "River is actually Green";
+                        break;
+                    case 40:
+                        JokeDisplayed = "Whats ligma?";
                         break;
                 }
 
