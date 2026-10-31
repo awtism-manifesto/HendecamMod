@@ -7540,6 +7540,145 @@ Boomshark: {
 JokeJumbotron: {
 	Tooltip: Displays random jokes
 	DisplayName: Joke Jumbotron
+
+	Jokes: {
+		Start: Welcome to the Joke Jumbotron!!!
+		0:
+			'''
+			River? 
+			I hardly know her
+			'''
+		1:
+			'''
+			How does Alpine make nachos? 
+			using the Elf Melter!
+			'''
+		2: Deltarune Tomorrow
+		3:
+			'''
+			Well at least you don't have to fight.. 
+			Freddy Fazbear..
+			'''
+		4:
+			'''
+			How much revenue has Azafure LLC made? 
+			67 dollars!
+			'''
+		5:
+			'''
+			Hendecam Mod: 
+			At least we aren't Calamity!
+			'''
+		6: IS THAT THE ROARING KNIGHT???
+		7: I wonder what Brain of Cthulhu's lobotometer decay rate is
+		8:
+			'''
+			Chlorophyte Shitballs! 
+			Now 50% shittier!!!
+			'''
+		9:
+			'''
+			Hendecam Balance Changes: 
+			Nerfed Omni again
+			'''
+		10: HALF LIFE 3 CONFIRMED???
+		11:
+			'''
+			Terraria 1.5: 
+			The Final Update (fr this time trust us)
+			'''
+		12: I use Arch Linux btw
+		13:
+			'''
+			Hendecam Mod: More optimized than 
+			Pokemon Scarlet & Violet!
+			'''
+		14:
+			'''
+			Why did the chicken cross the road?
+			To find the TerMerica 1.4.5 Port!
+			'''
+		15:
+			'''
+			Number 15. 
+			Burger king foot lettuce.
+			'''
+		16:
+			'''
+			The JFK Experience: 
+			Ending hardcore runs since 2024!
+			'''
+		17: Nerf Summoner
+		18:
+			'''
+			Why did spazmatism cross the road? 
+			To get to the brother side!
+			'''
+		19:
+			'''
+			According to all known laws of aviation, 
+			there is no way a bee should be able to fly
+			'''
+		20: There is no joke. this is the EVIL joke jumbotron!!!!
+		21:
+			'''
+			How do you steal a coat? 
+			You just jacket.
+			'''
+		22:
+			'''
+			Mechanical Murdergun! 
+			Now with 125% more murder!
+			'''
+		23:
+			'''
+			How do you get an art major off of your porch? 
+			You pay for the pizza.
+			'''
+		24:
+			'''
+			Why did the Moon Lord lose to dryads? 
+			because they were outstanding.
+			'''
+		25: Look for the gummy bear album in stores on November 13th!
+		26: I guess hellevators have their “ups and downs”...
+		27:
+			'''
+			What did the Lihzahrds use for entertainment? 
+			Solar tablets.
+			'''
+		28:
+			'''
+			Terra Vape! 
+			Now with 4x more vaping!
+			'''
+		29:
+			'''
+			The Dumbass is an amalgamate, 
+			made by Gaster intricate
+			'''
+		30:
+			'''
+			My favorite QoL mod! 
+			DragonLens!
+			'''
+		31: TerMerica died for this
+		32:
+			'''
+			Hey guys! 
+			When's the next Calamity update?
+			'''
+		33: I'm killing you
+		34: More like stupitus
+		35: I'm too lazy, make your own
+		36: I've always hated the color blue
+		37: You actually changed!
+		38: Here I come Sanfrandickso!
+		39: River is actually Green
+		40: Whats ligma?
+		//this does not show up
+		41: the true joke is that none of this is funny (say punchedline if you read this)
+	}
 }
 
 ImprovisedMortarLauncher: {

@@ -83,9 +83,15 @@ public partial class HendecamPlayer : ModPlayer
     public bool tornSaddle;
     public bool slashedJacket;
 
-    //
-    public bool soulOfImmunity;
 
+    //
+    public bool overClocked;
+    public bool ultraBoosted;
+    public bool soulOfImmunity;
+    //
+    public bool showJokes;
+
+    #region buffblocker
     private static readonly int[] ExplorationBuffs =
     [
         BuffID.Featherfall, BuffID.Flipper, BuffID.Gills, BuffID.Mining,
@@ -153,6 +159,7 @@ public partial class HendecamPlayer : ModPlayer
         BuffID.CoolWhipPlayerBuff, BuffID.ScytheWhipPlayerBuff,
         BuffID.SwordWhipPlayerBuff, BuffID.ThornWhipPlayerBuff
     ];
+    #endregion
     public int shakeDuration;
     public float shakeIntensityX;
     public float shakeIntensityY;
@@ -172,7 +179,10 @@ public partial class HendecamPlayer : ModPlayer
         shakeIntensityX = power.X;
         shakeIntensityY = power.Y;
     }
-
+    public override void ResetInfoAccessories()
+    {
+        showJokes = false;
+    }
     public override void ResetEffects()
     {
         isCamo = false;
@@ -224,6 +234,10 @@ public partial class HendecamPlayer : ModPlayer
         slashedJacket = false;
 
         ///
+        soulOfImmunity = false;
+        ultraBoosted = false;
+        overClocked = false;
+        ///
         radWeaponImbue = false;
         FusionWeaponImbue = false;
         FissionWeaponImbue = false;
@@ -246,6 +260,7 @@ public partial class HendecamPlayer : ModPlayer
     public override void UpdateDead()
     {
         ResetEffects();
+        ResetInfoAccessories();
     }
 
     public override void ProcessTriggers(TriggersSet triggersSet)

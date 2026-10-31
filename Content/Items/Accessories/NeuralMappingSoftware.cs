@@ -1,4 +1,5 @@
 
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Accessories.NastyPatty;
 using System.Collections.Generic;
@@ -18,14 +19,14 @@ public class NeuralMappingSoftware : ModItem
     }    // This is the main hook that allows for our info display to actually work with this accessory. 
     public override void UpdateVanity(Player player)
     {
-        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetHCPlayer().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
 
     }
     public override void UpdateInfoAccessory(Player player)
     {
-        player.GetModPlayer<JokePlayer>().showJokes = true;
+        player.GetHCPlayer().showJokes = true;
         player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
         player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
     }
