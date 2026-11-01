@@ -160,3 +160,6 @@ LycosporeSlime: {
 	DisplayName: Lycospore Slime
 	Bestiary: Be careful, these Lycospore Slimes can give you an explosive surprise when hurt
 }
+
+DartshipMarine.DisplayName: Dartship Pilot
+FallingAlpine.DisplayName: Falling Pilot

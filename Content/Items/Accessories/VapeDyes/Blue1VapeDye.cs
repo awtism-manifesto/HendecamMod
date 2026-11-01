@@ -21,8 +21,6 @@ public class Blue1VapeDye : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-
-
         recipe.AddIngredient(ItemID.BlueDye);
         recipe.AddIngredient<Polymer>(15);
         recipe.AddIngredient<CrudeOil>(25);

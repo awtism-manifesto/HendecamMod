@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 
@@ -25,48 +26,27 @@ public class OverclockedWrench : ModItem
         Item.value = 1499000;
     }
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
+    public override void UpdateVanity(Player player)
     {
-        player.GetModPlayer<Overclockified>().Overclocked = true; // Put all boosts in the ModPlayer below to toggle dynamically
-    }
-}
-
-public class Overclockified : ModPlayer
-{
-    public static readonly int MeleeAttackSpeedBonus = 13;
-    public static readonly int MoveSpeedBonus = 13;
-    public bool Overclocked;
-
-    public override void ResetEffects()
-    {
-        Overclocked = false;
-    }
-
-    public override void PostUpdateRunSpeeds()
-    {
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted || !Overclocked) //Disable when Ultraboosted
+        if (Main.rand.NextBool(8))
         {
-            return;
-        }
-
-        if (Main.rand.NextBool(8)) // 1-in-3 chance every tick
-        {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustID.Electric,
-                Player.velocity.X * Main.rand.NextFloat(-1f, 1.8f), Player.velocity.Y * Main.rand.NextFloat(-1f, 1.8f), 70, default, 0.65f);
+            int dust = Dust.NewDust(player.position, player.width, player.height, DustID.Electric,
+                player.velocity.X * Main.rand.NextFloat(-1.75f, 2.67f), player.velocity.Y * Main.rand.NextFloat(-1.75f, 2.67f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
     }
-
-    public override void PostUpdateEquips()
+    public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        if (Player.GetModPlayer<Ultraboostified>().Ultraboosted || !Overclocked) //Disable when Ultraboosted
+        if (!hideVisual)
         {
-            return;
+            if (Main.rand.NextBool(8))
+            {
+                int dust = Dust.NewDust(player.position, player.width, player.height, DustID.Electric,
+                    player.velocity.X * Main.rand.NextFloat(-1.75f, 2.67f), player.velocity.Y * Main.rand.NextFloat(-1.75f, 2.67f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+            }
         }
 
-        Player.maxTurrets += 2;
-        Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 100f;
-        Player.runAcceleration *= 1.12f;
-        Player.moveSpeed += MoveSpeedBonus / 112f;
+        player.GetHCPlayer().overClocked = true;
     }
 }

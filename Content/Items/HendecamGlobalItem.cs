@@ -841,7 +841,7 @@ public class HendecamGlobalItem : GlobalItem
             case ItemID.ShellphoneHell:
             case ItemID.ShellphoneOcean:
                 player.GetModPlayer<IQTestPlayer>().showLobotometer = true;
-                player.GetModPlayer<JokePlayer>().showJokes = true;
+                player.GetHCPlayer().showJokes = true;
                 player.GetModPlayer<BrainScanPlayer>().showLobotometerDecay = true;
                 break;
         }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HendecamMod.Common.Systems;
 using HendecamMod.Content.NPCs.Bosses;
+using HendecamMod.Content.NPCs.Town.AlpineNPC;
 using Terraria.Audio;
 using Terraria.Chat;
 using Terraria.Localization;
@@ -33,7 +34,7 @@ public class ApacheElfShipSummon : ModItem
 
     public override bool CanUseItem(Player player)
     {
-        return !NPC.AnyNPCs(NPCType<ApacheElfShip>());
+        return !NPC.AnyNPCs(NPCType<ApacheElfShip>()) && !NPC.AnyNPCs(NPCType<FallingAlpine>());
     }
 
     public override bool? UseItem(Player player)
@@ -63,7 +64,6 @@ public class ApacheElfShipSummon : ModItem
 
         return true;
     }
-
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();

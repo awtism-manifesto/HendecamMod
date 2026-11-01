@@ -1,3 +1,4 @@
+using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Tiles.Furniture;
 using System.Collections.Generic;
@@ -33,50 +34,27 @@ public class UltraboostedWrench : ModItem
         recipe.AddTile<CultistCyclotronPlaced>();
         recipe.Register();
     }
-
-    public override void UpdateAccessory(Player player, bool hideVisual)
+    public override void UpdateVanity(Player player)
     {
-        player.GetModPlayer<Ultraboostified>().Ultraboosted = true; // Put all boosts in the ModPlayer below to toggle dynamically
-    }
-}
-
-public class Ultraboostified : ModPlayer
-{
-    public static readonly int MeleeAttackSpeedBonus = 20;
-    public static readonly int MoveSpeedBonus = 20;
-    public bool Ultraboosted;
-
-    public override void ResetEffects()
-    {
-        Ultraboosted = false;
-    }
-
-    public override void PostUpdateRunSpeeds()
-    {
-        if (!Player.GetModPlayer<Ultraboostified>().Ultraboosted) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (Main.rand.NextBool(4))
         {
-            return;
-        }
-
-        if (Main.rand.NextBool(4)) // 1-in-3 chance every tick
-        {
-            int dust = Dust.NewDust(Player.position, Player.width, Player.height, DustID.Electric,
-                Player.velocity.X * Main.rand.NextFloat(-1.75f, 2.67f), Player.velocity.Y * Main.rand.NextFloat(-1.75f, 2.67f), 70, default, 0.82f);
+            int dust = Dust.NewDust(player.position, player.width, player.height, DustID.Electric,
+                player.velocity.X * Main.rand.NextFloat(-1.75f, 2.67f), player.velocity.Y * Main.rand.NextFloat(-1.75f, 2.67f), 70, default, 0.82f);
             Main.dust[dust].noGravity = true;
         }
     }
-
-    public override void PostUpdateEquips()
+    public override void UpdateAccessory(Player player, bool hideVisual)
     {
-        if (!Player.GetModPlayer<Ultraboostified>().Ultraboosted) // Strongest boost takes priority, weaker boosts shouldn't prevent this
+        if (!hideVisual)
         {
+            if (Main.rand.NextBool(4))
+            {
+                int dust = Dust.NewDust(player.position, player.width, player.height, DustID.Electric,
+                    player.velocity.X * Main.rand.NextFloat(-1.75f, 2.67f), player.velocity.Y * Main.rand.NextFloat(-1.75f, 2.67f), 70, default, 0.82f);
+                Main.dust[dust].noGravity = true;
+            }
         }
-        else
-        {
-            Player.maxTurrets += 4;
-            Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += MeleeAttackSpeedBonus / 100f;
-            Player.runAcceleration *= 1.21f;
-            Player.moveSpeed += MoveSpeedBonus / 121f;
-        }
+
+        player.GetHCPlayer().ultraBoosted = true; 
     }
 }

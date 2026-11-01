@@ -7,9 +7,6 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class AuspiciousLobotomySpike : ModItem
 {
-
-  
-
     public override void SetDefaults()
     {
         Item.width = 45;

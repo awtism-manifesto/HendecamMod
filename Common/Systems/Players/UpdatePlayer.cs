@@ -1,6 +1,8 @@
 using HendecamMod.Common.Utilities;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Dusts;
+using HendecamMod.Content.Global;
+using HendecamMod.Content.Items.Accessories;
 using HendecamMod.Networking;
 using HendecamMod.Networking.Packets;
 using Microsoft.Xna.Framework;
@@ -260,7 +262,20 @@ public partial class HendecamPlayer
                 Player.mount.Dismount(Player);
         }
     }
-
+    public override void PostUpdateRunSpeeds()
+    {
+        if (ultraBoosted)
+        {
+            return;
+        }
+    }
+    public override void RefreshInfoAccessoriesFromTeamPlayers(Player otherPlayer)
+    {
+        if (otherPlayer.GetHCPlayer().showJokes)
+        {
+            showJokes = true;
+        }
+    }
     public override void PostUpdateEquips()
     {
         if (soulOfImmunity)
@@ -281,6 +296,24 @@ public partial class HendecamPlayer
                 }
             }
         }
+        if (ultraBoosted)
+        {
+            Player.maxTurrets += 4;
+            Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += 20 / 100f;
+            Player.runAcceleration *= 1.21f;
+            Player.moveSpeed += 20 / 121f;
+        }
+        else
+        {
+            if (overClocked)
+            {
+                Player.maxTurrets += 2;
+                Player.GetAttackSpeed(DamageClass.SummonMeleeSpeed) += 13 / 100f;
+                Player.runAcceleration *= 1.12f;
+                Player.moveSpeed += 13 / 112f;
+            }
+        }
+
         base.PostUpdateEquips();
     }
 
@@ -313,6 +346,7 @@ public partial class HendecamPlayer
 
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
+        if(hotWax)
             target.AddBuff(BuffID.OnFire3, 600);
     }
 
