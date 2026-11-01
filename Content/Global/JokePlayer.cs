@@ -66,7 +66,7 @@ namespace HendecamMod.Content.Global
             if (JokeCycler >= 240)
             {
 
-                choice = Main.rand.Next(32);
+                choice = Main.rand.Next(46);
                
                
                 switch (choice)
@@ -195,6 +195,24 @@ namespace HendecamMod.Content.Global
                         break;
                     case 40:
                         JokeDisplayed = "Whats ligma?";
+                        break;
+                    case 41:
+                        JokeDisplayed = "Hold on, I'm asking ChatGPT to generate the next one";
+                        break;
+                    case 42:
+                        JokeDisplayed = "This joke is not avalible in your region";
+                        break;
+                    case 43:
+                        JokeDisplayed = "The Goblin Tinkerer's prices are fair and balanced.";
+                        break;
+                    case 44:
+                        JokeDisplayed = "If you're seeing this, it's time to wake up";
+                        break;
+                    case 45:
+                        JokeDisplayed = "Nuh uh. The fuck you mean Nuh uh.";
+                        break;
+                    case 46:
+                        JokeDisplayed = "Human, I remember your Terrarias";
                         break;
                 }
 
