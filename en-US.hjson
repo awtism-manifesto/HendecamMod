@@ -77,6 +77,11 @@ Mods: {
 
 				Headers.ExperimentalFeatures(clientside): Experimental Features (Client-side)
 				DisplayName: Hendecam Client Config
+
+				LobotometerShaderIntensity: {
+					Label: Lobotometer Shader Intensity
+					Tooltip: ""
+				}
 			}
 
 			HendecamExperimentalConfig: {

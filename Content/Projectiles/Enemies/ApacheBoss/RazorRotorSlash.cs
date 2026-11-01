@@ -1,5 +1,4 @@
-﻿using HendecamMod.Content.NPCs.Bosses;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -14,98 +13,74 @@ public class RazorRotorSlash : ModProjectile
 {
     public override string Texture => "HendecamMod/Content/NPCs/Bosses/Dartship_Rotor";
 
-    public static VertexStrip strip = new();
-    public MiscShaderData SlashShader = new MiscShaderData(Main.VertexPixelShaderRef, "MagicMissile")
-        .UseProjectionMatrix(true)
-        .UseImage0("Images/Extra_" + 201)
-        .UseImage1("Images/Extra_" + 193)
-        .UseImage2("Images/Extra_" + 252)
-        .UseSaturation(-2.8f)
-        .UseOpacity(2f);
+    public VertexStrip TrailStrip = new();
+    public ref float Timer => ref Projectile.ai[0];
 
     public override void SetStaticDefaults()
     {
-        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 14;
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
         ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
     }
 
     public override void SetDefaults()
     {
-        Projectile.width = 48;
-        Projectile.height = 20;
+        Projectile.width = 36;
+        Projectile.height = 36;
         Projectile.hostile = true;
         Projectile.friendly = false;
         Projectile.tileCollide = false;
         Projectile.ignoreWater = true;
         Projectile.penetrate = -1;
-        Projectile.timeLeft = 180;
+        Projectile.timeLeft = 120;
+        Projectile.Opacity = 1f;
     }
+
+    public override bool? CanDamage() => Projectile.Opacity > 0.25f;
 
     public override void AI()
     {
-        Projectile.rotation = Projectile.velocity.ToRotation();
-        Projectile.localAI[0] = MathHelper.WrapAngle(Projectile.localAI[0] + 0.45f);
+        if (Timer == 0f)
+        {
+            Projectile.rotation = Projectile.velocity.ToRotation();
+            Vector2 dir = Projectile.rotation.ToRotationVector2();
+
+            Projectile.velocity = dir * (16);
+        }
+
+        Timer++;
+
+        if (Timer >= 5)
+        {
+            Projectile.velocity *= 0.95f;
+        }
+        if (Timer >= 30)
+        {
+            Projectile.Kill();
+        }
     }
 
-    public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
-    {
-        float point = 0f;
-        Vector2 dir = Projectile.velocity.SafeNormalize(Vector2.UnitX);
-        return Collision.CheckAABBvLineCollision(
-            targetHitbox.TopLeft(),
-            targetHitbox.Size(),
-            Projectile.Center - dir * 44f,
-            Projectile.Center + dir * 44f,
-            20f * Projectile.scale,
-            ref point
-        );
-    }
 
     private Color StripColors(float progressOnStrip)
     {
-        Color c = new Color(160, 185, 205, 220);
-        c.A /= 2;
-        return c * (1f - progressOnStrip);
+        Color result = Color.Lerp(Color.White, Color.White, Utils.GetLerpValue(0f, 0.7f, progressOnStrip, true)) * (1f - Utils.GetLerpValue(0f, 0.98f, progressOnStrip, false));
+        result.A /= 2;
+        return result * 0.5f;
     }
-
     private float StripWidth(float progressOnStrip)
     {
-        return 36f * (1f - progressOnStrip * 0.5f) * Projectile.scale;
+        return MathHelper.Lerp(1f, 40f, Utils.GetLerpValue(0f, 0.6f, progressOnStrip, true)) * Utils.GetLerpValue(0f, 0.1f, progressOnStrip, true);
+    }
+    public override Color? GetAlpha(Color lightColor)
+    {
+        return Color.White;
     }
 
     public override bool PreDraw(ref Color lightColor)
     {
-        SlashShader.Apply(null);
-        strip.PrepareStrip(Projectile.oldPos, Projectile.oldRot, StripColors, StripWidth, Projectile.Size * 0.5f - Main.screenPosition, Projectile.oldPos.Length, true);
-        strip.DrawTrail();
 
-        Main.spriteBatch.End();
-        Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullNone, null, Main.GameViewMatrix.TransformationMatrix);
-
-        Texture2D rotorTex = ApacheElfShip.rotorTexture.Value;
-        Vector2 origin = new Vector2(3f, rotorTex.Height - 3f);
-
-        for (int i = 0; i < 4; i++)
-        {
-            float angle = Projectile.localAI[0] + i * MathHelper.PiOver2;
-            Vector2 localVec = new Vector2(MathF.Cos(angle) * 44f, MathF.Sin(angle) * 10f);
-            Vector2 worldVec = localVec.RotatedBy(Projectile.rotation);
-            float bladeRot = worldVec.ToRotation() + MathHelper.PiOver4;
-            float lenRatio = localVec.Length() / 44f;
-            Vector2 scale = new Vector2(lenRatio, MathHelper.Lerp(0.35f, 1f, lenRatio)) * Projectile.scale;
-
-            Main.EntitySpriteDraw(
-                rotorTex,
-                Projectile.Center - Main.screenPosition,
-                null,
-                Color.White,
-                bladeRot,
-                origin,
-                scale,
-                SpriteEffects.None,
-                0
-            );
-        }
+        GameShaders.Misc["LightDisc"].Apply(null);
+        TrailStrip.PrepareStrip(Projectile.oldPos, Projectile.oldRot, StripColors, StripWidth, Projectile.Size * 0.5f - Main.screenPosition, Projectile.oldPos.Length, true);
+        TrailStrip.DrawTrail();
 
         return false;
     }

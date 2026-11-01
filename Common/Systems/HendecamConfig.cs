@@ -47,17 +47,17 @@ public class HendecamConfig : ModConfig
 
 }
 public class HendecamClientConfig : ModConfig
-
 {
     public override ConfigScope Mode => ConfigScope.ClientSide;
+
     [Header("ExperimentalFeatures(clientside)")]
 
-
-
     [DefaultValue(false)]
-
     public bool EverythingMakesCritNoise;
 
-
+    [DefaultValue(1f)]
+    [Range(0f, 1f)]
+    [Increment(0.05f)]
+    [Slider]
+    public float LobotometerShaderIntensity;
 }
-

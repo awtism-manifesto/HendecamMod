@@ -1,4 +1,5 @@
-﻿using HendecamMod.Physics;
+﻿using HendecamMod.Content.Projectiles.Enemies.ApacheBoss;
+using HendecamMod.Physics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -31,6 +32,7 @@ public class DartshipMarine : ModNPC
     public Vector2 ArmRecoil = Vector2.Zero;
     public Vector2 ArmPivot = Vector2.Zero;
     public Vector2 MuzzlePos = Vector2.Zero;
+    public Vector2 LockedShootDir = Vector2.Zero;
     public float ArmRotation;
     public float TargetArmRotation;
     public float MuzzleGlow;
@@ -52,7 +54,7 @@ public class DartshipMarine : ModNPC
         NPC.height = 32;
         NPC.damage = 65;
         NPC.defense = 40;
-        NPC.lifeMax = 92500;
+        NPC.lifeMax = 40000;
         NPC.knockBackResist = 0f;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath1;
@@ -67,6 +69,8 @@ public class DartshipMarine : ModNPC
 
     private void UpdateVerletRope(Vector2 startPos, Vector2 chopperVelocity)
     {
+        if (Main.dedServ) return;
+
         float segLen = MaxRopeLength / RopeSegments;
 
         if (RopeChain?.allSticks == null)
@@ -123,11 +127,11 @@ public class DartshipMarine : ModNPC
         }
     }
 
-    private void GetPositionAndTangentAlongRope(float progress, out Vector2 pos, out Vector2 tangent)
+    private void GetPositionAndTangentAlongRope(Vector2 fallbackStart, float progress, out Vector2 pos, out Vector2 tangent)
     {
         if (RopeChain?.allSticks == null || RopeChain.allSticks.Count == 0)
         {
-            pos = NPC.Center;
+            pos = fallbackStart + new Vector2(0f, MathHelper.Clamp(progress, 0f, 1f) * MaxRopeLength);
             tangent = Vector2.UnitY;
             return;
         }
@@ -143,7 +147,7 @@ public class DartshipMarine : ModNPC
 
     private void ApplyRopeRecoil(Vector2 impulse)
     {
-        if (RopeChain?.allSticks == null) return;
+        if (Main.dedServ || RopeChain?.allSticks == null) return;
 
         int count = RopeChain.allSticks.Count;
         for (int i = 0; i < count; i++)
@@ -185,6 +189,7 @@ public class DartshipMarine : ModNPC
         if (forceRetreat && Timer < 250f)
         {
             Timer = 250f;
+            NPC.netUpdate = true;
         }
 
         Timer++;
@@ -202,17 +207,22 @@ public class DartshipMarine : ModNPC
         bool fullyDown = SlideProgress >= 0.99f && Timer < 250f && !forceRetreat;
         NPC.dontTakeDamage = SlideProgress < 0.5f || forceRetreat;
 
-        MarineFacing = (target.Center.X < NPC.Center.X) ? -1 : 1;
-        NPC.spriteDirection = MarineFacing;
-
         ArmRecoil = Vector2.Lerp(ArmRecoil, Vector2.Zero, 0.35f);
         MuzzleGlow = MathHelper.Max(0f, MuzzleGlow - 0.15f);
 
         UpdateVerletRope(boss.RopeAnchorPos, bossNPC.velocity);
-        GetPositionAndTangentAlongRope(SlideProgress, out Vector2 ropeAttachPos, out Vector2 ropeTangent);
+        GetPositionAndTangentAlongRope(boss.RopeAnchorPos, SlideProgress, out Vector2 ropeAttachPos, out Vector2 ropeTangent);
 
         float ropeTilt = (ropeTangent.ToRotation() - MathHelper.PiOver2) * 0.7f;
         NPC.rotation = Utils.AngleLerp(NPC.rotation, MathHelper.Clamp(ropeTilt, -0.55f, 0.55f), 0.2f);
+
+        int cycleTick = (int)(Timer % 80f);
+
+        if (!fullyDown || cycleTick < 15 || LockedShootDir == Vector2.Zero)
+        {
+            MarineFacing = (target.Center.X < NPC.Center.X) ? -1 : 1;
+            NPC.spriteDirection = MarineFacing;
+        }
 
         Vector2 harnessOffset = new Vector2(-2f * MarineFacing, -6f).RotatedBy(NPC.rotation);
         NPC.Center = ropeAttachPos - harnessOffset;
@@ -222,28 +232,55 @@ public class DartshipMarine : ModNPC
 
         if (fullyDown)
         {
-            TargetArmRotation = (target.Center - ArmPivot).ToRotation() + MathHelper.Pi;
+            if (cycleTick < 15 || LockedShootDir == Vector2.Zero)
+            {
+                TargetArmRotation = (target.Center - ArmPivot).ToRotation() + MathHelper.Pi;
+                LockedShootDir = new Vector2(-1f, 0f).RotatedBy(TargetArmRotation);
+            }
         }
         else
         {
             float neutralAngle = (MarineFacing == -1) ? 0f : MathHelper.Pi;
             TargetArmRotation = neutralAngle + NPC.rotation;
+            LockedShootDir = Vector2.Zero;
         }
 
         ArmRotation = Utils.AngleLerp(ArmRotation, TargetArmRotation, 0.22f);
         MuzzlePos = ArmPivot + new Vector2(-24f, -2f * MarineFacing).RotatedBy(ArmRotation);
 
-        if (fullyDown && Timer % 6f == 0f)
+        if (fullyDown)
         {
-            int burstPhase = (int)(Timer % 48f);
-            if (burstPhase <= 30)
+            if (cycleTick == 20)
             {
-                Vector2 shootDir = new Vector2(-1f, 0f).RotatedBy(ArmRotation);
+                SoundEngine.PlaySound(SoundID.Item15, MuzzlePos);
 
-                ArmRecoil = -shootDir * 2.5f;
-                ApplyRopeRecoil(-shootDir * 3.8f);
+                if (Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    Projectile.NewProjectile(
+                        NPC.GetSource_FromAI(),
+                        MuzzlePos,
+                        LockedShootDir,
+                        ModContent.ProjectileType<DartshipTelegraph>(),
+                        0,
+                        0f,
+                        Main.myPlayer,
+                        0f,
+                        0f,
+                        20f
+                    );
+                }
+            }
 
-                boss.BodyRecoilOffset += -shootDir * 1.2f;
+            if (cycleTick >= 30 && cycleTick % 5 == 0)
+            {
+                Vector2 shootDir = LockedShootDir != Vector2.Zero
+                    ? LockedShootDir
+                    : new Vector2(-1f, 0f).RotatedBy(ArmRotation);
+
+                ArmRecoil = -shootDir * 1.5f;
+                ApplyRopeRecoil(-shootDir * 1.8f);
+
+                boss.BodyRecoilOffset += -shootDir * 0.5f;
                 boss.NPC.velocity += -shootDir * 0.1f;
 
                 MuzzleGlow = 1f;
@@ -251,12 +288,13 @@ public class DartshipMarine : ModNPC
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Vector2 bulletVel = shootDir.RotatedByRandom(MathHelper.ToRadians(4f)) * 16f;
-                    Projectile p = Projectile.NewProjectileDirect(NPC.GetSource_FromAI(),
+                    Vector2 bulletVel = shootDir.RotatedByRandom(MathHelper.ToRadians(2f)) * 16f;
+                    Projectile p = Projectile.NewProjectileDirect(
+                        NPC.GetSource_FromAI(),
                         MuzzlePos,
                         bulletVel,
                         ProjectileID.BulletHighVelocity,
-                        NPC.damage / 3,
+                        ApacheElfShip.ProjectileDamage(NPC.damage / 3),
                         1f,
                         Main.myPlayer
                     );
@@ -330,7 +368,8 @@ public class DartshipMarine : ModNPC
         Vector2 bodyOrigin = mTex.Size() / 2f;
         Vector2 armOrigin = new(aTex.Width * 0.68f, aTex.Height * 0.56f);
 
-        GetPositionAndTangentAlongRope(SlideProgress, out Vector2 ropeAttachPos, out _);
+        Vector2 fallbackAnchor = (BossIndex >= 0 && BossIndex < Main.maxNPCs && Main.npc[BossIndex].ModNPC is ApacheElfShip boss) ? boss.RopeAnchorPos : NPC.Center;
+        GetPositionAndTangentAlongRope(fallbackAnchor, SlideProgress, out Vector2 ropeAttachPos, out _);
         Vector2 bodyDrawCenter = ropeAttachPos - new Vector2(-2f * MarineFacing, -6f).RotatedBy(NPC.rotation);
         Vector2 armDrawPivot = bodyDrawCenter + new Vector2(1f * MarineFacing, 0f).RotatedBy(NPC.rotation) + ArmRecoil;
         Vector2 muzzleDrawPos = armDrawPivot + new Vector2(-24f, -2f * MarineFacing).RotatedBy(ArmRotation);

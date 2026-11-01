@@ -144,13 +144,12 @@ namespace HendecamMod.Common.Systems
         {
             if (!Main.dedServ)
             {
-                // CRITICAL FIX: Check if THIS ModPlayer instance belongs to the local player
-                // NOT if Main.LocalPlayer is the local player (which is always true)
                 if (Player != Main.LocalPlayer)
                     return;
 
-                // Handle shader deactivation when dead or no current
-                if (Current <= 0 || Player.dead)
+                float configIntensity = ModContent.GetInstance<HendecamClientConfig>().LobotometerShaderIntensity;
+                //annoying
+                if (Current <= 0 || Player.dead || configIntensity <= 0f)
                 {
                     if (Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
                     {
@@ -159,14 +158,12 @@ namespace HendecamMod.Common.Systems
                     return;
                 }
 
-                // Activate shader if not already active
                 if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
                 {
                     Filters.Scene.Activate("HendecamMod:LobotomyScreen");
                 }
 
-                // Calculate intensity modifiers
-                float intensityMultiplier = 1f;
+                float intensityMultiplier = configIntensity;
 
                 if (Player.GetModPlayer<HendecamPlayer>().Lucid)
                 {

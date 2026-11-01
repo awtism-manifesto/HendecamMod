@@ -1,4 +1,5 @@
 ﻿using HendecamMod.Common.Systems;
+using HendecamMod.Common.Systems.Particles;
 using HendecamMod.Content.Global;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Placeables;
@@ -10,6 +11,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using System;
+using System.IO;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
@@ -210,6 +212,26 @@ public class ApacheElfShip : ModNPC
         }
     }
 
+    public override void SendExtraAI(BinaryWriter writer)
+    {
+        writer.Write(aiTimer0);
+        writer.Write(aiTimer1);
+        writer.Write(aiTimer2);
+        writer.Write((sbyte)TargetFacing);
+        writer.Write((sbyte)DesiredSide);
+        writer.Write(doorGun);
+    }
+
+    public override void ReceiveExtraAI(BinaryReader reader)
+    {
+        aiTimer0 = reader.ReadSingle();
+        aiTimer1 = reader.ReadSingle();
+        aiTimer2 = reader.ReadSingle();
+        TargetFacing = reader.ReadSByte();
+        DesiredSide = reader.ReadSByte();
+        doorGun = reader.ReadBoolean();
+    }
+
     public override void OnSpawn(IEntitySource source)
     {
         aiTimer0 = 0f;
@@ -220,6 +242,17 @@ public class ApacheElfShip : ModNPC
         RotorSpinFactor = 1f;
         AIState = ActionState.Intro;
 
+        int alpineIndex = NPC.FindFirstNPC(ModContent.NPCType<Alpine>());
+        if (alpineIndex >= 0 && alpineIndex < Main.maxNPCs && Main.npc[alpineIndex].active)
+        {
+            NPC.Center = Main.npc[alpineIndex].Center;
+            Main.npc[alpineIndex].active = false;
+            if (Main.netMode == NetmodeID.Server)
+            {
+                NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, alpineIndex);
+            }
+        }
+
         NPC.TargetClosest(true);
         if (NPC.HasValidTarget)
         {
@@ -229,6 +262,7 @@ public class ApacheElfShip : ModNPC
             DesiredSide = -TargetFacing;
         }
         NPC.velocity = new Vector2(TargetFacing * 4f, 6f);
+        NPC.netUpdate = true;
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -250,6 +284,7 @@ public class ApacheElfShip : ModNPC
         npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<AlpineRelicItem>()));
         npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<AlpinePetItem>(), 4));
     }
+
     public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)
     {
         NPC.lifeMax = (int)(NPC.lifeMax * 0.5f * balance * bossAdjustment);
@@ -283,12 +318,34 @@ public class ApacheElfShip : ModNPC
         ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("AGH!"), new Color(185, 105, 105));
         SoundEngine.PlaySound(SoundID.Item14, NPC.Center);
 
-        for (int i = 0; i < 40; i++)
+        if (!Main.dedServ)
         {
-            Dust d = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Torch, Main.rand.NextFloat(-8f, 8f), Main.rand.NextFloat(-8f, 2f), 100, default, 2.4f);
-            d.noGravity = true;
-            Dust s = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Smoke, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 2f), 100, default, 2f);
-            s.noGravity = true;
+            Vector2[] crashPoints = [BodyPos, BodyGunPivot, TopGunPivot];
+            foreach (Vector2 pt in crashPoints)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                    ParticleSystem.SpawnParticle(
+                        ParticleID.Streak,
+                        pt + Main.rand.NextVector2Circular(10f, 10f),
+                        Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(1.5f, 3.8f),
+                        randColor,
+                        1f,
+                        Main.rand.NextFloat(0.75f, 1.15f)
+                    );
+
+                    ParticleSystem.SpawnParticle(
+                        ParticleID.Gas,
+                        pt + Main.rand.NextVector2Circular(12f, 12f),
+                        Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(0.8f, 2.2f),
+                        randColor,
+                        0.9f,
+                        Main.rand.NextFloat(0.55f, 0.85f),
+                        data0: 0.03f
+                    );
+                }
+            }
         }
 
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
@@ -478,7 +535,7 @@ public class ApacheElfShip : ModNPC
         BodyPos = NPC.Center + BodyRecoilOffset;
 
         Vector2 frontAnchor = new Vector2(66f * TargetFacing, 8f).RotatedBy(NPC.rotation);
-        Vector2 bodyGunAnchor = new Vector2(6f * TargetFacing, 12f).RotatedBy(NPC.rotation);
+        Vector2 bodyGunAnchor = new Vector2(-12f * TargetFacing, 8f).RotatedBy(NPC.rotation);
         Vector2 topGunAnchor = new Vector2(-40f * TargetFacing, -20f).RotatedBy(NPC.rotation);
         Vector2 rotorAnchor = new Vector2(RotorAnchorOffset.X * TargetFacing, RotorAnchorOffset.Y).RotatedBy(NPC.rotation);
         Vector2 tailRotorAnchor = new Vector2(TailRotorAnchorOffset.X * TargetFacing, TailRotorAnchorOffset.Y).RotatedBy(NPC.rotation);
@@ -676,8 +733,7 @@ public class ApacheElfShip : ModNPC
             aiTimer0 = 0f;
             attackCount = 0f;
             int pick = (int)(aiTimer2++ % 4);
-            AIState = 
-            pick switch
+            AIState = pick switch
             {
                 0 => ActionState.DartshipBarrage,
                 1 => ActionState.RazorRotor,
@@ -786,51 +842,68 @@ public class ApacheElfShip : ModNPC
 
     private void DartshipBarrage(Player target)
     {
+        if (aiTimer0 == 0f && attackCount == 0f)
+        {
+            CheckSideSwitch(target);
+        }
+
         aiTimer0++;
 
-        float desiredX = target.Center.X + DesiredSide * 520f;
-        bool onCorrectSide = (DesiredSide == -1) ? (NPC.Center.X < target.Center.X - 180f) : (NPC.Center.X > target.Center.X + 180f);
-        bool reachedSpot = Math.Abs(NPC.Center.X - desiredX) < 90f;
-        bool isStable = onCorrectSide && Math.Abs(NPC.velocity.X) < 1.2f && Math.Abs(NPC.rotation) < 0.05f && TargetFacing == -DesiredSide;
-
-        if (aiTimer0 <= 150f)
+        if (aiTimer0 >= 1f && aiTimer0 <= 120f)
         {
             UpdateFacingAndGuns(target, false, false);
 
-            Vector2 desiredPos = new(desiredX, target.Center.Y);
+            Vector2 desiredPos = new(target.Center.X + DesiredSide * 520f, target.Center.Y);
             Vector2 toDesired = desiredPos - NPC.Center;
             float dist = toDesired.Length();
 
             Vector2 desiredVelocity = Vector2.Zero;
             if (dist > 10f)
             {
-                float speed = MathHelper.Clamp(dist * 0.055f, 1f, 8.5f);
+                float speed = MathHelper.Clamp(dist * 0.08f, 1.5f, 12f);
                 desiredVelocity = Vector2.Normalize(toDesired) * speed;
             }
 
-            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, 0.06f);
+            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, 0.08f);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.02f, -0.12f, 0.12f), 0.1f);
-
-            if (aiTimer0 == 150f && (!onCorrectSide || !reachedSpot))
-            {
-                aiTimer0 = 149f;
-            }
         }
-        else if (aiTimer0 <= 200f)
+
+        if (aiTimer0 >= 130f && aiTimer0 <= 180f)
         {
             TargetFacing = -DesiredSide;
             NPC.spriteDirection = TargetFacing;
             UpdateFacingAndGuns(target, false, true);
 
-            NPC.velocity *= 0.85f;
-            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.15f);
-
-            if (aiTimer0 == 200f && !isStable)
+            NPC.velocity *= 0.8f;
+            if (NPC.velocity.Length() < 0.2f)
             {
-                aiTimer0 = 199f;
+                NPC.velocity = Vector2.Zero;
+            }
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.2f);
+
+            if (aiTimer0 == 160f)
+            {
+                SoundEngine.PlaySound(SoundID.Item15, BodyGunMuzzlePos);
+
+                if (Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    Vector2 forwardDir = new(TargetFacing, 0f);
+                    Projectile.NewProjectile(
+                        NPC.GetSource_FromAI(),
+                        BodyGunMuzzlePos,
+                        forwardDir,
+                        ModContent.ProjectileType<DartshipTelegraph>(),
+                        0,
+                        0f,
+                        Main.myPlayer,
+                        0f,
+                        0f,
+                        30f
+                    );
+                }
             }
         }
-        else if (aiTimer0 <= 300f)
+        if (aiTimer0 >= 220f && aiTimer0 <= 300f)
         {
             TargetFacing = -DesiredSide;
             NPC.spriteDirection = TargetFacing;
@@ -860,14 +933,14 @@ public class ApacheElfShip : ModNPC
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Vector2 bodyVel = bodyShootDir.RotatedByRandom(MathHelper.ToRadians(5f)) * 13.5f;
+                    Vector2 bodyVel = bodyShootDir.RotatedByRandom(MathHelper.ToRadians(5f)) * 20.5f;
                     int bulletDamage = ProjectileDamage(NPC.damage / 3);
 
                     Projectile p = Projectile.NewProjectileDirect(
                         NPC.GetSource_FromAI(),
                         BodyGunMuzzlePos,
                         bodyVel,
-                        ProjectileID.BulletHighVelocity,
+                        ModContent.ProjectileType<DartshipBullet>(),
                         bulletDamage,
                         1f,
                         Main.myPlayer
@@ -877,30 +950,7 @@ public class ApacheElfShip : ModNPC
                     p.tileCollide = false;
                 }
             }
-            if (aiTimer0 % 20f == 0f)
-            {
-                int bulletDamage = ProjectileDamage(NPC.damage / 3);
-                int shrapnelCount = 4;
-                for (int i = 0; i < shrapnelCount; i++)
-                {
-                    float t = (i / (float)(shrapnelCount - 1)) - 0.5f;
-                    float angle = (t * MathHelper.ToRadians(80f));
-                    Vector2 shrapnelVel = angle.ToRotationVector2();
 
-                    Projectile p = Projectile.NewProjectileDirect(
-                        NPC.GetSource_FromThis(),
-                        FrontGunMuzzlePos,
-                        shrapnelVel * 2 * TargetFacing,
-                        ProjectileID.BulletHighVelocity,
-                        bulletDamage,
-                        1.5f,
-                        Main.myPlayer
-                    );
-                    p.hostile = true;
-                    p.friendly = false;
-                    p.tileCollide = false;
-                }
-            }
             if (aiTimer0 % 30f == 0f)
             {
                 Vector2 rocketDir = new Vector2(-1f, 0f).RotatedBy(TopGunRotation);
@@ -925,18 +975,14 @@ public class ApacheElfShip : ModNPC
                 }
             }
         }
-        else if (aiTimer0 <= 350f)
-        {
-            UpdateFacingAndGuns(target, false, false);
-            NPC.velocity *= 0.9f;
-            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.12f);
-        }
-        else
+
+        if (aiTimer0 > 310f)
         {
             aiTimer0 = 0f;
             DesiredSide = -DesiredSide;
+            NPC.netUpdate = true;
 
-            if (++attackCount >= 4f)
+            if (++attackCount >= 3f)
             {
                 attackCount = 0f;
                 AIState = ActionState.Reposition;
@@ -1100,6 +1146,7 @@ public class ApacheElfShip : ModNPC
         {
             aiTimer0 = 0f;
             DesiredSide = -DesiredSide;
+            NPC.netUpdate = true;
 
             if (++attackCount >= 2f)
             {
@@ -1113,13 +1160,48 @@ public class ApacheElfShip : ModNPC
     private static void SpawnGunExplosion(Vector2 pos)
     {
         SoundEngine.PlaySound(SoundID.Item14, pos);
-        for (int i = 0; i < 18; i++)
+        if (Main.dedServ) return;
+
+        for (int i = 0; i < 6; i++)
         {
-            Dust fire = Dust.NewDustDirect(pos - new Vector2(12f, 12f), 24, 24, DustID.Torch, Main.rand.NextFloat(-5f, 5f), Main.rand.NextFloat(-5f, 2f), 100, default, 2f);
-            fire.noGravity = true;
-            Dust smoke = Dust.NewDustDirect(pos - new Vector2(12f, 12f), 24, 24, DustID.Smoke, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 2f), 100, default, 1.6f);
-            smoke.noGravity = true;
+            Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+            ParticleSystem.SpawnParticle(
+                ParticleID.Streak,
+                pos,
+                Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(1.5f, 3.2f),
+                randColor,
+                1f,
+                Main.rand.NextFloat(0.65f, 0.95f)
+            );
+
+            ParticleSystem.SpawnParticle(
+                ParticleID.Gas,
+                pos,
+                Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(0.8f, 2f),
+                randColor,
+                0.9f,
+                Main.rand.NextFloat(0.45f, 0.7f),
+                data0: 0.03f
+            );
         }
+    }
+
+    private void SpawnBurningGasTrail(Vector2 pos)
+    {
+        if (Main.dedServ) return;
+
+        Color gasColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+        Vector2 driftVel = -NPC.velocity * 0.2f + Vector2.UnitY.RotatedByRandom(1.1f) * Main.rand.NextFloat(0.5f, 1.4f);
+
+        ParticleSystem.SpawnParticle(
+            ParticleID.Gas,
+            pos + Main.rand.NextVector2Circular(4f, 4f),
+            driftVel,
+            gasColor,
+            0.8f,
+            Main.rand.NextFloat(0.65f, 0.85f),
+            data0: 0.04f
+        );
     }
 
     private void Retreat()
@@ -1153,6 +1235,7 @@ public class ApacheElfShip : ModNPC
                 NPC.NewNPCDirect(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
             }
             NPC.active = false;
+            NPC.netUpdate = true;
         }
     }
 
@@ -1188,6 +1271,11 @@ public class ApacheElfShip : ModNPC
             SpawnGunExplosion(TopGunPivot);
         }
 
+        if (aiTimer1 >= 1f)
+            SpawnBurningGasTrail(BodyGunPivot);
+        if (aiTimer1 >= 18f)
+            SpawnBurningGasTrail(TopGunPivot);
+
         if (aiTimer1 <= 65f)
         {
             bodyFrame = 5;
@@ -1198,24 +1286,16 @@ public class ApacheElfShip : ModNPC
             TargetTopGunRotation = neutral + NPC.rotation + (droopOffset * 1.15f);
             GunRotationLerpSpeed = 0.15f;
 
-            // Rotors slow down as the engine fails, but keep spinning at 45% speed
             RotorSpinFactor = MathHelper.Lerp(1f, 0.45f, aiTimer1 / 65f);
-
-            if (Main.rand.NextBool(3))
-            {
-                Dust s = Dust.NewDustDirect(BodyPos - new Vector2(30f, 20f), 60, 40, DustID.Smoke, 0f, -2f, 100, default, 1.6f);
-                s.noGravity = true;
-            }
         }
         else
         {
             bodyFrame = 4;
-            // Maintain at least 35% rotor spin throughout the fall
             RotorSpinFactor = MathHelper.Max(0.35f, RotorSpinFactor - 0.003f);
 
             if (aiTimer1 == 66f)
             {
-                SoundEngine.PlaySound(SoundID.Item14, NPC.Center);
+                SpawnGunExplosion(BodyPos);
                 NPC.velocity = new Vector2(TargetFacing * 3.5f, -2.5f);
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
@@ -1227,6 +1307,7 @@ public class ApacheElfShip : ModNPC
                         ModContent.NPCType<FallingAlpine>()
                     );
                 }
+                NPC.netUpdate = true;
             }
 
             NPC.noTileCollide = false;
@@ -1238,14 +1319,6 @@ public class ApacheElfShip : ModNPC
 
             TargetGunRotation = neutral + NPC.rotation + droopOffset;
             TargetTopGunRotation = neutral + NPC.rotation + droopOffset;
-
-            if (Main.rand.NextBool(2))
-            {
-                Dust d = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Smoke, 0f, -1f, 100, default, 1.8f);
-                d.noGravity = true;
-                Dust f = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Torch, 0f, -1f, 100, default, 1.8f);
-                f.noGravity = true;
-            }
 
             if (NPC.collideY || NPC.collideX || NPC.velocity.Y == 0f || aiTimer1 >= 340f)
             {

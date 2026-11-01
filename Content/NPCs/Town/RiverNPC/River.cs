@@ -8,7 +8,6 @@ using HendecamMod.Content.Items.Armor;
 using HendecamMod.Content.Items.Consumables;
 using HendecamMod.Content.Items.Materials;
 using HendecamMod.Content.Items.Placeables;
-using HendecamMod.Content.Items.Placeables.Uno;
 using HendecamMod.Content.Items.Tools;
 using HendecamMod.Content.Items.Weapons.Ammo;
 using HendecamMod.Content.Items.Weapons.Multiclass;
@@ -307,8 +306,7 @@ public class River : ModNPC
     public override void AddShops()
     {
         var npcShop = new NPCShop(Type)
-                .Add<AnUnoDeck>()
-                   .Add(ItemID.MilkCarton)
+                .Add(ItemID.MilkCarton)
                 .Add<RockSalt>(Condition.DownedEarlygameBoss)
                 .Add<PurifiedSalt>(Condition.DownedMechBossAny)
                 .Add(ItemID.Gel)

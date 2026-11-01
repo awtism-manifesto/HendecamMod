@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HendecamMod.Common.Systems.Particles;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -33,7 +34,7 @@ public class ChinookSupplyCrate : ModProjectile
         Projectile.velocity.Y = MathHelper.Clamp(Projectile.velocity.Y + 0.32f, -10f, 14f);
         Projectile.rotation = MathHelper.Lerp(Projectile.rotation, Projectile.velocity.X * 0.06f, 0.15f);
 
-        if (Main.rand.NextBool(3))
+        if (!Main.dedServ && Main.rand.NextBool(3))
         {
             Dust smoke = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, -1f, 120, default, 1.1f);
             smoke.noGravity = true;
@@ -46,18 +47,34 @@ public class ChinookSupplyCrate : ModProjectile
         SoundEngine.PlaySound(SoundID.Item14, Projectile.Center);
         SoundEngine.PlaySound(SoundID.Dig, Projectile.Center);
 
-        for (int i = 0; i < 22; i++)
+        if (!Main.dedServ)
         {
-            Dust smoke = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, Main.rand.NextFloat(-5f, 5f), Main.rand.NextFloat(-6f, 1f), 100, default, 1.7f);
-            smoke.noGravity = true;
+            for (int i = 0; i < 12; i++)
+            {
+                Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Streak,
+                    Projectile.Center,
+                    Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(2f, 5f),
+                    randColor,
+                    1f,
+                    Main.rand.NextFloat(1f, 1.5f)
+                );
 
-            Dust fire = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-7f, 1f), 100, default, 2f);
-            fire.noGravity = true;
-        }
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Gas,
+                    Projectile.Center,
+                    Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(1f, 3f),
+                    randColor,
+                    1f,
+                    Main.rand.NextFloat(0.7f, 1f)
+                );
+            }
 
-        for (int g = 0; g < 3; g++)
-        {
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, new Vector2(Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(-4f, -1f)), Main.rand.Next(61, 64), 0.9f);
+            for (int g = 0; g < 3; g++)
+            {
+                Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, new Vector2(Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(-4f, -1f)), Main.rand.Next(61, 64), 0.9f);
+            }
         }
 
         if (Main.netMode != NetmodeID.MultiplayerClient)
@@ -70,7 +87,7 @@ public class ChinookSupplyCrate : ModProjectile
                 Vector2 shrapnelVel = angle.ToRotationVector2() * Main.rand.NextFloat(9.5f, 12.5f);
 
                 Projectile p = Projectile.NewProjectileDirect(
-                Projectile.GetSource_FromThis(),
+                    Projectile.GetSource_FromThis(),
                     Projectile.Center - new Vector2(0f, 6f),
                     shrapnelVel,
                     ProjectileID.BulletHighVelocity,
@@ -80,7 +97,6 @@ public class ChinookSupplyCrate : ModProjectile
                 );
                 p.hostile = true;
                 p.friendly = false;
-                p.tileCollide = false;
             }
         }
     }

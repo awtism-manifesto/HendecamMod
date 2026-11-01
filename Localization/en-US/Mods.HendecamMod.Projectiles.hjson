@@ -641,3 +641,5 @@ PresidentDeckProjectile.DisplayName: President Deck Projectile
 CardDeckProjectile.DisplayName: Card Deck Projectile
 RazorRotorSlash.DisplayName: Razor Rotor Slash
 ChinookSupplyCrate.DisplayName: Chinook Supply Crate
+DartshipBullet.DisplayName: Dartship Bullet
+DartshipTelegraph.DisplayName: Dartship Telegraph

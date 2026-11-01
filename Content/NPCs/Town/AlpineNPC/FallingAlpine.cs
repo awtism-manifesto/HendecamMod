@@ -96,12 +96,17 @@ public class FallingAlpine : ModNPC
         if (Main.netMode != NetmodeID.MultiplayerClient)
         {
             NPC.Transform(ModContent.NPCType<Alpine>());
+            if (Main.netMode == NetmodeID.Server)
+            {
+                NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, NPC.whoAmI);
+            }
         }
     }
 
     public override void OnSpawn(IEntitySource source)
     {
-        Player player = Main.player[Player.FindClosest(NPC.Center, 3000, 3000)];
+        int closestIdx = Player.FindClosest(NPC.Center, 3000, 3000);
+        Player player = Main.player[closestIdx];
         if (NPC.Center.X < player.Center.X)
         {
             NPC.spriteDirection = -1;
@@ -118,6 +123,7 @@ public class FallingAlpine : ModNPC
         RetractProgress = 0f;
         CanopyScale = 1f;
         CanopyPos = NPC.Center + new Vector2(0f, -44f);
+        NPC.netUpdate = true;
     }
 
     private void UpdateParachuteVerlet()
@@ -191,6 +197,19 @@ public class FallingAlpine : ModNPC
         }
     }
 
+    private bool IsAnyPlayerTalkingToMe()
+    {
+        for (int i = 0; i < Main.maxPlayers; i++)
+        {
+            Player p = Main.player[i];
+            if (p.active && p.talkNPC == NPC.whoAmI)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public override void AI()
     {
         DrawOffsetY = -2;
@@ -219,8 +238,11 @@ public class FallingAlpine : ModNPC
                     Timer = 0f;
                     RetractProgress = 0f;
 
-                    Gore.NewGoreDirect(NPC.GetSource_FromThis(), NPC.Bottom, new Vector2(3f, 0f), Main.rand.Next(11, 14), Scale: 0.7f);
-                    Gore.NewGoreDirect(NPC.GetSource_FromThis(), NPC.Bottom, new Vector2(-3f, 0f), Main.rand.Next(11, 14), Scale: 0.7f);
+                    if (!Main.dedServ)
+                    {
+                        Gore.NewGoreDirect(NPC.GetSource_FromThis(), NPC.Bottom, new Vector2(3f, 0f), Main.rand.Next(11, 14), Scale: 0.7f);
+                        Gore.NewGoreDirect(NPC.GetSource_FromThis(), NPC.Bottom, new Vector2(-3f, 0f), Main.rand.Next(11, 14), Scale: 0.7f);
+                    }
                     NPC.netUpdate = true;
                 }
                 break;
@@ -232,8 +254,16 @@ public class FallingAlpine : ModNPC
 
                 if (RetractProgress >= 1f)
                 {
-                    FaceClosestPlayer(out Player player);
-                    if (player != null && NPC.Distance(player.Center) >= 1600f)
+                    if (IsAnyPlayerTalkingToMe())
+                    {
+                        State = FallState.Talked;
+                        Timer = 0f;
+                        NPC.netUpdate = true;
+                        break;
+                    }
+
+                    int p = Player.FindClosest(NPC.Center, 3000, 3000);
+                    if (p >= 0 && p < Main.maxPlayers && Main.player[p].active && NPC.Distance(Main.player[p].Center) >= 1600f)
                     {
                         TransformIntoAlpine();
                     }
