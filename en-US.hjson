@@ -82,6 +82,16 @@ Mods: {
 					Label: Lobotometer Shader Intensity
 					Tooltip: ""
 				}
+
+				ReducedLobotometerMode: {
+					Label: Reduced Lobotometer Mode
+					Tooltip: ""
+				}
+
+				LobotomyShaderMode: {
+					Label: Lobotomy Shader Mode
+					Tooltip: ""
+				}
 			}
 
 			HendecamExperimentalConfig: {
@@ -150,6 +160,25 @@ Mods: {
 				GogRandomSpawns: {
 					Label: One Random Gog Block Spawns on boss kill
 					Tooltip: This is a WONDERFUL idea!!!
+				}
+			}
+
+			LobotomyMode: {
+				Tooltip: ""
+
+				Screen: {
+					Label: Screen
+					Tooltip: ""
+				}
+
+				Wave: {
+					Label: Wave
+					Tooltip: ""
+				}
+
+				Insane: {
+					Label: Insane
+					Tooltip: ""
 				}
 			}
 		}

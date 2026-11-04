@@ -49,25 +49,31 @@ public class ChinookSupplyCrate : ModProjectile
 
         if (!Main.dedServ)
         {
+            Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+
             for (int i = 0; i < 12; i++)
             {
-                Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
                 ParticleSystem.SpawnParticle(
                     ParticleID.Streak,
                     Projectile.Center,
-                    Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(2f, 5f),
+                    Vector2.UnitY.RotatedByRandom(MathHelper.Pi) * Main.rand.NextFloat(2f, 4.5f),
                     randColor,
                     1f,
-                    Main.rand.NextFloat(1f, 1.5f)
+                    Main.rand.NextFloat(0.85f, 1.3f)
                 );
-
+            }
+            for (int i = 0; i < 18; i++)
+            {
+                randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
                 ParticleSystem.SpawnParticle(
                     ParticleID.Gas,
                     Projectile.Center,
-                    Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(1f, 3f),
+                    Vector2.UnitY.RotatedByRandom(MathHelper.Pi) * Main.rand.NextFloat(1f, 2.8f),
                     randColor,
-                    1f,
-                    Main.rand.NextFloat(0.7f, 1f)
+                    0.95f,
+                    Main.rand.NextFloat(0.6f, 0.95f),
+                    data0: 0.03f
                 );
             }
 

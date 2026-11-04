@@ -49,7 +49,7 @@ public class RazorRotorSlash : ModProjectile
 
         Timer++;
 
-        if (Timer >= 5)
+        if (Timer >= 10)
         {
             Projectile.velocity *= 0.95f;
         }

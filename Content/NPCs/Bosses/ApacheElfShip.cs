@@ -56,6 +56,9 @@ public class ApacheElfShip : ModNPC
         DartshipBarrage,
         SpecPops,
         ChinookSupply,
+        Downdraft,
+        ShoverRocket,
+        ComancheCommander,
         Retreat,
         Death
     }
@@ -320,7 +323,7 @@ public class ApacheElfShip : ModNPC
 
         if (!Main.dedServ)
         {
-            Vector2[] crashPoints = [BodyPos, BodyGunPivot, TopGunPivot];
+            Vector2[] crashPoints = [BodyPos, BodyGunPivot, TopGunPivot,FrontGunMuzzlePos];
             foreach (Vector2 pt in crashPoints)
             {
                 for (int i = 0; i < 20; i++)
@@ -401,14 +404,9 @@ public class ApacheElfShip : ModNPC
 
     private void CheckSideSwitch(Player target)
     {
-        if (DesiredSide == 0)
+        if (DesiredSide != -1 && DesiredSide != 1)
         {
             DesiredSide = (NPC.Center.X < target.Center.X) ? -1 : 1;
-        }
-
-        if (target.Center.X > NPC.Center.X)
-        {
-            DesiredSide = -DesiredSide;
         }
     }
 
@@ -449,24 +447,28 @@ public class ApacheElfShip : ModNPC
         float distToDesired = toDesired.Length();
         float distToPlayer = Vector2.Distance(NPC.Center, target.Center);
 
-        float maxSpeed = 6.5f * speedMultiplier;
-        if (distToPlayer < 220f)
+        float distanceT = Utils.GetLerpValue(180f, 950f, distToDesired, true);
+        float maxSpeed = MathHelper.Lerp(7.5f, 24f, distanceT) * speedMultiplier;
+
+        if (distToPlayer < 220f && distToDesired < 260f)
         {
-            maxSpeed *= MathHelper.Clamp(distToPlayer / 220f, 0.25f, 1f);
+            maxSpeed *= MathHelper.Clamp(distToPlayer / 220f, 0.35f, 1f);
         }
 
         Vector2 desiredVelocity = Vector2.Zero;
         if (distToDesired > 12f)
         {
-            float speed = MathHelper.Clamp(distToDesired * 0.035f, 0.5f, maxSpeed);
-            desiredVelocity = Vector2.Normalize(toDesired) * speed;
+            float responsiveness = MathHelper.Lerp(0.045f, 0.095f, distanceT);
+            float speed = MathHelper.Clamp(distToDesired * responsiveness, 1f, maxSpeed);
+            desiredVelocity = Vector2.Normalize(toDesired) * speed + target.velocity * MathHelper.Lerp(0.25f, 0.75f, distanceT);
         }
 
-        NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, 0.045f);
+        float accelLerp = MathHelper.Lerp(0.055f, 0.14f, distanceT);
+        NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, accelLerp);
 
         if (rotateBodyToVelocity)
         {
-            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.025f, -0.18f, 0.18f), 0.08f);
+            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.022f, -0.24f, 0.24f), 0.09f);
         }
     }
 
@@ -509,11 +511,12 @@ public class ApacheElfShip : ModNPC
 
     private void UpdateKinematicsAndAnimations()
     {
-        float targetRotorMult = (AIState == ActionState.RazorRotor) ? 1.1f : 1f;
+        bool overdriveRotor = AIState == ActionState.RazorRotor || AIState == ActionState.Downdraft;
+        float targetRotorMult = overdriveRotor ? 1.1f : 1f;
         RotorSizeMultiplier = MathHelper.Lerp(RotorSizeMultiplier, targetRotorMult, 0.1f);
 
-        float baseRotorSpeed = (AIState == ActionState.RazorRotor) ? 0.3f : 0.2f;
-        float baseRotorArc = (AIState == ActionState.RazorRotor) ? 1.50f : 1.25f;
+        float baseRotorSpeed = overdriveRotor ? 0.3f : 0.2f;
+        float baseRotorArc = overdriveRotor ? 1.50f : 1.25f;
 
         RotorSpeed = baseRotorSpeed * RotorSpinFactor;
         TailRotorSpeed = 0.4f * RotorSpinFactor;
@@ -652,6 +655,18 @@ public class ApacheElfShip : ModNPC
                 if (PlayerCheck(player)) ChinookSupply(player);
                 break;
 
+            case ActionState.Downdraft:
+                if (PlayerCheck(player)) Downdraft(player);
+                break;
+
+            case ActionState.ShoverRocket:
+                if (PlayerCheck(player)) ShoverRocket(player);
+                break;
+
+            case ActionState.ComancheCommander:
+                if (PlayerCheck(player)) ComancheCommander(player);
+                break;
+
             case ActionState.Retreat:
                 Retreat();
                 break;
@@ -732,13 +747,16 @@ public class ApacheElfShip : ModNPC
         {
             aiTimer0 = 0f;
             attackCount = 0f;
-            int pick = (int)(aiTimer2++ % 4);
+            int pick = (int)(aiTimer2++ % 6);
             AIState = pick switch
             {
                 0 => ActionState.DartshipBarrage,
                 1 => ActionState.RazorRotor,
                 2 => ActionState.SpecPops,
-                _ => ActionState.ChinookSupply
+                3 => ActionState.ChinookSupply,
+                4 => ActionState.ShoverRocket,
+                _ => ActionState.Downdraft
+
             };
             NPC.netUpdate = true;
         }
@@ -793,7 +811,7 @@ public class ApacheElfShip : ModNPC
         }
         NPC.spriteDirection = TargetFacing;
 
-        Vector2 desiredPos = target.Center + new Vector2(-TargetFacing * 200f, -140f);
+        Vector2 desiredPos = target.Center + new Vector2(-TargetFacing * 150f, -140f);
         Vector2 toDesired = desiredPos - NPC.Center;
 
         Vector2 targetVel = toDesired.SafeNormalize(Vector2.Zero) * MathHelper.Clamp(toDesired.Length() * 0.09f, 2f, 13.5f);
@@ -818,10 +836,11 @@ public class ApacheElfShip : ModNPC
 
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
+                for (int i = -1; i <= 1; i+= 2)
                 Projectile.NewProjectile(
                     NPC.GetSource_FromAI(),
                     RotorPos,
-                    planeDir * slashSpeed,
+                    planeDir * slashSpeed * i,
                     ModContent.ProjectileType<RazorRotorSlash>(),
                     ProjectileDamage(NPC.damage / 2),
                     2f,
@@ -844,44 +863,47 @@ public class ApacheElfShip : ModNPC
     {
         if (aiTimer0 == 0f && attackCount == 0f)
         {
-            CheckSideSwitch(target);
+            DesiredSide = (NPC.Center.X < target.Center.X) ? -1 : 1;
         }
 
         aiTimer0++;
 
-        if (aiTimer0 >= 1f && aiTimer0 <= 120f)
+        if (aiTimer0 >= 1f && aiTimer0 <= 135f)
         {
+            TargetFacing = -DesiredSide;
+            NPC.spriteDirection = TargetFacing;
             UpdateFacingAndGuns(target, false, false);
 
-            Vector2 desiredPos = new(target.Center.X + DesiredSide * 520f, target.Center.Y);
+            float hoverBob = MathF.Sin(HoverTimer * 0.03f) * 12f;
+            Vector2 desiredPos = new(target.Center.X + DesiredSide * 460f, target.Center.Y + hoverBob);
             Vector2 toDesired = desiredPos - NPC.Center;
             float dist = toDesired.Length();
 
             Vector2 desiredVelocity = Vector2.Zero;
-            if (dist > 10f)
+            if (dist > 8f)
             {
-                float speed = MathHelper.Clamp(dist * 0.08f, 1.5f, 12f);
+                float speed = MathHelper.Clamp(dist * 0.06f, 1f, 10.5f);
                 desiredVelocity = Vector2.Normalize(toDesired) * speed;
             }
 
-            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, 0.08f);
-            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.02f, -0.12f, 0.12f), 0.1f);
+            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVelocity, 0.07f);
+            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.018f, -0.12f, 0.12f), 0.09f);
         }
 
-        if (aiTimer0 >= 130f && aiTimer0 <= 180f)
+        if (aiTimer0 >= 136f && aiTimer0 <= 195f)
         {
             TargetFacing = -DesiredSide;
             NPC.spriteDirection = TargetFacing;
             UpdateFacingAndGuns(target, false, true);
 
-            NPC.velocity *= 0.8f;
-            if (NPC.velocity.Length() < 0.2f)
+            NPC.velocity = Vector2.Lerp(NPC.velocity, Vector2.Zero, 0.16f);
+            if (NPC.velocity.Length() < 0.15f)
             {
                 NPC.velocity = Vector2.Zero;
             }
-            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.2f);
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.15f);
 
-            if (aiTimer0 == 160f)
+            if (aiTimer0 == 150f)
             {
                 SoundEngine.PlaySound(SoundID.Item15, BodyGunMuzzlePos);
 
@@ -898,21 +920,22 @@ public class ApacheElfShip : ModNPC
                         Main.myPlayer,
                         0f,
                         0f,
-                        30f
+                        35f
                     );
                 }
             }
         }
-        if (aiTimer0 >= 220f && aiTimer0 <= 300f)
+
+        if (aiTimer0 > 195f && aiTimer0 <= 275f)
         {
             TargetFacing = -DesiredSide;
             NPC.spriteDirection = TargetFacing;
             UpdateFacingAndGuns(target, false, true);
 
             float yDiff = target.Center.Y - NPC.Center.Y;
-            float targetVelY = MathHelper.Clamp(yDiff * 0.02f, -1.5f, 1.5f);
+            float targetVelY = MathHelper.Clamp(yDiff * 0.018f, -1.2f, 1.2f);
 
-            NPC.velocity = Vector2.Lerp(NPC.velocity, new Vector2(0f, targetVelY), 0.2f);
+            NPC.velocity = Vector2.Lerp(NPC.velocity, new Vector2(0f, targetVelY), 0.08f);
             NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.15f);
 
             frontGunActive = true;
@@ -961,22 +984,20 @@ public class ApacheElfShip : ModNPC
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Projectile p = Projectile.NewProjectileDirect(
-                        NPC.GetSource_FromAI(),
-                        TopGunMuzzlePos,
-                        rocketDir * 12f,
-                        ProjectileID.Missile,
-                        ProjectileDamage(NPC.damage / 2),
-                        2f,
-                        Main.myPlayer
-                    );
-                    p.hostile = true;
-                    p.friendly = false;
+                    Projectile.NewProjectile(NPC.GetSource_FromAI(), TopGunMuzzlePos, rocketDir * 6f,
+                ModContent.ProjectileType<DartshipRocket>(), ProjectileDamage(NPC.damage / 2), 1f, Main.myPlayer, 0, target.whoAmI);
                 }
             }
         }
 
-        if (aiTimer0 > 310f)
+        if (aiTimer0 > 275f && aiTimer0 <= 300f)
+        {
+            UpdateFacingAndGuns(target, false, false);
+            NPC.velocity = Vector2.Lerp(NPC.velocity, Vector2.Zero, 0.12f);
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.12f);
+        }
+
+        if (aiTimer0 > 300f)
         {
             aiTimer0 = 0f;
             DesiredSide = -DesiredSide;
@@ -1157,6 +1178,212 @@ public class ApacheElfShip : ModNPC
         }
     }
 
+    private void Downdraft(Player target)
+    {
+        if (aiTimer0 == 0f && attackCount == 0f)
+        {
+            CheckSideSwitch(target);
+        }
+
+        aiTimer0++;
+        doorGun = false;
+
+        int burstCount = 2;
+        float moveFastTicks = 42f;
+        float pauseTelegraphTicks = 26f;
+        float blowTicks = 120f;
+        float recoveryTicks = 22f;
+
+        float telegraphStartTick = moveFastTicks + 4f;
+        float blowStartTick = moveFastTicks + pauseTelegraphTicks;
+        float blowEndTick = blowStartTick + blowTicks;
+        float cycleTotalTime = blowEndTick + recoveryTicks;
+
+        int sideToBoss = (target.Center.X < NPC.Center.X) ? -1 : 1;
+        if (MathF.Abs(target.Center.X - NPC.Center.X) > 60f)
+        {
+            TargetFacing = sideToBoss;
+        }
+        NPC.spriteDirection = TargetFacing;
+        UpdateFacingAndGuns(target, false, false);
+
+        if (aiTimer0 >= 1f && aiTimer0 <= moveFastTicks)
+        {
+            float leadX = MathHelper.Clamp(target.velocity.X * 22f, -260f, 260f);
+            float hoverBob = MathF.Sin(HoverTimer * 0.04f) * 10f;
+            Vector2 desiredPos = new(target.Center.X + leadX, target.Center.Y - 300f + hoverBob);
+            Vector2 toDesired = desiredPos - NPC.Center;
+            float dist = toDesired.Length();
+
+            Vector2 desiredVel = (dist > 8f)
+                ? Vector2.Normalize(toDesired) * MathHelper.Clamp(dist * 0.11f, 2f, 18.5f)
+                : Vector2.Zero;
+
+            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVel, 0.12f);
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.018f, -0.16f, 0.16f), 0.12f);
+        }
+
+        if (aiTimer0 > moveFastTicks && aiTimer0 <= blowStartTick)
+        {
+            NPC.velocity = Vector2.Lerp(NPC.velocity, Vector2.Zero, 0.18f);
+            if (NPC.velocity.Length() < 0.2f)
+            {
+                NPC.velocity = Vector2.Zero;
+            }
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.16f);
+
+            if (aiTimer0 == telegraphStartTick && Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                Projectile.NewProjectile(
+                    NPC.GetSource_FromAI(),
+                    RotorPos,
+                    Vector2.Zero,
+                    ModContent.ProjectileType<DowndraftTelegraph>(),
+                    0,
+                    0f,
+                    Main.myPlayer,
+                    ai0: MathHelper.PiOver2,
+                    ai1: NPC.whoAmI,
+                    ai2: pauseTelegraphTicks
+                );
+            }
+
+            if (aiTimer0 == blowStartTick && Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                Projectile.NewProjectile(
+                    NPC.GetSource_FromAI(),
+                    NPC.Bottom,
+                    Vector2.Zero,
+                    ModContent.ProjectileType<DowndraftColumn>(),
+                    ProjectileDamage((int)(NPC.damage * 0.6f)),
+                    0f,
+                    Main.myPlayer,
+                    ai0: NPC.whoAmI,
+                    ai1: blowTicks
+                );
+            }
+        }
+
+        if (aiTimer0 > blowStartTick && aiTimer0 <= blowEndTick)
+        {
+            Vector2 desiredPos = new(target.Center.X, target.Center.Y - 300f);
+            Vector2 toDesired = desiredPos - NPC.Center;
+
+            float trackVelX = MathHelper.Clamp(toDesired.X * 0.025f, -3.2f, 3.2f);
+            float trackVelY = MathHelper.Clamp(toDesired.Y * 0.04f, -3.5f, 3.5f);
+
+            NPC.velocity = Vector2.Lerp(NPC.velocity, new Vector2(trackVelX, trackVelY), 0.06f);
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.015f, -0.08f, 0.08f), 0.12f);
+        }
+
+        if (aiTimer0 > blowEndTick && aiTimer0 <= cycleTotalTime)
+        {
+            NPC.velocity *= 0.88f;
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.12f);
+        }
+
+        if (aiTimer0 > cycleTotalTime)
+        {
+            aiTimer0 = 0f;
+            NPC.netUpdate = true;
+
+            if (++attackCount >= burstCount)
+            {
+                attackCount = 0f;
+                DesiredSide = -TargetFacing;
+                AIState = ActionState.Reposition;
+                NPC.netUpdate = true;
+            }
+        }
+    }
+    private void ShoverRocket(Player target)
+    {
+        if (aiTimer0 == 0f && attackCount == 0f)
+        {
+            CheckSideSwitch(target);
+        }
+
+        aiTimer0++;
+        doorGun = false;
+
+        int burstCount = 3;
+        float spawnTick = 10f;
+        float reticleSpawnTime = 40f;
+        float lockTime = 40f;
+        float holdDuration = spawnTick + reticleSpawnTime + lockTime + 22f;
+        float cycleTotalTime = holdDuration + 28f;
+
+        int sideToBoss = (target.Center.X < NPC.Center.X) ? -1 : 1;
+        if (MathF.Abs(target.Center.X - NPC.Center.X) > 60f)
+        {
+            TargetFacing = sideToBoss;
+        }
+        NPC.spriteDirection = TargetFacing;
+
+        if (aiTimer0 == spawnTick && Main.netMode != NetmodeID.MultiplayerClient)
+        {
+            Projectile.NewProjectile(
+                NPC.GetSource_FromAI(),
+                BodyPos,
+                Vector2.Zero,
+                ModContent.ProjectileType<ShovingRocket>(),
+                ProjectileDamage((int)(NPC.damage * 0.85f)),
+                12f,
+                Main.myPlayer,
+                ai0: NPC.whoAmI,
+                ai1: reticleSpawnTime,
+                ai2: lockTime
+            );
+        }
+
+        if (aiTimer0 >= 1f && aiTimer0 <= holdDuration)
+        {
+            Vector2 desiredPos = target.Center + new Vector2(-TargetFacing * 280f, -210f);
+            Vector2 toDesired = desiredPos - NPC.Center;
+            float dist = toDesired.Length();
+
+            bool isLocking = aiTimer0 >= spawnTick + reticleSpawnTime;
+            float speedCap = isLocking ? 2f : 8.5f;
+
+            Vector2 desiredVel = (dist > 10f)
+                ? Vector2.Normalize(toDesired) * MathHelper.Clamp(dist * 0.055f, 0.5f, speedCap)
+                : Vector2.Zero;
+
+            NPC.velocity = Vector2.Lerp(NPC.velocity, desiredVel, 0.08f);
+
+            float aimAngle = (target.Center - BodyPos).ToRotation();
+            float targetPlaneRot = (TargetFacing == -1) ? aimAngle + MathHelper.Pi : aimAngle;
+            targetPlaneRot = MathHelper.Clamp(MathHelper.WrapAngle(targetPlaneRot), -0.65f, 0.65f);
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, targetPlaneRot, 0.14f);
+
+            UpdateFacingAndGuns(target, true, false);
+        }
+
+        if (aiTimer0 > holdDuration && aiTimer0 <= cycleTotalTime)
+        {
+            UpdateFacingAndGuns(target, false, false);
+            NPC.velocity *= 0.9f;
+            NPC.rotation = Utils.AngleLerp(NPC.rotation, 0f, 0.12f);
+        }
+
+        if (aiTimer0 > cycleTotalTime)
+        {
+            aiTimer0 = 0f;
+            NPC.netUpdate = true;
+
+            if (++attackCount >= burstCount)
+            {
+                attackCount = 0f;
+                DesiredSide = -TargetFacing;
+                AIState = ActionState.Reposition;
+                NPC.netUpdate = true;
+            }
+        }
+    }
+    private void ComancheCommander(Player target)
+    {
+    }
+
     private static void SpawnGunExplosion(Vector2 pos)
     {
         SoundEngine.PlaySound(SoundID.Item14, pos);
@@ -1331,7 +1558,7 @@ public class ApacheElfShip : ModNPC
 
     private Color IntroStripColors(float progressOnStrip)
     {
-        Color result = Color.Lerp(Color.Cyan, Color.White, progressOnStrip);
+        Color result = Color.Lerp(Color.LightCyan, Color.SlateGray, progressOnStrip);
         result.A /= 2;
         return result * (1f - progressOnStrip);
     }
@@ -1401,8 +1628,10 @@ public class ApacheElfShip : ModNPC
             UpdateKinematicsAndAnimations();
         }
 
-        bool drawDashTrail = AIState == ActionState.Intro || (AIState == ActionState.ChinookSupply && aiTimer0 > 120f && aiTimer0 <= 190f);
-        if (drawDashTrail)
+        bool drawDashTrail = 
+            AIState == ActionState.Intro
+            || (AIState == ActionState.ChinookSupply && aiTimer0 > 120f && aiTimer0 <= 190f)
+            || (AIState == ActionState.Downdraft && aiTimer0 >= 1f && aiTimer0 <= 46f); if (drawDashTrail)
         {
             GameShaders.Misc["LightDisc"].Apply(null);
             IntroTrailStrip.PrepareStrip(dashOldPositions, dashOldRotations, IntroStripColors, IntroStripWidth, NPC.Size * 0.5f - screenPos, dashOldPositions.Length, true);

@@ -4,48 +4,42 @@ using Terraria.ModLoader.Config;
 
 namespace HendecamMod.Common.Systems;
 
+public enum LobotomyMode
+{
+    Screen,
+    Wave,
+    Insane
+}
+
 public class HendecamConfig : ModConfig
 {
-
     public override ConfigScope Mode => ConfigScope.ServerSide;
-
-
 
     [Header("PrimaryConfig")]
 
     [DefaultValue(true)]
-
-
     public bool ProgressionBasedEnemyPowercreep;
 
     [DefaultValue(true)]
-
     [ReloadRequired]
     public bool BootsTreeRework;
 
     [DefaultValue(true)]
-
     [ReloadRequired]
     public bool VanillaWeaponClassChanges;
 
     [DefaultValue(true)]
-
     [ReloadRequired]
     public bool VanillaWeaponStatBuffs;
 
     [DefaultValue(true)]
-
     [ReloadRequired]
     public bool MiscVanillaWeaponChanges;
 
     [DefaultValue(false)]
-
-   
     public bool EnableExperimentalFeatures;
-
-
-
 }
+
 public class HendecamClientConfig : ModConfig
 {
     public override ConfigScope Mode => ConfigScope.ClientSide;
@@ -54,6 +48,10 @@ public class HendecamClientConfig : ModConfig
 
     [DefaultValue(false)]
     public bool EverythingMakesCritNoise;
+
+    [DefaultValue(LobotomyMode.Screen)]
+    [DrawTicks]
+    public LobotomyMode LobotomyShaderMode;
 
     [DefaultValue(1f)]
     [Range(0f, 1f)]

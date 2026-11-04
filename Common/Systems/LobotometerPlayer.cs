@@ -1,12 +1,19 @@
 using HendecamMod.Common.Systems.Players;
 using HendecamMod.Content.Buffs;
 using HendecamMod.Content.Items.Accessories;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System;
 using System.IO;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using static Terraria.ModLoader.ModContent;
 
 namespace HendecamMod.Common.Systems
 {
@@ -37,15 +44,11 @@ namespace HendecamMod.Common.Systems
             // Reset temporary bonuses each frame
             TemporaryBonus = 0f;
             DecayRateMultiplier = 1f;
-
-            // DON'T calculate Max or clamp Current here anymore!
-            // This happens BEFORE accessories add their bonuses
         }
 
         public override void PostUpdate()
         {
             // Recalculate Max AFTER all temporary bonuses have been applied
-            // This runs after all equipment updates
             Max = BaseMax + MaxBonus;
 
             // Clamp current to the new max (in case max decreased)
@@ -73,7 +76,6 @@ namespace HendecamMod.Common.Systems
 
         public override void PreUpdate()
         {
-            // Recalculate Max again to be safe (temporary bonuses are already set by now)
             Max = BaseMax + MaxBonus;
 
             if (Current > Max)
@@ -96,7 +98,6 @@ namespace HendecamMod.Common.Systems
         // CHARACTER-SPECIFIC SAVE DATA
         public override void SaveData(TagCompound tag)
         {
-            // Only save the permanent bonus (temporary bonuses don't need saving)
             if (PermanentBonus > 0f)
                 tag["LoboPermanentBonus"] = PermanentBonus;
         }
@@ -109,36 +110,43 @@ namespace HendecamMod.Common.Systems
                 PermanentBonus = 0f;
         }
 
-        // Helper method to check if character has reached max permanent bonus
         public bool CanIncreasePermanent(int amount)
         {
-            float maxTotalBonus = 250f; // Maximum permanent bonus allowed
+            float maxTotalBonus = 250f;
             return PermanentBonus + amount <= maxTotalBonus;
         }
 
-        // Helper method to permanently increase the stat
         public void IncreasePermanent(int amount)
         {
             if (CanIncreasePermanent(amount))
             {
                 PermanentBonus += amount;
-
-                // Heal current by the same amount (like Life Crystals)
                 Current += amount;
                 if (Current > Max)
                     Current = Max;
             }
         }
 
-        // Helper method for accessories to add temporary bonuses
         public void AddTemporaryBonus(float bonus)
         {
             TemporaryBonus += bonus;
         }
+
         public float LobotometerShaderStrength = 0.5f;
         public float BaseLobotometerShaderStrength = 0.5f;
-        public float LocalCurrent = 0f; // Store local player's current value
-        public float LocalMax = 1f;    // Store local player's max value
+        public float LocalCurrent = 0f;
+        public float LocalMax = 1f;
+
+        private static readonly string[] AllLobotomyFilters = new[]
+                {
+            "HendecamMod:LobotomyScreen",
+            "HendecamMod:LobotomyWave",
+            "HendecamMod:LobotomyInsane"
+        };
+
+        private Vector3 insaneRandomSeed = new Vector3(1f, 1f, 0f);
+        private float insaneRandomProgress = 0f;
+        private bool wasLobotomyActive = false;
 
         public override void PostUpdateMiscEffects()
         {
@@ -147,22 +155,57 @@ namespace HendecamMod.Common.Systems
                 if (Player != Main.LocalPlayer)
                     return;
 
-                float configIntensity = ModContent.GetInstance<HendecamClientConfig>().LobotometerShaderIntensity;
-                //annoying
+                var clientConfig = GetInstance<HendecamClientConfig>();
+                float configIntensity = clientConfig.LobotometerShaderIntensity;
+
+                string activeFilter = clientConfig.LobotomyShaderMode switch
+                {
+                    LobotomyMode.Wave => "HendecamMod:LobotomyWave",
+                    LobotomyMode.Insane => "HendecamMod:LobotomyInsane",
+                    _ => "HendecamMod:LobotomyScreen"
+                };
+
+                // Deactivate any unselected shaders if the user switches mode in config
+                foreach (string filterName in AllLobotomyFilters)
+                {
+                    if (filterName != activeFilter && Filters.Scene[filterName] != null && Filters.Scene[filterName].IsActive())
+                    {
+                        Filters.Scene.Deactivate(filterName);
+                    }
+                }
+
+                // Deactivate active shader when dead, no current, or slider is at 0
                 if (Current <= 0 || Player.dead || configIntensity <= 0f)
                 {
-                    if (Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
+                    wasLobotomyActive = false;
+
+                    if (Filters.Scene[activeFilter] != null && Filters.Scene[activeFilter].IsActive())
                     {
-                        Filters.Scene.Deactivate("HendecamMod:LobotomyScreen");
+                        Filters.Scene.Deactivate(activeFilter);
                     }
                     return;
                 }
 
-                if (!Filters.Scene["HendecamMod:LobotomyScreen"].IsActive())
+                // Roll a new random glass crack layout whenever the meter starts up from 0
+                if (!wasLobotomyActive)
                 {
-                    Filters.Scene.Activate("HendecamMod:LobotomyScreen");
+                    wasLobotomyActive = true;
+
+                    float scaleX = Main.rand.NextFloat(0.75f, 1.35f) * (Main.rand.NextBool() ? 1f : -1f);
+                    float scaleY = Main.rand.NextFloat(0.75f, 1.35f) * (Main.rand.NextBool() ? 1f : -1f);
+                    float offset = Main.rand.NextFloat(-0.22f, 0.22f);
+
+                    insaneRandomSeed = new Vector3(scaleX, scaleY, offset);
+                    insaneRandomProgress = Main.rand.NextFloat(0f, 1f);
                 }
 
+                // Activate the selected shader if not already active
+                if (Filters.Scene[activeFilter] != null && !Filters.Scene[activeFilter].IsActive())
+                {
+                    Filters.Scene.Activate(activeFilter);
+                }
+
+                // Calculate intensity modifiers
                 float intensityMultiplier = configIntensity;
 
                 if (Player.GetModPlayer<HendecamPlayer>().Lucid)
@@ -187,9 +230,20 @@ namespace HendecamMod.Common.Systems
                     LobotometerShaderStrength *= 1.8f;
                 }
 
-                Filters.Scene["HendecamMod:LobotomyScreen"].GetShader().UseIntensity((Current / Max) * LobotometerShaderStrength);
+                if (Filters.Scene[activeFilter] != null)
+                {
+                    ScreenShaderData shader = Filters.Scene[activeFilter].GetShader();
+                    shader.UseIntensity((Current / Max) * LobotometerShaderStrength);
+
+                    if (clientConfig.LobotomyShaderMode == LobotomyMode.Insane)
+                    {
+                        shader.UseColor(insaneRandomSeed);
+                        shader.UseProgress(insaneRandomProgress);
+                    }
+                }
             }
         }
+
         public void AddLobotometer(float amount = 5f)
         {
             Current += amount;
@@ -199,6 +253,7 @@ namespace HendecamMod.Common.Systems
             ticksSinceLastUse = 0;
         }
     }
+
     [Autoload(Side = ModSide.Client)]
     public class LobotometerUISystem : ModSystem
     {
@@ -207,27 +262,24 @@ namespace HendecamMod.Common.Systems
 
         public override void Load()
         {
-            Main.NewText("LobotometerUISystem loading...");
-
             try
             {
-                // Updated path to match where you moved it
-                frame = Request<Texture2D>("HendecamMod/Content/Effects/Lobotometer", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                frame = Request<Texture2D>("HendecamMod/Content/Effects/Lobotometer", AssetRequestMode.ImmediateLoad).Value;
 
                 if (frame != null && !frame.IsDisposed)
                 {
                     textureLoaded = true;
-                    Main.NewText($"UI texture loaded: {frame.Width}x{frame.Height}");
                 }
-                else
-                {
-                    Main.NewText("ERROR: Texture loaded but is null or disposed!");
-                }
+
+                Asset<Effect> lobotomyScreenShader = Request<Effect>("HendecamMod/Assets/Shaders/Screen/LobotomyScreen", AssetRequestMode.ImmediateLoad);
+                Asset<Effect> lobotomyWaveShader = Request<Effect>("HendecamMod/Assets/Shaders/Screen/LobotomyWave", AssetRequestMode.ImmediateLoad);
+
+                Filters.Scene["HendecamMod:LobotomyScreen"] = new Filter(new ScreenShaderData(lobotomyScreenShader, "LobotomyScreen"), EffectPriority.Medium);
+                Filters.Scene["HendecamMod:LobotomyWave"] = new Filter(new ScreenShaderData(lobotomyWaveShader, "LobotomyWave"), EffectPriority.Medium);
             }
             catch (Exception ex)
             {
-                Main.NewText($"ERROR loading UI texture: {ex.Message}");
-                Main.NewText($"Make sure Lobotometer.png exists at: HendecamMod/Content/Effects/");
+                Mod.Logger.Error($"Error loading Lobotometer assets: {ex.Message}");
             }
         }
 
@@ -243,26 +295,17 @@ namespace HendecamMod.Common.Systems
 
             try
             {
-                // Convert player's world position into UI-space coordinates.
-                // In PostDrawInterface the spritebatch transform is Main.UIScale,
-                // so we must divide by it after subtracting screenPosition.
                 Vector2 uiPos = (player.Center - Main.screenPosition) / Main.UIScale;
-
-                // Offset in UI pixels (this scales with UI, so pick a value that
-                // looks right at scale 1 and it will scale proportionally).
                 uiPos += new Vector2(0f, 61f);
 
-                // Only draw if roughly on screen (using UI dimensions)
                 Rectangle screenRect = new Rectangle(0, 0, Main.screenWidth, Main.screenHeight);
                 if (!screenRect.Contains((int)uiPos.X, (int)uiPos.Y))
                     return;
 
                 Vector2 origin = new Vector2(frame.Width / 2f, frame.Height / 2f);
 
-                // Draw the frame centered horizontally under the player
                 spriteBatch.Draw(frame, uiPos, null, Color.White, 0f, origin, 1f, SpriteEffects.None, 0f);
 
-                // Fill bar
                 int border = 4;
                 int fillWidth = frame.Width - (border * 6);
                 int fillHeight = frame.Height - (border * 2);
@@ -292,10 +335,4 @@ namespace HendecamMod.Common.Systems
             }
         }
     }
-    
-
-
-
-
-
 }

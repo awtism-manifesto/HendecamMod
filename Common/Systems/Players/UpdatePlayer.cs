@@ -49,6 +49,11 @@ public partial class HendecamPlayer
 
     public override void PreUpdate()
     {
+        if (hasVertigo)
+        {
+            Player.wingTime = 0;
+            Player.wingTimeMax = 0;
+        }
         UpdateMouse();
         var config = ModContent.GetInstance<HendecamExperimentalConfig>();
         if (config.DeathEnabled && Main.rand.NextBool(config.DeathChance * 60))

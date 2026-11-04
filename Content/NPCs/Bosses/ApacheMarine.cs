@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using System;
+using System.IO;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -22,17 +23,18 @@ public class DartshipMarine : ModNPC
     public int BossIndex => (int)NPC.ai[0];
     public ref float Timer => ref NPC.ai[1];
     public ref float SlideProgress => ref NPC.ai[2];
+    public ref float LockedBaseArmRot => ref NPC.ai[3];
 
     public VerletChain RopeChain;
     public const int RopeSegments = 16;
     public const float MaxRopeLength = 200f;
+    public const float SweepStepRadians = 0.11f; // ~6.3 degrees per step
 
     public int MarineFacing = -1;
     public Vector2 LastAnchorPos = Vector2.Zero;
     public Vector2 ArmRecoil = Vector2.Zero;
     public Vector2 ArmPivot = Vector2.Zero;
     public Vector2 MuzzlePos = Vector2.Zero;
-    public Vector2 LockedShootDir = Vector2.Zero;
     public float ArmRotation;
     public float TargetArmRotation;
     public float MuzzleGlow;
@@ -63,9 +65,25 @@ public class DartshipMarine : ModNPC
         NPC.aiStyle = -1;
     }
 
+    public override void SendExtraAI(BinaryWriter writer)
+    {
+        writer.Write((sbyte)MarineFacing);
+    }
+
+    public override void ReceiveExtraAI(BinaryReader reader)
+    {
+        MarineFacing = reader.ReadSByte();
+    }
+
     public override bool CheckActive() => false;
 
     public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position) => false;
+
+    private float GetSweepAngleOffset(int shotIndex)
+    {
+        float stepOffset = (shotIndex - 2f) * SweepStepRadians;
+        return stepOffset * -MarineFacing;
+    }
 
     private void UpdateVerletRope(Vector2 startPos, Vector2 chopperVelocity)
     {
@@ -79,7 +97,7 @@ public class DartshipMarine : ModNPC
                 RopeSegments,
                 segLen,
                 startPos,
-                startPos + new Vector2(-chopperVelocity.X * 1.5f, 12f),
+                startPos + new Vector2(-chopperVelocity.X * 0.8f, 12f),
                 pinStart: true,
                 pinEnd: false
             );
@@ -88,7 +106,7 @@ public class DartshipMarine : ModNPC
             {
                 VerletPoint pt = RopeChain.allSticks[i].pointB;
                 float factor = (i + 1) / (float)RopeSegments;
-                pt.oldPos = pt.pos - new Vector2(-chopperVelocity.X * 0.45f * factor, 8f + 10f * factor);
+                pt.oldPos = pt.pos - new Vector2(-chopperVelocity.X * 0.25f * factor, 6f + 8f * factor);
             }
 
             LastAnchorPos = startPos;
@@ -107,18 +125,18 @@ public class DartshipMarine : ModNPC
             VerletPoint pt = stick.pointB;
             if (!pt.isVerletPinned)
             {
-                pt.pos += anchorDelta * 0.35f;
-                pt.oldPos += anchorDelta * 0.35f;
+                pt.pos += anchorDelta * 0.22f;
+                pt.oldPos += anchorDelta * 0.22f;
 
-                Vector2 vel = (pt.pos - pt.oldPos) * 0.985f;
+                Vector2 vel = (pt.pos - pt.oldPos) * 0.94f;
                 pt.oldPos = pt.pos;
 
-                float windSway = MathF.Sin(Main.GlobalTimeWrappedHourly * 3.5f + i * 0.25f) * 0.04f;
-                pt.pos += vel + new Vector2(windSway, PhysicsMethods.gravity * 1.35f);
+                float windSway = MathF.Sin(Main.GlobalTimeWrappedHourly * 2.8f + i * 0.25f) * 0.02f;
+                pt.pos += vel + new Vector2(windSway, PhysicsMethods.gravity * 1.45f);
             }
         }
 
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < 28; i++)
         {
             foreach (VerletStick stick in RopeChain.allSticks)
             {
@@ -152,7 +170,7 @@ public class DartshipMarine : ModNPC
         int count = RopeChain.allSticks.Count;
         for (int i = 0; i < count; i++)
         {
-            float weight = MathF.Pow((i + 1) / (float)count, 1.3f);
+            float weight = MathF.Pow((i + 1) / (float)count, 1.35f);
             RopeChain.allSticks[i].pointB.pos += impulse * weight;
         }
     }
@@ -213,12 +231,12 @@ public class DartshipMarine : ModNPC
         UpdateVerletRope(boss.RopeAnchorPos, bossNPC.velocity);
         GetPositionAndTangentAlongRope(boss.RopeAnchorPos, SlideProgress, out Vector2 ropeAttachPos, out Vector2 ropeTangent);
 
-        float ropeTilt = (ropeTangent.ToRotation() - MathHelper.PiOver2) * 0.7f;
-        NPC.rotation = Utils.AngleLerp(NPC.rotation, MathHelper.Clamp(ropeTilt, -0.55f, 0.55f), 0.2f);
+        float ropeTilt = (ropeTangent.ToRotation() - MathHelper.PiOver2) * 0.5f;
+        NPC.rotation = Utils.AngleLerp(NPC.rotation, MathHelper.Clamp(ropeTilt, -0.35f, 0.35f), 0.18f);
 
-        int cycleTick = (int)(Timer % 80f);
+        int cycleTick = (int)((Timer - 24f) % 75f);
 
-        if (!fullyDown || cycleTick < 15 || LockedShootDir == Vector2.Zero)
+        if (!fullyDown || cycleTick < 16)
         {
             MarineFacing = (target.Center.X < NPC.Center.X) ? -1 : 1;
             NPC.spriteDirection = MarineFacing;
@@ -232,63 +250,82 @@ public class DartshipMarine : ModNPC
 
         if (fullyDown)
         {
-            if (cycleTick < 15 || LockedShootDir == Vector2.Zero)
+            if (cycleTick < 16)
             {
-                TargetArmRotation = (target.Center - ArmPivot).ToRotation() + MathHelper.Pi;
-                LockedShootDir = new Vector2(-1f, 0f).RotatedBy(TargetArmRotation);
+                LockedBaseArmRot = (target.Center - ArmPivot).ToRotation() + MathHelper.Pi;
+                TargetArmRotation = LockedBaseArmRot + GetSweepAngleOffset(0);
+                if (cycleTick == 15)
+                {
+                    NPC.netUpdate = true;
+                }
+            }
+            else if (cycleTick >= 16 && cycleTick < 32)
+            {
+                TargetArmRotation = LockedBaseArmRot + GetSweepAngleOffset(0);
+            }
+            else if (cycleTick >= 32 && cycleTick <= 52)
+            {
+                float burstProgress = (cycleTick - 32f) / 20f;
+                int currentShotIdx = Math.Clamp((int)MathF.Floor(burstProgress * 4f), 0, 4);
+                TargetArmRotation = LockedBaseArmRot + GetSweepAngleOffset(currentShotIdx);
             }
         }
         else
         {
             float neutralAngle = (MarineFacing == -1) ? 0f : MathHelper.Pi;
             TargetArmRotation = neutralAngle + NPC.rotation;
-            LockedShootDir = Vector2.Zero;
         }
 
-        ArmRotation = Utils.AngleLerp(ArmRotation, TargetArmRotation, 0.22f);
+        ArmRotation = Utils.AngleLerp(ArmRotation, TargetArmRotation, 0.25f);
         MuzzlePos = ArmPivot + new Vector2(-24f, -2f * MarineFacing).RotatedBy(ArmRotation);
 
         if (fullyDown)
         {
-            if (cycleTick == 20)
+            if (cycleTick == 16)
             {
                 SoundEngine.PlaySound(SoundID.Item15, MuzzlePos);
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Projectile.NewProjectile(
-                        NPC.GetSource_FromAI(),
-                        MuzzlePos,
-                        LockedShootDir,
-                        ModContent.ProjectileType<DartshipTelegraph>(),
-                        0,
-                        0f,
-                        Main.myPlayer,
-                        0f,
-                        0f,
-                        20f
-                    );
+                    for (int i = 0; i <= 4; i++)
+                    {
+                        float sweepArmRot = LockedBaseArmRot + GetSweepAngleOffset(i);
+                        Vector2 sweepDir = new Vector2(-1f, 0f).RotatedBy(sweepArmRot);
+
+                        Projectile.NewProjectile(
+                            NPC.GetSource_FromAI(),
+                            MuzzlePos,
+                            sweepDir,
+                            ModContent.ProjectileType<DartshipTelegraph>(),
+                            0,
+                            0f,
+                            Main.myPlayer,
+                            0f,
+                            0f,
+                            18f
+                        );
+                    }
                 }
             }
 
-            if (cycleTick >= 30 && cycleTick % 5 == 0)
+            if (cycleTick >= 32 && cycleTick <= 52 && (cycleTick - 32) % 5 == 0)
             {
-                Vector2 shootDir = LockedShootDir != Vector2.Zero
-                    ? LockedShootDir
-                    : new Vector2(-1f, 0f).RotatedBy(ArmRotation);
+                int shotIdx = (cycleTick - 32) / 5; // 0, 1, 2, 3, 4
+                float shotArmRot = LockedBaseArmRot + GetSweepAngleOffset(shotIdx);
+                Vector2 shootDir = new Vector2(-1f, 0f).RotatedBy(shotArmRot);
 
-                ArmRecoil = -shootDir * 1.5f;
-                ApplyRopeRecoil(-shootDir * 1.8f);
+                ArmRecoil = -shootDir * 1.4f;
+                ApplyRopeRecoil(-shootDir * 1.1f);
 
-                boss.BodyRecoilOffset += -shootDir * 0.5f;
-                boss.NPC.velocity += -shootDir * 0.1f;
+                boss.BodyRecoilOffset += -shootDir * 0.45f;
+                boss.NPC.velocity += -shootDir * 0.06f;
 
                 MuzzleGlow = 1f;
                 SoundEngine.PlaySound(SoundID.Item11, MuzzlePos);
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Vector2 bulletVel = shootDir.RotatedByRandom(MathHelper.ToRadians(2f)) * 16f;
+                    Vector2 bulletVel = shootDir * 16.5f;
                     Projectile p = Projectile.NewProjectileDirect(
                         NPC.GetSource_FromAI(),
                         MuzzlePos,

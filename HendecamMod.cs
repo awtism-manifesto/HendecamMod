@@ -19,12 +19,21 @@ public class HendecamMod : Mod
 {
     public static HendecamMod Instance;
     public HendecamMod() => Instance = this;
+    public const string BlankTexture = "HendecamMod/Assets/Textures/Misc/BlankTexture";
 
     public override void Load()
     {
-        // Loading shader
-        LoadFilterShader("LobotomyScreen", "Assets/Shaders/Screen/LobotomyScreen", EffectPriority.Medium);
-    
+        if (!Main.dedServ)
+        {
+            Asset<Effect> lobotomyScreenShader = Request<Effect>("HendecamMod/Assets/Shaders/Screen/LobotomyScreen", AssetRequestMode.ImmediateLoad);
+            Asset<Effect> lobotomyWaveShader = Request<Effect>("HendecamMod/Assets/Shaders/Screen/LobotomyWave", AssetRequestMode.ImmediateLoad);
+            Asset<Effect> lobotomyInsaneShader = Request<Effect>("HendecamMod/Assets/Shaders/Screen/LobotomyInsane", AssetRequestMode.ImmediateLoad);
+
+            Filters.Scene["HendecamMod:LobotomyScreen"] = new Filter(new ScreenShaderData(lobotomyScreenShader, "LobotomyScreen"), EffectPriority.Medium);
+            Filters.Scene["HendecamMod:LobotomyWave"] = new Filter(new ScreenShaderData(lobotomyWaveShader, "LobotomyWave"), EffectPriority.Medium);
+            Filters.Scene["HendecamMod:LobotomyInsane"] = new Filter(new ScreenShaderData(lobotomyInsaneShader, "LobotomyInsane"), EffectPriority.Medium);
+        }
+
     }
     public override void HandlePacket(BinaryReader reader, int whoAmI)
     {

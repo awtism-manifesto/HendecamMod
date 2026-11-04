@@ -407,3 +407,8 @@ AutismTag: {
 	Description: Mods.HendecamMod.Buffs.AutismTag.Description
 	DisplayName: Autism Tag
 }
+
+VertigoBuff: {
+	DisplayName: Vertigo Buff
+	Description: Mods.HendecamMod.Buffs.VertigoBuff.Description
+}

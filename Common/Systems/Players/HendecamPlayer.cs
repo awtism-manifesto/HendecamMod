@@ -33,6 +33,7 @@ public partial class HendecamPlayer : ModPlayer
     public bool Ligma;
     public bool MoonBurnt;
     public bool TermLucid;
+    public bool hasVertigo;
 
     //Accessory
     public bool isCamo;
@@ -249,6 +250,7 @@ public partial class HendecamPlayer : ModPlayer
         MoonBurnt = false;
         Ligma = false;
         TermLucid = false;
+        hasVertigo = false;
         if (shakeDuration > 0)
             shakeDuration--;
         if (recoilFront > 0f)
