@@ -154,6 +154,48 @@ public class PearlSplinters : GlobalItem
     }
 
 }
+public class BoomerangSplinters : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.WoodenBoomerang;
+        }
+        else return false;
+    }
+
+    public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        target.AddBuff(BuffType<Splinters>(), 240);
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+    }
+
+}
+public class YoyoSplinters : GlobalItem
+{
+    public override bool AppliesToEntity(Item item, bool lateInstantiation)
+    {
+        if (GetInstance<HendecamConfig>().MiscVanillaWeaponChanges == true)
+        {
+            return item.type == ItemID.WoodYoyo;
+        }
+        else return false;
+    }
+
+    public override void OnHitNPC(Item item, Player player, NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        target.AddBuff(BuffType<Splinters>(), 240);
+    }
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        tooltips.Add(new TooltipLine(Mod, "Tooltip#1", "Hendecam Mod: Now inflicts Splinters on hit") { OverrideColor = Color.DarkViolet });
+    }
+
+}
 
 
 

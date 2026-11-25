@@ -20,11 +20,11 @@ public class HendecamDrops : GlobalNPC
 {
     public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
     {
-
+        // Pirates
+        #region
         if (npc.type == NPCID.PirateShip)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BigBuddy>(), chanceDenominator: 8));
-          
         }
 
         if (npc.type == NPCID.PirateCaptain)
@@ -32,17 +32,152 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 15));
             npcLoot.Add(ItemDropRule.Common(ItemType<CaptainsCannon>(), chanceDenominator: 5));
             npcLoot.Add(ItemDropRule.Common(ItemType<Bundlebuss>(), chanceDenominator: 10));
-          
         }
 
-      
+        if (npc.type == NPCID.PirateDeadeye)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 66));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Bundlebuss>(), chanceDenominator: 20));
+        }
+        #endregion
 
+        // Bosses
+        #region
         if (npc.type == NPCID.MoonLordCore)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<TheMoon>(), chanceDenominator: 4));
             npcLoot.Add(ItemDropRule.Common(ItemType<AmalgamatedFragment>(), chanceDenominator: 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentNebula, 4, 6, 30));
+            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentVortex, 4, 6, 30));
+            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentStardust, 4, 6, 30));
+            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentSolar, 4, 6, 30));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LeechRepellant>(), chanceDenominator: 2));
         }
 
+        if (npc.type == NPCID.HallowBoss)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PrismaticBullet>(), 1, 1449, 2749));
+        }
+
+        if (npc.type == NPCID.QueenBee)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PocketBees>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<HoneyHitter>(), chanceDenominator: 5));
+        }
+
+        if (npc.type == NPCID.WallofFlesh)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.DemonHeart, 2));
+        }
+
+        if (npc.type == NPCID.Golem)
+        {
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 4));
+        }
+
+        if (npc.type == NPCID.TheDestroyer)
+        {
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 3));
+        }
+
+        if (npc.type == NPCID.SkeletronPrime)
+        {
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 3));
+        }
+
+        if (npc.type == NPCID.Retinazer)
+        {
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
+        }
+
+        if (npc.type == NPCID.Spazmatism)
+        {
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ElementalFlameCore>(), chanceDenominator: 2));
+        }
+
+        if (npc.type == NPCID.AncientCultistSquidhead)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<StupidFuckingPickaxe>(), chanceDenominator: 2555));
+        }
+
+        if (npc.type == NPCID.KingSlime)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SuperSamuraiSlicer>(), chanceDenominator: 4));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Trimarang, 9));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Katana, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Bergentrucking>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
+        }
+
+        if (npc.type == NPCID.SkeletronHead)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 8));
+        }
+
+        if (npc.type == NPCID.DungeonGuardian)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 2));
+        }
+
+        if (npc.type == NPCID.QueenSlimeBoss)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MaximGelgun>(), chanceDenominator: 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<QueensShank>(), chanceDenominator: 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
+        }
+
+        if (npc.type == NPCID.BrainofCthulhu)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ItemType<GoodGrades>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
+        }
+        if (npc.type == NPCID.EaterofWorldsHead)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+        if (npc.type == NPCID.EaterofWorldsBody)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+        if (npc.type == NPCID.EaterofWorldsTail)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+        if (npc.type == NPCID.Plantera)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SeedBomber>(), chanceDenominator: 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<OtherworldlySixPack>(), chanceDenominator: 5));
+        }
+
+        if (npc.type == NPCID.EyeofCthulhu)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 2, 2, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<EyeRifle>(), chanceDenominator: 4));
+            npcLoot.Add(ItemDropRule.Common(ItemType<EyePoker>(), chanceDenominator: 4));
+            npcLoot.Add(ItemDropRule.Common(ItemID.VampireFrogStaff, 4));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BloodRainBow, 4));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 1, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 4, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 5));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BloodMoonStarter, 1));
+
+            if (npc.type == NPCID.Deerclops)
+            {
+                npcLoot.Add(ItemDropRule.Common(ItemType<CaribousCatastrophe>(), chanceDenominator: 3));
+                npcLoot.Add(ItemDropRule.Common(ItemType<FlinxsFurblade>(), chanceDenominator: 3));
+                npcLoot.Add(ItemDropRule.Common(ItemID.FlinxFur, 1, 6, 15));
+                npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 10, 1, 1));
+            }
+        }
+        #endregion
+
+        // Slimes
+        #region
         if (npc.type == NPCID.GreenSlime)
         {
 
@@ -83,17 +218,35 @@ public class HendecamDrops : GlobalNPC
 
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
+        #endregion
+
+        // Underworld
+        #region
         if (npc.type == NPCID.Hellhound)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<SmallSausageSpammer>(), chanceDenominator: 20));
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
         }
 
-        if (npc.type == NPCID.DD2Betsy)
+        if (npc.type == NPCID.BoneSerpentHead)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PhotonShotgun>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<GiantBone>(), chanceDenominator: 100));
+            npcLoot.Add(ItemDropRule.Common(ItemType<LuckyCigarette>(), chanceDenominator: 20));
         }
 
+        if (npc.type == NPCID.RedDevil)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<CardinalSin>(), chanceDenominator: 19));
+        }
+
+        if (npc.type == NPCID.Lavabat)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.LivingFireBlock, 5, 25, 54));
+        }
+        #endregion
+
+        // Ocean
+        #region
         if (npc.type == NPCID.Crab)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<TheFishStick>(), chanceDenominator: 20));
@@ -101,6 +254,15 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<PlasticScrap>(), 20, 4, 9));
         }
 
+        if (npc.type == NPCID.PinkJellyfish)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<TheFishStick>(), chanceDenominator: 12));
+            npcLoot.Add(ItemDropRule.Common(ItemType<PlasticScrap>(), 15, 4, 9));
+        }
+        #endregion
+
+        // Underground
+        #region
         if (npc.type == NPCID.Nymph)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 3));
@@ -108,6 +270,32 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
+        if (npc.type == NPCID.Skeleton)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 20));
+            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 2500));
+        }
+
+        if (npc.type == NPCID.Mimic)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<BowlingBaller>(), chanceDenominator: 7));
+        }
+
+        if (npc.type == NPCID.SkeletonArcher)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 70));
+        }
+
+        if (npc.type == NPCID.RuneWizard)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 5));
+            npcLoot.Add(ItemDropRule.Common(ItemType<RunicRaygun>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<RunicCodex>(), chanceDenominator: 2));
+        }
+        #endregion
+
+        // Jungle
+        #region
         if (npc.type == NPCID.Moth)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Casanova>(), chanceDenominator: 4));
@@ -143,34 +331,73 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<DeadSoldiersRifle>(), chanceDenominator: 4));
         }
 
-        if (npc.type == NPCID.PinkJellyfish)
+        if (npc.type == NPCID.Bee)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<TheFishStick>(), chanceDenominator: 12));
-            npcLoot.Add(ItemDropRule.Common(ItemType<PlasticScrap>(), 15, 4, 9));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Libeerator>(), chanceDenominator: 40));
         }
 
-        if (npc.type == NPCID.BoneSerpentHead)
+        if (npc.type == NPCID.BeeSmall)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<GiantBone>(), chanceDenominator: 100));
-            npcLoot.Add(ItemDropRule.Common(ItemType<LuckyCigarette>(), chanceDenominator: 20));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Libeerator>(), chanceDenominator: 40));
         }
 
-        if (npc.type == NPCID.HallowBoss)
+        if (npc.type == NPCID.GiantTortoise)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PrismaticBullet>(), 1, 1449, 2749));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 15));
         }
 
+        if (npc.type == NPCID.AngryTrapper)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 60));
+        }
+
+        if (npc.type == NPCID.ManEater)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 2, 2, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+
+        if (npc.type == NPCID.Snatcher)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+        }
+
+        if (npc.type == NPCID.LittleHornetLeafy)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 3, 1, 2));
+        }
+
+        if (npc.type == NPCID.HornetLeafy)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 2, 2, 2));
+        }
+
+        if (npc.type == NPCID.BigHornetLeafy)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 1, 2, 3));
+        }
+        #endregion
+
+        // Snow and Ice
+        #region
         if (npc.type == NPCID.IceGolem)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<TheIcebreaker>(), 7));
             npcLoot.Add(ItemDropRule.Common(ItemType<IcicleMinigun>(), 7));
         }
+        #endregion
 
+        // Blood Moon
+        #region
         if (npc.type == NPCID.BloodNautilus)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<EcologicalOvershot>(), 2));
         }
+        #endregion
 
+        // Goblins
+        #region
         if (npc.type == NPCID.GoblinSummoner)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Shadowflame>(), 1, 21, 41));
@@ -178,6 +405,44 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemID.GoblinBattleStandard));
         }
 
+        if (npc.type == NPCID.GoblinPeon)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 180, 1, 1));
+        }
+
+        if (npc.type == NPCID.GoblinThief)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 144, 1, 1));
+        }
+
+        if (npc.type == NPCID.GoblinWarrior)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 96, 1, 1));
+        }
+
+        if (npc.type == NPCID.GoblinSorcerer)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 111, 1, 1));
+        }
+
+        if (npc.type == NPCID.GoblinArcher)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 90, 1, 1));
+        }
+        #endregion
+
+        // Night
+        #region
         if (npc.type == NPCID.Zombie)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 50));
@@ -278,12 +543,49 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<AutismOrb>(), chanceDenominator: 8));
         }
 
-        if (npc.type == NPCID.Skeleton)
+        if (npc.type == NPCID.DemonEye)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 20));
-            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 2500));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
         }
 
+        if (npc.type == NPCID.DemonEyeSpaceship)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
+        }
+
+        if (npc.type == NPCID.DemonEye2)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
+        }
+
+        if (npc.type == NPCID.Wraith)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 115));
+        }
+
+        if (npc.type == NPCID.TwiggyZombie)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
+        }
+
+        if (npc.type == NPCID.ArmedZombieTwiggy)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
+        }
+
+        if (npc.type == NPCID.BigTwiggyZombie)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 6));
+        }
+
+        if (npc.type == NPCID.SmallTwiggyZombie)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 4));
+        }
+        #endregion
+
+        // Dungeon
+        #region
         if (npc.type == NPCID.AngryBones)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BadGrades>(), chanceDenominator: 20));
@@ -318,16 +620,6 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 225));
         }
 
-        if (npc.type == NPCID.Bee)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<Libeerator>(), chanceDenominator: 40));
-        }
-
-        if (npc.type == NPCID.BeeSmall)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<Libeerator>(), chanceDenominator: 40));
-        }
-
         if (npc.type == NPCID.DarkCaster)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<WaterflameSword>(), chanceDenominator: 15));
@@ -335,37 +627,6 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 225));
             npcLoot.Add(ItemDropRule.Common(ItemID.MagicCuffs, 20));
         }
-
-        if (npc.type == NPCID.DesertScorpionWalk)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 11));
-        }
-
-        if (npc.type == NPCID.DesertScorpionWall)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 11));
-        }
-
-        if (npc.type == NPCID.SandShark)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
-        }
-
-        if (npc.type == NPCID.SandsharkCorrupt)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
-        }
-
-        if (npc.type == NPCID.SandsharkCrimson)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
-        }
-
-        if (npc.type == NPCID.SandsharkHallow)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 19));
-        }
-
         if (npc.type == NPCID.DungeonSlime)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<Liquidation>(), chanceDenominator: 25));
@@ -373,191 +634,9 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
-        if (npc.type == NPCID.RedDevil)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CardinalSin>(), chanceDenominator: 19));
-        }
-
-        if (npc.type == NPCID.Unicorn)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<UnicornPoacher>(), chanceDenominator: 19));
-        }
-
-        if (npc.type == NPCID.GiantTortoise)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 15));
-        }
-
-        if (npc.type == NPCID.Nurse)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 25));
-            npcLoot.Add(ItemDropRule.Common(ItemType<FreeHealthcare>(), chanceDenominator: 5));
-        }
-
-        if (npc.type == NPCID.Cyborg)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<DvdLogo>(), chanceDenominator: 2));
-        }
-
-        if (npc.type == NPCID.Nutcracker)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CrackedNuts>(), chanceDenominator: 15));
-        }
-
-        if (npc.type == NPCID.NutcrackerSpinning)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CrackedNuts>(), chanceDenominator: 12));
-        }
-
-        if (npc.type == NPCID.Mimic)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BowlingBaller>(), chanceDenominator: 7));
-        }
-
         if (npc.type == NPCID.DiabolistRed)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 25));
-        }
-
-        if (npc.type == NPCID.Gastropod)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 90));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
-        }
-
-        if (npc.type == NPCID.SkeletonArcher)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 70));
-        }
-
-        if (npc.type == NPCID.RuneWizard)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 5));
-            npcLoot.Add(ItemDropRule.Common(ItemType<RunicRaygun>(), chanceDenominator: 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<RunicCodex>(), chanceDenominator: 2));
-        }
-
-        if (npc.type == NPCID.QueenBee)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PocketBees>(), chanceDenominator: 5));
-            npcLoot.Add(ItemDropRule.Common(ItemType<HoneyHitter>(), chanceDenominator: 5));
-        }
-        if (npc.type == NPCID.Spazmatism)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ElementalFlameCore>(), chanceDenominator: 2));
-        }
-
-        if (npc.type == NPCID.MoonLordCore)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<LeechRepellant>(), chanceDenominator: 2));
-        }
-
-        if (npc.type == NPCID.WallofFlesh)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.DemonHeart, 2));
-        }
-
-        if (npc.type == NPCID.ElfCopter)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 6));
-        }
-
-        if (npc.type == NPCID.ElfArcher)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 10));
-            npcLoot.Add(ItemDropRule.Common(ItemType<CandyCaneCompoundBow>(), chanceDenominator: 20));
-        }
-        if (npc.type == NPCID.SantaNK1)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<GagGifter>(), chanceDenominator: 6));
-            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 8));
-            npcLoot.Add(ItemDropRule.Common(ItemType<Bergentrucking>(), chanceDenominator: 9));
-        }
-
-        if (npc.type == NPCID.PirateDeadeye)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 66));
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<Bundlebuss>(), chanceDenominator: 20));
-        }
-
-        if (npc.type == NPCID.Scutlix)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
-        }
-
-        if (npc.type == NPCID.RayGunner)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
-        }
-        if (npc.type == NPCID.GrayGrunt)
-        {
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
-        }
-        if (npc.type == NPCID.MartianEngineer)
-        {
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
-        }
-        if (npc.type == NPCID.MartianOfficer)
-        {
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 40));
-        }
-        if (npc.type == NPCID.GigaZapper)
-        {
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
-        }
-        if (npc.type == NPCID.BrainScrambler)
-        {
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
-        }
-
-        if (npc.type == NPCID.MartianSaucerCore)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 7));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDronegun>(), chanceDenominator: 7));
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 4, chanceNumerator: 3));
-        }
-
-        if (npc.type == NPCID.Angler)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<Six7Gun>(), chanceDenominator: 7, chanceNumerator: 6));
-        }
-
-        if (npc.type == NPCID.Golem)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 4));
-        }
-
-        if (npc.type == NPCID.TheDestroyer)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 3));
-        }
-
-        if (npc.type == NPCID.SkeletronPrime)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 5, chanceNumerator: 3));
-        }
-
-        if (npc.type == NPCID.Retinazer)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
-        }
-
-        if (npc.type == NPCID.Spazmatism)
-        {
-            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 10, chanceNumerator: 3));
-        }
-
-        if (npc.type == NPCID.ScutlixRider)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
         }
 
         if (npc.type == NPCID.Necromancer)
@@ -569,11 +648,6 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<BrokenHeroGun>(), chanceDenominator: 25));
             npcLoot.Add(ItemDropRule.Common(ItemID.ShroomiteBar, 4, 2, 4));
-        }
-
-        if (npc.type == NPCID.Lavabat)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.LivingFireBlock, 5, 25, 54));
         }
 
         if (npc.type == NPCID.HellArmoredBones)
@@ -639,88 +713,170 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<BrokenHeroGun>(), chanceDenominator: 9));
         }
 
-        if (npc.type == NPCID.AncientCultistSquidhead)
+        if (npc.type == NPCID.TacticalSkeleton)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<StupidFuckingPickaxe>(), chanceDenominator: 2555));
+            npcLoot.Add(ItemDropRule.Common(ItemType<BrokenHeroGun>(), chanceDenominator: 15));
+        }
+        #endregion
+
+        // Desert
+        #region
+        if (npc.type == NPCID.DesertScorpionWalk)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 11));
+        }
+
+        if (npc.type == NPCID.DesertScorpionWall)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 11));
+        }
+
+        if (npc.type == NPCID.SandShark)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
+        }
+
+        if (npc.type == NPCID.SandsharkCorrupt)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
+        }
+
+        if (npc.type == NPCID.SandsharkCrimson)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 20));
+        }
+
+        if (npc.type == NPCID.SandsharkHallow)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<SandyScorpion>(), chanceDenominator: 19));
+        }
+        #endregion
+
+        // Hallow
+        #region
+        if (npc.type == NPCID.Unicorn)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<UnicornPoacher>(), chanceDenominator: 19));
+        }
+
+        if (npc.type == NPCID.Gastropod)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 90));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
         }
 
         if (npc.type == NPCID.BigMimicHallow)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<DartShotgun>(), chanceDenominator: 5));
         }
+        #endregion
 
-        if (npc.type == NPCID.TacticalSkeleton)
+        // Town NPCs
+        #region
+        if (npc.type == NPCID.Nurse)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BrokenHeroGun>(), chanceDenominator: 15));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Heartache>(), chanceDenominator: 25));
+            npcLoot.Add(ItemDropRule.Common(ItemType<FreeHealthcare>(), chanceDenominator: 5));
         }
 
-        if (npc.type == NPCID.AngryTrapper)
+        if (npc.type == NPCID.Cyborg)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 60));
+            npcLoot.Add(ItemDropRule.Common(ItemType<DvdLogo>(), chanceDenominator: 2));
         }
 
-        if (npc.type == NPCID.Wraith)
+        if (npc.type == NPCID.Angler)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<ShatteredKeyboard>(), chanceDenominator: 115));
+            npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ItemType<Six7Gun>(), chanceDenominator: 7, chanceNumerator: 6));
+        }
+        #endregion
+
+        // Frost Moon
+        #region
+        if (npc.type == NPCID.Nutcracker)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<CrackedNuts>(), chanceDenominator: 15));
         }
 
-        if (npc.type == NPCID.KingSlime)
+        if (npc.type == NPCID.NutcrackerSpinning)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SuperSamuraiSlicer>(), chanceDenominator: 4));
-            npcLoot.Add(ItemDropRule.Common(ItemID.Trimarang, 9));
-            npcLoot.Add(ItemDropRule.Common(ItemID.Katana, 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<Bergentrucking>(), chanceDenominator: 5));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CrackedNuts>(), chanceDenominator: 12));
         }
 
-        if (npc.type == NPCID.SkeletronHead)
+        if (npc.type == NPCID.ElfCopter)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 8));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 6));
         }
 
-        if (npc.type == NPCID.DungeonGuardian)
+        if (npc.type == NPCID.ElfArcher)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SkeletonKey>(), chanceDenominator: 2));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 10));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyCaneCompoundBow>(), chanceDenominator: 20));
+        }
+        if (npc.type == NPCID.SantaNK1)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<GagGifter>(), chanceDenominator: 6));
+            npcLoot.Add(ItemDropRule.Common(ItemType<CandyHeart>(), chanceDenominator: 8));
+            npcLoot.Add(ItemDropRule.Common(ItemType<Bergentrucking>(), chanceDenominator: 9));
+        }
+        #endregion
+
+        // Martians
+        #region
+        if (npc.type == NPCID.Scutlix)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 100, 1, 1));
+        }
+
+        if (npc.type == NPCID.RayGunner)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.GrayGrunt)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.MartianEngineer)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.MartianOfficer)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 40));
+        }
+        if (npc.type == NPCID.GigaZapper)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+        if (npc.type == NPCID.BrainScrambler)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDrugs>(), chanceDenominator: 50));
+        }
+
+        if (npc.type == NPCID.MartianSaucerCore)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 7));
+            npcLoot.Add(ItemDropRule.Common(ItemType<MartianDronegun>(), chanceDenominator: 7));
+            npcLoot.Add(ItemDropRule.ByCondition(new PostMoonlordDrop(), ItemType<FissionDrive>(), chanceDenominator: 4, chanceNumerator: 3));
+        }
+
+        if (npc.type == NPCID.ScutlixRider)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PulsePistols>(), chanceDenominator: 18));
+        }
+        #endregion
+
+        // Old One's Army
+        #region
+        if (npc.type == NPCID.DD2Betsy)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemType<PhotonShotgun>(), chanceDenominator: 2));
         }
 
         if (npc.type == NPCID.DD2DarkMageT1)
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<ArcaneDartgun>(), chanceDenominator: 5));
-        }
-
-        if (npc.type == NPCID.GoblinPeon)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 180, 1, 1));
-        }
-
-        if (npc.type == NPCID.GoblinThief)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 144, 1, 1));
-        }
-
-        if (npc.type == NPCID.GoblinWarrior)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 96, 1, 1));
-        }
-
-        if (npc.type == NPCID.GoblinSorcerer)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 111, 1, 1));
-        }
-
-        if (npc.type == NPCID.GoblinArcher)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.TatteredCloth, 3, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemType<ScreamingSoyjak>(), 90, 1, 1));
         }
 
         if (npc.type == NPCID.DD2OgreT2)
@@ -737,72 +893,9 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemType<ArcaneDartgun>(), chanceDenominator: 6));
         }
+        #endregion
 
-        if (npc.type == NPCID.DemonEye)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
-        }
-
-        if (npc.type == NPCID.DemonEyeSpaceship)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
-        }
-
-        if (npc.type == NPCID.DemonEye2)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 2));
-        }
-
-        if (npc.type == NPCID.QueenSlimeBoss)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<MaximGelgun>(), chanceDenominator: 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<QueensShank>(), chanceDenominator: 4));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
-        }
-
-        if (npc.type == NPCID.BrainofCthulhu)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 10));
-            npcLoot.Add(ItemDropRule.Common(ItemType<GoodGrades>(), chanceDenominator: 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 5, 1, 1));
-        }
-        if (npc.type == NPCID.EaterofWorldsHead)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
-          
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-        }
-        if (npc.type == NPCID.EaterofWorldsBody)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-        }
-        if (npc.type == NPCID.EaterofWorldsTail)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<BrainScanner>(), chanceDenominator: 155));
-
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-        }
-        if (npc.type == NPCID.Plantera)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<SeedBomber>(), chanceDenominator: 7));
-            npcLoot.Add(ItemDropRule.Common(ItemType<OtherworldlySixPack>(), chanceDenominator: 5));
-        }
-
-        if (npc.type == NPCID.EyeofCthulhu)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 2, 2, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<EyeRifle>(), chanceDenominator: 4));
-            npcLoot.Add(ItemDropRule.Common(ItemType<EyePoker>(), chanceDenominator: 4));
-            npcLoot.Add(ItemDropRule.Common(ItemID.VampireFrogStaff, 4));
-            npcLoot.Add(ItemDropRule.Common(ItemID.BloodRainBow, 4));
-            npcLoot.Add(ItemDropRule.Common(ItemID.Lens, 1, 1, 5));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 4, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 5));
-            npcLoot.Add(ItemDropRule.Common(ItemID.BloodMoonStarter, 1));
-        }
-
+        // To be organized
         if (npc.type == NPCID.EyeballFlyingFish)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.BlackLens, 1, 1, 10));
@@ -810,44 +903,9 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemType<EyePoker>(), chanceDenominator: 8));
         }
 
-        if (npc.type == NPCID.Deerclops)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<CaribousCatastrophe>(), chanceDenominator: 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<FlinxsFurblade>(), chanceDenominator: 3));
-            npcLoot.Add(ItemDropRule.Common(ItemID.FlinxFur, 1, 6, 15));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 10, 1, 1));
-        }
-
         if (npc.type == NPCID.SnowFlinx)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.FlinxFur, 1, 1, 2));
-        }
-
-        if (npc.type == NPCID.ManEater)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 2, 2, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-        }
-
-        if (npc.type == NPCID.Snatcher)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Stinger, 3, 1, 2));
-            npcLoot.Add(ItemDropRule.Common(ItemType<MonsterStemCells>(), 150, 1, 1));
-        }
-
-        if (npc.type == NPCID.LittleHornetLeafy)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 3, 1, 2));
-        }
-
-        if (npc.type == NPCID.HornetLeafy)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 2, 2, 2));
-        }
-
-        if (npc.type == NPCID.BigHornetLeafy)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Vine, 1, 2, 3));
         }
 
         if (npc.type == NPCID.SandElemental)
@@ -1191,26 +1249,6 @@ public class HendecamDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ItemID.HandWarmer, 100));
         }
 
-        if (npc.type == NPCID.TwiggyZombie)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
-        }
-
-        if (npc.type == NPCID.ArmedZombieTwiggy)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 5));
-        }
-
-        if (npc.type == NPCID.BigTwiggyZombie)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 6));
-        }
-
-        if (npc.type == NPCID.SmallTwiggyZombie)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemType<WoodenStick>(), 4, 2, 4));
-        }
-
         if (npc.type == NPCID.FlyingFish)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.SharkFin, 66));
@@ -1226,18 +1264,6 @@ public class HendecamDrops : GlobalNPC
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Pumpkin, 4, 12, 28));
             npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 3, 7));
-        }
-
-        if (npc.type == NPCID.MoonLordCore)
-        {
-            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentNebula, 4, 6, 30));
-            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentVortex, 4, 6, 30));
-            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentStardust, 4, 6, 30));
-            npcLoot.Add(ItemDropRule.Common(ItemID.FragmentSolar, 4, 6, 30));
-        }
-
-        if (npc.type == NPCID.RuneWizard)
-        {
         }
     }
 }
