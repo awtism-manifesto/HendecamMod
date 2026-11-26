@@ -246,7 +246,7 @@ public class DowndraftColumn : ModProjectile
                 p.velocity.Y = MathHelper.Clamp(p.velocity.Y + 2.5f, -12f, 36f);
                 p.fallStart = (int)(p.position.Y / 16f);
                 p.AddBuff(BuffID.WindPushed, 2);
-                p.AddBuff(ModContent.BuffType<VertigoBuff>(), 600);
+                p.AddBuff(ModContent.BuffType<VertigoBuff>(), 1800);
             }
         }
     }

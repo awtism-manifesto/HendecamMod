@@ -649,3 +649,7 @@ ShovingExplosion.DisplayName: Shoving Explosion
 ShovingRocket.DisplayName: Shoving Rocket
 DowndraftColumn.DisplayName: Downdraft Column
 DowndraftTelegraph.DisplayName: Downdraft Telegraph
+DartshipPlasmaOrb.DisplayName: Dartship Plasma Orb
+DartshipHomingRocket.DisplayName: Dartship Homing Rocket
+DartshipPointer.DisplayName: Dartship Pointer
+DartshipPatrolPoint.DisplayName: Dartship Patrol Point
