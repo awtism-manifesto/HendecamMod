@@ -136,8 +136,8 @@ public class ApacheElfShip : ModNPC
 
     public const int RotorBladeCount = 4;
     public const int RotorTrailLength = 24;
-    public Vector2[][] RotorTrailPos = new Vector2[RotorBladeCount][];
-    public float[][] RotorTrailRot = new float[RotorBladeCount][];
+    public Vector2[][] RotorTrailPos;
+    public float[][] RotorTrailRot;
     public float RotorAngle;
     public float RotorSpeed = 0.2f;
     public float RotorRadiusX = 72f;
@@ -150,8 +150,8 @@ public class ApacheElfShip : ModNPC
     public float RotorSpinFactor = 1f;
     public Vector2 RotorAnchorOffset = new(-4f, -40f);
 
-    public Vector2[][] TailRotorTrailPos = new Vector2[RotorBladeCount][];
-    public float[][] TailRotorTrailRot = new float[RotorBladeCount][];
+    public Vector2[][] TailRotorTrailPos;
+    public float[][] TailRotorTrailRot;
     public float TailRotorAngle;
     public float TailRotorSpeed = 0.4f;
     public float TailRotorRadiusX = 14f;
@@ -163,18 +163,20 @@ public class ApacheElfShip : ModNPC
     public Vector2 TailRotorAnchorOffset = new(-90f, -10f);
 
     private int currentDrawingBlade;
-    private readonly Vector2[] dashOldPositions = new Vector2[40];
-    private readonly float[] dashOldRotations = new float[40];
+    private Vector2[] dashOldPositions;
+    private float[] dashOldRotations;
 
     private float dashTrailOpacity;
     private Vector2 chinookStartPos;
     private Vector2 chinookEndPos;
     private ActionState lastAttack = ActionState.Intro;
-    private readonly HashSet<ActionState> usedAttacks = [];
+    private List<ActionState> attackPool;
+    private bool phase2Added;
+    private bool hasReachedPlayer;
 
     private MiscShaderData rotorShader;
     public static VertexStrip vertexStrip = new();
-    public VertexStrip IntroTrailStrip = new();
+    public VertexStrip IntroTrailStrip;
 
     private float LifeRatio => NPC.life / (float)NPC.lifeMax;
     public static bool ExpertMode => Main.expertMode;
@@ -213,6 +215,11 @@ public class ApacheElfShip : ModNPC
         NPC.npcSlots = 10f;
         NPC.aiStyle = -1;
 
+        RotorTrailPos = new Vector2[RotorBladeCount][];
+        RotorTrailRot = new float[RotorBladeCount][];
+        TailRotorTrailPos = new Vector2[RotorBladeCount][];
+        TailRotorTrailRot = new float[RotorBladeCount][];
+
         for (int i = 0; i < RotorBladeCount; i++)
         {
             RotorTrailPos[i] = new Vector2[RotorTrailLength];
@@ -221,6 +228,15 @@ public class ApacheElfShip : ModNPC
             TailRotorTrailRot[i] = new float[RotorTrailLength];
         }
 
+        dashOldPositions = new Vector2[40];
+        dashOldRotations = new float[40];
+        IntroTrailStrip = new();
+
+        attackPool = [];
+        phase2Added = false;
+        hasReachedPlayer = false;
+        dashTrailOpacity = 1f;
+        marineWhoAmI = -1f;
         AIState = ActionState.Intro;
 
         if (!Main.dedServ)
@@ -229,16 +245,21 @@ public class ApacheElfShip : ModNPC
         }
     }
 
+    public override bool CheckActive() => false;
+
     public override void SendExtraAI(BinaryWriter writer)
     {
         writer.Write(aiTimer0);
         writer.Write(aiTimer1);
         writer.Write(aiTimer2);
+        writer.Write(HoverTimer);
         writer.Write((sbyte)TargetFacing);
         writer.Write((sbyte)DesiredSide);
         writer.Write(doorGun);
         writer.Write(UseFrontSprites);
+        writer.Write(hasReachedPlayer);
         writer.Write(BackgroundProgress);
+        writer.Write(NPC.rotation);
         writer.WriteVector2(chinookStartPos);
         writer.WriteVector2(chinookEndPos);
     }
@@ -248,13 +269,17 @@ public class ApacheElfShip : ModNPC
         aiTimer0 = reader.ReadSingle();
         aiTimer1 = reader.ReadSingle();
         aiTimer2 = reader.ReadSingle();
+        HoverTimer = reader.ReadSingle();
         TargetFacing = reader.ReadSByte();
         DesiredSide = reader.ReadSByte();
         doorGun = reader.ReadBoolean();
         UseFrontSprites = reader.ReadBoolean();
+        hasReachedPlayer = reader.ReadBoolean();
         BackgroundProgress = reader.ReadSingle();
+        NPC.rotation = reader.ReadSingle();
         chinookStartPos = reader.ReadVector2();
         chinookEndPos = reader.ReadVector2();
+        NPC.spriteDirection = TargetFacing;
     }
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -298,6 +323,7 @@ public class ApacheElfShip : ModNPC
         aiTimer0 = 0f;
         aiTimer1 = 0f;
         aiTimer2 = 0f;
+        HoverTimer = 0f;
         attackCount = 0f;
         marineWhoAmI = -1f;
         RotorSpinFactor = 1f;
@@ -306,7 +332,9 @@ public class ApacheElfShip : ModNPC
         BackgroundProgress = 0f;
         dashTrailOpacity = 1f;
         lastAttack = ActionState.Intro;
-        usedAttacks.Clear();
+        attackPool = [];
+        phase2Added = false;
+        hasReachedPlayer = false;
         AIState = ActionState.Intro;
 
         int alpineIndex = NPC.FindFirstNPC(ModContent.NPCType<Alpine>());
@@ -364,40 +392,45 @@ public class ApacheElfShip : ModNPC
         return false;
     }
 
+    public override void HitEffect(NPC.HitInfo hit)
+    {
+        if (Main.dedServ || NPC.life > 0)
+            return;
+
+        SoundEngine.PlaySound(SoundID.Item14, NPC.Center);
+
+        Vector2[] crashPoints = [BodyPos, BodyGunPivot, TopGunPivot, FrontGunMuzzlePos];
+        foreach (Vector2 pt in crashPoints)
+        {
+            Vector2 spawnPt = pt == Vector2.Zero ? NPC.Center : pt;
+            for (int i = 0; i < 20; i++)
+            {
+                Color color = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Streak,
+                    spawnPt + Main.rand.NextVector2Circular(10f, 10f),
+                    Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(1.5f, 3.8f),
+                    color,
+                    1f,
+                    Main.rand.NextFloat(0.75f, 1.15f)
+                );
+
+                ParticleSystem.SpawnParticle(
+                    ParticleID.Gas,
+                    spawnPt + Main.rand.NextVector2Circular(12f, 12f),
+                    Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(0.8f, 2.2f),
+                    color,
+                    0.9f,
+                    Main.rand.NextFloat(0.55f, 0.85f),
+                    data0: 0.03f
+                );
+            }
+        }
+    }
+
     public override void OnKill()
     {
         ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("AGH!"), new Color(185, 105, 105));
-        SoundEngine.PlaySound(SoundID.Item14, NPC.Center);
-
-        if (!Main.dedServ)
-        {
-            Vector2[] crashPoints = [BodyPos, BodyGunPivot, TopGunPivot, FrontGunMuzzlePos];
-            foreach (Vector2 pt in crashPoints)
-            {
-                for (int i = 0; i < 20; i++)
-                {
-                    Color color = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
-                    ParticleSystem.SpawnParticle(
-                        ParticleID.Streak,
-                        pt + Main.rand.NextVector2Circular(10f, 10f),
-                        Vector2.UnitY.RotatedByRandom(3f) * Main.rand.NextFloat(1.5f, 3.8f),
-                        color,
-                        1f,
-                        Main.rand.NextFloat(0.75f, 1.15f)
-                    );
-
-                    ParticleSystem.SpawnParticle(
-                        ParticleID.Gas,
-                        pt + Main.rand.NextVector2Circular(12f, 12f),
-                        Vector2.UnitY.RotatedByRandom(1.3f) * Main.rand.NextFloat(0.8f, 2.2f),
-                        color,
-                        0.9f,
-                        Main.rand.NextFloat(0.55f, 0.85f),
-                        data0: 0.03f
-                    );
-                }
-            }
-        }
 
         AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
 
@@ -409,21 +442,30 @@ public class ApacheElfShip : ModNPC
                 ModContent.GetInstance<PlutoniumSystem>().BlessWorldWithPlutonium();
             }
         }
+
+        if (Main.netMode == NetmodeID.Server)
+        {
+            NetMessage.SendData(MessageID.WorldData);
+        }
     }
 
     public override void AI()
     {
-        if (NPC.target < 0 || NPC.target == 255 || Main.player[NPC.target].dead || !Main.player[NPC.target].active)
+        if (Main.netMode != NetmodeID.MultiplayerClient)
         {
-            NPC.TargetClosest();
+            if (NPC.target < 0 || NPC.target >= Main.maxPlayers || Main.player[NPC.target].dead || !Main.player[NPC.target].active)
+            {
+                NPC.TargetClosest();
+                NPC.netUpdate = true;
+            }
+
+            if (AlpineNPCRespawnSystem.unlockedAlpineSpawn)
+            {
+                AlpineNPCRespawnSystem.unlockedAlpineSpawn = false;
+            }
         }
 
-        Player player = Main.player[NPC.target];
-
-        if (AlpineNPCRespawnSystem.unlockedAlpineSpawn && Main.netMode != NetmodeID.MultiplayerClient)
-        {
-            AlpineNPCRespawnSystem.unlockedAlpineSpawn = false;
-        }
+        Player player = NPC.target >= 0 && NPC.target < Main.maxPlayers ? Main.player[NPC.target] : null;
 
         HoverTimer++;
         UpdateTrailHistory();
@@ -453,7 +495,7 @@ public class ApacheElfShip : ModNPC
         {
             Death();
         }
-        else if (HasValidTarget(player))
+        else if (HasValidTarget(ref player))
         {
             switch (AIState)
             {
@@ -474,14 +516,25 @@ public class ApacheElfShip : ModNPC
         UpdateKinematicsAndAnimations();
     }
 
-    private bool HasValidTarget(Player player)
+    private bool HasValidTarget(ref Player player)
     {
-        if (!player.active || player.dead || Vector2.Distance(NPC.Center, player.Center) > 4000f)
+        if (Main.netMode == NetmodeID.MultiplayerClient)
+        {
+            if (NPC.timeLeft < 600)
+                NPC.timeLeft = 600;
+
+            return player != null && player.active && !player.dead;
+        }
+
+        bool invalid = player == null || !player.active || player.dead || (hasReachedPlayer && Vector2.Distance(NPC.Center, player.Center) > 4000f);
+
+        if (invalid)
         {
             NPC.TargetClosest();
-            player = Main.player[NPC.target];
+            player = NPC.target >= 0 && NPC.target < Main.maxPlayers ? Main.player[NPC.target] : null;
+            invalid = player == null || !player.active || player.dead || (hasReachedPlayer && Vector2.Distance(NPC.Center, player.Center) > 4000f);
 
-            if (!player.active || player.dead || Vector2.Distance(NPC.Center, player.Center) > 4000f)
+            if (invalid)
             {
                 ResetBackgroundVisuals();
                 aiTimer0 = 0f;
@@ -491,6 +544,14 @@ public class ApacheElfShip : ModNPC
                 NPC.netUpdate = true;
                 return false;
             }
+
+            NPC.netUpdate = true;
+        }
+
+        if (!hasReachedPlayer && Vector2.Distance(NPC.Center, player.Center) <= 1000f)
+        {
+            hasReachedPlayer = true;
+            NPC.netUpdate = true;
         }
 
         if (NPC.timeLeft < 600)
@@ -509,77 +570,76 @@ public class ApacheElfShip : ModNPC
 
     private void SwitchState(ActionState next)
     {
+        if (Main.netMode == NetmodeID.MultiplayerClient)
+            return;
+
         aiTimer0 = 0f;
         attackCount = 0f;
         AIState = next;
         NPC.netUpdate = true;
     }
 
-    private ActionState PickNextAttack()
+    private void RefillAttackPool(bool phase2)
     {
-        bool phase2 = (MasterMode || LegendaryMode ) ? LifeRatio <= 0.5f : LifeRatio <= 0.6f;
-
-        ActionState[] pool;
+        attackPool.Clear();
+        attackPool.Add(ActionState.RazorRotor);
+        attackPool.Add(ActionState.Downdraft);
+        attackPool.Add(ActionState.ShoverRocket);
 
         if (ExpertMode || MasterMode || LegendaryMode)
         {
-            pool = phase2
-                ? [
-                    ActionState.RazorRotor,
-                    ActionState.Downdraft,
-                    ActionState.ShoverRocket,
-                    ActionState.ChinookSupply,
-                    ActionState.DartshipBarrage,
-                    ActionState.ComancheCommander,
-                    ActionState.PrimeAssault,
-                    ActionState.SpecPops
-                ]
-                : [
-                    ActionState.RazorRotor,
-                    ActionState.Downdraft,
-                    ActionState.ShoverRocket,
-                    ActionState.ChinookSupply,
-                    ActionState.DartshipBarrage,
-                    ActionState.ComancheCommander
-                ];
-        }
-        else
-        {
-            pool = phase2
-                ? [
-                    ActionState.RazorRotor,
-                    ActionState.Downdraft,
-                    ActionState.ShoverRocket,
-                    ActionState.ChinookSupply,
-                    ActionState.DartshipBarrage,
-                    ActionState.ComancheCommander
-                ]
-                : [
-                    ActionState.RazorRotor,
-                    ActionState.Downdraft,
-                    ActionState.ShoverRocket
-                ];
-        }
+            attackPool.Add(ActionState.ChinookSupply);
+            attackPool.Add(ActionState.DartshipBarrage);
+            attackPool.Add(ActionState.ComancheCommander);
 
-        List<ActionState> available = [];
-        foreach (ActionState attack in pool)
-        {
-            if (!usedAttacks.Contains(attack))
-                available.Add(attack);
-        }
-
-        if (available.Count == 0)
-        {
-            usedAttacks.Clear();
-            foreach (ActionState attack in pool)
+            if (phase2)
             {
-                if (pool.Length <= 1 || attack != lastAttack)
-                    available.Add(attack);
+                attackPool.Add(ActionState.PrimeAssault);
+                attackPool.Add(ActionState.SpecPops);
+            }
+        }
+        else if (phase2)
+        {
+            attackPool.Add(ActionState.ChinookSupply);
+            attackPool.Add(ActionState.DartshipBarrage);
+            attackPool.Add(ActionState.ComancheCommander);
+        }
+    }
+
+    private ActionState PickNextAttack()
+    {
+        attackPool ??= [];
+
+        bool phase2 = (MasterMode || LegendaryMode) ? LifeRatio <= 0.6f : LifeRatio <= 0.5f;
+
+        if (attackPool.Count == 0)
+        {
+            RefillAttackPool(phase2);
+            if (phase2)
+                phase2Added = true;
+        }
+        else if (phase2 && !phase2Added)
+        {
+            phase2Added = true;
+            if (ExpertMode || MasterMode || LegendaryMode)
+            {
+                attackPool.Add(ActionState.PrimeAssault);
+                attackPool.Add(ActionState.SpecPops);
+            }
+            else
+            {
+                attackPool.Add(ActionState.ChinookSupply);
+                attackPool.Add(ActionState.DartshipBarrage);
+                attackPool.Add(ActionState.ComancheCommander);
             }
         }
 
-        ActionState chosen = available[Main.rand.Next(available.Count)];
-        usedAttacks.Add(chosen);
+        int pickIndex = Main.rand.Next(attackPool.Count);
+        if (attackPool.Count > 1 && attackPool[pickIndex] == lastAttack)
+            pickIndex = (pickIndex + Main.rand.Next(1, attackPool.Count)) % attackPool.Count;
+
+        ActionState chosen = attackPool[pickIndex];
+        attackPool.RemoveAt(pickIndex);
         lastAttack = chosen;
         return chosen;
     }
@@ -619,6 +679,14 @@ public class ApacheElfShip : ModNPC
 
         Vector2 hoverPos = target.Center + new Vector2(DesiredSide * 300f, -210f);
 
+        if (!hasReachedPlayer)
+        {
+            MoveTowards(hoverPos, 0.08f, 18f, 52f, 0.1f, target.velocity * 0.75f, stopRadius: 12f);
+            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.018f, -0.35f, 0.35f), 0.12f);
+            aiTimer0 = 1f;
+            return;
+        }
+
         if (aiTimer0 < 45f && NPC.Center.Y < target.Center.Y + 40f)
         {
             NPC.velocity.X = MathHelper.Lerp(NPC.velocity.X, TargetFacing * 6f, 0.08f);
@@ -631,7 +699,7 @@ public class ApacheElfShip : ModNPC
         float pullUpTilt = MathHelper.Clamp(NPC.velocity.X * 0.025f + NPC.velocity.Y * 0.015f * TargetFacing, -0.35f, 0.35f);
         NPC.rotation = MathHelper.Lerp(NPC.rotation, pullUpTilt, 0.12f);
 
-        if (aiTimer0 >= 105f || (aiTimer0 >= 60f && dist < 50f))
+        if ((aiTimer0 >= 105f || (aiTimer0 >= 60f && dist < 50f)) && Main.netMode != NetmodeID.MultiplayerClient)
         {
             NPC.dontTakeDamage = false;
             SwitchState(ActionState.Chase);
@@ -667,7 +735,7 @@ public class ApacheElfShip : ModNPC
         float dist = MoveTowards(swoopTarget, 0.04f, 1f, 8f, 0.05f, stopRadius: 16f);
         NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.025f, -0.2f, 0.2f), 0.08f);
 
-        if (aiTimer0 >= 150f || dist < 45f)
+        if ((aiTimer0 >= 150f || dist < 45f) && Main.netMode != NetmodeID.MultiplayerClient)
         {
             SwitchState(ActionState.Chase);
         }
@@ -680,7 +748,7 @@ public class ApacheElfShip : ModNPC
 
         aiTimer0++;
 
-        float slashSpeed = 20f;
+        float slashSpeed = 24f;
         float flightTime = Vector2.Distance(RotorPos, target.Center) / slashSpeed;
         Vector2 interceptPos = new(target.Center.X + target.velocity.X * flightTime, target.Bottom.Y - 10f);
 
@@ -713,12 +781,16 @@ public class ApacheElfShip : ModNPC
                         Main.myPlayer
                     );
                 }
-            }
 
-            if (++attackCount >= 7f)
-            {
-                DesiredSide = -TargetFacing;
-                SwitchState(ActionState.Reposition);
+                if (++attackCount >= 7f)
+                {
+                    DesiredSide = -TargetFacing;
+                    SwitchState(ActionState.Reposition);
+                }
+                else
+                {
+                    NPC.netUpdate = true;
+                }
             }
         }
     }
@@ -772,7 +844,7 @@ public class ApacheElfShip : ModNPC
             SetFacing(-DesiredSide);
             UpdateFacingAndGuns(target, false, true);
 
-            float targetVelY = MathHelper.Clamp((target.Center.Y - NPC.Center.Y) * 0.018f, -1.2f, 1.2f);
+            float targetVelY = MathHelper.Clamp((target.Center.Y - NPC.Center.Y) * 0.018f, -3f, 3f);
             NPC.velocity = Vector2.Lerp(NPC.velocity, new Vector2(0f, targetVelY), 0.08f);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, 0f, 0.15f);
 
@@ -794,7 +866,7 @@ public class ApacheElfShip : ModNPC
                 SpawnBullet(BodyGunMuzzlePos, bodyShootDir, 20.5f, 5f);
             }
 
-            if (aiTimer0 % 30f == 0f)
+            if (aiTimer0 % 25f == 0f)
             {
                 Vector2 rocketDir = new Vector2(-1f, 0f).RotatedBy(TopGunRotation);
                 TopGunRecoil = -rocketDir * 12f;
@@ -824,15 +896,18 @@ public class ApacheElfShip : ModNPC
             NPC.velocity = Vector2.Lerp(NPC.velocity, Vector2.Zero, 0.12f);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, 0f, 0.12f);
         }
-        else
+        else if (Main.netMode != NetmodeID.MultiplayerClient)
         {
             aiTimer0 = 0f;
             DesiredSide = -DesiredSide;
-            NPC.netUpdate = true;
 
             if (++attackCount >= 3f)
             {
                 SwitchState(ActionState.Reposition);
+            }
+            else
+            {
+                NPC.netUpdate = true;
             }
         }
     }
@@ -881,7 +956,7 @@ public class ApacheElfShip : ModNPC
                 marine.TriggerRetract();
         }
 
-        if (aiTimer0 > spawnDelay && !marineActive)
+        if (aiTimer0 > spawnDelay && !marineActive && Main.netMode != NetmodeID.MultiplayerClient)
         {
             attackCount++;
             if (attackCount >= doorCloseTime)
@@ -893,10 +968,10 @@ public class ApacheElfShip : ModNPC
             }
         }
     }
+
     public void ChinookSupply(Player target)
     {
-        float attackAmount = 3;
-        attackAmount = LegendaryMode ? 6 : (MasterMode ? 5 : ExpertMode ? 4 : 3);
+        float attackAmount = LegendaryMode ? 5 : (MasterMode ? 5 : ExpertMode ? 4 : 3);
         if (aiTimer0 == 0f)
             EnsureSide(target);
 
@@ -920,7 +995,10 @@ public class ApacheElfShip : ModNPC
         }
 
         Vector2 dashVector = chinookEndPos - chinookStartPos;
-        float dashLength = MathF.Max(1f, dashVector.Length());
+        float dashLength = dashVector.Length();
+        if (dashLength < 1f)
+            return;
+
         Vector2 dashLineDir = dashVector / dashLength;
         float dashAngle = dashLineDir.ToRotation();
         float linePlaneRot = MathHelper.Clamp(
@@ -929,7 +1007,7 @@ public class ApacheElfShip : ModNPC
             0.6f
         );
 
-        int crateInterval = LegendaryMode ? 4 : MasterMode ? 5 : ExpertMode ? 6 : 7;
+        int crateInterval = LegendaryMode ? 6 : MasterMode ? 6 : ExpertMode ? 7 : 8;
 
         if (aiTimer0 <= 95f)
         {
@@ -939,10 +1017,18 @@ public class ApacheElfShip : ModNPC
             float dist = MoveTowards(chinookStartPos, 0.085f, 2f, 22f, 0.1f, stopRadius: 10f);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.02f, -0.15f, 0.15f), 0.1f);
 
-            if (dist < 32f && aiTimer0 >= 52f)
-                aiTimer0 = 96f;
-            else if (aiTimer0 == 95f && dist > 64f)
-                aiTimer0 = 94f;
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                if (dist < 32f && aiTimer0 >= 52f)
+                {
+                    aiTimer0 = 96f;
+                    NPC.netUpdate = true;
+                }
+                else if (aiTimer0 == 95f && dist > 64f)
+                {
+                    aiTimer0 = 94f;
+                }
+            }
         }
         else if (aiTimer0 <= 120f)
         {
@@ -980,7 +1066,7 @@ public class ApacheElfShip : ModNPC
                     Projectile.NewProjectile(
                         NPC.GetSource_FromAI(),
                         RopeAnchorPos,
-                        new Vector2(NPC.velocity.X * 0.18f, 3.5f),
+                        new Vector2(NPC.velocity.X * 0.18f, 1.5f),
                         ModContent.ProjectileType<ChinookSupplyCrate>(),
                         ProjectileDamage(NPC.damage / 2),
                         2f,
@@ -989,8 +1075,11 @@ public class ApacheElfShip : ModNPC
                 }
             }
 
-            if (along >= dashLength - 24f)
+            if (along >= dashLength - 24f && Main.netMode != NetmodeID.MultiplayerClient)
+            {
                 aiTimer0 = 200f;
+                NPC.netUpdate = true;
+            }
         }
         else if (aiTimer0 <= 238f)
         {
@@ -1002,18 +1091,20 @@ public class ApacheElfShip : ModNPC
             NPC.velocity *= 0.88f;
             NPC.rotation = MathHelper.Lerp(NPC.rotation, 0f, 0.12f);
         }
-        else
+        else if (Main.netMode != NetmodeID.MultiplayerClient)
         {
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-                FadePatrolPoints();
+            FadePatrolPoints();
 
             aiTimer0 = 0f;
             DesiredSide = -DesiredSide;
-            NPC.netUpdate = true;
 
             if (++attackCount >= attackAmount)
             {
                 SwitchState(ActionState.Reposition);
+            }
+            else
+            {
+                NPC.netUpdate = true;
             }
         }
     }
@@ -1028,7 +1119,7 @@ public class ApacheElfShip : ModNPC
 
         int burstCount = 3;
         const float moveFastTicks = 60f;
-        const float pauseTelegraphTicks = 22f;
+        const float pauseTelegraphTicks = 45f;
         const float blowTicks = 150f;
         const float recoveryTicks = 20f;
 
@@ -1098,15 +1189,18 @@ public class ApacheElfShip : ModNPC
             NPC.velocity *= 0.88f;
             NPC.rotation = MathHelper.Lerp(NPC.rotation, 0f, 0.12f);
         }
-        else
+        else if (Main.netMode != NetmodeID.MultiplayerClient)
         {
             aiTimer0 = 0f;
-            NPC.netUpdate = true;
 
             if (++attackCount >= burstCount)
             {
                 DesiredSide = -TargetFacing;
                 SwitchState(ActionState.Reposition);
+            }
+            else
+            {
+                NPC.netUpdate = true;
             }
         }
     }
@@ -1150,7 +1244,7 @@ public class ApacheElfShip : ModNPC
             Vector2 desiredPos = target.Center + new Vector2(-TargetFacing * 280f, -210f);
             MoveTowards(desiredPos, 0.055f, 0.5f, isLocking ? 2f : 8.5f, 0.08f, stopRadius: 10f);
 
-            AimBodyAt(target.Center, BodyPos, 0.14f, 0.65f);
+            AimBodyAt(target.Center, BodyPos, 0.12f, 0.65f);
             UpdateFacingAndGuns(target, true, false);
         }
         else if (aiTimer0 <= cycleTotalTime)
@@ -1159,21 +1253,29 @@ public class ApacheElfShip : ModNPC
             NPC.velocity *= 0.9f;
             NPC.rotation = MathHelper.Lerp(NPC.rotation, 0f, 0.12f);
         }
-        else
+        else if (Main.netMode != NetmodeID.MultiplayerClient)
         {
             aiTimer0 = 0f;
-            NPC.netUpdate = true;
 
             if (++attackCount >= burstCount)
             {
                 DesiredSide = -TargetFacing;
                 SwitchState(ActionState.Reposition);
             }
+            else
+            {
+                NPC.netUpdate = true;
+            }
         }
     }
 
     public void PrimeAssault(Player target)
     {
+        const float totalTime = 500f;
+        const float enterBgTime = 55f;
+        const float sideShiftTime = 45f;
+        const float exitBgTime = 45f;
+
         const float bodyLeadTicks = 18f;
         const float orbLeadTicks = 40f;
         const float rocketLeadTicks = 44f;
@@ -1184,22 +1286,27 @@ public class ApacheElfShip : ModNPC
         const float orbFireInterval = 10f;
         const float rocketFireInterval = 60f;
 
+        float enterEnd = enterBgTime;
+        float exitStart = MathF.Max(enterEnd, totalTime - exitBgTime);
+        float assaultEnd = MathF.Max(enterEnd, exitStart - sideShiftTime);
+
         if (aiTimer0 == 0f)
         {
             EnsureSide(target);
-            NPC.netUpdate = true;
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+                NPC.netUpdate = true;
         }
 
         aiTimer0++;
         doorGun = false;
         NPC.dontTakeDamage = true;
 
-        if (aiTimer0 <= 55f)
+        if (aiTimer0 <= enterEnd)
         {
             UseFrontSprites = false;
             NPC.hide = false;
 
-            float progress = Utils.GetLerpValue(1f, 55f, aiTimer0, true);
+            float progress = Utils.GetLerpValue(1f, enterEnd, aiTimer0, true);
             BackgroundProgress = MathHelper.SmoothStep(0f, 1f, progress);
             NPC.scale = MathHelper.Lerp(1f, 0.72f, BackgroundProgress);
 
@@ -1208,10 +1315,10 @@ public class ApacheElfShip : ModNPC
             NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.015f, -0.12f, 0.12f), 0.12f);
             UpdateFacingAndGuns(target, false, false);
 
-            if (aiTimer0 == 55f)
+            if (aiTimer0 == enterEnd && Main.netMode != NetmodeID.MultiplayerClient)
                 NPC.netUpdate = true;
         }
-        else if (aiTimer0 <= 235f)
+        else if (aiTimer0 <= assaultEnd)
         {
             UseFrontSprites = true;
             BackgroundProgress = 1f;
@@ -1226,13 +1333,15 @@ public class ApacheElfShip : ModNPC
             bodyGunActive = true;
             topGunActive = true;
 
-            if (aiTimer0 % 6f == 0f)
+            float assaultTick = aiTimer0 - enterEnd;
+
+            if (assaultTick % 6f == 0f)
             {
                 FrontGunScaleRecoil = -0.24f;
                 FrontGunMuzzleGlow = 1f;
             }
 
-            if (aiTimer0 % orbFireInterval == 0f)
+            if (assaultTick % orbFireInterval == 0f)
             {
                 BodyGunScaleRecoil = -0.3f;
                 BodyGunMuzzleGlow = 1f;
@@ -1267,13 +1376,13 @@ public class ApacheElfShip : ModNPC
                 }
             }
 
-            if (aiTimer0 % rocketFireInterval == 0f)
+            if (assaultTick % rocketFireInterval == 0f)
             {
                 TopGunScaleRecoil = -0.36f;
                 TopGunMuzzleGlow = 1f;
                 SoundEngine.PlaySound(SoundID.Item61, BodyPos);
 
-                int shotIndex = (int)(aiTimer0 / rocketFireInterval);
+                int shotIndex = (int)(assaultTick / rocketFireInterval);
                 bool fireRightSide = shotIndex % 2 == 0;
                 Vector2 rocketMuzzle = fireRightSide ? RightTopGunMuzzlePos : LeftTopGunMuzzlePos;
 
@@ -1295,13 +1404,14 @@ public class ApacheElfShip : ModNPC
                         ai2: rocketTarget.Y
                     );
                     rocket.localAI[1] = fireRightSide ? 1f : -1f;
+                    rocket.netUpdate = true;
                 }
             }
 
-            if (aiTimer0 == 235f)
+            if (aiTimer0 == assaultEnd && Main.netMode != NetmodeID.MultiplayerClient)
                 NPC.netUpdate = true;
         }
-        else if (aiTimer0 <= 280f)
+        else if (aiTimer0 <= exitStart)
         {
             UseFrontSprites = true;
             BackgroundProgress = 1f;
@@ -1311,15 +1421,15 @@ public class ApacheElfShip : ModNPC
             MoveTowards(sidePos, 0.08f, 1.5f, 15f, 0.09f, target.velocity * 0.35f, stopRadius: 10f);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.015f, -0.14f, 0.14f), 0.1f);
 
-            if (aiTimer0 == 280f)
+            if (aiTimer0 == exitStart && Main.netMode != NetmodeID.MultiplayerClient)
                 NPC.netUpdate = true;
         }
-        else if (aiTimer0 <= 325f)
+        else if (aiTimer0 <= totalTime)
         {
             UseFrontSprites = false;
             NPC.hide = false;
 
-            float returnT = Utils.GetLerpValue(280f, 325f, aiTimer0, true);
+            float returnT = Utils.GetLerpValue(exitStart, totalTime, aiTimer0, true);
             BackgroundProgress = MathHelper.SmoothStep(1f, 0f, returnT);
             NPC.scale = MathHelper.Lerp(1f, 0.72f, BackgroundProgress);
 
@@ -1401,8 +1511,8 @@ public class ApacheElfShip : ModNPC
         Projectile pointer = FindActivePointer();
         Vector2 pointerPos = pointer?.Center ?? target.Center;
 
-        FaceTowards(pointerPos.X, 24f);
-        AimBodyAt(pointerPos, BodyPos, 0.16f, 1.3f);
+        FaceTowards(pointerPos.X, 60f);
+        AimBodyAt(pointerPos, BodyPos, 0.055f, 1.15f, 0.025f);
         AlignGunsForward();
 
         MoveTowards(pointerPos, 0.055f, 2f, 8.5f, 0.08f, stopRadius: 14f);
@@ -1428,14 +1538,10 @@ public class ApacheElfShip : ModNPC
         if (aiTimer0 == fireEndTick && Main.netMode != NetmodeID.MultiplayerClient)
             SetComancheCommand(0f);
 
-        if (aiTimer0 >= totalDuration)
+        if (aiTimer0 >= totalDuration && Main.netMode != NetmodeID.MultiplayerClient)
         {
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-            {
-                DismissComanches();
-                pointer?.Kill();
-            }
-
+            DismissComanches();
+            pointer?.Kill();
             DesiredSide = -TargetFacing;
             SwitchState(ActionState.Reposition);
         }
@@ -1466,10 +1572,15 @@ public class ApacheElfShip : ModNPC
             if (BossDownedSystem.downedApacheElfShip)
             {
                 AlpineNPCRespawnSystem.unlockedAlpineSpawn = true;
-                NPC.NewNPCDirect(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
+                NPC alpine = NPC.NewNPCDirect(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<Alpine>(), NPC.whoAmI);
+                alpine.netUpdate = true;
             }
+
             NPC.active = false;
-            NPC.netUpdate = true;
+            if (Main.netMode == NetmodeID.Server)
+            {
+                NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, NPC.whoAmI);
+            }
         }
     }
 
@@ -1533,14 +1644,15 @@ public class ApacheElfShip : ModNPC
 
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
-                NPC.NewNPCDirect(
+                NPC falling = NPC.NewNPCDirect(
                     NPC.GetSource_FromAI(),
                     (int)BodyPos.X,
                     (int)(BodyPos.Y - 16f),
                     ModContent.NPCType<FallingAlpine>()
                 );
+                falling.netUpdate = true;
+                NPC.netUpdate = true;
             }
-            NPC.netUpdate = true;
         }
 
         NPC.noTileCollide = false;
@@ -1553,11 +1665,17 @@ public class ApacheElfShip : ModNPC
         TargetGunRotation = neutral + NPC.rotation + droopOffset;
         TargetTopGunRotation = neutral + NPC.rotation + droopOffset;
 
-        if (NPC.collideY || NPC.collideX || NPC.velocity.Y == 0f || aiTimer1 >= 340f)
+        if ((NPC.collideY || NPC.collideX || NPC.velocity.Y == 0f || aiTimer1 >= 340f) && Main.netMode != NetmodeID.MultiplayerClient)
         {
+            NPC.dontTakeDamage = false;
             NPC.life = 0;
             NPC.HitEffect();
             NPC.checkDead();
+
+            if (Main.netMode == NetmodeID.Server)
+            {
+                NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, NPC.whoAmI);
+            }
         }
     }
     #endregion
@@ -1607,14 +1725,15 @@ public class ApacheElfShip : ModNPC
             NPC.spriteDirection = TargetFacing;
     }
 
-    private void AimBodyAt(Vector2 worldTarget, Vector2 pivot, float rotLerp, float maxTilt)
+    private void AimBodyAt(Vector2 worldTarget, Vector2 pivot, float rotLerp, float maxTilt, float maxTurnSpeed = 0.06f)
     {
         float aimAngle = (worldTarget - pivot).ToRotation();
         float rawPlaneRot = TargetFacing == -1
             ? MathHelper.WrapAngle(aimAngle + MathHelper.Pi)
             : MathHelper.WrapAngle(aimAngle);
         float clampedRot = MathHelper.Clamp(rawPlaneRot, -maxTilt, maxTilt);
-        NPC.rotation = MathHelper.Lerp(NPC.rotation, clampedRot, rotLerp);
+        float turnStep = MathHelper.Clamp((clampedRot - NPC.rotation) * rotLerp, -maxTurnSpeed, maxTurnSpeed);
+        NPC.rotation += turnStep;
     }
 
     private void AlignGunsForward()
@@ -1648,6 +1767,7 @@ public class ApacheElfShip : ModNPC
         p.hostile = true;
         p.friendly = false;
         p.tileCollide = false;
+        p.netUpdate = true;
     }
 
     private Projectile FindActivePointer()
@@ -1742,6 +1862,9 @@ public class ApacheElfShip : ModNPC
 
     private void UpdateTrailHistory()
     {
+        if (Main.dedServ)
+            return;
+
         if (dashOldPositions[^1] == Vector2.Zero)
         {
             for (int i = 0; i < dashOldPositions.Length; i++)
@@ -1856,6 +1979,9 @@ public class ApacheElfShip : ModNPC
         BodyGunRecoil = Vector2.Lerp(BodyGunRecoil, Vector2.Zero, 0.4f);
         TopGunRecoil = Vector2.Lerp(TopGunRecoil, Vector2.Zero, 0.4f);
 
+        if (Main.dedServ)
+            return;
+
         bool wantsDashTrail =
             AIState == ActionState.Intro
             || HoverTimer <= 170f
@@ -1908,9 +2034,10 @@ public class ApacheElfShip : ModNPC
 
     private static void SpawnGunExplosion(Vector2 pos)
     {
-        SoundEngine.PlaySound(SoundID.Item14, pos);
         if (Main.dedServ)
             return;
+
+        SoundEngine.PlaySound(SoundID.Item14, pos);
 
         for (int i = 0; i < 6; i++)
         {

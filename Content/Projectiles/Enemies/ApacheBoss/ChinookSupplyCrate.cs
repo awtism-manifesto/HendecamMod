@@ -26,12 +26,18 @@ public class ChinookSupplyCrate : ModProjectile
         Projectile.timeLeft = 360;
     }
 
+    public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
+    {
+        fallThrough = true;
+        return true;
+    }
+
     public override void AI()
     {
         Projectile.ai[0]++;
         float sway = MathF.Sin(Projectile.ai[0] * 0.08f + Projectile.whoAmI) * 0.12f;
         Projectile.velocity.X = MathHelper.Lerp(Projectile.velocity.X, sway * 12f, 0.04f);
-        Projectile.velocity.Y = MathHelper.Clamp(Projectile.velocity.Y + 0.32f, -10f, 14f);
+        Projectile.velocity.Y = MathHelper.Clamp(Projectile.velocity.Y + 0.15f, -10f, 10f);
         Projectile.rotation = MathHelper.Lerp(Projectile.rotation, Projectile.velocity.X * 0.06f, 0.15f);
 
         if (!Main.dedServ && Main.rand.NextBool(3))
@@ -49,11 +55,9 @@ public class ChinookSupplyCrate : ModProjectile
 
         if (!Main.dedServ)
         {
-            Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
-
             for (int i = 0; i < 12; i++)
             {
-                randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
                 ParticleSystem.SpawnParticle(
                     ParticleID.Streak,
                     Projectile.Center,
@@ -63,9 +67,10 @@ public class ChinookSupplyCrate : ModProjectile
                     Main.rand.NextFloat(0.85f, 1.3f)
                 );
             }
+
             for (int i = 0; i < 18; i++)
             {
-                randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
+                Color randColor = Main.rand.NextFromList(Color.Orange, Color.OrangeRed, Color.SlateGray, Color.Gray);
                 ParticleSystem.SpawnParticle(
                     ParticleID.Gas,
                     Projectile.Center,
@@ -88,15 +93,15 @@ public class ChinookSupplyCrate : ModProjectile
             int shrapnelCount = 5;
             for (int i = 0; i < shrapnelCount; i++)
             {
-                float t = (i / (float)(shrapnelCount - 1)) - 0.5f;
-                float angle = -MathHelper.PiOver2 + (t * MathHelper.ToRadians(110f)) + Main.rand.NextFloat(-0.06f, 0.06f);
+                float t = i / (float)(shrapnelCount - 1) - 0.5f;
+                float angle = -MathHelper.PiOver2 + t * MathHelper.ToRadians(110f) + Main.rand.NextFloat(-0.06f, 0.06f);
                 Vector2 shrapnelVel = angle.ToRotationVector2() * Main.rand.NextFloat(9.5f, 12.5f);
 
                 Projectile p = Projectile.NewProjectileDirect(
                     Projectile.GetSource_FromThis(),
                     Projectile.Center - new Vector2(0f, 6f),
                     shrapnelVel,
-                    ProjectileID.BulletHighVelocity,
+                    ModContent.ProjectileType<DartshipBullet>(),
                     Projectile.damage,
                     1.5f,
                     Main.myPlayer

@@ -139,7 +139,10 @@ public class DartshipMarine : ModNPC
 
         NPC.netUpdate = true;
     }
-
+    public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+    {
+        modifiers.FinalDamage *= 1.5f;
+    }
     public override void SendExtraAI(BinaryWriter writer)
     {
         writer.Write((sbyte)MarineFacing);

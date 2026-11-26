@@ -224,11 +224,12 @@ public class ElfComanche : ModNPC
         if (boss.AIState == ApacheElfShip.ActionState.ComancheCommander)
         {
             float targetRot = MathHelper.Clamp(boss.NPC.rotation, -MathHelper.PiOver2, MathHelper.PiOver2);
-            NPC.rotation = MathHelper.Lerp(NPC.rotation, targetRot, 0.25f);
+            float turnStep = MathHelper.Clamp((targetRot - NPC.rotation) * 0.06f, -0.022f, 0.022f);
+            NPC.rotation += turnStep;
         }
         else
         {
-            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.024f, -0.25f, 0.25f), 0.1f);
+            NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.020f, -0.20f, 0.20f), 0.06f);
         }
 
         if (CommandState != 2f)
