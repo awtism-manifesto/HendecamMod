@@ -909,8 +909,7 @@ MeteorCube: {
 	DisplayName: Meteor Cube
 	Tooltip:
 		'''
-		Quadrouples your max fall speed
-		Good thing this can't become a black hole
+		Quadruples your fall speed
 		'''
 }
 
@@ -1653,7 +1652,7 @@ ShatteredKeyboard: {
 
 SilverCube: {
 	DisplayName: Silver Cube
-	Tooltip: Doubles your fall speed
+	Tooltip: Doubles player fall speed
 }
 
 SpiritProtectionCharm: {
@@ -1719,8 +1718,8 @@ TungstenCube: {
 	DisplayName: Tungsten Cube
 	Tooltip:
 		'''
-		This costs $5000 on Ebay
-		No I am not joking when I say that
+		Doubles player fall speed
+		This costs $5000 on ebay btw
 		'''
 }
 

@@ -17,6 +17,15 @@ public class ZincCube : BaseCube
 
     public override void AddRecipes()
     {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient<CubicMold>();
+        recipe.AddIngredient(ItemID.AlphabetStatueZ, 1);
+        recipe.AddIngredient(ItemID.AlphabetStatueI, 1);
+        recipe.AddIngredient(ItemID.AlphabetStatueN, 1);
+        recipe.AddIngredient(ItemID.AlphabetStatueC, 1);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
+
         if (ModLoader.TryGetMod("Avalon", out Mod Avalon) && Avalon.TryFind("ZincBar", out ModItem ZincBar))
         {
             CreateCubeRecipe(ZincBar.Type);
