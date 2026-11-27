@@ -30,8 +30,9 @@ namespace HendecamMod.Content.Projectiles.Enemies.ApacheBoss
             Projectile.penetrate = -1;
             Projectile.hostile = true;
             Projectile.alpha = 255;
-            Projectile.scale = 0.5f;
+
             Projectile.hide = true;
+            Projectile.scale = 1f;
         }
 
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
@@ -89,12 +90,8 @@ namespace HendecamMod.Content.Projectiles.Enemies.ApacheBoss
                 Projectile.Kill();
                 return;
             }
-
-
-
             color.A = 0;
         }
-
         public override void OnKill(int timeLeft)
         {
             base.OnKill(timeLeft);
@@ -116,13 +113,14 @@ namespace HendecamMod.Content.Projectiles.Enemies.ApacheBoss
 
         public override Color? GetAlpha(Color lightColor)
         {
-            return Color.White * Projectile.Opacity * (Main.mouseTextColor / 255f) * 0.9f;
+            return new Color(228, 83, 38, 80) * Projectile.Opacity * (Main.mouseTextColor / 255f) * 0.9f;
         }
-
 
         public override bool PreDraw(ref Color lightColor)
         {
             Texture2D texture2D13 = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value;
+            Texture2D textureTip = TextureAssets.Extra[ExtrasID.SharpTears].Value;
+            Rectangle frame2 = textureTip.Frame(1, Main.projFrames[Type], 0, Projectile.frame);
             int num156 = texture2D13.Height / Main.projFrames[Projectile.type];
             int y3 = num156 * Projectile.frame;
             Rectangle rectangle = new(0, y3, texture2D13.Width, num156);
@@ -132,20 +130,24 @@ namespace HendecamMod.Content.Projectiles.Enemies.ApacheBoss
             Vector2 offset = Projectile.rotation.ToRotationVector2() * length / 2f;
             Vector2 position = Projectile.Center - Main.screenLastPosition + new Vector2(0f, Projectile.gfxOffY) + offset;
             const float resolutionCompensation = 128f / 24f;
-            Rectangle destination = new((int)position.X, (int)position.Y, length, (int)(rectangle.Height * Projectile.scale / resolutionCompensation));
+            Rectangle destination = new((int)position.X, (int)position.Y, length, (int)(rectangle.Height * 0.25 / resolutionCompensation));
 
             Color drawColor = Projectile.GetAlpha(lightColor);
-
+            Vector2 glowScale = new Vector2(1.25f, 0.15f);
             for (int j = 0; j < drawLayers; j++)
             {
                 Main.EntitySpriteDraw(new DrawData(texture2D13, destination, new Rectangle?(rectangle), drawColor, Projectile.rotation, origin2, SpriteEffects.None, 0));
             }
-            Texture2D effectTexture = TextureAssets.Extra[ExtrasID.SharpTears].Value;
-            Vector2 drawPosition = Projectile.Center - Main.screenPosition;
-            Main.EntitySpriteDraw(effectTexture, drawPosition, null,
-            new Color(255, 184, 34, 0), Projectile.rotation, effectTexture.Size() / 2f, Projectile.scale, SpriteEffects.None);
-            Main.EntitySpriteDraw(effectTexture, drawPosition, null,
-            new Color(255, 184, 34, 0), Projectile.rotation + MathHelper.PiOver2, effectTexture.Size() / 2f, Projectile.scale, SpriteEffects.None);
+            Main.EntitySpriteDraw(textureTip, Projectile.Center - Main.screenPosition, frame2,
+            drawColor * 2, Projectile.rotation + MathHelper.PiOver4,
+            new Vector2(textureTip.Width
+            * 0.5f, textureTip.Height / Main.projFrames[Type] * 0.5f),
+            glowScale * 1f, SpriteEffects.None, 0f);
+            Main.EntitySpriteDraw(textureTip, Projectile.Center - Main.screenPosition, frame2,
+            drawColor * 2, Projectile.rotation + MathHelper.PiOver4 + MathHelper.PiOver2,
+            new Vector2(textureTip.Width
+            * 0.5f, textureTip.Height / Main.projFrames[Type] * 0.5f),
+            glowScale * 1f, SpriteEffects.None, 0f);
             return false;
         }
     }

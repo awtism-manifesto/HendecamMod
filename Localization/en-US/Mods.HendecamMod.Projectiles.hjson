@@ -649,6 +649,7 @@ ShovingExplosion.DisplayName: Shoving Explosion
 ShovingRocket.DisplayName: Shoving Rocket
 DowndraftColumn.DisplayName: Downdraft Column
 DowndraftTelegraph.DisplayName: Downdraft Telegraph
-CyberSand.DisplayName: Cyber Sand
-UraniumSpawn.DisplayName: Uranium Spawn
-UraniumCloud.DisplayName: Uranium Cloud
+DartshipPlasmaOrb.DisplayName: Dartship Plasma Orb
+DartshipHomingRocket.DisplayName: Dartship Homing Rocket
+DartshipPointer.DisplayName: Dartship Pointer
+DartshipPatrolPoint.DisplayName: Dartship Patrol Point
