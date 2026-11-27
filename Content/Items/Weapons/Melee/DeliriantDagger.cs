@@ -54,7 +54,7 @@ public class DeliriantDagger : ModItem
             Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(360f));
 
             int proj = Projectile.NewProjectile(source, position, newVelocity * 1f, ProjectileType<DaggerProj>(), (int)(damage * 0.85f), knockback, player.whoAmI);
-            Main.projectile[proj].GetGlobalProjectile<HendecamGlobalProjectile>().ProjectileSource = HendecamGlobalProjectile.ProjectileItemSource.DeliriantDagger;
+            
         }
 
         return true; // Prevent vanilla projectile spawn

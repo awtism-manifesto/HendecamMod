@@ -12,7 +12,7 @@ public class SodiumPickaxe : ModItem
 
         Item.width = 35;
         Item.height = 35;
-        Item.useTime = 11;
+        Item.useTime = 10;
         Item.useAnimation = 20;
 
         Item.useStyle = ItemUseStyleID.Swing;

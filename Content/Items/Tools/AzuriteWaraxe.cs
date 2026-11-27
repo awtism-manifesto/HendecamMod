@@ -10,7 +10,7 @@ public class AzuriteWaraxe : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.width = 40;
         Item.height = 40;
-        Item.useTime = 15;
+        Item.useTime = 9;
         Item.useAnimation = 15;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;

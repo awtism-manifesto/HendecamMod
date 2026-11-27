@@ -8,7 +8,7 @@ public class Transitioner : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.width = 40;
         Item.height = 40;
-        Item.useTime = 12;
+        Item.useTime = 9;
         Item.useAnimation = 34;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTurn = true;

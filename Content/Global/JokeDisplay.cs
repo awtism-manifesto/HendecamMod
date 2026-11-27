@@ -40,7 +40,7 @@ namespace HendecamMod.Content.Global
             }
             if (choice == 20)
             {
-                displayColor = new Color(15, 15, 105, Main.mouseTextColor);
+                displayColor = new Color(150, 15, 15, Main.mouseTextColor);
             }
             else
             {

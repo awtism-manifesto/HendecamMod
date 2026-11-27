@@ -61,9 +61,12 @@ public class LycosporeSlime : ModNPC
             Vector2 offset = Main.rand.NextVector2Circular(spreadRadius, spreadRadius);
             Vector2 spawnPos = center + offset;
 
-            // Stationary projectile: zero velocity
-            Projectile.NewProjectile(source, spawnPos, Vector2.Zero,
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                Projectile.NewProjectile(source, spawnPos, Vector2.Zero,
                 ProjectileType<BoomShroomHostile>(), 40, 0f, Main.myPlayer);
+            }
+            
 
             ShroomCD = 15;
         }

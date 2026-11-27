@@ -11,7 +11,7 @@ public class SteelPickaxe : ModItem
         Item.height = 36;
 
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 14;
+        Item.useTime = 13;
         Item.useAnimation = 20;
         Item.useTurn = true;
 

@@ -7,11 +7,7 @@ using Terraria.DataStructures;
 
 namespace HendecamMod.Content.Items.Weapons.Multiclass;
 
-/// <summary>
-///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-///     See Source code for Star Wrath projectile to see how it passes through tiles.
-///     For a detailed sword guide see <see cref="ExampleSword" />
-/// </summary>
+
 public class PyriteProjectorBlade : ModItem
 {
     private int shotCounter;
@@ -29,7 +25,7 @@ public class PyriteProjectorBlade : ModItem
         Item.damage = 22;
         Item.knockBack = 3f;
         Item.scale = 1.33f;
-        Item.mana = 6;
+        Item.mana = 9;
         Item.value = 59500;
         Item.rare = ItemRarityID.Green;
         Item.UseSound = SoundID.Item1;

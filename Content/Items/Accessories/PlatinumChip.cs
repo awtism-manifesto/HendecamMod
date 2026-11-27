@@ -10,19 +10,19 @@ namespace HendecamMod.Content.Items.Accessories;
 
 public class PlatinumChip : ModItem
 {
-   
+
     public override void SetDefaults()
     {
-        Item.width = 22; 
-        Item.height = 18; 
-        Item.value = Item.sellPrice(gold: 2); 
-        Item.rare = ItemRarityID.White; 
-        Item.defense = 1; 
+        Item.width = 22;
+        Item.height = 18;
+        Item.value = Item.sellPrice(gold: 2);
+        Item.rare = ItemRarityID.White;
+        Item.defense = 1;
         Item.accessory = true;
     }
-   
 
-  
+
+
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
@@ -45,23 +45,23 @@ public class PlatinumChip : ModItem
 
 public class PlatShat : ModPlayer
 {
-   
+
 
     public bool Shat;
-   
+
 
     public override void ResetEffects()
     {
         Shat = false;
     }
 
-   
+
 
     public override void OnHurt(Player.HurtInfo info)
     {
         if (!Shat)
             return;
-        
+
 
         int baseDamage = 12;
 
@@ -92,8 +92,8 @@ public class PlatShat : ModPlayer
 
         // Calculate final damage
         int calculatedDamage = (int)(baseDamage * totalMultiplier);
-        
-       
+
+
         Projectile.NewProjectile(
             Player.GetSource_FromThis(),
             Player.Center,
@@ -104,6 +104,6 @@ public class PlatShat : ModPlayer
             Player.whoAmI
         );
 
-      
+
     }
 }

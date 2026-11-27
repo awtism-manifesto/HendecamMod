@@ -8,7 +8,7 @@ public class SteelAxe : ModItem
         Item.DamageType = DamageClass.Melee;
         Item.width = 40;
         Item.height = 40;
-        Item.useTime = 15;
+        Item.useTime = 12;
         Item.useAnimation = 25;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.knockBack = 6;

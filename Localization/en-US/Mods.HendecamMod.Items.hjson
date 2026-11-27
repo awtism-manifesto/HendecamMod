@@ -7442,7 +7442,11 @@ RustyDustySawThrower: {
 }
 
 PlatinumChip: {
-	Tooltip: Causes platinum shards to fly out when you get hit
+	Tooltip:
+		'''
+			Causes platinum shards to fly out when the player gets hit
+			'Ain't that a kick in the balls'
+		'''
 	DisplayName: Platinum Chip
 }
 
@@ -7669,7 +7673,7 @@ JokeJumbotron: {
 			When's the next Calamity update?
 			'''
 		33: I'm killing you
-		34: More like stupitus
+		34: More like stupidtus
 		35: I'm too lazy, make your own
 		36: I've always hated the color blue
 		37: You actually changed!
@@ -8339,3 +8343,22 @@ HyperfixationVisor: {
 }
 
 BrainMatter.DisplayName: Brain Matter
+
+CyberneticSandgun: {
+	Tooltip:
+		'''
+			Shoots cybernetic sand without requiring ammo
+			The sand doesn't stay on the ground because i don't hate you
+			'Where does the sand come from? I dunno bro'
+		'''
+	DisplayName: Cybernetic Sandgun
+}
+
+UraniumChip: {
+	Tooltip:
+		'''
+		Hey, it's me, it's Verity
+		Ask me anything (I got a question)
+		'''
+	DisplayName: Uranium Chip
+}
