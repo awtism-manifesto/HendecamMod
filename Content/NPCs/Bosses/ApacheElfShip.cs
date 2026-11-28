@@ -644,21 +644,6 @@ public class ApacheElfShip : ModNPC
         return chosen;
     }
 
-    private int GetComancheCount()
-    {
-        float hp = LifeRatio;
-
-        if (ExpertMode || MasterMode || LegendaryMode)
-        {
-            if (hp <= 0.5f) return 3;
-            if (hp <= 0.75f) return 2;
-            return 1;
-        }
-
-        if (hp <= 0.25f) return 3;
-        if (hp <= 0.5f) return 2;
-        return 1;
-    }
 
     #region Attacks
     public void Intro(Player target)
@@ -1447,7 +1432,21 @@ public class ApacheElfShip : ModNPC
             SwitchState(ActionState.Reposition);
         }
     }
+    private int GetComancheCount()
+    {
+        float hp = LifeRatio;
 
+        if (ExpertMode || MasterMode || LegendaryMode)
+        {
+            if (hp <= 0.5f) return 3;
+            if (hp <= 0.75f) return 2;
+            return 1;
+        }
+
+        if (hp <= 0.25f) return 3;
+        if (hp <= 0.5f) return 2;
+        return 1;
+    }
     public void ComancheCommander(Player target)
     {
         const float fireStartTick = 45f;
@@ -1511,8 +1510,8 @@ public class ApacheElfShip : ModNPC
         Projectile pointer = FindActivePointer();
         Vector2 pointerPos = pointer?.Center ?? target.Center;
 
-        FaceTowards(pointerPos.X, 60f);
-        AimBodyAt(pointerPos, BodyPos, 0.055f, 1.15f, 0.025f);
+        float targetAimAngle = (pointerPos - BodyPos).ToRotation();
+        AimBody360(targetAimAngle, 0.08f, 0.035f);
         AlignGunsForward();
 
         MoveTowards(pointerPos, 0.055f, 2f, 8.5f, 0.08f, stopRadius: 14f);
@@ -1735,7 +1734,24 @@ public class ApacheElfShip : ModNPC
         float turnStep = MathHelper.Clamp((clampedRot - NPC.rotation) * rotLerp, -maxTurnSpeed, maxTurnSpeed);
         NPC.rotation += turnStep;
     }
+    private void AimBody360(float targetAimAngle, float rotLerp, float maxTurnSpeed)
+    {
+        float currentAimAngle = new Vector2(TargetFacing, 0f).RotatedBy(NPC.rotation).ToRotation();
+        float angleDiff = MathHelper.WrapAngle(targetAimAngle - currentAimAngle);
+        float turnStep = MathHelper.Clamp(angleDiff * rotLerp, -maxTurnSpeed, maxTurnSpeed);
+        float newAimAngle = MathHelper.WrapAngle(currentAimAngle + turnStep);
 
+        float cos = MathF.Cos(newAimAngle);
+        if (TargetFacing == 1 && cos < -0.08f)
+            TargetFacing = -1;
+        else if (TargetFacing == -1 && cos > 0.08f)
+            TargetFacing = 1;
+
+        NPC.spriteDirection = TargetFacing;
+        NPC.rotation = TargetFacing == -1
+            ? MathHelper.WrapAngle(newAimAngle + MathHelper.Pi)
+            : newAimAngle;
+    }
     private void AlignGunsForward()
     {
         float neutralAngle = TargetFacing == -1 ? 0f : MathHelper.Pi;

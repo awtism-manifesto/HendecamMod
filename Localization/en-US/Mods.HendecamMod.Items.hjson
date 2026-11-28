@@ -907,10 +907,7 @@ MediocreGrades: {
 
 MeteorCube: {
 	DisplayName: Meteor Cube
-	Tooltip:
-		'''
-		Quadruples your fall speed
-		'''
+	Tooltip: Quadruples your fall speed
 }
 
 MintalCube: {

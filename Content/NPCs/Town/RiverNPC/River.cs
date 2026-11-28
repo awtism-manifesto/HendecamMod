@@ -402,8 +402,6 @@ public class River : ModNPC
 
     public override void ModifyNPCLoot(NPCLoot npcLoot)
     {
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverGun>(), 2));
-        npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RiverMachinegun>(), 25));
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bullshit1>(), 201));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit2>(), chanceDenominator: 911, chanceNumerator: 2));
         npcLoot.Add(ItemDropRule.ByCondition(new HardmodeDrop(), ModContent.ItemType<Bullshit3>(), chanceDenominator: 42069, chanceNumerator: 15));

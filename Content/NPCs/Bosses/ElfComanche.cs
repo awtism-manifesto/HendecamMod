@@ -223,15 +223,14 @@ public class ElfComanche : ModNPC
 
         if (boss.AIState == ApacheElfShip.ActionState.ComancheCommander)
         {
-            float targetRot = MathHelper.Clamp(boss.NPC.rotation, -MathHelper.PiOver2, MathHelper.PiOver2);
-            float turnStep = MathHelper.Clamp((targetRot - NPC.rotation) * 0.06f, -0.022f, 0.022f);
-            NPC.rotation += turnStep;
+            float bossAimAngle = new Vector2(boss.TargetFacing, 0f).RotatedBy(boss.NPC.rotation).ToRotation();
+            AimBody(bossAimAngle, 0.1f, 0.04f);
         }
         else
         {
+            SetFacing(boss.TargetFacing);
             NPC.rotation = MathHelper.Lerp(NPC.rotation, MathHelper.Clamp(NPC.velocity.X * 0.020f, -0.20f, 0.20f), 0.06f);
         }
-
         if (CommandState != 2f)
             return;
 
@@ -248,7 +247,24 @@ public class ElfComanche : ModNPC
         SoundEngine.PlaySound(SoundID.Item11 with { Volume = 0.6f }, FrontGunPivot);
         SpawnBullet(boss, lookDir);
     }
+    private void AimBody(float targetAimAngle, float rotLerp, float maxTurnSpeed)
+    {
+        float currentAimAngle = new Vector2(TargetFacing, 0f).RotatedBy(NPC.rotation).ToRotation();
+        float angleDiff = MathHelper.WrapAngle(targetAimAngle - currentAimAngle);
+        float turnStep = MathHelper.Clamp(angleDiff * rotLerp, -maxTurnSpeed, maxTurnSpeed);
+        float newAimAngle = MathHelper.WrapAngle(currentAimAngle + turnStep);
 
+        float cos = MathF.Cos(newAimAngle);
+        if (TargetFacing == 1 && cos < -0.08f)
+            TargetFacing = -1;
+        else if (TargetFacing == -1 && cos > 0.08f)
+            TargetFacing = 1;
+
+        NPC.spriteDirection = TargetFacing;
+        NPC.rotation = TargetFacing == -1
+            ? MathHelper.WrapAngle(newAimAngle + MathHelper.Pi)
+            : newAimAngle;
+    }
     private void SpawnBullet(ApacheElfShip boss, Vector2 direction)
     {
         if (Main.netMode == NetmodeID.MultiplayerClient)
